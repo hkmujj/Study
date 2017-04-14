@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0C1B7B1D-E64F-43ED-BEBA-620BE781B283}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MMI.Facility.DataType</RootNamespace>
+    <AssemblyName>MMI.Facility.DataType</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Development outputs\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\..\..\Bin\MMI\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\3rdTools\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\ConfigureDescriptionAttribute.cs" />
+    <Compile Include="Config\Net\Channel\ANetConfig.cs" />
+    <Compile Include="Config\AppFileConfig.cs" />
+    <Compile Include="Config\Net\Channel\CNetConfig.cs" />
+    <Compile Include="Config\DebugWindowConfig.cs" />
+    <Compile Include="Config\Net\Channel\DNetConfig.cs" />
+    <Compile Include="Config\Form\ActureFormConfig.cs" />
+    <Compile Include="Config\Form\ActureFormViewConfig.cs" />
+    <Compile Include="Config\IndexDescriptionConfig.cs" />
+    <Compile Include="Config\Net\Channel\NetChannelConfig.cs" />
+    <Compile Include="Config\Net\Channel\PTT2DNetConfig.cs" />
+    <Compile Include="Config\Net\DataProtocol\BussnessIdAndPackageIdConfig.cs" />
+    <Compile Include="Config\Net\DataProtocol\NetDataProtocolConfig.cs" />
+    <Compile Include="Config\Net\DataProtocol\PackageIdOnlyConfig.cs" />
+    <Compile Include="Config\PlatformConfig.cs" />
+    <Compile Include="Config\ProjectIndexDescriptionConfig.cs" />
+    <Compile Include="Config\Net\NetConfig.cs" />
+    <Compile Include="Config\Net\DataProtocol\NetDataConfig.cs" />
+    <Compile Include="Config\Net\DataProtocol\NetDataPackageConfig.cs" />
+    <Compile Include="Config\Net\DataProtocol\NetProjectDataConfig.cs" />
+    <Compile Include="Config\ProjectIndexDescriptionConfigItem.cs" />
+    <Compile Include="Config\ScreenTableConfig.cs" />
+    <Compile Include="Config\SubsystemConfig.cs" />
+    <Compile Include="Config\TypeNetConfigBase.cs" />
+    <Compile Include="Course\CourseStartParameter.cs" />
+    <Compile Include="DataPackage.cs" />
+    <Compile Include="Config\AppConfig.cs" />
+    <Compile Include="Config\AppLogicConfigCollection.cs" />
+    <Compile Include="Config\AppViewConfig.cs" />
+    <Compile Include="Config\AppViewConfigUnit.cs" />
+    <Compile Include="Config\SystemDicrectory.cs" />
+    <Compile Include="Config\Config.cs" />
+    <Compile Include="Config\ConfigValueName.cs" />
+    <Compile Include="Config\Net\Channel\BNetConfig.cs" />
+    <Compile Include="Config\ObjectFileFrom.cs" />
+    <Compile Include="Data\CommunicationChangedDataBuffer.cs" />
+    <Compile Include="Data\CommunicationDataEntity.cs" />
+    <Compile Include="Data\CommunicatonDataReadServiceBase.cs" />
+    <Compile Include="Data\CommunicatonDataServiceBase.cs" />
+    <Compile Include="Data\CommunicatonDataWriteServiceBase.cs" />
+    <Compile Include="Data\DictionaryProxy.cs" />
+    <Compile Include="Data\Station\StationInfo.cs" />
+    <Compile Include="Extension\DebugWindowConfigExtension.cs" />
+    <Compile Include="Extension\IDictionaryExtention.cs" />
+    <Compile Include="Extension\ProjectTypeExtension.cs" />
+    <Compile Include="Log\SysLog.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="AdapterChangedDataReadOnlyDictionary.cs" />
+    <Compile Include="ReadOnlyDictionary.cs" />
+    <Compile Include="Running\AppRunningParam.cs" />
+    <Compile Include="Running\IRunningViewService.cs" />
+    <Compile Include="Running\RunningViewUnitParam.cs" />
+    <Compile Include="Running\RunningParam.cs" />
+    <Compile Include="Config\SystemConfig.cs" />
+    <Compile Include="Config\SystemProjectConfig.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Running\ViewServiceInitalizeParam.cs" />
+    <Compile Include="View\Control\IChildAttributeControl.cs" />
+    <Compile Include="View\Control\IChildShareControl.cs" />
+    <Compile Include="View\Control\IHelpControl.cs" />
+    <Compile Include="View\EventArg\AttributeValueDoubleClickEventArg.cs" />
+    <Compile Include="View\Form\IAttibuteForm.cs" />
+    <Compile Include="View\Form\IBaseConForm.cs" />
+    <Compile Include="View\Form\IHelpForm.cs" />
+    <Compile Include="View\Form\ILogicForm.cs" />
+    <Compile Include="View\Form\IMainForm.cs" />
+    <Compile Include="View\Form\IProjectInfoForm.cs" />
+    <Compile Include="View\Form\IProjectListInfo.cs" />
+    <Compile Include="View\Form\IShareForm.cs" />
+    <Compile Include="View\MouseEvent.cs" />
+    <Compile Include="View\MouseEventType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\MMICommon\CommonUtil\CommonUtil.csproj">
+      <Project>{500F1847-2FCE-4781-B4B8-064C79AA1108}</Project>
+      <Name>CommonUtil</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\MMICommon\Excel.Interface\Excel.Interface.csproj">
+      <Project>{09B1D262-07C6-41A8-A29A-AAC70F82589B}</Project>
+      <Name>Excel.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\MMI.Communacation\MMI.Communacation.Interface\MMI.Communacation.Interface.csproj">
+      <Project>{cfc49a76-abdd-4873-aba1-aa264ad6944a}</Project>
+      <Name>MMI.Communacation.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\MMI.Utils\ES.Facility.PublicModule\ES.Facility.PublicModule.csproj">
+      <Project>{4173bc47-1ec6-4658-8e8c-b23f2378701d}</Project>
+      <Name>ES.Facility.PublicModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MMI.Facility.Interface\MMI.Facility.Interface\MMI.Facility.Interface.csproj">
+      <Project>{CB9A9051-182E-4789-BC58-0B35C1B37DD0}</Project>
+      <Name>MMI.Facility.Interface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Service\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

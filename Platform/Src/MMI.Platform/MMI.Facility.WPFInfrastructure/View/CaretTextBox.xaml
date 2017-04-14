@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="MMI.Facility.WPFInfrastructure.View.CaretTextBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:view="clr-namespace:MMI.Facility.WPFInfrastructure.View"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             mc:Ignorable="d">
+    <Grid>
+        <TextBox x:Name="PartCustomTextBox"
+                 Margin="0"
+                 x:FieldModifier="private"
+                 Background="Transparent"
+                 BorderThickness="0"
+                 CaretBrush="Transparent"
+                 Text="111"
+                 VerticalAlignment="{Binding RelativeSource={RelativeSource AncestorType=view:CaretTextBox},Path=TextVerticalAlignment}"
+                 HorizontalAlignment="{Binding RelativeSource={RelativeSource AncestorType=view:CaretTextBox},Path=TextHorizontalAlignment}"
+                 Foreground="{Binding RelativeSource={RelativeSource AncestorType=view:CaretTextBox},
+                                      Path=Foreground}"
+                 IsHitTestVisible="True"
+                 Padding="0" />
+        <Canvas>
+            <ContentPresenter x:Name="PartCaret"
+                              Canvas.Left="0"
+                              Canvas.Top="0"
+                              x:FieldModifier="private"
+                              Content="{Binding RelativeSource={RelativeSource AncestorType=view:CaretTextBox},
+                                                Path=CaretControl}"
+                              Visibility="Collapsed" />
+        </Canvas>
+    </Grid>
+</UserControl>

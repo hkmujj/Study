@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{63B96D86-D018-4064-A40C-829DF8F8DA66}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MMITool.Common</RootNamespace>
+    <AssemblyName>MMITool.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\ConfigEditer\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\..\ConfigEditer\MMITool.Common.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>..\bin\Debug\MMITool.Common.xml</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\CommonUtil.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <NoWarn>649</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\CommonUtil.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\..\..\Bin\MMI\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\Arrows.cs" />
+    <Compile Include="Controls\Button\BtnClickStrategy.cs" />
+    <Compile Include="Controls\Button\BtnManager.cs" />
+    <Compile Include="Controls\Button\BtnNormalStrategy.cs" />
+    <Compile Include="Controls\Button\GDIButton.cs" />
+    <Compile Include="Controls\Button\IBtnStrategy.cs" />
+    <Compile Include="Controls\CommonInnerControlBase.cs" />
+    <Compile Include="Controls\CommonResouce.cs" />
+    <Compile Include="Controls\Coordinate.cs" />
+    <Compile Include="Controls\FormatStyle.cs" />
+    <Compile Include="Controls\GDIDataGrid.cs" />
+    <Compile Include="Controls\GDIRectText.cs" />
+    <Compile Include="Controls\Grid\GridBase.cs" />
+    <Compile Include="Controls\Grid\GridCell\GridCell.cs" />
+    <Compile Include="Controls\Grid\GridItemBase.cs" />
+    <Compile Include="Controls\Grid\GridItemBaseT.cs" />
+    <Compile Include="Controls\Grid\GridItemFactory.cs" />
+    <Compile Include="Controls\Grid\GridItemType.cs" />
+    <Compile Include="Controls\Grid\GridLine\GridLine.cs" />
+    <Compile Include="Controls\Grid\IGridItemFactory.cs" />
+    <Compile Include="Controls\Grid\Items\GridButtonItem.cs" />
+    <Compile Include="Controls\Grid\Items\GridRoundnessItem.cs" />
+    <Compile Include="Controls\Grid\Items\GridTextItem.cs" />
+    <Compile Include="Controls\IBehavierStratege.cs" />
+    <Compile Include="Controls\ICommonInnerControl.cs" />
+    <Compile Include="Controls\IInnerControl.cs" />
+    <Compile Include="Controls\Line.cs" />
+    <Compile Include="Controls\MouseMgr.cs" />
+    <Compile Include="Controls\MouseState.cs" />
+    <Compile Include="Controls\NullCommonInnerCotrol.cs" />
+    <Compile Include="Controls\PolygonRegion.cs" />
+    <Compile Include="Controls\Progress.cs" />
+    <Compile Include="Controls\Roundness\ColorChangedEventArgs.cs" />
+    <Compile Include="Controls\Roundness\GDIRoundness.cs" />
+    <Compile Include="Controls\Roundness\GDIRoundnessNormalBehavier.cs" />
+    <Compile Include="Controls\SelectableRectangleControl.cs" />
+    <Compile Include="Model\Direction.cs" />
+    <Compile Include="Model\IDictionaryKeyProvider.cs" />
+    <Compile Include="Model\IReadOnlyDictionary.cs" />
+    <Compile Include="Model\IRectangle.cs" />
+    <Compile Include="Model\IRectangleF.cs" />
+    <Compile Include="Model\OutLineChangedEventArgs.cs" />
+    <Compile Include="Model\ReadOnlyDictionary.cs" />
+    <Compile Include="Model\XmlRectangle.cs" />
+    <Compile Include="Model\XmlRectangleF.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\AttributeUtility.cs" />
+    <Compile Include="Util\ClassAttribute.cs" />
+    <Compile Include="Util\Dataserialization.cs" />
+    <Compile Include="Util\DeepCopy.cs" />
+    <Compile Include="Util\DynamicInvokeHelper.cs" />
+    <Compile Include="Util\EnumUtil.cs" />
+    <Compile Include="Util\EventArgs.cs" />
+    <Compile Include="Util\Excel\ExcelAdapter.cs" />
+    <Compile Include="Util\Excel\ExcelReaderConfig.cs" />
+    <Compile Include="Util\Excel\IExcelAdapter.cs" />
+    <Compile Include="Util\Excel\IODBCFacade.cs" />
+    <Compile Include="Util\Excel\ODBCFacade.cs" />
+    <Compile Include="Util\HandleUtil.cs" />
+    <Compile Include="Util\Extension\IDictionaryExtention.cs" />
+    <Compile Include="Util\Extension\IRectangleEx.cs" />
+    <Compile Include="Util\ICloneable.cs" />
+    <Compile Include="Util\LineHelper.cs" />
+    <Compile Include="Util\LogMgr.cs" />
+    <Compile Include="Util\Extension\MatrixExtension.cs" />
+    <Compile Include="Util\MatrixHelp.cs" />
+    <Compile Include="Util\Parser\DataMemberAttribute.cs" />
+    <Compile Include="Util\Parser\DataMemberAttributeCollection.cs" />
+    <Compile Include="Util\Parser\ListDataPaser.cs" />
+    <Compile Include="Util\Parser\ListDataPaserTest.cs" />
+    <Compile Include="Util\Extension\PointExtension.cs" />
+    <Compile Include="Util\PropertyAttribute.cs" />
+    <Compile Include="Util\Extension\RectangleExtension.cs" />
+    <Compile Include="Util\StringExtension.cs" />
+    <Compile Include="Util\XmlAttributeUtility.cs" />
+    <Compile Include="Util\XmlSerializationList.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\LogConfig.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

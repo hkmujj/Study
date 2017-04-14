@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D478F798-CED9-4812-96BB-690F640979C4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MMI.Facility.WPFInfrastructure</RootNamespace>
+    <AssemblyName>MMI.Facility.WPFInfrastructure</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\bin\Debug\MMI.Facility.WPFInfrastructure.xml</DocumentationFile>
+    <NoWarn>649</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\MMI\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>..\..\..\MMI\MMI.Facility.WPFInfrastructure.XML</DocumentationFile>
+    <NoWarn>649</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>..\bin\Debug\RailwaySimulation.Infrastructure.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\RailwaySimulation.Infrastructure.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.Prism, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.Prism.MefExtensions, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Behaviors\AutoPopulateExportedViewsBehavior.cs" />
+    <Compile Include="Behaviors\DataGridCommandBehavior.cs" />
+    <Compile Include="Behaviors\DialogActivationBehavior.cs" />
+    <Compile Include="Behaviors\IViewRegionRegistration.cs" />
+    <Compile Include="Behaviors\IViewRegionRelevance.cs" />
+    <Compile Include="Behaviors\IWindow.cs" />
+    <Compile Include="Behaviors\PasswordBoxBindingBehavior.cs" />
+    <Compile Include="Behaviors\RegionPopupBehaviors.cs" />
+    <Compile Include="Behaviors\ReturnCommandBehavior.cs" />
+    <Compile Include="Behaviors\ViewExportAttribute.cs" />
+    <Compile Include="Behaviors\ViewRegionRegistrationExtension.cs" />
+    <Compile Include="Behaviors\ViewRegionRelevance.cs" />
+    <Compile Include="Behaviors\WindowDialogActivationBehavior.Desktop.cs" />
+    <Compile Include="Behaviors\WindowWrapper.Desktop.cs" />
+    <Compile Include="Converter\BoolToObjectConverter.cs" />
+    <Compile Include="Converter\BoolVisibilityConverter.cs" />
+    <Compile Include="Converter\GetItemIndexOfCollectionConverter.cs" />
+    <Compile Include="Converter\IsNullToVisibilityConverter.cs" />
+    <Compile Include="Converter\MathConverter.cs" />
+    <Compile Include="Converter\MultiplicationConverter.cs" />
+    <Compile Include="Converter\NegativeBoolConverter.cs" />
+    <Compile Include="Converter\NullConverter.cs" />
+    <Compile Include="Converter\ReverseBoolConverter.cs" />
+    <Compile Include="Converter\SelectObjectContentConverter.cs" />
+    <Compile Include="Converter\ValueMultiplicativeConverter.cs" />
+    <Compile Include="DataGridCommand.cs" />
+    <Compile Include="Dependency\MarginProperty.cs" />
+    <Compile Include="Event\ApplicationShutdownEvent.cs" />
+    <Compile Include="Event\EventArg\DataGridMouseOperatorArgs.cs" />
+    <Compile Include="Event\EventArg\MouseState.cs" />
+    <Compile Include="Event\SendDataRequestEvent.cs" />
+    <Compile Include="Event\ViewInitalizeComplatedEvent.cs" />
+    <Compile Include="Extension\CompositePresentationEventExtension.cs" />
+    <Compile Include="Interactivity\CommandParameter.cs" />
+    <Compile Include="Interactivity\InvokeCommandAction.cs" />
+    <Compile Include="Interfaces\ControllerBase.cs" />
+    <Compile Include="Interfaces\IApplicationService.cs" />
+    <Compile Include="Interfaces\INavigeteParameterProvider.cs" />
+    <Compile Include="Interfaces\IResourceService.cs" />
+    <Compile Include="Interfaces\ISerializableService.cs" />
+    <Compile Include="Markup\EnumValuesExtension.cs" />
+    <Compile Include="MMIMefBootstrapper.cs" />
+    <Compile Include="MMIPrismLogFacade.cs" />
+    <Compile Include="Model\DataChangedModel.cs" />
+    <Compile Include="Model\IndexValueModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Dependency\PaddingProperty.cs" />
+    <Compile Include="Regions\BorderControlRegionAdapter.cs" />
+    <Compile Include="ReturnKey.cs" />
+    <Compile Include="ViewModel\IMainViewModel.cs" />
+    <Compile Include="View\CaretTextBox.xaml.cs">
+      <DependentUpon>CaretTextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CollapsibleWrapList.cs" />
+    <Compile Include="View\FlickeringDecorator.cs" />
+    <Compile Include="View\FlickerManager.cs" />
+    <Compile Include="View\GridLine.cs" />
+    <Compile Include="View\GroupingWrapper.cs" />
+    <Compile Include="View\IconImageClipper.xaml.cs">
+      <DependentUpon>IconImageClipper.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\IFlickeringable.cs" />
+    <Compile Include="View\WrapList.cs" />
+    <Compile Include="View\WrapListGroupHeader.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Atrribute\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\MMICommon\CommonUtil\CommonUtil.csproj">
+      <Project>{500F1847-2FCE-4781-B4B8-064C79AA1108}</Project>
+      <Name>CommonUtil</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CaretTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\IconImageClipper.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

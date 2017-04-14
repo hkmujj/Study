@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="MMI.Tester.BatchDataSender.View.TestDataCollectionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:converter="clr-namespace:MMI.Facility.WPFInfrastructure.Converter;assembly=MMI.Facility.WPFInfrastructure"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:view="clr-namespace:MMI.Tester.BatchDataSender.View"
+             xmlns:viewModel="clr-namespace:MMI.Tester.BatchDataSender.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:RootViewModel}"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <converter:IsNullToVisibilityConverter x:Key="IsNullToVisibilityConverter" />
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <view:TestDataView Margin="0,0,6,0" DataContext="{Binding Path=BoolDataViewModel}" />
+
+        <GridSplitter Grid.Column="0" Width="6" Background="DarkGray"/>
+
+        <view:TestDataView Grid.Column="1" DataContext="{Binding Path=FloatDataViewModel}" />
+
+    </Grid>
+</UserControl>

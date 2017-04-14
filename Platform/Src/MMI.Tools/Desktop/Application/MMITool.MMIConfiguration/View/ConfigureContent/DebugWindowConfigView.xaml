@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="MMITool.Addin.MMIConfiguration.View.ConfigureContent.DebugWindowConfigView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DataContext="{d:DesignInstance viewModel:DebugWindowConfigViewModel}"
+             d:DesignHeight="300"
+             d:DesignWidth="400"
+             mc:Ignorable="d">
+    <Grid>
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Path=Model.DebugWindowConfig.UserDebugWindownConfigCollection}">
+            <DataGrid.Columns>
+                <DataGridTextColumn MinWidth="60"
+                                    Binding="{Binding Path=X}"
+                                    Header="X" />
+                <DataGridTextColumn MinWidth="60"
+                                    Binding="{Binding Path=Y}"
+                                    Header="Y" />
+                <DataGridTextColumn MinWidth="60"
+                                    Binding="{Binding Path=Width}"
+                                    Header="Width" />
+                <DataGridTextColumn MinWidth="60"
+                                    Binding="{Binding Path=Height}"
+                                    Header="Height" />
+                <DataGridTextColumn Width="*"
+                                    MinWidth="60"
+                                    Binding="{Binding Path=TypeName}"
+                                    Header="窗口名" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

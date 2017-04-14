@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="MMI.Facility.View.Views.CommunicationData.CommunicationDataPageView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:communicationData="clr-namespace:MMI.Facility.View.Views.CommunicationData"
+             d:DataContext="{d:DesignInstance viewModel:CommunicationDataServiceViewModel}"
+             d:DesignHeight="300"
+             d:DesignWidth="400"
+             mc:Ignorable="d">
+    <Grid>
+        <TabControl>
+            <TabItem MinHeight="25" Header="In Datas">
+                <communicationData:CommunicationDataItemView DataContext="{Binding InData}" />
+            </TabItem>
+            <TabItem MinHeight="25" Header="Out Datas">
+                <communicationData:CommunicationDataItemView DataContext="{Binding OutData}" />
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

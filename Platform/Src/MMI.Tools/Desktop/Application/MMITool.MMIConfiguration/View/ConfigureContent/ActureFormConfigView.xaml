@@ -1,0 +1,118 @@
+﻿<UserControl x:Class="MMITool.Addin.MMIConfiguration.View.ConfigureContent.ActureFormConfigView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:MMITool.Addin.MMIConfiguration.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:ActureFormConfigViewModel}"
+             d:DesignHeight="300"
+             d:DesignWidth="400"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="Margin" Value="2" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="Margin" Value="2" />
+        </Style>
+    </UserControl.Resources>
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="40" MaxHeight="80" />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="1.1*" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="1.1*" />
+        </Grid.ColumnDefinitions>
+        <CheckBox Grid.Row="0"
+                  Grid.Column="1"
+                  VerticalAlignment="Bottom"
+                  Content="MMI窗口在前"
+                  IsChecked="{Binding Path=Model.ActureFormConfig.TopMost}"
+                  ToolTip="{Binding RelativeSource={RelativeSource Self},
+                                    Path=Content}" />
+        <CheckBox Grid.Row="0"
+                  Grid.Column="2"
+                  VerticalAlignment="Bottom"
+                  Content="是否显示鼠标"
+                  IsChecked="{Binding Path=Model.ActureFormConfig.IsCourseVisible}"
+                  ToolTip="{Binding RelativeSource={RelativeSource Self},
+                                    Path=Content}" />
+
+        <CheckBox Grid.Row="0"
+                  Grid.Column="3"
+                  VerticalAlignment="Bottom"
+                  Content="是否显示外部按键"
+                  IsChecked="{Binding Path=Model.ActureFormConfig.IsOutterFrameVisible}"
+                  ToolTip="是否显示外部按键, 只有窗口类型为Subsystem的插件有效" />
+
+        <TextBlock Grid.Row="1"
+                   Grid.Column="0"
+                   Text="X:" />
+        <TextBox Grid.Row="1"
+                 Grid.Column="1"
+                 Text="{Binding Path=Model.ActureFormConfig.X}" />
+        <TextBlock Grid.Row="1"
+                   Grid.Column="2"
+                   Text="Y:" />
+        <TextBox Grid.Row="1"
+                 Grid.Column="3"
+                 Text="{Binding Path=Model.ActureFormConfig.Y}" />
+        <TextBlock Grid.Row="2"
+                   Grid.Column="0"
+                   Text="Width:" />
+        <TextBox Grid.Row="2"
+                 Grid.Column="1"
+                 Text="{Binding Path=Model.ActureFormConfig.Width}" />
+        <TextBlock Grid.Row="2"
+                   Grid.Column="2"
+                   Text="Height:" />
+        <TextBox Grid.Row="2"
+                 Grid.Column="3"
+                 Text="{Binding Path=Model.ActureFormConfig.Height}" />
+
+        <TextBlock Grid.Row="3"
+                   Grid.Column="0"
+                   Text="DesignX:" />
+        <TextBox Grid.Row="3"
+                 Grid.Column="1"
+                 IsEnabled="{Binding Path=ConfigNavigateViewModel.Model.IsSeniorConfigModel}"
+                 Text="{Binding Path=Model.ActureFormConfig.DesignX}"
+                 ToolTip="设计时的位置，影响模拟硬件按键等的显示" />
+        <TextBlock Grid.Row="3"
+                   Grid.Column="2"
+                   Text="DesignY:" />
+        <TextBox Grid.Row="3"
+                 Grid.Column="3"
+                 IsEnabled="{Binding Path=ConfigNavigateViewModel.Model.IsSeniorConfigModel}"
+                 Text="{Binding Path=Model.ActureFormConfig.DesignY}"
+                 ToolTip="设计时的位置，影响模拟硬件按键等的显示" />
+
+        <TextBlock Grid.Row="4"
+                   Grid.Column="0"
+                   Text="DesignWidth:" />
+        <TextBox Grid.Row="4"
+                 Grid.Column="1"
+                 IsEnabled="{Binding Path=ConfigNavigateViewModel.Model.IsSeniorConfigModel}"
+                 Text="{Binding Path=Model.ActureFormConfig.DesignWidth}"
+                 ToolTip="设计时的大小，影响模拟硬件按键等的显示" />
+        <TextBlock Grid.Row="4"
+                   Grid.Column="2"
+                   Text="DesignHeight:" />
+        <TextBox Grid.Row="4"
+                 Grid.Column="3"
+                 IsEnabled="{Binding Path=ConfigNavigateViewModel.Model.IsSeniorConfigModel}"
+                 Text="{Binding Path=Model.ActureFormConfig.DesignHeight}"
+                 ToolTip="设计时的大小，影响模拟硬件按键等的显示" />
+    </Grid>
+</UserControl>

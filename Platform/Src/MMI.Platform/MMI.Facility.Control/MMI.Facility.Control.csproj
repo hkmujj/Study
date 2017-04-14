@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3E47CC90-90C8-42CA-B623-56D5A3B25A02}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MMI.Facility.Control</RootNamespace>
+    <AssemblyName>MMI.Facility.Control</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.Prism, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\3rdTools\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Command\CommandInterpreterFactory.cs" />
+    <Compile Include="Command\CourseStartSubType.cs" />
+    <Compile Include="Command\SetStartProjectCommandContentInterpreter.cs" />
+    <Compile Include="Data\AddinAppConfigLoader.cs" />
+    <Compile Include="Data\AddinInfo.cs" />
+    <Compile Include="Data\AddInLoader.cs" />
+    <Compile Include="Data\ConfigManager.cs" />
+    <Compile Include="Data\IAppConfigLoader.cs" />
+    <Compile Include="Data\SubsystemAppConfigLoader.cs" />
+    <Compile Include="Extension\AppCommunicationInterfaceModelExtension.cs" />
+    <Compile Include="Flow\PTTModelFlowBuilder.cs" />
+    <Compile Include="Service\DataChangeListenService.cs" />
+    <Compile Include="Service\DisposeService.cs" />
+    <Compile Include="Service\CommunicationDataFacadeService.cs" />
+    <Compile Include="Service\CourseService.cs" />
+    <Compile Include="Service\DebugViewService.cs" />
+    <Compile Include="Service\EventService.cs" />
+    <Compile Include="Service\IndexDescriptionService.cs" />
+    <Compile Include="Service\IndexInterpreter.cs" />
+    <Compile Include="Service\EditableCommunicationDataReadService.cs" />
+    <Compile Include="Service\EditableCommunicationDataService.cs" />
+    <Compile Include="Data\IUIObjectParser.cs" />
+    <Compile Include="Data\RunningParamManager.cs" />
+    <Compile Include="Data\RunningViewParam.cs" />
+    <Compile Include="Data\TextUIObjectParser.cs" />
+    <Compile Include="Data\ViewObjectMgr.cs" />
+    <Compile Include="Data\XmlUIObjectParser.cs" />
+    <Compile Include="Flow\EditModelFlowBuilder.cs" />
+    <Compile Include="Entry\EntryPoint.cs" />
+    <Compile Include="Entry\FlowFactory.cs" />
+    <Compile Include="Flow\FlowController.cs" />
+    <Compile Include="Flow\FlowControllerBuilder.cs" />
+    <Compile Include="Flow\NormalModelFlowBuilder.cs" />
+    <Compile Include="Hook\DefaultHookProcess.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\AppPostCmdServiceBase.cs" />
+    <Compile Include="Service\EditableCommunicationDataWriteService.cs" />
+    <Compile Include="Service\EditModelAppPostCmdService.cs" />
+    <Compile Include="Service\IStationNameProviderService.cs" />
+    <Compile Include="Service\NormalModelAppPostCmdService.cs" />
+    <Compile Include="Service\ObjectService.cs" />
+    <Compile Include="Service\RunningLogicCaculate.cs" />
+    <Compile Include="Service\ServiceExtension.cs" />
+    <Compile Include="Service\ServiceManager.cs" />
+    <Compile Include="Service\ViewService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\MMICommon\CommonUtil\CommonUtil.csproj">
+      <Project>{500f1847-2fce-4781-b4b8-064c79aa1108}</Project>
+      <Name>CommonUtil</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\MMICommon\Excel.Interface\Excel.Interface.csproj">
+      <Project>{09b1d262-07c6-41a8-a29a-aac70f82589b}</Project>
+      <Name>Excel.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\MMICommon\Mmi.Common.CommunicationIndexWrapper\Mmi.Common.CommunicationIndexWrapper.csproj">
+      <Project>{1acfd0c7-de4e-467d-b8a0-a3a44f790e0c}</Project>
+      <Name>Mmi.Common.CommunicationIndexWrapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\MMICommon\Mmi.Communication.LogicInterface.Adapter\Mmi.Communication.Index.Adapter.csproj">
+      <Project>{faea54f6-e8a6-4935-8697-46b290224da3}</Project>
+      <Name>Mmi.Communication.Index.Adapter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MMI.Communacation\MMI.Communacation.Control\MMI.Communacation.Control.csproj">
+      <Project>{a24b23ba-61cc-4c3f-9686-55c09b64aa3a}</Project>
+      <Name>MMI.Communacation.Control</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MMI.Communacation\MMI.Communacation.Interface\MMI.Communacation.Interface.csproj">
+      <Project>{cfc49a76-abdd-4873-aba1-aa264ad6944a}</Project>
+      <Name>MMI.Communacation.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MMI.Communacation\MMI.YDCommunicationWrapper\MMI.YDCommunicationWrapper.csproj">
+      <Project>{6ce3616d-4b60-4c06-9fc3-a9ff6c63fc0d}</Project>
+      <Name>MMI.YDCommunicationWrapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MMI.Utils\ES.Facility.PublicModule\ES.Facility.PublicModule.csproj">
+      <Project>{4173bc47-1ec6-4658-8e8c-b23f2378701d}</Project>
+      <Name>ES.Facility.PublicModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MMI.Facility.DataType\MMI.Facility.DataType\MMI.Facility.DataType.csproj">
+      <Project>{0c1b7b1d-e64f-43ed-beba-620be781b283}</Project>
+      <Name>MMI.Facility.DataType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MMI.Facility.Interface\MMI.Facility.Interface\MMI.Facility.Interface.csproj">
+      <Project>{cb9a9051-182e-4789-bc58-0b35c1b37dd0}</Project>
+      <Name>MMI.Facility.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MMI.Facility.View\MMI.Facility.View.csproj">
+      <Project>{22f2de30-11db-43e9-81aa-71459649e5f6}</Project>
+      <Name>MMI.Facility.View</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

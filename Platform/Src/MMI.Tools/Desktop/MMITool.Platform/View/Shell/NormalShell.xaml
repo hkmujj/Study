@@ -1,0 +1,95 @@
+﻿<Window x:Class="MMITool.Platform.View.Shell.NormalShell"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:behaviors="clr-namespace:MMI.Facility.WPFInfrastructure.Behaviors;assembly=MMI.Facility.WPFInfrastructure"
+        xmlns:converter="clr-namespace:MMI.Facility.WPFInfrastructure.Converter;assembly=MMI.Facility.WPFInfrastructure"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:regions="http://www.codeplex.com/CompositeWPF"
+        xmlns:viewModel1="clr-namespace:MMITool.Infrastructure.ViewModel;assembly=MMITool.Infrastructure"
+        xmlns:wpfInfrastructure1="clr-namespace:MMITool.Infrastructure;assembly=MMITool.Infrastructure"
+        Title="{Binding Path=WindTitle}"
+        Width="{Binding Path=WindWidth}"
+        Height="{Binding Path=WindHeight}"
+        MinWidth="600"
+        MinHeight="450"
+        behaviors:RegionPopupBehaviors.CreatePopupRegionWithName="{x:Static wpfInfrastructure1:RegionNames.HelpRegion}"
+        d:DataContext="{d:DesignInstance viewModel1:IMainViewModel}"
+        d:DesignHeight="300"
+        d:DesignWidth="400"
+        x:ClassModifier="internal"
+        WindowStyle="None"
+        mc:Ignorable="d">
+    <behaviors:RegionPopupBehaviors.ContainerWindowStyle>
+        <Style TargetType="Window">
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Width" Value="400" />
+            <Setter Property="Height" Value="400" />
+            <Setter Property="Title" Value="{Binding Path=Content.Title, RelativeSource={RelativeSource Self}}" />
+            <Setter Property="ShowInTaskbar" Value="False" />
+        </Style>
+    </behaviors:RegionPopupBehaviors.ContainerWindowStyle>
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Border BorderBrush="LightGray"
+                BorderThickness="0,0,0,1"
+                MouseDown="TitleBar_MouseDown"
+                MouseMove="TitleContentUIElement_OnMouseMove">
+            <Grid Margin="6,3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <WrapPanel x:Name="TitlePanel" Orientation="Horizontal">
+                    <Image x:Name="TitleIco"
+                           Width="16"
+                           MouseLeftButtonDown="TitleIco_OnMouseLeftButtonDown"
+                           Source="{Binding RelativeSource={RelativeSource AncestorType=Window},
+                                            Path=Icon}" />
+                    <TextBlock IsHitTestVisible="True" Text="{Binding Path=WindTitle}">
+                        <TextBlock.Width>
+                            <MultiBinding Converter="{converter:MathConverter}" ConverterParameter="x-y">
+                                <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=WrapPanel}" />
+                                <Binding ElementName="TitleIco" Path="ActualWidth" />
+                            </MultiBinding>
+                        </TextBlock.Width>
+                    </TextBlock>
+                </WrapPanel>
+
+                <StackPanel Grid.Column="1" Orientation="Horizontal">
+
+                    <Button Command="{Binding Path=HelpCommand}"
+                            Content="{StaticResource MMITool.Platform.Image.SysBtn_Help}"
+                            Style="{StaticResource MMITool.Platform.Button.IconImageV}"
+                            ToolTip="更新说明" />
+
+                    <Button Click="MinButtonBase_OnClick"
+                            Content="{StaticResource MMITool.Platform.Image.SysBtn_Minimize}"
+                            Style="{StaticResource MMITool.Platform.Button.IconImageV}"
+                            ToolTip="最小化" />
+
+                    <Button Click="ButtonResotre_OnClick"
+                            Content="{Binding RelativeSource={RelativeSource AncestorType=Window},
+                                              Path=WindowState,
+                                              Converter={StaticResource MMITool.Platform.Converter.WinStateToImageConverter}}"
+                            Style="{StaticResource MMITool.Platform.Button.IconImageV}"
+                            ToolTip="还原/最大化" />
+
+                    <Button Click="CloseButtonBase_OnClick"
+                            Content="{StaticResource MMITool.Platform.Image.SysBtn_Close}"
+                            Style="{StaticResource MMITool.Platform.Button.IconImageV}"
+                            ToolTip="关闭" />
+
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <ContentControl Grid.Row="1" regions:RegionManager.RegionName="{x:Static wpfInfrastructure1:RegionNames.MainContent}" />
+    </Grid>
+</Window>

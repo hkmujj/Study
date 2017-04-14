@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="MMITool.Addin.MMIConfiguration.View.ConfigureContent.NetDetail.ViewItem.NetDataConfigItemView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dataProtocol="clr-namespace:MMI.Facility.DataType.Config.Net.DataProtocol;assembly=MMI.Facility.DataType"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DataContext="{d:DesignInstance dataProtocol:NetDataPackageConfig}"
+             d:DesignHeight="300"
+             d:DesignWidth="400"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="6" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="6" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0"
+                   Grid.Column="0"
+                   Text="数据包数：" />
+
+        <TextBox Grid.Row="0"
+                 Grid.Column="1"
+                 Text="{Binding Path=PackageCount}" />
+        <TextBlock Grid.Row="1"
+                   Grid.Column="0"
+                   Text="float值的起始byte位置：" />
+        <TextBox Grid.Row="1"
+                 Grid.Column="1"
+                 Text="{Binding Path=FloatStartByte}" />
+        <TextBlock Grid.Row="2"
+                   Grid.Column="0"
+                   Text="float值的byte个数：" />
+        <TextBox Grid.Row="2"
+                 Grid.Column="1"
+                 Text="{Binding Path=FloatCountOfByte}" />
+        <TextBlock Grid.Row="3"
+                   Grid.Column="0"
+                   Text="Bool值的起始byte位置：" />
+        <TextBox Grid.Row="3"
+                 Grid.Column="1"
+                 Text="{Binding Path=BoolStartByte}" />
+        <TextBlock Grid.Row="4"
+                   Grid.Column="0"
+                   Text="Bool值的byte个数：" />
+        <TextBox Grid.Row="4"
+                 Grid.Column="1"
+                 Text="{Binding Path=BoolCountOfByte}" />
+        <TextBlock Grid.Row="5"
+                   Grid.Column="0"
+                   Text="float值的映射起始地址(个数)：" />
+        <TextBox Grid.Row="5"
+                 Grid.Column="1"
+                 Text="{Binding Path=FloatMappedStartIndex}" />
+        <TextBlock Grid.Row="6"
+                   Grid.Column="0"
+                   Text="Bool值的映射起始地址(个数)：" />
+        <TextBox Grid.Row="6"
+                 Grid.Column="1"
+                 Text="{Binding Path=BoolMappedStartIndex}" />
+
+    </Grid>
+</UserControl>

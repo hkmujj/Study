@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="MMI.Tester.BatchDataSender.View.SelectFileItemView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:validationRules="clr-namespace:MMI.Tester.BatchDataSender.ValidationRules"
+             xmlns:viewModel="clr-namespace:MMI.Tester.BatchDataSender.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:TempldateDataFileItemViewModel}"
+             d:DesignHeight="50"
+             d:DesignWidth="300"
+             mc:Ignorable="d">
+    <Grid>
+        <Grid Margin="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="40" />
+                <ColumnDefinition Width="60" />
+            </Grid.ColumnDefinitions>
+            <Grid.Resources>
+
+                <Style TargetType="TextBlock">
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                    <Setter Property="HorizontalAlignment" Value="Left" />
+                </Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="Height" Value="20" />
+                    <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}" />
+                </Style>
+                <Style TargetType="Button">
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                    <Setter Property="Margin" Value="6,0" />
+                    <Setter Property="Height" Value="25" />
+                </Style>
+            </Grid.Resources>
+            <TextBox Grid.Column="0" Validation.Error="Validation_OnError">
+                <TextBox.Text>
+                    <Binding IsAsync="True"
+                             NotifyOnValidationError="True"
+                             Path="File"
+                             UpdateSourceTrigger="PropertyChanged"
+                             ValidatesOnExceptions="True">
+                        <Binding.ValidationRules>
+                            <validationRules:TemplateDataFileValidationRule />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <Button Grid.Column="1"
+                    Command="{Binding Path=SelectFileCommand}"
+                    Content="…" />
+            <Button Grid.Column="2"
+                    Command="{Binding Path=ApplyCommand}"
+                    Content="Apply" />
+        </Grid>
+    </Grid>
+</UserControl>

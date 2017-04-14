@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="MMI.Tester.BatchDataSender.View.ShellView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:constant="clr-namespace:MMI.Tester.BatchDataSender.Constant"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:regions="http://www.codeplex.com/CompositeWPF"
+             xmlns:viewModel="clr-namespace:MMI.Tester.BatchDataSender.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:RootViewModel}"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             regions:RegionManager.RegionName="{x:Static constant:RegionNames.RootRegion}"
+             mc:Ignorable="d" />

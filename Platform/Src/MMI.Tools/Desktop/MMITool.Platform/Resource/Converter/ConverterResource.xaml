@@ -1,0 +1,18 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converter="clr-namespace:MMI.Facility.WPFInfrastructure.Converter;assembly=MMI.Facility.WPFInfrastructure"
+                    xmlns:local="clr-namespace:MMITool.Platform.Resource.Converter">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Images/ImageResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <converter:SelectObjectContentConverter x:Key="MMITool.Platform.Converter.WinStateToImageConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static WindowState.Maximized}" Content="{StaticResource MMITool.Platform.Image.SysBtn_Restore}" />
+            <converter:ObjectContentPair Key="{x:Static WindowState.Minimized}" Content="{StaticResource MMITool.Platform.Image.SysBtn_Restore}" />
+            <converter:ObjectContentPair Key="{x:Static WindowState.Normal}" Content="{StaticResource MMITool.Platform.Image.SysBtn_Maximize}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+</ResourceDictionary>
