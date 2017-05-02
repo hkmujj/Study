@@ -1,0 +1,651 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="InF网压" xml:space="preserve">
+    <value>网压</value>
+  </data>
+  <data name="InF网流" xml:space="preserve">
+    <value>网流</value>
+  </data>
+  <data name="InF速度" xml:space="preserve">
+    <value>速度</value>
+  </data>
+  <data name="InF限速值" xml:space="preserve">
+    <value>限速值</value>
+  </data>
+  <data name="InF当前站" xml:space="preserve">
+    <value>当前站</value>
+  </data>
+  <data name="InF下一站" xml:space="preserve">
+    <value>下一站</value>
+  </data>
+  <data name="InF终点站" xml:space="preserve">
+    <value>终点站</value>
+  </data>
+  <data name="InF牵引级位" xml:space="preserve">
+    <value>牵引级位</value>
+  </data>
+  <data name="InF制动级位" xml:space="preserve">
+    <value>制动级位</value>
+  </data>
+  <data name="InFTC1车载荷1" xml:space="preserve">
+    <value>TC1车 载荷1</value>
+  </data>
+  <data name="InFTC1车载荷2" xml:space="preserve">
+    <value>TC1车 载荷2</value>
+  </data>
+  <data name="InFMP1车载荷1" xml:space="preserve">
+    <value>MP1车 载荷1</value>
+  </data>
+  <data name="InFMP1车载荷2" xml:space="preserve">
+    <value>MP1车 载荷2</value>
+  </data>
+  <data name="InFM1车载荷1" xml:space="preserve">
+    <value>M1车 载荷1</value>
+  </data>
+  <data name="InFM1车载荷2" xml:space="preserve">
+    <value>M1车 载荷2</value>
+  </data>
+  <data name="InFM2车载荷1" xml:space="preserve">
+    <value>M2车 载荷1</value>
+  </data>
+  <data name="InFM2车载荷2" xml:space="preserve">
+    <value>M2车 载荷2</value>
+  </data>
+  <data name="InFMP2车载荷1" xml:space="preserve">
+    <value>MP2车 载荷1</value>
+  </data>
+  <data name="InFMP2车载荷2" xml:space="preserve">
+    <value>MP2车 载荷2</value>
+  </data>
+  <data name="InFTC2车载荷1" xml:space="preserve">
+    <value>TC2车 载荷1</value>
+  </data>
+  <data name="InFTC2车载荷2" xml:space="preserve">
+    <value>TC2车 载荷2</value>
+  </data>
+  <data name="InFTC1车制动压力1" xml:space="preserve">
+    <value>TC1车 制动压力1</value>
+  </data>
+  <data name="InFTC1车制动压力2" xml:space="preserve">
+    <value>TC1车 制动压力2</value>
+  </data>
+  <data name="InFMP1车制动压力1" xml:space="preserve">
+    <value>MP1车 制动压力1</value>
+  </data>
+  <data name="InFMP1车制动压力2" xml:space="preserve">
+    <value>MP1车 制动压力2</value>
+  </data>
+  <data name="InFM1车制动压力1" xml:space="preserve">
+    <value>M1车 制动压力1</value>
+  </data>
+  <data name="InFM1车制动压力2" xml:space="preserve">
+    <value>M1车 制动压力2</value>
+  </data>
+  <data name="InFM2车制动压力1" xml:space="preserve">
+    <value>M2车 制动压力1</value>
+  </data>
+  <data name="InFM2车制动压力2" xml:space="preserve">
+    <value>M2车 制动压力2</value>
+  </data>
+  <data name="InFMP2车制动压力1" xml:space="preserve">
+    <value>MP2车 制动压力1</value>
+  </data>
+  <data name="InFMP2车制动压力2" xml:space="preserve">
+    <value>MP2车 制动压力2</value>
+  </data>
+  <data name="InFTC2车制动压力1" xml:space="preserve">
+    <value>TC2车 制动压力1</value>
+  </data>
+  <data name="InFTC2车制动压力2" xml:space="preserve">
+    <value>TC2车 制动压力2</value>
+  </data>
+  <data name="InFTC1车ASP压力值1" xml:space="preserve">
+    <value>TC1车 ASP压力值1</value>
+  </data>
+  <data name="InFTC1车ASP压力值2" xml:space="preserve">
+    <value>TC1车 ASP压力值2</value>
+  </data>
+  <data name="InFMP1车ASP压力值1" xml:space="preserve">
+    <value>MP1车 ASP压力值1</value>
+  </data>
+  <data name="InFMP1车ASP压力值2" xml:space="preserve">
+    <value>MP1车 ASP压力值2</value>
+  </data>
+  <data name="InFM1车ASP压力值1" xml:space="preserve">
+    <value>M1车 ASP压力值1</value>
+  </data>
+  <data name="InFM1车ASP压力值2" xml:space="preserve">
+    <value>M1车 ASP压力值2</value>
+  </data>
+  <data name="InFM2车ASP压力值1" xml:space="preserve">
+    <value>M2车 ASP压力值1</value>
+  </data>
+  <data name="InFM2车ASP压力值2" xml:space="preserve">
+    <value>M2车 ASP压力值2</value>
+  </data>
+  <data name="InFMP2车ASP压力值1" xml:space="preserve">
+    <value>MP2车 ASP压力值1</value>
+  </data>
+  <data name="InFMP2车ASP压力值2" xml:space="preserve">
+    <value>MP2车 ASP压力值2</value>
+  </data>
+  <data name="InFTC2车ASP压力值1" xml:space="preserve">
+    <value>TC2车 ASP压力值1</value>
+  </data>
+  <data name="InFTC2车ASP压力值2" xml:space="preserve">
+    <value>TC2车 ASP压力值2</value>
+  </data>
+  <data name="InFMP1车电制动载荷2" xml:space="preserve">
+    <value>MP1车 电制动载荷2</value>
+  </data>
+  <data name="InFM1车电制动载荷1" xml:space="preserve">
+    <value>M1车 电制动载荷1</value>
+  </data>
+  <data name="InFM2车电制动载荷1" xml:space="preserve">
+    <value>M2车 电制动载荷1</value>
+  </data>
+  <data name="InFMP2车电制动载荷1" xml:space="preserve">
+    <value>MP2车 电制动载荷1</value>
+  </data>
+  <data name="InFTC1车常用制动力" xml:space="preserve">
+    <value>TC1车 常用制动力</value>
+  </data>
+  <data name="InFMP1车常用制动力" xml:space="preserve">
+    <value>MP1车 常用制动力</value>
+  </data>
+  <data name="InFM1车常用制动力" xml:space="preserve">
+    <value>M1车 常用制动力</value>
+  </data>
+  <data name="InFM2车常用制动力" xml:space="preserve">
+    <value>M2车 常用制动力</value>
+  </data>
+  <data name="InFMP2车常用制动力" xml:space="preserve">
+    <value>MP2车 常用制动力</value>
+  </data>
+  <data name="InFTC2车常用制动力" xml:space="preserve">
+    <value>TC2车 常用制动力</value>
+  </data>
+  <data name="InF反馈总制动力1" xml:space="preserve">
+    <value>反馈总制动力1</value>
+  </data>
+  <data name="InF反馈总制动力2" xml:space="preserve">
+    <value>反馈总制动力2</value>
+  </data>
+  <data name="InF总风管压力1" xml:space="preserve">
+    <value>总风管压力1</value>
+  </data>
+  <data name="InF总风管压力2" xml:space="preserve">
+    <value>总风管压力2</value>
+  </data>
+  <data name="InFTC1车1轴旋转速度" xml:space="preserve">
+    <value>TC1车 1轴旋转速度（km\h）</value>
+  </data>
+  <data name="InFTC1车2轴旋转速度" xml:space="preserve">
+    <value>TC1车 2轴旋转速度（km\h）</value>
+  </data>
+  <data name="InFTC1车3轴旋转速度" xml:space="preserve">
+    <value>TC1车 3轴旋转速度（km\h）</value>
+  </data>
+  <data name="InFTC1车4轴旋转速度" xml:space="preserve">
+    <value>TC1车 4轴旋转速度（km\h）</value>
+  </data>
+  <data name="InFMP1车1轴旋转速度" xml:space="preserve">
+    <value>MP1车 1轴旋转速度（km\h）</value>
+  </data>
+  <data name="InFMP1车2轴旋转速度" xml:space="preserve">
+    <value>MP1车 2轴旋转速度（km\h）</value>
+  </data>
+  <data name="InFMP1车3轴旋转速度" xml:space="preserve">
+    <value>MP1车 3轴旋转速度（km\h）</value>
+  </data>
+  <data name="InFMP1车4轴旋转速度" xml:space="preserve">
+    <value>MP1车 4轴旋转速度（km\h）</value>
+  </data>
+  <data name="InFM1车1轴旋转速度" xml:space="preserve">
+    <value>M1车 1轴旋转速度（km\h）</value>
+  </data>
+  <data name="InFM1车2轴旋转速度" xml:space="preserve">
+    <value>M1车 2轴旋转速度（km\h）</value>
+  </data>
+  <data name="InFM1车3轴旋转速度" xml:space="preserve">
+    <value>M1车 3轴旋转速度（km\h）</value>
+  </data>
+  <data name="InFM1车4轴旋转速度" xml:space="preserve">
+    <value>M1车 4轴旋转速度（km\h）</value>
+  </data>
+  <data name="InFM2车1轴旋转速度" xml:space="preserve">
+    <value>M2车 1轴旋转速度（km\h）</value>
+  </data>
+  <data name="InFM2车2轴旋转速度" xml:space="preserve">
+    <value>M2车 2轴旋转速度（km\h）</value>
+  </data>
+  <data name="InFM2车3轴旋转速度" xml:space="preserve">
+    <value>M2车 3轴旋转速度（km\h）</value>
+  </data>
+  <data name="InFM2车4轴旋转速度" xml:space="preserve">
+    <value>M2车 4轴旋转速度（km\h）</value>
+  </data>
+  <data name="InFMP2车1轴旋转速度" xml:space="preserve">
+    <value>MP2车 1轴旋转速度（km\h）</value>
+  </data>
+  <data name="InFMP2车2轴旋转速度" xml:space="preserve">
+    <value>MP2车 2轴旋转速度（km\h）</value>
+  </data>
+  <data name="InFMP2车3轴旋转速度" xml:space="preserve">
+    <value>MP2车 3轴旋转速度（km\h）</value>
+  </data>
+  <data name="InFMP2车4轴旋转速度" xml:space="preserve">
+    <value>MP2车 4轴旋转速度（km\h）</value>
+  </data>
+  <data name="InFTC2车1轴旋转速度" xml:space="preserve">
+    <value>TC2车 1轴旋转速度（km\h）</value>
+  </data>
+  <data name="InFTC2车2轴旋转速度" xml:space="preserve">
+    <value>TC2车 2轴旋转速度（km\h）</value>
+  </data>
+  <data name="InFTC2车3轴旋转速度" xml:space="preserve">
+    <value>TC2车 3轴旋转速度（km\h）</value>
+  </data>
+  <data name="InFTC2车4轴旋转速度" xml:space="preserve">
+    <value>TC2车 4轴旋转速度（km\h）</value>
+  </data>
+  <data name="InFMP1车实际电制力" xml:space="preserve">
+    <value>MP1车 实际电制力</value>
+  </data>
+  <data name="InFM1车实际电制力" xml:space="preserve">
+    <value>M1车 实际电制力</value>
+  </data>
+  <data name="InFM2车实际电制力" xml:space="preserve">
+    <value>M2车 实际电制力</value>
+  </data>
+  <data name="InFMP2车实际电制力" xml:space="preserve">
+    <value>MP2车 实际电制力</value>
+  </data>
+  <data name="InFMP1车牵引力" xml:space="preserve">
+    <value>MP1车 牵引力</value>
+  </data>
+  <data name="InFM1车牵引力" xml:space="preserve">
+    <value>M1车 牵引力</value>
+  </data>
+  <data name="InFM2车牵引力" xml:space="preserve">
+    <value>M2车 牵引力</value>
+  </data>
+  <data name="InFMP2车牵引力" xml:space="preserve">
+    <value>MP2车 牵引力</value>
+  </data>
+  <data name="InFMP1车电机电流" xml:space="preserve">
+    <value>MP1车 电机电流</value>
+  </data>
+  <data name="InFM1车电机电流" xml:space="preserve">
+    <value>M1车 电机电流</value>
+  </data>
+  <data name="InFM2车电机电流" xml:space="preserve">
+    <value>M2车 电机电流</value>
+  </data>
+  <data name="InFMP2车电机电流" xml:space="preserve">
+    <value>MP2车 电机电流</value>
+  </data>
+  <data name="InFMP1车牵引能耗" xml:space="preserve">
+    <value>MP1车 牵引能耗</value>
+  </data>
+  <data name="InFM1车牵引能耗" xml:space="preserve">
+    <value>M1车 牵引能耗</value>
+  </data>
+  <data name="InFM2车牵引能耗" xml:space="preserve">
+    <value>M2车 牵引能耗</value>
+  </data>
+  <data name="InFMP2车牵引能耗" xml:space="preserve">
+    <value>MP2车 牵引能耗</value>
+  </data>
+  <data name="InFMP1车再生制动能耗" xml:space="preserve">
+    <value>MP1车 再生制动能耗</value>
+  </data>
+  <data name="InFM1车再生制动能耗" xml:space="preserve">
+    <value>M1车 再生制动能耗</value>
+  </data>
+  <data name="InFM2车再生制动能耗" xml:space="preserve">
+    <value>M2车 再生制动能耗</value>
+  </data>
+  <data name="InFMP2车再生制动能耗" xml:space="preserve">
+    <value>MP2车 再生制动能耗</value>
+  </data>
+  <data name="InFMP1车电网电压" xml:space="preserve">
+    <value>MP1车 电网电压</value>
+  </data>
+  <data name="InFM1车电网电压" xml:space="preserve">
+    <value>M1车 电网电压</value>
+  </data>
+  <data name="InFM2车电网电压" xml:space="preserve">
+    <value>M2车 电网电压</value>
+  </data>
+  <data name="InFMP2车电网电压" xml:space="preserve">
+    <value>MP2车 电网电压</value>
+  </data>
+  <data name="InFMP1车滤波器电容电压" xml:space="preserve">
+    <value>MP1车 滤波器电容电压</value>
+  </data>
+  <data name="InFM1车滤波器电容电压" xml:space="preserve">
+    <value>M1车 滤波器电容电压</value>
+  </data>
+  <data name="InFM2车滤波器电容电压" xml:space="preserve">
+    <value>M2车 滤波器电容电压</value>
+  </data>
+  <data name="InFMP2车滤波器电容电压" xml:space="preserve">
+    <value>MP2车 滤波器电容电压</value>
+  </data>
+  <data name="InFMP1车电阻制动能耗" xml:space="preserve">
+    <value>MP1车 电阻制动能耗</value>
+  </data>
+  <data name="InFM1车电阻制动能耗" xml:space="preserve">
+    <value>M1车 电阻制动能耗</value>
+  </data>
+  <data name="InFM2车电阻制动能耗" xml:space="preserve">
+    <value>M2车 电阻制动能耗</value>
+  </data>
+  <data name="InFMP2车电阻制动能耗" xml:space="preserve">
+    <value>MP2车 电阻制动能耗</value>
+  </data>
+  <data name="InFTC1车辅助能耗" xml:space="preserve">
+    <value>TC1车 辅助能耗</value>
+  </data>
+  <data name="InFTC2车辅助能耗" xml:space="preserve">
+    <value>TC2车 辅助能耗</value>
+  </data>
+  <data name="InFTC1车输入电压" xml:space="preserve">
+    <value>TC1车 输入电压</value>
+  </data>
+  <data name="InFTC2车输入电压" xml:space="preserve">
+    <value>TC2车 输入电压</value>
+  </data>
+  <data name="InFTC1车母线电压" xml:space="preserve">
+    <value>TC1车 辅助系统状态母线电压</value>
+  </data>
+  <data name="InFTC2车母线电压" xml:space="preserve">
+    <value>TC2车 辅助系统状态母线电压</value>
+  </data>
+  <data name="InFTC1车输出电压" xml:space="preserve">
+    <value>TC1车 辅助系统状态输出电压</value>
+  </data>
+  <data name="InFTC2车输出电压" xml:space="preserve">
+    <value>TC2车 辅助系统状态输出电压</value>
+  </data>
+  <data name="InFTC1车输出频率" xml:space="preserve">
+    <value>TC1车 输出频率</value>
+  </data>
+  <data name="InFTC2车输出频率" xml:space="preserve">
+    <value>TC2车 输出频率</value>
+  </data>
+  <data name="InFTC1车输出电流" xml:space="preserve">
+    <value>TC1车 输出电流</value>
+  </data>
+  <data name="InFTC2车输出电流" xml:space="preserve">
+    <value>TC2车 输出电流</value>
+  </data>
+  <data name="InFTC1车输入电流" xml:space="preserve">
+    <value>TC1车 输入电流</value>
+  </data>
+  <data name="InFTC2车输入电流" xml:space="preserve">
+    <value>TC2车 输入电流</value>
+  </data>
+  <data name="InFTC1车输出负载电流" xml:space="preserve">
+    <value>TC1车 输出负载电流</value>
+  </data>
+  <data name="InFTC2车输出负载电流" xml:space="preserve">
+    <value>TC2车 输出负载电流</value>
+  </data>
+  <data name="InFTC1车输出充电电流" xml:space="preserve">
+    <value>TC1车 输出充电电流</value>
+  </data>
+  <data name="InFTC2车输出充电电流" xml:space="preserve">
+    <value>TC2车 输出充电电流</value>
+  </data>
+  <data name="InFTC1车蓄电池温度" xml:space="preserve">
+    <value>TC1车 蓄电池温度</value>
+  </data>
+  <data name="InFTC2车蓄电池温度" xml:space="preserve">
+    <value>TC2车 蓄电池温度</value>
+  </data>
+  <data name="InFTC1车设置温度" xml:space="preserve">
+    <value>TC1车 设置温度</value>
+  </data>
+  <data name="InFMP1车设置温度" xml:space="preserve">
+    <value>MP1车 设置温度</value>
+  </data>
+  <data name="InFM1车设置温度" xml:space="preserve">
+    <value>M1车 设置温度</value>
+  </data>
+  <data name="InFM2车设置温度" xml:space="preserve">
+    <value>M2车 设置温度</value>
+  </data>
+  <data name="InFMP2车设置温度" xml:space="preserve">
+    <value>MP2车 设置温度</value>
+  </data>
+  <data name="InFTC2车设置温度" xml:space="preserve">
+    <value>TC2车 设置温度</value>
+  </data>
+  <data name="InFTC1车车外温度" xml:space="preserve">
+    <value>TC1车 车外温度</value>
+  </data>
+  <data name="InFMP1车车外温度" xml:space="preserve">
+    <value>MP1车 车外温度</value>
+  </data>
+  <data name="InFM1车车外温度" xml:space="preserve">
+    <value>M1车 车外温度</value>
+  </data>
+  <data name="InFM2车车外温度" xml:space="preserve">
+    <value>M2车 车外温度</value>
+  </data>
+  <data name="InFMP2车车外温度" xml:space="preserve">
+    <value>MP2车 车外温度</value>
+  </data>
+  <data name="InFTC2车车外温度" xml:space="preserve">
+    <value>TC2车 车外温度</value>
+  </data>
+  <data name="InFTC1空气簧压力1" xml:space="preserve">
+    <value>TC1 空气簧压力1</value>
+  </data>
+  <data name="InFTC1空气簧压力2" xml:space="preserve">
+    <value>TC1 空气簧压力2</value>
+  </data>
+  <data name="InFMP1空气簧压力1" xml:space="preserve">
+    <value>MP1 空气簧压力1</value>
+  </data>
+  <data name="InFMP1空气簧压力2" xml:space="preserve">
+    <value>MP1 空气簧压力2</value>
+  </data>
+  <data name="InFM1空气簧压力1" xml:space="preserve">
+    <value>M1 空气簧压力1</value>
+  </data>
+  <data name="InFM1空气簧压力2" xml:space="preserve">
+    <value>M1 空气簧压力2</value>
+  </data>
+  <data name="InFM2空气簧压力1" xml:space="preserve">
+    <value>M2 空气簧压力1</value>
+  </data>
+  <data name="InFM2空气簧压力2" xml:space="preserve">
+    <value>M2 空气簧压力2</value>
+  </data>
+  <data name="InFMP2空气簧压力1" xml:space="preserve">
+    <value>MP2 空气簧压力1</value>
+  </data>
+  <data name="InFMP2空气簧压力2" xml:space="preserve">
+    <value>MP2 空气簧压力2</value>
+  </data>
+  <data name="InFTC2空气簧压力1" xml:space="preserve">
+    <value>TC2 空气簧压力1</value>
+  </data>
+  <data name="InFTC2空气簧压力2" xml:space="preserve">
+    <value>TC2 空气簧压力2</value>
+  </data>
+  <data name="InFTC1制动缸压力压力1" xml:space="preserve">
+    <value>TC1 制动缸压力压力1</value>
+  </data>
+  <data name="InFTC1制动缸压力压力2" xml:space="preserve">
+    <value>TC1 制动缸压力压力2</value>
+  </data>
+  <data name="InFMP1制动缸压力压力1" xml:space="preserve">
+    <value>MP1 制动缸压力压力1</value>
+  </data>
+  <data name="InFMP1制动缸压力压力2" xml:space="preserve">
+    <value>MP1 制动缸压力压力2</value>
+  </data>
+  <data name="InFM1制动缸压力压力1" xml:space="preserve">
+    <value>M1 制动缸压力压力1</value>
+  </data>
+  <data name="InFM1制动缸压力压力2" xml:space="preserve">
+    <value>M1 制动缸压力压力2</value>
+  </data>
+  <data name="InFM2制动缸压力压力1" xml:space="preserve">
+    <value>M2 制动缸压力压力1</value>
+  </data>
+  <data name="InFM2制动缸压力压力2" xml:space="preserve">
+    <value>M2 制动缸压力压力2</value>
+  </data>
+  <data name="InFMP2制动缸压力压力1" xml:space="preserve">
+    <value>MP2 制动缸压力压力1</value>
+  </data>
+  <data name="InFMP2制动缸压力压力2" xml:space="preserve">
+    <value>MP2 制动缸压力压力2</value>
+  </data>
+  <data name="InFTC2制动缸压力压力1" xml:space="preserve">
+    <value>TC2 制动缸压力压力1</value>
+  </data>
+  <data name="InFTC2制动缸压力压力2" xml:space="preserve">
+    <value>TC2 制动缸压力压力2</value>
+  </data>
+  <data name="InFTC1车充电机母线电压" xml:space="preserve">
+    <value>TC1车 充电机母线电压</value>
+  </data>
+  <data name="InFTC1车充电机输出电压" xml:space="preserve">
+    <value>TC1车 充电机输出电压</value>
+  </data>
+  <data name="InFTC2车充电机母线电压" xml:space="preserve">
+    <value>TC2车 充电机母线电压</value>
+  </data>
+  <data name="InFTC2车充电机输出电压" xml:space="preserve">
+    <value>TC2车 充电机输出电压</value>
+  </data>
+  <data name="InF当前设定终点站" xml:space="preserve">
+    <value>当前设定终点站</value>
+  </data>
+  <data name="InF当前设定起始站" xml:space="preserve">
+    <value>当前设定起始站</value>
+  </data>
+</root>
