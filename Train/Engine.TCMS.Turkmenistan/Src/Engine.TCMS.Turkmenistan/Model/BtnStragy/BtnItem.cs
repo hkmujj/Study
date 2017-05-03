@@ -6,12 +6,15 @@ namespace Engine.TCMS.Turkmenistan.Model.BtnStragy
 {
     [DebuggerDisplay("Content={Content}")]
     public class BtnItem : NotificationObject, IRaiseResourceChangedProvider
-    {private string m_Content;
+    {
+        private string m_Content;
 
-        public BtnItem(string content, IBtnActionResponser actionResponser)
+        public BtnItem(IBtnActionResponser actionResponser, string chContent, string tmContent)
         {
-            Content = content;
+            Content = chContent;
             ActionResponser = actionResponser;
+            ChContent = chContent;
+            TmContent = tmContent;
             if (actionResponser != null)
             {
                 actionResponser.Parent = this;
@@ -41,7 +44,8 @@ namespace Engine.TCMS.Turkmenistan.Model.BtnStragy
             }
             get { return m_Content; }
         }
-
+        public string ChContent { get; private set; }
+        public string TmContent { get; private set; }
         public DelegateCommand ClickCommand { private set; get; }
 
         public IBtnActionResponser ActionResponser { private set; get; }

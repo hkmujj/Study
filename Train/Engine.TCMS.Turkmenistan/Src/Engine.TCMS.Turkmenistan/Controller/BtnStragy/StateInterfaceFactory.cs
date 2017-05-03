@@ -41,11 +41,11 @@ namespace Engine.TCMS.Turkmenistan.Controller.BtnStragy
                     Id = interfaceKey,
                     Title = itConfig.Title,
                     ContentViewName = string.Format("Engine.TCMS.Turkmenistan.View.Contents.{0}", itConfig.ContentViewName),
-                    BtnF1 = CreateBtnItem(itConfig.B1Content, itConfig.B1ActionClassName),
-                    BtnF2 = CreateBtnItem(itConfig.B2Content, itConfig.B2ActionClassName),
-                    BtnF3 = CreateBtnItem(itConfig.B3Content, itConfig.B3ActionClassName),
-                    BtnF4 = CreateBtnItem(itConfig.B4Content, itConfig.B4ActionClassName),
-                    BtnF5 = CreateBtnItem(itConfig.B5Content, itConfig.B5ActionClassName),
+                    BtnF1 = CreateBtnItem(itConfig.B1ChContent, itConfig.B1TmContent, itConfig.B1ActionClassName),
+                    BtnF2 = CreateBtnItem(itConfig.B2ChContent, itConfig.B2TmContent, itConfig.B2ActionClassName),
+                    BtnF3 = CreateBtnItem(itConfig.B3ChContent, itConfig.B3TmContent, itConfig.B3ActionClassName),
+                    BtnF4 = CreateBtnItem(itConfig.B4ChContent, itConfig.B4TmContent, itConfig.B4ActionClassName),
+                    BtnF5 = CreateBtnItem(itConfig.B5ChContent, itConfig.B5TmContent, itConfig.B5ActionClassName),
                 };
                 m_StateInterfacedDictionary.Add(interfaceKey, state);
             }
@@ -55,7 +55,7 @@ namespace Engine.TCMS.Turkmenistan.Controller.BtnStragy
             }
         }
 
-        private static BtnItem CreateBtnItem(string content, string actionClassName)
+        private static BtnItem CreateBtnItem(string chContent, string tmContent, string actionClassName)
         {
             var actionClassFullName = string.Format("Engine.TCMS.Turkmenistan.Controller.BtnActionResponser.{0}",
                 actionClassName);
@@ -74,7 +74,7 @@ namespace Engine.TCMS.Turkmenistan.Controller.BtnStragy
                     AppLog.Error("can not found action response where name = {0}, {1}", actionClassFullName, e);
                 }
             }
-            return new BtnItem(content, responser);
+            return new BtnItem(responser, chContent, tmContent);
         }
     }
 }

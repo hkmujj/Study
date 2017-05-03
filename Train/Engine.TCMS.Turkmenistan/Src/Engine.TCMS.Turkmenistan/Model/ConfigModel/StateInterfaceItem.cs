@@ -16,37 +16,45 @@ namespace Engine.TCMS.Turkmenistan.Model.ConfigModel
         [ExcelField("内容控件名")]
         public string ContentViewName { private set; get; }
 
-        [ExcelField("第1个按键内容")]
-        public string B1Content { private set; get; }
+        [ExcelField("第1个按键中文内容")]
+        public string B1ChContent { private set; get; }
 
         [ExcelField("第1个按键处理")]
         public string B1ActionClassName { private set; get; }
 
-        [ExcelField("第2个按键内容")]
-        public string B2Content { private set; get; }
+        [ExcelField("第2个按键中文内容")]
+        public string B2ChContent { private set; get; }
 
         [ExcelField("第2个按键处理")]
         public string B2ActionClassName { private set; get; }
 
-        [ExcelField("第3个按键内容")]
-        public string B3Content { private set; get; }
+        [ExcelField("第3个按键中文内容")]
+        public string B3ChContent { private set; get; }
 
         [ExcelField("第3个按键处理")]
         public string B3ActionClassName { private set; get; }
 
-        [ExcelField("第4个按键内容")]
-        public string B4Content { private set; get; }
+        [ExcelField("第4个按键中文内容")]
+        public string B4ChContent { private set; get; }
 
         [ExcelField("第4个按键处理")]
         public string B4ActionClassName { private set; get; }
 
-        [ExcelField("第5个按键内容")]
-        public string B5Content { private set; get; }
+        [ExcelField("第5个按键中文内容")]
+        public string B5ChContent { private set; get; }
 
         [ExcelField("第5个按键处理")]
         public string B5ActionClassName { private set; get; }
-
-
+        [ExcelField("第1个按键土库曼斯坦内容")]
+        public string B1TmContent { private set; get; }
+        [ExcelField("第2个按键土库曼斯坦内容")]
+        public string B2TmContent { private set; get; }
+        [ExcelField("第3个按键土库曼斯坦内容")]
+        public string B3TmContent { private set; get; }
+        [ExcelField("第4个按键土库曼斯坦内容")]
+        public string B4TmContent { private set; get; }
+        [ExcelField("第5个按键土库曼斯坦内容")]
+        public string B5TmContent { private set; get; }
         /// <summary>
         /// </summary>
         /// <param name="propertyOrFieldName"></param>
