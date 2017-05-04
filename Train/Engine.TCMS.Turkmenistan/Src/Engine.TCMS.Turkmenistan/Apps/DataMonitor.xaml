@@ -1,0 +1,18 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Engine.TCMS.Turkmenistan.Apps"
+        xmlns:dxprg="http://schemas.devexpress.com/winfx/2008/xaml/propertygrid"
+        xmlns:viewModels="clr-namespace:Engine.TCMS.Turkmenistan.ViewModels"
+        x:Class="Engine.TCMS.Turkmenistan.Apps.DataMonitor"
+    d:DataContext="{d:DesignInstance viewModels:DoMainViewModel}"
+        mc:Ignorable="d"
+        Title="DataMonitor" Height="300" Width="300">
+    <Grid>
+
+        <dxprg:PropertyGridControl AllowExpanding="ForceIfNoTypeConverter" AllowInstanceInitializer="False"  SelectedObject="{Binding }" ShowCategories="False" />
+
+    </Grid>
+</Window>

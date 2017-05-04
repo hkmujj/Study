@@ -92,133 +92,20 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="WPFApp\App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Page Include="Resources\Base\TurkmenistanBaseResource.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Resources\Text\StringResource-ch.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Resources\Text\StringResource-tm.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Resources\TurkmenistanResource.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Resources\Styles\TurkmenistanButtonStyle.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Buttons\ButtonView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Common\NullView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Contents\MainView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\DataMonitor\DataMonitorView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\DataMonitor\DataMonitorWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Layout\ShellContentStyle1Layout.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Shell\ShellWithoutButton.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Shell\TurkmenistanShell.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="Adapter\DomainAdapter.cs" />
-    <Compile Include="Adapter\IUpdateDataProvider.cs" />
-    <Compile Include="Adapter\UpdateDataProviderBase.cs" />
-    <Compile Include="Constant\RegionNames.cs" />
-    <Compile Include="Controller\BtnStragy\StateInterfaceFactory.cs" />
-    <Compile Include="Controller\DomainController.cs" />
-    <Compile Include="Event\DataServiceDataChanged.cs" />
-    <Compile Include="Event\LazyValueCreatedEvent.cs" />
-    <Compile Include="Extension\CommunicationDataChangedArgsExtension.cs" />
-    <Compile Include="Extension\CommunicationDataServiceExtension.cs" />
-    <Compile Include="Model\IResetSupport.cs" />
-    <Compile Include="TurkmenistanMefBootstrapper.cs" />
-    <Compile Include="TurkmenistanSubystem.cs" />
-    <Compile Include="Model\BtnStragy\ActionResponserExportAttribute.cs" />
-    <Compile Include="Model\BtnStragy\BtnItem.cs" />
-    <Compile Include="Model\BtnStragy\IBtnActionResponser.cs" />
-    <Compile Include="Model\BtnStragy\IStateInterface.cs" />
-    <Compile Include="Model\BtnStragy\IStateInterfaceFactory.cs" />
-    <Compile Include="Model\BtnStragy\StateInterface.cs" />
-    <Compile Include="Model\BtnStragy\StateInterfaceExportAttribute.cs" />
-    <Compile Include="Model\BtnStragy\StateInterfaceKey.cs" />
-    <Compile Include="Model\ConfigModel\StateInterfaceItem.cs" />
-    <Compile Include="Model\GlobalParam.cs" />
-    <Compile Include="Model\IRaiseResourceChangedProvider.cs" />
-    <Compile Include="Model\DomainModel.cs" />
-    <Compile Include="Controller\HardwareBtnController.cs" />
-    <Compile Include="Model\HardwareBtnModel.cs" />
-    <Compile Include="Resources\Keys\StateKeys.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StateKeys.resx</DependentUpon>
+    <Compile Include="Apps\DataMonitor.xaml.cs">
+      <DependentUpon>DataMonitor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\HardwareBtnViewModel.cs" />
-    <Compile Include="ViewModel\DomainViewModel.cs" />
-    <Compile Include="View\Buttons\ButtonView.xaml.cs">
-      <DependentUpon>ButtonView.xaml</DependentUpon>
+    <Compile Include="Apps\StartEntry.xaml.cs">
+      <DependentUpon>StartEntry.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Common\NullView.xaml.cs">
-      <DependentUpon>NullView.xaml</DependentUpon>
+    <Compile Include="Apps\TurkmenistanWindwos.xaml.cs">
+      <DependentUpon>TurkmenistanWindwos.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Contents\MainView.xaml.cs">
-      <DependentUpon>MainView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\DataMonitor\DataMonitorView.xaml.cs">
-      <DependentUpon>DataMonitorView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\DataMonitor\DataMonitorWindow.xaml.cs">
-      <DependentUpon>DataMonitorWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Layout\ShellContentStyle1Layout.xaml.cs">
-      <DependentUpon>ShellContentStyle1Layout.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Shell\ShellWithoutButton.xaml.cs">
-      <DependentUpon>ShellWithoutButton.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Shell\TurkmenistanResourceForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Shell\TurkmenistanResourceForm.Designer.cs">
-      <DependentUpon>TurkmenistanResourceForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="WPFApp\App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="View\Shell\TurkmenistanShell.xaml.cs">
-      <DependentUpon>TurkmenistanShell.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
+    <Compile Include="Controllser\DoMainController.cs" />
+    <Compile Include="Interfaces\IViewModels.cs" />
+    <Compile Include="Models\GlobalParam.cs" />
+    <Compile Include="ViewModels\ButtonViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -232,16 +119,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="TurkmenistanBootStraper.cs" />
+    <Compile Include="ViewModels\DoMainViewModel.cs" />
+    <EmbeddedResource Include="Properties\Licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Keys\StateKeys.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>StateKeys.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Shell\TurkmenistanResourceForm.resx">
-      <DependentUpon>TurkmenistanResourceForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -250,13 +133,40 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="WPFApp\App.config" />
+    <Folder Include="Constance\" />
+    <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Changes.Engine.TCMS.Turkmenistan.txt" />
+    <ApplicationDefinition Include="Apps\StartEntry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controller\BtnActionResponser\" />
+    <Page Include="Apps\DataMonitor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Apps\TurkmenistanWindwos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Base\TurkmenistanBaseResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Converter\TurkmenistanConverter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\TurkmenistanStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\TurkmenistanReource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

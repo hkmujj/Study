@@ -1,11 +1,9 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    xmlns:converter="clr-namespace:MMI.Facility.WPFInfrastructure.Converter;assembly=MMI.Facility.WPFInfrastructure">
 
+    <converter:MathConverter x:Key="MathConverter" />
 
-    <system:Double x:Key="Double12">12</system:Double>
-
-    <SolidColorBrush x:Key="WhiteBrush" Color="White" />
 
 </ResourceDictionary>
