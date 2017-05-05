@@ -14,6 +14,7 @@ namespace Engine.TCMS.Turkmenistan.ViewModel
         {
             Model = model;
             Controller = controller;
+
             Parent = parent;
             controller.ViewModel = this;
             controller.Initalize();
