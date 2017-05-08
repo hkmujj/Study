@@ -1,0 +1,569 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ES.Facility.Common</name>
+    </assembly>
+    <members>
+        <member name="T:ES.Facility.Common.FontStyle_ES">
+            <summary>
+            功能描述：公共字体样式
+            创建人：唐林
+            创建时间：2014-07-15
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.FontStyle_ES.Font">
+            <summary>
+            读取或设置文本字体属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.FontStyle_ES.TextBrush">
+            <summary>
+            读取或设置文本画刷属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.FontStyle_ES.StringFormat">
+            <summary>
+            读取或设置文本在控件上的对齐方式属性
+            </summary>
+        </member>
+        <member name="T:ES.Facility.Common.FontStyles">
+            <summary>
+            功能描述：字体样式库
+            创建人：唐林
+            创建时间：2014-07-15
+            </summary>
+        </member>
+        <member name="F:ES.Facility.Common.FontStyles.FS_Song_11_CC_B">
+            <summary>
+            宋体-11号-垂直居中-水平居中-黑色
+            </summary>
+        </member>
+        <member name="F:ES.Facility.Common.FontStyles.FS_Song_13_CC_B">
+            <summary>
+            宋体-13号-垂直居中-水平居中-黑色
+            </summary>
+        </member>
+        <member name="F:ES.Facility.Common.FontStyles.FS_Song_105_CC_B">
+            <summary>
+            宋体-10.5号-垂直居中-水平居中-黑色
+            </summary>
+        </member>
+        <member name="F:ES.Facility.Common.FontStyles.FS_Song_10_CC_B">
+            <summary>
+            宋体-10号-垂直居中-水平居中-黑色
+            </summary>
+        </member>
+        <member name="F:ES.Facility.Common.FontStyles.FS_Song_10_CC_W">
+            <summary>
+            宋体-10号-垂直居中-水平居中-白色
+            </summary>
+        </member>
+        <member name="F:ES.Facility.Common.FontStyles.FS_Song_10_LC_B">
+            <summary>
+            宋体-10号-垂直居中-水平靠左-黑色
+            </summary>
+        </member>
+        <member name="F:ES.Facility.Common.FontStyles.FS__Song_105_LC_W">
+            <summary>
+            宋体-10.5号-垂直居中-水平靠左-白色
+            </summary>
+        </member>
+        <member name="T:ES.Facility.Common.Control.Common.IControl">
+            <summary>
+            功能描述：控件接口
+            创建人：唐林
+            创建时间：2014-07-14
+            </summary>
+        </member>
+        <member name="M:ES.Facility.Common.Control.Common.IControl.Paint(System.Drawing.Graphics)">
+            <summary>
+            控件绘制
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="P:ES.Facility.Common.Control.Common.IControl.Text">
+            <summary>
+            读取或设置控件文本属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.Common.IControl.ID">
+            <summary>
+            读取控件编号属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.Common.IControl.Style">
+            <summary>
+            获取样式属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.Common.IControl.Rect">
+            <summary>
+            读取或设置控件位置属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.Common.IControl.IsFocus">
+            <summary>
+            读取或设置控件是否获得焦点属性
+            </summary>
+        </member>
+        <member name="T:ES.Facility.Common.Control.Common.IStyle">
+            <summary>
+            功能描述：控件外观style
+            创建人：唐林
+            创建时间：2014-07-14
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.Common.IStyle.Background">
+            <summary>
+            读取或设置控件背景图片属性
+            </summary>
+        </member>
+        <member name="T:ES.Facility.Common.Control.Common.EventHandle_ClickEvent">
+            <summary>
+            控件点击事件代理
+            </summary>
+            <param name="sender">事件发生对象</param>
+            <param name="e">传输参数</param>
+        </member>
+        <member name="T:ES.Facility.Common.Control.Common.ClickEventArgs`1">
+            <summary>
+            功能描述：控件点击事件传输的参数类
+            创建人：唐林
+            创建时间：2014-07-14
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:ES.Facility.Common.Control.Common.ClickEventArgs`1.#ctor">
+            <summary>
+            空构造函数
+            </summary>
+        </member>
+        <member name="M:ES.Facility.Common.Control.Common.ClickEventArgs`1.#ctor(`0)">
+            <summary>
+            构造函数：获得事件数据状态
+            </summary>
+            <param name="message">数据</param>
+        </member>
+        <member name="P:ES.Facility.Common.Control.Common.ClickEventArgs`1.Message">
+            <summary>
+            读取事件数据
+            </summary>
+        </member>
+        <member name="T:ES.Facility.Common.Control.ButtonStyle">
+            <summary>
+            功能描述：按钮Style
+            创建人：唐林
+            创建时间：2014-07-14
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.ButtonStyle.FontStyle">
+            <summary>
+            读取或设置字体样式属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.ButtonStyle.DownImage">
+            <summary>
+            读取或设置控件响应鼠标左键按下时的背景图片属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.ButtonStyle.DisableImage">
+            <summary>
+            读取或设置控件无效时的背景图片属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.ButtonStyle.Background">
+            <summary>
+            读取或设置按钮背景图片属性
+            </summary>
+        </member>
+        <member name="T:ES.Facility.Common.Control.Button">
+            <summary>
+            功能描述：自定义按钮
+            创建人：唐林
+            创建时间：2014-07-15
+            </summary>
+        </member>
+        <member name="M:ES.Facility.Common.Control.Button.#ctor(System.String,System.Drawing.RectangleF,System.Int32,ES.Facility.Common.Control.ButtonStyle,System.Boolean)">
+            <summary>
+            构造函数：根据按钮文本信息、所在矩形区域、按钮标识、按钮Style、自复标识等信息构造按钮
+            </summary>
+            <param name="text">按钮文本</param>
+            <param name="rect">按钮矩形区域</param>
+            <param name="id">按钮ID</param>
+            <param name="style">按钮样式</param>
+            <param name="selfReplication">自复标识，默认为自复按钮</param>
+        </member>
+        <member name="M:ES.Facility.Common.Control.Button.MouseDown(System.Drawing.Point)">
+            <summary>
+            鼠标按下功能函数（该函数需在界面检测鼠标按下函数中调用）
+            </summary>
+            <param name="p">光标所在坐标</param>
+        </member>
+        <member name="M:ES.Facility.Common.Control.Button.MouseUp(System.Drawing.Point)">
+            <summary>
+            鼠标弹起功能函数（该函数需在界面检测鼠标弹起函数中调用）
+            </summary>
+            <param name="p">光标所在坐标</param>
+        </member>
+        <member name="M:ES.Facility.Common.Control.Button.Paint(System.Drawing.Graphics)">
+            <summary>
+            按钮绘制（需在界面绘制函数中实时调用）
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:ES.Facility.Common.Control.Button.Dispose">
+            <summary>
+            IDisposable接口函数：根据需要添加功能
+            </summary>
+        </member>
+        <member name="E:ES.Facility.Common.Control.Button.ClickEvent">
+            <summary>
+            添加或移除按钮点击事件响应函数属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.Button.Text">
+            <summary>
+            读取或设置按钮文本属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.Button.ID">
+            <summary>
+            读取按钮标识ID属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.Button.Style">
+            <summary>
+            读取按钮Style属性（使用时需转换为ButtonStyle）
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.Button.Enable">
+            <summary>
+            读取或设置按钮使能开关属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.Button.Rect">
+            <summary>
+            读取或设置按钮所在矩形区域属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.Button.IsFocus">
+            <summary>
+            读取或设置是否获得焦点属性（功能后续添加）
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.Button.IsReplication">
+            <summary>
+            读取或设置是否复位属性（按钮是否弹起，用户程序使用该属性实现按钮的复位）
+            </summary>
+        </member>
+        <member name="T:ES.Facility.Common.Control.Group">
+            <summary>
+            功能描述：自定义“组”
+            创建人：唐林
+            创建时间：2014-07-16
+            </summary>
+        </member>
+        <member name="M:ES.Facility.Common.Control.Group.#ctor(System.String,System.Drawing.Font,System.Drawing.Rectangle)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="text">标题</param>
+            <param name="font">字体</param>
+            <param name="rect">矩形区域</param>
+        </member>
+        <member name="M:ES.Facility.Common.Control.Group.Paint(System.Drawing.Graphics)">
+            <summary>
+            控件绘制（需在界面Paint函数中调用）
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="T:ES.Facility.Common.Control.ListBoxHeader">
+            <summary>
+            功能描述：ListBox头
+            创建人：唐林
+            创建时间：2014-07-15
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.ListBoxHeader.Text">
+            <summary>
+            读取或设置Header文本属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.ListBoxHeader.HeaderFont">
+            <summary>
+            读取或设置Header文本字体属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.ListBoxHeader.DataFont">
+            <summary>
+            读取或设置Header对应列数据文本字体属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.ListBoxHeader.TextBrush">
+            <summary>
+            读取或设置Header文本画刷属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.ListBoxHeader.BackgroundBrush">
+            <summary>
+            读取或设置Header背景画刷属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.ListBoxHeader.Width">
+            <summary>
+            读取或设置Header宽度属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.ListBoxHeader.Height">
+            <summary>
+            读取或设置Header高度属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.ListBoxHeader.TProperty">
+            <summary>
+            读取或设置Header对应列显示列表对象的属性名称属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.ListBoxHeader.SF_Header">
+            <summary>
+            读取或设置Header文本对齐方式属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.ListBoxHeader.SF_Data">
+            <summary>
+            读取或设置Header对应列数据文本对齐属性
+            </summary>
+        </member>
+        <member name="T:ES.Facility.Common.Control.ListBox`1">
+            <summary>
+            功能描述：自定义ListBox
+            创建人：唐林
+            创建时间：2014-07-15
+            </summary>
+            <typeparam name="T">Item类型</typeparam>
+        </member>
+        <member name="M:ES.Facility.Common.Control.ListBox`1.#ctor(System.Drawing.RectangleF,System.Collections.Generic.List{`0},ES.Facility.Common.Control.ListBoxHeader[])">
+            <summary>
+            构造函数：
+            </summary>
+            <param name="rect"></param>
+            <param name="dataList"></param>
+            <param name="header"></param>
+        </member>
+        <member name="M:ES.Facility.Common.Control.ListBox`1.Paint(System.Drawing.Graphics)">
+            <summary>
+            绘制ListBox
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:ES.Facility.Common.Control.ListBox`1.paint_Header(System.Drawing.Graphics)">
+            <summary>
+            绘制列表头
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:ES.Facility.Common.Control.ListBox`1.paint_Data(System.Drawing.Graphics)">
+            <summary>
+            绘制表格数据
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:ES.Facility.Common.Control.ListBox`1.NextPage">
+            <summary>
+            向下翻页
+            </summary>
+        </member>
+        <member name="M:ES.Facility.Common.Control.ListBox`1.LastPage">
+            <summary>
+            向上翻页
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.ListBox`1.Text">
+            <summary>
+            读取或设置按钮文本属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.ListBox`1.ID">
+            <summary>
+            读取按钮标识ID属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.ListBox`1.Style">
+            <summary>
+            读取按钮Style属性（使用时需转换为ButtonStyle）
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.ListBox`1.Rect">
+            <summary>
+            读取或设置按钮所在矩形区域属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.ListBox`1.IsFocus">
+            <summary>
+            读取或设置是否获得焦点属性（功能后续添加）
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.ListBox`1.DataList">
+            <summary>
+            读取或设置数据列表属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.ListBox`1.SelectedIndex">
+            <summary>
+            读取或设置选中行索引值属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.ListBox`1.IsCurrentPageItemSelected">
+            <summary>
+            读取当前显示页面是否包含选中行属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.ListBox`1.RowCount">
+            <summary>
+            读取或设置显示数据的行数属性
+            </summary>
+        </member>
+        <member name="T:ES.Facility.Common.FaultInfo">
+            <summary>
+            功能描述：故障
+            创建人：唐林
+            创建时间：2014-07-15
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.FaultInfo.Logic">
+            <summary>
+            读取或设置故障逻辑属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.FaultInfo.Grade">
+            <summary>
+            读取或设置故障等级属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.FaultInfo.Code">
+            <summary>
+            读取或设置故障代码属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.FaultInfo.Display">
+            <summary>
+            读取或设置故障内容属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.FaultInfo.StartTime">
+            <summary>
+            读取或设置故障开始时间属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.FaultInfo.OverTime">
+            <summary>
+            读取或设置故障结束时间属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.FaultInfo.Time">
+            <summary>
+            读取故障的时间（包括开始时间与结束时间）
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.FaultInfo.PointOut">
+            <summary>
+            读取或设置提示信息属性
+            </summary>
+        </member>
+        <member name="T:ES.Facility.Common.Control.TextBoxStyle">
+            <summary>
+            功能描述：TextBoxStyle
+            创建人：唐林
+            创建时间：2014-07-15
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.TextBoxStyle.Background">
+            <summary>Group
+            读取或设置按钮背景图片属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.TextBoxStyle.BackgroundFocus">
+            <summary>
+            读取或设置按钮获取焦点时的背景图片属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.TextBoxStyle.FontStyle">
+            <summary>
+            读取或设置字体样式属性
+            </summary>
+        </member>
+        <member name="T:ES.Facility.Common.Control.TextBox">
+            <summary>
+            功能描述：自定义TextBox
+            创建人：唐林
+            创建时间：2014-07-15
+            </summary>
+        </member>
+        <member name="M:ES.Facility.Common.Control.TextBox.#ctor(System.Drawing.RectangleF,ES.Facility.Common.Control.TextBoxStyle,System.Int32)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="rect"></param>
+            <param name="style"></param>
+            <param name="id"></param>
+        </member>
+        <member name="M:ES.Facility.Common.Control.TextBox.MouseDown(System.Drawing.Point)">
+            <summary>
+            鼠标按下处理函数（需在界面MouseDown函数中调用）
+            </summary>
+            <param name="p">点击点</param>
+        </member>
+        <member name="M:ES.Facility.Common.Control.TextBox.Paint(System.Drawing.Graphics)">
+            <summary>
+            TextBox控件绘制函数（需在界面Paint函数中调用）
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:ES.Facility.Common.Control.TextBox.cursor">
+            <summary>
+            光标计数器方法
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ES.Facility.Common.Control.TextBox.Dispose">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.TextBox.Text">
+            <summary>
+            读取或设置按钮文本属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.TextBox.ID">
+            <summary>
+            读取按钮标识ID属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.TextBox.Style">
+            <summary>
+            读取按钮Style属性（使用时需转换为ButtonStyle）
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.TextBox.Rect">
+            <summary>
+            读取或设置按钮所在矩形区域属性
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.TextBox.IsFocus">
+            <summary>
+            读取或设置是否获得焦点属性（功能后续添加）
+            </summary>
+        </member>
+        <member name="E:ES.Facility.Common.Control.TextBox.ClickEvent">
+            <summary>
+            添加或移除Text点击事件
+            </summary>
+        </member>
+        <member name="P:ES.Facility.Common.Control.TextBox.Enable">
+            <summary>
+            读取或设置按钮使能开关属性
+            </summary>
+        </member>
+    </members>
+</doc>
