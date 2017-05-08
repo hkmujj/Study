@@ -61,11 +61,29 @@ namespace Engine.TCMS.Turkmenistan.Resources.Keys {
         }
         
         /// <summary>
+        ///   查找类似 Black 的本地化字符串。
+        /// </summary>
+        internal static string Black {
+            get {
+                return ResourceManager.GetString("Black", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Root 的本地化字符串。
         /// </summary>
         internal static string Root {
             get {
                 return ResourceManager.GetString("Root", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Start 的本地化字符串。
+        /// </summary>
+        internal static string Start {
+            get {
+                return ResourceManager.GetString("Start", resourceCulture);
             }
         }
     }

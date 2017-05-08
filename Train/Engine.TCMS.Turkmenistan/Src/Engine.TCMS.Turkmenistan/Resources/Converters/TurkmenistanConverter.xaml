@@ -1,0 +1,12 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converter="clr-namespace:MMI.Facility.WPFInfrastructure.Converter;assembly=MMI.Facility.WPFInfrastructure"
+    xmlns:turkmenistan="clr-namespace:Engine.TCMS.Turkmenistan">
+
+    <converter:MathConverter x:Key="MathConverter" />
+    <converter:EnumDescritionConverter x:Key="EnumDescritionConverter"></converter:EnumDescritionConverter>
+    <turkmenistan:TargetDistanceScalLengthToLineTicknessConverter x:Key="TargetDistanceScalLengthToLineTicknessConverter"></turkmenistan:TargetDistanceScalLengthToLineTicknessConverter>
+
+
+</ResourceDictionary>

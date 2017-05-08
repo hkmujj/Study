@@ -18,10 +18,7 @@ namespace Engine.TCMS.Turkmenistan.Controller
 
         }
 
-        protected DomainViewModel ParentViewModel
-        {
-            get { return ViewModel.Parent.Value; }
-        }
+        protected DomainViewModel ParentViewModel => ViewModel.Parent.Value;
 
         private void OnB1Excute()
         {

@@ -31,7 +31,7 @@ namespace Engine.TCMS.Turkmenistan
         {
             base.InitializeShell();
 
-            var mainWindow = (Window) this.Shell;
+            var mainWindow = (Window)Shell;
             mainWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             Application.Current.MainWindow = mainWindow;
             Application.Current.MainWindow.Show();

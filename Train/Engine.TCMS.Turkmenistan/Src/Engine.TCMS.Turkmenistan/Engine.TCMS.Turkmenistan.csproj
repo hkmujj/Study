@@ -100,6 +100,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Resources\Converters\TurkmenistanConverter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Styles\TurkmenistanItemControlStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\TurkmenistanProgressBarStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\Styles\TurkmenistanTextStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -155,15 +167,23 @@
     <Compile Include="Adapter\DomainAdapter.cs" />
     <Compile Include="Adapter\IUpdateDataProvider.cs" />
     <Compile Include="Adapter\UpdateDataProviderBase.cs" />
+    <Compile Include="TargetDistanceScalLengthToLineTicknessConverter.cs" />
     <Compile Include="Constant\RegionNames.cs" />
     <Compile Include="Controller\BtnStragy\StateInterfaceFactory.cs" />
     <Compile Include="Controller\DomainController.cs" />
     <Compile Include="Event\DataServiceDataChanged.cs" />
     <Compile Include="Event\LazyValueCreatedEvent.cs" />
+    <Compile Include="Event\NavigatorEvent.cs" />
     <Compile Include="Extension\CommunicationDataChangedArgsExtension.cs" />
     <Compile Include="Extension\CommunicationDataServiceExtension.cs" />
     <Compile Include="Extension\ResourceExtention.cs" />
     <Compile Include="Model\IResetSupport.cs" />
+    <Compile Include="Model\ITargitDistanceScale.cs" />
+    <Compile Include="Model\TargitDistanceScale120.cs" />
+    <Compile Include="Model\TargitDistanceScaleItem.cs" />
+    <Compile Include="Model\ITargitDistanceScaleItem.cs" />
+    <Compile Include="Model\MainModel.cs" />
+    <Compile Include="Model\State\WorkModel.cs" />
     <Compile Include="TurkmenistanMefBootstrapper.cs" />
     <Compile Include="TurkmenistanSubystem.cs" />
     <Compile Include="Model\BtnStragy\ActionResponserExportAttribute.cs" />

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
+using Engine.TCMS.Turkmenistan.Event;
 using Engine.TCMS.Turkmenistan.Model.BtnStragy;
 using Engine.TCMS.Turkmenistan.ViewModel;
 using Engine.TCMS.Turkmenistan.Resources.Keys;
@@ -34,6 +35,12 @@ namespace Engine.TCMS.Turkmenistan.Controller
             m_RegionManager = regionManager;
             StateInterfaceFactory = stateInterfaceFactory;
             m_NavigateHistory = new Stack<StateInterfaceKey>();
+            m_EventAggregator.GetEvent<NavigatorEvent>().Subscribe(NavigateTo, ThreadOption.UIThread);
+        }
+
+        private void NavigateTo(NavigatorEvent.Args obj)
+        {
+            NavigateTo(obj.Params);
         }
 
 

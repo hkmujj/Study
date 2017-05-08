@@ -6,9 +6,11 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:regions="http://www.codeplex.com/CompositeWPF"
+    xmlns:viewModel="clr-namespace:Engine.TCMS.Turkmenistan.ViewModel"
+    d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
     d:DesignHeight="600"
     d:DesignWidth="800"
-    mc:Ignorable="d">
+    mc:Ignorable="d" Visibility="{Binding Model.IsVisibility}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="550*" />

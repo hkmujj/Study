@@ -5,7 +5,7 @@
     </ResourceDictionary.MergedDictionaries>
 
 
-    <Style x:Key="            " TargetType="Button">
+    <!--<Style x:Key="            " TargetType="Button">
         <Style.Setters>
             <Setter Property="HorizontalAlignment" Value="Center" />
             <Setter Property="VerticalAlignment" Value="Center" />
@@ -44,15 +44,15 @@
             </Setter>
 
         </Style.Setters>
-    </Style>
+    </Style>-->
     <Style x:Key="DownButtonStyle" TargetType="Button">
         <Setter Property="Margin" Value="3" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border
-                        Background="#7F7E81"
-                        BorderBrush="White"
+                        Background="{StaticResource ContentBackgroundBrush}"
+                        BorderBrush="{StaticResource HarwareButtonWhiteBrush}"
                         BorderThickness="2,2,0,0">
                         <TextBlock
                             HorizontalAlignment="Center"
@@ -64,7 +64,7 @@
         </Setter>
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Foreground" Value="{StaticResource HarwareButtonWhiteBrush}" />
         <Setter Property="FontSize" Value="18" />
     </Style>
     <Style x:Key="MainViewDateStyle" TargetType="Button">
@@ -88,7 +88,7 @@
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="BorderBrush" Value="{StaticResource ForegroundWhiteBrush}" />
         <Setter Property="Margin" Value="1" />
-        <Setter Property="Foreground" Value="PapayaWhip" />
+        <Setter Property="Foreground" Value="{StaticResource MainTextBrushOne}" />
         <Setter Property="FontSize" Value="{StaticResource Double20}" />
     </Style>
 </ResourceDictionary>

@@ -1,11 +1,15 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
+using System.Linq;
+using System.Reflection;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.Prism.ViewModel;
 using Microsoft.Practices.ServiceLocation;
+using MMI.Facility.WPFInfrastructure.Behaviors;
 
 namespace Engine.TCMS.Turkmenistan.Model.BtnStragy
 {
-    [DebuggerDisplay("Id={Id} Title={Title}")]
+    [DebuggerDisplay("Id={Id} Title={Title} ContentViewName={ContentViewName}")]
     public class StateInterface : NotificationObject, IStateInterface, IRaiseResourceChangedProvider
     {
 
@@ -123,9 +127,17 @@ namespace Engine.TCMS.Turkmenistan.Model.BtnStragy
             BtnF3.UpdateState();
             BtnF4.UpdateState();
             BtnF5.UpdateState();
-
+            Navigator();
         }
 
+        private void Navigator()
+        {
+            var view = Type.GetType(ContentViewName, false, true)?.GetCustomAttributes(typeof(ViewExportAttribute), false).FirstOrDefault() as ViewExportAttribute;
+            if (view != null)
+            {
+                m_RegionManager.RequestNavigate(view.RegionName, ContentViewName);
+            }
+        }
         public void RaiseResourceChanged()
         {
             RaisePropertyChanged(() => Title);
