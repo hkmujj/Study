@@ -136,6 +136,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Common\EffectBorder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Common\NullView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -210,6 +214,9 @@
     <Compile Include="View\Buttons\ButtonView.xaml.cs">
       <DependentUpon>ButtonView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Common\EffectBorder.xaml.cs">
+      <DependentUpon>EffectBorder.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Common\NullView.xaml.cs">
       <DependentUpon>NullView.xaml</DependentUpon>
     </Compile>
@@ -282,6 +289,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controller\BtnActionResponser\" />
+    <Folder Include="View\Contents\ProgressBar\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

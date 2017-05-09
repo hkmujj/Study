@@ -1,0 +1,41 @@
+﻿<UserControl
+    x:Class="Engine.TCMS.Turkmenistan.View.Common.EffectBorder"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="UserControl"
+    d:DesignHeight="300"
+    d:DesignWidth="300"
+    mc:Ignorable="d">
+    <Canvas>
+        <Path
+            x:Name="Path1"
+            Data="{Binding ElementName=UserControl, Path=Date1}"
+            Fill="{Binding ElementName=UserControl, Path=Line1Fill}" />
+        <Path
+            x:Name="Path2"
+            Data="{Binding ElementName=UserControl, Path=Date2}"
+            Fill="{Binding ElementName=UserControl, Path=Line2Fill}" />
+        <ContentControl
+            Canvas.Left="{Binding ElementName=UserControl, Path=LineWidth}"
+            Canvas.Top="{Binding ElementName=UserControl, Path=LineWidth}"
+            Canvas.Right="{Binding ElementName=UserControl, Path=LineWidth}"
+            Canvas.Bottom="{Binding ElementName=UserControl, Path=LineWidth}"
+            Panel.ZIndex="1"
+            Content="{Binding ElementName=UserControl, Path=EffectContent}">
+            <ContentControl.Height>
+                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x-2*y">
+                    <Binding Path="ActualHeight" RelativeSource="{RelativeSource FindAncestor, AncestorType=Canvas}" />
+                    <Binding ElementName="UserControl" Path="LineWidth" />
+                </MultiBinding>
+            </ContentControl.Height>
+            <ContentControl.Width>
+                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x-2*y">
+                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource FindAncestor, AncestorType=Canvas}" />
+                    <Binding ElementName="UserControl" Path="LineWidth" />
+                </MultiBinding>
+            </ContentControl.Width>
+        </ContentControl>
+    </Canvas>
+</UserControl>

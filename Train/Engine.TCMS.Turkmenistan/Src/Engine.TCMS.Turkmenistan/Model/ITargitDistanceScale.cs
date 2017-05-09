@@ -36,7 +36,7 @@ namespace Engine.TCMS.Turkmenistan.Model
             return value / MaxtValue;
         }
 
-        public string GetDistanceText(double distance)
+        public virtual string GetDistanceText(double distance)
         {
             if ((int)distance % TextStep == 0)
             {

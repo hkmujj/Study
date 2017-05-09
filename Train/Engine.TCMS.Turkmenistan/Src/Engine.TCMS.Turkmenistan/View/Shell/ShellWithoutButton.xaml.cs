@@ -1,4 +1,6 @@
 ﻿using System.Windows.Controls;
+using Engine.TCMS.Turkmenistan.ViewModel;
+using Microsoft.Practices.ServiceLocation;
 
 namespace Engine.TCMS.Turkmenistan.View.Shell
 {
@@ -10,6 +12,12 @@ namespace Engine.TCMS.Turkmenistan.View.Shell
         public ShellWithoutButton()
         {
             InitializeComponent();
+            Loaded += ShellWithoutButton_Loaded;
+        }
+
+        private void ShellWithoutButton_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+            DataContext = ServiceLocator.Current.GetInstance<DomainViewModel>();
         }
     }
 }

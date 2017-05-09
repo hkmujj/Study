@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.Composition;
 using System.Windows.Threading;
+using Engine.TCMS.Turkmenistan.Model.State;
 using Microsoft.Practices.Prism.ViewModel;
 
 namespace Engine.TCMS.Turkmenistan.Model
@@ -111,6 +112,10 @@ namespace Engine.TCMS.Turkmenistan.Model
         /// 机油温度
         /// </summary>
         public double OILTEngineOilTemperatureFlag { get; set; }
+        /// <summary>
+        /// 工况
+        /// </summary>
+        public WorkModel WorkModel { get; set; }
 
     }
 }

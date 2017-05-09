@@ -10,6 +10,7 @@
             <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
             <Setter Property="HorizontalAlignment" Value="Stretch" />
             <Setter Property="VerticalAlignment" Value="Stretch" />
+            <Setter Property="Background" Value="{StaticResource MainViewProgreeBarBackground}"></Setter>
 
             <Setter Property="RenderTransform">
                 <Setter.Value>
@@ -66,7 +67,6 @@
                                     <TextBlock Width="{Binding RelativeSource={RelativeSource FindAncestor,
                                                                                               AncestorType=Canvas},
                                                                Path=ActualWidth}"
-                                               FontSize="8"
                                                FontWeight="Bold"
                                                Foreground="{StaticResource MainTextBrushOne}"
                                                RenderTransformOrigin="0.5,0.25"
@@ -106,6 +106,182 @@
                                         </Line.Y1>
                                     </Line>
                                 </Canvas>
+                            </Grid>
+                        </Border>
+
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+    <Style TargetType="ItemsControl" x:Key="MainDistanceScalStyle1">
+        <Style.Setters>
+            <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="VerticalAlignment" Value="Stretch" />
+            <Setter Property="Background" Value="{StaticResource MainViewProgreeBarBackground}"></Setter>
+
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <ScaleTransform ScaleY="-1" />
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <Grid />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="FontSize" Value="{StaticResource Double16}"></Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="model:ITargitDistanceScaleItem">
+                        <Border Width="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                               AncestorType=ItemsControl},
+                                                Path=ActualWidth}"
+                                Height="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                                AncestorType=ItemsControl},
+                                                 Path=ActualHeight}"
+                                
+                        >
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="55*" />
+                                    <ColumnDefinition Width="90*" />
+                                    <ColumnDefinition Width="55*" />
+                                </Grid.ColumnDefinitions>
+                                <Canvas x:Name="ItemCanvas" Grid.Column="0">
+                                    <Line Stroke="{StaticResource MainTextBrushOne}"
+                                          StrokeThickness="{Binding Path=DegreeLength,
+                                                                    Converter={StaticResource TargetDistanceScalLengthToLineTicknessConverter}}"
+                                          X2="0"
+                                          Y2="{Binding RelativeSource={RelativeSource Self},
+                                                       Path=Y1}">
+                                        <Line.X1>
+                                            <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x*y">
+                                                <Binding Path="DegreeLength" />
+                                                <Binding ElementName="ItemCanvas" Path="ActualWidth" />
+                                            </MultiBinding>
+                                        </Line.X1>
+                                        <Line.Y1>
+                                            <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x*y">
+                                                <Binding Path="DegreeLocation" />
+                                                <Binding ElementName="ItemCanvas" Path="ActualHeight" />
+                                            </MultiBinding>
+                                        </Line.Y1>
+                                    </Line>
+                                </Canvas>
+                                <Canvas Grid.Column="1">
+                                    <TextBlock 
+                                               FontWeight="Bold"
+                                               Foreground="{StaticResource MainTextBrushOne}"
+                                               RenderTransformOrigin="0.5,0.25"
+                                               Text="{Binding Text}"
+                                               HorizontalAlignment="Left"
+                                               TextAlignment="Center">
+                                        <TextBlock.RenderTransform>
+                                            <ScaleTransform ScaleY="-1" />
+                                        </TextBlock.RenderTransform>
+                                        <Canvas.Top>
+                                            <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x*y">
+                                                <Binding Path="DegreeLocation" />
+                                                <Binding ElementName="ItemCanvas" Path="ActualHeight" />
+                                            </MultiBinding>
+                                        </Canvas.Top>
+                                    </TextBlock>
+                                </Canvas>
+                             
+                            </Grid>
+                        </Border>
+
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style TargetType="ItemsControl" x:Key="MainDistanceScalStyle2">
+        <Style.Setters>
+            <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="VerticalAlignment" Value="Stretch" />
+            <Setter Property="Background" Value="Transparent"></Setter>
+
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <ScaleTransform ScaleY="-1" />
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <Grid />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="FontSize" Value="{StaticResource Double16}"></Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="model:ITargitDistanceScaleItem">
+                        <Border Width="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                               AncestorType=ItemsControl},
+                                                Path=ActualWidth}"
+                                Height="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                                AncestorType=ItemsControl},
+                                                 Path=ActualHeight}"
+                                
+                        >
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="55*" />
+                                    <ColumnDefinition Width="90*" />
+                                    <ColumnDefinition Width="55*" />
+                                </Grid.ColumnDefinitions>
+                                <Canvas x:Name="ItemCanvas" Grid.Column="2">
+                                    <Line Stroke="{StaticResource MainTextBrushOne}"
+                                          StrokeThickness="{Binding Path=DegreeLength,
+                                                                    Converter={StaticResource TargetDistanceScalLengthToLineTicknessConverter}}"
+                                          X2="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                                      AncestorType=Canvas},
+                                                       Path=ActualWidth}"
+                                          Y2="{Binding RelativeSource={RelativeSource Self},
+                                                       Path=Y1}">
+                                        <Line.X1>
+                                            <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="(1-x)*y">
+                                                <Binding Path="DegreeLength" />
+                                                <Binding ElementName="ItemCanvas" Path="ActualWidth" />
+                                            </MultiBinding>
+                                        </Line.X1>
+                                        <Line.Y1>
+                                            <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x*y">
+                                                <Binding Path="DegreeLocation" />
+                                                <Binding ElementName="ItemCanvas" Path="ActualHeight" />
+                                            </MultiBinding>
+                                        </Line.Y1>
+                                    </Line>
+                                </Canvas>
+                                <Canvas Grid.Column="1" HorizontalAlignment="Right">
+                                    <TextBlock 
+                                        FontWeight="Bold"
+                                        Foreground="{StaticResource MainTextBrushOne}"
+                                        RenderTransformOrigin="0.5,0.25"
+                                        Canvas.Right="5"
+                                        Text="{Binding Text}"
+                                        HorizontalAlignment="Right"
+                                        TextAlignment="Right">
+                                        <TextBlock.RenderTransform>
+                                            <ScaleTransform ScaleY="-1" />
+                                        </TextBlock.RenderTransform>
+                                        <Canvas.Top>
+                                            <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x*y">
+                                                <Binding Path="DegreeLocation" />
+                                                <Binding ElementName="ItemCanvas" Path="ActualHeight" />
+                                            </MultiBinding>
+                                        </Canvas.Top>
+                                    </TextBlock>
+                                </Canvas>
+
                             </Grid>
                         </Border>
 
