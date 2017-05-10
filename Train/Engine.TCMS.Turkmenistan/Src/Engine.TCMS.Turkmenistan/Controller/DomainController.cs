@@ -8,6 +8,7 @@ using Engine.TCMS.Turkmenistan.ViewModel;
 using Engine.TCMS.Turkmenistan.Resources.Keys;
 using Microsoft.Practices.Prism.Events;
 using Microsoft.Practices.Prism.Regions;
+using MMI.Facility.WPFInfrastructure.Behaviors;
 using MMI.Facility.WPFInfrastructure.Interfaces;
 
 namespace Engine.TCMS.Turkmenistan.Controller
@@ -36,6 +37,17 @@ namespace Engine.TCMS.Turkmenistan.Controller
             StateInterfaceFactory = stateInterfaceFactory;
             m_NavigateHistory = new Stack<StateInterfaceKey>();
             m_EventAggregator.GetEvent<NavigatorEvent>().Subscribe(NavigateTo, ThreadOption.UIThread);
+            m_EventAggregator.GetEvent<NavigatorToView>().Subscribe(NavigateToView, ThreadOption.UIThread);
+        }
+
+        private void NavigateToView(NavigatorToView.Args obj)
+        {
+            var type = (ViewExportAttribute) Type.GetType(obj.ViewName)?.GetCustomAttributes(typeof(ViewExportAttribute), false)
+                .FirstOrDefault();
+            if (type != null)
+            {
+                m_RegionManager.RequestNavigate(type.RegionName, obj.ViewName);
+            }
         }
 
         private void NavigateTo(NavigatorEvent.Args obj)

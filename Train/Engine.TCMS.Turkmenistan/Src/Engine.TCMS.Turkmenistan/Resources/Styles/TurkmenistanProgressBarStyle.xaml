@@ -75,9 +75,18 @@
     </Style>
     <Style x:Key="MainViewBorderStyle2" TargetType="common:EffectBorder">
         <Setter Property="LineWidth" Value="5" />
+        <Setter Property="Background" Value="{StaticResource BlackBrush}" />
         <Setter Property="Line1Fill" Value="#807E86" />
         <Setter Property="Line2Fill" Value="#A8A3A8" />
         <Setter Property="FontSize" Value="{StaticResource Double20}" />
         <Setter Property="Margin" Value="2,3" />
+    </Style>
+
+    <Style x:Key="MainBorderStyle" TargetType="Border">
+        <Setter Property="Background" Value="#6B6769" />
+        <Setter Property="BorderBrush" Value="#7E8189" />
+        <Setter Property="Margin" Value="2" />
+        <Setter Property="Padding" Value="5" />
+        <Setter Property="BorderThickness" Value="3" />
     </Style>
 </ResourceDictionary>

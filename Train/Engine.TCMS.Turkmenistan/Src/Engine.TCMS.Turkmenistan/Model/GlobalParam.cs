@@ -19,7 +19,14 @@ namespace Engine.TCMS.Turkmenistan.Model
         public IProjectIndexDescriptionConfig IndexDescription { private set; get; }
 
         public ReadOnlyCollection<StateInterfaceItem> StateInterfaceCollection { get; private set; }
-
+        /// <summary>
+        /// 语言是否是土库曼斯坦
+        /// </summary>
+        public bool IsTurkmenistan { get; set; }
+        /// <summary>
+        /// 是否显示重联信息 
+        /// </summary>
+        public bool IsReconnection { get; set; }
 
         public void Initalize(SubsystemInitParam initParam)
         {
