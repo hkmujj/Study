@@ -116,6 +116,14 @@ namespace Engine.TCMS.Turkmenistan.Model
         /// 工况
         /// </summary>
         public WorkModel WorkModel { get; set; }
+        /// <summary>
+        /// 机车速度
+        /// </summary>
+        public double EngineSpeed { get; set; }
+        /// <summary>
+        /// 柴油机转速
+        /// </summary>
+        public double DieselEngineSpeed { get; set; }
 
     }
 }

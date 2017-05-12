@@ -19,8 +19,8 @@
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="40*" />
-                <RowDefinition Height="300*" />
-                <RowDefinition Height="120*" />
+                <RowDefinition Height="200*" />
+                <RowDefinition Height="70*" />
             </Grid.RowDefinitions>
             <Border
                 Grid.Row="0"
@@ -28,8 +28,9 @@
                 Style="{StaticResource MainBorderStyle}">
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="40*" />
-                        <RowDefinition Height="300*" />
+                        <RowDefinition Height="25*" />
+                        <RowDefinition Height="170*" />
+                        <RowDefinition Height="30*" />
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="0">
                         <Grid.ColumnDefinitions>
@@ -158,8 +159,86 @@
 
 
                     </Grid>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="62*" />
+                            <ColumnDefinition Width="44*" />
+                            <ColumnDefinition Width="66*" />
+                            <ColumnDefinition Width="59*" />
+                            <ColumnDefinition Width="49*" />
+                            <ColumnDefinition Width="62*" />
+                            <ColumnDefinition Width="62*" />
+                            <ColumnDefinition Width="40*" />
+                            <ColumnDefinition Width="55*" />
+                            <ColumnDefinition Width="15*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock
+                            Grid.Column="0"
+                            Style="{StaticResource MainTextStyle5}"
+                            Text="{StaticResource MasterVoltage}" />
+                        <TextBlock
+                            Grid.Column="2"
+                            Style="{StaticResource MainTextStyle5}"
+                            Text="{StaticResource MasterVoltage}" />
+                        <TextBlock
+                            Grid.Column="3"
+                            Style="{StaticResource MainTextStyle5}"
+                            Text="{StaticResource OilPressure}" />
+                        <TextBlock
+                            Grid.Column="5"
+                            Style="{StaticResource MainTextStyle5}"
+                            Text="{StaticResource FuelPressure}" />
+                        <TextBlock
+                            Grid.Column="6"
+                            Style="{StaticResource MainTextStyle5}"
+                            Text="{StaticResource CoolingWaterTemperature}" />
+                        <TextBlock
+                            Grid.Column="8"
+                            Style="{StaticResource MainTextStyle5}"
+                            Text="{StaticResource OILTEngineOilTemperature}" />
+                    </Grid>
                 </Grid>
             </Border>
+            <Border Grid.Row="2" Style="{StaticResource MainBorderStyle}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*" />
+                        <ColumnDefinition Width="300*" />
+                        <ColumnDefinition Width="50*" />
+                        <ColumnDefinition Width="120*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <common:EffectBorder
+                            Width="20"
+                            Height="20"
+                            Margin="5,5"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Background="Red"
+                            Style="{StaticResource MainViewBorderStyle2}" />
+                        <TextBlock
+                            Grid.Row="1"
+                            Style="{StaticResource MainTextStyle6}"
+                            Text="{StaticResource FaultInfo}" />
+                    </Grid>
+                    <Border Grid.Column="1" Style="{StaticResource MainBorderStyle2}" />
+                    <Grid Grid.Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40*" />
+                            <RowDefinition Height="120*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                            Grid.Row="1"
+                            Style="{StaticResource MainTextStyle1}"
+                            Text="轴&#13;温" />
+                    </Grid>
+                </Grid>
+            </Border>
+
         </Grid>
         <Border Grid.Column="1" Style="{StaticResource MainBorderStyle}">
             <Grid>
@@ -207,12 +286,12 @@
                                     Grid.Row="0"
                                     Grid.Column="0"
                                     Style="{StaticResource MainTextStyle3}"
-                                    Text="0" />
+                                    Text="{Binding Model.MainModel.EngineSpeed, StringFormat={}{0:F0}}" />
                                 <TextBlock
                                     Grid.Row="1"
                                     Grid.Column="0"
                                     Style="{StaticResource MainTextStyle3}"
-                                    Text="398" />
+                                    Text="{Binding Model.MainModel.DieselEngineSpeed, StringFormat={}{0:F0}}" />
                                 <TextBlock
                                     Grid.Row="0"
                                     Grid.Column="1"
@@ -227,14 +306,27 @@
                         </common:EffectBorder.EffectContent>
                     </common:EffectBorder>
                 </Grid>
-                <Border Grid.Row="1" BorderBrush="DarkGray" BorderThickness="2" Margin="5" Background="{StaticResource MainViewProgreeBarBackground}">
+                <Border
+                    Grid.Row="1"
+                    Margin="5"
+                    Background="{StaticResource MainViewProgreeBarBackground}"
+                    BorderBrush="DarkGray"
+                    BorderThickness="2">
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="40"></RowDefinition>
-                            <RowDefinition></RowDefinition>
+                            <RowDefinition Height="40" />
+                            <RowDefinition />
                         </Grid.RowDefinitions>
-                        <Border Background="{StaticResource ContentDeepSkyBlueBrush}" BorderBrush="DarkGray" BorderThickness="0,0,0,2">
-                            <TextBlock Text="运 行 参 数" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="{StaticResource Double20}"></TextBlock>
+                        <Border
+                            Background="{StaticResource ContentDeepSkyBlueBrush}"
+                            BorderBrush="DarkGray"
+                            BorderThickness="0,0,0,2">
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontSize="{StaticResource Double20}"
+                                Foreground="White"
+                                Text="运 行 参 数" />
                         </Border>
                     </Grid>
                 </Border>
