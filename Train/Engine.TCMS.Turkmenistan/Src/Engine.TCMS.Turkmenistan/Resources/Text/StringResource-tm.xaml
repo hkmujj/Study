@@ -2,7 +2,25 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:system="clr-namespace:System;assembly=mscorlib">
+    
+    <Style TargetType="Control">
+        <Setter Property="FontFamily" Value="Times New Roman"></Setter>
+    </Style>
 
-    <system:String x:Key="String">nihao</system:String>
+    <system:String x:Key="Date">дaTa</system:String>
+    <system:String x:Key="Time">время</system:String>
+    <system:String x:Key="WorkState">работы</system:String>
+    <system:String x:Key="EngineSpeed">скорость локомотива</system:String>
+    <system:String x:Key="DieselEngineSpeed">柴油机转速</system:String>
+    <system:String x:Key="MasterVoltage" xml:space="preserve">主&#13;电压</system:String>
+    <system:String x:Key="MasterCurrent" xml:space="preserve">主&#13;电源</system:String>
+    <system:String x:Key="OilPressure" xml:space="preserve">滑油&#13;压力</system:String>
+    <system:String x:Key="FuelPressure" xml:space="preserve">燃油&#13;压力</system:String>
+    <system:String x:Key="CoolingWaterTemperature" xml:space="preserve">冷却&#13;水温</system:String>
+    <system:String x:Key="OILTEngineOilTemperature" xml:space="preserve">机油&#13;温度</system:String>
+    <system:String x:Key="FaultInfo" xml:space="preserve">故障&#13;信息</system:String>
+    <system:String x:Key="AxleTemperature" xml:space="preserve">轴 &#13;&#13;温</system:String>
+    <system:String x:Key="Axial" xml:space="preserve">轴位</system:String>
+    <system:String x:Key="Temperature">温度℃</system:String>
 
 </ResourceDictionary>

@@ -144,6 +144,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Contents\AxleTemperatureInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Contents\MainView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -171,6 +175,7 @@
     <Compile Include="Adapter\DomainAdapter.cs" />
     <Compile Include="Adapter\IUpdateDataProvider.cs" />
     <Compile Include="Adapter\UpdateDataProviderBase.cs" />
+    <Compile Include="Controller\BtnActionResponser\LanguageSwitch.cs" />
     <Compile Include="Event\NavigatorToView.cs" />
     <Compile Include="Model\Fault\FaultInfo.cs" />
     <Compile Include="TargetDistanceScalLengthToLineTicknessConverter.cs" />
@@ -221,6 +226,9 @@
     </Compile>
     <Compile Include="View\Common\NullView.xaml.cs">
       <DependentUpon>NullView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\AxleTemperatureInfoView.xaml.cs">
+      <DependentUpon>AxleTemperatureInfoView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Contents\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
@@ -290,7 +298,6 @@
     <Resource Include="Changes.Engine.TCMS.Turkmenistan.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controller\BtnActionResponser\" />
     <Folder Include="View\Contents\ProgressBar\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

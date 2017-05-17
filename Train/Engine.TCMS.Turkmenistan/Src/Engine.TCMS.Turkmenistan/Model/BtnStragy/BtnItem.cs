@@ -8,7 +8,7 @@ namespace Engine.TCMS.Turkmenistan.Model.BtnStragy
     public class BtnItem : NotificationObject, IRaiseResourceChangedProvider
     {
         private string m_Content;
-
+        [DebuggerStepThrough]
         public BtnItem(IBtnActionResponser actionResponser, string chContent, string tmContent)
         {
             Content = chContent;
@@ -56,6 +56,7 @@ namespace Engine.TCMS.Turkmenistan.Model.BtnStragy
             {
                 ActionResponser.UpdateState();
             }
+            Content = GlobalParam.Instance.IsTurkmenistan ? TmContent : ChContent;
         }
 
         public void RaiseResourceChanged()

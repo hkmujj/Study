@@ -25,7 +25,7 @@
             <Border
                 Grid.Row="0"
                 Grid.RowSpan="2"
-                Style="{StaticResource MainBorderStyle}">
+                Style="{DynamicResource MainBorderStyle}">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="25*" />
@@ -43,27 +43,27 @@
                         </Grid.ColumnDefinitions>
                         <TextBlock
                             Grid.Column="0"
-                            Style="{StaticResource MainTextStyle1}"
+                            Style="{DynamicResource MainTextStyle1}"
                             Text="{DynamicResource Date}" />
-                        <common:EffectBorder Grid.Column="1" Style="{StaticResource MainViewBorderStyle2}">
+                        <common:EffectBorder Grid.Column="1" Style="{DynamicResource MainViewBorderStyle2}">
                             <common:EffectBorder.EffectContent>
                                 <TextBlock Foreground="Wheat" Text="{Binding Model.MainModel.Date}" />
                             </common:EffectBorder.EffectContent>
                         </common:EffectBorder>
                         <TextBlock
                             Grid.Column="2"
-                            Style="{StaticResource MainTextStyle1}"
+                            Style="{DynamicResource MainTextStyle1}"
                             Text="{DynamicResource Time}" />
-                        <common:EffectBorder Grid.Column="3" Style="{StaticResource MainViewBorderStyle2}">
+                        <common:EffectBorder Grid.Column="3" Style="{DynamicResource MainViewBorderStyle2}">
                             <common:EffectBorder.EffectContent>
                                 <TextBlock Foreground="Wheat" Text="{Binding Model.MainModel.Time}" />
                             </common:EffectBorder.EffectContent>
                         </common:EffectBorder>
                         <TextBlock
                             Grid.Column="4"
-                            Style="{StaticResource MainTextStyle1}"
+                            Style="{DynamicResource MainTextStyle1}"
                             Text="{DynamicResource WorkState}" />
-                        <common:EffectBorder Grid.Column="5" Style="{StaticResource MainViewBorderStyle2}">
+                        <common:EffectBorder Grid.Column="5" Style="{DynamicResource MainViewBorderStyle2}">
                             <common:EffectBorder.EffectContent>
                                 <TextBlock Foreground="Wheat" Text="{Binding Model.MainModel.WorkModel, Converter={StaticResource EnumDescritionConverter}}" />
                             </common:EffectBorder.EffectContent>
@@ -76,7 +76,7 @@
                             <ColumnDefinition />
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
-                        <common:EffectBorder Grid.Column="0" Style="{StaticResource MainViewBorderStyle}">
+                        <common:EffectBorder Grid.Column="0" Style="{DynamicResource MainViewBorderStyle}">
                             <common:EffectBorder.EffectContent>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
@@ -87,25 +87,25 @@
                                     <ProgressBar
                                         Grid.Column="0"
                                         Maximum="1120"
-                                        Style="{StaticResource ProgressBarOrdinaryStyle}"
+                                        Style="{DynamicResource ProgressBarOrdinaryStyle}"
                                         Value="{Binding Model.MainModel.MasterVoltage}" />
                                     <ItemsControl
                                         Grid.Column="1"
                                         ItemsSource="{Binding Source={x:Static model:TargitDistanceScale112.Instance}, Path=Items}"
-                                        Style="{StaticResource MainDistanceScalStyle1}" />
+                                        Style="{DynamicResource MainDistanceScalStyle1}" />
                                     <ItemsControl
                                         Grid.Column="1"
                                         ItemsSource="{Binding Source={x:Static model:TargitDistanceScale9.Instance}, Path=Items}"
-                                        Style="{StaticResource MainDistanceScalStyle2}" />
+                                        Style="{DynamicResource MainDistanceScalStyle2}" />
                                     <ProgressBar
                                         Grid.Column="2"
                                         Maximum="900"
-                                        Style="{StaticResource ProgressBarOrdinaryStyle}"
+                                        Style="{DynamicResource ProgressBarOrdinaryStyle}"
                                         Value="{Binding Model.MainModel.MasterCurrent}" />
                                 </Grid>
                             </common:EffectBorder.EffectContent>
                         </common:EffectBorder>
-                        <common:EffectBorder Grid.Column="1" Style="{StaticResource MainViewBorderStyle}">
+                        <common:EffectBorder Grid.Column="1" Style="{DynamicResource MainViewBorderStyle}">
                             <common:EffectBorder.EffectContent>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
@@ -116,22 +116,22 @@
                                     <ProgressBar
                                         Grid.Column="0"
                                         Maximum="120"
-                                        Style="{StaticResource ProgressBarOrdinaryStyle}"
+                                        Style="{DynamicResource ProgressBarOrdinaryStyle}"
                                         Value="{Binding Model.MainModel.OilPressure}" />
                                     <ItemsControl
                                         Grid.Column="1"
                                         ItemsSource="{Binding Source={x:Static model:TargitDistanceScale1200.Instance}, Path=Items}"
-                                        Style="{StaticResource MainDistanceScalStyle}" />
+                                        Style="{DynamicResource MainDistanceScalStyle}" />
                                     <ProgressBar
                                         Grid.Column="2"
                                         Maximum="120"
-                                        Style="{StaticResource ProgressBarOrdinaryStyle}"
+                                        Style="{DynamicResource ProgressBarOrdinaryStyle}"
                                         Value="{Binding Model.MainModel.FuelPressure}" />
                                 </Grid>
                             </common:EffectBorder.EffectContent>
 
                         </common:EffectBorder>
-                        <common:EffectBorder Grid.Column="2" Style="{StaticResource MainViewBorderStyle}">
+                        <common:EffectBorder Grid.Column="2" Style="{DynamicResource MainViewBorderStyle}">
                             <common:EffectBorder.EffectContent>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
@@ -142,16 +142,16 @@
                                     <ProgressBar
                                         Grid.Column="0"
                                         Maximum="120"
-                                        Style="{StaticResource ProgressBarOrdinaryStyle}"
+                                        Style="{DynamicResource ProgressBarOrdinaryStyle}"
                                         Value="{Binding Model.MainModel.CoolingWaterTemperature}" />
                                     <ItemsControl
                                         Grid.Column="1"
                                         ItemsSource="{Binding Source={x:Static model:TargitDistanceScale120.Instance}, Path=Items}"
-                                        Style="{StaticResource MainDistanceScalStyle}" />
+                                        Style="{DynamicResource MainDistanceScalStyle}" />
                                     <ProgressBar
                                         Grid.Column="2"
                                         Maximum="120"
-                                        Style="{StaticResource ProgressBarOrdinaryStyle}"
+                                        Style="{DynamicResource ProgressBarOrdinaryStyle}"
                                         Value="{Binding Model.MainModel.OILTEngineOilTemperature}" />
                                 </Grid>
                             </common:EffectBorder.EffectContent>
@@ -174,32 +174,32 @@
                         </Grid.ColumnDefinitions>
                         <TextBlock
                             Grid.Column="0"
-                            Style="{StaticResource MainTextStyle5}"
-                            Text="{StaticResource MasterVoltage}" />
+                            Style="{DynamicResource MainTextStyle5}"
+                            Text="{DynamicResource MasterVoltage}" />
                         <TextBlock
                             Grid.Column="2"
-                            Style="{StaticResource MainTextStyle5}"
-                            Text="{StaticResource MasterVoltage}" />
+                            Style="{DynamicResource MainTextStyle5}"
+                            Text="{DynamicResource MasterVoltage}" />
                         <TextBlock
                             Grid.Column="3"
-                            Style="{StaticResource MainTextStyle5}"
-                            Text="{StaticResource OilPressure}" />
+                            Style="{DynamicResource MainTextStyle5}"
+                            Text="{DynamicResource OilPressure}" />
                         <TextBlock
                             Grid.Column="5"
-                            Style="{StaticResource MainTextStyle5}"
-                            Text="{StaticResource FuelPressure}" />
+                            Style="{DynamicResource MainTextStyle5}"
+                            Text="{DynamicResource FuelPressure}" />
                         <TextBlock
                             Grid.Column="6"
-                            Style="{StaticResource MainTextStyle5}"
-                            Text="{StaticResource CoolingWaterTemperature}" />
+                            Style="{DynamicResource MainTextStyle5}"
+                            Text="{DynamicResource CoolingWaterTemperature}" />
                         <TextBlock
                             Grid.Column="8"
-                            Style="{StaticResource MainTextStyle5}"
-                            Text="{StaticResource OILTEngineOilTemperature}" />
+                            Style="{DynamicResource MainTextStyle5}"
+                            Text="{DynamicResource OILTEngineOilTemperature}" />
                     </Grid>
                 </Grid>
             </Border>
-            <Border Grid.Row="2" Style="{StaticResource MainBorderStyle}">
+            <Border Grid.Row="2" Style="{DynamicResource MainBorderStyle}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50*" />
@@ -219,13 +219,13 @@
                             HorizontalAlignment="Right"
                             VerticalAlignment="Bottom"
                             Background="Red"
-                            Style="{StaticResource MainViewBorderStyle2}" />
+                            Style="{DynamicResource MainViewBorderStyle2}" />
                         <TextBlock
                             Grid.Row="1"
-                            Style="{StaticResource MainTextStyle6}"
-                            Text="{StaticResource FaultInfo}" />
+                            Style="{DynamicResource MainTextStyle6}"
+                            Text="{DynamicResource FaultInfo}" />
                     </Grid>
-                    <Border Grid.Column="1" Style="{StaticResource MainBorderStyle2}" />
+                    <Border Grid.Column="1" Style="{DynamicResource MainBorderStyle2}" />
                     <Grid Grid.Column="2">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="40*" />
@@ -233,14 +233,39 @@
                         </Grid.RowDefinitions>
                         <TextBlock
                             Grid.Row="1"
-                            Style="{StaticResource MainTextStyle1}"
-                            Text="轴&#13;温" />
+                            Style="{DynamicResource MainTextStyle1}"
+                            Text="{DynamicResource AxleTemperature}" />
+                    </Grid>
+                    <Grid Grid.Column="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40*" />
+                            <RowDefinition Height="120*" />
+                        </Grid.RowDefinitions>
+                        <Border
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="2"
+                            Style="{DynamicResource MainBorderStyle2}" />
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Style="{DynamicResource MainTextStyle6}"
+                            Text="{DynamicResource Axial}" />
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Style="{DynamicResource MainTextStyle6}"
+                            Text="{DynamicResource Temperature}" />
                     </Grid>
                 </Grid>
             </Border>
 
         </Grid>
-        <Border Grid.Column="1" Style="{StaticResource MainBorderStyle}">
+        <Border Grid.Column="1" Style="{DynamicResource MainBorderStyle}">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="70*" />
@@ -258,19 +283,19 @@
                     <TextBlock
                         Grid.Row="0"
                         Grid.Column="0"
-                        Style="{StaticResource MainTextStyle2}"
-                        Text="{StaticResource EngineSpeed}" />
+                        Style="{DynamicResource MainTextStyle2}"
+                        Text="{DynamicResource EngineSpeed}" />
                     <TextBlock
                         Grid.Row="1"
                         Grid.Column="0"
-                        Style="{StaticResource MainTextStyle2}"
-                        Text="{StaticResource DieselEngineSpeed}" />
+                        Style="{DynamicResource MainTextStyle2}"
+                        Text="{DynamicResource DieselEngineSpeed}" />
                     <common:EffectBorder
                         Grid.Row="0"
                         Grid.RowSpan="2"
                         Grid.Column="1"
-                        Background="{StaticResource MainViewProgreeBarBackground}"
-                        Style="{StaticResource MainViewBorderStyle2}">
+                        Background="{DynamicResource MainViewProgreeBarBackground}"
+                        Style="{DynamicResource MainViewBorderStyle2}">
 
                         <common:EffectBorder.EffectContent>
                             <Grid>
@@ -285,22 +310,22 @@
                                 <TextBlock
                                     Grid.Row="0"
                                     Grid.Column="0"
-                                    Style="{StaticResource MainTextStyle3}"
+                                    Style="{DynamicResource MainTextStyle3}"
                                     Text="{Binding Model.MainModel.EngineSpeed, StringFormat={}{0:F0}}" />
                                 <TextBlock
                                     Grid.Row="1"
                                     Grid.Column="0"
-                                    Style="{StaticResource MainTextStyle3}"
+                                    Style="{DynamicResource MainTextStyle3}"
                                     Text="{Binding Model.MainModel.DieselEngineSpeed, StringFormat={}{0:F0}}" />
                                 <TextBlock
                                     Grid.Row="0"
                                     Grid.Column="1"
-                                    Style="{StaticResource MainTextStyle4}"
+                                    Style="{DynamicResource MainTextStyle4}"
                                     Text="km/h" />
                                 <TextBlock
                                     Grid.Row="1"
                                     Grid.Column="1"
-                                    Style="{StaticResource MainTextStyle4}"
+                                    Style="{DynamicResource MainTextStyle4}"
                                     Text="r/min" />
                             </Grid>
                         </common:EffectBorder.EffectContent>
@@ -309,7 +334,7 @@
                 <Border
                     Grid.Row="1"
                     Margin="5"
-                    Background="{StaticResource MainViewProgreeBarBackground}"
+                    Background="{DynamicResource MainViewProgreeBarBackground}"
                     BorderBrush="DarkGray"
                     BorderThickness="2">
                     <Grid>
@@ -318,13 +343,13 @@
                             <RowDefinition />
                         </Grid.RowDefinitions>
                         <Border
-                            Background="{StaticResource ContentDeepSkyBlueBrush}"
+                            Background="{DynamicResource ContentDeepSkyBlueBrush}"
                             BorderBrush="DarkGray"
                             BorderThickness="0,0,0,2">
                             <TextBlock
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
-                                FontSize="{StaticResource Double20}"
+                                FontSize="{DynamicResource Double20}"
                                 Foreground="White"
                                 Text="运 行 参 数" />
                         </Border>

@@ -79,6 +79,15 @@ namespace Engine.TCMS.Turkmenistan.Resources.Keys {
         }
         
         /// <summary>
+        ///   查找类似 Root-轴温信息 的本地化字符串。
+        /// </summary>
+        internal static string Root_轴温信息 {
+            get {
+                return ResourceManager.GetString("Root_轴温信息", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Start 的本地化字符串。
         /// </summary>
         internal static string Start {

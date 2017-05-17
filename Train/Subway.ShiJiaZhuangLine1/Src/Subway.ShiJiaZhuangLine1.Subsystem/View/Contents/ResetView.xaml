@@ -1,0 +1,190 @@
+﻿<UserControl
+    x:Class="Subway.ShiJiaZhuangLine1.Subsystem.View.Contents.ResetView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:constant="clr-namespace:Subway.ShiJiaZhuangLine1.Subsystem.Constant"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:keys="clr-namespace:Subway.ShiJiaZhuangLine1.Subsystem.Resource.Keys"
+    xmlns:mainContentContents="clr-namespace:Subway.ShiJiaZhuangLine1.Subsystem.View.Contents.MainContentContents"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="clr-namespace:Subway.ShiJiaZhuangLine1.Subsystem.ViewModels"
+    d:DataContext="{d:DesignInstance viewModels:ShellViewModel}"
+    d:DesignHeight="480"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary Source="../../AppResouce.xaml" />
+    </UserControl.Resources>
+    <Viewbox Stretch="Fill">
+        <Grid Width="800" Height="480">
+            <Grid Margin="40,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <mainContentContents:CarView Grid.RowSpan="2" Margin="0,30,0,0" />
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*" />
+                        <ColumnDefinition Width="0.5*" />
+                        <ColumnDefinition Width="3.3*" />
+                        <ColumnDefinition Width="3.3*" />
+                        <ColumnDefinition Width="3.3*" />
+                        <ColumnDefinition Width="3.3*" />
+                        <ColumnDefinition Width="3.3*" />
+                        <ColumnDefinition Width="3.3*" />
+                        <ColumnDefinition Width="0.5*" />
+                        <ColumnDefinition Width="0.5*" />
+                    </Grid.ColumnDefinitions>
+                    <ToggleButton
+                        Grid.Column="3"
+                        Command="{Binding Model.ResetModel.Click}"
+                        CommandParameter="{x:Static keys:ConfirmLogicDisplayString.车2牵引逆变器复位}"
+                        Content="牵引逆变器&#13;复位"
+                        IsChecked="{Binding Model.ResetModel.IsCar2Traction, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}"
+                        Style="{StaticResource ResetViewButtonStyle}" />
+                    <ToggleButton
+                        Grid.Column="4"
+                        Command="{Binding Model.ResetModel.Click}"
+                        CommandParameter="{x:Static keys:ConfirmLogicDisplayString.车3牵引逆变器复位}"
+                        Content="牵引逆变器&#13;复位"
+                        IsChecked="{Binding Model.ResetModel.IsCar3Traction, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}"
+                        Style="{StaticResource ResetViewButtonStyle}" />
+                    <ToggleButton
+                        Grid.Column="5"
+                        Command="{Binding Model.ResetModel.Click}"
+                        CommandParameter="{x:Static keys:ConfirmLogicDisplayString.车4牵引逆变器复位}"
+                        Content="牵引逆变器&#13;复位"
+                        IsChecked="{Binding Model.ResetModel.IsCar4Traction, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}"
+                        Style="{StaticResource ResetViewButtonStyle}" />
+                    <ToggleButton
+                        Grid.Column="6"
+                        Command="{Binding Model.ResetModel.Click}"
+                        CommandParameter="{x:Static keys:ConfirmLogicDisplayString.车5牵引逆变器复位}"
+                        Content="牵引逆变器&#13;复位"
+                        IsChecked="{Binding Model.ResetModel.IsCar5Traction, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}"
+                        Style="{StaticResource ResetViewButtonStyle}" />
+
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*" />
+                        <ColumnDefinition Width="0.5*" />
+                        <ColumnDefinition Width="3.3*" />
+                        <ColumnDefinition Width="3.3*" />
+                        <ColumnDefinition Width="3.3*" />
+                        <ColumnDefinition Width="3.3*" />
+                        <ColumnDefinition Width="3.3*" />
+                        <ColumnDefinition Width="3.3*" />
+                        <ColumnDefinition Width="0.5*" />
+                        <ColumnDefinition Width="0.5*" />
+                    </Grid.ColumnDefinitions>
+                    <ToggleButton
+                        Grid.Column="2"
+                        Command="{Binding Model.ResetModel.Click}"
+                        CommandParameter="{x:Static keys:ConfirmLogicDisplayString.车1辅助逆变器复位}"
+                        Content="辅助逆变器&#13;复位"
+                        IsChecked="{Binding Model.ResetModel.IsCar1Assist, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}"
+                        Style="{StaticResource ResetViewButtonStyle}" />
+                    <ToggleButton
+                        Grid.Column="4"
+                        Command="{Binding Model.ResetModel.Click}"
+                        CommandParameter="{x:Static keys:ConfirmLogicDisplayString.车3辅助逆变器复位}"
+                        Content="辅助逆变器&#13;复位"
+                        IsChecked="{Binding Model.ResetModel.IsCar3Assist, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}"
+                        Style="{StaticResource ResetViewButtonStyle}" />
+                    <ToggleButton
+                        Grid.Column="5"
+                        Command="{Binding Model.ResetModel.Click}"
+                        CommandParameter="{x:Static keys:ConfirmLogicDisplayString.车4辅助逆变器复位}"
+                        Content="辅助逆变器&#13;复位"
+                        IsChecked="{Binding Model.ResetModel.IsCar4Assist, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}"
+                        Style="{StaticResource ResetViewButtonStyle}" />
+                    <ToggleButton
+                        Grid.Column="7"
+                        Command="{Binding Model.ResetModel.Click}"
+                        CommandParameter="{x:Static keys:ConfirmLogicDisplayString.车6辅助逆变器复位}"
+                        Content="辅助逆变器&#13;复位"
+                        IsChecked="{Binding Model.ResetModel.IsCar6Assist, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}"
+                        Style="{StaticResource ResetViewButtonStyle}" />
+
+                </Grid>
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*" />
+                        <ColumnDefinition Width="0.5*" />
+                        <ColumnDefinition Width="3.3*" />
+                        <ColumnDefinition Width="3.3*" />
+                        <ColumnDefinition Width="3.3*" />
+                        <ColumnDefinition Width="3.3*" />
+                        <ColumnDefinition Width="3.3*" />
+                        <ColumnDefinition Width="3.3*" />
+                        <ColumnDefinition Width="0.5*" />
+                        <ColumnDefinition Width="0.5*" />
+                    </Grid.ColumnDefinitions>
+                    <ToggleButton
+                        Grid.Column="2"
+                        Command="{Binding Model.ResetModel.Click}"
+                        CommandParameter="{x:Static keys:ConfirmLogicDisplayString.车1烟温探测系统复位}"
+                        Content="烟温探测&#13;系统复位"
+                        IsChecked="{Binding Model.ResetModel.IsCar1Smoke, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}"
+                        Style="{StaticResource ResetViewButtonStyle}" />
+                </Grid>
+                <Border
+                    Grid.Row="4"
+                    Grid.RowSpan="3"
+                    Margin="180,0,150,50"
+                    BorderBrush="White"
+                    BorderThickness="2"
+                    Visibility="{Binding Model.ResetModel.ConfirmVisibility}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20*" />
+                            <RowDefinition Height="40*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                            Margin="20,0,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            FontSize="20"
+                            Foreground="White"
+                            Text="{Binding Model.ResetModel.CurrentKey, StringFormat={}{0}:}" />
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Button
+                                Command="{Binding Model.ResetModel.Confirm}"
+                                Content="确定"
+                                Style="{StaticResource ResetViewBuutonStyle2}" />
+                            <Button
+                                Grid.Column="1"
+                                Command="{Binding Model.ResetModel.Back}"
+                                Content="返回"
+                                Style="{StaticResource ResetViewBuutonStyle2}" />
+
+                        </Grid>
+                    </Grid>
+                </Border>
+
+            </Grid>
+            <Button
+                Width="100"
+                Height="55"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Command="{Binding Path=Controller.ShellContentNavigateCommand}"
+                CommandParameter="{x:Static constant:ViewNames.SetttingView}"
+                Content="返回"
+                Style="{StaticResource EventButtonStyle}" />
+        </Grid>
+
+    </Viewbox>
+
+</UserControl>
