@@ -166,6 +166,7 @@
 
     <Style x:Key="TractionLockItemsStyle" TargetType="ItemsControl">
         <Setter Property="Margin" Value="6,16,6,-6" />
+        <Setter Property="FontSize" Value="15"></Setter>
         <Setter Property="ItemTemplate">
             <Setter.Value>
                 <DataTemplate DataType="model:TractionLockUnit">
@@ -184,7 +185,6 @@
                             <TextBlock
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
-                                FontSize="16"
                                 Foreground="White"
                                 Text="{Binding Number}"
                                 TextWrapping="Wrap" />
@@ -193,7 +193,6 @@
                                 Grid.Column="1"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
-                                FontSize="16"
                                 Foreground="White"
                                 Text="{Binding Path=UnitName}"
                                 TextWrapping="Wrap" />
