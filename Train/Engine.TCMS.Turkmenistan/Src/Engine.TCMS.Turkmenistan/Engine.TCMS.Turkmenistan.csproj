@@ -144,6 +144,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Common\TableLine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Contents\AxleTemperatureInfoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -175,6 +179,8 @@
     <Compile Include="Adapter\DomainAdapter.cs" />
     <Compile Include="Adapter\IUpdateDataProvider.cs" />
     <Compile Include="Adapter\UpdateDataProviderBase.cs" />
+    <Compile Include="Controller\BtnActionResponser\AxleInfoBtnResponse.cs" />
+    <Compile Include="Controller\BtnActionResponser\BackBtnResponse.cs" />
     <Compile Include="Controller\BtnActionResponser\LanguageSwitch.cs" />
     <Compile Include="Event\NavigatorToView.cs" />
     <Compile Include="Model\Fault\FaultInfo.cs" />
@@ -226,6 +232,9 @@
     </Compile>
     <Compile Include="View\Common\NullView.xaml.cs">
       <DependentUpon>NullView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\TableLine.xaml.cs">
+      <DependentUpon>TableLine.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Contents\AxleTemperatureInfoView.xaml.cs">
       <DependentUpon>AxleTemperatureInfoView.xaml</DependentUpon>

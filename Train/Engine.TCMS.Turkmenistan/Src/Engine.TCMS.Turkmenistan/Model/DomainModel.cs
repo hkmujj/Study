@@ -15,6 +15,7 @@ namespace Engine.TCMS.Turkmenistan.Model
         public DomainModel()
         {
             m_Navigator = ServiceLocator.Current.GetInstance<IEventAggregator>().GetEvent<NavigatorEvent>();
+            IsVisibility = Visibility.Hidden;
         }
 
         private readonly NavigatorEvent m_Navigator;
