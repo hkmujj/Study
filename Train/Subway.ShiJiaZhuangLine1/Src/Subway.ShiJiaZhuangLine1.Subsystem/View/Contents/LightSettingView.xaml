@@ -1,0 +1,91 @@
+﻿<UserControl
+    x:Class="Subway.ShiJiaZhuangLine1.Subsystem.View.Contents.LightSettingView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:constant="clr-namespace:Subway.ShiJiaZhuangLine1.Subsystem.Constant"
+    xmlns:controls="clr-namespace:Subway.ShiJiaZhuangLine1.Subsystem.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Subway.ShiJiaZhuangLine1.Subsystem.View.Contents"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="clr-namespace:Subway.ShiJiaZhuangLine1.Subsystem.ViewModels"
+    d:DataContext="{d:DesignInstance viewModels:ShellViewModel}"
+    d:DesignHeight="380"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary Source="../../AppResouce.xaml" />
+    </UserControl.Resources>
+    <Viewbox Stretch="Fill">
+        <Canvas Width="800" Height="380">
+            <ProgressBar
+                Canvas.Left="245"
+                Canvas.Top="72"
+                Width="280"
+                Height="30"
+                Background="{StaticResource DarkGrayBrush}"
+                Foreground="{StaticResource YellowBrush}"
+                Maximum="100"
+                Minimum="0"
+                Value="{Binding Model.LightSetting.Light}" />
+            <Image
+                Canvas.Left="134"
+                Canvas.Top="66"
+                Width="50"
+                Height="40"
+                Source="{StaticResource 亮度图标}" />
+            <controls:RecTextButton
+                Canvas.Left="189"
+                Canvas.Top="66"
+                Width="40"
+                Height="40"
+                Padding="0"
+                Background="Transparent"
+                BorderBrush="{StaticResource DarkGrayBrush}"
+                BorderThickness="2"
+                Command="{Binding Model.LightSetting.Subtract}"
+                Content="-"
+                FontSize="25"
+                Foreground="{StaticResource DarkGrayBrush}" />
+            <controls:RecTextButton
+                Canvas.Left="539"
+                Canvas.Top="66"
+                Width="40"
+                Height="40"
+                Padding="0"
+                Background="Transparent"
+                BorderBrush="{StaticResource DarkGrayBrush}"
+                BorderThickness="2"
+                Command="{Binding Model.LightSetting.Plus}"
+                Content="+"
+                FontSize="25"
+                Foreground="{StaticResource DarkGrayBrush}" />
+            <controls:RecTextButton
+                Canvas.Left="428"
+                Canvas.Top="150"
+                Width="150"
+                Height="40"
+                Padding="0"
+                Background="Transparent"
+                BorderBrush="{StaticResource DarkGrayBrush}"
+                BorderThickness="2"
+                Content="自动调节"
+                FontSize="20"
+                Foreground="{StaticResource DarkGrayBrush}" />
+            <controls:RecTextButton
+                Canvas.Right="5"
+                Canvas.Bottom="15"
+                Width="70"
+                Height="40"
+                Padding="0"
+                Background="Transparent"
+                BorderBrush="{StaticResource DarkGrayBrush}"
+                BorderThickness="2"
+                Command="{Binding Controller.ShellContentNavigateCommand}"
+                CommandParameter="{x:Static constant:ViewNames.SetttingView}"
+                Content="返回"
+                FontSize="20"
+                Foreground="{StaticResource DarkGrayBrush}" />
+        </Canvas>
+    </Viewbox>
+
+</UserControl>

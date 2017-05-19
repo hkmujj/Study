@@ -1,0 +1,192 @@
+﻿<UserControl x:Class="Subway.ShiJiaZhuangLine1.Subsystem.View.Contents.MainContentContents.CarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:Subway.ShiJiaZhuangLine1.Subsystem.ViewModels"
+             d:DataContext="{d:DesignInstance viewModels:ShellViewModel}"
+             d:DesignHeight="100"
+             d:DesignWidth="700"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary Source="../../../AppResouce.xaml" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="15*" />
+            <RowDefinition Height="3*" />
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="3.3*" />
+            <ColumnDefinition Width="3.3*" />
+            <ColumnDefinition Width="3.3*" />
+            <ColumnDefinition Width="3.3*" />
+            <ColumnDefinition Width="3.3*" />
+            <ColumnDefinition Width="3.3*" />
+            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="0.5*" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0"
+                   Grid.Column="2"
+                   Style="{StaticResource CarTextBlockStyleOne}"
+                   Text="10001" />
+        <TextBlock Grid.Row="0"
+                   Grid.Column="3"
+                   Style="{StaticResource CarTextBlockStyleOne}"
+                   Text="10002" />
+        <TextBlock Grid.Row="0"
+                   Grid.Column="4"
+                   Style="{StaticResource CarTextBlockStyleOne}"
+                   Text="10003" />
+        <TextBlock Grid.Row="0"
+                   Grid.Column="5"
+                   Style="{StaticResource CarTextBlockStyleOne}"
+                   Text="10004" />
+        <TextBlock Grid.Row="0"
+                   Grid.Column="6"
+                   Style="{StaticResource CarTextBlockStyleOne}"
+                   Text="10005" />
+        <TextBlock Grid.Row="0"
+                   Grid.Column="7"
+                   Style="{StaticResource CarTextBlockStyleOne}"
+                   Text="10006" />
+
+        <Rectangle Grid.Row="2"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Margin="0,0,1,0"
+                   Fill="{StaticResource ItemBackgroudBrush}"
+                   RadiusX="5"
+                   RadiusY="20" />
+        <Grid Grid.Row="2" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+
+            <Ellipse x:Name="EllipseLeft"
+                     Grid.Row="1"
+                     Height="{Binding ElementName=EllipseLeft,
+                                      Path=ActualWidth}"
+                     Margin="2"
+                     Fill="Black"
+                     Visibility="{Binding Model.MainModel.DriverOneVisibility}"
+                     x:FieldModifier="private" />
+
+            <Image Grid.Row="2"
+                   Height="15"
+                   Width="7"
+                   Source="{Binding Path=Model.MainModel.EvacuateOneDoorState,
+                                    Converter={StaticResource EvacuateDoorStateToImageConvert}}"
+                   Stretch="Fill" />
+        </Grid>
+
+        <Rectangle Grid.Row="2"
+                   Grid.Column="1"
+                   Margin="0,0,1,0"
+                   Fill="{StaticResource ItemBackgroudBrush}" />
+        <Border Grid.Row="2"
+                Grid.Column="2"
+                Margin="1,0,1,0"
+                Background="{StaticResource ItemBackgroudBrush}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="134*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Image Grid.Row="1"
+                       Grid.Column="0"
+                       Height="15"
+                       Width="7"
+                       Source="{Binding Path=Model.MainModel.IntervalOneDoorState,
+                                        Converter={StaticResource IntervalDoorStateToImageConvert}}"
+                       Stretch="Fill" />
+            </Grid>
+        </Border>
+
+        <Rectangle Grid.Row="2"
+                   Grid.Column="3"
+                   Margin="1,0,1,0"
+                   Fill="{StaticResource ItemBackgroudBrush}" />
+        <Rectangle Grid.Row="2"
+                   Grid.Column="4"
+                   Margin="1,0,1,0"
+                   Fill="{StaticResource ItemBackgroudBrush}" />
+        <Rectangle Grid.Row="2"
+                   Grid.Column="5"
+                   Margin="1,0,1,0"
+                   Fill="{StaticResource ItemBackgroudBrush}" />
+        <Rectangle Grid.Row="2"
+                   Grid.Column="6"
+                   Margin="1,0,1,0"
+                   Fill="{StaticResource ItemBackgroudBrush}" />
+        <Border Grid.Row="2"
+                Grid.Column="7"
+                Margin="1,0,1,0"
+                Background="{StaticResource ItemBackgroudBrush}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="134*" />
+                    <ColumnDefinition Width="10*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Image Grid.Row="1"
+                       Grid.Column="1"
+                       Height="15"
+                       Width="7"
+                       Source="{Binding Path=Model.MainModel.IntervalSixDoorState,
+                                        Converter={StaticResource IntervalDoorStateToImageConvert}}"
+                       Stretch="Fill" />
+            </Grid>
+        </Border>
+
+        <Rectangle Grid.Row="2"
+                   Grid.Column="8"
+                   Grid.ColumnSpan="2"
+                   Margin="1,0,0,0"
+                   Fill="{StaticResource ItemBackgroudBrush}"
+                   RadiusX="5"
+                   RadiusY="20" />
+        <Rectangle Grid.Row="2"
+                   Grid.Column="8"
+                   Margin="1,0,0,0"
+                   Fill="{StaticResource ItemBackgroudBrush}" />
+        <Grid Grid.Row="2" Grid.Column="9">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0"
+                   Height="15"
+                   Width="7"
+                   Source="{Binding Path=Model.MainModel.EvacuateSixDoorState,
+                                    Converter={StaticResource EvacuateDoorStateToImageConvert}}"
+                   Stretch="Fill" />
+            <Ellipse x:Name="EllipseRight"
+                     Grid.Row="1"
+                     Height="{Binding ElementName=EllipseRight,
+                                      Path=ActualWidth}"
+                     Margin="2"
+                     Fill="Black"
+                     Visibility="{Binding Model.MainModel.DriverSixVisibility}"
+                     x:FieldModifier="private" />
+        </Grid>
+    </Grid>
+</UserControl>
