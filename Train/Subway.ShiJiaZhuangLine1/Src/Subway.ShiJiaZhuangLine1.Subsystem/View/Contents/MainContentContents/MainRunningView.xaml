@@ -12,7 +12,7 @@
     xmlns:view="clr-namespace:Subway.ShiJiaZhuangLine1.Subsystem.View"
     xmlns:viewModels="clr-namespace:Subway.ShiJiaZhuangLine1.Subsystem.ViewModels"
     d:DataContext="{d:DesignInstance viewModels:ShellViewModel}"
-    d:DesignHeight="440"
+    d:DesignHeight="500"
     d:DesignWidth="800"
     mc:Ignorable="d">
     <UserControl.Resources>
@@ -28,8 +28,12 @@
             <ColumnDefinition Width="25*" />
             <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="440*"></RowDefinition>
+            <RowDefinition Height="50*"></RowDefinition>
+        </Grid.RowDefinitions>
         <view:TrainLeft Grid.Column="0" />
-        <Grid Grid.Column="1" Grid.ColumnSpan="2">
+        <Grid Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="34*" />
                 <RowDefinition Height="100*" />
@@ -218,15 +222,7 @@
                                 <RotateTransform Angle="180" />
                             </ProgressBar.RenderTransform>
                         </ProgressBar>
-                        <TextBlock
-                            Grid.Row="0"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            FontSize="22"
-                            Foreground="White"
-                            Text="{Binding Model.MainModel.TractionEffective, Converter={StaticResource DoubleToStringConvert}}"
-                            Visibility="{Binding Model.MainModel.TractionVisibility}"><Run Text="0" />
-                        </TextBlock>
+                      
                         <ProgressBar
                             Grid.Row="1"
                             BorderThickness="0,1,1,1"
@@ -239,15 +235,7 @@
                                 <RotateTransform Angle="0" />
                             </ProgressBar.RenderTransform>
                         </ProgressBar>
-                        <TextBlock
-                            Grid.Row="1"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            FontSize="22"
-                            Foreground="White"
-                            Text="{Binding Model.MainModel.BrakeEffective, Converter={StaticResource DoubleToStringConvert}}"
-                            Visibility="{Binding Model.MainModel.BrakeVisibility}"><Run Text="0" />
-                        </TextBlock>
+                       
                     </Grid>
 
                     <Grid Grid.Row="0" Grid.Column="2">
@@ -272,6 +260,26 @@
                             FontSize="18"
                             Foreground="White"
                             Text="%" />
+                        <TextBlock
+                            Grid.Row="2"
+                            Margin="0,0,-5,5"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            FontSize="18"
+                            Foreground="White"
+                            Text="{Binding Model.MainModel.BrakeEffective, Converter={StaticResource DoubleToStringConvert}}"
+                            Visibility="{Binding Model.MainModel.BrakeVisibility}"><Run Text="0" />
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            FontSize="18"
+                            Foreground="White"
+                            Margin="0,15,-5,0"
+                            Text="{Binding Model.MainModel.TractionEffective, Converter={StaticResource DoubleToStringConvert}}"
+                            Visibility="{Binding Model.MainModel.TractionVisibility}"><Run Text="0" />
+                        </TextBlock>
                         <!--<TextBlock Grid.Row="2"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Top"
@@ -377,7 +385,8 @@
                 </Grid>
             </Grid>
         </Grid>
-        <view:TrainRight Grid.Column="2" />
+        <view:TrainRight Grid.Row="0" Grid.Column="2" />
+        <mainContentContents:EventConfirmView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"></mainContentContents:EventConfirmView>
         <Border
             Grid.Row="0"
             Grid.Column="0"
@@ -387,3 +396,4 @@
         <!--<Image />-->
     </Grid>
 </UserControl>
+

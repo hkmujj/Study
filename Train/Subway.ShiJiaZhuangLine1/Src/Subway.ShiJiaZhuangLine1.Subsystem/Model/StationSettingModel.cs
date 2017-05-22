@@ -34,7 +34,7 @@ namespace Subway.ShiJiaZhuangLine1.Subsystem.Model
         {
             ModelSelect = new DelegateCommand<string>(ModelSelectMethod);
             StationViewDump = new DelegateCommand<string>(StationViewDumpMethod);
-            StationSelect = new DelegateCommand<string>(StationSelectMethod);
+            StationSelect = new DelegateCommand<IStation>(StationSelectMethod);
             StationComfirm = new DelegateCommand(StationComfirmMethod);
             Up = new DelegateCommand(UpAction);
             Down = new DelegateCommand(DownAtion);
@@ -95,11 +95,11 @@ namespace Subway.ShiJiaZhuangLine1.Subsystem.Model
 
         }
 
-        private void StationSelectMethod(string obj)
+        private void StationSelectMethod(IStation obj)
         {
-            if (int.TryParse(obj, out int idnex))
+            if (obj!=null)
             {
-                StationIndex = idnex;
+                StationIndex = obj.Number;
             }
         }
 

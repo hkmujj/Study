@@ -35,10 +35,10 @@
             FontSize="16"
             Foreground="White"
             Text="{StaticResource StringHightBreaker}" />
-        <Image Grid.Column="3" Source="{Binding Model.FrsmHighSpeedModel.Car2HighSpeed, Converter={StaticResource FramHighSpeedToImageConvert}}" />
-        <Image Grid.Column="4" Source="{Binding Model.FrsmHighSpeedModel.Car3HighSpeed, Converter={StaticResource FramHighSpeedToImageConvert}}" />
-        <Image Grid.Column="5" Source="{Binding Model.FrsmHighSpeedModel.Car4HighSpeed, Converter={StaticResource FramHighSpeedToImageConvert}}" />
-        <Image Grid.Column="6" Source="{Binding Model.FrsmHighSpeedModel.Car5HighSpeed, Converter={StaticResource FramHighSpeedToImageConvert}}" />
+        <Image Margin="38,3" Grid.Column="3" Source="{Binding Model.FrsmHighSpeedModel.Car2HighSpeed, Converter={StaticResource FramHighSpeedToImageConvert}}" />
+        <Image Margin="38,3" Grid.Column="4" Source="{Binding Model.FrsmHighSpeedModel.Car3HighSpeed, Converter={StaticResource FramHighSpeedToImageConvert}}" />
+        <Image Margin="38,3" Grid.Column="5" Source="{Binding Model.FrsmHighSpeedModel.Car4HighSpeed, Converter={StaticResource FramHighSpeedToImageConvert}}" />
+        <Image Margin="38,3" Grid.Column="6" Source="{Binding Model.FrsmHighSpeedModel.Car5HighSpeed, Converter={StaticResource FramHighSpeedToImageConvert}}" />
         <!--<controls:HightBreakerIndicator Grid.Column="3" FrsmHighSpeed="{Binding Path=Model.FrsmHighSpeedModel.Car2HighSpeed}" />
         <controls:HightBreakerIndicator Grid.Column="4" FrsmHighSpeed="{Binding Path=Model.FrsmHighSpeedModel.Car3HighSpeed}" />
         <controls:HightBreakerIndicator Grid.Column="5" FrsmHighSpeed="{Binding Path=Model.FrsmHighSpeedModel.Car4HighSpeed}" />

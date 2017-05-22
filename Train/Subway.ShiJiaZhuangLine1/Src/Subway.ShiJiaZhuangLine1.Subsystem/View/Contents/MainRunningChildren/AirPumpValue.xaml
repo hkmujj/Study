@@ -38,7 +38,7 @@
             <controls:BorderText Grid.Column="0"
                                  Style="{StaticResource AirPumValueTextStyle}"
                                  Text="{Binding AirPunp.Car2CompressValue,
-                                                Converter={StaticResource DoubleToString00Convert}}" />
+                                                StringFormat={}{0:F0}}" />
 
             <TextBlock Grid.Column="1"
                        Margin="2,1,0,5"
@@ -56,7 +56,7 @@
             </Grid.ColumnDefinitions>
             <controls:BorderText Grid.Column="0"
                             Text="{Binding AirPunp.Car5CompressValue,
-                                              Converter={StaticResource DoubleToString00Convert}}"
+                                              StringFormat={}{0:F0}}"
                             Style="{StaticResource AirPumValueTextStyle}" />
             <TextBlock Grid.Column="1"
                        Margin="2,1,0,5"

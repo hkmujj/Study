@@ -21,5 +21,7 @@
 
 
         public const string HelpTableRegion = "Subway.ShiJiaZhuangLine1.Subsystem.Constant.HelpTableRegion";
+
+        public const string StationRegion = "Subway.ShiJiaZhuangLine1.Subsystem.Constant.StationRegion";
     }
 }

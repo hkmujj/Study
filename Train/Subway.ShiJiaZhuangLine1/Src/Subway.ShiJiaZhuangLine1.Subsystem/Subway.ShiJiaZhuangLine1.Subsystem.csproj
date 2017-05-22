@@ -210,6 +210,12 @@
     <Compile Include="View\Contents\HelpView.xaml.cs">
       <DependentUpon>HelpView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Contents\MainContentContents\NullVIew1.xaml.cs">
+      <DependentUpon>NullVIew1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\MainContentContents\NullView2.xaml.cs">
+      <DependentUpon>NullView2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Contents\MainRunningChildren\HightBreakerView.xaml.cs">
       <DependentUpon>HightBreakerView.xaml</DependentUpon>
     </Compile>
@@ -457,6 +463,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Contents\HelpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\MainContentContents\NullVIew1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\MainContentContents\NullView2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

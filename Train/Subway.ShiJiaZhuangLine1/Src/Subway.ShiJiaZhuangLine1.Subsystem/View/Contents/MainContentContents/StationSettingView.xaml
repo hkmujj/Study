@@ -10,6 +10,7 @@
              xmlns:model="clr-namespace:Subway.ShiJiaZhuangLine1.Subsystem.Model"
              xmlns:title="clr-namespace:Subway.ShiJiaZhuangLine1.Subsystem.View.Title"
              xmlns:viewModels="clr-namespace:Subway.ShiJiaZhuangLine1.Subsystem.ViewModels"
+             xmlns:interface="clr-namespace:Subway.ShiJiaZhuangLine1.Interface;assembly=Subway.ShiJiaZhuangLine1.Interface"
              d:DataContext="{d:DesignInstance viewModels:ShellViewModel}"
              d:DesignHeight="600"
              d:DesignWidth="800"
@@ -22,11 +23,10 @@
             <RowDefinition Height="5*" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
-        <Grid x:Name="Station"
+        <!--<Grid x:Name="Station"
               Grid.Row="0"
               Margin="35">
             <Grid.RowDefinitions>
-                <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
@@ -45,7 +45,75 @@
                    RadiusX="15"
                    RadiusY="15"
                    Stroke="{StaticResource DarkGrayBrush}"
-                   StrokeThickness="2" />
+                   StrokeThickness="2" />-->
+        <ItemsControl ItemsSource="{Binding Model.StationsMgr.AllData.Values}">
+            <ItemsControl.Style>
+                <Style TargetType="ItemsControl">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ItemsControl">
+                                <Border BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="15">
+                                    <ItemsPresenter></ItemsPresenter>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Margin" Value="20"></Setter>
+                    <Setter Property="BorderBrush" Value="White" ></Setter>
+                    <Setter Property="BorderThickness" Value="2"></Setter>
+                    <Setter Property="ItemsPanel">
+                        <Setter.Value>
+                            <ItemsPanelTemplate >
+                                <WrapPanel Orientation="Horizontal"></WrapPanel>
+                            </ItemsPanelTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="ItemTemplate">
+                        <Setter.Value>
+                            <DataTemplate DataType="interface:IStation">
+                                <RadioButton Command="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType=UserControl},Path=DataContext.Model.StationSettingModel.StationSelect}" CommandParameter="{Binding}"  Content="{Binding StationName}" Height="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType=Border},Path=ActualHeight,Converter={StaticResource MathConverter},ConverterParameter=((x-10)/4)-20}" Width="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType=Border},Path=ActualWidth, Converter={StaticResource MathConverter},ConverterParameter=((x-10)/5)-20}">
+                                    <RadioButton.Style>
+                                        <Style TargetType="RadioButton">
+                                            <Setter Property="Margin" Value="10"></Setter>
+                                            <Setter Property="Foreground" Value="White"></Setter>
+                                            <Setter Property="BorderBrush" Value="White"></Setter>
+                                            <Setter Property="FontSize" Value="18"></Setter>
+                                            <Setter Property="Background" Value="Transparent"></Setter>
+                                            <Setter Property="GroupName" Value="你好"></Setter>
+                                            
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="RadioButton">
+                                                        <Border
+                                                            Margin="0"
+                                                            BorderBrush="{TemplateBinding BorderBrush}"
+                                                            BorderThickness="1">
+                                                            <Border
+                                                                Margin="1"
+                                                                Background="{TemplateBinding Background}"
+                                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                                BorderThickness="1">
+                                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                            </Border>
+                                                        </Border>
+                                                        <ControlTemplate.Triggers>
+                                                            <Trigger Property="IsChecked" Value="True">
+                                                                <Setter Property="Background" Value="#FF00FF00"></Setter>
+                                                                <Setter Property="Foreground" Value="Black"></Setter>
+                                                            </Trigger>
+                                                        </ControlTemplate.Triggers>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </RadioButton.Style>
+                                </RadioButton>
+                            </DataTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ItemsControl.Style>
+        </ItemsControl>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="500*" />
