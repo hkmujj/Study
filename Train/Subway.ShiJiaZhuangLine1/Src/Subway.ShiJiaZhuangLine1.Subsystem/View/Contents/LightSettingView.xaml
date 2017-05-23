@@ -44,7 +44,6 @@
                 BorderThickness="2"
                 Command="{Binding Model.LightSetting.Subtract}"
                 Content="-"
-                FontSize="25"
                 Foreground="{StaticResource DarkGrayBrush}" />
             <controls:RecTextButton
                 Canvas.Left="539"
@@ -57,7 +56,6 @@
                 BorderThickness="2"
                 Command="{Binding Model.LightSetting.Plus}"
                 Content="+"
-                FontSize="25"
                 Foreground="{StaticResource DarkGrayBrush}" />
             <controls:RecTextButton
                 Canvas.Left="428"
@@ -69,7 +67,6 @@
                 BorderBrush="{StaticResource DarkGrayBrush}"
                 BorderThickness="2"
                 Content="自动调节"
-                FontSize="20"
                 Foreground="{StaticResource DarkGrayBrush}" />
             <controls:RecTextButton
                 Canvas.Right="5"
@@ -83,7 +80,6 @@
                 Command="{Binding Controller.ShellContentNavigateCommand}"
                 CommandParameter="{x:Static constant:ViewNames.SetttingView}"
                 Content="返回"
-                FontSize="20"
                 Foreground="{StaticResource DarkGrayBrush}" />
         </Canvas>
     </Viewbox>

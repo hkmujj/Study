@@ -9,6 +9,7 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="TextBlock">
+        <Setter Property="FontSize" Value="18" />
         <Setter Property="FontFamily" Value="{StaticResource CommonFont}" />
     </Style>
 
@@ -16,12 +17,10 @@
         <Setter Property="Margin" Value="6,12" />
         <Setter Property="BorderBrush" Value="DarkGray" />
         <Setter Property="BorderThickness" Value="2" />
-        <Setter Property="FontSize" Value="16" />
         <Setter Property="Foreground" Value="White" />
     </Style>
 
     <Style x:Key="HelpContentTextStyle" TargetType="TextBlock">
-        <Setter Property="FontSize" Value="16" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="HorizontalAlignment" Value="Left" />
     </Style>
@@ -30,26 +29,23 @@
         <Setter Property="Foreground" Value="{StaticResource WhiteBrush}" />
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="FontSize" Value="20" />
     </Style>
     <Style x:Key="CarTextBlockStyleTwo" TargetType="{x:Type TextBlock}">
         <Setter Property="Foreground" Value="{StaticResource WhiteBrush}" />
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="FontSize" Value="10" />
+        <Setter Property="FontSize" Value="10"></Setter>
     </Style>
 
     <Style x:Key="TitleTextBlockStyleOne" TargetType="{x:Type TextBlock}">
         <Setter Property="Foreground" Value="{StaticResource BlackBrush}" />
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="FontSize" Value="22" />
     </Style>
     <Style x:Key="TitleTextBlockStyleTwo" TargetType="{x:Type TextBlock}">
         <Setter Property="Foreground" Value="{StaticResource BlackBrush}" />
         <Setter Property="HorizontalAlignment" Value="Right" />
         <Setter Property="VerticalAlignment" Value="Top" />
-        <Setter Property="FontSize" Value="20" />
     </Style>
 
 

@@ -45,11 +45,13 @@
         </Grid>
         <Image Grid.Row="2"
                Grid.Column="4"
+               HorizontalAlignment="Left"
                Source="{Binding AssistModel.Car3Organ,
                                 Converter={StaticResource AssistPowerStatusToImageConvert}}"
                Style="{StaticResource AirStyle}" />
         <Image Grid.Row="2"
                Grid.Column="5"
+               HorizontalAlignment="Right"
                Source="{Binding AssistModel.Car4Organ,
                                 Converter={StaticResource AssistPowerStatusToImageConvert}}"
                Style="{StaticResource AirStyle}" />
@@ -58,8 +60,8 @@
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
-            <Image Source="{Binding AssistModel.Car6Organ, Converter={StaticResource AssistPowerStatusToImageConvert}}" Style="{StaticResource AirStyle}" />
-            <Image Grid.Column="1"
+            <Image Grid.Column="1" Source="{Binding AssistModel.Car6Organ, Converter={StaticResource AssistPowerStatusToImageConvert}}" Style="{StaticResource AirStyle}" />
+            <Image Grid.Column="0"
                    Source="{Binding AssistModel.Car6Charge,
                                     Converter={StaticResource AssistPowerStatusToImageConvert}}"
                    Style="{StaticResource AirStyle}" />

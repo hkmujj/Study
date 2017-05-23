@@ -34,7 +34,6 @@
                     </Setter>
                     <Setter Property="Background" Value="Transparent" />
                     <Setter Property="BorderThickness" Value="0" />
-                    <Setter Property="FontSize" Value="20" />
                     <Setter Property="ItemContainerStyle">
                         <Setter.Value>
                             <Style TargetType="ListBoxItem">
@@ -93,7 +92,6 @@
                 Margin="0,50,0,0"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Top"
-                FontSize="20"
                 Foreground="White"
                 Text="{Binding Model.BoradercastMgr.AllData.Count, StringFormat=共 {0} 条}" />
 
@@ -136,7 +134,6 @@
                 BorderThickness="2"
                 Command="{Binding Model.EnmergencyBorader.SentData}"
                 Content="确 认"
-                FontSize="20"
                 Foreground="{StaticResource DarkGrayBrush}" />
             <controls:RecTextButton
                 Height="50"
@@ -148,7 +145,6 @@
                 BorderThickness="2"
                 Command="{Binding Model.EnmergencyBorader.ClearData}"
                 Content="紧急广播&#13;停止"
-                FontSize="20"
                 Foreground="{StaticResource DarkGrayBrush}" />
         </Grid>
 

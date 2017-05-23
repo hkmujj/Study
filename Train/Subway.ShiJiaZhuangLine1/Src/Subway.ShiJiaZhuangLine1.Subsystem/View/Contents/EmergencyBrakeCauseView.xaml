@@ -25,7 +25,6 @@
             ItemsSource="{Binding Model.EmergencyBrakeCauseModel.EmergencyBrakeCauseUnits}">
             <ListBox.Style>
                 <Style TargetType="ListBox">
-                    <Setter Property="FontSize" Value="18" />
                     <Setter Property="Margin" Value="170,100,170,130" />
                     <Setter Property="Template">
                         <Setter.Value>
@@ -83,9 +82,20 @@
                 </Style>
             </ListBox.Style>
         </ListBox>
-        <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Orientation="Horizontal" Margin="0,0,60,0">
-            <Rectangle Fill="Red" Height="20" Width="50" Margin="10"></Rectangle>
-            <TextBlock Text="紧急制动原因" VerticalAlignment="Center" Foreground="White" FontSize="18"></TextBlock>
+        <StackPanel
+            Margin="0,0,60,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Orientation="Horizontal">
+            <Rectangle
+                Width="50"
+                Height="20"
+                Margin="10"
+                Fill="Red" />
+            <TextBlock
+                VerticalAlignment="Center"
+                Foreground="White"
+                Text="紧急制动原因" />
         </StackPanel>
     </Grid>
 </UserControl>
