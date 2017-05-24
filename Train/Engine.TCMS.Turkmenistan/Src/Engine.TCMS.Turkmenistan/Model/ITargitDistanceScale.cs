@@ -16,7 +16,7 @@ namespace Engine.TCMS.Turkmenistan.Model
     {
         protected double MaxtValue { get; set; }
         protected int TextStep { get; set; }
-        protected double ValueStep => MaxtValue / LineCount;
+        protected double ValueStep { get { return MaxtValue / LineCount; } }
         public int LongLineStep { get; set; }
         protected int LineCount { get; set; }
         public ReadOnlyCollection<ITargitDistanceScaleItem> Items { get; private set; }

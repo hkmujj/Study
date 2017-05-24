@@ -16,7 +16,7 @@ namespace Engine.TCMS.Turkmenistan.Extension
             catch (Exception)
             {
 
-                AppLog.Error($"Key {key} Not Found!");
+                AppLog.Error(string.Format("Key {0} Not Found!", key));
             }
             return default(T);
         }

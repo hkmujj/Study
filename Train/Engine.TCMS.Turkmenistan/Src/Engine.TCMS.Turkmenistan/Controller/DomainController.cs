@@ -42,11 +42,15 @@ namespace Engine.TCMS.Turkmenistan.Controller
 
         private void NavigateToView(NavigatorToView.Args obj)
         {
-            var type = (ViewExportAttribute) Type.GetType(obj.ViewName)?.GetCustomAttributes(typeof(ViewExportAttribute), false)
-                .FirstOrDefault();
-            if (type != null)
-            {
-                m_RegionManager.RequestNavigate(type.RegionName, obj.ViewName);
+            var memberInfo = Type.GetType(obj.ViewName);
+            if (memberInfo != null) {
+                var type = (ViewExportAttribute)memberInfo
+                    .GetCustomAttributes(typeof(ViewExportAttribute), false)
+                    .FirstOrDefault();
+                if (type != null)
+                {
+                    m_RegionManager.RequestNavigate(type.RegionName, obj.ViewName);
+                }
             }
         }
 

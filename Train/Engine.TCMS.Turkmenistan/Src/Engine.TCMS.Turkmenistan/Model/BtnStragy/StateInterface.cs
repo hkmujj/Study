@@ -132,7 +132,7 @@ namespace Engine.TCMS.Turkmenistan.Model.BtnStragy
 
         private void Navigator()
         {
-            var view = (ViewExportAttribute) Type.GetType(ContentViewName, false, true)?.GetCustomAttributes(typeof(ViewExportAttribute), false).FirstOrDefault();
+            var view = (ViewExportAttribute) Type.GetType(ContentViewName, false, true).GetCustomAttributes(typeof(ViewExportAttribute), false).FirstOrDefault();
             if (view != null)
             {
                 m_RegionManager.RequestNavigate(view.RegionName, ContentViewName);

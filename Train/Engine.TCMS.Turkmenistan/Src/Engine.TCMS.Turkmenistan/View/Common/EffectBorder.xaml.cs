@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
@@ -34,8 +35,10 @@ namespace Engine.TCMS.Turkmenistan.View.Common
             var height = ActualHeight;
 
 
-            Date1 = $"M 0,0 L 0,{height} {LineWidth},{height - LineWidth} {LineWidth},{LineWidth} {width- LineWidth},{LineWidth} {width},0";
-            Date2 = $"M 0,{height} L {width},{height} {width},0 {width - LineWidth},{LineWidth} {width - LineWidth},{height - LineWidth} {LineWidth},{height - LineWidth}";
+            Date1 = string.Format("M 0,0 L 0,{0} {1},{2} {3},{4} {5},{6} {7},0", height, LineWidth, height - LineWidth,
+                LineWidth, LineWidth, width - LineWidth, LineWidth, width);
+            Date2 = string.Format("M 0,{0} L {1},{2} {3},0 {4},{5} {6},{7} {8},{9}", height, width, height, width,
+                width - LineWidth, LineWidth, width - LineWidth, height - LineWidth, LineWidth, height - LineWidth);
 
 
         }
@@ -66,6 +69,6 @@ namespace Engine.TCMS.Turkmenistan.View.Common
 
         public Brush Line2Fill { get { return (Brush)GetValue(Line2FillProperty); } set { SetValue(Line2FillProperty, value); } }
 
-      
+
     }
 }
