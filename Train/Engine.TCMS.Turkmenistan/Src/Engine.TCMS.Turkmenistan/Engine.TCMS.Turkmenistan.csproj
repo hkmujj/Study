@@ -153,7 +153,43 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Contents\AxleTemperature\CurrentAxleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\CutSerchView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\FaulrResumeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\FaultCutView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Contents\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\ProgressBar\CurrentProgressbarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\ProgressBar\ReconnectionProgressBarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\RunParam\CurrentRunparamView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\RunParam\ReconnectionRunparamView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\TemperatureUpInfoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -180,18 +216,37 @@
     <Compile Include="Adapter\DomainAdapter.cs" />
     <Compile Include="Adapter\IUpdateDataProvider.cs" />
     <Compile Include="Adapter\UpdateDataProviderBase.cs" />
+    <Compile Include="Constant\ViewNames.cs" />
+    <Compile Include="Controller\BtnActionResponser\AuxiliaryResponse.cs" />
     <Compile Include="Controller\BtnActionResponser\AxleInfoBtnResponse.cs" />
     <Compile Include="Controller\BtnActionResponser\BackBtnResponse.cs" />
+    <Compile Include="Controller\BtnActionResponser\CurrentCarInfoResponse.cs" />
+    <Compile Include="Controller\BtnActionResponser\CutSerchBtnResponse.cs" />
+    <Compile Include="Controller\BtnActionResponser\FaultCUtBtnReposne.cs" />
+    <Compile Include="Controller\BtnActionResponser\FaultResumeBtnResposne.cs" />
     <Compile Include="Controller\BtnActionResponser\LanguageSwitch.cs" />
+    <Compile Include="Controller\BtnActionResponser\LightBtnReposne.cs" />
+    <Compile Include="Controller\BtnActionResponser\TemperatureUpInfoResponse.cs" />
     <Compile Include="Event\NavigatorToView.cs" />
     <Compile Include="Model\Fault\FaultInfo.cs" />
+    <Compile Include="Model\RunParamUnit.cs" />
+    <Compile Include="Resources\Keys\InBoolKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InBoolKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Keys\InFloatKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InFloatKeys.resx</DependentUpon>
+    </Compile>
     <Compile Include="TargetDistanceScalLengthToLineTicknessConverter.cs" />
     <Compile Include="Constant\RegionNames.cs" />
     <Compile Include="Controller\BtnStragy\StateInterfaceFactory.cs" />
     <Compile Include="Controller\DomainController.cs" />
     <Compile Include="Event\DataServiceDataChanged.cs" />
     <Compile Include="Event\LazyValueCreatedEvent.cs" />
-    <Compile Include="Event\NavigatorEvent.cs" />
+    <Compile Include="Event\NavigatorToState.cs" />
     <Compile Include="Extension\CommunicationDataChangedArgsExtension.cs" />
     <Compile Include="Extension\CommunicationDataServiceExtension.cs" />
     <Compile Include="Extension\ResourceExtention.cs" />
@@ -240,8 +295,35 @@
     <Compile Include="View\Contents\AxleTemperatureInfoView.xaml.cs">
       <DependentUpon>AxleTemperatureInfoView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Contents\AxleTemperature\CurrentAxleView.xaml.cs">
+      <DependentUpon>CurrentAxleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\CutSerchView.xaml.cs">
+      <DependentUpon>CutSerchView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\FaulrResumeView.xaml.cs">
+      <DependentUpon>FaulrResumeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\FaultCutView.xaml.cs">
+      <DependentUpon>FaultCutView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Contents\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\ProgressBar\CurrentProgressbarView.xaml.cs">
+      <DependentUpon>CurrentProgressbarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\ProgressBar\ReconnectionProgressBarView.xaml.cs">
+      <DependentUpon>ReconnectionProgressBarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\RunParam\CurrentRunparamView.xaml.cs">
+      <DependentUpon>CurrentRunparamView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\RunParam\ReconnectionRunparamView.xaml.cs">
+      <DependentUpon>ReconnectionRunparamView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\TemperatureUpInfoView.xaml.cs">
+      <DependentUpon>TemperatureUpInfoView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\DataMonitor\DataMonitorView.xaml.cs">
       <DependentUpon>DataMonitorView.xaml</DependentUpon>
@@ -288,6 +370,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Keys\InBoolKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InBoolKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Keys\InFloatKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InFloatKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Keys\StateKeys.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>StateKeys.Designer.cs</LastGenOutput>
@@ -307,9 +397,7 @@
   <ItemGroup>
     <Resource Include="Changes.Engine.TCMS.Turkmenistan.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="View\Contents\ProgressBar\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

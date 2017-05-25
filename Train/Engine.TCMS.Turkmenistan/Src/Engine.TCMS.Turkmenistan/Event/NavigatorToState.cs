@@ -2,7 +2,7 @@
 
 namespace Engine.TCMS.Turkmenistan.Event
 {
-    public class NavigatorEvent : CompositePresentationEvent<NavigatorEvent.Args>
+    public class NavigatorToState : CompositePresentationEvent<NavigatorToState.Args>
     {
 
         public class Args

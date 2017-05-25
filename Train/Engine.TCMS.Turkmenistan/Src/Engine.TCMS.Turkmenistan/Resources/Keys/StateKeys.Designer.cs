@@ -61,38 +61,83 @@ namespace Engine.TCMS.Turkmenistan.Resources.Keys {
         }
         
         /// <summary>
-        ///   查找类似 Black 的本地化字符串。
+        ///   查找类似 Root-本车信息 的本地化字符串。
         /// </summary>
-        internal static string Black {
+        internal static string Root_本车信息 {
             get {
-                return ResourceManager.GetString("Black", resourceCulture);
+                return ResourceManager.GetString("Root_本车信息", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 Root 的本地化字符串。
+        ///   查找类似 Root-本车信息-轴温信息 的本地化字符串。
         /// </summary>
-        internal static string Root {
+        internal static string Root_本车信息_轴温信息 {
             get {
-                return ResourceManager.GetString("Root", resourceCulture);
+                return ResourceManager.GetString("Root_本车信息_轴温信息", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 Root-轴温信息 的本地化字符串。
+        ///   查找类似 Root-本车信息-轴温信息-温升信息 的本地化字符串。
         /// </summary>
-        internal static string Root_轴温信息 {
+        internal static string Root_本车信息_轴温信息_温升信息 {
             get {
-                return ResourceManager.GetString("Root_轴温信息", resourceCulture);
+                return ResourceManager.GetString("Root_本车信息_轴温信息_温升信息", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 Start 的本地化字符串。
+        ///   查找类似 Root-本车信息-辅助功能 的本地化字符串。
         /// </summary>
-        internal static string Start {
+        internal static string Root_本车信息_辅助功能 {
             get {
-                return ResourceManager.GetString("Start", resourceCulture);
+                return ResourceManager.GetString("Root_本车信息_辅助功能", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Root-本车信息-辅助功能-亮度调节 的本地化字符串。
+        /// </summary>
+        internal static string Root_本车信息_辅助功能_亮度调节 {
+            get {
+                return ResourceManager.GetString("Root_本车信息_辅助功能_亮度调节", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Root-本车信息-辅助功能-切除查询 的本地化字符串。
+        /// </summary>
+        internal static string Root_本车信息_辅助功能_切除查询 {
+            get {
+                return ResourceManager.GetString("Root_本车信息_辅助功能_切除查询", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Root-本车信息-辅助功能-切除查询-履历 的本地化字符串。
+        /// </summary>
+        internal static string Root_本车信息_辅助功能_切除查询_履历 {
+            get {
+                return ResourceManager.GetString("Root_本车信息_辅助功能_切除查询_履历", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Root-本车信息-辅助功能-切除查询-故障切除 的本地化字符串。
+        /// </summary>
+        internal static string Root_本车信息_辅助功能_切除查询_故障切除 {
+            get {
+                return ResourceManager.GetString("Root_本车信息_辅助功能_切除查询_故障切除", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Root-重连信息 的本地化字符串。
+        /// </summary>
+        internal static string Root_重连信息 {
+            get {
+                return ResourceManager.GetString("Root_重连信息", resourceCulture);
             }
         }
     }

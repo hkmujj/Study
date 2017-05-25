@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="Engine.TCMS.Turkmenistan.View.Contents.AxleTemperature.CurrentAxleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:common="clr-namespace:Engine.TCMS.Turkmenistan.View.Common"
+             mc:Ignorable="d" 
+             d:DesignHeight="120" d:DesignWidth="530">
+    <Grid>
+        <Border Style="{DynamicResource MainBorderStyle}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="300*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="120*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <common:EffectBorder
+                        Width="20"
+                        Height="20"
+                        Margin="5,5"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Background="Red"
+                        Style="{DynamicResource MainViewBorderStyle2}" />
+                    <TextBlock
+                        Grid.Row="1"
+                        Style="{DynamicResource MainTextStyle6}"
+                        Text="{DynamicResource FaultInfo}" />
+                </Grid>
+                <Border Grid.Column="1" Style="{DynamicResource MainBorderStyle2}" />
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40*" />
+                        <RowDefinition Height="120*" />
+                    </Grid.RowDefinitions>
+                    <TextBlock
+                        Grid.Row="1"
+                        Style="{DynamicResource MainTextStyle1}"
+                        Text="{DynamicResource AxleTemperature}" />
+                </Grid>
+                <Grid Grid.Column="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40*" />
+                        <RowDefinition Height="120*" />
+                    </Grid.RowDefinitions>
+                    <Border
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Style="{DynamicResource MainBorderStyle2}" />
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Style="{DynamicResource MainTextStyle6}"
+                        Text="{DynamicResource Axial}" />
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Style="{DynamicResource MainTextStyle6}"
+                        Text="{DynamicResource Temperature}" />
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

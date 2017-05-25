@@ -1,0 +1,190 @@
+﻿<UserControl x:Class="Engine.TCMS.Turkmenistan.View.Contents.ProgressBar.ReconnectionProgressBarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Engine.TCMS.Turkmenistan.View.Contents.ProgressBar"
+             xmlns:viewModel="clr-namespace:Engine.TCMS.Turkmenistan.ViewModel"
+             xmlns:common="clr-namespace:Engine.TCMS.Turkmenistan.View.Common"
+             xmlns:model="clr-namespace:Engine.TCMS.Turkmenistan.Model"
+             d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="430" d:DesignWidth="530">
+    <Grid>
+        <Border
+            Style="{DynamicResource MainBorderStyle}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25*" />
+                    <RowDefinition Height="170*" />
+                    <RowDefinition Height="30*" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="2.5*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock
+                        Grid.Column="0"
+                        Style="{DynamicResource MainTextStyle1}"
+                        Text="{DynamicResource Date}" />
+                    <common:EffectBorder Grid.Column="1" Style="{DynamicResource MainViewBorderStyle2}">
+                        <common:EffectBorder.EffectContent>
+                            <TextBlock Foreground="Wheat" Text="{Binding Model.MainModel.Date}" />
+                        </common:EffectBorder.EffectContent>
+                    </common:EffectBorder>
+                    <TextBlock
+                        Grid.Column="2"
+                        Style="{DynamicResource MainTextStyle1}"
+                        Text="{DynamicResource Time}" />
+                    <common:EffectBorder Grid.Column="3" Style="{DynamicResource MainViewBorderStyle2}">
+                        <common:EffectBorder.EffectContent>
+                            <TextBlock Foreground="Wheat" Text="{Binding Model.MainModel.Time}" />
+                        </common:EffectBorder.EffectContent>
+                    </common:EffectBorder>
+                    <TextBlock
+                        Grid.Column="4"
+                        Style="{DynamicResource MainTextStyle1}"
+                        Text="{DynamicResource WorkState}" />
+                    <common:EffectBorder Grid.Column="5" Style="{DynamicResource MainViewBorderStyle2}">
+                        <common:EffectBorder.EffectContent>
+                            <TextBlock Foreground="Wheat" Text="{Binding Model.MainModel.WorkModel, Converter={StaticResource EnumDescritionConverter}}" />
+                        </common:EffectBorder.EffectContent>
+                    </common:EffectBorder>
+
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <common:EffectBorder Grid.Column="0" Style="{DynamicResource MainViewBorderStyle}">
+                        <common:EffectBorder.EffectContent>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="10*" />
+                                    <ColumnDefinition Width="2*" />
+                                </Grid.ColumnDefinitions>
+                                <ProgressBar
+                                    Grid.Column="0"
+                                    Maximum="1120"
+                                    Style="{DynamicResource ProgressBarOrdinaryStyle}"
+                                    Value="{Binding Model.MainModel.MasterVoltage}" />
+                                <ItemsControl
+                                    Grid.Column="1"
+                                    ItemsSource="{Binding Source={x:Static model:TargitDistanceScale112.Instance}, Path=Items}"
+                                    Style="{DynamicResource MainDistanceScalStyle1}" />
+                                <ItemsControl
+                                    Grid.Column="1"
+                                    ItemsSource="{Binding Source={x:Static model:TargitDistanceScale9.Instance}, Path=Items}"
+                                    Style="{DynamicResource MainDistanceScalStyle2}" />
+                                <ProgressBar
+                                    Grid.Column="2"
+                                    Maximum="900"
+                                    Style="{DynamicResource ProgressBarOrdinaryStyle}"
+                                    Value="{Binding Model.MainModel.MasterCurrent}" />
+                            </Grid>
+                        </common:EffectBorder.EffectContent>
+                    </common:EffectBorder>
+                    <common:EffectBorder Grid.Column="1" Style="{DynamicResource MainViewBorderStyle}">
+                        <common:EffectBorder.EffectContent>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="10*" />
+                                    <ColumnDefinition Width="2*" />
+                                </Grid.ColumnDefinitions>
+                                <ProgressBar
+                                    Grid.Column="0"
+                                    Maximum="120"
+                                    Style="{DynamicResource ProgressBarOrdinaryStyle}"
+                                    Value="{Binding Model.MainModel.OilPressure}" />
+                                <ItemsControl
+                                    Grid.Column="1"
+                                    ItemsSource="{Binding Source={x:Static model:TargitDistanceScale1200.Instance}, Path=Items}"
+                                    Style="{DynamicResource MainDistanceScalStyle}" />
+                                <ProgressBar
+                                    Grid.Column="2"
+                                    Maximum="120"
+                                    Style="{DynamicResource ProgressBarOrdinaryStyle}"
+                                    Value="{Binding Model.MainModel.FuelPressure}" />
+                            </Grid>
+                        </common:EffectBorder.EffectContent>
+
+                    </common:EffectBorder>
+                    <common:EffectBorder Grid.Column="2" Style="{DynamicResource MainViewBorderStyle}">
+                        <common:EffectBorder.EffectContent>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="10*" />
+                                    <ColumnDefinition Width="2*" />
+                                </Grid.ColumnDefinitions>
+                                <ProgressBar
+                                    Grid.Column="0"
+                                    Maximum="120"
+                                    Style="{DynamicResource ProgressBarOrdinaryStyle}"
+                                    Value="{Binding Model.MainModel.CoolingWaterTemperature}" />
+                                <ItemsControl
+                                    Grid.Column="1"
+                                    ItemsSource="{Binding Source={x:Static model:TargitDistanceScale120.Instance}, Path=Items}"
+                                    Style="{DynamicResource MainDistanceScalStyle}" />
+                                <ProgressBar
+                                    Grid.Column="2"
+                                    Maximum="120"
+                                    Style="{DynamicResource ProgressBarOrdinaryStyle}"
+                                    Value="{Binding Model.MainModel.OILTEngineOilTemperature}" />
+                            </Grid>
+                        </common:EffectBorder.EffectContent>
+                    </common:EffectBorder>
+
+
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="62*" />
+                        <ColumnDefinition Width="44*" />
+                        <ColumnDefinition Width="66*" />
+                        <ColumnDefinition Width="59*" />
+                        <ColumnDefinition Width="49*" />
+                        <ColumnDefinition Width="62*" />
+                        <ColumnDefinition Width="62*" />
+                        <ColumnDefinition Width="40*" />
+                        <ColumnDefinition Width="55*" />
+                        <ColumnDefinition Width="15*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock
+                        Grid.Column="0"
+                        Style="{DynamicResource MainTextStyle5}"
+                        Text="{DynamicResource MasterVoltage}" />
+                    <TextBlock
+                        Grid.Column="2"
+                        Style="{DynamicResource MainTextStyle5}"
+                        Text="{DynamicResource MasterVoltage}" />
+                    <TextBlock
+                        Grid.Column="3"
+                        Style="{DynamicResource MainTextStyle5}"
+                        Text="{DynamicResource OilPressure}" />
+                    <TextBlock
+                        Grid.Column="5"
+                        Style="{DynamicResource MainTextStyle5}"
+                        Text="{DynamicResource FuelPressure}" />
+                    <TextBlock
+                        Grid.Column="6"
+                        Style="{DynamicResource MainTextStyle5}"
+                        Text="{DynamicResource CoolingWaterTemperature}" />
+                    <TextBlock
+                        Grid.Column="8"
+                        Style="{DynamicResource MainTextStyle5}"
+                        Text="{DynamicResource OILTEngineOilTemperature}" />
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

@@ -31,12 +31,12 @@ namespace Engine.TCMS.Turkmenistan.Controller
         [ImportingConstructor]
         public DomainController(Lazy<DomainViewModel> viewModel, IEventAggregator eventAggregator, IRegionManager regionManager, IStateInterfaceFactory stateInterfaceFactory) : base(viewModel)
         {
-            m_CurrentRootStateKey = StateInterfaceKey.Parser(StateKeys.Root);
+            m_CurrentRootStateKey = StateInterfaceKey.Parser(StateKeys.Root_本车信息);
             m_EventAggregator = eventAggregator;
             m_RegionManager = regionManager;
             StateInterfaceFactory = stateInterfaceFactory;
             m_NavigateHistory = new Stack<StateInterfaceKey>();
-            m_EventAggregator.GetEvent<NavigatorEvent>().Subscribe(NavigateTo, ThreadOption.UIThread);
+            m_EventAggregator.GetEvent<NavigatorToState>().Subscribe(NavigateTo, ThreadOption.UIThread);
             m_EventAggregator.GetEvent<NavigatorToView>().Subscribe(NavigateToView, ThreadOption.UIThread);
         }
 
@@ -54,7 +54,7 @@ namespace Engine.TCMS.Turkmenistan.Controller
             }
         }
 
-        private void NavigateTo(NavigatorEvent.Args obj)
+        private void NavigateTo(NavigatorToState.Args obj)
         {
             NavigateTo(obj.Params);
         }
