@@ -1,0 +1,9 @@
+;;; 类名 				从属视图					输入_Bool_对应表 				输入_Float_对应表 					输出_bool_对应表 						输出_Float_对应表 							参数表 			备注
+;;; 字符串 			<数字 数字> 			[#bool编号 bool编号#] 	Float编号 Float编号*] 			[-bool编号 bool编号-] 			[+Float编号 Float编号+] 				{参数1 参数2 参数3}
+;;;黑屏视图
+VcC0BackGround                        [~ 1 ~]	       <0  >      [##]			                                                                                                [**]   [--]			[++]			{Run\仪表屏.png}
+VcC1ViewChangeButton                  [~ 2 ~]	       <0 >	[##]			                                                                                                [**]	                [-50 51 52 53 54-]			[++]			{Run\热区.png Run\按钮灯.png}
+
+V1RunC1RightButton                   [~ 3 ~]	       <0 >		          [##]			                                          [*156 157 158 159 160 161 162 163*]			[-56-]			[++]			{Run\热区.png Run\按钮灯.png}
+V1RunC2DigitDisplay                  [~ 4 ~]	       <0 >		          [#312#]			                                          [*151 152 153 154*]			[--]			[++]			{}
+V1RunC3TrafficSignal                 [~ 5 ~]	       <0 >		          [#300 301 302 303 304 305 306 308 309 310 311 313 314 315 316 317 319#]			                                          [**]			[--]			[++]			{Run\红灯.png Run\绿灯.png Run\黄灯.png Run\黄2灯.png Run\白灯.png Run\指示灯.png Run\按钮灯.png }

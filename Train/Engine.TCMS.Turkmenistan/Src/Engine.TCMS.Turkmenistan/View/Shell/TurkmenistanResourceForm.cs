@@ -9,6 +9,7 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using Engine.TCMS.Turkmenistan.Model;
+using Engine.TCMS.Turkmenistan.ViewModel;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.ServiceLocation;
 using MMI.Facility.Interface.Project;
@@ -22,8 +23,7 @@ namespace Engine.TCMS.Turkmenistan.View.Shell
         {
             InitializeComponent();
 
-            RegionManager.SetRegionManager(elementHost1.HostContainer,
-                ServiceLocator.Current.GetInstance<IRegionManager>());
+
 
             if (!DesignMode)
             {
@@ -34,15 +34,23 @@ namespace Engine.TCMS.Turkmenistan.View.Shell
                 Application.Current.Resources.MergedDictionaries.Add(new ResourceDictionary()
                 {
                     Source =
-                        new Uri(string.Format("pack://application:,,,/{0};component/Resource/{1}",
+                        new Uri(string.Format("pack://application:,,,/{0};component/Resources/{1}",
+                            Path.GetFileNameWithoutExtension(GetType().Assembly.Location), "Text/StringResource-ch.xaml")),
+                });
+                Application.Current.Resources.MergedDictionaries.Add(new ResourceDictionary()
+                {
+                    Source =
+                        new Uri(string.Format("pack://application:,,,/{0};component/Resources/{1}",
                             Path.GetFileNameWithoutExtension(GetType().Assembly.Location), "TurkmenistanResource.xaml")),
                 });
+              
             }
-
-            UserControl tcms = ServiceLocator.Current.GetInstance<ShellWithoutButton>();
+            UserControl tcms = new ShellWithoutButton();
             elementHost1.Child = tcms;
             elementHost1.HostContainer.MouseEnter += (sender, args) => OnMouseEnter(args);
             elementHost1.HostContainer.MouseLeave += (sender, args) => OnMouseLeave(args);
+            RegionManager.SetRegionManager(elementHost1.HostContainer,
+                ServiceLocator.Current.GetInstance<IRegionManager>());
 
         }
 

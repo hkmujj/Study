@@ -2,18 +2,18 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:system="clr-namespace:System;assembly=mscorlib">
-    
+
     <Style TargetType="Control">
-        <Setter Property="FontFamily" Value="Times New Roman"></Setter>
+        <Setter Property="FontFamily" Value="Times New Roman" />
     </Style>
 
-    <system:String x:Key="Date">дaTa</system:String>
-    <system:String x:Key="Time">время</system:String>
-    <system:String x:Key="WorkState">работы</system:String>
-    <system:String x:Key="EngineSpeed">скорость локомотива</system:String>
+    <system:String x:Key="Date">21312</system:String>
+    <system:String x:Key="Time">时间</system:String>
+    <system:String x:Key="WorkState">工况</system:String>
+    <system:String x:Key="EngineSpeed">机车速度</system:String>
     <system:String x:Key="DieselEngineSpeed">柴油机转速</system:String>
     <system:String x:Key="MasterVoltage" xml:space="preserve">主&#13;电压</system:String>
-    <system:String x:Key="MasterCurrent" xml:space="preserve">主&#13;电源</system:String>
+    <system:String x:Key="MasterCurrent" xml:space="preserve">主&#13;电流</system:String>
     <system:String x:Key="OilPressure" xml:space="preserve">滑油&#13;压力</system:String>
     <system:String x:Key="FuelPressure" xml:space="preserve">燃油&#13;压力</system:String>
     <system:String x:Key="CoolingWaterTemperature" xml:space="preserve">冷却&#13;水温</system:String>
@@ -22,5 +22,19 @@
     <system:String x:Key="AxleTemperature" xml:space="preserve">轴 &#13;&#13;温</system:String>
     <system:String x:Key="Axial" xml:space="preserve">轴位</system:String>
     <system:String x:Key="Temperature">温度℃</system:String>
+    <system:String x:Key="AxleTemperaturInfoWindow">轴 温 信 息 窗 口</system:String>
+    <system:String x:Key="TemperaturUpInfoWindow">温 升 信 息 窗 口</system:String>
+    <system:String x:Key="AmbientTemperature1">环境温度（1）:</system:String>
+    <system:String x:Key="AmbientTemperature2">环境温度（2）:</system:String>
+    <system:String x:Key="UnitCelsius">单位：℃</system:String>
+    <system:String x:Key="Axis">轴</system:String>
+    <system:String x:Key="Position">位</system:String>
+    <system:String x:Key="AxleTripInfo">开路：’xxx’;短路：’———’;故障：显示红色</system:String>
+    <system:String x:Key="CurrentCar" xml:space="preserve">本&#13;车</system:String>
+    <system:String x:Key="OthertCar" xml:space="preserve">他&#13;车</system:String>
+    <system:String x:Key="DieselEngineSpeed1" xml:space="preserve">柴油机&#13;转速</system:String>
+    <system:String x:Key="RunParam">运 行 参 数</system:String>
+    <system:String x:Key="CurrentCarParam">本 车 运 行 参 数</system:String>
+    <system:String x:Key="OtherCarRunParam">他 车 运 行 参 数</system:String>
 
 </ResourceDictionary>

@@ -26,17 +26,17 @@ namespace Engine.TCMS.Turkmenistan.Controller.BtnActionResponser
             GlobalParam.Instance.IsTurkmenistan = !GlobalParam.Instance.IsTurkmenistan;
             var model = ServiceLocator.Current.GetInstance<DomainModel>();
             model.CurrentStateInterface.UpdateState();
+            var str = string.Format("pack://application:,,,/{0};component/Resources/{1}",
+                Path.GetFileNameWithoutExtension(GetType().Assembly.Location), GlobalParam.Instance.IsTurkmenistan ? "Text/StringResource-tm.xaml" : "Text/StringResource-ch.xaml");
             var resourcedic = new ResourceDictionary
             {
+
                 Source = new Uri(
-                    string.Format("Resources/Text/StringResource-{0}.xaml", GlobalParam.Instance.IsTurkmenistan ? "tm" : "ch"),
-                    UriKind.Relative)
+                    str,
+                    UriKind.Absolute)
             };
             Application.Current.Resources.MergedDictionaries[0] = resourcedic;
-            //Application.Current.Resources.MergedDictionaries[0].MergedDictionaries.Insert(0,resourcedic);
-            //Application.Current.Resources.MergedDictionaries[0].MergedDictionaries[0] = resourcedic;
 
-            // resource.MergedDictionaries[0].MergedDictionaries[0].Source = new Uri(tmp);
 
         }
     }

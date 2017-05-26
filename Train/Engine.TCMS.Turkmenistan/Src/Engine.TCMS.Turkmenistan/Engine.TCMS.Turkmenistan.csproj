@@ -137,6 +137,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Common\DegreeIndicator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Common\DegreeIndicatorLeft.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Common\DegreeIndicatorRight.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Common\EffectBorder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -201,6 +213,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Layout\BlackView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Layout\ShellContentStyle1Layout.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -228,6 +244,7 @@
     <Compile Include="Controller\BtnActionResponser\LightBtnReposne.cs" />
     <Compile Include="Controller\BtnActionResponser\TemperatureUpInfoResponse.cs" />
     <Compile Include="Event\NavigatorToView.cs" />
+    <Compile Include="Event\ReSourceChangedEvent.cs" />
     <Compile Include="Model\Fault\FaultInfo.cs" />
     <Compile Include="Model\RunParamUnit.cs" />
     <Compile Include="Resources\Keys\InBoolKeys.Designer.cs">
@@ -283,6 +300,15 @@
     <Compile Include="View\Buttons\ButtonView.xaml.cs">
       <DependentUpon>ButtonView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Common\DegreeIndicator.xaml.cs">
+      <DependentUpon>DegreeIndicator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\DegreeIndicatorLeft.xaml.cs">
+      <DependentUpon>DegreeIndicatorLeft.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\DegreeIndicatorRight.xaml.cs">
+      <DependentUpon>DegreeIndicatorRight.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Common\EffectBorder.xaml.cs">
       <DependentUpon>EffectBorder.xaml</DependentUpon>
     </Compile>
@@ -330,6 +356,9 @@
     </Compile>
     <Compile Include="View\DataMonitor\DataMonitorWindow.xaml.cs">
       <DependentUpon>DataMonitorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Layout\BlackView.xaml.cs">
+      <DependentUpon>BlackView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Layout\ShellContentStyle1Layout.xaml.cs">
       <DependentUpon>ShellContentStyle1Layout.xaml</DependentUpon>

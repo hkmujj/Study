@@ -13,7 +13,7 @@
     Background="{StaticResource BackgroudBrush}"
     mc:Ignorable="d">
     <Grid>
-        <TextBlock Style="{StaticResource AxleTextStyle1}" Text="{StaticResource AxleTemperaturInfoWindow}" />
+        <TextBlock Style="{StaticResource AxleTextStyle1}" Text="{DynamicResource AxleTemperaturInfoWindow}" />
         <Grid
             Margin="2,100"
             view:GridLine.Brush="DarkGray"
@@ -58,17 +58,17 @@
                     Grid.Row="0"
                     Grid.Column="0"
                     Style="{StaticResource AxleTextStyle2}"
-                    Text="{StaticResource AmbientTemperature1}" />
+                    Text="{DynamicResource AmbientTemperature1}" />
                 <TextBlock
                     Grid.Row="1"
                     Grid.Column="0"
                     Style="{StaticResource AxleTextStyle2}"
-                    Text="{StaticResource AmbientTemperature2}" />
+                    Text="{DynamicResource AmbientTemperature2}" />
                 <TextBlock
                     Grid.Row="1"
                     Grid.Column="1"
                     Style="{StaticResource AxleTextStyle2}"
-                    Text="{StaticResource UnitCelsius}" />
+                    Text="{DynamicResource UnitCelsius}" />
             </Grid>
             <common:TableLine
                 Grid.Row="1"
@@ -77,8 +77,8 @@
                 LineBrush="DarkGray"
                 LineWidth="2"
                 TextForeground="{StaticResource ForegroundWhiteBrush}"
-                TextOne="{StaticResource Axis}"
-                TextTwo="{StaticResource Position}" />
+                TextOne="{DynamicResource Axis}"
+                TextTwo="{DynamicResource Position}" />
             <Button
                 Grid.Row="2"
                 Grid.Column="1"
@@ -333,7 +333,7 @@
                 Grid.Column="0"
                 Grid.ColumnSpan="7"
                 Style="{StaticResource AxleTextStyle2}"
-                Text="{StaticResource AxleTripInfo}" />
+                Text="{DynamicResource AxleTripInfo}" />
         </Grid>
     </Grid>
 </UserControl>

@@ -4,6 +4,7 @@ using Engine.TCMS.Turkmenistan.Model;
 using Engine.TCMS.Turkmenistan.View.Shell;
 using Microsoft.Practices.ServiceLocation;
 using MMI.Facility.Interface.Attribute;
+using MMI.Facility.Interface.Extension;
 using MMI.Facility.Interface.Project;
 using MMI.Facility.Interface.Service;
 
@@ -40,7 +41,7 @@ namespace Engine.TCMS.Turkmenistan
                 //domainMonitor.Left = 200;
                 //debugViewService.DebugFormCollection.Add(domainMonitor);
             }
-
+            initParam.RegistDataListener(m_TurkmenistanAdapter);
             SetValueWhenDebug(initParam);
 
             initParam.CommunicationDataService.ReadService.RaiseAllDataChanged();

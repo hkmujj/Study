@@ -106,6 +106,15 @@ namespace Engine.TCMS.Turkmenistan.Resources.Keys {
         }
         
         /// <summary>
+        ///   查找类似 亮屏 的本地化字符串。
+        /// </summary>
+        internal static string InB亮屏 {
+            get {
+                return ResourceManager.GetString("InB亮屏", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 他车工作正常 的本地化字符串。
         /// </summary>
         internal static string InB他车工作正常 {

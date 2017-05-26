@@ -6,12 +6,13 @@ namespace Engine.TCMS.Turkmenistan.View.Layout
     /// <summary>
     /// ShellContentLayout.xaml 的交互逻辑
     /// </summary>
-    [ViewExport(RegionName = RegionNames.ShellContent, IsDefaultView = true)]
+    [ViewExport(RegionName = RegionNames.ShellContent)]
     public partial class ShellContentStyle1Layout
     {
         public ShellContentStyle1Layout()
         {
             InitializeComponent();
+            
         }
     }
 }

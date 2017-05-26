@@ -1,18 +1,19 @@
-﻿<UserControl x:Class="Engine.TCMS.Turkmenistan.View.Contents.TemperatureUpInfoView"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:viewModel="clr-namespace:Engine.TCMS.Turkmenistan.ViewModel"
-             xmlns:view="clr-namespace:MMI.Facility.WPFInfrastructure.View;assembly=MMI.Facility.WPFInfrastructure"
-             xmlns:common="clr-namespace:Engine.TCMS.Turkmenistan.View.Common"
-             d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
-             d:DesignHeight="550"
-             d:DesignWidth="800"
-             Background="{StaticResource BackgroudBrush}"
-             mc:Ignorable="d">
+﻿<UserControl
+    x:Class="Engine.TCMS.Turkmenistan.View.Contents.TemperatureUpInfoView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:common="clr-namespace:Engine.TCMS.Turkmenistan.View.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:view="clr-namespace:MMI.Facility.WPFInfrastructure.View;assembly=MMI.Facility.WPFInfrastructure"
+    xmlns:viewModel="clr-namespace:Engine.TCMS.Turkmenistan.ViewModel"
+    d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+    d:DesignHeight="550"
+    d:DesignWidth="800"
+    Background="{StaticResource BackgroudBrush}"
+    mc:Ignorable="d">
     <Grid>
-        <TextBlock Style="{StaticResource AxleTextStyle1}" Text="{StaticResource TemperaturUpInfoWindow}" />
+        <TextBlock Style="{StaticResource AxleTextStyle1}" Text="{DynamicResource TemperaturUpInfoWindow}" />
         <Grid
             Margin="2,100"
             view:GridLine.Brush="DarkGray"
@@ -57,17 +58,17 @@
                     Grid.Row="0"
                     Grid.Column="0"
                     Style="{StaticResource AxleTextStyle2}"
-                    Text="{StaticResource AmbientTemperature1}" />
+                    Text="{DynamicResource AmbientTemperature1}" />
                 <TextBlock
                     Grid.Row="1"
                     Grid.Column="0"
                     Style="{StaticResource AxleTextStyle2}"
-                    Text="{StaticResource AmbientTemperature2}" />
+                    Text="{DynamicResource AmbientTemperature2}" />
                 <TextBlock
                     Grid.Row="1"
                     Grid.Column="1"
                     Style="{StaticResource AxleTextStyle2}"
-                    Text="{StaticResource UnitCelsius}" />
+                    Text="{DynamicResource UnitCelsius}" />
             </Grid>
             <common:TableLine
                 Grid.Row="1"
@@ -76,8 +77,8 @@
                 LineBrush="DarkGray"
                 LineWidth="2"
                 TextForeground="{StaticResource ForegroundWhiteBrush}"
-                TextOne="{StaticResource Axis}"
-                TextTwo="{StaticResource Position}" />
+                TextOne="{DynamicResource Axis}"
+                TextTwo="{DynamicResource Position}" />
             <Button
                 Grid.Row="2"
                 Grid.Column="1"
@@ -332,7 +333,7 @@
                 Grid.Column="0"
                 Grid.ColumnSpan="7"
                 Style="{StaticResource AxleTextStyle2}"
-                Text="{StaticResource AxleTripInfo}" />
+                Text="{DynamicResource AxleTripInfo}" />
         </Grid>
     </Grid>
 </UserControl>
