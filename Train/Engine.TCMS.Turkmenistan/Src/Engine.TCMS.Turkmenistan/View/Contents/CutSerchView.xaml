@@ -4,12 +4,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:col="clr-namespace:MMI.Facility.WPFInfrastructure.View;assembly=MMI.Facility.WPFInfrastructure"
     xmlns:viewModel="clr-namespace:Engine.TCMS.Turkmenistan.ViewModel"
     d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
     d:DesignHeight="550"
     d:DesignWidth="800"
     mc:Ignorable="d">
-    <Grid>
+    <Grid Margin="20" col:GridLine.Style="ShowAll" col:GridLine.Width="1" col:GridLine.WidthStyle="AllLineSame" col:GridLine.Brush="{StaticResource ContentBackgroundBrush}">
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition />
@@ -55,5 +56,265 @@
         <StackPanel Grid.Row="12" Orientation="Horizontal">
             <TextBlock Style="{StaticResource CutSerchViewTextStyle2}" Text="{DynamicResource DieselEngineResistanceBrakeTotalTime}"   />
         </StackPanel>
+        <Grid Grid.Row="16">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Style="{StaticResource CutSerchViewTextStyle3}" Text="主发功率基准："></TextBlock>
+            <TextBlock Grid.Column="1"  HorizontalAlignment="Center" Style="{StaticResource CutSerchViewTextStyle3}" Text="0 kw"></TextBlock>
+            <TextBlock Grid.Column="2" Style="{StaticResource CutSerchViewTextStyle3}" Text="主手柄位置："></TextBlock>
+            <TextBlock Grid.Column="3"  HorizontalAlignment="Center" Style="{StaticResource CutSerchViewTextStyle3}" Text="0 位"></TextBlock>
+        </Grid>
+        <Grid Grid.Row="17">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="160*"></ColumnDefinition>
+                <ColumnDefinition Width="176*"></ColumnDefinition>
+                <ColumnDefinition Width="125*"></ColumnDefinition>
+                <ColumnDefinition Width="179*"></ColumnDefinition>
+                <ColumnDefinition Width="160*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Style="{StaticResource CutSerchViewTextStyle3}" Text="牵引工况耗能："></TextBlock>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Right" Style="{StaticResource CutSerchViewTextStyle3}" Text="39099 kw.h"></TextBlock>
+            <TextBlock Grid.Column="2" HorizontalAlignment="Right" Style="{StaticResource CutSerchViewTextStyle3}" Text="+24v"></TextBlock>
+            <TextBlock Grid.Column="3" HorizontalAlignment="Right" Style="{StaticResource CutSerchViewTextStyle3}" Text="电压："></TextBlock>
+            <TextBlock Grid.Column="4" Margin="0,0,30,0" HorizontalAlignment="Center" Style="{StaticResource CutSerchViewTextStyle3}" Text="22 V"></TextBlock>
+        </Grid>
+        <Grid Grid.Row="18">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="160*"></ColumnDefinition>
+                <ColumnDefinition Width="176*"></ColumnDefinition>
+                <ColumnDefinition Width="125*"></ColumnDefinition>
+                <ColumnDefinition Width="179*"></ColumnDefinition>
+                <ColumnDefinition Width="160*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Style="{StaticResource CutSerchViewTextStyle3}" Text="电阻制动能耗："></TextBlock>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Right" Style="{StaticResource CutSerchViewTextStyle3}" Text="0 kw.h"></TextBlock>
+            <TextBlock Grid.Column="2" HorizontalAlignment="Right" Style="{StaticResource CutSerchViewTextStyle3}" Text="-24v"></TextBlock>
+            <TextBlock Grid.Column="3" HorizontalAlignment="Right" Style="{StaticResource CutSerchViewTextStyle3}" Text="电压："></TextBlock>
+            <TextBlock Grid.Column="4" Margin="0,0,30,0" HorizontalAlignment="Center" Style="{StaticResource CutSerchViewTextStyle3}" Text="22 V"></TextBlock>
+        </Grid>
+        <Grid Grid.Row="3" Margin="0,0,100,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource OneBit}"></TextBlock>
+            <TextBlock Grid.Column="1" Style="{StaticResource CutSerchViewTextStyle4}" Text="0 h"></TextBlock>
+            <TextBlock Grid.Column="2" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource TwoBit}"></TextBlock>
+            <TextBlock Grid.Column="3" Style="{StaticResource CutSerchViewTextStyle4}" Text="9940 h"></TextBlock>
+            <TextBlock Grid.Column="4" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource ThreeBit}"></TextBlock>
+            <TextBlock Grid.Column="5" Style="{StaticResource CutSerchViewTextStyle4}" Text="5070 h"></TextBlock>
+            <TextBlock Grid.Column="6" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource FourBit}"></TextBlock>
+            <TextBlock Grid.Column="7" Style="{StaticResource CutSerchViewTextStyle4}" Text="50 h"></TextBlock>
+        </Grid>
+        <Grid Grid.Row="4" Margin="0,0,100,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource FiveBit}"></TextBlock>
+            <TextBlock Grid.Column="1" Style="{StaticResource CutSerchViewTextStyle4}" Text="10 h"></TextBlock>
+            <TextBlock Grid.Column="2" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource SixBit}"></TextBlock>
+            <TextBlock Grid.Column="3" Style="{StaticResource CutSerchViewTextStyle4}" Text="0 h"></TextBlock>
+            <TextBlock Grid.Column="4" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource SeventBit}"></TextBlock>
+            <TextBlock Grid.Column="5" Style="{StaticResource CutSerchViewTextStyle4}" Text="0 h"></TextBlock>
+            <TextBlock Grid.Column="6" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource EightBit}"></TextBlock>
+            <TextBlock Grid.Column="7" Style="{StaticResource CutSerchViewTextStyle4}" Text="50 h"></TextBlock>
+        </Grid>
+        <Grid Grid.Row="5" Margin="0,0,100,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource NineOneBit}"></TextBlock>
+            <TextBlock Grid.Column="1" Style="{StaticResource CutSerchViewTextStyle4}" Text="10 h"></TextBlock>
+            <TextBlock Grid.Column="2" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource TenBit}"></TextBlock>
+            <TextBlock Grid.Column="3" Style="{StaticResource CutSerchViewTextStyle4}" Text="0 h"></TextBlock>
+            <TextBlock Grid.Column="4" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource ElevenBit}"></TextBlock>
+            <TextBlock Grid.Column="5" Style="{StaticResource CutSerchViewTextStyle4}" Text="0 h"></TextBlock>
+            <TextBlock Grid.Column="6" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource TwelveBit}"></TextBlock>
+            <TextBlock Grid.Column="7" Style="{StaticResource CutSerchViewTextStyle4}" Text="50 h"></TextBlock>
+        </Grid>
+        <Grid Grid.Row="6" Margin="0,0,100,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource ThirteenBit}"></TextBlock>
+            <TextBlock Grid.Column="1" Style="{StaticResource CutSerchViewTextStyle4}" Text="10 h"></TextBlock>
+            <TextBlock Grid.Column="2" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource ForteenBit}"></TextBlock>
+            <TextBlock Grid.Column="3" Style="{StaticResource CutSerchViewTextStyle4}" Text="0 h"></TextBlock>
+            <TextBlock Grid.Column="4" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource FiveteenBit}"></TextBlock>
+            <TextBlock Grid.Column="5" Style="{StaticResource CutSerchViewTextStyle4}" Text="0 h"></TextBlock>
+            <TextBlock Grid.Column="6" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource SixteenBit}"></TextBlock>
+            <TextBlock Grid.Column="7" Style="{StaticResource CutSerchViewTextStyle4}" Text="50 h"></TextBlock>
+        </Grid>
+        <Grid Grid.Row="8" Margin="0,0,100,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource OneBit}"></TextBlock>
+            <TextBlock Grid.Column="1" Style="{StaticResource CutSerchViewTextStyle4}" Text="0 h"></TextBlock>
+            <TextBlock Grid.Column="2" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource TwoBit}"></TextBlock>
+            <TextBlock Grid.Column="3" Style="{StaticResource CutSerchViewTextStyle4}" Text="9940 h"></TextBlock>
+            <TextBlock Grid.Column="4" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource ThreeBit}"></TextBlock>
+            <TextBlock Grid.Column="5" Style="{StaticResource CutSerchViewTextStyle4}" Text="5070 h"></TextBlock>
+            <TextBlock Grid.Column="6" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource FourBit}"></TextBlock>
+            <TextBlock Grid.Column="7" Style="{StaticResource CutSerchViewTextStyle4}" Text="50 h"></TextBlock>
+        </Grid>
+        <Grid Grid.Row="9" Margin="0,0,100,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource FiveBit}"></TextBlock>
+            <TextBlock Grid.Column="1" Style="{StaticResource CutSerchViewTextStyle4}" Text="10 h"></TextBlock>
+            <TextBlock Grid.Column="2" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource SixBit}"></TextBlock>
+            <TextBlock Grid.Column="3" Style="{StaticResource CutSerchViewTextStyle4}" Text="0 h"></TextBlock>
+            <TextBlock Grid.Column="4" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource SeventBit}"></TextBlock>
+            <TextBlock Grid.Column="5" Style="{StaticResource CutSerchViewTextStyle4}" Text="0 h"></TextBlock>
+            <TextBlock Grid.Column="6" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource EightBit}"></TextBlock>
+            <TextBlock Grid.Column="7" Style="{StaticResource CutSerchViewTextStyle4}" Text="50 h"></TextBlock>
+        </Grid>
+        <Grid Grid.Row="10" Margin="0,0,100,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource NineOneBit}"></TextBlock>
+            <TextBlock Grid.Column="1" Style="{StaticResource CutSerchViewTextStyle4}" Text="10 h"></TextBlock>
+            <TextBlock Grid.Column="2" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource TenBit}"></TextBlock>
+            <TextBlock Grid.Column="3" Style="{StaticResource CutSerchViewTextStyle4}" Text="0 h"></TextBlock>
+            <TextBlock Grid.Column="4" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource ElevenBit}"></TextBlock>
+            <TextBlock Grid.Column="5" Style="{StaticResource CutSerchViewTextStyle4}" Text="0 h"></TextBlock>
+            <TextBlock Grid.Column="6" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource TwelveBit}"></TextBlock>
+            <TextBlock Grid.Column="7" Style="{StaticResource CutSerchViewTextStyle4}" Text="50 h"></TextBlock>
+        </Grid>
+        <Grid Grid.Row="11" Margin="0,0,100,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource ThirteenBit}"></TextBlock>
+            <TextBlock Grid.Column="1" Style="{StaticResource CutSerchViewTextStyle4}" Text="10 h"></TextBlock>
+            <TextBlock Grid.Column="2" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource ForteenBit}"></TextBlock>
+            <TextBlock Grid.Column="3" Style="{StaticResource CutSerchViewTextStyle4}" Text="0 h"></TextBlock>
+            <TextBlock Grid.Column="4" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource FiveteenBit}"></TextBlock>
+            <TextBlock Grid.Column="5" Style="{StaticResource CutSerchViewTextStyle4}" Text="0 h"></TextBlock>
+            <TextBlock Grid.Column="6" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource SixteenBit}"></TextBlock>
+            <TextBlock Grid.Column="7" Style="{StaticResource CutSerchViewTextStyle4}" Text="50 h"></TextBlock>
+        </Grid>
+        <Grid Grid.Row="13" Margin="0,0,100,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource OneBit}"></TextBlock>
+            <TextBlock Grid.Column="1" Style="{StaticResource CutSerchViewTextStyle4}" Text="0 h"></TextBlock>
+            <TextBlock Grid.Column="2" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource TwoBit}"></TextBlock>
+            <TextBlock Grid.Column="3" Style="{StaticResource CutSerchViewTextStyle4}" Text="9940 h"></TextBlock>
+            <TextBlock Grid.Column="4" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource ThreeBit}"></TextBlock>
+            <TextBlock Grid.Column="5" Style="{StaticResource CutSerchViewTextStyle4}" Text="5070 h"></TextBlock>
+            <TextBlock Grid.Column="6" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource FourBit}"></TextBlock>
+            <TextBlock Grid.Column="7" Style="{StaticResource CutSerchViewTextStyle4}" Text="50 h"></TextBlock>
+        </Grid>
+        <Grid Grid.Row="14" Margin="0,0,100,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource FiveBit}"></TextBlock>
+            <TextBlock Grid.Column="1" Style="{StaticResource CutSerchViewTextStyle4}" Text="10 h"></TextBlock>
+            <TextBlock Grid.Column="2" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource SixBit}"></TextBlock>
+            <TextBlock Grid.Column="3" Style="{StaticResource CutSerchViewTextStyle4}" Text="0 h"></TextBlock>
+            <TextBlock Grid.Column="4" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource SeventBit}"></TextBlock>
+            <TextBlock Grid.Column="5" Style="{StaticResource CutSerchViewTextStyle4}" Text="0 h"></TextBlock>
+            <TextBlock Grid.Column="6" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource EightBit}"></TextBlock>
+            <TextBlock Grid.Column="7" Style="{StaticResource CutSerchViewTextStyle4}" Text="50 h"></TextBlock>
+        </Grid>
+        <Grid Grid.Row="15" Margin="0,0,100,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource NineOneBit}"></TextBlock>
+            <TextBlock Grid.Column="1" Style="{StaticResource CutSerchViewTextStyle4}" Text="10 h"></TextBlock>
+            <TextBlock Grid.Column="2" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource TenBit}"></TextBlock>
+            <TextBlock Grid.Column="3" Style="{StaticResource CutSerchViewTextStyle4}" Text="0 h"></TextBlock>
+            <TextBlock Grid.Column="4" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource ElevenBit}"></TextBlock>
+            <TextBlock Grid.Column="5" Style="{StaticResource CutSerchViewTextStyle4}" Text="0 h"></TextBlock>
+            <TextBlock Grid.Column="6" Style="{StaticResource CutSerchViewTextStyle4}" Text="{DynamicResource TwelveBit}"></TextBlock>
+            <TextBlock Grid.Column="7" Style="{StaticResource CutSerchViewTextStyle4}" Text="50 h"></TextBlock>
+        </Grid>
     </Grid>
 </UserControl>

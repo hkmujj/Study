@@ -38,6 +38,7 @@ namespace Engine.TCMS.Turkmenistan.Controller.BtnActionResponser
             Application.Current.Resources.MergedDictionaries[0] = resourcedic;
 
 
+
         }
     }
 }

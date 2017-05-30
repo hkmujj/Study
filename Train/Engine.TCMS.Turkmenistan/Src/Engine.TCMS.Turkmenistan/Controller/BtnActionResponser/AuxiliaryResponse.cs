@@ -22,4 +22,19 @@ namespace Engine.TCMS.Turkmenistan.Controller.BtnActionResponser
             @event.Publish(new NavigatorToState.Args(StateKeys.Root_本车信息_辅助功能));
         }
     }
+    [Export]
+    public class SameScreenModeResponse : IBtnActionResponser
+    {
+        public BtnItem Parent { get; set; }
+        public void UpdateState()
+        {
+
+        }
+
+        public void ResponseClick()
+        {
+            var @event = ServiceLocator.Current.GetInstance<IEventAggregator>().GetEvent<NavigatorToState>();
+            @event.Publish(new NavigatorToState.Args(StateKeys.Root_本车信息_同屏方式));
+        }
+    }
 }

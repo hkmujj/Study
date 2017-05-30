@@ -57,7 +57,27 @@
                         Grid.Row="1"
                         Grid.Column="0"
                         Grid.ColumnSpan="2"
-                        Style="{DynamicResource MainBorderStyle2}" />
+                        Style="{DynamicResource MainBorderStyle2}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="10" Foreground="White" FontSize="{StaticResource Double12}" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="20" Foreground="White" FontSize="{StaticResource Double12}" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock Grid.Row="2" Grid.Column="0" Text="65" Foreground="White" FontSize="{StaticResource Double12}" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock Grid.Row="0" Grid.Column="1" Text="31" Foreground="White" FontSize="{StaticResource Double12}" HorizontalAlignment="Left"></TextBlock>
+                            <TextBlock Grid.Row="1" Grid.Column="1" Text="31" Foreground="White" FontSize="{StaticResource Double12}" HorizontalAlignment="Left"></TextBlock>
+                            <TextBlock Grid.Row="2" Grid.Column="1" Text="44" Foreground="White" FontSize="{StaticResource Double12}" HorizontalAlignment="Left"></TextBlock>
+                        </Grid>
+                     
+                    </Border>
                     <TextBlock
                         Grid.Row="0"
                         Grid.Column="0"
@@ -68,6 +88,7 @@
                         Grid.Column="1"
                         Style="{DynamicResource MainTextStyle6}"
                         Text="{DynamicResource Temperature}" />
+                  
                 </Grid>
             </Grid>
         </Border>

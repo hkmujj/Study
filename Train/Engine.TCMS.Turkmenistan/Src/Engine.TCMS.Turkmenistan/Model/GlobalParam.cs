@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using Engine.TCMS.Turkmenistan.Model.ConfigModel;
 using Excel.Interface;
@@ -19,6 +20,7 @@ namespace Engine.TCMS.Turkmenistan.Model
         public IProjectIndexDescriptionConfig IndexDescription { private set; get; }
 
         public ReadOnlyCollection<StateInterfaceItem> StateInterfaceCollection { get; private set; }
+        public List<FaultCutUnit> FaultCutUnit { get; private set; }
         /// <summary>
         /// 语言是否是土库曼斯坦
         /// </summary>
@@ -41,6 +43,8 @@ namespace Engine.TCMS.Turkmenistan.Model
         public void Initalize(string rootConfigPath, string appConfigPath)
         {
             StateInterfaceCollection = ExcelParser.Parser<StateInterfaceItem>(appConfigPath).ToList().AsReadOnly();
+            FaultCutUnit = ExcelParser.Parser<FaultCutUnit>(appConfigPath).ToList();
+
         }
     }
 }

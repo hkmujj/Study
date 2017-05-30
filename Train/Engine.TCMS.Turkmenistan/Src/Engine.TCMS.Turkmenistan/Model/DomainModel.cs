@@ -56,6 +56,8 @@ namespace Engine.TCMS.Turkmenistan.Model
         }
         [Import]
         public MainModel MainModel { get; private set; }
+        [Import]
+        public FaultCutModel FaultCutModel { get; private set; }
         /// <summary>
         /// 黑屏
         /// </summary>
