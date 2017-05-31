@@ -35,13 +35,7 @@ namespace Engine.TCMS.Turkmenistan.View.Shell
                 {
                     Source =
                         new Uri(string.Format("pack://application:,,,/{0};component/Resources/{1}",
-                            Path.GetFileNameWithoutExtension(GetType().Assembly.Location), "Text/StringResource-ch.xaml")),
-                });
-                Application.Current.Resources.MergedDictionaries.Add(new ResourceDictionary()
-                {
-                    Source =
-                        new Uri(string.Format("pack://application:,,,/{0};component/Resources/{1}",
-                            Path.GetFileNameWithoutExtension(GetType().Assembly.Location), "TurkmenistanResource.xaml")),
+                            Path.GetFileNameWithoutExtension(GetType().Assembly.Location), "Converters/TurkmenistanConverter.xaml")),
                 });
               
             }

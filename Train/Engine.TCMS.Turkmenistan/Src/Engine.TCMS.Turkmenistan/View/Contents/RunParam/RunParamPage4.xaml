@@ -1,5 +1,5 @@
 ﻿<UserControl
-    x:Class="Engine.TCMS.Turkmenistan.View.Contents.RunParam.ReconnectionRunparamView"
+    x:Class="Engine.TCMS.Turkmenistan.View.Contents.RunParam.RunParamPage4"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:common="clr-namespace:Engine.TCMS.Turkmenistan.View.Common"
@@ -82,7 +82,7 @@
                                 Foreground="White"
                                 Text="{DynamicResource CurrentCarParam}" />
                         </Border>
-                        <Grid Grid.Row="1">
+                        <Grid Grid.Row="1" Margin="5,5,20,5">
                             <Grid.RowDefinitions>
                                 <RowDefinition />
                                 <RowDefinition />
@@ -94,28 +94,32 @@
                                 <RowDefinition />
                             </Grid.RowDefinitions>
                             <Grid Grid.Row="0">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource OilPressureParamFormat}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle1}" Text="{Binding Model.MainModel.CurrentOilPressure, StringFormat={}{0:F0}  Kpa}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource HightInletTemperature}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.HighWaterTemperatureSystemOfDieselEngineIn, StringFormat={}{0:F0}  ℃}" />
                             </Grid>
                             <Grid Grid.Row="1">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource FuelPressureParamFormat}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle1}" Text="{Binding Model.MainModel.CurrentFuelPressure, StringFormat={}{0:F0}  Kpa}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource HightOutletTemperature}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.HighWaterTemperatureSystemOfDieselEngineOut, StringFormat={}{0:F0}  ℃}" />
                             </Grid>
                             <Grid Grid.Row="2">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource CoolingWaterTemperatureParamFormat}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle3}" Text="{Binding Model.MainModel.CurrentCoolingWaterTemperature, StringFormat={}{0:F0}  ℃}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource InletTemperatureOfColdWater}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.ColdWaterSystemOfDieselEngineIn, StringFormat={}{0:F0}  ℃}" />
                             </Grid>
                             <Grid Grid.Row="3">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource OILTEngineOilTemperatureParamFormat}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle3}" Text="{Binding Model.MainModel.CurrentOILTEngineOilTemperature, StringFormat={}{0:F0}  ℃}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource OutletTemperatureOfColdWater}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.ColdWaterSystemOfDieselEngineOut, StringFormat={}{0:F0}  ℃}" />
                             </Grid>
                             <Grid Grid.Row="4">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource PowerTemperatureParamFormat1}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle3}" Text="{Binding Model.MainModel.CurrentPowerTemperature1, StringFormat={}{0:F0}  ℃}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource OilInletTemperature}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.OilInletTemperature, StringFormat={}{0:F0}  ℃}" />
                             </Grid>
                             <Grid Grid.Row="5">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource PowerTemperatureParamFormat2}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle3}" Text="{Binding Model.MainModel.CurrentPowerTemperature2, StringFormat={}{0:F0}  ℃}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource OilOutletTemperature}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.OilOutletTemperature, StringFormat={}{0:F0}  ℃}" />
+                            </Grid>
+                            <Grid Grid.Row="6">
+                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource WaterTemperatureOfHeatExchanger}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.WaterTemperatureOfHeatExchanger, StringFormat={}{0:F0}  ℃}" />
                             </Grid>
                         </Grid>
                     </Grid>
@@ -143,7 +147,7 @@
                                 Text="{DynamicResource OtherCarRunParam}" />
 
                         </Border>
-                        <Grid Grid.Row="1">
+                        <Grid Grid.Row="1" Margin="5,5,20,5">
                             <Grid.RowDefinitions>
                                 <RowDefinition />
                                 <RowDefinition />
@@ -155,32 +159,32 @@
                                 <RowDefinition />
                             </Grid.RowDefinitions>
                             <Grid Grid.Row="0">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource OilPressureParamFormat}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle1}" Text="{Binding Model.MainModel.OtherOilPressure, StringFormat={}{0:F0}  Kpa}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource HightInletTemperature}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.OtherHighWaterTemperatureSystemOfDieselEngineIn, StringFormat={}{0:F0}  ℃}" />
                             </Grid>
                             <Grid Grid.Row="1">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource FuelPressureParamFormat}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle1}" Text="{Binding Model.MainModel.OtherFuelPressure, StringFormat={}{0:F0}  Kpa}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource HightOutletTemperature}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.OtherHighWaterTemperatureSystemOfDieselEngineOut, StringFormat={}{0:F0}  ℃}" />
                             </Grid>
                             <Grid Grid.Row="2">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource CoolingWaterTemperatureParamFormat}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle3}" Text="{Binding Model.MainModel.OtherCoolingWaterTemperature, StringFormat={}{0:F0}  ℃}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource InletTemperatureOfColdWater}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.OtherColdWaterSystemOfDieselEngineIn, StringFormat={}{0:F0}  ℃}" />
                             </Grid>
                             <Grid Grid.Row="3">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource OILTEngineOilTemperatureParamFormat}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle3}" Text="{Binding Model.MainModel.OtherOILTEngineOilTemperature, StringFormat={}{0:F0}  ℃}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource OutletTemperatureOfColdWater}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.OtherColdWaterSystemOfDieselEngineOut, StringFormat={}{0:F0}  ℃}" />
                             </Grid>
                             <Grid Grid.Row="4">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource PowerTemperatureParamFormat1}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle3}" Text="{Binding Model.MainModel.OtherPowerTemperature1, StringFormat={}{0:F0}  ℃}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource OilInletTemperature}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.OtherOilInletTemperature, StringFormat={}{0:F0}  ℃}" />
                             </Grid>
                             <Grid Grid.Row="5">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource PowerTemperatureParamFormat2}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle3}" Text="{Binding Model.MainModel.OtherPowerTemperature2, StringFormat={}{0:F0}  ℃}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource OilOutletTemperature}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.OtherOilOutletTemperature, StringFormat={}{0:F0}  ℃}" />
                             </Grid>
                             <Grid Grid.Row="6">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource BrakePressParamFormat}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle1}" Text="{Binding Model.MainModel.OtherBrakePress, StringFormat={}{0:F0}  kPa}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource WaterTemperatureOfHeatExchanger}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.OtherWaterTemperatureOfHeatExchanger, StringFormat={}{0:F0}  ℃}" />
                             </Grid>
                         </Grid>
                     </Grid>

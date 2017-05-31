@@ -201,6 +201,26 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Contents\RunParam\RunParamPage1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\RunParam\RunParamPage2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\RunParam\RunParamPage3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\RunParam\RunParamPage4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\RunParam\RunParamPage5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Contents\TemperatureUpInfoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -248,9 +268,12 @@
     <Compile Include="Event\NavigatorToView.cs" />
     <Compile Include="Event\ReSourceChangedEvent.cs" />
     <Compile Include="Extension\SentDataExtention.cs" />
+    <Compile Include="Model\AxleBitModel.cs" />
+    <Compile Include="Model\AxleBitUnit.cs" />
     <Compile Include="Model\FaultCutModel.cs" />
     <Compile Include="Model\FaultCutUnit.cs" />
     <Compile Include="Model\Fault\FaultInfo.cs" />
+    <Compile Include="Model\RunParamModel.cs" />
     <Compile Include="Model\RunParamUnit.cs" />
     <Compile Include="Resources\Keys\InBoolKeys.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -352,6 +375,21 @@
     </Compile>
     <Compile Include="View\Contents\RunParam\ReconnectionRunparamView.xaml.cs">
       <DependentUpon>ReconnectionRunparamView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\RunParam\RunParamPage1.xaml.cs">
+      <DependentUpon>RunParamPage1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\RunParam\RunParamPage2.xaml.cs">
+      <DependentUpon>RunParamPage2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\RunParam\RunParamPage3.xaml.cs">
+      <DependentUpon>RunParamPage3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\RunParam\RunParamPage4.xaml.cs">
+      <DependentUpon>RunParamPage4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\RunParam\RunParamPage5.xaml.cs">
+      <DependentUpon>RunParamPage5.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Contents\TemperatureUpInfoView.xaml.cs">
       <DependentUpon>TemperatureUpInfoView.xaml</DependentUpon>

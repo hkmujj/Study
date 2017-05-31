@@ -26,6 +26,10 @@
     <system:String x:Key="TemperaturUpInfoWindow">温 升 信 息 窗 口</system:String>
     <system:String x:Key="AmbientTemperature1">环境温度（1）:</system:String>
     <system:String x:Key="AmbientTemperature2">环境温度（2）:</system:String>
+    <system:String x:Key="CurrentAmbientTemperature1">本车环温（1）:</system:String>
+    <system:String x:Key="CurrentAmbientTemperature2">本车环温（2）:</system:String>
+    <system:String x:Key="OtherAmbientTemperature1">他车环温（1）:</system:String>
+    <system:String x:Key="OtherAmbientTemperature2">他车环温（2）:</system:String>
     <system:String x:Key="UnitCelsius">单位：℃</system:String>
     <system:String x:Key="Axis">轴</system:String>
     <system:String x:Key="Position">位</system:String>
@@ -62,8 +66,64 @@
     <system:String x:Key="EnergyConsumptionInTactionCondition">牵引工况耗能:</system:String>
     <system:String x:Key="Voltage">电压：</system:String>
     <system:String x:Key="ResistanceBrakeEnergy">电阻制动能耗：</system:String>
-
     <system:String x:Key="FaultCutSelect">故障切除选择:</system:String>
-
-
+    <system:String x:Key="OilPressureParamFormat" xml:space="preserve">滑油压力</system:String>
+    <system:String x:Key="FuelPressureParamFormat" xml:space="preserve">燃油压力</system:String>
+    <system:String x:Key="CoolingWaterTemperatureParamFormat" xml:space="preserve">冷却水温</system:String>
+    <system:String x:Key="OILTEngineOilTemperatureParamFormat" xml:space="preserve">机油温度</system:String>
+    <system:String x:Key="PowerTemperatureParamFormat1" xml:space="preserve">功率环温1</system:String>
+    <system:String x:Key="PowerTemperatureParamFormat2" xml:space="preserve">功率环温2</system:String>
+    <system:String x:Key="BrakePressParamFormat" xml:space="preserve">制动风缸压力</system:String>
+    <system:String x:Key="UnitKpa">kPa</system:String>
+    <system:String x:Key="UnitCentigrade">℃</system:String>
+    <system:String x:Key="UnitA">A</system:String>
+    <system:String x:Key="UnitV">V</system:String>
+    <system:String x:Key="Unitrmin">r/min</system:String>
+    <system:String x:Key="HighWaterTemperatureSystemOfDieselEngine">1. 柴油机高温水系统</system:String>
+    <system:String x:Key="OutletTemperature">出口温度</system:String>
+    <system:String x:Key="InletTemperature">进口温度</system:String>
+    <system:String x:Key="ColdWaterSystemOfDieselEngine">2. 柴油机中冷水系统</system:String>
+    <system:String x:Key="OilInletTemperature">机油进口温度</system:String>
+    <system:String x:Key="OilOutletTemperature">机油出口温度</system:String>
+    <system:String x:Key="WaterTemperatureOfHeatExchanger">热交换器水温</system:String>
+    <system:String x:Key="DieselPressure">3. 柴油机压力</system:String>
+    <system:String x:Key="DieselIntel">柴油机进口</system:String>
+    <system:String x:Key="DieselOuttel">柴油机出口</system:String>
+    <system:String x:Key="FrontTurbochargerInlet">前增压器进口</system:String>
+    <system:String x:Key="AfterTurbochargerInlet">后增压器进口</system:String>
+    <system:String x:Key="FilterInletPressure">滤清器进口</system:String>
+    <system:String x:Key="FuelPressure2">3. 燃油压力</system:String>
+    <system:String x:Key="FuelPumpOutlet">燃油泵出口</system:String>
+    <system:String x:Key="SystemEnd">系统末端</system:String>
+    <system:String x:Key="ColdFanSpped1">#1冷却风扇转速</system:String>
+    <system:String x:Key="ColdFanSpped2">#2冷却风扇转速</system:String>
+    <system:String x:Key="ExciterCurrent">励磁机励磁电流</system:String>
+    <system:String x:Key="MainGeneratorExciterCurrent">主发电机励磁电流</system:String>
+    <system:String x:Key="EarthLeakageCurrent">接地漏电流</system:String>
+    <system:String x:Key="FrontTurbochargerSpeed">前增压器转速</system:String>
+    <system:String x:Key="AfterTurbochargerSpeed">后增压器转速</system:String>
+    <system:String x:Key="ReducedPowerLoopTemperature1">降功环温1</system:String>
+    <system:String x:Key="ReducedPowerLoopTemperature2">降功环温2</system:String>
+    <system:String x:Key="ElectricCurrent1D">1D电流</system:String>
+    <system:String x:Key="ElectricCurrent2D">2D电流</system:String>
+    <system:String x:Key="ElectricCurrent3D">3D电流</system:String>
+    <system:String x:Key="ElectricCurrent4D">4D电流</system:String>
+    <system:String x:Key="ElectricCurrent5D">5D电流</system:String>
+    <system:String x:Key="ElectricCurrent6D">6D电流</system:String>
+    <system:String x:Key="MotorCurrentDifference">电机电流差</system:String>
+    <system:String x:Key="CurrentDistributionFactor">电流分配系数</system:String>
+    <system:String x:Key="Speed1D">1D转速</system:String>
+    <system:String x:Key="Speed2D">2D转速</system:String>
+    <system:String x:Key="Speed3D">3D转速</system:String>
+    <system:String x:Key="Speed4D">4D转速</system:String>
+    <system:String x:Key="Speed5D">5D转速</system:String>
+    <system:String x:Key="Speed6D">6D转速</system:String>
+    <system:String x:Key="MotorSpeedDifference">电机转速差</system:String>
+    <system:String x:Key="HightInletTemperature">高温水进口温度</system:String>
+    <system:String x:Key="HightOutletTemperature">高温水出口温度</system:String>
+    <system:String x:Key="InletTemperatureOfColdWater">中冷水进口温度</system:String>
+    <system:String x:Key="OutletTemperatureOfColdWater">中冷水出口温度</system:String>
+    <system:String x:Key="DieselPressure2">机油压力：</system:String>
+    <system:String x:Key="FuelPumpOutletPressure">燃油泵出口压力</system:String>
+    <system:String x:Key="FuelSystemEndPressure">燃油系统末端压力</system:String>
 </ResourceDictionary>

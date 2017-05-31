@@ -2,8 +2,10 @@
 using System.ComponentModel.Composition;
 using System.IO;
 using System.Windows;
+using Engine.TCMS.Turkmenistan.Event;
 using Engine.TCMS.Turkmenistan.Model;
 using Engine.TCMS.Turkmenistan.Model.BtnStragy;
+using Microsoft.Practices.Prism.Events;
 using Microsoft.Practices.ServiceLocation;
 
 namespace Engine.TCMS.Turkmenistan.Controller.BtnActionResponser
@@ -36,7 +38,7 @@ namespace Engine.TCMS.Turkmenistan.Controller.BtnActionResponser
                     UriKind.Absolute)
             };
             Application.Current.Resources.MergedDictionaries[0] = resourcedic;
-
+            ServiceLocator.Current.GetInstance<IEventAggregator>().GetEvent<ReSourceChangedEvent>().Publish(null);
 
 
         }

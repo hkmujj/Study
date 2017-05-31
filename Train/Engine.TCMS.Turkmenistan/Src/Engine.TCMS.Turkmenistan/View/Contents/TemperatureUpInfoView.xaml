@@ -10,10 +10,10 @@
     d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
     d:DesignHeight="550"
     d:DesignWidth="800"
-    Background="{StaticResource BackgroudBrush}"
+    Background="{DynamicResource BackgroudBrush}"
     mc:Ignorable="d">
     <Grid>
-        <TextBlock Style="{StaticResource AxleTextStyle1}" Text="{DynamicResource TemperaturUpInfoWindow}" />
+        <TextBlock Style="{DynamicResource AxleTextStyle1}" Text="{DynamicResource TemperaturUpInfoWindow}" />
         <Grid
             Margin="2,100"
             view:GridLine.Brush="DarkGray"
@@ -57,17 +57,17 @@
                 <TextBlock
                     Grid.Row="0"
                     Grid.Column="0"
-                    Style="{StaticResource AxleTextStyle2}"
+                    Style="{DynamicResource AxleTextStyle2}"
                     Text="{DynamicResource AmbientTemperature1}" />
                 <TextBlock
                     Grid.Row="1"
                     Grid.Column="0"
-                    Style="{StaticResource AxleTextStyle2}"
+                    Style="{DynamicResource AxleTextStyle2}"
                     Text="{DynamicResource AmbientTemperature2}" />
                 <TextBlock
                     Grid.Row="1"
                     Grid.Column="1"
-                    Style="{StaticResource AxleTextStyle2}"
+                    Style="{DynamicResource AxleTextStyle2}"
                     Text="{DynamicResource UnitCelsius}" />
             </Grid>
             <common:TableLine
@@ -76,263 +76,263 @@
                 FontSize="20"
                 LineBrush="DarkGray"
                 LineWidth="2"
-                TextForeground="{StaticResource ForegroundWhiteBrush}"
+                TextForeground="{DynamicResource ForegroundWhiteBrush}"
                 TextOne="{DynamicResource Axis}"
                 TextTwo="{DynamicResource Position}" />
             <Button
                 Grid.Row="2"
                 Grid.Column="1"
                 Content="xxx"
-                Style="{StaticResource AxleInfoButtonTextStyle4}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
             <Button
                 Grid.Row="3"
                 Grid.Column="1"
                 Content="xxx"
-                Style="{StaticResource AxleInfoButtonTextStyle4}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
             <Button
                 Grid.Row="4"
                 Grid.Column="1"
                 Content="xxx"
-                Style="{StaticResource AxleInfoButtonTextStyle4}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
             <Button
                 Grid.Row="5"
                 Grid.Column="1"
                 Content="xxx"
-                Style="{StaticResource AxleInfoButtonTextStyle4}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
             <Button
                 Grid.Row="6"
                 Grid.Column="1"
                 Content="xxx"
-                Style="{StaticResource AxleInfoButtonTextStyle4}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
             <Button
                 Grid.Row="7"
                 Grid.Column="1"
                 Content="xxx"
-                Style="{StaticResource AxleInfoButtonTextStyle4}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
 
             <Button
                 Grid.Row="2"
                 Grid.Column="5"
                 Content="xxx"
-                Style="{StaticResource AxleInfoButtonTextStyle4}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
             <Button
                 Grid.Row="2"
                 Grid.Column="6"
                 Content="xxx"
-                Style="{StaticResource AxleInfoButtonTextStyle4}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
             <Button
                 Grid.Row="3"
                 Grid.Column="6"
                 Content="xxx"
-                Style="{StaticResource AxleInfoButtonTextStyle4}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
             <Button
                 Grid.Row="4"
                 Grid.Column="6"
                 Content="xxx"
-                Style="{StaticResource AxleInfoButtonTextStyle4}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
             <Button
                 Grid.Row="5"
                 Grid.Column="6"
                 Content="xxx"
-                Style="{StaticResource AxleInfoButtonTextStyle4}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
             <Button
                 Grid.Row="6"
                 Grid.Column="6"
                 Content="xxx"
-                Style="{StaticResource AxleInfoButtonTextStyle4}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
             <Button
                 Grid.Row="7"
                 Grid.Column="6"
                 Content="xxx"
-                Style="{StaticResource AxleInfoButtonTextStyle4}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
             <Button
                 Grid.Row="5"
                 Grid.Column="3"
                 Content="xxx"
-                Style="{StaticResource AxleInfoButtonTextStyle4}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
             <Button
                 Grid.Row="6"
                 Grid.Column="3"
                 Content="xxx"
-                Style="{StaticResource AxleInfoButtonTextStyle4}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
             <Button
                 Grid.Row="5"
                 Grid.Column="4"
                 Content="xxx"
-                Style="{StaticResource AxleInfoButtonTextStyle4}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
             <Button
                 Grid.Row="6"
                 Grid.Column="4"
                 Content="xxx"
-                Style="{StaticResource AxleInfoButtonTextStyle4}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
             <Button
                 Grid.Row="7"
                 Grid.Column="4"
                 Content="xxx"
-                Style="{StaticResource AxleInfoButtonTextStyle4}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
             <Button
                 Grid.Row="5"
                 Grid.Column="2"
                 Content="xxx"
-                Style="{StaticResource AxleInfoButtonTextStyle4}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
 
             <Button
                 Grid.Row="7"
                 Grid.Column="2"
                 Content="xxx"
-                Style="{StaticResource AxleInfoButtonTextStyle4}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
 
             <Button
                 Grid.Row="2"
                 Grid.Column="0"
                 Content="1"
-                Style="{StaticResource AxleInfoButtonTextStyle1}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle1}" />
             <Button
                 Grid.Row="3"
                 Grid.Column="0"
                 Content="2"
-                Style="{StaticResource AxleInfoButtonTextStyle1}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle1}" />
             <Button
                 Grid.Row="4"
                 Grid.Column="0"
                 Content="3"
-                Style="{StaticResource AxleInfoButtonTextStyle1}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle1}" />
             <Button
                 Grid.Row="5"
                 Grid.Column="0"
                 Content="4"
-                Style="{StaticResource AxleInfoButtonTextStyle1}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle1}" />
             <Button
                 Grid.Row="6"
                 Grid.Column="0"
                 Content="5"
-                Style="{StaticResource AxleInfoButtonTextStyle1}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle1}" />
             <Button
                 Grid.Row="7"
                 Grid.Column="0"
                 Content="6"
-                Style="{StaticResource AxleInfoButtonTextStyle1}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle1}" />
 
             <Button
                 Grid.Row="1"
                 Grid.Column="1"
                 Content="1"
-                Style="{StaticResource AxleInfoButtonTextStyle2}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle2}" />
             <Button
                 Grid.Row="1"
                 Grid.Column="2"
                 Content="2"
-                Style="{StaticResource AxleInfoButtonTextStyle2}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle2}" />
             <Button
                 Grid.Row="1"
                 Grid.Column="3"
                 Content="3"
-                Style="{StaticResource AxleInfoButtonTextStyle2}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle2}" />
             <Button
                 Grid.Row="1"
                 Grid.Column="4"
                 Content="4"
-                Style="{StaticResource AxleInfoButtonTextStyle2}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle2}" />
             <Button
                 Grid.Row="1"
                 Grid.Column="5"
                 Content="5"
-                Style="{StaticResource AxleInfoButtonTextStyle2}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle2}" />
             <Button
                 Grid.Row="1"
                 Grid.Column="6"
                 Content="6"
-                Style="{StaticResource AxleInfoButtonTextStyle2}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle2}" />
             <Button
                 Grid.Row="2"
                 Grid.Column="2"
                 Content="41"
-                Style="{StaticResource AxleInfoButtonTextStyle3}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle3}" />
             <Button
                 Grid.Row="3"
                 Grid.Column="2"
                 Content="43"
-                Style="{StaticResource AxleInfoButtonTextStyle3}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle3}" />
             <Button
                 Grid.Row="4"
                 Grid.Column="2"
                 Content="41"
-                Style="{StaticResource AxleInfoButtonTextStyle3}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle3}" />
             <Button
                 Grid.Row="6"
                 Grid.Column="2"
                 Content="37"
-                Style="{StaticResource AxleInfoButtonTextStyle3}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle3}" />
 
             <Button
                 Grid.Row="2"
                 Grid.Column="3"
                 Content="38"
-                Style="{StaticResource AxleInfoButtonTextStyle3}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle3}" />
             <Button
                 Grid.Row="3"
                 Grid.Column="3"
                 Content="42"
-                Style="{StaticResource AxleInfoButtonTextStyle3}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle3}" />
             <Button
                 Grid.Row="4"
                 Grid.Column="3"
                 Content="43"
-                Style="{StaticResource AxleInfoButtonTextStyle3}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle3}" />
             <Button
                 Grid.Row="7"
                 Grid.Column="3"
                 Content="41"
-                Style="{StaticResource AxleInfoButtonTextStyle3}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle3}" />
 
             <Button
                 Grid.Row="2"
                 Grid.Column="4"
                 Content="41"
-                Style="{StaticResource AxleInfoButtonTextStyle3}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle3}" />
             <Button
                 Grid.Row="3"
                 Grid.Column="4"
                 Content="41"
-                Style="{StaticResource AxleInfoButtonTextStyle3}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle3}" />
             <Button
                 Grid.Row="4"
                 Grid.Column="4"
                 Content="41"
-                Style="{StaticResource AxleInfoButtonTextStyle3}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle3}" />
 
             <Button
                 Grid.Row="3"
                 Grid.Column="5"
                 Content="41"
-                Style="{StaticResource AxleInfoButtonTextStyle3}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle3}" />
             <Button
                 Grid.Row="4"
                 Grid.Column="5"
                 Content="43"
-                Style="{StaticResource AxleInfoButtonTextStyle3}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle3}" />
             <Button
                 Grid.Row="5"
                 Grid.Column="5"
                 Content="35"
-                Style="{StaticResource AxleInfoButtonTextStyle3}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle3}" />
             <Button
                 Grid.Row="6"
                 Grid.Column="5"
                 Content="35"
-                Style="{StaticResource AxleInfoButtonTextStyle3}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle3}" />
             <Button
                 Grid.Row="7"
                 Grid.Column="5"
                 Content="44"
-                Style="{StaticResource AxleInfoButtonTextStyle3}" />
+                Style="{DynamicResource AxleInfoButtonTextStyle3}" />
 
 
             <TextBlock
                 Grid.Row="8"
                 Grid.Column="0"
                 Grid.ColumnSpan="7"
-                Style="{StaticResource AxleTextStyle2}"
+                Style="{DynamicResource AxleTextStyle2}"
                 Text="{DynamicResource AxleTripInfo}" />
         </Grid>
     </Grid>

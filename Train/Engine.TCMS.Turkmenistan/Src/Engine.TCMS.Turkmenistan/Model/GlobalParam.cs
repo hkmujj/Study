@@ -21,6 +21,7 @@ namespace Engine.TCMS.Turkmenistan.Model
 
         public ReadOnlyCollection<StateInterfaceItem> StateInterfaceCollection { get; private set; }
         public List<FaultCutUnit> FaultCutUnit { get; private set; }
+        public List<AxleBitUnit> AxleBitUnit { get; private set; }
         /// <summary>
         /// 语言是否是土库曼斯坦
         /// </summary>
@@ -44,6 +45,7 @@ namespace Engine.TCMS.Turkmenistan.Model
         {
             StateInterfaceCollection = ExcelParser.Parser<StateInterfaceItem>(appConfigPath).ToList().AsReadOnly();
             FaultCutUnit = ExcelParser.Parser<FaultCutUnit>(appConfigPath).ToList();
+            AxleBitUnit = ExcelParser.Parser<AxleBitUnit>(appConfigPath).ToList();
 
         }
     }

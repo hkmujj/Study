@@ -17,7 +17,7 @@ namespace Engine.TCMS.Turkmenistan.Model
     {
         public DomainModel()
         {
-            _mNavigatorToState = ServiceLocator.Current.GetInstance<IEventAggregator>().GetEvent<NavigatorToState>();
+            m_NavigatorToState = ServiceLocator.Current.GetInstance<IEventAggregator>().GetEvent<NavigatorToState>();
             m_NavigatorToView = ServiceLocator.Current.GetInstance<IEventAggregator>().GetEvent<NavigatorToView>();
             IsVisibility = Visibility.Hidden;
             ServiceLocator.Current.GetInstance<IEventAggregator>().GetEvent<DataServiceDataChangedEvent>()
@@ -27,9 +27,44 @@ namespace Engine.TCMS.Turkmenistan.Model
         private void DataChanged(DataServiceDataChangedEvent.Args obj)
         {
             obj.DataChangedArgs.ChangedBools.UpdateIfContains(InBoolKeys.InB亮屏, b => IsVisibility = b ? Visibility.Visible : Visibility.Hidden);
+            obj.DataChangedArgs.ChangedBools.UpdateIfContains(InBoolKeys.InBF1按键按下, b =>
+            {
+                if (b)
+                {
+                    CurrentStateInterface.BtnF1.ClickCommand.Execute();
+                }
+            });
+            obj.DataChangedArgs.ChangedBools.UpdateIfContains(InBoolKeys.InBF2按键按下, b =>
+            {
+                if (b)
+                {
+                    CurrentStateInterface.BtnF2.ClickCommand.Execute();
+                }
+            });
+            obj.DataChangedArgs.ChangedBools.UpdateIfContains(InBoolKeys.InBF3按键按下, b =>
+            {
+                if (b)
+                {
+                    CurrentStateInterface.BtnF3.ClickCommand.Execute();
+                }
+            });
+            obj.DataChangedArgs.ChangedBools.UpdateIfContains(InBoolKeys.InBF4按键按下, b =>
+            {
+                if (b)
+                {
+                    CurrentStateInterface.BtnF4.ClickCommand.Execute();
+                }
+            });
+            obj.DataChangedArgs.ChangedBools.UpdateIfContains(InBoolKeys.InBF5按键按下, b =>
+            {
+                if (b)
+                {
+                    CurrentStateInterface.BtnF5.ClickCommand.Execute();
+                }
+            });
         }
 
-        private readonly NavigatorToState _mNavigatorToState;
+        private readonly NavigatorToState m_NavigatorToState;
         private readonly NavigatorToView m_NavigatorToView;
         private IStateInterface m_CurrentStateInterface;
         private Visibility m_IsVisibility;
@@ -55,9 +90,13 @@ namespace Engine.TCMS.Turkmenistan.Model
             CurrentStateInterface = current;
         }
         [Import]
+        public AxleBitModel AxleBitModel { get; private set; }  
+        [Import]
         public MainModel MainModel { get; private set; }
         [Import]
         public FaultCutModel FaultCutModel { get; private set; }
+        [Import]
+        public RunParamModel RunParamModel { get; private set; }
         /// <summary>
         /// 黑屏
         /// </summary>
@@ -72,7 +111,7 @@ namespace Engine.TCMS.Turkmenistan.Model
                 if (m_IsVisibility == Visibility.Visible)
                 {
                     m_NavigatorToView.Publish(new NavigatorToView.Args(typeof(ShellContentStyle1Layout).FullName));
-                    _mNavigatorToState.Publish(new NavigatorToState.Args(StateKeys.Root_本车信息));
+                    m_NavigatorToState.Publish(new NavigatorToState.Args(StateKeys.Root_本车信息));
                     m_NavigatorToView.Publish(new NavigatorToView.Args(ViewNames.CurrentAxleView));
                     m_NavigatorToView.Publish(new NavigatorToView.Args(ViewNames.CurrentProgressbarView));
                     m_NavigatorToView.Publish(new NavigatorToView.Args(ViewNames.CurrentRunparamView));

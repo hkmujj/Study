@@ -9,10 +9,10 @@
 
     <Style x:Key="ProgressBarOrdinaryStyle" TargetType="ProgressBar">
         <Setter Property="Orientation" Value="Vertical" />
-        <Setter Property="Background" Value="{StaticResource BlackBrush}" />
+        <Setter Property="Background" Value="{DynamicResource BlackBrush}" />
         <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="BorderBrush" Value="{StaticResource MainTextBrushOne}" />
-        <Setter Property="Foreground" Value="{StaticResource ContentDeepSkyBlueBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource MainTextBrushOne}" />
+        <Setter Property="Foreground" Value="{DynamicResource ContentDeepSkyBlueBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ProgressBar">
@@ -75,10 +75,10 @@
     </Style>
     <Style x:Key="MainViewBorderStyle2" TargetType="common:EffectBorder">
         <Setter Property="LineWidth" Value="5" />
-        <Setter Property="Background" Value="{StaticResource BlackBrush}" />
+        <Setter Property="Background" Value="{DynamicResource BlackBrush}" />
         <Setter Property="Line1Fill" Value="#807E86" />
         <Setter Property="Line2Fill" Value="#A8A3A8" />
-        <Setter Property="FontSize" Value="{StaticResource Double20}" />
+        <Setter Property="FontSize" Value="{DynamicResource Double20}" />
         <Setter Property="Margin" Value="2,3" />
     </Style>
 
@@ -90,7 +90,7 @@
         <Setter Property="BorderThickness" Value="3" />
     </Style>
     <Style x:Key="MainBorderStyle2" TargetType="Border">
-        <Setter Property="Background" Value="{StaticResource BackgroudBrush}" />
+        <Setter Property="Background" Value="{DynamicResource BackgroudBrush}" />
         <Setter Property="BorderBrush" Value="#7E8189" />
         <Setter Property="Margin" Value="2" />
         <Setter Property="Padding" Value="5" />

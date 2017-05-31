@@ -14,7 +14,7 @@
         <Border Background="#737C7E" Margin="120,40,120,460">
             <Border BorderBrush="White" BorderThickness="1" Margin="4">
                 <Border BorderBrush="White" BorderThickness="1" Margin="2">
-                    <TextBlock Text="{DynamicResource FaultCutSelect}" Foreground="Black" FontSize="{StaticResource Double18}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Text="{DynamicResource FaultCutSelect}" Foreground="Black" FontSize="{DynamicResource Double18}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                 </Border>
             </Border>
         </Border>
@@ -51,7 +51,7 @@
                             <DataTemplate DataType="model:FaultCutUnit">
                                 <Grid Margin="3" Height="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType=ListBox},Path=ActualHeight,Converter={StaticResource MathConverter},ConverterParameter=x/6-6}">
                                     <Border Padding="10,0" Panel.ZIndex="10" x:Name="PartBorder" Margin="0,0,10,10" Background="Orange">
-                                        <TextBlock FontSize="{StaticResource Double18}" Text="{Binding DispalyText}" Foreground="Black" VerticalAlignment="Center" Background="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType=ListBoxItem},Path=Background}"></TextBlock>
+                                        <TextBlock FontSize="{DynamicResource Double18}" Text="{Binding DispalyText}" Foreground="Black" VerticalAlignment="Center" Background="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType=ListBoxItem},Path=Background}"></TextBlock>
                                     </Border>
 
                                     <Border Margin="10,10,0,0" Background="#454F56"></Border>
