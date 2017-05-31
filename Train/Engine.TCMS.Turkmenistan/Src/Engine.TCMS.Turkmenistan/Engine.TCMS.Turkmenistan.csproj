@@ -221,6 +221,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Contents\RunParam\RunParamPage7.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\RunParam\RunParamPage6.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Contents\TemperatureUpInfoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -257,6 +265,7 @@
     <Compile Include="Controller\BtnActionResponser\AxleInfoBtnResponse.cs" />
     <Compile Include="Controller\BtnActionResponser\BackBtnResponse.cs" />
     <Compile Include="Controller\BtnActionResponser\CurrentCarInfoResponse.cs" />
+    <Compile Include="Controller\BtnActionResponser\CurrentScreenBtnResponse.cs" />
     <Compile Include="Controller\BtnActionResponser\CutSerchBtnResponse.cs" />
     <Compile Include="Controller\BtnActionResponser\FaultCUtBtnReposne.cs" />
     <Compile Include="Controller\BtnActionResponser\FaultCutViewNextPageBtnReposne.cs" />
@@ -265,6 +274,7 @@
     <Compile Include="Controller\BtnActionResponser\LanguageSwitch.cs" />
     <Compile Include="Controller\BtnActionResponser\LightBtnReposne.cs" />
     <Compile Include="Controller\BtnActionResponser\TemperatureUpInfoResponse.cs" />
+    <Compile Include="Controller\BtnActionResponser\TwoScreenBtnReponse.cs" />
     <Compile Include="Event\NavigatorToView.cs" />
     <Compile Include="Event\ReSourceChangedEvent.cs" />
     <Compile Include="Extension\SentDataExtention.cs" />
@@ -390,6 +400,12 @@
     </Compile>
     <Compile Include="View\Contents\RunParam\RunParamPage5.xaml.cs">
       <DependentUpon>RunParamPage5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\RunParam\RunParamPage7.xaml.cs">
+      <DependentUpon>RunParamPage7.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\RunParam\RunParamPage6.xaml.cs">
+      <DependentUpon>RunParamPage6.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Contents\TemperatureUpInfoView.xaml.cs">
       <DependentUpon>TemperatureUpInfoView.xaml</DependentUpon>

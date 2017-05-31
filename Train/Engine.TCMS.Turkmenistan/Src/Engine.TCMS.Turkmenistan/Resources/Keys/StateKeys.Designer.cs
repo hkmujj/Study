@@ -79,6 +79,33 @@ namespace Engine.TCMS.Turkmenistan.Resources.Keys {
         }
         
         /// <summary>
+        ///   查找类似 Root-本车信息-同屏方式-本车同屏 的本地化字符串。
+        /// </summary>
+        internal static string Root_本车信息_同屏方式_他车同屏 {
+            get {
+                return ResourceManager.GetString("Root_本车信息_同屏方式_他车同屏", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Root-本车信息-同屏方式-双车同屏 的本地化字符串。
+        /// </summary>
+        internal static string Root_本车信息_同屏方式_双车同屏 {
+            get {
+                return ResourceManager.GetString("Root_本车信息_同屏方式_双车同屏", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Root-本车信息-同屏方式-本车同屏 的本地化字符串。
+        /// </summary>
+        internal static string Root_本车信息_同屏方式_本车同屏 {
+            get {
+                return ResourceManager.GetString("Root_本车信息_同屏方式_本车同屏", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Root-本车信息-轴温信息 的本地化字符串。
         /// </summary>
         internal static string Root_本车信息_轴温信息 {

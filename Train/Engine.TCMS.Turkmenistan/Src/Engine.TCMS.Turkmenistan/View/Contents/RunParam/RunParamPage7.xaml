@@ -1,0 +1,199 @@
+﻿<UserControl x:Class="Engine.TCMS.Turkmenistan.View.Contents.RunParam.RunParamPage7"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModel="clr-namespace:Engine.TCMS.Turkmenistan.ViewModel"
+             xmlns:common="clr-namespace:Engine.TCMS.Turkmenistan.View.Common"
+             d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+             d:DesignHeight="600"
+             d:DesignWidth="245"
+             mc:Ignorable="d">
+    <Grid>
+        <Border Style="{DynamicResource MainBorderStyle}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35*" />
+                    <RowDefinition Height="257*" />
+                    <RowDefinition Height="257*" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Margin="2,5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Style="{DynamicResource MainTextStyle2}"
+                        Text="{DynamicResource EngineSpeed}" />
+
+                    <common:EffectBorder
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Margin="2,-2"
+                        Background="{DynamicResource BackgroudBrush}"
+                        Style="{DynamicResource MainViewBorderStyle2}">
+
+                        <common:EffectBorder.EffectContent>
+                            <Grid>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Style="{DynamicResource MainTextStyle3}"
+                                    Text="{Binding Model.MainModel.EngineSpeed, StringFormat={}{0:F0}}" />
+
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Style="{DynamicResource MainTextStyle4}"
+                                    Text="km/h" />
+
+                            </Grid>
+                        </common:EffectBorder.EffectContent>
+                    </common:EffectBorder>
+                </Grid>
+                <Border
+                    Grid.Row="1"
+                    Margin="5"
+                    Background="{DynamicResource BackgroudBrush}"
+                    BorderBrush="DarkGray"
+                    BorderThickness="2">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Border
+                            Background="{DynamicResource ContentDeepSkyBlueBrush}"
+                            BorderBrush="DarkGray"
+                            BorderThickness="0,0,0,2">
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontSize="{DynamicResource Double20}"
+                                Foreground="White"
+                                Text="{DynamicResource CurrentCarParam}" />
+                        </Border>
+                        <Grid Grid.Row="1" Margin="5,5,5,5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource ElectricCurrent1D}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle1}" Text="{Binding Model.RunParamModel.ElectricCurrent1D, StringFormat={}{0:F0}    A}" />
+                            </Grid>
+                            <Grid Grid.Row="1">
+                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource ElectricCurrent2D}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle1}" Text="{Binding Model.RunParamModel.ElectricCurrent2D, StringFormat={}{0:F0}    A}" />
+                            </Grid>
+                            <Grid Grid.Row="2">
+                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource ElectricCurrent3D}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle1}" Text="{Binding Model.RunParamModel.ElectricCurrent3D, StringFormat={}{0:F0}    A}" />
+                            </Grid>
+                            <Grid Grid.Row="3">
+                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource ElectricCurrent4D}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle1}" Text="{Binding Model.RunParamModel.ElectricCurrent4D, StringFormat={}{0:F0}    A}" />
+                            </Grid>
+                            <Grid Grid.Row="4">
+                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource ElectricCurrent5D}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle1}" Text="{Binding Model.RunParamModel.ElectricCurrent5D, StringFormat={}{0:F0}    A}" />
+                            </Grid>
+                            <Grid Grid.Row="5">
+                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource ElectricCurrent6D}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle1}" Text="{Binding Model.RunParamModel.ElectricCurrent6D, StringFormat={}{0:F0}    A}" />
+                            </Grid>
+                       
+                            <Grid Grid.Row="6">
+                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource CurrentDistributionFactor}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle1}" Text="{Binding Model.RunParamModel.CurrentDistributionFactor, StringFormat={}{0:F0}   %}" />
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Border>
+                <Border
+                    Grid.Row="2"
+                    Margin="5"
+                    Background="{DynamicResource BackgroudBrush}"
+                    BorderBrush="DarkGray"
+                    BorderThickness="2">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Border
+                            Background="{DynamicResource ContentDeepSkyBlueBrush}"
+                            BorderBrush="DarkGray"
+                            BorderThickness="0,0,0,2">
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontSize="{DynamicResource Double20}"
+                                Foreground="White"
+                                Text="{DynamicResource OtherCarRunParam}" />
+
+                        </Border>
+                        <Grid Grid.Row="1" Margin="5,5,5,5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource ElectricCurrent1D}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle1}" Text="{Binding Model.RunParamModel.OtherElectricCurrent1D, StringFormat={}{0:F0}    A}" />
+                            </Grid>
+                            <Grid Grid.Row="1">
+                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource ElectricCurrent2D}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle1}" Text="{Binding Model.RunParamModel.OtherElectricCurrent2D, StringFormat={}{0:F0}    A}" />
+                            </Grid>
+                            <Grid Grid.Row="2">
+                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource ElectricCurrent3D}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle1}" Text="{Binding Model.RunParamModel.OtherElectricCurrent3D, StringFormat={}{0:F0}    A}" />
+                            </Grid>
+                            <Grid Grid.Row="3">
+                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource ElectricCurrent4D}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle1}" Text="{Binding Model.RunParamModel.OtherElectricCurrent4D, StringFormat={}{0:F0}    A}" />
+                            </Grid>
+                            <Grid Grid.Row="4">
+                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource ElectricCurrent5D}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle1}" Text="{Binding Model.RunParamModel.OtherElectricCurrent5D, StringFormat={}{0:F0}    A}" />
+                            </Grid>
+                            <Grid Grid.Row="5">
+                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource ElectricCurrent6D}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle1}" Text="{Binding Model.RunParamModel.OtherElectricCurrent6D, StringFormat={}{0:F0}    A}" />
+                            </Grid>
+
+                            <Grid Grid.Row="6">
+                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource CurrentDistributionFactor}" />
+                                <TextBlock Style="{DynamicResource RunParamTextStyle1}" Text="{Binding Model.RunParamModel.OtherCurrentDistributionFactor, StringFormat={}{0:F0}   %}" />
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Border>
+
+
+            </Grid>
+        </Border>
+
+    </Grid>
+</UserControl>
