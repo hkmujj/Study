@@ -2,6 +2,8 @@
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
+using System.Windows;
+using System.Windows.Threading;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.Prism.ViewModel;
 using Microsoft.Practices.ServiceLocation;
@@ -132,10 +134,13 @@ namespace Engine.TCMS.Turkmenistan.Model.BtnStragy
 
         private void Navigator()
         {
-            var view = (ViewExportAttribute) Type.GetType(ContentViewName, false, true).GetCustomAttributes(typeof(ViewExportAttribute), false).FirstOrDefault();
+            var view = (ViewExportAttribute)Type.GetType(ContentViewName, false, true).GetCustomAttributes(typeof(ViewExportAttribute), false).FirstOrDefault();
             if (view != null)
             {
-                m_RegionManager.RequestNavigate(view.RegionName, ContentViewName);
+                Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Normal, new Action((() =>
+               {
+                   m_RegionManager.RequestNavigate(view.RegionName, ContentViewName);
+               })));
             }
         }
         public void RaiseResourceChanged()

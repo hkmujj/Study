@@ -177,7 +177,7 @@
                                 </Grid.ColumnDefinitions>
                                 <ProgressBar
                                     Grid.Column="0"
-                                    Maximum="120"
+                                    Maximum="112"
                                     Style="{DynamicResource ProgressBarOrdinaryStyle}"
                                     Value="{Binding Model.MainModel.CoolingWaterTemperature}" />
                                 <Canvas Grid.Column="1" Panel.ZIndex="1">
@@ -210,7 +210,7 @@
                                     Style="{DynamicResource MainDistanceScalStyle}" />
                                 <ProgressBar
                                     Grid.Column="2"
-                                    Maximum="120"
+                                    Maximum="112"
                                     Style="{DynamicResource ProgressBarOrdinaryStyle}"
                                     Value="{Binding Model.MainModel.OILTEngineOilTemperature}" />
                             </Grid>

@@ -32,16 +32,7 @@ namespace Engine.TCMS.Turkmenistan
 
             m_TurkmenistanAdapter = ServiceLocator.Current.GetInstance<DomainAdapter>();
             m_TurkmenistanAdapter.Initalize(initParam.DataPackage.Config.SystemConfig.IsDebugModel);
-
-            if (initParam.DataPackage.Config.SystemConfig.IsDebugModel)
-            {
-                //var domainMonitor = new DataMonitor();
-                //var debugViewService = serviceManager.GetService<IDebugViewService>();
-                //domainMonitor.Top = 10;
-                //domainMonitor.Left = 200;
-                //debugViewService.DebugFormCollection.Add(domainMonitor);
-            }
-            initParam.RegistDataListener(m_TurkmenistanAdapter);
+            
             SetValueWhenDebug(initParam);
 
             initParam.CommunicationDataService.ReadService.RaiseAllDataChanged();

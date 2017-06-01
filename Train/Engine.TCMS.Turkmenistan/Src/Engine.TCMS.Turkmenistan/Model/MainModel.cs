@@ -32,7 +32,7 @@ namespace Engine.TCMS.Turkmenistan.Model
             CoolingWaterTemperatureFlag = 880;
             OILTEngineOilTemperatureFlag = 880;
             DieselEngineSpeedFalg = 1050;
-            ServiceLocator.Current.GetInstance<IEventAggregator>().GetEvent<DataServiceDataChangedEvent>().Subscribe(DataChanged,ThreadOption.UIThread);
+            ServiceLocator.Current.GetInstance<IEventAggregator>().GetEvent<DataServiceDataChangedEvent>().Subscribe(DataChanged, ThreadOption.UIThread);
         }
 
         private void DataChanged(DataServiceDataChangedEvent.Args obj)
@@ -65,14 +65,37 @@ namespace Engine.TCMS.Turkmenistan.Model
                     WorkModel = WorkModel.SlefLoading;
                 }
             });
-            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF主电流, f => MasterCurrent = f);
-            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF主电压, f => MasterVoltage = f);
-            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF滑油压力, f => OilPressure = f);
-            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF燃油压力, f => FuelPressure = f);
-            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF冷却水温, f => CoolingWaterTemperature = f);
-            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF机油温度, f => OILTEngineOilTemperature = f);
-            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF机车速度, f => EngineSpeed = f);
-            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF柴油机转速, f => DieselEngineSpeed = f);
+
+            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF本车主电源, f => MasterCurrent = f);
+            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF本车主电压, f => MasterVoltage = f);
+
+            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF本车滑油压力, f => CurrentOilPressure = OilPressure = f);
+            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF他车滑油压力, f => OtherOilPressure = f);
+
+            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF本车燃油压力, f => CurrentFuelPressure = FuelPressure = f);
+            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF他车燃油压力, f => OtherFuelPressure = f);
+
+            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF本车冷却水温, f => CurrentCoolingWaterTemperature = CoolingWaterTemperature = f);
+            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF他车冷却水温, f => OtherCoolingWaterTemperature = f);
+
+            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF本车机油温度, f => CurrentOILTEngineOilTemperature = OILTEngineOilTemperature = f);
+            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF他车机油温度, f => CurrentOILTEngineOilTemperature = OILTEngineOilTemperature = f);
+
+            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF本车机车速度, f => EngineSpeed = f);
+
+            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF本车柴油机转速, f => CurrentDieselEngineSpeed = DieselEngineSpeed = f);
+            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF他车柴油机转速, f => OtherDieselEngineSpeed = f);
+
+            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF本车功率环温1, f => CurrentPowerTemperature1 = f);
+            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF他车功率环温1, f => OtherPowerTemperature1 = f);
+
+            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF本车功率环温2, f => CurrentPowerTemperature2 = f);
+            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF他车功率环温2, f => OtherPowerTemperature2 = f);
+
+            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF他车制动风缸压力, f => OtherBrakePress = f);
+
+
+
         }
 
 

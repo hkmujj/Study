@@ -193,6 +193,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Contents\RecontionAxleTemperatureInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Contents\RunParam\CurrentRunparamView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -273,6 +277,7 @@
     <Compile Include="Controller\BtnActionResponser\FaultViewCutBtnResponse.cs" />
     <Compile Include="Controller\BtnActionResponser\LanguageSwitch.cs" />
     <Compile Include="Controller\BtnActionResponser\LightBtnReposne.cs" />
+    <Compile Include="Controller\BtnActionResponser\ScreenModelViewNextPageBtnResponse.cs" />
     <Compile Include="Controller\BtnActionResponser\TemperatureUpInfoResponse.cs" />
     <Compile Include="Controller\BtnActionResponser\TwoScreenBtnReponse.cs" />
     <Compile Include="Event\NavigatorToView.cs" />
@@ -379,6 +384,9 @@
     </Compile>
     <Compile Include="View\Contents\ProgressBar\ReconnectionProgressBarView.xaml.cs">
       <DependentUpon>ReconnectionProgressBarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\RecontionAxleTemperatureInfoView.xaml.cs">
+      <DependentUpon>RecontionAxleTemperatureInfoView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Contents\RunParam\CurrentRunparamView.xaml.cs">
       <DependentUpon>CurrentRunparamView.xaml</DependentUpon>

@@ -61,1334 +61,848 @@ namespace Engine.TCMS.Turkmenistan.Resources.Keys {
         }
         
         /// <summary>
-        ///   查找类似 1D电流 的本地化字符串。
+        ///   查找类似 他车#1冷风扇转速 的本地化字符串。
         /// </summary>
-        internal static string InF1D电流 {
+        internal static string InF他车_1冷风扇转速 {
             get {
-                return ResourceManager.GetString("InF1D电流", resourceCulture);
+                return ResourceManager.GetString("InF他车#1冷风扇转速", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 1D转速 的本地化字符串。
+        ///   查找类似 他车#2冷风扇转速 的本地化字符串。
         /// </summary>
-        internal static string InF1D转速 {
+        internal static string InF他车_2冷风扇转速 {
             get {
-                return ResourceManager.GetString("InF1D转速", resourceCulture);
+                return ResourceManager.GetString("InF他车#2冷风扇转速", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 #1冷却风扇转速 的本地化字符串。
+        ///   查找类似 他车1D电流 的本地化字符串。
         /// </summary>
-        internal static string InF1冷却风扇转速 {
+        internal static string InF他车1D电流 {
             get {
-                return ResourceManager.GetString("InF1冷却风扇转速", resourceCulture);
+                return ResourceManager.GetString("InF他车1D电流", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 2D电流 的本地化字符串。
+        ///   查找类似 他车1D转速 的本地化字符串。
         /// </summary>
-        internal static string InF2D电流 {
+        internal static string InF他车1D转速 {
             get {
-                return ResourceManager.GetString("InF2D电流", resourceCulture);
+                return ResourceManager.GetString("InF他车1D转速", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 2D转速 的本地化字符串。
+        ///   查找类似 他车2D电流 的本地化字符串。
         /// </summary>
-        internal static string InF2D转速 {
+        internal static string InF他车2D电流 {
             get {
-                return ResourceManager.GetString("InF2D转速", resourceCulture);
+                return ResourceManager.GetString("InF他车2D电流", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 #2冷却风扇转速 的本地化字符串。
+        ///   查找类似 他车2D转速 的本地化字符串。
         /// </summary>
-        internal static string InF2冷却风扇转速 {
+        internal static string InF他车2D转速 {
             get {
-                return ResourceManager.GetString("InF2冷却风扇转速", resourceCulture);
+                return ResourceManager.GetString("InF他车2D转速", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 3D电流 的本地化字符串。
+        ///   查找类似 他车3D电流 的本地化字符串。
         /// </summary>
-        internal static string InF3D电流 {
+        internal static string InF他车3D电流 {
             get {
-                return ResourceManager.GetString("InF3D电流", resourceCulture);
+                return ResourceManager.GetString("InF他车3D电流", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 3D转速 的本地化字符串。
+        ///   查找类似 他车3D转速 的本地化字符串。
         /// </summary>
-        internal static string InF3D转速 {
+        internal static string InF他车3D转速 {
             get {
-                return ResourceManager.GetString("InF3D转速", resourceCulture);
+                return ResourceManager.GetString("InF他车3D转速", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 4D电流 的本地化字符串。
+        ///   查找类似 他车4D电流 的本地化字符串。
         /// </summary>
-        internal static string InF4D电流 {
+        internal static string InF他车4D电流 {
             get {
-                return ResourceManager.GetString("InF4D电流", resourceCulture);
+                return ResourceManager.GetString("InF他车4D电流", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 4D转速 的本地化字符串。
+        ///   查找类似 他车4D转速 的本地化字符串。
         /// </summary>
-        internal static string InF4D转速 {
+        internal static string InF他车4D转速 {
             get {
-                return ResourceManager.GetString("InF4D转速", resourceCulture);
+                return ResourceManager.GetString("InF他车4D转速", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 5D电流 的本地化字符串。
+        ///   查找类似 他车5D电流 的本地化字符串。
         /// </summary>
-        internal static string InF5D电流 {
+        internal static string InF他车5D电流 {
             get {
-                return ResourceManager.GetString("InF5D电流", resourceCulture);
+                return ResourceManager.GetString("InF他车5D电流", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 5D转速 的本地化字符串。
+        ///   查找类似 他车5D转速 的本地化字符串。
         /// </summary>
-        internal static string InF5D转速 {
+        internal static string InF他车5D转速 {
             get {
-                return ResourceManager.GetString("InF5D转速", resourceCulture);
+                return ResourceManager.GetString("InF他车5D转速", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 6D电流 的本地化字符串。
+        ///   查找类似 他车6D电流 的本地化字符串。
         /// </summary>
-        internal static string InF6D电流 {
+        internal static string InF他车6D电流 {
             get {
-                return ResourceManager.GetString("InF6D电流", resourceCulture);
+                return ResourceManager.GetString("InF他车6D电流", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 6D转速 的本地化字符串。
+        ///   查找类似 他车6D转速 的本地化字符串。
         /// </summary>
-        internal static string InF6D转速 {
+        internal static string InF他车6D转速 {
             get {
-                return ResourceManager.GetString("InF6D转速", resourceCulture);
+                return ResourceManager.GetString("InF他车6D转速", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 主发功率基准 的本地化字符串。
+        ///   查找类似 他车中冷水出口温度 的本地化字符串。
         /// </summary>
-        internal static string InF主发功率基准 {
+        internal static string InF他车中冷水出口温度 {
             get {
-                return ResourceManager.GetString("InF主发功率基准", resourceCulture);
+                return ResourceManager.GetString("InF他车中冷水出口温度", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 主发电机励磁电流 的本地化字符串。
+        ///   查找类似 他车中冷水进口温度 的本地化字符串。
         /// </summary>
-        internal static string InF主发电机励磁电流 {
+        internal static string InF他车中冷水进口温度 {
             get {
-                return ResourceManager.GetString("InF主发电机励磁电流", resourceCulture);
+                return ResourceManager.GetString("InF他车中冷水进口温度", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 主手柄位置/lcp 的本地化字符串。
+        ///   查找类似 他车主发电机励磁电流 的本地化字符串。
         /// </summary>
-        internal static string InF主手柄位置lcp {
+        internal static string InF他车主发电机励磁电流 {
             get {
-                return ResourceManager.GetString("InF主手柄位置lcp", resourceCulture);
+                return ResourceManager.GetString("InF他车主发电机励磁电流", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 主电压 的本地化字符串。
+        ///   查找类似 他车主电压 的本地化字符串。
         /// </summary>
-        internal static string InF主电压 {
+        internal static string InF他车主电压 {
             get {
-                return ResourceManager.GetString("InF主电压", resourceCulture);
+                return ResourceManager.GetString("InF他车主电压", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 主电流 的本地化字符串。
+        ///   查找类似 他车主电源 的本地化字符串。
         /// </summary>
-        internal static string InF主电流 {
+        internal static string InF他车主电源 {
             get {
-                return ResourceManager.GetString("InF主电流", resourceCulture);
+                return ResourceManager.GetString("InF他车主电源", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车TM1电流 的本地化字符串。
+        ///   查找类似 他车冷却水温 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车TM1电流 {
+        internal static string InF他车冷却水温 {
             get {
-                return ResourceManager.GetString("InF他车他车TM1电流", resourceCulture);
+                return ResourceManager.GetString("InF他车冷却水温", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车TM1转速 的本地化字符串。
+        ///   查找类似 他车制动风缸压力 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车TM1转速 {
+        internal static string InF他车制动风缸压力 {
             get {
-                return ResourceManager.GetString("InF他车他车TM1转速", resourceCulture);
+                return ResourceManager.GetString("InF他车制动风缸压力", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车TM2电流 的本地化字符串。
+        ///   查找类似 他车前增压器转速 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车TM2电流 {
+        internal static string InF他车前增压器转速 {
             get {
-                return ResourceManager.GetString("InF他车他车TM2电流", resourceCulture);
+                return ResourceManager.GetString("InF他车前增压器转速", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车TM2转速 的本地化字符串。
+        ///   查找类似 他车前增压器进口压力 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车TM2转速 {
+        internal static string InF他车前增压器进口压力 {
             get {
-                return ResourceManager.GetString("InF他车他车TM2转速", resourceCulture);
+                return ResourceManager.GetString("InF他车前增压器进口压力", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车TM3电流 的本地化字符串。
+        ///   查找类似 他车功率环温1 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车TM3电流 {
+        internal static string InF他车功率环温1 {
             get {
-                return ResourceManager.GetString("InF他车他车TM3电流", resourceCulture);
+                return ResourceManager.GetString("InF他车功率环温1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车TM3转速 的本地化字符串。
+        ///   查找类似 他车功率环温2 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车TM3转速 {
+        internal static string InF他车功率环温2 {
             get {
-                return ResourceManager.GetString("InF他车他车TM3转速", resourceCulture);
+                return ResourceManager.GetString("InF他车功率环温2", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车TM4电流 的本地化字符串。
+        ///   查找类似 他车励磁机励磁电流 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车TM4电流 {
+        internal static string InF他车励磁机励磁电流 {
             get {
-                return ResourceManager.GetString("InF他车他车TM4电流", resourceCulture);
+                return ResourceManager.GetString("InF他车励磁机励磁电流", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车TM4转速 的本地化字符串。
+        ///   查找类似 他车后增压器转速 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车TM4转速 {
+        internal static string InF他车后增压器转速 {
             get {
-                return ResourceManager.GetString("InF他车他车TM4转速", resourceCulture);
+                return ResourceManager.GetString("InF他车后增压器转速", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车TM5电流 的本地化字符串。
+        ///   查找类似 他车后增压器进口压力 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车TM5电流 {
+        internal static string InF他车后增压器进口压力 {
             get {
-                return ResourceManager.GetString("InF他车他车TM5电流", resourceCulture);
+                return ResourceManager.GetString("InF他车后增压器进口压力", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车TM5转速 的本地化字符串。
+        ///   查找类似 他车接地漏电流 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车TM5转速 {
+        internal static string InF他车接地漏电流 {
             get {
-                return ResourceManager.GetString("InF他车他车TM5转速", resourceCulture);
+                return ResourceManager.GetString("InF他车接地漏电流", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车TM6电流 的本地化字符串。
+        ///   查找类似 他车机油出口温度 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车TM6电流 {
+        internal static string InF他车机油出口温度 {
             get {
-                return ResourceManager.GetString("InF他车他车TM6电流", resourceCulture);
+                return ResourceManager.GetString("InF他车机油出口温度", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车TM6转速 的本地化字符串。
+        ///   查找类似 他车机油温度 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车TM6转速 {
+        internal static string InF他车机油温度 {
             get {
-                return ResourceManager.GetString("InF他车他车TM6转速", resourceCulture);
+                return ResourceManager.GetString("InF他车机油温度", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车主发励磁电流 的本地化字符串。
+        ///   查找类似 他车机油进口温度 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车主发励磁电流 {
+        internal static string InF他车机油进口温度 {
             get {
-                return ResourceManager.GetString("InF他车他车主发励磁电流", resourceCulture);
+                return ResourceManager.GetString("InF他车机油进口温度", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车主电压 的本地化字符串。
+        ///   查找类似 他车机车速度 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车主电压 {
+        internal static string InF他车机车速度 {
             get {
-                return ResourceManager.GetString("InF他车他车主电压", resourceCulture);
+                return ResourceManager.GetString("InF他车机车速度", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车主电流 的本地化字符串。
+        ///   查找类似 他车柴油机出口压力 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车主电流 {
+        internal static string InF他车柴油机出口压力 {
             get {
-                return ResourceManager.GetString("InF他车他车主电流", resourceCulture);
+                return ResourceManager.GetString("InF他车柴油机出口压力", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车主电流表 的本地化字符串。
+        ///   查找类似 他车柴油机转速 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车主电流表 {
+        internal static string InF他车柴油机转速 {
             get {
-                return ResourceManager.GetString("InF他车他车主电流表", resourceCulture);
+                return ResourceManager.GetString("InF他车柴油机转速", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车前冷却风扇转速 的本地化字符串。
+        ///   查找类似 他车柴油机进口压力 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车前冷却风扇转速 {
+        internal static string InF他车柴油机进口压力 {
             get {
-                return ResourceManager.GetString("InF他车他车前冷却风扇转速", resourceCulture);
+                return ResourceManager.GetString("InF他车柴油机进口压力", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车前增压力 的本地化字符串。
+        ///   查找类似 他车滑油压力 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车前增压力 {
+        internal static string InF他车滑油压力 {
             get {
-                return ResourceManager.GetString("InF他车他车前增压力", resourceCulture);
+                return ResourceManager.GetString("InF他车滑油压力", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车前增压器转速 的本地化字符串。
+        ///   查找类似 他车滤清器进口压力 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车前增压器转速 {
+        internal static string InF他车滤清器进口压力 {
             get {
-                return ResourceManager.GetString("InF他车他车前增压器转速", resourceCulture);
+                return ResourceManager.GetString("InF他车滤清器进口压力", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车功率 的本地化字符串。
+        ///   查找类似 他车热交换器水温 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车功率 {
+        internal static string InF他车热交换器水温 {
             get {
-                return ResourceManager.GetString("InF他车他车功率", resourceCulture);
+                return ResourceManager.GetString("InF他车热交换器水温", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车励磁机励磁电流 的本地化字符串。
+        ///   查找类似 他车燃油压力 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车励磁机励磁电流 {
+        internal static string InF他车燃油压力 {
             get {
-                return ResourceManager.GetString("InF他车他车励磁机励磁电流", resourceCulture);
+                return ResourceManager.GetString("InF他车燃油压力", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车后冷却风扇转速 的本地化字符串。
+        ///   查找类似 他车燃油泵出口压力 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车后冷却风扇转速 {
+        internal static string InF他车燃油泵出口压力 {
             get {
-                return ResourceManager.GetString("InF他车他车后冷却风扇转速", resourceCulture);
+                return ResourceManager.GetString("InF他车燃油泵出口压力", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车后增压力 的本地化字符串。
+        ///   查找类似 他车燃油系统末端压力 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车后增压力 {
+        internal static string InF他车燃油系统末端压力 {
             get {
-                return ResourceManager.GetString("InF他车他车后增压力", resourceCulture);
+                return ResourceManager.GetString("InF他车燃油系统末端压力", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车后增压器转速 的本地化字符串。
+        ///   查找类似 他车电机电流差 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车后增压器转速 {
+        internal static string InF他车电机电流差 {
             get {
-                return ResourceManager.GetString("InF他车他车后增压器转速", resourceCulture);
+                return ResourceManager.GetString("InF他车电机电流差", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车接地漏电流 的本地化字符串。
+        ///   查找类似 他车电机转速差 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车接地漏电流 {
+        internal static string InF他车电机转速差 {
             get {
-                return ResourceManager.GetString("InF他车他车接地漏电流", resourceCulture);
+                return ResourceManager.GetString("InF他车电机转速差", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车控制电压 的本地化字符串。
+        ///   查找类似 他车电流分配系数 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车控制电压 {
+        internal static string InF他车电流分配系数 {
             get {
-                return ResourceManager.GetString("InF他车他车控制电压", resourceCulture);
+                return ResourceManager.GetString("InF他车电流分配系数", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车机油出口压力 的本地化字符串。
+        ///   查找类似 他车高温水出口温度 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车机油出口压力 {
+        internal static string InF他车高温水出口温度 {
             get {
-                return ResourceManager.GetString("InF他车他车机油出口压力", resourceCulture);
+                return ResourceManager.GetString("InF他车高温水出口温度", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车机油出口温度 的本地化字符串。
+        ///   查找类似 他车高温水进口温度 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车机油出口温度 {
+        internal static string InF他车高温水进口温度 {
             get {
-                return ResourceManager.GetString("InF他车他车机油出口温度", resourceCulture);
+                return ResourceManager.GetString("InF他车高温水进口温度", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车机油温度 的本地化字符串。
+        ///   查找类似 本车#1冷风扇转速 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车机油温度 {
+        internal static string InF本车_1冷风扇转速 {
             get {
-                return ResourceManager.GetString("InF他车他车机油温度", resourceCulture);
+                return ResourceManager.GetString("InF本车#1冷风扇转速", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车机油进口压力 的本地化字符串。
+        ///   查找类似 本车#2冷风扇转速 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车机油进口压力 {
+        internal static string InF本车_2冷风扇转速 {
             get {
-                return ResourceManager.GetString("InF他车他车机油进口压力", resourceCulture);
+                return ResourceManager.GetString("InF本车#2冷风扇转速", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车机车速度 的本地化字符串。
+        ///   查找类似 本车1D电流 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车机车速度 {
+        internal static string InF本车1D电流 {
             get {
-                return ResourceManager.GetString("InF他车他车机车速度", resourceCulture);
+                return ResourceManager.GetString("InF本车1D电流", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车柴转速 的本地化字符串。
+        ///   查找类似 本车1D转速 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车柴转速 {
+        internal static string InF本车1D转速 {
             get {
-                return ResourceManager.GetString("InF他车他车柴转速", resourceCulture);
+                return ResourceManager.GetString("InF本车1D转速", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车滤清器进口压力 的本地化字符串。
+        ///   查找类似 本车2D电流 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车滤清器进口压力 {
+        internal static string InF本车2D电流 {
             get {
-                return ResourceManager.GetString("InF他车他车滤清器进口压力", resourceCulture);
+                return ResourceManager.GetString("InF本车2D电流", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车燃油末端压力 的本地化字符串。
+        ///   查找类似 本车2D转速 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车燃油末端压力 {
+        internal static string InF本车2D转速 {
             get {
-                return ResourceManager.GetString("InF他车他车燃油末端压力", resourceCulture);
+                return ResourceManager.GetString("InF本车2D转速", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车电机转速差 的本地化字符串。
+        ///   查找类似 本车3D电流 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车电机转速差 {
+        internal static string InF本车3D电流 {
             get {
-                return ResourceManager.GetString("InF他车他车电机转速差", resourceCulture);
+                return ResourceManager.GetString("InF本车3D电流", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车电流分配 的本地化字符串。
+        ///   查找类似 本车3D转速 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车电流分配 {
+        internal static string InF本车3D转速 {
             get {
-                return ResourceManager.GetString("InF他车他车电流分配", resourceCulture);
+                return ResourceManager.GetString("InF本车3D转速", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车高温出口水温 的本地化字符串。
+        ///   查找类似 本车4D电流 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车高温出口水温 {
+        internal static string InF本车4D电流 {
             get {
-                return ResourceManager.GetString("InF他车他车高温出口水温", resourceCulture);
+                return ResourceManager.GetString("InF本车4D电流", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车高温水温 的本地化字符串。
+        ///   查找类似 本车4D转速 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车高温水温 {
+        internal static string InF本车4D转速 {
             get {
-                return ResourceManager.GetString("InF他车他车高温水温", resourceCulture);
+                return ResourceManager.GetString("InF本车4D转速", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 他车他车高温进口水温 的本地化字符串。
+        ///   查找类似 本车5D电流 的本地化字符串。
         /// </summary>
-        internal static string InF他车他车高温进口水温 {
+        internal static string InF本车5D电流 {
             get {
-                return ResourceManager.GetString("InF他车他车高温进口水温", resourceCulture);
+                return ResourceManager.GetString("InF本车5D电流", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 以下为重联屏接口 的本地化字符串。
+        ///   查找类似 本车5D转速 的本地化字符串。
         /// </summary>
-        internal static string InF以下为重联屏接口 {
+        internal static string InF本车5D转速 {
             get {
-                return ResourceManager.GetString("InF以下为重联屏接口", resourceCulture);
+                return ResourceManager.GetString("InF本车5D转速", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 冷却水温 的本地化字符串。
+        ///   查找类似 本车6D电流 的本地化字符串。
         /// </summary>
-        internal static string InF冷却水温 {
+        internal static string InF本车6D电流 {
             get {
-                return ResourceManager.GetString("InF冷却水温", resourceCulture);
+                return ResourceManager.GetString("InF本车6D电流", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 前增压器转速 的本地化字符串。
+        ///   查找类似 本车6D转速 的本地化字符串。
         /// </summary>
-        internal static string InF前增压器转速 {
+        internal static string InF本车6D转速 {
             get {
-                return ResourceManager.GetString("InF前增压器转速", resourceCulture);
+                return ResourceManager.GetString("InF本车6D转速", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 励磁机励磁电压 的本地化字符串。
+        ///   查找类似 本车中冷水出口温度 的本地化字符串。
         /// </summary>
-        internal static string InF励磁机励磁电压 {
+        internal static string InF本车中冷水出口温度 {
             get {
-                return ResourceManager.GetString("InF励磁机励磁电压", resourceCulture);
+                return ResourceManager.GetString("InF本车中冷水出口温度", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 励磁机励磁电流 的本地化字符串。
+        ///   查找类似 本车中冷水进口温度 的本地化字符串。
         /// </summary>
-        internal static string InF励磁机励磁电流 {
+        internal static string InF本车中冷水进口温度 {
             get {
-                return ResourceManager.GetString("InF励磁机励磁电流", resourceCulture);
+                return ResourceManager.GetString("InF本车中冷水进口温度", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 后增压器转速 的本地化字符串。
+        ///   查找类似 本车主发电机励磁电流 的本地化字符串。
         /// </summary>
-        internal static string InF后增压器转速 {
+        internal static string InF本车主发电机励磁电流 {
             get {
-                return ResourceManager.GetString("InF后增压器转速", resourceCulture);
+                return ResourceManager.GetString("InF本车主发电机励磁电流", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 备用--1 的本地化字符串。
+        ///   查找类似 本车主电压 的本地化字符串。
         /// </summary>
-        internal static string InF备用1 {
+        internal static string InF本车主电压 {
             get {
-                return ResourceManager.GetString("InF备用1", resourceCulture);
+                return ResourceManager.GetString("InF本车主电压", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 备用--2 的本地化字符串。
+        ///   查找类似 本车主电源 的本地化字符串。
         /// </summary>
-        internal static string InF备用2 {
+        internal static string InF本车主电源 {
             get {
-                return ResourceManager.GetString("InF备用2", resourceCulture);
+                return ResourceManager.GetString("InF本车主电源", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 接地漏电流 的本地化字符串。
+        ///   查找类似 本车冷却水温 的本地化字符串。
         /// </summary>
-        internal static string InF接地漏电流 {
+        internal static string InF本车冷却水温 {
             get {
-                return ResourceManager.GetString("InF接地漏电流", resourceCulture);
+                return ResourceManager.GetString("InF本车冷却水温", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 控制电压欠压值 的本地化字符串。
+        ///   查找类似 本车制动风缸压力 的本地化字符串。
         /// </summary>
-        internal static string InF控制电压欠压值 {
+        internal static string InF本车制动风缸压力 {
             get {
-                return ResourceManager.GetString("InF控制电压欠压值", resourceCulture);
+                return ResourceManager.GetString("InF本车制动风缸压力", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 控制电压过压值 的本地化字符串。
+        ///   查找类似 本车前增压器转速 的本地化字符串。
         /// </summary>
-        internal static string InF控制电压过压值 {
+        internal static string InF本车前增压器转速 {
             get {
-                return ResourceManager.GetString("InF控制电压过压值", resourceCulture);
+                return ResourceManager.GetString("InF本车前增压器转速", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 本车控制电压修正系数 的本地化字符串。
+        ///   查找类似 本车前增压器进口压力 的本地化字符串。
         /// </summary>
-        internal static string InF本车控制电压修正系数 {
+        internal static string InF本车前增压器进口压力 {
             get {
-                return ResourceManager.GetString("InF本车控制电压修正系数", resourceCulture);
+                return ResourceManager.GetString("InF本车前增压器进口压力", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 本车本车TM1电流 的本地化字符串。
+        ///   查找类似 本车功率环温1 的本地化字符串。
         /// </summary>
-        internal static string InF本车本车TM1电流 {
+        internal static string InF本车功率环温1 {
             get {
-                return ResourceManager.GetString("InF本车本车TM1电流", resourceCulture);
+                return ResourceManager.GetString("InF本车功率环温1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 本车本车TM1转速 的本地化字符串。
+        ///   查找类似 本车功率环温2 的本地化字符串。
         /// </summary>
-        internal static string InF本车本车TM1转速 {
+        internal static string InF本车功率环温2 {
             get {
-                return ResourceManager.GetString("InF本车本车TM1转速", resourceCulture);
+                return ResourceManager.GetString("InF本车功率环温2", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 本车本车TM2电流 的本地化字符串。
+        ///   查找类似 本车励磁机励磁电流 的本地化字符串。
         /// </summary>
-        internal static string InF本车本车TM2电流 {
+        internal static string InF本车励磁机励磁电流 {
             get {
-                return ResourceManager.GetString("InF本车本车TM2电流", resourceCulture);
+                return ResourceManager.GetString("InF本车励磁机励磁电流", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 本车本车TM2转速 的本地化字符串。
+        ///   查找类似 本车后增压器转速 的本地化字符串。
         /// </summary>
-        internal static string InF本车本车TM2转速 {
+        internal static string InF本车后增压器转速 {
             get {
-                return ResourceManager.GetString("InF本车本车TM2转速", resourceCulture);
+                return ResourceManager.GetString("InF本车后增压器转速", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 本车本车TM3电流 的本地化字符串。
+        ///   查找类似 本车后增压器进口压力 的本地化字符串。
         /// </summary>
-        internal static string InF本车本车TM3电流 {
+        internal static string InF本车后增压器进口压力 {
             get {
-                return ResourceManager.GetString("InF本车本车TM3电流", resourceCulture);
+                return ResourceManager.GetString("InF本车后增压器进口压力", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 本车本车TM3转速 的本地化字符串。
+        ///   查找类似 本车接地漏电流 的本地化字符串。
         /// </summary>
-        internal static string InF本车本车TM3转速 {
+        internal static string InF本车接地漏电流 {
             get {
-                return ResourceManager.GetString("InF本车本车TM3转速", resourceCulture);
+                return ResourceManager.GetString("InF本车接地漏电流", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 本车本车TM4电流 的本地化字符串。
+        ///   查找类似 本车机油出口温度 的本地化字符串。
         /// </summary>
-        internal static string InF本车本车TM4电流 {
+        internal static string InF本车机油出口温度 {
             get {
-                return ResourceManager.GetString("InF本车本车TM4电流", resourceCulture);
+                return ResourceManager.GetString("InF本车机油出口温度", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 本车本车TM4转速 的本地化字符串。
+        ///   查找类似 本车机油温度 的本地化字符串。
         /// </summary>
-        internal static string InF本车本车TM4转速 {
+        internal static string InF本车机油温度 {
             get {
-                return ResourceManager.GetString("InF本车本车TM4转速", resourceCulture);
+                return ResourceManager.GetString("InF本车机油温度", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 本车本车TM5电流 的本地化字符串。
+        ///   查找类似 本车机油进口温度 的本地化字符串。
         /// </summary>
-        internal static string InF本车本车TM5电流 {
+        internal static string InF本车机油进口温度 {
             get {
-                return ResourceManager.GetString("InF本车本车TM5电流", resourceCulture);
+                return ResourceManager.GetString("InF本车机油进口温度", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 本车本车TM5转速 的本地化字符串。
+        ///   查找类似 本车机车速度 的本地化字符串。
         /// </summary>
-        internal static string InF本车本车TM5转速 {
+        internal static string InF本车机车速度 {
             get {
-                return ResourceManager.GetString("InF本车本车TM5转速", resourceCulture);
+                return ResourceManager.GetString("InF本车机车速度", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 本车本车TM6电流 的本地化字符串。
+        ///   查找类似 本车柴油机出口压力 的本地化字符串。
         /// </summary>
-        internal static string InF本车本车TM6电流 {
+        internal static string InF本车柴油机出口压力 {
             get {
-                return ResourceManager.GetString("InF本车本车TM6电流", resourceCulture);
+                return ResourceManager.GetString("InF本车柴油机出口压力", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 本车本车TM6转速 的本地化字符串。
+        ///   查找类似 本车柴油机转速 的本地化字符串。
         /// </summary>
-        internal static string InF本车本车TM6转速 {
+        internal static string InF本车柴油机转速 {
             get {
-                return ResourceManager.GetString("InF本车本车TM6转速", resourceCulture);
+                return ResourceManager.GetString("InF本车柴油机转速", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 本车本车主发励磁电流 的本地化字符串。
+        ///   查找类似 本车柴油机进口压力 的本地化字符串。
         /// </summary>
-        internal static string InF本车本车主发励磁电流 {
+        internal static string InF本车柴油机进口压力 {
             get {
-                return ResourceManager.GetString("InF本车本车主发励磁电流", resourceCulture);
+                return ResourceManager.GetString("InF本车柴油机进口压力", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 本车本车主电压 的本地化字符串。
+        ///   查找类似 本车滑油压力 的本地化字符串。
         /// </summary>
-        internal static string InF本车本车主电压 {
+        internal static string InF本车滑油压力 {
             get {
-                return ResourceManager.GetString("InF本车本车主电压", resourceCulture);
+                return ResourceManager.GetString("InF本车滑油压力", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 本车本车主电流 的本地化字符串。
+        ///   查找类似 本车滤清器进口压力 的本地化字符串。
         /// </summary>
-        internal static string InF本车本车主电流 {
+        internal static string InF本车滤清器进口压力 {
             get {
-                return ResourceManager.GetString("InF本车本车主电流", resourceCulture);
+                return ResourceManager.GetString("InF本车滤清器进口压力", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 本车本车主电流表 的本地化字符串。
+        ///   查找类似 本车热交换器水温 的本地化字符串。
         /// </summary>
-        internal static string InF本车本车主电流表 {
+        internal static string InF本车热交换器水温 {
             get {
-                return ResourceManager.GetString("InF本车本车主电流表", resourceCulture);
+                return ResourceManager.GetString("InF本车热交换器水温", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 本车本车前冷却风扇转速 的本地化字符串。
+        ///   查找类似 本车燃油压力 的本地化字符串。
         /// </summary>
-        internal static string InF本车本车前冷却风扇转速 {
+        internal static string InF本车燃油压力 {
             get {
-                return ResourceManager.GetString("InF本车本车前冷却风扇转速", resourceCulture);
+                return ResourceManager.GetString("InF本车燃油压力", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 本车本车前增压力 的本地化字符串。
+        ///   查找类似 本车燃油泵出口压力 的本地化字符串。
         /// </summary>
-        internal static string InF本车本车前增压力 {
+        internal static string InF本车燃油泵出口压力 {
             get {
-                return ResourceManager.GetString("InF本车本车前增压力", resourceCulture);
+                return ResourceManager.GetString("InF本车燃油泵出口压力", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 本车本车前增压器转速 的本地化字符串。
+        ///   查找类似 本车燃油系统末端压力 的本地化字符串。
         /// </summary>
-        internal static string InF本车本车前增压器转速 {
+        internal static string InF本车燃油系统末端压力 {
             get {
-                return ResourceManager.GetString("InF本车本车前增压器转速", resourceCulture);
+                return ResourceManager.GetString("InF本车燃油系统末端压力", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 本车本车功率 的本地化字符串。
+        ///   查找类似 本车电机电流差 的本地化字符串。
         /// </summary>
-        internal static string InF本车本车功率 {
+        internal static string InF本车电机电流差 {
             get {
-                return ResourceManager.GetString("InF本车本车功率", resourceCulture);
+                return ResourceManager.GetString("InF本车电机电流差", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 本车本车励磁机励磁电流 的本地化字符串。
+        ///   查找类似 本车电机转速差 的本地化字符串。
         /// </summary>
-        internal static string InF本车本车励磁机励磁电流 {
+        internal static string InF本车电机转速差 {
             get {
-                return ResourceManager.GetString("InF本车本车励磁机励磁电流", resourceCulture);
+                return ResourceManager.GetString("InF本车电机转速差", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 本车本车后冷却风扇转速 的本地化字符串。
+        ///   查找类似 本车电流分配系数 的本地化字符串。
         /// </summary>
-        internal static string InF本车本车后冷却风扇转速 {
+        internal static string InF本车电流分配系数 {
             get {
-                return ResourceManager.GetString("InF本车本车后冷却风扇转速", resourceCulture);
+                return ResourceManager.GetString("InF本车电流分配系数", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 本车本车后增压力 的本地化字符串。
+        ///   查找类似 本车高温水出口温度 的本地化字符串。
         /// </summary>
-        internal static string InF本车本车后增压力 {
+        internal static string InF本车高温水出口温度 {
             get {
-                return ResourceManager.GetString("InF本车本车后增压力", resourceCulture);
+                return ResourceManager.GetString("InF本车高温水出口温度", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 本车本车后增压器转速 的本地化字符串。
+        ///   查找类似 本车高温水进口温度 的本地化字符串。
         /// </summary>
-        internal static string InF本车本车后增压器转速 {
+        internal static string InF本车高温水进口温度 {
             get {
-                return ResourceManager.GetString("InF本车本车后增压器转速", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 本车本车接地漏电流 的本地化字符串。
-        /// </summary>
-        internal static string InF本车本车接地漏电流 {
-            get {
-                return ResourceManager.GetString("InF本车本车接地漏电流", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 本车本车控制电压 的本地化字符串。
-        /// </summary>
-        internal static string InF本车本车控制电压 {
-            get {
-                return ResourceManager.GetString("InF本车本车控制电压", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 本车本车机油出口压力 的本地化字符串。
-        /// </summary>
-        internal static string InF本车本车机油出口压力 {
-            get {
-                return ResourceManager.GetString("InF本车本车机油出口压力", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 本车本车机油出口温度 的本地化字符串。
-        /// </summary>
-        internal static string InF本车本车机油出口温度 {
-            get {
-                return ResourceManager.GetString("InF本车本车机油出口温度", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 本车本车机油温度 的本地化字符串。
-        /// </summary>
-        internal static string InF本车本车机油温度 {
-            get {
-                return ResourceManager.GetString("InF本车本车机油温度", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 本车本车机油进口压力 的本地化字符串。
-        /// </summary>
-        internal static string InF本车本车机油进口压力 {
-            get {
-                return ResourceManager.GetString("InF本车本车机油进口压力", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 本车本车机车速度 的本地化字符串。
-        /// </summary>
-        internal static string InF本车本车机车速度 {
-            get {
-                return ResourceManager.GetString("InF本车本车机车速度", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 本车本车柴转速 的本地化字符串。
-        /// </summary>
-        internal static string InF本车本车柴转速 {
-            get {
-                return ResourceManager.GetString("InF本车本车柴转速", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 本车本车滤清器进口压力 的本地化字符串。
-        /// </summary>
-        internal static string InF本车本车滤清器进口压力 {
-            get {
-                return ResourceManager.GetString("InF本车本车滤清器进口压力", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 本车本车燃油末端压力 的本地化字符串。
-        /// </summary>
-        internal static string InF本车本车燃油末端压力 {
-            get {
-                return ResourceManager.GetString("InF本车本车燃油末端压力", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 本车本车电机转速差 的本地化字符串。
-        /// </summary>
-        internal static string InF本车本车电机转速差 {
-            get {
-                return ResourceManager.GetString("InF本车本车电机转速差", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 本车本车电流分配 的本地化字符串。
-        /// </summary>
-        internal static string InF本车本车电流分配 {
-            get {
-                return ResourceManager.GetString("InF本车本车电流分配", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 本车本车高温出口水温 的本地化字符串。
-        /// </summary>
-        internal static string InF本车本车高温出口水温 {
-            get {
-                return ResourceManager.GetString("InF本车本车高温出口水温", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 本车本车高温水温 的本地化字符串。
-        /// </summary>
-        internal static string InF本车本车高温水温 {
-            get {
-                return ResourceManager.GetString("InF本车本车高温水温", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 本车本车高温进口水温 的本地化字符串。
-        /// </summary>
-        internal static string InF本车本车高温进口水温 {
-            get {
-                return ResourceManager.GetString("InF本车本车高温进口水温", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 机油压力--前增压器进口 的本地化字符串。
-        /// </summary>
-        internal static string InF机油压力前增压器进口 {
-            get {
-                return ResourceManager.GetString("InF机油压力前增压器进口", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 机油压力--后增压器进口 的本地化字符串。
-        /// </summary>
-        internal static string InF机油压力后增压器进口 {
-            get {
-                return ResourceManager.GetString("InF机油压力后增压器进口", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 机油压力--柴油机出口 的本地化字符串。
-        /// </summary>
-        internal static string InF机油压力柴油机出口 {
-            get {
-                return ResourceManager.GetString("InF机油压力柴油机出口", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 机油压力--柴油机进口 的本地化字符串。
-        /// </summary>
-        internal static string InF机油压力柴油机进口 {
-            get {
-                return ResourceManager.GetString("InF机油压力柴油机进口", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 机油压力--滤清器进口 的本地化字符串。
-        /// </summary>
-        internal static string InF机油压力滤清器进口 {
-            get {
-                return ResourceManager.GetString("InF机油压力滤清器进口", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 机油温度 的本地化字符串。
-        /// </summary>
-        internal static string InF机油温度 {
-            get {
-                return ResourceManager.GetString("InF机油温度", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 机车累计带载运行时间 的本地化字符串。
-        /// </summary>
-        internal static string InF机车累计带载运行时间 {
-            get {
-                return ResourceManager.GetString("InF机车累计带载运行时间", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 机车累计运行里程 的本地化字符串。
-        /// </summary>
-        internal static string InF机车累计运行里程 {
-            get {
-                return ResourceManager.GetString("InF机车累计运行里程", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 机车速度 的本地化字符串。
-        /// </summary>
-        internal static string InF机车速度 {
-            get {
-                return ResourceManager.GetString("InF机车速度", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 柴油机冷水系统--出口温度 的本地化字符串。
-        /// </summary>
-        internal static string InF柴油机冷水系统出口温度 {
-            get {
-                return ResourceManager.GetString("InF柴油机冷水系统出口温度", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 柴油机冷水系统--机油出口温度 的本地化字符串。
-        /// </summary>
-        internal static string InF柴油机冷水系统机油出口温度 {
-            get {
-                return ResourceManager.GetString("InF柴油机冷水系统机油出口温度", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 柴油机冷水系统--机油进口温度 的本地化字符串。
-        /// </summary>
-        internal static string InF柴油机冷水系统机油进口温度 {
-            get {
-                return ResourceManager.GetString("InF柴油机冷水系统机油进口温度", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 柴油机冷水系统--热交换器水温 的本地化字符串。
-        /// </summary>
-        internal static string InF柴油机冷水系统热交换器水温 {
-            get {
-                return ResourceManager.GetString("InF柴油机冷水系统热交换器水温", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 柴油机冷水系统--进口温度 的本地化字符串。
-        /// </summary>
-        internal static string InF柴油机冷水系统进口温度 {
-            get {
-                return ResourceManager.GetString("InF柴油机冷水系统进口温度", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 柴油机转速 的本地化字符串。
-        /// </summary>
-        internal static string InF柴油机转速 {
-            get {
-                return ResourceManager.GetString("InF柴油机转速", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 柴油机高温水系统--出口温度 的本地化字符串。
-        /// </summary>
-        internal static string InF柴油机高温水系统出口温度 {
-            get {
-                return ResourceManager.GetString("InF柴油机高温水系统出口温度", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 柴油机高温水系统--进口温度 的本地化字符串。
-        /// </summary>
-        internal static string InF柴油机高温水系统进口温度 {
-            get {
-                return ResourceManager.GetString("InF柴油机高温水系统进口温度", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 正24V电压 的本地化字符串。
-        /// </summary>
-        internal static string InF正24V电压 {
-            get {
-                return ResourceManager.GetString("InF正24V电压", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 气表屏--列车管 的本地化字符串。
-        /// </summary>
-        internal static string InF气表屏列车管 {
-            get {
-                return ResourceManager.GetString("InF气表屏列车管", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 气表屏--制动缸 的本地化字符串。
-        /// </summary>
-        internal static string InF气表屏制动缸 {
-            get {
-                return ResourceManager.GetString("InF气表屏制动缸", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 气表屏--均衡缸 的本地化字符串。
-        /// </summary>
-        internal static string InF气表屏均衡缸 {
-            get {
-                return ResourceManager.GetString("InF气表屏均衡缸", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 气表屏--总风缸 的本地化字符串。
-        /// </summary>
-        internal static string InF气表屏总风缸 {
-            get {
-                return ResourceManager.GetString("InF气表屏总风缸", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 水平速度 的本地化字符串。
-        /// </summary>
-        internal static string InF水平速度 {
-            get {
-                return ResourceManager.GetString("InF水平速度", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 海拔高度 的本地化字符串。
-        /// </summary>
-        internal static string InF海拔高度 {
-            get {
-                return ResourceManager.GetString("InF海拔高度", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 滑油压力 的本地化字符串。
-        /// </summary>
-        internal static string InF滑油压力 {
-            get {
-                return ResourceManager.GetString("InF滑油压力", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 燃油压力 的本地化字符串。
-        /// </summary>
-        internal static string InF燃油压力 {
-            get {
-                return ResourceManager.GetString("InF燃油压力", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 燃油压力--燃油泵出口 的本地化字符串。
-        /// </summary>
-        internal static string InF燃油压力燃油泵出口 {
-            get {
-                return ResourceManager.GetString("InF燃油压力燃油泵出口", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 燃油压力--系统末端 的本地化字符串。
-        /// </summary>
-        internal static string InF燃油压力系统末端 {
-            get {
-                return ResourceManager.GetString("InF燃油压力系统末端", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 牵引工况耗能 的本地化字符串。
-        /// </summary>
-        internal static string InF牵引工况耗能 {
-            get {
-                return ResourceManager.GetString("InF牵引工况耗能", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 电机电流差 的本地化字符串。
-        /// </summary>
-        internal static string InF电机电流差 {
-            get {
-                return ResourceManager.GetString("InF电机电流差", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 电机转速差 的本地化字符串。
-        /// </summary>
-        internal static string InF电机转速差 {
-            get {
-                return ResourceManager.GetString("InF电机转速差", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 电流传感器正电源 的本地化字符串。
-        /// </summary>
-        internal static string InF电流传感器正电源 {
-            get {
-                return ResourceManager.GetString("InF电流传感器正电源", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 电流传感器负电源 的本地化字符串。
-        /// </summary>
-        internal static string InF电流传感器负电源 {
-            get {
-                return ResourceManager.GetString("InF电流传感器负电源", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 电流分配系数 的本地化字符串。
-        /// </summary>
-        internal static string InF电流分配系数 {
-            get {
-                return ResourceManager.GetString("InF电流分配系数", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 电阻制动耗能 的本地化字符串。
-        /// </summary>
-        internal static string InF电阻制动耗能 {
-            get {
-                return ResourceManager.GetString("InF电阻制动耗能", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 空压机工作时间 的本地化字符串。
-        /// </summary>
-        internal static string InF空压机工作时间 {
-            get {
-                return ResourceManager.GetString("InF空压机工作时间", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 纬度 的本地化字符串。
-        /// </summary>
-        internal static string InF纬度 {
-            get {
-                return ResourceManager.GetString("InF纬度", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 经度 的本地化字符串。
-        /// </summary>
-        internal static string InF经度 {
-            get {
-                return ResourceManager.GetString("InF经度", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 负24V电压 的本地化字符串。
-        /// </summary>
-        internal static string InF负24V电压 {
-            get {
-                return ResourceManager.GetString("InF负24V电压", resourceCulture);
+                return ResourceManager.GetString("InF本车高温水进口温度", resourceCulture);
             }
         }
     }

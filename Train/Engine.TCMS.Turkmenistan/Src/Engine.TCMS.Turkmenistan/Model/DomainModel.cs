@@ -21,7 +21,7 @@ namespace Engine.TCMS.Turkmenistan.Model
             m_NavigatorToView = ServiceLocator.Current.GetInstance<IEventAggregator>().GetEvent<NavigatorToView>();
             IsVisibility = Visibility.Hidden;
             ServiceLocator.Current.GetInstance<IEventAggregator>().GetEvent<DataServiceDataChangedEvent>()
-                .Subscribe(DataChanged);
+                .Subscribe(DataChanged,ThreadOption.UIThread);
         }
 
         private void DataChanged(DataServiceDataChangedEvent.Args obj)
@@ -59,7 +59,8 @@ namespace Engine.TCMS.Turkmenistan.Model
             {
                 if (b)
                 {
-                    CurrentStateInterface.BtnF5.ClickCommand.Execute();
+                    var command = CurrentStateInterface.BtnF5.ClickCommand;
+                    command.Execute();
                 }
             });
         }
