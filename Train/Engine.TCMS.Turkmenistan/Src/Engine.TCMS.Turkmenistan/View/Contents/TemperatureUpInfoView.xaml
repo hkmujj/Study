@@ -13,7 +13,7 @@
     Background="{DynamicResource BackgroudBrush}"
     mc:Ignorable="d">
     <Grid>
-        <TextBlock Style="{DynamicResource AxleTextStyle1}" Text="{DynamicResource TemperaturUpInfoWindow}" />
+        <TextBlock Style="{DynamicResource AxleTextStyle1}" Text="{DynamicResource AxleTemperaturInfoWindow}" />
         <Grid
             Margin="2,100"
             view:GridLine.Brush="DarkGray"
@@ -82,105 +82,105 @@
             <Button
                 Grid.Row="2"
                 Grid.Column="1"
-                Content="xxx"
-                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[0]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
             <Button
                 Grid.Row="3"
                 Grid.Column="1"
-                Content="xxx"
-                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[6]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
             <Button
                 Grid.Row="4"
                 Grid.Column="1"
-                Content="xxx"
-                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[12]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
             <Button
                 Grid.Row="5"
                 Grid.Column="1"
-                Content="xxx"
-                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[18]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
             <Button
                 Grid.Row="6"
                 Grid.Column="1"
-                Content="xxx"
-                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[24]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
             <Button
                 Grid.Row="7"
                 Grid.Column="1"
-                Content="xxx"
-                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[30]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
 
             <Button
                 Grid.Row="2"
                 Grid.Column="5"
-                Content="xxx"
-                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[4]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
             <Button
                 Grid.Row="2"
                 Grid.Column="6"
-                Content="xxx"
-                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[5]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
             <Button
                 Grid.Row="3"
                 Grid.Column="6"
-                Content="xxx"
-                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[11]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
             <Button
                 Grid.Row="4"
                 Grid.Column="6"
-                Content="xxx"
-                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[17]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
             <Button
                 Grid.Row="5"
                 Grid.Column="6"
-                Content="xxx"
-                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[23]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
             <Button
                 Grid.Row="6"
                 Grid.Column="6"
-                Content="xxx"
-                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[29]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
             <Button
                 Grid.Row="7"
                 Grid.Column="6"
-                Content="xxx"
-                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[35]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
             <Button
                 Grid.Row="5"
                 Grid.Column="3"
-                Content="xxx"
-                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[20]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
             <Button
                 Grid.Row="6"
                 Grid.Column="3"
-                Content="xxx"
-                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[26]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
             <Button
                 Grid.Row="5"
                 Grid.Column="4"
-                Content="xxx"
-                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[21]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
             <Button
                 Grid.Row="6"
                 Grid.Column="4"
-                Content="xxx"
-                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[27]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
             <Button
                 Grid.Row="7"
                 Grid.Column="4"
-                Content="xxx"
-                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[33]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
             <Button
                 Grid.Row="5"
                 Grid.Column="2"
-                Content="xxx"
-                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[19]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
 
             <Button
                 Grid.Row="7"
                 Grid.Column="2"
-                Content="xxx"
-                Style="{DynamicResource AxleInfoButtonTextStyle4}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[31]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
 
             <Button
                 Grid.Row="2"
@@ -246,86 +246,86 @@
             <Button
                 Grid.Row="2"
                 Grid.Column="2"
-                Content="41"
-                Style="{DynamicResource AxleInfoButtonTextStyle3}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[1]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
             <Button
                 Grid.Row="3"
                 Grid.Column="2"
-                Content="43"
-                Style="{DynamicResource AxleInfoButtonTextStyle3}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[7]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
             <Button
                 Grid.Row="4"
                 Grid.Column="2"
-                Content="41"
-                Style="{DynamicResource AxleInfoButtonTextStyle3}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[13]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
             <Button
                 Grid.Row="6"
                 Grid.Column="2"
-                Content="37"
-                Style="{DynamicResource AxleInfoButtonTextStyle3}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[25]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
 
             <Button
                 Grid.Row="2"
                 Grid.Column="3"
-                Content="38"
-                Style="{DynamicResource AxleInfoButtonTextStyle3}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[2]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
             <Button
                 Grid.Row="3"
                 Grid.Column="3"
-                Content="42"
-                Style="{DynamicResource AxleInfoButtonTextStyle3}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[8]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
             <Button
                 Grid.Row="4"
                 Grid.Column="3"
-                Content="43"
-                Style="{DynamicResource AxleInfoButtonTextStyle3}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[14]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
             <Button
                 Grid.Row="7"
                 Grid.Column="3"
-                Content="41"
-                Style="{DynamicResource AxleInfoButtonTextStyle3}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[32]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
 
             <Button
                 Grid.Row="2"
                 Grid.Column="4"
-                Content="41"
-                Style="{DynamicResource AxleInfoButtonTextStyle3}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[3]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
             <Button
                 Grid.Row="3"
                 Grid.Column="4"
-                Content="41"
-                Style="{DynamicResource AxleInfoButtonTextStyle3}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[9]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
             <Button
                 Grid.Row="4"
                 Grid.Column="4"
-                Content="41"
-                Style="{DynamicResource AxleInfoButtonTextStyle3}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[15]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
 
             <Button
                 Grid.Row="3"
                 Grid.Column="5"
-                Content="41"
-                Style="{DynamicResource AxleInfoButtonTextStyle3}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[10]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
             <Button
                 Grid.Row="4"
                 Grid.Column="5"
-                Content="43"
-                Style="{DynamicResource AxleInfoButtonTextStyle3}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[16]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
             <Button
                 Grid.Row="5"
                 Grid.Column="5"
-                Content="35"
-                Style="{DynamicResource AxleInfoButtonTextStyle3}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[22]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
             <Button
                 Grid.Row="6"
                 Grid.Column="5"
-                Content="35"
-                Style="{DynamicResource AxleInfoButtonTextStyle3}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[28]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
             <Button
                 Grid.Row="7"
                 Grid.Column="5"
-                Content="44"
-                Style="{DynamicResource AxleInfoButtonTextStyle3}" />
+                Content="{Binding Model.AxleBitModel.CurrentCarAxleBitUnits[34]}"
+                Style="{DynamicResource AxleInfoButtonStyle4}" />
 
 
             <TextBlock

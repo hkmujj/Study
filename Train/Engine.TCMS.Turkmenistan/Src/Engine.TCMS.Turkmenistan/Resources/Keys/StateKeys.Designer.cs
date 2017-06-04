@@ -176,5 +176,104 @@ namespace Engine.TCMS.Turkmenistan.Resources.Keys {
                 return ResourceManager.GetString("Root_重连信息", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   查找类似 Root-重连信息-同屏方式 的本地化字符串。
+        /// </summary>
+        internal static string Root_重连信息_同屏方式 {
+            get {
+                return ResourceManager.GetString("Root_重连信息_同屏方式", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Root-重连信息-同屏方式-本车同屏 的本地化字符串。
+        /// </summary>
+        internal static string Root_重连信息_同屏方式_他车同屏 {
+            get {
+                return ResourceManager.GetString("Root_重连信息_同屏方式_他车同屏", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Root-重连信息-同屏方式-双车同屏 的本地化字符串。
+        /// </summary>
+        internal static string Root_重连信息_同屏方式_双车同屏 {
+            get {
+                return ResourceManager.GetString("Root_重连信息_同屏方式_双车同屏", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Root-重连信息-同屏方式-本车同屏 的本地化字符串。
+        /// </summary>
+        internal static string Root_重连信息_同屏方式_本车同屏 {
+            get {
+                return ResourceManager.GetString("Root_重连信息_同屏方式_本车同屏", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Root-本车信息-轴温信息 的本地化字符串。
+        /// </summary>
+        internal static string Root_重连信息_轴温信息 {
+            get {
+                return ResourceManager.GetString("Root_重连信息_轴温信息", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Root-重连信息-轴温信息-温升信息 的本地化字符串。
+        /// </summary>
+        internal static string Root_重连信息_轴温信息_温升信息 {
+            get {
+                return ResourceManager.GetString("Root_重连信息_轴温信息_温升信息", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Root-本车信息-辅助功能 的本地化字符串。
+        /// </summary>
+        internal static string Root_重连信息_辅助功能 {
+            get {
+                return ResourceManager.GetString("Root_重连信息_辅助功能", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Root-重连信息-辅助功能-亮度调节 的本地化字符串。
+        /// </summary>
+        internal static string Root_重连信息_辅助功能_亮度调节 {
+            get {
+                return ResourceManager.GetString("Root_重连信息_辅助功能_亮度调节", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Root-重连信息-辅助功能-切除查询 的本地化字符串。
+        /// </summary>
+        internal static string Root_重连信息_辅助功能_切除查询 {
+            get {
+                return ResourceManager.GetString("Root_重连信息_辅助功能_切除查询", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Root-重连信息-辅助功能-切除查询-履历 的本地化字符串。
+        /// </summary>
+        internal static string Root_重连信息_辅助功能_切除查询_履历 {
+            get {
+                return ResourceManager.GetString("Root_重连信息_辅助功能_切除查询_履历", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Root-重连信息-辅助功能-切除查询-故障切除 的本地化字符串。
+        /// </summary>
+        internal static string Root_重连信息_辅助功能_切除查询_故障切除 {
+            get {
+                return ResourceManager.GetString("Root_重连信息_辅助功能_切除查询_故障切除", resourceCulture);
+            }
+        }
     }
 }

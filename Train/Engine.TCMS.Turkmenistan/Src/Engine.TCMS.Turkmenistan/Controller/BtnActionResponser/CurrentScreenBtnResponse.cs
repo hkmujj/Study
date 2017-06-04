@@ -28,10 +28,21 @@ namespace Engine.TCMS.Turkmenistan.Controller.BtnActionResponser
         {
             {
                 var @event = ServiceLocator.Current.GetInstance<IEventAggregator>().GetEvent<NavigatorToState>();
-                @event.Publish(new NavigatorToState.Args(StateKeys.Root_本车信息_同屏方式_本车同屏));
-                mNavigatorToView.Publish(new NavigatorToView.Args(ViewNames.CurrentAxleView));
-                mNavigatorToView.Publish(new NavigatorToView.Args(ViewNames.CurrentProgressbarView));
-                mNavigatorToView.Publish(new NavigatorToView.Args(ViewNames.RunParamPage1));
+                if (GlobalParam.Instance.IsReconnection)
+                {
+                    @event.Publish(new NavigatorToState.Args(StateKeys.Root_重连信息_同屏方式_本车同屏));
+                    mNavigatorToView.Publish(new NavigatorToView.Args(ViewNames.CurrentAxleView));
+                    mNavigatorToView.Publish(new NavigatorToView.Args(ViewNames.CurrentProgressbarView));
+                    mNavigatorToView.Publish(new NavigatorToView.Args(ViewNames.RunParamPage1));
+                }
+                else
+                {
+                    @event.Publish(new NavigatorToState.Args(StateKeys.Root_本车信息_同屏方式_本车同屏));
+                    mNavigatorToView.Publish(new NavigatorToView.Args(ViewNames.CurrentAxleView));
+                    mNavigatorToView.Publish(new NavigatorToView.Args(ViewNames.CurrentProgressbarView));
+                    mNavigatorToView.Publish(new NavigatorToView.Args(ViewNames.RunParamPage1));
+                }
+             
             }
         }
     }

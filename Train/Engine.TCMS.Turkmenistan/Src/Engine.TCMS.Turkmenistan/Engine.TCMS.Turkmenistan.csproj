@@ -105,15 +105,31 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Resources\Styles\TurkmenistanItemControlStyle.xaml">
+    <Page Include="Resources\Styles\TurkmenistanButtonStyle-ch.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Styles\TurkmenistanItemControlStyle-ch.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Styles\TurkmenistanItemControlStyle-tm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resources\Styles\TurkmenistanProgressBarStyle.xaml">
+    <Page Include="Resources\Styles\TurkmenistanProgressBarStyle-ch.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Styles\TurkmenistanProgressBarStyle-tm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resources\Styles\TurkmenistanTextStyles.xaml">
+    <Page Include="Resources\Styles\TurkmenistanTextStyles-tm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Styles\TurkmenistanTextStyles-ch.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -129,7 +145,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resources\Styles\TurkmenistanButtonStyle.xaml">
+    <Page Include="Resources\Styles\TurkmenistanButtonStyle-tm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -169,6 +185,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Contents\AxleTemperature\RecontionAxleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Contents\CutSerchView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -194,6 +214,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Contents\RecontionAxleTemperatureInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\RecontionTemperatureUpInfoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -300,6 +324,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>InFloatKeys.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Keys\StateKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StateKeys.resx</DependentUpon>
+    </Compile>
     <Compile Include="TargetDistanceScalLengthToLineTicknessConverter.cs" />
     <Compile Include="Constant\RegionNames.cs" />
     <Compile Include="Controller\BtnStragy\StateInterfaceFactory.cs" />
@@ -333,11 +362,6 @@
     <Compile Include="Model\DomainModel.cs" />
     <Compile Include="Controller\HardwareBtnController.cs" />
     <Compile Include="Model\HardwareBtnModel.cs" />
-    <Compile Include="Resources\Keys\StateKeys.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StateKeys.resx</DependentUpon>
-    </Compile>
     <Compile Include="ViewModel\HardwareBtnViewModel.cs" />
     <Compile Include="ViewModel\DomainViewModel.cs" />
     <Compile Include="View\Buttons\ButtonView.xaml.cs">
@@ -367,6 +391,9 @@
     <Compile Include="View\Contents\AxleTemperature\CurrentAxleView.xaml.cs">
       <DependentUpon>CurrentAxleView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Contents\AxleTemperature\RecontionAxleView.xaml.cs">
+      <DependentUpon>RecontionAxleView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Contents\CutSerchView.xaml.cs">
       <DependentUpon>CutSerchView.xaml</DependentUpon>
     </Compile>
@@ -387,6 +414,9 @@
     </Compile>
     <Compile Include="View\Contents\RecontionAxleTemperatureInfoView.xaml.cs">
       <DependentUpon>RecontionAxleTemperatureInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\RecontionTemperatureUpInfoView.xaml.cs">
+      <DependentUpon>RecontionTemperatureUpInfoView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Contents\RunParam\CurrentRunparamView.xaml.cs">
       <DependentUpon>CurrentRunparamView.xaml</DependentUpon>
@@ -477,6 +507,7 @@
     <EmbeddedResource Include="Resources\Keys\StateKeys.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>StateKeys.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Shell\TurkmenistanResourceForm.resx">
       <DependentUpon>TurkmenistanResourceForm.cs</DependentUpon>

@@ -34,7 +34,7 @@ namespace Engine.TCMS.Turkmenistan.Controller.BtnActionResponser
                 @event.Publish(new NavigatorToState.Args(StateKeys.Root_重连信息));
                 _navigatorToView.Publish(new NavigatorToView.Args(ViewNames.ReconnectionRunparamView));
                 _navigatorToView.Publish(new NavigatorToView.Args(ViewNames.ReconnectionProgressBarView));
-                _navigatorToView.Publish(new NavigatorToView.Args(ViewNames.CurrentAxleView));
+                _navigatorToView.Publish(new NavigatorToView.Args(ViewNames.RecontionAxleView));
             }
             else
             {

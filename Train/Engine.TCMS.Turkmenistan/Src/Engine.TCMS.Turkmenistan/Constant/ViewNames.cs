@@ -7,6 +7,7 @@ namespace Engine.TCMS.Turkmenistan.Constant
     public class ViewNames
     {
         public static readonly string CurrentAxleView = typeof(CurrentAxleView).FullName;
+        public static readonly string RecontionAxleView = typeof(RecontionAxleView).FullName;
         public static readonly string CurrentRunparamView = typeof(CurrentRunparamView).FullName;
         public static readonly string CurrentProgressbarView = typeof(ReconnectionProgressBarView).FullName;
         public static readonly string ReconnectionProgressBarView = typeof(CurrentProgressbarView).FullName;

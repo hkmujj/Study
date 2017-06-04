@@ -41,7 +41,7 @@ namespace Engine.TCMS.Turkmenistan.Controller.BtnActionResponser
                 
                 navigatorToView.Publish(new NavigatorToView.Args(ViewNames.ReconnectionRunparamView));
                 navigatorToView.Publish(new NavigatorToView.Args(ViewNames.ReconnectionProgressBarView));
-                navigatorToView.Publish(new NavigatorToView.Args(ViewNames.CurrentAxleView));
+                navigatorToView.Publish(new NavigatorToView.Args(ViewNames.RecontionAxleView));
             }
             else
             {
