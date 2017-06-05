@@ -3,7 +3,6 @@ using Engine.TCMS.Turkmenistan.Constant;
 using Engine.TCMS.Turkmenistan.Event;
 using Engine.TCMS.Turkmenistan.Model;
 using Engine.TCMS.Turkmenistan.Model.BtnStragy;
-using Engine.TCMS.Turkmenistan.Resources.Keys;
 using Microsoft.Practices.Prism.Events;
 using Microsoft.Practices.ServiceLocation;
 

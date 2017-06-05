@@ -1,10 +1,8 @@
-﻿using System.IO;
-using Engine.TCMS.Turkmenistan.Adapter;
+﻿using Engine.TCMS.Turkmenistan.Adapter;
 using Engine.TCMS.Turkmenistan.Model;
 using Engine.TCMS.Turkmenistan.View.Shell;
 using Microsoft.Practices.ServiceLocation;
 using MMI.Facility.Interface.Attribute;
-using MMI.Facility.Interface.Extension;
 using MMI.Facility.Interface.Project;
 using MMI.Facility.Interface.Service;
 

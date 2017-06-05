@@ -1,7 +1,4 @@
-﻿using System;
-using System.ComponentModel.Composition;
-using System.IO;
-using System.Windows;
+﻿using System.ComponentModel.Composition;
 using Engine.TCMS.Turkmenistan.Event;
 using Engine.TCMS.Turkmenistan.Model;
 using Engine.TCMS.Turkmenistan.Model.BtnStragy;

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.ComponentModel.Composition;
-using System.IO;
-using CommonUtil.Util;
 using Engine.TCMS.Turkmenistan.Event;
 using Engine.TCMS.Turkmenistan.Model;
 using Microsoft.Practices.Prism.Events;

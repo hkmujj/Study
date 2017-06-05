@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using Engine.TCMS.Turkmenistan.Model;
-using Engine.TCMS.Turkmenistan.ViewModel;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.ServiceLocation;
 using MMI.Facility.Interface.Project;

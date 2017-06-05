@@ -1,18 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows.Forms;
 using Engine.TCMS.Turkmenistan.Constant;
 using MMI.Facility.WPFInfrastructure.Behaviors;
+using UserControl = System.Windows.Controls.UserControl;
 
 namespace Engine.TCMS.Turkmenistan.View.Contents.RunParam
 {
