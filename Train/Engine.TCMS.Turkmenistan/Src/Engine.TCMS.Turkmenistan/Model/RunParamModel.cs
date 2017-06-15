@@ -137,6 +137,7 @@ namespace Engine.TCMS.Turkmenistan.Model
             obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF本车电机电流差, f => MotorCurrentDifference = f);
 
 
+
             obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF他车功率环温1, f => OtherReducedPowerLoopTemperature1 = f);
             obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF他车功率环温2, f => OtherReducedPowerLoopTemperature2 = f);
 
@@ -158,9 +159,11 @@ namespace Engine.TCMS.Turkmenistan.Model
             obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF他车高温水出口温度, f => OtherHighWaterTemperatureSystemOfDieselEngineOut = f);
             obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF他车中冷水进口温度, f => OtherColdWaterSystemOfDieselEngineIn = f);
             obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF他车中冷水出口温度, f => OtherColdWaterSystemOfDieselEngineOut = f);
-            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF他车热交换器水温, f => OtherOilInletTemperature = f);
-            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF他车柴油机进口压力, f => OtherOilOutletTemperature = f);
-            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF他车柴油机出口压力, f => OtherWaterTemperatureOfHeatExchanger = f);
+            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF他车机油进口温度, f => OtherOilInletTemperature = f);
+            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF他车机油出口温度, f => OtherOilOutletTemperature = f);
+            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF他车热交换器水温, f => OtherWaterTemperatureOfHeatExchanger = f);
+            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF他车柴油机进口压力, f => OtherInletPressureOfDieselEngine = f);
+            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF他车柴油机出口压力, f => OtherOutletPressureOfDieselEngine = f);
             obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF他车前增压器进口压力, f => OtherFrontTurbochargerInletPressure = f);
             obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF他车后增压器进口压力, f => OtherAfterTurbochargerInletPressure = f);
             obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF他车滤清器进口压力, f => OtherFilterInletPressure = f);
@@ -174,6 +177,9 @@ namespace Engine.TCMS.Turkmenistan.Model
             obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF他车前增压器转速, f => OtherFrontTurbochargerSpeed = f);
             obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF他车后增压器转速, f => OtherAfterTurbochargerSpeed = f);
             obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF他车电机电流差, f => OtherMotorCurrentDifference = f);
+
+
+
 
         }
 

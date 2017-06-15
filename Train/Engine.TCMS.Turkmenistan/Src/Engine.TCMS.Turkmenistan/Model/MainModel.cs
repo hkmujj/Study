@@ -78,9 +78,14 @@ namespace Engine.TCMS.Turkmenistan.Model
             obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF他车冷却水温, f => OtherCoolingWaterTemperature = f);
 
             obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF本车机油温度, f => CurrentOILTEngineOilTemperature = OILTEngineOilTemperature = f);
-            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF他车机油温度, f => CurrentOILTEngineOilTemperature = OILTEngineOilTemperature = f);
+            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF他车机油温度, f => OtherOILTEngineOilTemperature  = f);
 
-            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF本车机车速度, f => EngineSpeed = f);
+            obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF本车机车速度, f =>
+            {
+                var tmp = f.ToString().Split('.')[0];
+                var d = System.Convert.ToDouble(tmp);
+                EngineSpeed = d;
+            });
 
             obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF本车柴油机转速, f => CurrentDieselEngineSpeed = DieselEngineSpeed = f);
             obj.DataChangedArgs.ChangedFloats.UpdateIfContains(InFloatKeys.InF他车柴油机转速, f => OtherDieselEngineSpeed = f);
