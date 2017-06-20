@@ -182,4 +182,120 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <!--  2017/06/20添加  -->
+    <ControlTemplate x:Key="TextButtonControlTemlete" TargetType="Button">
+        <Border
+            Background="{TemplateBinding Background}"
+            BorderBrush="{TemplateBinding BorderBrush}"
+            BorderThickness="{TemplateBinding BorderThickness}">
+            <TextBlock
+                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                Text="{TemplateBinding Content}"
+                TextAlignment="Center" />
+        </Border>
+    </ControlTemplate>
+    <Style x:Key="MainTextButtonStyle1" TargetType="Button">
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="IsHitTestVisible" Value="False" />
+        <Setter Property="Template" Value="{StaticResource TextButtonControlTemlete}" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundWhiteBrush}" />
+        <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
+        <Setter Property="FontSize" Value="{DynamicResource Double20}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="MainTextButtonStyle2" TargetType="Button">
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="IsHitTestVisible" Value="False" />
+        <Setter Property="Template" Value="{StaticResource TextButtonControlTemlete}" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundWhiteBrush}" />
+        <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
+        <Setter Property="FontSize" Value="{DynamicResource Double20}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="MainTextButtonStyle3" TargetType="Button">
+        <Setter Property="IsHitTestVisible" Value="False" />
+        <Setter Property="Template" Value="{StaticResource TextButtonControlTemlete}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundOrangeBrush}" />
+        <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
+        <Setter Property="FontSize" Value="{DynamicResource Double20}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="MainTextButtonStyle4" TargetType="Button">
+        <Setter Property="Template" Value="{StaticResource TextButtonControlTemlete}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="IsHitTestVisible" Value="False" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundWhiteBrush}" />
+        <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
+        <Setter Property="FontSize" Value="{DynamicResource Double20}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="MainTextButtonStyle5" TargetType="Button">
+        <Setter Property="Template" Value="{StaticResource TextButtonControlTemlete}" />
+        <Setter Property="BorderBrush" Value="DarkGray" />
+        <Setter Property="IsHitTestVisible" Value="False" />
+        <Setter Property="BorderThickness" Value="0,0,0,2" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundWhiteBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ContentDeepSkyBlueBrush}" />
+        <Setter Property="FontSize" Value="{DynamicResource Double20}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="MainTextButtonStyle6" TargetType="Button">
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="IsHitTestVisible" Value="False" />
+        <Setter Property="Margin" Value="10,0,0,0" />
+        <Setter Property="Template" Value="{StaticResource TextButtonControlTemlete}" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundWhiteBrush}" />
+        <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
+        <Setter Property="FontSize" Value="{DynamicResource Double20}" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="RunParamButtonTextStyle1" TargetType="Button">
+        <Setter Property="Template" Value="{StaticResource TextButtonControlTemlete}" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="BorderBrush" Value="DarkGray" />
+        <Setter Property="BorderThickness" Value="0,0,0,0" />
+        <Setter Property="IsHitTestVisible" Value="False" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundWhiteBrush}" />
+        <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
+        <Setter Property="FontSize" Value="{DynamicResource Double16}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="RunParamButtonTextStyle2" TargetType="Button">
+        <Setter Property="Template" Value="{StaticResource TextButtonControlTemlete}" />
+        <Setter Property="BorderBrush" Value="DarkGray" />
+        <Setter Property="BorderThickness" Value="0,0,0,0" />
+        <Setter Property="IsHitTestVisible" Value="False" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="0,0,70,0" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundWhiteBrush}" />
+        <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
+        <Setter Property="FontSize" Value="{DynamicResource Double16}" />
+        <Setter Property="HorizontalContentAlignment" Value="Right" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="RunParamButtonTextStyle3" TargetType="Button">
+        <Setter Property="Template" Value="{StaticResource TextButtonControlTemlete}" />
+        <Setter Property="BorderBrush" Value="DarkGray" />
+        <Setter Property="BorderThickness" Value="0,0,0,0" />
+        <Setter Property="IsHitTestVisible" Value="False" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="155,0,0,0" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundWhiteBrush}" />
+        <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
+        <Setter Property="FontSize" Value="{DynamicResource Double16}" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
 </ResourceDictionary>

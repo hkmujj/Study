@@ -26,16 +26,16 @@
                         <RowDefinition />
                         <RowDefinition />
                     </Grid.RowDefinitions>
-                    <TextBlock
+                    <Button
                         Grid.Row="0"
                         Grid.Column="0"
-                        Style="{DynamicResource MainTextStyle2}"
-                        Text="{DynamicResource EngineSpeed}" />
-                    <TextBlock
+                        Content="{DynamicResource EngineSpeed}"
+                        Style="{DynamicResource MainTextButtonStyle6}" />
+                    <Button
                         Grid.Row="1"
                         Grid.Column="0"
-                        Style="{DynamicResource MainTextStyle2}"
-                        Text="{DynamicResource DieselEngineSpeed}" />
+                        Content="{DynamicResource DieselEngineSpeed}"
+                        Style="{DynamicResource MainTextButtonStyle6}" />
                     <common:EffectBorder
                         Grid.Row="0"
                         Grid.RowSpan="2"
@@ -88,17 +88,7 @@
                             <RowDefinition Height="40" />
                             <RowDefinition />
                         </Grid.RowDefinitions>
-                        <Border
-                            Background="{DynamicResource ContentDeepSkyBlueBrush}"
-                            BorderBrush="DarkGray"
-                            BorderThickness="0,0,0,2">
-                            <TextBlock
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                FontSize="{DynamicResource Double20}"
-                                Foreground="White"
-                                Text="{DynamicResource RunParam}" />
-                        </Border>
+                        <Button Content="{DynamicResource RunParam}" Style="{DynamicResource MainTextButtonStyle5}" />
                     </Grid>
                 </Border>
 

@@ -10,5 +10,11 @@
     d:DesignWidth="800"
     Background="Black"
     mc:Ignorable="d">
-    <ContentControl regions:RegionManager.RegionName="{x:Static constant:RegionNames.ShellContent}" />
+    <Viewbox Stretch="Fill">
+        <ContentControl
+            Width="800"
+            Height="600"
+            regions:RegionManager.RegionName="{x:Static constant:RegionNames.ShellContent}" />
+    </Viewbox>
+
 </UserControl>

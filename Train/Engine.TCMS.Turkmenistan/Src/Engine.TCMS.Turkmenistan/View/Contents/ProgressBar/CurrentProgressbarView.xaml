@@ -22,38 +22,47 @@
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*" />
-                        <ColumnDefinition Width="2.5*" />
-                        <ColumnDefinition Width="1*" />
-                        <ColumnDefinition Width="2*" />
-                        <ColumnDefinition Width="1*" />
-                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="54*" />
+                        <ColumnDefinition Width="114*" />
+                        <ColumnDefinition Width="60*" />
+                        <ColumnDefinition Width="95*" />
+                        <ColumnDefinition Width="66*" />
+                        <ColumnDefinition Width="121*" />
                     </Grid.ColumnDefinitions>
-                    <TextBlock
+                    <Button
                         Grid.Column="0"
-                        Style="{DynamicResource MainTextStyle1}"
-                        Text="{DynamicResource Date}" />
+                        Content="{DynamicResource Date}"
+                        Style="{DynamicResource MainTextButtonStyle1}" />
                     <common:EffectBorder Grid.Column="1" Style="{DynamicResource MainViewBorderStyle2}">
                         <common:EffectBorder.EffectContent>
-                            <TextBlock Foreground="Wheat" Text="{Binding Model.MainModel.Date}" />
+                            <TextBlock
+                                VerticalAlignment="Center"
+                                Foreground="Wheat"
+                                Text="{Binding Model.MainModel.Date}" />
                         </common:EffectBorder.EffectContent>
                     </common:EffectBorder>
-                    <TextBlock
+                    <Button
                         Grid.Column="2"
-                        Style="{DynamicResource MainTextStyle1}"
-                        Text="{DynamicResource Time}" />
+                        Content="{DynamicResource Time}"
+                        Style="{DynamicResource MainTextButtonStyle1}" />
                     <common:EffectBorder Grid.Column="3" Style="{DynamicResource MainViewBorderStyle2}">
                         <common:EffectBorder.EffectContent>
-                            <TextBlock Foreground="Wheat" Text="{Binding Model.MainModel.Time}" />
+                            <TextBlock
+                                VerticalAlignment="Center"
+                                Foreground="Wheat"
+                                Text="{Binding Model.MainModel.Time}" />
                         </common:EffectBorder.EffectContent>
                     </common:EffectBorder>
-                    <TextBlock
+                    <Button
                         Grid.Column="4"
-                        Style="{DynamicResource MainTextStyle1}"
-                        Text="{DynamicResource WorkState}" />
+                        Content="{DynamicResource WorkState}"
+                        Style="{DynamicResource MainTextButtonStyle1}" />
                     <common:EffectBorder Grid.Column="5" Style="{DynamicResource MainViewBorderStyle2}">
                         <common:EffectBorder.EffectContent>
-                            <TextBlock Foreground="Wheat" Text="{Binding Model.MainModel.WorkModel, Converter={StaticResource EnumDescritionConverter}}" />
+                            <TextBlock
+                                VerticalAlignment="Center"
+                                Foreground="Wheat"
+                                Text="{Binding Model.MainModel.WorkModel, Converter={StaticResource EnumDescritionConverter}}" />
                         </common:EffectBorder.EffectContent>
                     </common:EffectBorder>
 
@@ -198,43 +207,43 @@
                         <ColumnDefinition Width="22*" />
                         <ColumnDefinition Width="13*" />
                     </Grid.ColumnDefinitions>
-                    <TextBlock
+                    <Button
                         Grid.Column="1"
-                        Style="{DynamicResource MainTextStyle5}"
-                        Text="{DynamicResource CurrentCar}" />
-                    <TextBlock
-                        Grid.Column="2"
+                        Content="{DynamicResource CurrentCar}"
+                        Style="{DynamicResource MainTextButtonStyle2}" />
+                    <Button
                         Grid.Row="0"
-                        Style="{DynamicResource MainTextStyle5}"
-                        Text="{DynamicResource DieselEngineSpeed1}" />
-                    <TextBlock
+                        Grid.Column="2"
+                        Content="{DynamicResource DieselEngineSpeed1}"
+                        Style="{DynamicResource MainTextButtonStyle2}" />
+                    <Button
                         Grid.Column="3"
-                        Style="{DynamicResource MainTextStyle5}"
-                        Text="{DynamicResource OthertCar}" />
-                    <TextBlock
+                        Content="{DynamicResource OthertCar}"
+                        Style="{DynamicResource MainTextButtonStyle2}" />
+                    <Button
                         Grid.Column="5"
-                        Style="{DynamicResource MainTextStyle5}"
-                        Text="{DynamicResource CurrentCar}" />
-                    <TextBlock
+                        Content="{DynamicResource CurrentCar}"
+                        Style="{DynamicResource MainTextButtonStyle2}" />
+                    <Button
                         Grid.Column="6"
-                        Style="{DynamicResource MainTextStyle5}"
-                        Text="{DynamicResource OilPressure}" />
-                    <TextBlock
+                        Content="{DynamicResource OilPressure}"
+                        Style="{DynamicResource MainTextButtonStyle2}" />
+                    <Button
                         Grid.Column="7"
-                        Style="{DynamicResource MainTextStyle5}"
-                        Text="{DynamicResource OthertCar}" />
-                    <TextBlock
+                        Content="{DynamicResource OthertCar}"
+                        Style="{DynamicResource MainTextButtonStyle2}" />
+                    <Button
                         Grid.Column="9"
-                        Style="{DynamicResource MainTextStyle5}"
-                        Text="{DynamicResource CurrentCar}" />
-                    <TextBlock
+                        Content="{DynamicResource CurrentCar}"
+                        Style="{DynamicResource MainTextButtonStyle2}" />
+                    <Button
                         Grid.Column="10"
-                        Style="{DynamicResource MainTextStyle5}"
-                        Text="{DynamicResource CoolingWaterTemperature}" />
-                    <TextBlock
+                        Content="{DynamicResource CoolingWaterTemperature}"
+                        Style="{DynamicResource MainTextButtonStyle2}" />
+                    <Button
                         Grid.Column="11"
-                        Style="{DynamicResource MainTextStyle5}"
-                        Text="{DynamicResource OthertCar}" />
+                        Content="{DynamicResource OthertCar}"
+                        Style="{DynamicResource MainTextButtonStyle2}" />
 
                 </Grid>
             </Grid>

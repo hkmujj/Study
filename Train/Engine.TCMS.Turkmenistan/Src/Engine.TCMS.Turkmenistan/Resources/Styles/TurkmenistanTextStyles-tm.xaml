@@ -9,7 +9,7 @@
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundWhiteBrush}" />
         <Setter Property="FontSize" Value="{DynamicResource Double20}" />
-        <Setter Property="Background" Value="Black"></Setter>
+        <Setter Property="Background" Value="Black" />
     </Style>
     <Style x:Key="MainTextStyle2" TargetType="TextBlock">
         <Setter Property="HorizontalAlignment" Value="Left" />
@@ -17,7 +17,7 @@
         <Setter Property="Margin" Value="15,0,0,0" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundWhiteBrush}" />
         <Setter Property="FontSize" Value="{DynamicResource Double20}" />
-        <Setter Property="Background" Value="Black"></Setter>
+        <Setter Property="Background" Value="Black" />
     </Style>
     <Style x:Key="MainTextStyle3" TargetType="TextBlock">
         <Setter Property="HorizontalAlignment" Value="Right" />
@@ -34,21 +34,42 @@
         <Setter Property="FontSize" Value="{DynamicResource Double16}" />
     </Style>
     <Style x:Key="MainTextStyle5" TargetType="TextBlock">
-        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
         <Setter Property="TextAlignment" Value="Center" />
-        <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="Background" Value="Black"></Setter>
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="Background" Value="Black" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundWhiteBrush}" />
         <Setter Property="FontSize" Value="{DynamicResource Double20}" />
     </Style>
     <Style x:Key="MainTextStyle6" TargetType="TextBlock">
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="TextAlignment" Value="Center" />
+        <Setter Property="Background" Value="{DynamicResource BlackBrush}" />
         <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="Margin" Value="2,0" />
+        <Setter Property="Margin" Value="0,0" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundOrangeBrush}" />
+        <Setter Property="FontSize" Value="{DynamicResource Double18}" />
+    </Style>
+
+    <Style x:Key="MainTextStyle7" TargetType="TextBlock">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="TextAlignment" Value="Center" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundOrangeBrush}" />
         <Setter Property="FontSize" Value="{DynamicResource Double20}" />
+        <Setter Property="Background" Value="Black" />
     </Style>
+
+    <Style x:Key="MainTextStyle8" TargetType="TextBlock">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="TextAlignment" Value="Center" />
+        <Setter Property="Background" Value="{DynamicResource BlackBrush}" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="0,0" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundOrangeBrush}" />
+        <Setter Property="FontSize" Value="{DynamicResource Double18}" />
+    </Style>
+
     <Style x:Key="AxleTextStyle1" TargetType="TextBlock">
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="VerticalAlignment" Value="Top" />
@@ -70,7 +91,7 @@
     <Style x:Key="RunParamTextStyle2" TargetType="TextBlock">
         <Setter Property="HorizontalAlignment" Value="Left" />
         <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="Background" Value="Black"></Setter>
+        <Setter Property="Background" Value="Black" />
         <Setter Property="Foreground" Value="{DynamicResource HarwareButtonWhiteBrush}" />
         <Setter Property="FontSize" Value="{DynamicResource Double16}" />
     </Style>
@@ -78,7 +99,7 @@
         <Setter Property="HorizontalAlignment" Value="Left" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Margin" Value="20,0,0,0" />
-        <Setter Property="Background" Value="Black"></Setter>
+        <Setter Property="Background" Value="Black" />
         <Setter Property="Foreground" Value="{DynamicResource HarwareButtonWhiteBrush}" />
         <Setter Property="FontSize" Value="{DynamicResource Double16}" />
     </Style>
