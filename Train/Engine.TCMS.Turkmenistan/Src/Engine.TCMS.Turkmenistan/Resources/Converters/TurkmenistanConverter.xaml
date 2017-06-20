@@ -3,10 +3,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:constant="clr-namespace:Engine.TCMS.Turkmenistan.Constant"
     xmlns:converter="clr-namespace:MMI.Facility.WPFInfrastructure.Converter;assembly=MMI.Facility.WPFInfrastructure"
-    xmlns:turkmenistan="clr-namespace:Engine.TCMS.Turkmenistan">
+    xmlns:turkmenistan="clr-namespace:Engine.TCMS.Turkmenistan"
+    xmlns:converter1="clr-namespace:Engine.TCMS.Turkmenistan.Converter">
 
     <converter:MathConverter x:Key="MathConverter" />
     <converter:EnumDescritionConverter x:Key="EnumDescritionConverter" />
     <turkmenistan:TargetDistanceScalLengthToLineTicknessConverter x:Key="TargetDistanceScalLengthToLineTicknessConverter" />
+    <converter1:DoubleToStringConverter x:Key="DoubleToStringConverter"></converter1:DoubleToStringConverter>
 
 </ResourceDictionary>

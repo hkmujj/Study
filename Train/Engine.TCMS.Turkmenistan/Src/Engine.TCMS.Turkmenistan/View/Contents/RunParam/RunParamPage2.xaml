@@ -26,16 +26,16 @@
                         <RowDefinition />
                         <RowDefinition />
                     </Grid.RowDefinitions>
-                    <TextBlock
+                    <Button
                         Grid.Row="0"
                         Grid.Column="0"
-                        Style="{DynamicResource MainTextStyle2}"
-                        Text="{DynamicResource EngineSpeed}" />
-                    <TextBlock
+                        Content="{DynamicResource EngineSpeed}"
+                        Style="{DynamicResource MainTextButtonStyle6}" />
+                    <Button
                         Grid.Row="1"
                         Grid.Column="0"
-                        Style="{DynamicResource MainTextStyle2}"
-                        Text="{DynamicResource DieselEngineSpeed}" />
+                        Content="{DynamicResource DieselEngineSpeed}"
+                        Style="{DynamicResource MainTextButtonStyle6}" />
                     <common:EffectBorder
                         Grid.Row="0"
                         Grid.RowSpan="2"
@@ -88,17 +88,7 @@
                             <RowDefinition Height="40" />
                             <RowDefinition />
                         </Grid.RowDefinitions>
-                        <Border
-                            Background="{DynamicResource ContentDeepSkyBlueBrush}"
-                            BorderBrush="DarkGray"
-                            BorderThickness="0,0,0,2">
-                            <TextBlock
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                FontSize="{DynamicResource Double20}"
-                                Foreground="White"
-                                Text="{DynamicResource RunParam}" />
-                        </Border>
+                        <Button Content="{DynamicResource RunParam}" Style="{DynamicResource MainTextButtonStyle5}" />
                         <Grid Grid.Row="1" Margin="10,10,0,10">
                             <Grid.RowDefinitions>
                                 <RowDefinition />
@@ -116,40 +106,50 @@
                                 <RowDefinition />
                             </Grid.RowDefinitions>
                             <Grid Grid.Row="0">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource ColdFanSpped1}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.CoolingFanSpeed1, StringFormat={}{0:F0} r/min}" />
+                                <Button Content="{DynamicResource ColdFanSpped1}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.CoolingFanSpeed1}" Style="{DynamicResource RunParamButtonTextStyle4}" />
+                                <Button Content="r/min" Style="{DynamicResource RunParamButtonTextStyle3}" />
                             </Grid>
                             <Grid Grid.Row="1">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource ColdFanSpped2}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.CoolingFanSpeed2, StringFormat={}{0:F0} r/min}" />
+                                <Button Content="{DynamicResource ColdFanSpped2}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.CoolingFanSpeed2}" Style="{DynamicResource RunParamButtonTextStyle4}" />
+                                <Button Content="r/min" Style="{DynamicResource RunParamButtonTextStyle3}" />
                             </Grid>
                             <Grid Grid.Row="2">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource ExciterCurrent}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.ExciterCurrent, StringFormat={}{0:F0}     A}" />
+                                <Button Content="{DynamicResource ExciterCurrent}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.ExciterCurrent}"  Style="{DynamicResource RunParamButtonTextStyle6}" />
+                                <Button Content="A" Style="{DynamicResource RunParamButtonTextStyle5}" />
                             </Grid>
                             <Grid Grid.Row="4">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource MainGeneratorExciterCurrent}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.MainGeneratorExciterCurrent, StringFormat={}{0:F0}     A}" />
+                                <Button Content="{DynamicResource MainGeneratorExciterCurrent}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.MainGeneratorExciterCurrent}" Style="{DynamicResource RunParamButtonTextStyle6}" />
+                                <Button Content="A" Style="{DynamicResource RunParamButtonTextStyle5}" />
                             </Grid>
                             <Grid Grid.Row="5">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource EarthLeakageCurrent}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.EarthLeakageCurrent, StringFormat={}{0:F0}  mA}" />
+                                <Button Content="{DynamicResource EarthLeakageCurrent}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.EarthLeakageCurrent}" Style="{DynamicResource RunParamButtonTextStyle7}" />
+                                <Button Content="mA" Style="{DynamicResource RunParamButtonTextStyle5}" />
                             </Grid>
                             <Grid Grid.Row="6">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource FrontTurbochargerSpeed}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.FrontTurbochargerSpeed, StringFormat={}{0:F0} r/min}" />
+                                <Button Content="{DynamicResource FrontTurbochargerSpeed}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.FrontTurbochargerSpeed}" Style="{DynamicResource RunParamButtonTextStyle4}" />
+                                <Button Content="r/min" Style="{DynamicResource RunParamButtonTextStyle13}" />
                             </Grid>
                             <Grid Grid.Row="7">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource AfterTurbochargerSpeed}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.AfterTurbochargerSpeed, StringFormat={}{0:F0} r/min}" />
+                                <Button Content="{DynamicResource AfterTurbochargerSpeed}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.AfterTurbochargerSpeed}" Style="{DynamicResource RunParamButtonTextStyle4}" />
+                                <Button Content="r/min" Style="{DynamicResource RunParamButtonTextStyle13}" />
                             </Grid>
                             <Grid Grid.Row="8">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource ReducedPowerLoopTemperature1}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.ReducedPowerLoopTemperature1, StringFormat={}{0:F0}      ℃}" />
+                                <Button Content="{DynamicResource ReducedPowerLoopTemperature1}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.ReducedPowerLoopTemperature1}" Style="{DynamicResource RunParamButtonTextStyle4}" />
+                                <Button Content="{Binding Model.RunParamModel.ReducedPowerLoopTemperature1}" Style="{DynamicResource RunParamButtonTextStyle4}" />
+                                <Button Content="℃" Style="{DynamicResource RunParamButtonTextStyle5}" />
                             </Grid>
                             <Grid Grid.Row="9">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource ReducedPowerLoopTemperature2}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.ReducedPowerLoopTemperature2, StringFormat={}{0:F0}      ℃}" />
+                                <Button Content="{DynamicResource ReducedPowerLoopTemperature2}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.ReducedPowerLoopTemperature2}" Style="{DynamicResource RunParamButtonTextStyle4}" />
+                                <Button Content="℃" Style="{DynamicResource RunParamButtonTextStyle5}" />
                             </Grid>
                         </Grid>
                     </Grid>

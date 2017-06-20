@@ -23,11 +23,11 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock
+                    <Button
                         Grid.Row="0"
                         Grid.Column="0"
-                        Style="{DynamicResource MainTextStyle2}"
-                        Text="{DynamicResource EngineSpeed}" />
+                        Content="{DynamicResource EngineSpeed}"
+                        Style="{DynamicResource MainTextButtonStyle6}" />
 
                     <common:EffectBorder
                         Grid.Row="0"
@@ -70,17 +70,7 @@
                             <RowDefinition Height="40" />
                             <RowDefinition />
                         </Grid.RowDefinitions>
-                        <Border
-                            Background="{DynamicResource ContentDeepSkyBlueBrush}"
-                            BorderBrush="DarkGray"
-                            BorderThickness="0,0,0,2">
-                            <TextBlock
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                FontSize="{DynamicResource Double20}"
-                                Foreground="White"
-                                Text="{DynamicResource CurrentCarParam}" />
-                        </Border>
+                        <Button Content="{DynamicResource CurrentCarParam}" Style="{DynamicResource MainTextButtonStyle5}" />
                         <Grid Grid.Row="1" Margin="5,5,5,5">
                             <Grid.RowDefinitions>
                                 <RowDefinition />
@@ -93,33 +83,40 @@
                                 <RowDefinition />
                             </Grid.RowDefinitions>
                             <Grid Grid.Row="0">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource ElectricCurrent1D}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle1}" Text="{Binding Model.RunParamModel.ElectricCurrent1D, StringFormat={}{0:F0}    A}" />
+                                <Button Content="{DynamicResource ElectricCurrent1D}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.ElectricCurrent1D}" Style="{DynamicResource RunParamButtonTextStyle8}" />
+                                <Button Content="A" Style="{DynamicResource RunParamButtonTextStyle3}" />
                             </Grid>
                             <Grid Grid.Row="1">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource ElectricCurrent2D}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle1}" Text="{Binding Model.RunParamModel.ElectricCurrent2D, StringFormat={}{0:F0}    A}" />
+                                <Button Content="{DynamicResource ElectricCurrent2D}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.ElectricCurrent2D}" Style="{DynamicResource RunParamButtonTextStyle8}" />
+                                <Button Content="A" Style="{DynamicResource RunParamButtonTextStyle3}" />
                             </Grid>
                             <Grid Grid.Row="2">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource ElectricCurrent3D}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle1}" Text="{Binding Model.RunParamModel.ElectricCurrent3D, StringFormat={}{0:F0}    A}" />
+                                <Button Content="{DynamicResource ElectricCurrent3D}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.ElectricCurrent3D}" Style="{DynamicResource RunParamButtonTextStyle8}" />
+                                <Button Content="A" Style="{DynamicResource RunParamButtonTextStyle3}" />
                             </Grid>
                             <Grid Grid.Row="3">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource ElectricCurrent4D}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle1}" Text="{Binding Model.RunParamModel.ElectricCurrent4D, StringFormat={}{0:F0}    A}" />
+                                <Button Content="{DynamicResource ElectricCurrent4D}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.ElectricCurrent4D}" Style="{DynamicResource RunParamButtonTextStyle8}" />
+                                <Button Content="A" Style="{DynamicResource RunParamButtonTextStyle3}" />
                             </Grid>
                             <Grid Grid.Row="4">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource ElectricCurrent5D}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle1}" Text="{Binding Model.RunParamModel.ElectricCurrent5D, StringFormat={}{0:F0}    A}" />
+                                <Button Content="{DynamicResource ElectricCurrent5D}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.ElectricCurrent5D}" Style="{DynamicResource RunParamButtonTextStyle8}" />
+                                <Button Content="A" Style="{DynamicResource RunParamButtonTextStyle3}" />
                             </Grid>
                             <Grid Grid.Row="5">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource ElectricCurrent6D}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle1}" Text="{Binding Model.RunParamModel.ElectricCurrent6D, StringFormat={}{0:F0}    A}" />
+                                <Button Content="{DynamicResource ElectricCurrent6D}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.ElectricCurrent6D}" Style="{DynamicResource RunParamButtonTextStyle8}" />
+                                <Button Content="A" Style="{DynamicResource RunParamButtonTextStyle3}" />
                             </Grid>
-                       
+
                             <Grid Grid.Row="6">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource CurrentDistributionFactor}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle1}" Text="{Binding Model.RunParamModel.CurrentDistributionFactor, StringFormat={}{0:F0}   %}" />
+                                <Button Content="{DynamicResource CurrentDistributionFactor}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.CurrentDistributionFactor}" Style="{DynamicResource RunParamButtonTextStyle8}" />
+                                <Button Content="%" Style="{DynamicResource RunParamButtonTextStyle3}" />
                             </Grid>
                         </Grid>
                     </Grid>
@@ -135,18 +132,7 @@
                             <RowDefinition Height="40" />
                             <RowDefinition />
                         </Grid.RowDefinitions>
-                        <Border
-                            Background="{DynamicResource ContentDeepSkyBlueBrush}"
-                            BorderBrush="DarkGray"
-                            BorderThickness="0,0,0,2">
-                            <TextBlock
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                FontSize="{DynamicResource Double20}"
-                                Foreground="White"
-                                Text="{DynamicResource OtherCarRunParam}" />
-
-                        </Border>
+                        <Button Content="{DynamicResource OtherCarRunParam}" Style="{DynamicResource MainTextButtonStyle5}" />
                         <Grid Grid.Row="1" Margin="5,5,5,5">
                             <Grid.RowDefinitions>
                                 <RowDefinition />
@@ -159,33 +145,40 @@
                                 <RowDefinition />
                             </Grid.RowDefinitions>
                             <Grid Grid.Row="0">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource ElectricCurrent1D}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle1}" Text="{Binding Model.RunParamModel.OtherElectricCurrent1D, StringFormat={}{0:F0}    A}" />
+                                <Button Content="{DynamicResource ElectricCurrent1D}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.OtherElectricCurrent1D}" Style="{DynamicResource RunParamButtonTextStyle8}" />
+                                <Button Content="A" Style="{DynamicResource RunParamButtonTextStyle3}" />
                             </Grid>
                             <Grid Grid.Row="1">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource ElectricCurrent2D}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle1}" Text="{Binding Model.RunParamModel.OtherElectricCurrent2D, StringFormat={}{0:F0}    A}" />
+                                <Button Content="{DynamicResource ElectricCurrent2D}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.OtherElectricCurrent2D}" Style="{DynamicResource RunParamButtonTextStyle8}" />
+                                <Button Content="A" Style="{DynamicResource RunParamButtonTextStyle3}" />
                             </Grid>
                             <Grid Grid.Row="2">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource ElectricCurrent3D}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle1}" Text="{Binding Model.RunParamModel.OtherElectricCurrent3D, StringFormat={}{0:F0}    A}" />
+                                <Button Content="{DynamicResource ElectricCurrent3D}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.OtherElectricCurrent3D}" Style="{DynamicResource RunParamButtonTextStyle8}" />
+                                <Button Content="A" Style="{DynamicResource RunParamButtonTextStyle3}" />
                             </Grid>
                             <Grid Grid.Row="3">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource ElectricCurrent4D}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle1}" Text="{Binding Model.RunParamModel.OtherElectricCurrent4D, StringFormat={}{0:F0}    A}" />
+                                <Button Content="{DynamicResource ElectricCurrent4D}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.OtherElectricCurrent4D}" Style="{DynamicResource RunParamButtonTextStyle8}" />
+                                <Button Content="A" Style="{DynamicResource RunParamButtonTextStyle3}" />
                             </Grid>
                             <Grid Grid.Row="4">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource ElectricCurrent5D}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle1}" Text="{Binding Model.RunParamModel.OtherElectricCurrent5D, StringFormat={}{0:F0}    A}" />
+                                <Button Content="{DynamicResource ElectricCurrent5D}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.OtherElectricCurrent5D}" Style="{DynamicResource RunParamButtonTextStyle8}" />
+                                <Button Content="A" Style="{DynamicResource RunParamButtonTextStyle3}" />
                             </Grid>
                             <Grid Grid.Row="5">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource ElectricCurrent6D}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle1}" Text="{Binding Model.RunParamModel.OtherElectricCurrent6D, StringFormat={}{0:F0}    A}" />
+                                <Button Content="{DynamicResource ElectricCurrent6D}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.OtherElectricCurrent6D}" Style="{DynamicResource RunParamButtonTextStyle8}" />
+                                <Button Content="A" Style="{DynamicResource RunParamButtonTextStyle3}" />
                             </Grid>
 
                             <Grid Grid.Row="6">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource CurrentDistributionFactor}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle1}" Text="{Binding Model.RunParamModel.OtherCurrentDistributionFactor, StringFormat={}{0:F0}   %}" />
+                                <Button Content="{DynamicResource CurrentDistributionFactor}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.OtherCurrentDistributionFactor}" Style="{DynamicResource RunParamButtonTextStyle8}" />
+                                <Button Content="%" Style="{DynamicResource RunParamButtonTextStyle3}" />
                             </Grid>
                         </Grid>
                     </Grid>

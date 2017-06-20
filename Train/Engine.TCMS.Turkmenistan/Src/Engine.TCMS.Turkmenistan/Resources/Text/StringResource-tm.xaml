@@ -15,15 +15,18 @@
     <system:String x:Key="OILTEngineOilTemperature" xml:space="preserve">Т゜С&#13;масла</system:String>
     <system:String x:Key="FaultInfo" xml:space="preserve">Аварня&#13;Инфор&#13;мацня</system:String>
     <system:String x:Key="AxleTemperature" xml:space="preserve">Т゜С&#13;оси</system:String>
-    <system:String x:Key="AxleTemperature1" xml:space="preserve"></system:String>
+
+    <!--<system:String x:Key="AxleTemperature1"   xml:space="preserve"></system:String>-->
+    <x:Static x:Key="AxleTemperature1" Member="system:String.Empty"></x:Static>
+    
     <system:String x:Key="CurrentMaxOther" xml:space="preserve">本&#13;MAX&#13;他</system:String>
-    <system:String x:Key="AxleBitTemperature">ПП.оси Т゜С</system:String>
+    <system:String x:Key="AxleBitTemperature">ПП.оси Т℃</system:String>
     <system:String x:Key="Axial" xml:space="preserve">ОСИ N0</system:String>
     <system:String x:Key="Temperature">温度℃</system:String>
     <system:String x:Key="AxleTemperaturInfoWindow">Температура оси</system:String>
     <system:String x:Key="TemperaturUpInfoWindow">温 升 信 息 窗 口</system:String>
-    <system:String x:Key="AmbientTemperature1">Т゜С окр. Среды 1</system:String>
-    <system:String x:Key="AmbientTemperature2">Т゜С окр. Среды 2</system:String>
+    <system:String x:Key="AmbientTemperature1">Т℃ окр. Среды 1</system:String>
+    <system:String x:Key="AmbientTemperature2">Т℃ окр. Среды 2</system:String>
     <system:String x:Key="CurrentAmbientTemperature1">本车环温（1）:</system:String>
     <system:String x:Key="CurrentAmbientTemperature2">本车环温（2）:</system:String>
     <system:String x:Key="OtherAmbientTemperature1">他车环温（1）:</system:String>
@@ -67,10 +70,10 @@
     <system:String x:Key="FaultCutSelect">故障切除选择:</system:String>
     <system:String x:Key="OilPressureParamFormat" xml:space="preserve">Смазочное давленне</system:String>
     <system:String x:Key="FuelPressureParamFormat" xml:space="preserve">Давленне М-горення</system:String>
-    <system:String x:Key="CoolingWaterTemperatureParamFormat" xml:space="preserve">Т゜С охлводы</system:String>
-    <system:String x:Key="OILTEngineOilTemperatureParamFormat" xml:space="preserve">Т゜С масла</system:String>
-    <system:String x:Key="PowerTemperatureParamFormat1" xml:space="preserve">Т゜С средыпрн сннж.мощ1</system:String>
-    <system:String x:Key="PowerTemperatureParamFormat2" xml:space="preserve">Т゜С средыпрн сннж.мощ2</system:String>
+    <system:String x:Key="CoolingWaterTemperatureParamFormat" xml:space="preserve">Т℃ охлводы</system:String>
+    <system:String x:Key="OILTEngineOilTemperatureParamFormat" xml:space="preserve">Т℃ масла</system:String>
+    <system:String x:Key="PowerTemperatureParamFormat1" xml:space="preserve">Т℃ средыпрн сннж.мощ1</system:String>
+    <system:String x:Key="PowerTemperatureParamFormat2" xml:space="preserve">Т℃ средыпрн сннж.мощ2</system:String>
     <system:String x:Key="BrakePressParamFormat" xml:space="preserve">Дав.тормрезервуара</system:String>
     <system:String x:Key="UnitKpa">kPa</system:String>
     <system:String x:Key="UnitCentigrade">℃</system:String>
@@ -78,12 +81,12 @@
     <system:String x:Key="UnitV">V</system:String>
     <system:String x:Key="Unitrmin">r/min</system:String>
     <system:String x:Key="HighWaterTemperatureSystemOfDieselEngine">1.Снстема горячей воды д-ля</system:String>
-    <system:String x:Key="OutletTemperature">Выходящая Т゜С</system:String>
-    <system:String x:Key="InletTemperature">Входящая Т゜С</system:String>
+    <system:String x:Key="OutletTemperature">Выходящая Т℃</system:String>
+    <system:String x:Key="InletTemperature">Входящая Т℃</system:String>
     <system:String x:Key="ColdWaterSystemOfDieselEngine">2.Снстема среднеохл.воды д-ля</system:String>
     <system:String x:Key="OilInletTemperature">Вх.Т゜С масла</system:String>
-    <system:String x:Key="OilOutletTemperature">Вых.Т゜С масла</system:String>
-    <system:String x:Key="WaterTemperatureOfHeatExchanger">Т゜С воды теплообменннка</system:String>
+    <system:String x:Key="OilOutletTemperature">Вых.Т℃ масла</system:String>
+    <system:String x:Key="WaterTemperatureOfHeatExchanger">Т℃ воды теплообменннка</system:String>
     <system:String x:Key="DieselPressure">3.Давленне масла</system:String>
     <system:String x:Key="DieselIntel">Вход-дезель</system:String>
     <system:String x:Key="DieselOuttel">Выход-дезель</system:String>
@@ -102,8 +105,8 @@
     <system:String x:Key="EarthLeakageCurrent">Реле заземлення</system:String>
     <system:String x:Key="FrontTurbochargerSpeed">Ск-вращл-турбонагнет.</system:String>
     <system:String x:Key="AfterTurbochargerSpeed">Ск-вращз-турбонагнет.</system:String>
-    <system:String x:Key="ReducedPowerLoopTemperature1">Т゜С средыпрн сннж.мощ1</system:String>
-    <system:String x:Key="ReducedPowerLoopTemperature2">Т゜С средыпрн сннж.мощ1</system:String>
+    <system:String x:Key="ReducedPowerLoopTemperature1">Т℃ средыпрн сннж.мощ1</system:String>
+    <system:String x:Key="ReducedPowerLoopTemperature2">Т℃ средыпрн сннж.мощ1</system:String>
     <system:String x:Key="ElectricCurrent1D">Ток 1D</system:String>
     <system:String x:Key="ElectricCurrent2D">Ток 2D</system:String>
     <system:String x:Key="ElectricCurrent3D">Ток 3D</system:String>

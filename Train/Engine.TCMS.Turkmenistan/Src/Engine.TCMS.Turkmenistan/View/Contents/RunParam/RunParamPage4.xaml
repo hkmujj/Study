@@ -24,11 +24,11 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock
+                    <Button
                         Grid.Row="0"
                         Grid.Column="0"
-                        Style="{DynamicResource MainTextStyle2}"
-                        Text="{DynamicResource EngineSpeed}" />
+                        Content="{DynamicResource EngineSpeed}"
+                        Style="{DynamicResource MainTextButtonStyle6}" />
 
                     <common:EffectBorder
                         Grid.Row="0"
@@ -71,17 +71,7 @@
                             <RowDefinition Height="40" />
                             <RowDefinition />
                         </Grid.RowDefinitions>
-                        <Border
-                            Background="{DynamicResource ContentDeepSkyBlueBrush}"
-                            BorderBrush="DarkGray"
-                            BorderThickness="0,0,0,2">
-                            <TextBlock
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                FontSize="{DynamicResource Double20}"
-                                Foreground="White"
-                                Text="{DynamicResource CurrentCarParam}" />
-                        </Border>
+                        <Button Content="{DynamicResource CurrentCarParam}" Style="{DynamicResource MainTextButtonStyle5}" />
                         <Grid Grid.Row="1" Margin="5,5,20,5">
                             <Grid.RowDefinitions>
                                 <RowDefinition />
@@ -94,32 +84,39 @@
                                 <RowDefinition />
                             </Grid.RowDefinitions>
                             <Grid Grid.Row="0">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource HightInletTemperature}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.HighWaterTemperatureSystemOfDieselEngineIn, StringFormat={}{0:F0}  ℃}" />
+                                <Button Content="{DynamicResource HightInletTemperature}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.HighWaterTemperatureSystemOfDieselEngineIn}" Style="{DynamicResource RunParamButtonTextStyle6}" />
+                                <Button Content="℃" Style="{DynamicResource RunParamButtonTextStyle5}" />
                             </Grid>
                             <Grid Grid.Row="1">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource HightOutletTemperature}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.HighWaterTemperatureSystemOfDieselEngineOut, StringFormat={}{0:F0}  ℃}" />
+                                <Button Content="{DynamicResource HightOutletTemperature}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.HighWaterTemperatureSystemOfDieselEngineOut}" Style="{DynamicResource RunParamButtonTextStyle6}" />
+                                <Button Content="℃" Style="{DynamicResource RunParamButtonTextStyle5}" />
                             </Grid>
                             <Grid Grid.Row="2">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource InletTemperatureOfColdWater}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.ColdWaterSystemOfDieselEngineIn, StringFormat={}{0:F0}  ℃}" />
+                                <Button Content="{DynamicResource InletTemperatureOfColdWater}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.ColdWaterSystemOfDieselEngineIn}" Style="{DynamicResource RunParamButtonTextStyle6}" />
+                                <Button Content="℃" Style="{DynamicResource RunParamButtonTextStyle5}" />
                             </Grid>
                             <Grid Grid.Row="3">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource OutletTemperatureOfColdWater}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.ColdWaterSystemOfDieselEngineOut, StringFormat={}{0:F0}  ℃}" />
+                                <Button Content="{DynamicResource OutletTemperatureOfColdWater}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.ColdWaterSystemOfDieselEngineOut}" Style="{DynamicResource RunParamButtonTextStyle6}" />
+                                <Button Content="℃" Style="{DynamicResource RunParamButtonTextStyle5}" />
                             </Grid>
                             <Grid Grid.Row="4">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource OilInletTemperature}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.OilInletTemperature, StringFormat={}{0:F0}  ℃}" />
+                                <Button Content="{DynamicResource OilInletTemperature}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.OilInletTemperature}" Style="{DynamicResource RunParamButtonTextStyle6}" />
+                                <Button Content="℃" Style="{DynamicResource RunParamButtonTextStyle5}" />
                             </Grid>
                             <Grid Grid.Row="5">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource OilOutletTemperature}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.OilOutletTemperature, StringFormat={}{0:F0}  ℃}" />
+                                <Button Content="{DynamicResource OilOutletTemperature}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.OilOutletTemperature}" Style="{DynamicResource RunParamButtonTextStyle6}" />
+                                <Button Content="℃" Style="{DynamicResource RunParamButtonTextStyle5}" />
                             </Grid>
                             <Grid Grid.Row="6">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource WaterTemperatureOfHeatExchanger}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.WaterTemperatureOfHeatExchanger, StringFormat={}{0:F0}  ℃}" />
+                                <Button Content="{DynamicResource WaterTemperatureOfHeatExchanger}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.WaterTemperatureOfHeatExchanger}" Style="{DynamicResource RunParamButtonTextStyle6}" />
+                                <Button Content="℃" Style="{DynamicResource RunParamButtonTextStyle5}" />
                             </Grid>
                         </Grid>
                     </Grid>
@@ -135,18 +132,7 @@
                             <RowDefinition Height="40" />
                             <RowDefinition />
                         </Grid.RowDefinitions>
-                        <Border
-                            Background="{DynamicResource ContentDeepSkyBlueBrush}"
-                            BorderBrush="DarkGray"
-                            BorderThickness="0,0,0,2">
-                            <TextBlock
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                FontSize="{DynamicResource Double20}"
-                                Foreground="White"
-                                Text="{DynamicResource OtherCarRunParam}" />
-
-                        </Border>
+                        <Button Content="{DynamicResource OtherCarRunParam}" Style="{DynamicResource MainTextButtonStyle5}" />
                         <Grid Grid.Row="1" Margin="5,5,20,5">
                             <Grid.RowDefinitions>
                                 <RowDefinition />
@@ -159,32 +145,39 @@
                                 <RowDefinition />
                             </Grid.RowDefinitions>
                             <Grid Grid.Row="0">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource HightInletTemperature}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.OtherHighWaterTemperatureSystemOfDieselEngineIn, StringFormat={}{0:F0}  ℃}" />
+                                <Button Content="{DynamicResource HightInletTemperature}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.OtherHighWaterTemperatureSystemOfDieselEngineIn}" Style="{DynamicResource RunParamButtonTextStyle6}" />
+                                <Button Content="℃" Style="{DynamicResource RunParamButtonTextStyle5}" />
                             </Grid>
                             <Grid Grid.Row="1">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource HightOutletTemperature}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.OtherHighWaterTemperatureSystemOfDieselEngineOut, StringFormat={}{0:F0}  ℃}" />
+                                <Button Content="{DynamicResource HightOutletTemperature}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.OtherHighWaterTemperatureSystemOfDieselEngineOut}" Style="{DynamicResource RunParamButtonTextStyle6}" />
+                                <Button Content="℃" Style="{DynamicResource RunParamButtonTextStyle5}" />
                             </Grid>
                             <Grid Grid.Row="2">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource InletTemperatureOfColdWater}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.OtherColdWaterSystemOfDieselEngineIn, StringFormat={}{0:F0}  ℃}" />
+                                <Button Content="{DynamicResource InletTemperatureOfColdWater}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.OtherColdWaterSystemOfDieselEngineIn}" Style="{DynamicResource RunParamButtonTextStyle6}" />
+                                <Button Content="℃" Style="{DynamicResource RunParamButtonTextStyle5}" />
                             </Grid>
                             <Grid Grid.Row="3">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource OutletTemperatureOfColdWater}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.OtherColdWaterSystemOfDieselEngineOut, StringFormat={}{0:F0}  ℃}" />
+                                <Button Content="{DynamicResource OutletTemperatureOfColdWater}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.OtherColdWaterSystemOfDieselEngineOut}" Style="{DynamicResource RunParamButtonTextStyle6}" />
+                                <Button Content="℃" Style="{DynamicResource RunParamButtonTextStyle5}" />
                             </Grid>
                             <Grid Grid.Row="4">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource OilInletTemperature}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.OtherOilInletTemperature, StringFormat={}{0:F0}  ℃}" />
+                                <Button Content="{DynamicResource OilInletTemperature}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.OtherOilInletTemperature}" Style="{DynamicResource RunParamButtonTextStyle6}" />
+                                <Button Content="℃" Style="{DynamicResource RunParamButtonTextStyle5}" />
                             </Grid>
                             <Grid Grid.Row="5">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource OilOutletTemperature}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.OtherOilOutletTemperature, StringFormat={}{0:F0}  ℃}" />
+                                <Button Content="{DynamicResource OilOutletTemperature}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.OtherOilOutletTemperature}" Style="{DynamicResource RunParamButtonTextStyle6}" />
+                                <Button Content="℃" Style="{DynamicResource RunParamButtonTextStyle5}" />
                             </Grid>
                             <Grid Grid.Row="6">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource WaterTemperatureOfHeatExchanger}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.OtherWaterTemperatureOfHeatExchanger, StringFormat={}{0:F0}  ℃}" />
+                                <Button Content="{DynamicResource WaterTemperatureOfHeatExchanger}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.OtherWaterTemperatureOfHeatExchanger}" Style="{DynamicResource RunParamButtonTextStyle6}" />
+                                <Button Content="℃" Style="{DynamicResource RunParamButtonTextStyle5}" />
                             </Grid>
                         </Grid>
                     </Grid>

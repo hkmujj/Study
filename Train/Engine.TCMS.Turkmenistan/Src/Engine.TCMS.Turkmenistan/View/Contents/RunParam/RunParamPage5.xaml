@@ -24,11 +24,11 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock
+                    <Button
                         Grid.Row="0"
                         Grid.Column="0"
-                        Style="{DynamicResource MainTextStyle2}"
-                        Text="{DynamicResource EngineSpeed}" />
+                        Content="{DynamicResource EngineSpeed}"
+                        Style="{DynamicResource MainTextButtonStyle6}" />
 
                     <common:EffectBorder
                         Grid.Row="0"
@@ -71,17 +71,7 @@
                             <RowDefinition Height="40" />
                             <RowDefinition />
                         </Grid.RowDefinitions>
-                        <Border
-                            Background="{DynamicResource ContentDeepSkyBlueBrush}"
-                            BorderBrush="DarkGray"
-                            BorderThickness="0,0,0,2">
-                            <TextBlock
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                FontSize="{DynamicResource Double20}"
-                                Foreground="White"
-                                Text="{DynamicResource CurrentCarParam}" />
-                        </Border>
+                        <Button Content="{DynamicResource CurrentCarParam}" Style="{DynamicResource MainTextButtonStyle5}" />
                         <Grid Grid.Row="1" Margin="5,5,5,5">
                             <Grid.RowDefinitions>
                                 <RowDefinition />
@@ -94,35 +84,42 @@
                                 <RowDefinition />
                             </Grid.RowDefinitions>
                             <Grid Grid.Row="0">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource DieselPressure2}" />
+                                <Button Content="{DynamicResource DieselPressure2}" Style="{DynamicResource RunParamButtonTextStyle1}" />
                             </Grid>
                             <Grid Grid.Row="1">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle5}" Text="{DynamicResource DieselIntel}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.InletPressureOfDieselEngine, StringFormat={}{0:F0}  kPa}" />
+                                <Button Content="{DynamicResource DieselIntel}" Style="{DynamicResource RunParamButtonTextStyle9}" />
+                                <Button Content="{Binding Model.RunParamModel.InletPressureOfDieselEngine}" Style="{DynamicResource RunParamButtonTextStyle8}" />
+                                <Button Content="kPa" Style="{DynamicResource RunParamButtonTextStyle5}" />
                             </Grid>
                             <Grid Grid.Row="2">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle5}" Text="{DynamicResource DieselOuttel}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.OutletPressureOfDieselEngine, StringFormat={}{0:F0}  kPa}" />
+                                <Button Content="{DynamicResource DieselOuttel}" Style="{DynamicResource RunParamButtonTextStyle9}" />
+                                <Button Content="{Binding Model.RunParamModel.OutletPressureOfDieselEngine}" Style="{DynamicResource RunParamButtonTextStyle8}" />
+                                <Button Content="kPa" Style="{DynamicResource RunParamButtonTextStyle5}" />
                             </Grid>
                             <Grid Grid.Row="3">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle5}" Text="{DynamicResource FrontTurbochargerInlet}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.FrontTurbochargerInletPressure, StringFormat={}{0:F0}  kPa}" />
+                                <Button Content="{DynamicResource FrontTurbochargerInlet}" Style="{DynamicResource RunParamButtonTextStyle9}" />
+                                <Button Content="{Binding Model.RunParamModel.FrontTurbochargerInletPressure}" Style="{DynamicResource RunParamButtonTextStyle8}" />
+                                <Button Content="kPa" Style="{DynamicResource RunParamButtonTextStyle5}" />
                             </Grid>
                             <Grid Grid.Row="4">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle5}" Text="{DynamicResource AfterTurbochargerInlet}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.AfterTurbochargerInletPressure, StringFormat={}{0:F0}  kPa}" />
+                                <Button Content="{DynamicResource AfterTurbochargerInlet}" Style="{DynamicResource RunParamButtonTextStyle9}" />
+                                <Button Content="{Binding Model.RunParamModel.AfterTurbochargerInletPressure}" Style="{DynamicResource RunParamButtonTextStyle8}" />
+                                <Button Content="kPa" Style="{DynamicResource RunParamButtonTextStyle5}" />
                             </Grid>
                             <Grid Grid.Row="5">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle5}" Text="{DynamicResource FilterInletPressure}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.FilterInletPressure, StringFormat={}{0:F0}  kPa}" />
+                                <Button Content="{DynamicResource FilterInletPressure}" Style="{DynamicResource RunParamButtonTextStyle9}" />
+                                <Button Content="{Binding Model.RunParamModel.FilterInletPressure}" Style="{DynamicResource RunParamButtonTextStyle8}" />
+                                <Button Content="kPa" Style="{DynamicResource RunParamButtonTextStyle5}" />
                             </Grid>
                             <Grid Grid.Row="6">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource FuelPumpOutletPressure}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.FuelPumpOutletPressure, StringFormat={}{0:F0}  kPa}" />
+                                <Button Content="{DynamicResource FuelPumpOutletPressure}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.FuelPumpOutletPressure}" Style="{DynamicResource RunParamButtonTextStyle8}" />
+                                <Button Content="kPa" Style="{DynamicResource RunParamButtonTextStyle5}" />
                             </Grid>
                             <Grid Grid.Row="7">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource FuelSystemEndPressure}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.SystemEndingPressure, StringFormat={}{0:F0}  kPa}" />
+                                <Button Content="{DynamicResource FuelSystemEndPressure}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.SystemEndingPressure}" Style="{DynamicResource RunParamButtonTextStyle8}" />
+                                <Button Content="kPa" Style="{DynamicResource RunParamButtonTextStyle5}" />
                             </Grid>
                         </Grid>
                     </Grid>
@@ -138,18 +135,7 @@
                             <RowDefinition Height="40" />
                             <RowDefinition />
                         </Grid.RowDefinitions>
-                        <Border
-                            Background="{DynamicResource ContentDeepSkyBlueBrush}"
-                            BorderBrush="DarkGray"
-                            BorderThickness="0,0,0,2">
-                            <TextBlock
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                FontSize="{DynamicResource Double20}"
-                                Foreground="White"
-                                Text="{DynamicResource OtherCarRunParam}" />
-
-                        </Border>
+                        <Button Content="{DynamicResource OtherCarRunParam}" Style="{DynamicResource MainTextButtonStyle5}" />
                         <Grid Grid.Row="1" Margin="5,5,5,5">
                             <Grid.RowDefinitions>
                                 <RowDefinition />
@@ -162,35 +148,42 @@
                                 <RowDefinition />
                             </Grid.RowDefinitions>
                             <Grid Grid.Row="0">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource DieselPressure2}" />
+                                <Button Content="{DynamicResource DieselPressure2}" Style="{DynamicResource RunParamButtonTextStyle1}" />
                             </Grid>
                             <Grid Grid.Row="1">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle5}" Text="{DynamicResource DieselIntel}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.OtherInletPressureOfDieselEngine, StringFormat={}{0:F0}  kPa}" />
+                                <Button Content="{DynamicResource DieselIntel}" Style="{DynamicResource RunParamButtonTextStyle9}" />
+                                <Button Content="{Binding Model.RunParamModel.OtherInletPressureOfDieselEngine}" Style="{DynamicResource RunParamButtonTextStyle8}" />
+                                <Button Content="kPa" Style="{DynamicResource RunParamButtonTextStyle5}" />
                             </Grid>
                             <Grid Grid.Row="2">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle5}" Text="{DynamicResource DieselOuttel}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.OtherOutletPressureOfDieselEngine, StringFormat={}{0:F0}  kPa}" />
+                                <Button Content="{DynamicResource DieselOuttel}" Style="{DynamicResource RunParamButtonTextStyle9}" />
+                                <Button Content="{Binding Model.RunParamModel.OtherOutletPressureOfDieselEngine}" Style="{DynamicResource RunParamButtonTextStyle8}" />
+                                <Button Content="kPa" Style="{DynamicResource RunParamButtonTextStyle5}" />
                             </Grid>
                             <Grid Grid.Row="3">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle5}" Text="{DynamicResource FrontTurbochargerInlet}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.OtherFrontTurbochargerInletPressure, StringFormat={}{0:F0}  kPa}" />
+                                <Button Content="{DynamicResource FrontTurbochargerInlet}" Style="{DynamicResource RunParamButtonTextStyle9}" />
+                                <Button Content="{Binding Model.RunParamModel.OtherFrontTurbochargerInletPressure}" Style="{DynamicResource RunParamButtonTextStyle8}" />
+                                <Button Content="kPa" Style="{DynamicResource RunParamButtonTextStyle5}" />
                             </Grid>
                             <Grid Grid.Row="4">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle5}" Text="{DynamicResource AfterTurbochargerInlet}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.OtherAfterTurbochargerInletPressure, StringFormat={}{0:F0}  kPa}" />
+                                <Button Content="{DynamicResource AfterTurbochargerInlet}" Style="{DynamicResource RunParamButtonTextStyle9}" />
+                                <Button Content="{Binding Model.RunParamModel.OtherAfterTurbochargerInletPressure}" Style="{DynamicResource RunParamButtonTextStyle8}" />
+                                <Button Content="kPa" Style="{DynamicResource RunParamButtonTextStyle5}" />
                             </Grid>
                             <Grid Grid.Row="5">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle5}" Text="{DynamicResource FilterInletPressure}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.OtherFilterInletPressure, StringFormat={}{0:F0}  kPa}" />
+                                <Button Content="{DynamicResource FilterInletPressure}" Style="{DynamicResource RunParamButtonTextStyle9}" />
+                                <Button Content="{Binding Model.RunParamModel.OtherFilterInletPressure}" Style="{DynamicResource RunParamButtonTextStyle8}" />
+                                <Button Content="kPa" Style="{DynamicResource RunParamButtonTextStyle5}" />
                             </Grid>
                             <Grid Grid.Row="6">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource FuelPumpOutletPressure}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.OtherFuelPumpOutletPressure, StringFormat={}{0:F0}  kPa}" />
+                                <Button Content="{DynamicResource FuelPumpOutletPressure}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.OtherFuelPumpOutletPressure}" Style="{DynamicResource RunParamButtonTextStyle8}" />
+                                <Button Content="kPa" Style="{DynamicResource RunParamButtonTextStyle5}" />
                             </Grid>
                             <Grid Grid.Row="7">
-                                <TextBlock Style="{DynamicResource RunParamTextStyle2}" Text="{DynamicResource FuelSystemEndPressure}" />
-                                <TextBlock Style="{DynamicResource RunParamTextStyle4}" Text="{Binding Model.RunParamModel.OtherSystemEndingPressure, StringFormat={}{0:F0}  kPa}" />
+                                <Button Content="{DynamicResource FuelSystemEndPressure}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                <Button Content="{Binding Model.RunParamModel.OtherSystemEndingPressure}" Style="{DynamicResource RunParamButtonTextStyle8}" />
+                                <Button Content="kPa" Style="{DynamicResource RunParamButtonTextStyle5}" />
                             </Grid>
                         </Grid>
                     </Grid>
