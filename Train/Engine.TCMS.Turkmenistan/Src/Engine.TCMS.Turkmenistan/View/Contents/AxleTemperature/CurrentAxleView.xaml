@@ -5,6 +5,8 @@
     xmlns:common="clr-namespace:Engine.TCMS.Turkmenistan.View.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="clr-namespace:Engine.TCMS.Turkmenistan.ViewModel"
+    d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
     d:DesignHeight="120"
     d:DesignWidth="530"
     mc:Ignorable="d">
@@ -77,42 +79,42 @@
                                 HorizontalAlignment="Center"
                                 FontSize="{DynamicResource Double12}"
                                 Foreground="White"
-                                Text="10" />
+                                Text="{Binding Model.AxleBitModel.DisplayAxle1}" />
                             <TextBlock
                                 Grid.Row="1"
                                 Grid.Column="0"
                                 HorizontalAlignment="Center"
                                 FontSize="{DynamicResource Double12}"
                                 Foreground="White"
-                                Text="20" />
+                                Text="{Binding Model.AxleBitModel.DisplayAxle2}" />
                             <TextBlock
                                 Grid.Row="2"
                                 Grid.Column="0"
                                 HorizontalAlignment="Center"
                                 FontSize="{DynamicResource Double12}"
                                 Foreground="White"
-                                Text="65" />
+                                Text="{Binding Model.AxleBitModel.DisplayAxle3}" />
                             <TextBlock
                                 Grid.Row="0"
                                 Grid.Column="1"
                                 HorizontalAlignment="Left"
                                 FontSize="{DynamicResource Double12}"
                                 Foreground="White"
-                                Text="31" />
+                                Text="{Binding Model.AxleBitModel.DisplayT1}" />
                             <TextBlock
                                 Grid.Row="1"
                                 Grid.Column="1"
                                 HorizontalAlignment="Left"
                                 FontSize="{DynamicResource Double12}"
                                 Foreground="White"
-                                Text="31" />
+                                Text="{Binding Model.AxleBitModel.DisplayT2}" />
                             <TextBlock
                                 Grid.Row="2"
                                 Grid.Column="1"
                                 HorizontalAlignment="Left"
                                 FontSize="{DynamicResource Double12}"
                                 Foreground="White"
-                                Text="44" />
+                                Text="{Binding Model.AxleBitModel.DisplayT3}" />
                         </Grid>
 
                     </Border>

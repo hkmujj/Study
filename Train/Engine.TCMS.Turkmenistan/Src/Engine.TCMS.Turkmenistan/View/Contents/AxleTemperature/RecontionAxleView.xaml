@@ -4,8 +4,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:common="clr-namespace:Engine.TCMS.Turkmenistan.View.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:Engine.TCMS.Turkmenistan.View.Contents.AxleTemperature"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="clr-namespace:Engine.TCMS.Turkmenistan.ViewModel"
+    d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
     d:DesignHeight="120"
     d:DesignWidth="530"
     mc:Ignorable="d">
@@ -42,7 +43,10 @@
                         <RowDefinition Height="40*" />
                         <RowDefinition Height="120*" />
                     </Grid.RowDefinitions>
-                    <Button Grid.Row="0" Style="{DynamicResource MainTextButtonStyle1}" Content="{DynamicResource AxleTemperature1}"></Button>
+                    <Button
+                        Grid.Row="0"
+                        Content="{DynamicResource AxleTemperature1}"
+                        Style="{DynamicResource MainTextButtonStyle3}" />
                     <Button
                         Grid.Row="1"
                         Content="{DynamicResource CurrentMaxOther}"
@@ -73,48 +77,71 @@
                                 <ColumnDefinition />
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
+                            <GridSplitter
+                                Grid.Row="1"
+                                Grid.RowSpan="2"
+                                Grid.ColumnSpan="2"
+                                Height="3"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Center"
+                                Panel.ZIndex="1"
+                                Background="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Border}, Path=BorderBrush}" />
                             <TextBlock
                                 Grid.Row="0"
                                 Grid.Column="0"
                                 HorizontalAlignment="Center"
                                 FontSize="{DynamicResource Double12}"
                                 Foreground="White"
-                                Text="10" />
+                                Text="{Binding Model.AxleBitModel.DisplayAxle1}" />
                             <TextBlock
                                 Grid.Row="1"
                                 Grid.Column="0"
                                 HorizontalAlignment="Center"
                                 FontSize="{DynamicResource Double12}"
                                 Foreground="White"
-                                Text="20" />
+                                Text="{Binding Model.AxleBitModel.DisplayAxle2}" />
                             <TextBlock
                                 Grid.Row="2"
                                 Grid.Column="0"
                                 HorizontalAlignment="Center"
                                 FontSize="{DynamicResource Double12}"
                                 Foreground="White"
-                                Text="65" />
+                                Text="{Binding Model.AxleBitModel.OtherDisplayAxle1}" />
+                            <TextBlock
+                                Grid.Row="3"
+                                Grid.Column="0"
+                                HorizontalAlignment="Center"
+                                FontSize="{DynamicResource Double12}"
+                                Foreground="White"
+                                Text="{Binding Model.AxleBitModel.OtherDisplayAxle2}" />
                             <TextBlock
                                 Grid.Row="0"
                                 Grid.Column="1"
                                 HorizontalAlignment="Left"
                                 FontSize="{DynamicResource Double12}"
                                 Foreground="White"
-                                Text="31" />
+                                Text="{Binding Model.AxleBitModel.DisplayT1}" />
                             <TextBlock
                                 Grid.Row="1"
                                 Grid.Column="1"
                                 HorizontalAlignment="Left"
                                 FontSize="{DynamicResource Double12}"
                                 Foreground="White"
-                                Text="31" />
+                                Text="{Binding Model.AxleBitModel.DisplayT2}" />
                             <TextBlock
                                 Grid.Row="2"
                                 Grid.Column="1"
                                 HorizontalAlignment="Left"
                                 FontSize="{DynamicResource Double12}"
                                 Foreground="White"
-                                Text="44" />
+                                Text="{Binding Model.AxleBitModel.OtherDisplayT1}" />
+                            <TextBlock
+                                Grid.Row="3"
+                                Grid.Column="1"
+                                HorizontalAlignment="Left"
+                                FontSize="{DynamicResource Double12}"
+                                Foreground="White"
+                                Text="{Binding Model.AxleBitModel.OtherDisplayT2}" />
                         </Grid>
 
                     </Border>

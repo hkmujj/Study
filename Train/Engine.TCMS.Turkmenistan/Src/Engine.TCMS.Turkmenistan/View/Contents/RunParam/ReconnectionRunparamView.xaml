@@ -10,178 +10,180 @@
     d:DesignHeight="600"
     d:DesignWidth="245"
     mc:Ignorable="d">
-    <Grid>
-        <Border Style="{DynamicResource MainBorderStyle}">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="35*" />
-                    <RowDefinition Height="257*" />
-                    <RowDefinition Height="257*" />
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0" Margin="2,5">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <Button
-                        Grid.Row="0"
-                        Grid.Column="0"
-                        Content="{DynamicResource EngineSpeed}"
-                        Style="{DynamicResource MainTextButtonStyle6}" />
+    <Viewbox Stretch="Fill">
+        <Grid Width="245" Height="600">
+            <Border Style="{DynamicResource MainBorderStyle}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35*" />
+                        <RowDefinition Height="257*" />
+                        <RowDefinition Height="257*" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Margin="2,5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Button
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Content="{DynamicResource EngineSpeed}"
+                            Style="{DynamicResource MainTextButtonStyle6}" />
 
-                    <common:EffectBorder
-                        Grid.Row="0"
-                        Grid.Column="1"
-                        Margin="2,-2"
+                        <common:EffectBorder
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Margin="2,-2"
+                            Background="{DynamicResource BackgroudBrush}"
+                            Style="{DynamicResource MainViewBorderStyle2}">
+
+                            <common:EffectBorder.EffectContent>
+                                <Grid>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="1*" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        Style="{DynamicResource MainTextStyle3}"
+                                        Text="{Binding Model.MainModel.EngineSpeed, StringFormat={}{0:F0}}" />
+
+                                    <TextBlock
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        Style="{DynamicResource MainTextStyle4}"
+                                        Text="km/h" />
+
+                                </Grid>
+                            </common:EffectBorder.EffectContent>
+                        </common:EffectBorder>
+                    </Grid>
+                    <Border
+                        Grid.Row="1"
+                        Margin="5"
                         Background="{DynamicResource BackgroudBrush}"
-                        Style="{DynamicResource MainViewBorderStyle2}">
+                        BorderBrush="DarkGray"
+                        BorderThickness="2">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Button Content="{DynamicResource CurrentCarParam}" Style="{DynamicResource MainTextButtonStyle5}" />
+                            <Grid Grid.Row="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">
+                                    <Button Content="{DynamicResource OilPressureParamFormat}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                    <Button Content="{Binding Model.MainModel.CurrentOilPressure}" Style="{DynamicResource RunParamButtonTextStyle2}" />
+                                    <Button Content="Kpa" Style="{DynamicResource RunParamButtonTextStyle3}" />
+                                </Grid>
+                                <Grid Grid.Row="1">
+                                    <Button Content="{DynamicResource FuelPressureParamFormat}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                    <Button Content="{Binding Model.MainModel.CurrentFuelPressure}" Style="{DynamicResource RunParamButtonTextStyle2}" />
+                                    <Button Content="Kpa" Style="{DynamicResource RunParamButtonTextStyle3}" />
 
-                        <common:EffectBorder.EffectContent>
-                            <Grid>
-
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="1*" />
-                                    <ColumnDefinition Width="1*" />
-                                </Grid.ColumnDefinitions>
-                                <TextBlock
-                                    Grid.Row="0"
-                                    Grid.Column="0"
-                                    Style="{DynamicResource MainTextStyle3}"
-                                    Text="{Binding Model.MainModel.EngineSpeed, StringFormat={}{0:F0}}" />
-
-                                <TextBlock
-                                    Grid.Row="0"
-                                    Grid.Column="1"
-                                    Style="{DynamicResource MainTextStyle4}"
-                                    Text="km/h" />
-
+                                </Grid>
+                                <Grid Grid.Row="2">
+                                    <Button Content="{DynamicResource CoolingWaterTemperatureParamFormat}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                    <Button Content="{Binding Model.MainModel.CurrentCoolingWaterTemperature}" Style="{DynamicResource RunParamButtonTextStyle2}" />
+                                    <Button Content="℃" Style="{DynamicResource RunParamButtonTextStyle3}" />
+                                </Grid>
+                                <Grid Grid.Row="3">
+                                    <Button Content="{DynamicResource OILTEngineOilTemperatureParamFormat}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                    <Button Content="{Binding Model.MainModel.CurrentOILTEngineOilTemperature}" Style="{DynamicResource RunParamButtonTextStyle2}" />
+                                    <Button Content="℃" Style="{DynamicResource RunParamButtonTextStyle3}" />
+                                </Grid>
+                                <Grid Grid.Row="4">
+                                    <Button Content="{DynamicResource PowerTemperatureParamFormat1}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                    <Button Content="{Binding Model.MainModel.CurrentPowerTemperature1}" Style="{DynamicResource RunParamButtonTextStyle2}" />
+                                    <Button Content="℃" Style="{DynamicResource RunParamButtonTextStyle3}" />
+                                </Grid>
+                                <Grid Grid.Row="5">
+                                    <Button Content="{DynamicResource PowerTemperatureParamFormat2}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                    <Button Content="{Binding Model.MainModel.CurrentPowerTemperature2}" Style="{DynamicResource RunParamButtonTextStyle2}" />
+                                    <Button Content="℃" Style="{DynamicResource RunParamButtonTextStyle3}" />
+                                </Grid>
                             </Grid>
-                        </common:EffectBorder.EffectContent>
-                    </common:EffectBorder>
+                        </Grid>
+                    </Border>
+                    <Border
+                        Grid.Row="2"
+                        Margin="5"
+                        Background="{DynamicResource BackgroudBrush}"
+                        BorderBrush="DarkGray"
+                        BorderThickness="2">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Button Content="{DynamicResource OtherCarRunParam}" Style="{DynamicResource MainTextButtonStyle5}" />
+                            <Grid Grid.Row="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">
+                                    <Button Content="{DynamicResource OilPressureParamFormat}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                    <Button Content="{Binding Model.MainModel.OtherOilPressure}" Style="{DynamicResource RunParamButtonTextStyle2}" />
+                                    <Button Content="Kpa" Style="{DynamicResource RunParamButtonTextStyle3}" />
+                                </Grid>
+                                <Grid Grid.Row="1">
+                                    <Button Content="{DynamicResource FuelPressureParamFormat}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                    <Button Content="{Binding Model.MainModel.OtherFuelPressure}" Style="{DynamicResource RunParamButtonTextStyle2}" />
+                                    <Button Content="Kpa" Style="{DynamicResource RunParamButtonTextStyle3}" />
+
+                                </Grid>
+                                <Grid Grid.Row="2">
+                                    <Button Content="{DynamicResource CoolingWaterTemperatureParamFormat}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                    <Button Content="{Binding Model.MainModel.OtherCoolingWaterTemperature}" Style="{DynamicResource RunParamButtonTextStyle2}" />
+                                    <Button Content="℃" Style="{DynamicResource RunParamButtonTextStyle3}" />
+                                </Grid>
+                                <Grid Grid.Row="3">
+                                    <Button Content="{DynamicResource OILTEngineOilTemperatureParamFormat}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                    <Button Content="{Binding Model.MainModel.OtherOILTEngineOilTemperature}" Style="{DynamicResource RunParamButtonTextStyle2}" />
+                                    <Button Content="℃" Style="{DynamicResource RunParamButtonTextStyle3}" />
+                                </Grid>
+                                <Grid Grid.Row="4">
+                                    <Button Content="{DynamicResource PowerTemperatureParamFormat1}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                    <Button Content="{Binding Model.MainModel.OtherPowerTemperature1}" Style="{DynamicResource RunParamButtonTextStyle2}" />
+                                    <Button Content="℃" Style="{DynamicResource RunParamButtonTextStyle3}" />
+                                </Grid>
+                                <Grid Grid.Row="5">
+                                    <Button Content="{DynamicResource PowerTemperatureParamFormat2}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                    <Button Content="{Binding Model.MainModel.OtherPowerTemperature2}" Style="{DynamicResource RunParamButtonTextStyle2}" />
+                                    <Button Content="℃" Style="{DynamicResource RunParamButtonTextStyle3}" />
+                                </Grid>
+                                <Grid Grid.Row="6">
+                                    <Button Content="{DynamicResource BrakePressParamFormat}" Style="{DynamicResource RunParamButtonTextStyle1}" />
+                                    <Button Content="{Binding Model.MainModel.OtherBrakePress}" Style="{DynamicResource RunParamButtonTextStyle2}" />
+                                    <Button Content="kPa" Style="{DynamicResource RunParamButtonTextStyle3}" />
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Border>
+
+
                 </Grid>
-                <Border
-                    Grid.Row="1"
-                    Margin="5"
-                    Background="{DynamicResource BackgroudBrush}"
-                    BorderBrush="DarkGray"
-                    BorderThickness="2">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="40" />
-                            <RowDefinition />
-                        </Grid.RowDefinitions>
-                        <Button Content="{DynamicResource CurrentCarParam}" Style="{DynamicResource MainTextButtonStyle5}" />
-                        <Grid Grid.Row="1">
-                            <Grid.RowDefinitions>
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                            </Grid.RowDefinitions>
-                            <Grid Grid.Row="0">
-                                <Button Content="{DynamicResource OilPressureParamFormat}" Style="{DynamicResource RunParamButtonTextStyle1}" />
-                                <Button Content="{Binding Model.MainModel.CurrentOilPressure}" Style="{DynamicResource RunParamButtonTextStyle2}" />
-                                <Button Content="Kpa" Style="{DynamicResource RunParamButtonTextStyle3}" />
-                            </Grid>
-                            <Grid Grid.Row="1">
-                                <Button Content="{DynamicResource FuelPressureParamFormat}" Style="{DynamicResource RunParamButtonTextStyle1}" />
-                                <Button Content="{Binding Model.MainModel.CurrentFuelPressure}" Style="{DynamicResource RunParamButtonTextStyle2}" />
-                                <Button Content="Kpa" Style="{DynamicResource RunParamButtonTextStyle3}" />
+            </Border>
 
-                            </Grid>
-                            <Grid Grid.Row="2">
-                                <Button Content="{DynamicResource CoolingWaterTemperatureParamFormat}" Style="{DynamicResource RunParamButtonTextStyle1}" />
-                                <Button Content="{Binding Model.MainModel.CurrentCoolingWaterTemperature}" Style="{DynamicResource RunParamButtonTextStyle2}" />
-                                <Button Content="℃" Style="{DynamicResource RunParamButtonTextStyle3}" />
-                            </Grid>
-                            <Grid Grid.Row="3">
-                                <Button Content="{DynamicResource OILTEngineOilTemperatureParamFormat}" Style="{DynamicResource RunParamButtonTextStyle1}" />
-                                <Button Content="{Binding Model.MainModel.CurrentOILTEngineOilTemperature}" Style="{DynamicResource RunParamButtonTextStyle2}" />
-                                <Button Content="℃" Style="{DynamicResource RunParamButtonTextStyle3}" />
-                            </Grid>
-                            <Grid Grid.Row="4">
-                                <Button Content="{DynamicResource PowerTemperatureParamFormat1}" Style="{DynamicResource RunParamButtonTextStyle1}" />
-                                <Button Content="{Binding Model.MainModel.CurrentPowerTemperature1}" Style="{DynamicResource RunParamButtonTextStyle2}" />
-                                <Button Content="℃" Style="{DynamicResource RunParamButtonTextStyle3}" />
-                            </Grid>
-                            <Grid Grid.Row="5">
-                                <Button Content="{DynamicResource PowerTemperatureParamFormat2}" Style="{DynamicResource RunParamButtonTextStyle1}" />
-                                <Button Content="{Binding Model.MainModel.CurrentPowerTemperature2}" Style="{DynamicResource RunParamButtonTextStyle2}" />
-                                <Button Content="℃" Style="{DynamicResource RunParamButtonTextStyle3}" />
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                </Border>
-                <Border
-                    Grid.Row="2"
-                    Margin="5"
-                    Background="{DynamicResource BackgroudBrush}"
-                    BorderBrush="DarkGray"
-                    BorderThickness="2">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="40" />
-                            <RowDefinition />
-                        </Grid.RowDefinitions>
-                        <Button Content="{DynamicResource OtherCarRunParam}" Style="{DynamicResource MainTextButtonStyle5}" />
-                        <Grid Grid.Row="1">
-                            <Grid.RowDefinitions>
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                            </Grid.RowDefinitions>
-                            <Grid Grid.Row="0">
-                                <Button Content="{DynamicResource OilPressureParamFormat}" Style="{DynamicResource RunParamButtonTextStyle1}" />
-                                <Button Content="{Binding Model.MainModel.OtherOilPressure}" Style="{DynamicResource RunParamButtonTextStyle2}" />
-                                <Button Content="Kpa" Style="{DynamicResource RunParamButtonTextStyle3}" />
-                            </Grid>
-                            <Grid Grid.Row="1">
-                                <Button Content="{DynamicResource FuelPressureParamFormat}" Style="{DynamicResource RunParamButtonTextStyle1}" />
-                                <Button Content="{Binding Model.MainModel.OtherFuelPressure}" Style="{DynamicResource RunParamButtonTextStyle2}" />
-                                <Button Content="Kpa" Style="{DynamicResource RunParamButtonTextStyle3}" />
-
-                            </Grid>
-                            <Grid Grid.Row="2">
-                                <Button Content="{DynamicResource CoolingWaterTemperatureParamFormat}" Style="{DynamicResource RunParamButtonTextStyle1}" />
-                                <Button Content="{Binding Model.MainModel.OtherCoolingWaterTemperature}" Style="{DynamicResource RunParamButtonTextStyle2}" />
-                                <Button Content="℃" Style="{DynamicResource RunParamButtonTextStyle3}" />
-                            </Grid>
-                            <Grid Grid.Row="3">
-                                <Button Content="{DynamicResource OILTEngineOilTemperatureParamFormat}" Style="{DynamicResource RunParamButtonTextStyle1}" />
-                                <Button Content="{Binding Model.MainModel.OtherOILTEngineOilTemperature}" Style="{DynamicResource RunParamButtonTextStyle2}" />
-                                <Button Content="℃" Style="{DynamicResource RunParamButtonTextStyle3}" />
-                            </Grid>
-                            <Grid Grid.Row="4">
-                                <Button Content="{DynamicResource PowerTemperatureParamFormat1}" Style="{DynamicResource RunParamButtonTextStyle1}" />
-                                <Button Content="{Binding Model.MainModel.OtherPowerTemperature1}" Style="{DynamicResource RunParamButtonTextStyle2}" />
-                                <Button Content="℃" Style="{DynamicResource RunParamButtonTextStyle3}" />
-                            </Grid>
-                            <Grid Grid.Row="5">
-                                <Button Content="{DynamicResource PowerTemperatureParamFormat2}" Style="{DynamicResource RunParamButtonTextStyle1}" />
-                                <Button Content="{Binding Model.MainModel.OtherPowerTemperature2}" Style="{DynamicResource RunParamButtonTextStyle2}" />
-                                <Button Content="℃" Style="{DynamicResource RunParamButtonTextStyle3}" />
-                            </Grid>
-                            <Grid Grid.Row="6">
-                                <Button Content="{DynamicResource BrakePressParamFormat}" Style="{DynamicResource RunParamButtonTextStyle1}" />
-                                <Button Content="{Binding Model.MainModel.OtherBrakePress}" Style="{DynamicResource RunParamButtonTextStyle2}" />
-                                <Button Content="kPa" Style="{DynamicResource RunParamButtonTextStyle3}" />
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                </Border>
-
-
-            </Grid>
-        </Border>
-
-    </Grid>
+        </Grid>
+    </Viewbox>
 </UserControl>

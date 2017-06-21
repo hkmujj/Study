@@ -188,19 +188,21 @@
             Background="{TemplateBinding Background}"
             BorderBrush="{TemplateBinding BorderBrush}"
             BorderThickness="{TemplateBinding BorderThickness}">
-           
+
             <TextBlock
-                FontFamily="Times New Roman"
                 HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                 VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                Text="{TemplateBinding Content,Converter={StaticResource DoubleToStringConverter }}"
+                FontFamily="Times New Roman"
+                Text="{TemplateBinding Content,
+                                       Converter={StaticResource DoubleToStringConverter}}"
                 TextAlignment="Center" />
         </Border>
     </ControlTemplate>
-    
+
     <Style x:Key="MainTextButtonStyle1" TargetType="Button">
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="IsHitTestVisible" Value="False" />
+        <Setter Property="Margin" Value="0,8" />
         <Setter Property="Template" Value="{StaticResource TextButtonControlTemlete}" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundWhiteBrush}" />
         <Setter Property="Background" Value="{DynamicResource BlackBrush}" />
@@ -214,7 +216,7 @@
         <Setter Property="Template" Value="{StaticResource TextButtonControlTemlete}" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundWhiteBrush}" />
         <Setter Property="Background" Value="{DynamicResource BlackBrush}" />
-        <Setter Property="FontSize" Value="{DynamicResource Double20}" />
+        <Setter Property="FontSize" Value="{DynamicResource Double16}" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
     </Style>
@@ -224,7 +226,7 @@
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundOrangeBrush}" />
         <Setter Property="Background" Value="{DynamicResource BlackBrush}" />
-        <Setter Property="FontSize" Value="{DynamicResource Double20}" />
+        <Setter Property="FontSize" Value="{DynamicResource Double18}" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
     </Style>
@@ -245,7 +247,7 @@
         <Setter Property="BorderThickness" Value="0,0,0,2" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundWhiteBrush}" />
         <Setter Property="Background" Value="{DynamicResource BlackBrush}" />
-        <Setter Property="FontSize" Value="{DynamicResource Double20}" />
+        <Setter Property="FontSize" Value="{DynamicResource Double16}" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
     </Style>
@@ -294,7 +296,7 @@
         <Setter Property="IsHitTestVisible" Value="False" />
         <Setter Property="HorizontalAlignment" Value="Left" />
         <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="Margin" Value="155,0,0,0" />
+        <Setter Property="Margin" Value="165,0,0,0" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundWhiteBrush}" />
         <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
         <Setter Property="FontSize" Value="{DynamicResource Double14}" />
@@ -308,7 +310,7 @@
         <Setter Property="IsHitTestVisible" Value="False" />
         <Setter Property="HorizontalAlignment" Value="Right" />
         <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="Margin" Value="0,0,50,0" />
+        <Setter Property="Margin" Value="0,0,35,0" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundWhiteBrush}" />
         <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
         <Setter Property="FontSize" Value="{DynamicResource Double14}" />
@@ -336,7 +338,7 @@
         <Setter Property="IsHitTestVisible" Value="False" />
         <Setter Property="HorizontalAlignment" Value="Right" />
         <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="Margin" Value="0,0,30,0" />
+        <Setter Property="Margin" Value="0,0,25,0" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundWhiteBrush}" />
         <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
         <Setter Property="FontSize" Value="{DynamicResource Double14}" />
@@ -364,7 +366,7 @@
         <Setter Property="IsHitTestVisible" Value="False" />
         <Setter Property="HorizontalAlignment" Value="Right" />
         <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="Margin" Value="0,0,65,0" />
+        <Setter Property="Margin" Value="0,0,60,0" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundWhiteBrush}" />
         <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
         <Setter Property="FontSize" Value="{DynamicResource Double14}" />
@@ -377,7 +379,7 @@
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="BorderBrush" Value="DarkGray" />
         <Setter Property="BorderThickness" Value="0,0,0,0" />
-        <Setter Property="Margin" Value="20,0,0,0"></Setter>
+        <Setter Property="Margin" Value="0,0,0,0" />
         <Setter Property="IsHitTestVisible" Value="False" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundWhiteBrush}" />
         <Setter Property="Background" Value="{DynamicResource BlackBrush}" />
@@ -420,7 +422,7 @@
         <Setter Property="IsHitTestVisible" Value="False" />
         <Setter Property="HorizontalAlignment" Value="Right" />
         <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="Margin" Value="0,0,40,0" />
+        <Setter Property="Margin" Value="0,0,35,0" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundWhiteBrush}" />
         <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
         <Setter Property="FontSize" Value="{DynamicResource Double14}" />
