@@ -459,6 +459,47 @@
             </returns>
             <param name="value">绑定目标生成的值。</param><param name="targetType">要转换到的类型。</param><param name="parameter">要使用的转换器参数。</param><param name="culture">要用在转换器中的区域性。</param>
         </member>
+        <member name="T:MMI.Facility.WPFInfrastructure.Converter.ConditionContentConverter">
+            <summary>
+            条件选择内容转换器
+            </summary>
+        </member>
+        <member name="P:MMI.Facility.WPFInfrastructure.Converter.ConditionContentConverter.If">
+            <summary>
+            If
+            </summary>
+        </member>
+        <member name="P:MMI.Facility.WPFInfrastructure.Converter.ConditionContentConverter.ElseIfs">
+            <summary>
+            ElseIfs
+            </summary>
+        </member>
+        <member name="P:MMI.Facility.WPFInfrastructure.Converter.ConditionContentConverter.Else">
+            <summary>
+            Else
+            </summary>
+        </member>
+        <member name="M:MMI.Facility.WPFInfrastructure.Converter.ConditionContentConverter.#ctor">
+            <summary>
+            ConditionContentConverter
+            </summary>
+        </member>
+        <member name="M:MMI.Facility.WPFInfrastructure.Converter.ConditionContentConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>转换值。</summary>
+            <returns>转换后的值。 如果该方法返回 null，则使用有效的 null 值。</returns>
+            <param name="value">绑定源生成的值。</param>
+            <param name="targetType">绑定目标属性的类型。</param>
+            <param name="parameter">要使用的转换器参数。</param>
+            <param name="culture">要用在转换器中的区域性。</param>
+        </member>
+        <member name="M:MMI.Facility.WPFInfrastructure.Converter.ConditionContentConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>转换值。</summary>
+            <returns>转换后的值。 如果该方法返回 null，则使用有效的 null 值。</returns>
+            <param name="value">绑定目标生成的值。</param>
+            <param name="targetType">要转换到的类型。</param>
+            <param name="parameter">要使用的转换器参数。</param>
+            <param name="culture">要用在转换器中的区域性。</param>
+        </member>
         <member name="T:MMI.Facility.WPFInfrastructure.Converter.EnumDescritionConverter">
             <summary>
             枚举描述转换

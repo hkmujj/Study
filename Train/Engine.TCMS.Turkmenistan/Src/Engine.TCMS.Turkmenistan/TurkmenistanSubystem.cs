@@ -1,6 +1,7 @@
 ﻿using Engine.TCMS.Turkmenistan.Adapter;
 using Engine.TCMS.Turkmenistan.Model;
 using Engine.TCMS.Turkmenistan.View.Shell;
+using Engine.TCMS.Turkmenistan.ViewModel;
 using Microsoft.Practices.ServiceLocation;
 using MMI.Facility.Interface.Attribute;
 using MMI.Facility.Interface.Project;
@@ -21,6 +22,8 @@ namespace Engine.TCMS.Turkmenistan
             GlobalParam.Instance.Initalize(initParam);
 
             var serviceManager = initParam.DataPackage.ServiceManager;
+
+            ServiceLocator.Current.GetInstance<DomainViewModel>();
 
             var form = new TurkmenistanResourceForm();
 

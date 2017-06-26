@@ -28,7 +28,7 @@ namespace Engine.TCMS.Turkmenistan.View.Shell
         {
             if (GlobalParam.Instance.IsTurkmenistan)
             {
-                this.FontFamily=new FontFamily("Times New Roman");
+                this.FontFamily = new FontFamily("Times New Roman");
                 this.Resources.MergedDictionaries[0] = new ResourceDictionary()
                 {
                     Source =
@@ -99,6 +99,7 @@ namespace Engine.TCMS.Turkmenistan.View.Shell
 
         private void ShellWithoutButton_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
+            GlobalParam.Instance.SetStartLangage(true);
             DataContext = ServiceLocator.Current.GetInstance<DomainViewModel>();
             this.Resources.MergedDictionaries.Add(new ResourceDictionary()
             {
@@ -136,7 +137,7 @@ namespace Engine.TCMS.Turkmenistan.View.Shell
                     new Uri(string.Format("pack://application:,,,/{0};component/Resources/{1}",
                         Path.GetFileNameWithoutExtension(GetType().Assembly.Location), "TurkmenistanResource.xaml")),
             });
-           
+
         }
     }
 }

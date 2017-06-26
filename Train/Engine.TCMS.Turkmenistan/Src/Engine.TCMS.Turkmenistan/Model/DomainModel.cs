@@ -17,11 +17,17 @@ namespace Engine.TCMS.Turkmenistan.Model
     {
         public DomainModel()
         {
-            m_NavigatorToState = ServiceLocator.Current.GetInstance<IEventAggregator>().GetEvent<NavigatorToState>();
-            m_NavigatorToView = ServiceLocator.Current.GetInstance<IEventAggregator>().GetEvent<NavigatorToView>();
+            var evagg = ServiceLocator.Current.GetInstance<IEventAggregator>();
+            m_NavigatorToState = evagg.GetEvent<NavigatorToState>();
+            m_NavigatorToView = evagg.GetEvent<NavigatorToView>();
             IsVisibility = Visibility.Hidden;
-            ServiceLocator.Current.GetInstance<IEventAggregator>().GetEvent<DataServiceDataChangedEvent>()
-                .Subscribe(DataChanged,ThreadOption.UIThread);
+            evagg.GetEvent<DataServiceDataChangedEvent>().Subscribe(DataChanged, ThreadOption.UIThread);
+            evagg.GetEvent<ReconnectionChangedEvent>().Subscribe(SourceChanged, ThreadOption.UIThread);
+        }
+
+        private void SourceChanged(ReconnectionChangedEvent.Args obj)
+        {
+            IsConnection = obj.IsReconnection;
         }
 
         private void DataChanged(DataServiceDataChangedEvent.Args obj)
@@ -69,6 +75,7 @@ namespace Engine.TCMS.Turkmenistan.Model
         private readonly NavigatorToView m_NavigatorToView;
         private IStateInterface m_CurrentStateInterface;
         private Visibility m_IsVisibility;
+        private bool m_IsConnection;
 
         public IStateInterface CurrentStateInterface
         {
@@ -86,12 +93,26 @@ namespace Engine.TCMS.Turkmenistan.Model
             get { return m_CurrentStateInterface; }
         }
 
+        public bool IsConnection
+        {
+            get { return m_IsConnection; }
+            set
+            {
+                if (value == m_IsConnection)
+                    return;
+                m_IsConnection = value;
+                RaisePropertyChanged(() => IsConnection);
+            }
+        }
+
         public void UpdateCurrentState(IStateInterface current)
         {
             CurrentStateInterface = current;
         }
         [Import]
-        public AxleBitModel AxleBitModel { get; private set; }  
+        public FaultModel FaultModel { get; private set; }
+        [Import]
+        public AxleBitModel AxleBitModel { get; private set; }
         [Import]
         public MainModel MainModel { get; private set; }
         [Import]

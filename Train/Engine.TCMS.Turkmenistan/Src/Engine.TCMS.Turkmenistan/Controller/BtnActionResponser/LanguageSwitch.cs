@@ -25,7 +25,7 @@ namespace Engine.TCMS.Turkmenistan.Controller.BtnActionResponser
             GlobalParam.Instance.IsTurkmenistan = !GlobalParam.Instance.IsTurkmenistan;
             var model = ServiceLocator.Current.GetInstance<DomainModel>();
             model.CurrentStateInterface.UpdateState();
-            ServiceLocator.Current.GetInstance<IEventAggregator>().GetEvent<ReSourceChangedEvent>().Publish(null);
+         
 
 
         }

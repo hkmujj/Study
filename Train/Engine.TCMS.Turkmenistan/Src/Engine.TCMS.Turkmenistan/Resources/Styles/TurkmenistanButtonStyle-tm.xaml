@@ -443,4 +443,28 @@
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
     </Style>
+    <Style x:Key="MainFaultInfoTextStyle1" TargetType="Button">
+        <Setter Property="Template" Value="{StaticResource TextButtonControlTemlete}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource TransparentBrush}" />
+        <Setter Property="Background" Value="{DynamicResource BlackBrush}" />
+        <Setter Property="IsHitTestVisible" Value="False" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundWhiteBrush}" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="{DynamicResource Double16}" />
+    </Style>
+    <Style x:Key="MainFaultInfoTextStyle2" TargetType="Button">
+        <Setter Property="Template" Value="{StaticResource TextButtonControlTemlete}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource TransparentBrush}" />
+        <Setter Property="Background" Value="{DynamicResource BlackBrush}" />
+        <Setter Property="IsHitTestVisible" Value="False" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundWhiteBrush}" />
+        <Setter Property="HorizontalContentAlignment" Value="Right" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="{DynamicResource Double16}" />
+    </Style>
 </ResourceDictionary>

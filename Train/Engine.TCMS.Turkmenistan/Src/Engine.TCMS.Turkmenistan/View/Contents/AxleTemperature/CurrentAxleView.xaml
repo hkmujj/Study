@@ -37,7 +37,23 @@
                         Content="{DynamicResource FaultInfo}"
                         Style="{DynamicResource MainTextButtonStyle3}" />
                 </Grid>
-                <Border Grid.Column="1" Style="{DynamicResource MainBorderStyle2}" />
+                <Border Grid.Column="1" Style="{DynamicResource MainBorderStyle2}">
+                    <StackPanel
+                        Margin="10,0,0,0"
+                        VerticalAlignment="Center"
+                        Orientation="Vertical">
+                        <Button Content="{Binding Model.FaultModel.DispkayFault1.Message}" Style="{DynamicResource MainFaultInfoTextStyle1}" />
+                        <Button
+                            Content="{Binding Model.FaultModel.DispkayFault1.Car}"
+                            Style="{DynamicResource MainFaultInfoTextStyle2}"
+                            Visibility="{Binding Model.IsConnection, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                        <Button Content="{Binding Model.FaultModel.DisplayFault2.Message}" Style="{DynamicResource MainFaultInfoTextStyle1}" />
+                        <Button
+                            Content="{Binding Model.FaultModel.DisplayFault2.Car}"
+                            Style="{DynamicResource MainFaultInfoTextStyle2}"
+                            Visibility="{Binding Model.IsConnection, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                    </StackPanel>
+                </Border>
                 <Grid Grid.Column="2">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="40*" />
