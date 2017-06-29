@@ -1,0 +1,41 @@
+﻿<ContentControl x:Class="Subway.CBTC.QuanLuTong.View.Contents.RegionB.Detail.TriangleSpeedView"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+                xmlns:local="clr-namespace:Subway.CBTC.QuanLuTong.View.Contents.RegionB.Detail"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                d:DesignHeight="277"
+                d:DesignWidth="277"
+                mc:Ignorable="d">
+    <Grid RenderTransformOrigin="0.5,0.5">
+        <Grid.RenderTransform>
+            <RotateTransform Angle="{Binding RelativeSource={RelativeSource AncestorType=local:TriangleSpeedView}, Path=IndicationRoteAngle}" />
+        </Grid.RenderTransform>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="25" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <ed:RegularPolygon Grid.Row="1"
+                           Grid.Column="0"
+                           Fill="{Binding RelativeSource={RelativeSource Mode=FindAncestor,
+                                                                         AncestorType=local:TriangleSpeedView},
+                                          Path=Foreground}"
+                           InnerRadius="1"
+                           PointCount="3"
+                           RenderTransformOrigin="0.5,0.5"
+                           Stretch="Fill"
+                           Stroke="Black">
+            <ed:RegularPolygon.LayoutTransform>
+                <TransformGroup>
+                    <RotateTransform Angle="90" />
+                </TransformGroup>
+            </ed:RegularPolygon.LayoutTransform>
+        </ed:RegularPolygon>
+    </Grid>
+</ContentControl>

@@ -1,0 +1,16 @@
+﻿<Window
+    x:Class="Subway.CBTC.Casco.View.Shell.CascoShell"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:shell="clr-namespace:Subway.CBTC.Casco.View.Shell"
+    Title="Subway.CBTC.QuanLuTong"
+    Width="1000"
+    Height="750"
+    Loaded="Window_Loaded"
+    mc:Ignorable="d">
+    <Viewbox Stretch="Fill">
+        <shell:ShellWithButton Width="800" Height="600" />
+    </Viewbox>
+</Window>

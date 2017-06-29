@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="Subway.CBTC.Casco.View.Running.RunningLayout"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:regions="http://www.codeplex.com/CompositeWPF"
+             xmlns:header="clr-namespace:Subway.CBTC.Casco.View.Running.Header"
+             xmlns:constant="clr-namespace:Subway.CBTC.Casco.Constant"
+             xmlns:footer="clr-namespace:Subway.CBTC.Casco.View.Running.Footer"
+             d:DesignHeight="480"
+             d:DesignWidth="640"
+             mc:Ignorable="d">
+    <Grid Margin="15">
+        <Grid.Resources>
+            <Style BasedOn="{StaticResource Subway.CBTC.Casco.Style.Button.RunningAndMantence}" TargetType="Button" />
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="78*" />
+            <RowDefinition Height="294*" />
+            <RowDefinition Height="78*" />
+        </Grid.RowDefinitions>
+
+        <header:RunningHeader />
+
+        <ContentControl Grid.Row="1" regions:RegionManager.RegionName="{x:Static constant:RegionNames.RunningContent}" />
+
+        <footer:RunningFooter Grid.Row="2" />
+    </Grid>
+</UserControl>

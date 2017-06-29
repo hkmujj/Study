@@ -1,0 +1,113 @@
+﻿<UserControl x:Class="Subway.CBTC.Casco.View.Contents.RegionG.RegionGLayout"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:model="clr-namespace:Subway.CBTC.Casco.Model"
+             xmlns:details="clr-namespace:Subway.CBTC.Casco.View.Contents.RegionG.Details"
+             xmlns:viewModel="clr-namespace:Subway.CBTC.Casco.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+             d:DesignHeight="270"
+             d:DesignWidth="156"
+             mc:Ignorable="d">
+    <UserControl.Background>
+        <ImageBrush ImageSource="{StaticResource Subway.CBTC.Casco.Images.Temp.RegionG}" Opacity="{x:Static model:DesignData.TempOpacity}" />
+    </UserControl.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <!--  G1  -->
+        <TextBlock Style="{StaticResource Subway.CBTC.Casco.Style.Text.StateIndicator}" Text="{Binding Path=Domain.RunningInfo.OperatingGrade, Converter={StaticResource Subway.CBTC.Casco.Converter.OperatingGradeToString}}" />
+
+        <!--  G2  -->
+        <TextBlock Grid.Row="0"
+                   Grid.Column="1"
+                   Foreground="{Binding Path=Domain.RunningInfo.TrainOperatingMode,
+                                        Converter={StaticResource Subway.CBTC.Casco.Converter.TrainOperatingModeToForeground}}"
+                   Style="{StaticResource Subway.CBTC.Casco.Style.Text.StateIndicator}"
+                   Text="{Binding Path=Domain.RunningInfo.TrainOperatingMode,
+                                  Converter={StaticResource Subway.CBTC.Casco.Converter.TrainOperatingModeToString}}" />
+        <!--  G3  -->
+        <Image Grid.Row="1"
+               Grid.Column="0"
+               Source="{Binding Path=Domain.RoadInfo.ReturnState,
+                                Converter={StaticResource Subway.CBTC.Casco.Converter.ReturnStateToImage}}" />
+
+        <!--  G4  -->
+        <Image Grid.Row="1"
+               Grid.Column="1"
+               Source="{Binding Path=Domain.RunningInfo.TrainPosition,
+                                Converter={StaticResource Subway.CBTC.Casco.Converter.TrainPositionCarDepotToImage}}" />
+        <!--  G5  -->
+        <Image Grid.Row="2"
+               Grid.Column="0"
+               Source="{Binding Path=Domain.TrainInfo.DoorInfo.DoorAllowState,
+                                Converter={StaticResource Subway.CBTC.Casco.Converter.DoorAllowToImage}}" />
+        <!--  G5  -->
+        <Border Grid.Row="2"
+                Grid.Column="0"
+                Background="{StaticResource Subway.CBTC.Casco.Brush.Black}"
+                Visibility="{Binding Path=Domain.TrainInfo.DoorInfo.Bypassed,
+                                     Converter={StaticResource Subway.CBTC.Casco.Converter.BooleanToVisibilityConverter}}">
+            <Image Margin="3,6" Source="{StaticResource Subway.CBTC.Casco.Images.Content.Door.DoorBypassed}" />
+        </Border>
+
+        <!--  G6  -->
+        <details:DoorStateView Grid.Row="2" Grid.Column="1" />
+
+        <!--  G7  -->
+        <Image Grid.Row="3"
+               Grid.Column="0"
+               Source="{Binding Path=Domain.RunningInfo.ParkingAlignmentState,
+                                Converter={StaticResource Subway.CBTC.Casco.Converter.ParkingAlignmentStateToImage}}" />
+
+        <!--  G8  -->
+        <Image Grid.Row="3"
+               Grid.Column="1"
+               Source="{StaticResource Subway.CBTC.Casco.Images.Content.Speed.ZeroSpeed}"
+               Visibility="{Binding Path=Domain.SignalInfo.Speed.IsZeroSpeed,
+                                    Converter={StaticResource Subway.CBTC.Casco.Converter.BooleanToVisibilityConverter}}" />
+        <!--  G8  -->
+        <Image Grid.Row="3"
+               Grid.Column="1"
+               Source="{StaticResource Subway.CBTC.Casco.Images.Content.Speed.Speeding}"
+               Visibility="{Binding Path=Domain.SignalInfo.Speed.IsSpeeding,
+                                    Converter={StaticResource Subway.CBTC.Casco.Converter.BooleanToVisibilityConverter}}" />
+        <!--  G9  -->
+        <Image Grid.Row="3"
+               Grid.Column="2"
+               Source="{Binding Path=Domain.TrainInfo.BrakeInfo.BrakeState,
+                                Converter={StaticResource Subway.CBTC.Casco.Converter.BrakeStateToImage}}" />
+        <!--  G10  -->
+        <Image Grid.Row="4"
+               Grid.Column="0"
+               Source="{Binding Path=Domain.TrainInfo.DoorInfo.DoorControlMode,
+                                Converter={StaticResource Subway.CBTC.Casco.Converter.DoorControlModelToImage}}" />
+        <!--  G11  -->
+        <details:FaultView Grid.Row="4" Grid.Column="1" />
+
+        <!--  G12  -->
+        <Image Grid.Row="4"
+               Grid.Column="2"
+               Source="{Binding Path=Domain.SignalInfo.JumpStop,
+                                Converter={StaticResource Subway.CBTC.Casco.Converter.JumpStopToImage}}" />
+
+        <!--  G13  -->
+        <Image Grid.Row="5"
+               Grid.Column="1"
+               Source="{Binding Path=Domain.SignalInfo.ATPConnectState,
+                                Converter={StaticResource Subway.CBTC.Casco.Converter.ATPConnectStateToImage}}" />
+    </Grid>
+</UserControl>

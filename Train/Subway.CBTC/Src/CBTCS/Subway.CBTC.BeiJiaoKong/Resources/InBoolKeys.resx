@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="InBMMI屏黑屏" xml:space="preserve">
+    <value>MMI屏黑屏</value>
+  </data>
+  <data name="InB离站倒计时显示" xml:space="preserve">
+    <value>离站倒计时显示</value>
+  </data>
+  <data name="InB请求制动" xml:space="preserve">
+    <value>请求制动</value>
+  </data>
+  <data name="InB触发紧急制动" xml:space="preserve">
+    <value>触发紧急制动</value>
+  </data>
+  <data name="InB车辆正在牵引" xml:space="preserve">
+    <value>车辆正在牵引</value>
+  </data>
+  <data name="InB车辆为惰行" xml:space="preserve">
+    <value>车辆为惰行</value>
+  </data>
+  <data name="InB车辆正在制动" xml:space="preserve">
+    <value>车辆正在制动</value>
+  </data>
+  <data name="InB强制ATO后备模式" xml:space="preserve">
+    <value>强制ATO后备模式</value>
+  </data>
+  <data name="InBATOCBTC模式" xml:space="preserve">
+    <value>ATOCBTC模式</value>
+  </data>
+  <data name="InB退行" xml:space="preserve">
+    <value>退行</value>
+  </data>
+  <data name="InBATC状态部分故障" xml:space="preserve">
+    <value>ATC状态部分故障</value>
+  </data>
+  <data name="InBATC状态正常" xml:space="preserve">
+    <value>ATC状态正常</value>
+  </data>
+  <data name="InBATC状态完全故障" xml:space="preserve">
+    <value>ATC状态完全故障</value>
+  </data>
+  <data name="InB车辆制动力降低" xml:space="preserve">
+    <value>车辆制动力降低</value>
+  </data>
+  <data name="InB当前司机室未激活" xml:space="preserve">
+    <value>当前司机室未激活</value>
+  </data>
+  <data name="InB当前司机室激活" xml:space="preserve">
+    <value>当前司机室激活</value>
+  </data>
+  <data name="InB当前司机室旁路" xml:space="preserve">
+    <value>当前司机室旁路</value>
+  </data>
+  <data name="InB远端司机室未激活" xml:space="preserve">
+    <value>远端司机室未激活</value>
+  </data>
+  <data name="InB远端司机室激活" xml:space="preserve">
+    <value>远端司机室激活</value>
+  </data>
+  <data name="InB远端司机室旁路" xml:space="preserve">
+    <value>远端司机室旁路</value>
+  </data>
+  <data name="InBATO模式" xml:space="preserve">
+    <value>ATO模式</value>
+  </data>
+  <data name="InBATP模式" xml:space="preserve">
+    <value>ATP模式</value>
+  </data>
+  <data name="InBRM模式" xml:space="preserve">
+    <value>RM模式</value>
+  </data>
+  <data name="InBATC切除" xml:space="preserve">
+    <value>ATC切除</value>
+  </data>
+  <data name="InBRMR模式" xml:space="preserve">
+    <value>RMR模式</value>
+  </data>
+  <data name="InBCBI已选择RM驾驶模式" xml:space="preserve">
+    <value>CBI已选择RM驾驶模式</value>
+  </data>
+  <data name="InBBM" xml:space="preserve">
+    <value>BM</value>
+  </data>
+  <data name="InBCBTC" xml:space="preserve">
+    <value>CBTC</value>
+  </data>
+  <data name="InB列车在ATB区域内" xml:space="preserve">
+    <value>列车在ATB区域内</value>
+  </data>
+  <data name="InB列车在正进行ATB折返" xml:space="preserve">
+    <value>列车在正进行ATB折返</value>
+  </data>
+  <data name="InB列车正确停在停车点" xml:space="preserve">
+    <value>列车正确停在停车点</value>
+  </data>
+  <data name="InB列车未停到位" xml:space="preserve">
+    <value>列车未停到位</value>
+  </data>
+  <data name="InB左侧车门打开" xml:space="preserve">
+    <value>左侧车门打开</value>
+  </data>
+  <data name="InB右侧车门打开" xml:space="preserve">
+    <value>右侧车门打开</value>
+  </data>
+  <data name="InB两侧车门打开" xml:space="preserve">
+    <value>两侧车门打开</value>
+  </data>
+  <data name="InBATC没有授权情况下车门打开" xml:space="preserve">
+    <value>ATC没有授权情况下车门打开</value>
+  </data>
+  <data name="InB请求车门关闭" xml:space="preserve">
+    <value>请求车门关闭</value>
+  </data>
+  <data name="InBATC请求列车离站" xml:space="preserve">
+    <value>ATC请求列车离站</value>
+  </data>
+  <data name="InB车门手动打开手动关闭" xml:space="preserve">
+    <value>车门手动打开手动关闭</value>
+  </data>
+  <data name="InB车门自动打开手动关闭" xml:space="preserve">
+    <value>车门自动打开手动关闭</value>
+  </data>
+  <data name="InB车门自动打开自动关闭" xml:space="preserve">
+    <value>车门自动打开自动关闭</value>
+  </data>
+  <data name="InB车辆施加EB" xml:space="preserve">
+    <value>车辆施加EB</value>
+  </data>
+  <data name="InB车辆空转打滑信息正常范围" xml:space="preserve">
+    <value>车辆空转打滑信息正常范围</value>
+  </data>
+  <data name="InB车辆空转打滑信息严重" xml:space="preserve">
+    <value>车辆空转打滑信息严重</value>
+  </data>
+  <data name="InBPSD未关闭" xml:space="preserve">
+    <value>PSD未关闭</value>
+  </data>
+  <data name="InBPSD状态未知" xml:space="preserve">
+    <value>PSD状态未知</value>
+  </data>
+  <data name="InB无线通信中断" xml:space="preserve">
+    <value>无线通信中断</value>
+  </data>
+  <data name="InB选择了RM模式且ATC未定位" xml:space="preserve">
+    <value>选择了RM模式且ATC未定位</value>
+  </data>
+  <data name="InB提示是否强制选择BM模式" xml:space="preserve">
+    <value>提示是否强制选择BM模式</value>
+  </data>
+  <data name="InBATP进站显示目标距离显示距离" xml:space="preserve">
+    <value>ATP进站显示目标距离显示距离</value>
+  </data>
+  <data name="InB扣车" xml:space="preserve">
+    <value>扣车</value>
+  </data>
+  <data name="InB跳停" xml:space="preserve">
+    <value>跳停</value>
+  </data>
+  <data name="InB列车即将离开ATC区域" xml:space="preserve">
+    <value>列车即将离开ATC区域</value>
+  </data>
+  <data name="InBATOBM闪烁" xml:space="preserve">
+    <value>ATOBM闪烁</value>
+  </data>
+  <data name="InB车门无允许" xml:space="preserve">
+    <value>车门无允许 </value>
+  </data>
+  <data name="InB左侧车门允许" xml:space="preserve">
+    <value>左侧车门允许</value>
+  </data>
+  <data name="InB右侧车门允许" xml:space="preserve">
+    <value>右侧车门允许</value>
+  </data>
+  <data name="InB两侧车门允许" xml:space="preserve">
+    <value>两侧车门允许</value>
+  </data>
+  <data name="InB允许手动方式开左门且左右门均关好" xml:space="preserve">
+    <value>允许手动方式开左门且左右门均关好</value>
+  </data>
+  <data name="InB允许手动方式开左门且车门未关闭" xml:space="preserve">
+    <value>允许手动方式开左门且车门未关闭</value>
+  </data>
+  <data name="InB允许手动方式开右门且左右门均关好" xml:space="preserve">
+    <value>允许手动方式开右门且左右门均关好</value>
+  </data>
+  <data name="InB允许手动方式开右门且车门未关闭" xml:space="preserve">
+    <value>允许手动方式开右门且车门未关闭</value>
+  </data>
+  <data name="InB允许手动方式开两侧门且左右门均关好" xml:space="preserve">
+    <value>允许手动方式开两侧门且左右门均关好</value>
+  </data>
+  <data name="InB允许手动方式开两侧门且车门未关闭" xml:space="preserve">
+    <value>允许手动方式开两侧门且车门未关闭</value>
+  </data>
+  <data name="InB允许手动方式先开左门后开右门且左右门均关好" xml:space="preserve">
+    <value>允许手动方式先开左门后开右门且左右门均关好</value>
+  </data>
+  <data name="InB允许手动方式先开左门后开右门且车门未关闭" xml:space="preserve">
+    <value>允许手动方式先开左门后开右门且车门未关闭</value>
+  </data>
+  <data name="InB允许手动方式先开右门后开左门且左右门均关好" xml:space="preserve">
+    <value>允许手动方式先开右门后开左门且左右门均关好</value>
+  </data>
+  <data name="InB允许手动方式先开右门后开左门且车门未关闭" xml:space="preserve">
+    <value>允许手动方式先开右门后开左门且车门未关闭</value>
+  </data>
+  <data name="InB允许自动方式开左门且左右门均关好" xml:space="preserve">
+    <value>允许自动方式开左门且左右门均关好</value>
+  </data>
+  <data name="InB允许自动方式开左门且车门未关闭" xml:space="preserve">
+    <value>允许自动方式开左门且车门未关闭</value>
+  </data>
+  <data name="InB允许自动方式开右门且左右门均关好" xml:space="preserve">
+    <value>允许自动方式开右门且左右门均关好</value>
+  </data>
+  <data name="InB允许自动方式开右门且车门未关闭" xml:space="preserve">
+    <value>允许自动方式开右门且车门未关闭</value>
+  </data>
+  <data name="InB允许自动方式开两侧门且左右门均关好" xml:space="preserve">
+    <value>允许自动方式开两侧门且左右门均关好</value>
+  </data>
+  <data name="InB允许自动方式开两侧门且车门未关闭" xml:space="preserve">
+    <value>允许自动方式开两侧门且车门未关闭</value>
+  </data>
+  <data name="InB允许自动方式先开左门后开右门且左右门均关好" xml:space="preserve">
+    <value>允许自动方式先开左门后开右门且左右门均关好</value>
+  </data>
+  <data name="InB允许自动方式先开左门后开右门且车门未关闭" xml:space="preserve">
+    <value>允许自动方式先开左门后开右门且车门未关闭</value>
+  </data>
+  <data name="InB允许自动方式先开右门后开左门且左右门均关好" xml:space="preserve">
+    <value>允许自动方式先开右门后开左门且左右门均关好</value>
+  </data>
+  <data name="InB允许自动方式先开右门后开左门且车门未关闭" xml:space="preserve">
+    <value>允许自动方式先开右门后开左门且车门未关闭</value>
+  </data>
+  <data name="InB信号屏是否显示目标距离" xml:space="preserve">
+    <value>信号屏是否显示目标距离</value>
+  </data>
+  <data name="InB信号屏是否显示目标速度" xml:space="preserve">
+    <value>信号屏是否显示目标速度</value>
+  </data>
+  <data name="InB信号屏是否显示当前速度以及速度指针" xml:space="preserve">
+    <value>信号屏是否显示当前速度以及速度指针</value>
+  </data>
+  <data name="InB信号屏是否显示允许速度" xml:space="preserve">
+    <value>信号屏是否显示允许速度</value>
+  </data>
+  <data name="InB信号屏是否显示推荐速度" xml:space="preserve">
+    <value>信号屏是否显示推荐速度</value>
+  </data>
+  <data name="InB预选模式闪烁" xml:space="preserve">
+    <value>预选模式闪烁</value>
+  </data>
+  <data name="InB最高模式RM" xml:space="preserve">
+    <value>最高模式RM</value>
+  </data>
+  <data name="InB最高模式SMI" xml:space="preserve">
+    <value>最高模式SMI</value>
+  </data>
+  <data name="InB最高模式SMC" xml:space="preserve">
+    <value>最高模式SMC</value>
+  </data>
+  <data name="InB最高模式AMI" xml:space="preserve">
+    <value>最高模式AMI</value>
+  </data>
+  <data name="InB最高模式AMC" xml:space="preserve">
+    <value>最高模式AMC</value>
+  </data>
+  <data name="InBARoffered显示人工折返图标" xml:space="preserve">
+    <value>ARoffered显示人工折返图标</value>
+  </data>
+  <data name="InBARactive人工折返图标激活" xml:space="preserve">
+    <value>ARactive人工折返图标激活</value>
+  </data>
+  <data name="InBDTROisoffered显示自动折返图标" xml:space="preserve">
+    <value>DTROisoffered显示自动折返图标</value>
+  </data>
+  <data name="InBDTROactive无人折返操作激活" xml:space="preserve">
+    <value>DTROactive无人折返操作激活</value>
+  </data>
+  <data name="InB列车完整性" xml:space="preserve">
+    <value>列车完整性</value>
+  </data>
+  <data name="InB先开左门" xml:space="preserve">
+    <value>先开左门</value>
+  </data>
+  <data name="InB先开右门" xml:space="preserve">
+    <value>先开右门</value>
+  </data>
+  <data name="InB不再监控车门" xml:space="preserve">
+    <value>不再监控车门</value>
+  </data>
+  <data name="InB允许释放车门" xml:space="preserve">
+    <value>允许释放车门</value>
+  </data>
+  <data name="InB关闭门命令" xml:space="preserve">
+    <value>关闭门命令</value>
+  </data>
+  <data name="InBATP故障" xml:space="preserve">
+    <value>ATP故障</value>
+  </data>
+  <data name="InBATO故障" xml:space="preserve">
+    <value>ATO故障</value>
+  </data>
+  <data name="InB进入车辆段" xml:space="preserve">
+    <value>进入车辆段</value>
+  </data>
+  <data name="InB在车辆段内行驶" xml:space="preserve">
+    <value>在车辆段内行驶</value>
+  </data>
+  <data name="InB释放速度" xml:space="preserve">
+    <value>释放速度</value>
+  </data>
+  <data name="InB目标距离刻度条红色" xml:space="preserve">
+    <value>目标距离刻度条红色</value>
+  </data>
+  <data name="InB目标距离刻度条黄色" xml:space="preserve">
+    <value>目标距离刻度条黄色</value>
+  </data>
+  <data name="InB目标距离刻度条淡绿色" xml:space="preserve">
+    <value>目标距离刻度条淡绿色</value>
+  </data>
+  <data name="InB进入屏保界面" xml:space="preserve">
+    <value>进入屏保界面</value>
+  </data>
+  <data name="InB菜单点击无反应" xml:space="preserve">
+    <value>菜单点击无反应</value>
+  </data>
+  <data name="InB要求进入RM模式" xml:space="preserve">
+    <value>要求进入RM模式 </value>
+  </data>
+  <data name="InB确认释放速度以低速接近" xml:space="preserve">
+    <value>确认释放速度以低速接近</value>
+  </data>
+  <data name="InB由于离开TGMT区域切换到RM模式" xml:space="preserve">
+    <value>由于离开TGMT区域切换到RM模式</value>
+  </data>
+  <data name="InB确认模式级别的预选择" xml:space="preserve">
+    <value>确认模式级别的预选择</value>
+  </data>
+  <data name="InB激活确认按钮" xml:space="preserve">
+    <value>激活确认按钮</value>
+  </data>
+  <data name="InB激活ATO解锁触点" xml:space="preserve">
+    <value>激活ATO解锁触点</value>
+  </data>
+  <data name="InB激活ATO启动按钮" xml:space="preserve">
+    <value>激活ATO启动按钮</value>
+  </data>
+  <data name="InB激活自动折返按钮" xml:space="preserve">
+    <value>激活自动折返按钮</value>
+  </data>
+  <data name="InB激活操作模式降按钮" xml:space="preserve">
+    <value>激活操作模式降按钮</value>
+  </data>
+  <data name="InB激活操作模式升按钮" xml:space="preserve">
+    <value>激活操作模式升按钮</value>
+  </data>
+  <data name="InB激活门允许按钮" xml:space="preserve">
+    <value>激活门允许按钮</value>
+  </data>
+  <data name="InB按钮恢复失败" xml:space="preserve">
+    <value>按钮恢复失败</value>
+  </data>
+  <data name="InB按钮恢复拒绝" xml:space="preserve">
+    <value>按钮恢复拒绝</value>
+  </data>
+  <data name="InB按钮恢复成功" xml:space="preserve">
+    <value>按钮恢复成功</value>
+  </data>
+</root>

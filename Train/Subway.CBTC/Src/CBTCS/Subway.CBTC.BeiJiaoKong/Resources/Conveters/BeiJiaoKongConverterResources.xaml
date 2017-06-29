@@ -1,0 +1,198 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:constant="clr-namespace:CBTC.Infrasturcture.Model.Constant;assembly=CBTC.Infrasturcture"
+                    xmlns:converter1="clr-namespace:Subway.CBTC.BeiJiaoKong.Converter"
+                    xmlns:conveter="clr-namespace:MMI.Facility.WPFInfrastructure.Converter;assembly=MMI.Facility.WPFInfrastructure"
+                    xmlns:converter="clr-namespace:CBTC.Infrasturcture.Converter;assembly=CBTC.Infrasturcture">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Brushes/BeiJiaoKongSolodColorBrushes.xaml" />
+        <ResourceDictionary Source="../Fonts/BeiJiaoKongStringResource.xaml" />
+        <ResourceDictionary Source="../Images/BeiJiaoKongImagesResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <converter1:BeiJiaoKongTargetBarConvert x:Key="BeiJiaoKongTargetBarConvert" />
+    <converter1:BeiJiaoKongDegreeScaleTextAngleConverter x:Key="BeiJiaoKongDegreeScaleTextAngleConverter" />
+    <converter1:BeiJiaoKongDisplayMethodConverter x:Key="BeiJiaoKongDisplayMethodConverter" />
+    <converter1:BeiJiaoKongFlickingConvert x:Key="BeiJiaoKongFlickingConvert" />
+    <converter1:BeiJiaoKongProgressBarConvert x:Key="BeiJiaoKongProgressBarConvert" />
+    <converter1:BeiJiaoKongRecTypeCConvert x:Key="BeiJiaoKongRecTypeCConvert" />
+    <converter1:BeiJiaoKongRecTypeTConvert x:Key="BeiJiaoKongRecTypeTConvert" />
+    <converter1:BeiJiaoKongStringConverter x:Key="BeiJiaoKongStringConverter" />
+    <converter1:BeiJiaoKongBrakeDetailsConvert x:Key="BeiJiaoKongBrakeDetailsConvert" />
+    <converter1:BeiJiaoKongDoorStatusMulConverter x:Key="BeiJiaoKongDoorStatusMulConverter"/>
+    <BooleanToVisibilityConverter x:Key="BeiJiaoKongBooleanToVisibilityConverter" />
+    <converter1:BeiJiaoKongSpeedToAngleConverter x:Key="BeiJiaoKongSpeedToAngleConverter" />
+    <converter1:BeiJiaoKongCarDepotSwitchRegionMulConverter x:Key="BeiJiaoKongCarDepotSwitchRegionMulConverter" />
+    <converter1:BeiJiaoKongEmergencyAndPSDStatusMulConverter x:Key="BeiJiaoKongEmergencyAndPSDStatusMulConverter" />
+    <converter1:BeiJiaoKongWorkStateMulConverter x:Key="BeiJiaoKongWorkStateMulConverter" />
+    <converter1:BeiJiaoKongEquipmentTroubleMulConverter x:Key="BeiJiaoKongEquipmentTroubleMulConverter" />
+    <converter1:BeiJiaoKongCabStateToColorConverter x:Key="BeiJiaoKongCabStateToColorConverter" />
+    <converter1:BeiJiaoKongVOBCStateToColorConvert x:Key="BeiJiaoKongVOBCStateToColorConvert" />
+    <converter:LightPercentToBackColorConverter x:Key="BeiJiaoKongLightToBackColorConvert" />
+    <converter1:BeiJiaoKongTCTTypeToVisibilityConverter x:Key="BeiJiaoKongTCTTypeToVisibilityConverter" />
+
+    <conveter:IsNullToVisibilityConverter x:Key="BeiJiaoKongNullToVisibility"
+                                           VisibilityWhenNotNull="Visible"
+                                           VisibilityWhenNull="Collapsed" />
+    
+    <conveter:SelectObjectContentConverter x:Key="BeiJiaoKongHighDriveModelConverter">
+        <conveter:SelectObjectContentConverter.ObjectContentCollection>
+            <conveter:ObjectContentPair Key="{x:Static constant:HighDirveModel.Normal}" Content="{x:Null}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:HighDirveModel.RM}" Content="{StaticResource BeiJiaoKongStringRM}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:HighDirveModel.SMI}" Content="{StaticResource BeiJiaoKongStringCM-I}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:HighDirveModel.SMC}" Content="{StaticResource BeiJiaoKongStringCM-C}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:HighDirveModel.AMI}" Content="{StaticResource BeiJiaoKongStringAM-I}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:HighDirveModel.AMC}" Content="{StaticResource BeiJiaoKongStringAM-C}" />
+        </conveter:SelectObjectContentConverter.ObjectContentCollection>
+    </conveter:SelectObjectContentConverter>
+
+    <conveter:SelectObjectContentConverter x:Key="BeiJiaoKongTrainIntegrityConverter">
+        <conveter:SelectObjectContentConverter.ObjectContentCollection>
+            <conveter:ObjectContentPair Key="{x:Static constant:CompleteState.Completed}" Content="{StaticResource BeiJiaoKongTrainIntegrityNormalBitmapImage}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:CompleteState.Lose}" Content="{StaticResource BeiJiaoKongTrainIntegrityLoseBitmapImage}" />
+        </conveter:SelectObjectContentConverter.ObjectContentCollection>
+    </conveter:SelectObjectContentConverter>
+
+    <conveter:SelectObjectContentConverter x:Key="BeiJiaoKongTrainEquipmentConverter">
+        <conveter:SelectObjectContentConverter.ObjectContentCollection>
+            <conveter:ObjectContentPair Key="{x:Static constant:TrainEquipment.CommunicationNormal}" Content="{StaticResource BeiJiaoKongCommunicationNormalBitmapImage}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:TrainEquipment.CommunicationBreak}" Content="{StaticResource BeiJiaoKongCommunicationBreakBitmapImage}" />
+        </conveter:SelectObjectContentConverter.ObjectContentCollection>
+    </conveter:SelectObjectContentConverter>
+
+    <conveter:SelectObjectContentConverter x:Key="BeiJiaoKongTrainOperatingModeConverter">
+        <conveter:SelectObjectContentConverter.ObjectContentCollection>
+            <conveter:ObjectContentPair Key="{x:Static constant:TrainOperatingMode.Normal}" Content="{x:Null}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:TrainOperatingMode.AM}" Content="{StaticResource BeiJiaoKongStringAM}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:TrainOperatingMode.CM}" Content="{StaticResource BeiJiaoKongStringCM}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:TrainOperatingMode.RM}" Content="{StaticResource BeiJiaoKongStringRM}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:TrainOperatingMode.NRM}" Content="{StaticResource BeiJiaoKongStringEUM}" />
+        </conveter:SelectObjectContentConverter.ObjectContentCollection>
+    </conveter:SelectObjectContentConverter>
+
+    <conveter:SelectObjectContentConverter x:Key="BeiJiaoKongOperatingGradeConverter">
+        <conveter:SelectObjectContentConverter.ObjectContentCollection>
+            <conveter:ObjectContentPair Key="{x:Static constant:OperatingGrade.Normal}" Content="{x:Null}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:OperatingGrade.IXL}" Content="{StaticResource BeiJiaoKongStringIXL}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:OperatingGrade.ITC}" Content="{StaticResource BeiJiaoKongStringITC}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:OperatingGrade.CBTC}" Content="{StaticResource BeiJiaoKongStringCBTC}" />
+        </conveter:SelectObjectContentConverter.ObjectContentCollection>
+    </conveter:SelectObjectContentConverter>
+
+    <conveter:SelectObjectContentConverter x:Key="BeiJiaoKongPullbackStatusConverter">
+        <conveter:SelectObjectContentConverter.ObjectContentCollection>
+            <conveter:ObjectContentPair Key="{x:Static constant:ReturnState.None}" Content="{x:Null}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:ReturnState.AutoReturn}" Content="{StaticResource BeiJiaoKongWillPullbackBitmapImage}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:ReturnState.AutoReturnActived}" Content="{StaticResource BeiJiaoKongPullbackingBitmapImage}" />
+        </conveter:SelectObjectContentConverter.ObjectContentCollection>
+    </conveter:SelectObjectContentConverter>
+
+    <conveter:SelectObjectContentConverter x:Key="BeiJiaoKongTrainStopWindowConverter">
+        <conveter:SelectObjectContentConverter.ObjectContentCollection>
+            <conveter:ObjectContentPair Key="{x:Static constant:ParkingAlignmentState.Unkown}" Content="{x:Null}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:ParkingAlignmentState.NotAlignmentInStation}" Content="{StaticResource BeiJiaoKongOutsideStopWindowBitmapImage}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:ParkingAlignmentState.AlignmentInStation}" Content="{StaticResource BeiJiaoKongInsideStopWindowBitmapImage}" />
+        </conveter:SelectObjectContentConverter.ObjectContentCollection>
+    </conveter:SelectObjectContentConverter>
+
+    <conveter:SelectObjectContentConverter x:Key="BeiJiaoKongDepartInformationConverter">
+        <conveter:SelectObjectContentConverter.ObjectContentCollection>
+            <conveter:ObjectContentPair Key="{x:Static constant:ATCRequestState.None}" Content="{x:Null}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:ATCRequestState.ATCRequestLeave}" Content="{StaticResource BeiJiaoKongDepartRequestBitmapImage}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:ATCRequestState.CloseDoorOrder}" Content="{StaticResource BeiJiaoKongCloseDoorOrderBitmapImage}" />
+        </conveter:SelectObjectContentConverter.ObjectContentCollection>
+    </conveter:SelectObjectContentConverter>
+
+    <conveter:SelectObjectContentConverter x:Key="BeiJiaoKongDoorControlModeConverter">
+        <conveter:SelectObjectContentConverter.ObjectContentCollection>
+            <conveter:ObjectContentPair Key="{x:Static constant:DoorControlMode.Unkown}" Content="{x:Null}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:DoorControlMode.MOMC}" Content="{StaticResource BeiJiaoKongStringMOMC}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:DoorControlMode.AOMC}" Content="{StaticResource BeiJiaoKongStringAOMC}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:DoorControlMode.AOAC}" Content="{StaticResource BeiJiaoKongStringAOAC}" />
+        </conveter:SelectObjectContentConverter.ObjectContentCollection>
+    </conveter:SelectObjectContentConverter>
+
+    <conveter:SelectObjectContentConverter x:Key="BeiJiaoKongDoorControlMode1Converter">
+        <conveter:SelectObjectContentConverter.ObjectContentCollection>
+            <conveter:ObjectContentPair Key="{x:Static constant:DoorControlMode.Unkown}" Content="{x:Null}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:DoorControlMode.MOMC}" Content="{StaticResource BeiJiaoKongStringMOMC1}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:DoorControlMode.AOMC}" Content="{StaticResource BeiJiaoKongStringAOMC1}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:DoorControlMode.AOAC}" Content="{StaticResource BeiJiaoKongStringAOAC1}" />
+        </conveter:SelectObjectContentConverter.ObjectContentCollection>
+    </conveter:SelectObjectContentConverter>
+
+    <conveter:SelectObjectContentConverter x:Key="BeiJiaoKongDoorControlModeToVisibilityConverter">
+        <conveter:SelectObjectContentConverter.ObjectContentCollection>
+            <conveter:ObjectContentPair Key="{x:Static constant:DoorControlMode.Unkown}" Content="{x:Static Visibility.Hidden}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:DoorControlMode.MOMC}" Content="{x:Static Visibility.Visible}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:DoorControlMode.AOMC}" Content="{x:Static Visibility.Visible}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:DoorControlMode.AOAC}" Content="{x:Static Visibility.Visible}" />
+        </conveter:SelectObjectContentConverter.ObjectContentCollection>
+    </conveter:SelectObjectContentConverter>
+
+    <conveter:SelectObjectContentConverter x:Key="BeiJiaoKongEquipmentTroubleConverter">
+        <conveter:SelectObjectContentConverter.ObjectContentCollection>
+            <conveter:ObjectContentPair Key="{x:Static constant:FaultLocation.None}" Content="{x:Null}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:FaultLocation.RAD}" Content="{StaticResource BeiJiaoKongWirelessInterruptBitmapImage}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:FaultLocation.ATP}" Content="{StaticResource BeiJiaoKongATPTroubleBitmapImage}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:FaultLocation.ATO}" Content="{StaticResource BeiJiaoKongATOTroubleBitmapImage}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:FaultLocation.AM}" Content="{StaticResource BeiJiaoKongAMDisableBitmapImage}" />
+        </conveter:SelectObjectContentConverter.ObjectContentCollection>
+    </conveter:SelectObjectContentConverter>
+
+    <conveter:SelectObjectContentConverter x:Key="BeiJiaoKongJumpStopDetainCarConverterr">
+        <conveter:SelectObjectContentConverter.ObjectContentCollection>
+            <conveter:ObjectContentPair Key="{x:Static constant:JumpStopDetainCar.Normal}" Content="{x:Null}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:JumpStopDetainCar.JumpStop}" Content="{StaticResource BeiJiaoKongJumpStopBitmapImage}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:JumpStopDetainCar.DetainCar}" Content="{StaticResource BeiJiaoKongDetainCarBitmapImage}" />
+        </conveter:SelectObjectContentConverter.ObjectContentCollection>
+    </conveter:SelectObjectContentConverter>
+
+    <conveter:SelectObjectContentConverter x:Key="BeiJiaoKongPowerStateToVisible">
+        <conveter:SelectObjectContentConverter.ObjectContentCollection>
+            <conveter:ObjectContentPair Key="{x:Static constant:PowerState.Started}" Content="{x:Static Visibility.Visible}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:PowerState.Starting}" Content="{x:Static Visibility.Visible}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:PowerState.Stopped}" Content="{x:Static Visibility.Hidden}" />
+        </conveter:SelectObjectContentConverter.ObjectContentCollection>
+    </conveter:SelectObjectContentConverter>
+
+    <conveter:SelectObjectContentConverter x:Key="BeiJiaoKongEmergencyBrakeStatusConverter">
+        <conveter:SelectObjectContentConverter.ObjectContentCollection>
+            <conveter:ObjectContentPair Key="{x:Static constant:EmergencyBrakeStatus.None}" Content="{x:Null}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:EmergencyBrakeStatus.HasEB}" Content="{StaticResource BeiJiaoKongStringHasEB}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:EmergencyBrakeStatus.NotEB}" Content="{StaticResource BeiJiaoKongStringNotEB}" />
+        </conveter:SelectObjectContentConverter.ObjectContentCollection>
+    </conveter:SelectObjectContentConverter>
+
+    <conveter:SelectObjectContentConverter x:Key="BeiJiaoKongBlackTextConverter">
+        <conveter:SelectObjectContentConverter.ObjectContentCollection>
+            <conveter:ObjectContentPair Key="{x:Static constant:BlackText.None}" Content="{x:Null}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:BlackText.ATPAbscission}" Content="{StaticResource BeiJiaoKongStringATPAbscission}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:BlackText.MMICommunicationFault}" Content="{StaticResource BeiJiaoKongStringMMICommunicationFault}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:BlackText.UNManuanlReturn}" Content="{StaticResource BeiJiaoKongStringUNManuanlReturn}" />
+        </conveter:SelectObjectContentConverter.ObjectContentCollection>
+    </conveter:SelectObjectContentConverter>
+
+    <conveter:SelectObjectContentConverter x:Key="BeiJiaoKongRATOStateConverter">
+        <conveter:SelectObjectContentConverter.ObjectContentCollection>
+            <conveter:ObjectContentPair Key="{x:Static constant:RATOState.None}" Content="{x:Null}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:RATOState.RATONormal}" Content="{StaticResource BeiJiaoKongStringRATONormal}" />
+        </conveter:SelectObjectContentConverter.ObjectContentCollection>
+    </conveter:SelectObjectContentConverter>
+
+    <conveter:SelectObjectContentConverter x:Key="BeiJiaoKongBroadcastTestStatusConverter">
+        <conveter:SelectObjectContentConverter.ObjectContentCollection>
+            <conveter:ObjectContentPair Key="{x:Static constant:BroadcastTestStatus.None}" Content="{x:Null}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:BroadcastTestStatus.StatusUnKnown}" Content="{StaticResource BeiJiaoKongStringStatusUnKnown}" />
+        </conveter:SelectObjectContentConverter.ObjectContentCollection>
+    </conveter:SelectObjectContentConverter>
+
+    <conveter:SelectObjectContentConverter x:Key="BeiJiaoKongNetStatusConverter">
+        <conveter:SelectObjectContentConverter.ObjectContentCollection>
+            <conveter:ObjectContentPair Key="{x:Static constant:NetStatus.None}" Content="{x:Null}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:NetStatus.NormalStatus}" Content="{StaticResource BeiJiaoKongNetNormalBitmapImage}" />
+            <conveter:ObjectContentPair Key="{x:Static constant:NetStatus.ErrorStatus}" Content="{StaticResource BeiJiaoKongNetErrorBitmapImage}" />
+        </conveter:SelectObjectContentConverter.ObjectContentCollection>
+    </conveter:SelectObjectContentConverter>
+</ResourceDictionary>

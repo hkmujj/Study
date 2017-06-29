@@ -1,0 +1,48 @@
+﻿<UserControl
+    x:Class="Subway.CBTC.THALES.View.Shell.ShellWithButton"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:constant="clr-namespace:Subway.CBTC.THALES.Constant"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:interactivity="clr-namespace:MMI.Facility.WPFInfrastructure.Interactivity;assembly=MMI.Facility.WPFInfrastructure"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:regions="http://www.codeplex.com/CompositeWPF"
+    xmlns:shell="clr-namespace:Subway.CBTC.THALES.View.Shell"
+    xmlns:viewModel="clr-namespace:Subway.CBTC.THALES.ViewModel"
+    d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+    d:DesignHeight="600"
+    d:DesignWidth="800"
+    Background="{StaticResource Subway.CBTC.THALES.ShellBackgroundBrush}"
+    mc:Ignorable="d">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <interactivity:InvokeCommandAction Command="{Binding Path=Controller.LoadedCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Border>
+        <Viewbox Stretch="Fill">
+            <Grid Width="800" Height="600">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60*" />
+                    <RowDefinition Height="480*" />
+                    <RowDefinition Height="60*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80*" />
+                    <ColumnDefinition Width="640*" />
+                    <ColumnDefinition Width="80*" />
+                </Grid.ColumnDefinitions>
+
+                <shell:ShellWithoutButton Grid.Row="1" Grid.Column="1" />
+
+                <Border
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    regions:RegionManager.RegionName="{x:Static constant:RegionNames.ShellButton}"
+                    Background="{StaticResource Subway.CBTC.THALES.ShellBackgroundBrush}" />
+
+            </Grid>
+        </Viewbox>
+    </Border>
+</UserControl>

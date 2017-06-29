@@ -1,0 +1,62 @@
+﻿<UserControl
+    x:Class="Subway.CBTC.Casco.View.Contents.RegionA.RegionALayout"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="clr-namespace:Subway.CBTC.Casco.ViewModel"
+    xmlns:warning="clr-namespace:Subway.CBTC.Casco.Model.Domain.Signal.Warning"
+    d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+    d:DesignHeight="410"
+    d:DesignWidth="93"
+    Background="{StaticResource Subway.CBTC.Casco.Brush.Black}"
+    mc:Ignorable="d">
+    <Viewbox Stretch="Fill">
+        <Grid
+            Width="93"
+            Height="410"
+            Visibility="{Binding Path=Domain.SignalInfo.WarningIntervention.TargetDistanceVisible, Converter={StaticResource Subway.CBTC.Casco.Converter.BooleanToVisibilityConverter}}">
+            <!--<Grid.Background>
+            <ImageBrush ImageSource="{StaticResource Subway.CBTC.Casco.Images.Temp.RegionA}" />
+        </Grid.Background>-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="84*" />
+                <RowDefinition Height="84*" />
+                <RowDefinition Height="252*" />
+            </Grid.RowDefinitions>
+            <Border Margin="2" Background="{Binding CBTC.SignalInfo.Speed.BrakeDetailsType, Converter={StaticResource Subway.CBTC.Casco.Converter.BrakeDetailsTypeToBrush}}" />
+
+            <TextBlock
+                Grid.Row="1"
+                FontSize="16"
+                Style="{StaticResource Subway.CBTC.Casco.Style.Text.RegionA}"
+                Text="{Binding Path=Domain.SignalInfo.WarningIntervention.TargetDistance}" />
+            <!--<ItemsControl Grid.Row="2" ItemsSource="{Binding CBTC.SignalInfo.WarningIntervention.TargitDistanceScale.TargitDistanceScaleItems}" Style="{StaticResource Subway.CBTC.THALES.MainDistanceScalStyle1}"></ItemsControl>-->
+
+            <ItemsControl
+                Grid.Row="2"
+                Margin="0,0,50,0"
+                Panel.ZIndex="1"
+                ItemsSource="{Binding Source={x:Static warning:TagetDistanceScale.Instance}, Path=TargitDistanceScaleItems}"
+                Style="{StaticResource Subway.CBTC.THALES.MainDistanceScalStyle1}" />
+         
+            <ProgressBar
+                Grid.Row="2"
+              Margin="50,21,15,0"
+                Background="Transparent"
+                BorderThickness="0"
+                Foreground="{Binding Path=Domain.SignalInfo.WarningIntervention.WarningColor, Converter={StaticResource Subway.CBTC.Casco.Converter.CBTCColorToBrush}}"
+                Orientation="Vertical"
+                Style="{StaticResource Subway.CBTC.Casco.ProgressBar.OrdinaryStyle}">
+
+                <ProgressBar.Value>
+                    <MultiBinding Converter="{StaticResource Subway.CBTC.Casco.Converter.TargitDistanceToScalConverter}">
+                        <Binding Mode="OneWay" Path="Domain.SignalInfo.WarningIntervention.TargitDistanceScale" />
+                        <Binding Path="Domain.SignalInfo.WarningIntervention.TargetDistance" />
+                    </MultiBinding>
+                </ProgressBar.Value>
+            </ProgressBar>
+        </Grid>
+    </Viewbox>
+
+</UserControl>

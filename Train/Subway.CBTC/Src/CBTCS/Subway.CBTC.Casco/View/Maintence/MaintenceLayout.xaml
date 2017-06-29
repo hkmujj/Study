@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="Subway.CBTC.Casco.View.Maintence.MaintenceLayout"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:header="clr-namespace:Subway.CBTC.Casco.View.Maintence.Header"
+             xmlns:footer="clr-namespace:Subway.CBTC.Casco.View.Maintence.Footer"
+             d:DesignHeight="480"
+             d:DesignWidth="640"
+             mc:Ignorable="d">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="78*" />
+            <RowDefinition Height="294*" />
+            <RowDefinition Height="78*" />
+        </Grid.RowDefinitions>
+
+        <header:MaintenceHeader />
+
+        <footer:MaintenceFooter Grid.Row="2" />
+
+    </Grid>
+</UserControl>

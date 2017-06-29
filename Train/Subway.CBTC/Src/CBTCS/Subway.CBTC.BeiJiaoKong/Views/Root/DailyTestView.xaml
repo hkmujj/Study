@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="Subway.CBTC.BeiJiaoKong.Views.Root.DailyTestView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:constance="clr-namespace:Subway.CBTC.BeiJiaoKong.Constance"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:events="clr-namespace:Subway.CBTC.BeiJiaoKong.Events"
+             xmlns:viewModel="clr-namespace:Subway.CBTC.BeiJiaoKong.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:BeiJiaoKongViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="480" d:DesignWidth="600">
+    <Grid>
+        <Button Width="80"
+                Height="60"
+                Style="{StaticResource BeiJiaoKongBtnStyle}"
+                Command="{Binding Controller.Navigator}"
+                Content="返回" Margin="500,20,20,400">
+            <Button.CommandParameter>
+                <events:NavigatorEventArgs ViewName="{x:Static constance:ViewNames.SettingMenuView}" />
+            </Button.CommandParameter>
+        </Button>
+        <Button Width="80"
+                Height="60"
+                Style="{StaticResource BeiJiaoKongBtnStyle}"
+                Command="{Binding Controller.Navigator}"
+                Content="日检"  Margin="160,380,340,20">
+            <Button.CommandParameter>
+                <events:NavigatorEventArgs ViewName="{x:Static constance:ViewNames.DailyTestView}" />
+            </Button.CommandParameter>
+        </Button>
+        <Button Width="80"
+                Height="60"
+                Style="{StaticResource BeiJiaoKongBtnStyle}"
+                Command="{Binding Controller.Navigator}"
+                Content="司机号" Margin="310,380,190,20" >
+            <Button.CommandParameter>
+                <events:NavigatorEventArgs ViewName="{x:Static constance:ViewNames.DriverNumberInputView}" />
+            </Button.CommandParameter>
+        </Button>
+        <Button Width="80"
+                Height="60"
+                x:Name="BrakeTestButton"
+                Style="{StaticResource BeiJiaoKongBtnStyle}"
+                Click="ButtonBase_OnClick"
+                Content="试闸" Margin="32,143,488,277" >
+        </Button>
+        <Button Width="80" x:Name="RelaseButton"
+                Height="60"
+                Style="{StaticResource BeiJiaoKongBtnStyle}"
+                Click="ButtonBase_OnClick"
+                Content="缓解" Margin="32,227,488,193" >
+        </Button>
+        <Button Width="80" x:Name="BroadcastTestButton"
+                Height="60"
+                Style="{StaticResource BeiJiaoKongBtnStyle}"
+                Click="ButtonBase_OnClick"
+                Content="广播&#13;测试" Margin="32,308,488,112" >
+        </Button>
+        <Button Width="80" x:Name="LightTestButton"
+                Height="60"
+                Style="{StaticResource BeiJiaoKongBtnStyle}"
+                Click="ButtonBase_OnClick"
+                Content="点灯&#13;测试" Margin="500,143,20,277" >
+        </Button>
+        <TextBlock Text="      日检" Margin="10,105,10,355" Foreground="White" Background="#FF25455D"/>
+        <TextBlock Text="红网状态：" Margin="200,160,340,300" TextAlignment="Left" Foreground="#FFC3C3C3"/>
+        <TextBlock Text="篮网状态：" Margin="200,200,340,260" TextAlignment="Left" Foreground="#FFC3C3C3"/>
+        <TextBlock Text="紧急制动状态：" Margin="200,240,320,220" TextAlignment="Left" Foreground="#FFC3C3C3"/>
+        <TextBlock Text="广播测试状态：" Margin="200,280,320,180" TextAlignment="Left" Foreground="#FFC3C3C3"/>
+        <Image Margin="320,150,230,290" Source="{Binding Domain.TestInfo.RedStatus, Converter={StaticResource BeiJiaoKongNetStatusConverter}}"/>
+        <Image Margin="320,190,230,250" Source="{Binding Domain.TestInfo.BlueStatus, Converter={StaticResource BeiJiaoKongNetStatusConverter}}"/>
+        <TextBlock Text="{Binding Domain.TestInfo.EmergencyBrakeStatus, Converter={StaticResource BeiJiaoKongEmergencyBrakeStatusConverter}}" 
+                   Margin="320,240,100,220" TextAlignment="Left" Foreground="#FFC3C3C3"/>
+        <TextBlock Text="{Binding Domain.TestInfo.BroadcastTestStatus, Converter={StaticResource BeiJiaoKongBroadcastTestStatusConverter}}" 
+                   Margin="320,280,100,180" TextAlignment="Left" Foreground="#FFC3C3C3"/>
+    </Grid>
+</UserControl>
+

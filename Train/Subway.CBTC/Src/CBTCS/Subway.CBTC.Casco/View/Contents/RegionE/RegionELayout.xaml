@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="Subway.CBTC.Casco.View.Contents.RegionE.RegionELayout"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:view="clr-namespace:MMI.Facility.WPFInfrastructure.View;assembly=MMI.Facility.WPFInfrastructure"
+             xmlns:viewModel="clr-namespace:Subway.CBTC.Casco.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+             d:DesignHeight="72"
+             d:DesignWidth="376"
+             Background="{StaticResource Subway.CBTC.Casco.Brush.Black}"
+             mc:Ignorable="d">
+    <Grid Visibility="{Binding Path=Domain.Message.ShowingItem, Converter={StaticResource Subway.CBTC.Casco.Converter.NullToVisibility}}">
+        <Rectangle view:FlickerManager.DurationMiliSecond="1000"
+                   view:FlickerManager.Flicking="True"
+                   Stroke="{StaticResource Subway.CBTC.Casco.Brush.Yellow}"
+                   StrokeThickness="2" />
+        <TextBlock Margin="6"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   FontSize="26"
+                   Foreground="{StaticResource Subway.CBTC.Casco.Brush.White}"
+                   Text="{Binding Path=Domain.Message.ShowingItem.InformationContent.Content}" />
+    </Grid>
+</UserControl>

@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="Subway.CBTC.QuanLuTong.View.Running.Content.InputDriverIdView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:common="clr-namespace:Subway.CBTC.QuanLuTong.View.Common"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:model="clr-namespace:Subway.CBTC.QuanLuTong.Model"
+             xmlns:viewModel="clr-namespace:Subway.CBTC.QuanLuTong.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+             d:DesignHeight="294"
+             d:DesignWidth="610"
+             mc:Ignorable="d">
+
+    <Grid Margin="0,20">
+        <Grid.Background>
+            <ImageBrush ImageSource="{StaticResource Subway.CBTC.QuanLuTong.Images.Temp.InputDriverId}" Opacity="{x:Static model:DesignData.TempOpacity}" />
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="203*" />
+            <ColumnDefinition Width="407*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid Margin="6,0,3,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="21*" />
+                <RowDefinition Height="64*" />
+                <RowDefinition Height="48*" />
+                <RowDefinition Height="141*" />
+            </Grid.RowDefinitions>
+            <Border Grid.Row="1" Background="#666699">
+                <TextBlock Margin="8"
+                           VerticalAlignment="Center"
+                           FontFamily="宋体"
+                           FontSize="23"
+                           Foreground="{StaticResource Subway.CBTC.QuanLuTong.Brush.White}"
+                           Text="{Binding Source={StaticResource Subway.CBTC.QuanLuTong.String.DriverId},
+                                          StringFormat={}{0}:}" />
+            </Border>
+            <TextBlock Grid.Row="2"
+                       Margin="36,0,0,0"
+                       VerticalAlignment="Center"
+                       FontFamily="宋体"
+                       FontSize="23"
+                       Foreground="{StaticResource Subway.CBTC.QuanLuTong.Brush.White}"
+                       Text="{Binding Path=Model.RunningModel.InputtingDriverId}" />
+        </Grid>
+        <common:Keyboard Grid.Column="1" InputtedCommand="{Binding Path=Controller.InputDriverId}" />
+    </Grid>
+</UserControl>

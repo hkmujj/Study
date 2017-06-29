@@ -1,0 +1,146 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:carriage="clr-namespace:CBTC.Infrasturcture.Model.Train.Carriage;assembly=CBTC.Infrasturcture"
+    xmlns:constant="clr-namespace:CBTC.Infrasturcture.Model.Constant;assembly=CBTC.Infrasturcture"
+    xmlns:converter="clr-namespace:MMI.Facility.WPFInfrastructure.Converter;assembly=MMI.Facility.WPFInfrastructure"
+    xmlns:converter1="clr-namespace:CBTC.Infrasturcture.Converter;assembly=CBTC.Infrasturcture"
+    xmlns:converters="clr-namespace:Subway.CBTC.THALES.Converters"
+    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../String/THALES.xaml" />
+        <ResourceDictionary Source="../Base/THALESBaseResource.xaml" />
+        <ResourceDictionary Source="../Images/ImageResource_CH.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <converters:TagitDistanceToProportionConverter x:Key="Subway.CBTC.THALES.Converter.TagitDistanceToProportionConverter" />
+    <converter:MathConverter x:Key="Subway.CBTC.THALES.Converter.MathConverter" />
+    <BooleanToVisibilityConverter x:Key="Subway.CBTC.THALES.Converter.BooleanToVisibilityConverter" />
+    <converters:NextStationConverter x:Key="Subway.CBTC.THALES.Converter.NextStationConverter" />
+    <converters:TextPrefixConverter x:Key="Subway.CBTC.THALES.Converter.TextPrefixConverter" />
+    <converters:DegreeScaleTextAngleConverter x:Key="Subway.CBTC.THALES.Converter.DegreeScaleTextAngleConverter" />
+    <converters:SpeedToAngleConverter x:Key="Subway.CBTC.THALES.Converter.SpeedToAngleConverter" />
+    <converters:DialScaleTextColorConverter x:Key="Subway.CBTC.THALES.Converter.DialScaleTextColorConverter" />
+    <converters:TargitDistanceToScalConverter x:Key="Subway.CBTC.THALES.Converter.TargitDistanceToScalConverter" />
+    <converter:SelectObjectContentConverter x:Key="Subway.CBTC.THALES.Converter.PowerStateToVisible">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:PowerState.Started}" Content="{x:Static Visibility.Visible}" />
+            <converter:ObjectContentPair Key="{x:Static constant:PowerState.Starting}" Content="{x:Static Visibility.Visible}" />
+            <converter:ObjectContentPair Key="{x:Static constant:PowerState.Stopped}" Content="{x:Static Visibility.Hidden}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+    <converter:SelectObjectContentConverter x:Key="TrainOperatingModeStatusColorConverter">
+
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:TrainOperatingModeStatus.AvailableForMoveTrain}" Content="{StaticResource Subway.CBTC.THALES.Brush.LightGreen}" />
+            <converter:ObjectContentPair Key="{x:Static constant:TrainOperatingModeStatus.AvailableForStationaryTrain}" Content="{StaticResource Subway.CBTC.THALES.Brush.Yellow}" />
+            <converter:ObjectContentPair Key="{x:Static constant:TrainOperatingModeStatus.NotAvailable}" Content="{StaticResource Subway.CBTC.THALES.Brush.Red}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter1:LightPercentToBackColorConverter x:Key="Subway.CBTC.THALES.Converter.LightToBackColor" />
+    <system:Boolean x:Key="Subway.CBTC.THALES.Converter.True">True</system:Boolean>
+    <system:Boolean x:Key="Subway.CBTC.THALES.Converter.False">False</system:Boolean>
+
+
+
+    <converter:IsNullToVisibilityConverter
+        x:Key="Subway.CBTC.THALES.Converter.NullToVisibility"
+        VisibilityWhenNotNull="Visible"
+        VisibilityWhenNull="Collapsed" />
+
+    <converter:SelectObjectContentConverter x:Key="Subway.CBTC.THALES.Converter.OperationTextConverter">
+
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:TrainOperatingMode.OFF}" Content="{DynamicResource Subway.CBTC.THALES.String.OFF}" />
+            <converter:ObjectContentPair Key="{x:Static constant:TrainOperatingMode.ATO}" Content="{DynamicResource Subway.CBTC.THALES.String.ATO}" />
+            <converter:ObjectContentPair Key="{x:Static constant:TrainOperatingMode.ATP}" Content="{DynamicResource Subway.CBTC.THALES.String.ATP}" />
+            <converter:ObjectContentPair Key="{x:Static constant:TrainOperatingMode.IATP}" Content="{DynamicResource Subway.CBTC.THALES.String.IATP}" />
+            <converter:ObjectContentPair Key="{x:Static constant:TrainOperatingMode.RMF}" Content="{DynamicResource Subway.CBTC.THALES.String.RMF}" />
+            <converter:ObjectContentPair Key="{x:Static constant:TrainOperatingMode.RMR}" Content="{DynamicResource Subway.CBTC.THALES.String.RMR}" />
+            <converter:ObjectContentPair Key="{x:Static constant:TrainOperatingMode.DTB}" Content="{DynamicResource Subway.CBTC.THALES.String.DTB}" />
+            <converter:ObjectContentPair Key="{x:Static constant:TrainOperatingMode.Normal}" Content="{x:Null}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.CBTC.THALES.Converter.DockedStatusTextConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:ParkingStationState.Invalid}" Content="{DynamicResource Subway.CBTC.THALES.String.---}" />
+            <converter:ObjectContentPair Key="{x:Static constant:ParkingStationState.Aligned}" Content="{DynamicResource Subway.CBTC.THALES.String.YES}" />
+            <converter:ObjectContentPair Key="{x:Static constant:ParkingStationState.NONAligned}" Content="{DynamicResource Subway.CBTC.THALES.String.NO}" />
+            <converter:ObjectContentPair Key="{x:Static constant:ParkingStationState.NoAtStation}" Content="{x:Null}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+    <converter:SelectObjectContentConverter x:Key="Subway.CBTC.THALES.Converter.DockedStatusColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:ParkingStationState.Invalid}" Content="{StaticResource Subway.CBTC.THALES.Brush.Red}" />
+            <converter:ObjectContentPair Key="{x:Static constant:ParkingStationState.Aligned}" Content="{StaticResource Subway.CBTC.THALES.Brush.LightGreen}" />
+            <converter:ObjectContentPair Key="{x:Static constant:ParkingStationState.NONAligned}" Content="{StaticResource Subway.CBTC.THALES.Brush.Red}" />
+            <converter:ObjectContentPair Key="{x:Static constant:ParkingStationState.NoAtStation}" Content="{StaticResource Subway.CBTC.THALES.Brush.Red}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+    <converter:SelectObjectContentConverter x:Key="Subway.CBTC.THALES.Converter.DepartTextConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:DepartState.None}" Content="{DynamicResource Subway.CBTC.THALES.String.---}" />
+            <converter:ObjectContentPair Key="{x:Static constant:DepartState.CanDepart}" Content="{DynamicResource Subway.CBTC.THALES.String.YES}" />
+            <converter:ObjectContentPair Key="{x:Static constant:DepartState.CannotDepart}" Content="{DynamicResource Subway.CBTC.THALES.String.NO}" />
+            <converter:ObjectContentPair Key="{x:Static constant:DepartState.Moving}" Content="{x:Null}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+    <converter:SelectObjectContentConverter x:Key="Subway.CBTC.THALES.Converter.DepartColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:DepartState.None}" Content="{StaticResource Subway.CBTC.THALES.Brush.Red}" />
+            <converter:ObjectContentPair Key="{x:Static constant:DepartState.CanDepart}" Content="{StaticResource Subway.CBTC.THALES.Brush.LightGreen}" />
+            <converter:ObjectContentPair Key="{x:Static constant:DepartState.CannotDepart}" Content="{StaticResource Subway.CBTC.THALES.Brush.Red}" />
+            <converter:ObjectContentPair Key="{x:Static constant:DepartState.Moving}" Content="{StaticResource Subway.CBTC.THALES.Brush.Red}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.CBTC.THALES.Converter.PositionColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{StaticResource Subway.CBTC.THALES.Converter.True}" Content="{StaticResource Subway.CBTC.THALES.Brush.Red}" />
+            <converter:ObjectContentPair Key="{StaticResource Subway.CBTC.THALES.Converter.False}" Content="{StaticResource Subway.CBTC.THALES.Brush.LightGreen}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.CBTC.THALES.Converter.PositionTextConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{StaticResource Subway.CBTC.THALES.Converter.True}" Content="{StaticResource Subway.CBTC.THALES.String.NoPosition}" />
+            <converter:ObjectContentPair Key="{StaticResource Subway.CBTC.THALES.Converter.False}" Content="{StaticResource Subway.CBTC.THALES.String.Position}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.CBTC.THALES.Converter.WorkStateConverter">
+
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:WorkState.None}" Content="{x:Null}" />
+            <converter:ObjectContentPair Key="{x:Static constant:WorkState.Tow}" Content="{DynamicResource Subway.CBTC.THALES.String.Motoring}" />
+            <converter:ObjectContentPair Key="{x:Static constant:WorkState.Brake}" Content="{DynamicResource Subway.CBTC.THALES.String.Braking}" />
+            <converter:ObjectContentPair Key="{x:Static constant:WorkState.Coasting}" Content="{DynamicResource Subway.CBTC.THALES.String.Coasting}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converters:DoorOpenConverter x:Key="Subway.CBTC.THALES.Converter.DoorOpenConverter" />
+
+    <converter:SelectObjectContentConverter x:Key="Subway.CBTC.THALES.Converter.EnableConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:DoorAllowState.AllowBoth}" Content="{x:Static Visibility.Visible}" />
+            <converter:ObjectContentPair Key="{x:Static constant:DoorAllowState.FirstLeft}" Content="{x:Static Visibility.Visible}" />
+            <converter:ObjectContentPair Key="{x:Static constant:DoorAllowState.FirstRight}" Content="{x:Static Visibility.Visible}" />
+            <converter:ObjectContentPair Key="{x:Static constant:DoorAllowState.LeftAllow}" Content="{x:Static Visibility.Visible}" />
+            <converter:ObjectContentPair Key="{x:Static constant:DoorAllowState.NoAllow}" Content="{x:Static Visibility.Visible}" />
+            <converter:ObjectContentPair Key="{x:Static constant:DoorAllowState.RightAllow}" Content="{x:Static Visibility.Visible}" />
+            <converter:ObjectContentPair Key="{x:Static constant:DoorAllowState.NoAllow}" Content="{x:Static Visibility.Hidden}" />
+            <converter:ObjectContentPair Key="{x:Static constant:DoorAllowState.Unkown}" Content="{x:Static Visibility.Hidden}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+    <converter:SelectObjectContentConverter x:Key="Subway.CBTC.THALES.Converter.CBTCColorToBrush">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:CBTCColor.Gray}" Content="{StaticResource Subway.CBTC.THALES.Brush.White}" />
+            <converter:ObjectContentPair Key="{x:Static constant:CBTCColor.Yellow}" Content="{StaticResource Subway.CBTC.THALES.Brush.Yellow}" />
+            <converter:ObjectContentPair Key="{x:Static constant:CBTCColor.Green}" Content="{StaticResource Subway.CBTC.THALES.Brush.Green}" />
+            <converter:ObjectContentPair Key="{x:Static constant:CBTCColor.Red}" Content="{StaticResource Subway.CBTC.THALES.Brush.Red}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+</ResourceDictionary>
