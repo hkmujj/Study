@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<MMIDataDebuggerConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <DataBufferConfig>
+    <InData BoolStart="0" BoolEnd="4800" FloatStart="0" FloatEnd="600"></InData>
+    <OutData BoolStart="0" BoolEnd="1600" FloatStart="0" FloatEnd="200"></OutData>
+  </DataBufferConfig>
+
+  <ValueDescriptionConfigItems>
+    <Item>
+      <IndexType>InBool</IndexType>
+      <File>Engine.TPX21F.HXN5B接口_InBool.xls</File>
+      <SheetNames>
+        <Sheet>Sheet1</Sheet>
+      </SheetNames>
+      <ReadColoumns>
+        <Coloumn IsPrimaryKey="true" Name="Name" />
+        <Coloumn IsPrimaryKey="false" Name="Index" />
+      </ReadColoumns>
+    </Item>
+    <Item>
+      <IndexType>OutBool</IndexType>
+      <File>Engine.TPX21F.HXN5B接口_OutBool.xls</File>
+      <SheetNames>
+        <Sheet>Sheet1</Sheet>
+      </SheetNames>
+      <ReadColoumns>
+        <Coloumn IsPrimaryKey="true" Name="Name" />
+        <Coloumn IsPrimaryKey="false" Name="Index" />
+      </ReadColoumns>
+    </Item>
+    <Item>
+      <IndexType>InFloat</IndexType>
+      <File>Engine.TPX21F.HXN5B接口_InFloat.xls</File>
+      <SheetNames>
+        <Sheet>Sheet1</Sheet>
+      </SheetNames>
+      <ReadColoumns>
+        <Coloumn IsPrimaryKey="true" Name="Name" />
+        <Coloumn IsPrimaryKey="false" Name="Index" />
+      </ReadColoumns>
+    </Item>
+    <Item>
+      <IndexType>OutFloat</IndexType>
+      <File>Engine.TPX21F.HXN5B接口_OutFloat.xls</File>
+      <SheetNames>
+        <Sheet>Sheet1</Sheet>
+      </SheetNames>
+      <ReadColoumns>
+        <Coloumn IsPrimaryKey="true" Name="Name" />
+        <Coloumn IsPrimaryKey="false" Name="Index" />
+      </ReadColoumns>
+    </Item>
+  </ValueDescriptionConfigItems>
+</MMIDataDebuggerConfig>
