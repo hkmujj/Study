@@ -21,11 +21,9 @@ namespace MMI.Facility.View.Views.ActualContentHost
             get { return Config.SystemConfig.IsDebugModel; }
         }
 
-        /// <summary>
-        /// TODO why when the name is m__RefreshViewTimer , derived type can not see the design view ?
-        /// </summary>
-        // ReSharper disable once InconsistentNaming
-        private static readonly Timer _RefreshViewTimer = new Timer();
+        private readonly System.Threading.Timer m_UpdateTimer;
+
+        private static readonly Action<ViewFormActual> ManulInvokeAction = actual => actual.InvalidateControls();
 
         protected SizeF m_ScalSize = new SizeF(1, 1);
 
@@ -74,8 +72,7 @@ namespace MMI.Facility.View.Views.ActualContentHost
 
             RunningViewParam = dataPackage.RunningParam.AppRunningParamDictionary[appName].RunningViewParam;
 
-            _RefreshViewTimer.Interval = AppConfig.ActureFormViewConfig.ViewRfreshInterval;
-            _RefreshViewTimer.Tick += (o, args) => InvalidateControls();
+            m_UpdateTimer = new System.Threading.Timer(ManualVaidate, null,1000, AppConfig.ActureFormViewConfig.ViewRfreshInterval);
 
             contentViewControl1.InitalizeDatas(appName, dataPackage);
 
@@ -102,6 +99,14 @@ namespace MMI.Facility.View.Views.ActualContentHost
             contentViewControl1.MouseLeave += (sender, args) => OnMouseLeave(args);
         }
 
+        private void ManualVaidate(object state)
+        {
+            if (this.InvokeRequired)
+            {
+                this.Invoke(ManulInvokeAction, this);
+            }
+        }
+
         public ViewFormActual()
         {
             InitializeComponent();
@@ -113,6 +118,7 @@ namespace MMI.Facility.View.Views.ActualContentHost
 
         protected void InvalidateControls()
         {
+
             Invalidate();
 
             contentViewControl1.Invalidate();
@@ -120,11 +126,6 @@ namespace MMI.Facility.View.Views.ActualContentHost
 
         private void MMIActualForm_Load(object sender, EventArgs e)
         {
-            if (_RefreshViewTimer != null)
-            {
-                _RefreshViewTimer.Start();
-            }
-
             SetFormLocation();
 
             SetDesktopLocation(AppConfig.ActureFormConfig.Rectangle.X, AppConfig.ActureFormConfig.Rectangle.Y);

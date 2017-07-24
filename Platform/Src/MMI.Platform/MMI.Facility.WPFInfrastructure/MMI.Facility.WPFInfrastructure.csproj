@@ -98,6 +98,8 @@
     <Compile Include="Behaviors\WindowWrapper.Desktop.cs" />
     <Compile Include="Converter\BoolToObjectConverter.cs" />
     <Compile Include="Converter\BoolVisibilityConverter.cs" />
+    <Compile Include="Converter\ConditionContentConverter.cs" />
+    <Compile Include="Converter\EnumDescritionConverter.cs" />
     <Compile Include="Converter\GetItemIndexOfCollectionConverter.cs" />
     <Compile Include="Converter\IsNullToVisibilityConverter.cs" />
     <Compile Include="Converter\MathConverter.cs" />
@@ -169,6 +171,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
 using System.Text;
@@ -7,6 +8,7 @@ using Microsoft.Practices.Prism.Events;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.ServiceLocation;
 using MMI.Facility.WPFInfrastructure.Interfaces;
+using MMITool.Addin.MMIConfiguration.Controller;
 using MMITool.Addin.MMIConfiguration.Events;
 using MMITool.Addin.MMIConfiguration.Interface;
 
@@ -20,18 +22,25 @@ namespace MMITool.Addin.MMIConfiguration.SaveStrategy
 
         private readonly List<IConfigureContentEditerViewModel> m_ModifiedViewModels;
 
-        private readonly StringBuilder m_SaveConfigCompletedInfoBuffer;
+        private readonly List<string> m_SaveConfigCompletedInfoBuffer;
+
+        [Import]
+        private Lazy<SelectExePathController> m_SelectExePathController;
 
         public SaveAllStrategy()
         {
             m_ModifiedViewModels = new List<IConfigureContentEditerViewModel>();
-            m_SaveConfigCompletedInfoBuffer = new StringBuilder();
-            ServiceLocator.Current.GetInstance<IEventAggregator>()
-                .GetEvent<SaveConfigCompletedEvent>()
+            m_SaveConfigCompletedInfoBuffer = new List<string>();
+
+            IEventAggregator eventAggregator = ServiceLocator.Current.GetInstance<IEventAggregator>();
+
+            eventAggregator.GetEvent<SaveConfigCompletedEvent>()
                 .Subscribe(s =>
                 {
-                    m_SaveConfigCompletedInfoBuffer.AppendFormat("\r\n{0}\r\n", s);
+                    m_SaveConfigCompletedInfoBuffer.Add(string.Format("\r\n{0}\r\n", s));
                 });
+
+            eventAggregator.GetEvent<ParserConfigCompletedEvent>().Subscribe(s => ResetAll());
         }
 
         public void SaveExcute()
@@ -42,20 +51,50 @@ namespace MMITool.Addin.MMIConfiguration.SaveStrategy
             }
 
             MessageBox.Show(ServiceLocator.Current.GetInstance<IApplicationService>().ShellWindow,
-                m_SaveConfigCompletedInfoBuffer.ToString(), "Save completed");
+                string.Join("\r\n", m_SaveConfigCompletedInfoBuffer), "Save completed");
 
-            m_SaveConfigCompletedInfoBuffer.Clear();
+            ReloadConfig();
 
+            ClearCache();
+        }
+
+        private void ReloadConfig()
+        {
+            m_SelectExePathController.Value.Reload();
         }
 
         public void CancelExcute()
+        {
+            ClearCache();
+        }
+
+        private void ResetAll()
+        {
+            
+        }
+
+        private void ClearCache()
         {
             foreach (var vm in m_ModifiedViewModels)
             {
                 vm.Controller.ResetConfig();
             }
 
+            var last = m_ModifiedViewModels.LastOrDefault();
+
+            m_ModifiedViewModels.Clear();
+
+            if (last != null)
+            {
+                m_ModifiedViewModels.Add(last);
+            }
+
             m_SaveConfigCompletedInfoBuffer.Clear();
+            var last1 = m_SaveConfigCompletedInfoBuffer.LastOrDefault();
+            if (last1 != null)
+            {
+                m_SaveConfigCompletedInfoBuffer.Add(last1);
+            }
         }
 
         public void OnNavigatedTo(IConfigureContentEditerViewModel viewModel, NavigationContext navigationContext)

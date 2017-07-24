@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Yunda Tech")]
 [assembly: AssemblyProduct("Yunda / MMI")]
-[assembly: AssemblyCopyright("Copyright © Yunda Tech 2014")]
+[assembly: AssemblyCopyright("Copyright © Yunda Tech 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,8 +32,8 @@ using System.Runtime.InteropServices;
 // 可以指定所有这些值，也可以使用“内部版本号”和“修订号”的默认值，
 // 方法是按如下所示使用“*”:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.28.2016.0929")]
-[assembly: AssemblyFileVersion("2.28.2017.0301")]
+[assembly: AssemblyVersion("2.50.2017.0705")]
+[assembly: AssemblyFileVersion("2.50.2017.0705")]
 
 // 友元程序集
 [assembly: InternalsVisibleTo("MMITool.Platform")]

@@ -9,6 +9,7 @@ using MMI.Facility.DataType.Data;
 using MMI.Facility.DataType.Log;
 using MMI.Facility.Interface.Data.Config;
 using MMI.Facility.Interface.Data.Config.Net;
+using MMI.Facility.Interface.Event;
 using MMI.Facility.Interface.Service;
 
 namespace MMI.Communacation.Control.AppLayer
@@ -23,10 +24,11 @@ namespace MMI.Communacation.Control.AppLayer
         {
             m_Config = config;
             m_PresentationLayerNetService = new PresentationLayerNetService(config);
-            
+
             m_PresentationLayerNetService.Begin += OnPresentationLayerNetServiceBegin;
             m_PresentationLayerNetService.End += OnPresentationLayerNetServiceEnd;
             m_PresentationLayerNetService.StationCollectionUpdated += OnStationCollectionUpdated;
+            m_PresentationLayerNetService.TimeTableUpdate += OnTimeTableUpdate;
         }
 
 

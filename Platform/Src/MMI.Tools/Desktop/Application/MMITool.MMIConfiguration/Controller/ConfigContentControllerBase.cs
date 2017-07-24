@@ -30,6 +30,7 @@ namespace MMITool.Addin.MMIConfiguration.Controller
             }
         }
 
+
         protected abstract bool HasInitalzied { get; }
 
         // ReSharper disable once InconsistentNaming
@@ -43,6 +44,11 @@ namespace MMITool.Addin.MMIConfiguration.Controller
             IsModified = true;
             m_ConfigFileManager = ServiceLocator.Current.GetInstance<ConfigFileManager>();
             m_EventAggregator = ServiceLocator.Current.GetInstance<IEventAggregator>();
+            m_EventAggregator.GetEvent<ParserConfigCompletedEvent>().Subscribe(s =>
+            {
+                ViewModel.TargetConfigFile = null;
+                ResetConfig();
+            });
         }
 
         public virtual void SaveConfig()

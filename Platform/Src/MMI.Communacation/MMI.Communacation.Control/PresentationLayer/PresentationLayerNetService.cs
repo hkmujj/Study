@@ -12,6 +12,7 @@ using MMI.Communacation.Control.ProtocolLayer;
 using MMI.Communacation.Control.ProtocolLayer.RecvPackage;
 using MMI.Communacation.Interface.AppLayer;
 using MMI.Communacation.Interface.ProtocolLayer;
+using MMI.Facility.DataType.Course;
 using MMI.Facility.DataType.Extension;
 using MMI.Facility.DataType.Log;
 using MMI.Facility.Interface;
@@ -85,6 +86,7 @@ namespace MMI.Communacation.Control.PresentationLayer
         public event EventHandler<NetCommandEventArgs> Begin;
 
         public event EventHandler<UpdateStationCollectionEventArgs> StationCollectionUpdated;
+        public event EventHandler<TimeTableEventArgs> TimeTableUpdate;
 
 
         /// <summary>
@@ -139,8 +141,11 @@ namespace MMI.Communacation.Control.PresentationLayer
             m_ActureNetProtocolService.DataReceived += ActureNetProtocolServiceDataReceived;
             m_ActureNetProtocolService.CirCmdReceived += ActureNetProtocolServiceCirCmdReceived;
             m_ActureNetProtocolService.StationUpdated += ActureNetProtocolServiceOnStationUpdated;
+            m_ActureNetProtocolService.TimeTableReceiived += ActureNetProtocolServiceOnTimeTableChanged;
             m_ActureNetProtocolService.Initialize(m_Config);
         }
+
+
 
         private RecvRealTimeDataBroadcastStragy CreatBroadcastStragy(INetConfig netconfig)
         {
@@ -159,7 +164,7 @@ namespace MMI.Communacation.Control.PresentationLayer
                 if (hostInfo.AddressList.Length > 0)
                 {
                     var tmpNetIP = hostInfo.AddressList[bNetConfig.LocIpNum].GetAddressBytes();
-                    var tmpNetPort = BitConverter.GetBytes((int) bNetConfig.TeachPort);
+                    var tmpNetPort = BitConverter.GetBytes((int)bNetConfig.TeachPort);
 
                     var tmpInt = 24;
                     m_TheLoginTeacherData[tmpInt++] = tmpNetIP[0];
@@ -195,7 +200,10 @@ namespace MMI.Communacation.Control.PresentationLayer
                     args.Command.GetParamLen());
             }
         }
-
+        private void ActureNetProtocolServiceOnTimeTableChanged(NetCommandEventArgs obj)
+        {
+            OnTimeTableUpdate(new TimeTableEventArgs(obj.Command.cParam));
+        }
         private void ActureNetProtocolServiceDataReceived(byte[] bytes, RecvPackageHead dataType)
         {
             ReceiveDataModel<bool> boolmodel = null;
@@ -207,7 +215,7 @@ namespace MMI.Communacation.Control.PresentationLayer
             {
                 ParserBCBytes(bytes, dataType.TypeC.DataType, out boolmodel, out floatModel);
             }
-            else if (dataType.TypeD.GetProjectType().IsValidateProjectType() && 
+            else if (dataType.TypeD.GetProjectType().IsValidateProjectType() &&
                      m_Config.NetConfig.NetDataProtocolConfig.ProtocolType == NetDataProtocolType.BussnessIdAndPackageId)
             {
                 ParserDBytes(bytes, dataType, out boolmodel, out floatModel, out type);
@@ -235,9 +243,9 @@ namespace MMI.Communacation.Control.PresentationLayer
             var boolsourceBeginIdx = netDataConfig.NetInputDataPackage.BoolStartByte;
             var booldesLegth = netDataConfig.NetInputDataPackage.BoolCountOfByte;
 
-            var floatdesBeginIdx = netDataConfig.NetInputDataPackage.FloatCountOfByte/4*
+            var floatdesBeginIdx = netDataConfig.NetInputDataPackage.FloatCountOfByte / 4 *
                                    dataType.TypeD.GetDataPackageIndex();
-            var booldesBeginIdx = netDataConfig.NetInputDataPackage.BoolCountOfByte*8*
+            var booldesBeginIdx = netDataConfig.NetInputDataPackage.BoolCountOfByte * 8 *
                                   dataType.TypeD.GetDataPackageIndex();
 
             var bs = bytes.Skip(boolsourceBeginIdx).Take(booldesLegth).ToArray();
@@ -249,14 +257,14 @@ namespace MMI.Communacation.Control.PresentationLayer
             }
 
             var fs = bytes.Skip(floatsourceBeginIdx).Take(floatdesLegth).ToArray();
-            var floatList = new List<float>(fs.Count()/4);
+            var floatList = new List<float>(fs.Count() / 4);
             for (var i = 0; i < fs.Length; i += 4)
             {
                 floatList.Add(BitConverter.ToSingle(fs, i));
             }
 
-            boolmodel = new ReceiveDataModel<bool>() {DataList = boolList, StartIndex = booldesBeginIdx};
-            floatModel = new ReceiveDataModel<float> {DataList = floatList, StartIndex = floatdesBeginIdx};
+            boolmodel = new ReceiveDataModel<bool>() { DataList = boolList, StartIndex = booldesBeginIdx };
+            floatModel = new ReceiveDataModel<float> { DataList = floatList, StartIndex = floatdesBeginIdx };
         }
 
         private void ParserBCBytes(byte[] bytes, RecvDataType dataType, out ReceiveDataModel<bool> boolmodel,
@@ -278,12 +286,12 @@ namespace MMI.Communacation.Control.PresentationLayer
                     booldesBeginIdx = 0;
                     break;
                 case RecvDataType.SecondPackage:
-                    floatdesBeginIdx = netDataConfig.NetInputDataPackage.FloatCountOfByte/4;
-                    booldesBeginIdx = netDataConfig.NetInputDataPackage.BoolCountOfByte*8;
+                    floatdesBeginIdx = netDataConfig.NetInputDataPackage.FloatCountOfByte / 4;
+                    booldesBeginIdx = netDataConfig.NetInputDataPackage.BoolCountOfByte * 8;
                     break;
                 case RecvDataType.ThirdPackage:
-                    floatdesBeginIdx = netDataConfig.NetInputDataPackage.FloatCountOfByte/4*2;
-                    booldesBeginIdx = netDataConfig.NetInputDataPackage.BoolCountOfByte*8*2;
+                    floatdesBeginIdx = netDataConfig.NetInputDataPackage.FloatCountOfByte / 4 * 2;
+                    booldesBeginIdx = netDataConfig.NetInputDataPackage.BoolCountOfByte * 8 * 2;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException("dataType");
@@ -298,14 +306,14 @@ namespace MMI.Communacation.Control.PresentationLayer
             }
 
             var fs = bytes.Skip(floatsourceBeginIdx).Take(floatdesLegth).ToArray();
-            var floatList = new List<float>(fs.Count()/4);
+            var floatList = new List<float>(fs.Count() / 4);
             for (var i = 0; i < fs.Length; i += 4)
             {
                 floatList.Add(BitConverter.ToSingle(fs, i));
             }
 
-            boolmodel = new ReceiveDataModel<bool>() {DataList = boolList, StartIndex = booldesBeginIdx};
-            floatModel = new ReceiveDataModel<float> {DataList = floatList, StartIndex = floatdesBeginIdx};
+            boolmodel = new ReceiveDataModel<bool>() { DataList = boolList, StartIndex = booldesBeginIdx };
+            floatModel = new ReceiveDataModel<float> { DataList = floatList, StartIndex = floatdesBeginIdx };
         }
 
         private void ActureNetProtocolServiceCmdReceived(CommandType commandType)
@@ -402,6 +410,11 @@ namespace MMI.Communacation.Control.PresentationLayer
             {
                 StationCollectionUpdated.Invoke(this, e);
             }
+        }
+
+        protected virtual void OnTimeTableUpdate(TimeTableEventArgs e)
+        {
+            TimeTableUpdate?.Invoke(this, e);
         }
     }
 }

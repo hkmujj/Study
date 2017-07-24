@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Linq;
 using System.Net;
 using CommonUtil.Util;
 using MMI.Communacation.Control.ProtocolLayer.RecvPackage;
 using MMI.YDCommunicationWrapper;
 using MMI.Communacation.Interface.AppLayer;
 using MMI.Communacation.Interface.ProtocolLayer;
+using MMI.Facility.DataType.Course;
 using MMI.Facility.Interface.Data.Config;
 
 namespace MMI.Communacation.Control.ProtocolLayer
@@ -72,31 +74,31 @@ namespace MMI.Communacation.Control.ProtocolLayer
 
             switch (vNetCmdId)
             {
-                case (CommandType) 106: //课程准备
+                case (CommandType)106: //课程准备
                     RunStatus = 5; //课程准备好
                     break;
                 case CommandType.HeartbeatPacketRequest:
                     Command cmd;
                     cmd.cmd = 1101;
                     cmd.nParamLen = 0;
-                    cmd.subType = (short) RunStatus;
+                    cmd.subType = (short)RunStatus;
                     cmd.sTo = sysID;
                     cmd.sFrom = m_CNet.GetSystemID();
                     var sd = new byte[24];
 
                     sd[0] = 0x4d;
                     sd[1] = 0x4;
-                    sd[2] = (byte) RunStatus;
+                    sd[2] = (byte)RunStatus;
                     sd[3] = 0;
-                    long id = m_CNet.GetSystemID()/1000;
-                    id = id*1000 + 1;
+                    long id = m_CNet.GetSystemID() / 1000;
+                    id = id * 1000 + 1;
                     long sid = m_CNet.GetSystemID();
-                    var a = BitConverter.GetBytes((Int32) sid);
+                    var a = BitConverter.GetBytes((Int32)sid);
                     sd[4] = a[0];
                     sd[5] = a[1];
                     sd[6] = a[2];
                     sd[7] = a[3];
-                    var b = BitConverter.GetBytes((Int32) id);
+                    var b = BitConverter.GetBytes((Int32)id);
                     sd[8] = b[0];
                     sd[9] = b[1];
                     sd[10] = b[2];
@@ -113,7 +115,7 @@ namespace MMI.Communacation.Control.ProtocolLayer
                 case CommandType.CourseStart:
                     OnBegin(new NetCommandEventArgs(BytesStructConverter.ByteToStruct<Command>(data), data));
                     break;
-                case (CommandType) 1105:
+                case (CommandType)1105:
                     break;
                 case CommandType.CourseOver:
                     OnEnd(new NetCommandEventArgs(BytesStructConverter.ByteToStruct<Command>(data), data));
@@ -123,13 +125,32 @@ namespace MMI.Communacation.Control.ProtocolLayer
                 case CommandType.UpdateStation:
                     OnStationUpdated(new NetCommandEventArgs(BytesStructConverter.ByteToStruct<Command>(data), data));
                     break;
+                case CommandType.TimeTable:
+                    OnTimeTableReceiived(new NetCommandEventArgs(BytesStructConverter.ByteToStruct<Command>(data), data));
+                    //var data1 = m_CommandTypeInterpreter.InterpreterCommand(data).cParam;
+
+                    //var totalPack = BitConverter.ToInt32(data1, 0);
+                    //var index = BitConverter.ToInt32(data1, 4);
+                    //var effecttive = BitConverter.ToInt32(data1, 8);
+                    //if (index == 1)
+                    //{
+                    //    TimeTableParamter.ClearData();
+                    //}
+                    //TimeTableParamter.AddByte(data1.Skip(12).Take(effecttive).ToArray()); ;
+                    //if (totalPack == index)
+                    //{
+                    //    OnTimeTableReceiived(TimeTableParamter.Initlization());
+                    //}
+
+
+                    break;
             }
         }
 
         private void TCPRealDataReceive(int sysid, byte[] data, int len)
         {
             var dataIndex = BitConverter.ToInt32(data, 0);
-            OnDataReceived(data, new RecvPackageHead() {Value = dataIndex});
+            OnDataReceived(data, new RecvPackageHead() { Value = dataIndex });
         }
     }
 }

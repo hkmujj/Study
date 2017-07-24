@@ -11,6 +11,10 @@
         CirCmdRecv,
 
         UpdateStation = 4000,
+        /// <summary>
+        /// 时刻表
+        /// </summary>
+        TimeTable = 5000,
     }
 
 }

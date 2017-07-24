@@ -42,7 +42,7 @@ namespace MMITool.Addin.MMIConfiguration.ViewModel
 
         IConfigContentController IConfigureContentEditerViewModel.Controller { get { return Controller; } }
 
-        public virtual string TargetConfigFile { get; protected set; }
+        public virtual string TargetConfigFile { get; set; }
 
         /// <summary>
         /// 文件类型描述

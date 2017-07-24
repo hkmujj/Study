@@ -8,10 +8,12 @@ using MMI.Facility.Control.Data;
 using MMI.Facility.Control.Service;
 using MMI.Facility.DataType.Config;
 using MMI.Facility.DataType.Config.Net;
+using MMI.Facility.DataType.Course;
 using MMI.Facility.DataType.Log;
 using MMI.Facility.Interface.Data;
 using MMI.Facility.Interface.Data.Config.Net;
 using MMI.Facility.Interface.Data.Config.NetDataPackage;
+using MMI.Facility.Interface.Data.TimeTable;
 using MMI.Facility.Interface.Event;
 using MMI.Facility.View.Views;
 using MMI.Facility.View.Views.Common;
@@ -51,11 +53,28 @@ namespace MMI.Facility.Control.Flow
             m_CommunicatonDataFacadeService.NetServiceEnd += (sender, args) => ((EventService)m_EventService).OnCourseStopping();
             m_CommunicatonDataFacadeService.StationCollectionUpdated +=
                 (sender, args) => m_StationNameProviderService.UpdateStaionDictionay(args.Stations);
+            m_CommunicatonDataFacadeService.TimeTableUpdate += (snder, args) =>
+            {
+                var data1 = args.Date;
 
+                var totalPack = BitConverter.ToInt32(data1, 0);
+                var index = BitConverter.ToInt32(data1, 4);
+                var effecttive = BitConverter.ToInt32(data1, 8);
+                if (index == 1)
+                {
+                    TimeTableParamter.ClearData();
+                }
+                TimeTableParamter.AddByte(data1.Skip(12).Take(effecttive).ToArray()); ;
+                if (totalPack == index)
+                {
+                    m_TimeTableProviderService.UpdateTimeTable(TimeTableParamter.Initlization().TiemTable.Cast<ITimeTableItem>().ToList());
+                }
+
+            };
             RegistDataChangedEvents();
         }
 
-     
+
 
         public override void InitalizeRunningParam()
         {

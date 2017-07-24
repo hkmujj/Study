@@ -22,6 +22,12 @@ namespace MMI.Facility.Interface.Service
         event EventHandler<UpdateStationCollectionEventArgs> StationCollectionUpdated;
 
         /// <summary>
+        /// 时刻表更新
+        /// </summary>
+        event EventHandler<TimeTableEventArgs> TimeTableUpdate;
+        
+        
+        /// <summary>
         /// 
         /// </summary>
         /// <param name="dataKey"></param>

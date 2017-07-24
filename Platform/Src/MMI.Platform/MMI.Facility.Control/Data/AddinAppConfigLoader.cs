@@ -45,9 +45,12 @@ namespace MMI.Facility.Control.Data
             var config =
                 DataSerialization.DeserializeFromXmlFile<AppConfig>(Path.Combine(configDicrectory, AppConfig.FileName));
 
-            appConfig.ActureFormViewConfig = config.ActureFormViewConfig;
-            appConfig.AppFileConfig = config.AppFileConfig;
-            appConfig.AppCommunicationInterfaceConfig = config.AppCommunicationInterfaceConfig;
+            if (config != null)
+            {
+                appConfig.ActureFormViewConfig = config.ActureFormViewConfig;
+                appConfig.AppFileConfig = config.AppFileConfig;
+                appConfig.AppCommunicationInterfaceConfig = config.AppCommunicationInterfaceConfig;
+            }
             appConfig.AppName = appName;
             appConfig.AppPaths = new AppPaths(baseDirectory, appConfig);
 

@@ -4,6 +4,7 @@ using CommonUtil.Util;
 using MMI.Communacation.Control.ProtocolLayer.RecvPackage;
 using MMI.Communacation.Interface.AppLayer;
 using MMI.Communacation.Interface.ProtocolLayer;
+using MMI.Facility.DataType.Course;
 using MMI.Facility.DataType.Log;
 using MMI.Facility.Interface.Data.Config;
 
@@ -48,7 +49,7 @@ namespace MMI.Communacation.Control.ProtocolLayer
         /// </summary>
         protected void OnDataReceived(byte[] bytes, RecvPackageHead index)
         {
-            if (DataReceived!=null)
+            if (DataReceived != null)
             {
                 DataReceived(bytes, index);
             }
@@ -93,10 +94,15 @@ namespace MMI.Communacation.Control.ProtocolLayer
 
         public event EventHandler<NetCommandEventArgs> StationUpdated;
 
+        /// <summary>
+        /// 时刻表接收
+        /// </summary>
+        public event Action<NetCommandEventArgs> TimeTableReceiived;
+
         /// <summary>执行与释放或重置非托管资源相关的应用程序定义的任务。</summary>
         public virtual void Dispose()
         {
-            
+
         }
 
         protected virtual void OnStationUpdated(NetCommandEventArgs e)
@@ -105,6 +111,15 @@ namespace MMI.Communacation.Control.ProtocolLayer
             {
                 StationUpdated.Invoke(this, e);
             }
+        }
+
+        protected virtual void OnTimeTableReceiived(NetCommandEventArgs obj)
+        {
+            if (TimeTableReceiived != null)
+            {
+                TimeTableReceiived.Invoke(obj);
+            }
+
         }
     }
 }

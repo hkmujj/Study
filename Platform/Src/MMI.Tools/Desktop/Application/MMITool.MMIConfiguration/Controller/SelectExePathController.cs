@@ -10,12 +10,14 @@ using System.Windows;
 using System.Windows.Input;
 using Microsoft.Practices.Prism;
 using Microsoft.Practices.Prism.Commands;
+using Microsoft.Practices.Prism.Events;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Win32;
 using MMI.Facility.Control.Data;
 using MMI.Facility.WPFInfrastructure.Interfaces;
 using MMITool.Addin.MMIConfiguration.Constant;
+using MMITool.Addin.MMIConfiguration.Events;
 using MMITool.Addin.MMIConfiguration.Model;
 using MMITool.Addin.MMIConfiguration.Service;
 using MMITool.Addin.MMIConfiguration.View.ConfigureContent;
@@ -202,6 +204,11 @@ namespace MMITool.Addin.MMIConfiguration.Controller
             return !ViewModel.Model.HasValidationError && File.Exists(ViewModel.Model.FileFullName);
         }
 
+        public void Reload()
+        {
+            ConfigManager.Instance.LoadConfig(Path.GetDirectoryName(ViewModel.Model.FileFullName));
+        }
+
 
         /// <summary>
         /// 打开文件
@@ -240,7 +247,11 @@ namespace MMITool.Addin.MMIConfiguration.Controller
                     ViewModel.Model.ConfigConfigFileCollection.Add(model);
                 }
 
-                ConfigManager.Instance.LoadConfig(Path.GetDirectoryName(ViewModel.Model.FileFullName));
+                Reload();
+
+                ServiceLocator.Current.GetInstance<IEventAggregator>()
+                    .GetEvent<ParserConfigCompletedEvent>()
+                    .Publish(new ParserConfigCompletedEvent.Args());
             }
             catch(Exception e)
             {

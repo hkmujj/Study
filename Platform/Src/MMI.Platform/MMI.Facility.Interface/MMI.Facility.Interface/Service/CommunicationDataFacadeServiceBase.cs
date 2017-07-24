@@ -29,6 +29,11 @@ namespace MMI.Facility.Interface.Service
         public event EventHandler<UpdateStationCollectionEventArgs> StationCollectionUpdated;
 
         /// <summary>
+        /// 时刻表更新
+        /// </summary>
+        public event EventHandler<TimeTableEventArgs> TimeTableUpdate;
+
+        /// <summary>
         /// 
         /// </summary>
         public abstract void InitalizeDataServiceDictionary();
@@ -96,6 +101,15 @@ namespace MMI.Facility.Interface.Service
             {
                 StationCollectionUpdated.Invoke(sender, e);
             }
+        }
+
+        protected virtual void OnTimeTableUpdate(object sender, TimeTableEventArgs e)
+        {
+            if (TimeTableUpdate!=null)
+            {
+                TimeTableUpdate.Invoke(this, e);
+            }
+          
         }
     }
 }

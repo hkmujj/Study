@@ -31,6 +31,11 @@ namespace MMI.Communacation.Interface.AppLayer
 
         /// <summary>车站更新</summary>
         event EventHandler<UpdateStationCollectionEventArgs> StationCollectionUpdated;
+        /// <summary>
+        /// 时刻表
+        /// </summary>
+
+        event EventHandler<TimeTableEventArgs> TimeTableUpdate;
 
         /// <summary>
         /// 数据接收

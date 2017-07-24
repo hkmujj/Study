@@ -29,6 +29,6 @@ using System.Runtime.InteropServices;
 //      修订号
 //
 [assembly: AssemblyVersion("2.50.2017.0214")]
-[assembly: AssemblyFileVersion("2.50.2017.0216")]
+[assembly: AssemblyFileVersion("2.50.2017.0713")]
 
 

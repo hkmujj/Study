@@ -17,15 +17,21 @@ namespace MMITool.Addin.MMIConfiguration.Controller
 
         public override void ResetConfig()
         {
-            var app = ConcreateRootConfig.AllAppConfigs.FirstOrDefault(f => ViewModel.TargetConfigFile.ToLower().Contains(f.AppPaths.ConfigDirectory.ToLower()));
-            if (app == null)
+            if (ViewModel.TargetConfigFile != null)
             {
-                MessageBox.Show(ServiceLocator.Current.GetInstance<IApplicationService>().ShellWindow,
-                    "Can not found app config where file is {0}", ViewModel.TargetConfigFile);
-                return;
-            }
+                var app =
+                    ConcreateRootConfig.AllAppConfigs.FirstOrDefault(
+                        f => ViewModel.TargetConfigFile.ToLower().Contains(f.AppPaths.ConfigDirectory.ToLower()));
 
-            ViewModel.Model.AppConfig = XmlModelDeepCopy.Copy((AppConfig)app);
+                if (app == null)
+                {
+                    MessageBox.Show(ServiceLocator.Current.GetInstance<IApplicationService>().ShellWindow,
+                        "Can not found app config where file is {0}", ViewModel.TargetConfigFile);
+                    return;
+                }
+
+                ViewModel.Model.AppConfig = XmlModelDeepCopy.Copy((AppConfig) app);
+            }
         }
 
         public override void SaveConfig()

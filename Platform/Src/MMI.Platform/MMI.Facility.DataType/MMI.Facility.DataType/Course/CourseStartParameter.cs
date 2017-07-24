@@ -16,6 +16,7 @@ namespace MMI.Facility.DataType.Course
         private string m_LocomotiveNumber;
         private string m_CourseID;
         private string m_Version;
+        private List<Station> m_AllStation;
 
         [XmlAttribute("Desc")]
         public string Description
@@ -83,6 +84,20 @@ namespace MMI.Facility.DataType.Course
                 RaisePropertyChanged(() => LocomotiveNumber);
             }
         }
+        [XmlArray("站点")]
+        [XmlArrayItem("车站")]
+        public List<Station> AllStation
+        {
+            get { return m_AllStation; }
+            set
+            {
+                if (Equals(value, m_AllStation))
+                    return;
+
+                m_AllStation = value;
+                RaisePropertyChanged(() => AllStation);
+            }
+        }
 
         /// <summary>
         /// 信号标识  2.0  > Version 有效
@@ -136,16 +151,28 @@ namespace MMI.Facility.DataType.Course
         }
 
         // ReSharper disable once UnusedMember.Local
-        private static void Test()
+        public static void Test()
         {
             var data = new CourseStartParameter()
             {
-                SelectedScreens = new List<string>() {"ATP300S", "CRH380AL"},
+                SelectedScreens = new List<string>() { "ATP300S", "CRH380AL" },
                 Description = "",
                 Version = "2.0",
-                CourseID = "118"
+                CourseID = "118",
+                AllStation = new List<Station>() { new Station() { ID = "nidhsi", ArriveTime = "nidsaddadassd", DeapartTime = "Nisdjaisd" }, new Station() { ID = "nidhsi", ArriveTime = "nidsaddadassd", DeapartTime = "Nisdjaisd" } }
+
             };
-            DataSerialization.SerializeToXmlFile(data, "D:\\a.xml");
+            DataSerialization.SerializeToXmlFile(data, "c:\\tools\\a.xml");
         }
+    }
+
+    public class Station
+    {
+        [XmlAttribute("ID")]
+        public string ID { get; set; }
+        [XmlAttribute("到站时间")]
+        public string ArriveTime { get; set; }
+        [XmlAttribute("离站时间")]
+        public string DeapartTime { get; set; }
     }
 }

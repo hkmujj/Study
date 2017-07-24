@@ -19,7 +19,7 @@ namespace MMITool.Addin.MMIConfiguration.ViewModel
         public override string TargetConfigFile
         {
             get { return m_TargetConfigFile; }
-            protected set
+            set
             {
                 m_TargetConfigFile = value;
                 Controller.UpdateCurrentConfigModel();

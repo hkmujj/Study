@@ -46,7 +46,7 @@ namespace MMI.Facility.Control.Flow
         protected IHookProcess m_HookProcess;
 
         protected AddInLoader m_AddInLoader;
-     
+
         protected IRunningParamManager m_RunningParamManager;
 
         protected ICommunicationDataFacadeService m_CommunicatonDataFacadeService;
@@ -62,6 +62,7 @@ namespace MMI.Facility.Control.Flow
         protected DataChangeListenService m_DataChangeListenService;
 
         protected StationNameProviderService m_StationNameProviderService;
+        protected TimeTableProviderService m_TimeTableProviderService;
 
         protected DisposeService m_DisposeService;
 
@@ -186,12 +187,12 @@ namespace MMI.Facility.Control.Flow
         {
             try
             {
-                var subSys = ServiceLocator.Current.GetInstance(typeof (ISubsystem), subsystem.EntryClass) as ISubsystem;
+                var subSys = ServiceLocator.Current.GetInstance(typeof(ISubsystem), subsystem.EntryClass) as ISubsystem;
 
                 if (subSys == null)
                 {
                     SysLog.Error("Sub system class 【{0}】 of app【{1}】 is not Inherited from {2}", subsystem.EntryClass,
-                        subsystem.Name, typeof (ISubsystem).FullName);
+                        subsystem.Name, typeof(ISubsystem).FullName);
                     return;
                 }
 
@@ -232,6 +233,10 @@ namespace MMI.Facility.Control.Flow
             m_StationNameProviderService = stationService;
             m_StationNameProviderService.Regist<IStationNameProviderService>();
 
+            var timeTableService = new TimeTableProviderService();
+            m_TimeTableProviderService = timeTableService;
+            m_TimeTableProviderService.Regist<ITimeTableProviderService>();
+
             m_DataChangeListenService = new DataChangeListenService();
             m_DataChangeListenService.Regist<IDataChangeListenService>();
 
@@ -266,7 +271,7 @@ namespace MMI.Facility.Control.Flow
                     }
                 }
             };
-            m_EventService.CoursStarting += args => 
+            m_EventService.CoursStarting += args =>
             {
                 if (m_CourseService.CurrentCourseState == CourseState.Started)
                 {
@@ -384,7 +389,7 @@ namespace MMI.Facility.Control.Flow
         public virtual void InitalizeIndexDescriptionService()
         {
             var service = new IndexDescriptionService();
-            service.Initalize((CommunicationDataFacadeServiceBase) m_CommunicatonDataFacadeService, Config);
+            service.Initalize((CommunicationDataFacadeServiceBase)m_CommunicatonDataFacadeService, Config);
             m_IndexDescriptionService = service;
 
             service.Regist<IIndexDescriptionService>();
@@ -434,11 +439,11 @@ namespace MMI.Facility.Control.Flow
             foreach (var appConfig in Config.AppConfigs)
             {
                 var cd = m_CommunicatonDataFacadeService.GetCommunicationDataService(new CommunicationDataKey(appConfig));
-                (( CommunicatonDataReadServiceBase)cd.ReadService).DataChanged +=
+                ((CommunicatonDataReadServiceBase)cd.ReadService).DataChanged +=
                     (sender, args) => m_DataChangeListenService.OnDataChanged(appConfig.AppName, sender, args);
-                ( (CommunicatonDataReadServiceBase)cd.ReadService ).BoolChanged +=
+                ((CommunicatonDataReadServiceBase)cd.ReadService).BoolChanged +=
                     (sender, args) => m_DataChangeListenService.OnBoolChanged(appConfig.AppName, sender, args);
-                ( (CommunicatonDataReadServiceBase)cd.ReadService ).FloatChanged +=
+                ((CommunicatonDataReadServiceBase)cd.ReadService).FloatChanged +=
                     (sender, args) => m_DataChangeListenService.OnFloatChanged(appConfig.AppName, sender, args);
             }
         }

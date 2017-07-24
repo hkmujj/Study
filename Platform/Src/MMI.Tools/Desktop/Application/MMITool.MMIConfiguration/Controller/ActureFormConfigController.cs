@@ -15,7 +15,10 @@ namespace MMITool.Addin.MMIConfiguration.Controller
     [PartCreationPolicy(CreationPolicy.Shared)]
     public class ActureFormConfigController : ConfigContentControllerBase<ActureFormConfigViewModel>
     {
-        protected override bool HasInitalzied { get { return ViewModel.Model != null && ViewModel.Model.ActureFormConfig != null; } }
+        protected override bool HasInitalzied
+        {
+            get { return ViewModel.Model != null && ViewModel.Model.ActureFormConfig != null; }
+        }
 
         public override void ResetConfig()
         {
@@ -25,7 +28,7 @@ namespace MMITool.Addin.MMIConfiguration.Controller
                         new ActureFormConfigModel()
                         {
                             TargetConfigPath = s.AppPaths.ConfigDirectory.ToLower(),
-                            ActureFormConfig = XmlModelDeepCopy.Copy((ActureFormConfig)s.ActureFormConfig),
+                            ActureFormConfig = XmlModelDeepCopy.Copy((ActureFormConfig) s.ActureFormConfig),
                         }).ToList();
 
             UpdateCurrentConfigModel();
@@ -33,13 +36,22 @@ namespace MMITool.Addin.MMIConfiguration.Controller
 
         public void UpdateCurrentConfigModel()
         {
+            if (ViewModel.TargetConfigFile == null)
+            {
+                return;
+            }
+
             if (ViewModel.ActureFormConfigModelCollection != null)
             {
-                var app = ViewModel.ActureFormConfigModelCollection.FirstOrDefault(f => ViewModel.TargetConfigFile.ToLower().Contains(f.TargetConfigPath));
+                var app =
+                    ViewModel.ActureFormConfigModelCollection.FirstOrDefault(
+                        f => ViewModel.TargetConfigFile.ToLower().Contains(f.TargetConfigPath));
                 if (app == null)
                 {
                     MessageBox.Show(ServiceLocator.Current.GetInstance<IApplicationService>().ShellWindow,
-                        string.Format("Can not found app config where file is {0}, maybe system config not have configure this app !", ViewModel.TargetConfigFile));
+                        string.Format(
+                            "Can not found app config where file is {0}, maybe system config not have configure this app !",
+                            ViewModel.TargetConfigFile));
                     return;
                 }
 
@@ -50,7 +62,9 @@ namespace MMITool.Addin.MMIConfiguration.Controller
 
         public override void SaveConfig()
         {
-            foreach (var model in ViewModel.ActureFormConfigModelCollection)
+            foreach (
+                var model in
+                ViewModel.ActureFormConfigModelCollection.Where(w => !string.IsNullOrEmpty(w.TargetConfigFile)))
             {
                 SaveConfig(model.ActureFormConfig, model.TargetConfigFile);
             }

@@ -3,6 +3,7 @@ using System.Net;
 using MMI.Communacation.Control.ProtocolLayer.RecvPackage;
 using MMI.Communacation.Interface.AppLayer;
 using MMI.Communacation.Interface.ProtocolLayer;
+using MMI.Facility.DataType.Course;
 using MMI.Facility.Interface.Data.Config;
 
 namespace MMI.Communacation.Control.ProtocolLayer
@@ -46,6 +47,10 @@ namespace MMI.Communacation.Control.ProtocolLayer
         /// 更新车站
         /// </summary>
         event EventHandler<NetCommandEventArgs> StationUpdated;
+        /// <summary>
+        /// 时刻表接收
+        /// </summary>
+        event Action<NetCommandEventArgs> TimeTableReceiived;
 
     }
 }
