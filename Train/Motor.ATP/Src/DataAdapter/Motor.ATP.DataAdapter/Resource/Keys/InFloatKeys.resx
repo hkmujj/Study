@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="制动预警时间" xml:space="preserve">
+    <value>制动预警时间</value>
+  </data>
+  <data name="目标距离" xml:space="preserve">
+    <value>目标距离</value>
+  </data>
+  <data name="列车位置公里标" xml:space="preserve">
+    <value>列车位置公里标</value>
+  </data>
+  <data name="列车运行速度" xml:space="preserve">
+    <value>列车运行速度</value>
+  </data>
+  <data name="列车允许速度" xml:space="preserve">
+    <value>列车允许速度</value>
+  </data>
+  <data name="列车目标速度" xml:space="preserve">
+    <value>列车目标速度</value>
+  </data>
+  <data name="列车SBI速度" xml:space="preserve">
+    <value>列车SBI速度</value>
+  </data>
+  <data name="列车EBI速度" xml:space="preserve">
+    <value>列车EBI速度</value>
+  </data>
+  <data name="列车开口速度" xml:space="preserve">
+    <value>列车开口速度</value>
+  </data>
+  <data name="控制模式" xml:space="preserve">
+    <value>控制模式</value>
+  </data>
+  <data name="运行等级" xml:space="preserve">
+    <value>运行等级</value>
+  </data>
+  <data name="等级转换预告" xml:space="preserve">
+    <value>等级转换预告</value>
+  </data>
+  <data name="机车信号" xml:space="preserve">
+    <value>机车信号</value>
+  </data>
+  <data name="载频" xml:space="preserve">
+    <value>载频</value>
+  </data>
+  <data name="起模点位置" xml:space="preserve">
+    <value>起模点位置</value>
+  </data>
+  <data name="起模点结束位置" xml:space="preserve">
+    <value>起模点结束位置</value>
+  </data>
+  <data name="当前运行区域" xml:space="preserve">
+    <value>当前运行区域</value>
+  </data>
+  <data name="制动状态" xml:space="preserve">
+    <value>制动状态</value>
+  </data>
+  <data name="制动工作模式" xml:space="preserve">
+    <value>制动工作模式</value>
+  </data>
+  <data name="制动测试状态" xml:space="preserve">
+    <value>制动测试状态</value>
+  </data>
+  <data name="系统自检状态" xml:space="preserve">
+    <value>系统自检状态</value>
+  </data>
+  <data name="GSM连接状态" xml:space="preserve">
+    <value>GSM连接状态</value>
+  </data>
+  <data name="RBC连接状态" xml:space="preserve">
+    <value>RBC连接状态</value>
+  </data>
+  <data name="RBC连接方式" xml:space="preserve">
+    <value>RBC连接方式</value>
+  </data>
+  <data name="RBC允许调车状态" xml:space="preserve">
+    <value>RBC允许调车状态</value>
+  </data>
+  <data name="紧急消息" xml:space="preserve">
+    <value>紧急消息</value>
+  </data>
+  <data name="车站" xml:space="preserve">
+    <value>车站</value>
+  </data>
+  <data name="列车干预速度" xml:space="preserve">
+    <value>列车干预速度</value>
+  </data>
+  <data name="列车报警速度" xml:space="preserve">
+    <value>列车报警速度</value>
+  </data>
+  <data name="限速速度的距离信息1" xml:space="preserve">
+    <value>限速速度的距离信息1</value>
+  </data>
+  <data name="限速信息1" xml:space="preserve">
+    <value>限速信息1</value>
+  </data>
+  <data name="限速速度的距离信息2" xml:space="preserve">
+    <value>限速速度的距离信息2</value>
+  </data>
+  <data name="限速信息2" xml:space="preserve">
+    <value>限速信息2</value>
+  </data>
+  <data name="限速速度的距离信息3" xml:space="preserve">
+    <value>限速速度的距离信息3</value>
+  </data>
+  <data name="限速信息3" xml:space="preserve">
+    <value>限速信息3</value>
+  </data>
+  <data name="限速速度的距离信息4" xml:space="preserve">
+    <value>限速速度的距离信息4</value>
+  </data>
+  <data name="限速信息4" xml:space="preserve">
+    <value>限速信息4</value>
+  </data>
+  <data name="限速速度的距离信息5" xml:space="preserve">
+    <value>限速速度的距离信息5</value>
+  </data>
+  <data name="限速信息5" xml:space="preserve">
+    <value>限速信息5</value>
+  </data>
+  <data name="限速速度的距离信息6" xml:space="preserve">
+    <value>限速速度的距离信息6</value>
+  </data>
+  <data name="限速信息6" xml:space="preserve">
+    <value>限速信息6</value>
+  </data>
+  <data name="限速速度的距离信息7" xml:space="preserve">
+    <value>限速速度的距离信息7</value>
+  </data>
+  <data name="限速信息7" xml:space="preserve">
+    <value>限速信息7</value>
+  </data>
+  <data name="限速速度的距离信息8" xml:space="preserve">
+    <value>限速速度的距离信息8</value>
+  </data>
+  <data name="限速信息8" xml:space="preserve">
+    <value>限速信息8</value>
+  </data>
+  <data name="限速速度的距离信息9" xml:space="preserve">
+    <value>限速速度的距离信息9</value>
+  </data>
+  <data name="限速信息9" xml:space="preserve">
+    <value>限速信息9</value>
+  </data>
+  <data name="限速速度的距离信息10" xml:space="preserve">
+    <value>限速速度的距离信息10</value>
+  </data>
+  <data name="限速信息10" xml:space="preserve">
+    <value>限速信息10</value>
+  </data>
+  <data name="坡度的距离信息1" xml:space="preserve">
+    <value>坡度的距离信息1</value>
+  </data>
+  <data name="坡度信息1" xml:space="preserve">
+    <value>坡度信息1</value>
+  </data>
+  <data name="坡度的距离信息2" xml:space="preserve">
+    <value>坡度的距离信息2</value>
+  </data>
+  <data name="坡度信息2" xml:space="preserve">
+    <value>坡度信息2</value>
+  </data>
+  <data name="坡度的距离信息3" xml:space="preserve">
+    <value>坡度的距离信息3</value>
+  </data>
+  <data name="坡度信息3" xml:space="preserve">
+    <value>坡度信息3</value>
+  </data>
+  <data name="坡度的距离信息4" xml:space="preserve">
+    <value>坡度的距离信息4</value>
+  </data>
+  <data name="坡度信息4" xml:space="preserve">
+    <value>坡度信息4</value>
+  </data>
+  <data name="坡度的距离信息5" xml:space="preserve">
+    <value>坡度的距离信息5</value>
+  </data>
+  <data name="坡度信息5" xml:space="preserve">
+    <value>坡度信息5</value>
+  </data>
+  <data name="预告的距离信息1" xml:space="preserve">
+    <value>预告的距离信息1</value>
+  </data>
+  <data name="预告信息1" xml:space="preserve">
+    <value>预告信息1</value>
+  </data>
+  <data name="预告的距离信息2" xml:space="preserve">
+    <value>预告的距离信息2</value>
+  </data>
+  <data name="预告信息2" xml:space="preserve">
+    <value>预告信息2</value>
+  </data>
+  <data name="预告的距离信息3" xml:space="preserve">
+    <value>预告的距离信息3</value>
+  </data>
+  <data name="预告信息3" xml:space="preserve">
+    <value>预告信息3</value>
+  </data>
+  <data name="预告的距离信息4" xml:space="preserve">
+    <value>预告的距离信息4</value>
+  </data>
+  <data name="预告信息4" xml:space="preserve">
+    <value>预告信息4</value>
+  </data>
+  <data name="预告的距离信息5" xml:space="preserve">
+    <value>预告的距离信息5</value>
+  </data>
+  <data name="预告信息5" xml:space="preserve">
+    <value>预告信息5</value>
+  </data>
+  <data name="预告的距离信息6" xml:space="preserve">
+    <value>预告的距离信息6</value>
+  </data>
+  <data name="预告信息6" xml:space="preserve">
+    <value>预告信息6</value>
+  </data>
+  <data name="预告的距离信息7" xml:space="preserve">
+    <value>预告的距离信息7</value>
+  </data>
+  <data name="预告信息7" xml:space="preserve">
+    <value>预告信息7</value>
+  </data>
+  <data name="预告的距离信息8" xml:space="preserve">
+    <value>预告的距离信息8</value>
+  </data>
+  <data name="预告信息8" xml:space="preserve">
+    <value>预告信息8</value>
+  </data>
+  <data name="预告的距离信息9" xml:space="preserve">
+    <value>预告的距离信息9</value>
+  </data>
+  <data name="预告信息9" xml:space="preserve">
+    <value>预告信息9</value>
+  </data>
+  <data name="预告的距离信息10" xml:space="preserve">
+    <value>预告的距离信息10</value>
+  </data>
+  <data name="预告信息10" xml:space="preserve">
+    <value>预告信息10</value>
+  </data>
+  <data name="命令列表1" xml:space="preserve">
+    <value>命令列表1</value>
+  </data>
+  <data name="命令列表2" xml:space="preserve">
+    <value>命令列表2</value>
+  </data>
+  <data name="命令列表3" xml:space="preserve">
+    <value>命令列表3</value>
+  </data>
+  <data name="命令列表4" xml:space="preserve">
+    <value>命令列表4</value>
+  </data>
+  <data name="命令列表5" xml:space="preserve">
+    <value>命令列表5</value>
+  </data>
+  <data name="显示的日期" xml:space="preserve">
+    <value>显示的日期</value>
+  </data>
+  <data name="显示的时间" xml:space="preserve">
+    <value>显示的时间</value>
+  </data>
+  <data name="坡度信息10" xml:space="preserve">
+    <value>坡度信息10</value>
+  </data>
+  <data name="坡度信息6" xml:space="preserve">
+    <value>坡度信息6</value>
+  </data>
+  <data name="坡度信息7" xml:space="preserve">
+    <value>坡度信息7</value>
+  </data>
+  <data name="坡度信息8" xml:space="preserve">
+    <value>坡度信息8</value>
+  </data>
+  <data name="坡度信息9" xml:space="preserve">
+    <value>坡度信息9</value>
+  </data>
+  <data name="坡度的距离信息10" xml:space="preserve">
+    <value>坡度的距离信息10</value>
+  </data>
+  <data name="坡度的距离信息6" xml:space="preserve">
+    <value>坡度的距离信息6</value>
+  </data>
+  <data name="坡度的距离信息7" xml:space="preserve">
+    <value>坡度的距离信息7</value>
+  </data>
+  <data name="坡度的距离信息8" xml:space="preserve">
+    <value>坡度的距离信息8</value>
+  </data>
+  <data name="坡度的距离信息9" xml:space="preserve">
+    <value>坡度的距离信息9</value>
+  </data>
+  <data name="站台侧" xml:space="preserve">
+    <value>站台侧</value>
+  </data>
+  <data name="最大常用制动测试状态" xml:space="preserve">
+    <value>最大常用制动测试状态</value>
+  </data>
+  <data name="紧急制动测试状态" xml:space="preserve">
+    <value>紧急制动测试状态</value>
+  </data>
+  <data name="紧急制动类型" xml:space="preserve">
+    <value>紧急制动类型</value>
+  </data>
+  <data name="LKJ司机号" xml:space="preserve">
+    <value>LKJ司机号</value>
+  </data>
+  <data name="LKJ车次号" xml:space="preserve">
+    <value>LKJ车次号</value>
+  </data>
+  <data name="LKJ车次号头" xml:space="preserve">
+    <value>LKJ车次号头</value>
+  </data>
+</root>

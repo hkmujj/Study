@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="Motor.ATP._300S.Subsys.WPFView.RegionD.GradientInfomationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:interface="clr-namespace:Motor.ATP.Infrasturcture.Interface;assembly=Motor.ATP.Infrasturcture"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DataContext="{d:DesignInstance interface:IATP}"
+             d:DesignHeight="15"
+             d:DesignWidth="244"
+             mc:Ignorable="d">
+    <Grid>
+        <ListBox x:Name="RootList"
+                 Margin="0,0,0,-4"
+                 Background="Transparent"
+                 BorderThickness="0"
+                 IsHitTestVisible="False"
+                 ItemsSource="{Binding Path=GradientInfomation.GradientInfomationItemItems}"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                 ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                 x:FieldModifier="private">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Canvas x:Name="Part_RootCanvas"
+                            Width="{Binding ElementName=RootList,
+                                            Path=ActualWidth}"
+                            Height="{Binding ElementName=RootList,
+                                             Path=ActualHeight}"
+                            Background="Transparent">
+                        <Border Height="{Binding ElementName=Part_RootCanvas, Path=ActualHeight}" Background="{Binding Path=Type, Converter={StaticResource Motor.ATP.300S.GradientTypeToBackgroudConverter}}">
+                            <Border.Width>
+                                <MultiBinding Converter="{StaticResource Motor.ATP.300S.GradientDistanceToRectWidthConverter}">
+                                    <Binding ElementName="RootList" Path="DataContext.SpeedMonitoringSection.PlanSectionCoordinate" />
+                                    <Binding ElementName="Part_RootCanvas" Path="ActualWidth" />
+                                    <Binding Path="EndDistance" />
+                                    <Binding Path="StartDistance" />
+                                </MultiBinding>
+                            </Border.Width>
+                            <Canvas.Left>
+                                <MultiBinding Converter="{StaticResource Motor.ATP.300S.DistanceValueToActureWidthConverter}">
+                                    <Binding ElementName="RootList" Path="DataContext.SpeedMonitoringSection.PlanSectionCoordinate" />
+                                    <Binding ElementName="Part_RootCanvas" Path="ActualWidth" />
+                                    <Binding Path="StartDistance" />
+                                </MultiBinding>
+                            </Canvas.Left>
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="10" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="10" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.Resources>
+                                    <Style BasedOn="{StaticResource Motor.ATP.300S.SlopeTextStyle}" TargetType="TextBlock">
+                                        <Style.Setters>
+                                            <Setter Property="Foreground" Value="{Binding Path=Type, Converter={StaticResource Motor.ATP.300S.GradientTypeToForegroudConverter}}" />
+                                        </Style.Setters>
+                                    </Style>
+                                </Grid.Resources>
+                                <TextBlock Text="{Binding Path=Type, Converter={StaticResource Motor.ATP.300S.GradientTypeToAddDelStringConverter}}" />
+                                <TextBlock Grid.Column="1" Text="{Binding Path=AbsSlopeValue, StringFormat={}{0:F0}}" />
+                                <TextBlock Grid.Column="2" Text="{Binding Path=Type, Converter={StaticResource Motor.ATP.300S.GradientTypeToAddDelStringConverter}}" />
+                            </Grid>
+                        </Border>
+                    </Canvas>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</UserControl>

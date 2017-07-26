@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="Motor.ATP._200C.Subsys.WPFView.RegionD.CabSignalCodeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:interface="clr-namespace:Motor.ATP.Infrasturcture.Interface;assembly=Motor.ATP.Infrasturcture"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:view="clr-namespace:MMI.Facility.WPFInfrastructure.View;assembly=MMI.Facility.WPFInfrastructure"
+             d:DataContext="{d:DesignInstance interface:IATP}"
+             d:DesignHeight="50"
+             d:DesignWidth="50"
+             mc:Ignorable="d">
+    <Image view:FlickerManager.DurationMiliSecond="1000"
+           view:FlickerManager.Flicking="{Binding Path=CabSignal.Code,
+                                                  Converter={StaticResource Motor.ATP.200C.CabSignalCodeToFlickerConverter}}"
+           view:FlickerManager.VisibilityAfterFlicking="Visible"
+           Source="{Binding Path=CabSignal.Code,
+                            Converter={StaticResource Motor.ATP.200C.CabSignalCodeToImageConverter}}" />
+</UserControl>

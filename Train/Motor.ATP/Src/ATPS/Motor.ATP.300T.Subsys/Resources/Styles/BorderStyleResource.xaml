@@ -1,0 +1,58 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Basic/ATP300BasicResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="Motor.ATP.300T.BackGridBorderStyleLeft" TargetType="Border">
+        <Style.Setters>
+            <Setter Property="BorderBrush" Value="{StaticResource Motor.ATP.300T.BackGridBrush}" />
+            <Setter Property="BorderThickness" Value="2,0,0,0" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Motor.ATP.300T.BackGridBorderStyleLeftUpDown" TargetType="Border">
+        <Style.Setters>
+            <Setter Property="BorderBrush" Value="{StaticResource Motor.ATP.300T.BackGridBrush}" />
+            <Setter Property="BorderThickness" Value="2,2,0,2" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Motor.ATP.300T.BackGridBorderStyleLeftUp" TargetType="Border">
+        <Style.Setters>
+            <Setter Property="BorderBrush" Value="{StaticResource Motor.ATP.300T.BackGridBrush}" />
+            <Setter Property="BorderThickness" Value="2,2,0,0" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Motor.ATP.300T.BackGridBorderStyleUp" TargetType="Border">
+        <Style.Setters>
+            <Setter Property="BorderBrush" Value="{StaticResource Motor.ATP.300T.BackGridBrush}" />
+            <Setter Property="BorderThickness" Value="0,2,0,0" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="Motor.ATP.300T.BackGridBorderStyleRightDown" TargetType="Border">
+        <Style.Setters>
+            <Setter Property="BorderBrush" Value="{StaticResource Motor.ATP.300T.BackGridBrush}" />
+            <Setter Property="BorderThickness" Value="0,0,2,2" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="Motor.ATP.300T.BackGridBorderStyle" TargetType="Border">
+        <Style.Setters>
+            <Setter Property="BorderBrush" Value="{StaticResource Motor.ATP.300T.BackGridBrush}" />
+            <Setter Property="BorderThickness" Value="2,2,2,2" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="Motor.ATP.300T.BackGridBorderStyleNoDown" TargetType="Border">
+        <Style.Setters>
+            <Setter Property="BorderBrush" Value="{StaticResource Motor.ATP.300T.BackGridBrush}" />
+            <Setter Property="BorderThickness" Value="2,2,2,0" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="Motor.ATP.300T.BackGridBorderStyle1" TargetType="Border">
+        <Style.Setters>
+            <Setter Property="BorderBrush" Value="{StaticResource Motor.ATP.300T.BackGridBrush}" />
+            <Setter Property="BorderThickness" Value="0" />
+        </Style.Setters>
+    </Style>
+
+</ResourceDictionary>

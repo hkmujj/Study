@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="Motor.ATP._300T.Subsys.WPFView.RegionE.TrainIdView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:interface="clr-namespace:Motor.ATP.Infrasturcture.Interface;assembly=Motor.ATP.Infrasturcture"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DataContext="{d:DesignInstance interface:IATP}"
+             d:DesignHeight="80"
+             d:DesignWidth="80"
+             mc:Ignorable="d">
+    <Grid Visibility="{Binding Path=TrainInfo.Driver.TrainIdVisible, Converter={StaticResource Motor.ATP.300T.BoolVisibilityConverter}}">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock VerticalAlignment="Center"
+                   Style="{StaticResource Motor.ATP.300T.TrainIdTextStyle}"
+                   Text="{StaticResource Motor.ATP.Infrasturcture.String.TrainId}" />
+        <TextBlock Grid.Row="1"
+                   VerticalAlignment="Center"
+                   Style="{StaticResource Motor.ATP.300T.TrainIdTextStyle}">
+            <TextBlock.Text>
+                <MultiBinding Converter="{StaticResource Motor.ATP.300T.TrainIdConverter}">
+                    <Binding Path="TrainInfo.Driver.InputtingTrainId" />
+                    <Binding Path="TrainInfo.Driver.TrainId" />
+                    <Binding Path="TrainInfo.Driver.IsInputtingTrainId" />
+                </MultiBinding>
+            </TextBlock.Text>
+        </TextBlock>
+    </Grid>
+</UserControl>

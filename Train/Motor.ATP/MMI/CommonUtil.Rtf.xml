@@ -1,0 +1,2070 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CommonUtil.Rtf</name>
+    </assembly>
+    <members>
+        <member name="T:CommonUtil.Rtf.RtfControlGroupAttribute">
+            <summary>
+            Specifies control group.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfControlGroupAttribute.#ctor">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfControlGroupAttribute class.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfControlGroupAttribute.#ctor(System.String)">
+            <param name="name">Control group name</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfControlGroupAttribute.Name">
+            <summary>
+            Gets control group name.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfControlWordAttribute">
+            <summary>
+            Specifies control word.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfControlWordAttribute.#ctor">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfControlWordAttribute class.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfControlWordAttribute.#ctor(System.String)">
+            <param name="name">Control word name.</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfControlWordAttribute.Name">
+            <summary>
+            Gets control word name.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfControlWordAttribute.IsIndexed">
+            <summary>
+            Gets or sets a Boolean value indicating wheter the control word should be indexed when RtfWriter reflects an array.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfControlWordDenotingEndAttribute">
+            <summary>
+            Specifies control word which is added to RTF document after RtfWriter reflects all the members of a class.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfControlWordDenotingEndAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfControlWordDenotingEndAttribute class.
+            </summary>
+            <param name="name">Control word name.</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfControlWordDenotingEndAttribute.Name">
+            <summary>
+            Gets control word name.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfEnclosingBracesAttribute">
+            <summary>
+            Specifies control characters used.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfEnclosingBracesAttribute.Braces">
+            <summary>
+            Gets or sets a Boolean value indicating whether RtfWriter should enclose a class with braces.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfEnclosingBracesAttribute.ClosingSemicolon">
+            <summary>
+            Gets or sets a Boolean value indicating whether RtfWriter should add a semicolon after reflecting a class.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfEnumAsControlWordAttribute">
+            <summary>
+            Specifies a way to convert an enum to a control word.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfEnumAsControlWordAttribute.#ctor(CommonUtil.Rtf.RtfEnumConversion)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfEnumAsControlWordAttribute class.
+            </summary>
+            <param name="conversion">Conversion type.</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfEnumAsControlWordAttribute.Conversion">
+            <summary>
+            Gets conversion type.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfEnumAsControlWordAttribute.Prefix">
+            <summary>
+            Gets or sets a String value used as a prefix when converting an enum to control word.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfIgnoreAttribute">
+            <summary>
+            Specifies that RtfWriter must ignore a member of a class
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfIncludeAttribute">
+            <summary>
+            Specifies wheter RtfWriter must include a member according to condition.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfIncludeAttribute.ConditionMember">
+            <summary>
+            Gets or sets name of a Boolean member inside a class, value of which is used by RtfWriter as a condition. 
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfIncludeAttribute.Value">
+            <summary>
+            Gets or sets value of the condition member. Default is true.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfIndexAttribute">
+            <summary>
+            Specifies that a member is an index and must be ignored if value is negative.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfTextDataAttribute">
+            <summary>
+            Specifies text data.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTextDataAttribute.#ctor">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfTextDataAttribute class.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTextDataAttribute.#ctor(CommonUtil.Rtf.RtfTextDataType)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfTextDataAttribute class.
+            </summary>
+            <param name="type">Text data type.</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTextDataAttribute.Quotes">
+            <summary>
+            Gets or sets a Boolean value indicating whether RtfWriter should enclose text with quotes.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTextDataAttribute.TextDataType">
+            <summary>
+            Gets text data type.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfTabCollection">
+            <summary>
+            Represents a collection of ESCommon.Rtf.RtfTab within a paragraph.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTabCollection.#ctor">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfTabCollection class.
+            </summary>
+            <param name="paragraph">Parent paragraph.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTabCollection.Add(CommonUtil.Rtf.RtfTab)">
+            <summary>
+            Adds the specified ESCommon.Rtf.RtfTab to the collection.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTabCollection.AddRange(CommonUtil.Rtf.RtfTab[])">
+            <summary>
+            Adds the specified ESCommon.Rtf.RtfTab objects to the collection.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTabCollection.Clear">
+            <summary>
+            Clears all the contents of the collection.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTabCollection.Contains(CommonUtil.Rtf.RtfTab)">
+            <summary>
+            Determines if an element is in the collection.
+            </summary>
+            <param name="rtfParagraph">An instance of ESCommon.Rtf.RtfTab to locate in the collection.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTabCollection.CopyTo(CommonUtil.Rtf.RtfTab[],System.Int32)">
+            <summary>
+            Copies the entire collection to a compatible one-dimensional array, starting at the specified index of the target array.
+            </summary>
+            <param name="array">The one-dimensional System.Array that is the destination of the elements.</param>
+            <param name="arrayIndex">The zero-based index in array at which copying begins.</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTabCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets ESCommon.Rtf.RtfTab at specified location.
+            </summary>
+            <param name="index">A zero-based index of ESCommon.Rtf.RtfTab to get or set.</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTabCollection.Count">
+            <summary>
+            Gets the number of items in the collection.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfParagraphCollection">
+            <summary>
+            Represents a collection of ESCommon.Rtf.RtfParagraph within a paragraph.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfParagraphCollection.#ctor(CommonUtil.Rtf.RtfParagraphBase)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfParagraphCollection class.
+            </summary>
+            <param name="paragraph">Parent paragraph.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfParagraphCollection.Add(CommonUtil.Rtf.RtfParagraph)">
+            <summary>
+            Adds the specified ESCommon.Rtf.RtfParagraph to the collection.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfParagraphCollection.AddRange(CommonUtil.Rtf.RtfParagraph[])">
+            <summary>
+            Adds the specified ESCommon.Rtf.RtfParagraph objects to the collection.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfParagraphCollection.Clear">
+            <summary>
+            Clears all the contents of the collection.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfParagraphCollection.Contains(CommonUtil.Rtf.RtfParagraph)">
+            <summary>
+            Determines if an element is in the collection.
+            </summary>
+            <param name="rtfParagraph">An instance of ESCommon.Rtf.RtfParagraph to locate in the collection.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfParagraphCollection.CopyTo(CommonUtil.Rtf.RtfParagraph[],System.Int32)">
+            <summary>
+            Copies the entire collection to a compatible one-dimensional array, starting at the specified index of the target array.
+            </summary>
+            <param name="array">The one-dimensional System.Array that is the destination of the elements.</param>
+            <param name="arrayIndex">The zero-based index in array at which copying begins.</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfParagraphCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets ESCommon.Rtf.RtfParagraph at specified location.
+            </summary>
+            <param name="index">A zero-based index of ESCommon.Rtf.RtfParagraph to get or set.</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfParagraphCollection.Count">
+            <summary>
+            Gets the number of items in the collection.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfDocumentContentBase">
+            <summary>
+            Can be used within an RtfDocument
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfParagraphBase.#ctor">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfParagraph class.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfParagraphBase.#ctor(System.String)">
+            <param name="text">Text to add to paragraph contents.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfParagraphBase.#ctor(CommonUtil.Rtf.RtfParagraphContentBase)">
+            <param name="text">Text to add to paragraph contents.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfParagraphBase.AppendText(System.String)">
+            <summary>
+            Add text to paragraph contents
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfParagraphBase.AppendText(CommonUtil.Rtf.RtfParagraphContentBase)">
+            <summary>
+            Add text to paragraph contents
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfParagraphBase.AppendParagraph">
+            <summary>
+            Add an empty paragraph with inherited formatting
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfParagraphBase.AppendParagraph(System.String)">
+            <summary>
+            Add a new paragraph with inherited formatting
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfParagraphBase.AppendParagraph(CommonUtil.Rtf.RtfParagraphContentBase)">
+            <summary>
+            Add a new paragraph with inherited formatting
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfParagraphBase.AppendParagraph(CommonUtil.Rtf.RtfParagraph)">
+            <summary>
+            Add a new paragraph with inherited formatting
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfParagraphContentsCollection">
+            <summary>
+            Represents a collection of paragraph contents.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfParagraphContentsCollection.#ctor(CommonUtil.Rtf.RtfParagraphBase)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfParagraphContentsCollection class.
+            </summary>
+            <param name="owner">Owning paragraph.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfParagraphContentsCollection.Add(CommonUtil.Rtf.RtfParagraphContentBase)">
+            <summary>
+            Adds the specified ESCommon.Rtf.RtfParagraphContentBase to the collection.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfParagraphContentsCollection.AddRange(CommonUtil.Rtf.RtfParagraphContentBase[])">
+            <summary>
+            Adds the specified ESCommon.Rtf.RtfParagraphContentBase objects to the collection.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfParagraphContentsCollection.Clear">
+            <summary>
+            Clears all the contents of the collection.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfParagraphContentsCollection.Contains(CommonUtil.Rtf.RtfParagraphContentBase)">
+            <summary>
+            Determines if an element is in the collection.
+            </summary>
+            <param name="item">An instance of ESCommon.Rtf.RtfParagraphContentBase to locate in the collection.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfParagraphContentsCollection.CopyTo(CommonUtil.Rtf.RtfParagraphContentBase[],System.Int32)">
+            <summary>
+            Copies the entire collection to a compatible one-dimensional array, starting at the specified index of the target array.
+            </summary>
+            <param name="array">The one-dimensional System.Array that is the destination of the elements.</param>
+            <param name="arrayIndex">The zero-based index in array at which copying begins.</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfParagraphContentsCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets ESCommon.Rtf.RtfParagraphContentBase at specified location.
+            </summary>
+            <param name="index">A zero-based index of ESCommon.Rtf.RtfParagraphContentBase to get or set.</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfParagraphContentsCollection.Count">
+            <summary>
+            Gets the number of items in the collection.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfImage">
+            <summary>
+            Represents an image.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfParagraphContentBase">
+            <summary>
+            Can be used within a paragraph
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfImage.#ctor(System.Drawing.Bitmap)">
+            <summary>
+            Initializes an instance of ESCommon.Rtf.RtfImage class.
+            </summary>
+            <param name="bitmap">Bitmap</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfImage.#ctor(System.Drawing.Bitmap,CommonUtil.Rtf.RtfImageFormat)">
+            <param name="format">Image format</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfImage.#ctor(System.Drawing.Bitmap,CommonUtil.Rtf.RtfImageFormat,System.Single,System.Single)">
+            <param name="dpiX">Horizontal resolution</param>
+            <param name="dpiX">Vertical resolution</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfImage.SetDpi(System.Single,System.Single)">
+            <summary>
+            Resets the size of the bitmap according to DPI value.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfImage.GdipEmfToWmfBits(System.IntPtr,System.UInt32,System.Byte[],System.Int32,CommonUtil.Rtf.RtfImage.EmfToWmfBitsFlags)">
+            <summary>
+            Use the EmfToWmfBits function in the GDI+ specification to convert a
+            Enhanced Metafile to a Windows Metafile
+            </summary>
+            <param name="_hEmf">
+            A handle to the Enhanced Metafile to be converted
+            </param>
+            <param name="_bufferSize">
+            The size of the buffer used to store the Windows Metafile bits returned
+            </param>
+            <param name="_buffer">
+            An array of bytes used to hold the Windows Metafile bits returned
+            </param>
+            <param name="_mappingMode">
+            The mapping mode of the image.  This control uses MM_ANISOTROPIC.
+            </param>
+            <param name="_flags">
+            Flags used to specify the format of the Windows Metafile returned
+            </param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfImage.DeleteEnhMetaFile(System.IntPtr)">
+            <summary>
+            Releases metafile handle.
+            </summary>
+            <param name="_hEmf">
+            A handle to the Enhanced Metafile to be released.
+            </param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfImage.DpiX">
+            <summary>
+            Gets the horizontal resolution of the output image.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfImage.DpiY">
+            <summary>
+            Gets the vertical resolution of the output image.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfImage.ScaleX">
+            <summary>
+            Gets horizontal scale. Default is 100.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfImage.ScaleY">
+            <summary>
+            Gets vertical scale. Default is 100.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfImage.OriginalWidth">
+            <summary>
+            Gets width of the original picture in pixels for bitmaps and millimeters for WMF. Used by RtfWriter.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfImage.OriginalHeight">
+            <summary>
+            Gets height of the original picture in pixels for bitmaps and millimeters for WMF. Used by RtfWriter.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfImage.Width">
+            <summary>
+            Base width of the output image in twips.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfImage.Height">
+            <summary>
+            Base height of the output image in twips.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfImage.Format">
+            <summary>
+            Format of the output image. Default is Wmf.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfImage.HexData">
+            <summary>
+            Gets hexadecimal string representation of the image.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfFormattedParagraph">
+            <summary>
+            Represents a formatted paragraph.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfFormattedParagraph.#ctor">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfFormattedParagraph class
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfFormattedParagraph.#ctor(System.String)">
+            <param name="text">Text to add to paragraph contents</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfFormattedParagraph.#ctor(CommonUtil.Rtf.RtfParagraphContentBase)">
+            <param name="text">Text to add to paragraph contents</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfFormattedParagraph.#ctor(CommonUtil.Rtf.RtfParagraphFormatting)">
+            <param name="formatting">Paragraph formatting</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfFormattedParagraph.#ctor(System.String,CommonUtil.Rtf.RtfParagraphFormatting)">
+            <param name="text">Text to add to paragraph contents</param>
+            <param name="formatting">Paragraph formatting</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfFormattedParagraph.#ctor(CommonUtil.Rtf.RtfParagraphContentBase,CommonUtil.Rtf.RtfParagraphFormatting)">
+            <param name="text">Text to add to paragraph contents</param>
+            <param name="formatting">Paragraph formatting</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfFormattedParagraph.Clear">
+            <summary>
+            Clears all the contents of the paragraph.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfFormattedParagraph.GetFormatting">
+            <summary>
+            Returns ESCommon.Rtf.RtfParagraphFormatting of the paragraph.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfFormattedParagraph.IsPartOfATable">
+            <summary>
+            Gets or sets a Boolean value indicating that the paragraph is a part of a table
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfFormattedParagraph.ResetFormatting">
+            <summary>
+            Gets or sets a Boolean value indicating that font (character) formatting is reset to default value
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfFormattedParagraph.Formatting">
+            <summary>
+            Gets or sets paragraph formatting
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfFormattedParagraph.Language">
+            <summary>
+            Default language is English (United States).
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfFormattedParagraph.Tabs">
+            <summary>
+            Gets an array of paragraph tabs.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfFormattedParagraph.Contents">
+            <summary>
+            Gets an array of paragraph contents
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfFormattedParagraph.Paragraphs">
+            <summary>
+            Gets an array of paragraphs with inherited formatting
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfFormattedParagraph.IsNotDefaultLanguage">
+            <summary>
+            Condition member used by RtfWriter.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfFormattedParagraph.IsFormattingIncluded">
+            <summary>
+            Gets or sets a Boolean value indicating whether RtfWriter must include formatting
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfParagraph.#ctor">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfParagraph class.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfParagraph.#ctor(System.String)">
+            <param name="text">Text to add to paragraph contents.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfParagraph.#ctor(CommonUtil.Rtf.RtfParagraphContentBase)">
+            <param name="text">Text to add to paragraph contents.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfParagraph.GetFormatting">
+            <summary>
+            Returns ESCommon.Rtf.RtfParagraphFormatting of the paragraph.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfParagraph.IsPartOfATable">
+            <summary>
+            Gets or sets a Boolean value indicating that the paragraph is a part of a table
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfParagraph.Contents">
+            <summary>
+            Gets an array of paragraph contents
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfParagraph.Paragraphs">
+            <summary>
+            Gets an array of paragraphs with inherited formatting
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfPageBreak">
+            <summary>
+            Represents a page break.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfLineBreak">
+            <summary>
+            Represents a line break.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfTabCharacter">
+            <summary>
+            Represents a tab character.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfNonbreakingSpace">
+            <summary>
+            Represents a nonbreaking space.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfOptionalHyphen">
+            <summary>
+            Represents an optional hyphen.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfTableCellCollection">
+            <summary>
+            Represents a collection of cells in a ESCommon.Rtf.RtfTableRow
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableCellCollection.#ctor(CommonUtil.Rtf.RtfTableRow)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfTableCellCollection class.
+            </summary>
+            <param name="row">Owning row.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableCellCollection.Add">
+            <summary>
+            Adds a new ESCommon.Rtf.RtfTableCell to the collection.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableCellCollection.Add(CommonUtil.Rtf.RtfTableCell)">
+            <summary>
+            Adds the specified ESCommon.Rtf.RtfTableCell to the collection.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableCellCollection.Add(System.String)">
+            <summary>
+            Adds a new ESCommon.Rtf.RtfTableCell with specified text to the collection.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableCellCollection.Add(CommonUtil.Rtf.RtfParagraphContentBase)">
+            <summary>
+            Adds a new ESCommon.Rtf.RtfTableCell with specified text to the collection.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableCellCollection.AddRange(CommonUtil.Rtf.RtfTableCell[])">
+            <summary>
+            Adds the specified ESCommon.Rtf.RtfTableCell objects to the collection.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableCellCollection.Contains(CommonUtil.Rtf.RtfTableCell)">
+            <summary>
+            Determines if an element is in the collection.
+            </summary>
+            <param name="cell">An instance of ESCommon.Rtf.RtfTableCell to locate in the collection.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableCellCollection.CopyTo(CommonUtil.Rtf.RtfTableCell[],System.Int32)">
+            <summary>
+            Copies the entire collection to a compatible one-dimensional array, starting at the specified index of the target array.
+            </summary>
+            <param name="array">The one-dimensional System.Array that is the destination of the elements.</param>
+            <param name="arrayIndex">The zero-based index in array at which copying begins.</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableCellCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets ESCommon.Rtf.RtfTableCell at specified location.
+            </summary>
+            <param name="index">A zero-based index of ESCommon.Rtf.RtfTableCell to get or set.</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableCellCollection.Count">
+            <summary>
+            Gets the number of cells in the collection.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfTableCellDefinitionCollection">
+            <summary>
+            Represents a collection of cell definitions in a ESCommon.Rtf.RtfTableRow
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableCellDefinitionCollection.#ctor(CommonUtil.Rtf.RtfTableRow)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfTableCellDefinitionCollection class.
+            </summary>
+            <param name="row">Owning row.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableCellDefinitionCollection.AddInternal(CommonUtil.Rtf.RtfTableCellDefinition)">
+            <summary>
+            Adds the specified ESCommon.Rtf.RtfTableCellDefinition to the collection.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableCellDefinitionCollection.Item(System.Int32)">
+            <summary>
+            Gets ESCommon.Rtf.RtfTableCellDefinition at specified location.
+            </summary>
+            <param name="index">A zero-based index of ESCommon.Rtf.RtfTableCellDefinition to get.</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableCellDefinitionCollection.Count">
+            <summary>
+            Gets the number of cell definitions in the collection.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfTableColumnCollection">
+            <summary>
+            Represents a collection of columns in a ESCommon.Rtf.RtfTable
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableColumnCollection.#ctor(CommonUtil.Rtf.RtfTable)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfTableColumnCollection class.
+            </summary>
+            <param name="table">Owning table.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableColumnCollection.Add">
+            <summary>
+            Adds a new ESCommon.Rtf.RtfTableColumn to the collection.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableColumnCollection.Add(CommonUtil.Rtf.RtfTableColumn)">
+            <summary>
+            Adds the specified ESCommon.Rtf.RtfTableColumn to the collection.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableColumnCollection.AddRange(CommonUtil.Rtf.RtfTableColumn[])">
+            <summary>
+            Adds the specified ESCommon.Rtf.RtfTableColumn objects to the collection.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableColumnCollection.Contains(CommonUtil.Rtf.RtfTableColumn)">
+            <summary>
+            Determines if an element is in the collection.
+            </summary>
+            <param name="cell">An instance of ESCommon.Rtf.RtfTableColumn to locate in the collection.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableColumnCollection.CopyTo(CommonUtil.Rtf.RtfTableColumn[],System.Int32)">
+            <summary>
+            Copies the entire collection to a compatible one-dimensional array, starting at the specified index of the target array.
+            </summary>
+            <param name="array">The one-dimensional System.Array that is the destination of the elements.</param>
+            <param name="arrayIndex">The zero-based index in array at which copying begins.</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableColumnCollection.Item(System.Int32)">
+            <summary>
+            Gets ESCommon.Rtf.RtfTableColumn at specified location.
+            </summary>
+            <param name="index">A zero-based index of ESCommon.Rtf.RtfTableColumn to get.</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableColumnCollection.Count">
+            <summary>
+            Gets the number of columns in the collection.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfTableRowCollection">
+            <summary>
+            Represents a collection of rows in a ESCommon.Rtf.RtfTable
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableRowCollection.#ctor(CommonUtil.Rtf.RtfTable)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfTableRowCollection class.
+            </summary>
+            <param name="table">Owning table.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableRowCollection.Add">
+            <summary>
+            Adds a new ESCommon.Rtf.RtfTableRow to the collection.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableRowCollection.Add(CommonUtil.Rtf.RtfTableRow)">
+            <summary>
+            Adds the specified ESCommon.Rtf.RtfTableRow to the collection.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableRowCollection.AddRange(CommonUtil.Rtf.RtfTableRow[])">
+            <summary>
+            Adds the specified ESCommon.Rtf.RtfTableRow objects to the collection.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableRowCollection.Contains(CommonUtil.Rtf.RtfTableRow)">
+            <summary>
+            Determines if an element is in the collection.
+            </summary>
+            <param name="cell">An instance of ESCommon.Rtf.RtfTableRow to locate in the collection.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableRowCollection.CopyTo(CommonUtil.Rtf.RtfTableRow[],System.Int32)">
+            <summary>
+            Copies the entire collection to a compatible one-dimensional array, starting at the specified index of the target array.
+            </summary>
+            <param name="array">The one-dimensional System.Array that is the destination of the elements.</param>
+            <param name="arrayIndex">The zero-based index in array at which copying begins.</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableRowCollection.Item(System.Int32)">
+            <summary>
+            Gets ESCommon.Rtf.RtfTableRow at specified location.
+            </summary>
+            <param name="index">A zero-based index of ESCommon.Rtf.RtfTableRow to get.</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableRowCollection.Count">
+            <summary>
+            Gets the number of rows in the collection.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfTableAlign">
+            <summary>
+            Defines table align
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfTable">
+            <summary>
+            Represents a table.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTable.#ctor">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfTable.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTable.#ctor(System.Int32,System.Int32)">
+            <param name="columnCount">Number of columns</param>
+            <param name="rowCount">Number of rows</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTable.#ctor(CommonUtil.Rtf.RtfTableAlign)">
+            <param name="align">Table align</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTable.#ctor(CommonUtil.Rtf.RtfTableAlign,System.Int32,System.Int32)">
+            <param name="align">Table align</param>
+            <param name="columnCount">Number of columns</param>
+            <param name="rowCount">Number of rows</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTable.MergeCellsVertically(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Merge the cell located at the intersection of the column and row with the specified indexes vertically with the specified number of cells.
+            </summary>
+            <param name="columnIndex">The index of the column containing the cell.</param>
+            <param name="rowIndex">The index of the row containing the cell.</param>
+            <param name="count">The number of cells to merge.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTable.MergeCellsHorizontally(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Merge the cell located at the intersection of the column and row with the specified indexes horizontally with the specified number of cells.
+            </summary>
+            <param name="columnIndex">The index of the column containing the cell.</param>
+            <param name="rowIndex">The index of the row containing the cell.</param>
+            <param name="count">The number of cells to merge.</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTable.Columns">
+            <summary>
+            Gets a collection that contains all the columns of the table.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTable.Rows">
+            <summary>
+            Gets a collection that contains all the rows of the table.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTable.ColumnCount">
+            <summary>
+            Gets the number of columns.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTable.RowCount">
+            <summary>
+            Gets the number of rows.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTable.Width">
+            <summary>
+            Gets or sets the width of the table in twips.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTable.Align">
+            <summary>
+            Gets or sets table align.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTable.DefaultCellStyle">
+            <summary>
+            Gets or sets the default cell style to be applied to the cells in the ESCommon.Rtf.RtfTable if no other cell style properties are set.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTable.Item(System.Int32,System.Int32)">
+            <summary>
+            Provides an indexer to get or set the cell located at the intersection of the column and row with the specified indexes.
+            </summary>
+            <param name="columnIndex">The index of the column containing the cell.</param>
+            <param name="rowIndex">The index of the row containing the cell.</param>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfBorderSetting">
+            <summary>
+            Specifies border setting.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfTableCell">
+            <summary>
+            Represents a table cell.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableCell.#ctor">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfTableCell class.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableCell.#ctor(System.Single)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfTableCell class.
+            </summary>
+            <param name="width">Cell width in centimeters.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableCell.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfTableCell class.
+            </summary>
+            <param name="text">Text displayed in the cell.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableCell.#ctor(CommonUtil.Rtf.RtfParagraphContentBase)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfTableCell class.
+            </summary>
+            <param name="text">Text displayed in the cell.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableCell.#ctor(CommonUtil.Rtf.RtfTableCellStyle)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfTableCell class.
+            </summary>
+            <param name="style">Style applied to the cell.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableCell.#ctor(System.Single,System.String)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfTableCell class.
+            </summary>
+            <param name="width">Cell width in centimeters.</param>
+            <param name="text">Text displayed in the cell.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableCell.#ctor(System.Single,CommonUtil.Rtf.RtfParagraphContentBase)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfTableCell class.
+            </summary>
+            <param name="width">Cell width in centimeters.</param>
+            <param name="text">Text displayed in the cell.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableCell.#ctor(System.Single,CommonUtil.Rtf.RtfTableCellStyle)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfTableCell class.
+            </summary>
+            <param name="width">Cell width in centimeters.</param>
+            <param name="style">Style applied to the cell.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableCell.#ctor(System.String,CommonUtil.Rtf.RtfTableCellStyle)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfTableCell class.
+            </summary>
+            <param name="text">Text displayed in the cell.</param>
+            <param name="style">Style applied to the cell.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableCell.#ctor(CommonUtil.Rtf.RtfParagraphContentBase,CommonUtil.Rtf.RtfTableCellStyle)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfTableCell class.
+            </summary>
+            <param name="text">Text displayed in the cell.</param>
+            <param name="style">Style applied to the cell.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableCell.#ctor(System.Single,System.String,CommonUtil.Rtf.RtfTableCellStyle)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfTableCell class.
+            </summary>
+            <param name="width">Cell width in centimeters.</param>
+            <param name="text">Text displayed in the cell.</param>
+            <param name="style">Style applied to the cell.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableCell.#ctor(System.Single,CommonUtil.Rtf.RtfParagraphContentBase,CommonUtil.Rtf.RtfTableCellStyle)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfTableCell class.
+            </summary>
+            <param name="width">Cell width in centimeters.</param>
+            <param name="text">Text displayed in the cell.</param>
+            <param name="style">Style applied to the cell.</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableCell.Definition">
+            <summary>
+            Gets cell definition containing information about cell style and width.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableCell.Table">
+            <summary>
+            Gets owning table.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableCell.OwningColumn">
+            <summary>
+            Gets owning column.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableCell.OwningRow">
+            <summary>
+            Gets owning row.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableCell.ColumnIndex">
+            <summary>
+            Gets the index of the owning column in a table.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableCell.RowIndex">
+            <summary>
+            Gets the index of the owning row in a table.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfTableCellDefinition">
+            <summary>
+            Represents cell definition containing information about cell style and width.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableCellDefinition.FirstHorizontallyMergedCell">
+            <summary>
+            Gets a Boolean value indicating that the cell is the first cell in a range of table cells to be merged.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableCellDefinition.HorizontallyMergedCell">
+            <summary>
+            Gets a Boolean value indicating that the contents of the table cell are merged with those of the preceding cell.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableCellDefinition.FirstVerticallyMergedCell">
+            <summary>
+            Gets a Boolean value indicating that the cell is the first cell in a range of table cells to be vertically merged.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableCellDefinition.VerticallyMergedCell">
+            <summary>
+            Gets a Boolean value indicating that the contents of the table cell are vertically merged with those of the preceding cell.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableCellDefinition.Style">
+            <summary>
+            Gets or sets the style of the cell.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableCellDefinition.RightBoundary">
+            <summary>
+            Gets the right boundary of the cell in twips.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableCellDefinition.Width">
+            <summary>
+            Gets or sets the width of the cell in twips.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfTableCellVerticalAlign">
+            <summary>
+            Specifies vertical align of the text inside the cell.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfTableCellTextFlow">
+            <summary>
+            Specifies the direction of text flow inside the cell.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfTableCellStyle">
+            <summary>
+            Represents table cell style.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableCellStyle.#ctor">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfTableCellStyle class.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableCellStyle.#ctor(CommonUtil.Rtf.RtfBorderSetting)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfTableCellStyle class.
+            </summary>
+            <param name="borderSetting">Cell border setting.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableCellStyle.#ctor(CommonUtil.Rtf.RtfBorderSetting,CommonUtil.Rtf.RtfParagraphFormatting)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfTableCellStyle class.
+            </summary>
+            <param name="borderSetting">Cell border setting.</param>
+            <param name="formatting">Formatting applied to paragraphs inside the cell by default.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableCellStyle.#ctor(CommonUtil.Rtf.RtfBorderSetting,CommonUtil.Rtf.RtfParagraphFormatting,CommonUtil.Rtf.RtfTableCellVerticalAlign)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfTableCellStyle class.
+            </summary>
+            <param name="borderSetting">Cell border setting.</param>
+            <param name="formatting">Formatting applied to paragraphs inside the cell by default.</param>
+            <param name="align">Vertical align of the text inside the cell.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableCellStyle.#ctor(CommonUtil.Rtf.RtfBorderSetting,CommonUtil.Rtf.RtfParagraphFormatting,CommonUtil.Rtf.RtfTableCellVerticalAlign,CommonUtil.Rtf.RtfTableCellTextFlow)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfTableCellStyle class.
+            </summary>
+            <param name="borderSetting">Cell border setting.</param>
+            <param name="formatting">Formatting applied to paragraphs inside the cell by default.</param>
+            <param name="align">Vertical align of the text inside the cell.</param>
+            <param name="textFlow">Direction of text flow inside the cell.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableCellStyle.CopyTo(CommonUtil.Rtf.RtfTableCellStyle)">
+            <summary>
+            Copies all properties of the current cell style to the specified RtfTableCellStyle object.
+            </summary>
+            <param name="cellStyle">Cell style object to copy to.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableCellStyle.SetBorders(CommonUtil.Rtf.RtfBorderSetting)">
+            <summary>
+            Sets border style.
+            </summary>
+            <param name="borderSetting">Cell border setting.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableCellStyle.SetBorders(CommonUtil.Rtf.RtfBorderSetting,System.Single)">
+            <summary>
+            Sets border style.
+            </summary>
+            <param name="borderSetting">Cell border setting.</param>
+            <param name="width">Width in points.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableCellStyle.SetBorders(CommonUtil.Rtf.RtfBorderSetting,System.Single,CommonUtil.Rtf.RtfBorderStyle)">
+            <summary>
+            Sets border style.
+            </summary>
+            <param name="borderSetting">Cell border setting.</param>
+            <param name="width">Width in points.</param>
+            <param name="style">Border style.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableCellStyle.SetBorders(CommonUtil.Rtf.RtfBorderSetting,System.Single,CommonUtil.Rtf.RtfBorderStyle,System.Int32)">
+            <summary>
+            Sets border style.
+            </summary>
+            <param name="borderSetting">Cell border setting.</param>
+            <param name="width">Width in points.</param>
+            <param name="style">Border style.</param>
+            <param name="colorIndex">Index of an entry in the color table.</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableCellStyle.VerticalAlign">
+            <summary>
+            Gets or sets vertical align of the text inside the cell.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableCellStyle.Borders">
+            <summary>
+            Gets borders of the cell.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableCellStyle.TextFlow">
+            <summary>
+            Gets or sets the direction of text flow inside the cell
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableCellStyle.DefaultParagraphFormatting">
+            <summary>
+            Gets or sets the formatting applied to paragraphs inside the cell by default.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfTableColumn">
+            <summary>
+            Represents a table column.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableColumn.#ctor">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfTableColumn class.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableColumn.#ctor(System.Single)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfTableColumn class.
+            </summary>
+            <param name="width">Width in centimeters.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableColumn.#ctor(CommonUtil.Rtf.RtfTableCellStyle)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfTableColumn class.
+            </summary>
+            <param name="style">Default cell style.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableColumn.#ctor(System.Single,CommonUtil.Rtf.RtfTableCellStyle)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfTableColumn class.
+            </summary>
+            <param name="width">Width in centimeters.</param>
+            <param name="style">Default cell style.</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableColumn.DefaultCellStyle">
+            <summary>
+            Gets or sets the default cell style to be applied to the cells in the ESCommon.Rtf.RtfTable if no other cell style properties are set.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableColumn.Width">
+            <summary>
+            Gets or sets the width of the column in twips.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableColumn.Table">
+            <summary>
+            Gets the owning table.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableColumn.Index">
+            <summary>
+            Gets the index of the current column in the table.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfTableRow">
+            <summary>
+            Represents a table row.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableRow.#ctor">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfTableRow class.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableRow.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfTableRow class.
+            </summary>
+            <param name="columnCount">Number of columns.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTableRow.#ctor(CommonUtil.Rtf.RtfTableAlign)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfTableRow class.
+            </summary>
+            <param name="align">Align of the text row.</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableRow.Width">
+            <summary>
+            Gets or sets the width of the row in twips.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableRow.Height">
+            <summary>
+            Gets or sets the height of the row in twips. Default is 0 (auto).
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableRow.Align">
+            <summary>
+            Gets or sets the align of the table row.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableRow.Padding">
+            <summary>
+            Gets table row padding.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableRow.Definitions">
+            <summary>
+            Gets a collection that contains the definitions of the cell in the row.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableRow.Cells">
+            <summary>
+            Gets a collection of all the cells in the row.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableRow.Table">
+            <summary>
+            Gets the owning table.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableRow.Index">
+            <summary>
+            Gets the index of the current row in the table.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableRow.Item(System.Int32)">
+            <summary>
+            Gets or sets ESCommmon.Rtf.RtfTableCell at a specified location.
+            </summary>
+            <param name="index">A zero-based index of ESCommon.Rtf.RtfTableCell to get or set.</param>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfHyperlink">
+            <summary>
+            Represents hyperlink.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfHyperlink.#ctor(System.String,CommonUtil.Rtf.RtfFormattedText)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfHyperlink class.
+            </summary>
+            <param name="address">URL address</param>
+            <param name="text">Formatted text</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfHyperlink.RtfLocation">
+            <summary>
+            Gets RtfHyperlinkLocation used by RtfWriter.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfHyperlink.RtfText">
+            <summary>
+            Gets RtfHyperlinkText used by RtfWriter.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfHyperlink.Location">
+            <summary>
+            Gets or sets hyperlink location.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfHyperlink.Text">
+            <summary>
+            Gets or sets hyperlink text.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfHyperlink.RtfHyperlinkLocation">
+            <summary>
+            Represents hyperlink location.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfHyperlink.RtfHyperlinkLocation.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfHyperlinkLocation class.
+            </summary>
+            <param name="address">URL address</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfHyperlink.RtfHyperlinkLocation.FieldType">
+            <summary>
+            RTF field type.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfHyperlink.RtfHyperlinkLocation.Address">
+            <summary>
+            Gets or sets hyperlink address.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfHyperlink.RtfHyperlinkText">
+            <summary>
+            Represents hyperlink text.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfHyperlink.RtfHyperlinkText.#ctor(CommonUtil.Rtf.RtfFormattedText)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfHyperlinkText class.
+            </summary>
+            <param name="text">Hyperlink text</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfHyperlink.RtfHyperlinkText.Text">
+            <summary>
+            Gets or sets hyperlink text.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTextBase.AppendText(System.String)">
+            <summary>
+            Appends text to the current object.
+            </summary>
+            <param name="text">Text to append.</param>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfCharacterFormatting">
+            <summary>
+            Specifies font (character) formatting.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfFormattedText">
+            <summary>
+            Represents text with formatting.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfFormattedText.#ctor">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfFormattedText class.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfFormattedText.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfFormattedText class.
+            </summary>
+            <param name="text">String value to set as text.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfFormattedText.#ctor(System.String,System.Int32)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfFormattedText class.
+            </summary>
+            <param name="text">String value to set as text.</param>
+            <param name="colorIndex">Index of an entry in the color table.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfFormattedText.#ctor(CommonUtil.Rtf.RtfCharacterFormatting)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfFormattedText class.
+            </summary>
+            <param name="formatting">Character formatting to apply to the text.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfFormattedText.#ctor(System.String,CommonUtil.Rtf.RtfCharacterFormatting)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfFormattedText class.
+            </summary>
+            <param name="text">String value to set as text.</param>
+            <param name="formatting">Character formatting to apply to the text.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfFormattedText.#ctor(CommonUtil.Rtf.RtfCharacterFormatting,System.Int32)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfFormattedText class.
+            </summary>
+            <param name="formatting">Character formatting to apply to the text.</param>
+            <param name="colorIndex">Index of an entry in the color table.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfFormattedText.#ctor(System.String,CommonUtil.Rtf.RtfCharacterFormatting,System.Int32)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfFormattedText class.
+            </summary>
+            <param name="text">String value to set as text.</param>
+            <param name="formatting">Character formatting to apply to the text.</param>
+            /// <param name="colorIndex">Index of an entry in the color table.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfFormattedText.#ctor(System.String,System.Int32,System.Single)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfFormattedText class.
+            </summary>
+            <param name="text">String value to set as text.</param>
+            <param name="fontIndex">Index of an entry in the font table.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfFormattedText.#ctor(CommonUtil.Rtf.RtfCharacterFormatting,System.Int32,System.Single)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfFormattedText class.
+            </summary>
+            <param name="formatting">Character formatting to apply to the text.</param>
+            <param name="fontIndex">Index of an entry in the font table.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfFormattedText.#ctor(System.String,CommonUtil.Rtf.RtfCharacterFormatting,System.Int32,System.Single)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfFormattedText class.
+            </summary>
+            <param name="text">String value to set as text.</param>
+            <param name="formatting">Character formatting to apply to the text.</param>
+            <param name="fontIndex">Index of an entry in the font table.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfFormattedText.SetFormatting(CommonUtil.Rtf.RtfCharacterFormatting)">
+            <summary>
+            Applies specified formatting to the text.
+            </summary>
+            <param name="formatting">Character formatting to apply.</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfFormattedText.FontIndex">
+            <summary>
+            Index of an entry in the font table. Default is -1 and is ignored by RtfWriter.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfFormattedText.HalfPointFontSize">
+            <summary>
+            Gets the font size in half points. Used by RtfWriter.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfFormattedText.TextColorIndex">
+            <summary>
+            Index of an entry in the color table. Default is -1 and is ignored by RtfWriter.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfFormattedText.BackgroundColorIndex">
+            <summary>
+            Index of an entry in the color table. Default is -1 and is ignored by RtfWriter.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfFormattedText.Text">
+            <summary>
+            Gets string value of the text.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfFormattedText.FontSize">
+            <summary>
+            Font size in points. Default value 0 is ignored by RtfWriter.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfFormattedText.FontSizeSet">
+            <summary>
+            ConditionMember used by RtfWriter.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfText">
+            <summary>
+            Represents plain text.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfText.#ctor">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfText class.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfText.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfText class.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfText.Text">
+            <summary>
+            Gets string value of the text.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfTab">
+            <summary>
+            Represents a tab.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTab.#ctor(System.Int32)">
+            <summary>
+            Creates an instance of ESCommon.Rtf.RtfTab class.
+            </summary>
+            <param name="position">Tab position in twips</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTab.#ctor(System.Int32,CommonUtil.Rtf.RtfTabKind)">
+            <summary>
+            Creates an instance of ESCommon.Rtf.RtfTab class.
+            </summary>
+            <param name="position">Tab position in twips</param>
+            <param name="kind">Tab kind</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTab.#ctor(System.Int32,CommonUtil.Rtf.RtfTabLead)">
+            <summary>
+            Creates an instance of ESCommon.Rtf.RtfTab class.
+            </summary>
+            <param name="position">Tab position in twips</param>
+            <param name="lead">Tab lead</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfTab.#ctor(System.Int32,CommonUtil.Rtf.RtfTabKind,CommonUtil.Rtf.RtfTabLead)">
+            <summary>
+            Creates an instance of ESCommon.Rtf.RtfTab class.
+            </summary>
+            <param name="position">Tab position in twips</param>
+            <param name="kind">Tab kind</param>
+            <param name="lead">Tab lead</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTab.Kind">
+            <summary>
+            Gets or sets tab kind property.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTab.Lead">
+            <summary>
+            Gets or sets tab lead property.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTab.TabPosition">
+            <summary>
+            Gets tab position in twips. The value is used by RtfWriter.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTab.BarPosition">
+            <summary>
+            Gets bar tab position in twips. The value is used by RtfWriter.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTab.Bar">
+            <summary>
+            Gets or sets a Boolean value indicating whether a vertical bar is drawn at the tab position.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTab.IsNotBar">
+            <summary>
+            Condition member used by RtfWriter.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTab.Position">
+            <summary>
+            Gets or sets tab position in twips.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfBorderStyle">
+            <summary>
+            Specifies border style.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfBorder">
+            <summary>
+            Represents a border.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfBorder.SetProperties(System.Single,CommonUtil.Rtf.RtfBorderStyle,System.Int32)">
+            <summary>
+            Sets the properties of the current border.
+            </summary>
+            <param name="width">Width in points.</param>
+            <param name="style">Border style.</param>
+            <param name="colorIndex">Index of entry in the color table.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfBorder.CopyTo(CommonUtil.Rtf.RtfBorder)">
+            <summary>
+            Copy all the properties of the current border to specified ESCommon.Rtf.RtfBorder object.
+            </summary>
+            <param name="border">Border object to copy to.</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfBorder.Width">
+            <summary>
+            Border width in twips.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfBorder.Style">
+            <summary>
+            Border style.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfBorder.ColorIndex">
+            <summary>
+            Index of entry in the color table. Default is -1 and is ignored by RtfWriter.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfTextAlign">
+            <summary>
+            Specifies text align inside a paragraph.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfParagraphFormatting">
+            <summary>
+            Represents paragraph formatting.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfParagraphFormatting.#ctor">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfParagraphFormatting class.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfParagraphFormatting.#ctor(System.Single)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfParagraphFormatting class.
+            </summary>
+            <param name="fontSize">Font size in points.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfParagraphFormatting.#ctor(CommonUtil.Rtf.RtfTextAlign)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfParagraphFormatting class.
+            </summary>
+            <param name="align">Text align inside the paragraph.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfParagraphFormatting.#ctor(System.Single,CommonUtil.Rtf.RtfTextAlign)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfParagraphFormatting class.
+            </summary>
+            <param name="fontSize">Font size in points.</param>
+            <param name="align">Text align inside the paragraph.</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfParagraphFormatting.Align">
+            <summary>
+            Default is left.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfParagraphFormatting.FirstLineIndent">
+            <summary>
+            Paragraph first line indent in twips. Default is 0.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfParagraphFormatting.IndentLeft">
+            <summary>
+            Paragraph left indent in twips. Default is 0.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfParagraphFormatting.IndentRight">
+            <summary>
+            Paragraph right indent in twips. Default is 0.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfParagraphFormatting.TwipLineSpacing">
+            <summary>
+            Gets space between lines in twips. The value is used by RtfWriter.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfParagraphFormatting.SpaceBefore">
+            <summary>
+            Space before paragraph in twips. Default is 0.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfParagraphFormatting.SpaceAfter">
+            <summary>
+            Space after paragraph in twips. Default is 0.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfParagraphFormatting.BackgroundColorIndex">
+            <summary>
+            Index of an entry in the color table. Default is -1 and is ignored by RtfWriter.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfParagraphFormatting.TextColorIndex">
+            <summary>
+            Index of an entry in the color table. Default is -1 and is ignored by RtfWriter.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfParagraphFormatting.FontIndex">
+            <summary>
+            Index of an entry in the font table. Default is -1 and is ignored by RtfWriter.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfParagraphFormatting.HalfPointFontSize">
+            <summary>
+            Gets the font size in half points. Used by RtfWriter.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfParagraphFormatting.FontSize">
+            <summary>
+            Font size in points. Default is 12.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfParagraphFormatting.LineSpacingPercent">
+            <summary>
+            Space between lines in percent
+            . Default is 0 and the space is automatically determined by the tallest character in the line.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfTableCellBorders">
+            <summary>
+            Represents table cell borders.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableCellBorders.Top">
+            <summary>
+            Gets the top border of the cell.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableCellBorders.Left">
+            <summary>
+            Gets the left border of the cell.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableCellBorders.Bottom">
+            <summary>
+            Gets the bottom border of the cell.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableCellBorders.Right">
+            <summary>
+            Gets the right border of the cell.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableCellBorders.IsTopBorderSet">
+            <summary>
+            Gets a Boolean value indicating whether top border of the cell is set. This property is used by RtfWriter.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableCellBorders.IsLeftBorderSet">
+            <summary>
+            Gets a Boolean value indicating whether left border of the cell is set. This property is used by RtfWriter.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableCellBorders.IsBottomBorderSet">
+            <summary>
+            Gets a Boolean value indicating whether bottom border of the cell is set. This property is used by RtfWriter.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableCellBorders.IsRightBorderSet">
+            <summary>
+            Gets a Boolean value indicating whether right border of the cell is set. This property is used by RtfWriter.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfPaddingUnits">
+            <summary>
+            Defines units used to specify padding.
+            </summary>
+        </member>
+        <member name="F:CommonUtil.Rtf.RtfPaddingUnits.Null">
+            <summary>
+            The reader should ignore padding.
+            </summary>
+        </member>
+        <member name="F:CommonUtil.Rtf.RtfPaddingUnits.Twips">
+            <summary>
+            The padding is set in twips.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfTableRowPadding">
+            <summary>
+            Represents table row padding.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableRowPadding.IsLeftPaddingSet">
+            <summary>
+            Gets a Boolean value indicating whether left padding of the row is set. This property is used by RtfWriter.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableRowPadding.IsTopPaddingSet">
+            <summary>
+            Gets a Boolean value indicating whether top padding of the row is set. This property is used by RtfWriter.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableRowPadding.IsBottomPaddingSet">
+            <summary>
+            Gets a Boolean value indicating whether bottom padding of the row is set. This property is used by RtfWriter.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfTableRowPadding.IsRightPaddingSet">
+            <summary>
+            Gets a Boolean value indicating whether right padding of the row is set. This property is used by RtfWriter.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfFontCollection">
+            <summary>
+            Represents a collection of ESCommon.Rtf.RtfFont in the header of a RTF document.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfFontCollection.#ctor">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfFontCollection class.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfFontCollection.Add(CommonUtil.Rtf.RtfFont)">
+            <summary>
+            Adds the specified ESCommon.Rtf.RtfFont to the collection.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfFontCollection.AddRange(CommonUtil.Rtf.RtfFont[])">
+            <summary>
+            Adds the specified ESCommon.Rtf.RtfFont objects to the collection.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfFontCollection.Clear">
+            <summary>
+            Clears all the contents of the collection.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfFontCollection.Contains(CommonUtil.Rtf.RtfFont)">
+            <summary>
+            Determines if an element is in the collection.
+            </summary>
+            <param name="rtfFont">An instance of ESCommon.Rtf.RtfFont to locate in the collection.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfFontCollection.CopyTo(CommonUtil.Rtf.RtfFont[],System.Int32)">
+            <summary>
+            Copies the entire collection to a compatible one-dimensional array, starting at the specified index of the target array.
+            </summary>
+            <param name="array">The one-dimensional System.Array that is the destination of the elements.</param>
+            <param name="arrayIndex">The zero-based index in array at which copying begins.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfFontCollection.Remove(CommonUtil.Rtf.RtfFont)">
+            <summary>
+            Removes specified font from the collection.
+            </summary>
+            <param name="rtfFont">Font to remove.</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfFontCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets ESCommon.Rtf.RtfFont at specified location.
+            </summary>
+            <param name="index">A zero-based index of ESCommon.Rtf.RtfFont to get or set.</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfFontCollection.Count">
+            <summary>
+            Gets the number of items in the collection.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfColor">
+            <summary>
+            Represents a color.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfColor.#ctor">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfColor class.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfColor.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfColor class.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfColor.#ctor(System.Drawing.Color)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfColor class.
+            </summary>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfColor.IsNotAuto">
+            <summary>
+            Condition member used by RtfWriter.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfFontFamily">
+            <summary>
+            Specifies font family.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfCharacterSet">
+            <summary>
+            Specifies character set.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfFontPitch">
+            <summary>
+            Specifies font pitch.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfFont">
+            <summary>
+            Represents a font.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfFont.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfFont class.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfFont.#ctor(System.String,CommonUtil.Rtf.RtfCharacterSet)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfFont class.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfFont.#ctor(System.String,CommonUtil.Rtf.RtfCharacterSet,CommonUtil.Rtf.RtfFontFamily)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfFont class.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfFont.#ctor(System.String,CommonUtil.Rtf.RtfCharacterSet,CommonUtil.Rtf.RtfFontFamily,CommonUtil.Rtf.RtfFontPitch)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfFont class.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfColorCollection">
+            <summary>
+            Represents a collection of ESCommon.Rtf.RtfColor in the header of a RTF document.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfColorCollection.#ctor">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfColorCollection class.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfColorCollection.Add(CommonUtil.Rtf.RtfColor)">
+            <summary>
+            Adds the specified ESCommon.Rtf.RtfColor to the collection.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfColorCollection.AddRange(CommonUtil.Rtf.RtfColor[])">
+            <summary>
+            Adds the specified ESCommon.Rtf.RtfColor objects to the collection.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfColorCollection.Clear">
+            <summary>
+            Clears all the contents of the collection.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfColorCollection.Contains(CommonUtil.Rtf.RtfColor)">
+            <summary>
+            Determines if an element is in the collection.
+            </summary>
+            <param name="rtfColor">An instance of ESCommon.Rtf.RtfColor to locate in the collection.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfColorCollection.CopyTo(CommonUtil.Rtf.RtfColor[],System.Int32)">
+            <summary>
+            Copies the entire collection to a compatible one-dimensional array, starting at the specified index of the target array.
+            </summary>
+            <param name="array">The one-dimensional System.Array that is the destination of the elements.</param>
+            <param name="arrayIndex">The zero-based index in array at which copying begins.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfColorCollection.Remove(CommonUtil.Rtf.RtfColor)">
+            <summary>
+            Removes specified color from the collection.
+            </summary>
+            <param name="rtfColor">Color to remove.</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfColorCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets ESCommon.Rtf.RtfColor at specified location.
+            </summary>
+            <param name="index">A zero-based index of ESCommon.Rtf.RtfColor to get or set.</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfColorCollection.Count">
+            <summary>
+            Gets the number of items in the collection.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfDocumentCharacterSet">
+            <summary>
+            Specifies RTF document character set.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfCodePage">
+            <summary>
+            Specifies codepage.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfLanguage">
+            <summary>
+            Specifies language.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfDocument">
+            <summary>
+            Represents a RTF document.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfDocument.#ctor">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfDocument class.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfDocument.#ctor(CommonUtil.Rtf.RtfCodePage)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfDocument class.
+            </summary>
+            <param name="codePage">Document codepage.</param>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfDocumentContentCollection">
+            <summary>
+            Represents a collection of RTF document contents.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfDocumentContentCollection.#ctor(CommonUtil.Rtf.RtfDocument)">
+            <summary>
+            Initializes a new instance of ESCommon.Rtf.RtfDocumentContentCollection class.
+            </summary>
+            <param name="document">Owning document.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfDocumentContentCollection.Add(CommonUtil.Rtf.RtfDocumentContentBase)">
+            <summary>
+            Adds the specified ESCommon.Rtf.RtfDocumentContentBase to the collection.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfDocumentContentCollection.AddRange(CommonUtil.Rtf.RtfDocumentContentBase[])">
+            <summary>
+            Adds the specified ESCommon.Rtf.RtfDocumentContentBase objects to the collection.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfDocumentContentCollection.Clear">
+            <summary>
+            Clears all the contents of the collection.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfDocumentContentCollection.Contains(CommonUtil.Rtf.RtfDocumentContentBase)">
+            <summary>
+            Determines if an element is in the collection.
+            </summary>
+            <param name="item">An instance of ESCommon.Rtf.RtfDocumentContentBase to locate in the collection.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfDocumentContentCollection.CopyTo(CommonUtil.Rtf.RtfDocumentContentBase[],System.Int32)">
+            <summary>
+            Copies the entire collection to a compatible one-dimensional array, starting at the specified index of the target array.
+            </summary>
+            <param name="array">The one-dimensional System.Array that is the destination of the elements.</param>
+            <param name="arrayIndex">The zero-based index in array at which copying begins.</param>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfDocumentContentCollection.Remove(CommonUtil.Rtf.RtfDocumentContentBase)">
+            <summary>
+            Removes specified font from the collection.
+            </summary>
+            <param name="item">Item to remove.</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfDocumentContentCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets ESCommon.Rtf.RtfDocumentContentBase at specified location.
+            </summary>
+            <param name="index">A zero-based index of ESCommon.Rtf.RtfDocumentContentBase to get or set.</param>
+        </member>
+        <member name="P:CommonUtil.Rtf.RtfDocumentContentCollection.Count">
+            <summary>
+            Gets the number of items in the collection.
+            </summary>
+        </member>
+        <member name="T:CommonUtil.Rtf.RtfWriter">
+            <summary>
+            Reflects ESCommon.Rtf.RtfDocument generating an RTF string which is written to a file.
+            </summary>
+        </member>
+        <member name="M:CommonUtil.Rtf.RtfWriter.Write(System.IO.TextWriter,CommonUtil.Rtf.RtfDocument)">
+            <summary>
+            Writes ESCommon.Rtf.RtfDocument to a file.
+            </summary>
+            <param name="writer">The System.IO.TextWriter used to write RTF document.</param>
+            <param name="document">The ESCommon.Rtf.RtfDocument to write.</param>
+        </member>
+        <member name="T:CommonUtil.TwipConverter">
+            <summary>
+            Converts twips to metric units, and metric units to twips
+            </summary>
+        </member>
+        <member name="M:CommonUtil.TwipConverter.ToTwip(System.Single,CommonUtil.MetricUnit)">
+            <summary>
+            Converts metric values to twips
+            </summary>
+            <param name="value">Value in metric units</param>
+            <param name="unit">Unit which is used to specify the value</param>
+            <returns>Value in twips</returns>
+        </member>
+        <member name="M:CommonUtil.TwipConverter.ToPoint(System.Int32)">
+            <summary>
+            Converts twips to points
+            </summary>
+            <param name="value">Value in twips</param>
+            <returns>Value in points</returns>
+        </member>
+        <member name="M:CommonUtil.TwipConverter.ToMillimeter(System.Int32)">
+            <summary>
+            Converts twips to millimeters
+            </summary>
+            <param name="value">Value in twips</param>
+            <returns>Value in millimeters</returns>
+        </member>
+        <member name="M:CommonUtil.TwipConverter.ToCentimeter(System.Int32)">
+            <summary>
+            Converts twips to centimeters
+            </summary>
+            <param name="value">Value in twips</param>
+            <returns>Value in centimeters</returns>
+        </member>
+        <member name="M:CommonUtil.TwipConverter.ToMetricUnit(System.Int32,CommonUtil.MetricUnit)">
+            <summary>
+            Converts twips to metric values
+            </summary>
+            <param name="value">Value in twips</param>
+            <param name="unit">Metric unit to convert to</param>
+            <returns>Value in specified metric units</returns>
+        </member>
+    </members>
+</doc>

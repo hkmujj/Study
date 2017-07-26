@@ -1,0 +1,69 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{72743612-6B17-4C09-B7CB-5854FF06D7DC}"
+	ProjectSection(SolutionItems) = preProject
+		Src\DataAdapter\Motor.ATP.DataAdapter\IDataAdapterFactory.cs = Src\DataAdapter\Motor.ATP.DataAdapter\IDataAdapterFactory.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAdapter", "DataAdapter", "{98A2C333-630D-43D6-9977-53A47877377A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ATPS", "ATPS", "{AD280262-94DB-450F-B932-DA3ADA8077D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motor.ATP.DataAdapter", "Src\DataAdapter\Motor.ATP.DataAdapter\Motor.ATP.DataAdapter.csproj", "{CD7D14B2-171D-4B7A-AB61-5AA331E048B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motor.ATP.300H.Subsys", "Src\ATPS\Motor.ATP.300H.Subsys\Motor.ATP.300H.Subsys.csproj", "{273BDBAF-118E-4D6F-A847-EF8113C1026A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motor.ATP.300S.Subsys", "Src\ATPS\Motor.ATP.300S.Subsys\Motor.ATP.300S.Subsys.csproj", "{D7507A5B-F314-4527-B201-69A670CE41DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motor.ATP.200C.Subsys", "Src\ATPS\Motor.ATP.200C.Subsys\Motor.ATP.200C.Subsys.csproj", "{5680BEEB-B7FE-48C5-880E-B87470593C08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motor.ATP.Infrasturcture", "Src\Infrastructure\Motor.ATP.Infrasturcture\Motor.ATP.Infrasturcture.csproj", "{872C3124-9E5B-45AA-95E1-08EE53AC6CF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motor.ATP.300T.Subsys", "Src\ATPS\Motor.ATP.300T.Subsys\Motor.ATP.300T.Subsys.csproj", "{F2087ECA-F65E-4F57-9747-D2DDFB83227C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD7D14B2-171D-4B7A-AB61-5AA331E048B1}.Debug|x86.ActiveCfg = Debug|x86
+		{CD7D14B2-171D-4B7A-AB61-5AA331E048B1}.Debug|x86.Build.0 = Debug|x86
+		{CD7D14B2-171D-4B7A-AB61-5AA331E048B1}.Release|x86.ActiveCfg = Release|x86
+		{CD7D14B2-171D-4B7A-AB61-5AA331E048B1}.Release|x86.Build.0 = Release|x86
+		{273BDBAF-118E-4D6F-A847-EF8113C1026A}.Debug|x86.ActiveCfg = Debug|x86
+		{273BDBAF-118E-4D6F-A847-EF8113C1026A}.Debug|x86.Build.0 = Debug|x86
+		{273BDBAF-118E-4D6F-A847-EF8113C1026A}.Release|x86.ActiveCfg = Release|x86
+		{273BDBAF-118E-4D6F-A847-EF8113C1026A}.Release|x86.Build.0 = Release|x86
+		{D7507A5B-F314-4527-B201-69A670CE41DD}.Debug|x86.ActiveCfg = Debug|x86
+		{D7507A5B-F314-4527-B201-69A670CE41DD}.Debug|x86.Build.0 = Debug|x86
+		{D7507A5B-F314-4527-B201-69A670CE41DD}.Release|x86.ActiveCfg = Release|x86
+		{D7507A5B-F314-4527-B201-69A670CE41DD}.Release|x86.Build.0 = Release|x86
+		{5680BEEB-B7FE-48C5-880E-B87470593C08}.Debug|x86.ActiveCfg = Debug|x86
+		{5680BEEB-B7FE-48C5-880E-B87470593C08}.Debug|x86.Build.0 = Debug|x86
+		{5680BEEB-B7FE-48C5-880E-B87470593C08}.Release|x86.ActiveCfg = Release|x86
+		{5680BEEB-B7FE-48C5-880E-B87470593C08}.Release|x86.Build.0 = Release|x86
+		{872C3124-9E5B-45AA-95E1-08EE53AC6CF6}.Debug|x86.ActiveCfg = Debug|x86
+		{872C3124-9E5B-45AA-95E1-08EE53AC6CF6}.Debug|x86.Build.0 = Debug|x86
+		{872C3124-9E5B-45AA-95E1-08EE53AC6CF6}.Release|x86.ActiveCfg = Release|Any CPU
+		{872C3124-9E5B-45AA-95E1-08EE53AC6CF6}.Release|x86.Build.0 = Release|Any CPU
+		{F2087ECA-F65E-4F57-9747-D2DDFB83227C}.Debug|x86.ActiveCfg = Debug|x86
+		{F2087ECA-F65E-4F57-9747-D2DDFB83227C}.Debug|x86.Build.0 = Debug|x86
+		{F2087ECA-F65E-4F57-9747-D2DDFB83227C}.Release|x86.ActiveCfg = Release|x86
+		{F2087ECA-F65E-4F57-9747-D2DDFB83227C}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CD7D14B2-171D-4B7A-AB61-5AA331E048B1} = {98A2C333-630D-43D6-9977-53A47877377A}
+		{273BDBAF-118E-4D6F-A847-EF8113C1026A} = {AD280262-94DB-450F-B932-DA3ADA8077D5}
+		{D7507A5B-F314-4527-B201-69A670CE41DD} = {AD280262-94DB-450F-B932-DA3ADA8077D5}
+		{5680BEEB-B7FE-48C5-880E-B87470593C08} = {AD280262-94DB-450F-B932-DA3ADA8077D5}
+		{872C3124-9E5B-45AA-95E1-08EE53AC6CF6} = {72743612-6B17-4C09-B7CB-5854FF06D7DC}
+		{F2087ECA-F65E-4F57-9747-D2DDFB83227C} = {AD280262-94DB-450F-B932-DA3ADA8077D5}
+	EndGlobalSection
+EndGlobal

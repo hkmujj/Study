@@ -1,0 +1,152 @@
+﻿<UserControl x:Class="Motor.ATP._300S.Subsys.WPFView.RegionB.CurrentSpeedView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:details="clr-namespace:Motor.ATP._300S.Subsys.WPFView.RegionB.Details"
+             xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+             xmlns:interface="clr-namespace:Motor.ATP.Infrasturcture.Interface;assembly=Motor.ATP.Infrasturcture"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DataContext="{d:DesignInstance {x:Type interface:IATP}}"
+             d:DesignHeight="280"
+             d:DesignWidth="280"
+             Visibility="{Binding Path=TrainInfo.Speed.Visible,
+                                  Converter={StaticResource Motor.ATP.300S.BoolVisibilityConverter}}"
+             mc:Ignorable="d">
+    <Grid>
+        <Grid Margin="15">
+            <details:DialDegreeView />
+            <details:PointerView Margin="20" ContentBrush="{Binding TrainInfo.Speed.CurrentSpeed.SpeedColor, Converter={StaticResource Motor.ATP.300S.ATPColorToPointerColortConverter}}">
+                <details:PointerView.PointerAngle>
+                    <MultiBinding Converter="{StaticResource Motor.ATP.300S.SpeedToAngleConverter}">
+                        <Binding Path="TrainInfo.Speed.SpeedDialPlate" />
+                        <Binding Path="TrainInfo.Speed.CurrentSpeed.Value" />
+                    </MultiBinding>
+                </details:PointerView.PointerAngle>
+            </details:PointerView>
+            <TextBlock Foreground="{Binding TrainInfo.Speed.CurrentSpeed.SpeedColor,
+                                            Converter={StaticResource Motor.ATP.300S.ATPColorToTextColortConverter}}"
+                       Style="{StaticResource Motor.ATP.300S.CurrentSpeedTextStyle}"
+                       Text="{Binding TrainInfo.Speed.CurrentSpeed.Value,
+                                      StringFormat={}0}" />
+        </Grid>
+
+        <Grid Margin="5">
+            <!--  target speed  -->
+            <ed:Arc ArcThicknessUnit="Percent"
+                    StartAngle="-145"
+                    Stretch="None"
+                    Stroke="{Binding Path=TrainInfo.Speed.TargetSpeed.SpeedColor,
+                                     Converter={StaticResource Motor.ATP.300S.ATPColorToArcColortConverter}}"
+                    StrokeThickness="8">
+                <ed:Arc.EndAngle>
+                    <MultiBinding Converter="{StaticResource Motor.ATP.300S.SpeedToArcAngleConverter}" ConverterParameter="Target">
+                        <Binding Path="TrainInfo.Speed.SpeedDialPlate" />
+                        <Binding Path="TrainInfo.Speed.TargetSpeed.Value" />
+                    </MultiBinding>
+                </ed:Arc.EndAngle>
+            </ed:Arc>
+            <!--  PermittedLimitSpeed  -->
+            <ed:Arc ArcThicknessUnit="Percent"
+                    Stretch="None"
+                    Stroke="{Binding Path=TrainInfo.Speed.PermittedLimitSpeed.SpeedColor,
+                                     Converter={StaticResource Motor.ATP.300S.ATPColorToArcColortConverter}}"
+                    StrokeThickness="8">
+                <ed:Arc.StartAngle>
+                    <MultiBinding Converter="{StaticResource Motor.ATP.300S.SpeedToArcAngleConverter}">
+                        <Binding Path="TrainInfo.Speed.SpeedDialPlate" />
+                        <Binding Path="TrainInfo.Speed.TargetSpeed.Value" />
+                    </MultiBinding>
+                </ed:Arc.StartAngle>
+                <ed:Arc.EndAngle>
+                    <MultiBinding Converter="{StaticResource Motor.ATP.300S.SpeedToArcAngleConverter}">
+                        <Binding Path="TrainInfo.Speed.SpeedDialPlate" />
+                        <Binding Path="TrainInfo.Speed.PermittedLimitSpeed.Value" />
+                    </MultiBinding>
+                </ed:Arc.EndAngle>
+            </ed:Arc>
+
+            <!--  ServiceBrakeInterventionSpeed  -->
+            <ed:Arc ArcThicknessUnit="Percent"
+                    Stretch="None"
+                    Stroke="{Binding Path=TrainInfo.Speed.ServiceBrakeInterventionSpeed.SpeedColor,
+                                     Converter={StaticResource Motor.ATP.300S.ATPColorToArcColortConverter}}"
+                    StrokeThickness="8">
+                <ed:Arc.StartAngle>
+                    <MultiBinding Converter="{StaticResource Motor.ATP.300S.SpeedToArcAngleConverter}">
+                        <Binding Path="TrainInfo.Speed.SpeedDialPlate" />
+                        <Binding Path="TrainInfo.Speed.TargetSpeed.Value" />
+                    </MultiBinding>
+                </ed:Arc.StartAngle>
+                <ed:Arc.EndAngle>
+                    <MultiBinding Converter="{StaticResource Motor.ATP.300S.SpeedToArcAngleConverter}">
+                        <Binding Path="TrainInfo.Speed.SpeedDialPlate" />
+                        <Binding Path="TrainInfo.Speed.ServiceBrakeInterventionSpeed.Value" />
+                    </MultiBinding>
+                </ed:Arc.EndAngle>
+            </ed:Arc>
+            <!--  EmergencyBrakeInterventionSpeed  -->
+            <ed:Arc ArcThicknessUnit="Percent"
+                    Stretch="None"
+                    Stroke="{Binding Path=TrainInfo.Speed.EmergencyBrakeInterventionSpeed.SpeedColor,
+                                     Converter={StaticResource Motor.ATP.300S.ATPColorToArcColortConverter}}"
+                    StrokeThickness="18">
+                <ed:Arc.StartAngle>
+                    <MultiBinding Converter="{StaticResource Motor.ATP.300S.SpeedToArcAngleConverter}">
+                        <Binding Path="TrainInfo.Speed.SpeedDialPlate" />
+                        <Binding Path="TrainInfo.Speed.ServiceBrakeInterventionSpeed.Value" />
+                    </MultiBinding>
+                </ed:Arc.StartAngle>
+                <ed:Arc.EndAngle>
+                    <MultiBinding Converter="{StaticResource Motor.ATP.300S.SpeedToArcAngleConverter}">
+                        <Binding Path="TrainInfo.Speed.SpeedDialPlate" />
+                        <Binding Path="TrainInfo.Speed.EmergencyBrakeInterventionSpeed.Value" />
+                    </MultiBinding>
+                </ed:Arc.EndAngle>
+            </ed:Arc>
+
+            <ed:Arc ArcThicknessUnit="Percent"
+                    Stretch="None"
+                    StrokeThickness="18">
+                <ed:Arc.Stroke>
+                    <MultiBinding Converter="{StaticResource Motor.ATP.300S.FindSpeedHookColorConverter}">
+                        <Binding Path="TrainInfo.Speed.SpeedDialPlate" />
+                        <Binding Path="TrainInfo.Speed" />
+                        <Binding Source="{StaticResource Motor.ATP.300S.ATPColorToArcColortConverter}" />
+                        <Binding Path="TrainInfo.Speed.TargetSpeed.Value" />
+                        <Binding Path="TrainInfo.Speed.PermittedLimitSpeed.Value" />
+                        <Binding Path="TrainInfo.Speed.ServiceBrakeInterventionSpeed.Value" />
+                        <Binding Path="TrainInfo.Speed.TargetSpeed.SpeedColor" />
+                        <Binding Path="TrainInfo.Speed.PermittedLimitSpeed.SpeedColor" />
+                        <Binding Path="TrainInfo.Speed.ServiceBrakeInterventionSpeed.SpeedColor" />
+                    </MultiBinding>
+                </ed:Arc.Stroke>
+                <ed:Arc.StartAngle>
+                    <MultiBinding Converter="{StaticResource Motor.ATP.300S.FindSpeedHookStartAngleConverter}">
+                        <Binding Path="TrainInfo.Speed.SpeedDialPlate" />
+                        <Binding Path="TrainInfo.Speed" />
+                        <Binding Source="{StaticResource Motor.ATP.300S.ATPColorToArcColortConverter}" />
+                        <Binding Path="TrainInfo.Speed.TargetSpeed.Value" />
+                        <Binding Path="TrainInfo.Speed.PermittedLimitSpeed.Value" />
+                        <Binding Path="TrainInfo.Speed.ServiceBrakeInterventionSpeed.Value" />
+                        <Binding Path="TrainInfo.Speed.TargetSpeed.SpeedColor" />
+                        <Binding Path="TrainInfo.Speed.PermittedLimitSpeed.SpeedColor" />
+                        <Binding Path="TrainInfo.Speed.ServiceBrakeInterventionSpeed.SpeedColor" />
+                    </MultiBinding>
+                </ed:Arc.StartAngle>
+                <ed:Arc.EndAngle>
+                    <MultiBinding Converter="{StaticResource Motor.ATP.300S.FindSpeedHookEndAngleConverter}">
+                        <Binding Path="TrainInfo.Speed.SpeedDialPlate" />
+                        <Binding Path="TrainInfo.Speed" />
+                        <Binding Source="{StaticResource Motor.ATP.300S.ATPColorToArcColortConverter}" />
+                        <Binding Path="TrainInfo.Speed.TargetSpeed.Value" />
+                        <Binding Path="TrainInfo.Speed.PermittedLimitSpeed.Value" />
+                        <Binding Path="TrainInfo.Speed.ServiceBrakeInterventionSpeed.Value" />
+                        <Binding Path="TrainInfo.Speed.TargetSpeed.SpeedColor" />
+                        <Binding Path="TrainInfo.Speed.PermittedLimitSpeed.SpeedColor" />
+                        <Binding Path="TrainInfo.Speed.ServiceBrakeInterventionSpeed.SpeedColor" />
+                    </MultiBinding>
+                </ed:Arc.EndAngle>
+            </ed:Arc>
+        </Grid>
+    </Grid>
+</UserControl>

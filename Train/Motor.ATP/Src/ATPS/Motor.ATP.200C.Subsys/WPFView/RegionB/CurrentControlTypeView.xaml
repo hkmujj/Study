@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="Motor.ATP._200C.Subsys.WPFView.RegionB.CurrentControlTypeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:interface="clr-namespace:Motor.ATP.Infrasturcture.Interface;assembly=Motor.ATP.Infrasturcture"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DataContext="{d:DesignInstance interface:IATP}"
+             d:DesignHeight="36"
+             d:DesignWidth="36"
+             mc:Ignorable="d">
+    <TextBlock Style="{StaticResource Motor.ATP.200C.CurrentControlTypeTextStyle}" Text="{Binding Path=ControlModel.CurrentControlType, Converter={StaticResource Motor.ATP.200C.ControlTypeToStringConverter}}" />
+</UserControl>

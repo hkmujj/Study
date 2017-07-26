@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="Motor.ATP._200C.Subsys.WPFView.PopupViews.PopupViewLayerout"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:constant="clr-namespace:Motor.ATP._200C.Subsys.Constant"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:regions="http://www.codeplex.com/CompositeWPF"
+             d:DesignHeight="300"
+             d:DesignWidth="232"
+             mc:Ignorable="d">
+    <Grid Margin="2,2,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70*" />
+            <RowDefinition Height="230*" />
+        </Grid.RowDefinitions>
+        <Border regions:RegionManager.RegionName="{x:Static constant:RegionNames.RegionPopupViewTitle}" />
+        <Border Grid.Row="1" regions:RegionManager.RegionName="{x:Static constant:RegionNames.RegionPopupViewContent}" />
+    </Grid>
+</UserControl>

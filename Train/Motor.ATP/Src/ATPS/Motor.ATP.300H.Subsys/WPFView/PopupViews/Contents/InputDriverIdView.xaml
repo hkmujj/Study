@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="Motor.ATP._300H.Subsys.WPFView.PopupViews.Contents.InputDriverIdView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:common="clr-namespace:Motor.ATP._300H.Subsys.WPFView.PopupViews.Common"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:popupViewModels="clr-namespace:Motor.ATP._300H.Subsys.ViewModel.PopupViewModels"
+             d:DataContext="{d:DesignInstance popupViewModels:DataDriverIDPopupViewModel}"
+             d:DesignHeight="250"
+             d:DesignWidth="232"
+             Background="{StaticResource Motor.ATP.300H.BackgroudBrush}"
+             mc:Ignorable="d">
+    <Grid Margin="3,0,6,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="1"
+                   Style="{StaticResource Motor.ATP.300H.PopupViewContentTextStyle}"
+                   Text="{Binding Source={StaticResource Motor.ATP.Infrasturcture.String.DriverId}, StringFormat={}{0} :}" />
+
+        <TextBlock Grid.Row="2"
+                   Style="{StaticResource Motor.ATP.300H.PopupViewInputLongDataTextStyle}"
+                   Text="{Binding Path=DriverId,
+                                  StringFormat={}#}" />
+
+        <common:InputingCharOrNumberView Grid.Row="4" DriverInputState="{Binding Path=InputState}" />
+        <!--<common:PleaseInputing09AZView Grid.Row="4" />-->
+    </Grid>
+</UserControl>

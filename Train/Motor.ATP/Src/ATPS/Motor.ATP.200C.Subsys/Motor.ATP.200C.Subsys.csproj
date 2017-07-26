@@ -1,0 +1,944 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5680BEEB-B7FE-48C5-880E-B87470593C08}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Motor.ATP._200C.Subsys</RootNamespace>
+    <AssemblyName>Motor.ATP.200C.Subsys</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\MMI\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\MMI\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <LangVersion>default</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonUtil, Version=2.29.2016.517, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="CommonUtil.Rtf">
+      <HintPath>..\..\..\..\..\Bin\3rdDlls\CommonUtil.Rtf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.Prism, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.Prism.MefExtensions, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="MMI.Facility.Interface, Version=2.50.2017.214, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="MMI.Facility.WPFInfrastructure, Version=2.50.2017.705, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="WPFApp\DesignApp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ATP200CMefBootstrapper.cs" />
+    <Compile Include="ATP200CSubsystem.cs" />
+    <Compile Include="Constant\PopupTitletViewNames.cs" />
+    <Compile Include="Constant\PopupViewNames.cs" />
+    <Compile Include="Constant\RegionNames.cs" />
+    <Compile Include="Constant\VersionMarker.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\B11VigilantLinkActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\B1ShuntingLinkActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\B2OnSightLinkActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\B3CabSignalLinkActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\B3StartupLinkActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\B4RelievingBrakeLinkActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F1RBCIDActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F1RunEmergBrakeTestActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F1WatchDogTestActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F2RunNormalBrakeTestActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F2SafeTestActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F3CheckSoftwareVersionActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F3VRAMTestActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F4RunBrakeTestActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F2SkipBrakeTestActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F2TelNumberActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F3NetNumberActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F5DMITestActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F6OkBrakeTestRunActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F6OkCTCS0ActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F6OkCTCS2ActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F6OkCTCS3ActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F6OkDirectionDownActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F6OkDirectionUpActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F6OkRBCIDActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F6OkRelaseBrakeActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F6OkTelNumberActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F6RequestOkDriverIDActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F6RequestOkTrainIDActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F8CancelCheckDriverIDActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F8CancelCheckTrainIDActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F8CancelFreqActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F8CancelRelaseBrakeActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F8CancelTrainDataActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F8QuitBrakeTestActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F8ReturnCabSignalActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F8ReturnCTCS0ActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F8ReturnCTCS2ActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F8ReturnCTCS3ActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F8ReturnDirectionDownActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F8ReturnDirectionUpActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F8ReturnOnSightActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F8ReturnShuntingActionResponser.cs" />
+    <Compile Include="Control\UserAction\StateProvider\B11VigilantLinkStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\B1ShuntingLinkStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\B2OnSightLinkStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\B3CabSignalLinkStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\B3StartupLinkStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\B4RelievingBrakeLinkStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\BRelievingBrakeLinkStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\EmptyStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F1CTCS2StateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F1RBCIDStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F1RunEmergBrakeTestStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F1SoftwareUpStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F2CTCS0StateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F2RunNormalBrakeTestStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F2SoftwareDownStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F4RunBrakeTestStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F2SkipBrakeTestStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F2TelNumberStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F3NetNumberStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F5DMITestStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F8QuitBrakeTestStateProvider.cs" />
+    <Compile Include="Converters\BoolOperatConverter.cs" />
+    <Compile Include="Converters\CurrentInterfaceKeyToVisblityConverter.cs" />
+    <Compile Include="Converters\GetItemIndexOfCollectionConverter.cs" />
+    <Compile Include="Events\EnsureMessageEvent.cs" />
+    <Compile Include="Extension\RecoredActionExtension.cs" />
+    <Compile Include="Model\ATP200CAssistDisplayInfo.cs" />
+    <Compile Include="Model\ATP200CPlanSectionCoordinate16K.cs" />
+    <Compile Include="Model\ATP200CPlanSectionCoordinate32K.cs" />
+    <Compile Include="Model\ATP200CPlanSectionCoordinate8K.cs" />
+    <Compile Include="Model\ATP200CSpeedDialPlate.cs" />
+    <Compile Include="Model\ButtonManager.cs" />
+    <Compile Include="Model\Forecast\ForecastInformation200C.cs" />
+    <Compile Include="Model\GlobalParam.cs" />
+    <Compile Include="Model\GlobalTimer.cs" />
+    <Compile Include="Model\Message\ATP200CMessage.cs" />
+    <Compile Include="Model\RecoredAction.cs" />
+    <Compile Include="Resources\Converter\SelcetObjContentCreater.cs" />
+    <Compile Include="Resources\String\ATP200CStringKeys.cs" />
+    <Compile Include="Resources\String\ATP200CStringKeysCreater.cs" />
+    <Compile Include="Service\WPFPopupViewService.cs" />
+    <Compile Include="ViewModel\PopupViewModels\CheckSoftwareInfoViewModel.cs" />
+    <Compile Include="ViewModel\PopupViewModels\DMITestViewModel.cs" />
+    <Compile Include="ViewModel\PopupViewModels\EnsureCTCS0ViewModel.cs" />
+    <Compile Include="ViewModel\PopupViewModels\EnsureCTCS2ViewModel.cs" />
+    <Compile Include="ViewModel\PopupViewModels\EnsureDriverIdViewModel.cs" />
+    <Compile Include="ViewModel\HardwareButtonViewModel.cs" />
+    <Compile Include="ViewModel\PopupViewModels\CheckDataContentPopViewModel.cs" />
+    <Compile Include="ViewModel\PopupViewModels\DataDriverIDPopupViewModel.cs" />
+    <Compile Include="ViewModel\PopupViewModels\DateTimePopupViewModel.cs" />
+    <Compile Include="ViewModel\PopupViewModels\EnsureCabSignalPopupViewModel.cs" />
+    <Compile Include="ViewModel\PopupViewModels\EnsureEventPopupViewModel.cs" />
+    <Compile Include="ViewModel\PopupViewModels\EnsureEventPopupViewModelBase.cs" />
+    <Compile Include="ViewModel\PopupViewModels\EnsureFreqPopupViewModel.cs" />
+    <Compile Include="ViewModel\PopupViewModels\EnsureOSPopupViewModel.cs" />
+    <Compile Include="ViewModel\PopupViewModels\EnsureRelaseBrakeViewModel.cs" />
+    <Compile Include="ViewModel\PopupViewModels\EnsureRunBrakeTestPopupViewModel.cs" />
+    <Compile Include="ViewModel\PopupViewModels\EnsureShuntingPopupViewModel.cs" />
+    <Compile Include="ViewModel\PopupViewModels\EnsureTrainDataPopupViewModel.cs" />
+    <Compile Include="ViewModel\PopupViewModels\EnsureTrainIdViewModel.cs" />
+    <Compile Include="ViewModel\PopupViewModels\InputDataTrainIDPopupViewModel.cs" />
+    <Compile Include="ViewModel\PopupViewModels\InputRBCIdPopupViewModel.cs" />
+    <Compile Include="ViewModel\PopupViewModels\InputTelNumberPopupViewModel.cs" />
+    <Compile Include="ViewModel\PopupViewModels\IContentOfEnsurce.cs" />
+    <Compile Include="ViewModel\PopupViewModels\InputTrainDataViewModel.cs" />
+    <Compile Include="ViewModel\PopupViewModels\SelectBrakeTestViewModel.cs" />
+    <Compile Include="ViewModel\PopupViewModels\SelectControlModelPopupViewModel.cs" />
+    <Compile Include="ViewModel\PopupViewModels\SelectCTCSPopupViewModel.cs" />
+    <Compile Include="ViewModel\PopupViewModels\SelectDirectionPopupViewModel.cs" />
+    <Compile Include="ViewModel\PopupViewModels\SelectOtherViewModel.cs" />
+    <Compile Include="ViewModel\PopupViewModels\SelectRBCInputtedViewModel.cs" />
+    <Compile Include="ViewModel\PopupViewModels\SetLightPopupViewModel.cs" />
+    <Compile Include="ViewModel\PopupViewModels\SetVolumePopupViewModel.cs" />
+    <Compile Include="ViewModel\PopupViewModels\StartupPopupViewModel.cs" />
+    <Compile Include="WPFView\OpaqueLayer\OpaqueLayerView.xaml.cs">
+      <DependentUpon>OpaqueLayerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\PopupViews\Common\InputingCharOrNumberView.xaml.cs">
+      <DependentUpon>InputingCharOrNumberView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\PopupViews\Common\PleaseInputing09AZView.xaml.cs">
+      <DependentUpon>PleaseInputing09AZView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\PopupViews\Contents\CheckDataContentPopView.xaml.cs">
+      <DependentUpon>CheckDataContentPopView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\PopupViews\Contents\CheckSoftwareVersionInfoView.xaml.cs">
+      <DependentUpon>CheckSoftwareVersionInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\PopupViews\Contents\DMITestView.xaml.cs">
+      <DependentUpon>DMITestView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\PopupViews\Contents\EnsureDriverIdView.xaml.cs">
+      <DependentUpon>EnsureDriverIdView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\PopupViews\Contents\EnsureEventView.xaml.cs">
+      <DependentUpon>EnsureEventView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\PopupViews\Contents\EnsureTrainIdView.xaml.cs">
+      <DependentUpon>EnsureTrainIdView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\PopupViews\Contents\InputDateTimeView.xaml.cs">
+      <DependentUpon>InputDateTimeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\PopupViews\Contents\InputDriverDataView.xaml.cs">
+      <DependentUpon>InputDriverDataView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\PopupViews\Contents\InputDriverIdView.xaml.cs">
+      <DependentUpon>InputDriverIdView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\PopupViews\Contents\InputRBCIdView.xaml.cs">
+      <DependentUpon>InputRBCIdView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\PopupViews\Contents\InputTelNumberView.xaml.cs">
+      <DependentUpon>InputTelNumberView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\PopupViews\Contents\InputTrainDataView.xaml.cs">
+      <DependentUpon>InputTrainDataView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\PopupViews\Contents\EnsureTrainDataView.xaml.cs">
+      <DependentUpon>EnsureTrainDataView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\PopupViews\Contents\InputTrainIDView.xaml.cs">
+      <DependentUpon>InputTrainIDView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\PopupViews\Contents\NullPopupView.xaml.cs">
+      <DependentUpon>NullPopupView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\PopupViews\Contents\SelecCTCSView.xaml.cs">
+      <DependentUpon>SelecCTCSView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\PopupViews\Contents\SelecDirectionView.xaml.cs">
+      <DependentUpon>SelecDirectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\PopupViews\Contents\SelectBrakeTestView.xaml.cs">
+      <DependentUpon>SelectBrakeTestView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\PopupViews\Contents\SelectControlModelView.xaml.cs">
+      <DependentUpon>SelectControlModelView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\PopupViews\Contents\SelectOtherView.xaml.cs">
+      <DependentUpon>SelectOtherView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\PopupViews\Contents\SelectRBCInputtedView.xaml.cs">
+      <DependentUpon>SelectRBCInputtedView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\PopupViews\Contents\SetLightView.xaml.cs">
+      <DependentUpon>SetLightView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\PopupViews\Contents\SetVolumeView.xaml.cs">
+      <DependentUpon>SetVolumeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\PopupViews\PopupViewLayerout.xaml.cs">
+      <DependentUpon>PopupViewLayerout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\PopupViews\Title\NormalPopupTitleView.xaml.cs">
+      <DependentUpon>NormalPopupTitleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\PopupViews\Title\NullPopupTitleView.xaml.cs">
+      <DependentUpon>NullPopupTitleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionAssist\AssistView.xaml.cs">
+      <DependentUpon>AssistView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionA\BrakeWarningLevelView.xaml.cs">
+      <DependentUpon>BrakeWarningLevelView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionA\RegionALayerout.xaml.cs">
+      <DependentUpon>RegionALayerout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionA\TargetDistanceValueView.xaml.cs">
+      <DependentUpon>TargetDistanceValueView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionB\CmdIsolatedItemView.xaml.cs">
+      <DependentUpon>CmdIsolatedItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionB\CurrentControlTypeView.xaml.cs">
+      <DependentUpon>CurrentControlTypeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionB\CurrentSpeedView.xaml.cs">
+      <DependentUpon>CurrentSpeedView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionB\Details\DialDegreeView.xaml.cs">
+      <DependentUpon>DialDegreeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionB\Details\PointerView.xaml.cs">
+      <DependentUpon>PointerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionB\ForcastCmdView.xaml.cs">
+      <DependentUpon>ForcastCmdView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionB\RegionBLayerout.xaml.cs">
+      <DependentUpon>RegionBLayerout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionC\BrakeTypeView.xaml.cs">
+      <DependentUpon>BrakeTypeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionC\CTCSView.xaml.cs">
+      <DependentUpon>CTCSView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionC\RegionCLayerout.xaml.cs">
+      <DependentUpon>RegionCLayerout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionD\CabSignalCodeView.xaml.cs">
+      <DependentUpon>CabSignalCodeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionD\Details\ForecastInformationListView.xaml.cs">
+      <DependentUpon>ForecastInformationListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionD\ForecastInformationView.xaml.cs">
+      <DependentUpon>ForecastInformationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionD\GradientInfomationView.xaml.cs">
+      <DependentUpon>GradientInfomationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionD\Details\PlanZoneCoordinateView.xaml.cs">
+      <DependentUpon>PlanZoneCoordinateView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionD\Details\PlanZoneDrawingCanvas.cs" />
+    <Compile Include="WPFView\RegionD\PlanZoneView.xaml.cs">
+      <DependentUpon>PlanZoneView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionD\RegionDLayerout.xaml.cs">
+      <DependentUpon>RegionDLayerout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionD\SpeedChangeView.xaml.cs">
+      <DependentUpon>SpeedChangeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionE\CurrentStationView.xaml.cs">
+      <DependentUpon>CurrentStationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionE\DateTimeView.xaml.cs">
+      <DependentUpon>DateTimeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionE\GSMStateView.xaml.cs">
+      <DependentUpon>GSMStateView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionE\KilometerPostView.xaml.cs">
+      <DependentUpon>KilometerPostView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionE\MessageArrawView.xaml.cs">
+      <DependentUpon>MessageArrawView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionE\MessageListView.xaml.cs">
+      <DependentUpon>MessageListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionE\OpenDoorLocationView.xaml.cs">
+      <DependentUpon>OpenDoorLocationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionE\RBCStateView.xaml.cs">
+      <DependentUpon>RBCStateView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionE\RegionELeftLayerout.xaml.cs">
+      <DependentUpon>RegionELeftLayerout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionE\RegionERightLayerout.xaml.cs">
+      <DependentUpon>RegionERightLayerout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionE\TrainControlTypeView.xaml.cs">
+      <DependentUpon>TrainControlTypeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionE\TrainIdView.xaml.cs">
+      <DependentUpon>TrainIdView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionE\TrainLengthView.xaml.cs">
+      <DependentUpon>TrainLengthView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionE\ZoomInView.xaml.cs">
+      <DependentUpon>ZoomInView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionE\ZoomOutView.xaml.cs">
+      <DependentUpon>ZoomOutView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionF\RegionFLayerout.xaml.cs">
+      <DependentUpon>RegionFLayerout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionF\RegionFText.xaml.cs">
+      <DependentUpon>RegionFText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionHardware\HardwareBottom.xaml.cs">
+      <DependentUpon>HardwareBottom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionHardware\HardwareF.xaml.cs">
+      <DependentUpon>HardwareF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\RegionHardware\HardwareHelperView.xaml.cs">
+      <DependentUpon>HardwareHelperView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\Shell\ATPDebugShell.xaml.cs">
+      <DependentUpon>ATPDebugShell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\Shell\ShellContentView.xaml.cs">
+      <DependentUpon>ShellContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\Shell\ShellForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WPFView\Shell\ShellForm.Designer.cs">
+      <DependentUpon>ShellForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WPFView\Shell\ShellView.xaml.cs">
+      <DependentUpon>ShellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFApp\DesignApp.xaml.cs">
+      <DependentUpon>DesignApp.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\ATP200CDriverInterfaceController.cs" />
+    <Compile Include="Control\ATP200CDriverInterfaceFactory.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\B10ActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\B11ActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\B1ActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\B2ActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\B3ActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\B4ActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\B5ActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\B6ActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\B7ActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\B8ActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\B8PlanZoomInActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\B9ActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\B9PlanZoomOutActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F1BrakeTestActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F1CTCS2ActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F1DataActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F1DataDriverIDActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F1IncreaseLightActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F1IncreaseVolumeActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F1ShuntingActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F1UpDirectionActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F2ControlModeDriverActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F2CTCS0ActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F2DataTrainIDActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F2DownDirectionActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F2OnSightActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F2ReduceLightActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F2ReduceVolumeActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F1SetVolumeActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F3CabSignalActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F3CTCS3DActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F3DataTrainDataActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F3FreqActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F2SetLightActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F4DataUpActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F4LevelActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F5DataDownActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F5OtherActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F6DateTimeActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F6DriverIDDeleteActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F6DriverIDEnsureActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F6EventOkActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F6OkActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F6OkCabSignalActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F6OkComplateInputTrainDataActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F6OkDriverIDActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F6OkFreqActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F6OkOnSightActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F6OkShuntingActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F6OkStartupActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F6OkTrainDataActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F6OkTrainIDActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F6StartUpActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F7DeleteActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F7RBCDataActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F7RelievingBrakeActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F8CancelActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F8CancelStartupActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F8EventCancelActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F8EventOkActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F8OkActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F8ReturnActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F8VigilantActionResponser.cs" />
+    <Compile Include="Control\UserAction\StateProvider\B10StateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\B11StateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\B1StateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\B2StateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\B3StateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\B4StateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\B5StateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\B6StateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\B7StateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\B8PlanZoomInStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\B8StateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\B9PlanZoomOutStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\B9StateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F1DataDriverIDProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F1DataStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F1ShuntingStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F2ControlModeStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F2DataTrainIDStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F2OnSightStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F3CabSignalStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F3CTCS3DStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F3DataTrainDataStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F3FreqStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F4DataUpStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F4LevelStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F5DataDownStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F5OtherStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F6StartUpStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F7RBCDataStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F7RelievingBrakeStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F8CancelFreqStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F8CancelTrainDataStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F8ReturnStateProvider.cs" />
+    <Compile Include="Control\UserAction\StateProvider\F8VigilantStateProvider.cs" />
+    <Page Include="Resources\ATP200CResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Basic\ATP200CBasicResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Converter\ATP200CConvertersResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\String\StringResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\ATP200CStylesResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\BorderStyleResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\LineStyleResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\ListStyleResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\ProgressBarStyleResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\StackPanelResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\TextStyleResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\OpaqueLayer\OpaqueLayerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\PopupViews\Common\InputingCharOrNumberView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\PopupViews\Common\PleaseInputing09AZView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\PopupViews\Contents\CheckDataContentPopView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\PopupViews\Contents\CheckSoftwareVersionInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\PopupViews\Contents\DMITestView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\PopupViews\Contents\EnsureDriverIdView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\PopupViews\Contents\EnsureEventView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\PopupViews\Contents\EnsureTrainIdView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\PopupViews\Contents\InputDateTimeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\PopupViews\Contents\InputDriverDataView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\PopupViews\Contents\InputDriverIdView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\PopupViews\Contents\InputRBCIdView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\PopupViews\Contents\InputTelNumberView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\PopupViews\Contents\InputTrainDataView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\PopupViews\Contents\EnsureTrainDataView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPFView\PopupViews\Contents\InputTrainIDView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\PopupViews\Contents\NullPopupView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\PopupViews\Contents\SelecCTCSView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\PopupViews\Contents\SelecDirectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\PopupViews\Contents\SelectBrakeTestView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\PopupViews\Contents\SelectControlModelView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\PopupViews\Contents\SelectOtherView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPFView\PopupViews\Contents\SelectRBCInputtedView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\PopupViews\Contents\SetLightView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\PopupViews\Contents\SetVolumeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\PopupViews\PopupViewLayerout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\PopupViews\Title\NormalPopupTitleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\PopupViews\Title\NullPopupTitleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionAssist\AssistView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionA\BrakeWarningLevelView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionA\RegionALayerout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionA\TargetDistanceValueView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionB\CmdIsolatedItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionB\CurrentControlTypeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionB\CurrentSpeedView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionB\Details\DialDegreeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionB\Details\PointerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionB\ForcastCmdView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPFView\RegionB\RegionBLayerout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionC\BrakeTypeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionC\CTCSView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionC\RegionCLayerout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionD\CabSignalCodeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionD\Details\ForecastInformationListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionD\ForecastInformationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionD\GradientInfomationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionD\Details\PlanZoneCoordinateView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionD\PlanZoneView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionD\RegionDLayerout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionD\SpeedChangeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionE\CurrentStationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionE\DateTimeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionE\GSMStateView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionE\KilometerPostView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionE\MessageArrawView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionE\MessageListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionE\OpenDoorLocationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPFView\RegionE\RBCStateView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionE\RegionELeftLayerout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionE\RegionERightLayerout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionE\TrainControlTypeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionE\TrainIdView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionE\TrainLengthView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionE\ZoomInView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionE\ZoomOutView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionF\RegionFLayerout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionF\RegionFText.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionHardware\HardwareBottom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionHardware\HardwareF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\RegionHardware\HardwareHelperView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\Shell\ATPDebugShell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\Shell\ShellContentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFView\Shell\ShellView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\ATP200CDomainModel.cs" />
+    <Compile Include="Model\StationInterpreter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WPFView\Shell\ShellForm.resx">
+      <DependentUpon>ShellForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <Resource Include="Resources\Basic\Fonts\DS-DIGI.TTF" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataAdapter\Motor.ATP.DataAdapter\Motor.ATP.DataAdapter.csproj">
+      <Project>{cd7d14b2-171d-4b7a-ab61-5aa331e048b1}</Project>
+      <Name>Motor.ATP.DataAdapter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\Motor.ATP.Infrasturcture\Motor.ATP.Infrasturcture.csproj">
+      <Project>{872c3124-9e5b-45aa-95e1-08ee53ac6cf6}</Project>
+      <Name>Motor.ATP.Infrasturcture</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Changes_ATP200C.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

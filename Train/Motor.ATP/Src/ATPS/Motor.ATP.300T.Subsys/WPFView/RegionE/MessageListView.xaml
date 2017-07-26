@@ -1,0 +1,89 @@
+﻿<UserControl x:Class="Motor.ATP._300T.Subsys.WPFView.RegionE.MessageListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:interface="clr-namespace:Motor.ATP.Infrasturcture.Interface;assembly=Motor.ATP.Infrasturcture"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:view="clr-namespace:MMI.Facility.WPFInfrastructure.View;assembly=MMI.Facility.WPFInfrastructure"
+             d:DataContext="{d:DesignInstance interface:IATP}"
+             d:DesignHeight="100"
+             d:DesignWidth="234"
+             mc:Ignorable="d">
+    <Grid>
+        <ListBox x:Name="MsgLstv"
+                 Background="Transparent"
+                 BorderThickness="0"
+                 IsHitTestVisible="False"
+                 ItemsSource="{Binding Path=Message.ShowingMessageCollection}"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                 ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                 SelectedItem="{Binding Path=Message.CurrentFirstItem,
+                                        Mode=OneWay}"
+                 SelectionMode="Single"
+                 x:FieldModifier="private">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Style.Setters>
+                        <Setter Property="Foreground" Value="{StaticResource Motor.ATP.300T.GrayBrush}" />
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ListBoxItem">
+                                    <Border>
+                                        <ContentPresenter TextBlock.Foreground="{TemplateBinding Foreground}" />
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style.Setters>
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Trigger.Setters>
+                                <Setter Property="Foreground" Value="{StaticResource Motor.ATP.300T.WhiteBrush}" />
+                            </Trigger.Setters>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListBox.ItemContainerStyle>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Width="{Binding ElementName=MsgLstv, Path=ActualWidth}">
+
+                        <StackPanel Margin="0,4"
+                                    HorizontalAlignment="Left"
+                                    Orientation="Horizontal">
+                            <TextBlock Margin="2,0"
+                                       Padding="0,2,0,0"
+                                       Style="{StaticResource Motor.ATP.300T.MsgListTimeTextStyle}"
+                                       Text="{Binding TimeStamp,
+                                                      StringFormat={}HH:mm:ss}" />
+                            <Grid Width="190">
+                                <Rectangle Stretch="Fill"
+                                           Stroke="{StaticResource Motor.ATP.300T.YellowBrush}"
+                                           StrokeThickness="2"
+                                           Visibility="Hidden"
+                                           view:FlickerManager.DurationMiliSecond="1000"
+                                           view:FlickerManager.Flicking="{Binding Path=Style,
+                                                                                  Converter={StaticResource Motor.ATP.300T.MessageStyleToIsFlickingConverter}}"
+                                           view:FlickerManager.VisibilityAfterFlicking="Hidden" />
+                                <TextBlock Margin="5,0"
+                                           Style="{StaticResource Motor.ATP.300T.MsgListContentTextStyle}"
+                                           Text="{Binding Path=Content}" />
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Border Grid.Row="1" Style="{StaticResource Motor.ATP.300T.BackGridBorderStyle1}" />
+            <Border Grid.Row="2" Style="{StaticResource Motor.ATP.300T.BackGridBorderStyle1}" />
+            <Border Grid.Row="3" Style="{StaticResource Motor.ATP.300T.BackGridBorderStyle1}" />
+        </Grid>
+    </Grid>
+</UserControl>

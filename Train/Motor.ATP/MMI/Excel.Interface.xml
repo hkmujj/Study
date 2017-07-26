@@ -1,0 +1,266 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Excel.Interface</name>
+    </assembly>
+    <members>
+        <member name="T:Excel.Interface.CSVAdapter">
+            <summary>
+            CSV 适配
+            </summary>
+        </member>
+        <member name="M:Excel.Interface.CSVAdapter.Adapter(Excel.Interface.IExcelReaderConfig)">
+            <summary>
+            根据config 得到xls的数据表
+            </summary>
+            <param name="config"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Excel.Interface.CSVAdapter.Adapter(Excel.Interface.IExcelReaderConfig,Excel.Interface.IODBCFacade)">
+            <summary>
+            
+            </summary>
+            <param name="config"></param>
+            <param name="odbc"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Excel.Interface.ExcelAdapter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Excel.Interface.ExcelAdapter.Adapter(Excel.Interface.IExcelReaderConfig)">
+            <summary>
+            
+            </summary>
+            <param name="config"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Excel.Interface.ExcelAdapter.Adapter(Excel.Interface.IExcelReaderConfig,Excel.Interface.IODBCFacade)">
+            <summary>
+            
+            </summary>
+            <param name="config"></param>
+            <param name="odbc"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Excel.Interface.ExcelFieldAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Excel.Interface.ExcelFieldAttribute.#ctor(System.String,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="field"></param>
+            <param name="isPrimaryKey"></param>
+        </member>
+        <member name="P:Excel.Interface.ExcelFieldAttribute.IsPrimaryKey">
+            <summary>
+            是否为主键
+            </summary>
+        </member>
+        <member name="P:Excel.Interface.ExcelFieldAttribute.Field">
+            <summary>
+            字段名
+            </summary>
+        </member>
+        <member name="T:Excel.Interface.ExcelLocationAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Excel.Interface.ExcelLocationAttribute.#ctor(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="file"></param>
+            <param name="sheet"></param>
+        </member>
+        <member name="P:Excel.Interface.ExcelLocationAttribute.File">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="P:Excel.Interface.ExcelLocationAttribute.Sheet">
+            <summary>
+            表名。
+            </summary>
+        </member>
+        <member name="T:Excel.Interface.ExcelParser">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Excel.Interface.ExcelParser.Parser``1(System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:Excel.Interface.IExcelReaderConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Excel.Interface.IExcelReaderConfig.File">
+            <summary>
+            文件
+            </summary>
+        </member>
+        <member name="P:Excel.Interface.IExcelReaderConfig.SheetNames">
+            <summary>
+             sheet
+            </summary>
+        </member>
+        <member name="P:Excel.Interface.IExcelReaderConfig.Coloumns">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Excel.Interface.ExcelReaderConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Excel.Interface.ExcelReaderConfig.File">
+            <summary>
+            文件
+            </summary>
+        </member>
+        <member name="P:Excel.Interface.ExcelReaderConfig.SheetNames">
+            <summary>
+             sheet
+            </summary>
+        </member>
+        <member name="P:Excel.Interface.ExcelReaderConfig.Coloumns">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Excel.Interface.ColoumnConfig">
+            <summary>
+            列配置
+            </summary>
+        </member>
+        <member name="P:Excel.Interface.ColoumnConfig.IsPrimaryKey">
+            <summary>
+            是否为主键
+            </summary>
+        </member>
+        <member name="P:Excel.Interface.ColoumnConfig.Name">
+            <summary>
+            列名
+            </summary>
+        </member>
+        <member name="T:Excel.Interface.ExcelReaderConfigExtenstion">
+            <summary>
+            ExcelReaderConfig extension
+            </summary>
+        </member>
+        <member name="M:Excel.Interface.ExcelReaderConfigExtenstion.Adapter(Excel.Interface.IExcelReaderConfig)">
+            <summary>
+            根据配置文件, 适配出指定内容
+            </summary>
+            <param name="config"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Excel.Interface.ExcelReaderConfigExtenstion.Adapter(Excel.Interface.ExcelReaderConfig)">
+            <summary>
+            根据配置文件, 适配出指定内容
+            </summary>
+            <param name="config"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Excel.Interface.IExcelAdapter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Excel.Interface.IExcelAdapter.Adapter(Excel.Interface.IExcelReaderConfig)">
+            <summary>
+            根据config 得到xls的数据表
+            </summary>
+            <param name="config"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Excel.Interface.IExcelAdapter.Adapter(Excel.Interface.IExcelReaderConfig,Excel.Interface.IODBCFacade)">
+            <summary>
+            根据config 得到xls的数据表
+            </summary>
+            <param name="config"></param>
+            <param name="odbc"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Excel.Interface.IODBCFacade">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Excel.Interface.IODBCFacade.Sql">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Excel.Interface.IODBCFacade.ConnectSting">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Excel.Interface.IODBCFacade.ExcuteSql">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Excel.Interface.IODBCFacade.ExcuteSqlReturn">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Excel.Interface.ISetValueProvider">
+            <summary>
+            为 excel 调用 设置值。
+            </summary>
+        </member>
+        <member name="M:Excel.Interface.ISetValueProvider.SetValue(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="propertyOrFieldName"></param>
+            <param name="value"></param>
+        </member>
+        <member name="T:Excel.Interface.ODBCFacade">
+            <summary>
+            ODBC的操作
+            </summary>
+        </member>
+        <member name="P:Excel.Interface.ODBCFacade.Sql">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Excel.Interface.ODBCFacade.ConnectSting">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Excel.Interface.ODBCFacade.ExcuteSql">
+            <summary>
+            
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Excel.Interface.ODBCFacade.ExcuteSqlReturn">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+    </members>
+</doc>

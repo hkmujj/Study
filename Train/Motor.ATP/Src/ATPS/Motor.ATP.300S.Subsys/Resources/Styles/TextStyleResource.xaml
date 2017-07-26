@@ -1,0 +1,272 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Basic/ATP300BasicResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="Motor.ATP.300S.HardwareTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontFamily" Value="幼圆" />
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Motor.ATP.300S.RegionFTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontFamily" Value="幼圆" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="BaselineOffset" Value="2" />
+            <Setter Property="TextWrapping" Value="WrapWithOverflow" />
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Motor.ATP.300S.CTCSTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontFamily" Value="幼圆" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Motor.ATP.300S.PlanZoneDegreeTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontFamily" Value="Arail" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Motor.ATP.300S.SlopeTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontFamily" Value="Arail" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Foreground" Value="{StaticResource Motor.ATP.300S.DarkGrayBrush}" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+
+    <Style x:Key="Motor.ATP.300S.CabSignalTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontFamily" Value="Arail" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Foreground" Value="{StaticResource Motor.ATP.300S.BlackBrush}" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+
+    <Style x:Key="Motor.ATP.300S.StationNameTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontFamily" Value="幼圆" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Motor.ATP.300S.TrainIdTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontFamily" Value="Arail" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Motor.ATP.300S.DateTimeTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontFamily" Value="幼圆" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Motor.ATP.300S.TrainControlTypeTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontFamily" Value="幼圆" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Motor.ATP.300S.TargetDistanceTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontFamily" Value="Arail" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Motor.ATP.300S.SpeedDegreeTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontFamily" Value="Arail" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Motor.ATP.300S.CurrentSpeedTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontFamily" Value="Arail" />
+            <Setter Property="FontSize" Value="22" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Motor.ATP.300S.CurrentControlTypeTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontFamily" Value="幼圆" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Motor.ATP.300S.NextRunModelTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontFamily" Value="幼圆" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+    <!--  KilometerPost  -->
+    <Style x:Key="Motor.ATP.300S.KilometerPostTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontFamily" Value="Arail" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Motor.ATP.300S.MsgListContentTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontFamily" Value="幼圆" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Motor.ATP.300S.MsgListTimeTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontFamily" Value="Arail" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Motor.ATP.300S.PopupViewTitleTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontFamily" Value="宋体" />
+            <Setter Property="FontSize" Value="22" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Motor.ATP.300S.PopupViewContentTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontFamily" Value="宋体" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Motor.ATP.300S.PopupViewInputDateTimeTextStyle"
+           BasedOn="{StaticResource Motor.ATP.300S.PopupViewContentTextStyle}"
+           TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="Width" Value="30" />
+            <Setter Property="Height" Value="30" />
+            <Setter Property="Background" Value="{StaticResource Motor.ATP.300S.GrayBrush}" />
+            <Setter Property="Foreground" Value="{StaticResource Motor.ATP.300S.PopviewBackgroudBrush}" />
+            <Setter Property="Margin" Value="3,0" />
+            <Setter Property="TextAlignment" Value="Center" />
+            <Setter Property="Padding" Value="0,3,0,0" />
+            <Setter Property="IsEnabled" Value="False" />
+        </Style.Setters>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="True">
+                <Setter Property="Background" Value="{StaticResource Motor.ATP.300S.WhiteBrush}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="Motor.ATP.300S.PopupViewInputLongDataTextStyle"
+           BasedOn="{StaticResource Motor.ATP.300S.PopupViewContentTextStyle}"
+           TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="Width" Value="150" />
+            <Setter Property="Height" Value="30" />
+            <Setter Property="Background" Value="{StaticResource Motor.ATP.300S.MidGrayBrush}" />
+            <Setter Property="Foreground" Value="{StaticResource Motor.ATP.300S.PopviewBackgroudBrush}" />
+            <Setter Property="TextAlignment" Value="Left" />
+            <Setter Property="Padding" Value="3,3,0,0" />
+            <Setter Property="IsEnabled" Value="False" />
+        </Style.Setters>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="True">
+                <Setter Property="Background" Value="{StaticResource Motor.ATP.300S.WhiteBrush}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="Motor.ATP.300S.PopupViewInfoTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontFamily" Value="Arail" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+
+    <Style x:Key="Motor.ATP.300S.PopupViewSettingPercentTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontFamily" Value="Arail" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Foreground" Value="{StaticResource Motor.ATP.300S.PopviewBackgroudBrush}" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style.Setters>
+    </Style>
+
+</ResourceDictionary>

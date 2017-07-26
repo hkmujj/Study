@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="Motor.ATP._300T.Subsys.WPFView.PopupViews.Common.InputingCharOrNumberView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Name="RootControl"
+             d:DesignHeight="50"
+             d:DesignWidth="300"
+             x:FieldModifier="private"
+             mc:Ignorable="d">
+    <StackPanel Style="{StaticResource Motor.ATP.300T.InputingCharOrNumberStackPancelStyle}">
+        <TextBlock Style="{StaticResource Motor.ATP.300T.PopupViewInfoTextStyle}" Text="{StaticResource Motor.ATP.Infrasturcture.String.Inputing}" />
+        <TextBlock Style="{StaticResource Motor.ATP.300T.PopupViewInfoTextStyle}" Text="{Binding ElementName=RootControl, Path=DriverInputState, Converter={StaticResource Motor.ATP.300T.DriverInputStateToStringConverter}}" />
+    </StackPanel>
+</UserControl>

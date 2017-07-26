@@ -1,0 +1,687 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{872C3124-9E5B-45AA-95E1-08EE53AC6CF6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Motor.ATP.Infrasturcture</RootNamespace>
+    <AssemblyName>Motor.ATP.Infrasturcture</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\MMI\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <LangVersion>default</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonUtil, Version=2.29.2016.517, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="CommonUtil.Rtf">
+      <HintPath>..\..\..\..\..\Bin\3rdDlls\CommonUtil.Rtf.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.PropertyGrid.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Excel.Interface, Version=2.30.2016.712, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Practices.Prism, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="MMI.Facility.Interface, Version=2.50.2017.214, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="MMI.Facility.WPFInfrastructure, Version=2.50.2017.705, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\Monitor\MonitorController.cs" />
+    <Compile Include="Controller\Monitor\ViewControlController.cs" />
+    <Compile Include="Control\DataInputControlWordInterpreter.cs" />
+    <Compile Include="Control\DriverInputDataInterpreter.cs" />
+    <Compile Include="Control\Infomation\InfomationCreater.cs" />
+    <Compile Include="Control\Infomation\InfomationService.cs" />
+    <Compile Include="Control\Infomation\QueueEnsureInfomationCache.cs" />
+    <Compile Include="Control\RtfHelper.cs" />
+    <Compile Include="Control\Service\OpaqueLayerService.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\B10OrdinaryActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\B11OrdinaryActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\B1OrdinaryActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\B2OrdinaryActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\B3OrdinaryActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\B4OrdinaryActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\B5OrdinaryActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\B6OrdinaryActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\B7OrdinaryActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\B8OrdinaryActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\B9OrdinaryActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\EmptyActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F1OrdinaryActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F2OrdinaryActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F3OrdinaryActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F4OrdinaryActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F5OrdinaryActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F6OrdinaryActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F7OrdinaryActionResponser.cs" />
+    <Compile Include="Control\UserAction\ActionResponser\F8OrdinaryActionResponser.cs" />
+    <Compile Include="Control\UserAction\CancelActionResponser.cs" />
+    <Compile Include="Control\UserAction\CancelFreqActionResponser.cs" />
+    <Compile Include="Control\UserAction\DriverInterfaceController.cs" />
+    <Compile Include="Control\UserAction\DriverInterfaceFactory.cs" />
+    <Compile Include="Control\UserAction\DriverPopupViewBase.cs" />
+    <Compile Include="Control\UserAction\DriverPopupViewModelBase.cs" />
+    <Compile Include="Control\UserAction\EmptyStateProvider.cs" />
+    <Compile Include="Control\UserAction\InputDataInterpreter\TrainDataInputDataInterpreter.cs" />
+    <Compile Include="Control\UserAction\NormalStateProvider.cs" />
+    <Compile Include="Control\UserAction\OkActionResponser.cs" />
+    <Compile Include="Control\UserAction\ReturnActionResponser.cs" />
+    <Compile Include="Interface\AssistScreenTestModel.cs" />
+    <Compile Include="Interface\ATPPowerState.cs" />
+    <Compile Include="Interface\ATPType.cs" />
+    <Compile Include="Interface\BrakeTest\BrakeTestModel.cs" />
+    <Compile Include="Interface\BrakeTest\BrakeTestSelect.cs" />
+    <Compile Include="Interface\BrakeTest\BrakeTestStatus.cs" />
+    <Compile Include="Interface\BrakeTest\BrakeTestType.cs" />
+    <Compile Include="Interface\BrakeType.cs" />
+    <Compile Include="Interface\CabSignal.cs" />
+    <Compile Include="Interface\ControlType.cs" />
+    <Compile Include="Interface\DataInputtedFrom.cs" />
+    <Compile Include="Interface\DisplayType.cs" />
+    <Compile Include="Interface\Events\ChangePlanScaleEvent.cs" />
+    <Compile Include="Interface\Events\DataInputtedFromEvent.cs" />
+    <Compile Include="Interface\Events\PushOperatorToUIThreadEvent.cs" />
+    <Compile Include="Interface\Extension\ATPExtension.cs" />
+    <Compile Include="Interface\Extension\DriverInterfaceControllerExtension.cs" />
+    <Compile Include="Interface\Extension\InfomationTimeShowTypeExtension.cs" />
+    <Compile Include="Interface\ForecastInformationType.cs" />
+    <Compile Include="Interface\GSMRState.cs" />
+    <Compile Include="Interface\IAssistDisplayInfo.cs" />
+    <Compile Include="Interface\IATP.cs" />
+    <Compile Include="Interface\IATPButton.cs" />
+    <Compile Include="Interface\IATPPartial.cs" />
+    <Compile Include="Interface\IATPPower.cs" />
+    <Compile Include="Interface\IATPProjectManager.cs" />
+    <Compile Include="Interface\IBrake.cs" />
+    <Compile Include="Interface\ICloneable.cs" />
+    <Compile Include="Interface\IConnectState.cs" />
+    <Compile Include="Interface\IControlModel.cs" />
+    <Compile Include="Interface\ICTCS.cs" />
+    <Compile Include="Interface\IDriver.cs" />
+    <Compile Include="Interface\IEmergencyInfo.cs" />
+    <Compile Include="Interface\IEnabled.cs" />
+    <Compile Include="Interface\IForecastInformation.cs" />
+    <Compile Include="Interface\IForecastInformationItem.cs" />
+    <Compile Include="Interface\IHardwareButton.cs" />
+    <Compile Include="Interface\IIdentityProvider.cs" />
+    <Compile Include="Interface\IKilometerPost.cs" />
+    <Compile Include="Interface\IMessage.cs" />
+    <Compile Include="Interface\Infomation\IInfomationItem.cs" />
+    <Compile Include="Interface\Service\IClearDataService.cs" />
+    <Compile Include="Interface\Service\IInfomationService.cs" />
+    <Compile Include="Interface\Infomation\IInformationCreater.cs" />
+    <Compile Include="Interface\Infomation\InfoamtionSystemResponseType.cs" />
+    <Compile Include="Interface\Infomation\InfomationAutoCancelType.cs" />
+    <Compile Include="Interface\Infomation\InfomationItemContentExtension.cs" />
+    <Compile Include="Interface\Infomation\InfomationResponseType.cs" />
+    <Compile Include="Interface\Infomation\InfomationShowType.cs" />
+    <Compile Include="Interface\Infomation\InfomationTimeShowType.cs" />
+    <Compile Include="Interface\Infomation\InformationEnsureParam.cs" />
+    <Compile Include="Interface\Infomation\InformationEnsureType.cs" />
+    <Compile Include="Interface\Infomation\InformationState.cs" />
+    <Compile Include="Interface\Infomation\InformationUpdateType.cs" />
+    <Compile Include="Interface\IOther.cs" />
+    <Compile Include="Interface\IPopupViewServiceProvider.cs" />
+    <Compile Include="Interface\IRegionFStateProvier.cs" />
+    <Compile Include="Interface\ISendInterface.cs" />
+    <Compile Include="Interface\ISpeed.cs" />
+    <Compile Include="Interface\ISpeedModel.cs" />
+    <Compile Include="Interface\IStation.cs" />
+    <Compile Include="Interface\ITrainInfo.cs" />
+    <Compile Include="Interface\ITrainInfoPartial.cs" />
+    <Compile Include="Interface\IVersionManager.cs" />
+    <Compile Include="Interface\IVisibility.cs" />
+    <Compile Include="Interface\IWarningIntervention.cs" />
+    <Compile Include="Interface\LevelChangeType.cs" />
+    <Compile Include="Interface\MMILocation.cs" />
+    <Compile Include="Interface\OpenDoorLocation.cs" />
+    <Compile Include="Interface\RBCConnectState.cs" />
+    <Compile Include="Interface\RBCDataModel.cs" />
+    <Compile Include="Interface\RBCDataType.cs" />
+    <Compile Include="Interface\ScreenIdentity.cs" />
+    <Compile Include="Interface\Service\IDriverInputEventService.cs" />
+    <Compile Include="Interface\Service\IEventAggregatorProvider.cs" />
+    <Compile Include="Interface\Service\IInterfaceAdapterService.cs" />
+    <Compile Include="Interface\Service\IOpaqueLayerService.cs" />
+    <Compile Include="Interface\Service\IPopupViewService.cs" />
+    <Compile Include="Interface\Service\PopViewParam.cs" />
+    <Compile Include="Interface\SpeedColor.cs" />
+    <Compile Include="Interface\SpeedMonitoringSection\DistanceSpeedPoint.cs" />
+    <Compile Include="Interface\SpeedMonitoringSection\GradientType.cs" />
+    <Compile Include="Interface\SpeedMonitoringSection\ICoordinateAxis.cs" />
+    <Compile Include="Interface\SpeedMonitoringSection\IGradientInfomation.cs" />
+    <Compile Include="Interface\SpeedMonitoringSection\IGradientInfomationItem.cs" />
+    <Compile Include="Interface\SpeedMonitoringSection\IPlanSectionCoordinate.cs" />
+    <Compile Include="Interface\SpeedMonitoringSection\ISpeedChangInfo.cs" />
+    <Compile Include="Interface\SpeedMonitoringSection\ISpeedCurve.cs" />
+    <Compile Include="Interface\SpeedMonitoringSection\ISpeedDialPlateConverter.cs" />
+    <Compile Include="Interface\SpeedMonitoringSection\ISpeedMonitorSection.cs" />
+    <Compile Include="Interface\SpeedMonitoringSection\IValueScaleConverter.cs" />
+    <Compile Include="Interface\SpeedMonitoringSection\SpeedChangeType.cs" />
+    <Compile Include="Interface\SpeedMonitoringSection\SpeedMonitoringSectionType.cs" />
+    <Compile Include="Interface\TargetDistance\ITargitDistanceScale.cs" />
+    <Compile Include="Interface\TargetDistance\TargitDistanceScaleItem.cs" />
+    <Compile Include="Interface\TrainControlType.cs" />
+    <Compile Include="Interface\DriverDataModel.cs" />
+    <Compile Include="Interface\TrainFreq.cs" />
+    <Compile Include="Interface\UserAction\ATPButtonContent.cs" />
+    <Compile Include="Interface\UserAction\DriverInputControlWord.cs" />
+    <Compile Include="Interface\UserAction\DriverInputInterpreterResult.cs" />
+    <Compile Include="Interface\UserAction\DriverInputState.cs" />
+    <Compile Include="Interface\UserAction\DriverInterfaceControllerExtension.cs" />
+    <Compile Include="Interface\UserAction\DriverInterfaceExtension.cs" />
+    <Compile Include="Interface\UserAction\DriverInterfaceKey.cs" />
+    <Compile Include="Interface\UserAction\DriverInterfacePlaceholder.cs" />
+    <Compile Include="Interface\UserAction\DriverSelectedEventArgs.cs" />
+    <Compile Include="Interface\UserAction\DrvierSelectableItemExtension.cs" />
+    <Compile Include="Interface\UserAction\IDriverActionResponser.cs" />
+    <Compile Include="Interface\UserAction\IDriverInputInterpreter.cs" />
+    <Compile Include="Interface\UserAction\IDriverInterface.cs" />
+    <Compile Include="Interface\UserAction\IDriverInterfaceController.cs" />
+    <Compile Include="Interface\UserAction\IDriverInterfaceFactory.cs" />
+    <Compile Include="Interface\UserAction\IDriverInterfaceView.cs" />
+    <Compile Include="Interface\UserAction\IDriverPopupView.cs" />
+    <Compile Include="Interface\UserAction\IDriverSelectable.cs" />
+    <Compile Include="Interface\UserAction\IDriverSelectableItem.cs" />
+    <Compile Include="Interface\UserAction\IDriverSelectableItemStateProvider.cs" />
+    <Compile Include="Interface\UserAction\IHardwareButtonViewModel.cs" />
+    <Compile Include="Interface\UserAction\UpdateStateParam\IUpdateDriverInterfaceEventParam.cs" />
+    <Compile Include="Interface\UserAction\UpdateStateParam\IUpdateDriverInterfaceParam.cs" />
+    <Compile Include="Interface\UserAction\UpdateStateParam\UpdateDriverInterfaceEventParam.cs" />
+    <Compile Include="Interface\UserAction\UpdateStateParam\UpdateDriverInterfaceParam.cs" />
+    <Compile Include="Interface\UserAction\UserActionType.cs" />
+    <Compile Include="Model\AssistDisplayInfo.cs" />
+    <Compile Include="Model\ATPDomain.cs" />
+    <Compile Include="Model\AtpHardwareButton.cs" />
+    <Compile Include="Model\ATPPartialBase.cs" />
+    <Compile Include="Model\ATPPower.cs" />
+    <Compile Include="Model\ATPRepository.cs" />
+    <Compile Include="Model\Brake.cs" />
+    <Compile Include="Model\CabSignal.cs" />
+    <Compile Include="Model\Config\CommunicationInterfaceConfig.cs" />
+    <Compile Include="Model\Config\RunningConfig.cs" />
+    <Compile Include="Model\Config\StationConfig.cs" />
+    <Compile Include="Model\ConnectState.cs" />
+    <Compile Include="Model\ControlModel.cs" />
+    <Compile Include="Model\Converters\BrakeWaringColorToColorConverter.cs" />
+    <Compile Include="Model\Converters\BrakeWarningLevelToScalConverter.cs" />
+    <Compile Include="Model\Converters\CTCSTypeToTextConverter.cs" />
+    <Compile Include="Model\Converters\DegreeScaleTextAngleConverter.cs" />
+    <Compile Include="Model\Converters\DistanceScalToTextViewWidthConverter.cs" />
+    <Compile Include="Model\Converters\DistanceScalToViewWidthConverter.cs" />
+    <Compile Include="Model\Converters\DistanceValueToActureWidthConverter.cs" />
+    <Compile Include="Model\Converters\DistanceValueToViewWidthConverter.cs" />
+    <Compile Include="Model\Converters\FindSpeedHookConverter.cs" />
+    <Compile Include="Model\Converters\GradientDistanceToRectWidthConverter.cs" />
+    <Compile Include="Model\Converters\LightPercentToBackColorConverter.cs" />
+    <Compile Include="Model\Converters\PlanZonePointToPathDataConverter.cs" />
+    <Compile Include="Model\Converters\PopViewStringNameToContentConverter.cs" />
+    <Compile Include="Model\Converters\SpeedScalToTextViewHeightConverter.cs" />
+    <Compile Include="Model\Converters\SpeedScalToViewHeightConverter.cs" />
+    <Compile Include="Model\Converters\SpeedToAngleConverter.cs" />
+    <Compile Include="Model\Converters\SpeedToArcAngleConverter.cs" />
+    <Compile Include="Model\Converters\TargetDistanceFormatConverter.cs" />
+    <Compile Include="Model\Converters\TargetDistanceScalLenghToStartXConverter.cs" />
+    <Compile Include="Model\Converters\TargetDistanceScalLengthToLineStyleConverter.cs" />
+    <Compile Include="Model\Converters\TargitDistanceToScalConverter.cs" />
+    <Compile Include="Model\Converters\TrainIdConverter.cs" />
+    <Compile Include="Model\CTCS.cs" />
+    <Compile Include="Model\Driver.cs" />
+    <Compile Include="Model\EmergencyInfo.cs" />
+    <Compile Include="Model\Events\ButtonResponseCompletedEvent.cs" />
+    <Compile Include="Model\Events\ChangePopupViewEvent.cs" />
+    <Compile Include="Model\Events\CommunicationDataChangedWrapperArgs.cs" />
+    <Compile Include="Model\Events\DriverInputEvents\DriverInputCTCS.cs" />
+    <Compile Include="Model\Events\DriverInputEvents\DriverInputDriverId.cs" />
+    <Compile Include="Model\Events\DriverInputEvents\DriverInputEventArgs.cs" />
+    <Compile Include="Model\Events\DriverInputEvents\DriverInputFreq.cs" />
+    <Compile Include="Model\Events\DriverInputEvents\DriverInputTrainData.cs" />
+    <Compile Include="Model\Events\DriverInputEvents\DriverInputTrainId.cs" />
+    <Compile Include="Model\Events\DriverInputEvent.cs" />
+    <Compile Include="Model\Extension\CommunicationDataChangedWrapperArgsExtension.cs" />
+    <Compile Include="Model\Extension\ATPDomainExtension.cs" />
+    <Compile Include="Model\Extension\RunningConfigExtension.cs" />
+    <Compile Include="Model\ForecastInformation.cs" />
+    <Compile Include="Model\ForecastInformationItem.cs" />
+    <Compile Include="Model\GlobalParamBase.cs" />
+    <Compile Include="Model\GlobalTimerBase.cs" />
+    <Compile Include="Model\GradientInfomation.cs" />
+    <Compile Include="Model\HardwareButton.cs" />
+    <Compile Include="Model\Infomation\IEnsureInfomationCache.cs" />
+    <Compile Include="Model\Infomation\InfomationItem.cs" />
+    <Compile Include="Model\Infomation\InfomationItemExtension.cs" />
+    <Compile Include="Model\ItemStateProvider.cs" />
+    <Compile Include="Model\Message\Message.cs" />
+    <Compile Include="Model\Message\MessageExtension.cs" />
+    <Compile Include="Model\Message\MessageItem.cs" />
+    <Compile Include="Model\Monitor\Message\MonitorMessage.cs" />
+    <Compile Include="Model\Monitor\MonitorModel.cs" />
+    <Compile Include="Model\Monitor\ViewControl\ViewControlModel.cs" />
+    <Compile Include="Model\NoneSendInterface.cs" />
+    <Compile Include="Model\Other.cs" />
+    <Compile Include="Model\RegionFStateProvier.cs" />
+    <Compile Include="Model\Resources\DriverInterfaceKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DriverInterfaceKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ScreenIdentityExtension.cs" />
+    <Compile Include="Model\SendInterfaceCounterableProxy.cs" />
+    <Compile Include="Model\SendInterfaceProxy.cs" />
+    <Compile Include="Model\Service\ClearDataService.cs" />
+    <Compile Include="Model\Service\EventAggregatorProvider.cs" />
+    <Compile Include="Model\Service\INotifyableDriverInputEventService.cs" />
+    <Compile Include="Model\Service\InterfaceAdapterService.cs" />
+    <Compile Include="Model\SlopeInfomationItem.cs" />
+    <Compile Include="Model\Speed.cs" />
+    <Compile Include="Model\SpeedChangeInfo.cs" />
+    <Compile Include="Model\SpeedModel.cs" />
+    <Compile Include="Model\SpeedMonitoringSection\CeilingSpeedMonitoringSection.cs" />
+    <Compile Include="Model\SpeedMonitoringSection\CoordinateAxis.cs" />
+    <Compile Include="Model\SpeedMonitoringSection\DeepCopy.cs" />
+    <Compile Include="Model\SpeedMonitoringSection\DefaultPlanSectionCoordinate.cs" />
+    <Compile Include="Model\SpeedMonitoringSection\DefaultSpeedDialPlate.cs" />
+    <Compile Include="Model\SpeedMonitoringSection\NoneSpeedMonitoringSection.cs" />
+    <Compile Include="Model\SpeedMonitoringSection\PlanSectionCoordinate.cs" />
+    <Compile Include="Model\SpeedMonitoringSection\RelaseSpeedMonitoringSection.cs" />
+    <Compile Include="Model\SpeedMonitoringSection\SpeedCurve.cs" />
+    <Compile Include="Model\SpeedMonitoringSection\SpeedDialPlateDegree.cs" />
+    <Compile Include="Model\SpeedMonitoringSection\SpeedMonitoringSection.cs" />
+    <Compile Include="Model\SpeedMonitoringSection\TargetSpeedMonitoringSection.cs" />
+    <Compile Include="Model\TargitDistance\DefaultTargitDistanceScale.cs" />
+    <Compile Include="Model\TrainInfoPartialBase.cs" />
+    <Compile Include="Model\TrainInfo\IStationInterpreter.cs" />
+    <Compile Include="Model\TrainInfo\KilometerPost.cs" />
+    <Compile Include="Model\TrainInfo\Station.cs" />
+    <Compile Include="Model\TrainInfo\TrainInfo.cs" />
+    <Compile Include="Model\UserAction\DriverDataActionResponserBase.cs" />
+    <Compile Include="Model\UserAction\DriverInputEventService.cs" />
+    <Compile Include="Model\UserAction\DriverInterface.cs" />
+    <Compile Include="Model\UserAction\DriverSelectable.cs" />
+    <Compile Include="Model\UserAction\DriverSelectableItemStateProviderBase.cs" />
+    <Compile Include="Model\UserAction\DrvierSelectableItem.cs" />
+    <Compile Include="Model\UserAction\RegionFStructConfigNames.cs" />
+    <Compile Include="Model\UserAction\UserActionMeaning.cs" />
+    <Compile Include="Model\VersionManager.cs" />
+    <Compile Include="Model\WarningIntervention.cs" />
+    <Compile Include="Monitor\DoaminMonitorMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monitor\DoaminMonitorMain.Designer.cs">
+      <DependentUpon>DoaminMonitorMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monitor\DomainView.xaml.cs">
+      <DependentUpon>DomainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Resources\ATPUIString.Designer.cs">
+      <DependentUpon>ATPUIString.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Images\ImageResCreater.cs" />
+    <Compile Include="Resources\Strings\PopupViewStringKeys.cs" />
+    <Compile Include="Resources\Strings\PopupViewStringKeysCreater.cs" />
+    <Compile Include="ViewModel\MonitorViewModel.cs" />
+    <EmbeddedResource Include="Model\Resources\DriverInterfaceKeys.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DriverInterfaceKeys.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monitor\DoaminMonitorMain.resx">
+      <DependentUpon>DoaminMonitorMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ATPUIString.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ATPUIString.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Monitor\DomainView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Images\ImageResource_CH.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Strings\StringResource_CH.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\BarCode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\C2_紧急制动.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\C2_四级制动.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\C2_一级制动.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\C2_允许缓解.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\C2_最大常用制动.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\C3_紧急制动.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\C3_四级制动.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\C3_一级制动.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\C3_允许缓解.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\C3_最大常用制动.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\CabSignal_H.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\CabSignal_HB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\CabSignal_HU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\CabSignal_HZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\CabSignal_HZ2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\CabSignal_L.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\CabSignal_L2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\CabSignal_L3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\CabSignal_L4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\CabSignal_L5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\CabSignal_LU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\CabSignal_LU2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\CabSignal_U.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\CabSignal_U2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\CabSignal_U2S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\CabSignal_U3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\CabSignal_UU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\CabSignal_UUS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\ForecastInfoBridge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\ForecastInfoPhaseSeparatingSectionGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\ForecastInfoPhaseSeparatingSectionYellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\ForecastInfoStation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\ForecastInfoTemporarySpeedLimit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\ForecastInfoTunnel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\GSM_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\GSM_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\GSM_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\GSM_灰.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\Null.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\Open_Both.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\Open_Left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\Open_Left_first.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\Open_Right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\Open_Right_first.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\白灯.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\常用制动.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\放大暗.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\放大亮.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\箭头_上_暗.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\箭头_上_亮.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\箭头_下_暗.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\箭头_下_亮.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\紧急制动.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\亮度设置图标.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\没有无线通信.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\弱常用制动.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\缩小暗.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\缩小亮.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\未与RBC相连.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\无色.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\已经与RBC相连.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\音量设置图标.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\预告加速.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\预告减速.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\预告减速到0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\允许缓解.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\正在与RBC相连.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\指针橙.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\指针红.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\指针黄.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\指针灰.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\中等常用制动.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\Constant\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\音量设置图标白.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\亮度设置图标白.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\最大常用制动.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\GSM_灰1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\与一个RBC相连.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\与两个RBC相连.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CH\紧急消息.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,137 @@
+﻿<UserControl x:Class="Motor.ATP._300T.Subsys.WPFView.RegionD.Details.PlanZoneCoordinateView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:interface="clr-namespace:Motor.ATP.Infrasturcture.Interface;assembly=Motor.ATP.Infrasturcture"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DataContext="{d:DesignInstance interface:IATP}"
+             d:DesignHeight="245"
+             d:DesignWidth="244"
+             mc:Ignorable="d">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*" />
+                <!--<RowDefinition Height="110*" />-->
+                <RowDefinition Height="220*" />
+                <RowDefinition Height="20*" />
+                <RowDefinition Height="15*" />
+                <RowDefinition Height="40*" />
+                <RowDefinition Height="40*" />
+                <RowDefinition Height="20*" />
+            </Grid.RowDefinitions>
+
+            <Border x:Name="XZoneControl"
+                    Grid.Row="1"
+                    Grid.RowSpan="5"
+                    x:FieldModifier="private">
+                <ItemsControl ItemsSource="{Binding Path=SpeedMonitoringSection.PlanSectionCoordinate.XAxises}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <Grid />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Canvas Width="{Binding ElementName=XZoneControl, Path=Width}" Height="{Binding ElementName=XZoneControl, Path=Height}">
+                                <Line Stroke="{StaticResource Motor.ATP.300T.MRSPGridBrush}"
+                                      StrokeThickness="1"
+                                      Visibility="{Binding Path=Text}"
+                                      X1="{Binding RelativeSource={RelativeSource Self},
+                                                   Path=X2}"
+                                      Y1="0"
+                                      Y2="{Binding ElementName=XZoneControl,
+                                                   Path=ActualHeight}">
+                                    <Line.X2>
+                                        <MultiBinding Converter="{StaticResource Motor.ATP.300T.DistanceScalToViewWidthConverter}">
+                                            <Binding Path="LocationPercent" />
+                                            <Binding ElementName="XZoneControl" Path="ActualWidth" />
+                                        </MultiBinding>
+                                    </Line.X2>
+                                </Line>
+                                <TextBlock Canvas.Top="{Binding ElementName=XZoneControl,
+                                                                Path=ActualHeight}"
+                                           MinWidth="30"
+                                           HorizontalAlignment="Left"
+                                           Foreground="White"
+                                           Text="{Binding Text}"
+                                           TextAlignment="Left">
+                                    <Canvas.Left>
+                                        <MultiBinding Converter="{StaticResource Motor.ATP.300T.DistanceScalToTextViewWidthConverter}">
+                                            <Binding Path="LocationPercent" />
+                                            <Binding ElementName="XZoneControl" Path="ActualWidth" />
+                                        </MultiBinding>
+                                    </Canvas.Left>
+                                </TextBlock>
+                            </Canvas>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Border>
+
+            <Border x:Name="YZoneControl"
+                    Grid.Row="1"
+                    x:FieldModifier="private">
+                <ItemsControl ItemsSource="{Binding Path=SpeedMonitoringSection.PlanSectionCoordinate.YAxises}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <Grid />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Canvas Width="{Binding ElementName=YZoneControl,
+                                                    Path=ActualWidth}"
+                                    Height="{Binding ElementName=YZoneControl,
+                                                     Path=ActualHeight}"
+                                    Visibility="{Binding Path=Text,
+                                                         Converter={StaticResource Motor.ATP.300T.NotNullToVisibilityVisibleConverter}}">
+                                <Line Stroke="{StaticResource Motor.ATP.300T.MRSPGridBrush}"
+                                      StrokeThickness="1"
+                                      X1="0"
+                                      X2="{Binding ElementName=YZoneControl,
+                                                   Path=ActualWidth}"
+                                      Y1="{Binding RelativeSource={RelativeSource Self},
+                                                   Path=Y2}">
+                                    <Line.Y2>
+                                        <MultiBinding Converter="{StaticResource Motor.ATP.300T.SpeedScalToViewHeightConverter}">
+                                            <Binding Path="LocationPercent" />
+                                            <Binding ElementName="YZoneControl" Path="ActualHeight" />
+                                        </MultiBinding>
+                                    </Line.Y2>
+                                </Line>
+                                <TextBlock Foreground="White" Text="{Binding Text}">
+                                    <Canvas.Top>
+                                        <MultiBinding Converter="{StaticResource Motor.ATP.300T.SpeedScalToTextViewHeightConverter}">
+                                            <Binding Path="LocationPercent" />
+                                            <Binding ElementName="YZoneControl" Path="ActualHeight" />
+                                        </MultiBinding>
+                                    </Canvas.Top>
+                                </TextBlock>
+                            </Canvas>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Border>
+        </Grid>
+
+        <!--<Line Y1="-4" x:Name="BrakeStartPointLine" X2="{Binding ElementName=BrakeStartPointLine, Path=X1}"
+              Stroke="Yellow" StrokeThickness="3"
+              Visibility="{Binding Path=BrakeStartPointScale, Converter={StaticResource Motor.ATP.300T.BrakeStartPointScaleVisibilityConverter}}">
+            <Line.Y2>
+                <MultiBinding Converter="{StaticResource Motor.ATP.300T.SpeedScaleHeightConverterZeroDown}">
+                    <Binding Path="SpeedZeroHeightScale"></Binding>
+                    <Binding ElementName="RootControl" Path="ActualHeight" />
+                </MultiBinding>
+            </Line.Y2>
+
+            <Line.X1>
+                <MultiBinding Converter="{StaticResource Motor.ATP.300T.DistanceScaleWidthConverter}">
+                    <Binding Path="BrakeStartPointScale"></Binding>
+                    <Binding ElementName="RootControl" Path="ActualWidth" />
+                </MultiBinding>
+            </Line.X1>
+        </Line>-->
+    </Grid>
+</UserControl>
+

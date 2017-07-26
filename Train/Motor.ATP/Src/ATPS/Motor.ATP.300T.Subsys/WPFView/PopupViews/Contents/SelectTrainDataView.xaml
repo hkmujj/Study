@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="Motor.ATP._300T.Subsys.WPFView.PopupViews.Contents.SelectTrainDataView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:common="clr-namespace:Motor.ATP._300T.Subsys.WPFView.PopupViews.Common"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:popupViewModels="clr-namespace:Motor.ATP._300T.Subsys.ViewModel.PopupViewModels"
+             Background="{StaticResource Motor.ATP.300T.PopviewBackgroudBrush}"
+             d:DataContext="{d:DesignInstance popupViewModels:SelectTrainDataViewModel}"
+             d:DesignHeight="250"
+             d:DesignWidth="232"
+             mc:Ignorable="d">
+    <Grid Margin="50">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid>
+            <TextBlock HorizontalAlignment="Center"
+                       Style="{StaticResource Motor.ATP.300T.PopupViewContentTextStyle}"
+                       Text="{StaticResource Motor.ATP.Infrasturcture.String.8Car}" />
+            <Rectangle Name="Rectangle1"
+                       Margin="45,25,0,18"
+                       Stretch="Fill"
+                       Stroke="{StaticResource Motor.ATP.300T.WhiteBrush}"
+                       StrokeThickness="2"
+                       Visibility="Hidden" />
+        </Grid>
+        <Grid Grid.Row="1">
+            <TextBlock HorizontalAlignment="Center"
+                       Style="{StaticResource Motor.ATP.300T.PopupViewContentTextStyle}"
+                       Text="{StaticResource Motor.ATP.Infrasturcture.String.16Car}" />
+            <Rectangle Name="Rectangle2"
+                       Margin="45,25,0,18"
+                       Stretch="Fill"
+                       Stroke="{StaticResource Motor.ATP.300T.WhiteBrush}"
+                       StrokeThickness="2"
+                       Visibility="Hidden" />
+        </Grid>
+    </Grid>
+</UserControl>
