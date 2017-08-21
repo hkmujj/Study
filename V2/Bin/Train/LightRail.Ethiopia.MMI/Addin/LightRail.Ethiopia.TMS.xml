@@ -1,0 +1,2023 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LightRail.Ethiopia.TMS</name>
+    </assembly>
+    <members>
+        <member name="T:LightRail.Ethiopia.TMS.TCU.V4_ACU_MainView">
+            <summary>
+            功能描述：公共组件-No.1-切换视图按钮
+            创建人：唐林
+            创建时间：2014-7-1
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.TCU.V4_ACU_MainView.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.TCU.V4_ACU_MainView.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片资源与创建自定义控件
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.TCU.V4_ACU_MainView.paint(System.Drawing.Graphics)">
+            <summary>
+            界面绘制
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.TCU.V4_ACU_MainView.paint_Frame(System.Drawing.Graphics)">
+            <summary>
+            主要框架绘制
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.TCU.V4_ACU_MainView.getValue">
+            <summary>
+            获取网络数据（由三个位置数据表示：第一个位置：起始接口编号；第二个位置：包括条目数目；第三个位置：每个条目的状态数目）
+            </summary>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.TCU.V5_BCU_MainView">
+            <summary>
+            功能描述：公共组件-No.1-切换视图按钮
+            创建人：唐林
+            创建时间：2014-7-1
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.TCU.V5_BCU_MainView.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.TCU.V5_BCU_MainView.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片资源与创建自定义控件
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.TCU.V5_BCU_MainView.paint(System.Drawing.Graphics)">
+            <summary>
+            界面绘制
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.TCU.V5_BCU_MainView.paint_Frame(System.Drawing.Graphics)">
+            <summary>
+            主要框架绘制
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.TCU.V5_BCU_MainView.getValue">
+            <summary>
+            获取网络数据（由三个位置数据表示：第一个位置：起始接口编号；第二个位置：包括条目数目；第三个位置：每个条目的状态数目）
+            </summary>
+        </member>
+        <member name="F:LightRail.Ethiopia.TMS.Brushs.RedBrush">
+            <summary>
+            红色
+            </summary>
+        </member>
+        <member name="F:LightRail.Ethiopia.TMS.Brushs.BlackBrush">
+            <summary>
+            黑色
+            </summary>
+        </member>
+        <member name="F:LightRail.Ethiopia.TMS.Brushs.WhiteBrush">
+            <summary>
+            白色
+            </summary>
+        </member>
+        <member name="F:LightRail.Ethiopia.TMS.Brushs.YellowBrush">
+            <summary>
+            黄色
+            </summary>
+        </member>
+        <member name="F:LightRail.Ethiopia.TMS.Brushs.OrangeBrush">
+            <summary>
+            橙色
+            </summary>
+        </member>
+        <member name="F:LightRail.Ethiopia.TMS.Brushs.GreenBrush">
+            <summary>
+            绿色
+            </summary>
+        </member>
+        <member name="F:LightRail.Ethiopia.TMS.Brushs.GrayBrush">
+            <summary>
+            灰色
+            </summary>
+        </member>
+        <member name="F:LightRail.Ethiopia.TMS.Brushs.BlueBrush">
+            <summary>
+            蓝色
+            </summary>
+        </member>
+        <member name="F:LightRail.Ethiopia.TMS.Brushs.AshenBrush">
+            <summary>
+            灰白
+            </summary>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.Common.ViewState">
+            <summary>
+            功能描述：视图状态枚举
+            </summary>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.Help.V901_Help_Main">
+            <summary>
+            功能描述：视图604-帮助-运行帮助-No.0
+            创建人：唐林
+            创建时间：2014-7-6
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Help.V901_Help_Main.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Help.V901_Help_Main.init(System.Int32@)">
+            <summary>
+            初始化函数：初始化操作
+            </summary>
+            <param name="nErrorObjectIndex">错误索性</param>
+            <returns>初始化是否成功</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Help.V901_Help_Main.setRunValue(System.Int32,System.Int32,System.Single)">
+            <summary>
+            获取到当前运行视图：根据当前视图设置按钮状态
+            </summary>
+            <param name="nParaA"></param>
+            <param name="nParaB"></param>
+            <param name="nParaC"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Help.V901_Help_Main.paint(System.Drawing.Graphics)">
+            <summary>
+            界面绘制
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Help.V901_Help_Main.btn_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮点击事件响应函数：实现视图的切换
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.TCU.V701_HVAC_State">
+            <summary>
+            功能描述：公共组件-No.1-切换视图按钮
+            创建人：唐林
+            创建时间：2014-7-1
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.TCU.V701_HVAC_State.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.TCU.V701_HVAC_State.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片资源与创建自定义控件
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.TCU.V701_HVAC_State.paint(System.Drawing.Graphics)">
+            <summary>
+            界面绘制
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.TCU.V701_HVAC_State.paint_Frame(System.Drawing.Graphics)">
+            <summary>
+            主要框架绘制
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.TCU.V701_HVAC_State.getValue">
+            <summary>
+            获取网络数据（由三个位置数据表示：第一个位置：起始接口编号；第二个位置：包括条目数目；第三个位置：每个条目的状态数目）
+            </summary>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.V702_HVAC_Paremset">
+            <summary>
+            功能描述：公共组件-No.1-切换视图按钮
+            创建人：唐林
+            创建时间：2014-7-1
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V702_HVAC_Paremset.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V702_HVAC_Paremset.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片资源与创建自定义控件
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V702_HVAC_Paremset.btn_MouseDownEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮鼠标按下事件响应函数：改变按钮字体颜色
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V702_HVAC_Paremset.btn_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮点击事件响应函数：实现视图的切换
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V702_HVAC_Paremset.btn_ClickEvent_(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮点击事件响应函数：实现视图的切换
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.V703_HVAC_Test">
+            <summary>
+            功能描述：公共组件-No.1-切换视图按钮
+            创建人：唐林
+            创建时间：2014-7-1
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V703_HVAC_Test.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V703_HVAC_Test.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片资源与创建自定义控件
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V703_HVAC_Test.btn_MouseDownEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮鼠标按下事件响应函数：改变按钮字体颜色
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V703_HVAC_Test.btn_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮点击事件响应函数：实现视图的切换
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.HVAC.V7_HVAC_MainView">
+            <summary>
+            功能描述：公共组件-No.1-切换视图按钮
+            创建人：唐林
+            创建时间：2014-7-1
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.HVAC.V7_HVAC_MainView.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.HVAC.V7_HVAC_MainView.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片资源与创建自定义控件
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.HVAC.V7_HVAC_MainView.setRunValue(System.Int32,System.Int32,System.Single)">
+            <summary>
+            获取到当前运行视图：根据当前视图设置按钮状态
+            </summary>
+            <param name="nParaA"></param>
+            <param name="nParaB"></param>
+            <param name="nParaC"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.HVAC.V7_HVAC_MainView.btn_Quit_MouseDownEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮鼠标按下事件响应函数：改变按钮字体颜色
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.HVAC.V7_HVAC_MainView.btn_Quit_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮点击事件响应函数：实现视图的切换
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.HVAC.V7_HVAC_MainView.btn_MouseDownEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮鼠标按下事件响应函数：改变按钮字体颜色
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.HVAC.V7_HVAC_MainView.btn_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮点击事件响应函数：实现视图的切换
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.Main.V101_Main_ControlButton">
+            <summary>
+            功能描述：公共组件-No.1-切换视图按钮
+            创建人：唐林
+            创建时间：2014-7-1
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V101_Main_ControlButton.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V101_Main_ControlButton.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片资源与创建自定义控件
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V101_Main_ControlButton.btn_Switch_MouseDownEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮鼠标按下事件响应函数：改变按钮字体颜色
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V101_Main_ControlButton.btn_Switch_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮点击事件响应函数：实现视图的切换
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V101_Main_ControlButton.btn_Mutual_MouseDownEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮鼠标按下事件响应函数：改变按钮字体颜色
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V101_Main_ControlButton.btn_Mutual_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮点击事件响应函数：实现视图的切换
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V101_Main_ControlButton.btn_MouseDownEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮鼠标按下事件响应函数：改变按钮字体颜色
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V101_Main_ControlButton.btn_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮点击事件响应函数：实现视图的切换
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V101_Main_ControlButton._btn_SkipStation_MouseDownEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮鼠标按下事件响应函数：改变按钮字体颜色
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.Main.SpeedPointer">
+            <summary>
+            速度指针
+            </summary>
+        </member>
+        <member name="F:LightRail.Ethiopia.TMS.Main.SpeedPointer.dialAnglev">
+            <summary>
+            需要画的最大角度
+            </summary>
+        </member>
+        <member name="F:LightRail.Ethiopia.TMS.Main.SpeedPointer.initalAnglev">
+            <summary>
+            指针初始角度
+            </summary>
+        </member>
+        <member name="F:LightRail.Ethiopia.TMS.Main.SpeedPointer.maxSpeed">
+            <summary>
+            指针最大值
+            </summary>
+        </member>
+        <member name="F:LightRail.Ethiopia.TMS.Main.SpeedPointer.topPoint">
+            <summary>
+            绘图顶点
+            </summary>
+        </member>
+        <member name="F:LightRail.Ethiopia.TMS.Main.SpeedPointer.centralPoint">
+            <summary>
+            绘图中心点
+            </summary>
+        </member>
+        <member name="F:LightRail.Ethiopia.TMS.Main.SpeedPointer.anglev">
+            <summary>
+            转动角度
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.SpeedPointer.#ctor(System.Single,System.Single,System.Single,System.Drawing.PointF,System.Drawing.PointF)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="maxAnglev"></param>
+            <param name="initAnglev"></param>
+            <param name="maxValue"></param>
+            <param name="apexPoint"></param>
+            <param name="centrePoint"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.SpeedPointer.PaintPointer(System.Drawing.Graphics,System.Drawing.Image,System.Single@)">
+            <summary>
+            绘指针
+            </summary>
+            <param name="g"></param>
+            <param name="speed"></param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.Main.V1_Main_C0_Speed">
+            <summary>
+            功能描述：视图1-运行-No.2-状态
+            创建人：唐林
+            创建时间：2014-7-4
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V1_Main_C0_Speed.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V1_Main_C0_Speed.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片、初始化操作
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V1_Main_C0_Speed.paint(System.Drawing.Graphics)">
+            <summary>
+            界面绘制
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V1_Main_C0_Speed.paint_SpeedPointer(System.Drawing.Graphics)">
+            <summary>
+            绘制速度指针
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V1_Main_C0_Speed.paint_LimitSpeed(System.Drawing.Graphics)">
+            <summary>
+            绘制限速
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V1_Main_C0_Speed.paint_Distance(System.Drawing.Graphics)">
+            <summary>
+            绘制总里程
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.Main.V1_Main_C1_TrainState">
+            <summary>
+            功能描述：视图1-运行-No.2-状态
+            创建人：唐林
+            创建时间：2014-7-4
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V1_Main_C1_TrainState.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V1_Main_C1_TrainState.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片、初始化操作
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V1_Main_C1_TrainState.btn_MouseDownEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮鼠标按下事件响应函数：改变按钮字体颜色
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V1_Main_C1_TrainState.btn_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮点击事件响应函数：实现视图的切换
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V1_Main_C1_TrainState.paint(System.Drawing.Graphics)">
+            <summary>
+            界面绘制
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V1_Main_C1_TrainState.paint_Frame(System.Drawing.Graphics)">
+            <summary>
+            Main-车辆简图背景绘制
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V1_Main_C1_TrainState.paint_DriverRoom(System.Drawing.Graphics)">
+            <summary>
+            Main-司机室激活
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V1_Main_C1_TrainState.paint_DoorState(System.Drawing.Graphics)">
+            <summary>
+            Main-门状态
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V1_Main_C1_TrainState.paint_Direction(System.Drawing.Graphics)">
+            <summary>
+            Main-方向
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V1_Main_C1_TrainState.paint_TractionState(System.Drawing.Graphics)">
+            <summary>
+            Main-牵引状态
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V1_Main_C1_TrainState.paint_AuxiliaryState(System.Drawing.Graphics)">
+            <summary>
+            Main-辅助状态
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V1_Main_C1_TrainState.paint_BreakState(System.Drawing.Graphics)">
+            <summary>
+            Main-制动状态
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V1_Main_C1_TrainState.paint_HSCB(System.Drawing.Graphics)">
+            <summary>
+            Main-HSCB状态
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.Main.V1_Main_C3_Fault">
+            <summary>
+            功能描述：公共组件-No.3-获取故障信息
+            创建人：唐林
+            创建时间：2014-7-9
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V1_Main_C3_Fault.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V1_Main_C3_Fault.VC_C0_Title_EventHandle_ConfirmFault(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Boolean})">
+            <summary>
+            按钮点击事件响应函数
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V1_Main_C3_Fault._timer_Tick(System.Object,System.EventArgs)">
+            <summary>
+            计时器事件响应函数：倒计时
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.Main.V1_Main_C4_ControlButton">
+            <summary>
+            功能描述：公共组件-No.1-切换视图按钮
+            创建人：唐林
+            创建时间：2014-7-1
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V1_Main_C4_ControlButton.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V1_Main_C4_ControlButton.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片资源与创建自定义控件
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V1_Main_C4_ControlButton.btn_MouseDownEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮鼠标按下事件响应函数：改变按钮字体颜色
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Main.V1_Main_C4_ControlButton.btn_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮点击事件响应函数：实现视图的切换
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.MianTain.V801_MianTain_ParamSet">
+            <summary>
+            功能描述：公共组件-No.1-切换视图按钮
+            创建人：唐林
+            创建时间：2014-7-1
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V801_MianTain_ParamSet.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V801_MianTain_ParamSet.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片资源与创建自定义控件
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V801_MianTain_ParamSet.btn_MouseDownEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮鼠标按下事件响应函数：改变按钮字体颜色
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V801_MianTain_ParamSet.btn_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮点击事件响应函数：实现视图的切换
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.MianTain.V803_804_Fault_DeviceSelect">
+            <summary>
+            功能描述：公共组件-No.1-切换视图按钮
+            创建人：唐林
+            创建时间：2014-7-1
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V803_804_Fault_DeviceSelect.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V803_804_Fault_DeviceSelect.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片资源与创建自定义控件
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V803_804_Fault_DeviceSelect.setRunValue(System.Int32,System.Int32,System.Single)">
+            <summary>
+            获取到当前运行视图：根据当前视图设置按钮状态
+            </summary>
+            <param name="nParaA"></param>
+            <param name="nParaB"></param>
+            <param name="nParaC"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V803_804_Fault_DeviceSelect.btn_MouseDownEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮鼠标按下事件响应函数：改变按钮字体颜色
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V803_804_Fault_DeviceSelect.btn_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮点击事件响应函数：实现视图的切换
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.MianTain.V803_804_Fault_TimeSelect">
+            <summary>
+            功能描述：公共组件-No.1-切换视图按钮
+            创建人：唐林
+            创建时间：2014-7-1
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V803_804_Fault_TimeSelect.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V803_804_Fault_TimeSelect.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片资源与创建自定义控件
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V803_804_Fault_TimeSelect.setRunValue(System.Int32,System.Int32,System.Single)">
+            <summary>
+            获取到当前运行视图：根据当前视图设置按钮状态
+            </summary>
+            <param name="nParaA"></param>
+            <param name="nParaB"></param>
+            <param name="nParaC"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V803_804_Fault_TimeSelect.btn_MouseDownEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮鼠标按下事件响应函数：改变按钮字体颜色
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V803_804_Fault_TimeSelect.btn_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮点击事件响应函数：实现视图的切换
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.MianTain.V803_MianTain_CurrentFaultList">
+            <summary>
+            功能描述：公共组件-No.1-切换视图按钮
+            创建人：唐林
+            创建时间：2014-7-1
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V803_MianTain_CurrentFaultList.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V803_MianTain_CurrentFaultList.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片资源与创建自定义控件
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V803_MianTain_CurrentFaultList.grid_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮点击事件响应函数：实现视图的切换
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V803_MianTain_CurrentFaultList.btn_MouseDownEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮鼠标按下事件响应函数：改变按钮字体颜色
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V803_MianTain_CurrentFaultList.btn_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮点击事件响应函数：实现视图的切换
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V803_MianTain_CurrentFaultList.paint(System.Drawing.Graphics)">
+            <summary>
+            界面绘制
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V803_MianTain_CurrentFaultList.paint_Frame(System.Drawing.Graphics)">
+            <summary>
+            主要框架绘制
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V803_MianTain_CurrentFaultList.getValue">
+            <summary>
+            获取网络数据（由三个位置数据表示：第一个位置：起始接口编号；第二个位置：包括条目数目；第三个位置：每个条目的状态数目）
+            </summary>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.MianTain.V805_MianTain_Doors">
+            <summary>
+            功能描述：公共组件-No.1-切换视图按钮
+            创建人：唐林
+            创建时间：2014-7-1
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V805_MianTain_Doors.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V805_MianTain_Doors.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片资源与创建自定义控件
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V805_MianTain_Doors.paint(System.Drawing.Graphics)">
+            <summary>
+            界面绘制
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V805_MianTain_Doors.paint_Frame(System.Drawing.Graphics)">
+            <summary>
+            主要框架绘制
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V805_MianTain_Doors.getValue">
+            <summary>
+            获取网络数据（由三个位置数据表示：第一个位置：起始接口编号；第二个位置：包括条目数目；第三个位置：每个条目的状态数目）
+            </summary>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.MianTain.V8_MianTain_MianView">
+            <summary>
+            功能描述：公共组件-No.1-切换视图按钮
+            创建人：唐林
+            创建时间：2014-7-1
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V8_MianTain_MianView.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V8_MianTain_MianView.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片资源与创建自定义控件
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V8_MianTain_MianView.setRunValue(System.Int32,System.Int32,System.Single)">
+            <summary>
+            获取到当前运行视图：根据当前视图设置按钮状态
+            </summary>
+            <param name="nParaA"></param>
+            <param name="nParaB"></param>
+            <param name="nParaC"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V8_MianTain_MianView.btn_MouseDownEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮鼠标按下事件响应函数：改变按钮字体颜色
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V8_MianTain_MianView.btn_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮点击事件响应函数：实现视图的切换
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V8_MianTain_MianView.btn_View_MouseDownEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮鼠标按下事件响应函数：改变按钮字体颜色
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V8_MianTain_MianView.btn_View_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>`
+            菜单切换按钮点击事件响应函数：实现视图的切换
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.MianTain.V804_MianTain_HistoryFaultList">
+            <summary>
+            功能描述：公共组件-No.1-切换视图按钮
+            创建人：唐林
+            创建时间：2014-7-1
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V804_MianTain_HistoryFaultList.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V804_MianTain_HistoryFaultList.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片资源与创建自定义控件
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V804_MianTain_HistoryFaultList.grid_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮点击事件响应函数：实现视图的切换
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V804_MianTain_HistoryFaultList.btn_MouseDownEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮鼠标按下事件响应函数：改变按钮字体颜色
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V804_MianTain_HistoryFaultList.btn_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮点击事件响应函数：实现视图的切换
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V804_MianTain_HistoryFaultList.paint(System.Drawing.Graphics)">
+            <summary>
+            界面绘制
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V804_MianTain_HistoryFaultList.paint_Frame(System.Drawing.Graphics)">
+            <summary>
+            主要框架绘制
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.MianTain.V804_MianTain_HistoryFaultList.getValue">
+            <summary>
+            获取网络数据（由三个位置数据表示：第一个位置：起始接口编号；第二个位置：包括条目数目；第三个位置：每个条目的状态数目）
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Net.NetInfo.#ctor(System.Int32,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="id"></param>
+            <param name="name"></param>
+        </member>
+        <member name="P:LightRail.Ethiopia.TMS.Net.NetInfo.ID">
+            <summary>
+            读取或设置编号属性
+            </summary>
+        </member>
+        <member name="P:LightRail.Ethiopia.TMS.Net.NetInfo.Name">
+            <summary>
+            读取或设置名称属性
+            </summary>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.Net.V2_Net_C1_Mc1_Up">
+            <summary>
+            功能描述：公共组件-No.1-切换视图按钮
+            创建人：唐林
+            创建时间：2014-7-1
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Net.V2_Net_C1_Mc1_Up.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Net.V2_Net_C1_Mc1_Up.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片资源与创建自定义控件
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Net.V2_Net_C1_Mc1_Up.paint(System.Drawing.Graphics)">
+            <summary>
+            界面绘制
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Net.V2_Net_C1_Mc1_Up.getValue">
+            <summary>
+            获取Tc模块网络值
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Net.V2_Net_C1_Mc1_Up.paint_Mc1(System.Drawing.Graphics,System.Single,System.Single,System.Int32,System.Drawing.Rectangle)">
+            <summary>
+            绘制Mc1模块
+            </summary>
+            <param name="dcGs"></param>
+            <param name="rowDistance"></param>
+            <param name="columnDistance"></param>
+            <param name="rowCount"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.Net.V2_Net_C0_MainView">
+            <summary>
+            功能描述：公共组件-No.1-切换视图按钮
+            创建人：唐林
+            创建时间：2014-7-1
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Net.V2_Net_C0_MainView.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Net.V2_Net_C0_MainView.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片资源与创建自定义控件
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Net.V2_Net_C0_MainView.paint(System.Drawing.Graphics)">
+            <summary>
+            界面绘制
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Net.V2_Net_C0_MainView.paint_Frame(System.Drawing.Graphics)">
+            <summary>
+            绘制框架
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.Net.V2_Net_C2_Mc1_Down">
+            <summary>
+            功能描述：公共组件-No.1-切换视图按钮
+            创建人：唐林
+            创建时间：2014-7-1
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Net.V2_Net_C2_Mc1_Down.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Net.V2_Net_C2_Mc1_Down.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片资源与创建自定义控件
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Net.V2_Net_C2_Mc1_Down.paint(System.Drawing.Graphics)">
+            <summary>
+            界面绘制
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Net.V2_Net_C2_Mc1_Down.getValue">
+            <summary>
+            获取Tc模块网络值
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Net.V2_Net_C2_Mc1_Down.paint_Mc1_Down(System.Drawing.Graphics,System.Int32,System.Drawing.Rectangle)">
+            <summary>
+            绘制Mc1下部模块
+            </summary>
+            <param name="dcGs"></param>
+            <param name="rowDistance"></param>
+            <param name="columnDistance"></param>
+            <param name="rowCount"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.Net.V2_Net_C3_T">
+            <summary>
+            功能描述：公共组件-No.1-切换视图按钮
+            创建人：唐林
+            创建时间：2014-7-1
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Net.V2_Net_C3_T.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Net.V2_Net_C3_T.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片资源与创建自定义控件
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Net.V2_Net_C3_T.paint(System.Drawing.Graphics)">
+            <summary>
+            界面绘制
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Net.V2_Net_C3_T.getValue">
+            <summary>
+            获取Tc模块网络值
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Net.V2_Net_C3_T.paint_T(System.Drawing.Graphics,System.Single,System.Single,System.Int32,System.Drawing.Rectangle)">
+            <summary>
+            绘制T模块
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.Net.V2_Net_C4_Mc2_Up">
+            <summary>
+            功能描述：公共组件-No.1-切换视图按钮
+            创建人：唐林
+            创建时间：2014-7-1
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Net.V2_Net_C4_Mc2_Up.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Net.V2_Net_C4_Mc2_Up.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片资源与创建自定义控件
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Net.V2_Net_C4_Mc2_Up.paint(System.Drawing.Graphics)">
+            <summary>
+            界面绘制
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Net.V2_Net_C4_Mc2_Up.getValue">
+            <summary>
+            获取Tc模块网络值
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Net.V2_Net_C4_Mc2_Up.paint_Mc1(System.Drawing.Graphics,System.Single,System.Single,System.Int32,System.Drawing.Rectangle)">
+            <summary>
+            绘制Mc1模块
+            </summary>
+            <param name="dcGs"></param>
+            <param name="rowDistance"></param>
+            <param name="columnDistance"></param>
+            <param name="rowCount"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.Net.V2_Net_C5_Mc2_Down">
+            <summary>
+            功能描述：公共组件-No.1-切换视图按钮
+            创建人：唐林
+            创建时间：2014-7-1
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Net.V2_Net_C5_Mc2_Down.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Net.V2_Net_C5_Mc2_Down.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片资源与创建自定义控件
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Net.V2_Net_C5_Mc2_Down.paint(System.Drawing.Graphics)">
+            <summary>
+            界面绘制
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Net.V2_Net_C5_Mc2_Down.getValue">
+            <summary>
+            获取Tc模块网络值
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Net.V2_Net_C5_Mc2_Down.paint_Mc1_Down(System.Drawing.Graphics,System.Int32,System.Drawing.Rectangle)">
+            <summary>
+            绘制Mc1下部模块
+            </summary>
+            <param name="dcGs"></param>
+            <param name="rowDistance"></param>
+            <param name="columnDistance"></param>
+            <param name="rowCount"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.PIS.V601_V602_PIS_SetStation">
+            <summary>
+            功能描述：视图104-运行-站点设置-No.0-主界面
+            创建人：唐林
+            创建时间：2014-7-3
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.PIS.V601_V602_PIS_SetStation.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.PIS.V601_V602_PIS_SetStation.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片、创建控件
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.PIS.V601_V602_PIS_SetStation.btn_MouseDownEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮鼠标按下事件响应函数：改变按钮字体颜色
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.PIS.V601_V602_PIS_SetStation.btn_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            站点按钮点击事件响应函数：站点选择
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.PIS.V601_V602_PIS_SetStation.btn_Station_MouseDownEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮鼠标按下事件响应函数：改变按钮字体颜色
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.PIS.V601_V602_PIS_SetStation.btn_Station_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            站点按钮点击事件响应函数：站点选择
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.PIS.V601_V602_PIS_SetStation.paint_Frame(System.Drawing.Graphics)">
+            <summary>
+            绘制框架
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.PIS.V601_V602_PIS_SetStation.paint_StationLine(System.Drawing.Graphics)">
+            <summary>
+            绘制站台之间的连接线
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.V6_PIS_MianView">
+            <summary>
+            功能描述：公共组件-No.1-切换视图按钮
+            创建人：唐林
+            创建时间：2014-7-1
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V6_PIS_MianView.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V6_PIS_MianView.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片资源与创建自定义控件
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V6_PIS_MianView.btn_MouseDownEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮鼠标按下事件响应函数：改变按钮字体颜色
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V6_PIS_MianView.btn_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮点击事件响应函数：实现视图的切换
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V6_PIS_MianView.paint(System.Drawing.Graphics)">
+            <summary>
+            界面绘制
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V6_PIS_MianView.paint_LineSelect(System.Drawing.Graphics)">
+            <summary>
+            绘制线路选择
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V6_PIS_MianView.paint_UpDown(System.Drawing.Graphics)">
+            <summary>
+            绘制上下行
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V6_PIS_MianView.paint_Station(System.Drawing.Graphics)">
+            <summary>
+            绘制站台（起始站和终点站）
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V6_PIS_MianView.paint_TCMSOrPIS(System.Drawing.Graphics)">
+            <summary>
+            绘制TCMS PIS
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.VC_C6_HeadTail.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.Pub.VC_C7_SendData.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.TCU.V3_TCU_MainView">
+            <summary>
+            功能描述：公共组件-No.1-切换视图按钮
+            创建人：唐林
+            创建时间：2014-7-1
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.TCU.V3_TCU_MainView.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.TCU.V3_TCU_MainView.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片资源与创建自定义控件
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.TCU.V3_TCU_MainView.paint(System.Drawing.Graphics)">
+            <summary>
+            界面绘制
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.TCU.V3_TCU_MainView.paint_Frame(System.Drawing.Graphics)">
+            <summary>
+            主要框架绘制
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.TCU.V3_TCU_MainView.getValue">
+            <summary>
+            获取网络数据（由三个位置数据表示：第一个位置：起始接口编号；第二个位置：包括条目数目；第三个位置：每个条目的状态数目）
+            </summary>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.VC_C2_GetValue">
+            <summary>
+            功能描述：公共组件-No.3-获取故障信息
+            创建人：唐林
+            创建时间：2014-7-9
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.VC_C2_GetValue.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.VC_C5_BlackView">
+            <summary>
+            功能描述：视图0-黑屏-关闭时候
+            创建人：唐林
+            创建时间：2014-7-1
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.VC_C5_BlackView.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.VC_C5_BlackView.init(System.Int32@)">
+            <summary>
+            初始化函数
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.VC_C5_BlackView.paint(System.Drawing.Graphics)">
+            <summary>
+            界面绘制
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.V702_Check_TimeSetting_C0">
+            <summary>
+            功能描述：视图702-检修-时间设置-No.0-主界面
+            创建人：唐林
+            创建时间：2014-7-10
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V702_Check_TimeSetting_C0.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V702_Check_TimeSetting_C0.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片资源与创建自定义控件
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V702_Check_TimeSetting_C0.btn_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.V703_Check_PasswordSetting_C0">
+            <summary>
+            功能描述：视图703-检修-密码设置-No.0-主界面
+            创建人：唐林
+            创建时间：2014-7-10
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V703_Check_PasswordSetting_C0.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V703_Check_PasswordSetting_C0.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片资源与创建自定义控件
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V703_Check_PasswordSetting_C0.btn_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            按钮响应鼠标点击事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V703_Check_PasswordSetting_C0.paint_Frame(System.Drawing.Graphics)">
+            <summary>
+            绘制界面上的线框与标题等
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V703_Check_PasswordSetting_C0.paint_Password(System.Drawing.Graphics)">
+            <summary>
+            绘制密码（******）
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.V704_Check_WheelRadius_C0">
+            <summary>
+            功能描述：视图704-检修-轮径设置-No.0-主界面
+            创建人：唐林
+            创建时间：2014-7-10
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V704_Check_WheelRadius_C0.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V704_Check_WheelRadius_C0.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片资源与创建自定义控件
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V704_Check_WheelRadius_C0.btn_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            数字模块按钮响应点击事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V704_Check_WheelRadius_C0.btn_Train_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            车辆选择按钮点击事件响应函数
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V704_Check_WheelRadius_C0.paint_SetValue(System.Drawing.Graphics)">
+            <summary>
+            绘制轮径输入值
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.V705_Check_TrainIDSetting_C0">
+            <summary>
+            功能描述：视图705-检修-车号设置-No.0-主界面
+            创建人：唐林
+            创建时间：2014-7-10
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V705_Check_TrainIDSetting_C0.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V705_Check_TrainIDSetting_C0.btn_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            数字模块按钮响应点击事件
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V705_Check_TrainIDSetting_C0.paint_SetValue(System.Drawing.Graphics)">
+            <summary>
+            绘制车号输入
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.V706_Check_AccelerateTest_C0">
+            <summary>
+            功能描述：视图706-检修-加速度测试-No.0-主界面
+            创建人：唐林
+            创建时间：2014-7-10
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V706_Check_AccelerateTest_C0.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V706_Check_AccelerateTest_C0.btn_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            数字模块按钮响应点击事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V706_Check_AccelerateTest_C0.paint_Frame(System.Drawing.Graphics)">
+            <summary>
+            绘制背景与框架
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.V707_Check_Test_C0">
+            <summary>
+            功能描述：视图707-检修-测试-No.0-主界面
+            创建人：唐林
+            创建时间：2014-7-10
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V707_Check_Test_C0.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V707_Check_Test_C0.btn_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            响应鼠标点击事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.V708_Check_DataNotes_C0">
+            <summary>
+            功能描述：视图708-检修-数据记录-No.0-主界面
+            创建人：唐林
+            创建时间：2014-7-10
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V708_Check_DataNotes_C0.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V708_Check_DataNotes_C0.btn_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            按钮点击事件响应函数
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V708_Check_DataNotes_C0.paint_Frame(System.Drawing.Graphics)">
+            <summary>
+            绘制界面上的线框与标题等
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V708_Check_DataNotes_C0.paint_DataValue(System.Drawing.Graphics)">
+            <summary>
+            绘制数据（后续添加真实数据）
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.V7_Check_Common_Frame">
+            <summary>
+            功能描述：视图7-公共视图-线框
+            创建人：唐林
+            创建时间：2014-7-10
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V7_Check_Common_Frame.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V7_Check_Common_Frame.init(System.Int32@)">
+            <summary>
+            获取组件类型名称
+            </summary>
+            <returns>组件类型名称</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V7_Check_Common_Frame.paint(System.Drawing.Graphics)">
+            <summary>
+            界面绘制
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.V701_Check_Login_C0_MainView">
+            <summary>
+            功能描述：视图701-检修-登陆-No.0-主界面
+            创建人：唐林
+            创建时间：2014-7-10
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V701_Check_Login_C0_MainView.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V701_Check_Login_C0_MainView.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片资源与创建自定义控件
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V701_Check_Login_C0_MainView.btn_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            检修按钮弹起事件响应函数
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V701_Check_Login_C0_MainView.paint_Password(System.Drawing.Graphics)">
+            <summary>
+            绘制密码
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.V7_Check_C0_MainView">
+            <summary>
+            功能描述：视图7-检修-No.0-主界面
+            创建人：唐林
+            创建时间：2014-7-10
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V7_Check_C0_MainView.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V7_Check_C0_MainView.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片资源与创建自定义控件
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V7_Check_C0_MainView.btn_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            按钮点击事件响应函数：切换到相应视图
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V7_Check_C0_MainView.paint_Frame(System.Drawing.Graphics)">
+            <summary>
+            绘制线框与标题
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.EventHandle_BooleanEvent">
+            <summary>
+            控件点击事件代理
+            </summary>
+            <param name="sender">事件发生对象</param>
+            <param name="e">传输参数</param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.VC_C0_Title">
+            <summary>
+            功能描述：公共组件-第一个组件-标题
+            创建人：唐林
+            创建时间：2014-7-1
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.VC_C0_Title.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.VC_C0_Title.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片资源与创建自定义控件
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.VC_C0_Title.setRunValue(System.Int32,System.Int32,System.Single)">
+            <summary>
+            获取当期视图值
+            </summary>
+            <param name="nParaA"></param>
+            <param name="nParaB"></param>
+            <param name="nParaC"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.VC_C0_Title.btn_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            按钮点击事件响应函数
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.VC_C0_Title.paint(System.Drawing.Graphics)">
+            <summary>
+            界面绘制函数
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.VC_C0_Title.paint_Frame(System.Drawing.Graphics)">
+            <summary>
+            北京绘制
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.VC_C0_Title.paint_Up_SystemInfo(System.Drawing.Graphics)">
+            <summary>
+            绘制：系统信息（主界面上部分）
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.VC_C0_Title.getStation(System.Int32)">
+            <summary>
+            获取站台信息
+            </summary>
+            <param name="stationNum"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.V0_C0_BlackView_Closed">
+            <summary>
+            功能描述：视图0-黑屏-关闭时候
+            创建人：唐林
+            创建时间：2014-7-1
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V0_C0_BlackView_Closed.setRunValue(System.Int32,System.Int32,System.Single)">
+            <summary>
+            获取到当前运行视图：根据当前视图设置按钮状态
+            </summary>
+            <param name="nParaA"></param>
+            <param name="nParaB"></param>
+            <param name="nParaC"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V0_C0_BlackView_Closed.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V0_C0_BlackView_Closed.init(System.Int32@)">
+            <summary>
+            初始化函数
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V0_C0_BlackView_Closed.paint(System.Drawing.Graphics)">
+            <summary>
+            界面绘制
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.VC_C4_GetFault">
+            <summary>
+            功能描述：公共组件-No.3-获取故障信息
+            创建人：唐林
+            创建时间：2014-7-9
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.VC_C4_GetFault.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.VC_C4_GetFault.getFaultValue">
+            <summary>
+            获取故障网络值
+            </summary>
+        </member>
+        <member name="P:LightRail.Ethiopia.TMS.VC_C4_GetFault.CurrentFaults">
+            <summary>
+            获取当前故障列表属性
+            </summary>
+        </member>
+        <member name="P:LightRail.Ethiopia.TMS.VC_C4_GetFault.AllFaults">
+            <summary>
+            获取所有发生故障列表属性
+            </summary>
+        </member>
+        <member name="P:LightRail.Ethiopia.TMS.VC_C4_GetFault.CurrentFault">
+            <summary>
+            读取或设置当前最高优先级的故障属性
+            </summary>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.V1_Main_C2_State">
+            <summary>
+            功能描述：视图1-运行-No.2-状态
+            创建人：唐林
+            创建时间：2014-7-4
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V1_Main_C2_State.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V1_Main_C2_State.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片、初始化操作
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V1_Main_C2_State._timer_Tick(System.Object,System.EventArgs)">
+            <summary>
+            计时器事件响应函数：倒计时
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V1_Main_C2_State.paint(System.Drawing.Graphics)">
+            <summary>
+            界面绘制
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V1_Main_C2_State.paint_Frame(System.Drawing.Graphics)">
+            <summary>
+            运行界面-状态栏线框和不变状态的绘制
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V1_Main_C2_State.paint_Level(System.Drawing.Graphics)">
+            <summary>
+            Main-级位绘制
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V1_Main_C2_State.paint_Vigliant(System.Drawing.Graphics)">
+            <summary>
+            Main-警惕倒计时
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V1_Main_C2_State.paint_Mode(System.Drawing.Graphics)">
+            <summary>
+            绘制洗车那几种模式
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V1_Main_C2_State.paint_Safe(System.Drawing.Graphics)">
+            <summary>
+            绘制Safe几种
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V1_Main_C2_State.paint_ATPMode(System.Drawing.Graphics)">
+            <summary>
+            绘制ATP那几种模式
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V1_Main_C2_State.paint_Rescue(System.Drawing.Graphics)">
+            <summary>
+            救援模式
+            </summary>
+            <param name="dcGs"></param>
+        </member>
+        <member name="P:LightRail.Ethiopia.TMS.V1_Main_C2_State.IsResetCountDown">
+            <summary>
+            设置是否开始倒计时属性（用于处理开始倒计时命令）
+            </summary>
+        </member>
+        <member name="P:LightRail.Ethiopia.TMS.V1_Main_C2_State.Count">
+            <summary>
+            读取或设置倒计时数属性
+            </summary>
+        </member>
+        <member name="P:LightRail.Ethiopia.TMS.V1_Main_C2_State.IsVigilanted">
+            <summary>
+            警惕（反馈警惕信号）
+            </summary>
+        </member>
+        <member name="T:LightRail.Ethiopia.TMS.VC_C1_ViewChangeButton">
+            <summary>
+            功能描述：公共组件-No.1-切换视图按钮
+            创建人：唐林
+            创建时间：2014-7-1
+            </summary>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.VC_C1_ViewChangeButton.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.VC_C1_ViewChangeButton.init(System.Int32@)">
+            <summary>
+            初始化函数：导入图片资源与创建自定义控件
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.VC_C1_ViewChangeButton.setRunValue(System.Int32,System.Int32,System.Single)">
+            <summary>
+            获取到当前运行视图：根据当前视图设置按钮状态
+            </summary>
+            <param name="nParaA"></param>
+            <param name="nParaB"></param>
+            <param name="nParaC"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.VC_C1_ViewChangeButton.btn_MouseDownEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮鼠标按下事件响应函数：改变按钮字体颜色
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.VC_C1_ViewChangeButton.btn_ClickEvent(System.Object,ES.Facility.Common.Control.Common.ClickEventArgs{System.Int32})">
+            <summary>
+            菜单切换按钮点击事件响应函数：实现视图的切换
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V0_C1_ClassOver.GetInfo">
+            <summary>
+            获取组件描述信息
+            </summary>
+            <returns>组件描述信息</returns>
+        </member>
+        <member name="M:LightRail.Ethiopia.TMS.V0_C1_ClassOver.init(System.Int32@)">
+            <summary>
+            初始化函数
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

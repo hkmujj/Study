@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9AE651C1-8E30-4C2E-B523-028571DA0980}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Engine.LCDM.HDX2.Entity</RootNamespace>
+    <AssemblyName>Engine.LCDM.HDX2.Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonUtil">
+      <HintPath>..\..\..\..\Bin\MMI\CommonUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="Excel.Interface">
+      <HintPath>..\..\..\..\Bin\MMI\Excel.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\MMI\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.MefExtensions, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\MMI\Microsoft.Practices.Prism.MefExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\MMI\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="MMI.Facility.Interface, Version=2.40.2016.1101, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="MMI.Facility.WPFInfrastructure">
+      <HintPath>..\..\..\..\Bin\MMI\MMI.Facility.WPFInfrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\MMI\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\ResourceKeyAttibute.cs" />
+    <Compile Include="Constant\FooterRegionViews.cs" />
+    <Compile Include="Constant\LightAdjust.cs" />
+    <Compile Include="Constant\MainRegionViews.cs" />
+    <Compile Include="Constant\ContractNames.cs" />
+    <Compile Include="Constant\RootRegionViews.cs" />
+    <Compile Include="Controller\ActionResponser\AirBrakeActionResponser.cs" />
+    <Compile Include="Controller\ActionResponser\AirBrakeMoreActionResponser.cs" />
+    <Compile Include="Controller\ActionResponser\BtnActionResponserBase.cs" />
+    <Compile Include="Controller\ActionResponser\CancelActionResponser.cs" />
+    <Compile Include="Controller\ActionResponser\ChangeLangActionResponser.cs" />
+    <Compile Include="Controller\ActionResponser\ChangeTrainIdAction.cs" />
+    <Compile Include="Controller\ActionResponser\DateTimeActionResponser.cs" />
+    <Compile Include="Controller\ActionResponser\LangActionResponser.cs" />
+    <Compile Include="Controller\ActionResponser\MaintenanceActionResponser.cs" />
+    <Compile Include="Controller\ActionResponser\OkActionResponser.cs" />
+    <Compile Include="Controller\ActionResponser\ReturnToRootActionResponser.cs" />
+    <Compile Include="Controller\ActionResponser\ScreenInfoActionResponser.cs" />
+    <Compile Include="Controller\ActionResponser\SetAirBrakeActionResponser.cs" />
+    <Compile Include="Controller\ActionResponser\SetContentActionResponser.cs" />
+    <Compile Include="Controller\ActionResponser\SetSetActionResponser.cs" />
+    <Compile Include="Controller\ActionResponser\SettingActionResponser.cs" />
+    <Compile Include="Controller\ActionResponser\SoftVersionActionResponser.cs" />
+    <Compile Include="Controller\ActionResponser\SoftVersionReturnActionResponser.cs" />
+    <Compile Include="Controller\ActionResponser\TrainIdActionResponser.cs" />
+    <Compile Include="Controller\HXD2Controller.cs" />
+    <Compile Include="Controller\StateInterface\RootAirBrakeMaintenance.cs" />
+    <Compile Include="Controller\StateInterface\RootAirBrakeMoreOkCancel.cs" />
+    <Compile Include="Controller\StateInterface\RootAirBrakeMore.cs" />
+    <Compile Include="Controller\StateInterface\RootAirBrakeOkCancel.cs" />
+    <Compile Include="Controller\StateInterface\RootAirBrake.cs" />
+    <Compile Include="Controller\StateInterface\RootScreenInfoDateTimeOkCancel.cs" />
+    <Compile Include="Controller\StateInterface\RootScreenInfoDateTime.cs" />
+    <Compile Include="Controller\StateInterface\RootScreenInfoLang.cs" />
+    <Compile Include="Controller\StateInterface\RootScreenInfoSoftVersion.cs" />
+    <Compile Include="Controller\StateInterface\RootScreenInfo.cs" />
+    <Compile Include="Controller\ActionResponser\RootScreenTrainIdActionResponser.cs" />
+    <Compile Include="Controller\StateInterface\RootScreenInfoTrainIdOKCancel.cs" />
+    <Compile Include="Controller\StateInterface\RootScreenInfoTrainId.cs" />
+    <Compile Include="Controller\StateInterface\RootSettingOkCancel.cs" />
+    <Compile Include="Controller\StateInterface\RootSetting.cs" />
+    <Compile Include="Controller\StateInterface\Root.cs" />
+    <Compile Include="Controller\StateInterface\StateInterfaceBase.cs" />
+    <Compile Include="Controls\HXD2TextBox.cs" />
+    <Compile Include="Controls\LEDTextBox.cs" />
+    <Compile Include="Converter\EmergenceTimeToShowFormatConverter.cs" />
+    <Compile Include="Converter\EnumToResourceConverter.cs" />
+    <Compile Include="Converter\HeaderMessageVisibleConverter.cs" />
+    <Compile Include="Converter\IsNullToVisibly.cs" />
+    <Compile Include="Converter\MessageToContentConverter.cs" />
+    <Compile Include="Converter\MessageToNameConverter.cs" />
+    <Compile Include="Converter\MultiplicationConverter.cs" />
+    <Compile Include="Converter\ResourceKeyToResourceArrayConverter.cs" />
+    <Compile Include="Converter\ResourceKeyToResourceConverter.cs" />
+    <Compile Include="Converter\LineValueMappingConverter.cs" />
+    <Compile Include="Converter\StringArrayGetterConverter.cs" />
+    <Compile Include="Converter\StringArrayToStringConverter.cs" />
+    <Compile Include="Converter\StringToStringArrayConverter.cs" />
+    <Compile Include="Events\BtnEvent.cs" />
+    <Compile Include="Events\ChangeResourceEventArgs.cs" />
+    <Compile Include="Events\EmergenceTimeUpEventArg.cs" />
+    <Compile Include="Events\PowerStateChangedEventArg.cs" />
+    <Compile Include="Events\RequestChangeMainFooterRegionViewEventArge.cs" />
+    <Compile Include="Events\RequestChangeMainRegionViewEventArg.cs" />
+    <Compile Include="Events\SetAirBrakeEventArg.cs" />
+    <Compile Include="Events\SetDataTimeEventArg.cs" />
+    <Compile Include="Events\SetEventArg.cs" />
+    <Compile Include="Events\SettingTrainIdEventArg.cs" />
+    <Compile Include="Events\StateChangedEventArg.cs" />
+    <Compile Include="Extension\EnumExtension.cs" />
+    <Compile Include="Extension\EnumToResourceKey.cs" />
+    <Compile Include="Extension\FooterModelExtension.cs" />
+    <Compile Include="Extension\HXD2ModelExtension.cs" />
+    <Compile Include="Extension\UserControlExtension.cs" />
+    <Compile Include="Model\BtnStragy\IStateInterface.cs" />
+    <Compile Include="Model\BtnStragy\IStateInterfaceFactory.cs" />
+    <Compile Include="Model\BtnStragy\StateInterface.cs" />
+    <Compile Include="Model\BtnStragy\BtnItem.cs" />
+    <Compile Include="Model\BtnStragy\IBtnActionResponser.cs" />
+    <Compile Include="Model\BtnStragy\StateInterfaceExportAttribute.cs" />
+    <Compile Include="Model\BtnStragy\StateInterfaceFactory.cs" />
+    <Compile Include="Model\BtnStragy\StateInterfaceKey.cs" />
+    <Compile Include="Model\Domain\AirBrake.cs" />
+    <Compile Include="Model\Domain\AirBrakeLocation.cs" />
+    <Compile Include="Model\Domain\AirBrakePressur.cs" />
+    <Compile Include="Model\Domain\BigGateState.cs" />
+    <Compile Include="Model\Domain\BrakeCylinder.cs" />
+    <Compile Include="Model\Domain\BrakeLevel.cs" />
+    <Compile Include="Model\Domain\BrakeState.cs" />
+    <Compile Include="Model\Domain\EngineModel.cs" />
+    <Compile Include="Model\Domain\GateLevel.cs" />
+    <Compile Include="Model\Domain\HXD2HardwareBtn.cs" />
+    <Compile Include="Model\Domain\IRaiseResourceChangedProvider.cs" />
+    <Compile Include="Model\Domain\IResetable.cs" />
+    <Compile Include="Model\Domain\ISendInterface.cs" />
+    <Compile Include="Model\Domain\LCDMModel.cs" />
+    <Compile Include="Model\Domain\MachineType.cs" />
+    <Compile Include="Model\Domain\MakeupAirState.cs" />
+    <Compile Include="Model\Domain\Message.cs" />
+    <Compile Include="Model\Domain\MessageItem.cs" />
+    <Compile Include="Model\Domain\Other.cs" />
+    <Compile Include="Model\Domain\PowerState.cs" />
+    <Compile Include="Model\Domain\ReserveCommon.cs" />
+    <Compile Include="Model\Domain\SmallGateState.cs" />
+    <Compile Include="Model\Domain\TotalAirPresssureState.cs" />
+    <Compile Include="Model\Domain\TowLevel.cs" />
+    <Compile Include="Model\Domain\TrainState.cs" />
+    <Compile Include="Model\Domain\TrainType.cs" />
+    <Compile Include="Model\Domain\UseState.cs" />
+    <Compile Include="Model\Domain\VehicleCount.cs" />
+    <Compile Include="Model\Domain\WorkFlags.cs" />
+    <Compile Include="Model\FooterModel.cs" />
+    <Compile Include="Model\HXD2Model.cs" />
+    <Compile Include="Constant\RegionNames.cs" />
+    <Compile Include="Resource\StateKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StateKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TemplateSelector\TextContentControlTemplateSelector.cs" />
+    <Compile Include="ViewModel\HardWareButtonViewModel.cs" />
+    <Compile Include="ViewModel\HXD2ViewModel.cs" />
+    <Compile Include="View\ButtonRegion\ButtonItem.xaml.cs">
+      <DependentUpon>ButtonItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ButtonRegion\ButtonView.xaml.cs">
+      <DependentUpon>ButtonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ButtonRegion\HardWareButton.xaml.cs">
+      <DependentUpon>HardWareButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ButtonRegion\HardWareBottomButtonView.xaml.cs">
+      <DependentUpon>HardWareBottomButtonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ButtonRegion\HardWareLeftButtonView.xaml.cs">
+      <DependentUpon>HardWareLeftButtonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LCDMMain.xaml.cs">
+      <DependentUpon>LCDMMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LCDMMainView.xaml.cs">
+      <DependentUpon>LCDMMainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LCDMRootView.xaml.cs">
+      <DependentUpon>LCDMRootView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LCDMShellView.xaml.cs">
+      <DependentUpon>LCDMShellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LCDMShellWithButtonView.xaml.cs">
+      <DependentUpon>LCDMShellWithButtonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LCDMShutDownView.xaml.cs">
+      <DependentUpon>LCDMShutDownView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainContent\FlowRateView.xaml.cs">
+      <DependentUpon>FlowRateView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainContent\MainContentView.xaml.cs">
+      <DependentUpon>MainContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainFooter\DateTimeInfoFooterView.xaml.cs">
+      <DependentUpon>DateTimeInfoFooterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainFooter\FooterTextItem.xaml.cs">
+      <DependentUpon>FooterTextItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainFooter\MainFooterView.xaml.cs">
+      <DependentUpon>MainFooterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainHeader\MainHeaderView.xaml.cs">
+      <DependentUpon>MainHeaderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainRegion\MaintenanceView.xaml.cs">
+      <DependentUpon>MaintenanceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainTitle\MainTitleView.xaml.cs">
+      <DependentUpon>MainTitleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainRegion\SoftVersionView.xaml.cs">
+      <DependentUpon>SoftVersionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Message\MessageView.xaml.cs">
+      <DependentUpon>MessageView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="LCDMDesigningApp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ButtonRegion\ButtonItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ButtonRegion\ButtonView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ButtonRegion\HardWareButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ButtonRegion\HardWareBottomButtonView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ButtonRegion\HardWareLeftButtonView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LCDMMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LCDMMainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LCDMRootView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LCDMShellView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LCDMShellWithButtonView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LCDMShutDownView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainContent\FlowRateView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainContent\MainContentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainFooter\DateTimeInfoFooterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainFooter\FooterTextItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainFooter\MainFooterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainHeader\MainHeaderView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainRegion\MaintenanceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainTitle\MainTitleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainRegion\SoftVersionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Message\MessageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HXD2Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HXD2Form.Designer.cs">
+      <DependentUpon>HXD2Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="HXD2Form.resx">
+      <DependentUpon>HXD2Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\StateKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StateKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Engine.LCDM.HDX2.Resource\Engine.LCDM.HDX2.Resource.csproj">
+      <Project>{c0e7b05e-e1f1-4ab2-99d2-3f4ce02bbbc7}</Project>
+      <Name>Engine.LCDM.HDX2.Resource</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Behavior\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

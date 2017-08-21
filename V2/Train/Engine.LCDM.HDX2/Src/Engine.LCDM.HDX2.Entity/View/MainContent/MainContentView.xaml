@@ -1,0 +1,239 @@
+﻿<UserControl x:Class="Engine.LCDM.HDX2.Entity.View.MainContent.MainContentView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="clr-namespace:Engine.LCDM.HDX2.Entity.Controls"
+             xmlns:converter="clr-namespace:Engine.LCDM.HDX2.Entity.Converter"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mainContent="clr-namespace:Engine.LCDM.HDX2.Entity.View.MainContent"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:Engine.LCDM.HDX2.Entity.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:HXD2ViewModel}"
+             d:DesignHeight="360"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+
+            <converter:LineValueMappingConverter x:Key="ValueToAngleConverter"
+                                                 MaxSourceValue="1400"
+                                                 MaxTargetValue="216.7"
+                                                 MinSourceValue="0"
+                                                 MinTargetValue="-36.7" />
+            <Style TargetType="controls:LEDTextBox">
+                <Setter Property="Background" Value="Black" />
+                <Setter Property="BorderBrush" Value="{StaticResource MainOutlineBrush}" />
+                <Setter Property="BorderThickness" Value="3" />
+                <Setter Property="Foreground" Value="{StaticResource WhiteTextBrush1}" />
+            </Style>
+
+            <Style TargetType="controls:HXD2TextBox">
+                <Setter Property="Margin" Value="2" />
+                <Setter Property="Background" Value="Black" />
+                <Setter Property="BorderBrush" Value="{StaticResource MainOutlineBrush}" />
+                <Setter Property="BorderThickness" Value="3" />
+                <Setter Property="TextAlignment" Value="Right" />
+                <Setter Property="FontWeight" Value="Bold" />
+                <Setter Property="Padding" Value="6,0" />
+                <Setter Property="Foreground" Value="{StaticResource WhiteTextBrush2}" />
+            </Style>
+
+            <Style TargetType="TextBlock">
+                <Setter Property="Foreground" Value="{StaticResource WhiteTextBrush1}" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+            </Style>
+
+            <Style TargetType="Image">
+                <Setter Property="Stretch" Value="Uniform" />
+                <Setter Property="Margin" Value="25" />
+                <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
+            </Style>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Engine.LCDM.HDX2.Resource;component/HXD2ResourceManager.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220*" />
+            <ColumnDefinition Width="430*" />
+            <ColumnDefinition Width="410*" />
+        </Grid.ColumnDefinitions>
+
+        <mainContent:FlowRateView />
+
+        <Grid Grid.Column="1">
+            <Rectangle Margin="2"
+                       Fill="{StaticResource MidlePlateContentBackBrush}"
+                       RadiusX="5"
+                       RadiusY="5"
+                       Stroke="{StaticResource MainOutlineBrush}"
+                       StrokeThickness="2" />
+
+            <Image Source="{StaticResource ImageDialPlate}" />
+            <Image Source="{StaticResource BluePointer}">
+                <Image.RenderTransform>
+                    <RotateTransform Angle="{Binding Path=LCDMModel.TrainPipePressure, Converter={StaticResource ValueToAngleConverter}}" />
+                </Image.RenderTransform>
+            </Image>
+            <Image Source="{StaticResource RedPointer}">
+                <Image.RenderTransform>
+                    <RotateTransform Angle="{Binding Path=LCDMModel.BalancePressure, Converter={StaticResource ValueToAngleConverter}}" />
+                </Image.RenderTransform>
+            </Image>
+
+            <Grid Margin="12">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="260*" />
+                    <RowDefinition Height="40*" />
+                    <RowDefinition Height="40*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="1"
+                           Grid.Column="0"
+                           Margin="6"
+                           VerticalAlignment="Center"
+                           FontSize="20"
+                           Foreground="{StaticResource RedTextBrush}"
+                           Text="{DynamicResource Balanced}" />
+                <TextBlock Grid.Row="1"
+                           Grid.Column="1"
+                           Margin="6"
+                           HorizontalAlignment="Right"
+                           VerticalAlignment="Center"
+                           FontSize="20"
+                           Foreground="{StaticResource BlueTextBrush}"
+                           Text="{DynamicResource TrainPipe}" />
+
+                <controls:LEDTextBox Grid.Row="2"
+                                     Grid.Column="0"
+                                     Margin="6,6,20,6"
+                                     Text="{Binding Path=LCDMModel.BalancePressure,
+                                                    StringFormat={}{0:0}}" />
+
+                <controls:LEDTextBox Grid.Row="2"
+                                     Grid.Column="1"
+                                     Margin="20,6,6,6"
+                                     Text="{Binding Path=LCDMModel.TrainPipePressure,
+                                                    StringFormat={}{0:0}}" />
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Column="2">
+            <Rectangle Margin="2"
+                       Fill="{StaticResource MidlePlateContentBackBrush}"
+                       RadiusX="5"
+                       RadiusY="5"
+                       Stroke="{StaticResource MainOutlineBrush}"
+                       StrokeThickness="2" />
+
+            <Image Source="{StaticResource ImageDialPlate}" />
+            <Image Source="{StaticResource BluePointer}">
+                <Image.RenderTransform>
+                    <RotateTransform Angle="{Binding Path=LCDMModel.BrakeCylinderPressure, Converter={StaticResource ValueToAngleConverter}}" />
+                </Image.RenderTransform>
+            </Image>
+            <Image Source="{StaticResource RedPointer}">
+                <Image.RenderTransform>
+                    <RotateTransform Angle="{Binding Path=LCDMModel.TotalCylinderPressure, Converter={StaticResource ValueToAngleConverter}}" />
+                </Image.RenderTransform>
+            </Image>
+
+            <Grid Margin="12">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80*" />
+                    <RowDefinition Height="180*" />
+                    <RowDefinition Height="40*" />
+                    <RowDefinition Height="40*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Row="0" Grid.ColumnSpan="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <controls:HXD2TextBox Grid.Row="0"
+                                          Grid.Column="0"
+                                          Text="{Binding Path=LCDMModel.OperBrakeCylinder.BrakeCylinder1Pressure,
+                                                         StringFormat={}{0:0}}" />
+
+                    <TextBlock Grid.Row="0"
+                               Grid.Column="1"
+                               Text="{DynamicResource BrakeCylinder1}" />
+                    <TextBlock Grid.Row="0"
+                               Grid.Column="3"
+                               Text="{DynamicResource BrakeCylinder1}" />
+                    <controls:HXD2TextBox Grid.Row="0"
+                                          Grid.Column="4"
+                                          Text="{Binding Path=LCDMModel.NoneOperBrakeCylinder.BrakeCylinder1Pressure,
+                                                         StringFormat={}{0:0}}" />
+                    <controls:HXD2TextBox Grid.Row="1"
+                                          Grid.Column="0"
+                                          Text="{Binding Path=LCDMModel.OperBrakeCylinder.BrakeCylinder2Pressure,
+                                                         StringFormat={}{0:0}}" />
+                    <TextBlock Grid.Row="1"
+                               Grid.Column="1"
+                               Text="{DynamicResource BrakeCylinder2}" />
+                    <TextBlock Grid.Row="1"
+                               Grid.Column="3"
+                               Text="{DynamicResource BrakeCylinder2}" />
+                    <controls:HXD2TextBox Grid.Row="1"
+                                          Grid.Column="4"
+                                          Text="{Binding Path=LCDMModel.NoneOperBrakeCylinder.BrakeCylinder2Pressure,
+                                                         StringFormat={}{0:0}}" />
+                    <TextBlock Grid.Row="2"
+                               Grid.Column="0"
+                               Text="{DynamicResource Oprated}" />
+                    <TextBlock Grid.Row="2"
+                               Grid.Column="4"
+                               Text="{DynamicResource NonOprated}" />
+                </Grid>
+
+                <TextBlock Grid.Row="2"
+                           Grid.Column="0"
+                           Margin="6"
+                           VerticalAlignment="Center"
+                           FontSize="20"
+                           Foreground="{StaticResource RedTextBrush}"
+                           Text="{DynamicResource TotalAir}" />
+                <TextBlock Grid.Row="2"
+                           Grid.Column="1"
+                           Margin="6"
+                           HorizontalAlignment="Right"
+                           VerticalAlignment="Center"
+                           FontSize="20"
+                           Foreground="{StaticResource BlueTextBrush}"
+                           Text="{DynamicResource BrakeCylinder}" />
+
+                <controls:LEDTextBox Grid.Row="3"
+                                     Grid.Column="0"
+                                     Margin="6,6,20,6"
+                                     Text="{Binding Path=LCDMModel.TotalCylinderPressure,
+                                                    StringFormat={}{0:0}}" />
+
+                <controls:LEDTextBox Grid.Row="3"
+                                     Grid.Column="1"
+                                     Margin="20,6,6,6"
+                                     Text="{Binding Path=LCDMModel.BrakeCylinderPressure,
+                                                    StringFormat={}{0:0}}" />
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

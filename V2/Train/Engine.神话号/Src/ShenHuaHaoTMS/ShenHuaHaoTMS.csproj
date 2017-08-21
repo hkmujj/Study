@@ -1,0 +1,1233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9C571877-AE5D-4F3E-A39C-23BCFA3AA5E0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ShenHuaHaoTMS</RootNamespace>
+    <AssemblyName>Engine.ShenHuaHaoTMS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\MMI\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Excel.Interface, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MMI\Excel.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="MMI.Facility.Interface, Version=2.29.2016.314, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MMI\MMI.Facility.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BlackView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BlackView.Designer.cs">
+      <DependentUpon>BlackView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App.cs" />
+    <Compile Include="Common\ListenViewChangedData.cs" />
+    <Compile Include="DataChangedProxy.cs" />
+    <Compile Include="DefControls\DefPanelState.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DefControls\DefPanelState.Designer.cs">
+      <DependentUpon>DefPanelState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DefControls\DefState.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DefControls\DefState.Designer.cs">
+      <DependentUpon>DefState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DefControls\DefStateShow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DefControls\DefStateShow.Designer.cs">
+      <DependentUpon>DefStateShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DefControls\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DefControls\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalParam.cs" />
+    <Compile Include="IDataChangedListener.cs" />
+    <Compile Include="NoBodyVigilantView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NoBodyVigilantView.Designer.cs">
+      <DependentUpon>NoBodyVigilantView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NullControls\AxisLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NullControls\AxisLabel.Designer.cs">
+      <DependentUpon>AxisLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V0\SH_V0_BackView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V0\SH_V0_BackView.Designer.cs">
+      <DependentUpon>SH_V0_BackView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V1\SH_V1_MainView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V1\SH_V1_MainView.Designer.cs">
+      <DependentUpon>SH_V1_MainView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="View\V1\SH_V1_Main_C2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V1\SH_V1_Main_C2.Designer.cs">
+      <DependentUpon>SH_V1_Main_C2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V1\SH_V1_Main_C1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V1\SH_V1_Main_C1.Designer.cs">
+      <DependentUpon>SH_V1_Main_C1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V2\SH_V205_B_AuxiliarySys.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V2\SH_V205_B_AuxiliarySys.Designer.cs">
+      <DependentUpon>SH_V205_B_AuxiliarySys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V2\SH_V204_A_AuxiliarySys.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V2\SH_V204_A_AuxiliarySys.Designer.cs">
+      <DependentUpon>SH_V204_A_AuxiliarySys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V2\SH_V206_A_AxisTemperature.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V2\SH_V206_A_AxisTemperature.Designer.cs">
+      <DependentUpon>SH_V206_A_AxisTemperature.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V2\SH_V207_B_AxisTemperature.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V2\SH_V207_B_AxisTemperature.Designer.cs">
+      <DependentUpon>SH_V207_B_AxisTemperature.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V2\SH_V203_B_Temperature.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V2\SH_V203_B_Temperature.Designer.cs">
+      <DependentUpon>SH_V203_B_Temperature.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V2\SH_V202_A_Temperature.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V2\SH_V202_A_Temperature.Designer.cs">
+      <DependentUpon>SH_V202_A_Temperature.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V2\SH_V208_AuxiliaryTest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V2\SH_V208_AuxiliaryTest.designer.cs">
+      <DependentUpon>SH_V208_AuxiliaryTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V2\SH_V209_ControlSys.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V2\SH_V209_ControlSys.designer.cs">
+      <DependentUpon>SH_V209_ControlSys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V2\SH_V2_MainData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V2\SH_V2_MainData.Designer.cs">
+      <DependentUpon>SH_V2_MainData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V3\SH_V304_TimeSetting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V3\SH_V304_TimeSetting.Designer.cs">
+      <DependentUpon>SH_V304_TimeSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V3\SH_V303_TrainAOrB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V3\SH_V303_TrainAOrB.Designer.cs">
+      <DependentUpon>SH_V303_TrainAOrB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V3\SH_V302_WheelSetting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V3\SH_V302_WheelSetting.Designer.cs">
+      <DependentUpon>SH_V302_WheelSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V3\SH_V3_Maintain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V3\SH_V3_Maintain.Designer.cs">
+      <DependentUpon>SH_V3_Maintain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V3\SH_V301_TrainIDSetting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V3\SH_V301_TrainIDSetting.Designer.cs">
+      <DependentUpon>SH_V301_TrainIDSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V4\SH_V404_C1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V4\SH_V404_C1.Designer.cs">
+      <DependentUpon>SH_V404_C1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V4\SH_V405_GroupDiagnose.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V4\SH_V405_GroupDiagnose.Designer.cs">
+      <DependentUpon>SH_V405_GroupDiagnose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V4\SH_V403_DisConnect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V4\SH_V403_DisConnect.Designer.cs">
+      <DependentUpon>SH_V403_DisConnect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V4\SH_V4013_FaultLight.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V4\SH_V4013_FaultLight.Designer.cs">
+      <DependentUpon>SH_V4013_FaultLight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V4\SH_V4012_VersionInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V4\SH_V4012_VersionInfo.Designer.cs">
+      <DependentUpon>SH_V4012_VersionInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V4\SH_V4011_BreakingState.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V4\SH_V4011_BreakingState.Designer.cs">
+      <DependentUpon>SH_V4011_BreakingState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V4\SH_V401_StateShow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V4\SH_V401_StateShow.Designer.cs">
+      <DependentUpon>SH_V401_StateShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V4\SH_V4_Connect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V4\SH_V4_Connect.Designer.cs">
+      <DependentUpon>SH_V4_Connect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V4\SH_V404_GroupSetting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V4\SH_V404_GroupSetting.Designer.cs">
+      <DependentUpon>SH_V404_GroupSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V4\TrainInfo.cs" />
+    <Compile Include="View\V4\TrainType.cs" />
+    <Compile Include="View\V5\ReconnectBtn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V5\ReconnectBtn.Designer.cs">
+      <DependentUpon>ReconnectBtn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V5\SH_V512_B_TractionState_F.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V5\SH_V512_B_TractionState_F.Designer.cs">
+      <DependentUpon>SH_V512_B_TractionState_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V5\SH_V511_B_BreakerState_F.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V5\SH_V511_B_BreakerState_F.Designer.cs">
+      <DependentUpon>SH_V511_B_BreakerState_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V5\SH_V510_B_BowState_F.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V5\SH_V510_B_BowState_F.Designer.cs">
+      <DependentUpon>SH_V510_B_BowState_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V5\SH_V509_A_TractionState_F.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V5\SH_V509_A_TractionState_F.Designer.cs">
+      <DependentUpon>SH_V509_A_TractionState_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V5\SH_V508_A_BreakerState_F.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V5\SH_V508_A_BreakerState_F.Designer.cs">
+      <DependentUpon>SH_V508_A_BreakerState_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V5\SH_V507_A_BowState_F.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V5\SH_V507_A_BowState_F.Designer.cs">
+      <DependentUpon>SH_V507_A_BowState_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V5\SH_V506_B_TractionState.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V5\SH_V506_B_TractionState.Designer.cs">
+      <DependentUpon>SH_V506_B_TractionState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V5\SH_V504_B_BowState.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V5\SH_V504_B_BowState.Designer.cs">
+      <DependentUpon>SH_V504_B_BowState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V5\SH_V505_B_BreakerState.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V5\SH_V505_B_BreakerState.Designer.cs">
+      <DependentUpon>SH_V505_B_BreakerState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V5\SH_V503_A_TractionState.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V5\SH_V503_A_TractionState.Designer.cs">
+      <DependentUpon>SH_V503_A_TractionState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V5\SH_V502_A_BreakerState.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V5\SH_V502_A_BreakerState.Designer.cs">
+      <DependentUpon>SH_V502_A_BreakerState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V6\SH_V603_Vigilant.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V6\SH_V603_Vigilant.Designer.cs">
+      <DependentUpon>SH_V603_Vigilant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V6\SH_V602_WheelOiling.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V6\SH_V602_WheelOiling.Designer.cs">
+      <DependentUpon>SH_V602_WheelOiling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V6\SH_V601_TrianParam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V6\SH_V601_TrianParam.Designer.cs">
+      <DependentUpon>SH_V601_TrianParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V5\SH_V501_A_BowState.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V5\SH_V501_A_BowState.Designer.cs">
+      <DependentUpon>SH_V501_A_BowState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V6\SH_V604_TopSwith.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V6\SH_V604_TopSwith.Designer.cs">
+      <DependentUpon>SH_V604_TopSwith.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V6\SH_V6_ParamConfig_C2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V6\SH_V6_ParamConfig_C2.Designer.cs">
+      <DependentUpon>SH_V6_ParamConfig_C2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V6\SH_V6_ParamConfig_C1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V6\SH_V6_ParamConfig_C1.Designer.cs">
+      <DependentUpon>SH_V6_ParamConfig_C1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V7\SH_V7_TractionData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V7\SH_V7_TractionData.Designer.cs">
+      <DependentUpon>SH_V7_TractionData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V6\SH_V6_ParamConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V6\SH_V6_ParamConfig.Designer.cs">
+      <DependentUpon>SH_V6_ParamConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V8\SH_V806_B_DestroyFalut.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V8\SH_V806_B_DestroyFalut.Designer.cs">
+      <DependentUpon>SH_V806_B_DestroyFalut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V8\SH_V805_B_AllFalut.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V8\SH_V805_B_AllFalut.Designer.cs">
+      <DependentUpon>SH_V805_B_AllFalut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V8\SH_V804_A_DestroyFalut.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V8\SH_V804_A_DestroyFalut.Designer.cs">
+      <DependentUpon>SH_V804_A_DestroyFalut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V8\SH_V803_A_AllFalut.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V8\SH_V803_A_AllFalut.Designer.cs">
+      <DependentUpon>SH_V803_A_AllFalut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V8\SH_V812_B_OperateInfo_Info.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V8\SH_V812_B_OperateInfo_Info.Designer.cs">
+      <DependentUpon>SH_V812_B_OperateInfo_Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V8\SH_V811_B_OperateInfo_V1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V8\SH_V811_B_OperateInfo_V1.Designer.cs">
+      <DependentUpon>SH_V811_B_OperateInfo_V1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V8\SH_V810_B_OperateInfo_V0.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V8\SH_V810_B_OperateInfo_V0.Designer.cs">
+      <DependentUpon>SH_V810_B_OperateInfo_V0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V8\SH_V809_A_OperateInfo_Info.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V8\SH_V809_A_OperateInfo_Info.Designer.cs">
+      <DependentUpon>SH_V809_A_OperateInfo_Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V8\SH_V808_A_OperateInfo_V1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V8\SH_V808_A_OperateInfo_V1.Designer.cs">
+      <DependentUpon>SH_V808_A_OperateInfo_V1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V8\SH_V807_A_OperateInfo_V0.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V8\SH_V807_A_OperateInfo_V0.Designer.cs">
+      <DependentUpon>SH_V807_A_OperateInfo_V0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V8\SH_V802_B_CurrentFalut.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V8\SH_V802_B_CurrentFalut.Designer.cs">
+      <DependentUpon>SH_V802_B_CurrentFalut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\V8\SH_V801_A_CurrentFalut.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\V8\SH_V801_A_CurrentFalut.Designer.cs">
+      <DependentUpon>SH_V801_A_CurrentFalut.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BlackView.resx">
+      <DependentUpon>BlackView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DefControls\DefStateShow.resx">
+      <DependentUpon>DefStateShow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DefControls\UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NoBodyVigilantView.resx">
+      <DependentUpon>NoBodyVigilantView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NullControls\AxisLabel.resx">
+      <DependentUpon>AxisLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V0\SH_V0_BackView.resx">
+      <DependentUpon>SH_V0_BackView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V1\SH_V1_MainView.resx">
+      <DependentUpon>SH_V1_MainView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V1\SH_V1_Main_C2.resx">
+      <DependentUpon>SH_V1_Main_C2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V1\SH_V1_Main_C1.resx">
+      <DependentUpon>SH_V1_Main_C1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V2\SH_V205_B_AuxiliarySys.resx">
+      <DependentUpon>SH_V205_B_AuxiliarySys.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V2\SH_V204_A_AuxiliarySys.resx">
+      <DependentUpon>SH_V204_A_AuxiliarySys.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V2\SH_V206_A_AxisTemperature.resx">
+      <DependentUpon>SH_V206_A_AxisTemperature.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V2\SH_V207_B_AxisTemperature.resx">
+      <DependentUpon>SH_V207_B_AxisTemperature.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V2\SH_V203_B_Temperature.resx">
+      <DependentUpon>SH_V203_B_Temperature.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V2\SH_V202_A_Temperature.resx">
+      <DependentUpon>SH_V202_A_Temperature.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V2\SH_V208_AuxiliaryTest.resx">
+      <DependentUpon>SH_V208_AuxiliaryTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V2\SH_V209_ControlSys.resx">
+      <DependentUpon>SH_V209_ControlSys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V2\SH_V2_MainData.resx">
+      <DependentUpon>SH_V2_MainData.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V3\SH_V304_TimeSetting.resx">
+      <DependentUpon>SH_V304_TimeSetting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V3\SH_V303_TrainAOrB.resx">
+      <DependentUpon>SH_V303_TrainAOrB.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V3\SH_V302_WheelSetting.resx">
+      <DependentUpon>SH_V302_WheelSetting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V3\SH_V3_Maintain.resx">
+      <DependentUpon>SH_V3_Maintain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V3\SH_V301_TrainIDSetting.resx">
+      <DependentUpon>SH_V301_TrainIDSetting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V4\SH_V404_C1.resx">
+      <DependentUpon>SH_V404_C1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V4\SH_V405_GroupDiagnose.resx">
+      <DependentUpon>SH_V405_GroupDiagnose.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V4\SH_V403_DisConnect.resx">
+      <DependentUpon>SH_V403_DisConnect.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V4\SH_V4013_FaultLight.resx">
+      <DependentUpon>SH_V4013_FaultLight.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V4\SH_V4012_VersionInfo.resx">
+      <DependentUpon>SH_V4012_VersionInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V4\SH_V4011_BreakingState.resx">
+      <DependentUpon>SH_V4011_BreakingState.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V4\SH_V401_StateShow.resx">
+      <DependentUpon>SH_V401_StateShow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V4\SH_V4_Connect.resx">
+      <DependentUpon>SH_V4_Connect.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V4\SH_V404_GroupSetting.resx">
+      <DependentUpon>SH_V404_GroupSetting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V5\ReconnectBtn.resx">
+      <DependentUpon>ReconnectBtn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V5\SH_V512_B_TractionState_F.resx">
+      <DependentUpon>SH_V512_B_TractionState_F.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V5\SH_V511_B_BreakerState_F.resx">
+      <DependentUpon>SH_V511_B_BreakerState_F.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V5\SH_V510_B_BowState_F.resx">
+      <DependentUpon>SH_V510_B_BowState_F.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V5\SH_V509_A_TractionState_F.resx">
+      <DependentUpon>SH_V509_A_TractionState_F.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V5\SH_V508_A_BreakerState_F.resx">
+      <DependentUpon>SH_V508_A_BreakerState_F.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V5\SH_V507_A_BowState_F.resx">
+      <DependentUpon>SH_V507_A_BowState_F.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V5\SH_V506_B_TractionState.resx">
+      <DependentUpon>SH_V506_B_TractionState.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V5\SH_V504_B_BowState.resx">
+      <DependentUpon>SH_V504_B_BowState.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V5\SH_V505_B_BreakerState.resx">
+      <DependentUpon>SH_V505_B_BreakerState.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V5\SH_V503_A_TractionState.resx">
+      <DependentUpon>SH_V503_A_TractionState.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V5\SH_V502_A_BreakerState.resx">
+      <DependentUpon>SH_V502_A_BreakerState.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V6\SH_V603_Vigilant.resx">
+      <DependentUpon>SH_V603_Vigilant.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V6\SH_V602_WheelOiling.resx">
+      <DependentUpon>SH_V602_WheelOiling.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V6\SH_V601_TrianParam.resx">
+      <DependentUpon>SH_V601_TrianParam.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V5\SH_V501_A_BowState.resx">
+      <DependentUpon>SH_V501_A_BowState.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V6\SH_V604_TopSwith.resx">
+      <DependentUpon>SH_V604_TopSwith.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V6\SH_V6_ParamConfig_C2.resx">
+      <DependentUpon>SH_V6_ParamConfig_C2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V6\SH_V6_ParamConfig_C1.resx">
+      <DependentUpon>SH_V6_ParamConfig_C1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V7\SH_V7_TractionData.resx">
+      <DependentUpon>SH_V7_TractionData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V6\SH_V6_ParamConfig.resx">
+      <DependentUpon>SH_V6_ParamConfig.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V8\SH_V806_B_DestroyFalut.resx">
+      <DependentUpon>SH_V806_B_DestroyFalut.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V8\SH_V805_B_AllFalut.resx">
+      <DependentUpon>SH_V805_B_AllFalut.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V8\SH_V804_A_DestroyFalut.resx">
+      <DependentUpon>SH_V804_A_DestroyFalut.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V8\SH_V803_A_AllFalut.resx">
+      <DependentUpon>SH_V803_A_AllFalut.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V8\SH_V812_B_OperateInfo_Info.resx">
+      <DependentUpon>SH_V812_B_OperateInfo_Info.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V8\SH_V811_B_OperateInfo_V1.resx">
+      <DependentUpon>SH_V811_B_OperateInfo_V1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V8\SH_V810_B_OperateInfo_V0.resx">
+      <DependentUpon>SH_V810_B_OperateInfo_V0.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V8\SH_V809_A_OperateInfo_Info.resx">
+      <DependentUpon>SH_V809_A_OperateInfo_Info.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V8\SH_V808_A_OperateInfo_V1.resx">
+      <DependentUpon>SH_V808_A_OperateInfo_V1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V8\SH_V807_A_OperateInfo_V0.resx">
+      <DependentUpon>SH_V807_A_OperateInfo_V0.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V8\SH_V802_B_CurrentFalut.resx">
+      <DependentUpon>SH_V802_B_CurrentFalut.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\V8\SH_V801_A_CurrentFalut.resx">
+      <DependentUpon>SH_V801_A_CurrentFalut.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_Dwon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_Up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\主断闭合.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\主断故障.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\主断禁止闭合.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\主断运行闭合.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\朔黄辅助系统.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\朔黄辅助系统1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\接触器横断开1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\接触器横闭合1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\接触器竖断开1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\接触器竖闭合.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\朔黄辅助系统2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\断路器闭合.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\断路器断开.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\朔黄辅助系统3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\设备得电.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\设备断电.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\设备得电1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\设备断电1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_Up_Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_Up_Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_Up_Orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\信号塔.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RadioUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gray1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_Blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_Gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_Blue1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\主断闭合1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\主断死锁.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\主断开但没有缓解.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\主断开且已经缓解.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\机车方向向后.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\机车方向向前.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\机车方向不明确.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\警惕装置正常.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\警惕装置切除.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\停放制动施加.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\停放制动缓解a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\停放制动死锁.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\空转滑行a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\牵引允许.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\牵引禁止.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\受电弓A升起.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\受电弓降.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\受电弓2降1隔.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\受电弓B升起.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\受电弓降1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\受电弓1降2隔.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\受电弓12升起.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\受电弓全部隔离.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\受电弓降2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紧急制动.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\惩罚制动.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\撒砂.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\防滑.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\受电弓A升起1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\受电弓降3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PointerBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PointerRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\控制系统背景.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WTB_LineA_Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WTB_LineA_Green1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WTB_LineA_Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WTB_LineB_Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WTB_LineB_Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MVB_LineA_Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MVB_LineA_Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MVB_LineB_Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MVB_LineB_Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\正常.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\隔离.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\故障.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\机车配置背景.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\司机室A端.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\司机室B端.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\停放制动缓解65X50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\停放制动施加65X50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紧急制动65X69.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BCU本机投入65X65.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BCU重联65X65.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\制动缸缓解65X61.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\制动缸施加65X61.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\电机正常.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\电机隔离.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\转向架电机正常.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\转向架电机隔离.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\制动缸缓解54X50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\制动缸施加54X50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\停放制动缓解54X51.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\停放制动施加54X51.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\紧急制动54X54.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BCU本机投入65X651.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BCU重联65X651.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\升弓40X27.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\降弓40X27.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\左开关闭合101X27.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\左开关断开101X27.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\右开关闭合101X27.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\右开关断开101X27.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\方向向后78X78.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\方向向前78X78.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\方向不明确78X78.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\受电弓A升起.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\降双弓.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\受电弓A隔离.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\受电弓B升起.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\受电弓B隔离.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\升双弓.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\双弓故障.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\制动缸施加78X78.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\制动缸缓解78X78.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\制动缸死锁78X78.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\主断闭合98X27.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\主断死锁98X27.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\主断开但没有缓解98X27.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\主断开且已经缓解98X27.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\渐变线.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\朔黄辅助系统31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PointerGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\降双弓1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\双弓故障1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonControls\CommonControls.csproj">
+      <Project>{18b1ccf5-cd4a-413f-9427-c9ffb4f9f6cd}</Project>
+      <Name>CommonControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YunDa.JC.MMI.Common\YunDa.JC.MMI.Common.csproj">
+      <Project>{eb6b1edb-ee3b-4edc-b836-edc9ea8acc19}</Project>
+      <Name>YunDa.JC.MMI.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\司机室A端有效.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\司机室A端无效.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\司机室B端无效.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\司机室B端有效.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\空转滑行.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\转向架电机隔离A.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\右侧按钮背景Down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\升弓New.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\右侧按钮背景_确认按下.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\右侧按钮背景_确认按下1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\转向架电机不正常.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\转向架电机不正常1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_Down_Falut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_Down_Falut_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\箭头3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\箭头31.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\箭头1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\箭头11.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\箭头2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\车顶隔离开关2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\车顶隔离开关1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\车顶隔离开关3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\机车配置背景1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\方向向后96X79.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\方向向前96X79.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\方向不明确96X79.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

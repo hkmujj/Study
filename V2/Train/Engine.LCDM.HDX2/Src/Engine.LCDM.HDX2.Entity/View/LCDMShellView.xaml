@@ -1,0 +1,14 @@
+﻿<UserControl x:Class="Engine.LCDM.HDX2.Entity.View.LCDMShellView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:constant="clr-namespace:Engine.LCDM.HDX2.Entity.Constant"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:regions="http://www.codeplex.com/CompositeWPF"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             mc:Ignorable="d">
+    <Grid>
+        <ContentControl Grid.Row="0" regions:RegionManager.RegionName="{x:Static constant:RegionNames.WholeRegion}" />
+    </Grid>
+</UserControl>

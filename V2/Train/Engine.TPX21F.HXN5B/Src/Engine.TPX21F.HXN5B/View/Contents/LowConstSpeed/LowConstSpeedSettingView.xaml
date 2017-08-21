@@ -1,0 +1,125 @@
+﻿<UserControl x:Class="Engine.TPX21F.HXN5B.View.Contents.LowConstSpeed.LowConstSpeedSettingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:constant="clr-namespace:Engine.TPX21F.HXN5B.Constant"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:regions="http://www.codeplex.com/CompositeWPF"
+             xmlns:view="clr-namespace:MMI.Facility.WPFInfrastructure.View;assembly=MMI.Facility.WPFInfrastructure"
+             xmlns:viewModel="clr-namespace:Engine.TPX21F.HXN5B.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:HXN5BViewModel}"
+             d:DesignHeight="495"
+             d:DesignWidth="800"
+             Background="{StaticResource ContentBackgroundBrush}"
+             mc:Ignorable="d">
+    <GroupBox Margin="10,141,24,141" Style="{StaticResource SettingViewGroupBoxStyle}">
+        <GroupBox.Header>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource SettingLowSpeedContentTextStyle}" Text="{StaticResource StringLowConstSpeed}" />
+                <TextBlock Style="{StaticResource SettingLowSpeedContentTextStyle}" Text="{StaticResource StringSetting}" />
+            </StackPanel>
+        </GroupBox.Header>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Row="0"
+                        Grid.Column="2"
+                        HorizontalAlignment="Center"
+                        Orientation="Horizontal">
+                <TextBlock Style="{StaticResource SettingLowSpeedContentTextStyle}" Text="{StaticResource StringParam}" />
+                <TextBlock Style="{StaticResource SettingLowSpeedContentTextStyle}" Text="{StaticResource StringValue}" />
+            </StackPanel>
+            <StackPanel Grid.Row="1"
+                        Grid.Column="0"
+                        HorizontalAlignment="Center"
+                        Orientation="Horizontal">
+                <TextBlock Style="{StaticResource SettingLowSpeedContentTextStyle}" Text="{StaticResource StringParam}" />
+                <TextBlock Style="{StaticResource SettingLowSpeedContentTextStyle}" Text="{StaticResource StringName}" />
+            </StackPanel>
+            <StackPanel Grid.Row="1"
+                        Grid.Column="1"
+                        HorizontalAlignment="Center"
+                        Orientation="Horizontal">
+                <TextBlock Style="{StaticResource SettingLowSpeedContentTextStyle}" Text="{StaticResource StringDefault}" />
+                <TextBlock Style="{StaticResource SettingLowSpeedContentTextStyle}" Text="{StaticResource StringValue}" />
+            </StackPanel>
+
+            <TextBlock Grid.Row="1"
+                       Grid.Column="2"
+                       Style="{StaticResource SettingLowSpeedContentTextStyle}"
+                       Text="{StaticResource StringMin}" />
+
+            <TextBlock Grid.Row="1"
+                       Grid.Column="3"
+                       Style="{StaticResource SettingLowSpeedContentTextStyle}"
+                       Text="{StaticResource StringMax}" />
+
+
+            <TextBlock Grid.Row="1"
+                       Grid.Column="4"
+                       Style="{StaticResource SettingLowSpeedContentTextStyle}"
+                       Text="{StaticResource StringCurrent}" />
+
+            <TextBlock Grid.Row="1"
+                       Grid.Column="5"
+                       Style="{StaticResource SettingLowSpeedContentTextStyle}"
+                       Text="{StaticResource StringSetting}" />
+
+            <TextBlock Grid.Row="1"
+                       Grid.Column="6"
+                       Style="{StaticResource SettingLowSpeedContentTextStyle}"
+                       Text="{StaticResource StringUnit}" />
+
+            <TextBlock Grid.Row="2"
+                       Grid.Column="0"
+                       Style="{StaticResource SettingLowSpeedContentGreenTextStyle}"
+                       Text="{StaticResource StringLowConstSpeed}" />
+
+            <TextBlock Grid.Row="2"
+                       Grid.Column="1"
+                       Style="{StaticResource SettingLowSpeedContentGreenTextStyle}"
+                       Text="0" />
+
+            <TextBlock Grid.Row="2"
+                       Grid.Column="2"
+                       Style="{StaticResource SettingLowSpeedContentGreenTextStyle}"
+                       Text="0" />
+
+            <TextBlock Grid.Row="2"
+                       Grid.Column="3"
+                       Style="{StaticResource SettingLowSpeedContentGreenTextStyle}"
+                       Text="18" />
+
+
+            <TextBlock Grid.Row="2"
+                       Grid.Column="4"
+                       Style="{StaticResource SettingLowSpeedContentGreenTextStyle}"
+                       Text="{Binding Path=Domain.TrainSettingViewModel.Model.LowConstSpeedModel.CurrentLowSpeed,
+                                      StringFormat={}0.0}" />
+
+            <TextBlock Grid.Row="2"
+                       Grid.Column="5"
+                       Style="{StaticResource SettingLowSpeedContentGreenTextStyle}"
+                       Text="TODO" />
+
+            <TextBlock Grid.Row="2"
+                       Grid.Column="6"
+                       Style="{StaticResource SettingLowSpeedContentGreenTextStyle}"
+                       Text="km/h" />
+        </Grid>
+    </GroupBox>
+</UserControl>

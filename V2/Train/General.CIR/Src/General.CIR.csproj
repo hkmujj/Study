@@ -1,0 +1,621 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{33B6B931-42CB-47A0-A657-CCAF77689BF3}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>General.CIR</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <OutputPath>..\CIR\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Core.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.PropertyGrid.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System.Core" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="Microsoft.Practices.Prism.MefExtensions" />
+    <Reference Include="Microsoft.Practices.Prism" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="MMI.Facility.WPFInfrastructure" />
+    <Reference Include="Excel.Interface" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.Practices.ServiceLocation" />
+    <Reference Include="CommonUtil" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="General.CIR.CIRData\CallConfirmResponeInitiative450M.cs" />
+    <Compile Include="General.CIR.CIRData\CallConfirmResponeInitiativeGSMR.cs" />
+    <Compile Include="General.CIR.CIRData\CallRequestInitiative450M.cs" />
+    <Compile Include="General.CIR.CIRData\CallRequestInitiativeGSMR.cs" />
+    <Compile Include="General.CIR.CIRData\CallResponePassive450M.cs" />
+    <Compile Include="General.CIR.CIRData\CIRCommAgent.cs" />
+    <Compile Include="General.CIR.CIRData\CIRDate.cs" />
+    <Compile Include="General.CIR.CIRData\CIRPacket.cs" />
+    <Compile Include="General.CIR.CIRData\CIRTime.cs" />
+    <Compile Include="General.CIR.CIRData\ConstructProtectionAlarmRequest.cs" />
+    <Compile Include="General.CIR.CIRData\CrossAccientAlarmRequest.cs" />
+    <Compile Include="General.CIR.CIRData\DispatchInfo.cs" />
+    <Compile Include="General.CIR.CIRData\DispatchInfoSignConfirm.cs" />
+    <Compile Include="General.CIR.CIRData\GpsInfo.cs" />
+    <Compile Include="General.CIR.CIRData\LbjStatusInfo.cs" />
+    <Compile Include="General.CIR.CIRData\LineSingalModeSwitch.cs" />
+    <Compile Include="General.CIR.CIRData\OffOnHook.cs" />
+    <Compile Include="General.CIR.CIRData\OnOffHookRequest.cs" />
+    <Compile Include="General.CIR.CIRData\PowerStatusCtrl.cs" />
+    <Compile Include="General.CIR.CIRData\PressDownUpPTT.cs" />
+    <Compile Include="General.CIR.CIRData\RadioStatus450M.cs" />
+    <Compile Include="General.CIR.CIRData\SingalDegree450M.cs" />
+    <Compile Include="General.CIR.CIRData\StartStopLbjAlarmRequest.cs" />
+    <Compile Include="General.CIR.CIRData\StationInfo.cs" />
+    <Compile Include="General.CIR.CIRData\StatusInfo800M.cs" />
+    <Compile Include="General.CIR.CIRData\SysInfo.cs" />
+    <Compile Include="General.CIR.CIRData\TailInfo.cs" />
+    <Compile Include="General.CIR.CIRData\TrainIDRegistRequest.cs" />
+    <Compile Include="General.CIR.CIRData\TrainIDRegistResponse.cs" />
+    <Compile Include="General.CIR.CIRData\TrainNumRegistRequest.cs" />
+    <Compile Include="General.CIR.CIRData\TrainNumRegistResponse.cs" />
+    <Compile Include="General.CIR.CIRData\TrainProtectionAlarmRequest.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\AsteriskResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\BtnResponseBase.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\CallBtnResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\CallInputBackspaceResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\CallInputBtnResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\CallInputBtnResponseAsterisk.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\CallInputBtnResponseNumber0.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\CallInputBtnResponseNumber1.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\CallInputBtnResponseNumber2.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\CallInputBtnResponseNumber3.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\CallInputBtnResponseNumber4.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\CallInputBtnResponseNumber5.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\CallInputBtnResponseNumber6.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\CallInputBtnResponseNumber7.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\CallInputBtnResponseNumber8.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\CallInputBtnResponseNumber9.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\CallInputBtnResponseWellNumber.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\ColumnEndRemoveBtnResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\ColumnEndRequstResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\CommandInfoConfirmResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\CommandInfoQuitResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\CommandListBottomResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\CommandListConfirmResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\CommandListLeftResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\CommandListRightResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\CommandListUpResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\EmergencyConfirm.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\EnmergencyResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\F2Call.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\HangUpResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MaininsatncePasswordConfirResposne.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MaininsatnceRightReponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MaininsatnceUpResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MaininstanceBottonResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MaininstanceLeftResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MaininstanceNumber0BtnResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MaininstanceNumber1BtnResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MaininstanceNumber2BtnResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MaininstanceNumber3BtnResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MaininstanceNumber4BtnResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MaininstanceNumber5BtnResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MaininstanceNumber6BtnResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MaininstanceNumber7BtnResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MaininstanceNumber8BtnResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MaininstanceNumber9BtnResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MaininstanceNumberBtnResponseBase.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MaininstancePasswordBackspaceResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MainNumber0Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MainNumber1Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MainNumber2Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MainNumber3Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MainNumber4Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MainNumber5Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MainNumber6Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MainNumber7Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MainNumber8Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MainNumber9Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MasterGSMRF1CallResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MasterGSMRF1SerchResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MasterGSMRF4Call.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MasterGSMRF6Call.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MasterGSMRF7Call.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MasterGSMRF7F8Call.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MasterGSMRLeftResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MasterGSMRRightResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\MasterGSMRSettingResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\OutLibBottomResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\OutLibUpResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\PhoneBookBottomResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\PhoneBookLeftResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\PhoneBookRegionUpResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\PhoneBookRightResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\PoliceCommandConfirm.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\PoliceRemoveResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\PoliceResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\RecverLeftResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\RecverRightResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\RunRegionBottomResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\RunRegionLeftResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\RunRegionRightResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\RunRegionUpResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\ScreenLeftResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\ScreenRightResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SerchBottomResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SerchConfirmResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SerchNumber1Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SerchNumber2Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SerchNumber3Reponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SerchNumber4Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SerchNumber5Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SerchNumber6Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SerchUpResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SettigBottomResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SettingCOlBackspaceResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SettingColConfirmResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SettingColNumber0Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SettingColNumber1Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SettingColNumber2Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SettingColNumber3Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SettingColNumber4Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SettingColNumber5Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SettingColNumber6Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SettingColNumber7Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SettingColNumber8Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SettingColNumber9Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SettingConfirmResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SettingNumber0Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SettingNumber1Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SettingNumber2Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SettingNumber3Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SettingNumber4Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SettingNumber5Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SettingNumber6Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SettingNumber7Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SettingNumber8Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SettingNumber9Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SettingQuitResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SettingTripsQuitResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SettingUpResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SpeakerLeftResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\SpeakerRightResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\TrainNumberRegistConfirmResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\TrainNumberRegistNumber0Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\TrainNumberRegistNumber1Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\TrainNumberRegistNumber2Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\TrainNumberRegistNumber3Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\TrainNumberRegistNumber4Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\TrainNumberRegistNumber5Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\TrainNumberRegistNumber6Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\TrainNumberRegistNumber7Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\TrainNumberRegistNumber8Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\TrainNumberRegistNumber9Response.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\TrainNumberResgisterBackspaceResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\TrainNumberUnRegisterConfirmResponse.cs" />
+    <Compile Include="General.CIR.Commands.ScreenBtnResponse\WellNumResponse.cs" />
+    <Compile Include="General.CIR.Commands.SerchItemResponse\AllDispatchCommandResponse.cs" />
+    <Compile Include="General.CIR.Commands.SerchItemResponse\DispatchCarResponse.cs" />
+    <Compile Include="General.CIR.Commands.SerchItemResponse\DispatchCommandResponse.cs" />
+    <Compile Include="General.CIR.Commands.SerchItemResponse\OtherInfoResponse.cs" />
+    <Compile Include="General.CIR.Commands.SerchItemResponse\RoutePrevueResponse.cs" />
+    <Compile Include="General.CIR.Commands.SerchItemResponse\RunningTokenResponse.cs" />
+    <Compile Include="General.CIR.Commands.SettingItemResponse\ColumnInputResponse.cs" />
+    <Compile Include="General.CIR.Commands.SettingItemResponse\MainInstanceResponse.cs" />
+    <Compile Include="General.CIR.Commands.SettingItemResponse\OutLibResponse.cs" />
+    <Compile Include="General.CIR.Commands.SettingItemResponse\PhoneBookResponse.cs" />
+    <Compile Include="General.CIR.Commands.SettingItemResponse\RecverResponse.cs" />
+    <Compile Include="General.CIR.Commands.SettingItemResponse\RunRegionResponse.cs" />
+    <Compile Include="General.CIR.Commands.SettingItemResponse\ScreenResponse.cs" />
+    <Compile Include="General.CIR.Commands.SettingItemResponse\SpeakerResponse.cs" />
+    <Compile Include="General.CIR.Commands.SettingItemResponse\StatusSerchResponse.cs" />
+    <Compile Include="General.CIR.Commands.SettingItemResponse\TrainNumberResponse.cs" />
+    <Compile Include="General.CIR.Commands\CustomCommandBase.cs" />
+    <Compile Include="General.CIR.Config\EngineType.cs" />
+    <Compile Include="General.CIR.Config\EngineTypeConfig.cs" />
+    <Compile Include="General.CIR.Config\OutLib.cs" />
+    <Compile Include="General.CIR.Config\OutLibItem.cs" />
+    <Compile Include="General.CIR.Config\SystemConfig.cs" />
+    <Compile Include="General.CIR.Contance\RegionNames.cs" />
+    <Compile Include="General.CIR.Contance\ViewNames.cs" />
+    <Compile Include="General.CIR.Controller.ViewModelController\ButtonController.cs" />
+    <Compile Include="General.CIR.Controller.ViewModelController\ColumnEndController.cs" />
+    <Compile Include="General.CIR.Controller.ViewModelController\DispatchCommandController.cs" />
+    <Compile Include="General.CIR.Controller.ViewModelController\LineSelectController.cs" />
+    <Compile Include="General.CIR.Controller.ViewModelController\MasterInfoController.cs" />
+    <Compile Include="General.CIR.Controller.ViewModelController\PoliceController.cs" />
+    <Compile Include="General.CIR.Controller.ViewModelController\SettingViewController.cs" />
+    <Compile Include="General.CIR.Controller.ViewModelController\SystemInfoContrller.cs" />
+    <Compile Include="General.CIR.Controller.ViewModelController\TitleController.cs" />
+    <Compile Include="General.CIR.Controller\CIRController.cs" />
+    <Compile Include="General.CIR.Controller\ControllerBase.cs" />
+    <Compile Include="General.CIR.Converter\ConcatStringConverter.cs" />
+    <Compile Include="General.CIR.Converter\ProgressbarValueConverter.cs" />
+    <Compile Include="General.CIR.Converter\StringLengthConverter.cs" />
+    <Compile Include="General.CIR.DataTempleteSelector\SettingDatatemplateSelector.cs" />
+    <Compile Include="General.CIR.Events\BusinessType.cs" />
+    <Compile Include="General.CIR.Events\CallEvent.cs" />
+    <Compile Include="General.CIR.Events\CallEventArgs.cs" />
+    <Compile Include="General.CIR.Events\NavigatorEvent.cs" />
+    <Compile Include="General.CIR.Events\NetWorkDataEvent.cs" />
+    <Compile Include="General.CIR.Events\NetWorkEventArgs.cs" />
+    <Compile Include="General.CIR.Extentions\EngineNumberExtention.cs" />
+    <Compile Include="General.CIR.Extentions\EnmerableExtention.cs" />
+    <Compile Include="General.CIR.Extentions\EnumerableExtention.cs" />
+    <Compile Include="General.CIR.Extentions\NumberExtention.cs" />
+    <Compile Include="General.CIR.Extentions\StringExtention.cs" />
+    <Compile Include="General.CIR.Interfaces\IBtnItems.cs" />
+    <Compile Include="General.CIR.Interfaces\IBtnItemsFactory.cs" />
+    <Compile Include="General.CIR.Interfaces\ICIRStatusChanged.cs" />
+    <Compile Include="General.CIR.Models.States\CommandType.cs" />
+    <Compile Include="General.CIR.Models.States\InputText.cs" />
+    <Compile Include="General.CIR.Models.States\PoliceStatus.cs" />
+    <Compile Include="General.CIR.Models.Units\BtnItems.cs" />
+    <Compile Include="General.CIR.Models.Units\BtnItemsFactory.cs" />
+    <Compile Include="General.CIR.Models.Units\Bureau.cs" />
+    <Compile Include="General.CIR.Models.Units\ButtonUnits.cs" />
+    <Compile Include="General.CIR.Models.Units\DispatchCommandUnit.cs" />
+    <Compile Include="General.CIR.Models.Units\ItemType.cs" />
+    <Compile Include="General.CIR.Models.Units\LinePhone.cs" />
+    <Compile Include="General.CIR.Models.Units\LineSelectAll.cs" />
+    <Compile Include="General.CIR.Models.Units\LineUnit.cs" />
+    <Compile Include="General.CIR.Models.Units\Luju.cs" />
+    <Compile Include="General.CIR.Models.Units\MainInsatnce.cs" />
+    <Compile Include="General.CIR.Models.Units\MaininsatnceItem.cs" />
+    <Compile Include="General.CIR.Models.Units\PhoneBook.cs" />
+    <Compile Include="General.CIR.Models.Units\PhonesUnit.cs" />
+    <Compile Include="General.CIR.Models.Units\SerchItem.cs" />
+    <Compile Include="General.CIR.Models.Units\SettingItem.cs" />
+    <Compile Include="General.CIR.Models\GlobalParams.cs" />
+    <Compile Include="General.CIR.Properties\Resources.cs" />
+    <Compile Include="General.CIR.Properties\Settings.cs" />
+    <Compile Include="General.CIR.Resource\BtnItemKeys.cs" />
+    <Compile Include="General.CIR.Resource\InFoResource.cs" />
+    <Compile Include="General.CIR.ViewModels\ButtonViewModel.cs" />
+    <Compile Include="General.CIR.ViewModels\CalllViewModel.cs" />
+    <Compile Include="General.CIR.ViewModels\CIRViewModel.cs" />
+    <Compile Include="General.CIR.ViewModels\ColumnEndViewModel.cs" />
+    <Compile Include="General.CIR.ViewModels\DispatchCommandViewModel.cs" />
+    <Compile Include="General.CIR.ViewModels\LineSelectViewModel.cs" />
+    <Compile Include="General.CIR.ViewModels\MainContentViewModel.cs" />
+    <Compile Include="General.CIR.ViewModels\MaininstanceViewModel.cs" />
+    <Compile Include="General.CIR.ViewModels\MasterInfoViewModel.cs" />
+    <Compile Include="General.CIR.ViewModels\OutLibViewModel.cs" />
+    <Compile Include="General.CIR.ViewModels\PhoneBookViewModel.cs" />
+    <Compile Include="General.CIR.ViewModels\PhoneViewModel.cs" />
+    <Compile Include="General.CIR.ViewModels\PoliceViewModel.cs" />
+    <Compile Include="General.CIR.ViewModels\SettingViewModel.cs" />
+    <Compile Include="General.CIR.ViewModels\SystemInfosViewModel.cs" />
+    <Compile Include="General.CIR.ViewModels\TitleViewModel.cs" />
+    <Compile Include="General.CIR.ViewModels\ViewModelBase.cs" />
+    <Compile Include="General.CIR.Views.ColumnEnd\ColumnEndOne.cs" />
+    <Compile Include="General.CIR.Views.ColumnEnd\ColumnEndTwo.cs" />
+    <Compile Include="General.CIR.Views.Common\CommonBar.cs" />
+    <Compile Include="General.CIR.Views.Common\ImageButton.cs" />
+    <Compile Include="General.CIR.Views.Common\ReciverSoundView.cs" />
+    <Compile Include="General.CIR.Views.Common\ScreenView.cs" />
+    <Compile Include="General.CIR.Views.Common\SignalView.cs" />
+    <Compile Include="General.CIR.Views.Common\SpeakerSoundView.cs" />
+    <Compile Include="General.CIR.Views.MasterInfo\CallingView.cs" />
+    <Compile Include="General.CIR.Views.MasterInfo\CallNumberInputView.cs" />
+    <Compile Include="General.CIR.Views.MasterInfo\CenterInfoView.cs" />
+    <Compile Include="General.CIR.Views.MasterInfo\InCommingCallView.cs" />
+    <Compile Include="General.CIR.Views.MasterInfo\MasterInfoNull.cs" />
+    <Compile Include="General.CIR.Views.Master\VerticalKeyShell.cs" />
+    <Compile Include="General.CIR.Views.Police\EnmergencyConfirmView.cs" />
+    <Compile Include="General.CIR.Views.Police\EnmergencyRunView.cs" />
+    <Compile Include="General.CIR.Views.Police\PoliceConfirmView.cs" />
+    <Compile Include="General.CIR.Views.Police\PoliceNormal.cs" />
+    <Compile Include="General.CIR.Views.Police\PoliceRemoveCommandView.cs" />
+    <Compile Include="General.CIR.Views.Police\PoliceRemoveView.cs" />
+    <Compile Include="General.CIR.Views.Police\SendEnmergencyCommandView.cs" />
+    <Compile Include="General.CIR.Views.Police\SendPoliceCommandView.cs" />
+    <Compile Include="General.CIR.Views.Screen\BlackScreenView.cs" />
+    <Compile Include="General.CIR.Views.Screen\CommandListView.cs" />
+    <Compile Include="General.CIR.Views.Screen\CommandSerchView.cs" />
+    <Compile Include="General.CIR.Views.Screen\DispatchCommandInfos.cs" />
+    <Compile Include="General.CIR.Views.Screen\LineSelectView.cs" />
+    <Compile Include="General.CIR.Views.Screen\LujuView.cs" />
+    <Compile Include="General.CIR.Views.Screen\MainContent.cs" />
+    <Compile Include="General.CIR.Views.Screen\MianinstanceView.cs" />
+    <Compile Include="General.CIR.Views.Screen\OutLibView.cs" />
+    <Compile Include="General.CIR.Views.Screen\RunRegionViews.cs" />
+    <Compile Include="General.CIR.Views.Screen\SettingView.cs" />
+    <Compile Include="General.CIR.Views.Screen\StartingView.cs" />
+    <Compile Include="General.CIR.Views.Screen\StatusSerchView.cs" />
+    <Compile Include="General.CIR.Views.SettingTrips\ColumnEndInput.cs" />
+    <Compile Include="General.CIR.Views.SettingTrips\MainInstanceTripView.cs" />
+    <Compile Include="General.CIR.Views.SettingTrips\SettingTripsNull.cs" />
+    <Compile Include="General.CIR.Views.SettingTrips\TrainNumberRegister.cs" />
+    <Compile Include="General.CIR.Views.Shell\DoMain.cs" />
+    <Compile Include="General.CIR\App.cs" />
+    <Compile Include="General.CIR\CIRMMIBootStrapper.cs" />
+    <Compile Include="General.CIR\DataMonitor.cs" />
+    <Compile Include="General.CIR\MainWindow.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="General.CIR.Resource\BtnItemKeys.resx" />
+    <EmbeddedResource Include="General.CIR.Resource\InFoResource.resx" />
+    <Resource Include="resource\images\cir\logo1.png" />
+    <Resource Include="resource\images\cir\logo2.png" />
+    <Resource Include="resource\images\cir\recver.png" />
+    <Resource Include="resource\images\cir\screen.png" />
+    <Resource Include="resource\images\cir\signal.png" />
+    <Resource Include="resource\images\cir\speaker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="app.xaml" />
+    <Page Include="datamonitor.xaml" />
+    <Page Include="General.CIR.Views.ColumnEnd\columnendone.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.ColumnEnd\columnendtwo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.Common\commonbar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.Common\reciversoundview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.Common\screenview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.Common\signalview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.Common\speakersoundview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.MasterInfo\callingview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.MasterInfo\callnumberinputview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.MasterInfo\centerinfoview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.MasterInfo\incommingcallview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.MasterInfo\masterinfonull.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.Master\verticalkeyshell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.Police\enmergencyconfirmview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.Police\enmergencyrunview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.Police\policeconfirmview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.Police\policenormal.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.Police\policeremovecommandview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.Police\policeremoveview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.Police\sendenmergencycommandview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.Police\sendpolicecommandview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.Screen\blackscreenview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.Screen\commandlistview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.Screen\commandserchview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.Screen\dispatchcommandinfos.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.Screen\lineselectview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.Screen\lujuview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.Screen\maincontent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.Screen\mianinstanceview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.Screen\outlibview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.Screen\runregionviews.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.Screen\settingview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.Screen\startingview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.Screen\statusserchview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.SettingTrips\columnendinput.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.SettingTrips\maininstancetripview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.SettingTrips\settingtripsnull.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.SettingTrips\trainnumberregister.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General.CIR.Views.Shell\domain.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="mainwindow.xaml" />
+    <Page Include="resource\brushes\cirbrushresource.xaml" />
+    <Page Include="resource\cirreource.xaml" />
+    <Page Include="resource\converters\converterreource.xaml" />
+    <Page Include="resource\images\cirimageresource.xaml" />
+    <Page Include="resource\styles\btnstyleresource.xaml" />
+    <Page Include="resource\styles\itemscontrolstyleresource.xaml" />
+    <Page Include="resource\styles\textstyleresource.xaml" />
+    <Page Include="themes\generic.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resource\images\cir\0键弹起.png" />
+    <Resource Include="resource\images\cir\0键按下.png" />
+    <Resource Include="resource\images\cir\1键弹起.png" />
+    <Resource Include="resource\images\cir\1键按下.png" />
+    <Resource Include="resource\images\cir\2键弹起.png" />
+    <Resource Include="resource\images\cir\2键按下.png" />
+    <Resource Include="resource\images\cir\3键弹起.png" />
+    <Resource Include="resource\images\cir\3键按下.png" />
+    <Resource Include="resource\images\cir\4键弹起.png" />
+    <Resource Include="resource\images\cir\4键按下.png" />
+    <Resource Include="resource\images\cir\5键弹起.png" />
+    <Resource Include="resource\images\cir\5键按下.png" />
+    <Resource Include="resource\images\cir\6键弹起.png" />
+    <Resource Include="resource\images\cir\6键按下.png" />
+    <Resource Include="resource\images\cir\7键弹起.png" />
+    <Resource Include="resource\images\cir\7键按下.png" />
+    <Resource Include="resource\images\cir\8键弹起.png" />
+    <Resource Include="resource\images\cir\8键按下.png" />
+    <Resource Include="resource\images\cir\9键弹起.png" />
+    <Resource Include="resource\images\cir\9键按下.png" />
+    <Resource Include="resource\images\cir\F1键弹起.png" />
+    <Resource Include="resource\images\cir\F1键按下.png" />
+    <Resource Include="resource\images\cir\F8键弹起.png" />
+    <Resource Include="resource\images\cir\F8键按下.png" />
+    <Resource Include="resource\images\cir\F键弹起.png" />
+    <Resource Include="resource\images\cir\F键按下.png" />
+    <Resource Include="resource\images\cir\上键弹起.png" />
+    <Resource Include="resource\images\cir\上键按下.png" />
+    <Resource Include="resource\images\cir\下键弹起.png" />
+    <Resource Include="resource\images\cir\下键按下.png" />
+    <Resource Include="resource\images\cir\主控弹起.png" />
+    <Resource Include="resource\images\cir\主控按下.png" />
+    <Resource Include="resource\images\cir\井号弹起.png" />
+    <Resource Include="resource\images\cir\井号按下.png" />
+    <Resource Include="resource\images\cir\切换弹起.png" />
+    <Resource Include="resource\images\cir\切换按下.png" />
+    <Resource Include="resource\images\cir\列尾排风弹起.png" />
+    <Resource Include="resource\images\cir\列尾排风按下.png" />
+    <Resource Include="resource\images\cir\列尾消号弹起.png" />
+    <Resource Include="resource\images\cir\列尾消号按下.png" />
+    <Resource Include="resource\images\cir\列尾确认弹起.png" />
+    <Resource Include="resource\images\cir\列尾确认按下.png" />
+    <Resource Include="resource\images\cir\右键弹起.png" />
+    <Resource Include="resource\images\cir\右键按下.png" />
+    <Resource Include="resource\images\cir\吊车请求弹起.png" />
+    <Resource Include="resource\images\cir\吊车请求按下.png" />
+    <Resource Include="resource\images\cir\呼叫弹起.png" />
+    <Resource Include="resource\images\cir\呼叫按下.png" />
+    <Resource Include="resource\images\cir\回格弹起.png" />
+    <Resource Include="resource\images\cir\回格按下.png" />
+    <Resource Include="resource\images\cir\复位弹起.png" />
+    <Resource Include="resource\images\cir\复位按下.png" />
+    <Resource Include="resource\images\cir\左键弹起.png" />
+    <Resource Include="resource\images\cir\左键按下.png" />
+    <Resource Include="resource\images\cir\打印弹起.png" />
+    <Resource Include="resource\images\cir\打印按下.png" />
+    <Resource Include="resource\images\cir\报警弹起.png" />
+    <Resource Include="resource\images\cir\报警按下.png" />
+    <Resource Include="resource\images\cir\挂断弹起.png" />
+    <Resource Include="resource\images\cir\挂断按下.png" />
+    <Resource Include="resource\images\cir\推出弹起.png" />
+    <Resource Include="resource\images\cir\星号键弹起.png" />
+    <Resource Include="resource\images\cir\星号键按下.png" />
+    <Resource Include="resource\images\cir\查询弹起.png" />
+    <Resource Include="resource\images\cir\查询按下.png" />
+    <Resource Include="resource\images\cir\界面弹起.png" />
+    <Resource Include="resource\images\cir\界面按下.png" />
+    <Resource Include="resource\images\cir\确认牵手弹起.png" />
+    <Resource Include="resource\images\cir\确认牵手按下.png" />
+    <Resource Include="resource\images\cir\紧急呼叫弹起.png" />
+    <Resource Include="resource\images\cir\紧急呼叫按下.png" />
+    <Resource Include="resource\images\cir\背景1.png" />
+    <Resource Include="resource\images\cir\背景2.png" />
+    <Resource Include="resource\images\cir\设置弹起.png" />
+    <Resource Include="resource\images\cir\设置按下.png" />
+    <Resource Include="resource\images\cir\退出按下.png" />
+    <Resource Include="resource\images\cir\风压查询弹起.png" />
+    <Resource Include="resource\images\cir\风压查询按下.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

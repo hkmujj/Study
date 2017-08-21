@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4BD544E5-AEAE-4763-9958-B66F24D2F3DC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Urban.Iran.HMI</RootNamespace>
+    <AssemblyName>Urban.Iran.HMI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Debug\Addin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\MMI\Addin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>..\Debug\Addin\IranHMI.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;D:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\IranHMI.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;D:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonUtil">
+      <HintPath>..\..\..\..\Bin\MMI\CommonUtil.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Excel.Interface">
+      <HintPath>..\..\..\..\Bin\MMI\Excel.Interface.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism">
+      <HintPath>..\..\..\..\Bin\MMI\Microsoft.Practices.Prism.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mmi.Communication.Index.Adapter">
+      <HintPath>..\..\..\..\..\Bin\MMI\Mmi.Communication.Index.Adapter.dll</HintPath>
+    </Reference>
+    <Reference Include="MMI.Facility.Interface">
+      <HintPath>..\..\..\..\Bin\MMI\MMI.Facility.Interface.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Urban.Domain.TrainState.Interface">
+      <HintPath>..\..\..\..\Urban.Domain.TrainState.Interface\bin\Urban.Domain.TrainState.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="Urban.Domain.TrainState.Model">
+      <HintPath>..\..\..\..\Urban.Domain.TrainState.Model\bin\Urban.Domain.TrainState.Model.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AcitveEvents.cs" />
+    <Compile Include="AlarmPage.cs" />
+    <Compile Include="Announcement.cs" />
+    <Compile Include="ARChangeValue.cs" />
+    <Compile Include="ARTest.cs" />
+    <Compile Include="ArTestView.cs" />
+    <Compile Include="BlackView.cs" />
+    <Compile Include="BottomButton.cs" />
+    <Compile Include="BrakeAir.cs" />
+    <Compile Include="BrakeTest.cs" />
+    <Compile Include="Bypass.cs" />
+    <Compile Include="CarWeight.cs" />
+    <Compile Include="Clock\ClockControl.cs" />
+    <Compile Include="Common\AnnounceInfo.cs" />
+    <Compile Include="Common\ButtonFactory.cs" />
+    <Compile Include="Common\CarType.cs" />
+    <Compile Include="Common\DataGridRow.cs" />
+    <Compile Include="Common\DisplayIndexAttribute.cs" />
+    <Compile Include="Common\EventColor.cs" />
+    <Compile Include="Common\GDIButtonExtention.cs" />
+    <Compile Include="Common\GotoViewAttribute.cs" />
+    <Compile Include="Common\HMIBase.cs" />
+    <Compile Include="Common\BtnStatus.cs" />
+    <Compile Include="Common\Common.cs" />
+    <Compile Include="Common\DataGrid.cs" />
+    <Compile Include="Common\EventInfo.cs" />
+    <Compile Include="Common\EventLife.cs" />
+    <Compile Include="Common\FJButton.cs" />
+    <Compile Include="Common\FJButtonEx.cs" />
+    <Compile Include="Common\GdiCommon.cs" />
+    <Compile Include="Common\GlobleRect.cs" />
+    <Compile Include="Common\GlobleParam.cs" />
+    <Compile Include="Common\HMICommon.cs" />
+    <Compile Include="Common\IranDownableBtnBehavier.cs" />
+    <Compile Include="Common\IranHmiDefaultButtonBehavier.cs" />
+    <Compile Include="Common\IranShadowRectTextBehavier.cs" />
+    <Compile Include="Common\IranShadowTextButtonBehavier.cs" />
+    <Compile Include="Common\IranUnenableShadowButton.cs" />
+    <Compile Include="Common\IranUnenableShadowText.cs" />
+    <Compile Include="Common\NavigateType.cs" />
+    <Compile Include="Common\PISType.cs" />
+    <Compile Include="Common\SoftVersion.cs" />
+    <Compile Include="Common\StationInfo.cs" />
+    <Compile Include="CommunicationOverview\CommOverview.cs" />
+    <Compile Include="CommunicationOverview\CommunicationState.cs" />
+    <Compile Include="Config\ConfigModel\BogiesConfig.cs" />
+    <Compile Include="Config\ConfigModel\CarConfig.cs" />
+    <Compile Include="Config\ConfigModel\CommunicationOverviewConfig.cs" />
+    <Compile Include="Config\ConfigModel\DoorConfig.cs" />
+    <Compile Include="Config\ConfigModel\InterlockeConfig.cs" />
+    <Compile Include="Config\ConfigModel\IranDetailConfig.cs" />
+    <Compile Include="Config\ConfigModel\IranRootConfig.cs" />
+    <Compile Include="Config\ConfigModel\PasswordConfig.cs" />
+    <Compile Include="Controls\GDIProgress.cs" />
+    <Compile Include="Domain\CarNameConstant.cs" />
+    <Compile Include="Domain\IranCar.cs" />
+    <Compile Include="Domain\IranTrain.cs" />
+    <Compile Include="Domain\IranTrainState.cs" />
+    <Compile Include="DoorBase.cs" />
+    <Compile Include="DoorParam.cs" />
+    <Compile Include="Doors.cs" />
+    <Compile Include="ES.Facility.Common\Control\Button.cs" />
+    <Compile Include="ES.Facility.Common\Control\Common\IControl.cs" />
+    <Compile Include="ES.Facility.Common\Control\Common\IStyle.cs" />
+    <Compile Include="ES.Facility.Common\Control\Common\MouseEventArgs.cs" />
+    <Compile Include="ES.Facility.Common\Control\Grid.cs" />
+    <Compile Include="ES.Facility.Common\Control\Group.cs" />
+    <Compile Include="ES.Facility.Common\Control\ListBox.cs" />
+    <Compile Include="ES.Facility.Common\Control\TextBox.cs" />
+    <Compile Include="ES.Facility.Common\FaultInfo.cs" />
+    <Compile Include="ES.Facility.Common\FontStyle.cs" />
+    <Compile Include="ES.Facility.Common\FontStyles.cs" />
+    <Compile Include="EventOverview.cs" />
+    <Compile Include="EventSatusBar.cs" />
+    <Compile Include="Events\EventGroup.cs" />
+    <Compile Include="Events\EventManager.cs" />
+    <Compile Include="Events\EventPriority.cs" />
+    <Compile Include="Events\EventPriorityExtension.cs" />
+    <Compile Include="Extention\ButtonExtention.cs" />
+    <Compile Include="HMIWorkModel.cs" />
+    <Compile Include="HVAC\HVACWorkingModel.cs" />
+    <Compile Include="FireAlarmView.cs" />
+    <Compile Include="FLTest.cs" />
+    <Compile Include="Controls\GDITwoOutLineRec.cs" />
+    <Compile Include="GlobleView.cs" />
+    <Compile Include="Header.cs" />
+    <Compile Include="HVAC\HVAC.cs" />
+    <Compile Include="HVAC\HVAC2.cs" />
+    <Compile Include="HVAC\HVACControlModel.cs" />
+    <Compile Include="LightSettingValue.cs" />
+    <Compile Include="StandbyView.cs" />
+    <Compile Include="Interlocks.cs" />
+    <Compile Include="KeyBoard.cs" />
+    <Compile Include="LegendBrakesAir.cs" />
+    <Compile Include="LegendDoor.cs" />
+    <Compile Include="LegendHVAC.cs" />
+    <Compile Include="LegendPAB.cs" />
+    <Compile Include="Login.cs" />
+    <Compile Include="Logined.cs" />
+    <Compile Include="MainMenu\MainMenu.cs" />
+    <Compile Include="MainMenu\MainMenuItem.cs" />
+    <Compile Include="Maintenace.cs" />
+    <Compile Include="MasterCtrlTest.cs" />
+    <Compile Include="MasterRest.cs" />
+    <Compile Include="ODBSStatus.cs" />
+    <Compile Include="Operation\Operation.cs" />
+    <Compile Include="OperationalData.cs" />
+    <Compile Include="Operation\OperationLegend.cs" />
+    <Compile Include="PAB.cs" />
+    <Compile Include="PIS.cs" />
+    <Compile Include="PISLegend.cs" />
+    <Compile Include="PISStationSelectUnit.cs" />
+    <Compile Include="PISTest.cs" />
+    <Compile Include="FullScreen.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource_AR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource_AR.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource_CN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource_CN.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource_GB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource_GB.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SelectableControl.cs" />
+    <Compile Include="SetDataTime.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="SetWheelDiameter.cs" />
+    <Compile Include="SoftWareVersion.cs" />
+    <Compile Include="StartView.cs" />
+    <Compile Include="Train.cs" />
+    <Compile Include="ViewConfig.cs" />
+    <Compile Include="ViewIndexHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource_AR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource_AR.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource_CN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource_CN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource_GB.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource_GB.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\IranDetailConfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\IranRootConfig.xml" />
+    <Content Include="readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ES.Facility.Common\Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /y "$(ProjectDir)\Config\*.xml" "$(ProjectDir)\..\..\MMI\Config\"
+xcopy /y "$(SolutionDir)\..\Urban.Domain.TrainState.Model\bin\*.*" "$(SolutionDir)\MMI\"
+xcopy /y "$(SolutionDir)\..\Urban.Domain.TrainState.Interface\bin\*.*" "$(SolutionDir)\MMI\"
+</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

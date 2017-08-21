@@ -1,0 +1,1108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1CD21510-56BE-4EC7-A393-3764E83142A4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Urban.ATC.CommonView</RootNamespace>
+    <AssemblyName>Urban.ATC.CommonView</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\MMI\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonUtil, Version=1.3.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Bin\MMI\CommonUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="MMI.Facility.Interface, Version=2.40.2016.1101, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interface\IMessageItemContentShowStrategy.cs" />
+    <Compile Include="Model\ArrowState.cs" />
+    <Compile Include="Model\ATCTargitDistanceScale.cs" />
+    <Compile Include="Model\CoordinateAxisLenght.cs" />
+    <Compile Include="Model\DeepCopy.cs" />
+    <Compile Include="Model\DefaultTargitDistanceScale.cs" />
+    <Compile Include="Model\MessageItemContentShowMutiLineStrategy.cs" />
+    <Compile Include="Model\MessageItemContentShowSingleLineStrategy.cs" />
+    <Compile Include="Properties\Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\Extensions\ControlExtension.cs" />
+    <Compile Include="Utils\Extensions\LabelExtension.cs" />
+    <Compile Include="Utils\Extensions\PictureBoxExtension.cs" />
+    <Compile Include="Utils\Extensions\RichTextBoxExtension.cs" />
+    <Compile Include="Utils\Extensions\SpeedColorExtenstion.cs" />
+    <Compile Include="Utils\Extensions\TextBoxBaseExtension.cs" />
+    <Compile Include="View\ActualLevel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\ActualLevel.Designer.cs">
+      <DependentUpon>ActualLevel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\BrakeDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\BrakeDetail.Designer.cs">
+      <DependentUpon>BrakeDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GDICommon.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\DataTiemControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\DataTiemControl.Designer.cs">
+      <DependentUpon>DataTiemControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Departure.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Departure.Designer.cs">
+      <DependentUpon>Departure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Door.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Door.Designer.cs">
+      <DependentUpon>Door.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DoorMode.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\DoorMode.Designer.cs">
+      <DependentUpon>DoorMode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Drivemodel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Drivemodel.Designer.cs">
+      <DependentUpon>Drivemodel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Emergency.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Emergency.Designer.cs">
+      <DependentUpon>Emergency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ErrorDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ErrorDetail.Designer.cs">
+      <DependentUpon>ErrorDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrameVisiblePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\FrameVisiblePanel.Designer.cs">
+      <DependentUpon>FrameVisiblePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GridVisibleTableLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\GridVisibleTableLayoutPanel.Designer.cs">
+      <DependentUpon>GridVisibleTableLayoutPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\InfoText.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\InfoText.Designer.cs">
+      <DependentUpon>InfoText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\IPicBox.cs" />
+    <Compile Include="View\LogSimens.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\LogSimens.Designer.cs">
+      <DependentUpon>LogSimens.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MouseAwareButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\MouseAwareButton.Designer.cs">
+      <DependentUpon>MouseAwareButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PicBoxControlBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\PicBoxControlBase.Designer.cs">
+      <DependentUpon>PicBoxControlBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PopupView\PopupViewBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\PopupView\PopupViewBase.Designer.cs">
+      <DependentUpon>PopupViewBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProgressPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\ProgressPanel.Designer.cs">
+      <DependentUpon>ProgressPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ReadonlyRichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\ReadonlyRichTextBox.Designer.cs">
+      <DependentUpon>ReadonlyRichTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RectanceText.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\RectanceText.Designer.cs">
+      <DependentUpon>RectanceText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegionA\BrakeTypeControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\RegionA\BrakeTypeControl.Designer.cs">
+      <DependentUpon>BrakeTypeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegionA\BrakeWarningLevelControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\RegionA\BrakeWarningLevelControl.Designer.cs">
+      <DependentUpon>BrakeWarningLevelControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegionA\CTCSLevelControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\RegionA\CTCSLevelControl.Designer.cs">
+      <DependentUpon>CTCSLevelControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ATPCommonResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ATPCommonResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegionA\DistanceProgressBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\RegionA\DistanceProgressBar.Designer.cs">
+      <DependentUpon>DistanceProgressBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegionA\TargetDistanceDegreeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\RegionA\TargetDistanceDegreeControl.Designer.cs">
+      <DependentUpon>TargetDistanceDegreeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegionA\TargetDistanceMonitorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\RegionA\TargetDistanceMonitorControl.Designer.cs">
+      <DependentUpon>TargetDistanceMonitorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegionB\ControlModelControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\RegionB\ControlModelControl.Designer.cs">
+      <DependentUpon>ControlModelControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegionB\ForecastInfoControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\RegionB\ForecastInfoControl.Designer.cs">
+      <DependentUpon>ForecastInfoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegionB\SpeedArcPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\RegionB\SpeedArcPanel.Designer.cs">
+      <DependentUpon>SpeedArcPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegionB\SpeedDialPlatePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\RegionB\SpeedDialPlatePanel.Designer.cs">
+      <DependentUpon>SpeedDialPlatePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegionB\SpeedPointerPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\RegionB\SpeedPointerPanel.Designer.cs">
+      <DependentUpon>SpeedPointerPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegionD\CabSignalControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\RegionD\CabSignalControl.Designer.cs">
+      <DependentUpon>CabSignalControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegionD\ForecastInformationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\RegionD\ForecastInformationControl.Designer.cs">
+      <DependentUpon>ForecastInformationControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegionD\ForecationInfoControlBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\RegionD\ForecationInfoControlBase.Designer.cs">
+      <DependentUpon>ForecationInfoControlBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegionD\GradientControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\RegionD\GradientControl.Designer.cs">
+      <DependentUpon>GradientControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegionD\GradientItemControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\RegionD\GradientItemControl.Designer.cs">
+      <DependentUpon>GradientItemControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegionD\PlanSectionCoordinatePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\RegionD\PlanSectionCoordinatePanel.Designer.cs">
+      <DependentUpon>PlanSectionCoordinatePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegionD\SpeedChangesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\RegionD\SpeedChangesControl.Designer.cs">
+      <DependentUpon>SpeedChangesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegionD\SpeedChangeTypeControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\RegionD\SpeedChangeTypeControl.Designer.cs">
+      <DependentUpon>SpeedChangeTypeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegionD\SpeedLimitedCurvePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\RegionD\SpeedLimitedCurvePanel.Designer.cs">
+      <DependentUpon>SpeedLimitedCurvePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegionD\StartLocationPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\RegionD\StartLocationPanel.Designer.cs">
+      <DependentUpon>StartLocationPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegionE\ArrowControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\RegionE\ArrowControl.Designer.cs">
+      <DependentUpon>ArrowControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegionE\DateTimeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\RegionE\DateTimeControl.Designer.cs">
+      <DependentUpon>DateTimeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegionE\GSMRStateControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\RegionE\GSMRStateControl.Designer.cs">
+      <DependentUpon>GSMRStateControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegionE\KilometerPostControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\RegionE\KilometerPostControl.Designer.cs">
+      <DependentUpon>KilometerPostControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegionE\MessageItemControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\RegionE\MessageItemControl.Designer.cs">
+      <DependentUpon>MessageItemControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegionE\MessageListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\RegionE\MessageListControl.Designer.cs">
+      <DependentUpon>MessageListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegionE\RBCConnectStateControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\RegionE\RBCConnectStateControl.Designer.cs">
+      <DependentUpon>RBCConnectStateControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegionF\RegionFControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\RegionF\RegionFControl.Designer.cs">
+      <DependentUpon>RegionFControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegionF\RegionFMouseEventArgs.cs" />
+    <Compile Include="View\ReverseOperation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ReverseOperation.Designer.cs">
+      <DependentUpon>ReverseOperation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\SpecialDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\SpecialDetails.Designer.cs">
+      <DependentUpon>SpecialDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\StoppingAccuracy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\StoppingAccuracy.Designer.cs">
+      <DependentUpon>StoppingAccuracy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TestControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\TestControl.Designer.cs">
+      <DependentUpon>TestControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TextBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\TextBase.Designer.cs">
+      <DependentUpon>TextBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FilkerText.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\FilkerText.Designer.cs">
+      <DependentUpon>FilkerText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Menu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PicBoxC1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\PicBoxC1.Designer.cs">
+      <DependentUpon>PicBoxC1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\picBoxC3C4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\picBoxC3C4.Designer.cs">
+      <DependentUpon>picBoxC3C4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PicBoxC5.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\PicBoxC5.Designer.cs">
+      <DependentUpon>PicBoxC5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TargetDistanceDegreeTextControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\TargetDistanceDegreeTextControl.Designer.cs">
+      <DependentUpon>TargetDistanceDegreeTextControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TargetView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\TargetView.Designer.cs">
+      <DependentUpon>TargetView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TextTRec.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\TextTRec.Designer.cs">
+      <DependentUpon>TextTRec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WPFControl\DomainControl.xaml.cs">
+      <DependentUpon>DomainControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFControl\RegionA\BrakeDetails.xaml.cs">
+      <DependentUpon>BrakeDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFControl\RegionA\RegionA.xaml.cs">
+      <DependentUpon>RegionA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFControl\RegionB\RegionB.xaml.cs">
+      <DependentUpon>RegionB.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFControl\RegionC\DrivingBraking.xaml.cs">
+      <DependentUpon>DrivingBraking.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFControl\RegionC\MaximumModel.xaml.cs">
+      <DependentUpon>MaximumModel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFControl\RegionC\OBCU.xaml.cs">
+      <DependentUpon>OBCU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFControl\RegionC\RegionC.xaml.cs">
+      <DependentUpon>RegionC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFControl\RegionC\TrainBrakeState.xaml.cs">
+      <DependentUpon>TrainBrakeState.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFControl\RegionC\TrainIntegrity.xaml.cs">
+      <DependentUpon>TrainIntegrity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFControl\RegionD\Menu.xaml.cs">
+      <DependentUpon>Menu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFControl\RegionD\RegionD.xaml.cs">
+      <DependentUpon>RegionD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFControl\RegionE\CurrentTime.xaml.cs">
+      <DependentUpon>CurrentTime.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFControl\RegionE\Logo.xaml.cs">
+      <DependentUpon>Logo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFControl\RegionE\RegionE.xaml.cs">
+      <DependentUpon>RegionE.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFControl\RegionF\RegionF.xaml.cs">
+      <DependentUpon>RegionF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFControl\RegionM\RegionMOne.xaml.cs">
+      <DependentUpon>RegionMOne.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFControl\RegionM\RegionMTwo.xaml.cs">
+      <DependentUpon>RegionMTwo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFControl\RegionT\RegionT.xaml.cs">
+      <DependentUpon>RegionT.xaml</DependentUpon>
+    </Compile>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Urban.ATC.Domain.Interface\Urban.ATC.Domain.Interface.csproj">
+      <Project>{b1f69bd1-d578-4267-b04e-cce4cf7b7d4a}</Project>
+      <Name>Urban.ATC.Domain.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Urban.ATC.Siemens.Model\Urban.ATC.Siemens.Model.csproj">
+      <Project>{3410830c-f24d-4312-91f0-b4a6b24acfef}</Project>
+      <Name>Urban.ATC.Siemens.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Urban.ATC.Siemens.WPF.Control\Urban.ATC.Siemens.WPF.Control.csproj">
+      <Project>{8128E455-B095-494D-BCEC-0B528BC2A268}</Project>
+      <Name>Urban.ATC.Siemens.WPF.Control</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ATPCommonResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>ATPCommonResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ActualLevel.resx">
+      <DependentUpon>ActualLevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DataTiemControl.resx">
+      <DependentUpon>DataTiemControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DoorMode.resx">
+      <DependentUpon>DoorMode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Drivemodel.resx">
+      <DependentUpon>Drivemodel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FilkerText.resx">
+      <DependentUpon>FilkerText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\InfoText.resx">
+      <DependentUpon>InfoText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LogSimens.resx">
+      <DependentUpon>LogSimens.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PicBoxC1.resx">
+      <DependentUpon>PicBoxC1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\picBoxC3C4.resx">
+      <DependentUpon>picBoxC3C4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PicBoxC5.resx">
+      <DependentUpon>PicBoxC5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PicBoxControlBase.resx">
+      <DependentUpon>PicBoxControlBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProgressPanel.resx">
+      <DependentUpon>ProgressPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ReadonlyRichTextBox.resx">
+      <DependentUpon>ReadonlyRichTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RectanceText.resx">
+      <DependentUpon>RectanceText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegionA\CTCSLevelControl.resx">
+      <DependentUpon>CTCSLevelControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegionA\DistanceProgressBar.resx">
+      <DependentUpon>DistanceProgressBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegionA\TargetDistanceDegreeControl.resx">
+      <DependentUpon>TargetDistanceDegreeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegionA\TargetDistanceMonitorControl.resx">
+      <DependentUpon>TargetDistanceMonitorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegionB\ControlModelControl.resx">
+      <DependentUpon>ControlModelControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegionB\ForecastInfoControl.resx">
+      <DependentUpon>ForecastInfoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegionB\SpeedDialPlatePanel.resx">
+      <DependentUpon>SpeedDialPlatePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegionD\CabSignalControl.resx">
+      <DependentUpon>CabSignalControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegionD\ForecastInformationControl.resx">
+      <DependentUpon>ForecastInformationControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegionD\GradientControl.resx">
+      <DependentUpon>GradientControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegionD\GradientItemControl.resx">
+      <DependentUpon>GradientItemControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegionD\PlanSectionCoordinatePanel.resx">
+      <DependentUpon>PlanSectionCoordinatePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegionD\SpeedChangesControl.resx">
+      <DependentUpon>SpeedChangesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegionD\SpeedChangeTypeControl.resx">
+      <DependentUpon>SpeedChangeTypeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegionD\SpeedLimitedCurvePanel.resx">
+      <DependentUpon>SpeedLimitedCurvePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegionD\StartLocationPanel.resx">
+      <DependentUpon>StartLocationPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegionE\DateTimeControl.resx">
+      <DependentUpon>DateTimeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegionE\KilometerPostControl.resx">
+      <DependentUpon>KilometerPostControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegionE\MessageItemControl.resx">
+      <DependentUpon>MessageItemControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegionE\MessageListControl.resx">
+      <DependentUpon>MessageListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TargetDistanceDegreeTextControl.resx">
+      <DependentUpon>TargetDistanceDegreeTextControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TargetView.resx">
+      <DependentUpon>TargetView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TestControl.resx">
+      <DependentUpon>TestControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TextBase.resx">
+      <DependentUpon>TextBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TextTRec.resx">
+      <DependentUpon>TextTRec.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\HOLD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inside_Stopping_window.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jingbao1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jingbao2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jingzhi.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kaimen1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kaimen2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kaimen3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kongzhuan.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\liangdu.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menshi1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menshi2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\motoring.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\motoring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mubiaojuli.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\No_door_supervision.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\No_WCURadio_link.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OBCD_Green_Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OBCD_Green_Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OBCD_Green_White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OBCD_Red_Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OBCD_Red_Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OBCD_White_Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OBCD_White_Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Open_Both.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Open_Left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Open_Left_first.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Open_Right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Open_Right_first.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Outside_stopping_window.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Permissiver_door_release.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PSD_not_closed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redqiu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RedRound.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Relesase_Speed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RST_Braking_pressure_not_ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SKIP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Slip_or_Slide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tingche1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tingche2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tingche3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tongxin1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tongxin2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Train_Integrity_not_ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Train_Integrity_ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wanzhengxing1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wanzhengxing2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zhizhen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zhizhen2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zhizhen3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zhizhenhong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zhizhenhuang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zhizhenhui.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AR_active.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AR_offered.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ATO_fault.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ATP_fault.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\braking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button%28s%29_disturbed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button%28s%29_disturbed2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chemenpanglu.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chemenzhuangtai1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chemenzhuangtai2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chemenzhuangtai3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chemenzhuangtai4.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chemenzhuangtai5.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chemenzhuangtai6.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chemenzhuangtai7.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\closed_and_locked_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\closed_and_locked_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\closed_and_locked_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\closed_and_locked_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\closed_and_locked_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\closed_and_locked_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coasting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Departure_Request.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Depot_Driver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Depot_Entry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dingwei1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dingwei2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Door_Close_Order.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DTRO_active.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DTRO_is_offered.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Emergency_Brake.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Emergency_Brake2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GreenRound.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="WPFControl\DomainControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFControl\RegionA\BrakeDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFControl\RegionA\RegionA.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFControl\RegionB\RegionB.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFControl\RegionC\DrivingBraking.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFControl\RegionC\MaximumModel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFControl\RegionC\OBCU.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFControl\RegionC\RegionC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFControl\RegionC\TrainBrakeState.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFControl\RegionC\TrainIntegrity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFControl\RegionD\Menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFControl\RegionD\RegionD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFControl\RegionE\CurrentTime.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFControl\RegionE\Logo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFControl\RegionE\RegionE.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFControl\RegionF\RegionF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFControl\RegionM\RegionMOne.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFControl\RegionM\RegionMTwo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFControl\RegionT\RegionT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\C2_一级制动.png" />
+    <Content Include="Resources\C2_允许缓解.png" />
+    <Content Include="Resources\C2_四级制动.png" />
+    <Content Include="Resources\C2_最大常用制动.png" />
+    <Content Include="Resources\C2_紧急制动.png" />
+    <Content Include="Resources\C3_一级制动.png" />
+    <Content Include="Resources\C3_允许缓解.png" />
+    <Content Include="Resources\C3_四级制动.png" />
+    <Content Include="Resources\C3_最大常用制动.png" />
+    <Content Include="Resources\C3_紧急制动.png" />
+    <Content Include="Resources\CabSignal_H.png" />
+    <Content Include="Resources\CabSignal_HB.png" />
+    <Content Include="Resources\CabSignal_HU.png" />
+    <Content Include="Resources\CabSignal_HZ.png" />
+    <Content Include="Resources\CabSignal_HZ2.png" />
+    <Content Include="Resources\CabSignal_L.png" />
+    <Content Include="Resources\CabSignal_L2.png" />
+    <Content Include="Resources\CabSignal_L3.png" />
+    <Content Include="Resources\CabSignal_L4.png" />
+    <Content Include="Resources\CabSignal_L5.png" />
+    <Content Include="Resources\CabSignal_LU.png" />
+    <Content Include="Resources\CabSignal_LU2.png" />
+    <Content Include="Resources\CabSignal_U.png" />
+    <Content Include="Resources\CabSignal_U2.png" />
+    <Content Include="Resources\CabSignal_U2S.png" />
+    <Content Include="Resources\CabSignal_U3.png" />
+    <Content Include="Resources\CabSignal_UU.png" />
+    <Content Include="Resources\CabSignal_UUS.png" />
+    <Content Include="Resources\ForecastInfoBridge.png" />
+    <Content Include="Resources\ForecastInfoPhaseSeparatingSectionGray.png" />
+    <Content Include="Resources\ForecastInfoPhaseSeparatingSectionYellow.png" />
+    <Content Include="Resources\ForecastInfoStation.png" />
+    <Content Include="Resources\ForecastInfoTemporarySpeedLimit.png" />
+    <Content Include="Resources\ForecastInfoTunnel.png" />
+    <Content Include="Resources\GSM_1.png" />
+    <Content Include="Resources\GSM_2.png" />
+    <Content Include="Resources\GSM_3.png" />
+    <Content Include="Resources\GSM_灰.png" />
+    <Content Include="Resources\M1.png" />
+    <Content Include="Resources\中等常用制动.png" />
+    <Content Include="Resources\亮度设置图标.png" />
+    <Content Include="Resources\允许缓解.png" />
+    <Content Include="Resources\双黄灯.png" />
+    <Content Include="Resources\已经与RBC相连.png" />
+    <Content Include="Resources\常用制动.png" />
+    <Content Include="Resources\弱常用制动.png" />
+    <Content Include="Resources\指针橙.png" />
+    <Content Include="Resources\指针灰.png" />
+    <Content Include="Resources\指针红.png" />
+    <Content Include="Resources\指针黄.png" />
+    <Content Include="Resources\放大亮.png" />
+    <Content Include="Resources\放大暗.png" />
+    <Content Include="Resources\无色.png" />
+    <Content Include="Resources\未与RBC相连.png" />
+    <Content Include="Resources\正在与RBC相连.png" />
+    <Content Include="Resources\没有无线通信.png" />
+    <Content Include="Resources\灰灯.png" />
+    <Content Include="Resources\白灯.png" />
+    <Content Include="Resources\箭头_上_亮.png" />
+    <Content Include="Resources\箭头_上_暗.png" />
+    <Content Include="Resources\箭头_下_亮.png" />
+    <Content Include="Resources\箭头_下_暗.png" />
+    <Content Include="Resources\紧急制动.png" />
+    <Content Include="Resources\红灯.png" />
+    <Content Include="Resources\红黄灯.png" />
+    <Content Include="Resources\绿灯.png" />
+    <Content Include="Resources\绿黄灯.png" />
+    <Content Include="Resources\缩小亮.png" />
+    <Content Include="Resources\缩小暗.png" />
+    <Content Include="Resources\音量设置图标.png" />
+    <Content Include="Resources\预告减速.png" />
+    <Content Include="Resources\预告减速到0.png" />
+    <Content Include="Resources\预告加速.png" />
+    <Content Include="Resources\黄灯.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

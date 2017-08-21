@@ -1,0 +1,15 @@
+﻿using System.ComponentModel.Composition;
+using Motor.TCMS.CRH400BF.ViewModel;
+
+namespace Motor.TCMS.CRH400BF.Controller.BtnActionResponser
+{
+
+    [Export]
+    class ChangeToEquipmentStateActionResponser : BtnActionResponserBase
+    {
+        public override void ResponseClick(StateViewModel stateViewModel)
+        {
+            NavigateTo(stateViewModel, "Root-设备状态界面车门状态");
+        }
+    }
+}

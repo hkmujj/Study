@@ -1,0 +1,404 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:airCondition="clr-namespace:Subway.TCMS.LanZhou.View.Contents.AirCondition"
+                    xmlns:breakDownInformation="clr-namespace:Subway.TCMS.LanZhou.View.Contents.BreakDownInformation"
+                    xmlns:content="clr-namespace:Subway.TCMS.LanZhou.Model.Domain.Constant"
+                    xmlns:contents="clr-namespace:Subway.TCMS.LanZhou.View.Contents"
+                    xmlns:converter="clr-namespace:MMI.Facility.WPFInfrastructure.Converter;assembly=MMI.Facility.WPFInfrastructure"
+                    xmlns:converter1="clr-namespace:Subway.TCMS.LanZhou.Converter"
+                    xmlns:examineAndRepair="clr-namespace:Subway.TCMS.LanZhou.View.Contents.ExamineAndRepair"
+                    xmlns:helpInformation="clr-namespace:Subway.TCMS.LanZhou.View.Contents.HelpInformation"
+                    xmlns:trainStatus="clr-namespace:Subway.TCMS.LanZhou.Model.Domain.Constant.TrainStatus">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Image/TCMSLanZhouImageResource.xaml" />
+        <ResourceDictionary Source="../Base/TCMSLanZhouBaseResource.xaml" />
+        <ResourceDictionary Source="../Strings/TCMSLanZhouStringResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <converter1:TestConverter x:Key="Subway.TCMS.LanZhou.Converter.TestConverter" />
+
+    <converter:MathConverter x:Key="MathConverter" />
+
+    <converter1:FloatToTowBrakeConverter x:Key="FloatToTowBrakeConverter" />
+
+    <converter1:FindItemIndexConverter x:Key="FindItemIndexConverter" />
+
+    <converter:BoolVisibilityConverter x:Key="BoolVisibilityConverter" />
+
+    <converter1:BtnTypeToIsCheckedConverter x:Key="Subway.TCMS.LanZhou.Converter.BtnTypeToIsCheckedConverter" />
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.TrainBreakWarning">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:TrainBreakWarning.Serious}" Content="{StaticResource Subway.TCMS.LanZhou.ImgCommonTrainBreakRed}" />
+            <converter:ObjectContentPair Key="{x:Static content:TrainBreakWarning.Medium}" Content="{StaticResource Subway.TCMS.LanZhou.ImgCommonTrainBreakYellow}" />
+            <converter:ObjectContentPair Key="{x:Static content:TrainBreakWarning.Slight}" Content="{StaticResource Subway.TCMS.LanZhou.ImgCommonTrainBreakBlack}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.ContentViewTypeToShellTitleTextConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Type contents:RunningView}" Content="{StaticResource Subway.TCMS.LanZhou.String.RunningPage}" />
+            <converter:ObjectContentPair Key="{x:Type helpInformation:RunningHelpView}" Content="{StaticResource Subway.TCMS.LanZhou.String.RunningHelpPage}" />
+            <converter:ObjectContentPair Key="{x:Type helpInformation:RunningHelpView1}" Content="{StaticResource Subway.TCMS.LanZhou.String.RunningHelpPage}" />
+            <converter:ObjectContentPair Key="{x:Type contents:LineInformationView}" Content="{StaticResource Subway.TCMS.LanZhou.String.LineInformationPage}" />
+            <converter:ObjectContentPair Key="{x:Type contents:TrainStatusCommonView}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainStatusPage}" />
+            <converter:ObjectContentPair Key="{x:Type helpInformation:TrainStatusHelpView}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainStatusHelpPage}" />
+            <converter:ObjectContentPair Key="{x:Type helpInformation:TrainStatusHelpView1}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainStatusHelpPage}" />
+            <converter:ObjectContentPair Key="{x:Type helpInformation:TrainStatusHelpView2}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainStatusHelpPage}" />
+            <converter:ObjectContentPair Key="{x:Type airCondition:AirConditionSetting}" Content="{StaticResource Subway.TCMS.LanZhou.String.AirConditionSettingPage}" />
+            <converter:ObjectContentPair Key="{x:Type airCondition:AirConditionStatus}" Content="{StaticResource Subway.TCMS.LanZhou.String.AirConditionStatusPage}" />
+            <converter:ObjectContentPair Key="{x:Type helpInformation:AirConditionSettingHelpView}" Content="{StaticResource Subway.TCMS.LanZhou.String.AirConditionSettingHelpPage}" />
+            <converter:ObjectContentPair Key="{x:Type helpInformation:AirConditionStatusHelpView}" Content="{StaticResource Subway.TCMS.LanZhou.String.AirConditionStatusHelpPage}" />
+            <converter:ObjectContentPair Key="{x:Type breakDownInformation:BreakDownInformationList}" Content="{StaticResource Subway.TCMS.LanZhou.String.CurrentBreakdownPage}" />
+            <converter:ObjectContentPair Key="{x:Type breakDownInformation:BreakDownInformationDetail}" Content="{StaticResource Subway.TCMS.LanZhou.String.FaultOperateTipsPage}" />
+            <converter:ObjectContentPair Key="{x:Type contents:CommunicationStatus}" Content="{StaticResource Subway.TCMS.LanZhou.String.CommunicationStatusPage}" />
+            <converter:ObjectContentPair Key="{x:Type contents:FireAlarm}" Content="{StaticResource Subway.TCMS.LanZhou.String.FireAlarmPage}" />
+            <converter:ObjectContentPair Key="{x:Type examineAndRepair:ExamineAndRepairLogin}" Content="{StaticResource Subway.TCMS.LanZhou.String.ExamineAndRepairPage}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.RunningDirectionLeftVisibilityConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:RunningDirection.Unknown}" Content="{x:Static Visibility.Hidden}" />
+            <converter:ObjectContentPair Key="{x:Static content:RunningDirection.Left}" Content="{x:Static Visibility.Visible}" />
+            <converter:ObjectContentPair Key="{x:Static content:RunningDirection.Right}" Content="{x:Static Visibility.Hidden}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.RunningDirectionRightVisibilityConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:RunningDirection.Unknown}" Content="{x:Static Visibility.Hidden}" />
+            <converter:ObjectContentPair Key="{x:Static content:RunningDirection.Left}" Content="{x:Static Visibility.Hidden}" />
+            <converter:ObjectContentPair Key="{x:Static content:RunningDirection.Right}" Content="{x:Static Visibility.Visible}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.RunningDirectionLeftColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:RunningDirection.Unknown}" Content="{x:Null}" />
+            <converter:ObjectContentPair Key="{x:Static content:RunningDirection.Left}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicRunningDirectionLeft}" />
+            <converter:ObjectContentPair Key="{x:Static content:RunningDirection.Right}" Content="{x:Null}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.RunningDirectionRightColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:RunningDirection.Unknown}" Content="{x:Null}" />
+            <converter:ObjectContentPair Key="{x:Static content:RunningDirection.Left}" Content="{x:Null}" />
+            <converter:ObjectContentPair Key="{x:Static content:RunningDirection.Right}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicRunningDirectionRight}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.TrainBowStatusConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:BowStatus.Unknown}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicBowUnknown}" />
+            <converter:ObjectContentPair Key="{x:Static content:BowStatus.Raise}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicBowRaise}" />
+            <converter:ObjectContentPair Key="{x:Static content:BowStatus.Down}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicBowDown}" />
+            <converter:ObjectContentPair Key="{x:Static content:BowStatus.Action}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicBowAction}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.TowBrakeConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:CarTowBrakeStatus.Tow}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.TtainTowForeground}" />
+            <converter:ObjectContentPair Key="{x:Static content:CarTowBrakeStatus.Brake}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.TextBoxForeground}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.CabStateImageConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:CabStatus.Unactive}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicCabUnActivation}" />
+            <converter:ObjectContentPair Key="{x:Static content:CabStatus.Active}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicCabActivation}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.SpaceGateStateImageConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:SpaceGateStatus.Unknow}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicSpaceGateUnknow}" />
+            <converter:ObjectContentPair Key="{x:Static content:SpaceGateStatus.Closed}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicSpaceGateClosed}" />
+            <converter:ObjectContentPair Key="{x:Static content:SpaceGateStatus.Open}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicSpaceGateOpen}" />
+            <converter:ObjectContentPair Key="{x:Static content:SpaceGateStatus.HasOpen}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicSpaceGateHasOpen}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.EmergencyExitStateImageConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:EmergencyExitStatus.Unknow}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicEmergencyExitUnKnow}" />
+            <converter:ObjectContentPair Key="{x:Static content:EmergencyExitStatus.Closed}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicEmergencyExitClosed}" />
+            <converter:ObjectContentPair Key="{x:Static content:EmergencyExitStatus.Open}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicEmergencyExitOpen}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.DoorStateImageConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:DoorState.Unknow}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicDoorUnknow}" />
+            <converter:ObjectContentPair Key="{x:Static content:DoorState.Open}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicDoorInPlace}" />
+            <converter:ObjectContentPair Key="{x:Static content:DoorState.Closed}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicDoorClosed}" />
+            <converter:ObjectContentPair Key="{x:Static content:DoorState.DetectsObstacles}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicDoorDetectsObstacles}" />
+            <converter:ObjectContentPair Key="{x:Static content:DoorState.EmergencyRelease}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicDoorEmergencyRelease}" />
+            <converter:ObjectContentPair Key="{x:Static content:DoorState.Fault}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicDoorMainFault}" />
+            <converter:ObjectContentPair Key="{x:Static content:DoorState.Resection}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicDoorResection}" />
+            <converter:ObjectContentPair Key="{x:Static content:DoorState.Switch}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicDoorSwitch}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.AirCompressorImageConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:AirCompressorStatus.Unknow}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicAirCompressorUnknow}" />
+            <converter:ObjectContentPair Key="{x:Static content:AirCompressorStatus.Stop}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicAirCompressorStop}" />
+            <converter:ObjectContentPair Key="{x:Static content:AirCompressorStatus.Fault}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicAirCompressorFault}" />
+            <converter:ObjectContentPair Key="{x:Static content:AirCompressorStatus.Running}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicAirCompressorRunning}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.TractionSystemImageConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:TowState.Unknow}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicTractionSystemUnknow}" />
+            <converter:ObjectContentPair Key="{x:Static content:TowState.Fualt}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicTractionSystemFualt}" />
+            <converter:ObjectContentPair Key="{x:Static content:TowState.Running}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicTractionSystemRunning}" />
+            <converter:ObjectContentPair Key="{x:Static content:TowState.Normal}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicTractionSystemNormal}" />
+            <converter:ObjectContentPair Key="{x:Static content:TowState.Resection}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicTractionSystemResection}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.AuxiliarySystemImageConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:AuxiliarySystemStatus.Unknow}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicAuxiliarySystemNormal}" />
+            <converter:ObjectContentPair Key="{x:Static content:AuxiliarySystemStatus.Resection}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicAuxiliarySystemResection}" />
+            <converter:ObjectContentPair Key="{x:Static content:AuxiliarySystemStatus.Running}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicAuxiliarySystemRunning}" />
+            <converter:ObjectContentPair Key="{x:Static content:AuxiliarySystemStatus.Normal}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicAuxiliarySystemUnKnow}" />
+            <converter:ObjectContentPair Key="{x:Static content:AuxiliarySystemStatus.Failure}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicAuxiliarySystemFailure}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.CommonBrakeImageConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:BrakeStatus.CommonBrakeUnknow}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicCommonBrakeUnknow}" />
+            <converter:ObjectContentPair Key="{x:Static content:BrakeStatus.CommonBrakeApplication}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicCommonBrakeApplication}" />
+            <converter:ObjectContentPair Key="{x:Static content:BrakeStatus.CommonBrakeFault}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicCommonBrakeFault}" />
+            <converter:ObjectContentPair Key="{x:Static content:BrakeStatus.CommonBrakeIsolation}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicCommonBrakeIsolation}" />
+            <converter:ObjectContentPair Key="{x:Static content:BrakeStatus.CommonBrakeRelease}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicCommonBrakeRelease}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.ParkingBrakeImageConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:TrainParkingBrakeStatus.ParkingBrakeUnknow}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicParkingBrakeUnknow}" />
+            <converter:ObjectContentPair Key="{x:Static content:TrainParkingBrakeStatus.ParkingBrakeApplication}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicParkingBrakeApplication}" />
+            <converter:ObjectContentPair Key="{x:Static content:TrainParkingBrakeStatus.ParkingBrakeRelease}" Content="{StaticResource Subway.TCMS.LanZhou.ImgRunningViewPicParkingBrakeRelease}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.TowBrakeTextConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:CarTowBrakeStatus.Tow}" Content="{StaticResource Subway.TCMS.LanZhou.String.TractionInstruction}" />
+            <converter:ObjectContentPair Key="{x:Static content:CarTowBrakeStatus.Brake}" Content="{StaticResource Subway.TCMS.LanZhou.String.BrakeInstruction}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.BranchInformationConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:BranchInformationStatus.Normal}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.FontForeground}" />
+            <converter:ObjectContentPair Key="{x:Static content:BranchInformationStatus.Branch}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.RadioBtnForeground}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.TrainStatusOpenOrClosedColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static trainStatus:OpenOrClosedStatus.Closed}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.FontForeground}" />
+            <converter:ObjectContentPair Key="{x:Static trainStatus:OpenOrClosedStatus.Open}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.RadioBtnForeground}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.TrainStatusOpenOrClosedTextConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static trainStatus:OpenOrClosedStatus.Closed}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainStatusClosed}" />
+            <converter:ObjectContentPair Key="{x:Static trainStatus:OpenOrClosedStatus.Open}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainStatusOpen}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.TrainStatusIesContactorStatusTextConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static trainStatus:IesContactorStatus.IesContactorUnknow}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainStatusUnknow}" />
+            <converter:ObjectContentPair Key="{x:Static trainStatus:IesContactorStatus.IesContactorEarthcircuit}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainStatusEarthCircuit}" />
+            <converter:ObjectContentPair Key="{x:Static trainStatus:IesContactorStatus.IesContactorRunning}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainStatusRunning}" />
+            <converter:ObjectContentPair Key="{x:Static trainStatus:IesContactorStatus.IesContactorWorkshoppower}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainStatusWorkshopPower}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.TrainStatusWorkshopPowerStatusTextConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:WorkshopPowerStatus.WorkshopPowerUnConnect}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainStatusNotConnect}" />
+            <converter:ObjectContentPair Key="{x:Static content:WorkshopPowerStatus.WorkshopPowerConnect}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainStatusConnect}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.TrainStatusWorkshopPowerStatusColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:WorkshopPowerStatus.WorkshopPowerUnConnect}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.FontForeground}" />
+            <converter:ObjectContentPair Key="{x:Static content:WorkshopPowerStatus.WorkshopPowerConnect}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.RadioBtnForeground}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.TrainStatusTractionSafetyStatusTextConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:TractionSafetyStatus.TractionSafetyeffective}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainStatusEffective}" />
+            <converter:ObjectContentPair Key="{x:Static content:TractionSafetyStatus.TractionSafetyefInvalid}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainStatusInvalid}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.TrainStatusTractionSafetyStatusColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:TractionSafetyStatus.TractionSafetyeffective}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.FontForeground}" />
+            <converter:ObjectContentPair Key="{x:Static content:TractionSafetyStatus.TractionSafetyefInvalid}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.RadioBtnForeground}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.TrainStatusOvervoltageStatusTextConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:OvervoltageStatus.OvervoltageRunning}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainStatusWork}" />
+            <converter:ObjectContentPair Key="{x:Static content:OvervoltageStatus.OvervoltageStop}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainStatusNotWork}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.TrainStatusAirBrakeAvailableStatusTextConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static trainStatus:AirBrakeAvailableStatus.AirBrakeAvailableNormal}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainStatusNormal}" />
+            <converter:ObjectContentPair Key="{x:Static trainStatus:AirBrakeAvailableStatus.AirBrakeAvailableNotavailable}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainStatusNotAvailable}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.TrainStatusAirBrakeAvailableStatusColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static trainStatus:AirBrakeAvailableStatus.AirBrakeAvailableNormal}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.FontForeground}" />
+            <converter:ObjectContentPair Key="{x:Static trainStatus:AirBrakeAvailableStatus.AirBrakeAvailableNotavailable}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.RadioBtnForeground}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.TrainStatusAirBrakeExertOrNotappliedStatusTextConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:ExertOrNotappliedStatus.Exert}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainStatusExert}" />
+            <converter:ObjectContentPair Key="{x:Static content:ExertOrNotappliedStatus.Notapplied}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainStatusNotApplied}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.TrainStatusEmergencyBrakeAvailableStatusColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:EmergencyBrakeAvailableStatus.EmergencyBrakeAvailableNotavailable}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.RadioBtnForeground}" />
+            <converter:ObjectContentPair Key="{x:Static content:EmergencyBrakeAvailableStatus.EmergencyBrakeAvailableNormal}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.FontForeground}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.TrainStatusEmergencyBrakeAvailableStatusTextConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:EmergencyBrakeAvailableStatus.EmergencyBrakeAvailableNormal}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainStatusNormal}" />
+            <converter:ObjectContentPair Key="{x:Static content:EmergencyBrakeAvailableStatus.EmergencyBrakeAvailableNotavailable}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainStatusNotAvailable}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.TrainStatusAirBrakeExertOrNotappliedStatusColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:ExertOrNotappliedStatus.Notapplied}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.FontForeground}" />
+            <converter:ObjectContentPair Key="{x:Static content:ExertOrNotappliedStatus.Exert}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.RadioBtnForeground}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.TrainStatusParkingBrakeStatusColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:ParkingBrakeStatus.ParkingBrakeRelieve}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.FontForeground}" />
+            <converter:ObjectContentPair Key="{x:Static content:ParkingBrakeStatus.ParkingBrakeRemission}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.RadioBtnForeground}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.TrainStatusParkingBrakeStatusTextConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:ParkingBrakeStatus.ParkingBrakeRelieve}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainStatusRelieve}" />
+            <converter:ObjectContentPair Key="{x:Static content:ParkingBrakeStatus.ParkingBrakeRemission}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainStatusRemission}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.TrainStatusBrakeCylinderStatusColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:BrakeCylinderStatus.BrakeCylinderEffective}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.FontForeground}" />
+            <converter:ObjectContentPair Key="{x:Static content:BrakeCylinderStatus.BrakeCylinderInvalied}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.RadioBtnForeground}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.TrainStatusAirSpringPreStatusColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:AirSpringPreStatus.AirSpringPreEffective}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.FontForeground}" />
+            <converter:ObjectContentPair Key="{x:Static content:AirSpringPreStatus.AirSpringPreInvalid}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.RadioBtnForeground}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.TrainStatusBogieResectionStatusColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:BogieResectionStatus.BogieResection}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.RadioBtnForeground}" />
+            <converter:ObjectContentPair Key="{x:Static content:BogieResectionStatus.BogieResectionNormal}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.FontForeground}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.TrainStatusBogieResectionStatusTextConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:BogieResectionStatus.BogieResection}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainStatusResection}" />
+            <converter:ObjectContentPair Key="{x:Static content:BogieResectionStatus.BogieResectionNormal}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainStatusNotResection}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.TrainAirConditionRunningStatusColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:AirConditionRunningStatus.Stop}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.HarwareButtonPressedBackground}" />
+            <converter:ObjectContentPair Key="{x:Static content:AirConditionRunningStatus.Running}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.FontForeground}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.TrainAirConditionRunningModelTextConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:AirConditionRunningModel.Unknow}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainAirConditionStatusUnknow}" />
+            <converter:ObjectContentPair Key="{x:Static content:AirConditionRunningModel.Airout}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainAirConditionAirout}" />
+            <converter:ObjectContentPair Key="{x:Static content:AirConditionRunningModel.AutoCold}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainAirConditionAutoCold}" />
+            <converter:ObjectContentPair Key="{x:Static content:AirConditionRunningModel.EmergencyShutdown}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainAirConditionShudDown}" />
+            <converter:ObjectContentPair Key="{x:Static content:AirConditionRunningModel.LocalControl}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainAirConditionLocalControl}" />
+            <converter:ObjectContentPair Key="{x:Static content:AirConditionRunningModel.Strongwind}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainAirConditionStrongWind}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.TrainAirConditionOutDamperStatusTextConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:AirConditionOutsideDamper.FullyClosed}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainAirConditionOutDamperClosed}" />
+            <converter:ObjectContentPair Key="{x:Static content:AirConditionOutsideDamper.Half}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainAirConditionOutDamperHalf}" />
+            <converter:ObjectContentPair Key="{x:Static content:AirConditionOutsideDamper.SeventyFive}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainAirConditionOutDamperSevevtyFive}" />
+            <converter:ObjectContentPair Key="{x:Static content:AirConditionOutsideDamper.Totally}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainAirConditionOutDamperTotally}" />
+            <converter:ObjectContentPair Key="{x:Static content:AirConditionOutsideDamper.Unkonw}" Content="{StaticResource Subway.TCMS.LanZhou.String.TrainAirConditionOutDamperUnknow}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.TrainFireAlarmStatusPicConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:CarFireAlarmStatus.Normal}" Content="{StaticResource Subway.TCMS.LanZhou.ImgFireAlarmViewNormalEquipment}" />
+            <converter:ObjectContentPair Key="{x:Static content:CarFireAlarmStatus.Fault}" Content="{StaticResource Subway.TCMS.LanZhou.ImgFireAlarmViewEquipmentFailure}" />
+            <converter:ObjectContentPair Key="{x:Static content:CarFireAlarmStatus.Fire}" Content="{StaticResource Subway.TCMS.LanZhou.ImgFireAlarmViewEquipmentFireAlarm}" />
+            <converter:ObjectContentPair Key="{x:Static content:CarFireAlarmStatus.Invalid}" Content="{StaticResource Subway.TCMS.LanZhou.ImgFireAlarmViewEquipmentInvalid}" />
+            <converter:ObjectContentPair Key="{x:Static content:CarFireAlarmStatus.Polluted}" Content="{StaticResource Subway.TCMS.LanZhou.ImgFireAlarmViewEquipmentPollution}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.TrainCommunicationStatusColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:CarCommunicationStatus.Normal}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.FontForeground}" />
+            <converter:ObjectContentPair Key="{x:Static content:CarCommunicationStatus.Fault}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.HarwareButtonRed}" />
+            <converter:ObjectContentPair Key="{x:Static content:CarCommunicationStatus.SlaveDeviceNormal}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.RadioBtnForeground}" />
+            <converter:ObjectContentPair Key="{x:Static content:CarCommunicationStatus.Unknow}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Subway.TCMS.LanZhou.Converter.TrainCommunicationStatusTextColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static content:CarCommunicationStatus.Normal}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}" />
+            <converter:ObjectContentPair Key="{x:Static content:CarCommunicationStatus.Fault}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}" />
+            <converter:ObjectContentPair Key="{x:Static content:CarCommunicationStatus.SlaveDeviceNormal}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}" />
+            <converter:ObjectContentPair Key="{x:Static content:CarCommunicationStatus.Unknow}" Content="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+</ResourceDictionary>

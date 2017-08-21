@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="目标点速度" xml:space="preserve">
+    <value>目标点速度</value>
+  </data>
+  <data name="到目标点的距离" xml:space="preserve">
+    <value>到目标点的距离</value>
+  </data>
+  <data name="列车当前速度" xml:space="preserve">
+    <value>列车当前速度</value>
+  </data>
+  <data name="ATP推荐速度" xml:space="preserve">
+    <value>ATP推荐速度</value>
+  </data>
+  <data name="紧急制动触发速度" xml:space="preserve">
+    <value>紧急制动触发速度</value>
+  </data>
+  <data name="当前站" xml:space="preserve">
+    <value>当前站</value>
+  </data>
+  <data name="下一站" xml:space="preserve">
+    <value>下一站</value>
+  </data>
+  <data name="终点站" xml:space="preserve">
+    <value>终点站</value>
+  </data>
+  <data name="到站时间" xml:space="preserve">
+    <value>到站时间</value>
+  </data>
+  <data name="离站倒计时" xml:space="preserve">
+    <value>离站倒计时</value>
+  </data>
+  <data name="服务号" xml:space="preserve">
+    <value>服务号</value>
+  </data>
+  <data name="目的地号" xml:space="preserve">
+    <value>目的地号</value>
+  </data>
+  <data name="工号" xml:space="preserve">
+    <value>工号</value>
+  </data>
+  <data name="限速值" xml:space="preserve">
+    <value>限速值</value>
+  </data>
+  <data name="运行线路" xml:space="preserve">
+    <value>运行线路</value>
+  </data>
+  <data name="牵引制动百分比" xml:space="preserve">
+    <value>牵引制动百分比</value>
+  </data>
+  <data name="总风缸压力" xml:space="preserve">
+    <value>总风缸压力</value>
+  </data>
+  <data name="制动缸压力" xml:space="preserve">
+    <value>制动缸压力</value>
+  </data>
+  <data name="TMS显示编组" xml:space="preserve">
+    <value>TMS显示-编组</value>
+  </data>
+  <data name="TMS显示网压" xml:space="preserve">
+    <value>TMS显示-网压</value>
+  </data>
+  <data name="TC1车客室温度" xml:space="preserve">
+    <value>TC1车客室温度</value>
+  </data>
+  <data name="MP1车客室温度" xml:space="preserve">
+    <value>MP1车客室温度</value>
+  </data>
+  <data name="M1车客室温度" xml:space="preserve">
+    <value>M1车客室温度</value>
+  </data>
+  <data name="MP2车客室温度" xml:space="preserve">
+    <value>MP2车客室温度</value>
+  </data>
+  <data name="M2车客室温度" xml:space="preserve">
+    <value>M2车客室温度</value>
+  </data>
+  <data name="TC2车客室温度" xml:space="preserve">
+    <value>TC2车客室温度</value>
+  </data>
+  <data name="TC1车1制动缸压力" xml:space="preserve">
+    <value>TC1车1#制动缸压力</value>
+  </data>
+  <data name="TC1车2制动缸压力" xml:space="preserve">
+    <value>TC1车2#制动缸压力</value>
+  </data>
+  <data name="MP1车1制动缸压力" xml:space="preserve">
+    <value>MP1车1#制动缸压力</value>
+  </data>
+  <data name="MP1车2制动缸压力" xml:space="preserve">
+    <value>MP1车2#制动缸压力</value>
+  </data>
+  <data name="M1车1制动缸压力" xml:space="preserve">
+    <value>M1车1#制动缸压力</value>
+  </data>
+  <data name="M1车2制动缸压力" xml:space="preserve">
+    <value>M1车2#制动缸压力</value>
+  </data>
+  <data name="M2车1制动缸压力" xml:space="preserve">
+    <value>M2车1#制动缸压力</value>
+  </data>
+  <data name="M2车2制动缸压力" xml:space="preserve">
+    <value>M2车2#制动缸压力</value>
+  </data>
+  <data name="MP2车1制动缸压力" xml:space="preserve">
+    <value>MP2车1#制动缸压力</value>
+  </data>
+  <data name="MP2车2制动缸压力" xml:space="preserve">
+    <value>MP2车2#制动缸压力</value>
+  </data>
+  <data name="TC2车1制动缸压力" xml:space="preserve">
+    <value>TC2车1#制动缸压力</value>
+  </data>
+  <data name="TC2车2制动缸压力" xml:space="preserve">
+    <value>TC2车2#制动缸压力</value>
+  </data>
+  <data name="制动级位" xml:space="preserve">
+    <value>制动级位</value>
+  </data>
+  <data name="MP1车中间电压" xml:space="preserve">
+    <value>MP1车中间电压</value>
+  </data>
+  <data name="M1车中间电压" xml:space="preserve">
+    <value>M1车中间电压</value>
+  </data>
+  <data name="M2车中间电压" xml:space="preserve">
+    <value>M2车中间电压</value>
+  </data>
+  <data name="MP2车中间电压" xml:space="preserve">
+    <value>MP2车中间电压</value>
+  </data>
+  <data name="MP1车电机电流" xml:space="preserve">
+    <value>MP1车电机电流</value>
+  </data>
+  <data name="M1车电机电流" xml:space="preserve">
+    <value>M1车电机电流</value>
+  </data>
+  <data name="M2车电机电流" xml:space="preserve">
+    <value>M2车电机电流</value>
+  </data>
+  <data name="MP2车电机电流" xml:space="preserve">
+    <value>MP2车电机电流</value>
+  </data>
+  <data name="TC1车220V输出电压" xml:space="preserve">
+    <value>TC1车220V输出电压</value>
+  </data>
+  <data name="TC2车220V输出电压" xml:space="preserve">
+    <value>TC2车220V输出电压</value>
+  </data>
+  <data name="TC1车110V输出电压" xml:space="preserve">
+    <value>TC1车110V输出电压</value>
+  </data>
+  <data name="TC2车110V输出电压" xml:space="preserve">
+    <value>TC2车110V输出电压</value>
+  </data>
+  <data name="TC1车蓄电池充电电流" xml:space="preserve">
+    <value>TC1车蓄电池充电电流</value>
+  </data>
+  <data name="TC2车蓄电池充电电流" xml:space="preserve">
+    <value>TC2车蓄电池充电电流</value>
+  </data>
+  <data name="TC1车室外温度" xml:space="preserve">
+    <value>TC1车室外温度</value>
+  </data>
+  <data name="MP1车室外温度" xml:space="preserve">
+    <value>MP1车室外温度</value>
+  </data>
+  <data name="M1车室外温度" xml:space="preserve">
+    <value>M1车室外温度</value>
+  </data>
+  <data name="MP2车室外温度" xml:space="preserve">
+    <value>MP2车室外温度</value>
+  </data>
+  <data name="M2车室外温度" xml:space="preserve">
+    <value>M2车室外温度</value>
+  </data>
+  <data name="TC2车室外温度" xml:space="preserve">
+    <value>TC2车室外温度</value>
+  </data>
+  <data name="运行总里程" xml:space="preserve">
+    <value>运行总里程</value>
+  </data>
+  <data name="本次运行里程" xml:space="preserve">
+    <value>本次运行里程</value>
+  </data>
+  <data name="TC1压缩机工作时间" xml:space="preserve">
+    <value>TC1压缩机工作时间</value>
+  </data>
+  <data name="TC2压缩机工作时间" xml:space="preserve">
+    <value>TC2压缩机工作时间</value>
+  </data>
+  <data name="牵引能耗" xml:space="preserve">
+    <value>牵引能耗</value>
+  </data>
+  <data name="制动能耗" xml:space="preserve">
+    <value>制动能耗</value>
+  </data>
+  <data name="辅助能耗" xml:space="preserve">
+    <value>辅助能耗</value>
+  </data>
+  <data name="Tc1总风压力" xml:space="preserve">
+    <value>Tc1总风压力</value>
+  </data>
+  <data name="Mp1总风压力" xml:space="preserve">
+    <value>Mp1总风压力</value>
+  </data>
+  <data name="M1总风压力" xml:space="preserve">
+    <value>M1总风压力</value>
+  </data>
+  <data name="M2总风压力" xml:space="preserve">
+    <value>M2总风压力</value>
+  </data>
+  <data name="Mp2总风压力" xml:space="preserve">
+    <value>Mp2总风压力</value>
+  </data>
+  <data name="Tc2总风压力" xml:space="preserve">
+    <value>Tc2总风压力</value>
+  </data>
+  <data name="Tc1_1空簧压力" xml:space="preserve">
+    <value>Tc1_1空簧压力</value>
+  </data>
+  <data name="Tc1_2空簧压力" xml:space="preserve">
+    <value>Tc1_2空簧压力</value>
+  </data>
+  <data name="Mp1_1空簧压力" xml:space="preserve">
+    <value>Mp1_1空簧压力</value>
+  </data>
+  <data name="Mp1_2空簧压力" xml:space="preserve">
+    <value>Mp1_2空簧压力</value>
+  </data>
+  <data name="M1_1空簧压力" xml:space="preserve">
+    <value>M1_1空簧压力</value>
+  </data>
+  <data name="M1_2空簧压力" xml:space="preserve">
+    <value>M1_2空簧压力</value>
+  </data>
+  <data name="M2_1空簧压力" xml:space="preserve">
+    <value>M2_1空簧压力</value>
+  </data>
+  <data name="M2_2空簧压力" xml:space="preserve">
+    <value>M2_2空簧压力</value>
+  </data>
+  <data name="Mp2_1空簧压力" xml:space="preserve">
+    <value>Mp2_1空簧压力</value>
+  </data>
+  <data name="Tc2_1空簧压力" xml:space="preserve">
+    <value>Tc2_1空簧压力</value>
+  </data>
+  <data name="Tc2_2空簧压力" xml:space="preserve">
+    <value>Tc2_2空簧压力</value>
+  </data>
+  <data name="Tc1_1空调温度" xml:space="preserve">
+    <value>Tc1_1空调温度</value>
+  </data>
+  <data name="Tc1_2空调温度" xml:space="preserve">
+    <value>Tc1_2空调温度</value>
+  </data>
+  <data name="Mp1_1空调温度" xml:space="preserve">
+    <value>Mp1_1空调温度</value>
+  </data>
+  <data name="Mp1_2空调温度" xml:space="preserve">
+    <value>Mp1_2空调温度</value>
+  </data>
+  <data name="M1_1空调温度" xml:space="preserve">
+    <value>M1_1空调温度</value>
+  </data>
+  <data name="M1_2空调温度" xml:space="preserve">
+    <value>M1_2空调温度</value>
+  </data>
+  <data name="M2_1空调温度" xml:space="preserve">
+    <value>M2_1空调温度</value>
+  </data>
+  <data name="M2_2空调温度" xml:space="preserve">
+    <value>M2_2空调温度</value>
+  </data>
+  <data name="Mp2_1空调温度" xml:space="preserve">
+    <value>Mp2_1空调温度</value>
+  </data>
+  <data name="Tc2_1空调温度" xml:space="preserve">
+    <value>Tc2_1空调温度</value>
+  </data>
+  <data name="Tc2_2空调温度" xml:space="preserve">
+    <value>Tc2_2空调温度</value>
+  </data>
+  <data name="Mp2_1空簧压力2" xml:space="preserve">
+    <value>Mp2_1空簧压力2</value>
+  </data>
+  <data name="Mp2_1空调温度2" xml:space="preserve">
+    <value>Mp2_1空调温度2</value>
+  </data>
+  <data name="信息" xml:space="preserve">
+    <value>信息</value>
+  </data>
+  <data name="车次号0" xml:space="preserve">
+    <value>车次号0</value>
+  </data>
+  <data name="车次号1" xml:space="preserve">
+    <value>车次号1</value>
+  </data>
+</root>

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ProjectConfig>
+
+    <DetailConfigFile>ProjectDetailConfig.xml</DetailConfigFile>
+    
+    <ScreenConfig>
+        <OffsetX>80</OffsetX>
+        <OffsetY>80</OffsetY>
+    </ScreenConfig>
+
+    <AccessControlConfig>
+        <CanSkipBeginViewByClickZeroButton>true</CanSkipBeginViewByClickZeroButton>
+    </AccessControlConfig>
+
+    <CRH5AFileConfig>
+        <!--通信接口文件-->
+        <CRH5ACommunicationConfigCollection>
+            <CRH5ACommunicationConfig DataType="InBool">
+                <!--相对于.exe的目录-->
+                <File>CRH5A型车接口适配_InBool.csv</File>
+                <ReadColoumns>
+                    <Coloumn IsPrimaryKey="true"  Name="Name" />
+                    <Coloumn IsPrimaryKey="false" Name="Index" />
+                </ReadColoumns>
+            </CRH5ACommunicationConfig>
+            <CRH5ACommunicationConfig DataType="InFloat">
+                <!--相对于.exe的目录-->
+                <File>CRH5A型车接口适配_InFloat.csv</File>
+                <ReadColoumns>
+                    <Coloumn IsPrimaryKey="true"  Name="Name" />
+                    <Coloumn IsPrimaryKey="false" Name="Index" />
+                </ReadColoumns>
+            </CRH5ACommunicationConfig>
+            <CRH5ACommunicationConfig DataType="OutBool">
+                <!--相对于.exe的目录-->
+                <File>CRH5A型车接口适配_OutBool.csv</File>
+                <ReadColoumns>
+                    <Coloumn IsPrimaryKey="true"  Name="Name" />
+                    <Coloumn IsPrimaryKey="false" Name="Index" />
+                </ReadColoumns>
+            </CRH5ACommunicationConfig>
+            <CRH5ACommunicationConfig DataType="OutFloat">
+                <!--相对于.exe的目录-->
+                <File>CRH5A型车接口适配_OutFloat.csv</File>
+                <ReadColoumns>
+                    <Coloumn IsPrimaryKey="true"  Name="Name" />
+                    <Coloumn IsPrimaryKey="false" Name="Index" />
+                </ReadColoumns>
+            </CRH5ACommunicationConfig>
+        </CRH5ACommunicationConfigCollection>
+
+    </CRH5AFileConfig>
+    
+</ProjectConfig>

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<FlashConfigRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!--Flash 的 root 目录 ， 其它的未配置路径的文件均放到此目录， 不能在 AppDomain.CurrentDomain.BaseDirectory 中获取（如之前的 HXD2.dat, settings_flash.ini）-->
+  <!--<RootPath></RootPath> 为空 当前程序运行目录-->
+  <RootPath>General.FlashLoader.HXD2MMI\Flash</RootPath>
+  <!--SwfFile = D:\Tmp\HXD2.swf -->
+  <SwfFile>HXD2.swf</SwfFile>
+  <IsShowDebugWindow>true</IsShowDebugWindow>
+  <DataInterface>
+
+    <InBool>
+      <!--Inbool File = D:\Tmp\Config\HXD2车辆屏接口_InBool.xls -->
+      <File>..\..\Config\HXD2车辆屏接口_InBool.xls</File>
+      <Sheet>Sheet1</Sheet>
+      <Name>Name</Name>
+      <Index>Index</Index>
+    </InBool>
+    <InBool>
+      <File>..\..\Config\HXD2车辆屏故障接口表.xls</File>
+      <Sheet>Sheet1</Sheet>
+      <Name>名称</Name>
+      <Index>InBoolIndex</Index>
+    </InBool>
+
+    <OutBool>
+      <File>..\..\Config\HXD2车辆屏接口_OutBool.xls</File>
+      <Sheet>Sheet1</Sheet>
+      <Name>Name</Name>
+      <Index>Index</Index>
+    </OutBool>
+
+    <InFloat>
+      <File>..\..\Config\HXD2车辆屏接口_InFloat.xls</File>
+      <Sheet>Sheet1</Sheet>
+      <Name>Name</Name>
+      <Index>Index</Index>
+    </InFloat>
+
+    <OutFloat>
+      <File>..\..\Config\HXD2车辆屏接口_OutFloat.xls</File>
+      <Sheet>Sheet1</Sheet>
+      <Name>Name</Name>
+      <Index>Index</Index>
+    </OutFloat>
+
+  </DataInterface>
+</FlashConfigRoot>

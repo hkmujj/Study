@@ -1,0 +1,525 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:assist="clr-namespace:Engine.TCMS.HXD3.Model.TCMS.Assist"
+                    xmlns:common="clr-namespace:Engine.TCMS.HXD3.View.Common"
+                    xmlns:configModel="clr-namespace:Engine.TCMS.HXD3.Model.ConfigModel"
+                    xmlns:domain="clr-namespace:Engine.TCMS.HXD3.ViewModel.Domain"
+                    xmlns:domain1="clr-namespace:Engine.TCMS.HXD3.Model.TCMS.Domain"
+                    xmlns:themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Basic/BasicResource.xaml" />
+        <ResourceDictionary Source="../Converter/ConvertResource.xaml" />
+        <ResourceDictionary Source="TextStyleResource.xaml" />
+        <ResourceDictionary Source="BorderStyleResource.xaml" />
+        <ResourceDictionary Source="BtnStyleResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="ListBoxStyleBase" TargetType="ListBox">
+        <Style.Setters>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled" />
+            <Setter Property="IsHitTestVisible" Value="False" />
+            <Setter Property="Foreground" Value="{StaticResource WhiteBrush}" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Border Margin="0"
+                                Background="{TemplateBinding Background}"
+                                Padding="0">
+                            <ScrollViewer Margin="0"
+                                          Focusable="false"
+                                          Padding="0">
+                                <ItemsPresenter Margin="0" IsHitTestVisible="{TemplateBinding IsHitTestVisible}" />
+                            </ScrollViewer>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemContainerStyle">
+                <Setter.Value>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="Margin" Value="0" />
+                        <Setter Property="Padding" Value="0" />
+                        <Setter Property="BorderThickness" Value="0" />
+                    </Style>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="PopingFaultItemStyle"
+           BasedOn="{StaticResource ListBoxStyleBase}"
+           TargetType="ListBox">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Vertical" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <!--  开放状态  -->
+    <Style x:Key="OpenStateListStyle"
+           BasedOn="{StaticResource ListBoxStyleBase}"
+           TargetType="ListBox">
+        <Style.Setters>
+            <Setter Property="IsHitTestVisible" Value="True" />
+            <Setter Property="ItemContainerStyle">
+                <Setter.Value>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="Margin" Value="0" />
+                        <Setter Property="Padding" Value="0" />
+                        <Setter Property="BorderThickness" Value="0" />
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ListBoxItem">
+                                    <Border Background="{TemplateBinding Background}"
+                                            BorderBrush="{x:Null}"
+                                            BorderThickness="0">
+                                        <ContentPresenter />
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Trigger.Setters>
+                                                <Setter Property="Background" Value="{StaticResource ContentBackgroudBrush}" />
+                                            </Trigger.Setters>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="domain1:OpenStateItem">
+                        <Grid Width="75" Height="120">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="6" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="6" />
+                            </Grid.RowDefinitions>
+
+                            <common:BorderText Grid.Row="1"
+                                               Background="{Binding Path=State,
+                                                                    Converter={StaticResource OpenStateToContentBackgroundConverter}}"
+                                               Foreground="{Binding Path=State,
+                                                                    Converter={StaticResource OpenStateToContentForegroundConverter}}"
+                                               Text="{Binding Path=State,
+                                                              Converter={StaticResource OpenStateToContentConverter}}" />
+
+                            <ToggleButton Grid.Row="2"
+                                          Content="{Binding Path=Config.Name}"
+                                          IsChecked="{Binding Path=IsSelected}"
+                                          Style="{StaticResource OpenSelectableBtnStyle}" />
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <!--  故障描述  -->
+    <Style x:Key="FaultHandleDescriptionListStyle"
+           BasedOn="{StaticResource ListBoxStyleBase}"
+           TargetType="ListBox">
+        <Style.Setters>
+            <Setter Property="ItemContainerStyle">
+                <Setter.Value>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="Margin" Value="0" />
+                        <Setter Property="Padding" Value="0" />
+                        <Setter Property="BorderThickness" Value="1" />
+                        <Setter Property="BorderBrush" Value="{StaticResource WhiteBrush}" />
+                    </Style>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Vertical" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="configModel:FaultHandleItem">
+                        <Grid Width="{Binding RelativeSource={RelativeSource AncestorType=ListBox},
+                                              Path=ActualWidth}"
+                              Height="25"
+                              Margin="0"
+                              Background="Black">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="11*" />
+                            </Grid.ColumnDefinitions>
+                            <Border Style="{StaticResource BackGridBorderStyleRight}">
+                                <TextBlock Margin="0,0,6,0"
+                                           Style="{StaticResource MainContentRightTextStyle}"
+                                           Text="{Binding Path=Identify}" />
+                            </Border>
+                            <TextBlock x:Name="Part_DescriptionText"
+                                       Grid.Column="1"
+                                       Margin="6,0"
+                                       Style="{StaticResource MainContentLeftTextStyle}">
+                                <TextBlock.Text>
+                                    <MultiBinding Converter="{StaticResource ResourceKeyToResourceContentResource}">
+                                        <Binding ElementName="Part_DescriptionText" />
+                                        <Binding Path="DescriptionKey" />
+                                    </MultiBinding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <!--  开关状态  -->
+    <Style x:Key="SwitchStateListStyle"
+           BasedOn="{StaticResource ListBoxStyleBase}"
+           TargetType="ListBox">
+        <Style.Setters>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="domain1:SwitchItem">
+                        <Border Width="92"
+                                Height="38"
+                                Margin="1"
+                                Background="{Binding Path=State,
+                                                     Converter={StaticResource SwitchItemStateToBackgroundConverter}}"
+                                BorderBrush="{StaticResource WhiteBrush}"
+                                BorderThickness="1"
+                                Visibility="{Binding Path=Config.Name,
+                                                     Converter={StaticResource SwitchItemContentToVisibleConverter}}">
+                            <TextBlock Foreground="{Binding Path=State,
+                                                            Converter={StaticResource SwitchItemStateToBlackBrushConverter}}"
+                                       Style="{StaticResource MainContentContentTextStyle}"
+                                       Text="{Binding Path=Config.Name}" />
+                        </Border>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <!--  风机状态  -->
+    <Style x:Key="WindMachineStateListStyle"
+           BasedOn="{StaticResource ListBoxStyleBase}"
+           TargetType="ListBox">
+        <Style.Setters>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="domain1:SwitchItem">
+                        <Border Width="60"
+                                Height="30"
+                                Margin="1"
+                                Background="{Binding Path=Value,
+                                                     Converter={StaticResource BoolToGreenBrushConverter}}"
+                                BorderBrush="{StaticResource WhiteBrush}"
+                                BorderThickness="1">
+                            <TextBlock Foreground="{Binding Path=Value,
+                                                            Converter={StaticResource BoolToBlackBrushConverter}}"
+                                       Style="{StaticResource MainContentContentTextStyle}"
+                                       Text="{Binding Path=Config.Name}" />
+                        </Border>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <!--  牵引电机状态  -->
+    <Style x:Key="TowEleMachineStateListStyle"
+           BasedOn="{StaticResource ListBoxStyleBase}"
+           TargetType="ListBox">
+        <Style.Setters>
+            <Setter Property="ItemContainerStyle">
+                <Setter.Value>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="Margin" Value="7,0" />
+                        <Setter Property="Padding" Value="0" />
+                    </Style>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <common:TouchUnit Width="35"
+                                          Height="16"
+                                          TouchBrush="{Binding Converter={StaticResource TochMahineStateToTochBrushConverter}}" />
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <!--  牵引电机文本  -->
+    <Style x:Key="TowEleMachineTitleListStyle"
+           BasedOn="{StaticResource ListBoxStyleBase}"
+           TargetType="ListBox">
+        <Style.Setters>
+            <Setter Property="ItemContainerStyle">
+                <Setter.Value>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="BorderBrush" Value="{StaticResource WhiteBrush}" />
+                        <Setter Property="BorderThickness" Value="1" />
+                        <Setter Property="Margin" Value="0" />
+                        <Setter Property="Padding" Value="0" />
+                    </Style>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel Margin="0"
+                                    HorizontalAlignment="Center"
+                                    Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <ContentPresenter Width="49.5"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          Content="{Binding}" />
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+
+    <!--  牵引电机文本  -->
+    <Style x:Key="TowEleMachineTitleVListStyle"
+           BasedOn="{StaticResource TowEleMachineTitleListStyle}"
+           TargetType="ListBox">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Center" Orientation="Vertical" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <ContentPresenter Width="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                                         AncestorType=ListBox},
+                                                          Path=ActualWidth}"
+                                          Height="31.5"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          Content="{Binding}"
+                                          SnapsToDevicePixels="True" />
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+
+    <!--  牵引电机文本  -->
+    <Style x:Key="TowEleMachineTextListStyle"
+           BasedOn="{StaticResource ListBoxStyleBase}"
+           TargetType="ListBox">
+        <Style.Setters>
+            <Setter Property="ItemContainerStyle">
+                <Setter.Value>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="BorderBrush" Value="{StaticResource WhiteBrush}" />
+                        <Setter Property="BorderThickness" Value="1" />
+                        <Setter Property="Margin" Value="0" />
+                        <Setter Property="Padding" Value="0" />
+                    </Style>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <TextBlock Width="49"
+                                   Style="{StaticResource MainContentContentTextStyle}"
+                                   Text="{Binding StringFormat={}0}"
+                                   TextAlignment="Right" />
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <!--  刻度  -->
+    <Style x:Key="DegreeStyleBase"
+           BasedOn="{StaticResource ListBoxStyleBase}"
+           TargetType="ListBox">
+        <Setter Property="Width" Value="20" />
+        <Setter Property="Height" Value="100" />
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <Canvas Width="20" Height="100" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="assist:DegreeItem">
+                    <Line Stroke="{StaticResource WhiteBrush}"
+                          StrokeThickness="{Binding Stoke}"
+                          X1="0"
+                          X2="{Binding Path=Width}"
+                          Y1="{Binding Path=Scal}"
+                          Y2="{Binding Path=Scal}" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="DegreeStyleLeft"
+           BasedOn="{StaticResource DegreeStyleBase}"
+           TargetType="ListBox">
+        <Style.Setters>
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <ScaleTransform ScaleX="-1" />
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="DegreeStyleRight"
+           BasedOn="{StaticResource DegreeStyleBase}"
+           TargetType="ListBox" />
+
+    <Style x:Key="TrainAxisStyle"
+           BasedOn="{StaticResource ListBoxStyleBase}"
+           TargetType="ListBox">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel Margin="0"
+                                    HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                    Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <Border>
+                            <Viewbox>
+                                <Ellipse Width="50"
+                                         Height="50"
+                                         Fill="{Binding Converter={StaticResource AxisStateToForegroundConverter}}"
+                                         Stroke="{StaticResource WhiteBrush}"
+                                         StrokeThickness="6" />
+                            </Viewbox>
+                        </Border>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <!--  故障履历  -->
+    <Style x:Key="FaultCollectionStyle" TargetType="ListView">
+        <Style.Setters>
+            <Setter Property="IsHitTestVisible" Value="True" />
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="IsManipulationEnabled" Value="False" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
+            <Setter Property="Foreground" Value="{StaticResource TextForegroundBrush}" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListView}">
+                        <Border>
+                            <ScrollViewer Padding="{TemplateBinding Padding}" Style="{DynamicResource {x:Static GridView.GridViewScrollViewerStyleKey}}">
+                                <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                            </ScrollViewer>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemContainerStyle">
+                <Setter.Value>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ListViewItem">
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Trigger.Setters>
+                                                <Setter Property="Background" Value="{StaticResource BlueBrush}" />
+                                            </Trigger.Setters>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                    <StackPanel Background="{TemplateBinding Background}" Orientation="Vertical">
+                                        <GridViewRowPresenter Margin="1.7"
+                                                              Columns="{TemplateBinding GridView.ColumnCollection}"
+                                                              Content="{TemplateBinding Content}" />
+                                    </StackPanel>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="FaultViewItemStyle" TargetType="GridViewColumnHeader">
+        <Style.Setters>
+            <Setter Property="Background" Value="{x:Null}" />
+            <Setter Property="Foreground" Value="{StaticResource TextForegroundBrush}" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="GridViewColumnHeader">
+                        <Border BorderBrush="{StaticResource WhiteBrush}" BorderThickness="0,0,0,2">
+                            <ContentPresenter Margin="6,3" Content="{TemplateBinding Content}" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+</ResourceDictionary>

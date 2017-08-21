@@ -1,0 +1,248 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:airmodel="clr-namespace:LightRail.HMI.SZLHLF.Model.AirModel"
+                    xmlns:converter="clr-namespace:MMI.Facility.WPFInfrastructure.Converter;assembly=MMI.Facility.WPFInfrastructure"
+                    xmlns:converter1="clr-namespace:LightRail.HMI.SZLHLF.Converter"
+                    xmlns:eventModel="clr-namespace:LightRail.HMI.SZLHLF.Model.EventModel"
+                    xmlns:netWorkModel="clr-namespace:LightRail.HMI.SZLHLF.Model.NetWorkModel"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib"
+                    xmlns:tmodel="clr-namespace:LightRail.HMI.SZLHLF.Model.TrainModel"
+                    xmlns:units="clr-namespace:LightRail.HMI.SZLHLF.Model.Units">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../../Resources/Image/ImagesResource.xaml" />
+        <ResourceDictionary Source="../../Resources/FontSource/CH/SZLHLFStringResourceCH.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <converter1:StationSetConverter x:Key="StationSetConverter"
+                                    Colunm="8"
+                                    Row="3" />
+
+    <converter:MathConverter x:Key="MathConverter" />
+
+    <converter1:DriversConverter x:Key="DriversConverter" />
+    <converter1:StringToDoubleNegative x:Key="StringToDoubleNegative" />
+    <converter1:DirectionArrowLeftMulConverter x:Key="DirectionArrowLeftMulConverter" />
+    <converter1:DirectionArrowRightMulConverter x:Key="DirectionArrowRightMulConverter" />
+    <converter1:ResourceConverter x:Key="ResourceConverter" />
+    <converter1:TractionOrBrakeMulConverter x:Key="TractionOrBrakeMulConverter" />
+    <converter1:TimeConverter x:Key="TimeConverter" />
+    <converter1:EventInfoVisibleConverter x:Key="EventInfoVisibleConverter" />
+    <converter1:EventLevelConverter x:Key="EventLevelConverter" />
+    <converter1:LightBrushConverter x:Key="LightBrushConverter" />
+
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+
+
+    <system:Boolean x:Key="BooleanTrue">true</system:Boolean>
+    <system:Boolean x:Key="BooleanFlase">false</system:Boolean>
+
+    <converter:SelectObjectContentConverter x:Key="HMIBlackConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{StaticResource BooleanTrue}" Content="{x:Static Visibility.Visible}" />
+            <converter:ObjectContentPair Key="{StaticResource BooleanFlase}" Content="{x:Static Visibility.Hidden}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="BatteryStateConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:BatteryState.Normal}" Content="{StaticResource PowerNormalBitmapImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:BatteryState.Fault}" Content="{StaticResource PowerTroubleBitmapImage}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="TractionStateConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:TractionState.Normal}" Content="{StaticResource InverterNormalBitmapImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:TractionState.SeriousFault}" Content="{StaticResource InverterSeriousTroubleBitmapImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:TractionState.MinorFault}" Content="{StaticResource InverterSlightTroubleBitmapImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:TractionState.NotOperation}" Content="{StaticResource InverterNotOperationBitmapImage}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="AssistPowerSourceConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static tmodel:AssistPowerSource.Normal}" Content="{StaticResource AssistNormalBitmapImage}" />
+            <converter:ObjectContentPair Key="{x:Static tmodel:AssistPowerSource.SeriousTrouble}" Content="{StaticResource AssistSeriousTroubleBitmapImage}" />
+            <converter:ObjectContentPair Key="{x:Static tmodel:AssistPowerSource.SlightTrouble}" Content="{StaticResource AssistSlightTroubleBitmapImage}" />
+            <converter:ObjectContentPair Key="{x:Static tmodel:AssistPowerSource.NotOperation}" Content="{StaticResource AssistNotOperationBitmapImage}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="HighSpeedBreakerConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static tmodel:HighSpeedBreaker.HSCBCombine}" Content="{StaticResource HSCBCombineBitmapImage}" />
+            <converter:ObjectContentPair Key="{x:Static tmodel:HighSpeedBreaker.HSCBPart}" Content="{StaticResource HSCBPartBitmapImage}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="PantographConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static tmodel:Pantograph.Raise}" Content="{StaticResource RaiseBitmapImage}" />
+            <converter:ObjectContentPair Key="{x:Static tmodel:Pantograph.Down}" Content="{StaticResource DownBitmapImage}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="BatteryChargerConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static tmodel:BatteryCharger.Operation}" Content="{StaticResource BatteryChargerOperationBitmapImage}" />
+            <converter:ObjectContentPair Key="{x:Static tmodel:BatteryCharger.NotOperation}" Content="{StaticResource BatteryChargerNotOperationBitmapImage}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="DoorStateConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:DoorState.Opened}" Content="{StaticResource DoorOpenBitmapImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:DoorState.Closed}" Content="{StaticResource DoorCloseBitmapImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:DoorState.SeriousFault}" Content="{StaticResource DoorSeriousTroubleBitmapImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:DoorState.MinorFault}" Content="{StaticResource DoorSlightTroubleBitmapImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:DoorState.Cut}" Content="{StaticResource SelectiveDoorOperationBitmapImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:DoorState.EmergencyLock}" Content="{StaticResource DoorEmergencyBitmapImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:DoorState.Hinder}" Content="{StaticResource DoorAgainstClipBitmapImage}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="BrakeStateConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:BrakeState.SeriousFault}" Content="{StaticResource BrakeSeriousBitmapImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:BrakeState.MinorFault}" Content="{StaticResource BrakeSlightBitmapImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:BrakeState.Excision}" Content="{StaticResource BrakeExcisionBitmapImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:BrakeState.Infliction}" Content="{StaticResource BrakeInflictionBitmapImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:BrakeState.Remission}" Content="{StaticResource BrakeRemissionBitmapImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:BrakeState.BrakeEmergencyRemission}" Content="{StaticResource BrakeEmergencyRemissionBitmapImage}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="DirectionArrowConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static tmodel:DirectionArrow.Front}" Content="{StaticResource DirectionLeftBitmapImage}" />
+            <converter:ObjectContentPair Key="{x:Static tmodel:DirectionArrow.After}" Content="{StaticResource DirectionRightBitmapImage}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="TurnLeftLightConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static tmodel:TurnLight.Press}" Content="{StaticResource LeftPressBitmapImage}" />
+            <converter:ObjectContentPair Key="{x:Static tmodel:TurnLight.Restoration}" Content="{StaticResource LeftRestorationBitmapImage}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="TurnRightLightConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static tmodel:TurnLight.Press}" Content="{StaticResource RightPressBitmapImage}" />
+            <converter:ObjectContentPair Key="{x:Static tmodel:TurnLight.Restoration}" Content="{StaticResource RightRestorationBitmapImage}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="AirModelStateConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static airmodel:AirModelState.Normal}" Content="{x:Null}" />
+            <converter:ObjectContentPair Key="{x:Static airmodel:AirModelState.Arefaction}" Content="{StaticResource ArefactionString}" />
+            <converter:ObjectContentPair Key="{x:Static airmodel:AirModelState.Cold}" Content="{StaticResource ColdString}" />
+            <converter:ObjectContentPair Key="{x:Static airmodel:AirModelState.Hot}" Content="{StaticResource HotString}" />
+            <converter:ObjectContentPair Key="{x:Static airmodel:AirModelState.Ventilation}" Content="{StaticResource VentilationString}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="AirConditionConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:AirConditionState.Off}" Content="{StaticResource AirShutDownBitmapImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:AirConditionState.Run}" Content="{StaticResource AirNormalBitmapImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:AirConditionState.Aeration}" Content="{StaticResource AirVentilateBitmapImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:AirConditionState.EmergencyAeration}" Content="{StaticResource AirEmergencyVentilateBitmapImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:AirConditionState.Precool}" Content="{StaticResource AirLimitRefrigerationBitmapImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:AirConditionState.MinorFault}" Content="{StaticResource AirSlightTroubleBitmapImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:AirConditionState.SeriousFault}" Content="{StaticResource AirSeriousTroubleBitmapImage}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="EmergencyTalkStateConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:EmergencyTalkState.Calling}" Content="{StaticResource EmergencyCallNormalBitmapImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:EmergencyTalkState.CallRequest}" Content="{StaticResource EmergencyCallRequestBitmapImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:EmergencyTalkState.SeriousFault}" Content="{StaticResource EmergencyCallTroubleBitmapImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:EmergencyTalkState.CallEnd}" Content="{StaticResource EmergencyCallOverBitmapImage}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="DirectionArrowStringConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static tmodel:DirectionArrow.UnNormal}" Content="{StaticResource UnKnownString}" />
+            <converter:ObjectContentPair Key="{x:Static tmodel:DirectionArrow.Front}" Content="{StaticResource FrontString}" />
+            <converter:ObjectContentPair Key="{x:Static tmodel:DirectionArrow.After}" Content="{StaticResource AfterString}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="RunModelToStringConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static tmodel:RunModel.Normal}" Content="{x:Null}" />
+            <converter:ObjectContentPair Key="{x:Static tmodel:RunModel.CarWash}" Content="{StaticResource CarWashString}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="WorkStateToStringConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static tmodel:WorkState.Normal}" Content="{x:Null}" />
+            <converter:ObjectContentPair Key="{x:Static tmodel:WorkState.Traction}" Content="{StaticResource TractionString}" />
+            <converter:ObjectContentPair Key="{x:Static tmodel:WorkState.Brake}" Content="{StaticResource BrakeString}" />
+            <converter:ObjectContentPair Key="{x:Static tmodel:WorkState.Lazy}" Content="{StaticResource LazyString}" />
+            <converter:ObjectContentPair Key="{x:Static tmodel:WorkState.EmergencyTraction}" Content="{StaticResource EmergencyTractionString}" />
+            <converter:ObjectContentPair Key="{x:Static tmodel:WorkState.EmergencyBrake}" Content="{StaticResource EmergencyBrakeString}" />
+            <converter:ObjectContentPair Key="{x:Static tmodel:WorkState.FastBrake}" Content="{StaticResource FastBrakeString}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="LevelToTextConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static eventModel:EventLevel.Normal}" Content="{x:Null}" />
+            <converter:ObjectContentPair Key="{x:Static eventModel:EventLevel.Grave}" Content="{StaticResource GraveString}" />
+            <converter:ObjectContentPair Key="{x:Static eventModel:EventLevel.Light}" Content="{StaticResource LightString}" />
+            <converter:ObjectContentPair Key="{x:Static eventModel:EventLevel.Medium}" Content="{StaticResource MediumString}" />
+            <converter:ObjectContentPair Key="{x:Static eventModel:EventLevel.Prompt}" Content="{StaticResource PromptString}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="IsConfirmToImageConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{StaticResource BooleanTrue}" Content="{StaticResource EnterBitmapImage}" />
+            <converter:ObjectContentPair Key="{StaticResource BooleanFlase}" Content="{StaticResource UnEnterBitmapImage}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="HistoryOrCurrnetToTextConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{StaticResource BooleanTrue}" Content="{StaticResource CurrentFaultString}" />
+            <converter:ObjectContentPair Key="{StaticResource BooleanFlase}" Content="{StaticResource HistoryFaultString}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="NetWorkConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static netWorkModel:NetWorkState.Green}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="#FF00FF00" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static netWorkModel:NetWorkState.Gray}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="#FFB3B3AA" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static netWorkModel:NetWorkState.White}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="White" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static netWorkModel:NetWorkState.Pink}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="#FF8F59AC" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static netWorkModel:NetWorkState.Red}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Red" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+</ResourceDictionary>

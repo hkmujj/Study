@@ -1,0 +1,364 @@
+﻿<UserControl x:Class="Motor.TCMS.CRH400BF.View.Contents.MainRootContentView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+             xmlns:local="clr-namespace:Motor.TCMS.CRH400BF.View.Contents"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:regions="http://www.codeplex.com/CompositeWPF"
+             xmlns:view="clr-namespace:MMI.Facility.WPFInfrastructure.View;assembly=MMI.Facility.WPFInfrastructure"
+             xmlns:viewModel="clr-namespace:Motor.TCMS.CRH400BF.ViewModel"
+             xmlns:viewSource="clr-namespace:Motor.TCMS.CRH400BF.Model.ViewSource"
+             d:DataContext="{d:DesignInstance {x:Type viewModel:DomainViewModel}}"
+             d:DesignHeight="400"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <Grid Width="800" HorizontalAlignment="Right">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15*" />
+            <RowDefinition Height="110*" />
+            <RowDefinition Height="265*" />
+            <RowDefinition Height="10*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0" Grid.Column="1">
+            <StackPanel HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
+                <TextBlock VerticalAlignment="Center"
+                           Foreground="White"
+                           Text="CRH"
+                           TextAlignment="Right" />
+                <TextBlock VerticalAlignment="Center"
+                           Foreground="White"
+                           Text="0000"
+                           TextAlignment="Left" />
+            </StackPanel>
+        </Grid>
+
+        <TextBlock Grid.Row="1"
+                   Grid.Column="0"
+                   Margin="78,9,27,79"
+                   VerticalAlignment="Center "
+                   FontSize="16"
+                   Foreground="White "
+                   Text="网 压 (kV)"
+                   TextAlignment="Center" />
+        <Grid Grid.Row="1"
+              Grid.RowSpan="2"
+              Grid.Column="0"
+              Margin="40,0,50,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="10*" />
+            </Grid.RowDefinitions>
+            <ItemsControl Grid.Row="1"
+                          Grid.Column="0"
+                          Grid.ColumnSpan="2"
+                          ItemsSource="{Binding TargitDistanceScaleItems,
+                                                Source={x:Static viewSource:MainNetVRoteRateScale.Instance}}"
+                          Style="{StaticResource ItemNetVStyle}" />
+            <Border Grid.Row="1"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="3"
+                    BorderBrush="White"
+                    BorderThickness="0,0,0,1" />
+            <ProgressBar Grid.Row="1"
+                         Grid.Column="2"
+                         Maximum="40"
+                         Style="{StaticResource ProgressBarStyle}"
+                         Value="10" />
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="14*" />
+                <RowDefinition Height="45*" />
+                <RowDefinition Height="45*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.0*" />
+                <ColumnDefinition Width="1.2*" />
+                <ColumnDefinition Width="1.1*" />
+                <ColumnDefinition Width="2.7*" />
+                <ColumnDefinition Width="1.1*" />
+                <ColumnDefinition Width="2.1*" />
+                <ColumnDefinition Width="0.8*" />
+            </Grid.ColumnDefinitions>
+            <Image Grid.RowSpan="3"
+                   Grid.Column="0"
+                   Margin="0,0,0,15"
+                   Source="{StaticResource Img钥匙}" />
+            <ed:BlockArrow Grid.Row="0"
+                           Grid.RowSpan="2"
+                           Grid.Column="0"
+                           Height="20"
+                           Margin="10,6,10,0"
+                           VerticalAlignment="Top"
+                           Fill="LawnGreen"
+                           Orientation="Left"
+                           RenderTransformOrigin="0.1,0.072"
+                           Stroke="Black" />
+            <Border Grid.Row="0"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="5"
+                    BorderBrush="White"
+                    BorderThickness="0,0,0,1" />
+            <Border Grid.Row="0"
+                    Grid.RowSpan="3"
+                    Grid.Column="1"
+                    BorderBrush="White"
+                    BorderThickness="1,0,0,0" />
+
+            <TextBlock Grid.Row="0"
+                       Grid.Column="2"
+                       VerticalAlignment="Center"
+                       Foreground="White"
+                       Text="06"
+                       TextAlignment="Center " />
+            <TextBlock Grid.Row="0"
+                       Grid.Column="4"
+                       VerticalAlignment="Center"
+                       Foreground="White"
+                       Text="03"
+                       TextAlignment="Center " />
+
+            <Image Grid.Row="1"
+                   Grid.Column="2"
+                   Source="{StaticResource Img升弓}" />
+            <Image Grid.Row="1"
+                   Grid.Column="4"
+                   Source="{StaticResource Img升弓}" />
+
+            <Image Grid.Row="2"
+                   Grid.Column="2"
+                   Source="{StaticResource Img升弓}" />
+            <Image Grid.Row="2"
+                   Grid.Column="4"
+                   Source="{StaticResource Img升弓}" />
+        </Grid>
+        <TextBlock Grid.Row="1"
+                   Grid.Column="2"
+                   Margin="27,9,78,79"
+                   VerticalAlignment="Center "
+                   FontSize="16"
+                   Foreground="White"
+                   Text="网 流 (A)"
+                   TextAlignment="Center" />
+
+        <Grid Grid.Row="1"
+              Grid.RowSpan="2"
+              Grid.Column="2"
+              Margin="50,0,40,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="5*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="10*" />
+            </Grid.RowDefinitions>
+            <Border Grid.Row="1"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    BorderBrush="White"
+                    BorderThickness="0,0,0,1" />
+            <ProgressBar Grid.Row="1"
+                         Grid.Column="1"
+                         Maximum="40"
+                         Style="{StaticResource ProgressBarStyle}"
+                         Value="10" />
+            <ItemsControl Grid.Row="1"
+                          Grid.Column="2"
+                          Grid.ColumnSpan="2"
+                          ItemsSource="{Binding TargitDistanceScaleItems,
+                                                Source={x:Static viewSource:MainNetARoteRateScale.Instance}}"
+                          Style="{StaticResource ItemNetAStyle}" />
+        </Grid>
+        <TextBlock Grid.Row="2"
+                   Grid.Column="1"
+                   Margin="370,15,0,229"
+                   VerticalAlignment="Center"
+                   Foreground="White"
+                   Text="100%"
+                   TextAlignment="Left" />
+        <TextBlock Grid.Row="2"
+                   Grid.Column="1"
+                   Margin="370,133,0,113"
+                   VerticalAlignment="Center"
+                   Foreground="White"
+                   Text="50%"
+                   TextAlignment="Left" />
+        <TextBlock Grid.Row="2"
+                   Grid.RowSpan="2"
+                   Grid.Column="1"
+                   Margin="370,253,0,8"
+                   VerticalAlignment="Center"
+                   Foreground="White"
+                   Text="0%"
+                   TextAlignment="Left" />
+        <Grid Grid.Row="2"
+              Grid.Column="1"
+              Margin="45,0,35,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="10*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40*" />
+                <ColumnDefinition Width="50*" />
+                <ColumnDefinition Width="40*" />
+                <ColumnDefinition Width="20*" />
+                <ColumnDefinition Width="40*" />
+                <ColumnDefinition Width="50*" />
+                <ColumnDefinition Width="40*" />
+                <ColumnDefinition Width="40*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0"
+                  Grid.RowSpan="4"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="8">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="10*" />
+                    <RowDefinition Height="10*" />
+                </Grid.RowDefinitions>
+                <Border Grid.Row="2"
+                        Grid.Column="0"
+                        BorderBrush="White"
+                        BorderThickness="0,1,0,1" />
+                <Border Grid.Row="3"
+                        Grid.Column="0"
+                        BorderBrush="White"
+                        BorderThickness="0,0,0,1" />
+            </Grid>
+            <TextBlock Grid.Row="0"
+                       Grid.Column="0"
+                       VerticalAlignment="Center"
+                       Foreground="White "
+                       Text="07"
+                       TextAlignment="Center" />
+            <ProgressBar Grid.Row="1"
+                         Grid.RowSpan="3"
+                         Grid.Column="0"
+                         Maximum="40"
+                         Style="{StaticResource ProgressBarStyle}"
+                         Value="10" />
+
+            <ProgressBar Grid.Row="1"
+                         Grid.RowSpan="3"
+                         Grid.Column="2"
+                         Maximum="40"
+                         Style="{StaticResource ProgressBarStyle}"
+                         Value="10" />
+
+            <ProgressBar Grid.Row="1"
+                         Grid.RowSpan="3"
+                         Grid.Column="4"
+                         Maximum="40"
+                         Style="{StaticResource ProgressBarStyle}"
+                         Value="10" />
+
+            <ProgressBar Grid.Row="1"
+                         Grid.RowSpan="3"
+                         Grid.Column="6"
+                         Maximum="40"
+                         Style="{StaticResource ProgressBarStyle}"
+                         Value="10" />
+            <ed:RegularPolygon Grid.Row="3"
+                               Grid.Column="0"
+                               Margin="9,36,7,47"
+                               Fill="Fuchsia"
+                               InnerRadius="1"
+                               PointCount="3"
+                               RenderTransformOrigin="0.661,0.502"
+                               Stretch="Fill"
+                               Stroke="Fuchsia">
+                <ed:RegularPolygon.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform Angle="90" />
+                        <TranslateTransform X="-3.944" Y="3.784" />
+                    </TransformGroup>
+                </ed:RegularPolygon.RenderTransform>
+            </ed:RegularPolygon>
+
+            <ed:RegularPolygon Grid.Row="3"
+                               Grid.Column="2"
+                               Margin="9,36,7,47"
+                               Fill="Fuchsia"
+                               InnerRadius="1"
+                               PointCount="3"
+                               RenderTransformOrigin="0.661,0.502"
+                               Stretch="Fill"
+                               Stroke="Fuchsia">
+                <ed:RegularPolygon.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform Angle="90" />
+                        <TranslateTransform X="-3.944" Y="3.784" />
+                    </TransformGroup>
+                </ed:RegularPolygon.RenderTransform>
+            </ed:RegularPolygon>
+
+            <ed:RegularPolygon Grid.Row="3"
+                               Grid.Column="4"
+                               Margin="9,36,7,47"
+                               Fill="Fuchsia"
+                               InnerRadius="1"
+                               PointCount="3"
+                               RenderTransformOrigin="0.661,0.502"
+                               Stretch="Fill"
+                               Stroke="Fuchsia">
+                <ed:RegularPolygon.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform Angle="90" />
+                        <TranslateTransform X="-3.944" Y="3.784" />
+                    </TransformGroup>
+                </ed:RegularPolygon.RenderTransform>
+            </ed:RegularPolygon>
+
+            <ed:RegularPolygon Grid.Row="3"
+                               Grid.Column="6"
+                               Margin="9,36,7,47"
+                               Fill="Fuchsia"
+                               InnerRadius="1"
+                               PointCount="3"
+                               RenderTransformOrigin="0.661,0.502"
+                               Stretch="Fill"
+                               Stroke="Fuchsia">
+                <ed:RegularPolygon.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform Angle="90" />
+                        <TranslateTransform X="-3.944" Y="3.784" />
+                    </TransformGroup>
+                </ed:RegularPolygon.RenderTransform>
+            </ed:RegularPolygon>
+
+        </Grid>
+
+
+    </Grid>
+
+
+</UserControl>

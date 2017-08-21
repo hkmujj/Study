@@ -1,0 +1,168 @@
+﻿<UserControl
+    x:Class="Subway.WuHanLine6.Views.Conntent.MaintainMenu"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:events="clr-namespace:Subway.WuHanLine6.Events"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="clr-namespace:Subway.WuHanLine6.ViewModels"
+    d:DataContext="{d:DesignInstance viewModel:WuHanViewModel}"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Grid Margin="50,50,50,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Button
+            Grid.Row="0"
+            Grid.Column="0"
+            Command="{Binding Controller.NavigatorCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource 制动状态}"
+            Style="{StaticResource MaintainBtnStyle}" />
+        <Button
+            Grid.Row="0"
+            Grid.Column="1"
+            Command="{Binding Controller.NavigatorCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource 牵引状态}"
+            Style="{StaticResource MaintainBtnStyle}" />
+        <Button
+            Grid.Row="0"
+            Grid.Column="2"
+            Command="{Binding Controller.NavigatorCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource 辅助状态}"
+            Style="{StaticResource MaintainBtnStyle}" />
+        <Button
+            Grid.Row="0"
+            Grid.Column="3"
+            Command="{Binding Controller.NavigatorCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource 空调状态}"
+            Style="{StaticResource MaintainBtnStyle}" />
+        <Button
+            Grid.Row="0"
+            Grid.Column="4"
+            Command="{Binding Controller.NavigatroPassword}"
+            Content="{StaticResource 切除复位缓解}"
+            Style="{StaticResource MaintainBtnStyle}">
+            <Button.CommandParameter>
+                <events:NavigatorArgs
+                    Current="维修菜单"
+                    Navigator="密码输入"
+                    NextNavigator="切除复位缓解" />
+            </Button.CommandParameter>
+        </Button>
+        <Button
+            Grid.Row="1"
+            Grid.Column="0"
+            Command="{Binding Controller.NavigatorCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource 制动自检}"
+            Style="{StaticResource MaintainBtnStyle}" />
+        <Button
+            Grid.Row="1"
+            Grid.Column="1"
+            Content="{StaticResource 运输页面}"
+            Style="{StaticResource MaintainBtnStyle}" />
+
+        <Button
+            Grid.Row="1"
+            Grid.Column="2"
+            Content="{StaticResource 级位调试}"
+            Style="{StaticResource MaintainBtnStyle}" />
+        <Button
+            Grid.Row="1"
+            Grid.Column="3"
+            Content="{StaticResource 调试界面}"
+            Style="{StaticResource MaintainBtnStyle}" />
+
+        <Button
+            Grid.Row="1"
+            Grid.Column="4"
+            Content="{StaticResource 加减速度试验}"
+            Style="{StaticResource MaintainBtnStyle}" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="0"
+            Command="{Binding Controller.NavigatorCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource 车站设定}"
+            Style="{StaticResource MaintainBtnStyle}" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="1"
+            Content="{StaticResource 车号轮径设置}"
+            Style="{StaticResource MaintainBtnStyle}" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="2"
+            Content="{StaticResource 时间设定}"
+            Style="{StaticResource MaintainBtnStyle}" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="3"
+            Content="{StaticResource 门参数设置}"
+            Style="{StaticResource MaintainBtnStyle}" />
+
+        <Button
+            Grid.Row="2"
+            Grid.Column="4"
+            Content="{StaticResource 密码设置}"
+            Style="{StaticResource MaintainBtnStyle}" />
+
+        <Button
+            Grid.Row="3"
+            Grid.Column="0"
+            Command="{Binding Controller.NavigatorCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource 故障记录}"
+            Style="{StaticResource MaintainBtnStyle}" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="1"
+            Command="{Binding Controller.NavigatorCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource 事件记录}"
+            Style="{StaticResource MaintainBtnStyle}" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="2"
+            Content="{StaticResource 运行记录}"
+            Style="{StaticResource MaintainBtnStyle}" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="3"
+            Content="{StaticResource 运行记录清零}"
+            Style="{StaticResource MaintainBtnStyle}" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="4"
+            Command="{Binding Controller.NavigatorCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource 网络拓扑}"
+            Style="{StaticResource MaintainBtnStyle}" />
+        <Button
+            Grid.Row="4"
+            Grid.Column="0"
+            Command="{Binding Controller.NavigatorCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource 亮度调节}"
+            Style="{StaticResource MaintainBtnStyle}" />
+    </Grid>
+</UserControl>

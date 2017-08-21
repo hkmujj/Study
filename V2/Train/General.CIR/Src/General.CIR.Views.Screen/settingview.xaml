@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="General.CIR.Views.Screen.SettingView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:regions="http://www.codeplex.com/CompositeWPF"
+             xmlns:contance="clr-namespace:General.CIR.Contance">
+  <Grid>
+    <Border Background="#FF0000FF">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="10*" />
+          <RowDefinition Height="90*" />
+          <RowDefinition Height="20*" />
+        </Grid.RowDefinitions>
+        <ListBox Grid.Row="1" Style="{StaticResource SettingViewListBoxStyle}" ItemsSource="{Binding SettingViewModel.AllItems}" SelectedItem="{Binding SettingViewModel.SelectItem}" />
+        <Grid Grid.Row="2">
+          <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+          </Grid.RowDefinitions>
+          <ContentControl regions:RegionManager.RegionName="{x:Static contance:RegionNames.SettingTrips}" Visibility="{Binding SettingViewModel.TripsVisibility}" />
+          <TextBlock Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" TextBlock.Foreground="#FF00FFFF" Padding="10,0,0,0" Text="{Binding SettingViewModel.Trips}" />
+        </Grid>
+      </Grid>
+    </Border>
+  </Grid>
+</UserControl>

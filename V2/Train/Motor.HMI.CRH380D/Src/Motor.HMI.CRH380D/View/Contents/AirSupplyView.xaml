@@ -1,0 +1,200 @@
+﻿<UserControl x:Class="Motor.HMI.CRH380D.View.Contents.AirSupplyView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:constant="clr-namespace:Motor.HMI.CRH380D.Constant"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:regions="http://www.codeplex.com/CompositeWPF"
+             xmlns:viewModel="clr-namespace:Motor.HMI.CRH380D.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+             d:DesignHeight="420"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <Viewbox>
+        <Grid Width="800"
+              Height="420"
+              Background="{StaticResource Gray2Background}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="33*" />
+                <RowDefinition Height="187*" />
+                <RowDefinition Height="200*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <TextBlock Style="{StaticResource TitleTextStyle}" Text="供风" />
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="134*" />
+                    <ColumnDefinition Width="88*" />
+                    <ColumnDefinition Width="88*" />
+                    <ColumnDefinition Width="88*" />
+                    <ColumnDefinition Width="88*" />
+                    <ColumnDefinition Width="88*" />
+                    <ColumnDefinition Width="88*" />
+                    <ColumnDefinition Width="138*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1">
+                    <Border BorderBrush="{StaticResource NumForeground}" BorderThickness="1" />
+                    <TextBlock Width="30"
+                               Height="22"
+                               Margin="31,13,27,152"
+                               Style="{StaticResource NumTextStyle}"
+                               Text="00" />
+                    <TextBlock Width="50"
+                               Height="22"
+                               Margin="20,43,18,122"
+                               Style="{StaticResource NumTextStyle}"
+                               Text="6607" />
+                    <Border Width="40"
+                            Height="25"
+                            Margin="5,157,43,5"
+                            BorderBrush="{StaticResource NumForeground}"
+                            BorderThickness="1">
+                        <TextBlock Style="{StaticResource NumTextStyle}" Text="{Binding Model.AirSupplyModel.PressureSensorValue0}" />
+                    </Border>
+                    <TextBlock Margin="50,158,4,5"
+                               Style="{StaticResource BlackTextStyle}"
+                               Text="kPa" />
+                    <ToggleButton Width="40"
+                                  Height="40"
+                                  Margin="24,104,24,43"
+                                  Command="{Binding Model.AirSupplyModel.AirSupplyController.PressureSensorCheckCommand}"
+                                  CommandParameter="{Binding Model.AirSupplyModel.PressureSensor0}"
+                                  Content="{Binding Model.AirSupplyModel.PressureSensor0.State,
+                                                    Converter={StaticResource PressureSensorUnitConverter}}"
+                                  IsChecked="{Binding Model.AirSupplyModel.PressureSensor0.IsChecked}"
+                                  Style="{StaticResource ImageBtnStyle}" />
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Border BorderBrush="{StaticResource NumForeground}" BorderThickness="1" />
+                    <TextBlock Width="30"
+                               Height="22"
+                               Margin="31,13,27,152"
+                               Style="{StaticResource NumTextStyle}"
+                               Text="07" />
+                    <Image Width="40"
+                           Height="40"
+                           Margin="24,48,24,99"
+                           Source="{Binding Model.AirSupplyModel.SubCompressor7.State,
+                                            Converter={StaticResource SubCompressorUnitConverter}}" />
+                </Grid>
+                <Grid Grid.Column="3">
+                    <Border BorderBrush="{StaticResource NumForeground}" BorderThickness="1" />
+                    <TextBlock Width="30"
+                               Height="22"
+                               Margin="31,13,27,152"
+                               Style="{StaticResource NumTextStyle}"
+                               Text="05" />
+                    <ToggleButton Width="40"
+                                  Height="40"
+                                  Margin="24,48,24,99"
+                                  Background="{Binding Model.AirSupplyModel.PrimaryCompressor5.State,
+                                                       Converter={StaticResource PrimaryCompressorUnitToColorConverter}}"
+                                  Command="{Binding Model.AirSupplyModel.AirSupplyController.PrimaryCompressorCheckCommand}"
+                                  CommandParameter="{Binding Model.AirSupplyModel.PrimaryCompressor5}"
+                                  Content="{Binding Model.AirSupplyModel.PrimaryCompressor5.State,
+                                                    Converter={StaticResource PrimaryCompressorUnitConverter}}"
+                                  IsChecked="{Binding Model.AirSupplyModel.PrimaryCompressor5.IsChecked}"
+                                  Style="{StaticResource ImageBtnBackgroundStyle}" />
+                    <ToggleButton Width="40"
+                                  Height="40"
+                                  Margin="24,104,24,43"
+                                  Command="{Binding Model.AirSupplyModel.AirSupplyController.PressureSensorCheckCommand}"
+                                  CommandParameter="{Binding Model.AirSupplyModel.PressureSensor5}"
+                                  Content="{Binding Model.AirSupplyModel.PressureSensor5.State,
+                                                    Converter={StaticResource PressureSensorUnitConverter}}"
+                                  IsChecked="{Binding Model.AirSupplyModel.PressureSensor5.IsChecked}"
+                                  Style="{StaticResource ImageBtnStyle}" />
+                    <Border Width="40"
+                            Height="25"
+                            Margin="5,157,43,5"
+                            BorderBrush="{StaticResource NumForeground}"
+                            BorderThickness="1">
+                        <TextBlock Style="{StaticResource NumTextStyle}" Text="{Binding Model.AirSupplyModel.PressureSensorValue5}" />
+                    </Border>
+                    <TextBlock Margin="50,158,4,5"
+                               Style="{StaticResource BlackTextStyle}"
+                               Text="kPa" />
+                </Grid>
+                <Grid Grid.Column="4">
+                    <Border BorderBrush="{StaticResource NumForeground}" BorderThickness="1" />
+                    <TextBlock Width="30"
+                               Height="22"
+                               Margin="31,13,27,152"
+                               Style="{StaticResource NumTextStyle}"
+                               Text="04" />
+                    <ToggleButton Width="40"
+                                  Height="40"
+                                  Margin="24,48,24,99"
+                                  Background="{Binding Model.AirSupplyModel.PrimaryCompressor4.State,
+                                                       Converter={StaticResource PrimaryCompressorUnitToColorConverter}}"
+                                  Command="{Binding Model.AirSupplyModel.AirSupplyController.PrimaryCompressorCheckCommand}"
+                                  CommandParameter="{Binding Model.AirSupplyModel.PrimaryCompressor4}"
+                                  Content="{Binding Model.AirSupplyModel.PrimaryCompressor4.State,
+                                                    Converter={StaticResource PrimaryCompressorUnitConverter}}"
+                                  IsChecked="{Binding Model.AirSupplyModel.PrimaryCompressor4.IsChecked}"
+                                  Style="{StaticResource ImageBtnBackgroundStyle}" />
+                    <ToggleButton Width="40"
+                                  Height="40"
+                                  Margin="24,104,24,43"
+                                  Command="{Binding Model.AirSupplyModel.AirSupplyController.PressureSensorCheckCommand}"
+                                  CommandParameter="{Binding Model.AirSupplyModel.PressureSensor4}"
+                                  Content="{Binding Model.AirSupplyModel.PressureSensor4.State,
+                                                    Converter={StaticResource PressureSensorUnitConverter}}"
+                                  IsChecked="{Binding Model.AirSupplyModel.PressureSensor4.IsChecked}"
+                                  Style="{StaticResource ImageBtnStyle}" />
+                    <Border Width="40"
+                            Height="25"
+                            Margin="5,157,43,5"
+                            BorderBrush="{StaticResource NumForeground}"
+                            BorderThickness="1">
+                        <TextBlock Style="{StaticResource NumTextStyle}" Text="{Binding Model.AirSupplyModel.PressureSensorValue4}" />
+                    </Border>
+                    <TextBlock Margin="50,158,4,5"
+                               Style="{StaticResource BlackTextStyle}"
+                               Text="kPa" />
+                </Grid>
+                <Grid Grid.Column="5">
+                    <Border BorderBrush="{StaticResource NumForeground}" BorderThickness="1" />
+                    <TextBlock Width="30"
+                               Height="22"
+                               Margin="31,13,27,152"
+                               Style="{StaticResource NumTextStyle}"
+                               Text="02" />
+                    <Image Width="40"
+                           Height="40"
+                           Margin="24,48,24,99"
+                           Source="{Binding Model.AirSupplyModel.SubCompressor2.State,
+                                            Converter={StaticResource SubCompressorUnitConverter}}" />
+                </Grid>
+                <Grid Grid.Column="6">
+                    <Border BorderBrush="{StaticResource NumForeground}" BorderThickness="1" />
+                    <TextBlock Width="30"
+                               Height="22"
+                               Margin="31,13,27,152"
+                               Style="{StaticResource NumTextStyle}"
+                               Text="01" />
+                    <ToggleButton Width="40"
+                                  Height="40"
+                                  Margin="24,104,24,43"
+                                  Command="{Binding Model.AirSupplyModel.AirSupplyController.PressureSensorCheckCommand}"
+                                  CommandParameter="{Binding Model.AirSupplyModel.PressureSensor1}"
+                                  Content="{Binding Model.AirSupplyModel.PressureSensor1.State,
+                                                    Converter={StaticResource PressureSensorUnitConverter}}"
+                                  IsChecked="{Binding Model.AirSupplyModel.PressureSensor1.IsChecked}"
+                                  Style="{StaticResource ImageBtnStyle}" />
+                    <Border Width="40"
+                            Height="25"
+                            Margin="5,157,43,5"
+                            BorderBrush="{StaticResource NumForeground}"
+                            BorderThickness="1">
+                        <TextBlock Style="{StaticResource NumTextStyle}" Text="{Binding Model.AirSupplyModel.PressureSensorValue1}" />
+                    </Border>
+                    <TextBlock Margin="50,158,4,5"
+                               Style="{StaticResource BlackTextStyle}"
+                               Text="kPa" />
+                </Grid>
+            </Grid>
+        </Grid>
+    </Viewbox>
+</UserControl>

@@ -1,0 +1,672 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:State="clr-namespace:Motor.HMI.CRH380D.Models.State"
+                    xmlns:converter="clr-namespace:MMI.Facility.WPFInfrastructure.Converter;assembly=MMI.Facility.WPFInfrastructure"
+                    xmlns:converter1="clr-namespace:Motor.HMI.CRH380D.Converter"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib"
+                    xmlns:units="clr-namespace:Motor.HMI.CRH380D.Models.Units">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Images/ImageResource.xaml" />
+        <ResourceDictionary Source="../Color/ColorResource.xaml" />
+        <ResourceDictionary Source="../Styles/Image/ImageStyle.xaml" />
+        <ResourceDictionary Source="../Styles/Text/TextStyle.xaml" />
+        <ResourceDictionary Source="../String/StringStyle.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <converter1:ButtonContentConverter x:Key="ButtonContentConverter" />
+    <converter1:ButtonVisibilityConverter x:Key="ButtonVisibilityConverter" />
+    <converter1:AirConverter x:Key="AirConverter" />
+
+
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    <converter:MathConverter x:Key="MathConverter" />
+
+    <system:Boolean x:Key="BooleanTrue">true</system:Boolean>
+    <system:Boolean x:Key="BooleanFlase">false</system:Boolean>
+
+    <converter:SelectObjectContentConverter x:Key="LCBStateConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:LCBState.Fault}" Content="{StaticResource LCBFaultImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:LCBState.TurnOn}" Content="{StaticResource LCBTurnOnImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:LCBState.TurnOff}" Content="{StaticResource LCBCloseImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:LCBState.CutOff}" Content="{StaticResource LCBCutOffImage}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="ActivateViewLCBStateConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:LCBState.Fault}" Content="{StaticResource LCBFaultImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:LCBState.TurnOn}" Content="{StaticResource LCBTurnOnImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:LCBState.TurnOff}" Content="{StaticResource LCBTurnOffImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:LCBState.CutOff}" Content="{StaticResource LCBCutOffImage}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="PantographStateConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:PantographState.TurnUpFault}" Content="{StaticResource PantographTurnUpFaultImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:PantographState.TurnDownFault}" Content="{StaticResource PantographTurnDownFaultImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:PantographState.TurnUp}" Content="{StaticResource PantographTurnUpImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:PantographState.TurnDown}" Content="{StaticResource PantographTurnDownImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:PantographState.CutOff}" Content="{StaticResource PantographCutOffImage}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="QuickBreakStateConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:QuickBreakState.Fault}" Content="{StaticResource QuickBreakFaultImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:QuickBreakState.Closed}" Content="{StaticResource QuickBreakClosedImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:QuickBreakState.Open}" Content="{StaticResource QuickBreakOpenImage}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="GroundingStateConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:GroundingState.Fault}" Content="{StaticResource QuickBreakFaultImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:GroundingState.Closed}" Content="{StaticResource QuickBreakClosedImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:GroundingState.Open}" Content="{StaticResource QuickBreakOpenImage}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="InverterStateConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static State:InverterState.None}" Content="{x:Null}" />
+            <converter:ObjectContentPair Key="{x:Static State:InverterState.TurnOff}" Content="{StaticResource InverterTurnOffImage}" />
+            <converter:ObjectContentPair Key="{x:Static State:InverterState.TurnOn}" Content="{StaticResource InverterTurnOnImage}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="BatteryChargerStateConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static State:BatteryChargerState.None}" Content="{StaticResource BatteryChargerNoneStyle}" />
+            <converter:ObjectContentPair Key="{x:Static State:BatteryChargerState.TurnOff}" Content="{StaticResource BatteryChargerTurnOffStyle}" />
+            <converter:ObjectContentPair Key="{x:Static State:BatteryChargerState.TurnOn}" Content="{StaticResource BatteryChargerTurnOnStyle}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="VOBCtatusToVisibilityConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static State:VOBCState.None}" Content="{x:Static Visibility.Hidden}" />
+            <converter:ObjectContentPair Key="{x:Static State:VOBCState.Activate}" Content="{x:Static Visibility.Visible}" />
+            <converter:ObjectContentPair Key="{x:Static State:VOBCState.NoActivate}" Content="{x:Static Visibility.Hidden}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="DoorUnitBackgroundConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:DoorState.Cut}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="#FF64C8DC" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:DoorState.OpenAndCut}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="#FF64C8DC" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:DoorState.Fault}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Red" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:DoorState.Release}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="White" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:DoorState.Closed}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="{StaticResource Gray2Color}" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:DoorState.Opened}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="#FFF0E323" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="DoorUnitEllipseFillConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:DoorState.Cut}" Content="{StaticResource TransparentBackground}" />
+            <converter:ObjectContentPair Key="{x:Static units:DoorState.OpenAndCut}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="#FFF0E323" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:DoorState.Fault}" Content="{StaticResource TransparentBackground}" />
+            <converter:ObjectContentPair Key="{x:Static units:DoorState.Release}" Content="{StaticResource TransparentBackground}" />
+            <converter:ObjectContentPair Key="{x:Static units:DoorState.Closed}" Content="{StaticResource TransparentBackground}" />
+            <converter:ObjectContentPair Key="{x:Static units:DoorState.Opened}" Content="{StaticResource TransparentBackground}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="StationUnitBackgroundConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:StationState.Cut}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="#FF64C8DC" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:StationState.OpenAndCut}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="#FF64C8DC" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:StationState.Fault}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Red" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:StationState.Release}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="White" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:StationState.Closed}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="{StaticResource Gray2Color}" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:StationState.Opened}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="#FFF0E323" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="StationUnitEllipseFillConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:StationState.Cut}" Content="{StaticResource TransparentBackground}" />
+            <converter:ObjectContentPair Key="{x:Static units:StationState.OpenAndCut}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="#FFF0E323" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:StationState.Fault}" Content="{StaticResource TransparentBackground}" />
+            <converter:ObjectContentPair Key="{x:Static units:StationState.Release}" Content="{StaticResource TransparentBackground}" />
+            <converter:ObjectContentPair Key="{x:Static units:StationState.Closed}" Content="{StaticResource TransparentBackground}" />
+            <converter:ObjectContentPair Key="{x:Static units:StationState.Opened}" Content="{StaticResource TransparentBackground}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="ButtonColorStateToColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static State:ButtonColorState.Gray2}" Content="{StaticResource Gray2Color}" />
+            <converter:ObjectContentPair Key="{x:Static State:ButtonColorState.Red}" Content="{StaticResource RedColor}" />
+            <converter:ObjectContentPair Key="{x:Static State:ButtonColorState.Yellow}" Content="{StaticResource YellowColor}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="BooleanToColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{StaticResource BooleanTrue}" Content="{StaticResource YellowColor}" />
+            <converter:ObjectContentPair Key="{StaticResource BooleanFlase}" Content="{StaticResource Gray2Color}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="BooleanToTextStyleConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{StaticResource BooleanTrue}" Content="{StaticResource ButtonBlackTextStyle}" />
+            <converter:ObjectContentPair Key="{StaticResource BooleanFlase}" Content="{StaticResource ButtuonCarvingTextStyle}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="CarBordergroundToColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static State:CarState.None}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Transparent" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:CarState.TractionFault}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Red" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:CarState.TractionTurnOn}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Green" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:CarState.TractionTurnOff}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="{StaticResource Gray2Color}" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:CarState.TractionCut}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="#FF00C0F0" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:CarState.CarComforCut}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="#FF00C0F0" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:CarState.BogieOverHeat}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Red" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:CarState.BogieNormal}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Green" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:CarState.BreakTestForce}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Green" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:CarState.BreakTestRemit}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Green" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:CarState.BreakTestFault}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Red" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:CarState.StationNormal}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Green" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:CarState.StationOverLoad}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Yellow" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:CarState.StationSeriousOverLoad}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Red" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="CarBackgroundToColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static State:CarState.None}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Transparent" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:CarState.TractionFault}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Transparent" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:CarState.TractionTurnOn}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Transparent" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:CarState.TractionTurnOff}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Transparent" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:CarState.TractionCut}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Transparent" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:CarState.CarComforCut}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Transparent" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:CarState.BogieOverHeat}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Transparent" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:CarState.BogieNormal}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Transparent" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:CarState.BreakTestForce}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Green" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:CarState.BreakTestRemit}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Transparent" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:CarState.BreakTestFault}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Transparent" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:CarState.StationNormal}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Green" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:CarState.StationOverLoad}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Yellow" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:CarState.StationSeriousOverLoad}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Red" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="ACMStateToColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:ACMState.Fault}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Red" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:ACMState.TurnOn}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Green" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:ACMState.TurnOff}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="#FF636363" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:ACMState.Cut}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="#FF00C0F0" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="LCMStateToColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:LCMState.Fault}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Red" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:LCMState.TurnOn}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Green" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:LCMState.TurnOff}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="#FF636363" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:LCMState.Cut}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="#FF00C0F0" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="MCMStateToColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:MCMState.Fault}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Red" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:MCMState.TurnOn}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Green" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:MCMState.TurnOff}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="#FF636363" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:MCMState.Cut}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="#FF00C0F0" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="BCUStateToColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:BCUState.Fault}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Red" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:BCUState.TurnOn}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Green" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="ParkBreakStateConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:ParkBreakState.Fault}" Content="{StaticResource ParkBreakFalutImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:ParkBreakState.Cut}" Content="{StaticResource ParkBreakCutImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:ParkBreakState.Force}" Content="{StaticResource ParkBreakForceImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:ParkBreakState.Remit}" Content="{StaticResource ParkBreakRemitImage}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="EmergencyBreakStateConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:EmergencyBreakState.Fault}" Content="{StaticResource EmergencyBreakFaultImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:EmergencyBreakState.EmergencyBreakForce}" Content="{StaticResource EmergencyBreakForcemage}" />
+            <converter:ObjectContentPair Key="{x:Static units:EmergencyBreakState.SafeBreakForce}" Content="{StaticResource SafeBreakForceImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:EmergencyBreakState.Remit}" Content="{StaticResource EmergencyBreakRemitImage}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="CarComfortStateToColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:CarComfortState.Fault}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Red" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:CarComfortState.TurnOn}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Green" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:CarComfortState.TurnOff}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="#FF636363" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:CarComfortState.Cut}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="#FF00C0F0" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="PrimaryCompressorUnitConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:PrimaryCompressorState.Fault}" Content="{StaticResource PrimaryCompressorFaultImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:PrimaryCompressorState.Cut}" Content="{StaticResource PrimaryCompressorCutImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:PrimaryCompressorState.TurnOn}" Content="{StaticResource PrimaryCompressorTurnOnImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:PrimaryCompressorState.TurnOff}" Content="{StaticResource PrimaryCompressorTurnOffImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:PrimaryCompressorState.ManualTurnOn}" Content="{StaticResource PrimaryCompressorManualTurnOnImage}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="PrimaryCompressorUnitToColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:PrimaryCompressorState.Fault}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Transparent" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:PrimaryCompressorState.Cut}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Transparent" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:PrimaryCompressorState.TurnOn}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Transparent" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:PrimaryCompressorState.TurnOff}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Transparent" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:PrimaryCompressorState.ManualTurnOn}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="#FF00C0F0" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="SubCompressorUnitConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:SubCompressorState.Fault}" Content="{StaticResource SubCompressorFaultImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:SubCompressorState.TurnOn}" Content="{StaticResource SubCompressorTurnOnImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:SubCompressorState.TurnOff}" Content="{StaticResource SubCompressorTurnOffImage}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="PressureSensorUnitConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:PressureSensorState.Fault}" Content="{StaticResource PressureSensorFaultImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:PressureSensorState.Cut}" Content="{StaticResource PressureSensorCutImage}" />
+            <converter:ObjectContentPair Key="{x:Static units:PressureSensorState.TurnOn}" Content="{StaticResource PressureSensorNormalImage}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="IMSStateToColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static State:IMSState.IMSStable}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Red" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:IMSState.IMSUnStable}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Green" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="WCDeviceStateToColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static State:WCDeviceState.None}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Transparent" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:WCDeviceState.Using}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Green" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:WCDeviceState.Fault}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Red" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="HandleTestStateConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static State:HandleTestState.HandleTestFailed}" Content="{StaticResource HandleTestFailedImage}" />
+            <converter:ObjectContentPair Key="{x:Static State:HandleTestState.HandleTestSuccess}" Content="{StaticResource HandleTestSuccessImage}" />
+            <converter:ObjectContentPair Key="{x:Static State:HandleTestState.HandleTestNotStart}" Content="{StaticResource HandleTestNotStartImage}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="BooleanToYesOrNoConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{StaticResource BooleanTrue}" Content="{StaticResource YesString}" />
+            <converter:ObjectContentPair Key="{StaticResource BooleanFlase}" Content="{StaticResource NoString}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="BooleanToOpenOrCloseConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{StaticResource BooleanTrue}" Content="{StaticResource OpenString}" />
+            <converter:ObjectContentPair Key="{StaticResource BooleanFlase}" Content="{StaticResource ColseString}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="BooleanToTurnOnOrCloseConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{StaticResource BooleanTrue}" Content="{StaticResource TurnOnString}" />
+            <converter:ObjectContentPair Key="{StaticResource BooleanFlase}" Content="{StaticResource ColseString}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="BooleanToPassengerTalkConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{StaticResource BooleanTrue}" Content="{StaticResource OpenPassengerTalkImage}" />
+            <converter:ObjectContentPair Key="{StaticResource BooleanFlase}" Content="{StaticResource ClosePassengerTalkImage}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="DCDevice1StateToColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:DCDevice1State.Normal}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Green" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:DCDevice1State.Fault}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Red" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="DCDevice2StateToColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:DCDevice2State.Normal}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Green" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:DCDevice2State.Fault}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Red" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="DCDevice3StateToColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:DCDevice3State.Normal}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Green" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:DCDevice3State.Fault}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Red" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+</ResourceDictionary>

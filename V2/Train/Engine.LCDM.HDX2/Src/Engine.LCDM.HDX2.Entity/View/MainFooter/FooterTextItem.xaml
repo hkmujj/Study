@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="Engine.LCDM.HDX2.Entity.View.MainFooter.FooterTextItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:converter="clr-namespace:Engine.LCDM.HDX2.Entity.Converter"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <converter:ResourceKeyToResourceConverter x:Key="ResourceKeyToResourceConverter" />
+            <converter:IsNullToVisibility x:Key="IsNullToVisibility" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Engine.LCDM.HDX2.Resource;component/HXD2ResourceManager.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Visibility="{Binding Converter={StaticResource IsNullToVisibility}}">
+        <TextBlock HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   TextAlignment="Center">
+            <TextBlock.Text>
+                <MultiBinding Converter="{StaticResource ResourceKeyToResourceConverter}">
+                    <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType={x:Type UserControl}}" />
+                    <Binding Path="." />
+                </MultiBinding>
+            </TextBlock.Text>
+        </TextBlock>
+    </Grid>
+</UserControl>

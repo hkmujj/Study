@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="General.CIR.Views.Police.PoliceConfirmView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="30*" />
+      <ColumnDefinition Width="150*" />
+    </Grid.ColumnDefinitions>
+    <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+      <TextBlock Name="TextBlock" Margin="2,0,4,0" TextBlock.Foreground="#FFFFFF00" Text="报警" />
+      <Ellipse Stroke="#FFFFFF00" StrokeThickness="1" Width="{Binding ElementName=TextBlock, Path=ActualHeight, Converter={StaticResource MathConverter}, ConverterParameter=x-2}" Height="{Binding ElementName=TextBlock, Path=ActualHeight, Converter={StaticResource MathConverter}, ConverterParameter=x-2}" />
+    </StackPanel>
+    <Grid Grid.Column="1">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="4*" />
+        <RowDefinition Height="5*" />
+      </Grid.RowDefinitions>
+      <TextBlock TextBlock.FontSize="14" Text="5秒内按下“确认”键将发送列车事故防护" TextBlock.Foreground="#FFFFFF00" HorizontalAlignment="Left" VerticalAlignment="Center" />
+      <TextBlock Grid.Row="1" TextBlock.FontSize="14" Text="报警信息" TextBlock.Foreground="#FFFFFF00" HorizontalAlignment="Left" VerticalAlignment="Center" />
+    </Grid>
+  </Grid>
+</UserControl>

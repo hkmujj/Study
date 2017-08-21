@@ -1,0 +1,107 @@
+﻿using System.Collections.Generic;
+using System.Drawing;
+using Engine.TCMS.HXD3D.HXD3D;
+using Engine.TCMS.HXD3D.底层共用;
+using MMI.Facility.Interface.Attribute;
+
+namespace Engine.TCMS.HXD3D.MainInstance
+{
+    [GksDataType(DataType.isMMIObjectClass)]
+    internal class LampTest : HXD3BaseClass
+    {
+        // Fields
+        private readonly Image[] m_BaseImage = new Image[2];
+
+        private readonly bool[] m_BtnIsDown = new bool[1];
+        private readonly List<Region> m_BtnRegion = new List<Region>();
+        private float[] m_FValue;
+        private bool m_HasPlan;
+        private List<Image> m_ImgsList;
+        private List<RectangleF> m_RectsList;
+
+        // Methods
+        private void Draw(Graphics e)
+        {
+            PaintButtonsState(e);
+            PaintValue(e);
+        }
+
+        public override string GetInfo()
+        {
+            return "显示灯试验";
+        }
+
+        private void GetValue()
+        {
+            for (var i = 0; i < m_FValue.Length; i++)
+            {
+                m_FValue[i] = FloatList[UIObj.InFloatList[i]];
+            }
+        }
+
+        protected override  void Initalize()
+        {
+            InitData();
+        }
+
+        private void InitData()
+        {
+            m_FValue = new float[UIObj.InFloatList.Count];
+            m_ImgsList = new List<Image>();
+            for (var i = 0; i < UIObj.ParaList.Count; i++)
+            {
+                m_ImgsList.Add(Image.FromFile(RecPath + @"\" + UIObj.ParaList[i]));
+            }
+            m_BaseImage[0] = m_ImgsList[1];
+            m_BaseImage[1] = m_ImgsList[0];
+            if (Coordinate.RectangleFLists(ViewIDName.LampTest, ref m_RectsList))
+            {
+                m_BtnRegion.Add(new Region(m_RectsList[1]));
+                m_HasPlan = true;
+            }
+        }
+
+        public override bool mouseDown(Point nPoint)
+        {
+            if (m_BtnRegion[0].IsVisible(nPoint))
+            {
+                m_BtnIsDown[0] = true;
+                return true;
+            }
+            return false;
+        }
+
+        public override bool mouseUp(Point nPoint)
+        {
+            if (m_BtnRegion[0].IsVisible(nPoint))
+            {
+                m_BtnIsDown[0] = false;
+                return true;
+            }
+            return false;
+        }
+
+        public override void paint(Graphics dcGs)
+        {
+            GetValue();
+            Draw(dcGs);
+        }
+
+        private void PaintButtonsState(Graphics e)
+        {
+            e.FillRectangle(new SolidBrush(Color.Blue), m_RectsList[2]);
+            e.DrawString("确认", FontsItems.Fonts_Regular(FontName.宋体, 14f, false), SolidBrushsItems.WhiteBrush, m_RectsList[1], FontsItems.TheAlignment(FontRelated.居中));
+            e.DrawImage(m_BtnIsDown[0] ? m_ImgsList[0] : m_ImgsList[1], m_RectsList[1]);
+        }
+
+        private void PaintValue(Graphics e)
+        {
+            var ef = m_RectsList[0];
+            ef = m_RectsList[0];
+            ef = m_RectsList[0];
+            ef = m_RectsList[0];
+            e.DrawRectangle(new Pen(Color.White), ef.X, ef.Y, ef.Width, ef.Height);
+            e.DrawString("试验是否开始", FontsItems.Fonts_Regular(FontName.宋体, 14f, false), SolidBrushsItems.WhiteBrush, m_RectsList[0], FontsItems.TheAlignment(FontRelated.居中));
+        }
+    }
+}

@@ -1,0 +1,666 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Inf动车组1接触网电压" xml:space="preserve">
+    <value>动车组1接触网电压</value>
+  </data>
+  <data name="Inf动车组2接触网电压" xml:space="preserve">
+    <value>动车组2接触网电压</value>
+  </data>
+  <data name="Inf网侧电流" xml:space="preserve">
+    <value>网侧电流</value>
+  </data>
+  <data name="InfASC速度设定点速度" xml:space="preserve">
+    <value>ASC速度设定点速度</value>
+  </data>
+  <data name="Inf蓄电池电压_04" xml:space="preserve">
+    <value>蓄电池电压--04</value>
+  </data>
+  <data name="Inf蓄电池电压_05" xml:space="preserve">
+    <value>蓄电池电压--05</value>
+  </data>
+  <data name="Inf蓄电池电压_12" xml:space="preserve">
+    <value>蓄电池电压--12</value>
+  </data>
+  <data name="Inf蓄电池电压_13" xml:space="preserve">
+    <value>蓄电池电压--13</value>
+  </data>
+  <data name="Inf列车编号" xml:space="preserve">
+    <value>列车编号</value>
+  </data>
+  <data name="Inf司机编号" xml:space="preserve">
+    <value>司机编号</value>
+  </data>
+  <data name="Inf牵引制动百分比1" xml:space="preserve">
+    <value>牵引制动百分比1</value>
+  </data>
+  <data name="Inf牵引制动百分比2" xml:space="preserve">
+    <value>牵引制动百分比2</value>
+  </data>
+  <data name="Inf牵引制动百分比3" xml:space="preserve">
+    <value>牵引制动百分比3</value>
+  </data>
+  <data name="Inf牵引制动百分比4" xml:space="preserve">
+    <value>牵引制动百分比4</value>
+  </data>
+  <data name="Inf牵引制动百分比5" xml:space="preserve">
+    <value>牵引制动百分比5</value>
+  </data>
+  <data name="Inf牵引制动百分比6" xml:space="preserve">
+    <value>牵引制动百分比6</value>
+  </data>
+  <data name="Inf牵引制动百分比7" xml:space="preserve">
+    <value>牵引制动百分比7</value>
+  </data>
+  <data name="Inf牵引制动百分比8" xml:space="preserve">
+    <value>牵引制动百分比8</value>
+  </data>
+  <data name="Inf列车管_总" xml:space="preserve">
+    <value>列车管-总</value>
+  </data>
+  <data name="Inf列车管_16" xml:space="preserve">
+    <value>列车管-16</value>
+  </data>
+  <data name="Inf列车管_9" xml:space="preserve">
+    <value>列车管-9</value>
+  </data>
+  <data name="Inf列车管_8" xml:space="preserve">
+    <value>列车管-8</value>
+  </data>
+  <data name="Inf列车管_1" xml:space="preserve">
+    <value>列车管-1</value>
+  </data>
+  <data name="Inf总风管_总" xml:space="preserve">
+    <value>总风管-总</value>
+  </data>
+  <data name="Inf总风管_1" xml:space="preserve">
+    <value>总风管-1</value>
+  </data>
+  <data name="Inf总风管_8" xml:space="preserve">
+    <value>总风管-8</value>
+  </data>
+  <data name="Inf总风管_9" xml:space="preserve">
+    <value>总风管-9</value>
+  </data>
+  <data name="Inf总风管_16" xml:space="preserve">
+    <value>总风管-16</value>
+  </data>
+  <data name="Inf轴数" xml:space="preserve">
+    <value>轴数</value>
+  </data>
+  <data name="Inf车长" xml:space="preserve">
+    <value>车长</value>
+  </data>
+  <data name="Inf最高时速" xml:space="preserve">
+    <value>最高时速</value>
+  </data>
+  <data name="Inf车次号位0" xml:space="preserve">
+    <value>车次号位0</value>
+  </data>
+  <data name="Inf车次号位1" xml:space="preserve">
+    <value>车次号位1</value>
+  </data>
+  <data name="Inf中间直流环节电压_01" xml:space="preserve">
+    <value>中间直流环节电压---01</value>
+  </data>
+  <data name="Inf中间直流环节电压_03" xml:space="preserve">
+    <value>中间直流环节电压---03</value>
+  </data>
+  <data name="Inf中间直流环节电压_06" xml:space="preserve">
+    <value>中间直流环节电压---06</value>
+  </data>
+  <data name="Inf中间直流环节电压_08" xml:space="preserve">
+    <value>中间直流环节电压---08</value>
+  </data>
+  <data name="Inf中间直流环节电压_09" xml:space="preserve">
+    <value>中间直流环节电压---09</value>
+  </data>
+  <data name="Inf中间直流环节电压_11" xml:space="preserve">
+    <value>中间直流环节电压---11</value>
+  </data>
+  <data name="Inf中间直流环节电压_14" xml:space="preserve">
+    <value>中间直流环节电压---14</value>
+  </data>
+  <data name="Inf中间直流环节电压_16" xml:space="preserve">
+    <value>中间直流环节电压---16</value>
+  </data>
+  <data name="Inf运行速度设定检测_通道1" xml:space="preserve">
+    <value>运行速度设定检测---通道1</value>
+  </data>
+  <data name="Inf运行速度设定检测_通道2" xml:space="preserve">
+    <value>运行速度设定检测---通道2</value>
+  </data>
+  <data name="Inf使用电量_牵引单元1" xml:space="preserve">
+    <value>使用电量---牵引单元1</value>
+  </data>
+  <data name="Inf使用电量_牵引单元2" xml:space="preserve">
+    <value>使用电量---牵引单元2</value>
+  </data>
+  <data name="Inf使用电量_牵引单元3" xml:space="preserve">
+    <value>使用电量---牵引单元3</value>
+  </data>
+  <data name="Inf使用电量_牵引单元4" xml:space="preserve">
+    <value>使用电量---牵引单元4</value>
+  </data>
+  <data name="Inf再生电量_牵引单元1" xml:space="preserve">
+    <value>再生电量---牵引单元1</value>
+  </data>
+  <data name="Inf再生电量_牵引单元2" xml:space="preserve">
+    <value>再生电量---牵引单元2</value>
+  </data>
+  <data name="Inf再生电量_牵引单元3" xml:space="preserve">
+    <value>再生电量---牵引单元3</value>
+  </data>
+  <data name="Inf再生电量_牵引单元4" xml:space="preserve">
+    <value>再生电量---牵引单元4</value>
+  </data>
+  <data name="Inf显示日期" xml:space="preserve">
+    <value>显示日期</value>
+  </data>
+  <data name="Inf显示时间" xml:space="preserve">
+    <value>显示时间</value>
+  </data>
+  <data name="InfEVC显示列车速度" xml:space="preserve">
+    <value>EVC显示列车速度</value>
+  </data>
+  <data name="Inf动车组1前车厢11右" xml:space="preserve">
+    <value>动车组1 前车厢 1 1 右</value>
+  </data>
+  <data name="Inf动车组1前车厢11左" xml:space="preserve">
+    <value>动车组1 前车厢 1 1 左</value>
+  </data>
+  <data name="Inf动车组1前车厢12右" xml:space="preserve">
+    <value>动车组1 前车厢 1 2 右</value>
+  </data>
+  <data name="Inf动车组1前车厢12左" xml:space="preserve">
+    <value>动车组1 前车厢 1 2 左</value>
+  </data>
+  <data name="Inf动车组1前车厢13右" xml:space="preserve">
+    <value>动车组1 前车厢 1 3 右</value>
+  </data>
+  <data name="Inf动车组1前车厢13左" xml:space="preserve">
+    <value>动车组1 前车厢 1 3 左</value>
+  </data>
+  <data name="Inf动车组1前车厢14右" xml:space="preserve">
+    <value>动车组1 前车厢 1 4 右</value>
+  </data>
+  <data name="Inf动车组1前车厢14左" xml:space="preserve">
+    <value>动车组1 前车厢 1 4 左</value>
+  </data>
+  <data name="Inf动车组1前车厢21右" xml:space="preserve">
+    <value>动车组1 前车厢 2 1 右</value>
+  </data>
+  <data name="Inf动车组1前车厢21左" xml:space="preserve">
+    <value>动车组1 前车厢 2 1 左</value>
+  </data>
+  <data name="Inf动车组1前车厢22右" xml:space="preserve">
+    <value>动车组1 前车厢 2 2 右</value>
+  </data>
+  <data name="Inf动车组1前车厢22左" xml:space="preserve">
+    <value>动车组1 前车厢 2 2 左</value>
+  </data>
+  <data name="Inf动车组1前车厢23右" xml:space="preserve">
+    <value>动车组1 前车厢 2 3 右</value>
+  </data>
+  <data name="Inf动车组1前车厢23左" xml:space="preserve">
+    <value>动车组1 前车厢 2 3 左</value>
+  </data>
+  <data name="Inf动车组1前车厢24右" xml:space="preserve">
+    <value>动车组1 前车厢 2 4 右</value>
+  </data>
+  <data name="Inf动车组1前车厢24左" xml:space="preserve">
+    <value>动车组1 前车厢 2 4 左</value>
+  </data>
+  <data name="Inf动车组1前车厢31左" xml:space="preserve">
+    <value>动车组1 前车厢 3 1 左</value>
+  </data>
+  <data name="Inf动车组1前车厢31右" xml:space="preserve">
+    <value>动车组1 前车厢 3 1 右</value>
+  </data>
+  <data name="Inf动车组1前车厢32左" xml:space="preserve">
+    <value>动车组1 前车厢 3 2 左</value>
+  </data>
+  <data name="Inf动车组1前车厢32右" xml:space="preserve">
+    <value>动车组1 前车厢 3 2 右</value>
+  </data>
+  <data name="Inf动车组1前车厢33左" xml:space="preserve">
+    <value>动车组1 前车厢 3 3 左</value>
+  </data>
+  <data name="Inf动车组1前车厢33右" xml:space="preserve">
+    <value>动车组1 前车厢 3 3 右</value>
+  </data>
+  <data name="Inf动车组1前车厢34左" xml:space="preserve">
+    <value>动车组1 前车厢 3 4 左</value>
+  </data>
+  <data name="Inf动车组1前车厢34右" xml:space="preserve">
+    <value>动车组1 前车厢 3 4 右</value>
+  </data>
+  <data name="Inf动车组1前车厢41左" xml:space="preserve">
+    <value>动车组1 前车厢 4 1 左</value>
+  </data>
+  <data name="Inf动车组1前车厢41右" xml:space="preserve">
+    <value>动车组1 前车厢 4 1 右</value>
+  </data>
+  <data name="Inf动车组1前车厢42左" xml:space="preserve">
+    <value>动车组1 前车厢 4 2 左</value>
+  </data>
+  <data name="Inf动车组1前车厢42右" xml:space="preserve">
+    <value>动车组1 前车厢 4 2 右</value>
+  </data>
+  <data name="Inf动车组1前车厢43左" xml:space="preserve">
+    <value>动车组1 前车厢 4 3 左</value>
+  </data>
+  <data name="Inf动车组1前车厢43右" xml:space="preserve">
+    <value>动车组1 前车厢 4 3 右</value>
+  </data>
+  <data name="Inf动车组1前车厢44左" xml:space="preserve">
+    <value>动车组1 前车厢 4 4 左</value>
+  </data>
+  <data name="Inf动车组1前车厢44右" xml:space="preserve">
+    <value>动车组1 前车厢 4 4 右</value>
+  </data>
+  <data name="Inf动车组1后车厢11右" xml:space="preserve">
+    <value>动车组1 后车厢 1 1 右</value>
+  </data>
+  <data name="Inf动车组1后车厢11左" xml:space="preserve">
+    <value>动车组1 后车厢 1 1 左</value>
+  </data>
+  <data name="Inf动车组1后车厢12右" xml:space="preserve">
+    <value>动车组1 后车厢 1 2 右</value>
+  </data>
+  <data name="Inf动车组1后车厢12左" xml:space="preserve">
+    <value>动车组1 后车厢 1 2 左</value>
+  </data>
+  <data name="Inf动车组1后车厢13右" xml:space="preserve">
+    <value>动车组1 后车厢 1 3 右</value>
+  </data>
+  <data name="Inf动车组1后车厢13左" xml:space="preserve">
+    <value>动车组1 后车厢 1 3 左</value>
+  </data>
+  <data name="Inf动车组1后车厢14右" xml:space="preserve">
+    <value>动车组1 后车厢 1 4 右</value>
+  </data>
+  <data name="Inf动车组1后车厢14左" xml:space="preserve">
+    <value>动车组1 后车厢 1 4 左</value>
+  </data>
+  <data name="Inf动车组1后车厢21右" xml:space="preserve">
+    <value>动车组1 后车厢 2 1 右</value>
+  </data>
+  <data name="Inf动车组1后车厢21左" xml:space="preserve">
+    <value>动车组1 后车厢 2 1 左</value>
+  </data>
+  <data name="Inf动车组1后车厢22右" xml:space="preserve">
+    <value>动车组1 后车厢 2 2 右</value>
+  </data>
+  <data name="Inf动车组1后车厢22左" xml:space="preserve">
+    <value>动车组1 后车厢 2 2 左</value>
+  </data>
+  <data name="Inf动车组1后车厢23右" xml:space="preserve">
+    <value>动车组1 后车厢 2 3 右</value>
+  </data>
+  <data name="Inf动车组1后车厢23左" xml:space="preserve">
+    <value>动车组1 后车厢 2 3 左</value>
+  </data>
+  <data name="Inf动车组1后车厢24右" xml:space="preserve">
+    <value>动车组1 后车厢 2 4 右</value>
+  </data>
+  <data name="Inf动车组1后车厢24左" xml:space="preserve">
+    <value>动车组1 后车厢 2 4 左</value>
+  </data>
+  <data name="Inf动车组1后车厢31左" xml:space="preserve">
+    <value>动车组1 后车厢 3 1 左</value>
+  </data>
+  <data name="Inf动车组1后车厢31右" xml:space="preserve">
+    <value>动车组1 后车厢 3 1 右</value>
+  </data>
+  <data name="Inf动车组1后车厢32左" xml:space="preserve">
+    <value>动车组1 后车厢 3 2 左</value>
+  </data>
+  <data name="Inf动车组1后车厢32右" xml:space="preserve">
+    <value>动车组1 后车厢 3 2 右</value>
+  </data>
+  <data name="Inf动车组1后车厢33左" xml:space="preserve">
+    <value>动车组1 后车厢 3 3 左</value>
+  </data>
+  <data name="Inf动车组1后车厢33右" xml:space="preserve">
+    <value>动车组1 后车厢 3 3 右</value>
+  </data>
+  <data name="Inf动车组1后车厢34左" xml:space="preserve">
+    <value>动车组1 后车厢 3 4 左</value>
+  </data>
+  <data name="Inf动车组1后车厢34右" xml:space="preserve">
+    <value>动车组1 后车厢 3 4 右</value>
+  </data>
+  <data name="Inf动车组1后车厢41左" xml:space="preserve">
+    <value>动车组1 后车厢 4 1 左</value>
+  </data>
+  <data name="Inf动车组1后车厢41右" xml:space="preserve">
+    <value>动车组1 后车厢 4 1 右</value>
+  </data>
+  <data name="Inf动车组1后车厢42左" xml:space="preserve">
+    <value>动车组1 后车厢 4 2 左</value>
+  </data>
+  <data name="Inf动车组1后车厢42右" xml:space="preserve">
+    <value>动车组1 后车厢 4 2 右</value>
+  </data>
+  <data name="Inf动车组1后车厢43左" xml:space="preserve">
+    <value>动车组1 后车厢 4 3 左</value>
+  </data>
+  <data name="Inf动车组1后车厢43右" xml:space="preserve">
+    <value>动车组1 后车厢 4 3 右</value>
+  </data>
+  <data name="Inf动车组1后车厢44左" xml:space="preserve">
+    <value>动车组1 后车厢 4 4 左</value>
+  </data>
+  <data name="Inf动车组1后车厢44右" xml:space="preserve">
+    <value>动车组1 后车厢 4 4 右</value>
+  </data>
+  <data name="Inf动车组2前车厢11右" xml:space="preserve">
+    <value>动车组2 前车厢 1 1 右</value>
+  </data>
+  <data name="Inf动车组2前车厢11左" xml:space="preserve">
+    <value>动车组2 前车厢 1 1 左</value>
+  </data>
+  <data name="Inf动车组2前车厢12右" xml:space="preserve">
+    <value>动车组2 前车厢 1 2 右</value>
+  </data>
+  <data name="Inf动车组2前车厢12左" xml:space="preserve">
+    <value>动车组2 前车厢 1 2 左</value>
+  </data>
+  <data name="Inf动车组2前车厢13右" xml:space="preserve">
+    <value>动车组2 前车厢 1 3 右</value>
+  </data>
+  <data name="Inf动车组2前车厢13左" xml:space="preserve">
+    <value>动车组2 前车厢 1 3 左</value>
+  </data>
+  <data name="Inf动车组2前车厢14右" xml:space="preserve">
+    <value>动车组2 前车厢 1 4 右</value>
+  </data>
+  <data name="Inf动车组2前车厢14左" xml:space="preserve">
+    <value>动车组2 前车厢 1 4 左</value>
+  </data>
+  <data name="Inf动车组2前车厢21右" xml:space="preserve">
+    <value>动车组2 前车厢 2 1 右</value>
+  </data>
+  <data name="Inf动车组2前车厢21左" xml:space="preserve">
+    <value>动车组2 前车厢 2 1 左</value>
+  </data>
+  <data name="Inf动车组2前车厢22右" xml:space="preserve">
+    <value>动车组2 前车厢 2 2 右</value>
+  </data>
+  <data name="Inf动车组2前车厢22左" xml:space="preserve">
+    <value>动车组2 前车厢 2 2 左</value>
+  </data>
+  <data name="Inf动车组2前车厢23右" xml:space="preserve">
+    <value>动车组2 前车厢 2 3 右</value>
+  </data>
+  <data name="Inf动车组2前车厢23左" xml:space="preserve">
+    <value>动车组2 前车厢 2 3 左</value>
+  </data>
+  <data name="Inf动车组2前车厢24右" xml:space="preserve">
+    <value>动车组2 前车厢 2 4 右</value>
+  </data>
+  <data name="Inf动车组2前车厢24左" xml:space="preserve">
+    <value>动车组2 前车厢 2 4 左</value>
+  </data>
+  <data name="Inf动车组2前车厢31左" xml:space="preserve">
+    <value>动车组2 前车厢 3 1 左</value>
+  </data>
+  <data name="Inf动车组2前车厢31右" xml:space="preserve">
+    <value>动车组2 前车厢 3 1 右</value>
+  </data>
+  <data name="Inf动车组2前车厢32左" xml:space="preserve">
+    <value>动车组2 前车厢 3 2 左</value>
+  </data>
+  <data name="Inf动车组2前车厢32右" xml:space="preserve">
+    <value>动车组2 前车厢 3 2 右</value>
+  </data>
+  <data name="Inf动车组2前车厢33左" xml:space="preserve">
+    <value>动车组2 前车厢 3 3 左</value>
+  </data>
+  <data name="Inf动车组2前车厢33右" xml:space="preserve">
+    <value>动车组2 前车厢 3 3 右</value>
+  </data>
+  <data name="Inf动车组2前车厢34左" xml:space="preserve">
+    <value>动车组2 前车厢 3 4 左</value>
+  </data>
+  <data name="Inf动车组2前车厢34右" xml:space="preserve">
+    <value>动车组2 前车厢 3 4 右</value>
+  </data>
+  <data name="Inf动车组2前车厢41左" xml:space="preserve">
+    <value>动车组2 前车厢 4 1 左</value>
+  </data>
+  <data name="Inf动车组2前车厢41右" xml:space="preserve">
+    <value>动车组2 前车厢 4 1 右</value>
+  </data>
+  <data name="Inf动车组2前车厢42左" xml:space="preserve">
+    <value>动车组2 前车厢 4 2 左</value>
+  </data>
+  <data name="Inf动车组2前车厢42右" xml:space="preserve">
+    <value>动车组2 前车厢 4 2 右</value>
+  </data>
+  <data name="Inf动车组2前车厢43左" xml:space="preserve">
+    <value>动车组2 前车厢 4 3 左</value>
+  </data>
+  <data name="Inf动车组2前车厢43右" xml:space="preserve">
+    <value>动车组2 前车厢 4 3 右</value>
+  </data>
+  <data name="Inf动车组2前车厢44左" xml:space="preserve">
+    <value>动车组2 前车厢 4 4 左</value>
+  </data>
+  <data name="Inf动车组2前车厢44右" xml:space="preserve">
+    <value>动车组2 前车厢 4 4 右</value>
+  </data>
+  <data name="Inf动车组2后车厢11右" xml:space="preserve">
+    <value>动车组2 后车厢 1 1 右</value>
+  </data>
+  <data name="Inf动车组2后车厢11左" xml:space="preserve">
+    <value>动车组2 后车厢 1 1 左</value>
+  </data>
+  <data name="Inf动车组2后车厢12右" xml:space="preserve">
+    <value>动车组2 后车厢 1 2 右</value>
+  </data>
+  <data name="Inf动车组2后车厢12左" xml:space="preserve">
+    <value>动车组2 后车厢 1 2 左</value>
+  </data>
+  <data name="Inf动车组2后车厢13右" xml:space="preserve">
+    <value>动车组2 后车厢 1 3 右</value>
+  </data>
+  <data name="Inf动车组2后车厢13左" xml:space="preserve">
+    <value>动车组2 后车厢 1 3 左</value>
+  </data>
+  <data name="Inf动车组2后车厢14右" xml:space="preserve">
+    <value>动车组2 后车厢 1 4 右</value>
+  </data>
+  <data name="Inf动车组2后车厢14左" xml:space="preserve">
+    <value>动车组2 后车厢 1 4 左</value>
+  </data>
+  <data name="Inf动车组2后车厢21右" xml:space="preserve">
+    <value>动车组2 后车厢 2 1 右</value>
+  </data>
+  <data name="Inf动车组2后车厢21左" xml:space="preserve">
+    <value>动车组2 后车厢 2 1 左</value>
+  </data>
+  <data name="Inf动车组2后车厢22右" xml:space="preserve">
+    <value>动车组2 后车厢 2 2 右</value>
+  </data>
+  <data name="Inf动车组2后车厢22左" xml:space="preserve">
+    <value>动车组2 后车厢 2 2 左</value>
+  </data>
+  <data name="Inf动车组2后车厢23右" xml:space="preserve">
+    <value>动车组2 后车厢 2 3 右</value>
+  </data>
+  <data name="Inf动车组2后车厢23左" xml:space="preserve">
+    <value>动车组2 后车厢 2 3 左</value>
+  </data>
+  <data name="Inf动车组2后车厢24右" xml:space="preserve">
+    <value>动车组2 后车厢 2 4 右</value>
+  </data>
+  <data name="Inf动车组2后车厢24左" xml:space="preserve">
+    <value>动车组2 后车厢 2 4 左</value>
+  </data>
+  <data name="Inf动车组2后车厢31左" xml:space="preserve">
+    <value>动车组2 后车厢 3 1 左</value>
+  </data>
+  <data name="Inf动车组2后车厢31右" xml:space="preserve">
+    <value>动车组2 后车厢 3 1 右</value>
+  </data>
+  <data name="Inf动车组2后车厢32左" xml:space="preserve">
+    <value>动车组2 后车厢 3 2 左</value>
+  </data>
+  <data name="Inf动车组2后车厢32右" xml:space="preserve">
+    <value>动车组2 后车厢 3 2 右</value>
+  </data>
+  <data name="Inf动车组2后车厢33左" xml:space="preserve">
+    <value>动车组2 后车厢 3 3 左</value>
+  </data>
+  <data name="Inf动车组2后车厢33右" xml:space="preserve">
+    <value>动车组2 后车厢 3 3 右</value>
+  </data>
+  <data name="Inf动车组2后车厢34左" xml:space="preserve">
+    <value>动车组2 后车厢 3 4 左</value>
+  </data>
+  <data name="Inf动车组2后车厢34右" xml:space="preserve">
+    <value>动车组2 后车厢 3 4 右</value>
+  </data>
+  <data name="Inf动车组2后车厢41左" xml:space="preserve">
+    <value>动车组2 后车厢 4 1 左</value>
+  </data>
+  <data name="Inf动车组2后车厢41右" xml:space="preserve">
+    <value>动车组2 后车厢 4 1 右</value>
+  </data>
+  <data name="Inf动车组2后车厢42左" xml:space="preserve">
+    <value>动车组2 后车厢 4 2 左</value>
+  </data>
+  <data name="Inf动车组2后车厢42右" xml:space="preserve">
+    <value>动车组2 后车厢 4 2 右</value>
+  </data>
+  <data name="Inf动车组2后车厢43左" xml:space="preserve">
+    <value>动车组2 后车厢 4 3 左</value>
+  </data>
+  <data name="Inf动车组2后车厢43右" xml:space="preserve">
+    <value>动车组2 后车厢 4 3 右</value>
+  </data>
+  <data name="Inf动车组2后车厢44左" xml:space="preserve">
+    <value>动车组2 后车厢 4 4 左</value>
+  </data>
+  <data name="Inf动车组2后车厢44右" xml:space="preserve">
+    <value>动车组2 后车厢 4 4 右</value>
+  </data>
+</root>

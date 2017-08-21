@@ -1,0 +1,93 @@
+﻿<UserControl x:Class="Engine.TPX21F.HXN5B.View.Contents.Maintenance.Brake.SensorCorrectView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:common="clr-namespace:Engine.TPX21F.HXN5B.View.Common"
+             xmlns:constant="clr-namespace:Engine.TPX21F.HXN5B.Constant"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:designData="clr-namespace:Engine.TPX21F.HXN5B.Model.ViewSource.DesignData"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:regions="http://www.codeplex.com/CompositeWPF"
+             xmlns:view="clr-namespace:MMI.Facility.WPFInfrastructure.View;assembly=MMI.Facility.WPFInfrastructure"
+             xmlns:viewModel="clr-namespace:Engine.TPX21F.HXN5B.ViewModel"
+             xmlns:viewSource="clr-namespace:Engine.TPX21F.HXN5B.Model.ViewSource"
+             Background="{StaticResource ContentBackgroundBrush}"
+             d:DataContext="{d:DesignInstance viewModel:HXN5BViewModel}"
+             d:DesignHeight="495"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <Grid Margin="60,60,60,60">
+        <GroupBox Style="{StaticResource CenterHeaderGroupBoxStyle}" common:GroupBoxHeader.HeaderWidth="{Binding ElementName=HeaderPanel, Path=ActualWidth, Converter={StaticResource MathConverter}, ConverterParameter=x+60}">
+            <GroupBox.Header>
+                <StackPanel x:Name="HeaderPanel"
+                            Orientation="Horizontal"
+                            x:FieldModifier="private">
+                    <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringSensor}" />
+                    <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringCorrect}" />
+                </StackPanel>
+            </GroupBox.Header>
+
+            <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="269*" />
+                    <ColumnDefinition Width="393*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Style="{StaticResource ContentConstGreenTextStyle}" Text="201BP" />
+
+                <StackPanel Grid.Row="0"
+                            Grid.Column="1"
+                            Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringExecute}" />
+                    <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringBrakeCylinder}" />
+                    <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringSensor}" />
+                    <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringCorrect}" />
+                </StackPanel>
+                <TextBlock Grid.Row="1"
+                           Grid.Column="0"
+                           Style="{StaticResource ContentConstGreenTextStyle}"
+                           Text="204BP" />
+                <StackPanel Grid.Row="1"
+                            Grid.Column="1"
+                            Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringExecute}" />
+                    <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringTrainPipe}" />
+                    <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringSensor}" />
+                    <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringCorrect}" />
+                </StackPanel>
+                <TextBlock Grid.Row="2"
+                           Grid.Column="0"
+                           Style="{StaticResource ContentConstGreenTextStyle}"
+                           Text="205BP" />
+
+                <StackPanel Grid.Row="2"
+                            Grid.Column="1"
+                            Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringExecute}" />
+                    <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringBalanced}" />
+                    <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringAirCylinder}" />
+                    <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringSensor}" />
+                    <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringCorrect}" />
+                </StackPanel>
+                <TextBlock Grid.Row="3"
+                           Grid.Column="0"
+                           Style="{StaticResource ContentConstGreenTextStyle}"
+                           Text="206BP" />
+                <StackPanel Grid.Row="3"
+                            Grid.Column="1"
+                            Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringExecute}" />
+                    <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringCyPreControl}" />
+                    <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringSensor}" />
+                    <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringCorrect}" />
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</UserControl>

@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Fonts/AngolaDieselFontsResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="LEDText" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontFamily" Value="{StaticResource LEDFontFamily}" />
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="TextAlignment" Value="Right" />
+            <Setter Property="Margin" Value="4,0" />
+        </Style.Setters>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,124 @@
+﻿<UserControl
+    x:Class="Tram.CBTC.NRIET.View.Contents.Main.RegionMenu.SettingView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="clr-namespace:Tram.CBTC.NRIET.ViewModel"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:buttons="clr-namespace:Tram.CBTC.NRIET.View.Buttons"
+    xmlns:interactivity="clr-namespace:MMI.Facility.WPFInfrastructure.Interactivity;assembly=MMI.Facility.WPFInfrastructure"
+    d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+    d:DesignHeight="390"
+    d:DesignWidth="460"
+    Background="Gray"
+    mc:Ignorable="d">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <interactivity:InvokeCommandAction Command="{Binding Path=SettingViewModel.LoadedCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="36*" />
+            <ColumnDefinition Width="391*" />
+            <ColumnDefinition Width="18*" />
+        </Grid.ColumnDefinitions>
+        <Grid Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="36*" />
+                <RowDefinition Height="54*" />
+                <RowDefinition Height="81*" />
+                <RowDefinition Height="36*" />
+                <RowDefinition Height="72*" />
+                <RowDefinition Height="40*" />
+                <RowDefinition Height="32*" />
+            </Grid.RowDefinitions>
+            <Grid Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="124*" />
+                    <ColumnDefinition Width="37*" />
+                    <ColumnDefinition Width="210*" />
+                    <ColumnDefinition Width="20*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock
+                    Grid.Column="0"
+                    Style="{StaticResource Tram.CBTC.Nriet.Style.Text.InputTitle1}"
+                    Text="{StaticResource Tram.CBTC.Nriet.String.TrainNum:}" />
+                <TextBox
+                    Grid.Column="2"
+                    Style="{StaticResource Tram.CBTC.Nriet.Style.Text.InputValue1}"
+                    Text="{Binding SettingViewModel.TrainNum}" >
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="GotFocus">
+                            <i:InvokeCommandAction Command="{Binding  Path= SettingViewModel.TrainNumGotFocusCommand}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </TextBox>
+            </Grid>
+            <Grid Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="75*" />
+                    <ColumnDefinition Width="54*" />
+                    <ColumnDefinition Width="32*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="90*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
+                    Width="55"
+                    Height="26"
+                    Margin="0,6"
+                    Style="{StaticResource Tram.CBTC.Nriet.Style.Text.InputTitle1}"
+                    Text="{StaticResource Tram.CBTC.Nriet.String.MainLine:}" />
+                <RadioButton
+                    Grid.Column="3"
+                    Content="{StaticResource Tram.CBTC.Nriet.String.UpGoing}" 
+                    Style="{DynamicResource RadioButtonStyle2}"
+                    IsChecked="{Binding SettingViewModel.LineRunDirectionStatus,
+                    Converter={StaticResource Tram.CBTC.Nriet.Converter.LineRunDirectionConvert}, 
+                    ConverterParameter=true,Mode=TwoWay}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="GotFocus">
+                            <i:InvokeCommandAction Command="{Binding  Path= SettingViewModel.LineRunDirectionStatusGotFocusCommand}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </RadioButton>
+                    <RadioButton
+                    Grid.Column="5"
+                    Content="{StaticResource Tram.CBTC.Nriet.String.Down}"
+                    Style="{DynamicResource RadioButtonStyle2}"
+                        IsChecked="{Binding SettingViewModel.LineRunDirectionStatus,
+                        Converter={StaticResource Tram.CBTC.Nriet.Converter.LineRunDirectionConvert}, 
+                        ConverterParameter=false,Mode=TwoWay}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="GotFocus">
+                            <i:InvokeCommandAction Command="{Binding  Path= SettingViewModel.LineRunDirectionStatusGotFocusCommand}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </RadioButton>
+            </Grid>
+            <Grid Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="75*" />
+                    <ColumnDefinition Width="54*" />
+                    <ColumnDefinition Width="32*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="90*" />
+                </Grid.ColumnDefinitions>
+                <Button
+                    x:Name="ConfirmButton"
+                    Grid.Column="3"
+                    Content="{StaticResource Tram.CBTC.Nriet.String.Ensure}"
+                    Style="{StaticResource Tram.CBTC.Nriet.GrayBtnStyle}" 
+                    Command="{Binding Path=SettingViewModel.ConfirmCommand}"/>
+                <Popup x:Name="KeyboardPopup" Grid.Column="3" Width="650" Height="300" IsOpen="{Binding Controller.IsOpenKeyboard}" StaysOpen="True" PlacementTarget="{Binding ElementName=ConfirmButton}" HorizontalOffset="-250" VerticalOffset="-250">
+                    <buttons:Keyboard/>
+                </Popup>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

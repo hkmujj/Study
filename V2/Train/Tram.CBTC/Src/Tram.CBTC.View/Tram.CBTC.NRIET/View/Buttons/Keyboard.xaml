@@ -1,0 +1,312 @@
+﻿<UserControl
+    x:Class="Tram.CBTC.NRIET.View.Buttons.Keyboard"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:view="clr-namespace:MMI.Facility.WPFInfrastructure.View;assembly=MMI.Facility.WPFInfrastructure"
+    xmlns:viewModel="clr-namespace:Tram.CBTC.NRIET.ViewModel"
+    d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+    d:DesignHeight="300"
+    d:DesignWidth="650"
+    mc:Ignorable="d">
+
+    <Grid
+        view:GridLine.Brush="Black"
+        view:GridLine.Style="ShowAll"
+        view:GridLine.Width="1"
+        view:GridLine.WidthStyle="Different">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Button
+            Grid.Row="0"
+            Grid.Column="0"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.1}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="0"
+            Grid.Column="1"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.2}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="0"
+            Grid.Column="2"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.3}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="0"
+            Grid.Column="3"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.4}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="0"
+            Grid.Column="4"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.5}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="0"
+            Grid.Column="5"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.6}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="0"
+            Grid.Column="6"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.7}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="0"
+            Grid.Column="7"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.8}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="0"
+            Grid.Column="8"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.9}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="0"
+            Grid.Column="9"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.0}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="1"
+            Grid.Column="0"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.Q}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="1"
+            Grid.Column="1"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.W}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="1"
+            Grid.Column="2"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.E}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="1"
+            Grid.Column="3"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.R}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="1"
+            Grid.Column="4"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.T}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="1"
+            Grid.Column="5"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.Y}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="1"
+            Grid.Column="6"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.U}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="1"
+            Grid.Column="7"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.I}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="1"
+            Grid.Column="8"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.O}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="1"
+            Grid.Column="9"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.P}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="0"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.A}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="1"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.S}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="2"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.D}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="3"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.F}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="4"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.G}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="5"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.H}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="6"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.J}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="7"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.K}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="8"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.L}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="9"
+            Content=""
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="0"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.Z}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="1"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.X}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="2"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.C}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="3"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.V}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="4"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.B}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="5"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.N}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="6"
+            Command="{Binding KeyboardViewModel.InputCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.M}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="7"
+            Command="{Binding KeyboardViewModel.BackspaceCommand}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.Backspace}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="8"
+            Command="{Binding KeyboardViewModel.ReturnCommand}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.Return}"
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="9"
+            Content=""
+            Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle}" />
+    </Grid>
+</UserControl>

@@ -1,0 +1,17 @@
+﻿<UserControl
+    x:Class="Subway.CBTC.Casco.View.Contents.RegionN.RegionNView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Subway.CBTC.Casco.View.Contents.RegionN"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="65"
+    d:DesignWidth="176"
+    mc:Ignorable="d">
+    <Grid>
+        <TextBlock
+            Style="{DynamicResource Subway.CBTC.Casco.Style.Text.RegionNTextStyle}"
+            Text="{DynamicResource Subway.CBTC.Casco.String.Depart}"
+            Visibility="{Binding CBTC.RoadInfo.StationInfo.PSD.DepartSecondVisble, Converter={StaticResource Subway.CBTC.Casco.Converter.BooleanToVisibilityConverter}}" />
+    </Grid>
+</UserControl>

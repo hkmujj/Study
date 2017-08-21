@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="Engine.Angola.Diesel.View.Shell.AngolaDieselShellContent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:constant="clr-namespace:Engine.Angola.Diesel.Constant"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:model="clr-namespace:Engine.Angola.Diesel.Model"
+             xmlns:regions="http://www.codeplex.com/CompositeWPF"
+             Background="{StaticResource ScreenBackground}"
+             d:DataContext="{d:DesignInstance model:AngolaDieselShellModel}"
+             d:DesignHeight="136"
+             d:DesignWidth="249"
+             mc:Ignorable="d">
+    <Viewbox Stretch="Fill">
+        <Grid Width="249" Height="136">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="23*" />
+                <RowDefinition Height="90*" />
+                <RowDefinition Height="23*" />
+            </Grid.RowDefinitions>
+            <ContentControl Grid.Row="1"
+                            Grid.RowSpan="2"
+                            Grid.Column="0"
+                            Margin="0,0,11,0"
+                            regions:RegionManager.RegionName="{x:Static constant:RegionNames.DialRegion}" />
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="11,0,0,0"
+                            regions:RegionManager.RegionName="{x:Static constant:RegionNames.IndicateRegion}" />
+        </Grid>
+    </Viewbox>
+</UserControl>

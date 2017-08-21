@@ -1,0 +1,88 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:commonControl="clr-namespace:Engine._6A.CommonControl"
+                    mc:Ignorable="d">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Brushed/BrushResource.xaml" />
+        <ResourceDictionary Source="ProgressBarStyleResource.xaml" />
+        <ResourceDictionary Source="TextBlockStyleResource.xaml" />
+        <ResourceDictionary Source="TabStyleResource.xaml" />
+        <ResourceDictionary Source="RadioButtonStyleResource.xaml" />
+        <ResourceDictionary Source="RecTextButtonStyleResource.xaml" />
+        <ResourceDictionary Source="ComboBoxStyleResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="FramStyle" TargetType="Rectangle">
+        <Setter Property="StrokeThickness" Value="1" />
+        <Setter Property="Stroke" Value="{StaticResource WhiteBrush}" />
+    </Style>
+
+    <Style x:Key="CommonNoDataImgStyle" TargetType="Image">
+        <Setter Property="Source" Value="../Image/NoData.png" />
+        <Setter Property="Margin" Value="8" />
+    </Style>
+
+    <Style x:Key="SystemSettingButtonStyle" TargetType="commonControl:ImageTextButton">
+        <Setter Property="Margin" Value="5,5,5,0" />
+        <Setter Property="Padding" Value="-10,2,-10,0" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="Width" Value="71" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Height" Value="90" />
+        <Setter Property="Foreground" Value="{StaticResource WhiteBrush}" />
+    </Style>
+
+    <Style x:Key="PlateFormBoxStyle" TargetType="commonControl:RadioRecTest">
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="{StaticResource DarkGrayBrush}" />
+        <Setter Property="Margin" Value="2" />
+        <Setter Property="Width" Value="254" />
+    </Style>
+    <Style x:Key="BrakeViewBoxStyle" TargetType="commonControl:RadioRecTest">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="{StaticResource DarkGrayBrush}" />
+        <Setter Property="Margin" Value="2" />
+        <Setter Property="FontSize" Value="16" />
+    </Style>
+    <Style x:Key="InsulationViewBoxStyle" TargetType="commonControl:RadioRecTest">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="{StaticResource DarkGrayBrush}" />
+        <Setter Property="Margin" Value="2,2,65,2" />
+        <Setter Property="FontSize" Value="16" />
+    </Style>
+    <Style x:Key="ForTheColumnViewBoxStyleTwo" TargetType="commonControl:RadioRecTest">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="{StaticResource DarkGrayBrush}" />
+        <Setter Property="Margin" Value="5,1" />
+        <Setter Property="FontSize" Value="16" />
+    </Style>
+    <Style x:Key="ForTheColumnViewBoxStyleOne" TargetType="commonControl:RadioRecTest">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="{StaticResource DarkGrayBrush}" />
+        <Setter Property="Margin" Value="5,2" />
+        <Setter Property="FontSize" Value="16" />
+    </Style>
+    <Style x:Key="RunLineOneBoxStyle" TargetType="commonControl:RadioTwoLineRecText">
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="BorderBrush" Value="{StaticResource RunLineOnwBoxBrush}" />
+        <Setter Property="Margin" Value="1,3" />
+        <Setter Property="FontSize" Value="16" />
+    </Style>
+    <Style x:Key="RunLineTwoBoxStyle" TargetType="commonControl:RadioRecTest">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="{StaticResource DarkGrayBrush}" />
+        <Setter Property="Margin" Value="12,2,110,2" />
+        <Setter Property="FontSize" Value="16" />
+    </Style>
+    <Style x:Key="SleepViewBoxStyle" TargetType="commonControl:RadioRecTest">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="{StaticResource DarkGrayBrush}" />
+        <Setter Property="Margin" Value="10,3,175,3" />
+        <Setter Property="FontSize" Value="16" />
+    </Style>
+
+
+</ResourceDictionary>

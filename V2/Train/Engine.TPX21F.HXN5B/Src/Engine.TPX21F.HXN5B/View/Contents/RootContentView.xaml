@@ -1,0 +1,413 @@
+﻿<UserControl x:Class="Engine.TPX21F.HXN5B.View.Contents.RootContentView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:constant="clr-namespace:Engine.TPX21F.HXN5B.Constant"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:regions="http://www.codeplex.com/CompositeWPF"
+             xmlns:view="clr-namespace:MMI.Facility.WPFInfrastructure.View;assembly=MMI.Facility.WPFInfrastructure"
+             xmlns:viewModel="clr-namespace:Engine.TPX21F.HXN5B.ViewModel"
+             xmlns:viewSource="clr-namespace:Engine.TPX21F.HXN5B.Model.ViewSource"
+             Background="{StaticResource ContentBackgroundBrush}"
+             d:DataContext="{d:DesignInstance viewModel:HXN5BViewModel}"
+             d:DesignHeight="495"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <Grid view:GridLine.Brush="{StaticResource ForegroundWhiteBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="7*" />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="480*" />
+            <ColumnDefinition Width="320*" />
+        </Grid.ColumnDefinitions>
+        <Grid Margin="20,6" DataContext="{Binding Path=Domain.Model.MainData}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="7*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="11*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="7*" />
+                <ColumnDefinition Width="7*" />
+                <ColumnDefinition Width="5*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15*" />
+                <RowDefinition Height="94*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <TextBox Grid.Row="0"
+                     Grid.ColumnSpan="3"
+                     Margin="40,6"
+                     Style="{StaticResource BorderText}"
+                     Text="{Binding Path=OilEnginRotationRate,
+                                    StringFormat={}0}" />
+            <TextBox Grid.Row="0"
+                     Grid.Column="2"
+                     Grid.ColumnSpan="3"
+                     Margin="40,6,70,6"
+                     Style="{StaticResource BorderText}"
+                     Text="{Binding Path=BalanceAirCylinder,
+                                    StringFormat={}0}" />
+            <TextBox Grid.Row="0"
+                     Grid.Column="4"
+                     Grid.ColumnSpan="3"
+                     Margin="70,6,40,6"
+                     Style="{StaticResource BorderText}"
+                     Text="{Binding Path=BrakePipe,
+                                    StringFormat={}0}" />
+            <TextBox Grid.Row="0"
+                     Grid.Column="7"
+                     Grid.ColumnSpan="2"
+                     Margin="40,6,-12,6"
+                     Style="{StaticResource BorderText}"
+                     Text="{Binding Path=TowBrakeNewt,
+                                    Converter={StaticResource DoubleAbsConverter},
+                                    StringFormat={}0}" />
+
+            <ItemsControl Grid.Row="1"
+                          Grid.Column="0"
+                          ItemsSource="{Binding Source={x:Static viewSource:MainOilEngineRoteRateScale.Instance},
+                                                Path=TargitDistanceScaleItems}"
+                          Style="{StaticResource ItemControlOilEngineRateDegreeStyle}" />
+
+            <ProgressBar Grid.Row="1"
+                         Grid.Column="1"
+                         Maximum="1200"
+                         Style="{StaticResource MainViewProgressBarStyle}"
+                         Value="{Binding Path=OilEnginRotationRate}" />
+            <ProgressBar Grid.Row="1"
+                         Grid.Column="3"
+                         Maximum="800"
+                         Style="{StaticResource MainViewProgressBarStyle}"
+                         Value="{Binding Path=BalanceAirCylinder}" />
+            <ItemsControl Grid.Row="1"
+                          Grid.Column="4"
+                          ItemsSource="{Binding Source={x:Static viewSource:MainBrakePipeScale.Instance},
+                                                Path=TargitDistanceScaleItems}"
+                          Style="{StaticResource ItemControlBrakePipeScalDegreeStyle}" />
+
+            <ProgressBar Grid.Row="1"
+                         Grid.Column="5"
+                         Maximum="800"
+                         Style="{StaticResource MainViewProgressBarStyle}"
+                         Value="{Binding Path=BrakePipe}" />
+            <ItemsControl Grid.Row="1"
+                          Grid.Column="7"
+                          ItemsSource="{Binding Source={x:Static viewSource:MainTowBrakeScale.Instance},
+                                                Path=TargitDistanceScaleItems}"
+                          Style="{StaticResource ItemControlOilEngineRateDegreeStyle}" />
+            <ProgressBar Grid.Row="1"
+                         Grid.Column="8"
+                         Foreground="{Binding Path=TowBrakeNewt,
+                                              Converter={StaticResource TowBrakeNewtToForegroundConverter}}"
+                         Maximum="600"
+                         Style="{StaticResource MainViewProgressBarStyle}"
+                         Value="{Binding Path=TowBrakeNewt,
+                                         Converter={StaticResource DoubleAbsConverter}}" />
+            <TextBlock Grid.Row="2"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="3"
+                       Height="23"
+                       Margin="40,0"
+                       Style="{StaticResource ContentConstWhiteTextStyle}"
+                       Text="{StaticResource StringOilEngine}" />
+
+            <TextBlock Grid.Row="2"
+                       Grid.Column="2"
+                       Grid.ColumnSpan="3"
+                       Height="23"
+                       Margin="40,0,70,0"
+                       Style="{StaticResource ContentConstWhiteTextStyle}"
+                       Text="{StaticResource StringBalanced}" />
+
+            <StackPanel Grid.Row="2"
+                        Grid.Column="4"
+                        Grid.ColumnSpan="3"
+                        Margin="70,0,40,0"
+                        Orientation="Horizontal">
+                <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringBrake}" />
+                <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringPipe}" />
+            </StackPanel>
+
+
+            <TextBlock Grid.Row="2"
+                       Grid.Column="7"
+                       Grid.ColumnSpan="2"
+                       Height="23"
+                       Margin="40,0,-12,0"
+                       Style="{StaticResource ContentConstWhiteTextStyle}"
+                       Text="{StaticResource StringTow}" />
+            <TextBlock Grid.Row="3"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="3"
+                       Height="23"
+                       Margin="40,0"
+                       Style="{StaticResource ContentConstWhiteTextStyle}"
+                       Text="{StaticResource StringRotationRate}" />
+            <TextBlock Grid.Row="3"
+                       Grid.Column="2"
+                       Grid.ColumnSpan="3"
+                       Width="61"
+                       Height="23"
+                       Margin="0,0,70,0"
+                       HorizontalAlignment="Right"
+                       Style="{StaticResource ContentConstWhiteTextStyle}"
+                       Text="{StaticResource StringAirCylinder}" />
+            <StackPanel Grid.Row="3"
+                        Grid.Column="7"
+                        Grid.ColumnSpan="2"
+                        Margin="40,0,-12,0"
+                        Orientation="Horizontal">
+                <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringBrake}" />
+                <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringNewt}" />
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2.2*" />
+                <RowDefinition Height="3*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" DataContext="{Binding Path=Domain.Model.MainData}">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <GroupBox Foreground="White" Style="{StaticResource MainViewGroupBoxStyle}">
+                    <GroupBox.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Style="{StaticResource ContentConstGrayTextStyle}" Text="{StaticResource StringHandleShank}" />
+                            <TextBlock Style="{StaticResource ContentConstGrayTextStyle}" Text="{StaticResource StringGear}" />
+                        </StackPanel>
+                    </GroupBox.Header>
+                    <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{Binding Path=MainStates.HandlLevel, Converter={StaticResource HandlLevelToStringConverter}}" />
+                </GroupBox>
+                <GroupBox Grid.Row="0"
+                          Grid.Column="1"
+                          BorderBrush="{Binding Path=MainStates.WorkState,
+                                                Converter={StaticResource WorkStateToContentForegroudConverter}}"
+                          Style="{StaticResource MainViewGroupBoxStyle}">
+                    <GroupBox.Header>
+                        <TextBlock Foreground="{Binding Path=MainStates.WorkState,
+                                                        Converter={StaticResource WorkStateToTitleForegroudConverter}}"
+                                   Style="{StaticResource ContentConstGrayTextStyle}"
+                                   Text="{StaticResource StringWorkState}" />
+                    </GroupBox.Header>
+                    <TextBlock Foreground="{Binding Path=MainStates.WorkState,
+                                                    Converter={StaticResource WorkStateToContentForegroudConverter}}"
+                               Style="{StaticResource ContentConstWhiteTextStyle}"
+                               Text="{Binding Path=MainStates.WorkState,
+                                              Converter={StaticResource WorkStateToStringConverter}}" />
+
+                </GroupBox>
+                <GroupBox Grid.Row="0"
+                          Grid.Column="2"
+                          Style="{StaticResource MainViewGroupBoxStyle}">
+
+                    <GroupBox.Header>
+                        <TextBlock Style="{StaticResource ContentConstGrayTextStyle}" Text="{StaticResource StringMileage}" />
+                    </GroupBox.Header>
+                    <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{Binding Path=Mileage, StringFormat={}0 km}" />
+
+                </GroupBox>
+                <GroupBox Grid.Row="1"
+                          Grid.Column="0"
+                          Style="{StaticResource MainViewGroupBoxStyle}">
+                    <GroupBox.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Style="{StaticResource ContentConstGrayTextStyle}" Text="{StaticResource StringDirectCurrent}" />
+                            <TextBlock Style="{StaticResource ContentConstGrayTextStyle}" Text="{StaticResource StringRateOfWork}" />
+                        </StackPanel>
+                    </GroupBox.Header>
+                    <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{Binding Path=CurrentWorkRate, StringFormat={}0 kW}" />
+                </GroupBox>
+                <GroupBox Grid.Row="1"
+                          Grid.Column="1"
+                          Style="{StaticResource MainViewGroupBoxStyle}">
+                    <GroupBox.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="5" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Style="{StaticResource ContentConstGrayTextStyle}" Text="{StaticResource StringSpeed}" />
+                            <ContentControl Grid.Column="2"
+                                            Width="16"
+                                            Margin="0,3"
+                                            Content="{Binding Path=AcceleratedSpeedState,
+                                                              Converter={StaticResource AcceleratedSpeedStateToContentConverter}}" />
+                        </Grid>
+
+                    </GroupBox.Header>
+                    <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{Binding Path=CurrentSpeed, StringFormat={}0 km/h}" />
+                </GroupBox>
+                <GroupBox Grid.Row="1"
+                          Grid.Column="2"
+                          Style="{StaticResource MainViewGroupBoxStyle}">
+                    <GroupBox.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Style="{StaticResource ContentConstGrayTextStyle}" Text="{StaticResource StringFuelOil}" />
+                            <TextBlock Style="{StaticResource ContentConstGrayTextStyle}" Text="{StaticResource StringSize}" />
+                        </StackPanel>
+                    </GroupBox.Header>
+                    <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{Binding Path=OilSize, StringFormat={}0L}" />
+                </GroupBox>
+                <GroupBox Grid.Row="2"
+                          Grid.Column="0"
+                          Style="{StaticResource MainViewGroupBoxStyle}">
+                    <GroupBox.Header>
+                        <TextBlock Style="{StaticResource ContentConstGrayTextStyle}" Text="{StaticResource StringMainReservoir}" />
+                    </GroupBox.Header>
+                    <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{Binding Path=MainReservoirPressure, StringFormat={}0kPa}" />
+                </GroupBox>
+                <GroupBox Grid.Row="2"
+                          Grid.Column="1"
+                          Style="{StaticResource MainViewGroupBoxStyle}">
+                    <GroupBox.Header>
+                        <TextBlock Style="{StaticResource ContentConstGrayTextStyle}" Text="{StaticResource StringBrakeCylinder}" />
+                    </GroupBox.Header>
+                    <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{Binding Path=BrakeCylinderPressure, StringFormat={}0kPa}" />
+                </GroupBox>
+                <GroupBox Grid.Row="2"
+                          Grid.Column="2"
+                          Style="{StaticResource MainViewGroupBoxStyle}">
+                    <GroupBox.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Style="{StaticResource ContentConstGrayTextStyle}" Text="{StaticResource StringAir}" />
+                            <TextBlock Style="{StaticResource ContentConstGrayTextStyle}" Text="{StaticResource StringFlowRate}" />
+                        </StackPanel>
+                    </GroupBox.Header>
+                    <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{Binding Path=AirFlowRate, StringFormat={}0L}" />
+                </GroupBox>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="6*" />
+                </Grid.RowDefinitions>
+                <Border Background="{StaticResource ContentBackgroundOrangeBrush}">
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringEvents}" />
+                        <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringInfo}" />
+                    </StackPanel>
+                </Border>
+
+                <ItemsControl Grid.Row="1"
+                              ItemsSource="{Binding Path=Domain.FaultManagerViewModel.Model.RootViewItems.Items}"
+                              Style="{StaticResource ItemControlRootViewFaultStyle}" />
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1"
+              Grid.Column="0"
+              DataContext="{Binding Path=Domain.Model.MainData.MainStates}"
+              view:GridLine.Brush="{StaticResource ForegroundWhiteBrush}">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Image Grid.Row="0"
+                   Grid.Column="0 "
+                   Source="{Binding Path=Direction,
+                                    Converter={StaticResource TrainDirectionToImageConverter}}" />
+            <Image Grid.Row="0"
+                   Grid.Column="1 "
+                   Source="{Binding Path=RacingState,
+                                    Converter={StaticResource RacingStateToImageConverter}}" />
+            <Image Grid.Row="0"
+                   Grid.Column="2 "
+                   Source="{Binding Path=SonaState,
+                                    Converter={StaticResource SonaToImageConverter}}" />
+            <Image Grid.Row="0"
+                   Grid.Column="3 "
+                   Source="{Binding Path=SandState,
+                                    Converter={StaticResource SandStateToImageConverter}}" />
+            <Image Grid.Row="0"
+                   Grid.Column="4 "
+                   Source="{Binding Path=ReconnexionAlertState,
+                                    Converter={StaticResource ReconnexionAlertStateToImageConverter}}" />
+            <Image Grid.Row="0"
+                   Grid.Column="5 "
+                   Source="{Binding Path=EmergBrakeState,
+                                    Converter={StaticResource EmergBrakeStateToImageConverter}}" />
+            <ContentControl Grid.Row="0"
+                            Grid.Column="6"
+                            Content="{Binding Path=ParkingBrakeState,
+                                              Converter={StaticResource ParkingBrakeStateToContentConverter}}" />
+            <Image Grid.Row="0"
+                   Grid.Column="7"
+                   Source="{Binding Path=OilLowAlertState,
+                                    Converter={StaticResource OilLowAlertStateToImageConverter}}" />
+            <Image Grid.Row="0"
+                   Grid.Column="8 "
+                   Source="{Binding Path=StorageBatteryState,
+                                    Converter={StaticResource StorageBatteryStateToImageConverter}}" />
+
+            <ContentControl Grid.Row="1"
+                            Grid.Column="0 "
+                            Content="{Binding Path=NormalBrake,
+                                              Converter={StaticResource NormalBrakeToContentConverter}}" />
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1"
+                            Content="{Binding Path=VigilantState,
+                                              Converter={StaticResource VigilantStateToContentConverter}}" />
+            <ContentControl Grid.Row="1"
+                            Grid.Column="2 "
+                            Content="{Binding Path=PCSState,
+                                              Converter={StaticResource PCSStateToContentConverter}}" />
+            <ContentControl Grid.Row="1"
+                            Grid.Column="3 "
+                            Content="{Binding Path=SingleBrakeAlert,
+                                              Converter={StaticResource SingleBrakeAlertToContentConverter}}" />
+            <ContentControl Grid.Row="1"
+                            Grid.Column="4 "
+                            Content="{Binding Path=OtherTrainAlert,
+                                              Converter={StaticResource OtherTrainAlertToContentConverter}}" />
+            <Image Grid.Row="1"
+                   Grid.Column="5 "
+                   Source="{Binding Path=PenaltyBrake,
+                                    Converter={StaticResource PenaltyBrakeToImageConverter}}" />
+            <Image Grid.Row="1"
+                   Grid.Column="6 "
+                   Source="{Binding Path=Bc1CutState,
+                                    Converter={StaticResource BcCutToImageConverter}}" />
+            <Image Grid.Row="1"
+                   Grid.Column="7 "
+                   Source="{Binding Path=Bc2CutState,
+                                    Converter={StaticResource BcCutToImageConverter}}" />
+            <ContentControl Grid.Row="1"
+                            Grid.Column="8 "
+                            Content="{Binding Path=OperationConsle,
+                                              Converter={StaticResource OperationConsleToContentConverter}}" />
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+            <Border Background="{StaticResource HarwareButtonRedBrush}" regions:RegionManager.RegionName="{x:Static constant:RegionNames.ContentNotifyInfoTitle}" />
+            <Border Grid.Row="1" regions:RegionManager.RegionName="{x:Static constant:RegionNames.ContentNotifyInfoContent}" />
+        </Grid>
+    </Grid>
+</UserControl>

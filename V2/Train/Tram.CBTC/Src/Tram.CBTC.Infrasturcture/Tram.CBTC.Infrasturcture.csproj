@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{665E19AB-2B49-4F84-BD3D-C38950653242}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tram.CBTC.Infrasturcture</RootNamespace>
+    <AssemblyName>Tram.CBTC.Infrasturcture</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\MMI\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonUtil, Version=2.29.2016.517, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="DevExpress.Data.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MMI\DevExpress.Data.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Core.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MMI\DevExpress.Xpf.Core.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.PropertyGrid.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MMI\DevExpress.Xpf.PropertyGrid.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Excel.Interface, Version=2.30.2016.712, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Practices.Prism, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="MMI.Facility.Interface, Version=2.50.2017.214, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="MMI.Facility.WPFInfrastructure, Version=2.50.2017.705, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\GlobalTimer.cs" />
+    <Compile Include="Controller\Monitor\MonitorController.cs" />
+    <Compile Include="Converter\Class1.cs" />
+    <Compile Include="Events\ChangePopupViewEvent.cs" />
+    <Compile Include="Events\CommunicationDataChangedWrapperArgs.cs" />
+    <Compile Include="Events\DriverInputEvents\DriverInputDriverId.cs" />
+    <Compile Include="Events\DriverInputEvents\DriverInputTrainId.cs" />
+    <Compile Include="Events\InputWordEvent.cs" />
+    <Compile Include="Events\PlanInfo.cs" />
+    <Compile Include="Events\PowerStateChangedEvent.cs" />
+    <Compile Include="Events\PushOperatorToUIThreadEvent.cs" />
+    <Compile Include="Extension\CommunicationDataChangedWrapperArgsExtension.cs" />
+    <Compile Include="Model\CBTC.cs" />
+    <Compile Include="Model\Constant\ATPProtectionControlStatus.cs" />
+    <Compile Include="Model\Constant\ATPProhibitStatus.cs" />
+    <Compile Include="Model\Constant\ATPStatus.cs" />
+    <Compile Include="Model\Constant\BeaconStatus.cs" />
+    <Compile Include="Model\Constant\BrakeDetailsType.cs" />
+    <Compile Include="Model\Constant\CBTCColor.cs" />
+    <Compile Include="Model\Constant\CBTCConnectionStatus.cs" />
+    <Compile Include="Model\Constant\CompleteState.cs" />
+    <Compile Include="Model\Constant\CPStatus.cs" />
+    <Compile Include="Model\Constant\DepartStatus.cs" />
+    <Compile Include="Model\Constant\DoorAllowStatus.cs" />
+    <Compile Include="Model\Constant\DoorStatus.cs" />
+    <Compile Include="Model\Constant\DeviceState.cs" />
+    <Compile Include="Model\Constant\ELSStatus.cs" />
+    <Compile Include="Model\Constant\GarageIndicate.cs" />
+    <Compile Include="Model\Constant\GPSWorkStatus.cs" />
+    <Compile Include="Model\Constant\InformationShowType.cs" />
+    <Compile Include="Model\Constant\LineRunDirection.cs" />
+    <Compile Include="Model\Constant\MessageType.cs" />
+    <Compile Include="Model\Constant\OBCUStatus.cs" />
+    <Compile Include="Model\Constant\ParkingStatus.cs" />
+    <Compile Include="Model\Constant\PowerState.cs" />
+    <Compile Include="Model\Constant\RactingInstructions.cs" />
+    <Compile Include="Model\Constant\ReturnIndicate.cs" />
+    <Compile Include="Model\Constant\ReturnStatus.cs" />
+    <Compile Include="Model\Constant\RRStatus.cs" />
+    <Compile Include="Model\Constant\RunDirection.cs" />
+    <Compile Include="Model\Constant\SemaphoreStaus.cs" />
+    <Compile Include="Model\Constant\SignalBrakeStatus.cs" />
+    <Compile Include="Model\Constant\SignalCode.cs" />
+    <Compile Include="Model\Constant\SignalType.cs" />
+    <Compile Include="Model\Constant\SpeedInstructions.cs" />
+    <Compile Include="Model\Constant\StationControlCarStatus.cs" />
+    <Compile Include="Model\Constant\SystemStatus.cs" />
+    <Compile Include="Model\Constant\TrainInRegion.cs" />
+    <Compile Include="Model\Constant\TrainSoonerOrLaterStatus.cs" />
+    <Compile Include="Model\Constant\TripInfoStatus.cs" />
+    <Compile Include="Model\Constant\UserActionType.cs" />
+    <Compile Include="Model\Constant\VehicleCommunicationStatus.cs" />
+    <Compile Include="Model\Constant\VehicleControlType .cs" />
+    <Compile Include="Model\Constant\VehicleLocationStatus.cs" />
+    <Compile Include="Model\Constant\VehicleRunningModel.cs" />
+    <Compile Include="Model\Constant\VOBCOnBoardHostStatus.cs" />
+    <Compile Include="Model\Constant\WorkState.cs" />
+    <Compile Include="Model\Fault\FaultInfo.cs" />
+    <Compile Include="Model\Fault\RadarInfo.cs" />
+    <Compile Include="Model\Fault\RadarTarget.cs" />
+    <Compile Include="Model\Hardware\CBTCHardware.cs" />
+    <Compile Include="Model\Hardware\Button\HardwareButton.cs" />
+    <Compile Include="Model\Monitor\Detail\SendeMonitor.cs" />
+    <Compile Include="Model\Monitor\MonitorModel.cs" />
+    <Compile Include="Model\Monitor\Detail\MsgCreater.cs" />
+    <Compile Include="Model\Msg\Details\IInformationContent.cs" />
+    <Compile Include="Model\Msg\Details\InformationContent.cs" />
+    <Compile Include="Model\Msg\Details\InformationItem.cs" />
+    <Compile Include="Model\Msg\Message.cs" />
+    <Compile Include="Model\Msg\MessageFactory.cs" />
+    <Compile Include="Model\Others\Other.cs" />
+    <Compile Include="Model\Recive\IRecive.cs" />
+    <Compile Include="Model\Road\GarageIndicateInfo.cs" />
+    <Compile Include="Model\Road\ReturnIndicateInfo.cs" />
+    <Compile Include="Model\Road\RoadInfo.cs" />
+    <Compile Include="Model\Road\StationConfig.cs" />
+    <Compile Include="Model\Road\StationPass.cs" />
+    <Compile Include="Model\Road\TimeTableInfo.cs" />
+    <Compile Include="Model\Road\TimeTableItem.cs" />
+    <Compile Include="Model\ScreenIdentity.cs" />
+    <Compile Include="Model\Send\EmptySendInterface.cs" />
+    <Compile Include="Model\Send\ISendInterface.cs" />
+    <Compile Include="Model\Signal\Alram\Alram.cs" />
+    <Compile Include="Model\Signal\Alram\AlramModel.cs" />
+    <Compile Include="Model\Signal\Warning\DefaultTargitDistanceScale.cs" />
+    <Compile Include="Model\Signal\Warning\ITargitDistanceScale.cs" />
+    <Compile Include="Model\Signal\Warning\TargitDistanceScaleItem.cs" />
+    <Compile Include="Model\Signal\SignalInfo.cs" />
+    <Compile Include="Model\Road\Station\PSD\PSDInfo.cs" />
+    <Compile Include="Model\Running\RunningInfo.cs" />
+    <Compile Include="Model\Signal\Warning\WarningIntervention.cs" />
+    <Compile Include="Model\Road\Station\StationInfo.cs" />
+    <Compile Include="Model\Signal\Speed\ISpeedDialPlate.cs" />
+    <Compile Include="Model\Signal\Speed\SpeedDialPlateDegree.cs" />
+    <Compile Include="Model\Test\TestInfo.cs" />
+    <Compile Include="Model\Train\Brake\BrakeInfo.cs" />
+    <Compile Include="Model\Train\Carriage\Cab.cs" />
+    <Compile Include="Model\Train\Carriage\CarriageInfo.cs" />
+    <Compile Include="Model\Train\Device.cs" />
+    <Compile Include="Model\Train\Door\DoorInfo.cs" />
+    <Compile Include="Model\Train\Drive\DriveInfo.cs" />
+    <Compile Include="Model\Signal\Speed\Speed.cs" />
+    <Compile Include="Model\Signal\Speed\SpeedModel.cs" />
+    <Compile Include="Model\Train\System.cs" />
+    <Compile Include="Model\Train\TrainInfo.cs" />
+    <Compile Include="Monitor\DomainMonitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monitor\DomainMonitor.Designer.cs">
+      <DependentUpon>DomainMonitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monitor\DomainMonitorView.xaml.cs">
+      <DependentUpon>DomainMonitorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Monitor\DomainMonitorWindow.xaml.cs">
+      <DependentUpon>DomainMonitorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\IInterfaceAdapterService.cs" />
+    <Compile Include="Service\InterfaceAdapterService.cs" />
+    <Compile Include="ViewModel\Monitor\MonitorViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Monitor\DomainMonitor.resx">
+      <DependentUpon>DomainMonitor.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controller\Monitor\Detail\" />
+    <Folder Include="Control\" />
+    <Folder Include="Interface\" />
+    <Folder Include="Model\Running\Detail\" />
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Monitor\DomainMonitorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Monitor\DomainMonitorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tram.CBTC.Infrasturcture.Changes.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

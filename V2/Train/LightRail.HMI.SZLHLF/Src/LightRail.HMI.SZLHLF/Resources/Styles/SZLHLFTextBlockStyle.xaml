@@ -1,0 +1,46 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:view="clr-namespace:MMI.Facility.WPFInfrastructure.View;assembly=MMI.Facility.WPFInfrastructure">
+    <Style x:Key="BlackTextStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="FontFamily" Value="宋体" />
+    </Style>
+
+    <Style x:Key="WhiteTextStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontFamily" Value="宋体" />
+    </Style>
+
+    <Style x:Key="TextStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="#FF00AAFF" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="ContentInputPasswordTextStyle" TargetType="view:CaretTextBox">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontFamily" Value="新宋体" />
+            <Setter Property="BorderBrush" Value="{x:Null}" />
+            <Setter Property="Background" Value="White" />
+
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="RunningViewTipInfoEnglishTextStyle" TargetType="TextBlock">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontFamily" Value="Calibri" />
+        <Setter Property="FontSize" Value="18" />
+    </Style>
+
+    <Style x:Key="RunningViewTipInfoChineseTextStyle" TargetType="TextBlock">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontFamily" Value="宋体" />
+        <Setter Property="FontSize" Value="18" />
+    </Style>
+</ResourceDictionary>

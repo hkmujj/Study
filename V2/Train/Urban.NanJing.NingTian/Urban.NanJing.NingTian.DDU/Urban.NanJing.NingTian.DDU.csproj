@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C7781122-89C9-47DA-9FBA-EFBC67649B3C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Urban.NanJing.NingTian.DDU</RootNamespace>
+    <AssemblyName>Urban.NanJing.NingTian.DDU</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\MMI\Addin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\MMI\Addin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ES.Facility.PublicModule">
+      <HintPath>..\..\..\Bin\MMI\ES.Facility.PublicModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MMI.Facility.Interface">
+      <HintPath>..\..\..\Bin\MMI\MMI.Facility.Interface.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Brushs.cs" />
+    <Compile Include="Common\Enums.cs" />
+    <Compile Include="Common\FontInfo.cs" />
+    <Compile Include="PIS\V501_PIS_JumpStation_C0.cs" />
+    <Compile Include="PIS\V502_PIS_UrgencyBorad_C0.cs" />
+    <Compile Include="PIS\V5_PIS_C0_MainView.cs" />
+    <Compile Include="公共组件\VC_C2_BlackView.cs" />
+    <Compile Include="帮助\V601_Help_RunView_C0.cs" />
+    <Compile Include="帮助\V602_Help_TrainView_C0.cs" />
+    <Compile Include="帮助\V603_Help_AriConditionView_C0.cs" />
+    <Compile Include="帮助\V604_Help_MessageView_C0.cs" />
+    <Compile Include="检修\V702_Check_TimeSetting_C0.cs" />
+    <Compile Include="检修\V703_Check_PasswordSetting_C0.cs" />
+    <Compile Include="检修\V704_Check_WheelRadius_C0.cs" />
+    <Compile Include="检修\V705_Check_TrainIDSetting_C0.cs" />
+    <Compile Include="检修\V705_Check_AccelerateTest_C0.cs" />
+    <Compile Include="检修\V706_Check_Test_C0.cs" />
+    <Compile Include="检修\V707_Check_DataNotes_C0.cs" />
+    <Compile Include="检修\V701_Check_Login_C0_MainView.cs" />
+    <Compile Include="检修\V7_Check_C0_MainView.cs" />
+    <Compile Include="公共组件\VC_C0_Title.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="运行\V101_Run_DishRoad_C0.cs" />
+    <Compile Include="通讯状态\MessageModeInfo.cs" />
+    <Compile Include="通讯状态\V4_Message_C3_B2.cs" />
+    <Compile Include="通讯状态\V4_Message_C4_A2.cs" />
+    <Compile Include="黑屏\V0_C0_BlackView_Closed.cs" />
+    <Compile Include="运行\V1_Run_C1_RightButton.cs" />
+    <Compile Include="公共组件\VC_C4_GetFault.cs" />
+    <Compile Include="运行\V1_Run_C2_State.cs" />
+    <Compile Include="运行\V1_Run_C3_TrainState.cs" />
+    <Compile Include="公共组件\VC_C1_ViewChangeButton.cs" />
+    <Compile Include="参数\V2_TrainState_C0_MainView.cs" />
+    <Compile Include="空调状态\V3_AirCondition_C0_MainView.cs" />
+    <Compile Include="运行\V102_Run_Fault_C0_MianView.cs" />
+    <Compile Include="通讯状态\V4_Message_C0_MainView.cs" />
+    <Compile Include="通讯状态\V4_Message_C1_A1.cs" />
+    <Compile Include="通讯状态\V4_Message_C2_B1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ES.Facility.Common\ES.Facility.Common.csproj">
+      <Project>{0dc1f4ff-bf12-4f12-9200-704a9410eddc}</Project>
+      <Name>ES.Facility.Common</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

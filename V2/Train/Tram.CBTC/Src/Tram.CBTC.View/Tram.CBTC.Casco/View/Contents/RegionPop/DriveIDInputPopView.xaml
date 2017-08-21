@@ -1,0 +1,227 @@
+﻿<UserControl
+    x:Class="Tram.CBTC.Casco.View.Contents.RegionPop.DriveIDInputPopView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="clr-namespace:Tram.CBTC.Casco.ViewModel"
+    d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+    d:DesignHeight="340"
+    d:DesignWidth="610"
+    Background="{StaticResource Tram.CBTC.Casco.PopBackgroud}"
+    mc:Ignorable="d">
+    <Canvas>
+        <!--<Canvas.Background>
+            <ImageBrush ImageSource="/Tram.CBTC.Casco;component/1502347592(1).jpg" />
+        </Canvas.Background>-->
+        <TextBlock
+            Canvas.Left="23"
+            Canvas.Top="34"
+            FontSize="16"
+            Text="单程号" />
+        <TextBlock
+            Canvas.Left="23"
+            Canvas.Top="68"
+            FontSize="16"
+            Text="线路号" />
+        <TextBlock
+            Canvas.Left="23"
+            Canvas.Top="109"
+            FontSize="16"
+            Text="司机号" />
+        <TextBlock
+            Canvas.Left="161"
+            Canvas.Top="34"
+            FontSize="16"
+            Text="路径号" />
+        <TextBlock
+            Canvas.Left="161"
+            Canvas.Top="68"
+            FontSize="16"
+            Text="列车号" />
+        <TextBlock
+            Canvas.Left="90"
+            Canvas.Top="34"
+            FontSize="16"
+            Text="{Binding CBTC.RoadInfo.OneWayID}" />
+        <TextBlock
+            Canvas.Left="225"
+            Canvas.Top="34"
+            FontSize="16"
+            Text="{Binding CBTC.RoadInfo.RoadID}" />
+        <TextBlock
+            Canvas.Left="90"
+            Canvas.Top="68"
+            FontSize="16"
+            Text="{Binding CBTC.RoadInfo.LineID}" />
+        <TextBlock
+            Canvas.Left="225"
+            Canvas.Top="68"
+            FontSize="16"
+            Text="{Binding CBTC.RoadInfo.TrainNum}" />
+        <Border
+            Canvas.Left="82"
+            Canvas.Top="107"
+            Width="202"
+            Height="22"
+            Background="#FEFEFE"
+            BorderBrush="#5E707C"
+            BorderThickness="1">
+            <TextBlock
+                Margin="10,0,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                FontSize="16"
+                Foreground="Black"
+                Text="{Binding Model.PopModel.DriverIDInput.DriverID}" />
+        </Border>
+        <Button
+            Canvas.Left="68"
+            Canvas.Top="198"
+            Width="130"
+            Height="38"
+            Command="{Binding Model.PopModel.DriverIDInput.Login}"
+            Content="登陆"
+            Style="{StaticResource Tram.CBTC.Casco.DriverIDInputBtn}" />
+        <Button
+            Canvas.Left="68"
+            Canvas.Top="247"
+            Width="130"
+            Height="38"
+            Command="{Binding Model.PopModel.DriverIDInput.Cancel}"
+            Content="取消"
+            Style="{StaticResource Tram.CBTC.Casco.DriverIDInputBtn}" />
+
+        <Button
+            Canvas.Left="304"
+            Canvas.Top="103"
+            Width="59"
+            Height="56"
+            Command="{Binding Model.PopModel.DriverIDInput.InputChar}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="4"
+            Style="{StaticResource Tram.CBTC.Casco.DriverIDInputBtn}" />
+
+        <Button
+            Canvas.Left="377"
+            Canvas.Top="103"
+            Width="59"
+            Height="56"
+            Command="{Binding Model.PopModel.DriverIDInput.InputChar}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="5"
+            Style="{StaticResource Tram.CBTC.Casco.DriverIDInputBtn}" />
+        <Button
+            Canvas.Left="451"
+            Canvas.Top="103"
+            Width="59"
+            Height="56"
+            Command="{Binding Model.PopModel.DriverIDInput.InputChar}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="6"
+            Style="{StaticResource Tram.CBTC.Casco.DriverIDInputBtn}" />
+
+
+        <Button
+            Canvas.Left="304"
+            Canvas.Top="171"
+            Width="59"
+            Height="56"
+            Command="{Binding Model.PopModel.DriverIDInput.InputChar}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="1"
+            Style="{StaticResource Tram.CBTC.Casco.DriverIDInputBtn}" />
+        <Button
+            Canvas.Left="304"
+            Canvas.Top="240"
+            Width="132"
+            Height="56"
+            Command="{Binding Model.PopModel.DriverIDInput.InputChar}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="0"
+            Style="{StaticResource Tram.CBTC.Casco.DriverIDInputBtn}" />
+
+        <Button
+            Canvas.Left="377"
+            Canvas.Top="171"
+            Width="59"
+            Height="56"
+            Command="{Binding Model.PopModel.DriverIDInput.InputChar}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="2"
+            Style="{StaticResource Tram.CBTC.Casco.DriverIDInputBtn}" />
+        <Button
+            Canvas.Left="451"
+            Canvas.Top="171"
+            Width="59"
+            Height="56"
+            Command="{Binding Model.PopModel.DriverIDInput.InputChar}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="3"
+            Style="{StaticResource Tram.CBTC.Casco.DriverIDInputBtn}" />
+        <Button
+            Canvas.Left="304"
+            Canvas.Top="34"
+            Width="59"
+            Height="56"
+            Command="{Binding Model.PopModel.DriverIDInput.InputChar}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="7"
+            Style="{StaticResource Tram.CBTC.Casco.DriverIDInputBtn}" />
+
+        <Button
+            Canvas.Left="377"
+            Canvas.Top="34"
+            Width="59"
+            Height="56"
+            Command="{Binding Model.PopModel.DriverIDInput.InputChar}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="8"
+            Style="{StaticResource Tram.CBTC.Casco.DriverIDInputBtn}" />
+        <Button
+            Canvas.Left="451"
+            Canvas.Top="34"
+            Width="59"
+            Height="56"
+            Command="{Binding Model.PopModel.DriverIDInput.InputChar}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="9"
+            Style="{StaticResource Tram.CBTC.Casco.DriverIDInputBtn}" />
+        <Button
+            Canvas.Left="451"
+            Canvas.Top="240"
+            Width="59"
+            Height="56"
+            Command="{Binding Model.PopModel.DriverIDInput.InputChar}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="."
+            Style="{StaticResource Tram.CBTC.Casco.DriverIDInputBtn}" />
+        <Button
+            Canvas.Left="525"
+            Canvas.Top="103"
+            Width="59"
+            Height="56"
+            Command="{Binding Model.PopModel.DriverIDInput.InputChar}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="C"
+            Style="{StaticResource Tram.CBTC.Casco.DriverIDInputBtn}" />
+        <Button
+            Canvas.Left="525"
+            Canvas.Top="34"
+            Width="59"
+            Height="56"
+            Command="{Binding Model.PopModel.DriverIDInput.InputChar}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="←"
+            Style="{StaticResource Tram.CBTC.Casco.DriverIDInputBtn}" />
+        <Button
+            Canvas.Left="525"
+            Canvas.Top="171"
+            Width="59"
+            Height="125"
+            Command="{Binding Model.PopModel.DriverIDInput.InputChar}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+            Content="确定"
+            Style="{StaticResource Tram.CBTC.Casco.DriverIDInputBtn}" />
+    </Canvas>
+</UserControl>

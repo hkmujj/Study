@@ -1,0 +1,114 @@
+﻿<UserControl x:Class="Engine._6A.Views.Common.Fault.HistoryFauktContent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:commonControl="clr-namespace:Engine._6A.CommonControl"
+             xmlns:viewModel="clr-namespace:Engine._6A.Interface.ViewModel" d:DataContext="{d:DesignInstance viewModel:IEngine6AViewModel}"
+             d:DesignHeight="400"
+             d:DesignWidth="533"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary Source="../../../Resouce/Engine6AResource.xaml" />
+    </UserControl.Resources>
+    <Grid DataContext="{Binding Fault}">
+        <Grid Margin="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="345*" />
+                <RowDefinition Height="35*" />
+            </Grid.RowDefinitions>
+            <Grid x:Name="Grid" Margin="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+            </Grid>
+            <Grid Grid.Row="0" Margin="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+
+                <Grid x:Name="ContentName" Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="123*" />
+                        <ColumnDefinition Width="58*" />
+                        <ColumnDefinition Width="218*" />
+                        <ColumnDefinition Width="49*" />
+                        <ColumnDefinition Width="41*" />
+                        <ColumnDefinition Width="44*" />
+                    </Grid.ColumnDefinitions>
+
+                    <commonControl:RecTextButton Content="时间" Style="{StaticResource FaultViewTextStyleOne}" />
+                    <commonControl:RecTextButton Grid.Column="1"
+                                              Content="子系统"
+                                              Style="{StaticResource FaultViewTextStyleOne}" />
+                    <commonControl:RecTextButton Grid.Column="2"
+                                              HorizontalContentAlignment="Left"
+                                              Content="故障报警或提示"
+                                              Style="{StaticResource FaultViewTextStyleOne}" />
+                    <commonControl:RecTextButton Grid.Column="3"
+                                              Content="级别"
+                                              Style="{StaticResource FaultViewTextStyleOne}" />
+                    <commonControl:RecTextButton Grid.Column="4"
+                                              Content="位置"
+                                              Style="{StaticResource FaultViewTextStyleOne}" />
+                    <commonControl:RecTextButton Grid.Column="5"
+                                              Content="速度"
+                                              Style="{StaticResource FaultViewTextStyleOne}" />
+                </Grid>
+            </Grid>
+
+            <Grid x:Name="Data"
+                  Grid.Row="1"
+                  Visibility="Visible">
+                <Viewbox Width="{Binding ElementName=Data, Path=ActualWidth}" Height="{Binding ElementName=Data, Path=ActualHeight}">
+                    <Canvas Width="510" Height="30">
+                        <Path Data="m 0,0 h 510"
+                              Fill="{StaticResource DarkGrayBrush}"
+                              Stroke="{StaticResource DarkGrayBrush}"
+                              StrokeThickness="1" />
+                    </Canvas>
+                </Viewbox>
+                <Grid Visibility="{Binding ButtonVisibility}">
+                    <StackPanel FlowDirection="RightToLeft" Orientation="Horizontal">
+                        <commonControl:RecTextButton Width="90"
+                                                  HorizontalAlignment="Right"
+                                                  Command="{Binding NextPage}"
+                                                  Content="下一页"
+                                                  Style="{StaticResource FaultButtonStyle}" />
+                        <commonControl:RecTextButton Width="90"
+                                                  Command="{Binding LastPage}"
+                                                  Content="上一页"
+                                                  Style="{StaticResource FaultButtonStyle}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource CommonTextStyleOne}" Text="{Binding PageInfo}" />
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="Engine.HMI.SS3B.View.View.KunMing.ModelSelectPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:liuZhou="clr-namespace:Engine.HMI.SS3B.View.ViewModel.KunMing"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel1="clr-namespace:Engine.HMI.SS3B.View.ViewModel"
+             d:DataContext="{d:DesignInstance {x:Type liuZhou:SS3BViewModel}}"
+             d:DesignHeight="600"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <Grid Background="DarkCyan">
+        <Image Source="../../Resouce/KunMingModelSelect.png" Stretch="Fill" />
+    </Grid>
+</UserControl>

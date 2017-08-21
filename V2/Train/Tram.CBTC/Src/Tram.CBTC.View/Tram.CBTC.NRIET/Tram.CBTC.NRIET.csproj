@@ -1,0 +1,452 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CAE17752-3CC6-4DE4-AD0D-CF73E561B1D2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tram.CBTC.NRIET</RootNamespace>
+    <AssemblyName>Tram.CBTC.NRIET</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\MMI\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\MMI\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>..\..\..\MMI\Tram.CBTC.NRIET.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonUtil, Version=2.29.2016.517, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="DevExpress.Data.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Core.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.PropertyGrid.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Excel.Interface, Version=2.30.2016.712, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Expression.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.Prism, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.Prism.MefExtensions, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="MMI.Facility.Interface, Version=2.50.2017.214, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="MMI.Facility.WPFInfrastructure, Version=2.50.2017.705, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="WPFApp\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Resources\Base\NrietBaseResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Converters\NrietConverter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Font\NrietFont.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Images\ImageResource_CH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\NrietResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\String\NrietString.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\NrietButtonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\NrietItemsControlStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\NrietProgress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\NrietTextStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Buttons\HardwareButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Buttons\Keyboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Common\StationPassed.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Common\StopTimeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Main\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Main\RegionDeviceStatus\Device.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Main\RegionDeviceStatus\DeviceStatusView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Main\RegionInfo\InfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Main\RegionMenu\MaintenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Main\RegionMenu\SettingMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Main\RegionMenu\SettingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Main\RegionMenu\TimeTableView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Main\RegionRadar\RadarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Main\RegionRunning\RunningView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Main\RegionSpeed\DegreeScaleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Main\RegionSpeed\Pointer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Main\RegionSpeed\Emergency.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Main\RegionSpeed\SpeedDial.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Main\RegionSpeed\SpeedView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\ReentryWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\StartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\TrainNoActiveView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shell\ShellWithButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shell\ShellWithoutButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shell\NrietShell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Adapter\DomainAdapter.cs" />
+    <Compile Include="Adapter\IUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviderBase.cs" />
+    <Compile Include="Constant\RegionNames.cs" />
+    <Compile Include="Controller\BtnStragy\StateInterfaceFactory.cs" />
+    <Compile Include="Controller\DomainController.cs" />
+    <Compile Include="Controller\Navigator\NavigatorController.cs" />
+    <Compile Include="Controller\Navigator\Maintence\MaintenceNavigatorController.cs" />
+    <Compile Include="Controller\Navigator\RunningController.cs" />
+    <Compile Include="Controller\Navigator\Running\RunningNavigatorController.cs" />
+    <Compile Include="Converters\CabStatusToTextConverter.cs" />
+    <Compile Include="Converters\CompareSpeedConverter.cs" />
+    <Compile Include="Converters\DegreeScaleTextAngleConverter.cs" />
+    <Compile Include="Converters\BrakeDetailsConvert.cs" />
+    <Compile Include="Converters\GarageIndicateInfoToVisibleConvert.cs" />
+    <Compile Include="Converters\LineRunDirectionConvert.cs" />
+    <Compile Include="Converters\RadarTargetHorizontaldistanceConvert.cs" />
+    <Compile Include="Converters\RadarTargetVerticalDistanceConvert.cs" />
+    <Compile Include="Converters\ReturnIndicateInfoToOrientationConverter.cs" />
+    <Compile Include="Converters\GarageIndicateInfoToStartCornerConverter.cs" />
+    <Compile Include="Converters\ReturnIndicateInfoToVisibleConvert.cs" />
+    <Compile Include="Converters\ReturnInfoToTextConvert.cs" />
+    <Compile Include="Converters\ReturnInfoVisibleConvert.cs" />
+    <Compile Include="Converters\SpeedToAngleConverter.cs" />
+    <Compile Include="Converters\TargitDistanceToScalConverter.cs" />
+    <Compile Include="Converters\TextPrefixConverter.cs" />
+    <Compile Include="Converters\TimeConverter.cs" />
+    <Compile Include="Event\DataServiceDataChanged.cs" />
+    <Compile Include="Event\LazyValueCreatedEvent.cs" />
+    <Compile Include="Extension\CommunicationDataChangedArgsExtension.cs" />
+    <Compile Include="Extension\CommunicationDataServiceExtension.cs" />
+    <Compile Include="Model\Domain\Domain.cs" />
+    <Compile Include="Model\Domain\Signal\Speed\FullSpeedDial.cs" />
+    <Compile Include="CBTCNrietMefBootstrapper.cs" />
+    <Compile Include="CBTCNrietSubystem.cs" />
+    <Compile Include="Model\BtnStragy\ActionResponserExportAttribute.cs" />
+    <Compile Include="Model\BtnStragy\BtnItem.cs" />
+    <Compile Include="Model\BtnStragy\IBtnActionResponser.cs" />
+    <Compile Include="Model\BtnStragy\IStateInterface.cs" />
+    <Compile Include="Model\BtnStragy\IStateInterfaceFactory.cs" />
+    <Compile Include="Model\BtnStragy\StateInterface.cs" />
+    <Compile Include="Model\BtnStragy\StateInterfaceExportAttribute.cs" />
+    <Compile Include="Model\BtnStragy\StateInterfaceKey.cs" />
+    <Compile Include="Model\ConfigModel\StateInterfaceItem.cs" />
+    <Compile Include="Model\GlobalParam.cs" />
+    <Compile Include="Model\DomainModel.cs" />
+    <Compile Include="Model\IRaiseResourceChangedProvider.cs" />
+    <Compile Include="Model\IResetSupport.cs" />
+    <Compile Include="Model\PasswordBoxHelper.cs" />
+    <Compile Include="Model\RegionRadar\DistanceLineItem.cs" />
+    <Compile Include="Model\RegionRadar\DistanceLineResource.cs" />
+    <Compile Include="Model\RegionSpeed\DegreeScaleItem.cs" />
+    <Compile Include="Model\RegionSpeed\DegreeScaleResource.cs" />
+    <Compile Include="Resources\Keys\StateKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StateKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\Class1.cs" />
+    <Compile Include="ViewModel\DomainViewModel.cs" />
+    <Compile Include="ViewModel\KeyboardViewModel.cs" />
+    <Compile Include="ViewModel\SettingViewModel.cs" />
+    <Compile Include="ViewModel\StartViewModel.cs" />
+    <Compile Include="View\Buttons\HardwareButton.xaml.cs">
+      <DependentUpon>HardwareButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Buttons\Keyboard.xaml.cs">
+      <DependentUpon>Keyboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\StationPassed.xaml.cs">
+      <DependentUpon>StationPassed.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\StopTimeView.xaml.cs">
+      <DependentUpon>StopTimeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Main\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Main\RegionDeviceStatus\Device.xaml.cs">
+      <DependentUpon>Device.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Main\RegionDeviceStatus\DeviceStatusView.xaml.cs">
+      <DependentUpon>DeviceStatusView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Main\RegionInfo\InfoView.xaml.cs">
+      <DependentUpon>InfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Main\RegionMenu\MaintenView.xaml.cs">
+      <DependentUpon>MaintenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Main\RegionMenu\SettingMenu.xaml.cs">
+      <DependentUpon>SettingMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Main\RegionMenu\SettingView.xaml.cs">
+      <DependentUpon>SettingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Main\RegionMenu\TimeTableView.xaml.cs">
+      <DependentUpon>TimeTableView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Main\RegionRadar\RadarView.xaml.cs">
+      <DependentUpon>RadarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Main\RegionRunning\RunningView.xaml.cs">
+      <DependentUpon>RunningView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Main\RegionSpeed\DegreeScaleView.xaml.cs">
+      <DependentUpon>DegreeScaleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Main\RegionSpeed\Pointer.xaml.cs">
+      <DependentUpon>Pointer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Main\RegionSpeed\Emergency.xaml.cs">
+      <DependentUpon>Emergency.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Main\RegionSpeed\SpeedDial.xaml.cs">
+      <DependentUpon>SpeedDial.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Main\RegionSpeed\SpeedView.xaml.cs">
+      <DependentUpon>SpeedView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\ReentryWindow.xaml.cs">
+      <DependentUpon>ReentryWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\StartView.xaml.cs">
+      <DependentUpon>StartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\TrainNoActiveView.xaml.cs">
+      <DependentUpon>TrainNoActiveView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shell\ShellWithButton.xaml.cs">
+      <DependentUpon>ShellWithButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shell\ShellWithoutButton.xaml.cs">
+      <DependentUpon>ShellWithoutButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shell\NrietForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Shell\NrietForm.Designer.cs">
+      <DependentUpon>NrietForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WPFApp\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\Shell\NrietShell.xaml.cs">
+      <DependentUpon>NrietShell.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Resource Include="Resources\Font\小扣折纸体.ttf" />
+    <EmbeddedResource Include="Resources\Keys\StateKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StateKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Shell\NrietForm.resx">
+      <DependentUpon>NrietForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="WPFApp\App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Changes.Subway.CBTC.NRIET.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controller\BtnActionResponser\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Nriet\广州地铁标志.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Nriet\未静音.png" />
+    <Resource Include="Resources\Images\Nriet\静音.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Tram.CBTC.DataAdapter\Tram.CBTC.DataAdapter\Tram.CBTC.DataAdapter.csproj">
+      <Project>{b14accd1-e34f-4ba0-8ed8-cf502d3c0add}</Project>
+      <Name>Tram.CBTC.DataAdapter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Tram.CBTC.Infrasturcture\Tram.CBTC.Infrasturcture.csproj">
+      <Project>{665e19ab-2b49-4f84-bd3d-c38950653242}</Project>
+      <Name>Tram.CBTC.Infrasturcture</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

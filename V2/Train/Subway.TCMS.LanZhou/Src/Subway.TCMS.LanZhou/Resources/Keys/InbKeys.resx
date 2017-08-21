@@ -1,0 +1,5058 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Inb通讯失败模式" xml:space="preserve">
+    <value>通讯失败模式</value>
+  </data>
+  <data name="Inb故障等级1" xml:space="preserve">
+    <value>故障等级1</value>
+  </data>
+  <data name="Inb故障等级2" xml:space="preserve">
+    <value>故障等级2</value>
+  </data>
+  <data name="Inb故障等级3" xml:space="preserve">
+    <value>故障等级3</value>
+  </data>
+  <data name="Inb方向向前" xml:space="preserve">
+    <value>方向向前</value>
+  </data>
+  <data name="Inb方向向后" xml:space="preserve">
+    <value>方向向后</value>
+  </data>
+  <data name="Inb受电弓状态未知左" xml:space="preserve">
+    <value>D22受电弓状态未知左</value>
+  </data>
+  <data name="Inb受电弓升弓到位左" xml:space="preserve">
+    <value>受电弓升弓到位左</value>
+  </data>
+  <data name="Inb受电弓降弓到位左" xml:space="preserve">
+    <value>受电弓降弓到位左</value>
+  </data>
+  <data name="Inb受电弓动作中左" xml:space="preserve">
+    <value>受电弓动作中左</value>
+  </data>
+  <data name="Inb受电弓状态未知右" xml:space="preserve">
+    <value>受电弓状态未知右</value>
+  </data>
+  <data name="Inb受电弓升弓到位右" xml:space="preserve">
+    <value>受电弓升弓到位右</value>
+  </data>
+  <data name="Inb受电弓降弓到位右" xml:space="preserve">
+    <value>受电弓降弓到位右</value>
+  </data>
+  <data name="Inb受电弓动作中右" xml:space="preserve">
+    <value>受电弓动作中右</value>
+  </data>
+  <data name="Inb司机室激活Tc1" xml:space="preserve">
+    <value>司机室激活Tc1</value>
+  </data>
+  <data name="InbCar0CommonBrake未知1" xml:space="preserve">
+    <value>Car0CommonBrake未知1</value>
+  </data>
+  <data name="InbCar1CommonBrake未知1" xml:space="preserve">
+    <value>Car1CommonBrake未知1</value>
+  </data>
+  <data name="InbCar2CommonBrake未知1" xml:space="preserve">
+    <value>Car2CommonBrake未知1</value>
+  </data>
+  <data name="InbCar3CommonBrake未知1" xml:space="preserve">
+    <value>Car3CommonBrake未知1</value>
+  </data>
+  <data name="InbCar4CommonBrake未知1" xml:space="preserve">
+    <value>Car4CommonBrake未知1</value>
+  </data>
+  <data name="InbCar5CommonBrake未知1" xml:space="preserve">
+    <value>Car5CommonBrake未知1</value>
+  </data>
+  <data name="InbCar0CommonBrake施加1" xml:space="preserve">
+    <value>Car0CommonBrake施加1</value>
+  </data>
+  <data name="InbCar1CommonBrake施加1" xml:space="preserve">
+    <value>Car1CommonBrake施加1</value>
+  </data>
+  <data name="InbCar2CommonBrake施加1" xml:space="preserve">
+    <value>Car2CommonBrake施加1</value>
+  </data>
+  <data name="InbCar3CommonBrake施加1" xml:space="preserve">
+    <value>Car3CommonBrake施加1</value>
+  </data>
+  <data name="InbCar4CommonBrake施加1" xml:space="preserve">
+    <value>Car4CommonBrake施加1</value>
+  </data>
+  <data name="InbCar5CommonBrake施加1" xml:space="preserve">
+    <value>Car5CommonBrake施加1</value>
+  </data>
+  <data name="InbCar0CommonBrake缓解1" xml:space="preserve">
+    <value>Car0CommonBrake缓解1</value>
+  </data>
+  <data name="InbCar1CommonBrake缓解1" xml:space="preserve">
+    <value>Car1CommonBrake缓解1</value>
+  </data>
+  <data name="InbCar2CommonBrake缓解1" xml:space="preserve">
+    <value>Car2CommonBrake缓解1</value>
+  </data>
+  <data name="InbCar3CommonBrake缓解1" xml:space="preserve">
+    <value>Car3CommonBrake缓解1</value>
+  </data>
+  <data name="InbCar4CommonBrake缓解1" xml:space="preserve">
+    <value>Car4CommonBrake缓解1</value>
+  </data>
+  <data name="InbCar5CommonBrake缓解1" xml:space="preserve">
+    <value>Car5CommonBrake缓解1</value>
+  </data>
+  <data name="InbCar0CommonBrake故障1" xml:space="preserve">
+    <value>Car0CommonBrake故障1</value>
+  </data>
+  <data name="InbCar1CommonBrake故障1" xml:space="preserve">
+    <value>Car1CommonBrake故障1</value>
+  </data>
+  <data name="InbCar2CommonBrake故障1" xml:space="preserve">
+    <value>Car2CommonBrake故障1</value>
+  </data>
+  <data name="InbCar3CommonBrake故障1" xml:space="preserve">
+    <value>Car3CommonBrake故障1</value>
+  </data>
+  <data name="InbCar4CommonBrake故障1" xml:space="preserve">
+    <value>Car4CommonBrake故障1</value>
+  </data>
+  <data name="InbCar5CommonBrake故障1" xml:space="preserve">
+    <value>Car5CommonBrake故障1</value>
+  </data>
+  <data name="InbCar0CommonBrake隔离1" xml:space="preserve">
+    <value>Car0CommonBrake隔离1</value>
+  </data>
+  <data name="InbCar1CommonBrake隔离1" xml:space="preserve">
+    <value>Car1CommonBrake隔离1</value>
+  </data>
+  <data name="InbCar2CommonBrake隔离1" xml:space="preserve">
+    <value>Car2CommonBrake隔离1</value>
+  </data>
+  <data name="InbCar3CommonBrake隔离1" xml:space="preserve">
+    <value>Car3CommonBrake隔离1</value>
+  </data>
+  <data name="InbCar4CommonBrake隔离1" xml:space="preserve">
+    <value>Car4CommonBrake隔离1</value>
+  </data>
+  <data name="InbCar5CommonBrake隔离1" xml:space="preserve">
+    <value>Car5CommonBrake隔离1</value>
+  </data>
+  <data name="InbCar0CommonBrake未知2" xml:space="preserve">
+    <value>Car0CommonBrake未知2</value>
+  </data>
+  <data name="InbCar1CommonBrake未知2" xml:space="preserve">
+    <value>Car1CommonBrake未知2</value>
+  </data>
+  <data name="InbCar2CommonBrake未知2" xml:space="preserve">
+    <value>Car2CommonBrake未知2</value>
+  </data>
+  <data name="InbCar3CommonBrake未知2" xml:space="preserve">
+    <value>Car3CommonBrake未知2</value>
+  </data>
+  <data name="InbCar4CommonBrake未知2" xml:space="preserve">
+    <value>Car4CommonBrake未知2</value>
+  </data>
+  <data name="InbCar5CommonBrake未知2" xml:space="preserve">
+    <value>Car5CommonBrake未知2</value>
+  </data>
+  <data name="InbCar0CommonBrake施加2" xml:space="preserve">
+    <value>Car0CommonBrake施加2</value>
+  </data>
+  <data name="InbCar1CommonBrake施加2" xml:space="preserve">
+    <value>Car1CommonBrake施加2</value>
+  </data>
+  <data name="InbCar2CommonBrake施加2" xml:space="preserve">
+    <value>Car2CommonBrake施加2</value>
+  </data>
+  <data name="InbCar3CommonBrake施加2" xml:space="preserve">
+    <value>Car3CommonBrake施加2</value>
+  </data>
+  <data name="InbCar4CommonBrake施加2" xml:space="preserve">
+    <value>Car4CommonBrake施加2</value>
+  </data>
+  <data name="InbCar5CommonBrake施加2" xml:space="preserve">
+    <value>Car5CommonBrake施加2</value>
+  </data>
+  <data name="InbCar0CommonBrake缓解2" xml:space="preserve">
+    <value>Car0CommonBrake缓解2</value>
+  </data>
+  <data name="InbCar1CommonBrake缓解2" xml:space="preserve">
+    <value>Car1CommonBrake缓解2</value>
+  </data>
+  <data name="InbCar2CommonBrake缓解2" xml:space="preserve">
+    <value>Car2CommonBrake缓解2</value>
+  </data>
+  <data name="InbCar3CommonBrake缓解2" xml:space="preserve">
+    <value>Car3CommonBrake缓解2</value>
+  </data>
+  <data name="InbCar4CommonBrake缓解2" xml:space="preserve">
+    <value>Car4CommonBrake缓解2</value>
+  </data>
+  <data name="InbCar5CommonBrake缓解2" xml:space="preserve">
+    <value>Car5CommonBrake缓解2</value>
+  </data>
+  <data name="InbCar0CommonBrake故障2" xml:space="preserve">
+    <value>Car0CommonBrake故障2</value>
+  </data>
+  <data name="InbCar1CommonBrake故障2" xml:space="preserve">
+    <value>Car1CommonBrake故障2</value>
+  </data>
+  <data name="InbCar2CommonBrake故障2" xml:space="preserve">
+    <value>Car2CommonBrake故障2</value>
+  </data>
+  <data name="InbCar3CommonBrake故障2" xml:space="preserve">
+    <value>Car3CommonBrake故障2</value>
+  </data>
+  <data name="InbCar4CommonBrake故障2" xml:space="preserve">
+    <value>Car4CommonBrake故障2</value>
+  </data>
+  <data name="InbCar5CommonBrake故障2" xml:space="preserve">
+    <value>Car5CommonBrake故障2</value>
+  </data>
+  <data name="InbCar0CommonBrake隔离2" xml:space="preserve">
+    <value>Car0CommonBrake隔离2</value>
+  </data>
+  <data name="InbCar1CommonBrake隔离2" xml:space="preserve">
+    <value>Car1CommonBrake隔离2</value>
+  </data>
+  <data name="InbCar2CommonBrake隔离2" xml:space="preserve">
+    <value>Car2CommonBrake隔离2</value>
+  </data>
+  <data name="InbCar3CommonBrake隔离2" xml:space="preserve">
+    <value>Car3CommonBrake隔离2</value>
+  </data>
+  <data name="InbCar4CommonBrake隔离2" xml:space="preserve">
+    <value>Car4CommonBrake隔离2</value>
+  </data>
+  <data name="InbCar5CommonBrake隔离2" xml:space="preserve">
+    <value>Car5CommonBrake隔离2</value>
+  </data>
+  <data name="Inb车0分离接触器闭合" xml:space="preserve">
+    <value>车0分离接触器闭合</value>
+  </data>
+  <data name="Inb车2分离接触器闭合" xml:space="preserve">
+    <value>车2分离接触器闭合</value>
+  </data>
+  <data name="Inb车3分离接触器闭合" xml:space="preserve">
+    <value>车3分离接触器闭合</value>
+  </data>
+  <data name="Inb车5分离接触器闭合" xml:space="preserve">
+    <value>车5分离接触器闭合</value>
+  </data>
+  <data name="Inb车0分离接触器打开" xml:space="preserve">
+    <value>车0分离接触器打开</value>
+  </data>
+  <data name="Inb车2分离接触器打开" xml:space="preserve">
+    <value>车2分离接触器打开</value>
+  </data>
+  <data name="Inb车3分离接触器打开" xml:space="preserve">
+    <value>车3分离接触器打开</value>
+  </data>
+  <data name="Inb车5分离接触器打开" xml:space="preserve">
+    <value>车5分离接触器打开</value>
+  </data>
+  <data name="Inb车0辅逆负载接触器闭合" xml:space="preserve">
+    <value>车0辅逆负载接触器闭合</value>
+  </data>
+  <data name="Inb车2辅逆负载接触器闭合" xml:space="preserve">
+    <value>车2辅逆负载接触器闭合</value>
+  </data>
+  <data name="Inb车3辅逆负载接触器闭合" xml:space="preserve">
+    <value>车3辅逆负载接触器闭合</value>
+  </data>
+  <data name="Inb车5辅逆负载接触器闭合" xml:space="preserve">
+    <value>车5辅逆负载接触器闭合</value>
+  </data>
+  <data name="Inb车0辅逆负载接触器打开" xml:space="preserve">
+    <value>车0辅逆负载接触器打开</value>
+  </data>
+  <data name="Inb车2辅逆负载接触器打开" xml:space="preserve">
+    <value>车2辅逆负载接触器打开</value>
+  </data>
+  <data name="Inb车3辅逆负载接触器打开" xml:space="preserve">
+    <value>车3辅逆负载接触器打开</value>
+  </data>
+  <data name="Inb车5辅逆负载接触器打开" xml:space="preserve">
+    <value>车5辅逆负载接触器打开</value>
+  </data>
+  <data name="Inb车0预充电接触器闭合" xml:space="preserve">
+    <value>车0预充电接触器闭合</value>
+  </data>
+  <data name="Inb车2预充电接触器闭合" xml:space="preserve">
+    <value>车2预充电接触器闭合</value>
+  </data>
+  <data name="Inb车3预充电接触器闭合" xml:space="preserve">
+    <value>车3预充电接触器闭合</value>
+  </data>
+  <data name="Inb车5预充电接触器闭合" xml:space="preserve">
+    <value>车5预充电接触器闭合</value>
+  </data>
+  <data name="Inb车0预充电接触器打开" xml:space="preserve">
+    <value>车0预充电接触器打开</value>
+  </data>
+  <data name="Inb车2预充电接触器打开" xml:space="preserve">
+    <value>车2预充电接触器打开</value>
+  </data>
+  <data name="Inb车3预充电接触器打开" xml:space="preserve">
+    <value>车3预充电接触器打开</value>
+  </data>
+  <data name="Inb车5预充电接触器打开" xml:space="preserve">
+    <value>车5预充电接触器打开</value>
+  </data>
+  <data name="Inb车1IES接触器状态未知" xml:space="preserve">
+    <value>车1IES接触器状态未知</value>
+  </data>
+  <data name="Inb车4IES接触器状态未知" xml:space="preserve">
+    <value>车4IES接触器状态未知</value>
+  </data>
+  <data name="Inb车1IES接触器运行" xml:space="preserve">
+    <value>车1IES接触器运行</value>
+  </data>
+  <data name="Inb车4IES接触器运行" xml:space="preserve">
+    <value>车4IES接触器运行</value>
+  </data>
+  <data name="Inb车1IES接触器车间电源" xml:space="preserve">
+    <value>车1IES接触器车间电源</value>
+  </data>
+  <data name="Inb车4IES接触器车间电源" xml:space="preserve">
+    <value>车4IES接触器车间电源</value>
+  </data>
+  <data name="Inb车1IES接触器接地" xml:space="preserve">
+    <value>车1IES接触器接地</value>
+  </data>
+  <data name="Inb车4IES接触器接地" xml:space="preserve">
+    <value>车4IES接触器接地</value>
+  </data>
+  <data name="Inb车1牵引安全使能有效" xml:space="preserve">
+    <value>车1牵引安全使能有效</value>
+  </data>
+  <data name="Inb车2牵引安全使能有效" xml:space="preserve">
+    <value>车2牵引安全使能有效</value>
+  </data>
+  <data name="Inb车3牵引安全使能有效" xml:space="preserve">
+    <value>车3牵引安全使能有效</value>
+  </data>
+  <data name="Inb车4牵引安全使能有效" xml:space="preserve">
+    <value>车4牵引安全使能有效</value>
+  </data>
+  <data name="Inb车1牵引安全使能无效" xml:space="preserve">
+    <value>车1牵引安全使能无效</value>
+  </data>
+  <data name="Inb车2牵引安全使能无效" xml:space="preserve">
+    <value>车2牵引安全使能无效</value>
+  </data>
+  <data name="Inb车3牵引安全使能无效" xml:space="preserve">
+    <value>车3牵引安全使能无效</value>
+  </data>
+  <data name="Inb车4牵引安全使能无效" xml:space="preserve">
+    <value>车4牵引安全使能无效</value>
+  </data>
+  <data name="Inb车1车间电源保护盖打开" xml:space="preserve">
+    <value>车1车间电源保护盖打开</value>
+  </data>
+  <data name="Inb车4车间电源保护盖打开" xml:space="preserve">
+    <value>车4车间电源保护盖打开</value>
+  </data>
+  <data name="Inb车1车间电源保护盖闭合" xml:space="preserve">
+    <value>车1车间电源保护盖闭合</value>
+  </data>
+  <data name="Inb车4车间电源保护盖闭合" xml:space="preserve">
+    <value>车4车间电源保护盖闭合</value>
+  </data>
+  <data name="Inb车1车间电源连接" xml:space="preserve">
+    <value>车1车间电源连接</value>
+  </data>
+  <data name="Inb车4车间电源连接" xml:space="preserve">
+    <value>车4车间电源连接</value>
+  </data>
+  <data name="Inb车1车间电源未连接" xml:space="preserve">
+    <value>车1车间电源未连接</value>
+  </data>
+  <data name="Inb车4车间电源未连接" xml:space="preserve">
+    <value>车4车间电源未连接</value>
+  </data>
+  <data name="Inb车1高速断路器1闭合" xml:space="preserve">
+    <value>车1高速断路器1闭合</value>
+  </data>
+  <data name="Inb车4高速断路器1闭合" xml:space="preserve">
+    <value>车4高速断路器1闭合</value>
+  </data>
+  <data name="Inb车1高速断路器1打开" xml:space="preserve">
+    <value>车1高速断路器1打开</value>
+  </data>
+  <data name="Inb车4高速断路器1打开" xml:space="preserve">
+    <value>车4高速断路器1打开</value>
+  </data>
+  <data name="Inb车1高速断路器2闭合" xml:space="preserve">
+    <value>车1高速断路器2闭合</value>
+  </data>
+  <data name="Inb车4高速断路器2闭合" xml:space="preserve">
+    <value>车4高速断路器2闭合</value>
+  </data>
+  <data name="Inb车1高速断路器2打开" xml:space="preserve">
+    <value>车1高速断路器2打开</value>
+  </data>
+  <data name="Inb车4高速断路器2打开" xml:space="preserve">
+    <value>车4高速断路器2打开</value>
+  </data>
+  <data name="Inb车1过压吸收装置工作" xml:space="preserve">
+    <value>车1过压吸收装置工作</value>
+  </data>
+  <data name="Inb车2过压吸收装置工作" xml:space="preserve">
+    <value>车2过压吸收装置工作</value>
+  </data>
+  <data name="Inb车3过压吸收装置工作" xml:space="preserve">
+    <value>车3过压吸收装置工作</value>
+  </data>
+  <data name="Inb车4过压吸收装置工作" xml:space="preserve">
+    <value>车4过压吸收装置工作</value>
+  </data>
+  <data name="Inb车1过压吸收装置未工作" xml:space="preserve">
+    <value>车1过压吸收装置未工作</value>
+  </data>
+  <data name="Inb车2过压吸收装置未工作" xml:space="preserve">
+    <value>车2过压吸收装置未工作</value>
+  </data>
+  <data name="Inb车3过压吸收装置未工作" xml:space="preserve">
+    <value>车3过压吸收装置未工作</value>
+  </data>
+  <data name="Inb车4过压吸收装置未工作" xml:space="preserve">
+    <value>车4过压吸收装置未工作</value>
+  </data>
+  <data name="Inb车1线路断路器闭合" xml:space="preserve">
+    <value>车1线路断路器闭合</value>
+  </data>
+  <data name="Inb车2线路断路器闭合" xml:space="preserve">
+    <value>车2线路断路器闭合</value>
+  </data>
+  <data name="Inb车3线路断路器闭合" xml:space="preserve">
+    <value>车3线路断路器闭合</value>
+  </data>
+  <data name="Inb车4线路断路器闭合" xml:space="preserve">
+    <value>车4线路断路器闭合</value>
+  </data>
+  <data name="Inb车1线路断路器打开" xml:space="preserve">
+    <value>车1线路断路器打开</value>
+  </data>
+  <data name="Inb车2线路断路器打开" xml:space="preserve">
+    <value>车2线路断路器打开</value>
+  </data>
+  <data name="Inb车3线路断路器打开" xml:space="preserve">
+    <value>车3线路断路器打开</value>
+  </data>
+  <data name="Inb车4线路断路器打开" xml:space="preserve">
+    <value>车4线路断路器打开</value>
+  </data>
+  <data name="Inb车1保持制动1施加" xml:space="preserve">
+    <value>车1保持制动1施加</value>
+  </data>
+  <data name="Inb车2保持制动1施加" xml:space="preserve">
+    <value>车2保持制动1施加</value>
+  </data>
+  <data name="Inb车3保持制动1施加" xml:space="preserve">
+    <value>车3保持制动1施加</value>
+  </data>
+  <data name="Inb车4保持制动1施加" xml:space="preserve">
+    <value>车4保持制动1施加</value>
+  </data>
+  <data name="Inb车5保持制动1施加" xml:space="preserve">
+    <value>车5保持制动1施加</value>
+  </data>
+  <data name="Inb车6保持制动1施加" xml:space="preserve">
+    <value>车6保持制动1施加</value>
+  </data>
+  <data name="Inb车1保持制动1未施加" xml:space="preserve">
+    <value>车1保持制动1未施加</value>
+  </data>
+  <data name="Inb车2保持制动1未施加" xml:space="preserve">
+    <value>车2保持制动1未施加</value>
+  </data>
+  <data name="Inb车3保持制动1未施加" xml:space="preserve">
+    <value>车3保持制动1未施加</value>
+  </data>
+  <data name="Inb车4保持制动1未施加" xml:space="preserve">
+    <value>车4保持制动1未施加</value>
+  </data>
+  <data name="Inb车5保持制动1未施加" xml:space="preserve">
+    <value>车5保持制动1未施加</value>
+  </data>
+  <data name="Inb车6保持制动1未施加" xml:space="preserve">
+    <value>车6保持制动1未施加</value>
+  </data>
+  <data name="Inb车1保持制动2施加" xml:space="preserve">
+    <value>车1保持制动2施加</value>
+  </data>
+  <data name="Inb车2保持制动2施加" xml:space="preserve">
+    <value>车2保持制动2施加</value>
+  </data>
+  <data name="Inb车3保持制动2施加" xml:space="preserve">
+    <value>车3保持制动2施加</value>
+  </data>
+  <data name="Inb车4保持制动2施加" xml:space="preserve">
+    <value>车4保持制动2施加</value>
+  </data>
+  <data name="Inb车5保持制动2施加" xml:space="preserve">
+    <value>车5保持制动2施加</value>
+  </data>
+  <data name="Inb车6保持制动2施加" xml:space="preserve">
+    <value>车6保持制动2施加</value>
+  </data>
+  <data name="Inb车1保持制动2未施加" xml:space="preserve">
+    <value>车1保持制动2未施加</value>
+  </data>
+  <data name="Inb车2保持制动2未施加" xml:space="preserve">
+    <value>车2保持制动2未施加</value>
+  </data>
+  <data name="Inb车3保持制动2未施加" xml:space="preserve">
+    <value>车3保持制动2未施加</value>
+  </data>
+  <data name="Inb车4保持制动2未施加" xml:space="preserve">
+    <value>车4保持制动2未施加</value>
+  </data>
+  <data name="Inb车5保持制动2未施加" xml:space="preserve">
+    <value>车5保持制动2未施加</value>
+  </data>
+  <data name="Inb车6保持制动2未施加" xml:space="preserve">
+    <value>车6保持制动2未施加</value>
+  </data>
+  <data name="Inb车1紧急制动1正常" xml:space="preserve">
+    <value>车1紧急制动1正常</value>
+  </data>
+  <data name="Inb车2紧急制动1正常" xml:space="preserve">
+    <value>车2紧急制动1正常</value>
+  </data>
+  <data name="Inb车3紧急制动1正常" xml:space="preserve">
+    <value>车3紧急制动1正常</value>
+  </data>
+  <data name="Inb车4紧急制动1正常" xml:space="preserve">
+    <value>车4紧急制动1正常</value>
+  </data>
+  <data name="Inb车5紧急制动1正常" xml:space="preserve">
+    <value>车5紧急制动1正常</value>
+  </data>
+  <data name="Inb车6紧急制动1正常" xml:space="preserve">
+    <value>车6紧急制动1正常</value>
+  </data>
+  <data name="Inb车1紧急制动1不可用" xml:space="preserve">
+    <value>车1紧急制动1不可用</value>
+  </data>
+  <data name="Inb车2紧急制动1不可用" xml:space="preserve">
+    <value>车2紧急制动1不可用</value>
+  </data>
+  <data name="Inb车3紧急制动1不可用" xml:space="preserve">
+    <value>车3紧急制动1不可用</value>
+  </data>
+  <data name="Inb车4紧急制动1不可用" xml:space="preserve">
+    <value>车4紧急制动1不可用</value>
+  </data>
+  <data name="Inb车5紧急制动1不可用" xml:space="preserve">
+    <value>车5紧急制动1不可用</value>
+  </data>
+  <data name="Inb车6紧急制动1不可用" xml:space="preserve">
+    <value>车6紧急制动1不可用</value>
+  </data>
+  <data name="Inb车1紧急制动2正常" xml:space="preserve">
+    <value>车1紧急制动2正常</value>
+  </data>
+  <data name="Inb车2紧急制动2正常" xml:space="preserve">
+    <value>车2紧急制动2正常</value>
+  </data>
+  <data name="Inb车3紧急制动2正常" xml:space="preserve">
+    <value>车3紧急制动2正常</value>
+  </data>
+  <data name="Inb车4紧急制动2正常" xml:space="preserve">
+    <value>车4紧急制动2正常</value>
+  </data>
+  <data name="Inb车5紧急制动2正常" xml:space="preserve">
+    <value>车5紧急制动2正常</value>
+  </data>
+  <data name="Inb车6紧急制动2正常" xml:space="preserve">
+    <value>车6紧急制动2正常</value>
+  </data>
+  <data name="Inb车1紧急制动2不可用" xml:space="preserve">
+    <value>车1紧急制动2不可用</value>
+  </data>
+  <data name="Inb车2紧急制动2不可用" xml:space="preserve">
+    <value>车2紧急制动2不可用</value>
+  </data>
+  <data name="Inb车3紧急制动2不可用" xml:space="preserve">
+    <value>车3紧急制动2不可用</value>
+  </data>
+  <data name="Inb车4紧急制动2不可用" xml:space="preserve">
+    <value>车4紧急制动2不可用</value>
+  </data>
+  <data name="Inb车5紧急制动2不可用" xml:space="preserve">
+    <value>车5紧急制动2不可用</value>
+  </data>
+  <data name="Inb车6紧急制动2不可用" xml:space="preserve">
+    <value>车6紧急制动2不可用</value>
+  </data>
+  <data name="Inb车1紧急制动1施加" xml:space="preserve">
+    <value>车1紧急制动1施加</value>
+  </data>
+  <data name="Inb车2紧急制动1施加" xml:space="preserve">
+    <value>车2紧急制动1施加</value>
+  </data>
+  <data name="Inb车3紧急制动1施加" xml:space="preserve">
+    <value>车3紧急制动1施加</value>
+  </data>
+  <data name="Inb车4紧急制动1施加" xml:space="preserve">
+    <value>车4紧急制动1施加</value>
+  </data>
+  <data name="Inb车5紧急制动1施加" xml:space="preserve">
+    <value>车5紧急制动1施加</value>
+  </data>
+  <data name="Inb车6紧急制动1施加" xml:space="preserve">
+    <value>车6紧急制动1施加</value>
+  </data>
+  <data name="Inb车1紧急制动1未施加" xml:space="preserve">
+    <value>车1紧急制动1未施加</value>
+  </data>
+  <data name="Inb车2紧急制动1未施加" xml:space="preserve">
+    <value>车2紧急制动1未施加</value>
+  </data>
+  <data name="Inb车3紧急制动1未施加" xml:space="preserve">
+    <value>车3紧急制动1未施加</value>
+  </data>
+  <data name="Inb车4紧急制动1未施加" xml:space="preserve">
+    <value>车4紧急制动1未施加</value>
+  </data>
+  <data name="Inb车5紧急制动1未施加" xml:space="preserve">
+    <value>车5紧急制动1未施加</value>
+  </data>
+  <data name="Inb车6紧急制动1未施加" xml:space="preserve">
+    <value>车6紧急制动1未施加</value>
+  </data>
+  <data name="Inb车1紧急制动2施加" xml:space="preserve">
+    <value>车1紧急制动2施加</value>
+  </data>
+  <data name="Inb车2紧急制动2施加" xml:space="preserve">
+    <value>车2紧急制动2施加</value>
+  </data>
+  <data name="Inb车3紧急制动2施加" xml:space="preserve">
+    <value>车3紧急制动2施加</value>
+  </data>
+  <data name="Inb车4紧急制动2施加" xml:space="preserve">
+    <value>车4紧急制动2施加</value>
+  </data>
+  <data name="Inb车5紧急制动2施加" xml:space="preserve">
+    <value>车5紧急制动2施加</value>
+  </data>
+  <data name="Inb车6紧急制动2施加" xml:space="preserve">
+    <value>车6紧急制动2施加</value>
+  </data>
+  <data name="Inb车1紧急制动2未施加" xml:space="preserve">
+    <value>车1紧急制动2未施加</value>
+  </data>
+  <data name="Inb车2紧急制动2未施加" xml:space="preserve">
+    <value>车2紧急制动2未施加</value>
+  </data>
+  <data name="Inb车3紧急制动2未施加" xml:space="preserve">
+    <value>车3紧急制动2未施加</value>
+  </data>
+  <data name="Inb车4紧急制动2未施加" xml:space="preserve">
+    <value>车4紧急制动2未施加</value>
+  </data>
+  <data name="Inb车5紧急制动2未施加" xml:space="preserve">
+    <value>车5紧急制动2未施加</value>
+  </data>
+  <data name="Inb车6紧急制动2未施加" xml:space="preserve">
+    <value>车6紧急制动2未施加</value>
+  </data>
+  <data name="Inb车1空簧压力1有效" xml:space="preserve">
+    <value>车1空簧压力1有效</value>
+  </data>
+  <data name="Inb车2空簧压力1有效" xml:space="preserve">
+    <value>车2空簧压力1有效</value>
+  </data>
+  <data name="Inb车3空簧压力1有效" xml:space="preserve">
+    <value>车3空簧压力1有效</value>
+  </data>
+  <data name="Inb车4空簧压力1有效" xml:space="preserve">
+    <value>车4空簧压力1有效</value>
+  </data>
+  <data name="Inb车5空簧压力1有效" xml:space="preserve">
+    <value>车5空簧压力1有效</value>
+  </data>
+  <data name="Inb车6空簧压力1有效" xml:space="preserve">
+    <value>车6空簧压力1有效</value>
+  </data>
+  <data name="Inb车1空簧压力1无效" xml:space="preserve">
+    <value>车1空簧压力1无效</value>
+  </data>
+  <data name="Inb车2空簧压力1无效" xml:space="preserve">
+    <value>车2空簧压力1无效</value>
+  </data>
+  <data name="Inb车3空簧压力1无效" xml:space="preserve">
+    <value>车3空簧压力1无效</value>
+  </data>
+  <data name="Inb车4空簧压力1无效" xml:space="preserve">
+    <value>车4空簧压力1无效</value>
+  </data>
+  <data name="Inb车5空簧压力1无效" xml:space="preserve">
+    <value>车5空簧压力1无效</value>
+  </data>
+  <data name="Inb车6空簧压力1无效" xml:space="preserve">
+    <value>车6空簧压力1无效</value>
+  </data>
+  <data name="Inb车1空簧压力2有效" xml:space="preserve">
+    <value>车1空簧压力2有效</value>
+  </data>
+  <data name="Inb车2空簧压力2有效" xml:space="preserve">
+    <value>车2空簧压力2有效</value>
+  </data>
+  <data name="Inb车3空簧压力2有效" xml:space="preserve">
+    <value>车3空簧压力2有效</value>
+  </data>
+  <data name="Inb车4空簧压力2有效" xml:space="preserve">
+    <value>车4空簧压力2有效</value>
+  </data>
+  <data name="Inb车5空簧压力2有效" xml:space="preserve">
+    <value>车5空簧压力2有效</value>
+  </data>
+  <data name="Inb车6空簧压力2有效" xml:space="preserve">
+    <value>车6空簧压力2有效</value>
+  </data>
+  <data name="Inb车1空簧压力2无效" xml:space="preserve">
+    <value>车1空簧压力2无效</value>
+  </data>
+  <data name="Inb车2空簧压力2无效" xml:space="preserve">
+    <value>车2空簧压力2无效</value>
+  </data>
+  <data name="Inb车3空簧压力2无效" xml:space="preserve">
+    <value>车3空簧压力2无效</value>
+  </data>
+  <data name="Inb车4空簧压力2无效" xml:space="preserve">
+    <value>车4空簧压力2无效</value>
+  </data>
+  <data name="Inb车5空簧压力2无效" xml:space="preserve">
+    <value>车5空簧压力2无效</value>
+  </data>
+  <data name="Inb车6空簧压力2无效" xml:space="preserve">
+    <value>车6空簧压力2无效</value>
+  </data>
+  <data name="Inb车1空气制动1正常" xml:space="preserve">
+    <value>车1空气制动1正常</value>
+  </data>
+  <data name="Inb车2空气制动1正常" xml:space="preserve">
+    <value>车2空气制动1正常</value>
+  </data>
+  <data name="Inb车3空气制动1正常" xml:space="preserve">
+    <value>车3空气制动1正常</value>
+  </data>
+  <data name="Inb车4空气制动1正常" xml:space="preserve">
+    <value>车4空气制动1正常</value>
+  </data>
+  <data name="Inb车5空气制动1正常" xml:space="preserve">
+    <value>车5空气制动1正常</value>
+  </data>
+  <data name="Inb车6空气制动1正常" xml:space="preserve">
+    <value>车6空气制动1正常</value>
+  </data>
+  <data name="Inb车1空气制动1不可用" xml:space="preserve">
+    <value>车1空气制动1不可用</value>
+  </data>
+  <data name="Inb车2空气制动1不可用" xml:space="preserve">
+    <value>车2空气制动1不可用</value>
+  </data>
+  <data name="Inb车3空气制动1不可用" xml:space="preserve">
+    <value>车3空气制动1不可用</value>
+  </data>
+  <data name="Inb车4空气制动1不可用" xml:space="preserve">
+    <value>车4空气制动1不可用</value>
+  </data>
+  <data name="Inb车5空气制动1不可用" xml:space="preserve">
+    <value>车5空气制动1不可用</value>
+  </data>
+  <data name="Inb车6空气制动1不可用" xml:space="preserve">
+    <value>车6空气制动1不可用</value>
+  </data>
+  <data name="Inb车1空气制动2正常" xml:space="preserve">
+    <value>车1空气制动2正常</value>
+  </data>
+  <data name="Inb车2空气制动2正常" xml:space="preserve">
+    <value>车2空气制动2正常</value>
+  </data>
+  <data name="Inb车3空气制动2正常" xml:space="preserve">
+    <value>车3空气制动2正常</value>
+  </data>
+  <data name="Inb车4空气制动2正常" xml:space="preserve">
+    <value>车4空气制动2正常</value>
+  </data>
+  <data name="Inb车5空气制动2正常" xml:space="preserve">
+    <value>车5空气制动2正常</value>
+  </data>
+  <data name="Inb车6空气制动2正常" xml:space="preserve">
+    <value>车6空气制动2正常</value>
+  </data>
+  <data name="Inb车1空气制动2不可用" xml:space="preserve">
+    <value>车1空气制动2不可用</value>
+  </data>
+  <data name="Inb车2空气制动2不可用" xml:space="preserve">
+    <value>车2空气制动2不可用</value>
+  </data>
+  <data name="Inb车3空气制动2不可用" xml:space="preserve">
+    <value>车3空气制动2不可用</value>
+  </data>
+  <data name="Inb车4空气制动2不可用" xml:space="preserve">
+    <value>车4空气制动2不可用</value>
+  </data>
+  <data name="Inb车5空气制动2不可用" xml:space="preserve">
+    <value>车5空气制动2不可用</value>
+  </data>
+  <data name="Inb车6空气制动2不可用" xml:space="preserve">
+    <value>车6空气制动2不可用</value>
+  </data>
+  <data name="Inb车1空气制动1施加" xml:space="preserve">
+    <value>车1空气制动1施加</value>
+  </data>
+  <data name="Inb车2空气制动1施加" xml:space="preserve">
+    <value>车2空气制动1施加</value>
+  </data>
+  <data name="Inb车3空气制动1施加" xml:space="preserve">
+    <value>车3空气制动1施加</value>
+  </data>
+  <data name="Inb车4空气制动1施加" xml:space="preserve">
+    <value>车4空气制动1施加</value>
+  </data>
+  <data name="Inb车5空气制动1施加" xml:space="preserve">
+    <value>车5空气制动1施加</value>
+  </data>
+  <data name="Inb车6空气制动1施加" xml:space="preserve">
+    <value>车6空气制动1施加</value>
+  </data>
+  <data name="Inb车1空气制动1未施加" xml:space="preserve">
+    <value>车1空气制动1未施加</value>
+  </data>
+  <data name="Inb车2空气制动1未施加" xml:space="preserve">
+    <value>车2空气制动1未施加</value>
+  </data>
+  <data name="Inb车3空气制动1未施加" xml:space="preserve">
+    <value>车3空气制动1未施加</value>
+  </data>
+  <data name="Inb车4空气制动1未施加" xml:space="preserve">
+    <value>车4空气制动1未施加</value>
+  </data>
+  <data name="Inb车5空气制动1未施加" xml:space="preserve">
+    <value>车5空气制动1未施加</value>
+  </data>
+  <data name="Inb车6空气制动1未施加" xml:space="preserve">
+    <value>车6空气制动1未施加</value>
+  </data>
+  <data name="Inb车1空气制动2施加" xml:space="preserve">
+    <value>车1空气制动2施加</value>
+  </data>
+  <data name="Inb车2空气制动2施加" xml:space="preserve">
+    <value>车2空气制动2施加</value>
+  </data>
+  <data name="Inb车3空气制动2施加" xml:space="preserve">
+    <value>车3空气制动2施加</value>
+  </data>
+  <data name="Inb车4空气制动2施加" xml:space="preserve">
+    <value>车4空气制动2施加</value>
+  </data>
+  <data name="Inb车5空气制动2施加" xml:space="preserve">
+    <value>车5空气制动2施加</value>
+  </data>
+  <data name="Inb车6空气制动2施加" xml:space="preserve">
+    <value>车6空气制动2施加</value>
+  </data>
+  <data name="Inb车1空气制动2未施加" xml:space="preserve">
+    <value>车1空气制动2未施加</value>
+  </data>
+  <data name="Inb车2空气制动2未施加" xml:space="preserve">
+    <value>车2空气制动2未施加</value>
+  </data>
+  <data name="Inb车3空气制动2未施加" xml:space="preserve">
+    <value>车3空气制动2未施加</value>
+  </data>
+  <data name="Inb车4空气制动2未施加" xml:space="preserve">
+    <value>车4空气制动2未施加</value>
+  </data>
+  <data name="Inb车5空气制动2未施加" xml:space="preserve">
+    <value>车5空气制动2未施加</value>
+  </data>
+  <data name="Inb车6空气制动2未施加" xml:space="preserve">
+    <value>车6空气制动2未施加</value>
+  </data>
+  <data name="Inb车1停放制动缓解" xml:space="preserve">
+    <value>车1停放制动缓解</value>
+  </data>
+  <data name="Inb车2停放制动缓解" xml:space="preserve">
+    <value>车2停放制动缓解</value>
+  </data>
+  <data name="Inb车3停放制动缓解" xml:space="preserve">
+    <value>车3停放制动缓解</value>
+  </data>
+  <data name="Inb车4停放制动缓解" xml:space="preserve">
+    <value>车4停放制动缓解</value>
+  </data>
+  <data name="Inb车5停放制动缓解" xml:space="preserve">
+    <value>车5停放制动缓解</value>
+  </data>
+  <data name="Inb车6停放制动缓解" xml:space="preserve">
+    <value>车6停放制动缓解</value>
+  </data>
+  <data name="Inb车1停放制动未缓解" xml:space="preserve">
+    <value>车1停放制动未缓解</value>
+  </data>
+  <data name="Inb车2停放制动未缓解" xml:space="preserve">
+    <value>车2停放制动未缓解</value>
+  </data>
+  <data name="Inb车3停放制动未缓解" xml:space="preserve">
+    <value>车3停放制动未缓解</value>
+  </data>
+  <data name="Inb车4停放制动未缓解" xml:space="preserve">
+    <value>车4停放制动未缓解</value>
+  </data>
+  <data name="Inb车5停放制动未缓解" xml:space="preserve">
+    <value>车5停放制动未缓解</value>
+  </data>
+  <data name="Inb车6停放制动未缓解" xml:space="preserve">
+    <value>车6停放制动未缓解</value>
+  </data>
+  <data name="Inb车1制动风缸压力1有效" xml:space="preserve">
+    <value>车1制动风缸压力1有效</value>
+  </data>
+  <data name="Inb车2制动风缸压力1有效" xml:space="preserve">
+    <value>车2制动风缸压力1有效</value>
+  </data>
+  <data name="Inb车3制动风缸压力1有效" xml:space="preserve">
+    <value>车3制动风缸压力1有效</value>
+  </data>
+  <data name="Inb车4制动风缸压力1有效" xml:space="preserve">
+    <value>车4制动风缸压力1有效</value>
+  </data>
+  <data name="Inb车5制动风缸压力1有效" xml:space="preserve">
+    <value>车5制动风缸压力1有效</value>
+  </data>
+  <data name="Inb车6制动风缸压力1有效" xml:space="preserve">
+    <value>车6制动风缸压力1有效</value>
+  </data>
+  <data name="Inb车1制动风缸压力1无效" xml:space="preserve">
+    <value>车1制动风缸压力1无效</value>
+  </data>
+  <data name="Inb车2制动风缸压力1无效" xml:space="preserve">
+    <value>车2制动风缸压力1无效</value>
+  </data>
+  <data name="Inb车3制动风缸压力1无效" xml:space="preserve">
+    <value>车3制动风缸压力1无效</value>
+  </data>
+  <data name="Inb车4制动风缸压力1无效" xml:space="preserve">
+    <value>车4制动风缸压力1无效</value>
+  </data>
+  <data name="Inb车5制动风缸压力1无效" xml:space="preserve">
+    <value>车5制动风缸压力1无效</value>
+  </data>
+  <data name="Inb车6制动风缸压力1无效" xml:space="preserve">
+    <value>车6制动风缸压力1无效</value>
+  </data>
+  <data name="Inb车1制动风缸压力2有效" xml:space="preserve">
+    <value>车1制动风缸压力2有效</value>
+  </data>
+  <data name="Inb车2制动风缸压力2有效" xml:space="preserve">
+    <value>车2制动风缸压力2有效</value>
+  </data>
+  <data name="Inb车3制动风缸压力2有效" xml:space="preserve">
+    <value>车3制动风缸压力2有效</value>
+  </data>
+  <data name="Inb车4制动风缸压力2有效" xml:space="preserve">
+    <value>车4制动风缸压力2有效</value>
+  </data>
+  <data name="Inb车5制动风缸压力2有效" xml:space="preserve">
+    <value>车5制动风缸压力2有效</value>
+  </data>
+  <data name="Inb车6制动风缸压力2有效" xml:space="preserve">
+    <value>车6制动风缸压力2有效</value>
+  </data>
+  <data name="Inb车1制动风缸压力2无效" xml:space="preserve">
+    <value>车1制动风缸压力2无效</value>
+  </data>
+  <data name="Inb车2制动风缸压力2无效" xml:space="preserve">
+    <value>车2制动风缸压力2无效</value>
+  </data>
+  <data name="Inb车3制动风缸压力2无效" xml:space="preserve">
+    <value>车3制动风缸压力2无效</value>
+  </data>
+  <data name="Inb车4制动风缸压力2无效" xml:space="preserve">
+    <value>车4制动风缸压力2无效</value>
+  </data>
+  <data name="Inb车5制动风缸压力2无效" xml:space="preserve">
+    <value>车5制动风缸压力2无效</value>
+  </data>
+  <data name="Inb车6制动风缸压力2无效" xml:space="preserve">
+    <value>车6制动风缸压力2无效</value>
+  </data>
+  <data name="Inb车1转向架1切除" xml:space="preserve">
+    <value>车1转向架1切除</value>
+  </data>
+  <data name="Inb车2转向架1切除" xml:space="preserve">
+    <value>车2转向架1切除</value>
+  </data>
+  <data name="Inb车3转向架1切除" xml:space="preserve">
+    <value>车3转向架1切除</value>
+  </data>
+  <data name="Inb车4转向架1切除" xml:space="preserve">
+    <value>车4转向架1切除</value>
+  </data>
+  <data name="Inb车5转向架1切除" xml:space="preserve">
+    <value>车5转向架1切除</value>
+  </data>
+  <data name="Inb车6转向架1切除" xml:space="preserve">
+    <value>车6转向架1切除</value>
+  </data>
+  <data name="Inb车1转向架1正常" xml:space="preserve">
+    <value>车1转向架1正常</value>
+  </data>
+  <data name="Inb车2转向架1正常" xml:space="preserve">
+    <value>车2转向架1正常</value>
+  </data>
+  <data name="Inb车3转向架1正常" xml:space="preserve">
+    <value>车3转向架1正常</value>
+  </data>
+  <data name="Inb车4转向架1正常" xml:space="preserve">
+    <value>车4转向架1正常</value>
+  </data>
+  <data name="Inb车5转向架1正常" xml:space="preserve">
+    <value>车5转向架1正常</value>
+  </data>
+  <data name="Inb车6转向架1正常" xml:space="preserve">
+    <value>车6转向架1正常</value>
+  </data>
+  <data name="Inb车1转向架2切除" xml:space="preserve">
+    <value>车1转向架2切除</value>
+  </data>
+  <data name="Inb车2转向架2切除" xml:space="preserve">
+    <value>车2转向架2切除</value>
+  </data>
+  <data name="Inb车3转向架2切除" xml:space="preserve">
+    <value>车3转向架2切除</value>
+  </data>
+  <data name="Inb车4转向架2切除" xml:space="preserve">
+    <value>车4转向架2切除</value>
+  </data>
+  <data name="Inb车5转向架2切除" xml:space="preserve">
+    <value>车5转向架2切除</value>
+  </data>
+  <data name="Inb车6转向架2切除" xml:space="preserve">
+    <value>车6转向架2切除</value>
+  </data>
+  <data name="Inb车1转向架2正常" xml:space="preserve">
+    <value>车1转向架2正常</value>
+  </data>
+  <data name="Inb车2转向架2正常" xml:space="preserve">
+    <value>车2转向架2正常</value>
+  </data>
+  <data name="Inb车3转向架2正常" xml:space="preserve">
+    <value>车3转向架2正常</value>
+  </data>
+  <data name="Inb车4转向架2正常" xml:space="preserve">
+    <value>车4转向架2正常</value>
+  </data>
+  <data name="Inb车5转向架2正常" xml:space="preserve">
+    <value>车5转向架2正常</value>
+  </data>
+  <data name="Inb车6转向架2正常" xml:space="preserve">
+    <value>车6转向架2正常</value>
+  </data>
+  <data name="InbCar0辅助系统未知" xml:space="preserve">
+    <value>Car0辅助系统未知</value>
+  </data>
+  <data name="InbCar2辅助系统未知" xml:space="preserve">
+    <value>Car2辅助系统未知</value>
+  </data>
+  <data name="InbCar3辅助系统未知" xml:space="preserve">
+    <value>Car3辅助系统未知</value>
+  </data>
+  <data name="InbCar5辅助系统未知" xml:space="preserve">
+    <value>Car5辅助系统未知</value>
+  </data>
+  <data name="InbCar0辅助系统切除" xml:space="preserve">
+    <value>Car0辅助系统切除</value>
+  </data>
+  <data name="InbCar2辅助系统切除" xml:space="preserve">
+    <value>Car2辅助系统切除</value>
+  </data>
+  <data name="InbCar3辅助系统切除" xml:space="preserve">
+    <value>Car3辅助系统切除</value>
+  </data>
+  <data name="InbCar5辅助系统切除" xml:space="preserve">
+    <value>Car5辅助系统切除</value>
+  </data>
+  <data name="InbCar0辅助系统故障" xml:space="preserve">
+    <value>Car0辅助系统故障</value>
+  </data>
+  <data name="InbCar2辅助系统故障" xml:space="preserve">
+    <value>Car2辅助系统故障</value>
+  </data>
+  <data name="InbCar3辅助系统故障" xml:space="preserve">
+    <value>Car3辅助系统故障</value>
+  </data>
+  <data name="InbCar5辅助系统故障" xml:space="preserve">
+    <value>Car5辅助系统故障</value>
+  </data>
+  <data name="InbCar0辅助系统运行" xml:space="preserve">
+    <value>Car0辅助系统运行</value>
+  </data>
+  <data name="InbCar2辅助系统运行" xml:space="preserve">
+    <value>Car2辅助系统运行</value>
+  </data>
+  <data name="InbCar3辅助系统运行" xml:space="preserve">
+    <value>Car3辅助系统运行</value>
+  </data>
+  <data name="InbCar5辅助系统运行" xml:space="preserve">
+    <value>Car5辅助系统运行</value>
+  </data>
+  <data name="InbCar0辅助系统正常" xml:space="preserve">
+    <value>Car0辅助系统正常</value>
+  </data>
+  <data name="InbCar2辅助系统正常" xml:space="preserve">
+    <value>Car2辅助系统正常</value>
+  </data>
+  <data name="InbCar3辅助系统正常" xml:space="preserve">
+    <value>Car3辅助系统正常</value>
+  </data>
+  <data name="InbCar5辅助系统正常" xml:space="preserve">
+    <value>Car5辅助系统正常</value>
+  </data>
+  <data name="InbCar2空压机未知" xml:space="preserve">
+    <value>Car2空压机未知</value>
+  </data>
+  <data name="InbCar3空压机未知" xml:space="preserve">
+    <value>Car3空压机未知</value>
+  </data>
+  <data name="InbCar2空压机工作" xml:space="preserve">
+    <value>Car2空压机工作</value>
+  </data>
+  <data name="InbCar3空压机工作" xml:space="preserve">
+    <value>Car3空压机工作</value>
+  </data>
+  <data name="InbCar2空压机未工作" xml:space="preserve">
+    <value>Car2空压机未工作</value>
+  </data>
+  <data name="InbCar3空压机未工作" xml:space="preserve">
+    <value>Car3空压机未工作</value>
+  </data>
+  <data name="InbCar2空压机故障" xml:space="preserve">
+    <value>Car2空压机故障</value>
+  </data>
+  <data name="InbCar3空压机故障" xml:space="preserve">
+    <value>Car3空压机故障</value>
+  </data>
+  <data name="InbCar0DoorIndex1切除" xml:space="preserve">
+    <value>Car0DoorIndex1切除</value>
+  </data>
+  <data name="InbCar1DoorIndex1切除" xml:space="preserve">
+    <value>Car1DoorIndex1切除</value>
+  </data>
+  <data name="InbCar2DoorIndex1切除" xml:space="preserve">
+    <value>Car2DoorIndex1切除</value>
+  </data>
+  <data name="InbCar3DoorIndex1切除" xml:space="preserve">
+    <value>Car3DoorIndex1切除</value>
+  </data>
+  <data name="InbCar4DoorIndex1切除" xml:space="preserve">
+    <value>Car4DoorIndex1切除</value>
+  </data>
+  <data name="InbCar5DoorIndex1切除" xml:space="preserve">
+    <value>Car5DoorIndex1切除</value>
+  </data>
+  <data name="InbCar0DoorIndex1紧急释放" xml:space="preserve">
+    <value>Car0DoorIndex1紧急释放</value>
+  </data>
+  <data name="InbCar1DoorIndex1紧急释放" xml:space="preserve">
+    <value>Car1DoorIndex1紧急释放</value>
+  </data>
+  <data name="InbCar2DoorIndex1紧急释放" xml:space="preserve">
+    <value>Car2DoorIndex1紧急释放</value>
+  </data>
+  <data name="InbCar3DoorIndex1紧急释放" xml:space="preserve">
+    <value>Car3DoorIndex1紧急释放</value>
+  </data>
+  <data name="InbCar4DoorIndex1紧急释放" xml:space="preserve">
+    <value>Car4DoorIndex1紧急释放</value>
+  </data>
+  <data name="InbCar5DoorIndex1紧急释放" xml:space="preserve">
+    <value>Car5DoorIndex1紧急释放</value>
+  </data>
+  <data name="InbCar0DoorIndex1故障" xml:space="preserve">
+    <value>Car0DoorIndex1故障</value>
+  </data>
+  <data name="InbCar1DoorIndex1故障" xml:space="preserve">
+    <value>Car1DoorIndex1故障</value>
+  </data>
+  <data name="InbCar2DoorIndex1故障" xml:space="preserve">
+    <value>Car2DoorIndex1故障</value>
+  </data>
+  <data name="InbCar3DoorIndex1故障" xml:space="preserve">
+    <value>Car3DoorIndex1故障</value>
+  </data>
+  <data name="InbCar4DoorIndex1故障" xml:space="preserve">
+    <value>Car4DoorIndex1故障</value>
+  </data>
+  <data name="InbCar5DoorIndex1故障" xml:space="preserve">
+    <value>Car5DoorIndex1故障</value>
+  </data>
+  <data name="InbCar0DoorIndex1障碍物" xml:space="preserve">
+    <value>Car0DoorIndex1障碍物</value>
+  </data>
+  <data name="InbCar1DoorIndex1障碍物" xml:space="preserve">
+    <value>Car1DoorIndex1障碍物</value>
+  </data>
+  <data name="InbCar2DoorIndex1障碍物" xml:space="preserve">
+    <value>Car2DoorIndex1障碍物</value>
+  </data>
+  <data name="InbCar3DoorIndex1障碍物" xml:space="preserve">
+    <value>Car3DoorIndex1障碍物</value>
+  </data>
+  <data name="InbCar4DoorIndex1障碍物" xml:space="preserve">
+    <value>Car4DoorIndex1障碍物</value>
+  </data>
+  <data name="InbCar5DoorIndex1障碍物" xml:space="preserve">
+    <value>Car5DoorIndex1障碍物</value>
+  </data>
+  <data name="InbCar0DoorIndex1正在开关" xml:space="preserve">
+    <value>Car0DoorIndex1正在开关</value>
+  </data>
+  <data name="InbCar1DoorIndex1正在开关" xml:space="preserve">
+    <value>Car1DoorIndex1正在开关</value>
+  </data>
+  <data name="InbCar2DoorIndex1正在开关" xml:space="preserve">
+    <value>Car2DoorIndex1正在开关</value>
+  </data>
+  <data name="InbCar3DoorIndex1正在开关" xml:space="preserve">
+    <value>Car3DoorIndex1正在开关</value>
+  </data>
+  <data name="InbCar4DoorIndex1正在开关" xml:space="preserve">
+    <value>Car4DoorIndex1正在开关</value>
+  </data>
+  <data name="InbCar5DoorIndex1正在开关" xml:space="preserve">
+    <value>Car5DoorIndex1正在开关</value>
+  </data>
+  <data name="InbCar0DoorIndex1开到位" xml:space="preserve">
+    <value>Car0DoorIndex1开到位</value>
+  </data>
+  <data name="InbCar1DoorIndex1开到位" xml:space="preserve">
+    <value>Car1DoorIndex1开到位</value>
+  </data>
+  <data name="InbCar2DoorIndex1开到位" xml:space="preserve">
+    <value>Car2DoorIndex1开到位</value>
+  </data>
+  <data name="InbCar3DoorIndex1开到位" xml:space="preserve">
+    <value>Car3DoorIndex1开到位</value>
+  </data>
+  <data name="InbCar4DoorIndex1开到位" xml:space="preserve">
+    <value>Car4DoorIndex1开到位</value>
+  </data>
+  <data name="InbCar5DoorIndex1开到位" xml:space="preserve">
+    <value>Car5DoorIndex1开到位</value>
+  </data>
+  <data name="InbCar0DoorIndex1关并锁到位" xml:space="preserve">
+    <value>Car0DoorIndex1关并锁到位</value>
+  </data>
+  <data name="InbCar1DoorIndex1关并锁到位" xml:space="preserve">
+    <value>Car1DoorIndex1关并锁到位</value>
+  </data>
+  <data name="InbCar2DoorIndex1关并锁到位" xml:space="preserve">
+    <value>Car2DoorIndex1关并锁到位</value>
+  </data>
+  <data name="InbCar3DoorIndex1关并锁到位" xml:space="preserve">
+    <value>Car3DoorIndex1关并锁到位</value>
+  </data>
+  <data name="InbCar4DoorIndex1关并锁到位" xml:space="preserve">
+    <value>Car4DoorIndex1关并锁到位</value>
+  </data>
+  <data name="InbCar5DoorIndex1关并锁到位" xml:space="preserve">
+    <value>Car5DoorIndex1关并锁到位</value>
+  </data>
+  <data name="InbCar0DoorIndex1状态未知" xml:space="preserve">
+    <value>Car0DoorIndex1状态未知</value>
+  </data>
+  <data name="InbCar1DoorIndex1状态未知" xml:space="preserve">
+    <value>Car1DoorIndex1状态未知</value>
+  </data>
+  <data name="InbCar2DoorIndex1状态未知" xml:space="preserve">
+    <value>Car2DoorIndex1状态未知</value>
+  </data>
+  <data name="InbCar3DoorIndex1状态未知" xml:space="preserve">
+    <value>Car3DoorIndex1状态未知</value>
+  </data>
+  <data name="InbCar4DoorIndex1状态未知" xml:space="preserve">
+    <value>Car4DoorIndex1状态未知</value>
+  </data>
+  <data name="InbCar5DoorIndex1状态未知" xml:space="preserve">
+    <value>Car5DoorIndex1状态未知</value>
+  </data>
+  <data name="InbCar0DoorIndex2切除" xml:space="preserve">
+    <value>Car0DoorIndex2切除</value>
+  </data>
+  <data name="InbCar1DoorIndex2切除" xml:space="preserve">
+    <value>Car1DoorIndex2切除</value>
+  </data>
+  <data name="InbCar2DoorIndex2切除" xml:space="preserve">
+    <value>Car2DoorIndex2切除</value>
+  </data>
+  <data name="InbCar3DoorIndex2切除" xml:space="preserve">
+    <value>Car3DoorIndex2切除</value>
+  </data>
+  <data name="InbCar4DoorIndex2切除" xml:space="preserve">
+    <value>Car4DoorIndex2切除</value>
+  </data>
+  <data name="InbCar5DoorIndex2切除" xml:space="preserve">
+    <value>Car5DoorIndex2切除</value>
+  </data>
+  <data name="InbCar0DoorIndex2紧急释放" xml:space="preserve">
+    <value>Car0DoorIndex2紧急释放</value>
+  </data>
+  <data name="InbCar1DoorIndex2紧急释放" xml:space="preserve">
+    <value>Car1DoorIndex2紧急释放</value>
+  </data>
+  <data name="InbCar2DoorIndex2紧急释放" xml:space="preserve">
+    <value>Car2DoorIndex2紧急释放</value>
+  </data>
+  <data name="InbCar3DoorIndex2紧急释放" xml:space="preserve">
+    <value>Car3DoorIndex2紧急释放</value>
+  </data>
+  <data name="InbCar4DoorIndex2紧急释放" xml:space="preserve">
+    <value>Car4DoorIndex2紧急释放</value>
+  </data>
+  <data name="InbCar5DoorIndex2紧急释放" xml:space="preserve">
+    <value>Car5DoorIndex2紧急释放</value>
+  </data>
+  <data name="InbCar0DoorIndex2故障" xml:space="preserve">
+    <value>Car0DoorIndex2故障</value>
+  </data>
+  <data name="InbCar1DoorIndex2故障" xml:space="preserve">
+    <value>Car1DoorIndex2故障</value>
+  </data>
+  <data name="InbCar2DoorIndex2故障" xml:space="preserve">
+    <value>Car2DoorIndex2故障</value>
+  </data>
+  <data name="InbCar3DoorIndex2故障" xml:space="preserve">
+    <value>Car3DoorIndex2故障</value>
+  </data>
+  <data name="InbCar4DoorIndex2故障" xml:space="preserve">
+    <value>Car4DoorIndex2故障</value>
+  </data>
+  <data name="InbCar5DoorIndex2故障" xml:space="preserve">
+    <value>Car5DoorIndex2故障</value>
+  </data>
+  <data name="InbCar0DoorIndex2障碍物" xml:space="preserve">
+    <value>Car0DoorIndex2障碍物</value>
+  </data>
+  <data name="InbCar1DoorIndex2障碍物" xml:space="preserve">
+    <value>Car1DoorIndex2障碍物</value>
+  </data>
+  <data name="InbCar2DoorIndex2障碍物" xml:space="preserve">
+    <value>Car2DoorIndex2障碍物</value>
+  </data>
+  <data name="InbCar3DoorIndex2障碍物" xml:space="preserve">
+    <value>Car3DoorIndex2障碍物</value>
+  </data>
+  <data name="InbCar4DoorIndex2障碍物" xml:space="preserve">
+    <value>Car4DoorIndex2障碍物</value>
+  </data>
+  <data name="InbCar5DoorIndex2障碍物" xml:space="preserve">
+    <value>Car5DoorIndex2障碍物</value>
+  </data>
+  <data name="InbCar0DoorIndex2正在开关" xml:space="preserve">
+    <value>Car0DoorIndex2正在开关</value>
+  </data>
+  <data name="InbCar1DoorIndex2正在开关" xml:space="preserve">
+    <value>Car1DoorIndex2正在开关</value>
+  </data>
+  <data name="InbCar2DoorIndex2正在开关" xml:space="preserve">
+    <value>Car2DoorIndex2正在开关</value>
+  </data>
+  <data name="InbCar3DoorIndex2正在开关" xml:space="preserve">
+    <value>Car3DoorIndex2正在开关</value>
+  </data>
+  <data name="InbCar4DoorIndex2正在开关" xml:space="preserve">
+    <value>Car4DoorIndex2正在开关</value>
+  </data>
+  <data name="InbCar5DoorIndex2正在开关" xml:space="preserve">
+    <value>Car5DoorIndex2正在开关</value>
+  </data>
+  <data name="InbCar0DoorIndex2开到位" xml:space="preserve">
+    <value>Car0DoorIndex2开到位</value>
+  </data>
+  <data name="InbCar1DoorIndex2开到位" xml:space="preserve">
+    <value>Car1DoorIndex2开到位</value>
+  </data>
+  <data name="InbCar2DoorIndex2开到位" xml:space="preserve">
+    <value>Car2DoorIndex2开到位</value>
+  </data>
+  <data name="InbCar3DoorIndex2开到位" xml:space="preserve">
+    <value>Car3DoorIndex2开到位</value>
+  </data>
+  <data name="InbCar4DoorIndex2开到位" xml:space="preserve">
+    <value>Car4DoorIndex2开到位</value>
+  </data>
+  <data name="InbCar5DoorIndex2开到位" xml:space="preserve">
+    <value>Car5DoorIndex2开到位</value>
+  </data>
+  <data name="InbCar0DoorIndex2关并锁到位" xml:space="preserve">
+    <value>Car0DoorIndex2关并锁到位</value>
+  </data>
+  <data name="InbCar1DoorIndex2关并锁到位" xml:space="preserve">
+    <value>Car1DoorIndex2关并锁到位</value>
+  </data>
+  <data name="InbCar2DoorIndex2关并锁到位" xml:space="preserve">
+    <value>Car2DoorIndex2关并锁到位</value>
+  </data>
+  <data name="InbCar3DoorIndex2关并锁到位" xml:space="preserve">
+    <value>Car3DoorIndex2关并锁到位</value>
+  </data>
+  <data name="InbCar4DoorIndex2关并锁到位" xml:space="preserve">
+    <value>Car4DoorIndex2关并锁到位</value>
+  </data>
+  <data name="InbCar5DoorIndex2关并锁到位" xml:space="preserve">
+    <value>Car5DoorIndex2关并锁到位</value>
+  </data>
+  <data name="InbCar0DoorIndex2状态未知" xml:space="preserve">
+    <value>Car0DoorIndex2状态未知</value>
+  </data>
+  <data name="InbCar1DoorIndex2状态未知" xml:space="preserve">
+    <value>Car1DoorIndex2状态未知</value>
+  </data>
+  <data name="InbCar2DoorIndex2状态未知" xml:space="preserve">
+    <value>Car2DoorIndex2状态未知</value>
+  </data>
+  <data name="InbCar3DoorIndex2状态未知" xml:space="preserve">
+    <value>Car3DoorIndex2状态未知</value>
+  </data>
+  <data name="InbCar4DoorIndex2状态未知" xml:space="preserve">
+    <value>Car4DoorIndex2状态未知</value>
+  </data>
+  <data name="InbCar5DoorIndex2状态未知" xml:space="preserve">
+    <value>Car5DoorIndex2状态未知</value>
+  </data>
+  <data name="InbCar0DoorIndex3切除" xml:space="preserve">
+    <value>Car0DoorIndex3切除</value>
+  </data>
+  <data name="InbCar1DoorIndex3切除" xml:space="preserve">
+    <value>Car1DoorIndex3切除</value>
+  </data>
+  <data name="InbCar2DoorIndex3切除" xml:space="preserve">
+    <value>Car2DoorIndex3切除</value>
+  </data>
+  <data name="InbCar3DoorIndex3切除" xml:space="preserve">
+    <value>Car3DoorIndex3切除</value>
+  </data>
+  <data name="InbCar4DoorIndex3切除" xml:space="preserve">
+    <value>Car4DoorIndex3切除</value>
+  </data>
+  <data name="InbCar5DoorIndex3切除" xml:space="preserve">
+    <value>Car5DoorIndex3切除</value>
+  </data>
+  <data name="InbCar0DoorIndex3紧急释放" xml:space="preserve">
+    <value>Car0DoorIndex3紧急释放</value>
+  </data>
+  <data name="InbCar1DoorIndex3紧急释放" xml:space="preserve">
+    <value>Car1DoorIndex3紧急释放</value>
+  </data>
+  <data name="InbCar2DoorIndex3紧急释放" xml:space="preserve">
+    <value>Car2DoorIndex3紧急释放</value>
+  </data>
+  <data name="InbCar3DoorIndex3紧急释放" xml:space="preserve">
+    <value>Car3DoorIndex3紧急释放</value>
+  </data>
+  <data name="InbCar4DoorIndex3紧急释放" xml:space="preserve">
+    <value>Car4DoorIndex3紧急释放</value>
+  </data>
+  <data name="InbCar5DoorIndex3紧急释放" xml:space="preserve">
+    <value>Car5DoorIndex3紧急释放</value>
+  </data>
+  <data name="InbCar0DoorIndex3故障" xml:space="preserve">
+    <value>Car0DoorIndex3故障</value>
+  </data>
+  <data name="InbCar1DoorIndex3故障" xml:space="preserve">
+    <value>Car1DoorIndex3故障</value>
+  </data>
+  <data name="InbCar2DoorIndex3故障" xml:space="preserve">
+    <value>Car2DoorIndex3故障</value>
+  </data>
+  <data name="InbCar3DoorIndex3故障" xml:space="preserve">
+    <value>Car3DoorIndex3故障</value>
+  </data>
+  <data name="InbCar4DoorIndex3故障" xml:space="preserve">
+    <value>Car4DoorIndex3故障</value>
+  </data>
+  <data name="InbCar5DoorIndex3故障" xml:space="preserve">
+    <value>Car5DoorIndex3故障</value>
+  </data>
+  <data name="InbCar0DoorIndex3障碍物" xml:space="preserve">
+    <value>Car0DoorIndex3障碍物</value>
+  </data>
+  <data name="InbCar1DoorIndex3障碍物" xml:space="preserve">
+    <value>Car1DoorIndex3障碍物</value>
+  </data>
+  <data name="InbCar2DoorIndex3障碍物" xml:space="preserve">
+    <value>Car2DoorIndex3障碍物</value>
+  </data>
+  <data name="InbCar3DoorIndex3障碍物" xml:space="preserve">
+    <value>Car3DoorIndex3障碍物</value>
+  </data>
+  <data name="InbCar4DoorIndex3障碍物" xml:space="preserve">
+    <value>Car4DoorIndex3障碍物</value>
+  </data>
+  <data name="InbCar5DoorIndex3障碍物" xml:space="preserve">
+    <value>Car5DoorIndex3障碍物</value>
+  </data>
+  <data name="InbCar0DoorIndex3正在开关" xml:space="preserve">
+    <value>Car0DoorIndex3正在开关</value>
+  </data>
+  <data name="InbCar1DoorIndex3正在开关" xml:space="preserve">
+    <value>Car1DoorIndex3正在开关</value>
+  </data>
+  <data name="InbCar2DoorIndex3正在开关" xml:space="preserve">
+    <value>Car2DoorIndex3正在开关</value>
+  </data>
+  <data name="InbCar3DoorIndex3正在开关" xml:space="preserve">
+    <value>Car3DoorIndex3正在开关</value>
+  </data>
+  <data name="InbCar4DoorIndex3正在开关" xml:space="preserve">
+    <value>Car4DoorIndex3正在开关</value>
+  </data>
+  <data name="InbCar5DoorIndex3正在开关" xml:space="preserve">
+    <value>Car5DoorIndex3正在开关</value>
+  </data>
+  <data name="InbCar0DoorIndex3开到位" xml:space="preserve">
+    <value>Car0DoorIndex3开到位</value>
+  </data>
+  <data name="InbCar1DoorIndex3开到位" xml:space="preserve">
+    <value>Car1DoorIndex3开到位</value>
+  </data>
+  <data name="InbCar2DoorIndex3开到位" xml:space="preserve">
+    <value>Car2DoorIndex3开到位</value>
+  </data>
+  <data name="InbCar3DoorIndex3开到位" xml:space="preserve">
+    <value>Car3DoorIndex3开到位</value>
+  </data>
+  <data name="InbCar4DoorIndex3开到位" xml:space="preserve">
+    <value>Car4DoorIndex3开到位</value>
+  </data>
+  <data name="InbCar5DoorIndex3开到位" xml:space="preserve">
+    <value>Car5DoorIndex3开到位</value>
+  </data>
+  <data name="InbCar0DoorIndex3关并锁到位" xml:space="preserve">
+    <value>Car0DoorIndex3关并锁到位</value>
+  </data>
+  <data name="InbCar1DoorIndex3关并锁到位" xml:space="preserve">
+    <value>Car1DoorIndex3关并锁到位</value>
+  </data>
+  <data name="InbCar2DoorIndex3关并锁到位" xml:space="preserve">
+    <value>Car2DoorIndex3关并锁到位</value>
+  </data>
+  <data name="InbCar3DoorIndex3关并锁到位" xml:space="preserve">
+    <value>Car3DoorIndex3关并锁到位</value>
+  </data>
+  <data name="InbCar4DoorIndex3关并锁到位" xml:space="preserve">
+    <value>Car4DoorIndex3关并锁到位</value>
+  </data>
+  <data name="InbCar5DoorIndex3关并锁到位" xml:space="preserve">
+    <value>Car5DoorIndex3关并锁到位</value>
+  </data>
+  <data name="InbCar0DoorIndex3状态未知" xml:space="preserve">
+    <value>Car0DoorIndex3状态未知</value>
+  </data>
+  <data name="InbCar1DoorIndex3状态未知" xml:space="preserve">
+    <value>Car1DoorIndex3状态未知</value>
+  </data>
+  <data name="InbCar2DoorIndex3状态未知" xml:space="preserve">
+    <value>Car2DoorIndex3状态未知</value>
+  </data>
+  <data name="InbCar3DoorIndex3状态未知" xml:space="preserve">
+    <value>Car3DoorIndex3状态未知</value>
+  </data>
+  <data name="InbCar4DoorIndex3状态未知" xml:space="preserve">
+    <value>Car4DoorIndex3状态未知</value>
+  </data>
+  <data name="InbCar5DoorIndex3状态未知" xml:space="preserve">
+    <value>Car5DoorIndex3状态未知</value>
+  </data>
+  <data name="InbCar0DoorIndex4切除" xml:space="preserve">
+    <value>Car0DoorIndex4切除</value>
+  </data>
+  <data name="InbCar1DoorIndex4切除" xml:space="preserve">
+    <value>Car1DoorIndex4切除</value>
+  </data>
+  <data name="InbCar2DoorIndex4切除" xml:space="preserve">
+    <value>Car2DoorIndex4切除</value>
+  </data>
+  <data name="InbCar3DoorIndex4切除" xml:space="preserve">
+    <value>Car3DoorIndex4切除</value>
+  </data>
+  <data name="InbCar4DoorIndex4切除" xml:space="preserve">
+    <value>Car4DoorIndex4切除</value>
+  </data>
+  <data name="InbCar5DoorIndex4切除" xml:space="preserve">
+    <value>Car5DoorIndex4切除</value>
+  </data>
+  <data name="InbCar0DoorIndex4紧急释放" xml:space="preserve">
+    <value>Car0DoorIndex4紧急释放</value>
+  </data>
+  <data name="InbCar1DoorIndex4紧急释放" xml:space="preserve">
+    <value>Car1DoorIndex4紧急释放</value>
+  </data>
+  <data name="InbCar2DoorIndex4紧急释放" xml:space="preserve">
+    <value>Car2DoorIndex4紧急释放</value>
+  </data>
+  <data name="InbCar3DoorIndex4紧急释放" xml:space="preserve">
+    <value>Car3DoorIndex4紧急释放</value>
+  </data>
+  <data name="InbCar4DoorIndex4紧急释放" xml:space="preserve">
+    <value>Car4DoorIndex4紧急释放</value>
+  </data>
+  <data name="InbCar5DoorIndex4紧急释放" xml:space="preserve">
+    <value>Car5DoorIndex4紧急释放</value>
+  </data>
+  <data name="InbCar0DoorIndex4故障" xml:space="preserve">
+    <value>Car0DoorIndex4故障</value>
+  </data>
+  <data name="InbCar1DoorIndex4故障" xml:space="preserve">
+    <value>Car1DoorIndex4故障</value>
+  </data>
+  <data name="InbCar2DoorIndex4故障" xml:space="preserve">
+    <value>Car2DoorIndex4故障</value>
+  </data>
+  <data name="InbCar3DoorIndex4故障" xml:space="preserve">
+    <value>Car3DoorIndex4故障</value>
+  </data>
+  <data name="InbCar4DoorIndex4故障" xml:space="preserve">
+    <value>Car4DoorIndex4故障</value>
+  </data>
+  <data name="InbCar5DoorIndex4故障" xml:space="preserve">
+    <value>Car5DoorIndex4故障</value>
+  </data>
+  <data name="InbCar0DoorIndex4障碍物" xml:space="preserve">
+    <value>Car0DoorIndex4障碍物</value>
+  </data>
+  <data name="InbCar1DoorIndex4障碍物" xml:space="preserve">
+    <value>Car1DoorIndex4障碍物</value>
+  </data>
+  <data name="InbCar2DoorIndex4障碍物" xml:space="preserve">
+    <value>Car2DoorIndex4障碍物</value>
+  </data>
+  <data name="InbCar3DoorIndex4障碍物" xml:space="preserve">
+    <value>Car3DoorIndex4障碍物</value>
+  </data>
+  <data name="InbCar4DoorIndex4障碍物" xml:space="preserve">
+    <value>Car4DoorIndex4障碍物</value>
+  </data>
+  <data name="InbCar5DoorIndex4障碍物" xml:space="preserve">
+    <value>Car5DoorIndex4障碍物</value>
+  </data>
+  <data name="InbCar0DoorIndex4正在开关" xml:space="preserve">
+    <value>Car0DoorIndex4正在开关</value>
+  </data>
+  <data name="InbCar1DoorIndex4正在开关" xml:space="preserve">
+    <value>Car1DoorIndex4正在开关</value>
+  </data>
+  <data name="InbCar2DoorIndex4正在开关" xml:space="preserve">
+    <value>Car2DoorIndex4正在开关</value>
+  </data>
+  <data name="InbCar3DoorIndex4正在开关" xml:space="preserve">
+    <value>Car3DoorIndex4正在开关</value>
+  </data>
+  <data name="InbCar4DoorIndex4正在开关" xml:space="preserve">
+    <value>Car4DoorIndex4正在开关</value>
+  </data>
+  <data name="InbCar5DoorIndex4正在开关" xml:space="preserve">
+    <value>Car5DoorIndex4正在开关</value>
+  </data>
+  <data name="InbCar0DoorIndex4开到位" xml:space="preserve">
+    <value>Car0DoorIndex4开到位</value>
+  </data>
+  <data name="InbCar1DoorIndex4开到位" xml:space="preserve">
+    <value>Car1DoorIndex4开到位</value>
+  </data>
+  <data name="InbCar2DoorIndex4开到位" xml:space="preserve">
+    <value>Car2DoorIndex4开到位</value>
+  </data>
+  <data name="InbCar3DoorIndex4开到位" xml:space="preserve">
+    <value>Car3DoorIndex4开到位</value>
+  </data>
+  <data name="InbCar4DoorIndex4开到位" xml:space="preserve">
+    <value>Car4DoorIndex4开到位</value>
+  </data>
+  <data name="InbCar5DoorIndex4开到位" xml:space="preserve">
+    <value>Car5DoorIndex4开到位</value>
+  </data>
+  <data name="InbCar0DoorIndex4关并锁到位" xml:space="preserve">
+    <value>Car0DoorIndex4关并锁到位</value>
+  </data>
+  <data name="InbCar1DoorIndex4关并锁到位" xml:space="preserve">
+    <value>Car1DoorIndex4关并锁到位</value>
+  </data>
+  <data name="InbCar2DoorIndex4关并锁到位" xml:space="preserve">
+    <value>Car2DoorIndex4关并锁到位</value>
+  </data>
+  <data name="InbCar3DoorIndex4关并锁到位" xml:space="preserve">
+    <value>Car3DoorIndex4关并锁到位</value>
+  </data>
+  <data name="InbCar4DoorIndex4关并锁到位" xml:space="preserve">
+    <value>Car4DoorIndex4关并锁到位</value>
+  </data>
+  <data name="InbCar5DoorIndex4关并锁到位" xml:space="preserve">
+    <value>Car5DoorIndex4关并锁到位</value>
+  </data>
+  <data name="InbCar0DoorIndex4状态未知" xml:space="preserve">
+    <value>Car0DoorIndex4状态未知</value>
+  </data>
+  <data name="InbCar1DoorIndex4状态未知" xml:space="preserve">
+    <value>Car1DoorIndex4状态未知</value>
+  </data>
+  <data name="InbCar2DoorIndex4状态未知" xml:space="preserve">
+    <value>Car2DoorIndex4状态未知</value>
+  </data>
+  <data name="InbCar3DoorIndex4状态未知" xml:space="preserve">
+    <value>Car3DoorIndex4状态未知</value>
+  </data>
+  <data name="InbCar4DoorIndex4状态未知" xml:space="preserve">
+    <value>Car4DoorIndex4状态未知</value>
+  </data>
+  <data name="InbCar5DoorIndex4状态未知" xml:space="preserve">
+    <value>Car5DoorIndex4状态未知</value>
+  </data>
+  <data name="InbCar0DoorIndex5切除" xml:space="preserve">
+    <value>Car0DoorIndex5切除</value>
+  </data>
+  <data name="InbCar1DoorIndex5切除" xml:space="preserve">
+    <value>Car1DoorIndex5切除</value>
+  </data>
+  <data name="InbCar2DoorIndex5切除" xml:space="preserve">
+    <value>Car2DoorIndex5切除</value>
+  </data>
+  <data name="InbCar3DoorIndex5切除" xml:space="preserve">
+    <value>Car3DoorIndex5切除</value>
+  </data>
+  <data name="InbCar4DoorIndex5切除" xml:space="preserve">
+    <value>Car4DoorIndex5切除</value>
+  </data>
+  <data name="InbCar5DoorIndex5切除" xml:space="preserve">
+    <value>Car5DoorIndex5切除</value>
+  </data>
+  <data name="InbCar0DoorIndex5紧急释放" xml:space="preserve">
+    <value>Car0DoorIndex5紧急释放</value>
+  </data>
+  <data name="InbCar1DoorIndex5紧急释放" xml:space="preserve">
+    <value>Car1DoorIndex5紧急释放</value>
+  </data>
+  <data name="InbCar2DoorIndex5紧急释放" xml:space="preserve">
+    <value>Car2DoorIndex5紧急释放</value>
+  </data>
+  <data name="InbCar3DoorIndex5紧急释放" xml:space="preserve">
+    <value>Car3DoorIndex5紧急释放</value>
+  </data>
+  <data name="InbCar4DoorIndex5紧急释放" xml:space="preserve">
+    <value>Car4DoorIndex5紧急释放</value>
+  </data>
+  <data name="InbCar5DoorIndex5紧急释放" xml:space="preserve">
+    <value>Car5DoorIndex5紧急释放</value>
+  </data>
+  <data name="InbCar0DoorIndex5故障" xml:space="preserve">
+    <value>Car0DoorIndex5故障</value>
+  </data>
+  <data name="InbCar1DoorIndex5故障" xml:space="preserve">
+    <value>Car1DoorIndex5故障</value>
+  </data>
+  <data name="InbCar2DoorIndex5故障" xml:space="preserve">
+    <value>Car2DoorIndex5故障</value>
+  </data>
+  <data name="InbCar3DoorIndex5故障" xml:space="preserve">
+    <value>Car3DoorIndex5故障</value>
+  </data>
+  <data name="InbCar4DoorIndex5故障" xml:space="preserve">
+    <value>Car4DoorIndex5故障</value>
+  </data>
+  <data name="InbCar5DoorIndex5故障" xml:space="preserve">
+    <value>Car5DoorIndex5故障</value>
+  </data>
+  <data name="InbCar0DoorIndex5障碍物" xml:space="preserve">
+    <value>Car0DoorIndex5障碍物</value>
+  </data>
+  <data name="InbCar1DoorIndex5障碍物" xml:space="preserve">
+    <value>Car1DoorIndex5障碍物</value>
+  </data>
+  <data name="InbCar2DoorIndex5障碍物" xml:space="preserve">
+    <value>Car2DoorIndex5障碍物</value>
+  </data>
+  <data name="InbCar3DoorIndex5障碍物" xml:space="preserve">
+    <value>Car3DoorIndex5障碍物</value>
+  </data>
+  <data name="InbCar4DoorIndex5障碍物" xml:space="preserve">
+    <value>Car4DoorIndex5障碍物</value>
+  </data>
+  <data name="InbCar5DoorIndex5障碍物" xml:space="preserve">
+    <value>Car5DoorIndex5障碍物</value>
+  </data>
+  <data name="InbCar0DoorIndex5正在开关" xml:space="preserve">
+    <value>Car0DoorIndex5正在开关</value>
+  </data>
+  <data name="InbCar1DoorIndex5正在开关" xml:space="preserve">
+    <value>Car1DoorIndex5正在开关</value>
+  </data>
+  <data name="InbCar2DoorIndex5正在开关" xml:space="preserve">
+    <value>Car2DoorIndex5正在开关</value>
+  </data>
+  <data name="InbCar3DoorIndex5正在开关" xml:space="preserve">
+    <value>Car3DoorIndex5正在开关</value>
+  </data>
+  <data name="InbCar4DoorIndex5正在开关" xml:space="preserve">
+    <value>Car4DoorIndex5正在开关</value>
+  </data>
+  <data name="InbCar5DoorIndex5正在开关" xml:space="preserve">
+    <value>Car5DoorIndex5正在开关</value>
+  </data>
+  <data name="InbCar0DoorIndex5开到位" xml:space="preserve">
+    <value>Car0DoorIndex5开到位</value>
+  </data>
+  <data name="InbCar1DoorIndex5开到位" xml:space="preserve">
+    <value>Car1DoorIndex5开到位</value>
+  </data>
+  <data name="InbCar2DoorIndex5开到位" xml:space="preserve">
+    <value>Car2DoorIndex5开到位</value>
+  </data>
+  <data name="InbCar3DoorIndex5开到位" xml:space="preserve">
+    <value>Car3DoorIndex5开到位</value>
+  </data>
+  <data name="InbCar4DoorIndex5开到位" xml:space="preserve">
+    <value>Car4DoorIndex5开到位</value>
+  </data>
+  <data name="InbCar5DoorIndex5开到位" xml:space="preserve">
+    <value>Car5DoorIndex5开到位</value>
+  </data>
+  <data name="InbCar0DoorIndex5关并锁到位" xml:space="preserve">
+    <value>Car0DoorIndex5关并锁到位</value>
+  </data>
+  <data name="InbCar1DoorIndex5关并锁到位" xml:space="preserve">
+    <value>Car1DoorIndex5关并锁到位</value>
+  </data>
+  <data name="InbCar2DoorIndex5关并锁到位" xml:space="preserve">
+    <value>Car2DoorIndex5关并锁到位</value>
+  </data>
+  <data name="InbCar3DoorIndex5关并锁到位" xml:space="preserve">
+    <value>Car3DoorIndex5关并锁到位</value>
+  </data>
+  <data name="InbCar4DoorIndex5关并锁到位" xml:space="preserve">
+    <value>Car4DoorIndex5关并锁到位</value>
+  </data>
+  <data name="InbCar5DoorIndex5关并锁到位" xml:space="preserve">
+    <value>Car5DoorIndex5关并锁到位</value>
+  </data>
+  <data name="InbCar0DoorIndex5状态未知" xml:space="preserve">
+    <value>Car0DoorIndex5状态未知</value>
+  </data>
+  <data name="InbCar1DoorIndex5状态未知" xml:space="preserve">
+    <value>Car1DoorIndex5状态未知</value>
+  </data>
+  <data name="InbCar2DoorIndex5状态未知" xml:space="preserve">
+    <value>Car2DoorIndex5状态未知</value>
+  </data>
+  <data name="InbCar3DoorIndex5状态未知" xml:space="preserve">
+    <value>Car3DoorIndex5状态未知</value>
+  </data>
+  <data name="InbCar4DoorIndex5状态未知" xml:space="preserve">
+    <value>Car4DoorIndex5状态未知</value>
+  </data>
+  <data name="InbCar5DoorIndex5状态未知" xml:space="preserve">
+    <value>Car5DoorIndex5状态未知</value>
+  </data>
+  <data name="InbCar0DoorIndex6切除" xml:space="preserve">
+    <value>Car0DoorIndex6切除</value>
+  </data>
+  <data name="InbCar1DoorIndex6切除" xml:space="preserve">
+    <value>Car1DoorIndex6切除</value>
+  </data>
+  <data name="InbCar2DoorIndex6切除" xml:space="preserve">
+    <value>Car2DoorIndex6切除</value>
+  </data>
+  <data name="InbCar3DoorIndex6切除" xml:space="preserve">
+    <value>Car3DoorIndex6切除</value>
+  </data>
+  <data name="InbCar4DoorIndex6切除" xml:space="preserve">
+    <value>Car4DoorIndex6切除</value>
+  </data>
+  <data name="InbCar5DoorIndex6切除" xml:space="preserve">
+    <value>Car5DoorIndex6切除</value>
+  </data>
+  <data name="InbCar0DoorIndex6紧急释放" xml:space="preserve">
+    <value>Car0DoorIndex6紧急释放</value>
+  </data>
+  <data name="InbCar1DoorIndex6紧急释放" xml:space="preserve">
+    <value>Car1DoorIndex6紧急释放</value>
+  </data>
+  <data name="InbCar2DoorIndex6紧急释放" xml:space="preserve">
+    <value>Car2DoorIndex6紧急释放</value>
+  </data>
+  <data name="InbCar3DoorIndex6紧急释放" xml:space="preserve">
+    <value>Car3DoorIndex6紧急释放</value>
+  </data>
+  <data name="InbCar4DoorIndex6紧急释放" xml:space="preserve">
+    <value>Car4DoorIndex6紧急释放</value>
+  </data>
+  <data name="InbCar5DoorIndex6紧急释放" xml:space="preserve">
+    <value>Car5DoorIndex6紧急释放</value>
+  </data>
+  <data name="InbCar0DoorIndex6故障" xml:space="preserve">
+    <value>Car0DoorIndex6故障</value>
+  </data>
+  <data name="InbCar1DoorIndex6故障" xml:space="preserve">
+    <value>Car1DoorIndex6故障</value>
+  </data>
+  <data name="InbCar2DoorIndex6故障" xml:space="preserve">
+    <value>Car2DoorIndex6故障</value>
+  </data>
+  <data name="InbCar3DoorIndex6故障" xml:space="preserve">
+    <value>Car3DoorIndex6故障</value>
+  </data>
+  <data name="InbCar4DoorIndex6故障" xml:space="preserve">
+    <value>Car4DoorIndex6故障</value>
+  </data>
+  <data name="InbCar5DoorIndex6故障" xml:space="preserve">
+    <value>Car5DoorIndex6故障</value>
+  </data>
+  <data name="InbCar0DoorIndex6障碍物" xml:space="preserve">
+    <value>Car0DoorIndex6障碍物</value>
+  </data>
+  <data name="InbCar1DoorIndex6障碍物" xml:space="preserve">
+    <value>Car1DoorIndex6障碍物</value>
+  </data>
+  <data name="InbCar2DoorIndex6障碍物" xml:space="preserve">
+    <value>Car2DoorIndex6障碍物</value>
+  </data>
+  <data name="InbCar3DoorIndex6障碍物" xml:space="preserve">
+    <value>Car3DoorIndex6障碍物</value>
+  </data>
+  <data name="InbCar4DoorIndex6障碍物" xml:space="preserve">
+    <value>Car4DoorIndex6障碍物</value>
+  </data>
+  <data name="InbCar5DoorIndex6障碍物" xml:space="preserve">
+    <value>Car5DoorIndex6障碍物</value>
+  </data>
+  <data name="InbCar0DoorIndex6正在开关" xml:space="preserve">
+    <value>Car0DoorIndex6正在开关</value>
+  </data>
+  <data name="InbCar1DoorIndex6正在开关" xml:space="preserve">
+    <value>Car1DoorIndex6正在开关</value>
+  </data>
+  <data name="InbCar2DoorIndex6正在开关" xml:space="preserve">
+    <value>Car2DoorIndex6正在开关</value>
+  </data>
+  <data name="InbCar3DoorIndex6正在开关" xml:space="preserve">
+    <value>Car3DoorIndex6正在开关</value>
+  </data>
+  <data name="InbCar4DoorIndex6正在开关" xml:space="preserve">
+    <value>Car4DoorIndex6正在开关</value>
+  </data>
+  <data name="InbCar5DoorIndex6正在开关" xml:space="preserve">
+    <value>Car5DoorIndex6正在开关</value>
+  </data>
+  <data name="InbCar0DoorIndex6开到位" xml:space="preserve">
+    <value>Car0DoorIndex6开到位</value>
+  </data>
+  <data name="InbCar1DoorIndex6开到位" xml:space="preserve">
+    <value>Car1DoorIndex6开到位</value>
+  </data>
+  <data name="InbCar2DoorIndex6开到位" xml:space="preserve">
+    <value>Car2DoorIndex6开到位</value>
+  </data>
+  <data name="InbCar3DoorIndex6开到位" xml:space="preserve">
+    <value>Car3DoorIndex6开到位</value>
+  </data>
+  <data name="InbCar4DoorIndex6开到位" xml:space="preserve">
+    <value>Car4DoorIndex6开到位</value>
+  </data>
+  <data name="InbCar5DoorIndex6开到位" xml:space="preserve">
+    <value>Car5DoorIndex6开到位</value>
+  </data>
+  <data name="InbCar0DoorIndex6关并锁到位" xml:space="preserve">
+    <value>Car0DoorIndex6关并锁到位</value>
+  </data>
+  <data name="InbCar1DoorIndex6关并锁到位" xml:space="preserve">
+    <value>Car1DoorIndex6关并锁到位</value>
+  </data>
+  <data name="InbCar2DoorIndex6关并锁到位" xml:space="preserve">
+    <value>Car2DoorIndex6关并锁到位</value>
+  </data>
+  <data name="InbCar3DoorIndex6关并锁到位" xml:space="preserve">
+    <value>Car3DoorIndex6关并锁到位</value>
+  </data>
+  <data name="InbCar4DoorIndex6关并锁到位" xml:space="preserve">
+    <value>Car4DoorIndex6关并锁到位</value>
+  </data>
+  <data name="InbCar5DoorIndex6关并锁到位" xml:space="preserve">
+    <value>Car5DoorIndex6关并锁到位</value>
+  </data>
+  <data name="InbCar0DoorIndex6状态未知" xml:space="preserve">
+    <value>Car0DoorIndex6状态未知</value>
+  </data>
+  <data name="InbCar1DoorIndex6状态未知" xml:space="preserve">
+    <value>Car1DoorIndex6状态未知</value>
+  </data>
+  <data name="InbCar2DoorIndex6状态未知" xml:space="preserve">
+    <value>Car2DoorIndex6状态未知</value>
+  </data>
+  <data name="InbCar3DoorIndex6状态未知" xml:space="preserve">
+    <value>Car3DoorIndex6状态未知</value>
+  </data>
+  <data name="InbCar4DoorIndex6状态未知" xml:space="preserve">
+    <value>Car4DoorIndex6状态未知</value>
+  </data>
+  <data name="InbCar5DoorIndex6状态未知" xml:space="preserve">
+    <value>Car5DoorIndex6状态未知</value>
+  </data>
+  <data name="InbCar0DoorIndex7切除" xml:space="preserve">
+    <value>Car0DoorIndex7切除</value>
+  </data>
+  <data name="InbCar1DoorIndex7切除" xml:space="preserve">
+    <value>Car1DoorIndex7切除</value>
+  </data>
+  <data name="InbCar2DoorIndex7切除" xml:space="preserve">
+    <value>Car2DoorIndex7切除</value>
+  </data>
+  <data name="InbCar3DoorIndex7切除" xml:space="preserve">
+    <value>Car3DoorIndex7切除</value>
+  </data>
+  <data name="InbCar4DoorIndex7切除" xml:space="preserve">
+    <value>Car4DoorIndex7切除</value>
+  </data>
+  <data name="InbCar5DoorIndex7切除" xml:space="preserve">
+    <value>Car5DoorIndex7切除</value>
+  </data>
+  <data name="InbCar0DoorIndex7紧急释放" xml:space="preserve">
+    <value>Car0DoorIndex7紧急释放</value>
+  </data>
+  <data name="InbCar1DoorIndex7紧急释放" xml:space="preserve">
+    <value>Car1DoorIndex7紧急释放</value>
+  </data>
+  <data name="InbCar2DoorIndex7紧急释放" xml:space="preserve">
+    <value>Car2DoorIndex7紧急释放</value>
+  </data>
+  <data name="InbCar3DoorIndex7紧急释放" xml:space="preserve">
+    <value>Car3DoorIndex7紧急释放</value>
+  </data>
+  <data name="InbCar4DoorIndex7紧急释放" xml:space="preserve">
+    <value>Car4DoorIndex7紧急释放</value>
+  </data>
+  <data name="InbCar5DoorIndex7紧急释放" xml:space="preserve">
+    <value>Car5DoorIndex7紧急释放</value>
+  </data>
+  <data name="InbCar0DoorIndex7故障" xml:space="preserve">
+    <value>Car0DoorIndex7故障</value>
+  </data>
+  <data name="InbCar1DoorIndex7故障" xml:space="preserve">
+    <value>Car1DoorIndex7故障</value>
+  </data>
+  <data name="InbCar2DoorIndex7故障" xml:space="preserve">
+    <value>Car2DoorIndex7故障</value>
+  </data>
+  <data name="InbCar3DoorIndex7故障" xml:space="preserve">
+    <value>Car3DoorIndex7故障</value>
+  </data>
+  <data name="InbCar4DoorIndex7故障" xml:space="preserve">
+    <value>Car4DoorIndex7故障</value>
+  </data>
+  <data name="InbCar5DoorIndex7故障" xml:space="preserve">
+    <value>Car5DoorIndex7故障</value>
+  </data>
+  <data name="InbCar0DoorIndex7障碍物" xml:space="preserve">
+    <value>Car0DoorIndex7障碍物</value>
+  </data>
+  <data name="InbCar1DoorIndex7障碍物" xml:space="preserve">
+    <value>Car1DoorIndex7障碍物</value>
+  </data>
+  <data name="InbCar2DoorIndex7障碍物" xml:space="preserve">
+    <value>Car2DoorIndex7障碍物</value>
+  </data>
+  <data name="InbCar3DoorIndex7障碍物" xml:space="preserve">
+    <value>Car3DoorIndex7障碍物</value>
+  </data>
+  <data name="InbCar4DoorIndex7障碍物" xml:space="preserve">
+    <value>Car4DoorIndex7障碍物</value>
+  </data>
+  <data name="InbCar5DoorIndex7障碍物" xml:space="preserve">
+    <value>Car5DoorIndex7障碍物</value>
+  </data>
+  <data name="InbCar0DoorIndex7正在开关" xml:space="preserve">
+    <value>Car0DoorIndex7正在开关</value>
+  </data>
+  <data name="InbCar1DoorIndex7正在开关" xml:space="preserve">
+    <value>Car1DoorIndex7正在开关</value>
+  </data>
+  <data name="InbCar2DoorIndex7正在开关" xml:space="preserve">
+    <value>Car2DoorIndex7正在开关</value>
+  </data>
+  <data name="InbCar3DoorIndex7正在开关" xml:space="preserve">
+    <value>Car3DoorIndex7正在开关</value>
+  </data>
+  <data name="InbCar4DoorIndex7正在开关" xml:space="preserve">
+    <value>Car4DoorIndex7正在开关</value>
+  </data>
+  <data name="InbCar5DoorIndex7正在开关" xml:space="preserve">
+    <value>Car5DoorIndex7正在开关</value>
+  </data>
+  <data name="InbCar0DoorIndex7开到位" xml:space="preserve">
+    <value>Car0DoorIndex7开到位</value>
+  </data>
+  <data name="InbCar1DoorIndex7开到位" xml:space="preserve">
+    <value>Car1DoorIndex7开到位</value>
+  </data>
+  <data name="InbCar2DoorIndex7开到位" xml:space="preserve">
+    <value>Car2DoorIndex7开到位</value>
+  </data>
+  <data name="InbCar3DoorIndex7开到位" xml:space="preserve">
+    <value>Car3DoorIndex7开到位</value>
+  </data>
+  <data name="InbCar4DoorIndex7开到位" xml:space="preserve">
+    <value>Car4DoorIndex7开到位</value>
+  </data>
+  <data name="InbCar5DoorIndex7开到位" xml:space="preserve">
+    <value>Car5DoorIndex7开到位</value>
+  </data>
+  <data name="InbCar0DoorIndex7关并锁到位" xml:space="preserve">
+    <value>Car0DoorIndex7关并锁到位</value>
+  </data>
+  <data name="InbCar1DoorIndex7关并锁到位" xml:space="preserve">
+    <value>Car1DoorIndex7关并锁到位</value>
+  </data>
+  <data name="InbCar2DoorIndex7关并锁到位" xml:space="preserve">
+    <value>Car2DoorIndex7关并锁到位</value>
+  </data>
+  <data name="InbCar3DoorIndex7关并锁到位" xml:space="preserve">
+    <value>Car3DoorIndex7关并锁到位</value>
+  </data>
+  <data name="InbCar4DoorIndex7关并锁到位" xml:space="preserve">
+    <value>Car4DoorIndex7关并锁到位</value>
+  </data>
+  <data name="InbCar5DoorIndex7关并锁到位" xml:space="preserve">
+    <value>Car5DoorIndex7关并锁到位</value>
+  </data>
+  <data name="InbCar0DoorIndex7状态未知" xml:space="preserve">
+    <value>Car0DoorIndex7状态未知</value>
+  </data>
+  <data name="InbCar1DoorIndex7状态未知" xml:space="preserve">
+    <value>Car1DoorIndex7状态未知</value>
+  </data>
+  <data name="InbCar2DoorIndex7状态未知" xml:space="preserve">
+    <value>Car2DoorIndex7状态未知</value>
+  </data>
+  <data name="InbCar3DoorIndex7状态未知" xml:space="preserve">
+    <value>Car3DoorIndex7状态未知</value>
+  </data>
+  <data name="InbCar4DoorIndex7状态未知" xml:space="preserve">
+    <value>Car4DoorIndex7状态未知</value>
+  </data>
+  <data name="InbCar5DoorIndex7状态未知" xml:space="preserve">
+    <value>Car5DoorIndex7状态未知</value>
+  </data>
+  <data name="InbCar0DoorIndex8切除" xml:space="preserve">
+    <value>Car0DoorIndex8切除</value>
+  </data>
+  <data name="InbCar1DoorIndex8切除" xml:space="preserve">
+    <value>Car1DoorIndex8切除</value>
+  </data>
+  <data name="InbCar2DoorIndex8切除" xml:space="preserve">
+    <value>Car2DoorIndex8切除</value>
+  </data>
+  <data name="InbCar3DoorIndex8切除" xml:space="preserve">
+    <value>Car3DoorIndex8切除</value>
+  </data>
+  <data name="InbCar4DoorIndex8切除" xml:space="preserve">
+    <value>Car4DoorIndex8切除</value>
+  </data>
+  <data name="InbCar5DoorIndex8切除" xml:space="preserve">
+    <value>Car5DoorIndex8切除</value>
+  </data>
+  <data name="InbCar0DoorIndex8紧急释放" xml:space="preserve">
+    <value>Car0DoorIndex8紧急释放</value>
+  </data>
+  <data name="InbCar1DoorIndex8紧急释放" xml:space="preserve">
+    <value>Car1DoorIndex8紧急释放</value>
+  </data>
+  <data name="InbCar2DoorIndex8紧急释放" xml:space="preserve">
+    <value>Car2DoorIndex8紧急释放</value>
+  </data>
+  <data name="InbCar3DoorIndex8紧急释放" xml:space="preserve">
+    <value>Car3DoorIndex8紧急释放</value>
+  </data>
+  <data name="InbCar4DoorIndex8紧急释放" xml:space="preserve">
+    <value>Car4DoorIndex8紧急释放</value>
+  </data>
+  <data name="InbCar5DoorIndex8紧急释放" xml:space="preserve">
+    <value>Car5DoorIndex8紧急释放</value>
+  </data>
+  <data name="InbCar0DoorIndex8故障" xml:space="preserve">
+    <value>Car0DoorIndex8故障</value>
+  </data>
+  <data name="InbCar1DoorIndex8故障" xml:space="preserve">
+    <value>Car1DoorIndex8故障</value>
+  </data>
+  <data name="InbCar2DoorIndex8故障" xml:space="preserve">
+    <value>Car2DoorIndex8故障</value>
+  </data>
+  <data name="InbCar3DoorIndex8故障" xml:space="preserve">
+    <value>Car3DoorIndex8故障</value>
+  </data>
+  <data name="InbCar4DoorIndex8故障" xml:space="preserve">
+    <value>Car4DoorIndex8故障</value>
+  </data>
+  <data name="InbCar5DoorIndex8故障" xml:space="preserve">
+    <value>Car5DoorIndex8故障</value>
+  </data>
+  <data name="InbCar0DoorIndex8障碍物" xml:space="preserve">
+    <value>Car0DoorIndex8障碍物</value>
+  </data>
+  <data name="InbCar1DoorIndex8障碍物" xml:space="preserve">
+    <value>Car1DoorIndex8障碍物</value>
+  </data>
+  <data name="InbCar2DoorIndex8障碍物" xml:space="preserve">
+    <value>Car2DoorIndex8障碍物</value>
+  </data>
+  <data name="InbCar3DoorIndex8障碍物" xml:space="preserve">
+    <value>Car3DoorIndex8障碍物</value>
+  </data>
+  <data name="InbCar4DoorIndex8障碍物" xml:space="preserve">
+    <value>Car4DoorIndex8障碍物</value>
+  </data>
+  <data name="InbCar5DoorIndex8障碍物" xml:space="preserve">
+    <value>Car5DoorIndex8障碍物</value>
+  </data>
+  <data name="InbCar0DoorIndex8正在开关" xml:space="preserve">
+    <value>Car0DoorIndex8正在开关</value>
+  </data>
+  <data name="InbCar1DoorIndex8正在开关" xml:space="preserve">
+    <value>Car1DoorIndex8正在开关</value>
+  </data>
+  <data name="InbCar2DoorIndex8正在开关" xml:space="preserve">
+    <value>Car2DoorIndex8正在开关</value>
+  </data>
+  <data name="InbCar3DoorIndex8正在开关" xml:space="preserve">
+    <value>Car3DoorIndex8正在开关</value>
+  </data>
+  <data name="InbCar4DoorIndex8正在开关" xml:space="preserve">
+    <value>Car4DoorIndex8正在开关</value>
+  </data>
+  <data name="InbCar5DoorIndex8正在开关" xml:space="preserve">
+    <value>Car5DoorIndex8正在开关</value>
+  </data>
+  <data name="InbCar0DoorIndex8开到位" xml:space="preserve">
+    <value>Car0DoorIndex8开到位</value>
+  </data>
+  <data name="InbCar1DoorIndex8开到位" xml:space="preserve">
+    <value>Car1DoorIndex8开到位</value>
+  </data>
+  <data name="InbCar2DoorIndex8开到位" xml:space="preserve">
+    <value>Car2DoorIndex8开到位</value>
+  </data>
+  <data name="InbCar3DoorIndex8开到位" xml:space="preserve">
+    <value>Car3DoorIndex8开到位</value>
+  </data>
+  <data name="InbCar4DoorIndex8开到位" xml:space="preserve">
+    <value>Car4DoorIndex8开到位</value>
+  </data>
+  <data name="InbCar5DoorIndex8开到位" xml:space="preserve">
+    <value>Car5DoorIndex8开到位</value>
+  </data>
+  <data name="InbCar0DoorIndex8关并锁到位" xml:space="preserve">
+    <value>Car0DoorIndex8关并锁到位</value>
+  </data>
+  <data name="InbCar1DoorIndex8关并锁到位" xml:space="preserve">
+    <value>Car1DoorIndex8关并锁到位</value>
+  </data>
+  <data name="InbCar2DoorIndex8关并锁到位" xml:space="preserve">
+    <value>Car2DoorIndex8关并锁到位</value>
+  </data>
+  <data name="InbCar3DoorIndex8关并锁到位" xml:space="preserve">
+    <value>Car3DoorIndex8关并锁到位</value>
+  </data>
+  <data name="InbCar4DoorIndex8关并锁到位" xml:space="preserve">
+    <value>Car4DoorIndex8关并锁到位</value>
+  </data>
+  <data name="InbCar5DoorIndex8关并锁到位" xml:space="preserve">
+    <value>Car5DoorIndex8关并锁到位</value>
+  </data>
+  <data name="InbCar0DoorIndex8状态未知" xml:space="preserve">
+    <value>Car0DoorIndex8状态未知</value>
+  </data>
+  <data name="InbCar1DoorIndex8状态未知" xml:space="preserve">
+    <value>Car1DoorIndex8状态未知</value>
+  </data>
+  <data name="InbCar2DoorIndex8状态未知" xml:space="preserve">
+    <value>Car2DoorIndex8状态未知</value>
+  </data>
+  <data name="InbCar3DoorIndex8状态未知" xml:space="preserve">
+    <value>Car3DoorIndex8状态未知</value>
+  </data>
+  <data name="InbCar4DoorIndex8状态未知" xml:space="preserve">
+    <value>Car4DoorIndex8状态未知</value>
+  </data>
+  <data name="InbCar5DoorIndex8状态未知" xml:space="preserve">
+    <value>Car5DoorIndex8状态未知</value>
+  </data>
+  <data name="InbCar0DoorIndex9切除" xml:space="preserve">
+    <value>Car0DoorIndex9切除</value>
+  </data>
+  <data name="InbCar1DoorIndex9切除" xml:space="preserve">
+    <value>Car1DoorIndex9切除</value>
+  </data>
+  <data name="InbCar2DoorIndex9切除" xml:space="preserve">
+    <value>Car2DoorIndex9切除</value>
+  </data>
+  <data name="InbCar3DoorIndex9切除" xml:space="preserve">
+    <value>Car3DoorIndex9切除</value>
+  </data>
+  <data name="InbCar4DoorIndex9切除" xml:space="preserve">
+    <value>Car4DoorIndex9切除</value>
+  </data>
+  <data name="InbCar5DoorIndex9切除" xml:space="preserve">
+    <value>Car5DoorIndex9切除</value>
+  </data>
+  <data name="InbCar0DoorIndex9紧急释放" xml:space="preserve">
+    <value>Car0DoorIndex9紧急释放</value>
+  </data>
+  <data name="InbCar1DoorIndex9紧急释放" xml:space="preserve">
+    <value>Car1DoorIndex9紧急释放</value>
+  </data>
+  <data name="InbCar2DoorIndex9紧急释放" xml:space="preserve">
+    <value>Car2DoorIndex9紧急释放</value>
+  </data>
+  <data name="InbCar3DoorIndex9紧急释放" xml:space="preserve">
+    <value>Car3DoorIndex9紧急释放</value>
+  </data>
+  <data name="InbCar4DoorIndex9紧急释放" xml:space="preserve">
+    <value>Car4DoorIndex9紧急释放</value>
+  </data>
+  <data name="InbCar5DoorIndex9紧急释放" xml:space="preserve">
+    <value>Car5DoorIndex9紧急释放</value>
+  </data>
+  <data name="InbCar0DoorIndex9故障" xml:space="preserve">
+    <value>Car0DoorIndex9故障</value>
+  </data>
+  <data name="InbCar1DoorIndex9故障" xml:space="preserve">
+    <value>Car1DoorIndex9故障</value>
+  </data>
+  <data name="InbCar2DoorIndex9故障" xml:space="preserve">
+    <value>Car2DoorIndex9故障</value>
+  </data>
+  <data name="InbCar3DoorIndex9故障" xml:space="preserve">
+    <value>Car3DoorIndex9故障</value>
+  </data>
+  <data name="InbCar4DoorIndex9故障" xml:space="preserve">
+    <value>Car4DoorIndex9故障</value>
+  </data>
+  <data name="InbCar5DoorIndex9故障" xml:space="preserve">
+    <value>Car5DoorIndex9故障</value>
+  </data>
+  <data name="InbCar0DoorIndex9障碍物" xml:space="preserve">
+    <value>Car0DoorIndex9障碍物</value>
+  </data>
+  <data name="InbCar1DoorIndex9障碍物" xml:space="preserve">
+    <value>Car1DoorIndex9障碍物</value>
+  </data>
+  <data name="InbCar2DoorIndex9障碍物" xml:space="preserve">
+    <value>Car2DoorIndex9障碍物</value>
+  </data>
+  <data name="InbCar3DoorIndex9障碍物" xml:space="preserve">
+    <value>Car3DoorIndex9障碍物</value>
+  </data>
+  <data name="InbCar4DoorIndex9障碍物" xml:space="preserve">
+    <value>Car4DoorIndex9障碍物</value>
+  </data>
+  <data name="InbCar5DoorIndex9障碍物" xml:space="preserve">
+    <value>Car5DoorIndex9障碍物</value>
+  </data>
+  <data name="InbCar0DoorIndex9正在开关" xml:space="preserve">
+    <value>Car0DoorIndex9正在开关</value>
+  </data>
+  <data name="InbCar1DoorIndex9正在开关" xml:space="preserve">
+    <value>Car1DoorIndex9正在开关</value>
+  </data>
+  <data name="InbCar2DoorIndex9正在开关" xml:space="preserve">
+    <value>Car2DoorIndex9正在开关</value>
+  </data>
+  <data name="InbCar3DoorIndex9正在开关" xml:space="preserve">
+    <value>Car3DoorIndex9正在开关</value>
+  </data>
+  <data name="InbCar4DoorIndex9正在开关" xml:space="preserve">
+    <value>Car4DoorIndex9正在开关</value>
+  </data>
+  <data name="InbCar5DoorIndex9正在开关" xml:space="preserve">
+    <value>Car5DoorIndex9正在开关</value>
+  </data>
+  <data name="InbCar0DoorIndex9开到位" xml:space="preserve">
+    <value>Car0DoorIndex9开到位</value>
+  </data>
+  <data name="InbCar1DoorIndex9开到位" xml:space="preserve">
+    <value>Car1DoorIndex9开到位</value>
+  </data>
+  <data name="InbCar2DoorIndex9开到位" xml:space="preserve">
+    <value>Car2DoorIndex9开到位</value>
+  </data>
+  <data name="InbCar3DoorIndex9开到位" xml:space="preserve">
+    <value>Car3DoorIndex9开到位</value>
+  </data>
+  <data name="InbCar4DoorIndex9开到位" xml:space="preserve">
+    <value>Car4DoorIndex9开到位</value>
+  </data>
+  <data name="InbCar5DoorIndex9开到位" xml:space="preserve">
+    <value>Car5DoorIndex9开到位</value>
+  </data>
+  <data name="InbCar0DoorIndex9关并锁到位" xml:space="preserve">
+    <value>Car0DoorIndex9关并锁到位</value>
+  </data>
+  <data name="InbCar1DoorIndex9关并锁到位" xml:space="preserve">
+    <value>Car1DoorIndex9关并锁到位</value>
+  </data>
+  <data name="InbCar2DoorIndex9关并锁到位" xml:space="preserve">
+    <value>Car2DoorIndex9关并锁到位</value>
+  </data>
+  <data name="InbCar3DoorIndex9关并锁到位" xml:space="preserve">
+    <value>Car3DoorIndex9关并锁到位</value>
+  </data>
+  <data name="InbCar4DoorIndex9关并锁到位" xml:space="preserve">
+    <value>Car4DoorIndex9关并锁到位</value>
+  </data>
+  <data name="InbCar5DoorIndex9关并锁到位" xml:space="preserve">
+    <value>Car5DoorIndex9关并锁到位</value>
+  </data>
+  <data name="InbCar0DoorIndex9状态未知" xml:space="preserve">
+    <value>Car0DoorIndex9状态未知</value>
+  </data>
+  <data name="InbCar1DoorIndex9状态未知" xml:space="preserve">
+    <value>Car1DoorIndex9状态未知</value>
+  </data>
+  <data name="InbCar2DoorIndex9状态未知" xml:space="preserve">
+    <value>Car2DoorIndex9状态未知</value>
+  </data>
+  <data name="InbCar3DoorIndex9状态未知" xml:space="preserve">
+    <value>Car3DoorIndex9状态未知</value>
+  </data>
+  <data name="InbCar4DoorIndex9状态未知" xml:space="preserve">
+    <value>Car4DoorIndex9状态未知</value>
+  </data>
+  <data name="InbCar5DoorIndex9状态未知" xml:space="preserve">
+    <value>Car5DoorIndex9状态未知</value>
+  </data>
+  <data name="InbCar0DoorIndex10切除" xml:space="preserve">
+    <value>Car0DoorIndex10切除</value>
+  </data>
+  <data name="InbCar1DoorIndex10切除" xml:space="preserve">
+    <value>Car1DoorIndex10切除</value>
+  </data>
+  <data name="InbCar2DoorIndex10切除" xml:space="preserve">
+    <value>Car2DoorIndex10切除</value>
+  </data>
+  <data name="InbCar3DoorIndex10切除" xml:space="preserve">
+    <value>Car3DoorIndex10切除</value>
+  </data>
+  <data name="InbCar4DoorIndex10切除" xml:space="preserve">
+    <value>Car4DoorIndex10切除</value>
+  </data>
+  <data name="InbCar5DoorIndex10切除" xml:space="preserve">
+    <value>Car5DoorIndex10切除</value>
+  </data>
+  <data name="InbCar0DoorIndex10紧急释放" xml:space="preserve">
+    <value>Car0DoorIndex10紧急释放</value>
+  </data>
+  <data name="InbCar1DoorIndex10紧急释放" xml:space="preserve">
+    <value>Car1DoorIndex10紧急释放</value>
+  </data>
+  <data name="InbCar2DoorIndex10紧急释放" xml:space="preserve">
+    <value>Car2DoorIndex10紧急释放</value>
+  </data>
+  <data name="InbCar3DoorIndex10紧急释放" xml:space="preserve">
+    <value>Car3DoorIndex10紧急释放</value>
+  </data>
+  <data name="InbCar4DoorIndex10紧急释放" xml:space="preserve">
+    <value>Car4DoorIndex10紧急释放</value>
+  </data>
+  <data name="InbCar5DoorIndex10紧急释放" xml:space="preserve">
+    <value>Car5DoorIndex10紧急释放</value>
+  </data>
+  <data name="InbCar0DoorIndex10故障" xml:space="preserve">
+    <value>Car0DoorIndex10故障</value>
+  </data>
+  <data name="InbCar1DoorIndex10故障" xml:space="preserve">
+    <value>Car1DoorIndex10故障</value>
+  </data>
+  <data name="InbCar2DoorIndex10故障" xml:space="preserve">
+    <value>Car2DoorIndex10故障</value>
+  </data>
+  <data name="InbCar3DoorIndex10故障" xml:space="preserve">
+    <value>Car3DoorIndex10故障</value>
+  </data>
+  <data name="InbCar4DoorIndex10故障" xml:space="preserve">
+    <value>Car4DoorIndex10故障</value>
+  </data>
+  <data name="InbCar5DoorIndex10故障" xml:space="preserve">
+    <value>Car5DoorIndex10故障</value>
+  </data>
+  <data name="InbCar0DoorIndex10障碍物" xml:space="preserve">
+    <value>Car0DoorIndex10障碍物</value>
+  </data>
+  <data name="InbCar1DoorIndex10障碍物" xml:space="preserve">
+    <value>Car1DoorIndex10障碍物</value>
+  </data>
+  <data name="InbCar2DoorIndex10障碍物" xml:space="preserve">
+    <value>Car2DoorIndex10障碍物</value>
+  </data>
+  <data name="InbCar3DoorIndex10障碍物" xml:space="preserve">
+    <value>Car3DoorIndex10障碍物</value>
+  </data>
+  <data name="InbCar4DoorIndex10障碍物" xml:space="preserve">
+    <value>Car4DoorIndex10障碍物</value>
+  </data>
+  <data name="InbCar5DoorIndex10障碍物" xml:space="preserve">
+    <value>Car5DoorIndex10障碍物</value>
+  </data>
+  <data name="InbCar0DoorIndex10正在开关" xml:space="preserve">
+    <value>Car0DoorIndex10正在开关</value>
+  </data>
+  <data name="InbCar1DoorIndex10正在开关" xml:space="preserve">
+    <value>Car1DoorIndex10正在开关</value>
+  </data>
+  <data name="InbCar2DoorIndex10正在开关" xml:space="preserve">
+    <value>Car2DoorIndex10正在开关</value>
+  </data>
+  <data name="InbCar3DoorIndex10正在开关" xml:space="preserve">
+    <value>Car3DoorIndex10正在开关</value>
+  </data>
+  <data name="InbCar4DoorIndex10正在开关" xml:space="preserve">
+    <value>Car4DoorIndex10正在开关</value>
+  </data>
+  <data name="InbCar5DoorIndex10正在开关" xml:space="preserve">
+    <value>Car5DoorIndex10正在开关</value>
+  </data>
+  <data name="InbCar0DoorIndex10开到位" xml:space="preserve">
+    <value>Car0DoorIndex10开到位</value>
+  </data>
+  <data name="InbCar1DoorIndex10开到位" xml:space="preserve">
+    <value>Car1DoorIndex10开到位</value>
+  </data>
+  <data name="InbCar2DoorIndex10开到位" xml:space="preserve">
+    <value>Car2DoorIndex10开到位</value>
+  </data>
+  <data name="InbCar3DoorIndex10开到位" xml:space="preserve">
+    <value>Car3DoorIndex10开到位</value>
+  </data>
+  <data name="InbCar4DoorIndex10开到位" xml:space="preserve">
+    <value>Car4DoorIndex10开到位</value>
+  </data>
+  <data name="InbCar5DoorIndex10开到位" xml:space="preserve">
+    <value>Car5DoorIndex10开到位</value>
+  </data>
+  <data name="InbCar0DoorIndex10关并锁到位" xml:space="preserve">
+    <value>Car0DoorIndex10关并锁到位</value>
+  </data>
+  <data name="InbCar1DoorIndex10关并锁到位" xml:space="preserve">
+    <value>Car1DoorIndex10关并锁到位</value>
+  </data>
+  <data name="InbCar2DoorIndex10关并锁到位" xml:space="preserve">
+    <value>Car2DoorIndex10关并锁到位</value>
+  </data>
+  <data name="InbCar3DoorIndex10关并锁到位" xml:space="preserve">
+    <value>Car3DoorIndex10关并锁到位</value>
+  </data>
+  <data name="InbCar4DoorIndex10关并锁到位" xml:space="preserve">
+    <value>Car4DoorIndex10关并锁到位</value>
+  </data>
+  <data name="InbCar5DoorIndex10关并锁到位" xml:space="preserve">
+    <value>Car5DoorIndex10关并锁到位</value>
+  </data>
+  <data name="InbCar0DoorIndex10状态未知" xml:space="preserve">
+    <value>Car0DoorIndex10状态未知</value>
+  </data>
+  <data name="InbCar1DoorIndex10状态未知" xml:space="preserve">
+    <value>Car1DoorIndex10状态未知</value>
+  </data>
+  <data name="InbCar2DoorIndex10状态未知" xml:space="preserve">
+    <value>Car2DoorIndex10状态未知</value>
+  </data>
+  <data name="InbCar3DoorIndex10状态未知" xml:space="preserve">
+    <value>Car3DoorIndex10状态未知</value>
+  </data>
+  <data name="InbCar4DoorIndex10状态未知" xml:space="preserve">
+    <value>Car4DoorIndex10状态未知</value>
+  </data>
+  <data name="InbCar5DoorIndex10状态未知" xml:space="preserve">
+    <value>Car5DoorIndex10状态未知</value>
+  </data>
+  <data name="Inb车0ATP门使能旁路" xml:space="preserve">
+    <value>车0ATP门使能旁路</value>
+  </data>
+  <data name="Inb车5ATP门使能旁路" xml:space="preserve">
+    <value>车5ATP门使能旁路</value>
+  </data>
+  <data name="Inb车0ATP门使能正常" xml:space="preserve">
+    <value>车0ATP门使能正常</value>
+  </data>
+  <data name="Inb车5ATP门使能正常" xml:space="preserve">
+    <value>车5ATP门使能正常</value>
+  </data>
+  <data name="Inb车0ATP切除旁路" xml:space="preserve">
+    <value>车0ATP切除旁路</value>
+  </data>
+  <data name="Inb车5ATP切除旁路" xml:space="preserve">
+    <value>车5ATP切除旁路</value>
+  </data>
+  <data name="Inb车0ATP切除正常" xml:space="preserve">
+    <value>车0ATP切除正常</value>
+  </data>
+  <data name="Inb车5ATP切除正常" xml:space="preserve">
+    <value>车5ATP切除正常</value>
+  </data>
+  <data name="Inb车0半自动车钩状态旁路" xml:space="preserve">
+    <value>车0半自动车钩状态旁路</value>
+  </data>
+  <data name="Inb车5半自动车钩状态旁路" xml:space="preserve">
+    <value>车5半自动车钩状态旁路</value>
+  </data>
+  <data name="Inb车0半自动车钩状态正常" xml:space="preserve">
+    <value>车0半自动车钩状态正常</value>
+  </data>
+  <data name="Inb车5半自动车钩状态正常" xml:space="preserve">
+    <value>车5半自动车钩状态正常</value>
+  </data>
+  <data name="Inb车0常用制动缓解旁路" xml:space="preserve">
+    <value>车0常用制动缓解旁路</value>
+  </data>
+  <data name="Inb车5常用制动缓解旁路" xml:space="preserve">
+    <value>车5常用制动缓解旁路</value>
+  </data>
+  <data name="Inb车0常用制动缓解正常" xml:space="preserve">
+    <value>车0常用制动缓解正常</value>
+  </data>
+  <data name="Inb车5常用制动缓解正常" xml:space="preserve">
+    <value>车5常用制动缓解正常</value>
+  </data>
+  <data name="Inb车0警惕按钮旁路" xml:space="preserve">
+    <value>车0警惕按钮旁路</value>
+  </data>
+  <data name="Inb车5警惕按钮旁路" xml:space="preserve">
+    <value>车5警惕按钮旁路</value>
+  </data>
+  <data name="Inb车0警惕按钮正常" xml:space="preserve">
+    <value>车0警惕按钮正常</value>
+  </data>
+  <data name="Inb车5警惕按钮正常" xml:space="preserve">
+    <value>车5警惕按钮正常</value>
+  </data>
+  <data name="Inb车0零速旁路" xml:space="preserve">
+    <value>车0零速旁路</value>
+  </data>
+  <data name="Inb车5零速旁路" xml:space="preserve">
+    <value>车5零速旁路</value>
+  </data>
+  <data name="Inb车0零速正常" xml:space="preserve">
+    <value>车0零速正常</value>
+  </data>
+  <data name="Inb车5零速正常" xml:space="preserve">
+    <value>车5零速正常</value>
+  </data>
+  <data name="Inb车0升弓允许旁路" xml:space="preserve">
+    <value>车0升弓允许旁路</value>
+  </data>
+  <data name="Inb车5升弓允许旁路" xml:space="preserve">
+    <value>车5升弓允许旁路</value>
+  </data>
+  <data name="Inb车0升弓允许正常" xml:space="preserve">
+    <value>车0升弓允许正常</value>
+  </data>
+  <data name="Inb车5升弓允许正常" xml:space="preserve">
+    <value>车5升弓允许正常</value>
+  </data>
+  <data name="Inb车0所有门关好旁路" xml:space="preserve">
+    <value>车0所有门关好旁路</value>
+  </data>
+  <data name="Inb车5所有门关好旁路" xml:space="preserve">
+    <value>车5所有门关好旁路</value>
+  </data>
+  <data name="Inb车0所有门关好正常" xml:space="preserve">
+    <value>车0所有门关好正常</value>
+  </data>
+  <data name="Inb车5所有门关好正常" xml:space="preserve">
+    <value>车5所有门关好正常</value>
+  </data>
+  <data name="Inb车0停放制动缓解旁路" xml:space="preserve">
+    <value>车0停放制动缓解旁路</value>
+  </data>
+  <data name="Inb车5停放制动缓解旁路" xml:space="preserve">
+    <value>车5停放制动缓解旁路</value>
+  </data>
+  <data name="Inb车0停放制动缓解正常" xml:space="preserve">
+    <value>车0停放制动缓解正常</value>
+  </data>
+  <data name="Inb车5停放制动缓解正常" xml:space="preserve">
+    <value>车5停放制动缓解正常</value>
+  </data>
+  <data name="Inb车0总风地压旁路" xml:space="preserve">
+    <value>车0总风地压旁路</value>
+  </data>
+  <data name="Inb车5总风地压旁路" xml:space="preserve">
+    <value>车5总风地压旁路</value>
+  </data>
+  <data name="Inb车0总风地压正常" xml:space="preserve">
+    <value>车0总风地压正常</value>
+  </data>
+  <data name="Inb车5总风地压正常" xml:space="preserve">
+    <value>车5总风地压正常</value>
+  </data>
+  <data name="InbCar1牵引未知" xml:space="preserve">
+    <value>Car1牵引未知</value>
+  </data>
+  <data name="InbCar2牵引未知" xml:space="preserve">
+    <value>Car2牵引未知</value>
+  </data>
+  <data name="InbCar3牵引未知" xml:space="preserve">
+    <value>Car3牵引未知</value>
+  </data>
+  <data name="InbCar4牵引未知" xml:space="preserve">
+    <value>Car4牵引未知</value>
+  </data>
+  <data name="InbCar1牵引切除" xml:space="preserve">
+    <value>Car1牵引切除</value>
+  </data>
+  <data name="InbCar2牵引切除" xml:space="preserve">
+    <value>Car2牵引切除</value>
+  </data>
+  <data name="InbCar3牵引切除" xml:space="preserve">
+    <value>Car3牵引切除</value>
+  </data>
+  <data name="InbCar4牵引切除" xml:space="preserve">
+    <value>Car4牵引切除</value>
+  </data>
+  <data name="InbCar1牵引故障" xml:space="preserve">
+    <value>Car1牵引故障</value>
+  </data>
+  <data name="InbCar2牵引故障" xml:space="preserve">
+    <value>Car2牵引故障</value>
+  </data>
+  <data name="InbCar3牵引故障" xml:space="preserve">
+    <value>Car3牵引故障</value>
+  </data>
+  <data name="InbCar4牵引故障" xml:space="preserve">
+    <value>Car4牵引故障</value>
+  </data>
+  <data name="InbCar1牵引运行" xml:space="preserve">
+    <value>Car1牵引运行</value>
+  </data>
+  <data name="InbCar2牵引运行" xml:space="preserve">
+    <value>Car2牵引运行</value>
+  </data>
+  <data name="InbCar3牵引运行" xml:space="preserve">
+    <value>Car3牵引运行</value>
+  </data>
+  <data name="InbCar4牵引运行" xml:space="preserve">
+    <value>Car4牵引运行</value>
+  </data>
+  <data name="InbCar1牵引正常" xml:space="preserve">
+    <value>Car1牵引正常</value>
+  </data>
+  <data name="InbCar2牵引正常" xml:space="preserve">
+    <value>Car2牵引正常</value>
+  </data>
+  <data name="InbCar3牵引正常" xml:space="preserve">
+    <value>Car3牵引正常</value>
+  </data>
+  <data name="InbCar4牵引正常" xml:space="preserve">
+    <value>Car4牵引正常</value>
+  </data>
+  <data name="InbCar0停放制动未知" xml:space="preserve">
+    <value>Car0停放制动未知</value>
+  </data>
+  <data name="InbCar1停放制动未知" xml:space="preserve">
+    <value>Car1停放制动未知</value>
+  </data>
+  <data name="InbCar2停放制动未知" xml:space="preserve">
+    <value>Car2停放制动未知</value>
+  </data>
+  <data name="InbCar3停放制动未知" xml:space="preserve">
+    <value>Car3停放制动未知</value>
+  </data>
+  <data name="InbCar4停放制动未知" xml:space="preserve">
+    <value>Car4停放制动未知</value>
+  </data>
+  <data name="InbCar5停放制动未知" xml:space="preserve">
+    <value>Car5停放制动未知</value>
+  </data>
+  <data name="InbCar0停放制动施加" xml:space="preserve">
+    <value>Car0停放制动施加</value>
+  </data>
+  <data name="InbCar1停放制动施加" xml:space="preserve">
+    <value>Car1停放制动施加</value>
+  </data>
+  <data name="InbCar2停放制动施加" xml:space="preserve">
+    <value>Car2停放制动施加</value>
+  </data>
+  <data name="InbCar3停放制动施加" xml:space="preserve">
+    <value>Car3停放制动施加</value>
+  </data>
+  <data name="InbCar4停放制动施加" xml:space="preserve">
+    <value>Car4停放制动施加</value>
+  </data>
+  <data name="InbCar5停放制动施加" xml:space="preserve">
+    <value>Car5停放制动施加</value>
+  </data>
+  <data name="InbCar0停放制动缓解" xml:space="preserve">
+    <value>Car0停放制动缓解</value>
+  </data>
+  <data name="InbCar1停放制动缓解" xml:space="preserve">
+    <value>Car1停放制动缓解</value>
+  </data>
+  <data name="InbCar2停放制动缓解" xml:space="preserve">
+    <value>Car2停放制动缓解</value>
+  </data>
+  <data name="InbCar3停放制动缓解" xml:space="preserve">
+    <value>Car3停放制动缓解</value>
+  </data>
+  <data name="InbCar4停放制动缓解" xml:space="preserve">
+    <value>Car4停放制动缓解</value>
+  </data>
+  <data name="InbCar5停放制动缓解" xml:space="preserve">
+    <value>Car5停放制动缓解</value>
+  </data>
+  <data name="InbCar0空调本地控制" xml:space="preserve">
+    <value>Car0空调本地控制</value>
+  </data>
+  <data name="InbCar1空调本地控制" xml:space="preserve">
+    <value>Car1空调本地控制</value>
+  </data>
+  <data name="InbCar2空调本地控制" xml:space="preserve">
+    <value>Car2空调本地控制</value>
+  </data>
+  <data name="InbCar3空调本地控制" xml:space="preserve">
+    <value>Car3空调本地控制</value>
+  </data>
+  <data name="InbCar4空调本地控制" xml:space="preserve">
+    <value>Car4空调本地控制</value>
+  </data>
+  <data name="InbCar5空调本地控制" xml:space="preserve">
+    <value>Car5空调本地控制</value>
+  </data>
+  <data name="InbCar0空调自动冷" xml:space="preserve">
+    <value>Car0空调自动冷</value>
+  </data>
+  <data name="InbCar1空调自动冷" xml:space="preserve">
+    <value>Car1空调自动冷</value>
+  </data>
+  <data name="InbCar2空调自动冷" xml:space="preserve">
+    <value>Car2空调自动冷</value>
+  </data>
+  <data name="InbCar3空调自动冷" xml:space="preserve">
+    <value>Car3空调自动冷</value>
+  </data>
+  <data name="InbCar4空调自动冷" xml:space="preserve">
+    <value>Car4空调自动冷</value>
+  </data>
+  <data name="InbCar5空调自动冷" xml:space="preserve">
+    <value>Car5空调自动冷</value>
+  </data>
+  <data name="InbCar0空调通风" xml:space="preserve">
+    <value>Car0空调通风</value>
+  </data>
+  <data name="InbCar1空调通风" xml:space="preserve">
+    <value>Car1空调通风</value>
+  </data>
+  <data name="InbCar2空调通风" xml:space="preserve">
+    <value>Car2空调通风</value>
+  </data>
+  <data name="InbCar3空调通风" xml:space="preserve">
+    <value>Car3空调通风</value>
+  </data>
+  <data name="InbCar4空调通风" xml:space="preserve">
+    <value>Car4空调通风</value>
+  </data>
+  <data name="InbCar5空调通风" xml:space="preserve">
+    <value>Car5空调通风</value>
+  </data>
+  <data name="InbCar0空调强风" xml:space="preserve">
+    <value>Car0空调强风</value>
+  </data>
+  <data name="InbCar1空调强风" xml:space="preserve">
+    <value>Car1空调强风</value>
+  </data>
+  <data name="InbCar2空调强风" xml:space="preserve">
+    <value>Car2空调强风</value>
+  </data>
+  <data name="InbCar3空调强风" xml:space="preserve">
+    <value>Car3空调强风</value>
+  </data>
+  <data name="InbCar4空调强风" xml:space="preserve">
+    <value>Car4空调强风</value>
+  </data>
+  <data name="InbCar5空调强风" xml:space="preserve">
+    <value>Car5空调强风</value>
+  </data>
+  <data name="InbCar0空调停机" xml:space="preserve">
+    <value>Car0空调停机</value>
+  </data>
+  <data name="InbCar1空调停机" xml:space="preserve">
+    <value>Car1空调停机</value>
+  </data>
+  <data name="InbCar2空调停机" xml:space="preserve">
+    <value>Car2空调停机</value>
+  </data>
+  <data name="InbCar3空调停机" xml:space="preserve">
+    <value>Car3空调停机</value>
+  </data>
+  <data name="InbCar4空调停机" xml:space="preserve">
+    <value>Car4空调停机</value>
+  </data>
+  <data name="InbCar5空调停机" xml:space="preserve">
+    <value>Car5空调停机</value>
+  </data>
+  <data name="InbCar0空调状态未知" xml:space="preserve">
+    <value>Car0空调状态未知</value>
+  </data>
+  <data name="InbCar1空调状态未知" xml:space="preserve">
+    <value>Car1空调状态未知</value>
+  </data>
+  <data name="InbCar2空调状态未知" xml:space="preserve">
+    <value>Car2空调状态未知</value>
+  </data>
+  <data name="InbCar3空调状态未知" xml:space="preserve">
+    <value>Car3空调状态未知</value>
+  </data>
+  <data name="InbCar4空调状态未知" xml:space="preserve">
+    <value>Car4空调状态未知</value>
+  </data>
+  <data name="InbCar5空调状态未知" xml:space="preserve">
+    <value>Car5空调状态未知</value>
+  </data>
+  <data name="InbCar0通风机运行1" xml:space="preserve">
+    <value>Car0通风机运行1</value>
+  </data>
+  <data name="InbCar1通风机运行1" xml:space="preserve">
+    <value>Car1通风机运行1</value>
+  </data>
+  <data name="InbCar2通风机运行1" xml:space="preserve">
+    <value>Car2通风机运行1</value>
+  </data>
+  <data name="InbCar3通风机运行1" xml:space="preserve">
+    <value>Car3通风机运行1</value>
+  </data>
+  <data name="InbCar4通风机运行1" xml:space="preserve">
+    <value>Car4通风机运行1</value>
+  </data>
+  <data name="InbCar5通风机运行1" xml:space="preserve">
+    <value>Car5通风机运行1</value>
+  </data>
+  <data name="InbCar0通风机未运行1" xml:space="preserve">
+    <value>Car0通风机未运行1</value>
+  </data>
+  <data name="InbCar1通风机未运行1" xml:space="preserve">
+    <value>Car1通风机未运行1</value>
+  </data>
+  <data name="InbCar2通风机未运行1" xml:space="preserve">
+    <value>Car2通风机未运行1</value>
+  </data>
+  <data name="InbCar3通风机未运行1" xml:space="preserve">
+    <value>Car3通风机未运行1</value>
+  </data>
+  <data name="InbCar4通风机未运行1" xml:space="preserve">
+    <value>Car4通风机未运行1</value>
+  </data>
+  <data name="InbCar5通风机未运行1" xml:space="preserve">
+    <value>Car5通风机未运行1</value>
+  </data>
+  <data name="InbCar0通风机运行2" xml:space="preserve">
+    <value>Car0通风机运行2</value>
+  </data>
+  <data name="InbCar1通风机运行2" xml:space="preserve">
+    <value>Car1通风机运行2</value>
+  </data>
+  <data name="InbCar2通风机运行2" xml:space="preserve">
+    <value>Car2通风机运行2</value>
+  </data>
+  <data name="InbCar3通风机运行2" xml:space="preserve">
+    <value>Car3通风机运行2</value>
+  </data>
+  <data name="InbCar4通风机运行2" xml:space="preserve">
+    <value>Car4通风机运行2</value>
+  </data>
+  <data name="InbCar5通风机运行2" xml:space="preserve">
+    <value>Car5通风机运行2</value>
+  </data>
+  <data name="InbCar0通风机未运行2" xml:space="preserve">
+    <value>Car0通风机未运行2</value>
+  </data>
+  <data name="InbCar1通风机未运行2" xml:space="preserve">
+    <value>Car1通风机未运行2</value>
+  </data>
+  <data name="InbCar2通风机未运行2" xml:space="preserve">
+    <value>Car2通风机未运行2</value>
+  </data>
+  <data name="InbCar3通风机未运行2" xml:space="preserve">
+    <value>Car3通风机未运行2</value>
+  </data>
+  <data name="InbCar4通风机未运行2" xml:space="preserve">
+    <value>Car4通风机未运行2</value>
+  </data>
+  <data name="InbCar5通风机未运行2" xml:space="preserve">
+    <value>Car5通风机未运行2</value>
+  </data>
+  <data name="InbCar0压缩机运行1" xml:space="preserve">
+    <value>Car0压缩机运行1</value>
+  </data>
+  <data name="InbCar1压缩机运行1" xml:space="preserve">
+    <value>Car1压缩机运行1</value>
+  </data>
+  <data name="InbCar2压缩机运行1" xml:space="preserve">
+    <value>Car2压缩机运行1</value>
+  </data>
+  <data name="InbCar3压缩机运行1" xml:space="preserve">
+    <value>Car3压缩机运行1</value>
+  </data>
+  <data name="InbCar4压缩机运行1" xml:space="preserve">
+    <value>Car4压缩机运行1</value>
+  </data>
+  <data name="InbCar5压缩机运行1" xml:space="preserve">
+    <value>Car5压缩机运行1</value>
+  </data>
+  <data name="InbCar0压缩机未运行1" xml:space="preserve">
+    <value>Car0压缩机未运行1</value>
+  </data>
+  <data name="InbCar1压缩机未运行1" xml:space="preserve">
+    <value>Car1压缩机未运行1</value>
+  </data>
+  <data name="InbCar2压缩机未运行1" xml:space="preserve">
+    <value>Car2压缩机未运行1</value>
+  </data>
+  <data name="InbCar3压缩机未运行1" xml:space="preserve">
+    <value>Car3压缩机未运行1</value>
+  </data>
+  <data name="InbCar4压缩机未运行1" xml:space="preserve">
+    <value>Car4压缩机未运行1</value>
+  </data>
+  <data name="InbCar5压缩机未运行1" xml:space="preserve">
+    <value>Car5压缩机未运行1</value>
+  </data>
+  <data name="InbCar0压缩机运行2" xml:space="preserve">
+    <value>Car0压缩机运行2</value>
+  </data>
+  <data name="InbCar1压缩机运行2" xml:space="preserve">
+    <value>Car1压缩机运行2</value>
+  </data>
+  <data name="InbCar2压缩机运行2" xml:space="preserve">
+    <value>Car2压缩机运行2</value>
+  </data>
+  <data name="InbCar3压缩机运行2" xml:space="preserve">
+    <value>Car3压缩机运行2</value>
+  </data>
+  <data name="InbCar4压缩机运行2" xml:space="preserve">
+    <value>Car4压缩机运行2</value>
+  </data>
+  <data name="InbCar5压缩机运行2" xml:space="preserve">
+    <value>Car5压缩机运行2</value>
+  </data>
+  <data name="InbCar0压缩机未运行2" xml:space="preserve">
+    <value>Car0压缩机未运行2</value>
+  </data>
+  <data name="InbCar1压缩机未运行2" xml:space="preserve">
+    <value>Car1压缩机未运行2</value>
+  </data>
+  <data name="InbCar2压缩机未运行2" xml:space="preserve">
+    <value>Car2压缩机未运行2</value>
+  </data>
+  <data name="InbCar3压缩机未运行2" xml:space="preserve">
+    <value>Car3压缩机未运行2</value>
+  </data>
+  <data name="InbCar4压缩机未运行2" xml:space="preserve">
+    <value>Car4压缩机未运行2</value>
+  </data>
+  <data name="InbCar5压缩机未运行2" xml:space="preserve">
+    <value>Car5压缩机未运行2</value>
+  </data>
+  <data name="InbCar0冷凝机运行1" xml:space="preserve">
+    <value>Car0冷凝机运行1</value>
+  </data>
+  <data name="InbCar1冷凝机运行1" xml:space="preserve">
+    <value>Car1冷凝机运行1</value>
+  </data>
+  <data name="InbCar2冷凝机运行1" xml:space="preserve">
+    <value>Car2冷凝机运行1</value>
+  </data>
+  <data name="InbCar3冷凝机运行1" xml:space="preserve">
+    <value>Car3冷凝机运行1</value>
+  </data>
+  <data name="InbCar4冷凝机运行1" xml:space="preserve">
+    <value>Car4冷凝机运行1</value>
+  </data>
+  <data name="InbCar5冷凝机运行1" xml:space="preserve">
+    <value>Car5冷凝机运行1</value>
+  </data>
+  <data name="InbCar0冷凝机未运行1" xml:space="preserve">
+    <value>Car0冷凝机未运行1</value>
+  </data>
+  <data name="InbCar1冷凝机未运行1" xml:space="preserve">
+    <value>Car1冷凝机未运行1</value>
+  </data>
+  <data name="InbCar2冷凝机未运行1" xml:space="preserve">
+    <value>Car2冷凝机未运行1</value>
+  </data>
+  <data name="InbCar3冷凝机未运行1" xml:space="preserve">
+    <value>Car3冷凝机未运行1</value>
+  </data>
+  <data name="InbCar4冷凝机未运行1" xml:space="preserve">
+    <value>Car4冷凝机未运行1</value>
+  </data>
+  <data name="InbCar5冷凝机未运行1" xml:space="preserve">
+    <value>Car5冷凝机未运行1</value>
+  </data>
+  <data name="InbCar0冷凝机运行2" xml:space="preserve">
+    <value>Car0冷凝机运行2</value>
+  </data>
+  <data name="InbCar1冷凝机运行2" xml:space="preserve">
+    <value>Car1冷凝机运行2</value>
+  </data>
+  <data name="InbCar2冷凝机运行2" xml:space="preserve">
+    <value>Car2冷凝机运行2</value>
+  </data>
+  <data name="InbCar3冷凝机运行2" xml:space="preserve">
+    <value>Car3冷凝机运行2</value>
+  </data>
+  <data name="InbCar4冷凝机运行2" xml:space="preserve">
+    <value>Car4冷凝机运行2</value>
+  </data>
+  <data name="InbCar5冷凝机运行2" xml:space="preserve">
+    <value>Car5冷凝机运行2</value>
+  </data>
+  <data name="InbCar0冷凝机未运行2" xml:space="preserve">
+    <value>Car0冷凝机未运行2</value>
+  </data>
+  <data name="InbCar1冷凝机未运行2" xml:space="preserve">
+    <value>Car1冷凝机未运行2</value>
+  </data>
+  <data name="InbCar2冷凝机未运行2" xml:space="preserve">
+    <value>Car2冷凝机未运行2</value>
+  </data>
+  <data name="InbCar3冷凝机未运行2" xml:space="preserve">
+    <value>Car3冷凝机未运行2</value>
+  </data>
+  <data name="InbCar4冷凝机未运行2" xml:space="preserve">
+    <value>Car4冷凝机未运行2</value>
+  </data>
+  <data name="InbCar5冷凝机未运行2" xml:space="preserve">
+    <value>Car5冷凝机未运行2</value>
+  </data>
+  <data name="InbCar0新风阀全关Index1" xml:space="preserve">
+    <value>Car0新风阀全关Index1</value>
+  </data>
+  <data name="InbCar1新风阀全关Index1" xml:space="preserve">
+    <value>Car1新风阀全关Index1</value>
+  </data>
+  <data name="InbCar2新风阀全关Index1" xml:space="preserve">
+    <value>Car2新风阀全关Index1</value>
+  </data>
+  <data name="InbCar3新风阀全关Index1" xml:space="preserve">
+    <value>Car3新风阀全关Index1</value>
+  </data>
+  <data name="InbCar4新风阀全关Index1" xml:space="preserve">
+    <value>Car4新风阀全关Index1</value>
+  </data>
+  <data name="InbCar5新风阀全关Index1" xml:space="preserve">
+    <value>Car5新风阀全关Index1</value>
+  </data>
+  <data name="InbCar0新风阀50Index1" xml:space="preserve">
+    <value>Car0新风阀50Index1</value>
+  </data>
+  <data name="InbCar1新风阀50Index1" xml:space="preserve">
+    <value>Car1新风阀50Index1</value>
+  </data>
+  <data name="InbCar2新风阀50Index1" xml:space="preserve">
+    <value>Car2新风阀50Index1</value>
+  </data>
+  <data name="InbCar3新风阀50Index1" xml:space="preserve">
+    <value>Car3新风阀50Index1</value>
+  </data>
+  <data name="InbCar4新风阀50Index1" xml:space="preserve">
+    <value>Car4新风阀50Index1</value>
+  </data>
+  <data name="InbCar5新风阀50Index1" xml:space="preserve">
+    <value>Car5新风阀50Index1</value>
+  </data>
+  <data name="InbCar0新风阀75Index1" xml:space="preserve">
+    <value>Car0新风阀75Index1</value>
+  </data>
+  <data name="InbCar1新风阀75Index1" xml:space="preserve">
+    <value>Car1新风阀75Index1</value>
+  </data>
+  <data name="InbCar2新风阀75Index1" xml:space="preserve">
+    <value>Car2新风阀75Index1</value>
+  </data>
+  <data name="InbCar3新风阀75Index1" xml:space="preserve">
+    <value>Car3新风阀75Index1</value>
+  </data>
+  <data name="InbCar4新风阀75Index1" xml:space="preserve">
+    <value>Car4新风阀75Index1</value>
+  </data>
+  <data name="InbCar5新风阀75Index1" xml:space="preserve">
+    <value>Car5新风阀75Index1</value>
+  </data>
+  <data name="InbCar0新风阀100Index1" xml:space="preserve">
+    <value>Car0新风阀100Index1</value>
+  </data>
+  <data name="InbCar1新风阀100Index1" xml:space="preserve">
+    <value>Car1新风阀100Index1</value>
+  </data>
+  <data name="InbCar2新风阀100Index1" xml:space="preserve">
+    <value>Car2新风阀100Index1</value>
+  </data>
+  <data name="InbCar3新风阀100Index1" xml:space="preserve">
+    <value>Car3新风阀100Index1</value>
+  </data>
+  <data name="InbCar4新风阀100Index1" xml:space="preserve">
+    <value>Car4新风阀100Index1</value>
+  </data>
+  <data name="InbCar5新风阀100Index1" xml:space="preserve">
+    <value>Car5新风阀100Index1</value>
+  </data>
+  <data name="InbCar0新风阀未知Index1" xml:space="preserve">
+    <value>Car0新风阀未知Index1</value>
+  </data>
+  <data name="InbCar1新风阀未知Index1" xml:space="preserve">
+    <value>Car1新风阀未知Index1</value>
+  </data>
+  <data name="InbCar2新风阀未知Index1" xml:space="preserve">
+    <value>Car2新风阀未知Index1</value>
+  </data>
+  <data name="InbCar3新风阀未知Index1" xml:space="preserve">
+    <value>Car3新风阀未知Index1</value>
+  </data>
+  <data name="InbCar4新风阀未知Index1" xml:space="preserve">
+    <value>Car4新风阀未知Index1</value>
+  </data>
+  <data name="InbCar5新风阀未知Index1" xml:space="preserve">
+    <value>Car5新风阀未知Index1</value>
+  </data>
+  <data name="InbCar0新风阀全关Index2" xml:space="preserve">
+    <value>Car0新风阀全关Index2</value>
+  </data>
+  <data name="InbCar1新风阀全关Index2" xml:space="preserve">
+    <value>Car1新风阀全关Index2</value>
+  </data>
+  <data name="InbCar2新风阀全关Index2" xml:space="preserve">
+    <value>Car2新风阀全关Index2</value>
+  </data>
+  <data name="InbCar3新风阀全关Index2" xml:space="preserve">
+    <value>Car3新风阀全关Index2</value>
+  </data>
+  <data name="InbCar4新风阀全关Index2" xml:space="preserve">
+    <value>Car4新风阀全关Index2</value>
+  </data>
+  <data name="InbCar5新风阀全关Index2" xml:space="preserve">
+    <value>Car5新风阀全关Index2</value>
+  </data>
+  <data name="InbCar0新风阀50Index2" xml:space="preserve">
+    <value>Car0新风阀50Index2</value>
+  </data>
+  <data name="InbCar1新风阀50Index2" xml:space="preserve">
+    <value>Car1新风阀50Index2</value>
+  </data>
+  <data name="InbCar2新风阀50Index2" xml:space="preserve">
+    <value>Car2新风阀50Index2</value>
+  </data>
+  <data name="InbCar3新风阀50Index2" xml:space="preserve">
+    <value>Car3新风阀50Index2</value>
+  </data>
+  <data name="InbCar4新风阀50Index2" xml:space="preserve">
+    <value>Car4新风阀50Index2</value>
+  </data>
+  <data name="InbCar5新风阀50Index2" xml:space="preserve">
+    <value>Car5新风阀50Index2</value>
+  </data>
+  <data name="InbCar0新风阀75Index2" xml:space="preserve">
+    <value>Car0新风阀75Index2</value>
+  </data>
+  <data name="InbCar1新风阀75Index2" xml:space="preserve">
+    <value>Car1新风阀75Index2</value>
+  </data>
+  <data name="InbCar2新风阀75Index2" xml:space="preserve">
+    <value>Car2新风阀75Index2</value>
+  </data>
+  <data name="InbCar3新风阀75Index2" xml:space="preserve">
+    <value>Car3新风阀75Index2</value>
+  </data>
+  <data name="InbCar4新风阀75Index2" xml:space="preserve">
+    <value>Car4新风阀75Index2</value>
+  </data>
+  <data name="InbCar5新风阀75Index2" xml:space="preserve">
+    <value>Car5新风阀75Index2</value>
+  </data>
+  <data name="InbCar0新风阀100Index2" xml:space="preserve">
+    <value>Car0新风阀100Index2</value>
+  </data>
+  <data name="InbCar1新风阀100Index2" xml:space="preserve">
+    <value>Car1新风阀100Index2</value>
+  </data>
+  <data name="InbCar2新风阀100Index2" xml:space="preserve">
+    <value>Car2新风阀100Index2</value>
+  </data>
+  <data name="InbCar3新风阀100Index2" xml:space="preserve">
+    <value>Car3新风阀100Index2</value>
+  </data>
+  <data name="InbCar4新风阀100Index2" xml:space="preserve">
+    <value>Car4新风阀100Index2</value>
+  </data>
+  <data name="InbCar5新风阀100Index2" xml:space="preserve">
+    <value>Car5新风阀100Index2</value>
+  </data>
+  <data name="InbCar0新风阀未知Index2" xml:space="preserve">
+    <value>Car0新风阀未知Index2</value>
+  </data>
+  <data name="InbCar1新风阀未知Index2" xml:space="preserve">
+    <value>Car1新风阀未知Index2</value>
+  </data>
+  <data name="InbCar2新风阀未知Index2" xml:space="preserve">
+    <value>Car2新风阀未知Index2</value>
+  </data>
+  <data name="InbCar3新风阀未知Index2" xml:space="preserve">
+    <value>Car3新风阀未知Index2</value>
+  </data>
+  <data name="InbCar4新风阀未知Index2" xml:space="preserve">
+    <value>Car4新风阀未知Index2</value>
+  </data>
+  <data name="InbCar5新风阀未知Index2" xml:space="preserve">
+    <value>Car5新风阀未知Index2</value>
+  </data>
+  <data name="Inb烟火报警Index1正常" xml:space="preserve">
+    <value>烟火报警Index1正常</value>
+  </data>
+  <data name="Inb烟火报警Index1故障" xml:space="preserve">
+    <value>烟火报警Index1故障</value>
+  </data>
+  <data name="Inb烟火报警Index1污染" xml:space="preserve">
+    <value>烟火报警Index1污染</value>
+  </data>
+  <data name="Inb烟火报警Index1无效" xml:space="preserve">
+    <value>烟火报警Index1无效</value>
+  </data>
+  <data name="Inb烟火报警Index1火警" xml:space="preserve">
+    <value>烟火报警Index1火警</value>
+  </data>
+  <data name="Inb烟火报警Index2正常" xml:space="preserve">
+    <value>烟火报警Index2正常</value>
+  </data>
+  <data name="Inb烟火报警Index2故障" xml:space="preserve">
+    <value>烟火报警Index2故障</value>
+  </data>
+  <data name="Inb烟火报警Index2污染" xml:space="preserve">
+    <value>烟火报警Index2污染</value>
+  </data>
+  <data name="Inb烟火报警Index2无效" xml:space="preserve">
+    <value>烟火报警Index2无效</value>
+  </data>
+  <data name="Inb烟火报警Index2火警" xml:space="preserve">
+    <value>烟火报警Index2火警</value>
+  </data>
+  <data name="Inb烟火报警Index3正常" xml:space="preserve">
+    <value>烟火报警Index3正常</value>
+  </data>
+  <data name="Inb烟火报警Index3故障" xml:space="preserve">
+    <value>烟火报警Index3故障</value>
+  </data>
+  <data name="Inb烟火报警Index3污染" xml:space="preserve">
+    <value>烟火报警Index3污染</value>
+  </data>
+  <data name="Inb烟火报警Index3无效" xml:space="preserve">
+    <value>烟火报警Index3无效</value>
+  </data>
+  <data name="Inb烟火报警Index3火警" xml:space="preserve">
+    <value>烟火报警Index3火警</value>
+  </data>
+  <data name="Inb烟火报警Index4正常" xml:space="preserve">
+    <value>烟火报警Index4正常</value>
+  </data>
+  <data name="Inb烟火报警Index4故障" xml:space="preserve">
+    <value>烟火报警Index4故障</value>
+  </data>
+  <data name="Inb烟火报警Index4污染" xml:space="preserve">
+    <value>烟火报警Index4污染</value>
+  </data>
+  <data name="Inb烟火报警Index4无效" xml:space="preserve">
+    <value>烟火报警Index4无效</value>
+  </data>
+  <data name="Inb烟火报警Index4火警" xml:space="preserve">
+    <value>烟火报警Index4火警</value>
+  </data>
+  <data name="Inb烟火报警Index5正常" xml:space="preserve">
+    <value>烟火报警Index5正常</value>
+  </data>
+  <data name="Inb烟火报警Index5故障" xml:space="preserve">
+    <value>烟火报警Index5故障</value>
+  </data>
+  <data name="Inb烟火报警Index5污染" xml:space="preserve">
+    <value>烟火报警Index5污染</value>
+  </data>
+  <data name="Inb烟火报警Index5无效" xml:space="preserve">
+    <value>烟火报警Index5无效</value>
+  </data>
+  <data name="Inb烟火报警Index5火警" xml:space="preserve">
+    <value>烟火报警Index5火警</value>
+  </data>
+  <data name="Inb烟火报警Index6正常" xml:space="preserve">
+    <value>烟火报警Index6正常</value>
+  </data>
+  <data name="Inb烟火报警Index6故障" xml:space="preserve">
+    <value>烟火报警Index6故障</value>
+  </data>
+  <data name="Inb烟火报警Index6污染" xml:space="preserve">
+    <value>烟火报警Index6污染</value>
+  </data>
+  <data name="Inb烟火报警Index6无效" xml:space="preserve">
+    <value>烟火报警Index6无效</value>
+  </data>
+  <data name="Inb烟火报警Index6火警" xml:space="preserve">
+    <value>烟火报警Index6火警</value>
+  </data>
+  <data name="Inb烟火报警Index7正常" xml:space="preserve">
+    <value>烟火报警Index7正常</value>
+  </data>
+  <data name="Inb烟火报警Index7故障" xml:space="preserve">
+    <value>烟火报警Index7故障</value>
+  </data>
+  <data name="Inb烟火报警Index7污染" xml:space="preserve">
+    <value>烟火报警Index7污染</value>
+  </data>
+  <data name="Inb烟火报警Index7无效" xml:space="preserve">
+    <value>烟火报警Index7无效</value>
+  </data>
+  <data name="Inb烟火报警Index7火警" xml:space="preserve">
+    <value>烟火报警Index7火警</value>
+  </data>
+  <data name="Inb烟火报警Index8正常" xml:space="preserve">
+    <value>烟火报警Index8正常</value>
+  </data>
+  <data name="Inb烟火报警Index8故障" xml:space="preserve">
+    <value>烟火报警Index8故障</value>
+  </data>
+  <data name="Inb烟火报警Index8污染" xml:space="preserve">
+    <value>烟火报警Index8污染</value>
+  </data>
+  <data name="Inb烟火报警Index8无效" xml:space="preserve">
+    <value>烟火报警Index8无效</value>
+  </data>
+  <data name="Inb烟火报警Index8火警" xml:space="preserve">
+    <value>烟火报警Index8火警</value>
+  </data>
+  <data name="Inb烟火报警Index9正常" xml:space="preserve">
+    <value>烟火报警Index9正常</value>
+  </data>
+  <data name="Inb烟火报警Index9故障" xml:space="preserve">
+    <value>烟火报警Index9故障</value>
+  </data>
+  <data name="Inb烟火报警Index9污染" xml:space="preserve">
+    <value>烟火报警Index9污染</value>
+  </data>
+  <data name="Inb烟火报警Index9无效" xml:space="preserve">
+    <value>烟火报警Index9无效</value>
+  </data>
+  <data name="Inb烟火报警Index9火警" xml:space="preserve">
+    <value>烟火报警Index9火警</value>
+  </data>
+  <data name="Inb烟火报警Index10正常" xml:space="preserve">
+    <value>烟火报警Index10正常</value>
+  </data>
+  <data name="Inb烟火报警Index10故障" xml:space="preserve">
+    <value>烟火报警Index10故障</value>
+  </data>
+  <data name="Inb烟火报警Index10污染" xml:space="preserve">
+    <value>烟火报警Index10污染</value>
+  </data>
+  <data name="Inb烟火报警Index10无效" xml:space="preserve">
+    <value>烟火报警Index10无效</value>
+  </data>
+  <data name="Inb烟火报警Index10火警" xml:space="preserve">
+    <value>烟火报警Index10火警</value>
+  </data>
+  <data name="Inb烟火报警Index11正常" xml:space="preserve">
+    <value>烟火报警Index11正常</value>
+  </data>
+  <data name="Inb烟火报警Index11故障" xml:space="preserve">
+    <value>烟火报警Index11故障</value>
+  </data>
+  <data name="Inb烟火报警Index11污染" xml:space="preserve">
+    <value>烟火报警Index11污染</value>
+  </data>
+  <data name="Inb烟火报警Index11无效" xml:space="preserve">
+    <value>烟火报警Index11无效</value>
+  </data>
+  <data name="Inb烟火报警Index11火警" xml:space="preserve">
+    <value>烟火报警Index11火警</value>
+  </data>
+  <data name="Inb烟火报警Index12正常" xml:space="preserve">
+    <value>烟火报警Index12正常</value>
+  </data>
+  <data name="Inb烟火报警Index12故障" xml:space="preserve">
+    <value>烟火报警Index12故障</value>
+  </data>
+  <data name="Inb烟火报警Index12污染" xml:space="preserve">
+    <value>烟火报警Index12污染</value>
+  </data>
+  <data name="Inb烟火报警Index12无效" xml:space="preserve">
+    <value>烟火报警Index12无效</value>
+  </data>
+  <data name="Inb烟火报警Index12火警" xml:space="preserve">
+    <value>烟火报警Index12火警</value>
+  </data>
+  <data name="Inb烟火报警Index13正常" xml:space="preserve">
+    <value>烟火报警Index13正常</value>
+  </data>
+  <data name="Inb烟火报警Index13故障" xml:space="preserve">
+    <value>烟火报警Index13故障</value>
+  </data>
+  <data name="Inb烟火报警Index13污染" xml:space="preserve">
+    <value>烟火报警Index13污染</value>
+  </data>
+  <data name="Inb烟火报警Index13无效" xml:space="preserve">
+    <value>烟火报警Index13无效</value>
+  </data>
+  <data name="Inb烟火报警Index13火警" xml:space="preserve">
+    <value>烟火报警Index13火警</value>
+  </data>
+  <data name="Inb烟火报警Index14正常" xml:space="preserve">
+    <value>烟火报警Index14正常</value>
+  </data>
+  <data name="Inb烟火报警Index14故障" xml:space="preserve">
+    <value>烟火报警Index14故障</value>
+  </data>
+  <data name="Inb烟火报警Index14污染" xml:space="preserve">
+    <value>烟火报警Index14污染</value>
+  </data>
+  <data name="Inb烟火报警Index14无效" xml:space="preserve">
+    <value>烟火报警Index14无效</value>
+  </data>
+  <data name="Inb烟火报警Index14火警" xml:space="preserve">
+    <value>烟火报警Index14火警</value>
+  </data>
+  <data name="Inb烟火报警Index15正常" xml:space="preserve">
+    <value>烟火报警Index15正常</value>
+  </data>
+  <data name="Inb烟火报警Index15故障" xml:space="preserve">
+    <value>烟火报警Index15故障</value>
+  </data>
+  <data name="Inb烟火报警Index15污染" xml:space="preserve">
+    <value>烟火报警Index15污染</value>
+  </data>
+  <data name="Inb烟火报警Index15无效" xml:space="preserve">
+    <value>烟火报警Index15无效</value>
+  </data>
+  <data name="Inb烟火报警Index15火警" xml:space="preserve">
+    <value>烟火报警Index15火警</value>
+  </data>
+  <data name="Inb烟火报警Index16正常" xml:space="preserve">
+    <value>烟火报警Index16正常</value>
+  </data>
+  <data name="Inb烟火报警Index16故障" xml:space="preserve">
+    <value>烟火报警Index16故障</value>
+  </data>
+  <data name="Inb烟火报警Index16污染" xml:space="preserve">
+    <value>烟火报警Index16污染</value>
+  </data>
+  <data name="Inb烟火报警Index16无效" xml:space="preserve">
+    <value>烟火报警Index16无效</value>
+  </data>
+  <data name="Inb烟火报警Index16火警" xml:space="preserve">
+    <value>烟火报警Index16火警</value>
+  </data>
+  <data name="Inb烟火报警Index17正常" xml:space="preserve">
+    <value>烟火报警Index17正常</value>
+  </data>
+  <data name="Inb烟火报警Index17故障" xml:space="preserve">
+    <value>烟火报警Index17故障</value>
+  </data>
+  <data name="Inb烟火报警Index17污染" xml:space="preserve">
+    <value>烟火报警Index17污染</value>
+  </data>
+  <data name="Inb烟火报警Index17无效" xml:space="preserve">
+    <value>烟火报警Index17无效</value>
+  </data>
+  <data name="Inb烟火报警Index17火警" xml:space="preserve">
+    <value>烟火报警Index17火警</value>
+  </data>
+  <data name="Inb烟火报警Index18正常" xml:space="preserve">
+    <value>烟火报警Index18正常</value>
+  </data>
+  <data name="Inb烟火报警Index18故障" xml:space="preserve">
+    <value>烟火报警Index18故障</value>
+  </data>
+  <data name="Inb烟火报警Index18污染" xml:space="preserve">
+    <value>烟火报警Index18污染</value>
+  </data>
+  <data name="Inb烟火报警Index18无效" xml:space="preserve">
+    <value>烟火报警Index18无效</value>
+  </data>
+  <data name="Inb烟火报警Index18火警" xml:space="preserve">
+    <value>烟火报警Index18火警</value>
+  </data>
+  <data name="Inb烟火报警Index19正常" xml:space="preserve">
+    <value>烟火报警Index19正常</value>
+  </data>
+  <data name="Inb烟火报警Index19故障" xml:space="preserve">
+    <value>烟火报警Index19故障</value>
+  </data>
+  <data name="Inb烟火报警Index19污染" xml:space="preserve">
+    <value>烟火报警Index19污染</value>
+  </data>
+  <data name="Inb烟火报警Index19无效" xml:space="preserve">
+    <value>烟火报警Index19无效</value>
+  </data>
+  <data name="Inb烟火报警Index19火警" xml:space="preserve">
+    <value>烟火报警Index19火警</value>
+  </data>
+  <data name="Inb烟火报警Index20正常" xml:space="preserve">
+    <value>烟火报警Index20正常</value>
+  </data>
+  <data name="Inb烟火报警Index20故障" xml:space="preserve">
+    <value>烟火报警Index20故障</value>
+  </data>
+  <data name="Inb烟火报警Index20污染" xml:space="preserve">
+    <value>烟火报警Index20污染</value>
+  </data>
+  <data name="Inb烟火报警Index20无效" xml:space="preserve">
+    <value>烟火报警Index20无效</value>
+  </data>
+  <data name="Inb烟火报警Index20火警" xml:space="preserve">
+    <value>烟火报警Index20火警</value>
+  </data>
+  <data name="Inb烟火报警Index21正常" xml:space="preserve">
+    <value>烟火报警Index21正常</value>
+  </data>
+  <data name="Inb烟火报警Index21故障" xml:space="preserve">
+    <value>烟火报警Index21故障</value>
+  </data>
+  <data name="Inb烟火报警Index21污染" xml:space="preserve">
+    <value>烟火报警Index21污染</value>
+  </data>
+  <data name="Inb烟火报警Index21无效" xml:space="preserve">
+    <value>烟火报警Index21无效</value>
+  </data>
+  <data name="Inb烟火报警Index21火警" xml:space="preserve">
+    <value>烟火报警Index21火警</value>
+  </data>
+  <data name="Inb烟火报警Index22正常" xml:space="preserve">
+    <value>烟火报警Index22正常</value>
+  </data>
+  <data name="Inb烟火报警Index22故障" xml:space="preserve">
+    <value>烟火报警Index22故障</value>
+  </data>
+  <data name="Inb烟火报警Index22污染" xml:space="preserve">
+    <value>烟火报警Index22污染</value>
+  </data>
+  <data name="Inb烟火报警Index22无效" xml:space="preserve">
+    <value>烟火报警Index22无效</value>
+  </data>
+  <data name="Inb烟火报警Index22火警" xml:space="preserve">
+    <value>烟火报警Index22火警</value>
+  </data>
+  <data name="Inb烟火报警Index23正常" xml:space="preserve">
+    <value>烟火报警Index23正常</value>
+  </data>
+  <data name="Inb烟火报警Index23故障" xml:space="preserve">
+    <value>烟火报警Index23故障</value>
+  </data>
+  <data name="Inb烟火报警Index23污染" xml:space="preserve">
+    <value>烟火报警Index23污染</value>
+  </data>
+  <data name="Inb烟火报警Index23无效" xml:space="preserve">
+    <value>烟火报警Index23无效</value>
+  </data>
+  <data name="Inb烟火报警Index23火警" xml:space="preserve">
+    <value>烟火报警Index23火警</value>
+  </data>
+  <data name="Inb烟火报警Index24正常" xml:space="preserve">
+    <value>烟火报警Index24正常</value>
+  </data>
+  <data name="Inb烟火报警Index24故障" xml:space="preserve">
+    <value>烟火报警Index24故障</value>
+  </data>
+  <data name="Inb烟火报警Index24污染" xml:space="preserve">
+    <value>烟火报警Index24污染</value>
+  </data>
+  <data name="Inb烟火报警Index24无效" xml:space="preserve">
+    <value>烟火报警Index24无效</value>
+  </data>
+  <data name="Inb烟火报警Index24火警" xml:space="preserve">
+    <value>烟火报警Index24火警</value>
+  </data>
+  <data name="Inb烟火报警Index25正常" xml:space="preserve">
+    <value>烟火报警Index25正常</value>
+  </data>
+  <data name="Inb烟火报警Index25故障" xml:space="preserve">
+    <value>烟火报警Index25故障</value>
+  </data>
+  <data name="Inb烟火报警Index25污染" xml:space="preserve">
+    <value>烟火报警Index25污染</value>
+  </data>
+  <data name="Inb烟火报警Index25无效" xml:space="preserve">
+    <value>烟火报警Index25无效</value>
+  </data>
+  <data name="Inb烟火报警Index25火警" xml:space="preserve">
+    <value>烟火报警Index25火警</value>
+  </data>
+  <data name="Inb烟火报警Index26正常" xml:space="preserve">
+    <value>烟火报警Index26正常</value>
+  </data>
+  <data name="Inb烟火报警Index26故障" xml:space="preserve">
+    <value>烟火报警Index26故障</value>
+  </data>
+  <data name="Inb烟火报警Index26污染" xml:space="preserve">
+    <value>烟火报警Index26污染</value>
+  </data>
+  <data name="Inb烟火报警Index26无效" xml:space="preserve">
+    <value>烟火报警Index26无效</value>
+  </data>
+  <data name="Inb烟火报警Index26火警" xml:space="preserve">
+    <value>烟火报警Index26火警</value>
+  </data>
+  <data name="Inb烟火报警Index27正常" xml:space="preserve">
+    <value>烟火报警Index27正常</value>
+  </data>
+  <data name="Inb烟火报警Index27故障" xml:space="preserve">
+    <value>烟火报警Index27故障</value>
+  </data>
+  <data name="Inb烟火报警Index27污染" xml:space="preserve">
+    <value>烟火报警Index27污染</value>
+  </data>
+  <data name="Inb烟火报警Index27无效" xml:space="preserve">
+    <value>烟火报警Index27无效</value>
+  </data>
+  <data name="Inb烟火报警Index27火警" xml:space="preserve">
+    <value>烟火报警Index27火警</value>
+  </data>
+  <data name="Inb烟火报警Index28正常" xml:space="preserve">
+    <value>烟火报警Index28正常</value>
+  </data>
+  <data name="Inb烟火报警Index28故障" xml:space="preserve">
+    <value>烟火报警Index28故障</value>
+  </data>
+  <data name="Inb烟火报警Index28污染" xml:space="preserve">
+    <value>烟火报警Index28污染</value>
+  </data>
+  <data name="Inb烟火报警Index28无效" xml:space="preserve">
+    <value>烟火报警Index28无效</value>
+  </data>
+  <data name="Inb烟火报警Index28火警" xml:space="preserve">
+    <value>烟火报警Index28火警</value>
+  </data>
+  <data name="Inb烟火报警Index29正常" xml:space="preserve">
+    <value>烟火报警Index29正常</value>
+  </data>
+  <data name="Inb烟火报警Index29故障" xml:space="preserve">
+    <value>烟火报警Index29故障</value>
+  </data>
+  <data name="Inb烟火报警Index29污染" xml:space="preserve">
+    <value>烟火报警Index29污染</value>
+  </data>
+  <data name="Inb烟火报警Index29无效" xml:space="preserve">
+    <value>烟火报警Index29无效</value>
+  </data>
+  <data name="Inb烟火报警Index29火警" xml:space="preserve">
+    <value>烟火报警Index29火警</value>
+  </data>
+  <data name="Inb烟火报警Index30正常" xml:space="preserve">
+    <value>烟火报警Index30正常</value>
+  </data>
+  <data name="Inb烟火报警Index30故障" xml:space="preserve">
+    <value>烟火报警Index30故障</value>
+  </data>
+  <data name="Inb烟火报警Index30污染" xml:space="preserve">
+    <value>烟火报警Index30污染</value>
+  </data>
+  <data name="Inb烟火报警Index30无效" xml:space="preserve">
+    <value>烟火报警Index30无效</value>
+  </data>
+  <data name="Inb烟火报警Index30火警" xml:space="preserve">
+    <value>烟火报警Index30火警</value>
+  </data>
+  <data name="Inb烟火报警Index31正常" xml:space="preserve">
+    <value>烟火报警Index31正常</value>
+  </data>
+  <data name="Inb烟火报警Index31故障" xml:space="preserve">
+    <value>烟火报警Index31故障</value>
+  </data>
+  <data name="Inb烟火报警Index31污染" xml:space="preserve">
+    <value>烟火报警Index31污染</value>
+  </data>
+  <data name="Inb烟火报警Index31无效" xml:space="preserve">
+    <value>烟火报警Index31无效</value>
+  </data>
+  <data name="Inb烟火报警Index31火警" xml:space="preserve">
+    <value>烟火报警Index31火警</value>
+  </data>
+  <data name="Inb烟火报警Index32正常" xml:space="preserve">
+    <value>烟火报警Index32正常</value>
+  </data>
+  <data name="Inb烟火报警Index32故障" xml:space="preserve">
+    <value>烟火报警Index32故障</value>
+  </data>
+  <data name="Inb烟火报警Index32污染" xml:space="preserve">
+    <value>烟火报警Index32污染</value>
+  </data>
+  <data name="Inb烟火报警Index32无效" xml:space="preserve">
+    <value>烟火报警Index32无效</value>
+  </data>
+  <data name="Inb烟火报警Index32火警" xml:space="preserve">
+    <value>烟火报警Index32火警</value>
+  </data>
+  <data name="Inb烟火报警Index33正常" xml:space="preserve">
+    <value>烟火报警Index33正常</value>
+  </data>
+  <data name="Inb烟火报警Index33故障" xml:space="preserve">
+    <value>烟火报警Index33故障</value>
+  </data>
+  <data name="Inb烟火报警Index33污染" xml:space="preserve">
+    <value>烟火报警Index33污染</value>
+  </data>
+  <data name="Inb烟火报警Index33无效" xml:space="preserve">
+    <value>烟火报警Index33无效</value>
+  </data>
+  <data name="Inb烟火报警Index33火警" xml:space="preserve">
+    <value>烟火报警Index33火警</value>
+  </data>
+  <data name="Inb烟火报警Index34正常" xml:space="preserve">
+    <value>烟火报警Index34正常</value>
+  </data>
+  <data name="Inb烟火报警Index34故障" xml:space="preserve">
+    <value>烟火报警Index34故障</value>
+  </data>
+  <data name="Inb烟火报警Index34污染" xml:space="preserve">
+    <value>烟火报警Index34污染</value>
+  </data>
+  <data name="Inb烟火报警Index34无效" xml:space="preserve">
+    <value>烟火报警Index34无效</value>
+  </data>
+  <data name="Inb烟火报警Index34火警" xml:space="preserve">
+    <value>烟火报警Index34火警</value>
+  </data>
+  <data name="Inb烟火报警Index35正常" xml:space="preserve">
+    <value>烟火报警Index35正常</value>
+  </data>
+  <data name="Inb烟火报警Index35故障" xml:space="preserve">
+    <value>烟火报警Index35故障</value>
+  </data>
+  <data name="Inb烟火报警Index35污染" xml:space="preserve">
+    <value>烟火报警Index35污染</value>
+  </data>
+  <data name="Inb烟火报警Index35无效" xml:space="preserve">
+    <value>烟火报警Index35无效</value>
+  </data>
+  <data name="Inb烟火报警Index35火警" xml:space="preserve">
+    <value>烟火报警Index35火警</value>
+  </data>
+  <data name="Inb烟火报警Index36正常" xml:space="preserve">
+    <value>烟火报警Index36正常</value>
+  </data>
+  <data name="Inb烟火报警Index36故障" xml:space="preserve">
+    <value>烟火报警Index36故障</value>
+  </data>
+  <data name="Inb烟火报警Index36污染" xml:space="preserve">
+    <value>烟火报警Index36污染</value>
+  </data>
+  <data name="Inb烟火报警Index36无效" xml:space="preserve">
+    <value>烟火报警Index36无效</value>
+  </data>
+  <data name="Inb烟火报警Index36火警" xml:space="preserve">
+    <value>烟火报警Index36火警</value>
+  </data>
+  <data name="Inb烟火报警Index37正常" xml:space="preserve">
+    <value>烟火报警Index37正常</value>
+  </data>
+  <data name="Inb烟火报警Index37故障" xml:space="preserve">
+    <value>烟火报警Index37故障</value>
+  </data>
+  <data name="Inb烟火报警Index37污染" xml:space="preserve">
+    <value>烟火报警Index37污染</value>
+  </data>
+  <data name="Inb烟火报警Index37无效" xml:space="preserve">
+    <value>烟火报警Index37无效</value>
+  </data>
+  <data name="Inb烟火报警Index37火警" xml:space="preserve">
+    <value>烟火报警Index37火警</value>
+  </data>
+  <data name="Inb烟火报警Index38正常" xml:space="preserve">
+    <value>烟火报警Index38正常</value>
+  </data>
+  <data name="Inb烟火报警Index38故障" xml:space="preserve">
+    <value>烟火报警Index38故障</value>
+  </data>
+  <data name="Inb烟火报警Index38污染" xml:space="preserve">
+    <value>烟火报警Index38污染</value>
+  </data>
+  <data name="Inb烟火报警Index38无效" xml:space="preserve">
+    <value>烟火报警Index38无效</value>
+  </data>
+  <data name="Inb烟火报警Index38火警" xml:space="preserve">
+    <value>烟火报警Index38火警</value>
+  </data>
+  <data name="Inb通讯状态HMI1红" xml:space="preserve">
+    <value>通讯状态HMI1红</value>
+  </data>
+  <data name="Inb通讯状态HMI1黄" xml:space="preserve">
+    <value>通讯状态HMI1黄</value>
+  </data>
+  <data name="Inb通讯状态HMI1绿" xml:space="preserve">
+    <value>通讯状态HMI1绿</value>
+  </data>
+  <data name="Inb通讯状态CCU1红" xml:space="preserve">
+    <value>通讯状态CCU1红</value>
+  </data>
+  <data name="Inb通讯状态CCU1黄" xml:space="preserve">
+    <value>通讯状态CCU1黄</value>
+  </data>
+  <data name="Inb通讯状态CCU1绿" xml:space="preserve">
+    <value>通讯状态CCU1绿</value>
+  </data>
+  <data name="Inb通讯状态ERM1红" xml:space="preserve">
+    <value>通讯状态ERM1红</value>
+  </data>
+  <data name="Inb通讯状态ERM1黄" xml:space="preserve">
+    <value>通讯状态ERM1黄</value>
+  </data>
+  <data name="Inb通讯状态ERM1绿" xml:space="preserve">
+    <value>通讯状态ERM1绿</value>
+  </data>
+  <data name="Inb通讯状态PIS1红" xml:space="preserve">
+    <value>通讯状态PIS1红</value>
+  </data>
+  <data name="Inb通讯状态PIS1黄" xml:space="preserve">
+    <value>通讯状态PIS1黄</value>
+  </data>
+  <data name="Inb通讯状态PIS1绿" xml:space="preserve">
+    <value>通讯状态PIS1绿</value>
+  </data>
+  <data name="Inb通讯状态FAS1红" xml:space="preserve">
+    <value>通讯状态FAS1红</value>
+  </data>
+  <data name="Inb通讯状态FAS1黄" xml:space="preserve">
+    <value>通讯状态FAS1黄</value>
+  </data>
+  <data name="Inb通讯状态FAS1绿" xml:space="preserve">
+    <value>通讯状态FAS1绿</value>
+  </data>
+  <data name="Inb通讯状态DCUA1红" xml:space="preserve">
+    <value>通讯状态DCUA1红</value>
+  </data>
+  <data name="Inb通讯状态DCUA1黄" xml:space="preserve">
+    <value>通讯状态DCUA1黄</value>
+  </data>
+  <data name="Inb通讯状态DCUA1绿" xml:space="preserve">
+    <value>通讯状态DCUA1绿</value>
+  </data>
+  <data name="Inb通讯状态RIOM1红" xml:space="preserve">
+    <value>通讯状态RIOM1红</value>
+  </data>
+  <data name="Inb通讯状态RIOM1黄" xml:space="preserve">
+    <value>通讯状态RIOM1黄</value>
+  </data>
+  <data name="Inb通讯状态RIOM1绿" xml:space="preserve">
+    <value>通讯状态RIOM1绿</value>
+  </data>
+  <data name="Inb通讯状态RIOM7红" xml:space="preserve">
+    <value>通讯状态RIOM7红</value>
+  </data>
+  <data name="Inb通讯状态RIOM7黄" xml:space="preserve">
+    <value>通讯状态RIOM7黄</value>
+  </data>
+  <data name="Inb通讯状态RIOM7绿" xml:space="preserve">
+    <value>通讯状态RIOM7绿</value>
+  </data>
+  <data name="Inb通讯状态HCAC1红" xml:space="preserve">
+    <value>通讯状态HCAC1红</value>
+  </data>
+  <data name="Inb通讯状态HCAC1黄" xml:space="preserve">
+    <value>通讯状态HCAC1黄</value>
+  </data>
+  <data name="Inb通讯状态HCAC1绿" xml:space="preserve">
+    <value>通讯状态HCAC1绿</value>
+  </data>
+  <data name="Inb通讯状态EDCU1红" xml:space="preserve">
+    <value>通讯状态EDCU1红</value>
+  </data>
+  <data name="Inb通讯状态EDCU1黄" xml:space="preserve">
+    <value>通讯状态EDCU1黄</value>
+  </data>
+  <data name="Inb通讯状态EDCU1绿" xml:space="preserve">
+    <value>通讯状态EDCU1绿</value>
+  </data>
+  <data name="Inb通讯状态EDCU7红" xml:space="preserve">
+    <value>通讯状态EDCU7红</value>
+  </data>
+  <data name="Inb通讯状态EDCU7黄" xml:space="preserve">
+    <value>通讯状态EDCU7黄</value>
+  </data>
+  <data name="Inb通讯状态EDCU7绿" xml:space="preserve">
+    <value>通讯状态EDCU7绿</value>
+  </data>
+  <data name="Inb通讯状态BCU1红" xml:space="preserve">
+    <value>通讯状态BCU1红</value>
+  </data>
+  <data name="Inb通讯状态BCU1黄" xml:space="preserve">
+    <value>通讯状态BCU1黄</value>
+  </data>
+  <data name="Inb通讯状态BCU1绿" xml:space="preserve">
+    <value>通讯状态BCU1绿</value>
+  </data>
+  <data name="Inb通讯状态TDS红" xml:space="preserve">
+    <value>通讯状态TDS红</value>
+  </data>
+  <data name="Inb通讯状态TDS黄" xml:space="preserve">
+    <value>通讯状态TDS黄</value>
+  </data>
+  <data name="Inb通讯状态TDS绿" xml:space="preserve">
+    <value>通讯状态TDS绿</value>
+  </data>
+  <data name="Inb通讯状态ECR1红" xml:space="preserve">
+    <value>通讯状态ECR1红</value>
+  </data>
+  <data name="Inb通讯状态ECR1黄" xml:space="preserve">
+    <value>通讯状态ECR1黄</value>
+  </data>
+  <data name="Inb通讯状态ECR1绿" xml:space="preserve">
+    <value>通讯状态ECR1绿</value>
+  </data>
+  <data name="Inb通讯状态RIOM2红" xml:space="preserve">
+    <value>通讯状态RIOM2红</value>
+  </data>
+  <data name="Inb通讯状态RIOM2黄" xml:space="preserve">
+    <value>通讯状态RIOM2黄</value>
+  </data>
+  <data name="Inb通讯状态RIOM2绿" xml:space="preserve">
+    <value>通讯状态RIOM2绿</value>
+  </data>
+  <data name="Inb通讯状态HCAC2红" xml:space="preserve">
+    <value>通讯状态HCAC2红</value>
+  </data>
+  <data name="Inb通讯状态HCAC2黄" xml:space="preserve">
+    <value>通讯状态HCAC2黄</value>
+  </data>
+  <data name="Inb通讯状态HCAC2绿" xml:space="preserve">
+    <value>通讯状态HCAC2绿</value>
+  </data>
+  <data name="Inb通讯状态EDCU2红" xml:space="preserve">
+    <value>通讯状态EDCU2红</value>
+  </data>
+  <data name="Inb通讯状态EDCU2黄" xml:space="preserve">
+    <value>通讯状态EDCU2黄</value>
+  </data>
+  <data name="Inb通讯状态EDCU2绿" xml:space="preserve">
+    <value>通讯状态EDCU2绿</value>
+  </data>
+  <data name="Inb通讯状态EDCU8红" xml:space="preserve">
+    <value>通讯状态EDCU8红</value>
+  </data>
+  <data name="Inb通讯状态EDCU8黄" xml:space="preserve">
+    <value>通讯状态EDCU8黄</value>
+  </data>
+  <data name="Inb通讯状态EDCU8绿" xml:space="preserve">
+    <value>通讯状态EDCU8绿</value>
+  </data>
+  <data name="Inb通讯状态DCUM1红" xml:space="preserve">
+    <value>通讯状态DCUM1红</value>
+  </data>
+  <data name="Inb通讯状态DCUM1黄" xml:space="preserve">
+    <value>通讯状态DCUM1黄</value>
+  </data>
+  <data name="Inb通讯状态DCUM1绿" xml:space="preserve">
+    <value>通讯状态DCUM1绿</value>
+  </data>
+  <data name="Inb通讯状态RIOM3红" xml:space="preserve">
+    <value>通讯状态RIOM3红</value>
+  </data>
+  <data name="Inb通讯状态RIOM3黄" xml:space="preserve">
+    <value>通讯状态RIOM3黄</value>
+  </data>
+  <data name="Inb通讯状态RIOM3绿" xml:space="preserve">
+    <value>通讯状态RIOM3绿</value>
+  </data>
+  <data name="Inb通讯状态HCAC3红" xml:space="preserve">
+    <value>通讯状态HCAC3红</value>
+  </data>
+  <data name="Inb通讯状态HCAC3黄" xml:space="preserve">
+    <value>通讯状态HCAC3黄</value>
+  </data>
+  <data name="Inb通讯状态HCAC3绿" xml:space="preserve">
+    <value>通讯状态HCAC3绿</value>
+  </data>
+  <data name="Inb通讯状态EDCU3红" xml:space="preserve">
+    <value>通讯状态EDCU3红</value>
+  </data>
+  <data name="Inb通讯状态EDCU3黄" xml:space="preserve">
+    <value>通讯状态EDCU3黄</value>
+  </data>
+  <data name="Inb通讯状态EDCU3绿" xml:space="preserve">
+    <value>通讯状态EDCU3绿</value>
+  </data>
+  <data name="Inb通讯状态EDCU9红" xml:space="preserve">
+    <value>通讯状态EDCU9红</value>
+  </data>
+  <data name="Inb通讯状态EDCU9黄" xml:space="preserve">
+    <value>通讯状态EDCU9黄</value>
+  </data>
+  <data name="Inb通讯状态EDCU9绿" xml:space="preserve">
+    <value>通讯状态EDCU9绿</value>
+  </data>
+  <data name="Inb通讯状态BCU2红" xml:space="preserve">
+    <value>通讯状态BCU2红</value>
+  </data>
+  <data name="Inb通讯状态BCU2黄" xml:space="preserve">
+    <value>通讯状态BCU2黄</value>
+  </data>
+  <data name="Inb通讯状态BCU2绿" xml:space="preserve">
+    <value>通讯状态BCU2绿</value>
+  </data>
+  <data name="Inb通讯状态DCUA2红" xml:space="preserve">
+    <value>通讯状态DCUA2红</value>
+  </data>
+  <data name="Inb通讯状态DCUA2黄" xml:space="preserve">
+    <value>通讯状态DCUA2黄</value>
+  </data>
+  <data name="Inb通讯状态DCUA2绿" xml:space="preserve">
+    <value>通讯状态DCUA2绿</value>
+  </data>
+  <data name="Inb通讯状态DCUM2红" xml:space="preserve">
+    <value>通讯状态DCUM2红</value>
+  </data>
+  <data name="Inb通讯状态DCUM2黄" xml:space="preserve">
+    <value>通讯状态DCUM2黄</value>
+  </data>
+  <data name="Inb通讯状态DCUM2绿" xml:space="preserve">
+    <value>通讯状态DCUM2绿</value>
+  </data>
+  <data name="Inb通讯状态CCUD1红" xml:space="preserve">
+    <value>通讯状态CCUD1红</value>
+  </data>
+  <data name="Inb通讯状态CCUD1黄" xml:space="preserve">
+    <value>通讯状态CCUD1黄</value>
+  </data>
+  <data name="Inb通讯状态CCUD1绿" xml:space="preserve">
+    <value>通讯状态CCUD1绿</value>
+  </data>
+  <data name="Inb通讯状态RIOM4红" xml:space="preserve">
+    <value>通讯状态RIOM4红</value>
+  </data>
+  <data name="Inb通讯状态RIOM4黄" xml:space="preserve">
+    <value>通讯状态RIOM4黄</value>
+  </data>
+  <data name="Inb通讯状态RIOM4绿" xml:space="preserve">
+    <value>通讯状态RIOM4绿</value>
+  </data>
+  <data name="Inb通讯状态HCAC4红" xml:space="preserve">
+    <value>通讯状态HCAC4红</value>
+  </data>
+  <data name="Inb通讯状态HCAC4黄" xml:space="preserve">
+    <value>通讯状态HCAC4黄</value>
+  </data>
+  <data name="Inb通讯状态HCAC4绿" xml:space="preserve">
+    <value>通讯状态HCAC4绿</value>
+  </data>
+  <data name="Inb通讯状态EDCU4红" xml:space="preserve">
+    <value>通讯状态EDCU4红</value>
+  </data>
+  <data name="Inb通讯状态EDCU4黄" xml:space="preserve">
+    <value>通讯状态EDCU4黄</value>
+  </data>
+  <data name="Inb通讯状态EDCU4绿" xml:space="preserve">
+    <value>通讯状态EDCU4绿</value>
+  </data>
+  <data name="Inb通讯状态EDCU10红" xml:space="preserve">
+    <value>通讯状态EDCU10红</value>
+  </data>
+  <data name="Inb通讯状态EDCU10黄" xml:space="preserve">
+    <value>通讯状态EDCU10黄</value>
+  </data>
+  <data name="Inb通讯状态EDCU10绿" xml:space="preserve">
+    <value>通讯状态EDCU10绿</value>
+  </data>
+  <data name="Inb通讯状态BCU3红" xml:space="preserve">
+    <value>通讯状态BCU3红</value>
+  </data>
+  <data name="Inb通讯状态BCU3黄" xml:space="preserve">
+    <value>通讯状态BCU3黄</value>
+  </data>
+  <data name="Inb通讯状态BCU3绿" xml:space="preserve">
+    <value>通讯状态BCU3绿</value>
+  </data>
+  <data name="Inb通讯状态DCUA3红" xml:space="preserve">
+    <value>通讯状态DCUA3红</value>
+  </data>
+  <data name="Inb通讯状态DCUA3黄" xml:space="preserve">
+    <value>通讯状态DCUA3黄</value>
+  </data>
+  <data name="Inb通讯状态DCUA3绿" xml:space="preserve">
+    <value>通讯状态DCUA3绿</value>
+  </data>
+  <data name="Inb通讯状态DCUM3红" xml:space="preserve">
+    <value>通讯状态DCUM3红</value>
+  </data>
+  <data name="Inb通讯状态DCUM3黄" xml:space="preserve">
+    <value>通讯状态DCUM3黄</value>
+  </data>
+  <data name="Inb通讯状态DCUM3绿" xml:space="preserve">
+    <value>通讯状态DCUM3绿</value>
+  </data>
+  <data name="Inb通讯状态CCUD2红" xml:space="preserve">
+    <value>通讯状态CCUD2红</value>
+  </data>
+  <data name="Inb通讯状态CCUD2黄" xml:space="preserve">
+    <value>通讯状态CCUD2黄</value>
+  </data>
+  <data name="Inb通讯状态CCUD2绿" xml:space="preserve">
+    <value>通讯状态CCUD2绿</value>
+  </data>
+  <data name="Inb通讯状态ECR2红" xml:space="preserve">
+    <value>通讯状态ECR2红</value>
+  </data>
+  <data name="Inb通讯状态ECR2黄" xml:space="preserve">
+    <value>通讯状态ECR2黄</value>
+  </data>
+  <data name="Inb通讯状态ECR2绿" xml:space="preserve">
+    <value>通讯状态ECR2绿</value>
+  </data>
+  <data name="Inb通讯状态RIOM5红" xml:space="preserve">
+    <value>通讯状态RIOM5红</value>
+  </data>
+  <data name="Inb通讯状态RIOM5黄" xml:space="preserve">
+    <value>通讯状态RIOM5黄</value>
+  </data>
+  <data name="Inb通讯状态RIOM5绿" xml:space="preserve">
+    <value>通讯状态RIOM5绿</value>
+  </data>
+  <data name="Inb通讯状态HCAC5红" xml:space="preserve">
+    <value>通讯状态HCAC5红</value>
+  </data>
+  <data name="Inb通讯状态HCAC5黄" xml:space="preserve">
+    <value>通讯状态HCAC5黄</value>
+  </data>
+  <data name="Inb通讯状态HCAC5绿" xml:space="preserve">
+    <value>通讯状态HCAC5绿</value>
+  </data>
+  <data name="Inb通讯状态EDCU5红" xml:space="preserve">
+    <value>通讯状态EDCU5红</value>
+  </data>
+  <data name="Inb通讯状态EDCU5黄" xml:space="preserve">
+    <value>通讯状态EDCU5黄</value>
+  </data>
+  <data name="Inb通讯状态EDCU5绿" xml:space="preserve">
+    <value>通讯状态EDCU5绿</value>
+  </data>
+  <data name="Inb通讯状态EDCU11红" xml:space="preserve">
+    <value>通讯状态EDCU11红</value>
+  </data>
+  <data name="Inb通讯状态EDCU11黄" xml:space="preserve">
+    <value>通讯状态EDCU11黄</value>
+  </data>
+  <data name="Inb通讯状态EDCU11绿" xml:space="preserve">
+    <value>通讯状态EDCU11绿</value>
+  </data>
+  <data name="Inb通讯状态DCUM4红" xml:space="preserve">
+    <value>通讯状态DCUM4红</value>
+  </data>
+  <data name="Inb通讯状态DCUM4黄" xml:space="preserve">
+    <value>通讯状态DCUM4黄</value>
+  </data>
+  <data name="Inb通讯状态DCUM4绿" xml:space="preserve">
+    <value>通讯状态DCUM4绿</value>
+  </data>
+  <data name="Inb通讯状态RIOM6红" xml:space="preserve">
+    <value>通讯状态RIOM6红</value>
+  </data>
+  <data name="Inb通讯状态RIOM6黄" xml:space="preserve">
+    <value>通讯状态RIOM6黄</value>
+  </data>
+  <data name="Inb通讯状态RIOM6绿" xml:space="preserve">
+    <value>通讯状态RIOM6绿</value>
+  </data>
+  <data name="Inb通讯状态RIOM8红" xml:space="preserve">
+    <value>通讯状态RIOM8红</value>
+  </data>
+  <data name="Inb通讯状态RIOM8黄" xml:space="preserve">
+    <value>通讯状态RIOM8黄</value>
+  </data>
+  <data name="Inb通讯状态RIOM8绿" xml:space="preserve">
+    <value>通讯状态RIOM8绿</value>
+  </data>
+  <data name="Inb通讯状态HCAC6红" xml:space="preserve">
+    <value>通讯状态HCAC6红</value>
+  </data>
+  <data name="Inb通讯状态HCAC6黄" xml:space="preserve">
+    <value>通讯状态HCAC6黄</value>
+  </data>
+  <data name="Inb通讯状态HCAC6绿" xml:space="preserve">
+    <value>通讯状态HCAC6绿</value>
+  </data>
+  <data name="Inb通讯状态EDCU6红" xml:space="preserve">
+    <value>通讯状态EDCU6红</value>
+  </data>
+  <data name="Inb通讯状态EDCU6黄" xml:space="preserve">
+    <value>通讯状态EDCU6黄</value>
+  </data>
+  <data name="Inb通讯状态EDCU6绿" xml:space="preserve">
+    <value>通讯状态EDCU6绿</value>
+  </data>
+  <data name="Inb通讯状态EDCU12红" xml:space="preserve">
+    <value>通讯状态EDCU12红</value>
+  </data>
+  <data name="Inb通讯状态EDCU12黄" xml:space="preserve">
+    <value>通讯状态EDCU12黄</value>
+  </data>
+  <data name="Inb通讯状态EDCU12绿" xml:space="preserve">
+    <value>通讯状态EDCU12绿</value>
+  </data>
+  <data name="Inb通讯状态BCU4红" xml:space="preserve">
+    <value>通讯状态BCU4红</value>
+  </data>
+  <data name="Inb通讯状态BCU4黄" xml:space="preserve">
+    <value>通讯状态BCU4黄</value>
+  </data>
+  <data name="Inb通讯状态BCU4绿" xml:space="preserve">
+    <value>通讯状态BCU4绿</value>
+  </data>
+  <data name="Inb通讯状态HMI2红" xml:space="preserve">
+    <value>通讯状态HMI2红</value>
+  </data>
+  <data name="Inb通讯状态HMI2黄" xml:space="preserve">
+    <value>通讯状态HMI2黄</value>
+  </data>
+  <data name="Inb通讯状态HMI2绿" xml:space="preserve">
+    <value>通讯状态HMI2绿</value>
+  </data>
+  <data name="Inb通讯状态CCU2红" xml:space="preserve">
+    <value>通讯状态CCU2红</value>
+  </data>
+  <data name="Inb通讯状态CCU2黄" xml:space="preserve">
+    <value>通讯状态CCU2黄</value>
+  </data>
+  <data name="Inb通讯状态CCU2绿" xml:space="preserve">
+    <value>通讯状态CCU2绿</value>
+  </data>
+  <data name="Inb通讯状态ERM2红" xml:space="preserve">
+    <value>通讯状态ERM2红</value>
+  </data>
+  <data name="Inb通讯状态ERM2黄" xml:space="preserve">
+    <value>通讯状态ERM2黄</value>
+  </data>
+  <data name="Inb通讯状态ERM2绿" xml:space="preserve">
+    <value>通讯状态ERM2绿</value>
+  </data>
+  <data name="Inb通讯状态PIS2红" xml:space="preserve">
+    <value>通讯状态PIS2红</value>
+  </data>
+  <data name="Inb通讯状态PIS2黄" xml:space="preserve">
+    <value>通讯状态PIS2黄</value>
+  </data>
+  <data name="Inb通讯状态PIS2绿" xml:space="preserve">
+    <value>通讯状态PIS2绿</value>
+  </data>
+  <data name="Inb通讯状态FAS2红" xml:space="preserve">
+    <value>通讯状态FAS2红</value>
+  </data>
+  <data name="Inb通讯状态FAS2黄" xml:space="preserve">
+    <value>通讯状态FAS2黄</value>
+  </data>
+  <data name="Inb通讯状态FAS2绿" xml:space="preserve">
+    <value>通讯状态FAS2绿</value>
+  </data>
+  <data name="Inb通讯状态ATC红" xml:space="preserve">
+    <value>通讯状态ATC红</value>
+  </data>
+  <data name="Inb通讯状态ATC黄" xml:space="preserve">
+    <value>通讯状态ATC黄</value>
+  </data>
+  <data name="Inb通讯状态ATC绿" xml:space="preserve">
+    <value>通讯状态ATC绿</value>
+  </data>
+  <data name="Inb通讯状态DCUA4红" xml:space="preserve">
+    <value>通讯状态DCUA4红</value>
+  </data>
+  <data name="Inb通讯状态DCUA4黄" xml:space="preserve">
+    <value>通讯状态DCUA4黄</value>
+  </data>
+  <data name="Inb通讯状态DCUA4绿" xml:space="preserve">
+    <value>通讯状态DCUA4绿</value>
+  </data>
+  <data name="Inb通讯状态PDS1红" xml:space="preserve">
+    <value>通讯状态PDS1红</value>
+  </data>
+  <data name="Inb通讯状态PDS1黄" xml:space="preserve">
+    <value>通讯状态PDS1黄</value>
+  </data>
+  <data name="Inb通讯状态PDS1绿" xml:space="preserve">
+    <value>通讯状态PDS1绿</value>
+  </data>
+  <data name="Inb通讯状态PDS2红" xml:space="preserve">
+    <value>通讯状态PDS2红</value>
+  </data>
+  <data name="Inb通讯状态PDS2黄" xml:space="preserve">
+    <value>通讯状态PDS2黄</value>
+  </data>
+  <data name="Inb通讯状态PDS2绿" xml:space="preserve">
+    <value>通讯状态PDS2绿</value>
+  </data>
+  <data name="Inb车0辅逆负载电流未知" xml:space="preserve">
+    <value>车0辅逆负载电流未知</value>
+  </data>
+  <data name="Inb车2辅逆负载电流未知" xml:space="preserve">
+    <value>车2辅逆负载电流未知</value>
+  </data>
+  <data name="Inb车3辅逆负载电流未知" xml:space="preserve">
+    <value>车3辅逆负载电流未知</value>
+  </data>
+  <data name="Inb车5辅逆负载电流未知" xml:space="preserve">
+    <value>车5辅逆负载电流未知</value>
+  </data>
+  <data name="Inb车0辅逆负载电压未知" xml:space="preserve">
+    <value>车0辅逆负载电压未知</value>
+  </data>
+  <data name="Inb车2辅逆负载电压未知" xml:space="preserve">
+    <value>车2辅逆负载电压未知</value>
+  </data>
+  <data name="Inb车3辅逆负载电压未知" xml:space="preserve">
+    <value>车3辅逆负载电压未知</value>
+  </data>
+  <data name="Inb车5辅逆负载电压未知" xml:space="preserve">
+    <value>车5辅逆负载电压未知</value>
+  </data>
+  <data name="Inb车0蓄电池充电机电流未知" xml:space="preserve">
+    <value>车0蓄电池充电机电流未知</value>
+  </data>
+  <data name="Inb车5蓄电池充电机电流未知" xml:space="preserve">
+    <value>车5蓄电池充电机电流未知</value>
+  </data>
+  <data name="Inb车0蓄电池母线电流未知" xml:space="preserve">
+    <value>车0蓄电池母线电流未知</value>
+  </data>
+  <data name="Inb车5蓄电池母线电流未知" xml:space="preserve">
+    <value>车5蓄电池母线电流未知</value>
+  </data>
+  <data name="Inb车0蓄电池母线电压未知" xml:space="preserve">
+    <value>车0蓄电池母线电压未知</value>
+  </data>
+  <data name="Inb车5蓄电池母线电压未知" xml:space="preserve">
+    <value>车5蓄电池母线电压未知</value>
+  </data>
+  <data name="Inb车0辅助直流环节电流未知" xml:space="preserve">
+    <value>车0辅助直流环节电流未知</value>
+  </data>
+  <data name="Inb车2辅助直流环节电流未知" xml:space="preserve">
+    <value>车2辅助直流环节电流未知</value>
+  </data>
+  <data name="Inb车3辅助直流环节电流未知" xml:space="preserve">
+    <value>车3辅助直流环节电流未知</value>
+  </data>
+  <data name="Inb车5辅助直流环节电流未知" xml:space="preserve">
+    <value>车5辅助直流环节电流未知</value>
+  </data>
+  <data name="Inb车0辅助直流环节电压未知" xml:space="preserve">
+    <value>车0辅助直流环节电压未知</value>
+  </data>
+  <data name="Inb车2辅助直流环节电压未知" xml:space="preserve">
+    <value>车2辅助直流环节电压未知</value>
+  </data>
+  <data name="Inb车3辅助直流环节电压未知" xml:space="preserve">
+    <value>车3辅助直流环节电压未知</value>
+  </data>
+  <data name="Inb车5辅助直流环节电压未知" xml:space="preserve">
+    <value>车5辅助直流环节电压未知</value>
+  </data>
+  <data name="Inb车1电机电流未知" xml:space="preserve">
+    <value>车1电机电流未知</value>
+  </data>
+  <data name="Inb车2电机电流未知" xml:space="preserve">
+    <value>车2电机电流未知</value>
+  </data>
+  <data name="Inb车3电机电流未知" xml:space="preserve">
+    <value>车3电机电流未知</value>
+  </data>
+  <data name="Inb车4电机电流未知" xml:space="preserve">
+    <value>车4电机电流未知</value>
+  </data>
+  <data name="Inb车1牵引直流环节电流数值" xml:space="preserve">
+    <value>车1牵引直流环节电流数值</value>
+  </data>
+  <data name="Inb车2牵引直流环节电流数值" xml:space="preserve">
+    <value>车2牵引直流环节电流数值</value>
+  </data>
+  <data name="Inb车3牵引直流环节电流数值" xml:space="preserve">
+    <value>车3牵引直流环节电流数值</value>
+  </data>
+  <data name="Inb车4牵引直流环节电流数值" xml:space="preserve">
+    <value>车4牵引直流环节电流数值</value>
+  </data>
+  <data name="Inb车1牵引直流环节电流未知" xml:space="preserve">
+    <value>车1牵引直流环节电流未知</value>
+  </data>
+  <data name="Inb车2牵引直流环节电流未知" xml:space="preserve">
+    <value>车2牵引直流环节电流未知</value>
+  </data>
+  <data name="Inb车3牵引直流环节电流未知" xml:space="preserve">
+    <value>车3牵引直流环节电流未知</value>
+  </data>
+  <data name="Inb车4牵引直流环节电流未知" xml:space="preserve">
+    <value>车4牵引直流环节电流未知</value>
+  </data>
+  <data name="Inb车1空簧压力1未知" xml:space="preserve">
+    <value>车1空簧压力1未知</value>
+  </data>
+  <data name="Inb车2空簧压力1未知" xml:space="preserve">
+    <value>车2空簧压力1未知</value>
+  </data>
+  <data name="Inb车3空簧压力1未知" xml:space="preserve">
+    <value>车3空簧压力1未知</value>
+  </data>
+  <data name="Inb车4空簧压力1未知" xml:space="preserve">
+    <value>车4空簧压力1未知</value>
+  </data>
+  <data name="Inb车5空簧压力1未知" xml:space="preserve">
+    <value>车5空簧压力1未知</value>
+  </data>
+  <data name="Inb车6空簧压力1未知" xml:space="preserve">
+    <value>车6空簧压力1未知</value>
+  </data>
+  <data name="Inb车1空簧压力2未知" xml:space="preserve">
+    <value>车1空簧压力2未知</value>
+  </data>
+  <data name="Inb车2空簧压力2未知" xml:space="preserve">
+    <value>车2空簧压力2未知</value>
+  </data>
+  <data name="Inb车3空簧压力2未知" xml:space="preserve">
+    <value>车3空簧压力2未知</value>
+  </data>
+  <data name="Inb车4空簧压力2未知" xml:space="preserve">
+    <value>车4空簧压力2未知</value>
+  </data>
+  <data name="Inb车5空簧压力2未知" xml:space="preserve">
+    <value>车5空簧压力2未知</value>
+  </data>
+  <data name="Inb车6空簧压力2未知" xml:space="preserve">
+    <value>车6空簧压力2未知</value>
+  </data>
+  <data name="Inb车0制动缸压力架1未知" xml:space="preserve">
+    <value>车0制动缸压力架1未知</value>
+  </data>
+  <data name="Inb车1制动缸压力架1未知" xml:space="preserve">
+    <value>车1制动缸压力架1未知</value>
+  </data>
+  <data name="Inb车2制动缸压力架1未知" xml:space="preserve">
+    <value>车2制动缸压力架1未知</value>
+  </data>
+  <data name="Inb车3制动缸压力架1未知" xml:space="preserve">
+    <value>车3制动缸压力架1未知</value>
+  </data>
+  <data name="Inb车4制动缸压力架1未知" xml:space="preserve">
+    <value>车4制动缸压力架1未知</value>
+  </data>
+  <data name="Inb车5制动缸压力架1未知" xml:space="preserve">
+    <value>车5制动缸压力架1未知</value>
+  </data>
+  <data name="Inb车0制动缸压力架2未知" xml:space="preserve">
+    <value>车0制动缸压力架2未知</value>
+  </data>
+  <data name="Inb车1制动缸压力架2未知" xml:space="preserve">
+    <value>车1制动缸压力架2未知</value>
+  </data>
+  <data name="Inb车2制动缸压力架2未知" xml:space="preserve">
+    <value>车2制动缸压力架2未知</value>
+  </data>
+  <data name="Inb车3制动缸压力架2未知" xml:space="preserve">
+    <value>车3制动缸压力架2未知</value>
+  </data>
+  <data name="Inb车4制动缸压力架2未知" xml:space="preserve">
+    <value>车4制动缸压力架2未知</value>
+  </data>
+  <data name="Inb车5制动缸压力架2未知" xml:space="preserve">
+    <value>车5制动缸压力架2未知</value>
+  </data>
+  <data name="Inb车1主风管压力未知" xml:space="preserve">
+    <value>车1主风管压力未知</value>
+  </data>
+  <data name="Inb车4主风管压力未知" xml:space="preserve">
+    <value>车4主风管压力未知</value>
+  </data>
+  <data name="Inb车0空调温度未知" xml:space="preserve">
+    <value>车0空调温度未知</value>
+  </data>
+  <data name="Inb车1空调温度未知" xml:space="preserve">
+    <value>车1空调温度未知</value>
+  </data>
+  <data name="Inb车2空调温度未知" xml:space="preserve">
+    <value>车2空调温度未知</value>
+  </data>
+  <data name="Inb车3空调温度未知" xml:space="preserve">
+    <value>车3空调温度未知</value>
+  </data>
+  <data name="Inb车4空调温度未知" xml:space="preserve">
+    <value>车4空调温度未知</value>
+  </data>
+  <data name="Inb车5空调温度未知" xml:space="preserve">
+    <value>车5空调温度未知</value>
+  </data>
+  <data name="Inb车1牵引直流环节电压未知" xml:space="preserve">
+    <value>车1牵引直流环节电压未知</value>
+  </data>
+  <data name="Inb车2牵引直流环节电压未知" xml:space="preserve">
+    <value>车2牵引直流环节电压未知</value>
+  </data>
+  <data name="Inb车3牵引直流环节电压未知" xml:space="preserve">
+    <value>车3牵引直流环节电压未知</value>
+  </data>
+  <data name="Inb车4牵引直流环节电压未知" xml:space="preserve">
+    <value>车4牵引直流环节电压未知</value>
+  </data>
+  <data name="Inb车0满载率未知" xml:space="preserve">
+    <value>车0满载率未知</value>
+  </data>
+  <data name="Inb车1满载率未知" xml:space="preserve">
+    <value>车1满载率未知</value>
+  </data>
+  <data name="Inb车2满载率未知" xml:space="preserve">
+    <value>车2满载率未知</value>
+  </data>
+  <data name="Inb车3满载率未知" xml:space="preserve">
+    <value>车3满载率未知</value>
+  </data>
+  <data name="Inb车4满载率未知" xml:space="preserve">
+    <value>车4满载率未知</value>
+  </data>
+  <data name="Inb车5满载率未知" xml:space="preserve">
+    <value>车5满载率未知</value>
+  </data>
+  <data name="Inb牵引百分比牵引状态" xml:space="preserve">
+    <value>牵引百分比牵引状态</value>
+  </data>
+  <data name="Inb牵引百分比制动状态" xml:space="preserve">
+    <value>牵引百分比制动状态</value>
+  </data>
+  <data name="InbCar0冷凝机运行3" xml:space="preserve">
+    <value>Car0冷凝机运行3</value>
+  </data>
+  <data name="InbCar1冷凝机运行3" xml:space="preserve">
+    <value>Car1冷凝机运行3</value>
+  </data>
+  <data name="InbCar2冷凝机运行3" xml:space="preserve">
+    <value>Car2冷凝机运行3</value>
+  </data>
+  <data name="InbCar3冷凝机运行3" xml:space="preserve">
+    <value>Car3冷凝机运行3</value>
+  </data>
+  <data name="InbCar4冷凝机运行3" xml:space="preserve">
+    <value>Car4冷凝机运行3</value>
+  </data>
+  <data name="InbCar5冷凝机运行3" xml:space="preserve">
+    <value>Car5冷凝机运行3</value>
+  </data>
+  <data name="InbCar0冷凝机未运行3" xml:space="preserve">
+    <value>Car0冷凝机未运行3</value>
+  </data>
+  <data name="InbCar1冷凝机未运行3" xml:space="preserve">
+    <value>Car1冷凝机未运行3</value>
+  </data>
+  <data name="InbCar2冷凝机未运行3" xml:space="preserve">
+    <value>Car2冷凝机未运行3</value>
+  </data>
+  <data name="InbCar3冷凝机未运行3" xml:space="preserve">
+    <value>Car3冷凝机未运行3</value>
+  </data>
+  <data name="InbCar4冷凝机未运行3" xml:space="preserve">
+    <value>Car4冷凝机未运行3</value>
+  </data>
+  <data name="InbCar5冷凝机未运行3" xml:space="preserve">
+    <value>Car5冷凝机未运行3</value>
+  </data>
+  <data name="InbCar0冷凝机运行4" xml:space="preserve">
+    <value>Car0冷凝机运行4</value>
+  </data>
+  <data name="InbCar1冷凝机运行4" xml:space="preserve">
+    <value>Car1冷凝机运行4</value>
+  </data>
+  <data name="InbCar2冷凝机运行4" xml:space="preserve">
+    <value>Car2冷凝机运行4</value>
+  </data>
+  <data name="InbCar3冷凝机运行4" xml:space="preserve">
+    <value>Car3冷凝机运行4</value>
+  </data>
+  <data name="InbCar4冷凝机运行4" xml:space="preserve">
+    <value>Car4冷凝机运行4</value>
+  </data>
+  <data name="InbCar5冷凝机运行4" xml:space="preserve">
+    <value>Car5冷凝机运行4</value>
+  </data>
+  <data name="InbCar0冷凝机未运行4" xml:space="preserve">
+    <value>Car0冷凝机未运行4</value>
+  </data>
+  <data name="InbCar1冷凝机未运行4" xml:space="preserve">
+    <value>Car1冷凝机未运行4</value>
+  </data>
+  <data name="InbCar2冷凝机未运行4" xml:space="preserve">
+    <value>Car2冷凝机未运行4</value>
+  </data>
+  <data name="InbCar3冷凝机未运行4" xml:space="preserve">
+    <value>Car3冷凝机未运行4</value>
+  </data>
+  <data name="InbCar4冷凝机未运行4" xml:space="preserve">
+    <value>Car4冷凝机未运行4</value>
+  </data>
+  <data name="InbCar5冷凝机未运行4" xml:space="preserve">
+    <value>Car5冷凝机未运行4</value>
+  </data>
+  <data name="InbCar0通风机运行3" xml:space="preserve">
+    <value>Car0通风机运行3</value>
+  </data>
+  <data name="InbCar1通风机运行3" xml:space="preserve">
+    <value>Car1通风机运行3</value>
+  </data>
+  <data name="InbCar2通风机运行3" xml:space="preserve">
+    <value>Car2通风机运行3</value>
+  </data>
+  <data name="InbCar3通风机运行3" xml:space="preserve">
+    <value>Car3通风机运行3</value>
+  </data>
+  <data name="InbCar4通风机运行3" xml:space="preserve">
+    <value>Car4通风机运行3</value>
+  </data>
+  <data name="InbCar5通风机运行3" xml:space="preserve">
+    <value>Car5通风机运行3</value>
+  </data>
+  <data name="InbCar0通风机未运行3" xml:space="preserve">
+    <value>Car0通风机未运行3</value>
+  </data>
+  <data name="InbCar1通风机未运行3" xml:space="preserve">
+    <value>Car1通风机未运行3</value>
+  </data>
+  <data name="InbCar2通风机未运行3" xml:space="preserve">
+    <value>Car2通风机未运行3</value>
+  </data>
+  <data name="InbCar3通风机未运行3" xml:space="preserve">
+    <value>Car3通风机未运行3</value>
+  </data>
+  <data name="InbCar4通风机未运行3" xml:space="preserve">
+    <value>Car4通风机未运行3</value>
+  </data>
+  <data name="InbCar5通风机未运行3" xml:space="preserve">
+    <value>Car5通风机未运行3</value>
+  </data>
+  <data name="InbCar0通风机运行4" xml:space="preserve">
+    <value>Car0通风机运行4</value>
+  </data>
+  <data name="InbCar1通风机运行4" xml:space="preserve">
+    <value>Car1通风机运行4</value>
+  </data>
+  <data name="InbCar2通风机运行4" xml:space="preserve">
+    <value>Car2通风机运行4</value>
+  </data>
+  <data name="InbCar3通风机运行4" xml:space="preserve">
+    <value>Car3通风机运行4</value>
+  </data>
+  <data name="InbCar4通风机运行4" xml:space="preserve">
+    <value>Car4通风机运行4</value>
+  </data>
+  <data name="InbCar5通风机运行4" xml:space="preserve">
+    <value>Car5通风机运行4</value>
+  </data>
+  <data name="InbCar0通风机未运行4" xml:space="preserve">
+    <value>Car0通风机未运行4</value>
+  </data>
+  <data name="InbCar1通风机未运行4" xml:space="preserve">
+    <value>Car1通风机未运行4</value>
+  </data>
+  <data name="InbCar2通风机未运行4" xml:space="preserve">
+    <value>Car2通风机未运行4</value>
+  </data>
+  <data name="InbCar3通风机未运行4" xml:space="preserve">
+    <value>Car3通风机未运行4</value>
+  </data>
+  <data name="InbCar4通风机未运行4" xml:space="preserve">
+    <value>Car4通风机未运行4</value>
+  </data>
+  <data name="InbCar5通风机未运行4" xml:space="preserve">
+    <value>Car5通风机未运行4</value>
+  </data>
+  <data name="InbCar0压缩机运行3" xml:space="preserve">
+    <value>Car0压缩机运行3</value>
+  </data>
+  <data name="InbCar1压缩机运行3" xml:space="preserve">
+    <value>Car1压缩机运行3</value>
+  </data>
+  <data name="InbCar2压缩机运行3" xml:space="preserve">
+    <value>Car2压缩机运行3</value>
+  </data>
+  <data name="InbCar3压缩机运行3" xml:space="preserve">
+    <value>Car3压缩机运行3</value>
+  </data>
+  <data name="InbCar4压缩机运行3" xml:space="preserve">
+    <value>Car4压缩机运行3</value>
+  </data>
+  <data name="InbCar5压缩机运行3" xml:space="preserve">
+    <value>Car5压缩机运行3</value>
+  </data>
+  <data name="InbCar0压缩机未运行3" xml:space="preserve">
+    <value>Car0压缩机未运行3</value>
+  </data>
+  <data name="InbCar1压缩机未运行3" xml:space="preserve">
+    <value>Car1压缩机未运行3</value>
+  </data>
+  <data name="InbCar2压缩机未运行3" xml:space="preserve">
+    <value>Car2压缩机未运行3</value>
+  </data>
+  <data name="InbCar3压缩机未运行3" xml:space="preserve">
+    <value>Car3压缩机未运行3</value>
+  </data>
+  <data name="InbCar4压缩机未运行3" xml:space="preserve">
+    <value>Car4压缩机未运行3</value>
+  </data>
+  <data name="InbCar5压缩机未运行3" xml:space="preserve">
+    <value>Car5压缩机未运行3</value>
+  </data>
+  <data name="InbCar0压缩机运行4" xml:space="preserve">
+    <value>Car0压缩机运行4</value>
+  </data>
+  <data name="InbCar1压缩机运行4" xml:space="preserve">
+    <value>Car1压缩机运行4</value>
+  </data>
+  <data name="InbCar2压缩机运行4" xml:space="preserve">
+    <value>Car2压缩机运行4</value>
+  </data>
+  <data name="InbCar3压缩机运行4" xml:space="preserve">
+    <value>Car3压缩机运行4</value>
+  </data>
+  <data name="InbCar4压缩机运行4" xml:space="preserve">
+    <value>Car4压缩机运行4</value>
+  </data>
+  <data name="InbCar5压缩机运行4" xml:space="preserve">
+    <value>Car5压缩机运行4</value>
+  </data>
+  <data name="InbCar0压缩机未运行4" xml:space="preserve">
+    <value>Car0压缩机未运行4</value>
+  </data>
+  <data name="InbCar1压缩机未运行4" xml:space="preserve">
+    <value>Car1压缩机未运行4</value>
+  </data>
+  <data name="InbCar2压缩机未运行4" xml:space="preserve">
+    <value>Car2压缩机未运行4</value>
+  </data>
+  <data name="InbCar3压缩机未运行4" xml:space="preserve">
+    <value>Car3压缩机未运行4</value>
+  </data>
+  <data name="InbCar4压缩机未运行4" xml:space="preserve">
+    <value>Car4压缩机未运行4</value>
+  </data>
+  <data name="InbCar5压缩机未运行4" xml:space="preserve">
+    <value>Car5压缩机未运行4</value>
+  </data>
+  <data name="Inb车0空调室内温度未知" xml:space="preserve">
+    <value>车0空调室内温度未知</value>
+  </data>
+  <data name="Inb车1空调室内温度未知" xml:space="preserve">
+    <value>车1空调室内温度未知</value>
+  </data>
+  <data name="Inb车2空调室内温度未知" xml:space="preserve">
+    <value>车2空调室内温度未知</value>
+  </data>
+  <data name="Inb车3空调室内温度未知" xml:space="preserve">
+    <value>车3空调室内温度未知</value>
+  </data>
+  <data name="Inb车4空调室内温度未知" xml:space="preserve">
+    <value>车4空调室内温度未知</value>
+  </data>
+  <data name="Inb车5空调室内温度未知" xml:space="preserve">
+    <value>车5空调室内温度未知</value>
+  </data>
+  <data name="Inb车0空调目标温度未知" xml:space="preserve">
+    <value>车0空调目标温度未知</value>
+  </data>
+  <data name="Inb车1空调目标温度未知" xml:space="preserve">
+    <value>车1空调目标温度未知</value>
+  </data>
+  <data name="Inb车2空调目标温度未知" xml:space="preserve">
+    <value>车2空调目标温度未知</value>
+  </data>
+  <data name="Inb车3空调目标温度未知" xml:space="preserve">
+    <value>车3空调目标温度未知</value>
+  </data>
+  <data name="Inb车4空调目标温度未知" xml:space="preserve">
+    <value>车4空调目标温度未知</value>
+  </data>
+  <data name="Inb车5空调目标温度未知" xml:space="preserve">
+    <value>车5空调目标温度未知</value>
+  </data>
+  <data name="Inb车0空调室外温度未知" xml:space="preserve">
+    <value>车0空调室外温度未知</value>
+  </data>
+  <data name="Inb车1空调室外温度未知" xml:space="preserve">
+    <value>车1空调室外温度未知</value>
+  </data>
+  <data name="Inb车2空调室外温度未知" xml:space="preserve">
+    <value>车2空调室外温度未知</value>
+  </data>
+  <data name="Inb车3空调室外温度未知" xml:space="preserve">
+    <value>车3空调室外温度未知</value>
+  </data>
+  <data name="Inb车4空调室外温度未知" xml:space="preserve">
+    <value>车4空调室外温度未知</value>
+  </data>
+  <data name="Inb车5空调室外温度未知" xml:space="preserve">
+    <value>车5空调室外温度未知</value>
+  </data>
+  <data name="Inb司机室激活Tc2" xml:space="preserve">
+    <value>司机室激活Tc2</value>
+  </data>
+  <data name="InbTC1间壁门打开过" xml:space="preserve">
+    <value>TC1间壁门打开过</value>
+  </data>
+  <data name="InbTC1间壁门状态未知" xml:space="preserve">
+    <value>TC1间壁门状态未知</value>
+  </data>
+  <data name="InbTC1间壁门打开" xml:space="preserve">
+    <value>TC1间壁门打开</value>
+  </data>
+  <data name="InbTC1间壁门关闭" xml:space="preserve">
+    <value>TC1间壁门关闭</value>
+  </data>
+  <data name="InbTC2间壁门打开过" xml:space="preserve">
+    <value>TC2间壁门打开过</value>
+  </data>
+  <data name="InbTC2间壁门状态未知" xml:space="preserve">
+    <value>TC2间壁门状态未知</value>
+  </data>
+  <data name="InbTC2间壁门打开" xml:space="preserve">
+    <value>TC2间壁门打开</value>
+  </data>
+  <data name="InbTC2间壁门关闭" xml:space="preserve">
+    <value>TC2间壁门关闭</value>
+  </data>
+  <data name="InbTC1逃生门打开" xml:space="preserve">
+    <value>TC1逃生门打开</value>
+  </data>
+  <data name="InbTC1逃生门关闭" xml:space="preserve">
+    <value>TC1逃生门关闭</value>
+  </data>
+  <data name="InbTC1逃生门状态未知" xml:space="preserve">
+    <value>TC1逃生门状态未知</value>
+  </data>
+  <data name="InbTC2逃生门打开" xml:space="preserve">
+    <value>TC2逃生门打开</value>
+  </data>
+  <data name="InbTC2逃生门关闭" xml:space="preserve">
+    <value>TC2逃生门关闭</value>
+  </data>
+  <data name="InbTC2逃生门状态未知" xml:space="preserve">
+    <value>TC2逃生门状态未知</value>
+  </data>
+</root>

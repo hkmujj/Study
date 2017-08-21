@@ -1,0 +1,954 @@
+﻿<UserControl x:Class="LightRail.HMI.GZYGDC.View.Contents.RunningView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LightRail.HMI.GZYGDC.View.Contents"
+             xmlns:viewModel="clr-namespace:LightRail.HMI.GZYGDC.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+             mc:Ignorable="d"
+             d:DesignHeight="480" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="110*"></RowDefinition>
+            <RowDefinition Height="305*"></RowDefinition>
+            <RowDefinition Height="120*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="61*"></ColumnDefinition>
+                <ColumnDefinition Width="542*"></ColumnDefinition>
+                <ColumnDefinition Width="95*"></ColumnDefinition>
+                <ColumnDefinition Width="102*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Column="1" Margin="0,0,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="54*"></ColumnDefinition>
+                    <ColumnDefinition Width="97*"></ColumnDefinition>
+                    <ColumnDefinition Width="114*"></ColumnDefinition>
+                    <ColumnDefinition Width="116*"></ColumnDefinition>
+                    <ColumnDefinition Width="78*"></ColumnDefinition>
+                    <ColumnDefinition Width="62*"></ColumnDefinition>
+                    <ColumnDefinition Width="11*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Column="0">
+                    <Border  Width="65" CornerRadius="45" Margin="5,10,0,10" Background="{Binding RunningViewModel.Model.HeadTrainActive, Converter={StaticResource TrainActiveConverter}}" BorderThickness="2" BorderBrush="#6aeff8" ></Border>
+                </Grid>
+                <Grid Column="0" ColumnSpan="2">
+                    <Border Margin="35,10,4,10" Background="Black" BorderThickness="2" BorderBrush="#6aeff8" ></Border>
+                    <Border Margin="35,10,4,10" Background="#2f8cb4" BorderThickness="2" BorderBrush="#6aeff8" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Column="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Image Width="25" Height="25" Source="{Binding RunningViewModel.Model.Car1Door1.State, Converter={StaticResource DoorConverter}}" Margin="7,0,0,0"></Image>
+                            </Grid>
+                            <Grid Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid Row="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Column="0">
+                                        <TextBlock HorizontalAlignment="Center" Style="{StaticResource RunningViewDoorNumberTextStyle}" Text="{StaticResource RunningView.1}"></TextBlock>
+                                    </Grid>
+                                    <Grid Column="1">
+                                        <TextBlock HorizontalAlignment="Center" Style="{StaticResource RunningViewDoorNumberTextStyle}" Text="{StaticResource RunningView.3}"></TextBlock>
+                                    </Grid>
+                                </Grid>
+                                <Grid Row="1">
+                                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource RunningViewDoorTypeTextStyle}" Text="{StaticResource RunningView.Mc1}"></TextBlock>
+                                </Grid>
+                                <Grid Row="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Column="1">
+                                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Style="{StaticResource RunningViewDoorNumberTextStyle}" Text="{StaticResource RunningView.2}"></TextBlock>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                            <Grid Column="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid Row="0">
+                                    <Image Width="25" Height="25" Source="{Binding RunningViewModel.Model.Car1Door3.State, Converter={StaticResource DoorConverter}}"></Image>
+                                </Grid>
+                                <Grid Row="1">
+                                    <Image Width="25" Height="25" Source="{Binding RunningViewModel.Model.Car1Door2.State, Converter={StaticResource DoorConverter}}"></Image>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </Grid>
+                <Grid Column="2">
+                    <Border Margin="0,10,4,10" Background="#2f8cb4" BorderThickness="2" BorderBrush="#6aeff8" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Column="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid Row="1">
+                                    <Image Width="25" Height="25" Source="{Binding RunningViewModel.Model.Car2Door4.State, Converter={StaticResource DoorConverter}}"></Image>
+                                </Grid>
+                            </Grid>
+                            <Grid Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid Row="2" Column="0">
+                                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Style="{StaticResource RunningViewDoorNumberTextStyle}" Text="{StaticResource RunningView.4}"></TextBlock>
+                                </Grid>
+                                <Grid Row="1" Column="1">
+                                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom"  Style="{StaticResource RunningViewDoorTypeTextStyle}" Text="{StaticResource RunningView.T}"></TextBlock>
+                                </Grid>
+                                <Grid Row="0" Column="2">
+                                    <TextBlock HorizontalAlignment="Center" Style="{StaticResource RunningViewDoorNumberTextStyle}" Text="{StaticResource RunningView.5}"></TextBlock>
+                                </Grid>
+                            </Grid>
+                            <Grid Column="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid Row="0">
+                                    <Image Width="25" Height="25" Source="{Binding RunningViewModel.Model.Car2Door5.State, Converter={StaticResource DoorConverter}}"></Image>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </Grid>
+                <Grid Column="3">
+                    <Border Margin="0,10,4,10" Background="#2f8cb4" BorderThickness="2" BorderBrush="#6aeff8" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Column="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid Row="1">
+                                    <Image Width="25" Height="25" Source="{Binding RunningViewModel.Model.Car3Door6.State, Converter={StaticResource DoorConverter}}"></Image>
+                                </Grid>
+                            </Grid>
+                            <Grid Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid Row="2" Column="0">
+                                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Style="{StaticResource RunningViewDoorNumberTextStyle}" Text="{StaticResource RunningView.6}"></TextBlock>
+                                </Grid>
+                                <Grid Row="1" Column="1">
+                                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom"  Style="{StaticResource RunningViewDoorTypeTextStyle}" Text="{StaticResource RunningView.M}"></TextBlock>
+                                </Grid>
+                                <Grid Row="0" Column="2">
+                                    <TextBlock HorizontalAlignment="Center" Style="{StaticResource RunningViewDoorNumberTextStyle}" Text="{StaticResource RunningView.7}"></TextBlock>
+                                </Grid>
+                            </Grid>
+                            <Grid Column="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid Row="0">
+                                    <Image Width="25" Height="25" Source="{Binding RunningViewModel.Model.Car3Door7.State, Converter={StaticResource DoorConverter}}"></Image>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </Grid>
+                <Grid Column="5">
+                    <Border  CornerRadius="30" Margin="0,10,0,10" Background="{Binding RunningViewModel.Model.TailTrainActive, Converter={StaticResource TrainActiveConverter}}" BorderThickness="2" BorderBrush="#6aeff8" ></Border>
+                </Grid>
+                <Grid Column="4" ColumnSpan="2">
+                    <Border Margin="0,10,30,10" Background="Black" BorderThickness="2" BorderBrush="#6aeff8" ></Border>
+                    <Border Margin="0,10,30,10" Background="#2f8cb4" BorderThickness="2" BorderBrush="#6aeff8" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Column="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid Row="0">
+                                    <Image Width="25" Height="25" Source="{Binding RunningViewModel.Model.Car4Door9.State, Converter={StaticResource DoorConverter}}"></Image>
+                                </Grid>
+                                <Grid Row="1">
+                                    <Image Width="25" Height="25" Source="{Binding RunningViewModel.Model.Car4Door8.State, Converter={StaticResource DoorConverter}}"></Image>
+                                </Grid>
+                            </Grid>
+                            <Grid Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid Row="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Column="0">
+                                        <TextBlock Style="{StaticResource RunningViewDoorNumberTextStyle}" Text="{StaticResource RunningView.9}"></TextBlock>
+                                    </Grid>
+                                </Grid>
+                                <Grid Row="1">
+                                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"  Style="{StaticResource RunningViewDoorTypeTextStyle}" Text="{StaticResource RunningView.Mc2}"></TextBlock>
+                                </Grid>
+                                <Grid Row="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Column="0">
+                                        <TextBlock VerticalAlignment="Bottom" Style="{StaticResource RunningViewDoorNumberTextStyle}" Text="{StaticResource RunningView.8}"></TextBlock>
+                                    </Grid>
+                                    <Grid Column="1">
+                                        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Bottom" Style="{StaticResource RunningViewDoorNumberTextStyle}" Text="{StaticResource RunningView.10}"></TextBlock>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                            <Grid Column="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid Row="1">
+                                    <Image Width="25" Height="25" Source="{Binding RunningViewModel.Model.Car4Door10.State, Converter={StaticResource DoorConverter}}"></Image>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Grid>
+            <Grid Column="3">
+                <Button Style="{StaticResource BottomButtonStyle}" Content="{Binding Path=Model.CenterStateInterface.BtnB1.Content,Converter={StaticResource ButtonContentConverter},Mode=OneWay}" Command="{Binding Model.CenterStateInterface.BtnB1.ClickCommand}" Margin="0,30,0,0"></Button>
+            </Grid>
+        </Grid>
+        <Grid Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="64*"></ColumnDefinition>
+                <ColumnDefinition Width="491*"></ColumnDefinition>
+                <ColumnDefinition Width="133*"></ColumnDefinition>
+                <ColumnDefinition Width="112*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="115*"></RowDefinition>
+                    <RowDefinition Height="66*"></RowDefinition>
+                    <RowDefinition Height="123*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Row="0">
+                    <Button Style="{StaticResource LeftButtonStyle}" Content="{Binding Path=Model.CenterStateInterface.BtnB7.Content,Converter={StaticResource ButtonContentConverter},Mode=OneWay}" Command="{Binding Model.CenterStateInterface.BtnB7.ClickCommand}" ></Button>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Button Style="{StaticResource LeftButtonStyle}" Content="{Binding Path=Model.CenterStateInterface.BtnB8.Content,Converter={StaticResource ButtonContentConverter},Mode=OneWay}" Command="{Binding Model.CenterStateInterface.BtnB8.ClickCommand}" ></Button>
+                </Grid>
+                <Grid Row="2">
+                    <Button Style="{StaticResource LeftButtonStyle}" Content="{Binding Path=Model.CenterStateInterface.BtnB9.Content,Converter={StaticResource ButtonContentConverter},Mode=OneWay}" Command="{Binding Model.CenterStateInterface.BtnB9.ClickCommand}" ></Button>
+                </Grid>
+            </Grid>
+            <Grid Column="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30*"></ColumnDefinition>
+                        <ColumnDefinition Width="461*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Column="1">
+                        <Border BorderThickness="2" BorderBrush="Aqua">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="110*"></RowDefinition>
+                                    <RowDefinition Height="60*"></RowDefinition>
+                                    <RowDefinition Height="90*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid Row="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Column="0" Margin="5,5,2,5">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition></ColumnDefinition>
+                                                <ColumnDefinition></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid Column="0" Margin="0,0,6,0">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="1.5*"></RowDefinition>
+                                                    <RowDefinition Height="8.2*"></RowDefinition>
+                                                    <RowDefinition Height="0.3*"></RowDefinition>
+                                                </Grid.RowDefinitions>
+                                                <Grid Row="0">
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Grid Column="1" Margin="0,1,0,1">
+                                                            <Border Background="LightGray"></Border>
+                                                        </Grid>
+                                                    </Grid>
+                                                </Grid>
+                                                <Grid Row="1">
+                                                    <ProgressBar Style="{StaticResource RunningViewPowerStatusProgressBarStyle}" Foreground="{Binding RunningViewModel.Model.Car1BatteryInfo.PowerQuantityPercent,Converter={StaticResource PowerValueBrushConverter}}" Value="{Binding RunningViewModel.Model.Car1BatteryInfo.PowerQuantityPercent}"></ProgressBar>
+                                                </Grid>
+                                                <Grid Row="2">
+                                                    <Border Background="LightGray"></Border>
+                                                </Grid>
+                                            </Grid>
+                                            <Grid Column="1">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="1*"></RowDefinition>
+                                                    <RowDefinition Height="2*"></RowDefinition>
+                                                    <RowDefinition Height="1*"></RowDefinition>
+                                                    <RowDefinition Height="1*"></RowDefinition>
+                                                </Grid.RowDefinitions>
+                                                <Grid Row="1">
+                                                    <Image Source="{Binding RunningViewModel.Model.Car1BatteryUnit.State, Converter={StaticResource BatteryConverter}}"></Image>
+                                                </Grid>
+                                                <Grid Row="2">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition></ColumnDefinition>
+                                                        <ColumnDefinition></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Grid Column="0" ColumnSpan="2">
+                                                        <Border Margin="0,0,0,2" Background="LightGray"></Border>
+                                                    </Grid>
+                                                    <Grid Column="0">
+                                                        <TextBlock HorizontalAlignment="Center" Style="{StaticResource RunningViewPowerStatusTextStyle}" Text="{Binding RunningViewModel.Model.Car1BatteryInfo.Temperature}"></TextBlock>
+                                                    </Grid>
+                                                    <Grid Column="1">
+                                                        <TextBlock HorizontalAlignment="Center" Style="{StaticResource RunningViewPowerStatusTextStyle}" Text="{StaticResource RunningView.℃}"></TextBlock>
+                                                    </Grid>
+                                                </Grid>
+                                                <Grid Row="3">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition></ColumnDefinition>
+                                                        <ColumnDefinition></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Grid Column="0" ColumnSpan="2">
+                                                        <Border Margin="0,0,0,2" Background="LightGray"></Border>
+                                                    </Grid>
+                                                    <Grid Column="0">
+                                                        <TextBlock HorizontalAlignment="Center" Style="{StaticResource RunningViewPowerStatusTextStyle}" Text="{Binding RunningViewModel.Model.Car1BatteryInfo.PowerQuantityPercent}"></TextBlock>
+                                                    </Grid>
+                                                    <Grid Column="1">
+                                                        <TextBlock HorizontalAlignment="Center" Style="{StaticResource RunningViewPowerStatusTextStyle}" Text="{StaticResource RunningView.％}"></TextBlock>
+                                                    </Grid>
+                                                </Grid>
+                                            </Grid>
+                                        </Grid>
+                                    </Grid>
+                                    <Grid Column="1" Margin="5,5,2,5">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition></ColumnDefinition>
+                                                <ColumnDefinition></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid Column="0" Margin="0,0,6,0">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="1.5*"></RowDefinition>
+                                                    <RowDefinition Height="8.2*"></RowDefinition>
+                                                    <RowDefinition Height="0.3*"></RowDefinition>
+                                                </Grid.RowDefinitions>
+                                                <Grid Row="0">
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Grid Column="1" Margin="0,1,0,1">
+                                                            <Border Background="LightGray"></Border>
+                                                        </Grid>
+                                                    </Grid>
+                                                </Grid>
+                                                <Grid Row="1">
+                                                    <ProgressBar Style="{StaticResource RunningViewPowerStatusProgressBarStyle}" Foreground="{Binding RunningViewModel.Model.Car2BatteryInfo.PowerQuantityPercent,Converter={StaticResource PowerValueBrushConverter}}" Value="{Binding RunningViewModel.Model.Car2BatteryInfo.PowerQuantityPercent}"></ProgressBar>
+                                                </Grid>
+                                                <Grid Row="2">
+                                                    <Border Background="LightGray"></Border>
+                                                </Grid>
+                                            </Grid>
+                                            <Grid Column="1">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="1*"></RowDefinition>
+                                                    <RowDefinition Height="2*"></RowDefinition>
+                                                    <RowDefinition Height="1*"></RowDefinition>
+                                                    <RowDefinition Height="1*"></RowDefinition>
+                                                </Grid.RowDefinitions>
+                                                <Grid Row="1">
+                                                    <Image Source="{Binding RunningViewModel.Model.Car2BatteryUnit.State, Converter={StaticResource BatteryConverter}}"></Image>
+                                                </Grid>
+                                                <Grid Row="2">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition></ColumnDefinition>
+                                                        <ColumnDefinition></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Grid Column="0" ColumnSpan="2">
+                                                        <Border Margin="0,0,0,2" Background="LightGray"></Border>
+                                                    </Grid>
+                                                    <Grid Column="0">
+                                                        <TextBlock HorizontalAlignment="Center" Style="{StaticResource RunningViewPowerStatusTextStyle}" Text="{Binding RunningViewModel.Model.Car2BatteryInfo.Temperature, StringFormat={}{0:F0}}"></TextBlock>
+                                                    </Grid>
+                                                    <Grid Column="1">
+                                                        <TextBlock HorizontalAlignment="Center" Style="{StaticResource RunningViewPowerStatusTextStyle}" Text="{StaticResource RunningView.℃}"></TextBlock>
+                                                    </Grid>
+                                                </Grid>
+                                                <Grid Row="3">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition></ColumnDefinition>
+                                                        <ColumnDefinition></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Grid Column="0" ColumnSpan="2">
+                                                        <Border Margin="0,0,0,2" Background="LightGray"></Border>
+                                                    </Grid>
+                                                    <Grid Column="0">
+                                                        <TextBlock HorizontalAlignment="Center" Style="{StaticResource RunningViewPowerStatusTextStyle}" Text="{Binding RunningViewModel.Model.Car2BatteryInfo.PowerQuantityPercent}"></TextBlock>
+                                                    </Grid>
+                                                    <Grid Column="1">
+                                                        <TextBlock HorizontalAlignment="Center" Style="{StaticResource RunningViewPowerStatusTextStyle}" Text="{StaticResource RunningView.％}"></TextBlock>
+                                                    </Grid>
+                                                </Grid>
+                                            </Grid>
+                                        </Grid>
+                                    </Grid>
+                                    <Grid Column="3" Margin="5,5,2,5">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition></ColumnDefinition>
+                                                <ColumnDefinition></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid Column="0" Margin="0,0,6,0">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="1.5*"></RowDefinition>
+                                                    <RowDefinition Height="8.2*"></RowDefinition>
+                                                    <RowDefinition Height="0.3*"></RowDefinition>
+                                                </Grid.RowDefinitions>
+                                                <Grid Row="0">
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Grid Column="1" Margin="0,1,0,1">
+                                                            <Border Background="LightGray"></Border>
+                                                        </Grid>
+                                                    </Grid>
+                                                </Grid>
+                                                <Grid Row="1">
+                                                    <ProgressBar Style="{StaticResource RunningViewPowerStatusProgressBarStyle}" Foreground="{Binding RunningViewModel.Model.Car4BatteryInfo.PowerQuantityPercent,Converter={StaticResource PowerValueBrushConverter}}" Value="{Binding RunningViewModel.Model.Car4BatteryInfo.PowerQuantityPercent}"></ProgressBar>
+                                                </Grid>
+                                                <Grid Row="2">
+                                                    <Border Background="LightGray"></Border>
+                                                </Grid>
+                                            </Grid>
+                                            <Grid Column="1">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="1*"></RowDefinition>
+                                                    <RowDefinition Height="2*"></RowDefinition>
+                                                    <RowDefinition Height="1*"></RowDefinition>
+                                                    <RowDefinition Height="1*"></RowDefinition>
+                                                </Grid.RowDefinitions>
+                                                <Grid Row="1">
+                                                    <Image Source="{Binding RunningViewModel.Model.Car4BatteryUnit.State, Converter={StaticResource BatteryConverter}}"></Image>
+                                                </Grid>
+                                                <Grid Row="2">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition></ColumnDefinition>
+                                                        <ColumnDefinition></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Grid Column="0" ColumnSpan="2">
+                                                        <Border Margin="0,0,0,2" Background="LightGray"></Border>
+                                                    </Grid>
+                                                    <Grid Column="0">
+                                                        <TextBlock HorizontalAlignment="Center" Style="{StaticResource RunningViewPowerStatusTextStyle}" Text="{Binding RunningViewModel.Model.Car4BatteryInfo.Temperature, StringFormat={}{0:F0}}"></TextBlock>
+                                                    </Grid>
+                                                    <Grid Column="1">
+                                                        <TextBlock HorizontalAlignment="Center" Style="{StaticResource RunningViewPowerStatusTextStyle}" Text="{StaticResource RunningView.℃}"></TextBlock>
+                                                    </Grid>
+                                                </Grid>
+                                                <Grid Row="3">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition></ColumnDefinition>
+                                                        <ColumnDefinition></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Grid Column="0" ColumnSpan="2">
+                                                        <Border Margin="0,0,0,2" Background="LightGray"></Border>
+                                                    </Grid>
+                                                    <Grid Column="0">
+                                                        <TextBlock HorizontalAlignment="Center" Style="{StaticResource RunningViewPowerStatusTextStyle}" Text="{Binding RunningViewModel.Model.Car4BatteryInfo.PowerQuantityPercent}"></TextBlock>
+                                                    </Grid>
+                                                    <Grid Column="1">
+                                                        <TextBlock HorizontalAlignment="Center" Style="{StaticResource RunningViewPowerStatusTextStyle}" Text="{StaticResource RunningView.％}"></TextBlock>
+                                                    </Grid>
+                                                </Grid>
+                                            </Grid>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                                <Grid Row="1">
+                                    <Border BorderThickness="2" BorderBrush="Aqua">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition></ColumnDefinition>
+                                                <ColumnDefinition></ColumnDefinition>
+                                                <ColumnDefinition></ColumnDefinition>
+                                                <ColumnDefinition></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid Column="0">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition></ColumnDefinition>
+                                                        <ColumnDefinition></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Grid Column="0" Margin="2,0,2,0">
+                                                        <Image Source="{Binding RunningViewModel.Model.Car1TractionUnit.State, Converter={StaticResource TractionConverter}}"></Image>
+                                                    </Grid>
+                                                    <Grid Column="1" Margin="2,0,2,0">
+                                                        <Image Source="{Binding RunningViewModel.Model.Car1Location1AssistUnit.State, Converter={StaticResource AssistConverter}}"></Image>
+                                                    </Grid>
+                                                </Grid>
+                                            </Grid>
+                                            <Grid Column="1">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition></ColumnDefinition>
+                                                        <ColumnDefinition></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Grid Column="0" Margin="2,0,2,0">
+                                                        <Image Source="{Binding RunningViewModel.Model.Car2HSCBUnit.State, Converter={StaticResource HSCBConverter}}"></Image>
+                                                    </Grid>
+                                                    <Grid Column="1" Margin="2,0,2,0">
+                                                        <Image Source="{Binding RunningViewModel.Model.Car2PantographUnit.State, Converter={StaticResource PantographConverter}}"></Image>
+                                                    </Grid>
+                                                </Grid>
+                                            </Grid>
+                                            <Grid Column="2">
+                                                <Image Height="55" Source="{Binding RunningViewModel.Model.Car3TractionUnit.State, Converter={StaticResource TractionConverter}}"></Image>
+                                            </Grid>
+                                            <Grid Column="3">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition></ColumnDefinition>
+                                                        <ColumnDefinition></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Grid Column="0" Margin="2,0,2,0">
+                                                        <Image Source="{Binding RunningViewModel.Model.Car4TractionUnit.State, Converter={StaticResource TractionConverter}}"></Image>
+                                                    </Grid>
+                                                    <Grid Column="1" Margin="2,0,2,0">
+                                                        <Image Source="{Binding RunningViewModel.Model.Car4Location1AssistUnit.State, Converter={StaticResource AssistConverter}}"></Image>
+                                                    </Grid>
+                                                </Grid>
+                                            </Grid>
+                                        </Grid>
+                                    </Border>
+                                </Grid>
+                                <Grid Row="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Column="0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1.2*"></RowDefinition>
+                                            <RowDefinition Height="1*"></RowDefinition>
+                                            <RowDefinition Height="1*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid Row="0">
+                                            <Image Source="{Binding RunningViewModel.Model.Car1Location1BrakeUnit.State, Converter={StaticResource BrakeConverter}}"></Image>
+                                        </Grid>
+                                        <Grid Row="1" Margin="0,3,0,0">
+                                            <Border Margin="19,0,19,0" Background="{Binding RunningViewModel.Model.Car1Location1SpringUnit.State, Converter={StaticResource SpringConverter}}">
+                                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource RunningViewBreakTextStyle}" Text="{StaticResource RunningView.PrimarySpring}"></TextBlock>
+                                            </Border>
+                                        </Grid>
+                                        <Grid Row="2" Margin="0,3,0,3">
+                                            <Border Margin="19,0,19,0" Background="{Binding RunningViewModel.Model.Car1Location2SpringUnit.State, Converter={StaticResource SpringConverter}}">
+                                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource RunningViewBreakTextStyle}" Text="{StaticResource RunningView.TwoStageSpring}"></TextBlock>
+                                            </Border>
+                                        </Grid>
+                                    </Grid>
+                                    <Grid Column="1">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1.2*"></RowDefinition>
+                                            <RowDefinition Height="1*"></RowDefinition>
+                                            <RowDefinition Height="1*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid Row="0">
+                                            <Image Source="{Binding RunningViewModel.Model.Car2Location1BrakeUnit.State, Converter={StaticResource BrakeConverter}}"></Image>
+                                        </Grid>
+                                    </Grid>
+                                    <Grid Column="2">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1.2*"></RowDefinition>
+                                            <RowDefinition Height="1*"></RowDefinition>
+                                            <RowDefinition Height="1*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid Row="0">
+                                            <Image Source="{Binding RunningViewModel.Model.Car3Location1BrakeUnit.State, Converter={StaticResource BrakeConverter}}"></Image>
+                                        </Grid>
+                                        <Grid Row="1" Margin="0,3,0,0">
+                                            <Border Margin="19,0,19,0" Background="{Binding RunningViewModel.Model.Car3Location1SpringUnit.State, Converter={StaticResource SpringConverter}}">
+                                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource RunningViewBreakTextStyle}" Text="{StaticResource RunningView.PrimarySpring}"></TextBlock>
+                                            </Border>
+                                        </Grid>
+                                        <Grid Row="2" Margin="0,3,0,3">
+                                            <Border Margin="19,0,19,0" Background="{Binding RunningViewModel.Model.Car3Location2SpringUnit.State, Converter={StaticResource SpringConverter}}">
+                                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource RunningViewBreakTextStyle}" Text="{StaticResource RunningView.TwoStageSpring}"></TextBlock>
+                                            </Border>
+                                        </Grid>
+                                    </Grid>
+                                    <Grid Column="3">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1.2*"></RowDefinition>
+                                            <RowDefinition Height="1*"></RowDefinition>
+                                            <RowDefinition Height="1*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid Row="0">
+                                            <Image Source="{Binding RunningViewModel.Model.Car4Location1BrakeUnit.State, Converter={StaticResource BrakeConverter}}"></Image>
+                                        </Grid>
+                                        <Grid Row="1" Margin="0,3,0,0">
+                                            <Border Margin="19,0,19,0" Background="{Binding RunningViewModel.Model.Car4Location1SpringUnit.State, Converter={StaticResource SpringConverter}}">
+                                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource RunningViewBreakTextStyle}" Text="{StaticResource RunningView.PrimarySpring}"></TextBlock>
+                                            </Border>
+                                        </Grid>
+                                        <Grid Row="2" Margin="0,3,0,3">
+                                            <Border Margin="19,0,19,0" Background="{Binding RunningViewModel.Model.Car4Location2SpringUnit.State, Converter={StaticResource SpringConverter}}">
+                                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource RunningViewBreakTextStyle}" Text="{StaticResource RunningView.TwoStageSpring}"></TextBlock>
+                                            </Border>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="227*"></RowDefinition>
+                    <RowDefinition Height="40*"></RowDefinition>
+                    <RowDefinition Height="18*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="53*"></ColumnDefinition>
+                        <ColumnDefinition Width="46*"></ColumnDefinition>
+                        <ColumnDefinition Width="30*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Column="0" Margin="3,0,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="24*"></RowDefinition>
+                            <RowDefinition Height="98*"></RowDefinition>
+                            <RowDefinition Height="2*"></RowDefinition>
+                            <RowDefinition Height="98*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Row="1" Margin="5,0,5,0">
+                            <ProgressBar Style="{StaticResource RunningViewTractionProgressBarStyle}" Value="{Binding RunningViewModel.Model.TractionPercent}"></ProgressBar>
+                        </Grid>
+                        <Grid Row="2">
+                            <Border Margin="4,0,0,0" Background="White"></Border>
+                        </Grid>
+                        <Grid Row="3" Margin="5,0,5,0">
+                            <ProgressBar Style="{StaticResource RunningViewBrakeProgressBarStyle}" Value="{Binding RunningViewModel.Model.BrakePercent}"></ProgressBar>
+                        </Grid>
+                    </Grid>
+                    <Grid Column="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="15*"></ColumnDefinition>
+                                <ColumnDefinition Width="31*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Column="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="24*"></RowDefinition>
+                                    <RowDefinition Height="98*"></RowDefinition>
+                                    <RowDefinition Height="2*"></RowDefinition>
+                                    <RowDefinition Height="98*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid Row="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"></RowDefinition>
+                                        <RowDefinition Height="20*"></RowDefinition>
+                                        <RowDefinition Height="2*"></RowDefinition>
+                                        <RowDefinition Height="20*"></RowDefinition>
+                                        <RowDefinition Height="2*"></RowDefinition>
+                                        <RowDefinition Height="28*"></RowDefinition>
+                                        <RowDefinition Height="2*"></RowDefinition>
+                                        <RowDefinition Height="20*"></RowDefinition>
+                                        <RowDefinition Height="2*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid Row="0">
+                                        <Border Background="White"></Border>
+                                    </Grid>
+                                    <Grid Row="2" Margin="0,0,10,0">
+                                        <Border Background="White"></Border>
+                                    </Grid>
+                                    <Grid Row="4">
+                                        <Border Background="White"></Border>
+                                    </Grid>
+                                    <Grid Row="6" Margin="0,0,10,0">
+                                        <Border Background="White"></Border>
+                                    </Grid>
+                                    <Grid Row="8">
+                                        <Border Background="White"></Border>
+                                    </Grid>
+                                </Grid>
+                                <Grid Row="2">
+
+                                </Grid>
+                                <Grid Row="3">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"></RowDefinition>
+                                        <RowDefinition Height="20*"></RowDefinition>
+                                        <RowDefinition Height="2*"></RowDefinition>
+                                        <RowDefinition Height="20*"></RowDefinition>
+                                        <RowDefinition Height="2*"></RowDefinition>
+                                        <RowDefinition Height="28*"></RowDefinition>
+                                        <RowDefinition Height="2*"></RowDefinition>
+                                        <RowDefinition Height="20*"></RowDefinition>
+                                        <RowDefinition Height="2*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid Row="0">
+
+                                    </Grid>
+                                    <Grid Row="2" Margin="0,0,10,0">
+                                        <Border Background="White"></Border>
+                                    </Grid>
+                                    <Grid Row="4">
+                                        <Border Background="White"></Border>
+                                    </Grid>
+                                    <Grid Row="6" Margin="0,0,10,0">
+                                        <Border Background="White"></Border>
+                                    </Grid>
+                                    <Grid Row="8">
+                                        <Border Background="White"></Border>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                            <Grid Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="9*"></RowDefinition>
+                                    <RowDefinition Height="6*"></RowDefinition>
+                                    <RowDefinition Height="16*"></RowDefinition>
+                                    <RowDefinition Height="7*"></RowDefinition>
+                                    <RowDefinition Height="18*"/>
+                                    <RowDefinition Height="6*"/>
+                                    <RowDefinition Height="17*"/>
+                                    <RowDefinition Height="6*"/>
+                                    <RowDefinition Height="18*"/>
+                                    <RowDefinition Height="6*"/>
+                                </Grid.RowDefinitions>
+                                <Grid Row="1">
+                                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource RunningViewTractionBreakInfoEnglishTextStyle}" Text="{StaticResource RunningView.100}"></TextBlock>
+                                </Grid>
+                                <Grid Row="3">
+                                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource RunningViewTractionBreakInfoEnglishTextStyle}" Text="{StaticResource RunningView.50}"></TextBlock>
+                                </Grid>
+                                <Grid Row="5">
+                                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource RunningViewTractionBreakInfoEnglishTextStyle}" Text="{StaticResource RunningView.0}"></TextBlock>
+                                </Grid>
+                                <Grid Row="7">
+                                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource RunningViewTractionBreakInfoEnglishTextStyle}" Text="{StaticResource RunningView.-50}"></TextBlock>
+                                </Grid>
+                                <Grid Row="9">
+                                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource RunningViewTractionBreakInfoEnglishTextStyle}" Text="{StaticResource RunningView.-100}"></TextBlock>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="58*"></RowDefinition>
+                            <RowDefinition Height="21*"></RowDefinition>
+                            <RowDefinition Height="113*"></RowDefinition>
+                            <RowDefinition Height="21*"></RowDefinition>
+                            <RowDefinition Height="14*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Row="1">
+                            <TextBlock Style="{StaticResource RunningViewBreakInfoChineseTextStyle}" Text="{Binding RunningViewModel.Model.CurWorkCondition, Converter={StaticResource TractionTextConverter}}"></TextBlock>
+                        </Grid>
+                        <Grid Row="3">
+                            <TextBlock Style="{StaticResource RunningViewBreakInfoChineseTextStyle}" Text="{Binding RunningViewModel.Model.CurWorkCondition, Converter={StaticResource BrakeTextConverter}}"></TextBlock>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid Row="2" Margin="6,0,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="51*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                        <ColumnDefinition Width="47*"></ColumnDefinition>
+                        <ColumnDefinition Width="8*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Column="0">
+                        <TextBlock Style="{StaticResource RunningViewBreakInfoChineseTextStyle}" Text="参考值"></TextBlock>
+                    </Grid>
+                    <Grid Column="2">
+                        <TextBlock Style="{StaticResource RunningViewBreakInfoEnglishTextStyle}" Text="{Binding RunningViewModel.Model.ReferencePercent, StringFormat={}{0:F0}}"></TextBlock>
+                        <TextBlock Style="{StaticResource RunningViewBreakInfoEnglishTextStyle}" Margin="30,0,0,0" Text="%"></TextBlock>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid Column="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="72*"></RowDefinition>
+                    <RowDefinition Height="71*"></RowDefinition>
+                    <RowDefinition Height="71*"></RowDefinition>
+                    <RowDefinition Height="71*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Row="0">
+                    <Button  Style="{StaticResource BottomButtonStyle}"  Content="{Binding Path=Model.CenterStateInterface.BtnB2.Content,Converter={StaticResource ButtonContentConverter},Mode=OneWay}" Command="{Binding Model.CenterStateInterface.BtnB2.ClickCommand}" Margin="10,0,0,0"></Button>
+                </Grid>
+                <Grid Row="1">
+                    <Button  Style="{StaticResource BottomButtonStyle}"  Content="{Binding Path=Model.CenterStateInterface.BtnB3.Content,Converter={StaticResource ButtonContentConverter},Mode=OneWay}" Command="{Binding Model.CenterStateInterface.BtnB3.ClickCommand}"  Margin="10,0,0,0"></Button>
+                </Grid>
+                <Grid Row="2">
+                    <Button  Style="{StaticResource BottomButtonStyle}"  Content="{Binding Path=Model.CenterStateInterface.BtnB4.Content,Converter={StaticResource ButtonContentConverter},Mode=OneWay}" Command="{Binding Model.CenterStateInterface.BtnB4.ClickCommand}"  Margin="10,0,0,0"></Button>
+                </Grid>
+                <Grid Row="3">
+                    <Button  Style="{StaticResource BottomButtonStyle}"  Content="{Binding Path=Model.CenterStateInterface.BtnB5.Content,Converter={StaticResource ButtonContentConverter},Mode=OneWay}" Command="{Binding Model.CenterStateInterface.BtnB5.ClickCommand}"  Margin="10,0,0,0"></Button>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="349*"></ColumnDefinition>
+                <ColumnDefinition Width="51*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="22*"></RowDefinition>
+                    <RowDefinition Height="24*"></RowDefinition>
+                    <RowDefinition Height="32*"></RowDefinition>
+                    <RowDefinition Height="23*"></RowDefinition>
+                    <RowDefinition Height="11*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="46*"></ColumnDefinition>
+                        <ColumnDefinition Width="75*"></ColumnDefinition>
+                        <ColumnDefinition Width="55*"></ColumnDefinition>
+                        <ColumnDefinition Width="75*"/>
+                        <ColumnDefinition Width="101*"/>
+                        <ColumnDefinition Width="50*"></ColumnDefinition>
+                        <ColumnDefinition Width="47*"></ColumnDefinition>
+                        <ColumnDefinition Width="32*"></ColumnDefinition>
+                        <ColumnDefinition Width="41*"></ColumnDefinition>
+                        <ColumnDefinition Width="134*"></ColumnDefinition>
+                        <ColumnDefinition Width="38*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Column="1">
+                        <TextBlock Style="{StaticResource RunningViewConditionInfoTextStyle}"  Text="{Binding RunningViewModel.Model.CurTrainDirectionDirection, Converter={StaticResource DescritionConverter}}"></TextBlock>
+                    </Grid>
+                    <Grid Grid.Column="3">
+                        <TextBlock Visibility="Hidden" Style="{StaticResource RunningViewConditionInfoTextStyle}" HorizontalAlignment="Center" Text="洗车模式"></TextBlock>
+                    </Grid>
+                    <Grid Grid.Column="5">
+                        <TextBlock Style="{StaticResource RunningViewConditionInfoTextStyle}"  Text="限速"></TextBlock>
+                    </Grid>
+                    <Grid Grid.Column="7">
+                        <TextBlock Style="{StaticResource RunningViewConditionInfoTextStyle}"  Text="{Binding RunningViewModel.Model.LimitSpeed}"></TextBlock>
+                    </Grid>
+                    <Grid Grid.Column="9">
+                        <TextBlock Style="{StaticResource RunningViewConditionInfoTextStyle}"  Text="{Binding RunningViewModel.Model.CurWorkCondition, Converter={StaticResource DescritionConverter}}"></TextBlock>
+                    </Grid>
+                </Grid>
+                <Grid Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="51*"></ColumnDefinition>
+                        <ColumnDefinition Width="23*"></ColumnDefinition>
+                        <ColumnDefinition Width="164*"></ColumnDefinition>
+                        <ColumnDefinition Width="6*"></ColumnDefinition>
+                        <ColumnDefinition Width="45*"></ColumnDefinition>
+                        <ColumnDefinition Width="11*"></ColumnDefinition>
+                        <ColumnDefinition Width="53*"></ColumnDefinition>
+                        <ColumnDefinition Width="341*"></ColumnDefinition>
+                        <ColumnDefinition Width="4*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Column="0" Visibility="{Binding EventInfoViewModel.Model.WaitConfirmEvent,Converter={StaticResource EventInfoVisibleConverter}}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid Column="0">
+                            <TextBlock HorizontalAlignment="Center" Style="{StaticResource RunningViewTipInfoEnglishTextStyle}" Text="1"></TextBlock>
+                        </Grid>
+                        <Grid Column="1">
+                            <TextBlock HorizontalAlignment="Center" Style="{StaticResource RunningViewTipInfoEnglishTextStyle}" Text="/"></TextBlock>
+                        </Grid>
+                        <Grid Column="2">
+                            <TextBlock HorizontalAlignment="Center" Style="{StaticResource RunningViewTipInfoEnglishTextStyle}" Text="{Binding EventInfoViewModel.Model.UnConfirmEventCount}"></TextBlock>
+                        </Grid>
+                    </Grid>
+                    <Grid Column="2">
+                        <TextBlock  Style="{StaticResource RunningViewTipInfoEnglishTextStyle}" Text="{Binding EventInfoViewModel.Model.WaitConfirmEvent.HappenTime,StringFormat={}{0:yyyy-MM-dd  HH:mm:ss}}"></TextBlock>
+                    </Grid>
+                    <Grid Column="4">
+                        <TextBlock  Style="{StaticResource RunningViewTipInfoChineseTextStyle}" Text="{Binding EventInfoViewModel.Model.WaitConfirmEvent.Level, Converter={StaticResource DescritionConverter}}"></TextBlock>
+                    </Grid>
+                    <Grid Column="6">
+                        <TextBlock  Style="{StaticResource RunningViewTipInfoChineseTextStyle}" Text="{Binding EventInfoViewModel.Model.WaitConfirmEvent.FaultCode}"></TextBlock>
+                    </Grid>
+                    <Grid Column="7">
+                        <TextBlock  Style="{StaticResource RunningViewTipInfoChineseTextStyle}" Text="{Binding EventInfoViewModel.Model.WaitConfirmEvent.Describe}"></TextBlock>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid Column="1">
+                <Button Margin="0,30,0,20" Style="{StaticResource BottomButtonStyle}" Content="{Binding Path=Model.CenterStateInterface.BtnB6.Content,Converter={StaticResource ButtonContentConverter},Mode=OneWay}" Command="{Binding Model.CenterStateInterface.BtnB6.ClickCommand}" ></Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

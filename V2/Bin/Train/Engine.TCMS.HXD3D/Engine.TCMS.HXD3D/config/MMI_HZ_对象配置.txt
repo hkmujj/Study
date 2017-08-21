@@ -1,0 +1,77 @@
+;;; 类名	从属视图		输入_Bool_对应表	输入_Float_对应表	输出_bool_对应表	输出_Float_对应表	参数表	备注
+;;; 字符串	<数字 数字>		[#bool编号 bool编号#]	[*Float编号 Float编号*]	[-bool编号 bool编号-]	[+Float编号 Float编号+]	{参数1 参数2 参数3}	
+;;;课程结束视图								
+ClassOverScreen	[~10~]	< 100 >	[##]	[**]	[--]	[+60+]	{}	
+;;;黑屏视图								
+BlackScreen	[~11~]	< 0 >	[#800#]	[**]	[--]	[+60+]	{}	
+;;;标题视图								
+ButtomTitleScreen	[~12~]	< 2 >	[#800 829 830 831 832 833#]	[**]	[--]	[+60+]	{开机.png Btn2.png Btn3.png FX_Q.png FX_H.png FX_0.png}	
+;;;主菜单界面								
+Main	[~13~]	< 2 >	[#835 836 801 802 803 804 805 807 808 818 825 824 820 810 944 945 946 947 948 949 819 820 908 813 816 817 840 844#]	[*106 103 112 105 113 102 107 108 109 110*]	[--]	[+ +]	{KJ\菜单.png Btn2.png Btn3.png FX_Q.png FX_H.png FX_0.png SDG_U.png SDG_D.png ZD_H.png ZD_D.png ZD_GL.png CFZD.png ChengFZD.png JT.png ad\ts.png ad\ts1.png ad\ts2.png ad\jz.png ad\jz2.png ad\jz1.png ad\JT.png ad\jt1.png 撒沙.png 未升弓.png 升弓.png 升前弓.png 升后弓.png}	
+;;;故障接收模块								
+FaultReceive	[~37~]	<1 2 21 31 32 33 34 41 42 43 51 52 53 54 55 56 57 58 60 61 62 63 64 71 72 73 74 75 76 77 81 82 100 101>	[# #]	[**]	[--]	[++]	{}	
+;;;标题视图								
+TopTitleScreen	[~12~]	< 1 21 31 32 33 34 41 42 43 51 52 53 54 55 56 57 58 60 61 62 63 64 71 72 73 74 75 76 77 78 81 82 101>	[#801 802 803 840 841 842 843 844 845 846 847 807 808 819 825 810 813 814 828 800 941 942 943 950 908#]	[**]	[--]	[+ 60 +]	{ KJ\KJ.png Btn\Btn_Others_Up.png Btn\Btn_Others_Down.png Btn\WeiH_U.png Btn\WeiH_D.png Btn\Btn8_U.bmp Btn\Btn8_D.png Btn\Btn1.bmp  Btn\Btn2.bmp Btn\Btn3.bmp Btn\Btn4.bmp Btn\Btn5.bmp Btn\Btn6.bmp Btn\Btn7.bmp PassWord.png ShuRK.png FaultBtn_U.png FaultBtn_D.png 故障后自停.bmp 故障后可运行.bmp 故障后不停车处理.bmp FX_Q.png FX_H.png FX_0.png SD\SDG_LU.png SD\SDG_RD.png SD\SDG_RJ.png SD\ShouDG_RG.png SD\SDG_RU.png SD\SDG_LD.png SD\SDG_LJ.png SD\ShouDG_LG.png ZD_H.png ZD_D.png ChengFZD.png 分相.bmp TingCZD.png 空转指示灯.png 实施紧急制动.bmp 撒沙1.png}	
+;;;主屏视图								
+MainScreen	[~13~]	< 1 >	[#801 802 803 804 805 807 808 813 825 832 833 834 835 836 837 810 826 828 831 814 811 812 #]	[*101 106 102 103 104 113 105 107 108 109 110 *]	[- 841 842 -]	[++]	{ KJ\Main_KJ.png Btn\Up.png Btn\Down.png FX_Q.png FX_H.png FX_0.png SD\SDG_LU.png SD\SDG_LD.png SD\ShouDG_LG.png SD\SDG_LJ.png ZD_H.png ZD_D.png ZD_GL.png TingCZD.png ChengFZD.png Btn\Base_U.png Btn\Base_D.png QianY.png ZhiD.png KJ\KJ_2.png 分相.bmp 速度设定.png 实施紧急制动.bmp 空转指示灯.png}	
+;;;机车纵览								
+TrainOverview	[~14~]	< 21 >	[#840 841 842 843 844 845 846 847 848 849 850 851 852 853 854 858 859 860 855 856 857 861 862 863 912 913 914 915 916 917 801 802 803 807 808 813 956 957 958#]	[*146*]	[--]	[++]	{KJ\JiCYL.png FX_Q.png FX_H.png FX_0.png SD\SDG_RU.png SD\SDG_RD.png SD\SDG_RJ.png SD\ShouDG_RG.png SD\SDG_LU.png SD\SDG_LD.png SD\SDG_LJ.png SD\ShouDG_LG.png SiJSZY.png CFZD.png TingCZD.png QY.png ZhiD.png QY_GL.png ZD_H.png ZD_D.png CFJCZD.png TingCZDJC.png }	
+;;;隔离								
+ConverterCutOff	[~15~]	< 31 >	[# 866 867 868 869 870 871 872 873 820 875 876 877 878 879 880 881 882 883 884 885 886 887 888 889 890 891 892 893 894 895 #]	[**]	[- 801	802	803	804	805	806	807	808	809	810 -]	[++]	{KJ\GL.png Btn\BaseBtn_D.png Btn\BaseBtn_U.png GL_Hand.png IsGeLi.png Btn\Car2.png Btn\AnNBK.png PassWord.png ShuRK.png }	
+;;;受电弓预选择								
+ControlPantoSelection	[~16~]	< 32 >	[# 840 841 842 843 844 845 846 847 848 849 804 #]	[**]	[- 833	834	835	836	837 -]	[++]	{ KJ\ShouDGYX.png SD\SDG_RU.png SD\SDG_RD.png SD\SDG_RJ.png SD\ShouDG_RG.png SD\SDG_LU.png SD\SDG_LD.png SD\SDG_LJ.png SD\ShouDG_LG.png Btn\BaseBtn_D.png Btn\BaseBtn_U.png Btn\G1_U.png Btn\G1_D.png Btn\G3_U.png Btn\G3_D.png Btn\G4_U.png Btn\G4_D.png Btn\G5_U.png Btn\G5_D.png Btn\G2_U.png Btn\G2_D.png Btn\Car2.png  SiJSZY.png PassWord.png ShuRK.png Btn\Car1.png }	
+;;;操作测试								
+;;;OperationalTest	[~17~]	< 34 >	[##]	[**]	[- 823 810 -]	[++]	{GL_Hand.png}	
+;;;距离计数器								
+DistanceCounters	[~18~]	< 33 >	[##]	[**]	[--]	[++]	{ Btn\Btn_Others_Up.png Btn\Btn_Others_Down.png }	
+;;;制动设置								
+BrakeSetting	[~19~]	< 41 >	[##]	[*185 186 187 188 189 190 191 *]	[]	[++]	{KJ\Brake.png}	
+;;;隔离阀状态								
+CutOffState	[~28~]	< 43 >	[#900 901 902 903 904 905 906 907 908 909 910 911#]	[**]	[--]	[++]	{}	
+;;;列车供电								
+TrainPower	[~20~]	< 51 >	[#1032 1033 1034 1035 1036 1037 1038 1039 1040 1041 952 953 954 955#]	[*192 193 194 195 196 197 198 199 200 201 166 167*]	[--]	[++]	{KJ\TrainPower.png 开关_U.png 开关_D.png}	
+;;;驱动								
+ProcessDrives	[~21~]	< 52 >	[#1042 1043 1044 1045 1046 1047 1048 1049 1050 1051 1052 1053#]	[*103 112 123 120 121 122 106 101 124 145 146 143 144 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 148 149 152 153 156 157 160 161 164 165 168 169*]	[--]	[++]	{ KJ\ProcessDrives.png ProcessDrives_D.png ProcessDrives_U.png }	
+;;;牵引/制动力								
+ProcessTebe	[~ 22 ~]	< 53>	[# 835 836 #]	[*148 152 156  160 164 168 146 147 145 101 106 102*]	[--]	[++]	{ KJ\ProcessTEBE.png }	
+;;;断路器								
+ProcessCb	[~ 23 ~]	< 54>	[# 920 921 922 923 924 925 926 927 928 929 930 931 932 933 934 935 936 937 938 939 940 #]	[**]	[--]	[++]	{ KJ\ProcessCB.png Btn\BaseBtn_D.png Btn\BaseBtn_U.png Btn\Car2.png }	
+;;;辅助								
+ProcessAux	[~ 24 ~]	< 55 >	[#992 993 994 995 996 920 926 921 927 922 928 923 929 924 930 925 997 998#]	[*171 172 173 174 175 176*]	[--]	[++]	{ KJ\ProcessAux.png  FZ\FZ_KM_0.png FZ\FZ_KM_1.png FZ\FZ_KM_2.png FZ\FZ_KM_3.png FZ\FZ_QA_0.png FZ\FZ_QA_1.png}	
+;;;蓄电池								
+ProcessBattery	[~ 25 ~]	< 56>	[#1024 1025 1026#]	[*194 195 181 202 182 196 197 203*]	[--]	[++]	{ KJ\ProcessBattery.png 开关_2.png 开关_3.png 开关_1.png 开关_0.png FX_1.png FX_2.png }	
+;;;网络控制								
+ProcessNetControl	[~ 26 ~]	< 57 >	[# #]	[**]	[--]	[++]	{}	
+;;;计数								
+ProcessCounters	[~ 27 ~]	< 58 >	[##]	[**]	[--]	[++]	{Btn\BaseBtn_D.png Btn\BaseBtn_U.png}	
+;;;轮径								
+;;;DataInWheelDiam	[~ 40 ~]	< 61 >	[##]	[**]	[--]	[++]	{ KJ\DataInWheelDiam.png }	
+;;;轮缘润滑								
+;;;DataInWheelFlangeLub	[~ 41 ~]	< 62 >	[##]	[**]	[--]	[++]	{ KJ\DataInWheelFlangeLub.png }	
+;;;日期时间设定								
+;;;DataInTimeDate	[~ 42 ~]	< 63 >	[##]	[**]	[--]	[++]	{ KJ\DataInTimeDate.png }	
+;;;其他设置								
+DataInOthers	[~ 43 ~]	< 64 >	[##]	[**]	[- 870	871	872	873	874	875	876	862	863	864	865 -]	[++]	{ Btn\BaseBtn_D.png Btn\BaseBtn_U.png }	
+;;;主司控器试验								
+MainControlTest	[~ 29 ~]	< 71 >	[##]	[*204 205*]	[--]	[++]	{ Btn\Btn_Others_Down.png Btn\Btn_Others_Up.png }	
+;;;启动试验								
+StartTest	[~ 30 ~]	< 72 >	[##]	[*206 211*]	[--]	[++]	{ Btn\Btn_Others_Down.png Btn\Btn_Others_Up.png }	
+;;;零级位试验								
+ZeroOrderTest	[~ 31 ~]	< 73 >	[##]	[*206 211*]	[--]	[++]	{ Btn\Btn_Others_Down.png Btn\Btn_Others_Up.png }	
+;;;辅助电源试验								
+AuxPowerTest	[~ 32 ~]	< 74 >	[##]	[* 212 213 *]	[--]	[++]	{ Btn\Btn_Others_Down.png Btn\Btn_Others_Up.png }	
+;;;显示灯试验								
+LampTest	[~ 33 ~]	< 75 >	[##]	[**]	[--]	[++]	{ Btn\Btn_Others_Down.png Btn\Btn_Others_Up.png }	
+;;;无人警惕试验								
+AlertToTest	[~ 34 ~]	< 76 >	[#819 941 942 943#]	[**]	[-881-]	[++]	{ Btn\Btn_Others_Down.png Btn\Btn_Others_Up.png }	
+;;;轮缘润滑试验								
+MaintenanceLubrificationValveTest	[~ 38 ~]	< 77 >	[#848 849#]	[**]	[-878 879-]	[++]	{ KJ\MaintenanceLubrificationValveTest.png Btn\Btn_Others_Down.png Btn\Btn_Others_Up.png SiJSZY.png }	
+;;;数据浏览器-无过滤								
+FaultUnfiltration	[~ 35 ~]	< 81 >	[##]	[**]	[--]	[++]	{ Fault0.png Btn\Btn_Others_Up.png Btn\Btn_Others_Down.png }	
+;;;数据浏览器-过滤								
+FaultFiltration	[~ 36 ~]	< 82 >	[##]	[**]	[--]	[++]	{ }	
+;;;故障确认								
+FaultEnsure	[~ 39 ~]	< 101  >	[##]	[**]	[--]	[++]	{ faultEnsure.png Btn\Btn_Others_Up.png Btn\Btn_Others_Down.png }	
+;;;顶轮实验							
+TopWeelTest	[~ 40 ~]	< 78  >	[##]	[*200 201 202 203 204 205*]	[--]	[++]	{}	
+

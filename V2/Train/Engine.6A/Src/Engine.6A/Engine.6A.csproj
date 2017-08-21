@@ -1,0 +1,831 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6380F8CA-ED0A-4BD7-9C77-5A3E8EA7C5A0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Engine._6A</RootNamespace>
+    <AssemblyName>Engine.6A</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\MMI\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Engine._6A.WPFApp.App</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonUtil, Version=2.29.2016.517, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="Excel.Interface, Version=2.30.2016.712, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Practices.Prism, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.Prism.Interactivity, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.Prism.MefExtensions, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Mmi.Common.CommunicationIndexWrapper">
+      <HintPath>..\..\..\..\Bin\Common\Mmi.Common.CommunicationIndexWrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="MMI.Common.Msg.Interface">
+      <HintPath>..\..\..\..\Bin\Train\Engine.6A\MMI.Common.Msg.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="MMI.Facility.Interface, Version=2.40.2016.1101, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="MMI.Facility.WPFInfrastructure, Version=2.28.2016.929, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="WPFApp\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Adapter\Adapter\Common\DataMonitor\BrakeDataAdapter.cs" />
+    <Compile Include="Adapter\Adapter\Common\DataMonitor\ForTheColumnPageOneAdapter.cs" />
+    <Compile Include="Adapter\Adapter\Common\DataMonitor\InsulationAdapter.cs" />
+    <Compile Include="Adapter\Adapter\Common\DataMonitor\RunLineOneAdapter.cs" />
+    <Compile Include="Adapter\Adapter\Common\DialAdapter.cs" />
+    <Compile Include="Adapter\Adapter\Common\FaultAdapter.cs" />
+    <Compile Include="Adapter\Adapter\Common\ModelAdapter.cs" />
+    <Compile Include="Adapter\Adapter\Common\ModelAdapterBase.cs" />
+    <Compile Include="Adapter\Adapter\Common\SystemSetting\ElectropsychometerTestAdapter.cs" />
+    <Compile Include="Adapter\Adapter\Common\SystemSetting\MicrocomputerInfoAdapter.cs" />
+    <Compile Include="Adapter\Adapter\Common\SystemSetting\MonitorAdapter.cs" />
+    <Compile Include="Adapter\Adapter\Common\SystemSetting\OlLevelMeterAdapter.cs" />
+    <Compile Include="Adapter\Adapter\Common\SystemSetting\PlateformInfoAdapter.cs" />
+    <Compile Include="Adapter\Adapter\Common\TitleAdapter.cs" />
+    <Compile Include="Adapter\ConfigInfo\ExcelFaultInfo.cs" />
+    <Compile Include="Adapter\ConfigInfo\FaultInfo.cs" />
+    <Compile Include="Adapter\ConfigInfo\FaultManage.cs" />
+    <Compile Include="Adapter\ConfigInfo\IndexConfigure.cs" />
+    <Compile Include="Adapter\ConfigInfo\PlateFormInfo.cs" />
+    <Compile Include="Adapter\ConfigInfo\VersionInfo.cs" />
+    <Compile Include="Adapter\Converter\NameConst.cs" />
+    <Compile Include="Adapter\Converter\PressureConvert.cs" />
+    <Compile Include="Adapter\IEngineAdapter.cs" />
+    <Compile Include="Adapter\Resouce\InBoolKeys.Designer.cs">
+      <DependentUpon>InBoolKeys.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Adapter\Resouce\InFloatKeys.Designer.cs">
+      <DependentUpon>InFloatKeys.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="CommonControl\ComboBox6A.xaml.cs">
+      <DependentUpon>ComboBox6A.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonControl\ImageTextButton.cs" />
+    <Compile Include="CommonControl\MultiStateButton.xaml.cs">
+      <DependentUpon>MultiStateButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonControl\ProgressBar6A.cs" />
+    <Compile Include="CommonControl\RadioContentControl.cs" />
+    <Compile Include="CommonControl\RadioRecTest.cs" />
+    <Compile Include="CommonControl\RadioTwoLineRecText.cs" />
+    <Compile Include="CommonControl\RecImageButton.cs" />
+    <Compile Include="CommonControl\RecTextButton.cs" />
+    <Compile Include="Config\Engine6AConfig.cs" />
+    <Compile Include="Config\GlobalParam.cs" />
+    <Compile Include="Constance\Axle6ControlName.cs" />
+    <Compile Include="Constance\Axle8ControlName.cs" />
+    <Compile Include="Constance\ContractName.cs" />
+    <Compile Include="Constance\CoontrolNameBase.cs" />
+    <Compile Include="Constance\MouseEventClass.cs" />
+    <Compile Include="Constance\RegionNames.cs" />
+    <Compile Include="Converter\DataTimeConvertToString.cs" />
+    <Compile Include="Converter\DoubleToString.cs" />
+    <Compile Include="Converter\StringSliptConvertOne.cs" />
+    <Compile Include="Converter\StringSliptConvertTwo.cs" />
+    <Compile Include="Engine6ASubsystem.cs" />
+    <Compile Include="Views\Shell\ShellForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Shell\ShellForm.Designer.cs">
+      <DependentUpon>ShellForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shell\ShellWindow.xaml.cs">
+      <DependentUpon>ShellWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Engine6AMefBootstrapper.cs" />
+    <Compile Include="Enums\Distinction.cs" />
+    <Compile Include="Enums\Engine6AType.cs" />
+    <Compile Include="Enums\FaultType.cs" />
+    <Compile Include="Enums\SubSystem.cs" />
+    <Compile Include="EventArgs\ColumnEventArgs.cs" />
+    <Compile Include="EventArgs\ForTheColumnEventArgs.cs" />
+    <Compile Include="EventArgs\NavigateEventArgs.cs" />
+    <Compile Include="EventArgs\SelectedIndexChangedRoutedEventArgs.cs" />
+    <Compile Include="EventArgs\TrainChangedEventAgrs.cs" />
+    <Compile Include="Event\ButtonEvent.cs" />
+    <Compile Include="Event\ColumnEvent.cs" />
+    <Compile Include="Event\ForTheColumnEven.cs" />
+    <Compile Include="Event\NavigateEvent.cs" />
+    <Compile Include="Event\TrainChangedEvent.cs" />
+    <Compile Include="Interface\IBoolDataChanged.cs" />
+    <Compile Include="Interface\IButtonResponse.cs" />
+    <Compile Include="Interface\IClearData.cs" />
+    <Compile Include="Interface\IDataChanged.cs" />
+    <Compile Include="Interface\IFaultInfo.cs" />
+    <Compile Include="Interface\IFaultManage.cs" />
+    <Compile Include="Interface\IFloatChnged.cs" />
+    <Compile Include="Interface\IHeartTime.cs" />
+    <Compile Include="Interface\IPageName.cs" />
+    <Compile Include="Interface\ITabItemInfoProvider.cs" />
+    <Compile Include="Interface\ViewModel\DataMonitor\ForTheColumn\IForTheColumnOneViewModel.cs" />
+    <Compile Include="Interface\ViewModel\DataMonitor\ForTheColumn\IForTheColumnTwoViewModel.cs" />
+    <Compile Include="Interface\ViewModel\DataMonitor\IBrakeViewModel.cs" />
+    <Compile Include="Interface\ViewModel\DataMonitor\IDataMonitorViewModel.cs" />
+    <Compile Include="Interface\ViewModel\DataMonitor\IFirePreventionViewModel.cs" />
+    <Compile Include="Interface\ViewModel\DataMonitor\IInsulationViewModel.cs" />
+    <Compile Include="Interface\ViewModel\DataMonitor\IRunLineOneViewModelBase.cs" />
+    <Compile Include="Interface\ViewModel\DataMonitor\IRunLineTwoViewModel.cs" />
+    <Compile Include="Interface\ViewModel\DataMonitor\ISleepViewModel.cs" />
+    <Compile Include="Interface\ViewModel\IAxle6ButtonViewModel.cs" />
+    <Compile Include="Interface\ViewModel\IAxle8ButtonViewModel.cs" />
+    <Compile Include="Interface\ViewModel\IButtonViewModel.cs" />
+    <Compile Include="Interface\ViewModel\IDialViewModel.cs" />
+    <Compile Include="Interface\ViewModel\IEngine6AViewModel.cs" />
+    <Compile Include="Interface\ViewModel\IFaultViewModel.cs" />
+    <Compile Include="Interface\ViewModel\IMainViewModel.cs" />
+    <Compile Include="Interface\ViewModel\IStartingViewModel.cs" />
+    <Compile Include="Interface\ViewModel\ITitleViewModel.cs" />
+    <Compile Include="Interface\ViewModel\IVideoViewModel.cs" />
+    <Compile Include="Interface\ViewModel\SystemSeting\IPlateformInfoViewModel.cs" />
+    <Compile Include="Interface\ViewModel\SystemSeting\ISystemSettingViewModel.cs" />
+    <Compile Include="Interface\ViewModel\SystemSeting\ITrainSettingViewModel.cs" />
+    <Compile Include="Interface\ViewModel\SystemSeting\IVersionInfoViewModel.cs" />
+    <Compile Include="Interface\ViewModel\SystemSeting\IWorkModelViewModel.cs" />
+    <Compile Include="Interface\ViewModel\SystemSeting\TrainInfo\IElectropsychometerTestViewModel.cs" />
+    <Compile Include="Interface\ViewModel\SystemSeting\TrainInfo\IMicrocomputerInfoViewModel.cs" />
+    <Compile Include="Interface\ViewModel\SystemSeting\TrainInfo\IMonitorDataViewModel.cs" />
+    <Compile Include="Interface\ViewModel\SystemSeting\TrainInfo\IOlLevelMeterTestViewModel.cs" />
+    <Compile Include="Interface\ViewModel\SystemSeting\TrainInfo\ITrainInfoViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ViewModel\Axle6\Axle6ButtonViewModel.cs" />
+    <Compile Include="ViewModel\Axle6\Axle6ViewModel.cs" />
+    <Compile Include="ViewModel\Axle6\FirePreventionViewModel.cs" />
+    <Compile Include="ViewModel\Axle6\ForTheColumnOneViewModel.cs" />
+    <Compile Include="ViewModel\Axle6\ForTheColumnTwoViewModel.cs" />
+    <Compile Include="ViewModel\Axle6\InsulationViewModel.cs" />
+    <Compile Include="ViewModel\Axle6\RunLineOneViewModel.cs" />
+    <Compile Include="ViewModel\Axle6\RunLineTwoViewModel.cs" />
+    <Compile Include="ViewModel\Axle8\Axle8ButtonViewModel.cs" />
+    <Compile Include="ViewModel\Axle8\Axle8ViewModel.cs" />
+    <Compile Include="ViewModel\Common\Axle6DataMonitorViewModel.cs" />
+    <Compile Include="ViewModel\Common\BrakeViewModel.cs" />
+    <Compile Include="ViewModel\Common\DialViewModel.cs" />
+    <Compile Include="ViewModel\Common\ElectropsychometerTestViewModel.cs" />
+    <Compile Include="ViewModel\Common\FaultViewModel.cs" />
+    <Compile Include="ViewModel\Common\IViewModelBase.cs" />
+    <Compile Include="ViewModel\Common\MainViewModel.cs" />
+    <Compile Include="ViewModel\Common\SleepViewModel.cs" />
+    <Compile Include="ViewModel\Common\StartingViewModel.cs" />
+    <Compile Include="ViewModel\Common\SystemSetting\MicrocomputerInfoViewModel.cs" />
+    <Compile Include="ViewModel\Common\SystemSetting\MonitorDataViewModel.cs" />
+    <Compile Include="ViewModel\Common\SystemSetting\OlLevelMeterTestViewModel.cs" />
+    <Compile Include="ViewModel\Common\SystemSetting\PlateformInfoViewModel.cs" />
+    <Compile Include="ViewModel\Common\SystemSetting\SystemSettingViewModel.cs" />
+    <Compile Include="ViewModel\Common\SystemSetting\TrainInfoViewModel.cs" />
+    <Compile Include="ViewModel\Common\SystemSetting\TrainSettingViewModel.cs" />
+    <Compile Include="ViewModel\Common\SystemSetting\VersionInfoViewModel.cs" />
+    <Compile Include="ViewModel\Common\TitleViewModel.cs" />
+    <Compile Include="ViewModel\Common\VideoViewModel.cs" />
+    <Compile Include="ViewModel\Common\ViewModelBase.cs" />
+    <Compile Include="ViewModel\Common\WorkModelViewModel.cs" />
+    <Compile Include="Views\Axle6\AxleButtonView.xaml.cs">
+      <DependentUpon>AxleButtonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Axle6\DataMonitorShell.xaml.cs">
+      <DependentUpon>DataMonitorShell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Axle6\FaultShell.xaml.cs">
+      <DependentUpon>FaultShell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Axle6\ForTheColumnButton.xaml.cs">
+      <DependentUpon>ForTheColumnButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Axle6\ForTheColumnPageOneView.xaml.cs">
+      <DependentUpon>ForTheColumnPageOneView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Axle6\ForTheColumnPageTwoView.xaml.cs">
+      <DependentUpon>ForTheColumnPageTwoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Axle6\ForTheColumnView.xaml.cs">
+      <DependentUpon>ForTheColumnView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Axle6\SystemSettingShell.xaml.cs">
+      <DependentUpon>SystemSettingShell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Axle6\VideoView.xaml.cs">
+      <DependentUpon>VideoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Axle8\Axle8ButtonView.xaml.cs">
+      <DependentUpon>Axle8ButtonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Axle8\Axle8DataMonitorShell.xaml.cs">
+      <DependentUpon>Axle8DataMonitorShell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Axle8\Axle8FaultShell.xaml.cs">
+      <DependentUpon>Axle8FaultShell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Axle8\Axle8RunLineOne.xaml.cs">
+      <DependentUpon>Axle8RunLineOne.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\BlackScreenView.xaml.cs">
+      <DependentUpon>BlackScreenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\CurrentDialView.xaml.cs">
+      <DependentUpon>CurrentDialView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\DataMonitor\BrakeView.xaml.cs">
+      <DependentUpon>BrakeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\DataMonitor\FirePreventionView.xaml.cs">
+      <DependentUpon>FirePreventionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\DataMonitor\InsulationView.xaml.cs">
+      <DependentUpon>InsulationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\DataMonitor\RunLineViewOne.xaml.cs">
+      <DependentUpon>RunLineViewOne.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\DataMonitor\RunLineViewTwo.xaml.cs">
+      <DependentUpon>RunLineViewTwo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\DataMonitor\SleepView.xaml.cs">
+      <DependentUpon>SleepView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\DialView.xaml.cs">
+      <DependentUpon>DialView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\DoMain.xaml.cs">
+      <DependentUpon>DoMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\Fault\CreepageFaultView.xaml.cs">
+      <DependentUpon>CreepageFaultView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\Fault\CreepageFaultViewPack.xaml.cs">
+      <DependentUpon>CreepageFaultViewPack.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\Fault\FaultInfo.xaml.cs">
+      <DependentUpon>FaultInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\Fault\FaultViewContent.xaml.cs">
+      <DependentUpon>FaultViewContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\Fault\FaultViewContentPack.xaml.cs">
+      <DependentUpon>FaultViewContentPack.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\Fault\HistoryFauktContent.xaml.cs">
+      <DependentUpon>HistoryFauktContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\Fault\HistoryFauktContentPack.xaml.cs">
+      <DependentUpon>HistoryFauktContentPack.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\MainContentView.xaml.cs">
+      <DependentUpon>MainContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\Main\MainContent.xaml.cs">
+      <DependentUpon>MainContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\Main\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\PoingterOne.xaml.cs">
+      <DependentUpon>PoingterOne.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\PointerThree.xaml.cs">
+      <DependentUpon>PointerThree.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\PointerTwo.xaml.cs">
+      <DependentUpon>PointerTwo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\StartingView.xaml.cs">
+      <DependentUpon>StartingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\SystemSetting\PlateFormInfoView.xaml.cs">
+      <DependentUpon>PlateFormInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\SystemSetting\TrainInfoView.xaml.cs">
+      <DependentUpon>TrainInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\SystemSetting\TrainInfo\ElectropsychometerTestView.xaml.cs">
+      <DependentUpon>ElectropsychometerTestView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\SystemSetting\TrainInfo\MicrocomputerInfoView.xaml.cs">
+      <DependentUpon>MicrocomputerInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\SystemSetting\TrainInfo\MonitorView.xaml.cs">
+      <DependentUpon>MonitorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\SystemSetting\TrainInfo\OilLevelMeterTestView.xaml.cs">
+      <DependentUpon>OilLevelMeterTestView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\SystemSetting\TrainSetting.xaml.cs">
+      <DependentUpon>TrainSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\SystemSetting\VersionInfoView.xaml.cs">
+      <DependentUpon>VersionInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\SystemSetting\WorkModelView.xaml.cs">
+      <DependentUpon>WorkModelView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFApp\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Adapter\Resouce\InBoolKeys.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>InBoolKeys.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adapter\Resouce\InFloatKeys.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>InFloatKeys.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shell\ShellForm.resx">
+      <DependentUpon>ShellForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="WPFApp\App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="CommonControl\ComboBox6A.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CommonControl\MultiStateButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Shell\ShellWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resouce\Brushed\BrushResource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resouce\Converters\ConverResource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resouce\Engine6AResource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resouce\Styles\ComboBoxStyleResource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resouce\Styles\ProgressBarStyleResource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resouce\Styles\RadioButtonStyleResource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resouce\Styles\RecTextButtonStyleResource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resouce\Styles\StyleResource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resouce\Styles\TabStyleResource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resouce\Styles\TextBlockStyleResource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Axle6\AxleButtonView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Axle6\DataMonitorShell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Axle6\FaultShell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Axle6\ForTheColumnButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Axle6\ForTheColumnPageOneView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Axle6\ForTheColumnPageTwoView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Axle6\ForTheColumnView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Axle6\SystemSettingShell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Axle6\VideoView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Axle8\Axle8ButtonView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Axle8\Axle8DataMonitorShell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Axle8\Axle8FaultShell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Axle8\Axle8RunLineOne.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Common\BlackScreenView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Common\CurrentDialView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Common\DataMonitor\BrakeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Common\DataMonitor\FirePreventionView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Common\DataMonitor\InsulationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Common\DataMonitor\RunLineViewOne.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Common\DataMonitor\RunLineViewTwo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Common\DataMonitor\SleepView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Common\DialView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Common\DoMain.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Common\Fault\CreepageFaultView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Common\Fault\CreepageFaultViewPack.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Common\Fault\FaultInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Common\Fault\FaultViewContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Common\Fault\FaultViewContentPack.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Common\Fault\HistoryFauktContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Common\Fault\HistoryFauktContentPack.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Common\MainContentView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Common\Main\MainContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Common\Main\MainView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Common\PoingterOne.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Common\PointerThree.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Common\PointerTwo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Common\StartingView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Common\SystemSetting\PlateFormInfoView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Common\SystemSetting\TrainInfoView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Common\SystemSetting\TrainInfo\ElectropsychometerTestView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Common\SystemSetting\TrainInfo\MicrocomputerInfoView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Common\SystemSetting\TrainInfo\MonitorView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Common\SystemSetting\TrainInfo\OilLevelMeterTestView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Common\SystemSetting\TrainSetting.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Common\SystemSetting\VersionInfoView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Common\SystemSetting\WorkModelView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\6a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\6ATitle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\AutoCheckDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\AutoCheckUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\BoxBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\BrakeDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\BrakeUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\Button1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\Button2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\Button3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\Button4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\ButtonDown3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\ButtonUp3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\ColumnPage1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\ColumnPage1Img.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\ColumnPage2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\ColumnPage2Img.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\ColumnPageBox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\ColumnPageIco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\Diag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\FireDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\FireMakeDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\FireMakeUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\FireUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\LimitDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\LimitUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\MouseDowning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\NoData.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\OtherDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\OtherUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\OutMoudleDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\OutMoudleUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\Pic1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\RunDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\RunUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\SystemDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\SystemTimeUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\tky.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\TrainCofigUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\TrainConfigDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\VideoDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\VideoUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\WorkModelButtonDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\WorkModelButtonDowning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\WorkModelButtonUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\等待监控数据.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\Image\框.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Adapter\Adapter\Axle6\" />
+    <Folder Include="Adapter\Adapter\Axle8\" />
+    <Folder Include="Entry\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Changes.Engine.6A.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

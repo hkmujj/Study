@@ -1,0 +1,20 @@
+﻿<Button x:Class="Engine.LCDM.HDX2.Entity.View.ButtonRegion.HardWareButton"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModel="clr-namespace:Engine.LCDM.HDX2.Entity.ViewModel"
+        d:DataContext="{d:DesignInstance viewModel:HardWareButtonViewModel}"
+        d:DesignHeight="300"
+        d:DesignWidth="300"
+        mc:Ignorable="d">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="PreviewMouseDown">
+            <i:InvokeCommandAction Command="{Binding Path=BtnDownCommand}" CommandParameter="{Binding Path=Tag, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="PreviewMouseUp">
+            <i:InvokeCommandAction Command="{Binding Path=BtnUpCommand}" CommandParameter="{Binding Path=Tag, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+</Button>

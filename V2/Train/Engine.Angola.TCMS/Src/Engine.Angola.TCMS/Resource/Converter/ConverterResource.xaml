@@ -1,0 +1,132 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:MainData="clr-namespace:Engine.Angola.TCMS.Model.MainData"
+                    xmlns:SwData="clr-namespace:Engine.Angola.TCMS.Model.SWData"
+                    xmlns:converter1="clr-namespace:Engine.Angola.TCMS.Converter"
+                    xmlns:conveter="clr-namespace:MMI.Facility.WPFInfrastructure.Converter;assembly=MMI.Facility.WPFInfrastructure">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Strings/TCMSString_AG.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+
+    <converter1:Color1Converter x:Key="Color1Converter" />
+    <converter1:Color2Converter x:Key="Color2Converter" />
+    <converter1:Color3Converter x:Key="Color3Converter" />
+    <converter1:Color4Converter x:Key="Color4Converter" />
+    <converter1:Color5Converter x:Key="Color5Converter" />
+    <converter1:Color6Converter x:Key="Color6Converter" />
+    <converter1:Color7Converter x:Key="Color7Converter" />
+    <converter1:Color8Converter x:Key="Color8Converter" />
+    <converter1:Color9Converter x:Key="Color9Converter" />
+    <converter1:Color10Converter x:Key="Color10Converter" />
+    <converter1:Color11Converter x:Key="Color11Converter" />
+    <converter1:Color12Converter x:Key="Color12Converter" />
+    <converter1:LocaliadaColorConverter x:Key="LocaliadaColorConverter" />
+
+
+    <conveter:SelectObjectContentConverter x:Key="ThacaoCmdConverter">
+        <conveter:SelectObjectContentConverter.ObjectContentCollection>
+            <conveter:ObjectContentPair Key="{x:Static SwData:ThacaoCmd.ON}" Content="{StaticResource Engine.Angola.TCMSStringON}" />
+            <conveter:ObjectContentPair Key="{x:Static SwData:ThacaoCmd.OFF}" Content="{StaticResource Engine.Angola.TCMSStringOFF}" />
+        </conveter:SelectObjectContentConverter.ObjectContentCollection>
+    </conveter:SelectObjectContentConverter>
+
+    <conveter:SelectObjectContentConverter x:Key="DynPreioCmdConverter">
+        <conveter:SelectObjectContentConverter.ObjectContentCollection>
+            <conveter:ObjectContentPair Key="{x:Static SwData:DynPreioCmd.ON}" Content="{StaticResource Engine.Angola.TCMSStringON}" />
+            <conveter:ObjectContentPair Key="{x:Static SwData:DynPreioCmd.OFF}" Content="{StaticResource Engine.Angola.TCMSStringOFF}" />
+        </conveter:SelectObjectContentConverter.ObjectContentCollection>
+    </conveter:SelectObjectContentConverter>
+
+    <conveter:SelectObjectContentConverter x:Key="PropCargaCmdConverter">
+        <conveter:SelectObjectContentConverter.ObjectContentCollection>
+            <conveter:ObjectContentPair Key="{x:Static SwData:PropCargaCmd.ON}" Content="{StaticResource Engine.Angola.TCMSStringON}" />
+            <conveter:ObjectContentPair Key="{x:Static SwData:PropCargaCmd.OFF}" Content="{StaticResource Engine.Angola.TCMSStringOFF}" />
+        </conveter:SelectObjectContentConverter.ObjectContentCollection>
+    </conveter:SelectObjectContentConverter>
+
+    <conveter:SelectObjectContentConverter x:Key="FieldWeakeningConverter">
+        <conveter:SelectObjectContentConverter.ObjectContentCollection>
+            <conveter:ObjectContentPair Key="{x:Static SwData:FieldWeakening.ON}" Content="{StaticResource Engine.Angola.TCMSStringON}" />
+            <conveter:ObjectContentPair Key="{x:Static SwData:FieldWeakening.OFF}" Content="{StaticResource Engine.Angola.TCMSStringOFF}" />
+        </conveter:SelectObjectContentConverter.ObjectContentCollection>
+    </conveter:SelectObjectContentConverter>
+
+    <conveter:SelectObjectContentConverter x:Key="EfcNoConverter">
+        <conveter:SelectObjectContentConverter.ObjectContentCollection>
+            <conveter:ObjectContentPair Key="{x:Static SwData:EfcNo.ON}" Content="{StaticResource Engine.Angola.TCMSStringON}" />
+            <conveter:ObjectContentPair Key="{x:Static SwData:EfcNo.OFF}" Content="{StaticResource Engine.Angola.TCMSStringOFF}" />
+        </conveter:SelectObjectContentConverter.ObjectContentCollection>
+    </conveter:SelectObjectContentConverter>
+
+    <conveter:SelectObjectContentConverter x:Key="MotorFbkInConverter">
+        <conveter:SelectObjectContentConverter.ObjectContentCollection>
+            <conveter:ObjectContentPair Key="{x:Static SwData:MotorFbkIn.ON}" Content="{StaticResource Engine.Angola.TCMSStringON}" />
+            <conveter:ObjectContentPair Key="{x:Static SwData:MotorFbkIn.OFF}" Content="{StaticResource Engine.Angola.TCMSStringOFF}" />
+        </conveter:SelectObjectContentConverter.ObjectContentCollection>
+    </conveter:SelectObjectContentConverter>
+
+    <conveter:SelectObjectContentConverter x:Key="BrakeFbkInConverter">
+        <conveter:SelectObjectContentConverter.ObjectContentCollection>
+            <conveter:ObjectContentPair Key="{x:Static SwData:BrakeFbkIn.ON}" Content="{StaticResource Engine.Angola.TCMSStringON}" />
+            <conveter:ObjectContentPair Key="{x:Static SwData:BrakeFbkIn.OFF}" Content="{StaticResource Engine.Angola.TCMSStringOFF}" />
+        </conveter:SelectObjectContentConverter.ObjectContentCollection>
+    </conveter:SelectObjectContentConverter>
+
+    <conveter:SelectObjectContentConverter x:Key="LocospeedContConverter">
+        <conveter:SelectObjectContentConverter.ObjectContentCollection>
+            <conveter:ObjectContentPair Key="{x:Static SwData:LocospeedCont.ON}" Content="{StaticResource Engine.Angola.TCMSStringON}" />
+            <conveter:ObjectContentPair Key="{x:Static SwData:LocospeedCont.OFF}" Content="{StaticResource Engine.Angola.TCMSStringOFF}" />
+        </conveter:SelectObjectContentConverter.ObjectContentCollection>
+    </conveter:SelectObjectContentConverter>
+
+    <conveter:SelectObjectContentConverter x:Key="VigilanciaSwtConverter">
+        <conveter:SelectObjectContentConverter.ObjectContentCollection>
+            <conveter:ObjectContentPair Key="{x:Static SwData:VigilanciaSwt.ON}" Content="{StaticResource Engine.Angola.TCMSStringON}" />
+            <conveter:ObjectContentPair Key="{x:Static SwData:VigilanciaSwt.OFF}" Content="{StaticResource Engine.Angola.TCMSStringOFF}" />
+        </conveter:SelectObjectContentConverter.ObjectContentCollection>
+    </conveter:SelectObjectContentConverter>
+
+    <conveter:SelectObjectContentConverter x:Key="AirFbkConverter">
+        <conveter:SelectObjectContentConverter.ObjectContentCollection>
+            <conveter:ObjectContentPair Key="{x:Static SwData:AirFbk.ON}" Content="{StaticResource Engine.Angola.TCMSStringON}" />
+            <conveter:ObjectContentPair Key="{x:Static SwData:AirFbk.OFF}" Content="{StaticResource Engine.Angola.TCMSStringOFF}" />
+        </conveter:SelectObjectContentConverter.ObjectContentCollection>
+    </conveter:SelectObjectContentConverter>
+
+    <conveter:SelectObjectContentConverter x:Key="AirStartInConverter">
+        <conveter:SelectObjectContentConverter.ObjectContentCollection>
+            <conveter:ObjectContentPair Key="{x:Static SwData:AirStartIn.ON}" Content="{StaticResource Engine.Angola.TCMSStringON}" />
+            <conveter:ObjectContentPair Key="{x:Static SwData:AirStartIn.OFF}" Content="{StaticResource Engine.Angola.TCMSStringOFF}" />
+        </conveter:SelectObjectContentConverter.ObjectContentCollection>
+    </conveter:SelectObjectContentConverter>
+
+    <conveter:SelectObjectContentConverter x:Key="AirStartDelayConverter">
+        <conveter:SelectObjectContentConverter.ObjectContentCollection>
+            <conveter:ObjectContentPair Key="{x:Static SwData:AirStartDelay.ON}" Content="{StaticResource Engine.Angola.TCMSStringON}" />
+            <conveter:ObjectContentPair Key="{x:Static SwData:AirStartDelay.OFF}" Content="{StaticResource Engine.Angola.TCMSStringOFF}" />
+        </conveter:SelectObjectContentConverter.ObjectContentCollection>
+    </conveter:SelectObjectContentConverter>
+
+    <conveter:SelectObjectContentConverter x:Key="LocaliadaConverter">
+        <conveter:SelectObjectContentConverter.ObjectContentCollection>
+            <conveter:ObjectContentPair Key="{x:Static MainData:Localiada.LenTa}" Content="{StaticResource Engine.Angola.TCMSStringLenTa}" />
+            <conveter:ObjectContentPair Key="{x:Static MainData:Localiada.Motor}" Content="{StaticResource Engine.Angola.TCMSStringMotor}" />
+            <conveter:ObjectContentPair Key="{x:Static MainData:Localiada.Travagen}" Content="{StaticResource Engine.Angola.TCMSStringTravagen}" />
+        </conveter:SelectObjectContentConverter.ObjectContentCollection>
+    </conveter:SelectObjectContentConverter>
+
+    <conveter:SelectObjectContentConverter x:Key="CMDConverter">
+        <conveter:SelectObjectContentConverter.ObjectContentCollection>
+            <conveter:ObjectContentPair Key="{x:Static MainData:CMD.CMD0}" Content="{StaticResource StringCmd0}" />
+            <conveter:ObjectContentPair Key="{x:Static MainData:CMD.CMD1}" Content="{StaticResource StringCmd1}" />
+            <conveter:ObjectContentPair Key="{x:Static MainData:CMD.CMD2}" Content="{StaticResource StringCmd2}" />
+            <conveter:ObjectContentPair Key="{x:Static MainData:CMD.CMD3}" Content="{StaticResource StringCmd3}" />
+            <conveter:ObjectContentPair Key="{x:Static MainData:CMD.CMD4}" Content="{StaticResource StringCmd4}" />
+            <conveter:ObjectContentPair Key="{x:Static MainData:CMD.CMD5}" Content="{StaticResource StringCmd5}" />
+            <conveter:ObjectContentPair Key="{x:Static MainData:CMD.CMD6}" Content="{StaticResource StringCmd6}" />
+            <conveter:ObjectContentPair Key="{x:Static MainData:CMD.CMD7}" Content="{StaticResource StringCmd7}" />
+            <conveter:ObjectContentPair Key="{x:Static MainData:CMD.CMD8}" Content="{StaticResource StringCmd8}" />
+        </conveter:SelectObjectContentConverter.ObjectContentCollection>
+    </conveter:SelectObjectContentConverter>
+</ResourceDictionary>

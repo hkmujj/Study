@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C7781122-89C9-47DA-9FBA-EFBC67649B3C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LightRail.Ethiopia.TMS</RootNamespace>
+    <AssemblyName>LightRail.Ethiopia.TMS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\MMI\Addin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\MMI\Addin\LightRail.Ethiopia.TMS.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\MMI\Addin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MMI.Facility.Interface, Version=2.40.2016.1101, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ACU\V4_ACU_MainView.cs" />
+    <Compile Include="BCU\V5_BCU_MainView.cs" />
+    <Compile Include="Common\Brushs.cs" />
+    <Compile Include="Common\Enums.cs" />
+    <Compile Include="Common\FontInfo.cs" />
+    <Compile Include="Control\Button.cs" />
+    <Compile Include="Control\Common\IControl.cs" />
+    <Compile Include="Control\Common\IStyle.cs" />
+    <Compile Include="Control\Common\MouseEventArgs.cs" />
+    <Compile Include="Control\Grid.cs" />
+    <Compile Include="Control\Group.cs" />
+    <Compile Include="Control\ListBox.cs" />
+    <Compile Include="Control\TextBox.cs" />
+    <Compile Include="FaultInfo.cs" />
+    <Compile Include="FontStyle.cs" />
+    <Compile Include="FontStyles.cs" />
+    <Compile Include="Help\V901_Help_Main.cs" />
+    <Compile Include="HVAC\V701_HVAC_State.cs" />
+    <Compile Include="HVAC\V702_HVAC_Paremset.cs" />
+    <Compile Include="HVAC\V703_HVAC_Test.cs" />
+    <Compile Include="HVAC\V7_HVAC_MainView.cs" />
+    <Compile Include="Main\V101_Main_ControlButton.cs" />
+    <Compile Include="Main\V1_Main_C0_Speed.cs" />
+    <Compile Include="Main\V1_Main_C1_TrainState.cs" />
+    <Compile Include="Main\V1_Main_C3_Fault.cs" />
+    <Compile Include="Main\V1_Main_C4_ControlButton.cs" />
+    <Compile Include="MianTain\V801_MianTain_ParamSet.cs" />
+    <Compile Include="MianTain\V803_804_Fault_DeviceSelect.cs" />
+    <Compile Include="MianTain\V803_804_Fault_TimeSelect.cs" />
+    <Compile Include="MianTain\V803_MianTain_CurrentFaultList.cs" />
+    <Compile Include="MianTain\V805_MianTain_Doors.cs" />
+    <Compile Include="MianTain\V8_MianTain_MianView.cs" />
+    <Compile Include="MianTain\V804_MianTain_HistoryFaultList.cs" />
+    <Compile Include="Net\V2_Net_C1_Mc1_Up.cs" />
+    <Compile Include="Net\V2_Net_C0_MainView.cs" />
+    <Compile Include="Net\V2_Net_C2_Mc1_Down.cs" />
+    <Compile Include="Net\V2_Net_C3_T.cs" />
+    <Compile Include="Net\V2_Net_C4_Mc2_Up.cs" />
+    <Compile Include="Net\V2_Net_C5_Mc2_Down.cs" />
+    <Compile Include="PIS\V601_V602_PIS_SetStation.cs" />
+    <Compile Include="PIS\V6_PIS_MianView.cs" />
+    <Compile Include="Pub\VC_C6_HeadTail.cs" />
+    <Compile Include="Pub\VC_C7_SendData.cs" />
+    <Compile Include="TCU\V3_TCU_MainView.cs" />
+    <Compile Include="Pub\VC_C2_GetValue.cs" />
+    <Compile Include="Pub\VC_C5_BlackView.cs" />
+    <Compile Include="检修\V702_Check_TimeSetting_C0.cs" />
+    <Compile Include="检修\V703_Check_PasswordSetting_C0.cs" />
+    <Compile Include="检修\V704_Check_WheelRadius_C0.cs" />
+    <Compile Include="检修\V705_Check_TrainIDSetting_C0.cs" />
+    <Compile Include="检修\V706_Check_AccelerateTest_C0.cs" />
+    <Compile Include="检修\V707_Check_Test_C0.cs" />
+    <Compile Include="检修\V708_Check_DataNotes_C0.cs" />
+    <Compile Include="检修\V7_Check_Common_Frame.cs" />
+    <Compile Include="检修\V701_Check_Login_C0_MainView.cs" />
+    <Compile Include="检修\V7_Check_C0_MainView.cs" />
+    <Compile Include="Pub\VC_C0_Title.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="黑屏\V0_C0_BlackView_Closed.cs" />
+    <Compile Include="Pub\VC_C4_GetFault.cs" />
+    <Compile Include="Main\V1_Main_C2_State.cs" />
+    <Compile Include="Pub\VC_C1_ViewChangeButton.cs" />
+    <Compile Include="黑屏\V0_C1_ClassOver.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

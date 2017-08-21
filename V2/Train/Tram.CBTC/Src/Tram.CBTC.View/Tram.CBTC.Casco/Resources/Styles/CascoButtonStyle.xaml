@@ -1,0 +1,543 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:details="clr-namespace:Tram.CBTC.Infrasturcture.Model.Msg.Details;assembly=Tram.CBTC.Infrasturcture">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Base/CascoBaseResource.xaml" />
+        <ResourceDictionary Source="../Converters/CascoConverter.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <Style x:Key="Tram.CBTC.Casco.PopButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource Tram.CBTC.Casco.PopContent}" />
+        <Setter Property="Foreground" Value="{StaticResource Tram.CBTC.Casco.Brush.Black}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="LightGray" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Tram.CBTC.Casco.DriverIDInputBtn" TargetType="Button">
+        <Setter Property="Background" Value="#FBFBFB" />
+        <Setter Property="Foreground" Value="{StaticResource Tram.CBTC.Casco.Brush.Black}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="FontSize" Value="26" />
+        <Setter Property="BorderBrush" Value="LightGray" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Tram.CBTC.Casco.HardwareBtnStyle" TargetType="Button">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="{StaticResource Tram.CBTC.Casco.HarwareButtonWhiteBrush}" />
+            <Setter Property="BorderBrush" Value="{StaticResource Tram.CBTC.Casco.HarwareButtonWhiteBrush}" />
+            <Setter Property="Background" Value="{StaticResource Tram.CBTC.Casco.ShellBackgroundBrush}" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="Width" Value="50" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                            x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="10"
+                            SnapsToDevicePixels="true">
+                            <ContentPresenter
+                                Margin="{TemplateBinding Padding}"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Focusable="False"
+                                RecognizesAccessKey="True"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="border" Property="Background" Value="{StaticResource Tram.CBTC.Casco.HarwareButtonPressedBackground}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Tram.CBTC.Casco.Style.Button.RegionH" TargetType="Button">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="{StaticResource Tram.CBTC.Casco.HarwareButtonWhiteBrush}" />
+            <Setter Property="BorderBrush" Value="{StaticResource Tram.CBTC.Casco.HarwareButtonWhiteBrush}" />
+            <Setter Property="Background" Value="{StaticResource Tram.CBTC.Casco.Brush.Black}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Margin" Value="1" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                            x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="2"
+                            SnapsToDevicePixels="true">
+                            <ContentPresenter
+                                Margin="{TemplateBinding Padding}"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Focusable="False"
+                                RecognizesAccessKey="True"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="border" Property="Background" Value="{StaticResource Tram.CBTC.Casco.HarwareButtonPressedBackground}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Tram.CBTC.Casco.Style.Button.RunningAndMantence" TargetType="Button">
+        <Style.Setters>
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="Foreground" Value="{StaticResource Tram.CBTC.Casco.HarwareButtonWhiteBrush}" />
+            <Setter Property="BorderBrush" Value="{StaticResource Tram.CBTC.Casco.Brush.Black}" />
+            <Setter Property="Background" Value="{StaticResource Tram.CBTC.Casco.Brush.LightGray}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="FontFamily" Value="宋体" />
+            <Setter Property="Margin" Value="1" />
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                            x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            SnapsToDevicePixels="true">
+                            <ContentPresenter
+                                Margin="{TemplateBinding Padding}"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Focusable="False"
+                                RecognizesAccessKey="True"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="border" Property="Background" Value="{StaticResource Tram.CBTC.Casco.HarwareButtonPressedBackground}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style.Setters>
+
+    </Style>
+    <Style x:Key="Tram.CBTC.Casco.Style.Button.InfoBtn" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="bac" />
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="bac" Property="Background">
+                                <Setter.Value>
+                                    <ImageBrush ImageSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Button}, Path=Tag}" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="True">
+                            <Setter TargetName="bac" Property="Background">
+                                <Setter.Value>
+                                    <ImageBrush ImageSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Button}, Path=Content}" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Tram.CBTC.Casco.Style.Button.Alram" TargetType="Button">
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border>
+                        <Border.Background>
+                            <ImageBrush ImageSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Button}, Path=Tag}" />
+                        </Border.Background>
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Button}, Path=Content}" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Margin" Value="7,0,7,5" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="FontWeight" Value="Bold" />
+
+
+    </Style>
+    <Style x:Key="Tram.CBTC.Casco.Style.PopTabItemStyle" TargetType="{x:Type TabItem}">
+        <Setter Property="FocusVisualStyle">
+            <Setter.Value>
+                <Style>
+                    <Setter Property="Control.Template">
+                        <Setter.Value>
+                            <ControlTemplate>
+                                <Rectangle
+                                    Margin="2"
+                                    SnapsToDevicePixels="True"
+                                    Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"
+                                    StrokeDashArray="1 2"
+                                    StrokeThickness="1" />
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="Background" Value="{StaticResource Tram.CBTC.Casco.PopBackgroud}" />
+        <Setter Property="BorderBrush" Value="#FFACACAC" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Padding" Value="6,2" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabItem}">
+                    <Grid x:Name="templateRoot" SnapsToDevicePixels="True">
+                        <Border
+                            x:Name="mainBorder"
+                            Margin="0"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="1,1,1,0">
+                            <Border
+                                x:Name="innerBorder"
+                                Margin="-1"
+                                Background="{StaticResource Tram.CBTC.Casco.PopContent}"
+                                BorderBrush="#FFACACAC"
+                                BorderThickness="1,1,1,0"
+                                Opacity="0" />
+                        </Border>
+                        <ContentPresenter
+                            x:Name="contentPresenter"
+                            Margin="{TemplateBinding Padding}"
+                            HorizontalAlignment="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type ItemsControl}}}"
+                            VerticalAlignment="{Binding VerticalContentAlignment, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type ItemsControl}}}"
+                            Content="{TemplateBinding Header}"
+                            ContentSource="Header"
+                            ContentStringFormat="{TemplateBinding HeaderStringFormat}"
+                            ContentTemplate="{TemplateBinding HeaderTemplate}"
+                            Focusable="False"
+                            RecognizesAccessKey="True"
+                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsEnabled, RelativeSource={RelativeSource Self}}" Value="false" />
+                                <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type TabControl}}}" Value="Left" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter TargetName="contentPresenter" Property="Opacity" Value="0.56" />
+                            <Setter TargetName="mainBorder" Property="Background" Value="#FFF0F0F0" />
+                            <Setter TargetName="mainBorder" Property="BorderBrush" Value="#FFD9D9D9" />
+                            <Setter TargetName="innerBorder" Property="BorderThickness" Value="1,1,0,1" />
+                            <Setter TargetName="mainBorder" Property="BorderThickness" Value="1,1,0,1" />
+                        </MultiDataTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsEnabled, RelativeSource={RelativeSource Self}}" Value="false" />
+                                <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type TabControl}}}" Value="Bottom" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter TargetName="contentPresenter" Property="Opacity" Value="0.56" />
+                            <Setter TargetName="mainBorder" Property="Background" Value="#FFF0F0F0" />
+                            <Setter TargetName="mainBorder" Property="BorderBrush" Value="#FFD9D9D9" />
+                            <Setter TargetName="innerBorder" Property="BorderThickness" Value="1,0,1,1" />
+                            <Setter TargetName="mainBorder" Property="BorderThickness" Value="1,0,1,1" />
+                        </MultiDataTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsEnabled, RelativeSource={RelativeSource Self}}" Value="false" />
+                                <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type TabControl}}}" Value="Right" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter TargetName="contentPresenter" Property="Opacity" Value="0.56" />
+                            <Setter TargetName="mainBorder" Property="Background" Value="#FFF0F0F0" />
+                            <Setter TargetName="mainBorder" Property="BorderBrush" Value="#FFD9D9D9" />
+                            <Setter TargetName="innerBorder" Property="BorderThickness" Value="0,1,1,1" />
+                            <Setter TargetName="mainBorder" Property="BorderThickness" Value="0,1,1,1" />
+                        </MultiDataTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsEnabled, RelativeSource={RelativeSource Self}}" Value="false" />
+                                <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type TabControl}}}" Value="Top" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter TargetName="contentPresenter" Property="Opacity" Value="0.56" />
+                            <Setter TargetName="mainBorder" Property="Background" Value="#FFF0F0F0" />
+                            <Setter TargetName="mainBorder" Property="BorderBrush" Value="#FFD9D9D9" />
+                            <Setter TargetName="innerBorder" Property="BorderThickness" Value="1,1,1,0" />
+                            <Setter TargetName="mainBorder" Property="BorderThickness" Value="1,1,1,0" />
+                        </MultiDataTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}" Value="false" />
+                                <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type TabControl}}}" Value="Left" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter TargetName="innerBorder" Property="BorderThickness" Value="1,1,0,1" />
+                            <Setter TargetName="mainBorder" Property="BorderThickness" Value="1,1,0,1" />
+                        </MultiDataTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}" Value="true" />
+                                <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type TabControl}}}" Value="Left" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Panel.ZIndex" Value="1" />
+                            <Setter Property="Margin" Value="-2,-2,0,-2" />
+                            <Setter TargetName="innerBorder" Property="Opacity" Value="1" />
+                            <Setter TargetName="innerBorder" Property="BorderThickness" Value="1,1,0,1" />
+                            <Setter TargetName="mainBorder" Property="BorderThickness" Value="1,1,0,1" />
+                        </MultiDataTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}" Value="false" />
+                                <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type TabControl}}}" Value="Bottom" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter TargetName="innerBorder" Property="BorderThickness" Value="1,0,1,1" />
+                            <Setter TargetName="mainBorder" Property="BorderThickness" Value="1,0,1,1" />
+                        </MultiDataTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}" Value="true" />
+                                <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type TabControl}}}" Value="Bottom" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Panel.ZIndex" Value="1" />
+                            <Setter Property="Margin" Value="-2,0,-2,-2" />
+                            <Setter TargetName="innerBorder" Property="Opacity" Value="1" />
+                            <Setter TargetName="innerBorder" Property="BorderThickness" Value="1,0,1,1" />
+                            <Setter TargetName="mainBorder" Property="BorderThickness" Value="1,0,1,1" />
+                        </MultiDataTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}" Value="false" />
+                                <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type TabControl}}}" Value="Right" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter TargetName="innerBorder" Property="BorderThickness" Value="0,1,1,1" />
+                            <Setter TargetName="mainBorder" Property="BorderThickness" Value="0,1,1,1" />
+                        </MultiDataTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}" Value="true" />
+                                <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type TabControl}}}" Value="Right" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Panel.ZIndex" Value="1" />
+                            <Setter Property="Margin" Value="0,-2,-2,-2" />
+                            <Setter TargetName="innerBorder" Property="Opacity" Value="1" />
+                            <Setter TargetName="innerBorder" Property="BorderThickness" Value="0,1,1,1" />
+                            <Setter TargetName="mainBorder" Property="BorderThickness" Value="0,1,1,1" />
+                        </MultiDataTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}" Value="false" />
+                                <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type TabControl}}}" Value="Top" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter TargetName="innerBorder" Property="BorderThickness" Value="1,1,1,0" />
+                            <Setter TargetName="mainBorder" Property="BorderThickness" Value="1,1,1,0" />
+                        </MultiDataTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}" Value="true" />
+                                <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type TabControl}}}" Value="Top" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Panel.ZIndex" Value="1" />
+                            <Setter Property="Margin" Value="-2,-2,-2,0" />
+                            <Setter TargetName="innerBorder" Property="Opacity" Value="1" />
+                            <Setter TargetName="innerBorder" Property="BorderThickness" Value="1,1,1,0" />
+                            <Setter TargetName="mainBorder" Property="BorderThickness" Value="1,1,1,0" />
+                        </MultiDataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Tram.CBTC.Casco.Style.RegionDItemStyle" TargetType="{x:Type TabItem}">
+        <Setter Property="FocusVisualStyle">
+            <Setter.Value>
+                <Style>
+                    <Setter Property="Control.Template">
+                        <Setter.Value>
+                            <ControlTemplate>
+                                <Rectangle
+                                    Margin="2"
+                                    SnapsToDevicePixels="True"
+                                    Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"
+                                    StrokeDashArray="1 2"
+                                    StrokeThickness="1" />
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Background" Value="{StaticResource Tram.CBTC.Casco.RegionDBack}" />
+        <Setter Property="BorderBrush" Value="#FFACACAC" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Padding" Value="6,2" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabItem}">
+                    <Grid x:Name="templateRoot" SnapsToDevicePixels="True">
+                        <Border
+                            x:Name="mainBorder"
+                            Margin="0"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="1,1,1,0">
+                            <Border
+                                x:Name="innerBorder"
+                                Margin="-1"
+                                Background="{StaticResource Tram.CBTC.Casco.RegionDBack}"
+                                BorderBrush="#FFACACAC"
+                                BorderThickness="1,1,1,0"
+                                Opacity="0" />
+                        </Border>
+                        <ContentPresenter
+                            x:Name="contentPresenter"
+                            Margin="{TemplateBinding Padding}"
+                            HorizontalAlignment="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type ItemsControl}}}"
+                            VerticalAlignment="{Binding VerticalContentAlignment, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type ItemsControl}}}"
+                            Content="{TemplateBinding Header}"
+                            ContentSource="Header"
+                            ContentStringFormat="{TemplateBinding HeaderStringFormat}"
+                            ContentTemplate="{TemplateBinding HeaderTemplate}"
+                            Focusable="False"
+                            RecognizesAccessKey="True"
+                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+
+
+
+
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}" Value="false" />
+                                <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type TabControl}}}" Value="Top" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Margin" Value="-2,-2,-2,0" />
+                            <Setter TargetName="innerBorder" Property="BorderThickness" Value="1,1,1,0" />
+                            <Setter TargetName="mainBorder" Property="BorderThickness" Value="1,1,1,0" />
+                        </MultiDataTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}" Value="true" />
+                                <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type TabControl}}}" Value="Top" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Panel.ZIndex" Value="1" />
+                            <Setter Property="Margin" Value="-2,-2,-2,0" />
+                            <Setter TargetName="innerBorder" Property="Opacity" Value="1" />
+                            <Setter TargetName="innerBorder" Property="BorderThickness" Value="1,1,1,0" />
+                            <Setter TargetName="mainBorder" Property="BorderThickness" Value="1,1,1,0" />
+                        </MultiDataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Tram.CBTC.Casco.RunInfoStyle" TargetType="ItemsControl">
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel IsItemsHost="True" Orientation="Vertical" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="details:IInformationContent">
+                    <Grid HorizontalAlignment="Left">
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontSize="14"
+                            Foreground="Yellow"
+                            TextWrapping="Wrap">
+                            <TextBlock.Text>
+                                <MultiBinding Converter="{StaticResource Tram.CBTC.Casco.Converter.StringFroamatCovnerter}">
+                                    <Binding Path="HappenDate" />
+                                    <Binding Path="Content" />
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+                    </Grid>
+
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Tram.CBTC.Casco.MaininstanceInfo" TargetType="ItemsControl">
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel IsItemsHost="True" Orientation="Vertical" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="details:IInformationContent">
+                    <Grid HorizontalAlignment="Left">
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontSize="14"
+                            Foreground="White"
+                            TextWrapping="Wrap">
+                            <TextBlock.Text>
+                                <MultiBinding Converter="{StaticResource Tram.CBTC.Casco.Converter.StringFroamatCovnerter}">
+                                    <Binding Path="HappenDate" />
+                                    <Binding Path="Content" />
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+                    </Grid>
+
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,308 @@
+﻿<UserControl
+    x:Class="Motor.TCMS.CRH400BF.View.Contents.MainBrakeInfoContentView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Motor.TCMS.CRH400BF.View.Contents"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:view="clr-namespace:MMI.Facility.WPFInfrastructure.View;assembly=MMI.Facility.WPFInfrastructure"
+    xmlns:viewModel="clr-namespace:Motor.TCMS.CRH400BF.ViewModel"
+    xmlns:viewSource="clr-namespace:Motor.TCMS.CRH400BF.Model.ViewSource"
+    d:DataContext="{d:DesignInstance {x:Type viewModel:DomainViewModel}}"
+    d:DesignHeight="400"
+    d:DesignWidth="800"
+    Background="Black"
+    mc:Ignorable="d">
+    <Grid Width="800" HorizontalAlignment="Right">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15*" />
+            <RowDefinition Height="40*" />
+            <RowDefinition Height="15*" />
+            <RowDefinition Height="30*" />
+            <RowDefinition Height="30*" />
+            <RowDefinition Height="30*" />
+            <RowDefinition Height="30*" />
+            <RowDefinition Height="30*" />
+            <RowDefinition Height="30*" />
+            <RowDefinition Height="30*" />
+            <RowDefinition Height="30*" />
+            <RowDefinition Height="30*" />
+            <RowDefinition Height="30*" />
+            <RowDefinition Height="30*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0" Grid.Column="1">
+            <StackPanel
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Orientation="Horizontal">
+                <TextBlock
+                    VerticalAlignment="Center"
+                    Foreground="White"
+                    Text="CR400BF"
+                    TextAlignment="Right" />
+                <TextBlock
+                    VerticalAlignment="Center"
+                    Foreground="White"
+                    Text="-"
+                    TextAlignment="Center" />
+                <TextBlock
+                    VerticalAlignment="Center"
+                    Foreground="White"
+                    Text="0207"
+                    TextAlignment="Left" />
+            </StackPanel>
+        </Grid>
+        <ItemsControl
+            Grid.Row="1"
+            Grid.Column="1"
+            ItemsSource="{Binding Path=TrainViewModel.Model.CarCollection}"
+            Style="{StaticResource CarNameItemStyle}" />
+        <Border
+            Grid.Row="1"
+            Grid.Column="1"
+            BorderBrush="White"
+            BorderThickness="0,2,0,2" />
+        <TextBlock
+            Grid.Row="3"
+            Grid.Column="0"
+            VerticalAlignment="Center"
+            FontSize="16"
+            Foreground="White"
+            Text="总风管压力(kPa)"
+            TextAlignment="Center" />
+        <Grid Grid.Row="3" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50.5" />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition Width="50.5" />
+            </Grid.ColumnDefinitions>
+            <Border
+                Grid.Column="0"
+                BorderBrush="White"
+                BorderThickness="0,0,1,0" />
+            <Border
+                Grid.Column="7"
+                BorderBrush="White"
+                BorderThickness="1,0,0,0" />
+        </Grid>
+        <Border
+            Grid.Row="3"
+            Grid.Column="1"
+            BorderBrush="White"
+            BorderThickness="1,1,1,0" />
+
+        <ItemsControl
+            Grid.Row="3"
+            Grid.Column="1"
+            ItemsSource="{Binding TrainViewModel.Model.CarCollection}"
+            Style="{StaticResource WindPipePressItemStyle}" />
+
+        <TextBlock
+            Grid.Row="4"
+            Grid.Column="0"
+            VerticalAlignment="Center"
+            FontSize="16"
+            Foreground="White"
+            Text="制动缸压力(kPa)"
+            TextAlignment="Center" />
+
+        <ItemsControl
+            Grid.Row="4"
+            Grid.Column="1"
+            ItemsSource="{Binding TrainViewModel.Model.CarCollection}"
+            Style="{StaticResource BrakeCylinderPressItemStyle}" />
+        <Grid
+            Grid.Row="4"
+            Grid.RowSpan="4"
+            Grid.Column="1"
+            view:GridLine.Brush="{StaticResource LineBrush}"
+            view:GridLine.Style="ShowAll">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30*" />
+                <RowDefinition Height="30*" />
+                <RowDefinition Height="30*" />
+                <RowDefinition Height="30*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <TextBlock
+            Grid.Row="5"
+            Grid.Column="0"
+            VerticalAlignment="Center"
+            FontSize="16"
+            Foreground="White"
+            Text="空簧1压力(kPa)"
+            TextAlignment="Center" />
+
+        <ItemsControl
+            Grid.Row="5"
+            Grid.Column="1"
+            ItemsSource="{Binding TrainViewModel.Model.CarCollection}"
+            Style="{StaticResource EmptySpring1PressItemStyle}" />
+        <TextBlock
+            Grid.Row="6"
+            Grid.Column="0"
+            VerticalAlignment="Center"
+            FontSize="16"
+            Foreground="White"
+            Text="空簧2压力(kPa)"
+            TextAlignment="Center" />
+
+        <ItemsControl
+            Grid.Row="6"
+            Grid.Column="1"
+            ItemsSource="{Binding TrainViewModel.Model.CarCollection}"
+            Style="{StaticResource EmptySpring2PressItemStyle}" />
+
+
+
+
+        <TextBlock
+            Grid.Row="7"
+            Grid.Column="0"
+            VerticalAlignment="Center"
+            FontSize="16"
+            Foreground="White"
+            Text="停放缸压力(kPa)"
+            TextAlignment="Center" />
+
+        <ItemsControl
+            Grid.Row="7"
+            Grid.Column="1"
+            ItemsSource="{Binding TrainViewModel.Model.CarCollection}"
+            Style="{StaticResource ParkingCylinderPressItemStyle}" />
+
+        <TextBlock
+            Grid.Row="8"
+            Grid.Column="0"
+            VerticalAlignment="Center"
+            FontSize="16"
+            Foreground="White"
+            Text="ATP级位"
+            TextAlignment="Center" />
+        <Border
+            Grid.Row="8"
+            Grid.Column="1"
+            BorderBrush="White"
+            BorderThickness="1,0,1,0" />
+        <TextBlock
+            Grid.Row="8"
+            Grid.Column="1"
+            VerticalAlignment="Center"
+            Foreground="Yellow"
+            Text="{Binding TrainViewModel.Model.AtpLevel, Converter={StaticResource AtpLevelStateToImageConverter}}"
+            TextAlignment="Center" />
+
+        <TextBlock
+            Grid.Row="9"
+            Grid.Column="0"
+            VerticalAlignment="Center"
+            FontSize="16"
+            Foreground="White"
+            Text="BCU1状态"
+            TextAlignment="Center" />
+
+        <ItemsControl
+            Grid.Row="9"
+            Grid.Column="1"
+            ItemsSource="{Binding TrainViewModel.Model.CarCollection}"
+            Style="{StaticResource Bcu1StateItemStyle}" />
+        <Grid
+            Grid.Row="9"
+            Grid.RowSpan="4"
+            Grid.Column="1"
+            view:GridLine.Brush="{StaticResource LineBrush}"
+            view:GridLine.Style="ShowAll">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30*" />
+                <RowDefinition Height="30*" />
+                <RowDefinition Height="30*" />
+                <RowDefinition Height="30*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+        </Grid>
+
+        <TextBlock
+            Grid.Row="10"
+            Grid.Column="0"
+            VerticalAlignment="Center"
+            FontSize="16"
+            Foreground="White"
+            Text="BCU2状态"
+            TextAlignment="Center" />
+
+        <ItemsControl
+            Grid.Row="10"
+            Grid.Column="1"
+            ItemsSource="{Binding TrainViewModel.Model.CarCollection}"
+            Style="{StaticResource Bcu2StateItemStyle}" />
+        <TextBlock
+            Grid.Row="11"
+            Grid.Column="0"
+            VerticalAlignment="Center"
+            FontSize="16"
+            Foreground="White"
+            Text="保持制动状态"
+            TextAlignment="Center" />
+        <ItemsControl
+            Grid.Row="11"
+            Grid.Column="1"
+            ItemsSource="{Binding TrainViewModel.Model.CarCollection}"
+            Style="{StaticResource KeepBrakeStateItemStyle}" />
+        <TextBlock
+            Grid.Row="12"
+            Grid.Column="0"
+            VerticalAlignment="Center"
+            FontSize="16"
+            Foreground="White"
+            Text="比例制动状态"
+            TextAlignment="Center" />
+        <ItemsControl
+            Grid.Row="12"
+            Grid.Column="1"
+            ItemsSource="{Binding TrainViewModel.Model.CarCollection}"
+            Style="{StaticResource PercentBrakeStateItemStyle}" />
+        <TextBlock
+            Grid.Row="13"
+            Grid.Column="0"
+            VerticalAlignment="Center"
+            FontSize="16"
+            Foreground="White"
+            Text="辅助空压机状态"
+            TextAlignment="Center" />
+        <ItemsControl
+            Grid.Row="13"
+            Grid.Column="1"
+            ItemsSource="{Binding TrainViewModel.Model.CarCollection}"
+            Style="{StaticResource AssistAirCompressorStateItemStyle}" />
+
+    </Grid>
+</UserControl>

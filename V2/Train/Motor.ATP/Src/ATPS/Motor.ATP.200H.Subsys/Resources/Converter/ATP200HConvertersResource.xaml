@@ -1,0 +1,331 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converter1="clr-namespace:MMI.Facility.WPFInfrastructure.Converter;assembly=MMI.Facility.WPFInfrastructure"
+                    xmlns:converters="clr-namespace:Motor.ATP.Infrasturcture.Model.Converters;assembly=Motor.ATP.Infrasturcture"
+                    xmlns:interface="clr-namespace:Motor.ATP.Infrasturcture.Interface;assembly=Motor.ATP.Infrasturcture"
+                    xmlns:speedMonitoringSection="clr-namespace:Motor.ATP.Infrasturcture.Interface.SpeedMonitoringSection;assembly=Motor.ATP.Infrasturcture"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib"
+                    xmlns:userAction="clr-namespace:Motor.ATP.Infrasturcture.Interface.UserAction;assembly=Motor.ATP.Infrasturcture"
+                    xmlns:converters1="clr-namespace:Motor.ATP._200H.Subsys.Converters">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Motor.ATP.Infrasturcture;component/Resources/Strings/StringResource_CH.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Motor.ATP.Infrasturcture;component/Resources/Images/ImageResource_CH.xaml" />
+        <ResourceDictionary Source="../Basic/ATP200HBasicResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <converters1:GetItemIndexOfCollectionConverter x:Key="Motor.ATP.200H.GetItemIndexOfCollectionConverter" />
+    <converters1:BoolOperatConverter x:Key="Motor.ATP.200H.BoolOperatConverter" />
+    <converters1:CurrentInterfaceKeyToVisblityConverter x:Key="Motor.ATP.200H.CurrentInterfaceKeyToVisblityConverter" />
+
+    <converter1:MathConverter x:Key="Motor.ATP.200H.MathConverter" />
+
+    <converters:TargetDistanceScalLenghToStartXConverter x:Key="Motor.ATP.200H.TargetDistanceScalLenghToStartXConverter" />
+    <converters:TargetDistanceScalLengthToLineTicknessConverter x:Key="Motor.ATP.200H.TargetDistanceScalLengthToLineTicknessConverter" />
+    <converters:TargitDistanceToScalConverter x:Key="Motor.ATP.200H.TargitDistanceToScalConverter" />
+    <converters:TargetDistanceFormatConverter x:Key="Motor.ATP.200H.TargetDistanceFormatConverter" />
+
+    <converter1:ValueMultiplicativeConverter x:Key="Motor.ATP.200H.ValueMultiplicativeConverter" />
+    <converter1:MultiplicationConverter x:Key="Motor.ATP.200H.Multiplication1O2Converter" Multiplier="0.5" />
+
+    <converters:PlanZonePointToPathDataConverter x:Key="Motor.ATP.200H.PlanZonePointToPathDataConverter" />
+
+    <converters:LightPercentToBackColorConverter x:Key="Motor.ATP.200H.LightPercentToBackColorConverter" />
+
+    <converters:BrakeWaringColorToColorConverter x:Key="Motor.ATP.200H.BrakeWaringColorToColorConverter" />
+    <converters:BrakeWarningLevelToScalConverter x:Key="Motor.ATP.200H.BrakeWarningLevelToScalConverter" />
+    <converters:CTCSTypeToTextConverter x:Key="Motor.ATP.200H.CtcsTypeToTextConverter" />
+    <converter1:BoolVisibilityConverter x:Key="Motor.ATP.200H.BoolVisibilityConverter" />
+
+    <converters:DegreeScaleTextAngleConverter x:Key="Motor.ATP.200H.DegreeScaleTextAngleConverter" />
+    <converter1:IsNullToVisibilityConverter x:Key="Motor.ATP.200H.NotNullToVisibilityVisibleConverter"
+                                            VisibilityWhenNotNull="Visible"
+                                            VisibilityWhenNull="Hidden" />
+
+    <converters:SpeedToAngleConverter x:Key="Motor.ATP.200H.SpeedToAngleConverter" />
+    <converters:SpeedToArcAngleConverter x:Key="Motor.ATP.200H.SpeedToArcAngleConverter" />
+    <converters:FindSpeedHookEndAngleConverter x:Key="Motor.ATP.200H.FindSpeedHookEndAngleConverter" />
+    <converters:FindSpeedHookColorConverter x:Key="Motor.ATP.200H.FindSpeedHookColorConverter" />
+    <converters:FindSpeedHookStartAngleConverter x:Key="Motor.ATP.200H.FindSpeedHookStartAngleConverter" />
+
+    <converters:SpeedScalToViewHeightConverter x:Key="Motor.ATP.200H.SpeedScalToViewHeightConverter" />
+    <converters:DistanceScalToViewWidthConverter x:Key="Motor.ATP.200H.DistanceScalToViewWidthConverter" />
+    <converters:DistanceValueToViewWidthConverter x:Key="Motor.ATP.200H.DistanceValueToViewWidthConverter" />
+    <converters:DistanceScalToTextViewWidthConverter x:Key="Motor.ATP.200H.DistanceScalToTextViewWidthConverter" />
+    <converters:SpeedScalToTextViewHeightConverter x:Key="Motor.ATP.200H.SpeedScalToTextViewHeightConverter" />
+
+    <converters:DistanceValueToActureWidthConverter x:Key="Motor.ATP.200H.DistanceValueToActureWidthConverter" />
+
+    <converters:GradientDistanceToRectWidthConverter x:Key="Motor.ATP.200H.GradientDistanceToRectWidthConverter" />
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.ATP.200H.TrainLengthToStringConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{StaticResource Motor.ATP.200H.Float8}" Content="{StaticResource Motor.ATP.Infrasturcture.String.8Car}" />
+            <converter1:ObjectContentPair Key="{StaticResource Motor.ATP.200H.Float16}" Content="{StaticResource Motor.ATP.Infrasturcture.String.16Car}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.ATP.200H.DriverInputStateToShowingStringConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static userAction:DriverInputState.Other}" Content="{StaticResource Motor.ATP.Infrasturcture.String.InputingNumber}" />
+            <converter1:ObjectContentPair Key="{x:Static userAction:DriverInputState.Character}" Content="{StaticResource Motor.ATP.Infrasturcture.String.InputingChar}" />
+            <converter1:ObjectContentPair Key="{x:Static userAction:DriverInputState.Number}" Content="{StaticResource Motor.ATP.Infrasturcture.String.InputingNumber}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.ATP.200H.SpeedChangeTypeToImageConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static speedMonitoringSection:SpeedChangeType.None}" Content="{StaticResource Motor.ATP.Infrasturcture.Image.Null}" />
+            <converter1:ObjectContentPair Key="{x:Static speedMonitoringSection:SpeedChangeType.Acceleration}" Content="{StaticResource Motor.ATP.Infrasturcture.Image.预告加速}" />
+            <converter1:ObjectContentPair Key="{x:Static speedMonitoringSection:SpeedChangeType.Decelerate}" Content="{StaticResource Motor.ATP.Infrasturcture.Image.预告减速}" />
+            <converter1:ObjectContentPair Key="{x:Static speedMonitoringSection:SpeedChangeType.DecelerateToZero}" Content="{StaticResource Motor.ATP.Infrasturcture.Image.预告减速到0}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.ATP.200H.GradientTypeToBackgroudConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static speedMonitoringSection:GradientType.None}" Content="{StaticResource Motor.ATP.200H.BlackBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static speedMonitoringSection:GradientType.Upslope}" Content="{StaticResource Motor.ATP.200H.BlackBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static speedMonitoringSection:GradientType.Downslope}" Content="{StaticResource Motor.ATP.200H.WhiteBrush}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.ATP.200H.GradientTypeToForegroudConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static speedMonitoringSection:GradientType.None}" Content="{StaticResource Motor.ATP.200H.WhiteBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static speedMonitoringSection:GradientType.Upslope}" Content="{StaticResource Motor.ATP.200H.WhiteBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static speedMonitoringSection:GradientType.Downslope}" Content="{StaticResource Motor.ATP.200H.BlackBrush}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.ATP.200H.GradientTypeToAddDelStringConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static speedMonitoringSection:GradientType.None}" Content="+" />
+            <converter1:ObjectContentPair Key="{x:Static speedMonitoringSection:GradientType.Upslope}" Content="+" />
+            <converter1:ObjectContentPair Key="{x:Static speedMonitoringSection:GradientType.Downslope}" Content="-" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.ATP.200H.ForecastInformationTypeToImageConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static interface:ForecastInformationType.None}" Content="{StaticResource Motor.ATP.Infrasturcture.Image.Null}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ForecastInformationType.Bridge}" Content="{StaticResource Motor.ATP.Infrasturcture.Image.ForecastInfoBridge}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ForecastInformationType.Station}" Content="{StaticResource Motor.ATP.Infrasturcture.Image.ForecastInfoStation}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ForecastInformationType.Tunnel}" Content="{StaticResource Motor.ATP.Infrasturcture.Image.ForecastInfoTunnel}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ForecastInformationType.TemporarySpeedLimit}" Content="{StaticResource Motor.ATP.Infrasturcture.Image.ForecastInfoTemporarySpeedLimit}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ForecastInformationType.PhaseSeparatingSectionYellow}" Content="{StaticResource Motor.ATP.Infrasturcture.Image.ForecastInfoPhaseSeparatingSectionYellow}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ForecastInformationType.PhaseSeparatingSection}" Content="{StaticResource Motor.ATP.Infrasturcture.Image.ForecastInfoPhaseSeparatingSectionGray}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.ATP.200H.ForecastIsolatedTypeToTextConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static interface:ForecastInformationType.Isolated}" Content="{StaticResource Motor.ATP.Infrasturcture.String.ControlTypeIsolated}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.ATP.200H.BrakeTypeToImageSourceConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static interface:BrakeType.None}" Content="{StaticResource Motor.ATP.Infrasturcture.Image.Null}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:BrakeType.WeakNormal}" Content="{StaticResource Motor.ATP.Infrasturcture.Image.弱常用制动}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:BrakeType.MiddlingNormal}" Content="{StaticResource Motor.ATP.Infrasturcture.Image.中等常用制动}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:BrakeType.MaxNormal}" Content="{StaticResource Motor.ATP.Infrasturcture.Image.常用制动}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:BrakeType.AllowRelease}" Content="{StaticResource Motor.ATP.Infrasturcture.Image.允许缓解}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:BrakeType.Emergent}" Content="{StaticResource Motor.ATP.Infrasturcture.Image.紧急制动}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converters:PopViewStringNameToContentConverter x:Key="Motor.ATP.200H.PopViewStringNameToContentConverter" />
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.ATP.200H.BoolToMsgArrawUpConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{StaticResource Motor.ATP.200H.BooleanTrue}" Content="{StaticResource Motor.ATP.Infrasturcture.Image.箭头_上_亮}" />
+            <converter1:ObjectContentPair Key="{StaticResource Motor.ATP.200H.BooleanFalse}" Content="{StaticResource Motor.ATP.Infrasturcture.Image.箭头_上_暗}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.ATP.200H.EnterOrQuitToQuitStringConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static interface:EnterOrQuit.Enter}" Content="" />
+            <converter1:ObjectContentPair Key="{x:Static interface:EnterOrQuit.Quit}" Content="{StaticResource Motor.ATP.Infrasturcture.String.Quit}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.ATP.200H.BoolToMsgArrawDownConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{StaticResource Motor.ATP.200H.BooleanTrue}" Content="{StaticResource Motor.ATP.Infrasturcture.Image.箭头_下_亮}" />
+            <converter1:ObjectContentPair Key="{StaticResource Motor.ATP.200H.BooleanFalse}" Content="{StaticResource Motor.ATP.Infrasturcture.Image.箭头_下_暗}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.ATP.200H.MessageStyleToIsFlickingConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static interface:MessageStyle.FlashFrame}" Content="{StaticResource Motor.ATP.200H.BooleanTrue}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:MessageStyle.Ordinary}" Content="{StaticResource Motor.ATP.200H.BooleanFalse}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.ATP.200H.DriverInputStateToStringConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static userAction:DriverInputState.Number}" Content="{StaticResource Motor.ATP.Infrasturcture.String.InputingNumber}" />
+            <converter1:ObjectContentPair Key="{x:Static userAction:DriverInputState.Character}" Content="{StaticResource Motor.ATP.Infrasturcture.String.InputingChar}" />
+            <converter1:ObjectContentPair Key="{x:Static userAction:DriverInputState.Other}" Content="" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.ATP.200H.TrainControlTypeToStringConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static interface:TrainControlType.ATP}" Content="{DynamicResource Motor.ATP.Infrasturcture.String.MaichineControl}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:TrainControlType.Driver}" Content="{DynamicResource Motor.ATP.Infrasturcture.String.HumanControl}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:TrainControlType.Unkown}" Content="" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.ATP.200H.GSMStateToImageConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static interface:GSMRState.Invalidate}" Content="{StaticResource Motor.ATP.Infrasturcture.Image.Null}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:GSMRState.None}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.GSM_灰}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:GSMRState.HasOne}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.GSM_1}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:GSMRState.HasTwo}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.GSM_2}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:GSMRState.HasThree}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.GSM_3}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.ATP.200H.RBCStateToImageConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static interface:RBCConnectState.Invalidate}" Content="{StaticResource Motor.ATP.Infrasturcture.Image.Null}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:RBCConnectState.Unconnected}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.未与RBC相连}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:RBCConnectState.Connecting}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.正在与RBC相连}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:RBCConnectState.Connected}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.已经与RBC相连}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:RBCConnectState.ConnectFault}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.未与RBC相连}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.ATP.200H.CabSignalCodeToImageConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.Unknown}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.Null}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.L6}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.Null}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.L5}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.CabSignal_L5}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.L4}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.CabSignal_L4}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.L3}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.CabSignal_L3}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.L2}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.CabSignal_L2}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.L}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.CabSignal_L}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.LU}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.CabSignal_LU}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.LU2}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.CabSignal_LU2}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.U}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.CabSignal_U}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.U2}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.CabSignal_U2}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.U2S}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.CabSignal_U2S}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.UU}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.CabSignal_UU}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.UUS}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.CabSignal_UUS}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.HB}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.CabSignal_HB}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.HU}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.CabSignal_HU}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.H}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.CabSignal_H}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.Code25}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.Null}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.Code27}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.Null}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.NC}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.CabSignal_HZ}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.ATP.200H.CabSignalCodeToFlickerConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.Unknown}" Content="{StaticResource Motor.ATP.200H.BooleanFalse}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.L6}" Content="{StaticResource Motor.ATP.200H.BooleanFalse}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.L5}" Content="{StaticResource Motor.ATP.200H.BooleanFalse}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.L4}" Content="{StaticResource Motor.ATP.200H.BooleanFalse}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.L3}" Content="{StaticResource Motor.ATP.200H.BooleanFalse}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.L2}" Content="{StaticResource Motor.ATP.200H.BooleanFalse}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.L}" Content="{StaticResource Motor.ATP.200H.BooleanFalse}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.LU}" Content="{StaticResource Motor.ATP.200H.BooleanFalse}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.LU2}" Content="{StaticResource Motor.ATP.200H.BooleanFalse}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.U}" Content="{StaticResource Motor.ATP.200H.BooleanFalse}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.U2}" Content="{StaticResource Motor.ATP.200H.BooleanFalse}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.U2S}" Content="{StaticResource Motor.ATP.200H.BooleanTrue}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.UU}" Content="{StaticResource Motor.ATP.200H.BooleanFalse}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.UUS}" Content="{StaticResource Motor.ATP.200H.BooleanTrue}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.HB}" Content="{StaticResource Motor.ATP.200H.BooleanTrue}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.HU}" Content="{StaticResource Motor.ATP.200H.BooleanFalse}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.H}" Content="{StaticResource Motor.ATP.200H.BooleanFalse}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.Code25}" Content="{StaticResource Motor.ATP.200H.BooleanFalse}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.Code27}" Content="{StaticResource Motor.ATP.200H.BooleanFalse}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:CabSignalCode.NC}" Content="{StaticResource Motor.ATP.200H.BooleanFalse}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.ATP.200H.ATPColorToPointerColortConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static interface:ATPColor.None}" Content="{StaticResource Motor.ATP.200H.GrayBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ATPColor.LightGrey}" Content="{StaticResource Motor.ATP.200H.GrayBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ATPColor.Grey}" Content="{StaticResource Motor.ATP.200H.GrayBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ATPColor.Yellow}" Content="{StaticResource Motor.ATP.200H.YellowBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ATPColor.Orange}" Content="{StaticResource Motor.ATP.200H.OrangiBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ATPColor.Red}" Content="{StaticResource Motor.ATP.200H.RedBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ATPColor.White}" Content="{StaticResource Motor.ATP.200H.WhiteBrush}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.ATP.200H.ATPColorToArcColortConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static interface:ATPColor.None}" Content="{StaticResource Motor.ATP.200H.TransparentBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ATPColor.LightGrey}" Content="{StaticResource Motor.ATP.200H.GrayBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ATPColor.Grey}" Content="{StaticResource Motor.ATP.200H.GrayBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ATPColor.Yellow}" Content="{StaticResource Motor.ATP.200H.YellowBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ATPColor.Orange}" Content="{StaticResource Motor.ATP.200H.OrangiBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ATPColor.Red}" Content="{StaticResource Motor.ATP.200H.RedBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ATPColor.White}" Content="{StaticResource Motor.ATP.200H.WhiteBrush}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.ATP.200H.ATPColorToTextColortConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static interface:ATPColor.None}" Content="{StaticResource Motor.ATP.200H.BlackBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ATPColor.LightGrey}" Content="{StaticResource Motor.ATP.200H.BlackBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ATPColor.Grey}" Content="{StaticResource Motor.ATP.200H.BlackBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ATPColor.Yellow}" Content="{StaticResource Motor.ATP.200H.BlackBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ATPColor.Orange}" Content="{StaticResource Motor.ATP.200H.BlackBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ATPColor.Red}" Content="{StaticResource Motor.ATP.200H.WhiteBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ATPColor.White}" Content="{StaticResource Motor.ATP.200H.BlackBrush}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.ATP.200H.CanZoomInToImageConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{StaticResource Motor.ATP.200H.BooleanTrue}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.放大亮}" />
+            <converter1:ObjectContentPair Key="{StaticResource Motor.ATP.200H.BooleanFalse}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.放大暗}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.ATP.200H.CanZoomOutToImageConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{StaticResource Motor.ATP.200H.BooleanTrue}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.缩小亮}" />
+            <converter1:ObjectContentPair Key="{StaticResource Motor.ATP.200H.BooleanFalse}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.缩小暗}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.ATP.200H.ControlTypeToStringConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static interface:ControlType.Unknown}" Content="{x:Static system:String.Empty}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ControlType.FullSupervision}" Content="{DynamicResource Motor.ATP.Infrasturcture.String.ControlTypeFullSupervision}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ControlType.PartialSupervision}" Content="{DynamicResource Motor.ATP.Infrasturcture.String.ControlTypePartialSupervision}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ControlType.OnSight}" Content="{DynamicResource Motor.ATP.Infrasturcture.String.ControlTypeOnSight}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ControlType.CallingOn}" Content="{DynamicResource Motor.ATP.Infrasturcture.String.ControlTypeCallingOn}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ControlType.Shunting}" Content="{DynamicResource Motor.ATP.Infrasturcture.String.ControlTypeShunting}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ControlType.LKJ}" Content="{DynamicResource Motor.ATP.Infrasturcture.String.ControlTypeLKJEn}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ControlType.StandBy}" Content="{DynamicResource Motor.ATP.Infrasturcture.String.ControlTypeStandBy}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ControlType.Isolated}" Content="{DynamicResource Motor.ATP.Infrasturcture.String.ControlTypeIsolated}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ControlType.RO}" Content="{DynamicResource Motor.ATP.Infrasturcture.String.ControlTypeRO}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ControlType.Trip}" Content="{DynamicResource Motor.ATP.Infrasturcture.String.ControlTypeTrip}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ControlType.PostTrip}" Content="{DynamicResource Motor.ATP.Infrasturcture.String.ControlTypePostTrip}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ControlType.Fault}" Content="{DynamicResource Motor.ATP.Infrasturcture.String.ControlTypeFault}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ControlType.Overtaking}" Content="{DynamicResource Motor.ATP.Infrasturcture.String.ControlTypeOvertaking}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:ControlType.Sleep}" Content="{DynamicResource Motor.ATP.Infrasturcture.String.ControlTypeSleep}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.ATP.200H.OpenDoorLocationToImageConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static interface:OpenDoorLocation.Unkown}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.Null}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:OpenDoorLocation.Left}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.Open_Left}" />
+            <converter1:ObjectContentPair Key="{x:Static interface:OpenDoorLocation.Right}" Content="{DynamicResource Motor.ATP.Infrasturcture.Image.Open_Right}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+</ResourceDictionary>

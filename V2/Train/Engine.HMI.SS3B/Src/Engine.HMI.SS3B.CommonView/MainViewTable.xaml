@@ -1,0 +1,29 @@
+﻿<ItemsControl x:Class="Engine.HMI.SS3B.CommonView.MainViewTable"
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+              d:DataContext="MainViewTableModel"
+              d:DesignHeight="300"
+              d:DesignWidth="300"
+              mc:Ignorable="d">
+    <ItemsControl.ItemTemplate>
+        <DataTemplate>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock Foreground="Red" Text="{Binding Name}" />
+                <TextBlock Grid.Column="1"
+                           Foreground="Red"
+                           Text="{Binding Info1}" />
+                <TextBlock Grid.Column="2"
+                           Foreground="Red"
+                           Text="{Binding MineInfo}" />
+            </Grid>
+
+        </DataTemplate>
+    </ItemsControl.ItemTemplate>
+</ItemsControl>

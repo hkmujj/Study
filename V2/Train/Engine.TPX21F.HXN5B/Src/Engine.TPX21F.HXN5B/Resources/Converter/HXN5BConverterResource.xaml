@@ -1,0 +1,550 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:constant="clr-namespace:Engine.TPX21F.HXN5B.Model.Domain.Constant"
+                    xmlns:converter="clr-namespace:Engine.TPX21F.HXN5B.Converter"
+                    xmlns:converter1="clr-namespace:MMI.Facility.WPFInfrastructure.Converter;assembly=MMI.Facility.WPFInfrastructure"
+                    xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+                    xmlns:viewSource="clr-namespace:Engine.TPX21F.HXN5B.Model.ViewSource">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Base/HXN5BBaseResource.xaml" />
+        <ResourceDictionary Source="../Image/HXN5BImageResource.xaml" />
+        <ResourceDictionary Source="../Strings/StringResource_CH.xaml" />
+        <ResourceDictionary Source="../Styles/HXN5BTextStyle.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+
+    <converter:FindItemIndexConverter x:Key="FindItemIndexConverter" />
+
+    <converter:SubtractionConverter x:Key="SubtractionConverter" />
+
+    <converter:EmergerBrakeCoutDownToStringConverter x:Key="EmergerBrakeCoutDownToStringConverter" />
+
+    <converter:DegreeScaleTextAngleConverter x:Key="DegreeScaleTextAngleConverter" />
+
+    <converter:AccumulativeValueToStringConverter x:Key="AccumulativeValueToStringConverter" />
+
+    <converter:SpeedValueToForegroundConverter x:Key="SpeedValueToForegroundConverter"
+                                               RedBrush="{StaticResource ContentBackgroundRedBrush}"
+                                               WhiteBrush="{StaticResource ForegroundWhiteBrush}" />
+
+    <converter:TestConditionToForgroundConverter x:Key="TestConditionToForgroundConverter"
+                                                 BlueBrush="DeepSkyBlue"
+                                                 WhiteBrush="{StaticResource ForegroundWhiteBrush}" />
+
+    <converter:TowBrakeNewtToForegroundConverter x:Key="TowBrakeNewtToForegroundConverter"
+                                                 BrakeBrush="{StaticResource ContentBackgroundRedBrush}"
+                                                 TowBrush="{StaticResource ContentLimeGreenBrush}" />
+
+    <converter:TargetDistanceScalLenghToStartXConverter x:Key="TargetDistanceScalLenghToStartXConverter" />
+    <converter:TargetDistanceScalLenghToStartX2Converter x:Key="TargetDistanceScalLenghToStartX2Converter" />
+    <converter:TargetDistanceScalLengthToLineTicknessConverter x:Key="TargetDistanceScalLengthToLineTicknessConverter" />
+    <converter:TargitDistanceToScalConverter x:Key="TargitDistanceToScalConverter" />
+    <converter:TargetDistanceFormatConverter x:Key="TargetDistanceFormatConverter" />
+    <converter1:ValueMultiplicativeConverter x:Key="ValueMultiplicativeConverter" />
+    <converter1:MathConverter x:Key="MathConverter" />
+
+    <converter:DoubleAbsConverter x:Key="DoubleAbsConverter" />
+
+    <converter:PortDataStyleToStringFormatConverter x:Key="PortDataStyleToStringFormatConverter" />
+
+    <converter:SpeedToAngleConverter x:Key="TotalAirToAngleConverter" ValueDialPlate="{Binding Source={x:Static viewSource:TotalWindCylinderViewValueDialPlate.Instance}}" />
+    <converter:SpeedToAngleConverter x:Key="BrakeToAngleConverter" ValueDialPlate="{Binding Source={x:Static viewSource:BrakeCylinderViewValueDialPlate.Instance}}" />
+    <converter:SpeedToAngleConverter x:Key="SpeedToAngleConverter" ValueDialPlate="{Binding Source={x:Static viewSource:MonitorViewValueDialPlate.Instance}}" />
+    <converter:SpeedToAngleConverter x:Key="TestSpeedToAngleConverter" ValueDialPlate="{Binding Source={x:Static viewSource:TestSpeedSpeedValueDialPlate.Instance}}" />
+
+    <converter1:SelectObjectContentConverter x:Key="WorkStateToTitleForegroudConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:WorkState.Tow}" Content="{StaticResource ContentBlueBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:WorkState.Unkown}" Content="{x:Static Brushes.DarkGray}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:WorkState.Slow}" Content="{x:Static Brushes.DarkGray}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:WorkState.Brake}" Content="{x:Static Brushes.DarkGray}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:WorkState.Preset}" Content="{x:Static Brushes.DarkGray}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:WorkState.EmergBrake}" Content="{x:Static Brushes.DarkGray}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:WorkState.NormalBrake}" Content="{x:Static Brushes.DarkGray}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:WorkState.PunishmentBrake}" Content="{x:Static Brushes.DarkGray}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="WorkStateToContentForegroudConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:WorkState.Tow}" Content="{StaticResource ContentBlueBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:WorkState.Unkown}" Content="{x:Static Brushes.White}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:WorkState.Slow}" Content="{x:Static Brushes.White}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:WorkState.Brake}" Content="{x:Static Brushes.White}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:WorkState.Preset}" Content="{x:Static Brushes.White}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:WorkState.EmergBrake}" Content="{x:Static Brushes.White}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:WorkState.NormalBrake}" Content="{x:Static Brushes.White}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:WorkState.PunishmentBrake}" Content="{x:Static Brushes.White}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="MonitorItemStateToStringConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:MonitorItemState.Close}" Content="{StaticResource StringClose}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:MonitorItemState.Open}" Content="{StaticResource StringOpen}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="SoftSwitchDirectionToEllipseFillBrushConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:SoftSwitchDirection.RightUp}" Content="{StaticResource ForegroundWhiteBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:SoftSwitchDirection.RightDown}" Content="{StaticResource ContentLimeGreenBrush}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+
+    <converter1:SelectObjectContentConverter x:Key="TestItemPassedToBackgroundConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{StaticResource BoolTrue}" Content="{StaticResource ContentLimeGreenBrush}" />
+            <converter1:ObjectContentPair Key="{StaticResource BoolFalse}" Content="{StaticResource ContentDimGrayBrush}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="BoolToSelectedBlueBrushConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{StaticResource BoolTrue}" Content="{StaticResource SelectedBlueBrush}" />
+            <converter1:ObjectContentPair Key="{StaticResource BoolFalse}" Content="{StaticResource ForegroundWhiteBrush}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="BrakeTrainTypeToStringConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:TrainType.Main}" Content="{StaticResource StringLocalMachine}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:TrainType.AssistingVehicle}" Content="{StaticResource StringReservMachine}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+
+    <converter1:SelectObjectContentConverter x:Key="BrakePressureToStringConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:AirBrakePressure.KP500}" Content="500KPa" />
+            <converter1:ObjectContentPair Key="{x:Static constant:AirBrakePressure.KP600}" Content="600KPa" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="BrakeAirSupplyToStringConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:UseState.Cutoff}" Content="{StaticResource StringNotMakeupAir}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:UseState.Using}" Content="{StaticResource StringMakeupAir}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="BrakeUseStateToStringConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:UseState.Cutoff}" Content="{StaticResource StringCutoff}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:UseState.Using}" Content="{StaticResource StringPutInto}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="EleAirBrakeStateToStringConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:EleAirBrakeState.Cutoff}">
+                <converter1:ObjectContentPair.Content>
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource ContentBrakeSysWhiteSmallTextStyle}" Text="{StaticResource StringEleAir}" />
+                        <TextBlock Style="{StaticResource ContentBrakeSysWhiteSmallTextStyle}" Text="{StaticResource StringCutoff}" />
+                    </StackPanel>
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+            <converter1:ObjectContentPair Key="{x:Static constant:EleAirBrakeState.Using}">
+                <converter1:ObjectContentPair.Content>
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource ContentBrakeSysWhiteSmallTextStyle}" Text="{StaticResource StringEleAir}" />
+                        <TextBlock Style="{StaticResource ContentBrakeSysWhiteSmallTextStyle}" Text="{StaticResource StringPutInto}" />
+                    </StackPanel>
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+            <converter1:ObjectContentPair Key="{x:Static constant:EleAirBrakeState.Unkown}">
+                <converter1:ObjectContentPair.Content>
+                    <TextBlock Style="{StaticResource ContentBrakeSysWhiteSmallTextStyle}" Text="- - -" />
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="CutableItemStateToStringConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:CutableItemState.PutInto}" Content="{StaticResource StringPutInto}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:CutableItemState.CutOff}" Content="{StaticResource StringIsolation}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="MonitorControlSwitchToStringConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:MonitorControlSwitch.Cutoff}" Content="{StaticResource StringIsolation}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:MonitorControlSwitch.Move}" Content="{StaticResource StringMoveTrain}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:MonitorControlSwitch.Running}" Content="{StaticResource StringRunning}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:MonitorControlSwitch.Start}" Content="{StaticResource StringStartup}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter:MonitorContentToStringConverter x:Key="MonitorContentToStringConverter"
+                                               CutableItemStateToSTringConverter="{StaticResource CutableItemStateToStringConverter}"
+                                               MonitorControlSwitchToStringConverter="{StaticResource MonitorControlSwitchToStringConverter}"
+                                               MonitorItemStateToStringConverter="{StaticResource MonitorItemStateToStringConverter}" />
+    <BorderGapMaskConverter x:Key="BorderGapMaskConverter" />
+    <converter:BorderGapCenterMaskConverter x:Key="BorderGapCenterMaskConverter" />
+
+    <converter1:SelectObjectContentConverter x:Key="TrainDirectionToImageConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:TrainDirection.Unkown}" Content="{StaticResource Img方向不明}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:TrainDirection.Backward}" Content="{StaticResource Img方向向后}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:TrainDirection.Forward}" Content="{StaticResource Img方向向前}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="TrainDirectionToTextConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:TrainDirection.Unkown}" Content="{StaticResource StringZeroLevel}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:TrainDirection.Backward}" Content="{StaticResource StringBackward}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:TrainDirection.Forward}" Content="{StaticResource StringForward}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="HandlLevelToStringConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:HandlLevel.Unkown}" Content="{StaticResource StringUnkown}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:HandlLevel.Tow1}" Content="1位" />
+            <converter1:ObjectContentPair Key="{x:Static constant:HandlLevel.Tow2}" Content="2位" />
+            <converter1:ObjectContentPair Key="{x:Static constant:HandlLevel.Tow3}" Content="3位" />
+            <converter1:ObjectContentPair Key="{x:Static constant:HandlLevel.Tow4}" Content="4位" />
+            <converter1:ObjectContentPair Key="{x:Static constant:HandlLevel.Tow5}" Content="5位" />
+            <converter1:ObjectContentPair Key="{x:Static constant:HandlLevel.Tow6}" Content="6位" />
+            <converter1:ObjectContentPair Key="{x:Static constant:HandlLevel.Tow7}" Content="7位" />
+            <converter1:ObjectContentPair Key="{x:Static constant:HandlLevel.Tow8}" Content="8位" />
+            <converter1:ObjectContentPair Key="{x:Static constant:HandlLevel.Idle}" Content="Idle" />
+            <converter1:ObjectContentPair Key="{x:Static constant:HandlLevel.SetUp}" Content="set-up" />
+            <converter1:ObjectContentPair Key="{x:Static constant:HandlLevel.EleBrak1}" Content="电制1位" />
+            <converter1:ObjectContentPair Key="{x:Static constant:HandlLevel.EleBrak2}" Content="电制2位" />
+            <converter1:ObjectContentPair Key="{x:Static constant:HandlLevel.EleBrak3}" Content="电制3位" />
+            <converter1:ObjectContentPair Key="{x:Static constant:HandlLevel.EleBrak4}" Content="电制4位" />
+            <converter1:ObjectContentPair Key="{x:Static constant:HandlLevel.EleBrak5}" Content="电制5位" />
+            <converter1:ObjectContentPair Key="{x:Static constant:HandlLevel.EleBrak6}" Content="电制6位" />
+            <converter1:ObjectContentPair Key="{x:Static constant:HandlLevel.EleBrak7}" Content="电制7位" />
+            <converter1:ObjectContentPair Key="{x:Static constant:HandlLevel.EleBrak8}" Content="电制8位" />
+            <converter1:ObjectContentPair Key="{x:Static constant:HandlLevel.EleBrak9}" Content="电制9位" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+
+    <converter1:SelectObjectContentConverter x:Key="WorkStateToStringConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:WorkState.Unkown}" Content="{StaticResource StringUnkown}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:WorkState.Tow}" Content="{StaticResource StringTow}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:WorkState.Preset}" Content="{StaticResource StringPreset}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:WorkState.Slow}" Content="{StaticResource StringCoasting}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:WorkState.Brake}" Content="{StaticResource StringBrake}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:WorkState.EmergBrake}" Content="{StaticResource StringEmergBrake}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:WorkState.PunishmentBrake}" Content="{StaticResource StringPunishmentBrake}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:WorkState.NormalBrake}" Content="{StaticResource StringNormalBrake}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="BcCutToImageConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:BcCutState.Null}" Content="{StaticResource ImgNull}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:BcCutState.BC1}" Content="{StaticResource ImgBC1隔离}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:BcCutState.BC2}" Content="{StaticResource ImgBC2隔离}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="SonaToImageConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:SonaState.Null}" Content="{StaticResource ImgNull}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:SonaState.Sona}" Content="{StaticResource Img喇叭按钮}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+
+    <converter1:SelectObjectContentConverter x:Key="RacingStateToImageConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:RacingState.Null}" Content="{StaticResource ImgNull}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:RacingState.Racing}" Content="{StaticResource Img车轮空转}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="SandStateToImageConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:SandState.Null}" Content="{StaticResource ImgNull}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:SandState.Sand}" Content="{StaticResource Img撒砂指示}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="ReconnexionAlertStateToImageConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:ReconnexionAlertState.Null}" Content="{StaticResource ImgNull}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:ReconnexionAlertState.Alert}" Content="{StaticResource Img重联警铃信号}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="EmergBrakeStateToImageConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:EmergBrakeState.Relase}" Content="{StaticResource ImgNull}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:EmergBrakeState.Occuse}" Content="{StaticResource Img紧急制动}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="EmergBrakeStateToStringConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:EmergBrakeState.Relase}" Content="{x:Null}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:EmergBrakeState.Occuse}" Content="{StaticResource StringEmergBrake}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="ParkingBrakeStateToContentConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:ParkingBrakeState.Unkown}">
+                <converter1:ObjectContentPair.Content>
+                    <Image Source="{StaticResource ImgNull}" />
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+            <converter1:ObjectContentPair Key="{x:Static constant:ParkingBrakeState.Relase}">
+                <converter1:ObjectContentPair.Content>
+                    <Image Source="{StaticResource Img停放制动缓解}" />
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+            <converter1:ObjectContentPair Key="{x:Static constant:ParkingBrakeState.Press}">
+                <converter1:ObjectContentPair.Content>
+                    <Image Source="{StaticResource Img停放制动施加}" />
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+            <converter1:ObjectContentPair Key="{x:Static constant:ParkingBrakeState.Cutoff}">
+                <converter1:ObjectContentPair.Content>
+                    <Image Source="{StaticResource Img停放制动隔离}" />
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+            <converter1:ObjectContentPair Key="{x:Static constant:ParkingBrakeState.Error}">
+                <converter1:ObjectContentPair.Content>
+                    <Border Background="{StaticResource ContentBackgroundRedBrush}" Padding="0,6">
+                        <Grid Margin="0,6">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="{StaticResource StringParking}" />
+                            <TextBlock Grid.Row="1"
+                                       Style="{StaticResource ContentConstBlackTextStyle}"
+                                       Text="{StaticResource StringError}" />
+                        </Grid>
+                    </Border>
+
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="StorageBatteryStateToImageConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:StorageBatteryState.NoChanging}" Content="{StaticResource Img蓄电池不充电}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:StorageBatteryState.Changing}" Content="{StaticResource ImgNull}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="PCSStateToContentConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:PCSState.Unkown}">
+                <converter1:ObjectContentPair.Content>
+                    <Border />
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+            <converter1:ObjectContentPair Key="{x:Static constant:PCSState.Relase}">
+                <converter1:ObjectContentPair.Content>
+                    <Border Background="{StaticResource ContentBackgroundRedBrush}">
+                        <Grid Margin="0,6">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="PCR" />
+                            <TextBlock Grid.Row="1"
+                                       Style="{StaticResource ContentConstBlackTextStyle}"
+                                       Text="{StaticResource StringDisconnect}" />
+                        </Grid>
+                    </Border>
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="AcceleratedSpeedStateToContentConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:AcceleratedSpeedState.Zero}">
+                <converter1:ObjectContentPair.Content>
+                    <Border />
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+            <converter1:ObjectContentPair Key="{x:Static constant:AcceleratedSpeedState.LargerThan0}">
+                <converter1:ObjectContentPair.Content>
+                    <ed:BlockArrow Fill="{StaticResource ContentLimeGreenBrush}"
+                                   Orientation="Up"
+                                   StrokeThickness="0" />
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+            <converter1:ObjectContentPair Key="{x:Static constant:AcceleratedSpeedState.SmallerThan0}">
+                <converter1:ObjectContentPair.Content>
+                    <ed:BlockArrow Fill="{StaticResource ContentBackgroundYellowBrush}"
+                                   Orientation="Down"
+                                   StrokeThickness="0" />
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="OtherTrainAlertToContentConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:OtherTrainAlert.Null}">
+                <converter1:ObjectContentPair.Content>
+                    <Border />
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+            <converter1:ObjectContentPair Key="{x:Static constant:OtherTrainAlert.Alert}">
+                <converter1:ObjectContentPair.Content>
+                    <Border Background="{StaticResource ContentBackgroundRedBrush}">
+                        <Grid Margin="0,6">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="{StaticResource StringOtherTrain}" />
+                            <TextBlock Grid.Row="1"
+                                       Style="{StaticResource ContentConstBlackTextStyle}"
+                                       Text="{StaticResource StringDisconnect}" />
+                        </Grid>
+                    </Border>
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="SingleBrakeAlertToContentConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:SingleBrakeAlert.Null}">
+                <converter1:ObjectContentPair.Content>
+                    <Border />
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+            <converter1:ObjectContentPair Key="{x:Static constant:SingleBrakeAlert.Alert}">
+                <converter1:ObjectContentPair.Content>
+                    <Border Background="{StaticResource ContentBackgroundRedBrush}">
+                        <Grid Margin="0,6">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="{StaticResource StringSingle}" />
+                            <TextBlock Grid.Row="1"
+                                       Style="{StaticResource ContentConstBlackTextStyle}"
+                                       Text="{StaticResource StringBrake}" />
+                        </Grid>
+                    </Border>
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="VigilantStateToContentConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:VigilantState.Null}">
+                <converter1:ObjectContentPair.Content>
+                    <Image Source="{StaticResource ImgNull}" />
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+            <converter1:ObjectContentPair Key="{x:Static constant:VigilantState.Vigilanting}">
+                <converter1:ObjectContentPair.Content>
+                    <Image Source="{StaticResource ImgNull}" />
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+            <converter1:ObjectContentPair Key="{x:Static constant:VigilantState.Vigilanted}">
+                <converter1:ObjectContentPair.Content>
+                    <Border Background="{StaticResource ContentBackgroundRedBrush}">
+                        <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="{StaticResource StringVigilant}" />
+                    </Border>
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="NormalBrakeToContentConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:NormalBrake.Unkown}">
+                <converter1:ObjectContentPair.Content>
+                    <Image Source="{StaticResource ImgNull}" />
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+            <converter1:ObjectContentPair Key="{x:Static constant:NormalBrake.Relase}">
+                <converter1:ObjectContentPair.Content>
+                    <Image Source="{StaticResource Img常用制动缓解}" />
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+            <converter1:ObjectContentPair Key="{x:Static constant:NormalBrake.Press}">
+                <converter1:ObjectContentPair.Content>
+                    <Image Source="{StaticResource Img常用制动施加}" />
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+            <converter1:ObjectContentPair Key="{x:Static constant:NormalBrake.Error}">
+                <converter1:ObjectContentPair.Content>
+                    <Border Background="{StaticResource ContentBackgroundRedBrush}">
+                        <Grid Margin="0,6">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="{StaticResource StringCommonUse}" />
+                            <TextBlock Grid.Row="1"
+                                       Style="{StaticResource ContentConstBlackTextStyle}"
+                                       Text="{StaticResource StringError}" />
+                        </Grid>
+                    </Border>
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="OperationConsleToContentConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:OperationConsle.Unkown}">
+                <converter1:ObjectContentPair.Content>
+                    <Border />
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+            <converter1:ObjectContentPair Key="{x:Static constant:OperationConsle.Error}">
+                <converter1:ObjectContentPair.Content>
+                    <Border Background="{StaticResource ContentBackgroundRedBrush}">
+                        <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="{StaticResource StringError}" />
+                    </Border>
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+            <converter1:ObjectContentPair Key="{x:Static constant:OperationConsle.Using1}">
+                <converter1:ObjectContentPair.Content>
+                    <Border Background="{StaticResource ContentBackgroundYellowBrush}">
+                        <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="1" />
+                    </Border>
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+            <converter1:ObjectContentPair Key="{x:Static constant:OperationConsle.Using2}">
+                <converter1:ObjectContentPair.Content>
+                    <Border Background="{StaticResource ContentBackgroundYellowBrush}">
+                        <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="2" />
+                    </Border>
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="OilLowAlertStateToImageConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:OilLowAlertState.Null}" Content="{StaticResource ImgNull}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:OilLowAlertState.Low}" Content="{StaticResource Img燃油量低警告}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="PenaltyBrakeToImageConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:PenaltyBrake.Null}" Content="{StaticResource ImgNull}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:PenaltyBrake.Brake}" Content="{StaticResource Img惩罚制动}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+</ResourceDictionary>

@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A26E1854-641E-4987-8CB6-15AD6B9A4665}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HXD1D</RootNamespace>
+    <AssemblyName>HXD1D</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Development outputs\Addin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\Development outputs\Addin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MMI.Facility.Interface">
+      <HintPath>..\Development outputs\MMI.Facility.Interface.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MsgReceiveMod">
+      <HintPath>..\Development outputs\MsgReceiveMod.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClassOver.cs" />
+    <Compile Include="NobodyVigilant.cs" />
+    <Compile Include="Record.cs" />
+    <Compile Include="RowCount.cs" />
+    <Compile Include="FindImgClass.cs" />
+    <Compile Include="Titlte\TitleChangePage.cs" />
+    <Compile Include="V53_LongDistanceCutOff.cs" />
+    <Compile Include="V54_BreakingOut.cs" />
+    <Compile Include="V55_BreakingOver.cs" />
+    <Compile Include="维护界面\Password.cs" />
+    <Compile Include="维护界面\V47_VersionInfo.cs" />
+    <Compile Include="维护界面\V48_PressModeSet.cs" />
+    <Compile Include="维护界面\V49_Power.cs" />
+    <Compile Include="维护界面\V50_Blackout.cs" />
+    <Compile Include="辅助系统\AuxiliarySystem.cs" />
+    <Compile Include="BlackScrren.cs" />
+    <Compile Include="ButtonSeting.cs" />
+    <Compile Include="Common\Common.cs" />
+    <Compile Include="控制设置\ControlSeting.cs" />
+    <Compile Include="控制系统\ControlSystem.cs" />
+    <Compile Include="CoolingSystem.cs" />
+    <Compile Include="CursorMovecs.cs" />
+    <Compile Include="DragCalcuate.cs" />
+    <Compile Include="EngineSetting.cs" />
+    <Compile Include="ExamineSetting.cs" />
+    <Compile Include="Faul.cs" />
+    <Compile Include="故障界面\FaultInfo.cs" />
+    <Compile Include="MaintainTesting.cs" />
+    <Compile Include="Meter.cs" />
+    <Compile Include="ModelButton.cs" />
+    <Compile Include="PromptButton.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Engine_Config\Engine_Config.cs" />
+    <Compile Include="ReadConfigcs.cs" />
+    <Compile Include="运行条件\RunCondtion.cs" />
+    <Compile Include="Run\Run.cs" />
+    <Compile Include="Run\RunInt.cs" />
+    <Compile Include="StateInfo.cs" />
+    <Compile Include="Titlte\TitleFuns.cs" />
+    <Compile Include="Titlte\TitleInit.cs" />
+    <Compile Include="TractionData.cs" />
+    <Compile Include="TrainElectricity.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

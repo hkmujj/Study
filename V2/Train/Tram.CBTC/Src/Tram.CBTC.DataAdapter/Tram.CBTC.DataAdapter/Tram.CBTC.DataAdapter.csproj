@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B14ACCD1-E34F-4BA0-8ED8-CF502D3C0ADD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tram.CBTC.DataAdapter</RootNamespace>
+    <AssemblyName>Tram.CBTC.DataAdapter</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\MMI\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonUtil, Version=2.29.2016.517, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="Excel.Interface, Version=2.30.2016.712, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Practices.Prism, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Mmi.Common.DateTimeInterpreter">
+      <HintPath>..\..\..\MMI\Mmi.Common.DateTimeInterpreter.dll</HintPath>
+    </Reference>
+    <Reference Include="MMI.Facility.Interface, Version=2.50.2017.214, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConcreateAdapter\CASCO\CASCODataAdapter.cs" />
+    <Compile Include="ConcreateAdapter\CASCO\SendInterfaceCASCO.cs" />
+    <Compile Include="ConcreateAdapter\CASCO\SignalDataInCASCO.cs" />
+    <Compile Include="ConcreateAdapter\CASCO\SignalDataOutCASCO.cs" />
+    <Compile Include="ConcreateAdapter\NRIET\NRIETDataAdapter.cs" />
+    <Compile Include="ConcreateAdapter\NRIET\SendInterfaceNRIET.cs" />
+    <Compile Include="ConcreateAdapter\NRIET\SignalDataInNRIET.cs" />
+    <Compile Include="ConcreateAdapter\NRIET\SignalDataOutNRIET.cs" />
+    <Compile Include="ConcreateAdapter\SendInterfaceBase.cs" />
+    <Compile Include="DataAdapterBase.cs" />
+    <Compile Include="DataAdapterFactory.cs" />
+    <Compile Include="Extension\DataInExtensino.cs" />
+    <Compile Include="Extension\StringExtention.cs" />
+    <Compile Include="IDataAdapterFactory.cs" />
+    <Compile Include="Model\SignalDataIn.cs" />
+    <Compile Include="Model\SignalDataOut.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource\Keys\InbKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InbKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Keys\InfKeys1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InfKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Keys\OuBKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OuBKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Keys\OufKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OufKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Util\DeepCopy.cs" />
+    <Compile Include="Util\Port.cs" />
+    <Compile Include="Util\StringFloatConverter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CBTC.DataAdapter.Changes.txt" />
+    <EmbeddedResource Include="Resource\Keys\InbKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InbKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Keys\InfKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InfKeys1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Keys\OuBKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OuBKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Keys\OufKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OufKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Tram.CBTC.Infrasturcture\Tram.CBTC.Infrasturcture.csproj">
+      <Project>{665e19ab-2b49-4f84-bd3d-c38950653242}</Project>
+      <Name>Tram.CBTC.Infrasturcture</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resource\Keys\InbKeys.txt" />
+    <Content Include="Resource\Keys\InfKeys.txt" />
+    <Content Include="Resource\Keys\OuBKeys.txt" />
+    <Content Include="Resource\Keys\OufKeys.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

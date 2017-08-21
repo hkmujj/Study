@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="Subway.ShenZhenLine7.Views.Root.DoMain"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:regions="http://www.codeplex.com/CompositeWPF"
+             xmlns:root="clr-namespace:Subway.ShenZhenLine7.Views.Root"
+             xmlns:constance="clr-namespace:Subway.ShenZhenLine7.Constance"
+             xmlns:viewModels="clr-namespace:Subway.ShenZhenLine7.ViewModels"
+             d:DataContext="{d:DesignInstance viewModels:ShenZhenLine7ViewModel}"
+             d:DesignHeight="600"
+             d:DesignWidth="800"
+             Background="{StaticResource  Subway.ShenZhenLine7.BalckBrush}"
+             mc:Ignorable="d">
+    <Viewbox Stretch="Fill">
+        <ContentControl Width="800"
+                        Height="600"
+                        regions:RegionManager.RegionName="{x:Static constance:RegionNames.Root}" />
+    </Viewbox>
+</UserControl>

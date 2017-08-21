@@ -1,0 +1,53 @@
+﻿<UserControl
+    x:Class="Motor.TCMS.CRH400BF.View.Buttons.MainHardwareButtonRight"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Motor.TCMS.CRH400BF.View.Buttons"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="clr-namespace:Motor.TCMS.CRH400BF.ViewModel"
+    d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+    d:DesignHeight="600"
+    d:DesignWidth="80"
+    mc:Ignorable="d">
+    <Grid Margin="0,80">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="1.5*" />
+        </Grid.RowDefinitions>
+        <Button
+            Grid.Row="0"
+            Command="{Binding Path=HardwareBtnViewModel.Model.BReturnCommand}"
+            Content="C"
+            Style="{StaticResource HardwareBtnStyle}" />
+        <Button
+            Grid.Row="1"
+            Command="{Binding Path=HardwareBtnViewModel.Model.LeftCommand}"
+            Content="←"
+            Style="{StaticResource HardwareBtnStyle}" />
+        <Button
+            Grid.Row="2"
+            Command="{Binding Path=HardwareBtnViewModel.Model.RightCommand}"
+            Content="→"
+            Style="{StaticResource HardwareBtnStyle}" />
+        <Button
+            Grid.Row="3"
+            Command="{Binding Path=HardwareBtnViewModel.Model.UpCommand}"
+            Content="↑"
+            Style="{StaticResource HardwareBtnStyle}" />
+        <Button
+            Grid.Row="4"
+            Command="{Binding Path=HardwareBtnViewModel.Model.DownCommand}"
+            Content="↓"
+            Style="{StaticResource HardwareBtnStyle}" />
+        <Button
+            Grid.Row="5"
+            Command="{Binding Path=HardwareBtnViewModel.Model.OKCommand}"
+            Content="E"
+            Style="{StaticResource HardwareBtnStyle}" />
+    </Grid>
+</UserControl>

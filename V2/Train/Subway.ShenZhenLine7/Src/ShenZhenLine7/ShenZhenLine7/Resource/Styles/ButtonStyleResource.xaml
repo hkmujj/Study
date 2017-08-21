@@ -1,0 +1,224 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:custom="clr-namespace:Subway.ShenZhenLine7.Views.Custom"
+    xmlns:helper="clr-namespace:Subway.ShenZhenLine7.Helper">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Converter/ConverterResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <ControlTemplate x:Key="Subway.ShenZhenLine7.ControlTemplateFive" TargetType="Button">
+        <Grid>
+            <Border
+                Panel.ZIndex="1"
+                BorderBrush="DarkGray"
+                BorderThickness="2,2,0,0" />
+            <Border
+                Panel.ZIndex="1"
+                BorderBrush="DarkGray"
+                BorderThickness="0,0,2,2" />
+            <Border Background="{TemplateBinding Background}">
+                <TextBlock
+                    Margin="{TemplateBinding Padding}"
+                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                    FontSize="{TemplateBinding FontSize}"
+                    Foreground="{TemplateBinding Foreground}"
+                    Text="{TemplateBinding Content}" />
+            </Border>
+        </Grid>
+    </ControlTemplate>
+    <Style x:Key="CarNumberStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="Subway.ShenZhenLine7.MainButtonStyle1" TargetType="Button">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                            <Border BorderBrush="Black" BorderThickness="0.5,0.5,0.5,0">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background" Value="DarkGray" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="BorderBrush" Value="White" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="BorderThickness" Value="1.5,1.5,1.5,0" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="Subway.ShenZhenLine7.BaseInfoStyle" TargetType="Button">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background" Value="DarkGray" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="BorderBrush" Value="White" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="BorderThickness" Value="1,1,1,0" />
+            <Setter Property="Margin" Value="4" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="Subway.ShenZhenLine7.MasterPageButtonStyle1" TargetType="Button">
+        <Setter Property="Template" Value="{StaticResource Subway.ShenZhenLine7.ControlTemplateFive}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="Margin" Value="30,5" />
+        <Setter Property="Foreground" Value="White" />
+    </Style>
+    <Style x:Key="Subway.ShenZhenLine7.EmergencyBorderButtonStyle1" TargetType="Button">
+        <Setter Property="Template" Value="{StaticResource Subway.ShenZhenLine7.ControlTemplateFive}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="Foreground" Value="White" />
+    </Style>
+    <Style x:Key="Subway.ShenZhenLine7.MainContenRdioBtnStyle" TargetType="RadioButton">
+        <Setter Property="GroupName" Value="btn" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="White"
+                        BorderThickness="1">
+                        <Image>
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource Subway.ShenZhenLine7.BtnConverter}">
+                                    <Binding Path="Tag" RelativeSource="{RelativeSource FindAncestor, AncestorType={x:Type RadioButton}}" />
+                                    <Binding Path="IsChecked" RelativeSource="{RelativeSource FindAncestor, AncestorType=RadioButton}" />
+                                    <Binding Path="(helper:RadionButtomHelper.NormalImage)" RelativeSource="{RelativeSource FindAncestor, AncestorType=RadioButton}" />
+                                    <Binding Path="(helper:RadionButtomHelper.FaultImage)" RelativeSource="{RelativeSource FindAncestor, AncestorType=RadioButton}" />
+                                    <Binding Path="(helper:RadionButtomHelper.CheckedImage)" RelativeSource="{RelativeSource FindAncestor, AncestorType=RadioButton}" />
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <ImageBrush ImageSource="{StaticResource Subway.ShenZhenLine7.按钮背景}" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <Style x:Key="Subway.ShenZhenLine7.EventInfoBtnStyle" TargetType="Button">
+        <Setter Property="Template" Value="{StaticResource Subway.ShenZhenLine7.ControlTemplateFive}" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="White" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="Margin" Value="10" />
+        <Setter Property="FontSize" Value="18" />
+    </Style>
+    <Style x:Key="Subway.ShenZhenLine7.EnventPageTextStyleOne" TargetType="TextBlock">
+        <Setter Property="Background" Value="#001A71" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="Subway.ShenZhenLine7.TractionLockBtnStyle" TargetType="Button">
+        <Setter Property="Template" Value="{StaticResource Subway.ShenZhenLine7.ControlTemplateFive}" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="BorderBrush" Value="White" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Self}, Path=Tag, Converter={StaticResource Subway.ShenZhenLine7.TractionLockColorConverter}}" />
+    </Style>
+    <Style x:Key="Subway.ShenZhenLine7.BorderCastBtnStyle" TargetType="RadioButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" Value="#FF00FF00" />
+                            <Setter Property="Foreground" Value="Black" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="BorderBrush" Value="White" />
+        <Setter Property="BorderThickness" Value="2" />
+    </Style>
+    <Style x:Key="Subway.ShenZhenLine7.BorderCastBtnStyle2" TargetType="Button">
+        <Setter Property="Template" Value="{StaticResource Subway.ShenZhenLine7.ControlTemplateFive}" />
+        <Setter Property="BorderBrush" Value="White" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+    <Style x:Key="Subway.ShenZhenLine7.BorderCastBtnStyle3" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <Border
+                            Margin="2"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" />
+                        </Border>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="DarkGray" />
+    </Style>
+    <Style TargetType="custom:HightSpeedControl">
+        <Setter Property="Margin" Value="0,10" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="custom:HightSpeedControl">
+                    <Ellipse
+                        x:Name="PART_Ellipse"
+                        Stroke="White"
+                        StrokeThickness="1" />
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="State" Value="Close">
+                            <Setter TargetName="PART_Ellipse" Property="Fill" Value="#FF00FF00" />
+                            <Setter TargetName="PART_Ellipse" Property="StrokeThickness" Value="0" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

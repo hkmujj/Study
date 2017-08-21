@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<PriorityConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DoorPriorities>
+    <Door Key="EmergencyLock" Prioritys="1" />
+    <Door Key="Cut" Prioritys="2" />
+    <Door Key="SeriousFault" Prioritys="3" />
+    <Door Key="MinorFault" Prioritys="4" />
+    <Door Key="Hinder" Prioritys="5" />
+	<Door Key="Opened" Prioritys="6" />
+	<Door Key="Closed" Prioritys="7" />
+  </DoorPriorities>
+   <BatteryPriorities>
+    <Battery Key="Fault" Prioritys="1" />
+    <Battery Key="Normal" Prioritys="2" />
+  </BatteryPriorities>
+  <BrakePriorities>
+    <Brake Key="Excision" Prioritys="1" />
+    <Brake Key="SeriousFault" Prioritys="2" />
+    <Brake Key="MinorFault" Prioritys="3" />
+    <Brake Key="Infliction" Prioritys="4" />
+    <Brake Key="Remission" Prioritys="5" />
+  </BrakePriorities>
+  <TractionPriorities>
+    <Traction Key="SeriousFault" Prioritys="1" />
+    <Traction Key="MinorFault" Prioritys="2" />
+    <Traction Key="NotOperation" Prioritys="3" />
+    <Traction Key="Normal" Prioritys="4" />
+  </TractionPriorities>
+  <EmergencyTalkPriorities>
+    <Emergency Key="SeriousFault" Prioritys="1" />
+    <Emergency Key="Calling" Prioritys="2" />
+    <Emergency Key="CallRequest" Prioritys="3" />
+    <Emergency Key="CallEnd" Prioritys="4" />
+  </EmergencyTalkPriorities>
+	<AirConditionPriorities>
+    <AirCondition Key="Off" Prioritys="1" />
+    <AirCondition Key="SeriousFault" Prioritys="2" />
+    <AirCondition Key="MinorFault" Prioritys="3" />
+	<AirCondition Key="Aeration" Prioritys="4" />
+    <AirCondition Key="EmergencyAeration" Prioritys="5" />
+    <AirCondition Key="Precool" Prioritys="6" />
+	<AirCondition Key="Run" Prioritys="7" />
+  </AirConditionPriorities>
+</PriorityConfig>

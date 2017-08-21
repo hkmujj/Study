@@ -1,0 +1,123 @@
+﻿<UserControl x:Class="Engine._6A.Views.Axle6.VideoView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:commonControl="clr-namespace:Engine._6A.CommonControl"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary Source="../../Resouce/Engine6AResource.xaml" />
+    </UserControl.Resources>
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="253*" />
+            <ColumnDefinition Width="62*" />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid Margin="0">
+                <Image Width="175"
+                       Height="135"
+                       Source="../../Resouce/Image/等待监控数据.png" />
+                <TextBlock Margin="0,170,0,0"
+                           Style="{StaticResource CommonTextStyleOne}"
+                           Text="等待视屏数据……" />
+            </Grid>
+        </Grid>
+        <Rectangle Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Margin="0,0,1,0"
+                   Style="{StaticResource FramStyle}" />
+
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <commonControl:RecTextButton Grid.Row="0"
+                                      Grid.Column="0"
+                                      Content="1"
+                                      Style="{StaticResource VideoViewButtonStyleOne}" />
+            <commonControl:RecTextButton Grid.Row="0"
+                                      Grid.Column="1"
+                                      Content="2"
+                                      Style="{StaticResource VideoViewButtonStyleTwo}" />
+            <commonControl:RecTextButton Grid.Row="1"
+                                      Grid.Column="0"
+                                      Content="3"
+                                      Style="{StaticResource VideoViewButtonStyleOne}" />
+            <commonControl:RecTextButton Grid.Row="1"
+                                      Grid.Column="1"
+                                      Content="4"
+                                      Style="{StaticResource VideoViewButtonStyleTwo}" />
+            <commonControl:RecTextButton Grid.Row="2"
+                                      Grid.Column="0"
+                                      Content="5"
+                                      Style="{StaticResource VideoViewButtonStyleOne}" />
+            <commonControl:RecTextButton Grid.Row="2"
+                                      Grid.Column="1"
+                                      Content="6"
+                                      Style="{StaticResource VideoViewButtonStyleTwo}" />
+            <commonControl:RecTextButton Grid.Row="3"
+                                      Grid.Column="0"
+                                      Content="7"
+                                      Style="{StaticResource VideoViewButtonStyleOne}" />
+            <commonControl:RecTextButton Grid.Row="3"
+                                      Grid.Column="1"
+                                      Content="8"
+                                      Style="{StaticResource VideoViewButtonStyleTwo}" />
+            <commonControl:RecTextButton Grid.Row="4"
+                                      Grid.Column="0"
+                                      Content="9"
+                                      Style="{StaticResource VideoViewButtonStyleOne}" />
+            <commonControl:RecTextButton Grid.Row="4"
+                                      Grid.Column="1"
+                                      Content="10"
+                                      Style="{StaticResource VideoViewButtonStyleTwo}" />
+            <commonControl:RecTextButton Grid.Row="5"
+                                      Grid.Column="0"
+                                      Content="11"
+                                      Style="{StaticResource VideoViewButtonStyleOne}" />
+            <commonControl:RecTextButton Grid.Row="5"
+                                      Grid.Column="1"
+                                      Content="12"
+                                      Style="{StaticResource VideoViewButtonStyleTwo}" />
+            <commonControl:RecTextButton Grid.Row="6"
+                                      Grid.Column="0"
+                                      Content="13"
+                                      Style="{StaticResource VideoViewButtonStyleOne}" />
+            <commonControl:RecTextButton Grid.Row="6"
+                                      Grid.Column="1"
+                                      Content="14"
+                                      Style="{StaticResource VideoViewButtonStyleTwo}" />
+            <commonControl:RecTextButton Grid.Row="7"
+                                      Grid.Column="0"
+                                      Content="15"
+                                      Style="{StaticResource VideoViewButtonStyleOne}" />
+            <commonControl:RecTextButton Grid.Row="7"
+                                      Grid.Column="1"
+                                      Content="16"
+                                      Style="{StaticResource VideoViewButtonStyleTwo}" />
+            <commonControl:RecTextButton Grid.Row="8"
+                                      Grid.Column="0"
+                                      Content="单画面"
+                                      Style="{StaticResource VideoViewButtonStyleThree}" />
+            <commonControl:RecTextButton Grid.Row="8"
+                                      Grid.Column="1"
+                                      Content="自动"
+                                      Style="{StaticResource VideoViewButtonStyleThree}" />
+        </Grid>
+    </Grid>
+</UserControl>

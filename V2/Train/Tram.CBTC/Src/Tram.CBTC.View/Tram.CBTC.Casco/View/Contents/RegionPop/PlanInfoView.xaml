@@ -1,0 +1,79 @@
+﻿<UserControl
+    x:Class="Tram.CBTC.Casco.View.Contents.RegionPop.PlanInfoView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="clr-namespace:Tram.CBTC.Casco.ViewModel"
+    d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+    d:DesignHeight="340"
+    d:DesignWidth="610"
+    Background="#EDEAE5"
+    mc:Ignorable="d">
+    <Canvas>
+        <!--<Canvas.Background>
+            <ImageBrush ImageSource="/Tram.CBTC.Casco;component/1502348790(1).jpg" />
+        </Canvas.Background>-->
+        <TextBlock
+            Canvas.Left="159"
+            Canvas.Top="30"
+            FontSize="17"
+            FontWeight="Bold"
+            Text="可选的执行计划，车次号，单程号" />
+        <TextBlock
+            Canvas.Left="28"
+            Canvas.Top="98"
+            FontSize="17"
+            Text="计划" />
+        <TextBlock
+            Canvas.Left="28"
+            Canvas.Top="155"
+            FontSize="17"
+            Text="车次" />
+        <TextBlock
+            Canvas.Left="28"
+            Canvas.Top="213"
+            FontSize="17"
+            Text="单程" />
+        <ComboBox
+            Canvas.Left="101"
+            Canvas.Top="93"
+            Width="468"
+            Height="35"
+            ItemsSource="{Binding Model.PopModel.SelectPlanTrainAndOneWay.SelectItemModels}"
+            SelectedItem="{Binding Model.PopModel.SelectPlanTrainAndOneWay.SelectItem, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}"
+            Style="{StaticResource Tram.CBTC.Casco.ComboBoxStyle1}" />
+        <ComboBox
+            Canvas.Left="101"
+            Canvas.Top="150"
+            Width="468"
+            Height="35"
+            ItemsSource="{Binding Model.PopModel.SelectPlanTrainAndOneWay.SelectItem.Items1}"
+            SelectedItem="{Binding Model.PopModel.SelectPlanTrainAndOneWay.SelectItem.Select1, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}"
+            Style="{StaticResource Tram.CBTC.Casco.ComboBoxStyle1}" />
+        <ComboBox
+            Canvas.Left="101"
+            Canvas.Top="211"
+            Width="468"
+            Height="35"
+            ItemsSource="{Binding Model.PopModel.SelectPlanTrainAndOneWay.SelectItem.Items2}"
+            SelectedItem="{Binding Model.PopModel.SelectPlanTrainAndOneWay.SelectItem.Select2, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}"
+            Style="{StaticResource Tram.CBTC.Casco.ComboBoxStyle1}" />
+        <Button
+            Canvas.Left="319"
+            Canvas.Top="281"
+            Width="114"
+            Height="49"
+            Command="{Binding Model.PopModel.SelectPlanTrainAndOneWay.Confirm}"
+            Content="确定"
+            Style="{StaticResource Tram.CBTC.Casco.DriverIDInputBtn}" />
+        <Button
+            Canvas.Left="453"
+            Canvas.Top="281"
+            Width="116"
+            Height="49"
+            Command="{Binding Model.PopModel.SelectPlanTrainAndOneWay.Cancel}"
+            Content="取消"
+            Style="{StaticResource Tram.CBTC.Casco.DriverIDInputBtn}" />
+    </Canvas>
+</UserControl>

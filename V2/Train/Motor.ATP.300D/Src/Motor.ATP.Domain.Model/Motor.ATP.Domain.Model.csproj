@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{91738F04-0820-46F9-B2B0-5BEDE15D22FB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Motor.ATP.Domain.Model</RootNamespace>
+    <AssemblyName>Motor.ATP.Domain.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\MMI\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonUtil">
+      <HintPath>..\..\..\Bin\MMI\CommonUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="MMI.Facility.Interface, Version=2.11.2015.1016, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Bin\MMI\MMI.Facility.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ATPDomainBase.cs" />
+    <Compile Include="ATPPartialBase.cs" />
+    <Compile Include="ATPRepository.cs" />
+    <Compile Include="Brake.cs" />
+    <Compile Include="CabSignal.cs" />
+    <Compile Include="ControlModel\ControlModelBase.cs" />
+    <Compile Include="ControlModel\ControlModelFactory.cs" />
+    <Compile Include="ControlModel\FullSupervisionControlModel.cs" />
+    <Compile Include="ControlModel\OvertakingControlModel.cs" />
+    <Compile Include="ControlModel\StandByControlModel.cs" />
+    <Compile Include="ControlModel\UnkownControlModel.cs" />
+    <Compile Include="CTCS\CTCS0.cs" />
+    <Compile Include="CTCS\CTCS1.cs" />
+    <Compile Include="CTCS\CTCS2.cs" />
+    <Compile Include="CTCS\CTCS3.cs" />
+    <Compile Include="CTCS\CTCSBase.cs" />
+    <Compile Include="CTCS\UnkownCTCS.cs" />
+    <Compile Include="Driver.cs" />
+    <Compile Include="Message\Message.cs" />
+    <Compile Include="Message\MessageItem.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScreenIdentityExtension.cs" />
+    <Compile Include="Speed.cs" />
+    <Compile Include="SpeedMonitoringSection\CeilingSpeedMonitoringSection.cs" />
+    <Compile Include="SpeedMonitoringSection\NoneSpeedMonitoringSection.cs" />
+    <Compile Include="SpeedMonitoringSection\RelaseSpeedMonitoringSection.cs" />
+    <Compile Include="SpeedMonitoringSection\SpeedMonitoringSectionBase.cs" />
+    <Compile Include="SpeedMonitoringSection\SpeedProfile.cs" />
+    <Compile Include="SpeedMonitoringSection\TargetSpeedMonitoringSection.cs" />
+    <Compile Include="TrainInfo.cs" />
+    <Compile Include="WarningIntervention.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="RailwaySimulation.Motor.ATP.Domain.Model.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Motor.ATP.Domain.Interface\Motor.ATP.Domain.Interface.csproj">
+      <Project>{6DD5C0AC-09A8-4283-8782-6E0D214C45F7}</Project>
+      <Name>Motor.ATP.Domain.Interface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

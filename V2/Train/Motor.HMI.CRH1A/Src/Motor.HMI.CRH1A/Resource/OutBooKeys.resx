@@ -1,0 +1,486 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="OB02车受电弓切换" xml:space="preserve">
+    <value>02车受电弓切换</value>
+  </data>
+  <data name="OB07车受电弓切换" xml:space="preserve">
+    <value>07车受电弓切换</value>
+  </data>
+  <data name="OB02断路器切换" xml:space="preserve">
+    <value>02断路器切换</value>
+  </data>
+  <data name="OB02_05断路器切换" xml:space="preserve">
+    <value>02_05断路器切换</value>
+  </data>
+  <data name="OB05断路器切换" xml:space="preserve">
+    <value>05断路器切换</value>
+  </data>
+  <data name="OB05_07断路器切换" xml:space="preserve">
+    <value>05_07断路器切换</value>
+  </data>
+  <data name="OB07断路器切换" xml:space="preserve">
+    <value>07断路器切换</value>
+  </data>
+  <data name="OB切除电制动" xml:space="preserve">
+    <value>切除电制动</value>
+  </data>
+  <data name="OB01_03车主控复位" xml:space="preserve">
+    <value>01-03车主控复位</value>
+  </data>
+  <data name="OB04_05车主控复位" xml:space="preserve">
+    <value>04-05车主控复位</value>
+  </data>
+  <data name="OB06_07车主控复位" xml:space="preserve">
+    <value>06-07车主控复位</value>
+  </data>
+  <data name="OB复位报警器" xml:space="preserve">
+    <value>复位报警器</value>
+  </data>
+  <data name="OB释放联锁" xml:space="preserve">
+    <value>释放联锁</value>
+  </data>
+  <data name="OB高压控制切换" xml:space="preserve">
+    <value>高压控制切换</value>
+  </data>
+  <data name="OB过分相切除" xml:space="preserve">
+    <value>过分相切除</value>
+  </data>
+  <data name="OB自动气流" xml:space="preserve">
+    <value>自动气流</value>
+  </data>
+  <data name="OB火灾模式" xml:space="preserve">
+    <value>火灾模式</value>
+  </data>
+  <data name="OB02车辅助空压机切入切除标志" xml:space="preserve">
+    <value>02车辅助空压机切入切除标志</value>
+  </data>
+  <data name="OB05车辅助空压机切入切除标志" xml:space="preserve">
+    <value>05车辅助空压机切入切除标志</value>
+  </data>
+  <data name="OB02车主空压机切入切除标志" xml:space="preserve">
+    <value>02车主空压机切入切除标志</value>
+  </data>
+  <data name="OB05车主空压机切入切除标志" xml:space="preserve">
+    <value>05车主空压机切入切除标志</value>
+  </data>
+  <data name="OB07车主空压机切入切除标志" xml:space="preserve">
+    <value>07车主空压机切入切除标志</value>
+  </data>
+  <data name="OB02车压力传感器" xml:space="preserve">
+    <value>02车压力传感器</value>
+  </data>
+  <data name="OB05车压力传感器" xml:space="preserve">
+    <value>05车压力传感器</value>
+  </data>
+  <data name="OB07车压力传感器" xml:space="preserve">
+    <value>07车压力传感器</value>
+  </data>
+  <data name="OB02车主空压机手动开关标志" xml:space="preserve">
+    <value>02车主空压机手动开关标志</value>
+  </data>
+  <data name="OB05车主空压机手动开关标志" xml:space="preserve">
+    <value>05车主空压机手动开关标志</value>
+  </data>
+  <data name="OB07车主空压机手动开关标志" xml:space="preserve">
+    <value>07车主空压机手动开关标志</value>
+  </data>
+  <data name="OB手柄测试开始" xml:space="preserve">
+    <value>手柄测试开始</value>
+  </data>
+  <data name="OB灯测试_全部亮开始" xml:space="preserve">
+    <value>灯测试-全部亮开始</value>
+  </data>
+  <data name="OB制动测试开始" xml:space="preserve">
+    <value>制动测试开始</value>
+  </data>
+  <data name="OB灯测试_无灯亮测试开始" xml:space="preserve">
+    <value>灯测试-无灯亮测试开始</value>
+  </data>
+  <data name="OB警报蜂鸣器开始" xml:space="preserve">
+    <value>警报蜂鸣器开始</value>
+  </data>
+  <data name="OB报警蜂鸣结束" xml:space="preserve">
+    <value>报警蜂鸣结束</value>
+  </data>
+  <data name="OB手柄测试进行中" xml:space="preserve">
+    <value>手柄测试进行中</value>
+  </data>
+  <data name="OBMC1车左门切除_切入" xml:space="preserve">
+    <value>MC1车左门切除/切入</value>
+  </data>
+  <data name="OBTP1车左门切除_切入" xml:space="preserve">
+    <value>TP1车左门切除/切入</value>
+  </data>
+  <data name="OBM1车左门切除_切入" xml:space="preserve">
+    <value>M1车左门切除/切入</value>
+  </data>
+  <data name="OBM3车左门切除_切入" xml:space="preserve">
+    <value>M3车左门切除/切入</value>
+  </data>
+  <data name="OBTB车左门切除_切入" xml:space="preserve">
+    <value>TB车左门切除/切入</value>
+  </data>
+  <data name="OBM2车左门切除_切入" xml:space="preserve">
+    <value>M2车左门切除/切入</value>
+  </data>
+  <data name="OBTP2车左门切除_切入" xml:space="preserve">
+    <value>TP2车左门切除/切入</value>
+  </data>
+  <data name="OBMC2车左门切除_切入" xml:space="preserve">
+    <value>MC2车左门切除/切入</value>
+  </data>
+  <data name="OBMC1车右门切除_切入" xml:space="preserve">
+    <value>MC1车右门切除/切入</value>
+  </data>
+  <data name="OBTP1车右门切除_切入" xml:space="preserve">
+    <value>TP1车右门切除/切入</value>
+  </data>
+  <data name="OBM1车右门切除_切入" xml:space="preserve">
+    <value>M1车右门切除/切入</value>
+  </data>
+  <data name="OBM3车右门切除_切入" xml:space="preserve">
+    <value>M3车右门切除/切入</value>
+  </data>
+  <data name="OBTB车右门切除_切入" xml:space="preserve">
+    <value>TB车右门切除/切入</value>
+  </data>
+  <data name="OBM2车右门切除_切入" xml:space="preserve">
+    <value>M2车右门切除/切入</value>
+  </data>
+  <data name="OBTP2车右门切除_切入" xml:space="preserve">
+    <value>TP2车右门切除/切入</value>
+  </data>
+  <data name="OBMC2车右门切除_切入" xml:space="preserve">
+    <value>MC2车右门切除/切入</value>
+  </data>
+  <data name="OBMC1车车辆切除_切入" xml:space="preserve">
+    <value>MC1车车辆切除/切入</value>
+  </data>
+  <data name="OBTP1车车辆切除_切入" xml:space="preserve">
+    <value>TP1车车辆切除/切入</value>
+  </data>
+  <data name="OBM1车车辆切除_切入" xml:space="preserve">
+    <value>M1车车辆切除/切入</value>
+  </data>
+  <data name="OBM3车车辆切除_切入" xml:space="preserve">
+    <value>M3车车辆切除/切入</value>
+  </data>
+  <data name="OBTB车车辆切除_切入" xml:space="preserve">
+    <value>TB车车辆切除/切入</value>
+  </data>
+  <data name="OBM2车车辆切除_切入" xml:space="preserve">
+    <value>M2车车辆切除/切入</value>
+  </data>
+  <data name="OBTP2车车辆切除_切入" xml:space="preserve">
+    <value>TP2车车辆切除/切入</value>
+  </data>
+  <data name="OBMC2车车辆切除_切入" xml:space="preserve">
+    <value>MC2车车辆切除/切入</value>
+  </data>
+  <data name="OBMC1车HVAC开_关" xml:space="preserve">
+    <value>MC1车HVAC开/关</value>
+  </data>
+  <data name="OBTP1车HVAC开_关" xml:space="preserve">
+    <value>TP1车HVAC开/关</value>
+  </data>
+  <data name="OBM1车HVAC开_关" xml:space="preserve">
+    <value>M1车HVAC开/关</value>
+  </data>
+  <data name="OBM3车HVAC开_关" xml:space="preserve">
+    <value>M3车HVAC开/关</value>
+  </data>
+  <data name="OBTB车HVAC开_关" xml:space="preserve">
+    <value>TB车HVAC开/关</value>
+  </data>
+  <data name="OBM2车HVAC开_关" xml:space="preserve">
+    <value>M2车HVAC开/关</value>
+  </data>
+  <data name="OBTP2车HVAC开_关" xml:space="preserve">
+    <value>TP2车HVAC开/关</value>
+  </data>
+  <data name="OBMC2车HVAC开_关" xml:space="preserve">
+    <value>MC2车HVAC开/关</value>
+  </data>
+  <data name="OBMC1车排空水箱" xml:space="preserve">
+    <value>MC1车排空水箱</value>
+  </data>
+  <data name="OBTP1车排空水箱" xml:space="preserve">
+    <value>TP1车排空水箱</value>
+  </data>
+  <data name="OBM1车排空水箱" xml:space="preserve">
+    <value>M1车排空水箱</value>
+  </data>
+  <data name="OBM3车排空水箱" xml:space="preserve">
+    <value>M3车排空水箱</value>
+  </data>
+  <data name="OBTB车排空水箱" xml:space="preserve">
+    <value>TB车排空水箱</value>
+  </data>
+  <data name="OBM2车排空水箱" xml:space="preserve">
+    <value>M2车排空水箱</value>
+  </data>
+  <data name="OBTP2车排空水箱" xml:space="preserve">
+    <value>TP2车排空水箱</value>
+  </data>
+  <data name="OBMC2车排空水箱" xml:space="preserve">
+    <value>MC2车排空水箱</value>
+  </data>
+  <data name="OBMC1车排空所有水箱" xml:space="preserve">
+    <value>MC1车排空所有水箱</value>
+  </data>
+  <data name="OBTP1车排空所有水箱" xml:space="preserve">
+    <value>TP1车排空所有水箱</value>
+  </data>
+  <data name="OBM1车排空所有水箱" xml:space="preserve">
+    <value>M1车排空所有水箱</value>
+  </data>
+  <data name="OBM3车排空所有水箱" xml:space="preserve">
+    <value>M3车排空所有水箱</value>
+  </data>
+  <data name="OBTB车排空所有水箱" xml:space="preserve">
+    <value>TB车排空所有水箱</value>
+  </data>
+  <data name="OBM2车排空所有水箱" xml:space="preserve">
+    <value>M2车排空所有水箱</value>
+  </data>
+  <data name="OBTP2车排空所有水箱" xml:space="preserve">
+    <value>TP2车排空所有水箱</value>
+  </data>
+  <data name="OBMC2车排空所有水箱" xml:space="preserve">
+    <value>MC2车排空所有水箱</value>
+  </data>
+  <data name="OBMC1车ACM切除" xml:space="preserve">
+    <value>MC1车ACM切除</value>
+  </data>
+  <data name="OBMC1车LCM切除" xml:space="preserve">
+    <value>MC1车LCM切除</value>
+  </data>
+  <data name="OBMC1车MCM1切除" xml:space="preserve">
+    <value>MC1车MCM1切除</value>
+  </data>
+  <data name="OBMC1车MCM2切除" xml:space="preserve">
+    <value>MC1车MCM2切除</value>
+  </data>
+  <data name="OBM1车ACM切除" xml:space="preserve">
+    <value>M1车ACM切除</value>
+  </data>
+  <data name="OBM1车LCM切除" xml:space="preserve">
+    <value>M1车LCM切除</value>
+  </data>
+  <data name="OBM1车MCM1切除" xml:space="preserve">
+    <value>M1车MCM1切除</value>
+  </data>
+  <data name="OBM1车MCM2切除" xml:space="preserve">
+    <value>M1车MCM2切除</value>
+  </data>
+  <data name="OBM3车ACM切除" xml:space="preserve">
+    <value>M3车ACM切除</value>
+  </data>
+  <data name="OBM3车LCM切除" xml:space="preserve">
+    <value>M3车LCM切除</value>
+  </data>
+  <data name="OBM3车MCM1切除" xml:space="preserve">
+    <value>M3车MCM1切除</value>
+  </data>
+  <data name="OBM3车MCM2切除" xml:space="preserve">
+    <value>M3车MCM2切除</value>
+  </data>
+  <data name="OBM2车ACM切除" xml:space="preserve">
+    <value>M2车ACM切除</value>
+  </data>
+  <data name="OBM2车LCM切除" xml:space="preserve">
+    <value>M2车LCM切除</value>
+  </data>
+  <data name="OBM2车MCM1切除" xml:space="preserve">
+    <value>M2车MCM1切除</value>
+  </data>
+  <data name="OBM2车MCM2切除" xml:space="preserve">
+    <value>M2车MCM2切除</value>
+  </data>
+  <data name="OBMC2车ACM切除" xml:space="preserve">
+    <value>MC2车ACM切除</value>
+  </data>
+  <data name="OBMC2车LCM切除" xml:space="preserve">
+    <value>MC2车LCM切除</value>
+  </data>
+  <data name="OBMC2车MCM1切除" xml:space="preserve">
+    <value>MC2车MCM1切除</value>
+  </data>
+  <data name="OBMC2车MCM2切除" xml:space="preserve">
+    <value>MC2车MCM2切除</value>
+  </data>
+  <data name="OB舒适度系统界面" xml:space="preserve">
+    <value>舒适度系统界面</value>
+  </data>
+  <data name="OB污物系统状态视图" xml:space="preserve">
+    <value>污物系统状态视图</value>
+  </data>
+  <data name="OB系统_门状态视图" xml:space="preserve">
+    <value>系统/门状态视图</value>
+  </data>
+  <data name="OB轴温箱状态视图" xml:space="preserve">
+    <value>轴温箱状态视图</value>
+  </data>
+  <data name="OB火灾探测器状态" xml:space="preserve">
+    <value>火灾探测器状态</value>
+  </data>
+  <data name="OB前端" xml:space="preserve">
+    <value>前端</value>
+  </data>
+  <data name="OB制动状态" xml:space="preserve">
+    <value>制动状态</value>
+  </data>
+  <data name="OB网侧电压系统视图" xml:space="preserve">
+    <value>网侧电压系统视图</value>
+  </data>
+  <data name="OB蓄电池供电系统视图" xml:space="preserve">
+    <value>蓄电池供电系统视图</value>
+  </data>
+  <data name="OB供风系统视图" xml:space="preserve">
+    <value>供风系统视图</value>
+  </data>
+  <data name="OB牵引系统视图" xml:space="preserve">
+    <value>牵引系统视图</value>
+  </data>
+  <data name="OB制动试验界面" xml:space="preserve">
+    <value>制动试验界面</value>
+  </data>
+  <data name="OB手柄试验界面" xml:space="preserve">
+    <value>手柄试验界面</value>
+  </data>
+  <data name="OB灯试验界面" xml:space="preserve">
+    <value>灯试验界面</value>
+  </data>
+  <data name="OB报警记录界面" xml:space="preserve">
+    <value>报警记录界面</value>
+  </data>
+  <data name="OB报警总况界面" xml:space="preserve">
+    <value>报警总况界面</value>
+  </data>
+  <data name="OB故障报告界面" xml:space="preserve">
+    <value>故障报告界面</value>
+  </data>
+  <data name="OB运行_门状态" xml:space="preserve">
+    <value>运行/门状态</value>
+  </data>
+  <data name="OB用户输入密码_机械师" xml:space="preserve">
+    <value>用户输入密码-机械师</value>
+  </data>
+</root>

@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="Motor.ATP._200H.Subsys.WPFView.PopupViews.Contents.CheckSoftwareVersionInfoView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:popupViewModels="clr-namespace:Motor.ATP._200H.Subsys.ViewModel.PopupViewModels"
+             d:DataContext="{d:DesignInstance popupViewModels:CheckSoftwareInfoViewModel}"
+             d:DesignHeight="250"
+             d:DesignWidth="232"
+             Background="{StaticResource Motor.ATP.200H.Bursh.PopViewContent}"
+             mc:Ignorable="d">
+    <StackPanel Margin="6,80,6,10" Orientation="Vertical">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="ATP版本号：" Style="{StaticResource Motor.ATP.200H.PopupViewContentTextStyle}">
+            </TextBlock>
+            <TextBlock Style="{StaticResource Motor.ATP.200H.PopupViewContentTextStyle}" Text="{Binding Path=DMIVersion}" />
+        </StackPanel>
+      
+        <StackPanel Margin="0,50,0,0" Orientation="Horizontal">
+            <TextBlock Text="DMI版本号：" Style="{StaticResource Motor.ATP.200H.PopupViewContentTextStyle}">
+                
+            </TextBlock>
+            <TextBlock Style="{StaticResource Motor.ATP.200H.PopupViewContentTextStyle}" Text="{Binding Path=MachineVersion}" />
+        </StackPanel>
+       
+    </StackPanel>
+</UserControl>

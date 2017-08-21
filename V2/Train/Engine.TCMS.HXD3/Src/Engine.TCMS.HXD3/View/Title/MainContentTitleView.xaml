@@ -1,0 +1,104 @@
+﻿<UserControl x:Class="Engine.TCMS.HXD3.View.Title.MainContentTitleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:view="clr-namespace:MMI.Facility.WPFInfrastructure.View;assembly=MMI.Facility.WPFInfrastructure"
+             xmlns:viewModel="clr-namespace:Engine.TCMS.HXD3.ViewModel"
+             Background="{StaticResource ContentBackgroudBrush}"
+             d:DataContext="{d:DesignInstance viewModel:HXD3TCMSViewModel}"
+             d:DesignHeight="70"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <Border Style="{StaticResource BackGridBorderStyleRightDown}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="240*" />
+                <ColumnDefinition Width="200*" />
+                <ColumnDefinition Width="110*" />
+                <ColumnDefinition Width="100*" />
+                <ColumnDefinition Width="110*" />
+                <ColumnDefinition Width="115*" />
+                <ColumnDefinition Width="110*" />
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" Style="{StaticResource BackGridBorderStyleLeftUp}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0"
+                               Style="{StaticResource MainContentTitleTextStyle}"
+                               Text="{Binding Path=Model.Other.ShowTime,
+                                              StringFormat={StaticResource DateFormart}}" />
+                    <TextBlock Grid.Row="1"
+                               Style="{StaticResource MainContentTitleTextStyle}"
+                               Text="{Binding Path=Model.Other.ShowTime,
+                                              StringFormat={StaticResource TimeFormart}}" />
+                </Grid>
+            </Border>
+            <Border Grid.Column="1" Style="{StaticResource BackGridBorderStyleLeftUp}">
+                <StackPanel HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            FlowDirection="RightToLeft"
+                            Orientation="Horizontal">
+                    <TextBlock Margin="6,8"
+                               VerticalAlignment="Bottom"
+                               Style="{StaticResource MainContentTitleTextStyle}"
+                               Text="km/h" />
+                    <TextBlock Style="{StaticResource MainContentTitleLEDTextStyle}" Text="{Binding Path=TCMS.MainDataViewModel.CurrentSpeed, StringFormat={}0}" />
+                </StackPanel>
+            </Border>
+            <Border Grid.Column="2" Style="{StaticResource BackGridBorderStyleLeftUp}">
+                <Grid>
+                    <TextBlock Style="{StaticResource MainContentTitleTextStyle}" Text="{StaticResource StringPackingBrake}" />
+                    <Border Background="{StaticResource YellowBrush}"
+                            view:FlickerManager.DurationMiliSecond="1000"
+                            view:FlickerManager.Flicking="{Binding Path=TCMS.MainDataViewModel.IsPackingBraking}"
+                            view:FlickerManager.VisibilityAfterFlicking="Hidden">
+                        <TextBlock Foreground="{StaticResource BlackBrush}"
+                                   Style="{StaticResource MainContentTitleTextStyle}"
+                                   Text="{StaticResource StringPackingBrake}" />
+                    </Border>
+                </Grid>
+            </Border>
+            <Border Grid.Column="3" Style="{StaticResource BackGridBorderStyleLeftUp}">
+                <TextBlock Style="{StaticResource MainContentTitleTextStyle}" Text="{Binding Path=TCMS.MainDataViewModel.TowBrakeWorkState, Converter={StaticResource WorkStateToTextConverter}}" />
+            </Border>
+            <Border Grid.Column="4" Style="{StaticResource BackGridBorderStyleLeftUp}">
+                <StackPanel HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            FlowDirection="RightToLeft"
+                            Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource MainContentTitleTextStyle}" Text="{StaticResource StringLevel}" />
+                    <TextBlock Style="{StaticResource MainContentTitleLEDTextStyle}" Text="{Binding Path=TCMS.MainDataViewModel.LevelValue, StringFormat={}0.0}" />
+                </StackPanel>
+            </Border>
+            <Border Grid.Column="5"
+                    Background="{Binding Path=TCMS.MainDataViewModel.ConstantSpeedState,
+                                         Converter={StaticResource ConstaSpeedStateToBackgroundConverter}}"
+                    Style="{StaticResource BackGridBorderStyleLeftUp}">
+                <TextBlock Foreground="{Binding Path=TCMS.MainDataViewModel.ConstantSpeedState,
+                                                Converter={StaticResource ConstaSpeedStateToForegroundConverter}}"
+                           Style="{StaticResource MainContentTitleTextStyle}"
+                           Text="{StaticResource StringConstSpeed}" />
+            </Border>
+            <Border Grid.Column="6" Style="{StaticResource BackGridBorderStyleLeftUp}">
+                <Grid>
+                    <TextBlock Style="{StaticResource MainContentTitleTextStyle}" Text="{StaticResource StringNobodyWarn}" />
+                    <Border Background="{Binding Path=TCMS.MainDataViewModel.NobodyWarningLevel,
+                                                 Converter={StaticResource NobodyWarnToBackgroundConverter}}"
+                            view:FlickerManager.DurationMiliSecond="1000"
+                            view:FlickerManager.Flicking="{Binding Path=TCMS.MainDataViewModel.NobodyWarningLevel,
+                                                                   Converter={StaticResource NobodyWarnToFlickConverter}}"
+                            view:FlickerManager.VisibilityAfterFlicking="Visible">
+                        <TextBlock Foreground="{Binding Path=TCMS.MainDataViewModel.NobodyWarningLevel,
+                                                        Converter={StaticResource NobodyWarnToForegroundConverter}}"
+                                   Style="{StaticResource MainContentTitleTextStyle}"
+                                   Text="{StaticResource StringNobodyWarn}" />
+                    </Border>
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
+</UserControl>

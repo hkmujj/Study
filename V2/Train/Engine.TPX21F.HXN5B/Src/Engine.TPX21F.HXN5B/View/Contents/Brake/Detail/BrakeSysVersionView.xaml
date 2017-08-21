@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="Engine.TPX21F.HXN5B.View.Contents.Brake.Detail.BrakeSysVersionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:constant="clr-namespace:Engine.TPX21F.HXN5B.Constant"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:detail="clr-namespace:Engine.TPX21F.HXN5B.View.Contents.Brake.Detail"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:regions="http://www.codeplex.com/CompositeWPF"
+             xmlns:view="clr-namespace:MMI.Facility.WPFInfrastructure.View;assembly=MMI.Facility.WPFInfrastructure"
+             xmlns:viewModel="clr-namespace:Engine.TPX21F.HXN5B.ViewModel"
+             xmlns:viewSource="clr-namespace:Engine.TPX21F.HXN5B.Model.ViewSource"
+             Background="{StaticResource ContentBackgroundBrush}"
+             d:DataContext="{d:DesignInstance viewModel:HXN5BViewModel}"
+             d:DesignHeight="60"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+        <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="BCU VERSION: V0.0" />
+        <TextBlock Margin="80,0,0,0"
+                   Style="{StaticResource ContentConstWhiteTextStyle}"
+                   Text="{Binding Path=OtherViewModel.Model.ShowTime,
+                                  StringFormat=yyyy-mm-ss,
+                                  Mode=OneTime}" />
+    </StackPanel>
+</UserControl>

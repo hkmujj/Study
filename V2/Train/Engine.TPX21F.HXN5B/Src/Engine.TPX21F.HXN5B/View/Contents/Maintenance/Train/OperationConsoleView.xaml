@@ -1,0 +1,99 @@
+﻿<UserControl x:Class="Engine.TPX21F.HXN5B.View.Contents.Maintenance.Train.OperationConsoleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:behaviors="clr-namespace:MMI.Facility.WPFInfrastructure.Behaviors;assembly=MMI.Facility.WPFInfrastructure"
+             xmlns:common="clr-namespace:Engine.TPX21F.HXN5B.View.Common"
+             xmlns:constant="clr-namespace:Engine.TPX21F.HXN5B.Constant"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:designData="clr-namespace:Engine.TPX21F.HXN5B.Model.ViewSource.DesignData"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:interactivity="clr-namespace:MMI.Facility.WPFInfrastructure.Interactivity;assembly=MMI.Facility.WPFInfrastructure"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:regions="http://www.codeplex.com/CompositeWPF"
+             xmlns:view="clr-namespace:MMI.Facility.WPFInfrastructure.View;assembly=MMI.Facility.WPFInfrastructure"
+             xmlns:viewModel="clr-namespace:Engine.TPX21F.HXN5B.ViewModel"
+             xmlns:viewSource="clr-namespace:Engine.TPX21F.HXN5B.Model.ViewSource"
+             d:DataContext="{d:DesignInstance viewModel:HXN5BViewModel}"
+             d:DesignHeight="495"
+             d:DesignWidth="800"
+             Background="{StaticResource ContentBackgroundBrush}"
+             mc:Ignorable="d">
+    <Grid Margin="20,40">
+        <GroupBox common:GroupBoxHeader.HeaderWidth="{Binding ElementName=HeaderPanel, Path=ActualWidth, Converter={StaticResource MathConverter}, ConverterParameter=x+60}" Style="{StaticResource CenterHeaderGroupBoxStyle}">
+            <GroupBox.Header>
+                <StackPanel x:Name="HeaderPanel"
+                            x:FieldModifier="private"
+                            Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringOperationConsole}" />
+                    <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringSelect}" />
+                </StackPanel>
+            </GroupBox.Header>
+
+            <Grid Margin="20,20,40,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="59*" />
+                    <ColumnDefinition Width="30*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+
+                <StackPanel Grid.Row="0"
+                            Grid.RowSpan="2"
+                            Grid.Column="0">
+                    <TextBlock HorizontalAlignment="Left"
+                               FontSize="16"
+                               Style="{StaticResource ContentConstGreenTextStyle}"
+                               Text="{StaticResource StringSelectOperationConsoleCondition}" />
+
+                    <ItemsControl Margin="6,12"
+                                  ItemsSource="{Binding Path=Domain.MaintenanceViewModel.Model.TrainModel.OperConsleSelectModel.OperConsleSelectItems.Value}"
+                                  Style="{StaticResource ItemControlPassableItemStyle}" />
+
+                </StackPanel>
+                <GroupBox Grid.Row="0"
+                          Grid.Column="1"
+                          Margin="3,3,3,57"
+                          common:GroupBoxHeader.HeaderWidth="{Binding ElementName=HeaderPanel1,
+                                                                      Path=ActualWidth,
+                                                                      Converter={StaticResource MathConverter},
+                                                                      ConverterParameter=x+60}"
+                          Style="{StaticResource CenterHeaderGroupBoxStyle}">
+                    <GroupBox.Header>
+                        <StackPanel x:Name="HeaderPanel1"
+                                    x:FieldModifier="private"
+                                    Orientation="Horizontal">
+                            <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringCurrent}" />
+                            <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringOperationConsole}" />
+                        </StackPanel>
+                    </GroupBox.Header>
+
+                    <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="TODO" />
+                </GroupBox>
+
+                <GroupBox Grid.Row="1"
+                          Grid.Column="1"
+                          Margin="3,3,3,57"
+                          common:GroupBoxHeader.HeaderWidth="{Binding ElementName=HeaderPanel2,
+                                                                      Path=ActualWidth,
+                                                                      Converter={StaticResource MathConverter},
+                                                                      ConverterParameter=x+60}"
+                          Style="{StaticResource CenterHeaderGroupBoxStyle}">
+                    <GroupBox.Header>
+                        <StackPanel x:Name="HeaderPanel2"
+                                    x:FieldModifier="private"
+                                    Orientation="Horizontal">
+                            <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringSelect}" />
+                            <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringSwitch}" />
+                        </StackPanel>
+                    </GroupBox.Header>
+
+                    <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="TODO" />
+
+                </GroupBox>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</UserControl>

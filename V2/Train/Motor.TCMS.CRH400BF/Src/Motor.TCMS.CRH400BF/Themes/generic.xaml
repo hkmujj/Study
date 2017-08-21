@@ -1,0 +1,69 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:common="clr-namespace:Motor.TCMS.CRH400BF.View.Common"
+                    >
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/CRH400BFResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="{x:Type common:NaviButton}">
+        <Style.Setters>
+            <Setter Property="FontFamily" Value="{StaticResource FontFamilySongTypeface}" />
+            <Setter Property="Foreground" Value="{StaticResource ForegroundWhiteBrush}" />
+            <Setter Property="Padding" Value="3" />
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="{StaticResource ImgNavigationBtnUp}" />
+                </Setter.Value>
+            </Setter>
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Margin" Value="0.5,1" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="common:NaviButton">
+                        <Border x:Name="Part_Border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                SnapsToDevicePixels="true">
+                            <Border x:Name="Part_InnerBorder" SnapsToDevicePixels="True">
+                                <TextBlock x:Name="Part_Text"
+                                           Margin="{TemplateBinding Padding}"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center "
+                                           Focusable="False"
+                                           FontSize="16"
+                                           FontWeight="Light"
+                                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                           Text="{TemplateBinding Content}"
+                                           TextAlignment="Center"
+                                           TextWrapping="Wrap" />
+                            </Border>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="Part_Border" Property="Background">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="{StaticResource ImgNavigationBtnDown}" />
+                                    </Setter.Value>
+                                </Setter>
+                                <!--<Setter Property="Foreground" Value="{StaticResource TextBlockFontForegroundYellow}" />-->
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="Part_Border" Property="Background">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="{StaticResource ImgNavigationBtnDown}" />
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="Foreground" Value="{StaticResource TextBlockFontForegroundYellow}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+
+</ResourceDictionary>

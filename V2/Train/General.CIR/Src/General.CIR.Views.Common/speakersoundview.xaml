@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UserControl
+    x:Class="General.CIR.Views.Common.SpeakerSoundView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dxprg="http://schemas.devexpress.com/winfx/2008/xaml/propertygrid"
+    x:Name="UserControl">
+    <Grid>
+        <ProgressBar
+            x:Name="Bar"
+            Background="{Binding BackBrush, ElementName=UserControl}"
+            BorderBrush="{Binding BorBrush, ElementName=UserControl}"
+            BorderThickness="{Binding BorderThick, ElementName=UserControl}"
+            Foreground="{Binding ForBrush, ElementName=UserControl}"
+            Maximum="10"
+            Minimum="0"
+            Style="{StaticResource ProgressBarStyle1}">
+            <ProgressBar.Value>
+                <MultiBinding Converter="{StaticResource ProgressbarValueConverter}">
+                    <Binding Path="MainContentViewModel.TitleViewModel.SpeakerSound" />
+                    <Binding ElementName="Bar" Path="Maximum" />
+                    <Binding ElementName="Bar" Path="Minimum" />
+                </MultiBinding>
+            </ProgressBar.Value>
+        </ProgressBar>
+
+    </Grid>
+</UserControl>

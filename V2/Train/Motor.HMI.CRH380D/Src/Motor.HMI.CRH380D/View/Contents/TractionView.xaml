@@ -1,0 +1,211 @@
+﻿<UserControl x:Class="Motor.HMI.CRH380D.View.Contents.TractionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:common="clr-namespace:Motor.HMI.CRH380D.View.Common"
+             xmlns:constant="clr-namespace:Motor.HMI.CRH380D.Constant"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:regions="http://www.codeplex.com/CompositeWPF"
+             xmlns:viewModel="clr-namespace:Motor.HMI.CRH380D.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+             d:DesignHeight="420"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <Viewbox>
+        <Grid Width="800" Height="420">
+            <Grid Background="{StaticResource Gray2Background}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="33*" />
+                    <RowDefinition Height="65*" />
+                    <RowDefinition Height="4*" />
+                    <RowDefinition Height="85*" />
+                    <RowDefinition Height="222*" />
+                    <RowDefinition Height="11*" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <TextBlock Style="{StaticResource TitleTextStyle}" Text="牵引" />
+                </Grid>
+                <Grid Grid.Row="1">
+                    <common:TrainCommon3 DataContext="{Binding Model.TractionModel.TrainModel}" />
+                </Grid>
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="127*" />
+                        <ColumnDefinition Width="151*" />
+                        <ColumnDefinition Width="122*" />
+                    </Grid.ColumnDefinitions>
+                    <Viewbox Grid.Column="1">
+                        <Grid>
+                            <Border BorderBrush="{StaticResource NumForeground}" BorderThickness="1" />
+                            <Path Data="M119,55 L123,55 123,86 227,86 227,55 231,55 231,138 227,138 227,90 123,90 123,138 119,138 119,90 59,90 59,86 119,86 119,55" Fill="{StaticResource NumForeground}" />
+                            <ToggleButton Width="45"
+                                          Height="45"
+                                          Margin="14,67,243,110"
+                                          BorderBrush="{Binding Model.TractionModel.ACM.State,
+                                                                Converter={StaticResource ACMStateToColorConverter}}"
+                                          Command="{Binding Model.TractionModel.TractionController.CheckCommand}"
+                                          CommandParameter="ACM"
+                                          Content="ACM"
+                                          IsChecked="{Binding Model.TractionModel.ACM.IsChecked,
+                                                              Mode=TwoWay,
+                                                              NotifyOnSourceUpdated=True,
+                                                              NotifyOnTargetUpdated=True}"
+                                          Style="{StaticResource TextBtnStyle}" />
+                            <ToggleButton Width="45"
+                                          Height="45"
+                                          Margin="99,10,158,167"
+                                          BorderBrush="{Binding Model.TractionModel.LCM1.State,
+                                                                Converter={StaticResource LCMStateToColorConverter}}"
+                                          Command="{Binding Model.TractionModel.TractionController.CheckCommand}"
+                                          CommandParameter="LCM1"
+                                          Content="LCM    1"
+                                          IsChecked="{Binding Model.TractionModel.LCM1.IsChecked,
+                                                              Mode=TwoWay,
+                                                              NotifyOnSourceUpdated=True,
+                                                              NotifyOnTargetUpdated=True}"
+                                          Style="{StaticResource TextBtnStyle}" />
+                            <ToggleButton Width="45"
+                                          Height="45"
+                                          Margin="207,10,50,167"
+                                          BorderBrush="{Binding Model.TractionModel.LCM2.State,
+                                                                Converter={StaticResource LCMStateToColorConverter}}"
+                                          Command="{Binding Model.TractionModel.TractionController.CheckCommand}"
+                                          CommandParameter="LCM2"
+                                          Content="LCM    2"
+                                          IsChecked="{Binding Model.TractionModel.LCM2.IsChecked,
+                                                              Mode=TwoWay,
+                                                              NotifyOnSourceUpdated=True,
+                                                              NotifyOnTargetUpdated=True}"
+                                          Style="{StaticResource TextBtnStyle}" />
+                            <ToggleButton Width="45"
+                                          Height="45"
+                                          Margin="99,138,158,39"
+                                          BorderBrush="{Binding Model.TractionModel.MCM1.State,
+                                                                Converter={StaticResource MCMStateToColorConverter}}"
+                                          Command="{Binding Model.TractionModel.TractionController.CheckCommand}"
+                                          CommandParameter="MCM1"
+                                          Content="MCM    1"
+                                          IsChecked="{Binding Model.TractionModel.MCM1.IsChecked,
+                                                              Mode=TwoWay,
+                                                              NotifyOnSourceUpdated=True,
+                                                              NotifyOnTargetUpdated=True}"
+                                          Style="{StaticResource TextBtnStyle}" />
+                            <ToggleButton Width="45"
+                                          Height="45"
+                                          Margin="207,138,50,39"
+                                          BorderBrush="{Binding Model.TractionModel.MCM2.State,
+                                                                Converter={StaticResource MCMStateToColorConverter}}"
+                                          Command="{Binding Model.TractionModel.TractionController.CheckCommand}"
+                                          CommandParameter="MCM2"
+                                          Content="MCM    2"
+                                          IsChecked="{Binding Model.TractionModel.MCM2.IsChecked,
+                                                              Mode=TwoWay,
+                                                              NotifyOnSourceUpdated=True,
+                                                              NotifyOnTargetUpdated=True}"
+                                          Style="{StaticResource TextBtnStyle}" />
+                            <Border Height="25"
+                                    Margin="95,188,158,9"
+                                    BorderBrush="Black"
+                                    BorderThickness="1">
+                                <TextBlock HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           FontSize="18"
+                                           FontWeight="Bold"
+                                           Foreground="{StaticResource NumForeground}"
+                                           Text="{Binding Model.TractionModel.TractionInverterForce1}" />
+                            </Border>
+                            <Border Height="25"
+                                    Margin="139,76,114,121"
+                                    Background="{StaticResource Gray2Background}"
+                                    BorderBrush="Black"
+                                    BorderThickness="1">
+                                <TextBlock HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           FontSize="18"
+                                           FontWeight="Bold"
+                                           Foreground="{StaticResource NumForeground}"
+                                           Text="{Binding Model.TractionModel.SubInverterVoltage}" />
+                            </Border>
+                            <Border Width="45"
+                                    Height="25"
+                                    Margin="14,117,243,80"
+                                    BorderBrush="Black"
+                                    BorderThickness="1">
+                                <TextBlock HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           FontSize="18"
+                                           FontWeight="Bold"
+                                           Foreground="{StaticResource NumForeground}"
+                                           Text="{Binding Model.TractionModel.SideInverterVoltage}" />
+                            </Border>
+                            <Border Height="25"
+                                    Margin="207,188,48,9"
+                                    BorderBrush="Black"
+                                    BorderThickness="1">
+                                <TextBlock HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           FontSize="18"
+                                           FontWeight="Bold"
+                                           Foreground="{StaticResource NumForeground}"
+                                           Text="{Binding Model.TractionModel.TractionInverterForce2}" />
+                            </Border>
+                            <TextBlock Width="19"
+                                       Height="23"
+                                       Margin="65,120,218,0"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Top"
+                                       FontSize="18"
+                                       Foreground="Black"
+                                       RenderTransformOrigin="2.579,0.783"
+                                       Text="V" />
+                            <TextBlock Width="20"
+                                       Height="23"
+                                       Margin="190,78,93,0"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Top"
+                                       Background="{StaticResource Gray2Background}"
+                                       FontSize="18"
+                                       Foreground="Black"
+                                       Text="V"
+                                       TextAlignment="Center" />
+                            <TextBlock Width="19"
+                                       Height="23"
+                                       Margin="151,176,132,0"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Top"
+                                       FontSize="18"
+                                       Foreground="Black"
+                                       Text="千" />
+                            <TextBlock Width="19"
+                                       Height="23"
+                                       Margin="260,176,23,0"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Top"
+                                       FontSize="18"
+                                       Foreground="Black"
+                                       RenderTransformOrigin="2.474,0.435"
+                                       Text="千" />
+                            <TextBlock Width="19"
+                                       Height="23"
+                                       Margin="261,199,22,0"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Top"
+                                       FontSize="18"
+                                       Foreground="Black"
+                                       RenderTransformOrigin="2.474,0.435"
+                                       Text="牛" />
+                            <TextBlock Width="19"
+                                       Height="23"
+                                       Margin="151,198,132,0"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Top"
+                                       FontSize="18"
+                                       Foreground="Black"
+                                       Text="牛" />
+                        </Grid>
+                    </Viewbox>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Viewbox>
+</UserControl>

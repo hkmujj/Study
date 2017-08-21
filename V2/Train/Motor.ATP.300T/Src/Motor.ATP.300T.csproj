@@ -1,0 +1,559 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{99AFCC1A-E523-4692-B9DD-1B6C97D07C81}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Motor.ATP._300T</RootNamespace>
+    <AssemblyName>Motor.ATP.300T</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>MMI\Addin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>x86</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\MMI\Addin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>..\MMI\Addin\ATP.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;D:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\ATP.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;D:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ATPComControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MMI\ATPComControl.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CommonUtil, Version=2.29.2016.517, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="Excel.Interface, Version=2.30.2016.712, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="Mmi.Common.DateTimeInterpreter">
+      <HintPath>..\..\..\Bin\Common\Mmi.Common.DateTimeInterpreter.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MMI.Facility.Interface, Version=2.50.2017.214, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MMI\MMI.Facility.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="MsgReceiveMod">
+      <HintPath>..\..\..\Bin\Common\MsgReceiveMod.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Appraise\AppraiseControl.cs" />
+    <Compile Include="Config\ParaADefine.cs" />
+    <Compile Include="Config\SpeedProportionConfig.cs" />
+    <Compile Include="Config\ViewConfig.cs" />
+    <Compile Include="Constant\LogicInterface.cs" />
+    <Compile Include="DataManager\DataManager.cs" />
+    <Compile Include="DataManager\IDataClearable.cs" />
+    <Compile Include="FunBtnTest\FunBtnBase.cs" />
+    <Compile Include="FunBtnTest\FunBtnData.cs" />
+    <Compile Include="ProjectSwitch.cs" />
+    <Compile Include="Resources\ImageKeys\BrakeImages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BrakeImages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ImageKeys\BtnImages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BtnImages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ImageKeys\ComImages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ComImages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ImageKeys\DialPointerImages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DialPointerImages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ImageKeys\OpenDoorImages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OpenDoorImages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ImageKeys\PlanImages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PlanImages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ImageKeys\SignalImages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SignalImages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\InBoolKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InBoolKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\InFloatKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InFloatKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\OutBoolKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutBoolKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\OutFloatKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutFloatKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TopAdorner.cs" />
+    <Compile Include="主屏\AreaAContent.cs" />
+    <Compile Include="主屏\AreaBContent.cs" />
+    <Compile Include="主屏\AreaCContent.cs" />
+    <Compile Include="主屏\AreaDContent.cs" />
+    <Compile Include="主屏\AreaEContent.cs" />
+    <Compile Include="主屏\AreaFContent.cs" />
+    <Compile Include="主屏\BreakWarningStatus.cs" />
+    <Compile Include="共用\ControlMode.cs" />
+    <Compile Include="共用\Keyboard.cs" />
+    <Compile Include="共用\OpenDoorLocation.cs" />
+    <Compile Include="共用\TrainMode.cs" />
+    <Compile Include="共用\AreaBView.cs" />
+    <Compile Include="共用\PictrueAndProgress.cs" />
+    <Compile Include="共用\GDIProgress.cs" />
+    <Compile Include="ModelBase\ModuleBase.cs" />
+    <Compile Include="ModelBase\ModuleInterface.cs" />
+    <Compile Include="ModelBase\ModuleUpdate.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="主屏\Start\ATPMainStartScreen.cs" />
+    <Compile Include="共用\ATPBaseClass.cs" />
+    <Compile Include="共用\ATPType.cs" />
+    <Compile Include="共用\BtnInfo.cs" />
+    <Compile Include="共用\ButtonBar.cs" />
+    <Compile Include="共用\ButtonScreen.cs" />
+    <Compile Include="共用\ButtonType.cs" />
+    <Compile Include="共用\CoordinateConversion.cs" />
+    <Compile Include="共用\EnumItems.cs" />
+    <Compile Include="主屏\ATPMainScreen.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="共用\IStringFloatConverter.cs" />
+    <Compile Include="共用\Message.cs" />
+    <Compile Include="共用\SolidBrushsItems.cs" />
+    <Compile Include="共用\功能键与菜单\ATP_Type.cs" />
+    <Compile Include="共用\功能键与菜单\FunMenuButtonId.cs" />
+    <Compile Include="共用\功能键与菜单\MenuValue.cs" />
+    <Compile Include="共用\功能键与菜单\OpenFunBtnCTCS300T.cs" />
+    <Compile Include="共用\功能键与菜单\AppendPostCmd.cs" />
+    <Compile Include="共用\UtilityClass.cs" />
+    <Compile Include="共用\功能键与菜单\IOpennFunctionButton.cs" />
+    <Compile Include="共用\功能键与菜单\SignalSystem.cs" />
+    <Compile Include="共用\功能键与菜单\FunState\StateProvider.cs" />
+    <Compile Include="黑屏\ATPBlackScreen.cs" />
+    <Compile Include="黑屏\ATPClassoverScreen.cs" />
+    <Compile Include="黑屏\BlackFault.cs" />
+    <Compile Include="黑屏\StartState.cs" />
+    <Compile Include="黑屏\StartView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ImageKeys\BrakeImages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>BrakeImages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ImageKeys\BtnImages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>BtnImages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ImageKeys\ComImages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ComImages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ImageKeys\DialPointerImages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DialPointerImages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ImageKeys\OpenDoorImages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OpenDoorImages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ImageKeys\PlanImages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PlanImages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ImageKeys\SignalImages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SignalImages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\InBoolKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InBoolKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\InFloatKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InFloatKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\OutBoolKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OutBoolKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\OutFloatKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OutFloatKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Button\Btn_Down.png" />
+    <None Include="Resources\Images\Button\按钮背景.psd" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Button\Btn_Up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Button\按钮背景.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\表盘指针\表盘_CTCS300T.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\表盘指针\橙针.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\表盘指针\红针.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\表盘指针\黄针.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\表盘指针\灰针.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\计划区\M1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\计划区\M2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\计划区\M3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\计划区\M4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\计划区\M5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\计划区\M6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\计划区\y1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\计划区\y2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\计划区\y3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\计划区\y4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\计划区\y5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\计划区\y6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\计划区\计划区.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\计划区\加.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\计划区\减.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\计划区\降至0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\制动缓解\C2_紧急制动.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\制动缓解\C2_四级制动.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\制动缓解\C2_一级制动.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\制动缓解\C2_允许缓解.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\制动缓解\C2_最大常用制动.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\制动缓解\C3_紧急制动.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\制动缓解\C3_四级制动.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\制动缓解\C3_一级制动.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\制动缓解\C3_允许缓解.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\制动缓解\C3_最大常用制动.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\制动缓解\常用制动.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\制动缓解\紧急制动.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\制动缓解\弱常用制动.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\制动缓解\允许缓解.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\制动缓解\中等常用制动.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\信号灯\白灯.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\信号灯\红灯.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\信号灯\红黄灯.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\信号灯\黄灯.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\信号灯\灰灯.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\信号灯\绿灯.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\信号灯\绿黄灯.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\信号灯\双黄灯.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\信号灯\无色.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\GSM_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\GSM_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\GSM_灰.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\liangdu.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\shengying.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\底层框架_粗线.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\底层框架_启动.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\底层框架_细线.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\放大暗.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\放大亮.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\箭头_上_暗.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\箭头_上_亮.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\箭头_下_暗.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\箭头_下_亮.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\紧急消息.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\进度条.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\亮度.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\没有无线通信.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\目标距离.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\声音.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\司机安全设备告警.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\司机安全设备制动.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\缩小暗.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\缩小亮.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\未与RBC相连.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\已经与RBC相连.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\正在与RBC相连.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Changes_Motor.ATP.300T.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\OpenDoor\Open_Left.png" />
+    <Content Include="Resources\Images\OpenDoor\Open_Right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extension\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

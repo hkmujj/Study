@@ -1,0 +1,804 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:config="clr-namespace:Subway.ShenZhenLine7.Config"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:interfaces="clr-namespace:Subway.ShenZhenLine7.Interfaces"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:units="clr-namespace:Subway.ShenZhenLine7.Models.Units"
+    xmlns:view="clr-namespace:MMI.Facility.WPFInfrastructure.View;assembly=MMI.Facility.WPFInfrastructure"
+    mc:Ignorable="d">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Converter/ConverterResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="Subway.ShenZhenLine7.DoorItemTop" TargetType="ItemsControl">
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="units:DoorUnit">
+                    <Border>
+                        <Border.Width>
+                            <Binding
+                                Converter="{StaticResource Subway.ShenZhenLine7.MaxthConverter}"
+                                ConverterParameter="x/5"
+                                Path="ActualWidth"
+                                RelativeSource="{RelativeSource AncestorType=ItemsControl}" />
+                        </Border.Width>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="8*" />
+                                <RowDefinition Height="9*" />
+                            </Grid.RowDefinitions>
+                            <TextBlock
+                                Grid.Row="0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Foreground="White"
+                                Text="{Binding Location}" />
+                            <Image
+                                Grid.Row="1"
+                                Margin="1,0"
+                                view:FlickerManager.DurationMiliSecond="200"
+                                view:FlickerManager.Flicking="{Binding State, Converter={StaticResource Subway.ShenZhenLine7.DoorVisibilityConverter}}"
+                                view:FlickerManager.VisibilityAfterFlicking="Visible"
+                                Source="{Binding State, Converter={StaticResource Subway.ShenZhenLine7.DoorConverter}}"
+                                Stretch="Fill" />
+                        </Grid>
+                    </Border>
+
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Subway.ShenZhenLine7.DoorItemBottom" TargetType="ItemsControl">
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="units:DoorUnit">
+                    <Border>
+                        <Border.Width>
+                            <Binding
+                                Converter="{StaticResource Subway.ShenZhenLine7.MaxthConverter}"
+                                ConverterParameter="x/5"
+                                Path="ActualWidth"
+                                RelativeSource="{RelativeSource AncestorType=ItemsControl}" />
+                        </Border.Width>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="9*" />
+                                <RowDefinition Height="8*" />
+                            </Grid.RowDefinitions>
+                            <Image
+                                Grid.Row="0"
+                                Margin="1,0"
+                                view:FlickerManager.DurationMiliSecond="200"
+                                view:FlickerManager.Flicking="{Binding State, Converter={StaticResource Subway.ShenZhenLine7.DoorVisibilityConverter}}"
+                                view:FlickerManager.VisibilityAfterFlicking="Visible"
+                                Source="{Binding State, Converter={StaticResource Subway.ShenZhenLine7.DoorConverter}}"
+                                Stretch="Fill" />
+                            <TextBlock
+                                Grid.Row="1"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Foreground="White"
+                                Text="{Binding Location}" />
+                        </Grid>
+                    </Border>
+
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Subway.ShenZhenLine7.AirConditionItemStyle" TargetType="ItemsControl">
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="units:AirConditionUnit">
+                    <Border Width="{Binding RelativeSource={RelativeSource AncestorType=ItemsControl}, Path=ActualWidth, Converter={StaticResource Subway.ShenZhenLine7.MaxthConverter}, ConverterParameter=(x-12)/2}" Height="{Binding RelativeSource={RelativeSource AncestorType=ItemsControl}, Path=ActualHeight}">
+                        <Image
+                            Margin="5"
+                            Source="{Binding State, Converter={StaticResource Subway.ShenZhenLine7.AirConditionConverter}}"
+                            Stretch="Fill" />
+                    </Border>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Subway.ShenZhenLine7.EmegcnyTalkTopStyle" TargetType="ItemsControl">
+        <Setter Property="Margin" Value="-5,0" />
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="units:EnmergencyTalkUnit">
+                    <Border Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=ItemsControl}, Path=ActualWidth, Converter={StaticResource Subway.ShenZhenLine7.MaxthConverter}, ConverterParameter=x/5}" Margin="8,0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="16*" />
+                                <RowDefinition Height="21*" />
+                            </Grid.RowDefinitions>
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Foreground="White"
+                                Text="{Binding Location}" />
+                            <Border Grid.Row="1" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}">
+                                <Image Source="{Binding State, Converter={StaticResource Subway.ShenZhenLine7.EmergencyTalkConverter}}" />
+                            </Border>
+                        </Grid>
+                    </Border>
+
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Subway.ShenZhenLine7.EmegcnyTalkButtomStyle" TargetType="ItemsControl">
+        <Setter Property="Margin" Value="-5,0" />
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="units:EnmergencyTalkUnit">
+                    <Border Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=ItemsControl}, Path=ActualWidth, Converter={StaticResource Subway.ShenZhenLine7.MaxthConverter}, ConverterParameter=x/5}" Margin="8,0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="21*" />
+                                <RowDefinition Height="16*" />
+                            </Grid.RowDefinitions>
+
+                            <Border Grid.Row="0" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}">
+                                <Image Source="{Binding State, Converter={StaticResource Subway.ShenZhenLine7.EmergencyTalkConverter}}" />
+                            </Border>
+                            <TextBlock
+                                Grid.Row="1"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Foreground="White"
+                                Text="{Binding Location}" />
+                        </Grid>
+                    </Border>
+
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Subway.ShenZhenLine7.BrakeTopStyle" TargetType="ItemsControl">
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="units:BrakeUnit">
+                    <Border
+                        Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=ItemsControl}, Path=ActualWidth, Converter={StaticResource Subway.ShenZhenLine7.MaxthConverter}, ConverterParameter=(x)/2.5}"
+                        Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=ItemsControl}, Path=ActualHeight}"
+                        Padding="5,2">
+                        <Grid>
+
+                            <Border>
+                                <Image Source="{Binding State, Converter={StaticResource Subway.ShenZhenLine7.BrakeConverter}}" />
+                            </Border>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Subway.ShenZhenLine7.BorderCast" TargetType="ListBox">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBox">
+                    <ItemsPresenter />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemContainerStyle">
+            <Setter.Value>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListBoxItem">
+                                <Border
+                                    Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBox}}, Path=ActualHeight, Converter={StaticResource Subway.ShenZhenLine7.MaxthConverter}, ConverterParameter=x/10}"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}">
+                                    <ContentPresenter />
+                                </Border>
+
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="Background" Value="CornflowerBlue" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="Background" Value="Transparent" />
+                    <Setter Property="FontSize" Value="17" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="config:BorderCastItem">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2.5*" />
+                            <ColumnDefinition Width="10*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Text="{Binding Index}" />
+                        <TextBlock
+                            Grid.Column="1"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Text="{Binding Name}" />
+
+                    </Grid>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Margin" Value="80,20,80,0" />
+    </Style>
+
+    <Style x:Key="Subway.ShenZhenLine7.EventInfoStyle" TargetType="ItemsControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ItemsControl">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid
+                            Grid.Row="0"
+                            view:GridLine.Brush="White"
+                            view:GridLine.Style="ShowAll"
+                            view:GridLine.Width="1"
+                            view:GridLine.WidthStyle="Different"
+                            Background="#FEA97E">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="12*" />
+                                <ColumnDefinition Width="12*" />
+                                <ColumnDefinition Width="12*" />
+                                <ColumnDefinition Width="40*" />
+                                <ColumnDefinition Width="40*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.Resources>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="FontSize" Value="18" />
+                                    <Setter Property="Foreground" Value="Black" />
+                                    <Setter Property="HorizontalAlignment" Value="Center" />
+                                    <Setter Property="VerticalAlignment" Value="Center" />
+                                </Style>
+                            </Grid.Resources>
+                            <TextBlock Grid.Column="0" Text="序号" />
+                            <TextBlock Grid.Column="1" Text="故障代码" />
+                            <TextBlock Grid.Column="2" Text="等级" />
+                            <TextBlock Grid.Column="3" Text="故障描述" />
+                            <TextBlock Grid.Column="4" Text="日期时间" />
+                        </Grid>
+                        <Border
+                            Grid.Row="1"
+                            Grid.RowSpan="10"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="White"
+                            BorderThickness="1">
+                            <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Border>
+
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="interfaces:IEventInfo">
+                    <RadioButton GroupName="event" IsChecked="{Binding IsChecked, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}">
+                        <RadioButton.Template>
+                            <ControlTemplate TargetType="RadioButton">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsChecked" Value="True">
+                                        <Setter Property="Background" Value="#9A9385" />
+                                    </Trigger>
+                                    <Trigger Property="IsChecked" Value="False">
+                                        <Setter Property="Background" Value="Transparent" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </RadioButton.Template>
+                        <RadioButton.Content>
+                            <Grid
+                                Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualHeight, Converter={StaticResource Subway.ShenZhenLine7.MaxthConverter}, ConverterParameter=x/11}"
+                                view:GridLine.Brush="White"
+                                view:GridLine.Style="ShowAll"
+                                view:GridLine.Width="1"
+                                view:GridLine.WidthStyle="AllLineSame">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="12*" />
+                                    <ColumnDefinition Width="12*" />
+                                    <ColumnDefinition Width="12*" />
+                                    <ColumnDefinition Width="40*" />
+                                    <ColumnDefinition Width="40*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.Resources>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="FontSize" Value="18" />
+                                        <Setter Property="Foreground" Value="White" />
+                                        <Setter Property="HorizontalAlignment" Value="Center" />
+                                        <Setter Property="VerticalAlignment" Value="Center" />
+                                    </Style>
+                                </Grid.Resources>
+                                <TextBlock Grid.Column="0" Text="{Binding Number}" />
+                                <TextBlock Grid.Column="1" Text="{Binding FaultCode}" />
+                                <TextBlock Grid.Column="2" Text="{Binding Level, Converter={StaticResource Subway.ShenZhenLine7.EvelLevelConverter}}" />
+                                <TextBlock Grid.Column="3" Text="{Binding Describe}" />
+                                <TextBlock Grid.Column="4" Text="{Binding HappenTime, StringFormat={}{0:yyyy-MM-dd hh:mm:ss}}" />
+                            </Grid>
+                        </RadioButton.Content>
+                    </RadioButton>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Subway.ShenZhenLine7.BypassUnitStyle" TargetType="ItemsControl">
+        <Style.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="Foreground" Value="White" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="HorizontalAlignment" Value="Left" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+            </Style>
+        </Style.Resources>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ItemsControl">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="3*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock
+                                Grid.Column="0"
+                                HorizontalAlignment="Center"
+                                Text="1车" />
+                            <TextBlock
+                                Grid.Column="2"
+                                HorizontalAlignment="Center"
+                                Text="6车" />
+                        </Grid>
+                        <ItemsPresenter Grid.Row="1" Grid.RowSpan="6" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel IsItemsHost="True" Orientation="Vertical" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="units:BypassUnit">
+                    <Grid Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualHeight, Converter={StaticResource Subway.ShenZhenLine7.MaxthConverter}, ConverterParameter=x/7}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Border
+                            x:Name="car1"
+                            Grid.Column="0"
+                            Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualHeight, Converter={StaticResource Subway.ShenZhenLine7.MaxthConverter}, ConverterParameter=x/7-6}"
+                            Margin="3"
+                            HorizontalAlignment="Center"
+                            Background="Transparent"
+                            BorderBrush="DarkGray"
+                            BorderThickness="1" />
+                        <TextBlock
+                            Grid.Column="1"
+                            Margin="20,0,0,0"
+                            VerticalAlignment="Center"
+                            FontSize="18"
+                            Foreground="White"
+                            Text="{Binding Bypass}" />
+                        <Border
+                            x:Name="car2"
+                            Grid.Column="2"
+                            Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualHeight, Converter={StaticResource Subway.ShenZhenLine7.MaxthConverter}, ConverterParameter=x/7-6}"
+                            Margin="3"
+                            HorizontalAlignment="Center"
+                            Background="Transparent"
+                            BorderBrush="DarkGray"
+                            BorderThickness="1" />
+                    </Grid>
+                    <DataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding Status1}" Value="True">
+                            <Setter TargetName="car1" Property="Background" Value="Yellow" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Status6}" Value="True">
+                            <Setter TargetName="car2" Property="Background" Value="Yellow" />
+                        </DataTrigger>
+                    </DataTemplate.Triggers>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Subway.ShenZhenLine7.StationSelectViewStyle" TargetType="ItemsControl">
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="interfaces:IStation">
+                    <RadioButton
+                        Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualWidth, Converter={StaticResource Subway.ShenZhenLine7.MaxthConverter}, ConverterParameter=(x/5)-40}"
+                        Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualHeight, Converter={StaticResource Subway.ShenZhenLine7.MaxthConverter}, ConverterParameter=x/6-20}"
+                        Margin="20,10"
+                        Content="{Binding Name}"
+                        GroupName="stations"
+                        IsChecked="{Binding IsChecked, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}">
+                        <RadioButton.Style>
+                            <Style TargetType="RadioButton">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="RadioButton">
+                                            <Border
+                                                Background="{TemplateBinding Background}"
+                                                BorderBrush="White"
+                                                BorderThickness="2">
+                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsChecked" Value="True">
+                                                    <Setter Property="Foreground" Value="Black" />
+                                                    <Setter Property="Background" Value="#FF00FF00" />
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="Background" Value="Transparent" />
+                                <Setter Property="Foreground" Value="White" />
+                                <Setter Property="FontSize" Value="20" />
+                            </Style>
+                        </RadioButton.Style>
+
+                    </RadioButton>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <ControlTemplate x:Key="Subway.ShenZhenLine7.ProgressOne" TargetType="ProgressBar">
+        <Grid x:Name="LayoutRoot">
+            <Border
+                x:Name="PART_Track"
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}" />
+            <Border
+                x:Name="PART_Indicator"
+                HorizontalAlignment="Left"
+                Background="{TemplateBinding Foreground}" />
+
+        </Grid>
+        <ControlTemplate.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="Orientation" Value="Vertical" />
+                    <Condition Property="Tag" Value="Top" />
+                </MultiTrigger.Conditions>
+                <Setter TargetName="LayoutRoot" Property="LayoutTransform">
+                    <Setter.Value>
+                        <RotateTransform Angle="-90" />
+                    </Setter.Value>
+                </Setter>
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="Orientation" Value="Vertical" />
+                    <Condition Property="Tag" Value="Bottom" />
+                </MultiTrigger.Conditions>
+                <Setter TargetName="LayoutRoot" Property="LayoutTransform">
+                    <Setter.Value>
+                        <RotateTransform Angle="90" />
+                    </Setter.Value>
+                </Setter>
+            </MultiTrigger>
+        </ControlTemplate.Triggers>
+
+    </ControlTemplate>
+    <Style x:Key="Subway.ShenZhenLine7.MainMasterProgressBasrStyle" TargetType="ProgressBar">
+        <Setter Property="Template" Value="{StaticResource Subway.ShenZhenLine7.ProgressOne}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="#FF00FF00" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="BorderBrush" Value="White" />
+    </Style>
+    <SolidColorBrush x:Key="Subway.ShenZhenLine7.TabControlNormalBorderBrush" Color="#8C8E94" />
+    <LinearGradientBrush x:Key="Subway.ShenZhenLine7.ButtonNormalBackground" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Offset="0" Color="#F3F3F3" />
+        <GradientStop Offset="0.5" Color="#EBEBEB" />
+        <GradientStop Offset="0.5" Color="#DDDDDD" />
+        <GradientStop Offset="1" Color="#CDCDCD" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="Subway.ShenZhenLine7.TabItemHotBackground" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Offset="0.15" Color="#EAF6FD" />
+        <GradientStop Offset=".5" Color="#D9F0FC" />
+        <GradientStop Offset=".5" Color="#BEE6FD" />
+        <GradientStop Offset="1" Color="#A7D9F5" />
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="Subway.ShenZhenLine7.TabItemSelectedBackground" Color="#F9F9F9" />
+    <SolidColorBrush x:Key="Subway.ShenZhenLine7.TabItemHotBorderBrush" Color="#3C7FB1" />
+    <SolidColorBrush x:Key="Subway.ShenZhenLine7.TabItemDisabledBackground" Color="#F4F4F4" />
+    <SolidColorBrush x:Key="Subway.ShenZhenLine7.TabItemDisabledBorderBrush" Color="#FFC9C7BA" />
+    <Style x:Key="Subway.ShenZhenLine7.HelpTabItemStyle" TargetType="{x:Type TabItem}">
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="Padding" Value="10,0" />
+        <Setter Property="BorderBrush" Value="{StaticResource Subway.ShenZhenLine7.TabControlNormalBorderBrush}" />
+        <Setter Property="Background" Value="{StaticResource Subway.ShenZhenLine7.ButtonNormalBackground}" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabItem}">
+                    <Border
+                        x:Name="Bd"
+                        Height="29"
+                        Padding="{TemplateBinding Padding}"
+                        VerticalAlignment="Top"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="1,1,1,0">
+                        <ContentPresenter
+                            x:Name="Content"
+                            HorizontalAlignment="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"
+                            VerticalAlignment="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"
+                            d:DataContext="{d:DesignInstance interfaces:ITabItemInfoProvider}"
+                            Content="{Binding HeadName}"
+                            ContentSource="Header"
+                            RecognizesAccessKey="True"
+                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="true">
+                            <Setter Property="Panel.ZIndex" Value="1" />
+                            <Setter TargetName="Bd" Property="Background" Value="{StaticResource Subway.ShenZhenLine7.TabItemSelectedBackground}" />
+                        </Trigger>
+                        <Trigger Property="TabStripPlacement" Value="Bottom">
+                            <Setter TargetName="Bd" Property="BorderThickness" Value="1,0,1,1" />
+                        </Trigger>
+                        <Trigger Property="TabStripPlacement" Value="Left">
+                            <Setter TargetName="Bd" Property="BorderThickness" Value="1,1,0,1" />
+                        </Trigger>
+                        <Trigger Property="TabStripPlacement" Value="Right">
+                            <Setter TargetName="Bd" Property="BorderThickness" Value="0,1,1,1" />
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true" />
+                                <Condition Property="TabStripPlacement" Value="Top" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Margin" Value="-2,-2,-2,-2" />
+                            <Setter TargetName="Content" Property="Margin" Value="0,0,0,1" />
+                            <Setter TargetName="Bd" Property="Height" Value="34" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true" />
+                                <Condition Property="TabStripPlacement" Value="Bottom" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Margin" Value="-2,-1,-2,-2" />
+                            <Setter TargetName="Content" Property="Margin" Value="0,1,0,0" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true" />
+                                <Condition Property="TabStripPlacement" Value="Left" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Margin" Value="-2,-2,-1,-2" />
+                            <Setter TargetName="Content" Property="Margin" Value="0,0,1,0" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true" />
+                                <Condition Property="TabStripPlacement" Value="Right" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Margin" Value="-1,-2,-2,-2" />
+                            <Setter TargetName="Content" Property="Margin" Value="1,0,0,0" />
+                        </MultiTrigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter TargetName="Bd" Property="Background" Value="{StaticResource Subway.ShenZhenLine7.TabItemDisabledBackground}" />
+                            <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource Subway.ShenZhenLine7.TabItemDisabledBorderBrush}" />
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Subway.ShenZhenLine7.TabControlStyle" TargetType="{x:Type TabControl}">
+        <Setter Property="Padding" Value="2" />
+        <Setter Property="BorderBrush" Value="Black" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="TabStripPlacement" Value="Top" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="ItemContainerStyle" Value="{StaticResource Subway.ShenZhenLine7.HelpTabItemStyle}" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="TabIndex" Value="{Binding TabIndex}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabControl}">
+                    <Grid
+                        ClipToBounds="true"
+                        KeyboardNavigation.TabNavigation="Local"
+                        SnapsToDevicePixels="true">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition x:Name="ColumnDefinition0" />
+                            <ColumnDefinition x:Name="ColumnDefinition1" Width="0" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition x:Name="RowDefinition0" Height="Auto" />
+                            <RowDefinition x:Name="RowDefinition1" Height="*" />
+                        </Grid.RowDefinitions>
+                        <StackPanel
+                            x:Name="HeaderPanel"
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Margin="0"
+                            Panel.ZIndex="1"
+                            IsItemsHost="True"
+                            KeyboardNavigation.TabIndex="1"
+                            Orientation="Horizontal" />
+                        <!--<TabPanel x:Name="HeaderPanel"
+                                  Grid.Row="0"
+                                  Grid.Column="0"
+                                  Margin="0"
+                                  Panel.ZIndex="1"
+                                  IsItemsHost="true"
+                                  KeyboardNavigation.TabIndex="1" />-->
+                        <Border
+                            x:Name="ContentPanel"
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            KeyboardNavigation.DirectionalNavigation="Contained"
+                            KeyboardNavigation.TabIndex="2"
+                            KeyboardNavigation.TabNavigation="Local">
+                            <ContentPresenter
+                                x:Name="PART_SelectedContentHost"
+                                Margin="{TemplateBinding Padding}"
+                                ContentSource="SelectedContent"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="TabStripPlacement" Value="Bottom">
+                            <Setter TargetName="HeaderPanel" Property="Grid.Row" Value="1" />
+                            <Setter TargetName="ContentPanel" Property="Grid.Row" Value="0" />
+                            <Setter TargetName="RowDefinition0" Property="Height" Value="*" />
+                            <Setter TargetName="RowDefinition1" Property="Height" Value="Auto" />
+                            <Setter TargetName="HeaderPanel" Property="Margin" Value="2,0,2,2" />
+                        </Trigger>
+                        <Trigger Property="TabStripPlacement" Value="Left">
+                            <Setter TargetName="HeaderPanel" Property="Grid.Row" Value="0" />
+                            <Setter TargetName="ContentPanel" Property="Grid.Row" Value="0" />
+                            <Setter TargetName="HeaderPanel" Property="Grid.Column" Value="0" />
+                            <Setter TargetName="ContentPanel" Property="Grid.Column" Value="1" />
+                            <Setter TargetName="ColumnDefinition0" Property="Width" Value="Auto" />
+                            <Setter TargetName="ColumnDefinition1" Property="Width" Value="*" />
+                            <Setter TargetName="RowDefinition0" Property="Height" Value="*" />
+                            <Setter TargetName="RowDefinition1" Property="Height" Value="0" />
+                            <Setter TargetName="HeaderPanel" Property="Margin" Value="2,2,0,2" />
+                        </Trigger>
+                        <Trigger Property="TabStripPlacement" Value="Right">
+                            <Setter TargetName="HeaderPanel" Property="Grid.Row" Value="0" />
+                            <Setter TargetName="ContentPanel" Property="Grid.Row" Value="0" />
+                            <Setter TargetName="HeaderPanel" Property="Grid.Column" Value="1" />
+                            <Setter TargetName="ContentPanel" Property="Grid.Column" Value="0" />
+                            <Setter TargetName="ColumnDefinition0" Property="Width" Value="*" />
+                            <Setter TargetName="ColumnDefinition1" Property="Width" Value="Auto" />
+                            <Setter TargetName="RowDefinition0" Property="Height" Value="*" />
+                            <Setter TargetName="RowDefinition1" Property="Height" Value="0" />
+                            <Setter TargetName="HeaderPanel" Property="Margin" Value="0,2,2,2" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

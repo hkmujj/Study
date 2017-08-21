@@ -1,0 +1,514 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="主断禁止闭合" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\主断禁止闭合.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="司机室B端有效" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\司机室B端有效.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="主断运行闭合" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\主断运行闭合.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="设备断电1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\设备断电1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="车顶隔离开关3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\车顶隔离开关3.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="断路器闭合" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\断路器闭合.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="司机室A端" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\司机室A端.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="渐变线" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\渐变线.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="紧急制动54X54" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\紧急制动54X54.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WTB_LineA_Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WTB_LineA_Green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="主断死锁" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\主断死锁.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="警惕装置正常" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\警惕装置正常.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_Up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_Up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="车顶隔离开关2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\车顶隔离开关2.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="电机正常" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\电机正常.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="接触器竖闭合" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\接触器竖闭合.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="司机室A端无效" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\司机室A端无效.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="停放制动缓解54X51" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\停放制动缓解54X51.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="主断闭合98X27" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\主断闭合98X27.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="升弓40X27" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\升弓40X27.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="右侧按钮背景Down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\右侧按钮背景Down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WTB_LineA_Green1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WTB_LineA_Green1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="断路器断开" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\断路器断开.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="接触器横断开1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\接触器横断开1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="隔离" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\隔离.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="制动缸施加54X50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\制动缸施加54X50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_Down_Falut_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_Down_Falut_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WTB_LineB_Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WTB_LineB_Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="右开关闭合101X27" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\右开关闭合101X27.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="紧急制动" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\紧急制动.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="电机隔离" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\电机隔离.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="主断开且已经缓解98X27" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\主断开且已经缓解98X27.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="方向向前78X78" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\方向向前78X78.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MVB_LineA_Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MVB_LineA_Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MVB_LineB_Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MVB_LineB_Green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="制动缸死锁78X78" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\制动缸死锁78X78.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MVB_LineA_Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MVB_LineA_Green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="降弓40X27" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\降弓40X27.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="受电弓B升起1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\受电弓B升起.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="接触器竖断开1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\接触器竖断开1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="转向架电机不正常1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\转向架电机不正常1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="方向向前96X79" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\方向向前96X79.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="转向架电机隔离A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\转向架电机隔离A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="牵引禁止" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\牵引禁止.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="受电弓A升起2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\受电弓A升起.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="信号塔" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\信号塔.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="方向不明确78X78" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\方向不明确78X78.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="升弓New" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\升弓New.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MVB_LineB_Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MVB_LineB_Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="牵引允许" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\牵引允许.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="方向向后96X79" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\方向向后96X79.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="降双弓" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\降双弓.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="接触器横闭合1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\接触器横闭合1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="右侧按钮背景1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\右侧按钮背景1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="方向向后78X78" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\方向向后78X78.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PointerBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PointerBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="左开关断开101X27" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\左开关断开101X27.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="正常" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\正常.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="空转滑行" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\空转滑行.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="主断开但没有缓解" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\主断开但没有缓解.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="箭头2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\箭头2.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="左开关闭合101X27" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\左开关闭合101X27.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PointerGray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PointerGray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="主断闭合1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\主断闭合1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="右开关断开101X27" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\右开关断开101X27.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="双弓故障1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\双弓故障1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="设备得电1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\设备得电1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="箭头3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\箭头3.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="双弓故障" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\双弓故障.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="停放制动施加" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\停放制动施加.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="防滑" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\防滑.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="转向架电机不正常" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\转向架电机不正常.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="朔黄辅助系统31" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\朔黄辅助系统31.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RadioUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RadioUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BCU本机投入65X651" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BCU本机投入65X651.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="停放制动死锁" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\停放制动死锁.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="受电弓A隔离" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\受电弓A隔离.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="主断死锁98X27" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\主断死锁98X27.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="主断开但没有缓解98X27" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\主断开但没有缓解98X27.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="撒砂" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\撒砂.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="警惕装置切除" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\警惕装置切除.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="主断故障" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\主断故障.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_Up_Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_Up_Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="右侧按钮背景" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\右侧按钮背景.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_Gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_Gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="停放制动施加54X51" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\停放制动施加54X51.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PointerRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PointerRed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="右侧按钮背景_确认按下1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\右侧按钮背景_确认按下1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="制动缸缓解54X50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\制动缸缓解54X50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="转向架电机隔离" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\转向架电机隔离.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logo_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo_.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="车顶隔离开关1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\车顶隔离开关1.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="控制系统背景" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\控制系统背景.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WTB_LineA_Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WTB_LineA_Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_Dwon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_Dwon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="降双弓1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\降双弓1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Gray1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gray1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="箭头1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\箭头1.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BCU重联65X651" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BCU重联65X651.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="箭头11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\箭头11.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="机车配置背景1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\机车配置背景1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="惩罚制动" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\惩罚制动.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="制动缸缓解78X78" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\制动缸缓解78X78.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="制动缸施加78X78" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\制动缸施加78X78.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="主断开且已经缓解" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\主断开且已经缓解.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="空转滑行a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\空转滑行a.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="司机室B端" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\司机室B端.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="箭头31" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\箭头31.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="受电弓B隔离" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\受电弓B隔离.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_Blue1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_Blue1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_Blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="司机室A端有效" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\司机室A端有效.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_Up_Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_Up_Green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WTB_LineB_Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WTB_LineB_Green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="主断闭合" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\主断闭合.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="转向架电机正常" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\转向架电机正常.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="升双弓" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\升双弓.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="右侧按钮背景_确认按下" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\右侧按钮背景_确认按下.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="司机室B端无效" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\司机室B端无效.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="故障" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\故障.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_Down_Falut" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_Down_Falut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="紧急制动65X69" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\紧急制动65X69.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="机车配置背景" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\机车配置背景.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="停放制动缓解a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\停放制动缓解a.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_Up_Orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_Up_Orange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="方向不明确96X79" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\方向不明确96X79.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>

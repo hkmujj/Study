@@ -1,0 +1,46 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converter="clr-namespace:Engine.TAX2.SS7C.Converter">
+
+    <SolidColorBrush x:Key="ContentBackgroundBrush" Color="Gainsboro" />
+
+    <SolidColorBrush x:Key="ContentBackground2Brush" Color="Gray" />
+
+    <SolidColorBrush x:Key="ContentDeepSkyBlueBrush" Color="DeepSkyBlue" />
+
+    <SolidColorBrush x:Key="ContentBlueBrush" Color="Blue" />
+
+    <SolidColorBrush x:Key="ContentGreeBrush" Color="#4CC65B" />
+
+    <SolidColorBrush x:Key="ContentRedBrush" Color="Red" />
+
+    <SolidColorBrush x:Key="ContentYellowBrush" Color="Yellow" />
+
+    <SolidColorBrush x:Key="ContentTextBlackBrush" Color="Black" />
+
+    <SolidColorBrush x:Key="ContentBlackBorderBrush" Color="Black" />
+
+    <SolidColorBrush x:Key="ContentWhiteBorderBrush" Color="White" />
+
+    <SolidColorBrush x:Key="ShellBackgroundBrush" Color="Black" />
+
+    <SolidColorBrush x:Key="ForegroundWhiteBrush" Color="White" />
+
+    <SolidColorBrush x:Key="HarwareButtonWhiteBrush" Color="White" />
+
+    <SolidColorBrush x:Key="HarwareButtonRedBrush" Color="Red" />
+
+    <SolidColorBrush x:Key="HarwareButtonPressedBackground" Color="Gainsboro" />
+
+    <VisualBrush x:Key="FrameVisualBrush">
+        <VisualBrush.Visual>
+            <Canvas Width="6" Height="6">
+                <Path Data="M0,0 0,6 6,0 z" Fill="{StaticResource ForegroundWhiteBrush}" />
+                <Path Data="M0,6 6,0 6,6 z" Fill="{StaticResource ContentBlackBorderBrush}" />
+            </Canvas>
+        </VisualBrush.Visual>
+    </VisualBrush>
+
+    <converter:DownBtnContentToShowingContentConverter x:Key="DownBtnContentToShowingContentConverter" />
+
+</ResourceDictionary>

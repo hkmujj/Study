@@ -1,0 +1,609 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Inb数据按键是否失效" xml:space="preserve">
+    <value>数据按键是否失效</value>
+  </data>
+  <data name="Inb车次号按键是否失效" xml:space="preserve">
+    <value>车次号按键是否失效</value>
+  </data>
+  <data name="Inb司机号按键是否失效" xml:space="preserve">
+    <value>司机号按键是否失效</value>
+  </data>
+  <data name="Inb等级按键是否失效" xml:space="preserve">
+    <value>等级按键是否失效</value>
+  </data>
+  <data name="Inb模式按键是否失效" xml:space="preserve">
+    <value>模式按键是否失效</value>
+  </data>
+  <data name="Inb载频按键是否失效" xml:space="preserve">
+    <value>载频按键是否失效</value>
+  </data>
+  <data name="Inb启动按键是否失效" xml:space="preserve">
+    <value>启动按键是否失效</value>
+  </data>
+  <data name="Inb列车数据按键是否失效" xml:space="preserve">
+    <value>列车数据按键是否失效</value>
+  </data>
+  <data name="Inb调车按键是否失效" xml:space="preserve">
+    <value>调车按键是否失效</value>
+  </data>
+  <data name="Inb目视按键是否失效" xml:space="preserve">
+    <value>目视按键是否失效</value>
+  </data>
+  <data name="Inb机信按键是否失效" xml:space="preserve">
+    <value>机信按键是否失效</value>
+  </data>
+  <data name="InbF1" xml:space="preserve">
+    <value>F1</value>
+  </data>
+  <data name="InbF2" xml:space="preserve">
+    <value>F2</value>
+  </data>
+  <data name="InbF3" xml:space="preserve">
+    <value>F3</value>
+  </data>
+  <data name="InbF4" xml:space="preserve">
+    <value>F4</value>
+  </data>
+  <data name="InbF5" xml:space="preserve">
+    <value>F5</value>
+  </data>
+  <data name="InbF6" xml:space="preserve">
+    <value>F6</value>
+  </data>
+  <data name="InbF7" xml:space="preserve">
+    <value>F7</value>
+  </data>
+  <data name="InbF8" xml:space="preserve">
+    <value>F8</value>
+  </data>
+  <data name="Inb1" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Inb2" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Inb3" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="Inb4" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="Inb5" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="Inb6" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="Inb7" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Inb8" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="Inb9" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="Inb0" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Inb警惕1" xml:space="preserve">
+    <value>警惕1</value>
+  </data>
+  <data name="Inb黑屏故障" xml:space="preserve">
+    <value>黑屏故障</value>
+  </data>
+  <data name="Inb黑屏" xml:space="preserve">
+    <value>黑屏</value>
+  </data>
+  <data name="Inb顶棚速度监视区CSM" xml:space="preserve">
+    <value>顶棚速度监视区(CSM)</value>
+  </data>
+  <data name="Inb目标速度监视区TSM" xml:space="preserve">
+    <value>目标速度监视区(TSM)</value>
+  </data>
+  <data name="Inb开口速度监视区RSM" xml:space="preserve">
+    <value>开口速度监视区(RSM)</value>
+  </data>
+  <data name="Inb其他" xml:space="preserve">
+    <value>其他()</value>
+  </data>
+  <data name="Inb完全" xml:space="preserve">
+    <value>完全</value>
+  </data>
+  <data name="Inb部分" xml:space="preserve">
+    <value>部分</value>
+  </data>
+  <data name="Inb目视" xml:space="preserve">
+    <value>目视</value>
+  </data>
+  <data name="Inb引导" xml:space="preserve">
+    <value>引导</value>
+  </data>
+  <data name="Inb调车" xml:space="preserve">
+    <value>调车</value>
+  </data>
+  <data name="Inb待机" xml:space="preserve">
+    <value>待机</value>
+  </data>
+  <data name="Inb隔离" xml:space="preserve">
+    <value>隔离</value>
+  </data>
+  <data name="Inb机信" xml:space="preserve">
+    <value>机信</value>
+  </data>
+  <data name="Inb休眠" xml:space="preserve">
+    <value>休眠</value>
+  </data>
+  <data name="Inb冒进" xml:space="preserve">
+    <value>冒进</value>
+  </data>
+  <data name="Inb冒后" xml:space="preserve">
+    <value>冒后</value>
+  </data>
+  <data name="InbLKJ" xml:space="preserve">
+    <value>LKJ</value>
+  </data>
+  <data name="InbCTCS0" xml:space="preserve">
+    <value>CTCS 0</value>
+  </data>
+  <data name="InbCTCS1" xml:space="preserve">
+    <value>CTCS 1</value>
+  </data>
+  <data name="InbTVM430" xml:space="preserve">
+    <value>TVM430</value>
+  </data>
+  <data name="InbTVM300" xml:space="preserve">
+    <value>TVM300</value>
+  </data>
+  <data name="InbCTCS2" xml:space="preserve">
+    <value>CTCS 2</value>
+  </data>
+  <data name="InbCTCS3" xml:space="preserve">
+    <value>CTCS 3</value>
+  </data>
+  <data name="InbCTCS3D" xml:space="preserve">
+    <value>CTCS 3D</value>
+  </data>
+  <data name="Inb上行" xml:space="preserve">
+    <value>上行</value>
+  </data>
+  <data name="Inb下行" xml:space="preserve">
+    <value>下行</value>
+  </data>
+  <data name="Inb司机安全设备告警" xml:space="preserve">
+    <value>司机安全设备告警</value>
+  </data>
+  <data name="Inb司机安全设备制动" xml:space="preserve">
+    <value>司机安全设备制动</value>
+  </data>
+  <data name="Inb紧急消息" xml:space="preserve">
+    <value>紧急消息</value>
+  </data>
+  <data name="Inb没有无线通信" xml:space="preserve">
+    <value>没有无线通信</value>
+  </data>
+  <data name="Inb机控" xml:space="preserve">
+    <value>机控</value>
+  </data>
+  <data name="Inb人控" xml:space="preserve">
+    <value>人控</value>
+  </data>
+  <data name="Inb紧急制动" xml:space="preserve">
+    <value>紧急制动</value>
+  </data>
+  <data name="Inb常用制动" xml:space="preserve">
+    <value>常用制动</value>
+  </data>
+  <data name="Inb中等常用制动" xml:space="preserve">
+    <value>中等常用制动</value>
+  </data>
+  <data name="Inb弱常用制动" xml:space="preserve">
+    <value>弱常用制动</value>
+  </data>
+  <data name="Inb允许缓解1" xml:space="preserve">
+    <value>允许缓解1</value>
+  </data>
+  <data name="Inb驾驶室未激活" xml:space="preserve">
+    <value>驾驶室未激活</value>
+  </data>
+  <data name="Inb上次成功进行制动测试的时间是否在30小时以内" xml:space="preserve">
+    <value>上次成功进行制动测试的时间是否在30小时以内</value>
+  </data>
+  <data name="Inb正在进行制动测试" xml:space="preserve">
+    <value>正在进行制动测试</value>
+  </data>
+  <data name="Inb制动测试成功" xml:space="preserve">
+    <value>制动测试成功</value>
+  </data>
+  <data name="Inb制动测试不成功" xml:space="preserve">
+    <value>制动测试不成功</value>
+  </data>
+  <data name="InbATP自检不通过" xml:space="preserve">
+    <value>ATP自检不通过</value>
+  </data>
+  <data name="InbGSMR灰色" xml:space="preserve">
+    <value>GSM-R灰色</value>
+  </data>
+  <data name="InbGSMR绿2" xml:space="preserve">
+    <value>GSM-R绿2</value>
+  </data>
+  <data name="InbGSMR绿3" xml:space="preserve">
+    <value>GSM-R绿3</value>
+  </data>
+  <data name="InbRBC未连接" xml:space="preserve">
+    <value>RBC未连接</value>
+  </data>
+  <data name="InbRBC正在连接" xml:space="preserve">
+    <value>RBC正在连接</value>
+  </data>
+  <data name="InbRBC已连接" xml:space="preserve">
+    <value>RBC已连接</value>
+  </data>
+  <data name="Inb公里标显示" xml:space="preserve">
+    <value>公里标显示</value>
+  </data>
+  <data name="Inb进分相区" xml:space="preserve">
+    <value>进分相区</value>
+  </data>
+  <data name="Inb流程中启动条件" xml:space="preserve">
+    <value>流程中启动条件</value>
+  </data>
+  <data name="Inb启动确认" xml:space="preserve">
+    <value>启动确认</value>
+  </data>
+  <data name="Inb制动测试" xml:space="preserve">
+    <value>制动测试</value>
+  </data>
+  <data name="Inb确认CTCS2" xml:space="preserve">
+    <value>确认CTCS-2</value>
+  </data>
+  <data name="Inb确认CTCS3" xml:space="preserve">
+    <value>确认CTCS-3</value>
+  </data>
+  <data name="Inb载频上行" xml:space="preserve">
+    <value>载频上行</value>
+  </data>
+  <data name="Inb载频下行" xml:space="preserve">
+    <value>载频下行</value>
+  </data>
+  <data name="Inb允许缓解2" xml:space="preserve">
+    <value>允许缓解2</value>
+  </data>
+  <data name="Inb调车模式" xml:space="preserve">
+    <value>调车模式</value>
+  </data>
+  <data name="Inb目视模式" xml:space="preserve">
+    <value>目视模式</value>
+  </data>
+  <data name="Inb机信模式" xml:space="preserve">
+    <value>机信模式</value>
+  </data>
+  <data name="Inb退出调车模式" xml:space="preserve">
+    <value>退出调车模式</value>
+  </data>
+  <data name="Inb退出目视模式" xml:space="preserve">
+    <value>退出目视模式</value>
+  </data>
+  <data name="Inb退出机信模式" xml:space="preserve">
+    <value>退出机信模式</value>
+  </data>
+  <data name="Inb启动确认没有消息提示与确认" xml:space="preserve">
+    <value>启动确认(没有消息提示与确认)</value>
+  </data>
+  <data name="Inb警惕确认1" xml:space="preserve">
+    <value>警惕确认1</value>
+  </data>
+  <data name="Inb电话号码发送确认" xml:space="preserve">
+    <value>电话号码发送确认</value>
+  </data>
+  <data name="Inb制动测试失败是否重新进行制动测试" xml:space="preserve">
+    <value>制动测试失败，是否重新进行制动测试？</value>
+  </data>
+  <data name="Inb引导确认1" xml:space="preserve">
+    <value>引导确认1</value>
+  </data>
+  <data name="Inb警惕" xml:space="preserve">
+    <value>警惕</value>
+  </data>
+  <data name="InbATP启动成功" xml:space="preserve">
+    <value>ATP启动成功</value>
+  </data>
+  <data name="Inb进入待机模式" xml:space="preserve">
+    <value>进入待机模式</value>
+  </data>
+  <data name="Inb进入部分监控模式" xml:space="preserve">
+    <value>进入部分监控模式</value>
+  </data>
+  <data name="Inb进入目视行车模式" xml:space="preserve">
+    <value>进入目视行车模式</value>
+  </data>
+  <data name="Inb进入调车模式" xml:space="preserve">
+    <value>进入调车模式</value>
+  </data>
+  <data name="Inb进入引导模式" xml:space="preserve">
+    <value>进入引导模式</value>
+  </data>
+  <data name="Inb进入机车信号模式" xml:space="preserve">
+    <value>进入机车信号模式</value>
+  </data>
+  <data name="Inb进入完全监控模式" xml:space="preserve">
+    <value>进入完全监控模式</value>
+  </data>
+  <data name="Inb进入模式预留1" xml:space="preserve">
+    <value>进入*模式预留1</value>
+  </data>
+  <data name="Inb进入模式预留2" xml:space="preserve">
+    <value>进入*模式预留2</value>
+  </data>
+  <data name="Inb进入模式预留3" xml:space="preserve">
+    <value>进入*模式预留3</value>
+  </data>
+  <data name="Inb进入CTCS0级" xml:space="preserve">
+    <value>进入CTCS-0级</value>
+  </data>
+  <data name="Inb进入CTCS2级" xml:space="preserve">
+    <value>进入CTCS-2级</value>
+  </data>
+  <data name="Inb进入CTCS3级" xml:space="preserve">
+    <value>进入CTCS-3级</value>
+  </data>
+  <data name="Inb进入CTCS级预留1" xml:space="preserve">
+    <value>进入CTCS-*级预留1</value>
+  </data>
+  <data name="Inb进入CTCS级预留2" xml:space="preserve">
+    <value>进入CTCS-*级预留2</value>
+  </data>
+  <data name="InbC0级间转换预告" xml:space="preserve">
+    <value>C0级间转换预告</value>
+  </data>
+  <data name="InbC2级间转换预告" xml:space="preserve">
+    <value>C2级间转换预告</value>
+  </data>
+  <data name="InbC3级间转换预告" xml:space="preserve">
+    <value>C3级间转换预告</value>
+  </data>
+  <data name="InbC级间转换预告预留1" xml:space="preserve">
+    <value>C*级间转换预告预留1</value>
+  </data>
+  <data name="InbC级间转换预告预留2" xml:space="preserve">
+    <value>C*级间转换预告预留2</value>
+  </data>
+  <data name="Inb允许缓解" xml:space="preserve">
+    <value>允许缓解</value>
+  </data>
+  <data name="Inb司机室未激活" xml:space="preserve">
+    <value>司机室未激活</value>
+  </data>
+  <data name="InbRBC拒绝调车" xml:space="preserve">
+    <value>RBC拒绝调车</value>
+  </data>
+  <data name="InbRBC允许调车" xml:space="preserve">
+    <value>RBC允许调车</value>
+  </data>
+  <data name="Inb列车冒进确认" xml:space="preserve">
+    <value>列车冒进确认</value>
+  </data>
+  <data name="Inb越行确认" xml:space="preserve">
+    <value>越行确认</value>
+  </data>
+  <data name="Inb警惕确认" xml:space="preserve">
+    <value>警惕确认</value>
+  </data>
+  <data name="Inb冒进确认" xml:space="preserve">
+    <value>冒进确认</value>
+  </data>
+  <data name="Inb无法与RBC建立连接" xml:space="preserve">
+    <value>无法与RBC建立连接</value>
+  </data>
+  <data name="Inb不在RBC管辖范围" xml:space="preserve">
+    <value>不在RBC管辖范围</value>
+  </data>
+  <data name="Inb确认越行" xml:space="preserve">
+    <value>确认越行</value>
+  </data>
+  <data name="Inb常用制动故障" xml:space="preserve">
+    <value>常用制动故障</value>
+  </data>
+  <data name="Inb列车防护制动" xml:space="preserve">
+    <value>列车防护制动</value>
+  </data>
+  <data name="Inb正在与RBC进行连接" xml:space="preserve">
+    <value>正在与RBC进行连接</value>
+  </data>
+  <data name="Inb与RBC进行连接成功" xml:space="preserve">
+    <value>与RBC进行连接成功</value>
+  </data>
+  <data name="Inb引导确认3" xml:space="preserve">
+    <value>引导确认3</value>
+  </data>
+  <data name="Inb位置未知" xml:space="preserve">
+    <value>位置未知</value>
+  </data>
+  <data name="InbSTM双系故障" xml:space="preserve">
+    <value>STM双系故障</value>
+  </data>
+  <data name="Inb链严重故障1" xml:space="preserve">
+    <value>链严重故障1</value>
+  </data>
+  <data name="Inb轨道电路传输模块故障" xml:space="preserve">
+    <value>轨道电路传输模块故障</value>
+  </data>
+  <data name="InbGSMR网络丢失" xml:space="preserve">
+    <value>GSM-R网络丢失</value>
+  </data>
+  <data name="Inb与RBC无连接" xml:space="preserve">
+    <value>与RBC无连接</value>
+  </data>
+  <data name="Inb应答器接收模块故障" xml:space="preserve">
+    <value>应答器接收模块故障</value>
+  </data>
+  <data name="Inb测速系统故障" xml:space="preserve">
+    <value>测速系统故障</value>
+  </data>
+  <data name="InbFSK连续式传输故障" xml:space="preserve">
+    <value>FSK连续式传输故障</value>
+  </data>
+  <data name="Inb链严重故障" xml:space="preserve">
+    <value>链严重故障</value>
+  </data>
+  <data name="Inb速度传感器故障" xml:space="preserve">
+    <value>速度传感器故障</value>
+  </data>
+  <data name="Inb地面设备故障" xml:space="preserve">
+    <value>地面设备故障</value>
+  </data>
+  <data name="InbATPCU故障" xml:space="preserve">
+    <value>ATPCU故障</value>
+  </data>
+  <data name="Inb安全软件故障" xml:space="preserve">
+    <value>安全软件故障</value>
+  </data>
+  <data name="InbDMI与主机通信中断" xml:space="preserve">
+    <value>DMI与主机通信中断</value>
+  </data>
+  <data name="Inb应答器报文错误" xml:space="preserve">
+    <value>应答器报文错误</value>
+  </data>
+  <data name="InbCTCS2故障" xml:space="preserve">
+    <value>CTCS2故障</value>
+  </data>
+  <data name="InbBTM故障" xml:space="preserve">
+    <value>BTM故障</value>
+  </data>
+  <data name="Inb预留" xml:space="preserve">
+    <value>预留</value>
+  </data>
+  <data name="Inb引导确认" xml:space="preserve">
+    <value>引导确认</value>
+  </data>
+  <data name="Inb手动进入CTCS3" xml:space="preserve">
+    <value>手动进入CTCS3</value>
+  </data>
+  <data name="Inb冒进闪烁" xml:space="preserve">
+    <value>冒进闪烁</value>
+  </data>
+  <data name="Inb越行闪烁" xml:space="preserve">
+    <value>越行闪烁</value>
+  </data>
+  <data name="Inb警惕按键" xml:space="preserve">
+    <value>警惕按键</value>
+  </data>
+</root>

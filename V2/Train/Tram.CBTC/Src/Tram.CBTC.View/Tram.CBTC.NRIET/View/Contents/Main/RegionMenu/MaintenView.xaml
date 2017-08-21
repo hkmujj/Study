@@ -1,0 +1,84 @@
+﻿<UserControl x:Class="Tram.CBTC.NRIET.View.Contents.Main.RegionMenu.MaintenView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:view="clr-namespace:MMI.Facility.WPFInfrastructure.View;assembly=MMI.Facility.WPFInfrastructure"
+             xmlns:viewModel="clr-namespace:Tram.CBTC.NRIET.ViewModel"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+             d:DesignHeight="360" d:DesignWidth="480">
+    <Grid Background="Gray"
+          view:GridLine.Brush="LightGray" 
+          view:GridLine.Style="ShowAll" 
+          view:GridLine.WidthStyle="Different" 
+          view:GridLine.Width="1">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource Tram.CBTC.Nriet.Style.Text.WhiteText6}" Text="{StaticResource Tram.CBTC.Nriet.String.DeviceName}"></TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="1" Style="{StaticResource Tram.CBTC.Nriet.Style.Text.WhiteText6}" Text="{StaticResource Tram.CBTC.Nriet.String.OwnDeviceStatus}"></TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource Tram.CBTC.Nriet.Style.Text.WhiteText6}" Text="{StaticResource Tram.CBTC.Nriet.String.OtherDeviceStatus}"></TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource Tram.CBTC.Nriet.Style.Text.WhiteText6}" Text="{StaticResource Tram.CBTC.Nriet.String.Radar_CH}"></TextBlock>
+        <Border Grid.Row="1" Grid.Column="1" Background="{Binding CBTC.TrainInfo.Device.RadarState, Converter={StaticResource Tram.CBTC.Nriet.Converter.CurrentDeviceStatusColorConverter}}">
+            <TextBlock Style="{StaticResource Tram.CBTC.Nriet.Style.Text.WhiteText6}" Text="{Binding CBTC.TrainInfo.Device.RadarState, Converter={StaticResource Tram.CBTC.Nriet.Converter.CurrentDeviceStatusTextConverter}}"></TextBlock>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="2" Background="{Binding CBTC.TrainInfo.Device.RadarState, Converter={StaticResource Tram.CBTC.Nriet.Converter.RemoteDeviceStatusColorConverter}}">
+            <TextBlock Style="{StaticResource Tram.CBTC.Nriet.Style.Text.WhiteText6}" Text="{Binding CBTC.TrainInfo.Device.RadarState, Converter={StaticResource Tram.CBTC.Nriet.Converter.RemoteDeviceStatusTextConverter}}"></TextBlock>
+        </Border>
+        <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource Tram.CBTC.Nriet.Style.Text.WhiteText6}" Text="{StaticResource Tram.CBTC.Nriet.String.STA_CH}"></TextBlock>
+        <Border Grid.Row="2" Grid.Column="1" Background="{Binding CBTC.TrainInfo.Device.STAState, Converter={StaticResource Tram.CBTC.Nriet.Converter.CurrentDeviceStatusColorConverter}}">
+            <TextBlock Style="{StaticResource Tram.CBTC.Nriet.Style.Text.WhiteText6}" Text="{Binding CBTC.TrainInfo.Device.STAState, Converter={StaticResource Tram.CBTC.Nriet.Converter.CurrentDeviceStatusTextConverter}}"></TextBlock>
+        </Border>
+        <Border Grid.Row="2" Grid.Column="2" Background="{Binding CBTC.TrainInfo.Device.STAState, Converter={StaticResource Tram.CBTC.Nriet.Converter.RemoteDeviceStatusColorConverter}}">
+            <TextBlock Style="{StaticResource Tram.CBTC.Nriet.Style.Text.WhiteText6}" Text="{Binding CBTC.TrainInfo.Device.STAState, Converter={StaticResource Tram.CBTC.Nriet.Converter.RemoteDeviceStatusTextConverter}}"></TextBlock>
+        </Border>
+        <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource Tram.CBTC.Nriet.Style.Text.WhiteText6}" Text="{StaticResource Tram.CBTC.Nriet.String.Balise_CH}"></TextBlock>
+        <Border Grid.Row="3" Grid.Column="1" Background="{Binding CBTC.TrainInfo.Device.BaliseState, Converter={StaticResource Tram.CBTC.Nriet.Converter.CurrentDeviceStatusColorConverter}}">
+            <TextBlock Style="{StaticResource Tram.CBTC.Nriet.Style.Text.WhiteText6}" Text="{Binding CBTC.TrainInfo.Device.BaliseState, Converter={StaticResource Tram.CBTC.Nriet.Converter.CurrentDeviceStatusTextConverter}}"></TextBlock>
+        </Border>
+        <Border Grid.Row="3" Grid.Column="2" Background="{Binding CBTC.TrainInfo.Device.BaliseState, Converter={StaticResource Tram.CBTC.Nriet.Converter.RemoteDeviceStatusColorConverter}}">
+            <TextBlock Style="{StaticResource Tram.CBTC.Nriet.Style.Text.WhiteText6}" Text="{Binding CBTC.TrainInfo.Device.BaliseState, Converter={StaticResource Tram.CBTC.Nriet.Converter.RemoteDeviceStatusTextConverter}}"></TextBlock>
+        </Border>
+        <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource Tram.CBTC.Nriet.Style.Text.WhiteText6}" Text="{StaticResource Tram.CBTC.Nriet.String.PSRC_CH}"></TextBlock>
+        <Border Grid.Row="4" Grid.Column="1" Background="{Binding CBTC.TrainInfo.Device.DSRCState, Converter={StaticResource Tram.CBTC.Nriet.Converter.CurrentDeviceStatusColorConverter}}">
+            <TextBlock Style="{StaticResource Tram.CBTC.Nriet.Style.Text.WhiteText6}" Text="{Binding CBTC.TrainInfo.Device.DSRCState, Converter={StaticResource Tram.CBTC.Nriet.Converter.CurrentDeviceStatusTextConverter}}"></TextBlock>
+        </Border>
+        <Border Grid.Row="4" Grid.Column="2" Background="{Binding CBTC.TrainInfo.Device.DSRCState, Converter={StaticResource Tram.CBTC.Nriet.Converter.RemoteDeviceStatusColorConverter}}">
+            <TextBlock Style="{StaticResource Tram.CBTC.Nriet.Style.Text.WhiteText6}" Text="{Binding CBTC.TrainInfo.Device.DSRCState, Converter={StaticResource Tram.CBTC.Nriet.Converter.RemoteDeviceStatusTextConverter}}"></TextBlock>
+        </Border>
+        <TextBlock Grid.Row="5" Grid.Column="0" Style="{StaticResource Tram.CBTC.Nriet.Style.Text.WhiteText6}" Text="{StaticResource Tram.CBTC.Nriet.String.GPS}"></TextBlock>
+        <Border Grid.Row="5" Grid.Column="1" Background="{Binding CBTC.TrainInfo.Device.GPSState, Converter={StaticResource Tram.CBTC.Nriet.Converter.CurrentDeviceStatusColorConverter}}">
+            <TextBlock Style="{StaticResource Tram.CBTC.Nriet.Style.Text.WhiteText6}" Text="{Binding CBTC.TrainInfo.Device.GPSState, Converter={StaticResource Tram.CBTC.Nriet.Converter.CurrentDeviceStatusTextConverter}}"></TextBlock>
+        </Border>
+        <Border Grid.Row="5" Grid.Column="2" Background="{Binding CBTC.TrainInfo.Device.GPSState, Converter={StaticResource Tram.CBTC.Nriet.Converter.RemoteDeviceStatusColorConverter}}">
+            <TextBlock Style="{StaticResource Tram.CBTC.Nriet.Style.Text.WhiteText6}" Text="{Binding CBTC.TrainInfo.Device.GPSState, Converter={StaticResource Tram.CBTC.Nriet.Converter.RemoteDeviceStatusTextConverter}}"></TextBlock>
+        </Border>
+        <TextBlock Grid.Row="6" Grid.Column="0" Style="{StaticResource Tram.CBTC.Nriet.Style.Text.WhiteText6}" Text="{StaticResource Tram.CBTC.Nriet.String.Tod}"></TextBlock>
+        <Border Grid.Row="6" Grid.Column="1" Background="{Binding CBTC.TrainInfo.Device.TODState, Converter={StaticResource Tram.CBTC.Nriet.Converter.CurrentDeviceStatusColorConverter}}">
+            <TextBlock Style="{StaticResource Tram.CBTC.Nriet.Style.Text.WhiteText6}" Text="{Binding CBTC.TrainInfo.Device.TODState, Converter={StaticResource Tram.CBTC.Nriet.Converter.CurrentDeviceStatusTextConverter}}"></TextBlock>
+        </Border>
+        <Border Grid.Row="6" Grid.Column="2" Background="{Binding CBTC.TrainInfo.Device.TODState, Converter={StaticResource Tram.CBTC.Nriet.Converter.RemoteDeviceStatusColorConverter}}">
+            <TextBlock Style="{StaticResource Tram.CBTC.Nriet.Style.Text.WhiteText6}" Text="{Binding CBTC.TrainInfo.Device.TODState, Converter={StaticResource Tram.CBTC.Nriet.Converter.RemoteDeviceStatusTextConverter}}"></TextBlock>
+        </Border>
+        <TextBlock Grid.Row="7" Grid.Column="0" Style="{StaticResource Tram.CBTC.Nriet.Style.Text.WhiteText6}" Text="{StaticResource Tram.CBTC.Nriet.String.NTC_CH}"></TextBlock>
+        <Border Grid.Row="7" Grid.Column="1" Background="{Binding CBTC.TrainInfo.Device.NTCState, Converter={StaticResource Tram.CBTC.Nriet.Converter.CurrentDeviceStatusColorConverter}}">
+            <TextBlock Style="{StaticResource Tram.CBTC.Nriet.Style.Text.WhiteText6}" Text="{Binding CBTC.TrainInfo.Device.NTCState, Converter={StaticResource Tram.CBTC.Nriet.Converter.CurrentDeviceStatusTextConverter}}"></TextBlock>
+        </Border>
+        <Border Grid.Row="7" Grid.Column="2" Background="{Binding CBTC.TrainInfo.Device.NTCState, Converter={StaticResource Tram.CBTC.Nriet.Converter.RemoteDeviceStatusColorConverter}}">
+            <TextBlock Style="{StaticResource Tram.CBTC.Nriet.Style.Text.WhiteText6}" Text="{Binding CBTC.TrainInfo.Device.NTCState, Converter={StaticResource Tram.CBTC.Nriet.Converter.RemoteDeviceStatusTextConverter}}"></TextBlock>
+        </Border>
+    </Grid>
+</UserControl>

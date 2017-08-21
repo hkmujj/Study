@@ -1,0 +1,88 @@
+﻿<UserControl
+    x:Class="Subway.XiaMenLine1.Subsystem.View.Contents.MainRunningChildren.AssistPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mainContentContents="clr-namespace:Subway.XiaMenLine1.Subsystem.View.Contents.MainContentContents"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="clr-namespace:Subway.XiaMenLine1.Subsystem.ViewModels"
+    d:DataContext="{d:DesignInstance viewModels:ShellViewModel}"
+    d:DesignHeight="135"
+    d:DesignWidth="720"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary Source="../../../AppResouce.xaml" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30*" />
+            <RowDefinition Height="12*" />
+            <RowDefinition Height="13*" />
+            <RowDefinition Height="20*" />
+            <RowDefinition Height="18*" />
+            <RowDefinition Height="20*" />
+            <RowDefinition Height="13*" />
+            <RowDefinition Height="12*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70*" />
+            <ColumnDefinition Width="90*" />
+            <ColumnDefinition Width="90*" />
+            <ColumnDefinition Width="90*" />
+            <ColumnDefinition Width="90*" />
+            <ColumnDefinition Width="90*" />
+            <ColumnDefinition Width="90*" />
+            <ColumnDefinition Width="70*" />
+        </Grid.ColumnDefinitions>
+        <mainContentContents:CarNumber
+            Grid.Row="1"
+            Grid.Column="1"
+            Grid.ColumnSpan="6" />
+        <mainContentContents:SubSystemCarView
+            Grid.Row="2"
+            Grid.RowSpan="5"
+            Grid.Column="0"
+            Grid.ColumnSpan="8" />
+        <Grid
+            Grid.Row="3"
+            Grid.RowSpan="3"
+            Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Image Source="{Binding Model.AssistModel.Car1Organ, Converter={StaticResource AssistPowerStatusToImageConvert}}" Style="{StaticResource AirStyle}" />
+            <Image
+                Grid.Column="1"
+                Source="{Binding Model.AssistModel.Car1Charge, Converter={StaticResource AssistPowerStatusToImageConvert}}"
+                Style="{StaticResource AirStyle}" />
+
+        </Grid>
+        <Image
+            Grid.Row="3"
+            Grid.RowSpan="3"
+            Grid.Column="3"
+            Source="{Binding Model.AssistModel.Car3Organ, Converter={StaticResource AssistPowerStatusToImageConvert}}"
+            Style="{StaticResource AirStyle}" />
+        <Image
+            Grid.Row="3"
+            Grid.RowSpan="3"
+            Grid.Column="4"
+            Source="{Binding Model.AssistModel.Car4Organ, Converter={StaticResource AssistPowerStatusToImageConvert}}"
+            Style="{StaticResource AirStyle}" />
+        <Grid
+            Grid.Row="3"
+            Grid.RowSpan="3"
+            Grid.Column="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Image Source="{Binding Model.AssistModel.Car6Organ, Converter={StaticResource AssistPowerStatusToImageConvert}}" Style="{StaticResource AirStyle}" />
+            <Image
+                Grid.Column="1"
+                Source="{Binding Model.AssistModel.Car6Charge, Converter={StaticResource AssistPowerStatusToImageConvert}}"
+                Style="{StaticResource AirStyle}" />
+        </Grid>
+    </Grid>
+</UserControl>

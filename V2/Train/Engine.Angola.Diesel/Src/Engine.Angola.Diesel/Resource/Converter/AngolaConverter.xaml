@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converter="clr-namespace:Engine.Angola.Diesel.Converter"
+                    xmlns:converter1="clr-namespace:MMI.Facility.WPFInfrastructure.Converter;assembly=MMI.Facility.WPFInfrastructure">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Basic/BasicResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <converter:DialValutToAngleConverter x:Key="DialValutToAngleConverter" />
+
+    <converter1:SelectObjectContentConverter x:Key="IndicatorBoolToBackgroundConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{StaticResource BooleanTrue}" Content="{StaticResource DialRed}" />
+            <converter1:ObjectContentPair Key="{StaticResource BooleanFalse}" Content="{StaticResource Transparent}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+
+
+</ResourceDictionary>

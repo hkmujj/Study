@@ -1,0 +1,411 @@
+﻿<UserControl x:Class="Motor.HMI.CRH380D.View.Contents.CarComfortView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:common="clr-namespace:Motor.HMI.CRH380D.View.Common"
+             xmlns:constant="clr-namespace:Motor.HMI.CRH380D.Constant"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:regions="http://www.codeplex.com/CompositeWPF"
+             xmlns:viewModel="clr-namespace:Motor.HMI.CRH380D.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+             d:DesignHeight="420"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <Viewbox>
+        <Grid Width="800"
+              Height="420"
+              Background="{StaticResource Gray2Background}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="33*" />
+                <RowDefinition Height="65*" />
+                <RowDefinition Height="34*" />
+                <RowDefinition Height="44*" />
+                <RowDefinition Height="63*" />
+                <RowDefinition Height="66*" />
+                <RowDefinition Height="100*" />
+                <RowDefinition Height="15*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <TextBlock Style="{StaticResource TitleTextStyle}" Text="客室舒适度" />
+            </Grid>
+            <Grid Grid.Row="1">
+                <common:TrainCommon3 DataContext="{Binding Model.CarComfortModel.TrainModel}" />
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="70*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1">
+                    <Border Width="30"
+                            Height="30"
+                            Margin="13,4,47,0"
+                            BorderBrush="Black"
+                            BorderThickness="1">
+                        <TextBlock Style="{StaticResource BlackTextStyle}" Text="{Binding Model.CarComfortModel.Temperature0}" />
+                    </Border>
+                    <Border Width="30"
+                            Height="30"
+                            Margin="47,4,13,0"
+                            BorderBrush="Black"
+                            BorderThickness="1">
+                        <TextBlock Style="{StaticResource NumTextStyle}" Text="{Binding Model.CarComfortModel.SetTemperature0}" />
+                    </Border>
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Border Width="30"
+                            Height="30"
+                            Margin="13,4,47,0"
+                            BorderBrush="Black"
+                            BorderThickness="1">
+                        <TextBlock Style="{StaticResource BlackTextStyle}" Text="{Binding Model.CarComfortModel.Temperature7}" />
+                    </Border>
+                    <Border Width="30"
+                            Height="30"
+                            Margin="47,4,13,0"
+                            BorderBrush="Black"
+                            BorderThickness="1">
+                        <TextBlock Style="{StaticResource NumTextStyle}" Text="{Binding Model.CarComfortModel.SetTemperature7}" />
+                    </Border>
+                </Grid>
+                <Grid Grid.Column="3">
+                    <Border Width="30"
+                            Height="30"
+                            Margin="13,4,47,0"
+                            BorderBrush="Black"
+                            BorderThickness="1">
+                        <TextBlock Style="{StaticResource BlackTextStyle}" Text="{Binding Model.CarComfortModel.Temperature6}" />
+                    </Border>
+                    <Border Width="30"
+                            Height="30"
+                            Margin="47,4,13,0"
+                            BorderBrush="Black"
+                            BorderThickness="1">
+                        <TextBlock Style="{StaticResource NumTextStyle}" Text="{Binding Model.CarComfortModel.SetTemperature6}" />
+                    </Border>
+                </Grid>
+                <Grid Grid.Column="4">
+                    <Border Width="30"
+                            Height="30"
+                            Margin="13,4,47,0"
+                            BorderBrush="Black"
+                            BorderThickness="1">
+                        <TextBlock Style="{StaticResource BlackTextStyle}" Text="{Binding Model.CarComfortModel.Temperature5}" />
+                    </Border>
+                    <Border Width="30"
+                            Height="30"
+                            Margin="47,4,13,0"
+                            BorderBrush="Black"
+                            BorderThickness="1">
+                        <TextBlock Style="{StaticResource NumTextStyle}" Text="{Binding Model.CarComfortModel.SetTemperature5}" />
+                    </Border>
+                </Grid>
+                <Grid Grid.Column="5">
+                    <Border Width="30"
+                            Height="30"
+                            Margin="13,4,47,0"
+                            BorderBrush="Black"
+                            BorderThickness="1">
+                        <TextBlock Style="{StaticResource BlackTextStyle}" Text="{Binding Model.CarComfortModel.Temperature4}" />
+                    </Border>
+                    <Border Width="30"
+                            Height="30"
+                            Margin="47,4,13,0"
+                            BorderBrush="Black"
+                            BorderThickness="1">
+                        <TextBlock Style="{StaticResource NumTextStyle}" Text="{Binding Model.CarComfortModel.SetTemperature4}" />
+                    </Border>
+                </Grid>
+                <Grid Grid.Column="6">
+                    <Border Width="30"
+                            Height="30"
+                            Margin="13,4,47,0"
+                            BorderBrush="Black"
+                            BorderThickness="1">
+                        <TextBlock Style="{StaticResource BlackTextStyle}" Text="{Binding Model.CarComfortModel.Temperature3}" />
+                    </Border>
+                    <Border Width="30"
+                            Height="30"
+                            Margin="47,4,13,0"
+                            BorderBrush="Black"
+                            BorderThickness="1">
+                        <TextBlock Style="{StaticResource NumTextStyle}" Text="{Binding Model.CarComfortModel.SetTemperature3}" />
+                    </Border>
+                </Grid>
+                <Grid Grid.Column="7">
+                    <Border Width="30"
+                            Height="30"
+                            Margin="13,4,47,0"
+                            BorderBrush="Black"
+                            BorderThickness="1">
+                        <TextBlock Style="{StaticResource BlackTextStyle}" Text="{Binding Model.CarComfortModel.Temperature2}" />
+                    </Border>
+                    <Border Width="30"
+                            Height="30"
+                            Margin="47,4,13,0"
+                            BorderBrush="Black"
+                            BorderThickness="1">
+                        <TextBlock Style="{StaticResource NumTextStyle}" Text="{Binding Model.CarComfortModel.SetTemperature2}" />
+                    </Border>
+                </Grid>
+                <Grid Grid.Column="8">
+                    <Border Width="30"
+                            Height="30"
+                            Margin="13,4,47,0"
+                            BorderBrush="Black"
+                            BorderThickness="1">
+                        <TextBlock Style="{StaticResource BlackTextStyle}" Text="{Binding Model.CarComfortModel.Temperature1}" />
+                    </Border>
+                    <Border Width="30"
+                            Height="30"
+                            Margin="47,4,13,0"
+                            BorderBrush="Black"
+                            BorderThickness="1">
+                        <TextBlock Style="{StaticResource NumTextStyle}" Text="{Binding Model.CarComfortModel.SetTemperature1}" />
+                    </Border>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="70*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1">
+                    <ToggleButton Margin="13,1,13,0"
+                                  BorderBrush="{Binding Model.CarComfortModel.CarComfort0.State,
+                                                        Converter={StaticResource CarComfortStateToColorConverter}}"
+                                  Command="{Binding Model.CarComfortModel.CarComfortController.CheckCommand}"
+                                  CommandParameter="0"
+                                  Content="HVAC"
+                                  IsChecked="{Binding Model.CarComfortModel.CarComfort0.IsChecked,
+                                                      Mode=TwoWay,
+                                                      NotifyOnSourceUpdated=True,
+                                                      NotifyOnTargetUpdated=True}"
+                                  Style="{StaticResource TextBtnStyle}" />
+                </Grid>
+                <Grid Grid.Column="2">
+                    <ToggleButton Margin="13,1,13,0"
+                                  BorderBrush="{Binding Model.CarComfortModel.CarComfort7.State,
+                                                        Converter={StaticResource CarComfortStateToColorConverter}}"
+                                  Command="{Binding Model.CarComfortModel.CarComfortController.CheckCommand}"
+                                  CommandParameter="7"
+                                  Content="HVAC"
+                                  IsChecked="{Binding Model.CarComfortModel.CarComfort7.IsChecked,
+                                                      Mode=TwoWay,
+                                                      NotifyOnSourceUpdated=True,
+                                                      NotifyOnTargetUpdated=True}"
+                                  Style="{StaticResource TextBtnStyle}" />
+                </Grid>
+                <Grid Grid.Column="3">
+                    <ToggleButton Margin="13,1,13,0"
+                                  BorderBrush="{Binding Model.CarComfortModel.CarComfort6.State,
+                                                        Converter={StaticResource CarComfortStateToColorConverter}}"
+                                  Command="{Binding Model.CarComfortModel.CarComfortController.CheckCommand}"
+                                  CommandParameter="6"
+                                  Content="HVAC"
+                                  IsChecked="{Binding Model.CarComfortModel.CarComfort6.IsChecked,
+                                                      Mode=TwoWay,
+                                                      NotifyOnSourceUpdated=True,
+                                                      NotifyOnTargetUpdated=True}"
+                                  Style="{StaticResource TextBtnStyle}" />
+                </Grid>
+                <Grid Grid.Column="4">
+                    <ToggleButton Margin="13,1,13,0"
+                                  BorderBrush="{Binding Model.CarComfortModel.CarComfort5.State,
+                                                        Converter={StaticResource CarComfortStateToColorConverter}}"
+                                  Command="{Binding Model.CarComfortModel.CarComfortController.CheckCommand}"
+                                  CommandParameter="5"
+                                  Content="HVAC"
+                                  IsChecked="{Binding Model.CarComfortModel.CarComfort5.IsChecked,
+                                                      Mode=TwoWay,
+                                                      NotifyOnSourceUpdated=True,
+                                                      NotifyOnTargetUpdated=True}"
+                                  Style="{StaticResource TextBtnStyle}" />
+                </Grid>
+                <Grid Grid.Column="5">
+                    <ToggleButton Margin="13,1,13,0"
+                                  BorderBrush="{Binding Model.CarComfortModel.CarComfort4.State,
+                                                        Converter={StaticResource CarComfortStateToColorConverter}}"
+                                  Command="{Binding Model.CarComfortModel.CarComfortController.CheckCommand}"
+                                  CommandParameter="4"
+                                  Content="HVAC"
+                                  IsChecked="{Binding Model.CarComfortModel.CarComfort4.IsChecked,
+                                                      Mode=TwoWay,
+                                                      NotifyOnSourceUpdated=True,
+                                                      NotifyOnTargetUpdated=True}"
+                                  Style="{StaticResource TextBtnStyle}" />
+                </Grid>
+                <Grid Grid.Column="6">
+                    <ToggleButton Margin="13,1,13,0"
+                                  BorderBrush="{Binding Model.CarComfortModel.CarComfort3.State,
+                                                        Converter={StaticResource CarComfortStateToColorConverter}}"
+                                  Command="{Binding Model.CarComfortModel.CarComfortController.CheckCommand}"
+                                  CommandParameter="3"
+                                  Content="HVAC"
+                                  IsChecked="{Binding Model.CarComfortModel.CarComfort3.IsChecked,
+                                                      Mode=TwoWay,
+                                                      NotifyOnSourceUpdated=True,
+                                                      NotifyOnTargetUpdated=True}"
+                                  Style="{StaticResource TextBtnStyle}" />
+                </Grid>
+                <Grid Grid.Column="7">
+                    <ToggleButton Margin="13,1,13,0"
+                                  BorderBrush="{Binding Model.CarComfortModel.CarComfort2.State,
+                                                        Converter={StaticResource CarComfortStateToColorConverter}}"
+                                  Command="{Binding Model.CarComfortModel.CarComfortController.CheckCommand}"
+                                  CommandParameter="2"
+                                  Content="HVAC"
+                                  IsChecked="{Binding Model.CarComfortModel.CarComfort2.IsChecked,
+                                                      Mode=TwoWay,
+                                                      NotifyOnSourceUpdated=True,
+                                                      NotifyOnTargetUpdated=True}"
+                                  Style="{StaticResource TextBtnStyle}" />
+                </Grid>
+                <Grid Grid.Column="8">
+                    <ToggleButton Margin="13,1,13,0"
+                                  BorderBrush="{Binding Model.CarComfortModel.CarComfort1.State,
+                                                        Converter={StaticResource CarComfortStateToColorConverter}}"
+                                  Command="{Binding Model.CarComfortModel.CarComfortController.CheckCommand}"
+                                  CommandParameter="1"
+                                  Content="HVAC"
+                                  IsChecked="{Binding Model.CarComfortModel.CarComfort1.IsChecked,
+                                                      Mode=TwoWay,
+                                                      NotifyOnSourceUpdated=True,
+                                                      NotifyOnTargetUpdated=True}"
+                                  Style="{StaticResource TextBtnStyle}" />
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="257*" />
+                    <ColumnDefinition Width="161*" />
+                    <ColumnDefinition Width="95*" />
+                    <ColumnDefinition Width="280*" />
+                    <ColumnDefinition Width="7*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <TextBlock Margin="55,69,130,10"
+                               FontSize="18"
+                               Text="外部温度" />
+                    <TextBlock Height="21"
+                               Margin="211,67,30,12"
+                               FontSize="18"
+                               FontWeight="Bold"
+                               RenderTransformOrigin="-0.239,0.643"
+                               Text="C" />
+                    <TextBlock Margin="204,55,37,17"
+                               FontSize="18"
+                               FontWeight="Bold"
+                               Text="。" />
+                    <Border Width="40"
+                            Height="21"
+                            Margin="162,0,0,10"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            BorderBrush="Black"
+                            BorderThickness="1">
+                        <TextBlock HorizontalAlignment="Right"
+                                   VerticalAlignment="Center"
+                                   FontSize="18"
+                                   FontWeight="Bold"
+                                   Foreground="{StaticResource NumForeground}"
+                                   Text="{Binding Model.CarComfortModel.OutTemperature}" />
+                    </Border>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Border BorderBrush="Black" BorderThickness="1">
+                        <TextBlock Width="99"
+                                   Margin="31,6,29,70"
+                                   HorizontalAlignment="Center"
+                                   FontSize="18"
+                                   Text="设置点温度" />
+                    </Border>
+                    <Button Width="56"
+                            Height="55"
+                            Margin="15,40,90,5"
+                            Command="{Binding Model.CarComfortModel.CarComfortController.SubTemperatureCommand}"
+                            Content="-"
+                            FontSize="40"
+                            IsEnabled="{Binding Model.CarComfortModel.SubTemperatureIsEnable}"
+                            Style="{StaticResource WarringSumMenuBtnStyle}"
+                            Tag="{StaticResource Gray2Color}" />
+                    <Button Width="56"
+                            Height="55"
+                            Margin="90,40,15,5"
+                            Command="{Binding Model.CarComfortModel.CarComfortController.AddTemperatureCommand}"
+                            Content="+"
+                            FontSize="40"
+                            IsEnabled="{Binding Model.CarComfortModel.AddTemperatureIsEnable}"
+                            Style="{StaticResource WarringSumMenuBtnStyle}"
+                            Tag="{StaticResource Gray2Color}" />
+                </Grid>
+                <Grid Grid.Column="3">
+                    <Border BorderBrush="Black" BorderThickness="1">
+                        <TextBlock Margin="60,6,58,70"
+                                   HorizontalAlignment="Center"
+                                   FontSize="18"
+                                   Text="照明" />
+                    </Border>
+                    <Grid Margin="10,40,5,5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <RadioButton Grid.RowSpan="2"
+                                     Grid.Column="0"
+                                     Width="84"
+                                     Height="55"
+                                     Margin="2,0"
+                                     Command="{Binding Model.CarComfortModel.CarComfortController.SetLightModeCommand}"
+                                     CommandParameter="Normal"
+                                     Content="普通"
+                                     FontSize="18"
+                                     Style="{StaticResource RadioBtnStyle}"
+                                     Tag="{StaticResource Gray2Color}" />
+                        <RadioButton Grid.RowSpan="2"
+                                     Grid.Column="1"
+                                     Width="84"
+                                     Height="55"
+                                     Margin="2,0"
+                                     Command="{Binding Model.CarComfortModel.CarComfortController.SetLightModeCommand}"
+                                     CommandParameter="Half"
+                                     Content="半"
+                                     FontSize="18"
+                                     Style="{StaticResource RadioBtnStyle}"
+                                     Tag="{StaticResource Gray2Color}" />
+                        <RadioButton Grid.RowSpan="2"
+                                     Grid.Column="2"
+                                     Width="84"
+                                     Height="55"
+                                     Margin="2,0"
+                                     Command="{Binding Model.CarComfortModel.CarComfortController.SetLightModeCommand}"
+                                     CommandParameter="Closed"
+                                     Content="关闭"
+                                     FontSize="18"
+                                     Style="{StaticResource RadioBtnStyle}"
+                                     Tag="{StaticResource Gray2Color}" />
+
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Viewbox>
+</UserControl>
+

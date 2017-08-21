@@ -1,0 +1,24 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:com="clr-namespace:Urban.ATC.Siemens.WPF.Control">
+
+    <ControlTemplate x:Key="RecTextTemplate" TargetType="com:RecButton">
+        <Grid Width="{TemplateBinding ActualWidth}"
+              Height="{TemplateBinding ActualHeight}"
+              Background="{TemplateBinding Background}">
+            <Rectangle Stroke="{TemplateBinding BorderBrush}" StrokeThickness="{TemplateBinding BorderThickness}" />
+            <TextBlock Margin="{TemplateBinding Padding}"
+                       HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                       VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                       Background="{TemplateBinding Background}"
+                       FontSize="{TemplateBinding FontSize}"
+                       FontWeight="Bold"
+                       Foreground="{TemplateBinding Foreground}"
+                       Text="{TemplateBinding Content}"
+                       TextWrapping="Wrap" />
+        </Grid>
+    </ControlTemplate>
+    <Style TargetType="com:RecButton">
+        <Setter Property="Template" Value="{StaticResource RecTextTemplate}" />
+    </Style>
+</ResourceDictionary>

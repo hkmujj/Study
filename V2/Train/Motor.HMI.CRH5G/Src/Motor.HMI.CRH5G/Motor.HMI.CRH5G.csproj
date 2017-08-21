@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2FB6D87A-BBF2-4F6D-A52C-FB1966AD3133}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Motor.HMI.CRH5G</RootNamespace>
+    <AssemblyName>Motor.HMI.CRH5G</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\MMI\Addin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonUtil">
+      <HintPath>..\..\..\Bin\MMI\CommonUtil.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Excel.Interface">
+      <HintPath>..\..\..\Bin\MMI\Excel.Interface.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mmi.Common.DateTimeInterpreter">
+      <HintPath>..\..\..\..\Bin\Common\Mmi.Common.DateTimeInterpreter.dll</HintPath>
+    </Reference>
+    <Reference Include="MMI.Facility.Interface, Version=2.50.2017.214, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="MsgReceiveMod">
+      <HintPath>E:\mmi\trunk\V2\Bin\Common\MsgReceiveMod.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Appraise\Appraise.cs" />
+    <Compile Include="Appraise\AppraiseResource.cs" />
+    <Compile Include="Appraise\GlobalViewNavigate.cs" />
+    <Compile Include="Config\ConfigModel\CommunicationDataModel.cs" />
+    <Compile Include="Config\ConfigModel\CRH5GExcelReaderConfig.cs" />
+    <Compile Include="Config\ConfigModel\ICorrectable.cs" />
+    <Compile Include="Config\ConfigModel\ProjectConfig.cs" />
+    <Compile Include="Config\ConfigModel\ProjectDetailConfig.cs" />
+    <Compile Include="Config\ViewConfig.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource\Images\ImagesResouce.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImagesResouce.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\InBoolKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InBoolKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\InFloatKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InFloatKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\OutBoolKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutBoolKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\OutFloatKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutFloatKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="下载数据故障\DownloadDataFault.cs" />
+    <Compile Include="主屏\HomeScreen.cs" />
+    <Compile Include="主屏\HomeScreenItem.cs" />
+    <Compile Include="仪表\Instrument.cs" />
+    <Compile Include="制动试验\BrakeTest.cs" />
+    <Compile Include="密码\PassWord.cs" />
+    <Compile Include="底层共用\BaseClassExtenstion.cs" />
+    <Compile Include="底层共用\BottomBtnType.cs" />
+    <Compile Include="底层共用\BtnInfo.cs" />
+    <Compile Include="底层共用\ButtonsScreen.cs" />
+    <Compile Include="底层共用\RectView\CommandRectInfo.cs" />
+    <Compile Include="底层共用\CommunicationDataIndexExtension.cs" />
+    <Compile Include="底层共用\CoordinateConversion.cs" />
+    <Compile Include="底层共用\CRH5GBase.cs" />
+    <Compile Include="底层共用\EnumItems.cs" />
+    <Compile Include="底层共用\GlobalParam.cs" />
+    <Compile Include="底层共用\ObjectManager.cs" />
+    <Compile Include="底层共用\ObjectManagerExtenstion.cs" />
+    <Compile Include="底层共用\RectView\MarshallingChangableRectState.cs" />
+    <Compile Include="底层共用\RectView\MarshallingType.cs" />
+    <Compile Include="底层共用\RectView\RectState.cs" />
+    <Compile Include="底层共用\ScreenIdentification.cs" />
+    <Compile Include="底层共用\TrainDirection.cs" />
+    <Compile Include="底层共用\UtilityClass.cs" />
+    <Compile Include="底层共用\消息\FaultReceive.cs" />
+    <Compile Include="底层共用\消息\FaultMsg5.cs" />
+    <Compile Include="底层共用\消息\MsgHandler.cs" />
+    <Compile Include="底层共用\消息\MsgShowType.cs" />
+    <Compile Include="底层共用\消息\FaultEnsure.cs" />
+    <Compile Include="指令\Command.cs" />
+    <Compile Include="底层共用\ShowStyle.cs" />
+    <Compile Include="指令\SelectableRectMoveStrategy.cs" />
+    <Compile Include="故障历史\FalutRepertory.cs" />
+    <Compile Include="故障历史\FalutSortType.cs" />
+    <Compile Include="故障历史\FaultHistory.cs" />
+    <Compile Include="状态\BottomButtonVisitor.cs" />
+    <Compile Include="状态\Menu\MenuEightScreen.cs" />
+    <Compile Include="状态\Menu\MenuFiveScreen.cs" />
+    <Compile Include="状态\Menu\MenuFourScreen.cs" />
+    <Compile Include="状态\Menu\MenuNineScreen.cs" />
+    <Compile Include="状态\Menu\MenuOneScreen.cs" />
+    <Compile Include="状态\Menu\MenuScreenBase.cs" />
+    <Compile Include="状态\Menu\MenuSevenScreen.cs" />
+    <Compile Include="状态\Menu\MenuSixScreen.cs" />
+    <Compile Include="状态\Menu\MenuThreeScreen.cs" />
+    <Compile Include="状态\Menu\MenuTwoScreen.cs" />
+    <Compile Include="状态\Menu\SateBottomButtonVisitor.cs" />
+    <Compile Include="状态\TitleScreen.cs" />
+    <Compile Include="状态\TitleScreenInit.cs" />
+    <Compile Include="状态\TitleSrceenFun.cs" />
+    <Compile Include="状态\车.cs" />
+    <Compile Include="电子仪器\ElectronicInstrumentBase.cs" />
+    <Compile Include="电子仪器\TestThreeScreen.cs" />
+    <Compile Include="电子仪器\TestOneScreen.cs" />
+    <Compile Include="电子仪器\TestTwoScreen.cs" />
+    <Compile Include="系统设置\SystemSettings.cs" />
+    <Compile Include="维护\Maintain.cs" />
+    <Compile Include="语言时间设置\LanguageTimeSettings.cs" />
+    <Compile Include="黑屏\BlackScreen.cs" />
+    <Compile Include="黑屏\ClassOverScreen.cs" />
+    <Compile Include="黑屏\StartView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Changes_Motor.HMI.CRH5G.txt" />
+    <Content Include="Config\ProjectConfig.xml" />
+    <Content Include="Config\ProjectDetailConfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Resource\Images\Resource\时间设置.png" />
+    <None Include="Resource\Images\Resource\故障.png" />
+    <None Include="Resource\Images\Resource\SingleToDouble.png" />
+    <None Include="Resource\Images\Resource\faultEnsure.png" />
+    <None Include="Resource\Images\Resource\DoubleToSingle.png" />
+    <None Include="Resource\Images\Resource\Car.png" />
+    <None Include="Resource\Images\Resource\硬件按钮.png" />
+    <None Include="Resource\Images\Resource\表针\指针.png" />
+    <None Include="Resource\Images\Resource\表针\线电压.png" />
+    <None Include="Resource\Images\Resource\表针\线电流.png" />
+    <None Include="Resource\Images\Resource\表针\速度表盘.png" />
+    <None Include="Resource\Images\Resource\表针\红三角.png" />
+    <None Include="Resource\Images\Resource\表针\作用力2.png" />
+    <None Include="Resource\Images\Resource\表针\作用力.png" />
+    <None Include="Resource\Images\Resource\表针\主风管压力.png" />
+    <None Include="Resource\Images\Resource\表针\制动主管压力.png" />
+    <None Include="Resource\Images\Resource\表针\指针_3.png" />
+    <None Include="Resource\Images\Resource\表针\指针_2.png" />
+    <None Include="Resource\Images\Resource\表针\指针_1.png" />
+    <None Include="Resource\Images\Resource\car\向右.png" />
+    <None Include="Resource\Images\Resource\car\司机室占用.png" />
+    <None Include="Resource\Images\Resource\car\受电弓-左.png" />
+    <None Include="Resource\Images\Resource\car\受电弓-右.png" />
+    <None Include="Resource\Images\Resource\car\三角.png" />
+    <None Include="Resource\Images\Resource\car\16车换端.png" />
+    <None Include="Resource\Images\Resource\car\16车.png" />
+    <None Include="Resource\Images\Resource\car\8车双组显示换端.png" />
+    <None Include="Resource\Images\Resource\car\8车双组显示.png" />
+    <None Include="Resource\Images\Resource\car\8车换端.png" />
+    <None Include="Resource\Images\Resource\car\8车.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource\Images\ImagesResouce.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ImagesResouce.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\InBoolKeys.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>InBoolKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\InFloatKeys.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>InFloatKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\OutBoolKeys.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OutBoolKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\OutFloatKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OutFloatKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy /y "$(TargetPath)" "$(SolutionDir)..\..\Platform\MMI\Addin\$(TargetFileName)"
+xcopy /y "$(ProjectDir)\Config\*.xml" "$(SolutionDir)..\..\Platform\MMI\Config\"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

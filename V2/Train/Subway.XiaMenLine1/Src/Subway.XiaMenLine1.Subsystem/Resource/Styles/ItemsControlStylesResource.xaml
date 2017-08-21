@@ -1,0 +1,385 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converter="clr-namespace:Subway.XiaMenLine1.Subsystem.Converter"
+    xmlns:converter1="clr-namespace:MMI.Facility.WPFInfrastructure.Converter;assembly=MMI.Facility.WPFInfrastructure"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:interface="clr-namespace:Subway.XiaMenLine1.Interface;assembly=Subway.XiaMenLine1.Interface"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:model="clr-namespace:Subway.XiaMenLine1.Subsystem.Model"
+    xmlns:view="clr-namespace:Subway.XiaMenLine1.Subsystem.View"
+    mc:Ignorable="d">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Converters/ConverterResource.xaml" />
+        <ResourceDictionary Source="../Styles/TextResource.xaml" />
+        <ResourceDictionary Source="BorderStyleResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="MainRunningBrakeItemControlStyle" TargetType="ItemsControl">
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <WrapPanel />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="{x:Type model:BrakeUnit}">
+                    <Border Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualWidth, Converter={StaticResource Division2Conveter}}" Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualHeight, Converter={StaticResource Division2Conveter}}">
+                        <Image
+                            Margin="9,2"
+                            Source="{Binding BrakeStatus, Converter={StaticResource BrakeStatusToImageConvert}}"
+                            Stretch="Fill" />
+                    </Border>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="EmergencyCauseItemStyle" TargetType="ItemsControl">
+        <Setter Property="Margin" Value="50,50,50,20" />
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="model:EnmergencyCauseUnit">
+                    <Border
+                        Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualHeight, Converter={StaticResource Division8Conveter}}"
+                        d:DataContext="{d:DesignInstance model:EnmergencyCauseUnit}"
+                        BorderBrush="White"
+                        BorderThickness="2,1">
+                        <Border x:Name="PART_Border" Margin="1">
+                            <TextBlock
+                                x:Name="PART_TextBlock"
+                                Margin="50,0,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                FontSize="{StaticResource TextFontSize16}"
+                                Foreground="White"
+                                Text="{Binding Name}" />
+                        </Border>
+
+                    </Border>
+                    <DataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding IsEmergency}" Value="true">
+                            <Setter TargetName="PART_Border" Property="Background" Value="{StaticResource RedBrush}" />
+                            <Setter TargetName="PART_TextBlock" Property="Foreground" Value="{StaticResource BlackBrush}" />
+                        </DataTrigger>
+                    </DataTemplate.Triggers>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="MainRunnigDoorUpItemStyle" TargetType="ItemsControl">
+        <Setter Property="Margin" Value="2" />
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="{x:Type model:DoorUnit}">
+                    <Border
+                        x:Name="PART_Boder"
+                        Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualWidth, Converter={StaticResource Division4Conveter}}"
+                        Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualHeight}">
+                        <Grid>
+                            <view:Door Margin="4,0" Status="{Binding DoorStatus}" />
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="MainRunnigDoorDownItemStyle" TargetType="ItemsControl">
+        <Setter Property="Margin" Value="2" />
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="{x:Type model:DoorUnit}">
+                    <Border Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualWidth, Converter={StaticResource Division5Conveter}}" Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualHeight}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="3*" />
+                                <RowDefinition Height="2*" />
+                            </Grid.RowDefinitions>
+                            <Border Grid.Row="0" Style="{StaticResource MainRunnigCarContentItemBorderStyle}">
+                                <Image Source="{Binding Path=DoorStatus, Converter={StaticResource DoorStatusToImageConvert}}" />
+                            </Border>
+                            <TextBlock
+                                Grid.Row="1"
+                                Style="{StaticResource CarTextBlockStyleTwo}"
+                                Text="{Binding Path=DoorIndex}" />
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="MainRunnigEmerTalkUpItemStyle" TargetType="ItemsControl">
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="{x:Type model:EmergencyTalkUnit}">
+                    <Border
+                        Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualWidth, Converter={StaticResource Division4Conveter}}"
+                        Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualHeight}"
+                        Visibility="{Binding Path=State, Converter={StaticResource EmergencyTalkStateToVisiblyConverter}}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="2*" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Style="{StaticResource CarTextBlockStyleTwo}" Text="{Binding Path=Location}" />
+                            <Border Grid.Row="1" Style="{StaticResource MainRunnigCarContentItemBorderStyle}">
+                                <Image Source="{Binding Path=State, Converter={StaticResource EmergencyTalkToImageConvert}}" />
+                            </Border>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="MainRunnigEmerTalkDownItemStyle" TargetType="ItemsControl">
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="{x:Type model:EmergencyTalkUnit}">
+                    <Border
+                        Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualWidth, Converter={StaticResource Division4Conveter}}"
+                        Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualHeight}"
+                        Visibility="{Binding Path=State, Converter={StaticResource EmergencyTalkStateToVisiblyConverter}}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2*" />
+                                <RowDefinition Height="1*" />
+                            </Grid.RowDefinitions>
+                            <Border Grid.Row="0" Style="{StaticResource MainRunnigCarContentItemBorderStyle}">
+                                <Image Source="{Binding Path=State, Converter={StaticResource EmergencyTalkToImageConvert}}" />
+                            </Border>
+                            <TextBlock
+                                Grid.Row="1"
+                                Style="{StaticResource CarTextBlockStyleTwo}"
+                                Text="{Binding Path=Location}" />
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <converter1:MathConverter x:Key="MathConverter" />
+
+    <Style x:Key="TractionLockItemsStyle" TargetType="ItemsControl">
+        <Setter Property="Margin" Value="6,16,6,-6" />
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="model:TractionLockUnit">
+                    <Border
+                        x:Name="PART_Border"
+                        Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualHeight, Converter={StaticResource DivisionUnitCountPerPageConveter}}"
+                        Margin="0,-1,0,0"
+                        d:DataContext="{d:DesignInstance model:TractionLockUnit}"
+                        BorderBrush="White"
+                        BorderThickness="2,1,2,1">
+                        <TextBlock
+                            x:Name="PART_Text"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            FontSize="{StaticResource TextFontSize14}"
+                            Foreground="White"
+                            Text="{Binding Path=UnitName}"
+                            TextAlignment="Left"
+                            TextWrapping="Wrap" />
+                    </Border>
+                    <DataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding IsLocked}" Value="true">
+                            <DataTrigger.Setters>
+                                <Setter TargetName="PART_Border" Property="Background" Value="Red" />
+                                <Setter TargetName="PART_Text" Property="Foreground" Value="Black" />
+                            </DataTrigger.Setters>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsRowSpan}" Value="1">
+                            <DataTrigger.Setters>
+                                <Setter TargetName="PART_Border" Property="BorderThickness" Value="2,1,2,0" />
+                            </DataTrigger.Setters>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsRowSpan}" Value="2">
+                            <DataTrigger.Setters>
+                                <Setter TargetName="PART_Border" Property="BorderThickness" Value="2,0,2,1" />
+                            </DataTrigger.Setters>
+                        </DataTrigger>
+                    </DataTemplate.Triggers>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="EnmergencyBorderItemStyle" TargetType="ItemsControl">
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <RadioButton
+                        x:Name="PART_RadioButton"
+                        Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualHeight, Converter={StaticResource Division6Conveter}}"
+                        Command="{Binding SentData}"
+                        Tag="{Binding Number}">
+                        <RadioButton.Template>
+                            <ControlTemplate TargetType="RadioButton">
+                                <Grid>
+                                    <Border Background="{TemplateBinding Background}">
+                                        <TextBlock FontSize="{StaticResource TextFontSize22}" Foreground="White">
+                                            <TextBlock.Text>
+                                                <MultiBinding Converter="{StaticResource EnmergencyConveter}">
+                                                    <Binding Path="Number" />
+                                                    <Binding Path="Content" />
+                                                </MultiBinding>
+                                            </TextBlock.Text>
+                                        </TextBlock>
+                                    </Border>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsChecked" Value="True">
+                                        <Setter Property="Background" Value="{StaticResource YellowBrush}" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </RadioButton.Template>
+                    </RadioButton>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="BoradercastBtn1" TargetType="RadioButton">
+        <Setter Property="Background" Value="#99EBDF" />
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="Margin" Value="2" />
+        <Setter Property="GroupName" Value="emergenctcontent" />
+        <Setter Property="Command" Value="{Binding Source={x:Static model:EnmergencyBorader.Instance}, Path=SenBoradID}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Border Background="{TemplateBinding Background}">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Text="{TemplateBinding Content}"
+                            TextAlignment="Center" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" Value="Yellow" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="LoveBoradcast" TargetType="ItemsControl">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <WrapPanel />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="interface:IBoradcast">
+                    <Border Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=ItemsControl}, Path=ActualWidth, Converter={StaticResource MathConverter}, ConverterParameter=x/2-1}" Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=ItemsControl}, Path=ActualHeight, Converter={StaticResource MathConverter}, ConverterParameter=x/5}">
+                        <RadioButton
+                            CommandParameter="{Binding}"
+                            Content="{Binding Content}"
+                            Style="{StaticResource BoradercastBtn1}" />
+                    </Border>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="CustBoradcast" TargetType="ItemsControl">
+        <Setter Property="FontSize" Value="16" />
+
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <WrapPanel />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="interface:IBoradcast">
+                    <Border Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=ItemsControl}, Path=ActualWidth, Converter={StaticResource MathConverter}, ConverterParameter=x/1}" Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=ItemsControl}, Path=ActualHeight, Converter={StaticResource MathConverter}, ConverterParameter=x/5}">
+                        <RadioButton
+                            CommandParameter="{Binding}"
+                            Content="{Binding Content}"
+                            Style="{StaticResource BoradercastBtn1}" />
+                    </Border>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="EmergentBoradcast" TargetType="ItemsControl">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <WrapPanel />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="interface:IBoradcast">
+                    <Border Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=ItemsControl}, Path=ActualWidth, Converter={StaticResource MathConverter}, ConverterParameter=x/3}" Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=ItemsControl}, Path=ActualHeight, Converter={StaticResource MathConverter}, ConverterParameter=x/5}">
+                        <RadioButton
+                            CommandParameter="{Binding}"
+                            Content="{Binding Content}"
+                            Style="{StaticResource BoradercastBtn1}" />
+                    </Border>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

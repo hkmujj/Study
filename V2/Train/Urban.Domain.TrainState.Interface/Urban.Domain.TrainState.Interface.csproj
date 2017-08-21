@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EEF968DC-1D30-4B8D-BE15-148DCF8BF231}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Urban.Domain.TrainState.Interface</RootNamespace>
+    <AssemblyName>Urban.Domain.TrainState.Interface</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonUtil">
+      <HintPath>..\..\Bin\MMI\CommonUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="Mmi.Communication.Index.Adapter">
+      <HintPath>..\..\Bin\MMI\Mmi.Communication.Index.Adapter.dll</HintPath>
+    </Reference>
+    <Reference Include="MMI.Facility.Interface">
+      <HintPath>..\..\Bin\MMI\MMI.Facility.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\ISateProvider.cs" />
+    <Compile Include="Common\ITypeProvider.cs" />
+    <Compile Include="Common\IUpdateParamExtension.cs" />
+    <Compile Include="IAccumulatorPower.cs" />
+    <Compile Include="IATP.cs" />
+    <Compile Include="ICarPower.cs" />
+    <Compile Include="ICarPowerItem.cs" />
+    <Compile Include="IContactLinePower.cs" />
+    <Compile Include="IPower.cs" />
+    <Compile Include="Statues\BrakingLevel.cs" />
+    <Compile Include="Statues\BrakingState.cs" />
+    <Compile Include="Common\IListeningModel.cs" />
+    <Compile Include="Common\IListeningModelProvider.cs" />
+    <Compile Include="Common\INameProvider.cs" />
+    <Compile Include="Common\IUpdateParam.cs" />
+    <Compile Include="Common\IUpdatingEventProvider.cs" />
+    <Compile Include="Common\IStateUpdatable.cs" />
+    <Compile Include="Common\UpdateEvent.cs" />
+    <Compile Include="IAirCylinder.cs" />
+    <Compile Include="IDataListener.cs" />
+    <Compile Include="IIdentityProvider.cs" />
+    <Compile Include="Infomation\IInfomationCollection.cs" />
+    <Compile Include="Infomation\IInfomationItem.cs" />
+    <Compile Include="Infomation\IInfomationItemContent.cs" />
+    <Compile Include="Infomation\IInfomationService.cs" />
+    <Compile Include="Infomation\IInformationCreater.cs" />
+    <Compile Include="IPassenger.cs" />
+    <Compile Include="ISpeed.cs" />
+    <Compile Include="ISpeedModel.cs" />
+    <Compile Include="ITrainPartial.cs" />
+    <Compile Include="IVisibility.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CanCutPart.cs" />
+    <Compile Include="IAxis.cs" />
+    <Compile Include="IBogies .cs" />
+    <Compile Include="IBraking.cs" />
+    <Compile Include="ICar.cs" />
+    <Compile Include="ICarBraking.cs" />
+    <Compile Include="ICompressorMotor.cs" />
+    <Compile Include="IContactLine.cs" />
+    <Compile Include="IDifferentiateCar.cs" />
+    <Compile Include="IDoor.cs" />
+    <Compile Include="IDriverCar.cs" />
+    <Compile Include="IEmergencyInsulate.cs" />
+    <Compile Include="IExternalEnvironment.cs" />
+    <Compile Include="IFaultable.cs" />
+    <Compile Include="IHVAC.cs" />
+    <Compile Include="IIdentityProvide.cs" />
+    <Compile Include="ScreenIdentity.cs" />
+    <Compile Include="IPantograph.cs" />
+    <Compile Include="IPartialCar.cs" />
+    <Compile Include="IStation.cs" />
+    <Compile Include="ITemperatureMensurability.cs" />
+    <Compile Include="IToilet.cs" />
+    <Compile Include="ITraction.cs" />
+    <Compile Include="ITrain.cs" />
+    <Compile Include="ITrainLine.cs" />
+    <Compile Include="ITrainState.cs" />
+    <Compile Include="ITrainUnit.cs" />
+    <Compile Include="IVCB.cs" />
+    <Compile Include="IWheel.cs" />
+    <Compile Include="Statues\BrakingType.cs" />
+    <Compile Include="Statues\CarPowerState.cs" />
+    <Compile Include="Statues\MotorCarType.cs" />
+    <Compile Include="Statues\PassengerState.cs" />
+    <Compile Include="Statues\PISModel.cs" />
+    <Compile Include="Statues\TractionLevel.cs" />
+    <Compile Include="Statues\TrainType.cs" />
+    <Compile Include="Statues\UseState.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

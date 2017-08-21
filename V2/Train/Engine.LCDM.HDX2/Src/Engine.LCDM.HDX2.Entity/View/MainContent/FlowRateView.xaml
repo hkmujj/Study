@@ -1,0 +1,212 @@
+﻿<UserControl x:Class="Engine.LCDM.HDX2.Entity.View.MainContent.FlowRateView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="clr-namespace:Engine.LCDM.HDX2.Entity.Controls"
+             xmlns:converter="clr-namespace:Engine.LCDM.HDX2.Entity.Converter"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:Engine.LCDM.HDX2.Entity.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:HXD2ViewModel}"
+             d:DesignHeight="500"
+             d:DesignWidth="220"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <converter:EnumToResourceConverter x:Key="EnumToResourceConverter" />
+            <converter:MultiplicationConverter x:Key="HalfMultiplicationConverter" Multiplier="0.5" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Engine.LCDM.HDX2.Resource;component/HXD2ResourceManager.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Rectangle Margin="2"
+                   Fill="{StaticResource MidlePlateContentBackBrush}"
+                   RadiusX="5"
+                   RadiusY="5"
+                   Stroke="{StaticResource MainOutlineBrush}"
+                   StrokeThickness="2" />
+        <Grid Margin="12">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="260*" />
+                <RowDefinition Height="40*" />
+                <RowDefinition Height="40*" />
+            </Grid.RowDefinitions>
+            <Rectangle Grid.Row="0"
+                       Margin="6,6,6,0"
+                       Stroke="{StaticResource MainOutlineBrush}"
+                       StrokeThickness="12" />
+            <Grid Grid.Row="0"
+                  Margin="18,18,12,12"
+                  Background="{StaticResource MainTitleBackBrush}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="5*" />
+                </Grid.RowDefinitions>
+                <Rectangle Margin="-6,-6,-6,0"
+                           Stroke="{StaticResource MainOutlineBrush}"
+                           StrokeThickness="6" />
+                <TextBlock Grid.Row="0"
+                           Margin="6"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="30"
+                           Foreground="{StaticResource BlueTextBrush}">
+                    <TextBlock.Text>
+                        <MultiBinding Converter="{StaticResource EnumToResourceConverter}">
+                            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType={x:Type UserControl}}" />
+                            <Binding Path="LCDMModel.MachineType" />
+                        </MultiBinding>
+                    </TextBlock.Text>
+                </TextBlock>
+                <Grid Grid.Row="1" Margin="6,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="14"
+                               Foreground="{StaticResource WhiteTextBrush2}"
+                               Text="{DynamicResource AirBrake}">
+                        <TextBlock.LayoutTransform>
+                            <RotateTransform Angle="-90" />
+                        </TextBlock.LayoutTransform>
+                    </TextBlock>
+
+                    <Grid Grid.Column="1" Margin="6,6,0,6">
+                        <Grid.Resources>
+                            <Style x:Key="LLine" TargetType="Line">
+                                <Setter Property="Stroke" Value="{StaticResource WhiteTextBrush1}" />
+                                <Setter Property="X1" Value="0" />
+                                <Setter Property="Y1" Value="{Binding Path=ActualHeight, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}}" />
+                                <Setter Property="X2" Value="{Binding Path=ActualWidth, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}}" />
+                                <Setter Property="Y2" Value="{Binding Path=ActualHeight, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}}" />
+                                <Setter Property="StrokeThickness" Value="5" />
+                            </Style>
+                            <Style x:Key="SLine" TargetType="Line">
+                                <Setter Property="Stroke" Value="{StaticResource WhiteTextBrush1}" />
+                                <Setter Property="X1" Value="{Binding Path=ActualWidth, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}, Converter={StaticResource HalfMultiplicationConverter}}" />
+                                <Setter Property="Y1" Value="{Binding Path=ActualHeight, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}}" />
+                                <Setter Property="X2" Value="{Binding Path=ActualWidth, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}}" />
+                                <Setter Property="Y2" Value="{Binding Path=ActualHeight, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}}" />
+                                <Setter Property="StrokeThickness" Value="5" />
+                            </Style>
+
+                            <Style TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="14" />
+                                <Setter Property="VerticalAlignment" Value="Top" />
+                                <Setter Property="Foreground" Value="{StaticResource WhiteTextBrush2}" />
+                            </Style>
+
+                            <Style TargetType="Grid">
+                                <Setter Property="Margin" Value="1,0" />
+                            </Style>
+                        </Grid.Resources>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0 ">
+                            <TextBlock Text="2.5" />
+                            <Line Style="{StaticResource LLine}" />
+                        </Grid>
+                        <ProgressBar Grid.Row="1"
+                                     Grid.RowSpan="10"
+                                     Grid.Column="1"
+                                     Background="{StaticResource WhiteTextBrush1}"
+                                     Foreground="Aquamarine"
+                                     Maximum="2500"
+                                     Orientation="Vertical"
+                                     Value="{Binding LCDMModel.FlowRate}">
+                            <ProgressBar.Template>
+                                <ControlTemplate>
+                                    <Border x:Name="border"
+                                            BorderBrush="{TemplateBinding BorderBrush}"
+                                            BorderThickness="{TemplateBinding BorderThickness}">
+                                        <Grid>
+                                            <Rectangle x:Name="PART_Track" Fill="{TemplateBinding Background}" />
+                                            <Rectangle x:Name="PART_Indicator"
+                                                       HorizontalAlignment="Left"
+                                                       Fill="{TemplateBinding Foreground}" />
+                                        </Grid>
+                                    </Border>
+
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="ProgressBar.Orientation" Value="Vertical">
+                                            <Setter TargetName="border" Property="LayoutTransform">
+                                                <Setter.Value>
+                                                    <RotateTransform Angle="270" />
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </ProgressBar.Template>
+                        </ProgressBar>
+                        <Grid Grid.Row="1 " Grid.Column="0">
+                            <Line Style="{StaticResource SLine}" />
+                        </Grid>
+                        <Grid Grid.Row="2 " Grid.Column="0">
+                            <TextBlock Text="2" />
+                            <Line Style="{StaticResource LLine}" />
+                        </Grid>
+                        <Grid Grid.Row="3 " Grid.Column="0">
+                            <Line Style="{StaticResource SLine}" />
+                        </Grid>
+                        <Grid Grid.Row="4 " Grid.Column="0">
+                            <TextBlock Text="1.5" />
+                            <Line Style="{StaticResource LLine}" />
+                        </Grid>
+                        <Grid Grid.Row="5 " Grid.Column="0">
+                            <Line Style="{StaticResource SLine}" />
+                        </Grid>
+                        <Grid Grid.Row="6 " Grid.Column="0">
+                            <TextBlock Text="1" />
+                            <Line Style="{StaticResource LLine}" />
+                        </Grid>
+                        <Grid Grid.Row="7 " Grid.Column="0">
+                            <Line Style="{StaticResource SLine}" />
+                        </Grid>
+                        <Grid Grid.Row="8 " Grid.Column="0">
+                            <TextBlock Text="0.5" />
+                            <Line Style="{StaticResource LLine}" />
+                        </Grid>
+                        <Grid Grid.Row="9 " Grid.Column="0">
+                            <Line Style="{StaticResource SLine}" />
+                        </Grid>
+                        <Grid Grid.Row="10" Grid.Column="0">
+                            <TextBlock Text="0" />
+                            <Line Style="{StaticResource LLine}" />
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <TextBlock Grid.Row="1"
+                       Margin="6"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="30"
+                       Foreground="{StaticResource BlueTextBrush}"
+                       Text="{DynamicResource FlowRate}" />
+            <controls:LEDTextBox Grid.Row="2"
+                                 Margin="6"
+                                 FontSize="20"
+                                 Text="{Binding Path=LCDMModel.FlowRate,
+                                                StringFormat={}{0:0}}" />
+        </Grid>
+    </Grid>
+</UserControl>

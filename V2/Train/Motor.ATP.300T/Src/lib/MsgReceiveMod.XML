@@ -1,0 +1,364 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MsgReceiveMod</name>
+    </assembly>
+    <members>
+        <member name="T:MsgReceiveMod.MsgSort">
+            <summary>
+            消息排序
+            </summary>
+        </member>
+        <member name="F:MsgReceiveMod.MsgSort.MsgSortBy">
+            <summary>
+            默认按时间顺序排序
+            </summary>
+        </member>
+        <member name="M:MsgReceiveMod.MsgSort.Compare(MsgReceiveMod.ILevelAndTime,MsgReceiveMod.ILevelAndTime)">
+            <summary>
+            排序比较
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns>1表示x大于y,-1表示x小于y,0表示x等于y</returns>
+        </member>
+        <member name="T:MsgReceiveMod.ILevelAndTime">
+            <summary>
+            消息接收时间与消息的等级
+            做成接口主要用来排序用
+            </summary>
+        </member>
+        <member name="P:MsgReceiveMod.ILevelAndTime.MsgReceiveTime">
+            <summary>
+            消息接收时间
+            </summary>
+        </member>
+        <member name="P:MsgReceiveMod.ILevelAndTime.TheMsgLevel">
+            <summary>
+            消息等级
+            </summary>
+        </member>
+        <member name="P:MsgReceiveMod.ILevelAndTime.TheMsgFlag">
+            <summary>
+            消息已读标记
+            </summary>
+        </member>
+        <member name="T:MsgReceiveMod.MsgLevels">
+            <summary>
+            消息等级
+            </summary>
+        </member>
+        <member name="F:MsgReceiveMod.MsgLevels.Level0">
+            <summary>
+            最高等级
+            </summary>
+        </member>
+        <member name="F:MsgReceiveMod.MsgLevels.Level1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MsgReceiveMod.MsgLevels.Level2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MsgReceiveMod.MsgLevels.Level3">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MsgReceiveMod.MsgLevels.Level4">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MsgReceiveMod.MsgLevels.Level5">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MsgReceiveMod.MsgLevels.Level6">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MsgReceiveMod.MsgLevels.Level7">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MsgReceiveMod.MsgLevels.Level8">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MsgReceiveMod.MsgLevels.Level9">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:MsgReceiveMod.SortCriteriaOfMsg">
+            <summary>
+            消息排序方式
+            </summary>
+        </member>
+        <member name="F:MsgReceiveMod.SortCriteriaOfMsg.TimeUp">
+            <summary>
+            按时间排序(时间早的在前面)
+            </summary>
+        </member>
+        <member name="F:MsgReceiveMod.SortCriteriaOfMsg.TimeDown">
+            <summary>
+            按时间排序(时间早的在后面)
+            </summary>
+        </member>
+        <member name="F:MsgReceiveMod.SortCriteriaOfMsg.Level">
+            <summary>
+            按消息等级排序
+            </summary>
+        </member>
+        <member name="F:MsgReceiveMod.SortCriteriaOfMsg.Flag">
+            <summary>
+            按消息是否标记排序
+            </summary>
+        </member>
+        <member name="F:MsgReceiveMod.SortCriteriaOfMsg.TimeThenLevel">
+            <summary>
+            按 消息时间->消息等级 排序
+            </summary>
+        </member>
+        <member name="F:MsgReceiveMod.SortCriteriaOfMsg.LevelThenTime">
+            <summary>
+            按 消息等级->消息时间 排序
+            </summary>
+        </member>
+        <member name="F:MsgReceiveMod.SortCriteriaOfMsg.FlagThenTimeThenLevel">
+            <summary>
+            按 消息是否标记->消息时间->消息等级 排序
+            </summary>
+        </member>
+        <member name="F:MsgReceiveMod.SortCriteriaOfMsg.FlagThenLevelThenTime">
+            <summary>
+            按 消息是否标记->消息等级->消息时间 排序
+            </summary>
+        </member>
+        <member name="T:MsgReceiveMod.KmMmiMsgHandler`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:MsgReceiveMod.MsgHandlerFault0`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:MsgReceiveMod.MsgHandler`1">
+            <summary>
+            消息接收处理
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:MsgReceiveMod.MsgHandler`1.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:MsgReceiveMod.MsgHandler`1.AddNewMsg(`0)">
+            <summary>
+            往消息列表添加新消息
+            </summary>
+            <param name="newMsg"></param>
+        </member>
+        <member name="M:MsgReceiveMod.MsgHandler`1.MsgBeRead(System.Int32)">
+            <summary>
+            某条消息已阅
+            </summary>
+            <param name="theMsgLogicId">消息逻辑号</param>
+        </member>
+        <member name="M:MsgReceiveMod.MsgHandler`1.ClearAllList">
+            <summary>
+            清空所有消息列表
+            </summary>
+        </member>
+        <member name="M:MsgReceiveMod.MsgHandler`1.AllMsgListSort(MsgReceiveMod.SortCriteriaOfMsg)">
+            <summary>
+            消息列表按某个标准进行排序
+            </summary>
+            <param name="sortCriteria"></param>
+        </member>
+        <member name="M:MsgReceiveMod.MsgHandler`1.MsgListSort(System.Collections.Generic.List{`0}@,MsgReceiveMod.SortCriteriaOfMsg)">
+            <summary>
+            消息排序
+            </summary>
+            <param name="beSortList">需要排序的列表</param>
+            <param name="sortCriteria">排序方式</param>
+        </member>
+        <member name="P:MsgReceiveMod.MsgHandler`1.AllMsgsList">
+            <summary>
+            所有故障列表
+            </summary>
+        </member>
+        <member name="M:MsgReceiveMod.MsgHandlerFault0`1.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MsgReceiveMod.MsgHandlerFault0`1.AddNewMsg(`0)">
+            <summary>
+            往消息列表添加新消息
+            </summary>
+            <param name="newMsg"></param>
+        </member>
+        <member name="M:MsgReceiveMod.MsgHandlerFault0`1.AddNewMsg(`0,System.DateTime)">
+            <summary>
+            往消息列表添加新消息
+            </summary>
+            <param name="newMsg"></param>
+            <param name="theTime">设定时间</param>
+        </member>
+        <member name="M:MsgReceiveMod.MsgHandlerFault0`1.MsgBeRead(System.Int32)">
+            <summary>
+            某条消息已阅
+            </summary>
+            <param name="theMsgLogicId">消息在所有消息中位置</param>
+        </member>
+        <member name="M:MsgReceiveMod.MsgHandlerFault0`1.ClearAllList">
+            <summary>
+            清空所有消息列表
+            </summary>
+        </member>
+        <member name="M:MsgReceiveMod.MsgHandlerFault0`1.CurrentMsgListSort(MsgReceiveMod.SortCriteriaOfMsg)">
+            <summary>
+            当前消息列表按某个标准进行排序
+            </summary>
+            <param name="sortCriteria">消息排序方法</param>
+        </member>
+        <member name="M:MsgReceiveMod.MsgHandlerFault0`1.MsgOver(System.Int32)">
+            <summary>
+            收到某条消息的结束命令
+            </summary>
+            <param name="msgLogicId">消息逻辑号</param>
+        </member>
+        <member name="M:MsgReceiveMod.MsgHandlerFault0`1.MsgOver(System.Int32,System.DateTime)">
+            <summary>
+            收到某条消息的结束命令，并赋值结束时间
+            </summary>
+            <param name="msgLogicId">消息逻辑号</param>
+            <param name="overTime">消息结束时间</param>
+        </member>
+        <member name="M:MsgReceiveMod.MsgHandlerFault0`1.MsgReadAllReset">
+            <summary>
+            当前未结束消息重置已读
+            </summary>
+        </member>
+        <member name="P:MsgReceiveMod.MsgHandlerFault0`1.CurrentMsgList">
+            <summary>
+            当前消息
+            </summary>
+        </member>
+        <member name="M:MsgReceiveMod.KmMmiMsgHandler`1.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MsgReceiveMod.KmMmiMsgHandler`1.MsgHasShowed(System.Int32)">
+            <summary>
+            改变消息显示状态
+            -1表示没有高优先级的消息要显示
+            0表示当前高优先级消息显示时间到，不显示
+            1表示当前高优先级消息显示中
+            </summary>
+            <param name="maxTimeCount"></param>
+        </member>
+        <member name="M:MsgReceiveMod.KmMmiMsgHandler`1.MsgListSort(MsgReceiveMod.SortCriteriaOfMsg)">
+            <summary>
+            
+            </summary>
+            <param name="sortCriteria"></param>
+        </member>
+        <member name="P:MsgReceiveMod.KmMmiMsgHandler`1.NeedShowHighMsg">
+            <summary>
+            是否需要显示高优先级消息
+            </summary>
+        </member>
+        <member name="P:MsgReceiveMod.KmMmiMsgHandler`1.HighMsg">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:MsgReceiveMod.BaseMsgContent">
+            <summary>
+            最基本的消息结构
+            </summary>
+        </member>
+        <member name="P:MsgReceiveMod.BaseMsgContent.MsgLogicID">
+            <summary>
+            消息逻辑号
+            </summary>
+        </member>
+        <member name="P:MsgReceiveMod.BaseMsgContent.MsgID">
+            <summary>
+            消息代码
+            </summary>
+        </member>
+        <member name="P:MsgReceiveMod.BaseMsgContent.MsgContent">
+            <summary>
+            消息内容
+            </summary>
+        </member>
+        <member name="P:MsgReceiveMod.BaseMsgContent.MsgOverTime">
+            <summary>
+            消息结束时间
+            </summary>
+        </member>
+        <member name="P:MsgReceiveMod.BaseMsgContent.FaultBeOver">
+            <summary>
+            故障是否已结束
+            </summary>
+        </member>
+        <member name="P:MsgReceiveMod.BaseMsgContent.TheSameMsgNumb">
+            <summary>
+            同一条故障的个数
+            </summary>
+        </member>
+        <member name="P:MsgReceiveMod.BaseMsgContent.MsgReceiveTime">
+            <summary>
+            消息接收时间
+            </summary>
+        </member>
+        <member name="P:MsgReceiveMod.BaseMsgContent.TheMsgLevel">
+            <summary>
+            消息等级
+            </summary>
+        </member>
+        <member name="P:MsgReceiveMod.BaseMsgContent.TheMsgFlag">
+            <summary>
+            消息已读标记
+            </summary>
+        </member>
+        <member name="T:MsgReceiveMod.FaultMsgOrdinary">
+            <summary>
+            普遍性消息内容
+            </summary>
+        </member>
+        <member name="P:MsgReceiveMod.FaultMsgOrdinary.FaultSolutionStr">
+            <summary>
+            故障排除
+            文字解决方案
+            </summary>
+        </member>
+        <member name="P:MsgReceiveMod.FaultMsgOrdinary.FaultSolutionImage">
+            <summary>
+            图片解决方案
+            </summary>
+        </member>
+        <member name="P:MsgReceiveMod.FaultMsgOrdinary.MsgSendLogicID">
+            <summary>
+            消息对应需要往外发送的逻辑位
+            </summary>
+        </member>
+    </members>
+</doc>

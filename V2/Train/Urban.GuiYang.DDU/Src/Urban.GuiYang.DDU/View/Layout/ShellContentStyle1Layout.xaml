@@ -1,0 +1,33 @@
+﻿<UserControl
+    x:Class="Urban.GuiYang.DDU.View.Layout.ShellContentStyle1Layout"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:constant="clr-namespace:Urban.GuiYang.DDU.Constant"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:regions="http://www.codeplex.com/CompositeWPF"
+    d:DesignHeight="600"
+    d:DesignWidth="800"
+    Background="{StaticResource ContentBackgroundBrush}"
+    mc:Ignorable="d">
+
+    <!--  <UserControl.Background>
+        <ImageBrush ImageSource="{StaticResource ImgTemporaryShellLayout}" />
+    </UserControl.Background>-->
+    <Border BorderBrush="{StaticResource Gay2Brush}" BorderThickness="1,0,1,1">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="7*" />
+                <RowDefinition Height="45*" />
+                <RowDefinition Height="8*" />
+            </Grid.RowDefinitions>
+
+            <Border regions:RegionManager.RegionName="{x:Static constant:RegionNames.ContentTitle}" />
+            <Border Grid.Row="1" regions:RegionManager.RegionName="{x:Static constant:RegionNames.ContentContent}" />
+            <Border
+                Grid.Row="2"
+                regions:RegionManager.RegionName="{x:Static constant:RegionNames.ContentButton}"
+                Background="{StaticResource Gay2Brush}" />
+        </Grid>
+    </Border>
+</UserControl>

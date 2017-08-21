@@ -1,0 +1,143 @@
+﻿<UserControl
+    x:Class="Subway.WuHanLine6.GIS.Views.Shells.LeftMapView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:commonView="clr-namespace:Subway.WuHanLine6.GIS.Views.CommonView"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="clr-namespace:Subway.WuHanLine6.GIS.ViewModels"
+    d:DataContext="{d:DesignInstance viewModels:WuHanLine6GisViewModel}"
+    d:DesignHeight="232"
+    d:DesignWidth="1366"
+    mc:Ignorable="d">
+    <UserControl.Background>
+        <ImageBrush ImageSource="{StaticResource 背景3}" />
+    </UserControl.Background>
+    <Viewbox Stretch="Fill">
+        <Grid Width="1366" Height="232">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40*" />
+                <RowDefinition Height="70*" />
+            </Grid.RowDefinitions>
+
+            <ContentControl Grid.Row="0" FontSize="20">
+                <Grid>
+                    <Image
+                        Width="40"
+                        Height="40"
+                        Margin="423,0,0,44"
+                        HorizontalAlignment="Left"
+                        Source="{StaticResource 图标1}" />
+                    <TextBlock Margin="470,5,0,0" Text="武汉轨道交通6号线" />
+                    <TextBlock Margin="780,5,0,0" FontSize="20">
+                        <Run Text="列车开往—" />
+                        <Run Text="{Binding EndStation}" />
+                    </TextBlock>
+
+                    <Image
+                        Width="70"
+                        Height="50"
+                        Margin="1100,0,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Bottom">
+                        <Image.Style>
+                            <Style TargetType="Image">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding IsLeftOpenDoor}" Value="True">
+                                        <Setter Property="Source" Value="{StaticResource 本侧开门}" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding IsLeftOpenDoor}" Value="False">
+                                        <Setter Property="Source" Value="{StaticResource 对侧开门}" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                    </Image>
+
+                    <Image
+                        Width="10"
+                        Height="20"
+                        Margin="1130,0,0,5"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Bottom"
+                        Source="{StaticResource 本侧开门箭头}"
+                        Visibility="{Binding IsLeftOpenDoor, Converter={StaticResource BoolVisibilityConverter}}" />
+                    <commonView:ChineseEnglishText Margin="1170,45,0,0">
+                        <commonView:ChineseEnglishText.Style>
+                            <Style TargetType="commonView:ChineseEnglishText">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding IsLeftOpenDoor}" Value="False">
+                                        <Setter Property="ChineseText" Value="对 侧 开 门" />
+                                        <Setter Property="EnglishText" Value="Doors Open On Other Side" />
+                                        <Setter Property="Foreground" Value="Red" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding IsLeftOpenDoor}" Value="True">
+                                        <Setter Property="ChineseText" Value="本 侧 开 门" />
+                                        <Setter Property="EnglishText" Value="Doors Open At  This  Side" />
+                                        <Setter Property="Foreground" Value="Green" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </commonView:ChineseEnglishText.Style>
+                        <commonView:ChineseEnglishText.EnglishTextStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="10" />
+                            </Style>
+                        </commonView:ChineseEnglishText.EnglishTextStyle>
+                        <commonView:ChineseEnglishText.ChineseTextStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="22" />
+                            </Style>
+                        </commonView:ChineseEnglishText.ChineseTextStyle>
+                    </commonView:ChineseEnglishText>
+                    <TextBlock
+                        Margin="50,0,0,15"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Bottom"
+                        Text="{Binding NextStationString}" />
+                </Grid>
+            </ContentControl>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40*" />
+                    <RowDefinition Height="88*" />
+                </Grid.RowDefinitions>
+                <Rectangle
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Height="8"
+                    Margin="20,0"
+                    Panel.ZIndex="-10"
+                    Fill="Green" />
+                <ItemsControl
+                    Grid.Row="0"
+                    Grid.RowSpan="2"
+                    Grid.Column="0"
+                    ItemsSource="{Binding Left}">
+                    <ItemsControl.Style>
+                        <Style TargetType="ItemsControl">
+                            <Setter Property="ItemsPanel">
+                                <Setter.Value>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel IsEnabled="True" Orientation="Horizontal" />
+                                    </ItemsPanelTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="ItemTemplate">
+                                <Setter.Value>
+                                    <DataTemplate>
+                                        <commonView:StationNameView
+                                            Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=ItemsControl}, Path=ActualWidth, Converter={StaticResource MaxConverter}, ConverterParameter=x/27}"
+                                            Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=ItemsControl}, Path=ActualHeight}"
+                                            StationName="{Binding}" />
+                                    </DataTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ItemsControl.Style>
+                </ItemsControl>
+            </Grid>
+        </Grid>
+    </Viewbox>
+
+</UserControl>

@@ -1,0 +1,292 @@
+﻿<UserControl x:Class="Engine.HMI.SS3B.View.View.LiuZhou.MainCircuitPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:commonView="clr-namespace:Engine.HMI.SS3B.CommonView;assembly=Engine.HMI.SS3B.CommonView"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:Engine.HMI.SS3B.View.ViewModel"
+             xmlns:kunMing="clr-namespace:Engine.HMI.SS3B.View.ViewModel.KunMing"
+             d:DataContext="{d:DesignInstance kunMing:SS3BViewModel}"
+             d:DesignHeight="380"
+             d:DesignWidth="796"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary Source="../../LiuZhouAppResouce.xaml" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row="0"
+                   Grid.RowSpan="18"
+                   Margin="-1"
+                   Stroke="{StaticResource BlueBruh}"
+                   StrokeThickness="2" />
+        <commonView:RectTextControl Grid.Row="0"
+                                    Grid.Column="0"
+                                    ContenTwo=""
+                                    ContentFour="它  车"
+                                    ContentOne=""
+                                    ContentThree="本  车"
+                                    Style="{StaticResource TitleStyle}" />
+        <commonView:RectTextControl Grid.Row="1"
+                                    ContenTwo="323/306"
+                                    ContentOne=" 1 ) 牵引 /制动"
+                                    Style="{StaticResource ContentStyleOne}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="MainCircuitPageViewModel.TowOther" />
+                    <Binding Path="MainCircuitPageViewModel.BrakeOther" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="MainCircuitPageViewModel.TowOrigin" />
+                    <Binding Path="MainCircuitPageViewModel.BrakeOrigin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="2"
+                                    ContenTwo="685/686"
+                                    ContentOne=" 2 ) 1架隔离/2架隔离"
+                                    Style="{StaticResource ContentStyleTwo}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="MainCircuitPageViewModel.Frame1FaultOther" />
+                    <Binding Path="MainCircuitPageViewModel.Frame2FaultOther" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="MainCircuitPageViewModel.Frame1FaultOrigin" />
+                    <Binding Path="MainCircuitPageViewModel.Frame2FaultOrigin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="3"
+                                    ContenTwo="A014/L427"
+                                    ContentOne=" 3 ) 降弓分主断 /它车禁止主断"
+                                    Style="{StaticResource ContentStyleOne}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="MainCircuitPageViewModel.BowDownMasterOther" />
+                    <Binding Path="MainCircuitPageViewModel.BanMasterOther" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="MainCircuitPageViewModel.BowDownMasterOrigin" />
+                    <Binding Path="MainCircuitPageViewModel.BanMasterOrigin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="4"
+                                    ContenTwo="609"
+                                    ContentFour="{Binding MainCircuitPageViewModel.MasterClosingOther,
+                                                          StringFormat={}{0:f0}}"
+                                    ContentOne=" 4 ) 合主断"
+                                    ContentThree="{Binding MainCircuitPageViewModel.MasterClosingOrigin,
+                                                           StringFormat={}{0:f0}}"
+                                    Style="{StaticResource ContentStyleTwo}" />
+        <commonView:RectTextControl Grid.Row="5"
+                                    ContenTwo="L328"
+                                    ContentFour="{Binding MainCircuitPageViewModel.MasterClosedOther,
+                                                          StringFormat={}{0:f0}}"
+                                    ContentOne=" 5 ) 主断已合"
+                                    ContentThree="{Binding MainCircuitPageViewModel.MasterClosedOrigin,
+                                                           StringFormat={}{0:f0}}"
+                                    Style="{StaticResource ContentStyleOne}" />
+        <commonView:RectTextControl Grid.Row="6"
+                                    ContenTwo="371/373"
+                                    ContentOne=" 6 ) 线路继电器1,2/3"
+                                    Style="{StaticResource ContentStyleTwo}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="MainCircuitPageViewModel.LineTouch1Other" />
+                    <Binding Path="MainCircuitPageViewModel.LineTouch23Other" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="MainCircuitPageViewModel.LineTouch1Origin" />
+                    <Binding Path="MainCircuitPageViewModel.LineTouch23Origin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="7"
+                                    ContenTwo="375/377"
+                                    ContentOne=" 7 ) 线路继电器 4,5/6"
+                                    Style="{StaticResource ContentStyleOne}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="MainCircuitPageViewModel.LineTouch4Other" />
+                    <Binding Path="MainCircuitPageViewModel.LineTouch56Other" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="MainCircuitPageViewModel.LineTouch4Origin" />
+                    <Binding Path="MainCircuitPageViewModel.LineTouch56Origin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="8"
+                                    ContenTwo="2009"
+                                    ContentFour="{Binding MainCircuitPageViewModel.MagneticTouchOther,
+                                                          StringFormat={}{0:f0}}"
+                                    ContentOne=" 8 ) 励磁接触器"
+                                    ContentThree="{Binding MainCircuitPageViewModel.MagneticTouchOrigin,
+                                                           StringFormat={}{0:f0}}"
+                                    Style="{StaticResource ContentStyleTwo}" />
+        <commonView:RectTextControl Grid.Row="9"
+                                    ContenTwo="342/343"
+                                    ContentOne=" 9 ) 1位牵引/1位制动"
+                                    Style="{StaticResource ContentStyleOne}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="MainCircuitPageViewModel.Bit1TowOther" />
+                    <Binding Path="MainCircuitPageViewModel.Bit1BrakeOther" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="MainCircuitPageViewModel.Bit1TowOrigin" />
+                    <Binding Path="MainCircuitPageViewModel.Bit1BrakeOrigin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+
+        <commonView:RectTextControl Grid.Row="10"
+                                    ContenTwo="L342/L343"
+                                    ContentOne="10) 2位牵引/2位制动"
+                                    Style="{StaticResource ContentStyleTwo}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="MainCircuitPageViewModel.Bit2TowOther" />
+                    <Binding Path="MainCircuitPageViewModel.Bit2BrakeOther" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="MainCircuitPageViewModel.Bit2TowOrigin" />
+                    <Binding Path="MainCircuitPageViewModel.Bit2BrakeOrigin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="11"
+                                    ContenTwo="L307/L308"
+                                    ContentOne="11) 1,3级磁削/2,4级磁削"
+                                    Style="{StaticResource ContentStyleOne}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="MainCircuitPageViewModel.Level13MagneticOther" />
+                    <Binding Path="MainCircuitPageViewModel.Level23MagneticOther" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="MainCircuitPageViewModel.Level13MagneticOrigin" />
+                    <Binding Path="MainCircuitPageViewModel.Level23MagneticOrigin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="12"
+                                    ContenTwo=""
+                                    ContentFour="{Binding MainCircuitPageViewModel.DriverKeyOther,
+                                                          StringFormat={}{0:f0}}"
+                                    ContentOne="12) 有司机钥匙"
+                                    ContentThree="{Binding MainCircuitPageViewModel.DriverKeyOrigin,
+                                                           StringFormat={}{0:f0}}"
+                                    Style="{StaticResource ContentStyleTwo}" />
+        <commonView:RectTextControl Grid.Row="13"
+                                    ContenTwo=""
+                                    ContentOne="13) 1架/2架电机电压"
+                                    Style="{StaticResource ContentStyleOne}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertTwo}">
+                    <Binding Path="MainCircuitPageViewModel.Frame1MOtorVoltageOther" />
+                    <Binding Path="MainCircuitPageViewModel.Frame2MotorVoltageOther" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertTwo}">
+                    <Binding Path="MainCircuitPageViewModel.Frame1MOtorVoltageOrigin" />
+                    <Binding Path="MainCircuitPageViewModel.Frame2MotorVoltageOrigin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="14"
+                                    ContenTwo=""
+                                    ContentFour="{Binding MainCircuitPageViewModel.MagneticGalvanicOther,
+                                                          StringFormat={}{0:f0}}"
+                                    ContentOne="14) 励磁电流"
+                                    ContentThree="{Binding MainCircuitPageViewModel.MagneticGalvanicOrigin,
+                                                           StringFormat={}{0:f0}}"
+                                    Style="{StaticResource ContentStyleTwo}" />
+        <commonView:RectTextControl Grid.Row="15"
+                                    ContenTwo=""
+                                    ContentOne="15) 电机电流 1/2/3(A)"
+                                    Style="{StaticResource ContentStyleOne}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource ThreeDoubleToOne}">
+                    <Binding Path="MainCircuitPageViewModel.MotorGalvanic1Other" />
+                    <Binding Path="MainCircuitPageViewModel.MotorGalvanic2Other" />
+                    <Binding Path="MainCircuitPageViewModel.MotorGalvanic3Other" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource ThreeDoubleToOne}">
+                    <Binding Path="MainCircuitPageViewModel.MotorGalvanic1Origin" />
+                    <Binding Path="MainCircuitPageViewModel.MotorGalvanic2Origin" />
+                    <Binding Path="MainCircuitPageViewModel.MotorGalvanic3Origin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="16"
+                                    ContenTwo=""
+                                    ContentOne="16) 电机电流 4/5/6(A)"
+                                    Style="{StaticResource ContentStyleTwo}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource ThreeDoubleToOne}">
+                    <Binding Path="MainCircuitPageViewModel.MotorGalvanic4Other" />
+                    <Binding Path="MainCircuitPageViewModel.MotorGalvanic5Other" />
+                    <Binding Path="MainCircuitPageViewModel.MotorGalvanic6Other" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource ThreeDoubleToOne}">
+                    <Binding Path="MainCircuitPageViewModel.MotorGalvanic4Origin" />
+                    <Binding Path="MainCircuitPageViewModel.MotorGalvanic5Origin" />
+                    <Binding Path="MainCircuitPageViewModel.MotorGalvanic6Origin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="17"
+                                    ContenTwo=""
+                                    ContentFour="{Binding MainCircuitPageViewModel.NetPressOther,
+                                                          StringFormat={}{0:f1}}"
+                                    ContentOne="17) 网压 (KV)"
+                                    ContentThree="{Binding MainCircuitPageViewModel.NetPressOrigin,
+                                                           StringFormat={}{0:f1}}"
+                                    ForeGroundFour="{StaticResource WhiteColor}"
+                                    ForedGroundThree="{StaticResource WhiteColor}"
+                                    Style="{StaticResource ContentStyleOne}" />
+    </Grid>
+</UserControl>

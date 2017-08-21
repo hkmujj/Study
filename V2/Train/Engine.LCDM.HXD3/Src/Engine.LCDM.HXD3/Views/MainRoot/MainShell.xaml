@@ -1,0 +1,195 @@
+﻿<UserControl x:Class="Engine.LCDM.HXD3.Views.MainRoot.MainShell"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:commonView="clr-namespace:Engine.LCDM.HXD3.Views.CommonView"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Engine.LCDM.HXD3.Views.MainRoot"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:name="clr-namespace:Engine.LCDM.HXD3.Constance"
+             xmlns:regiom="http://www.codeplex.com/CompositeWPF"
+             xmlns:viewModel="clr-namespace:Engine.LCDM.HXD3.ViewModels"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:interactivity="clr-namespace:MMI.Facility.WPFInfrastructure.Interactivity;assembly=MMI.Facility.WPFInfrastructure"
+             d:DataContext="{d:DesignInstance viewModel:LCDMViewModel}"
+             d:DesignHeight="600"
+             d:DesignWidth="800" Visibility="{Binding IsShowMain}"
+             mc:Ignorable="d">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <interactivity:InvokeCommandAction Command="{Binding Path=Controller.LoadedCommand}" >
+                <!--<interactivity:InvokeCommandAction.CommandParameter>
+                    <viewModel:TrainStyleChoice Passenger="{x:Static name:ViewNames.FlowView}" Goods="{x:Static name:ViewNames.FlowViewH}"></viewModel:TrainStyleChoice>
+                </interactivity:InvokeCommandAction.CommandParameter>-->
+            </interactivity:InvokeCommandAction>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid Margin="2">
+        <Grid.Resources>
+            <ResourceDictionary Source="../../Resource/Converter/ConverterResource.xaml" />
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="160*" />
+            <ColumnDefinition Width="290*" />
+            <ColumnDefinition Width="290*" />
+            <ColumnDefinition Width="50" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80*" />
+            <RowDefinition Height="210*" />
+            <RowDefinition Height="70*" />
+            <RowDefinition Height="110*" />
+            <RowDefinition Height="65*" />
+            <RowDefinition Height="65*" />
+        </Grid.RowDefinitions>
+        <commonView:NormalStatus Grid.Row="0"
+                                 Grid.Column="0"
+                                 Grid.ColumnSpan="4"
+                                 Margin="0,0,0,35"
+                                 Visibility="{Binding Main.NorEmVisibility}" />
+        <Grid Grid.Row="3"
+              Grid.Column="2"
+              Grid.ColumnSpan="2"
+              Margin="0,15,0,15"
+              >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" Style="{DynamicResource TimeStyleOne}" Text="{DynamicResource Train}" />
+                    <TextBlock Grid.Row="0" Grid.Column="1"
+                           Style="{DynamicResource TimeStyleOne}"
+                           Text="{Binding InfoData.TrainNum}" />
+                </Grid>
+                <TextBlock Grid.Row="1"
+                           Style="{DynamicResource TimeStyleOne}"
+                           Text="{Binding InfoData.DisplayTime,
+                                          StringFormat={}{0:yyyy/MM/dd}}" />
+                <TextBlock Grid.Row="2"
+                           Style="{DynamicResource TimeStyleOne}"
+                           Text="{Binding InfoData.DisplayTime,
+                                          StringFormat={}{0:hh:mm:ss}}" />
+
+            </Grid>
+        </Grid>
+        <ContentControl Grid.Row="3"
+                        Grid.Column="1"
+                        Margin="50,0,50,20"
+                        regiom:RegionManager.RegionName="{x:Static name:RegionNames.DataDisplay}" />
+        <ContentControl Grid.Row="3"
+                        Grid.Column="2"
+                        Margin="40,0,60,20"
+                        regiom:RegionManager.RegionName="{x:Static name:RegionNames.Pressure}" />
+        <commonView:EpcuLoseStatus Grid.Row="0"
+                                   Grid.Column="0"
+                                   Grid.ColumnSpan="4"
+                                   Margin="0,0,0,35" />
+        <commonView:StatusDisplay Grid.Row="0"
+                                  Grid.Column="0"
+                                  Grid.ColumnSpan="4"
+                                  Margin="0,0,0,35"
+                                  Visibility="{Binding Main.MipuVisibility}" />
+        <ContentControl Grid.Row="1"
+                        Grid.RowSpan="2"
+                        Grid.Column="0"
+                        Margin="3,0,2,2"
+                        regiom:RegionManager.RegionName="{x:Static name:RegionNames.Flow}"/>
+        <commonView:SpeedPointer Grid.Row="1"
+                                 Grid.RowSpan="2"
+                                 Grid.Column="1"
+                                 Margin="0"
+                                 CurrentRedAnhle="{Binding Main.SpeedOneRed}"
+                                 CurrentWhiteAnhle="{Binding Main.SpeedOneWhite}"
+                                 InitAngleRed="-60.5"
+                                 InitAngleWhite="-60.5" />
+        <commonView:SpeedPointer Grid.Row="1"
+                                 Grid.RowSpan="2"
+                                 Grid.Column="2"
+                                 Margin="0"
+                                 CurrentRedAnhle="{Binding Main.SpeedTwoRed}"
+                                 CurrentWhiteAnhle="{Binding Main.SpeedTwoWhite}"
+                                 InitAngleRed="-60.5"
+                                 InitAngleWhite="-60.5" />
+        <Border Grid.Row="4"
+                Grid.Column="0"
+                Grid.ColumnSpan="4"
+                BorderThickness="3"
+                Style="{DynamicResource BorderStyleOne}" />
+        <Border Grid.Row="4"
+                Grid.Column="0"
+                Grid.ColumnSpan="4">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <TextBlock Margin="10,0,0,0"
+                           HorizontalAlignment="Left"
+                           FontSize="16"
+                           Style="{DynamicResource FlowTextStyleOne}"
+                           Text="{Binding Main.Unit.ContentOne}"
+                           Visibility="{Binding Main.NorEmVisibility}" />
+                <TextBlock Grid.Row="1"
+                           Margin="10,0,0,0"
+                           HorizontalAlignment="Left"
+                           FontSize="16"
+                           Style="{DynamicResource FlowTextStyleOne}"
+                           Text="{Binding Main.Unit.ContentTwo}"
+                           Visibility="{Binding Main.NorEmVisibility}" />
+            </Grid>
+        </Border>
+        <ContentControl Grid.Row="2"
+                        Grid.RowSpan="3"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="4"
+                        Margin="0,20,0,0"
+                        regiom:RegionManager.RegionName="{x:Static name:RegionNames.SoftWareInstall}" />
+        <ContentControl Grid.Row="3"
+                        Grid.RowSpan="2"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="4"
+                        Margin="0"
+                        regiom:RegionManager.RegionName="{x:Static name:RegionNames.PowerBrakeSet}" />
+        <ContentControl Grid.Row="3"
+                        Grid.RowSpan="2"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"
+                        Margin="100,0,150,0"
+                        regiom:RegionManager.RegionName="{x:Static name:RegionNames.LanguageSet}" />
+        <commonView:VerticalTextBlock Grid.Row="4"
+                                      Grid.Column="0"
+                                      Grid.ColumnSpan="4"
+                                      Margin="5,0,0,0"
+                                      HorizontalAlignment="Left"
+                                      FontSize="14"
+                                      SplitChar="\r\n"
+                                      Text="{DynamicResource EpcuLosePower}"
+                                      TextStyle="{DynamicResource FlowTextStyleOne}"
+                                      Visibility="{Binding Main.EpcuNotMipmVisibility}" />
+        <ContentControl Grid.Row="4"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="4"
+                        Margin="0"
+                        regiom:RegionManager.RegionName="{x:Static name:RegionNames.TrainNumbSetting}" />
+        <ContentControl Grid.Row="4"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="4"
+                        Margin="0"
+                        regiom:RegionManager.RegionName="{x:Static name:RegionNames.DateSetting}" />
+        <ContentControl Grid.Row="5"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="4"
+                        Margin="0,0.6,0,0"
+                        regiom:RegionManager.RegionName="{x:Static name:RegionNames.BottomButton}" />
+    </Grid>
+</UserControl>

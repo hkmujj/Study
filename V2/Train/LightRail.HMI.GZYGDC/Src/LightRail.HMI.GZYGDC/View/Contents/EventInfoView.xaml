@@ -1,0 +1,120 @@
+﻿<UserControl x:Class="LightRail.HMI.GZYGDC.View.Contents.EventInfoView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LightRail.HMI.GZYGDC.View.Contents"
+             xmlns:viewModel="clr-namespace:LightRail.HMI.GZYGDC.ViewModel"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+             d:DesignHeight="480" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6*"></RowDefinition>
+            <RowDefinition Height="393*"></RowDefinition>
+            <RowDefinition Height="6*"></RowDefinition>
+            <RowDefinition Height="55*"></RowDefinition>
+            <RowDefinition Height="20*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="6*"></ColumnDefinition>
+            <ColumnDefinition Width="670*"></ColumnDefinition>
+            <ColumnDefinition Width="15*"></ColumnDefinition>
+            <ColumnDefinition Width="100*"></ColumnDefinition>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Row="1" Column="1">
+            <ItemsControl Style="{StaticResource EventInfoItemsControl}" ItemsSource="{Binding EventInfoViewModel.Model.EventInfoDisplayItems}"></ItemsControl>
+        </Grid>
+        <Grid Row="3" Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="66*"></ColumnDefinition>
+                <ColumnDefinition Width="86*"></ColumnDefinition>
+                <ColumnDefinition Width="85*"></ColumnDefinition>
+                <ColumnDefinition Width="86*"></ColumnDefinition>
+                <ColumnDefinition Width="80*"></ColumnDefinition>
+                <ColumnDefinition Width="81*"></ColumnDefinition>
+                <ColumnDefinition Width="88*"></ColumnDefinition>
+                <ColumnDefinition Width="86*"></ColumnDefinition>
+                <ColumnDefinition Width="11*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Column="1">
+                <Button Margin="0,0,6,0" Style="{StaticResource BlackImageButtonStyle}" Content="{StaticResource EventInfoView.时钟}" Command="{Binding Model.CenterStateInterface.BtnB4.ClickCommand}"></Button>
+            </Grid>
+            <Grid Column="2">
+                <Button Margin="0,0,6,0" Style="{StaticResource BlackImageButtonStyle}" Content="{StaticResource EventInfoView.4点向上透明箭头}" Command="{Binding Model.CenterStateInterface.BtnB5.ClickCommand}"></Button>
+            </Grid>
+            <Grid Column="3">
+                <Button Margin="0,0,6,0" Background="{Binding EventInfoViewModel.Model.CurEventLevel,Converter={StaticResource AllFaultBackGroundConverter}}" Style="{StaticResource BlackTextButtonStyle}" Content="{StaticResource EventInfoView.AllFault}" Command="{Binding Model.CenterStateInterface.BtnB6.ClickCommand}" CommandParameter="Normal"></Button>
+            </Grid>
+            <Grid Column="4">
+                <Button Margin="0,0,6,0" Background="{Binding EventInfoViewModel.Model.CurEventLevel,Converter={StaticResource GraveBackGroundConverter}}" Style="{StaticResource BlackTextButtonStyle}" Content="{StaticResource EventInfoView.Grave}" Command="{Binding Model.CenterStateInterface.BtnB7.ClickCommand}" CommandParameter="Grave"></Button>
+            </Grid>
+            <Grid Column="5">
+                <Button Margin="0,0,6,0" Background="{Binding EventInfoViewModel.Model.CurEventLevel,Converter={StaticResource MediumBackGroundConverter}}" Style="{StaticResource BlackTextButtonStyle}" Content="{StaticResource EventInfoView.Medium}" Command="{Binding Model.CenterStateInterface.BtnB8.ClickCommand}" CommandParameter="Medium"></Button>
+            </Grid>
+            <Grid Column="6">
+                <Button Margin="0,0,6,0" Background="{Binding EventInfoViewModel.Model.CurEventLevel,Converter={StaticResource LightBackGroundConverter}}" Style="{StaticResource BlackTextButtonStyle}" Content="{StaticResource EventInfoView.Light}" Command="{Binding Model.CenterStateInterface.BtnB9.ClickCommand}" CommandParameter="Light"></Button>
+            </Grid>
+            <Grid Column="7">
+                <Button Margin="0,0,6,0" Background="{Binding EventInfoViewModel.Model.CurEventLevel,Converter={StaticResource TipBackGroundConverter}}" Style="{StaticResource BlackTextButtonStyle}" Content="{StaticResource EventInfoView.Tip}" Command="{Binding Model.CenterStateInterface.BtnB10.ClickCommand}" CommandParameter="Tip"></Button>
+            </Grid>
+        </Grid>
+        <Grid Column="3" Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50*"></RowDefinition>
+                <RowDefinition Height="33*"></RowDefinition>
+                <RowDefinition Height="60*"></RowDefinition>
+                <RowDefinition Height="80*"></RowDefinition>
+                <RowDefinition Height="80*"></RowDefinition>
+                <RowDefinition Height="80*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid  Column="0">
+                    <TextBlock Style="{StaticResource EventInfoViewPageTextStyle}" Text="{StaticResource EventInfoView.TotalCount}"></TextBlock>
+                </Grid>
+                <Grid  Column="1">
+                    <TextBlock HorizontalAlignment="Center" Style="{StaticResource EventInfoViewPageTextStyle}" Text="{Binding EventInfoViewModel.Model.TotalCount}"></TextBlock>
+                </Grid>
+            </Grid>
+            <Grid Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid  Column="0">
+                    <TextBlock Style="{StaticResource EventInfoViewPageTextStyle}" Text="{StaticResource EventInfoView.CurrentPage}"></TextBlock>
+                </Grid>
+                <Grid Column="1">
+                    <TextBlock HorizontalAlignment="Center" Style="{StaticResource EventInfoViewPageTextStyle}" Text="{Binding EventInfoViewModel.Model.CurPageNum}"></TextBlock>
+                </Grid>
+            </Grid>
+            <Grid Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid  Column="0">
+                    <TextBlock Style="{StaticResource EventInfoViewPageTextStyle}" Text="{StaticResource EventInfoView.TotalPage}"></TextBlock>
+                </Grid>
+                <Grid Column="1">
+                    <TextBlock HorizontalAlignment="Center" Style="{StaticResource EventInfoViewPageTextStyle}" Text="{Binding EventInfoViewModel.Model.MaxPageNum}"></TextBlock>
+                </Grid>
+            </Grid>
+            <Grid Row="3">
+                <Button Margin="10,0,10,10" Style="{StaticResource BlackImageButtonStyle}" Content="{StaticResource EventInfoView.黑色向上箭头}" Command="{Binding Model.CenterStateInterface.BtnB1.ClickCommand}"></Button>
+            </Grid>
+            <Grid Row="4">
+                <Button Margin="10,0,10,10" Style="{StaticResource BlackImageButtonStyle}" Content="{StaticResource EventInfoView.黑色向下箭头}" Command="{Binding Model.CenterStateInterface.BtnB2.ClickCommand}"></Button>
+            </Grid>
+            <Grid Row="5">
+                <Button Margin="10,0,10,0" Background="DodgerBlue" Style="{StaticResource BlackTextButtonStyle}" Content="{StaticResource EventInfoView.HistoryFault}" Command="{Binding Model.CenterStateInterface.BtnB3.ClickCommand}"></Button>
+            </Grid>
+
+        </Grid>
+    </Grid>
+</UserControl>

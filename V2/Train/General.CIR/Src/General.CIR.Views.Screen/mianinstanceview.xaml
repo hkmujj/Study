@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UserControl
+    x:Class="General.CIR.Views.Screen.MianinstanceView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:resource="clr-namespace:General.CIR.Resource"
+    Background="#FF0000FF">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="90*" />
+            <RowDefinition Height="20*" />
+        </Grid.RowDefinitions>
+        <TextBlock
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            TextBlock.Foreground="#FF00FFFF">
+            <Run Text="{Binding MaininstanceViewModel.SelectItem.Page}" /> <Run Text="/" /> <Run Text="2" /></TextBlock>
+        <ListBox
+            Grid.Row="1"
+            ItemsSource="{Binding MaininstanceViewModel.DisplayItems}"
+            SelectedItem="{Binding MaininstanceViewModel.SelectItem}"
+            Style="{StaticResource MaiininstanceListBoxStyle}" />
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBlock
+                Grid.Row="1"
+                Padding="10,0,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                
+                Text="{x:Static resource:InFoResource.设置主界面提示信息}"
+                Foreground="#FF00FFFF" />
+        </Grid>
+    </Grid>
+</UserControl>

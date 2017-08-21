@@ -1,0 +1,16 @@
+;;; 类名 				从属视图					输入_Bool_对应表 				输入_Float_对应表 					输出_bool_对应表 						输出_Float_对应表 							参数表 			备注
+;;; 字符串 			<数字 数字> 			[#bool编号 bool编号#] 	Float编号 Float编号*] 			[-bool编号 bool编号-] 			[+Float编号 Float编号+] 				{参数1 参数2 参数3}
+;;;课程结束视图
+V0_C0_BlackView                [~ 0 ~]	     < 103>			[#1#]			        [**]			[--]			[++]			{}
+V1_C0_Frame                    [~ 1 ~]	     < 104 105>			[##]			        [**]			[--]			[++]			{Frame/Frame.png}
+V1_C1_States                   [~ 2 ~]	     < 104 105>			[#5 13 17 20#]			[**]			[--]			[++]			{Frame/闪烁.png}
+V1_C2_Door                     [~ 3 ~]	     < 104 >			[#24 28 32#]			[**]			[--]			[++]			{}
+V1_C3_AvailabilityIndicator    [~ 4 ~]	     < 104 >			[#34 36 38#]			[**]			[--]			[++]			{}
+V1_C4_StationIndicator         [~ 5 ~]	     < 104 >			[#40 42 44#]			[*6 7*]			[--]			[++]			{}
+V1_C5_Position_EB_Indicator    [~ 6 ~]	     < 104 >			[#46 48 32 50#]			[**]			[--]			[++]			{}
+V1_C6_SystemInfo               [~ 7 ~]	     < 104 105>			[##]		         	[*1 8 9 10*]		[--]			[++]			{}
+V1_C7_SpeedDial                [~ 8 ~]	     < 104 >			[#53 55#]		         	[*3 4 5 2*]		[--]			[++]			{SpeedDial/Pointer1.png SpeedDial/TargetSpeed.png SpeedDial/MaxSpeed.png}
+V1_C8_Confirm_List_Button      [~ 9 ~]	     < 104 105>			[##]		         	[**]	        	[--]			[++]			{Frame/btn_Up.png Frame/btn_Down.png}
+V1_C10_Button_DriverID         [~ 10 ~]	     < 104>			[##]		         	[**]	        	[--]			[++]			{}
+V2_C0_Button_DriverID_Quit     [~ 11 ~]	     < 105>			[##]		         	[**]	        	[--]			[++]			{}
+V2_C1_DriverID                 [~ 12 ~]	     < 105>			[##]		         	[**]	        	[--]			[+201+]			{}

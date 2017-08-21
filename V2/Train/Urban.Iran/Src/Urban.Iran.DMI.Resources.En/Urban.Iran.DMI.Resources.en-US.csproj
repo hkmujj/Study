@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{70D9BDEA-934E-4983-AD3B-03D58A1E1C61}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Urban.Iran.DMI.Resources</RootNamespace>
+    <AssemblyName>Urban.Iran.DMI.Resources.en-US</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\MMI\Resource\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Images.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Images.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Images.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\active.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrowLeft.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ATBApply.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ATBNormal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ATBSel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AtoError.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ATPApply.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\atpError.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ATPNormal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ATPSel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AUTOApply.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AUTONormal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AUTOSel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\closeAll.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\decreaseBri.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\decreaseSound.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dot.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\downArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drError.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\driverNumber.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drOpen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enterAll.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grayPt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iAtb.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iAtp.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iAtpA.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iAtpB.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iAuto.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inactive.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\increaseBri.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\increaseSound.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iReverse.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iRM.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lockClean.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\meter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\miscellaneous.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\openAll.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\openLeft.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\openRight.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orangePt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redPt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RMApply.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RMNormal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RMSel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\skipStop.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spec.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\startup.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\submit.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sysInfo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\test.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tracker.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yellowPt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yes.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ATBApply1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ATPApply1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AUTOApply1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RMApply1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\active2.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

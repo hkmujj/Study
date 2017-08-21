@@ -1,0 +1,68 @@
+﻿<UserControl
+    x:Class="Motor.ATP._200C.Subsys.WPFView.Shell.ShellView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:constant="clr-namespace:Motor.ATP._200C.Subsys.Constant"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Motor.ATP._200C.Subsys.WPFView.Shell"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:model="clr-namespace:Motor.ATP._200C.Subsys.Model"
+    xmlns:regions="http://www.codeplex.com/CompositeWPF"
+    d:DesignHeight="600"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Border>
+        <Viewbox Stretch="Fill">
+            <Grid Width="800" Height="600">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60*" />
+                    <RowDefinition Height="480*" />
+                    <RowDefinition Height="60*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80*" />
+                    <ColumnDefinition Width="640*" />
+                    <ColumnDefinition Width="80*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock
+                    Grid.ColumnSpan="2"
+                    Margin="10"
+                    Panel.ZIndex="100"
+                    FontSize="23"
+                    Foreground="{StaticResource Motor.ATP.200C.GreenBrush}"
+                    Text="{Binding Source={x:Static model:GlobalParam.Instance}, Path=InitParam.AppConfig.AppName}"
+                    Visibility="{Binding Source={x:Static model:GlobalParam.Instance}, Path=IsDebugModel, Converter={StaticResource Motor.ATP.200C.BoolVisibilityConverter}}" />
+                <Border
+                    Grid.Row="0"
+                    Grid.RowSpan="3"
+                    Grid.Column="0"
+                    Margin="0,0,0,30"
+                    regions:RegionManager.RegionName="{x:Static constant:RegionNames.RegionAssist}" />
+
+                <TextBlock
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Style="{StaticResource Motor.ATP.200C.HardwareTextStyle}"
+                    Text="{StaticResource Motor.ATP.Infrasturcture.String.ScreenTitle200C}" />
+
+                <Border
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    regions:RegionManager.RegionName="{x:Static constant:RegionNames.RegionHardwareHelper}" />
+
+                <local:ShellContentView Grid.Row="1" Grid.Column="1" />
+
+                <Border
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    regions:RegionManager.RegionName="{x:Static constant:RegionNames.RegionHardwareF1To8}" />
+
+
+                <Border
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    regions:RegionManager.RegionName="{x:Static constant:RegionNames.RegionHardwareBottom}" />
+            </Grid>
+        </Viewbox>
+    </Border>
+</UserControl>

@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8CD5C78B-AEAA-45B7-B991-30855FC9AA70}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Motor.HMI.CRH1A</RootNamespace>
+    <AssemblyName>Motor.HMI.CRH1A</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+    <CodeContractsAssemblyMode>0</CodeContractsAssemblyMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\MMI\Addin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;CODE_ANALYSIS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>
+    </DocumentationFile>
+    <CodeContractsEnableRuntimeChecking>False</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>True</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>True</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>True</CodeContractsRedundantAssumptions>
+    <CodeContractsAssertsToContractsCheckBox>True</CodeContractsAssertsToContractsCheckBox>
+    <CodeContractsRedundantTests>True</CodeContractsRedundantTests>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsMissingPublicEnsuresAsWarnings>False</CodeContractsMissingPublicEnsuresAsWarnings>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferEnsuresAutoProperties>True</CodeContractsInferEnsuresAutoProperties>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestAssumptionsForCallees>False</CodeContractsSuggestAssumptionsForCallees>
+    <CodeContractsSuggestRequires>False</CodeContractsSuggestRequires>
+    <CodeContractsNecessaryEnsures>True</CodeContractsNecessaryEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsSuggestReadonly>True</CodeContractsSuggestReadonly>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsSkipAnalysisIfCannotConnectToCache>False</CodeContractsSkipAnalysisIfCannotConnectToCache>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsBeingOptimisticOnExternal>True</CodeContractsBeingOptimisticOnExternal>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>%28none%29</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\MMI\Addin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;CODE_ANALYSIS</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>..\MMI\Addin\GT_HMI.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <LangVersion>4</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\GT_HMI.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonUtil">
+      <HintPath>..\..\..\Bin\MMI\CommonUtil.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Excel.Interface">
+      <HintPath>..\..\..\Bin\MMI\Excel.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="Mmi.Common.DateTimeInterpreter">
+      <HintPath>..\..\..\..\Bin\Common\Mmi.Common.DateTimeInterpreter.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MMI.Facility.Interface">
+      <HintPath>..\..\..\Bin\MMI\MMI.Facility.Interface.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AirSupply\AirSupplyBtnMgr.cs" />
+    <Compile Include="AirSupply\AirSupplyInnerControlType.cs" />
+    <Compile Include="AirSupply\AirSupplyOutBoolIdxAdpt.cs" />
+    <Compile Include="AirSupply\AYaShuoJ.cs" />
+    <Compile Include="AirSupply\Class1.cs" />
+    <Compile Include="AirSupply\MYaShuoJi.cs" />
+    <Compile Include="AirSupply\Presure.cs" />
+    <Compile Include="Alarm\AlarmInfoB.cs" />
+    <Compile Include="Alarm\FaultPopupView\UserDefineFaultView.cs" />
+    <Compile Include="Alarm\Fault\FaultSenderType.cs" />
+    <Compile Include="Alarm\Fault\FaultShowAttribute.cs" />
+    <Compile Include="Alarm\NotifyFilter\DefaultNotifyFilter.cs" />
+    <Compile Include="Alarm\NotifyFilter\INotifyFilter.cs" />
+    <Compile Include="Alarm\Fault\FaultTypeHelper.cs" />
+    <Compile Include="ButtomNotify\ButtomNotifyItemView.cs" />
+    <Compile Include="ButtomNotify\ButtomNotifyModel.cs" />
+    <Compile Include="ButtomNotify\ButtomNotifyModelWrapper.cs" />
+    <Compile Include="ButtomNotify\ButtomNotifyView.cs" />
+    <Compile Include="Alarm\VigilantFault\VigilantFaultView.cs" />
+    <Compile Include="Alarm\Fault\ExceptionDataLogicCompare.cs" />
+    <Compile Include="Alarm\Fault\FaultHelpInfo.cs" />
+    <Compile Include="Alarm\Fault\EventStatic.cs" />
+    <Compile Include="Alarm\Fault\ExceptionData.cs" />
+    <Compile Include="Alarm\FaultPopupView\FaultPopupImageRes.cs" />
+    <Compile Include="Alarm\FaultPopupView\FaultPopupInBoolRes.cs" />
+    <Compile Include="Alarm\Fault\FaultQueue.cs" />
+    <Compile Include="Alarm\Fault\FaultState.cs" />
+    <Compile Include="Alarm\Fault\FaultType.cs" />
+    <Compile Include="Alarm\GT_Active_Alarm.cs" />
+    <Compile Include="Alarm\GT_AlarmOverView.cs" />
+    <Compile Include="Alarm\GT_Alarm_History.cs" />
+    <Compile Include="Alarm\FaultPopupView\GT_FaultPopupView.cs" />
+    <Compile Include="Alarm\GT_Trian2.cs" />
+    <Compile Include="Appraise\Appraise.cs" />
+    <Compile Include="Appraise\AppraiseResource.cs" />
+    <Compile Include="Comfort\ComfortButtonMgr.cs" />
+    <Compile Include="Comfort\ComfortButtonType.cs" />
+    <Compile Include="Comfort\ComfortImageRes.cs" />
+    <Compile Include="Comfort\ComfortInBoolDefine.cs" />
+    <Compile Include="Comfort\ComfortOutBoolDefine.cs" />
+    <Compile Include="Comfort\ComfortUnit.cs" />
+    <Compile Include="Comfort\HVACState.cs" />
+    <Compile Include="Comfort\TrainHeadComfortUnit.cs" />
+    <Compile Include="Common\Config\ViewConfig.cs" />
+    <Compile Include="Common\Config\TrainConfig.cs" />
+    <Compile Include="Common\CRH1AButton.cs" />
+    <Compile Include="Common\CRH1BaseClass.cs" />
+    <Compile Include="Common\DeepCopy.cs" />
+    <Compile Include="Common\EventArg\ChangedArgs.cs" />
+    <Compile Include="Common\EventArg\TrainStateChangedArgs.cs" />
+    <Compile Include="Common\Fault\FaultEnum.cs" />
+    <Compile Include="Common\Global\GlobalEvent.cs" />
+    <Compile Include="Common\Global\GlobalParam.cs" />
+    <Compile Include="Common\Global\GlobalViewNavigate.cs" />
+    <Compile Include="Common\LuminanceConctrol.cs" />
+    <Compile Include="Common\Model\CRH2CommunicationPortModel.cs" />
+    <Compile Include="Common\Model\GridLineConfig.cs" />
+    <Compile Include="Common\ParaADefine.cs" />
+    <Compile Include="Common\RoomType.cs" />
+    <Compile Include="Common\Global\GlobalInfo.cs" />
+    <Compile Include="Common\Train\BaseTrainUnit.cs" />
+    <Compile Include="Common\Train\Car.cs" />
+    <Compile Include="Common\Train\CommonTrain.cs" />
+    <Compile Include="Common\Train\CommonTrainInBoolRes.cs" />
+    <Compile Include="Common\Train\DriverLocation.cs" />
+    <Compile Include="Common\Train\HeadCar.cs" />
+    <Compile Include="Common\Train\HeadCarType.cs" />
+    <Compile Include="Common\Train\TrainIDConvert.cs" />
+    <Compile Include="Common\Train\TrainInfo.cs" />
+    <Compile Include="Common\Train\TrainSelectedChangedArgs.cs" />
+    <Compile Include="Common\Train\TrainState.cs" />
+    <Compile Include="Common\Train\TrainvView.cs" />
+    <Compile Include="Common\View\CRH1Button.cs" />
+    <Compile Include="Common\View\CRH1ButtonStrategy.cs" />
+    <Compile Include="Config\ConfigModel\AdaptConfig.cs" />
+    <Compile Include="Config\ConfigModel\CRH1AConfig.cs" />
+    <Compile Include="Config\ConfigModel\CRH1AConfigTest.cs" />
+    <Compile Include="Config\ConfigModel\CRH1ADebug.cs" />
+    <Content Include="Changes_Motor.HMI.CRH1A.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\CRH1AConfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Compile Include="Config\ConfigModel\CRH1ADetailConfig.cs" />
+    <Compile Include="Config\ConfigModel\PasswordConfig.cs" />
+    <Compile Include="Config\ConfigModel\ProjectType.cs" />
+    <Compile Include="Door\DoorInfo.cs" />
+    <Compile Include="Door\DoorMgr.cs" />
+    <Compile Include="Door\DoorOutBoolDefine.cs" />
+    <Compile Include="Door\DoorState.cs" />
+    <Compile Include="Door\DoorStateAdapter.cs" />
+    <Compile Include="FireDetector\FireModel.cs" />
+    <Compile Include="GT_Activation.cs" />
+    <Compile Include="AirSupply\GT_AirSupply.cs" />
+    <Compile Include="Alarm\GT_AlarmInfo.cs" />
+    <Compile Include="GT_BatterySupply.cs" />
+    <Compile Include="Brake\GT_Brakes.cs" />
+    <Compile Include="GT_MenuTitle.cs" />
+    <Compile Include="ExternalButtons.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Resource\InBoolKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InBoolKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\InFloatKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InFloatKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\OutBooKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutBooKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Roller\ControllerButtonName.cs" />
+    <Compile Include="Roller\HotBoxControllerRegion.cs" />
+    <Compile Include="Roller\HotBoxResource.cs" />
+    <Compile Include="Running\DialStrategy\DialStrategyBase.cs" />
+    <Compile Include="Running\DialStrategy\OldDialStrategy.cs" />
+    <Compile Include="Running\GT_LightRuning.cs" />
+    <Compile Include="Running\DialStrategy\IDialStrategy.cs" />
+    <Compile Include="Running\DialStrategy\NormalDialStrategy.cs" />
+    <Compile Include="Common\CarNameFactory.cs" />
+    <Compile Include="Station\Car\DoorViewCarBase.cs" />
+    <Compile Include="Station\Car\CarStyle.cs" />
+    <Compile Include="Station\Car\CarType.cs" />
+    <Compile Include="Station\Car\DriverCar.cs" />
+    <Compile Include="Station\Car\IDoorViewCar.cs" />
+    <Compile Include="Station\Car\PassengerCar.cs" />
+    <Compile Include="Station\Door\StationDoorFactory.cs" />
+    <Compile Include="Station\Overload\OverloadState.cs" />
+    <Compile Include="Station\Overload\OverloadView.cs" />
+    <Compile Include="Station\StationResource.cs" />
+    <Compile Include="SystemMenu\GT_SystemButton.cs" />
+    <Compile Include="SystemMenu\SystemButtonRegion.cs" />
+    <Compile Include="SystemMenu\SystemMenuConfig.cs" />
+    <Compile Include="Test\GT_BrakeTest.cs" />
+    <Compile Include="Comfort\GT_Comfort.cs" />
+    <Compile Include="Door\GT_DoorStatus.cs" />
+    <Compile Include="FireDetector\GT_FireDetector.cs" />
+    <Compile Include="GT_Front.cs" />
+    <Compile Include="Alarm\Fault\GT_GalobalFaultManage.cs" />
+    <Compile Include="HighVoltage\HighVolOutBoolIdxAdpt.cs" />
+    <Compile Include="HighVoltage\ImageMgr.cs" />
+    <Compile Include="HighVoltage\StateAdpt.cs" />
+    <Compile Include="HighVoltage\GT_HighvoltageStatus.cs" />
+    <Compile Include="Station\Door\DoorLocation.cs" />
+    <Compile Include="Station\Door\HollowStationDoor.cs" />
+    <Compile Include="Station\Door\IStationDoor.cs" />
+    <Compile Include="Station\Door\SolidStationDoor.cs" />
+    <Compile Include="Station\Door\StationDoorBase.cs" />
+    <Compile Include="Station\StationConfig.cs" />
+    <Compile Include="Station\Door\StationDoors.cs" />
+    <Compile Include="Station\Door\StationDoorState.cs" />
+    <Compile Include="Station\Door\StationDoorStyle.cs" />
+    <Compile Include="Test\GT_Drive_ControlTest.cs" />
+    <Compile Include="Test\GT_LampTest.cs" />
+    <Compile Include="Test\TestToolInfo.cs" />
+    <Compile Include="Train\Train4.cs" />
+    <Compile Include="Train\TrainBase.cs" />
+    <Compile Include="UserController\LoginInputEventArgs.cs" />
+    <Compile Include="UserController\LoginKeyboard.cs" />
+    <Compile Include="UserController\SwithUserView.cs" />
+    <Compile Include="Roller\GT_HotBoxStatus.cs" />
+    <Compile Include="GT_InterLock_System.cs" />
+    <Compile Include="UserController\GT_Login.cs" />
+    <Compile Include="GT_MainRun_Button.cs" />
+    <Compile Include="Running\IFloatValueExpression.cs" />
+    <Compile Include="Running\GT_Running.cs" />
+    <Compile Include="HighVoltage\AcceptEleArc.cs" />
+    <Compile Include="HighVoltage\HighVoltageSwitch.cs" />
+    <Compile Include="Roller\RollerTemperature.cs" />
+    <Compile Include="Roller\TemperatureState.cs" />
+    <Compile Include="Roller\TemperatureStateAdpt.cs" />
+    <Compile Include="Roller\TrainRoller.cs" />
+    <Compile Include="Running\TowBrakeValueExpression.cs" />
+    <Compile Include="Sanitary\GT_Sanitary.cs" />
+    <Compile Include="Setting\GT_ChangeUser.cs" />
+    <Compile Include="Setting\GT_MasterReset.cs" />
+    <Compile Include="Setting\GT_Settings.cs" />
+    <Compile Include="Station\GT_Station.cs" />
+    <Compile Include="SystemMenu\GT_SystemMenu.cs" />
+    <Compile Include="Title\GT_TitleInfo.cs" />
+    <Compile Include="GT_MainMenuButton.cs" />
+    <Compile Include="Startup\StartUpTimerModel.cs" />
+    <Compile Include="Startup\StartUpView.cs" />
+    <Compile Include="TractionBrake\AccelerationCtrol.cs" />
+    <Compile Include="TractionBrake\GT_Traction_Brake.cs" />
+    <Compile Include="Train\Train3.cs" />
+    <Compile Include="GT_TrainStatus.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sanitary\SanitaryButtonMgr.cs" />
+    <Compile Include="Sanitary\SanitaryButtonType.cs" />
+    <Compile Include="Sanitary\SanitaryOutBoolIdxAdpt.cs" />
+    <Compile Include="TractionBrake\TractionBrakeInFloatAdpt.cs" />
+    <Compile Include="Traction\ACM.cs" />
+    <Compile Include="Traction\GT_TractionStatus.cs" />
+    <Compile Include="Traction\LCM.cs" />
+    <Compile Include="Traction\MCM.cs" />
+    <Compile Include="Traction\TractionEquipMemtBase.cs" />
+    <Compile Include="Traction\TractionOutBoolAdpt.cs" />
+    <Compile Include="Util\Dataserialization.cs" />
+    <Compile Include="黑屏\BlackScreen.cs" />
+    <Compile Include="黑屏\ClassOverScreen.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource\InBoolKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InBoolKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\InFloatKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InFloatKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\OutBooKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OutBooKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

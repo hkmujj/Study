@@ -1,0 +1,285 @@
+﻿<UserControl x:Class="Motor.HMI.CRH380D.View.Contents.WCDeviceView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:common="clr-namespace:Motor.HMI.CRH380D.View.Common"
+             xmlns:constant="clr-namespace:Motor.HMI.CRH380D.Constant"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:regions="http://www.codeplex.com/CompositeWPF"
+             xmlns:viewModel="clr-namespace:Motor.HMI.CRH380D.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+             d:DesignHeight="420"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <Viewbox>
+        <Grid Width="800"
+              Height="420"
+              Background="{StaticResource Gray2Background}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="33*" />
+                <RowDefinition Height="65*" />
+                <RowDefinition Height="5*" />
+                <RowDefinition Height="30*" />
+                <RowDefinition Height="5*" />
+                <RowDefinition Height="80*" />
+                <RowDefinition Height="187*" />
+                <RowDefinition Height="15*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <TextBlock Style="{StaticResource TitleTextStyle}" Text="卫生设备" />
+            </Grid>
+            <Grid Grid.Row="1">
+                <common:TrainCommon3 DataContext="{Binding Model.WCDeviceModel.TrainModel}" />
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="70*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="2">
+                    <Border Width="40"
+                            Height="24"
+                            Margin="3,2,47,2"
+                            BorderBrush="{Binding Model.WCDeviceModel.WCDevice71,
+                                                  Converter={StaticResource WCDeviceStateToColorConverter}}"
+                            BorderThickness="1">
+                        <TextBlock FontSize="18"
+                                   FontWeight="Bold"
+                                   Foreground="{Binding Model.WCDeviceModel.WCDevice71,
+                                                        Converter={StaticResource WCDeviceStateToColorConverter}}"
+                                   Text="WC"
+                                   TextAlignment="Center" />
+                    </Border>
+                    <Border Width="40"
+                            Height="24"
+                            Margin="47,2,3,2"
+                            BorderBrush="{Binding Model.WCDeviceModel.WCDevice72,
+                                                  Converter={StaticResource WCDeviceStateToColorConverter}}"
+                            BorderThickness="1">
+                        <TextBlock FontSize="18"
+                                   FontWeight="Bold"
+                                   Foreground="{Binding Model.WCDeviceModel.WCDevice72,
+                                                        Converter={StaticResource WCDeviceStateToColorConverter}}"
+                                   Text="WC"
+                                   TextAlignment="Center" />
+                    </Border>
+                </Grid>
+                <Grid Grid.Column="3">
+                    <Border Width="40"
+                            Height="24"
+                            Margin="3,2,47,2"
+                            BorderBrush="{Binding Model.WCDeviceModel.WCDevice61,
+                                                  Converter={StaticResource WCDeviceStateToColorConverter}}"
+                            BorderThickness="1">
+                        <TextBlock FontSize="18"
+                                   FontWeight="Bold"
+                                   Foreground="{Binding Model.WCDeviceModel.WCDevice61,
+                                                        Converter={StaticResource WCDeviceStateToColorConverter}}"
+                                   Text="WC"
+                                   TextAlignment="Center" />
+                    </Border>
+                    <Border Width="40"
+                            Height="24"
+                            Margin="47,2,3,2"
+                            BorderBrush="{Binding Model.WCDeviceModel.WCDevice62,
+                                                  Converter={StaticResource WCDeviceStateToColorConverter}}"
+                            BorderThickness="1">
+                        <TextBlock FontSize="18"
+                                   FontWeight="Bold"
+                                   Foreground="{Binding Model.WCDeviceModel.WCDevice62,
+                                                        Converter={StaticResource WCDeviceStateToColorConverter}}"
+                                   Text="WC"
+                                   TextAlignment="Center" />
+                    </Border>
+                </Grid>
+                <Grid Grid.Column="4">
+                    <Border Width="40"
+                            Height="24"
+                            Margin="3,2,47,2"
+                            BorderBrush="{Binding Model.WCDeviceModel.WCDevice51,
+                                                  Converter={StaticResource WCDeviceStateToColorConverter}}"
+                            BorderThickness="1">
+                        <TextBlock FontSize="18"
+                                   FontWeight="Bold"
+                                   Foreground="{Binding Model.WCDeviceModel.WCDevice51,
+                                                        Converter={StaticResource WCDeviceStateToColorConverter}}"
+                                   Text="WC"
+                                   TextAlignment="Center" />
+                    </Border>
+                    <Border Width="40"
+                            Height="24"
+                            Margin="47,2,3,2"
+                            BorderBrush="{Binding Model.WCDeviceModel.WCDevice52,
+                                                  Converter={StaticResource WCDeviceStateToColorConverter}}"
+                            BorderThickness="1">
+                        <TextBlock FontSize="18"
+                                   FontWeight="Bold"
+                                   Foreground="{Binding Model.WCDeviceModel.WCDevice52,
+                                                        Converter={StaticResource WCDeviceStateToColorConverter}}"
+                                   Text="WC"
+                                   TextAlignment="Center" />
+                    </Border>
+                </Grid>
+                <Grid Grid.Column="6">
+                    <Border Width="40"
+                            Height="24"
+                            Margin="3,2,47,2"
+                            BorderBrush="{Binding Model.WCDeviceModel.WCDevice31,
+                                                  Converter={StaticResource WCDeviceStateToColorConverter}}"
+                            BorderThickness="1">
+                        <TextBlock FontSize="18"
+                                   FontWeight="Bold"
+                                   Foreground="{Binding Model.WCDeviceModel.WCDevice31,
+                                                        Converter={StaticResource WCDeviceStateToColorConverter}}"
+                                   Text="WC"
+                                   TextAlignment="Center" />
+                    </Border>
+                    <Border Width="40"
+                            Height="24"
+                            Margin="47,2,3,2"
+                            BorderBrush="{Binding Model.WCDeviceModel.WCDevice32,
+                                                  Converter={StaticResource WCDeviceStateToColorConverter}}"
+                            BorderThickness="1">
+                        <TextBlock FontSize="18"
+                                   FontWeight="Bold"
+                                   Foreground="{Binding Model.WCDeviceModel.WCDevice32,
+                                                        Converter={StaticResource WCDeviceStateToColorConverter}}"
+                                   Text="WC"
+                                   TextAlignment="Center" />
+                    </Border>
+                </Grid>
+                <Grid Grid.Column="7">
+                    <Border Width="40"
+                            Height="24"
+                            Margin="3,2,47,2"
+                            BorderBrush="{Binding Model.WCDeviceModel.WCDevice21,
+                                                  Converter={StaticResource WCDeviceStateToColorConverter}}"
+                            BorderThickness="1">
+                        <TextBlock FontSize="18"
+                                   FontWeight="Bold"
+                                   Foreground="{Binding Model.WCDeviceModel.WCDevice21,
+                                                        Converter={StaticResource WCDeviceStateToColorConverter}}"
+                                   Text="WC"
+                                   TextAlignment="Center" />
+                    </Border>
+                    <Border Width="40"
+                            Height="24"
+                            Margin="47,2,3,2"
+                            BorderBrush="{Binding Model.WCDeviceModel.WCDevice22,
+                                                  Converter={StaticResource WCDeviceStateToColorConverter}}"
+                            BorderThickness="1">
+                        <TextBlock FontSize="18"
+                                   FontWeight="Bold"
+                                   Foreground="{Binding Model.WCDeviceModel.WCDevice22,
+                                                        Converter={StaticResource WCDeviceStateToColorConverter}}"
+                                   Text="WC"
+                                   TextAlignment="Center" />
+                    </Border>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="70*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1">
+                    <ProgressBar Margin="47,2,3,2"
+                                 Foreground="#FF55A8BE"
+                                 Maximum="100"
+                                 Style="{StaticResource WCProgressStyle}"
+                                 Value="{Binding Model.WCDeviceModel.WaterValue0}" />
+                </Grid>
+                <Grid Grid.Column="2">
+                    <ProgressBar Margin="47,2,3,2"
+                                 Foreground="#FF55A8BE"
+                                 Maximum="100"
+                                 Style="{StaticResource WCProgressStyle}"
+                                 Value="{Binding Model.WCDeviceModel.WaterValue7}" />
+                    <ProgressBar Margin="3,2,47,2"
+                                 Foreground="#FF805F55"
+                                 Maximum="100"
+                                 Style="{StaticResource WCProgressStyle}"
+                                 Value="{Binding Model.WCDeviceModel.DirtValue7}" />
+                </Grid>
+                <Grid Grid.Column="3">
+                    <ProgressBar Margin="47,2,3,2"
+                                 Foreground="#FF55A8BE"
+                                 Maximum="100"
+                                 Style="{StaticResource WCProgressStyle}"
+                                 Value="{Binding Model.WCDeviceModel.WaterValue6}" />
+                    <ProgressBar Margin="3,2,47,2"
+                                 Foreground="#FF805F55"
+                                 Maximum="100"
+                                 Style="{StaticResource WCProgressStyle}"
+                                 Value="{Binding Model.WCDeviceModel.DirtValue6}" />
+                </Grid>
+                <Grid Grid.Column="4">
+                    <ProgressBar Margin="47,2,3,2"
+                                 Foreground="#FF55A8BE"
+                                 Maximum="100"
+                                 Style="{StaticResource WCProgressStyle}"
+                                 Value="{Binding Model.WCDeviceModel.WaterValue5}" />
+                    <ProgressBar Margin="3,2,47,2"
+                                 Foreground="#FF805F55"
+                                 Maximum="100"
+                                 Style="{StaticResource WCProgressStyle}"
+                                 Value="{Binding Model.WCDeviceModel.DirtValue5}" />
+                </Grid>
+                <Grid Grid.Column="5">
+                    <ProgressBar Margin="47,2,3,2"
+                                 Foreground="#FF55A8BE"
+                                 Maximum="100"
+                                 Style="{StaticResource WCProgressStyle}"
+                                 Value="{Binding Model.WCDeviceModel.WaterValue4}" />
+                </Grid>
+                <Grid Grid.Column="6">
+                    <ProgressBar Margin="47,2,3,2"
+                                 Foreground="#FF55A8BE"
+                                 Maximum="100"
+                                 Style="{StaticResource WCProgressStyle}"
+                                 Value="{Binding Model.WCDeviceModel.WaterValue3}" />
+                    <ProgressBar Margin="3,2,47,2"
+                                 Foreground="#FF805F55"
+                                 Maximum="100"
+                                 Style="{StaticResource WCProgressStyle}"
+                                 Value="{Binding Model.WCDeviceModel.DirtValue3}" />
+                </Grid>
+                <Grid Grid.Column="7">
+                    <ProgressBar Margin="47,2,3,2"
+                                 Foreground="#FF55A8BE"
+                                 Maximum="100"
+                                 Style="{StaticResource WCProgressStyle}"
+                                 Value="{Binding Model.WCDeviceModel.WaterValue2}" />
+                    <ProgressBar Margin="3,2,47,2"
+                                 Foreground="#FF805F55"
+                                 Maximum="100"
+                                 Style="{StaticResource WCProgressStyle}"
+                                 Value="{Binding Model.WCDeviceModel.DirtValue2}" />
+                </Grid>
+                <Grid Grid.Column="8">
+                    <ProgressBar Margin="47,2,3,2"
+                                 Foreground="#FF55A8BE"
+                                 Maximum="100"
+                                 Style="{StaticResource WCProgressStyle}"
+                                 Value="{Binding Model.WCDeviceModel.WaterValue1}" />
+                </Grid>
+            </Grid>
+        </Grid>
+    </Viewbox>
+</UserControl>

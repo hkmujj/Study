@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="Engine.TPX21F.HXN5B.View.Contents.Fault.FaultDeatilView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:common="clr-namespace:Engine.TPX21F.HXN5B.View.Common"
+             xmlns:constant="clr-namespace:Engine.TPX21F.HXN5B.Constant"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:designData="clr-namespace:Engine.TPX21F.HXN5B.Model.ViewSource.DesignData"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:regions="http://www.codeplex.com/CompositeWPF"
+             xmlns:view="clr-namespace:MMI.Facility.WPFInfrastructure.View;assembly=MMI.Facility.WPFInfrastructure"
+             xmlns:viewModel="clr-namespace:Engine.TPX21F.HXN5B.ViewModel"
+             xmlns:viewSource="clr-namespace:Engine.TPX21F.HXN5B.Model.ViewSource"
+             d:DataContext="{d:DesignInstance viewModel:HXN5BViewModel}"
+             d:DesignHeight="495"
+             d:DesignWidth="800"
+             Background="{StaticResource ContentBackgroundBrush}"
+             mc:Ignorable="d">
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid view:GridLine.Brush="{StaticResource ForegroundWhiteBrush}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1.2*" />
+                <ColumnDefinition Width="1.2*" />
+                <ColumnDefinition Width="1.2*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringOrderNumber}" />
+            <TextBlock Grid.Column="1"
+                       Style="{StaticResource ContentConstWhiteTextStyle}"
+                       Text="{StaticResource StringFault}" />
+            <TextBlock Grid.Column="2"
+                       Style="{StaticResource ContentConstWhiteTextStyle}"
+                       Text="{StaticResource StringWorkState}" />
+            <TextBlock Grid.Column="3"
+                       Style="{StaticResource ContentConstWhiteTextStyle}"
+                       Text="{StaticResource StringParam}" />
+            <TextBlock Grid.Column="4"
+                       Style="{StaticResource ContentConstWhiteTextStyle}"
+                       Text="{StaticResource StringRotationRate}" />
+            <TextBlock Grid.Column="5"
+                       Style="{StaticResource ContentConstWhiteTextStyle}"
+                       Text="{StaticResource StringSpeed}" />
+            <StackPanel Grid.Column="6"
+                        HorizontalAlignment="Center"
+                        Orientation="Horizontal">
+                <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringOccuse}" />
+                <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="/" />
+                <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringReset}" />
+                <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringTime}" />
+            </StackPanel>
+            <StackPanel Grid.Column="7" Orientation="Vertical">
+                <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringOccuse}" />
+                <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringReset}" />
+            </StackPanel>
+        </Grid>
+
+        <!--<ItemsControl Grid.Row="1"
+                      ItemsSource="{Binding Source={x:Static designData:DesignFaultItem.Items}}"
+                      Style="{StaticResource ItemControlFaultDetailStyle}" />-->
+
+
+        <ItemsControl Grid.Row="1"
+                      ItemsSource="{Binding Path=Domain.FaultManagerViewModel.Model.CurrentFaultDetails.Items}"
+                      Style="{StaticResource ItemControlFaultDetailStyle}" />
+
+
+        <StackPanel Grid.Row="2"
+                    Margin="12,0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Bottom"
+                    Orientation="Horizontal">
+            <TextBlock Style="{StaticResource MonitorPageIndicatorGreenTextStyle}" Text="{Binding Path=Domain.FaultManagerViewModel.Model.CurrentFaultDetails.CurrentPageIndex, Converter={StaticResource MathConverter}, ConverterParameter=x+1}" />
+            <TextBlock Style="{StaticResource MonitorPageIndicatorGreenTextStyle}" Text="/" />
+            <TextBlock Style="{StaticResource MonitorPageIndicatorGreenTextStyle}" Text="{Binding Path=Domain.FaultManagerViewModel.Model.CurrentFaultDetails.PageCount}" />
+        </StackPanel>
+    </Grid>
+</UserControl>

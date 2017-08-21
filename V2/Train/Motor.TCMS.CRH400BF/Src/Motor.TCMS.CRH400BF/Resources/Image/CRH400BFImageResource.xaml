@@ -1,0 +1,110 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+    <ImageSource x:Key="ImageTitleTrainFaultNone">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Title/无故障.png</ImageSource>
+    <ImageSource x:Key="ImageTitleTrainFaultOne">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Title/一级故障.png</ImageSource>
+    <ImageSource x:Key="ImageTitleTrainFaultTwo">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Title/二级故障.png</ImageSource>
+
+    <ImageSource x:Key="ImgNavigationBtnUp">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Common/BtnUp.png</ImageSource>
+    <ImageSource x:Key="ImgNavigationBtnDown">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Common/BtnDown.png</ImageSource>
+
+    <ImageSource x:Key="ImgTrainInfoPantographUp">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/TrainInfo/升弓.png</ImageSource>
+    <ImageSource x:Key="ImgTrainInfoPantographDown">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/TrainInfo/降弓.png</ImageSource>
+    <ImageSource x:Key="ImgTrainInfoPantographCutOff">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/TrainInfo/受电弓切除.png</ImageSource>
+
+    <ImageSource x:Key="ImgTrainInfoBreakerOpen">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/TrainInfo/主断断.png</ImageSource>
+    <ImageSource x:Key="ImgTrainInfoBrerkerClose">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/TrainInfo/主断合.png</ImageSource>
+    <ImageSource x:Key="ImgTrainInfoBreakerCuOff">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/TrainInfo/主断切除.png</ImageSource>
+
+    <ImageSource x:Key="ImgCommonDoorOpen">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Common/门开.png</ImageSource>
+    <ImageSource x:Key="ImgCommonDoorClose">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Common/门锁闭.png</ImageSource>
+    <ImageSource x:Key="ImgCommonDoorFault">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Common/门故障.png</ImageSource>
+    <ImageSource x:Key="ImgCommonDoorIsolation">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Common/门隔离.png</ImageSource>
+
+    <ImageSource x:Key="ImgCommonDriverRoomChange">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Common/司机室变更.png</ImageSource>
+
+    <ImageSource x:Key="ImgCommonVcbWhite">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Common/VCB白.png</ImageSource>
+    <ImageSource x:Key="ImgCommonVcbGreen">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Common/VCB绿.png</ImageSource>
+
+    <ImageSource x:Key="ImgCommonFireCall">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Common/火警.png</ImageSource>
+
+    <ImageSource x:Key="ImgCommonBatteryChargerRun">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Common/充电机工作.png</ImageSource>
+    <ImageSource x:Key="ImgCommonBatteryChargerNotRun">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Common/充电机未工作.png</ImageSource>
+    <ImageSource x:Key="ImgCommonBatteryChargerFault">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Common/充电机故障.png</ImageSource>
+    <ImageSource x:Key="ImgCommonBatteryChargerCutOff">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Common/充电机切除.png</ImageSource>
+
+    <ImageSource x:Key="ImgCommonConverterStateRun">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Common/Converter工作.PNG</ImageSource>
+    <ImageSource x:Key="ImgCommonConverterStateNotRun">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Common/Converter未工作.PNG</ImageSource>
+    <ImageSource x:Key="ImgCommonConverterStateCutOff">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Common/Converter切除.PNG</ImageSource>
+    <ImageSource x:Key="ImgCommonConverterStateFault">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Common/Converter故障.PNG</ImageSource>
+
+    <ImageSource x:Key="ImgCommonAirCompressorStateRun">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Common/空压机工作.PNG</ImageSource>
+    <ImageSource x:Key="ImgCommonAirCompressorStateNotRun">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Common/空压机未工作.PNG</ImageSource>
+    <ImageSource x:Key="ImgCommonAirCompressorStateCutOff">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Common/空压机切除.PNG</ImageSource>
+    <ImageSource x:Key="ImgCommonAirCompressorStateFault">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Common/空压机故障.PNG</ImageSource>
+
+    <ImageSource x:Key="ImgCommonHighPressSwitchStateOpen">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Common/高隔开.PNG</ImageSource>
+    <ImageSource x:Key="ImgCommonHighPressSwitchStateClose">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Common/高隔合.PNG</ImageSource>
+    <ImageSource x:Key="ImgCommonHighPressSwitchStateCutOff">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Common/高隔切除.PNG</ImageSource>
+
+    <ImageSource x:Key="ImgCommonUnKnow">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Common/未知.png</ImageSource>
+
+    <ImageSource x:Key="ImgCommonAutoSafetyEquip">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Common/自动安全装置.png</ImageSource>
+
+    <ImageSource x:Key="ImgCommonEPassengerCall">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Common/乘客报警.PNG</ImageSource>
+
+    <ImageSource x:Key="ImgCommonEmptyRun">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Common/空转滑行提示.png</ImageSource>
+
+    <ImageSource x:Key="ImgCommonPowerSupply">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Common/库内供电.PNG</ImageSource>
+
+
+    <ImageSource x:Key="ImgBrakeEleBrakeRun">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Brake/电制动.png</ImageSource>
+
+    <ImageSource x:Key="ImgBrakeAirBrakeRun">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Brake/空气制动.png</ImageSource>
+    <ImageSource x:Key="ImgBrakeAirBrakeIsolation">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Brake/空气制动切除.png</ImageSource>
+
+    <ImageSource x:Key="ImgBrakeParkBrakeRun">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Brake/停放制动.png</ImageSource>
+    <ImageSource x:Key="ImgBrakeParkBrakeIsolation">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Brake/停放制动切除.PNG</ImageSource>
+
+    <ImageSource x:Key="Img钥匙">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/TrainInfo/钥匙.PNG</ImageSource>
+
+    <ImageSource x:Key="ImgTemporaryCurrentFaultPage">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Temporary/当前故障.PNG</ImageSource>
+    <ImageSource x:Key="ImgEquipmentCutOffPage">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Temporary/设备切除.PNG</ImageSource>
+    <ImageSource x:Key="ImgTemporaryDoorAbout">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Temporary/车门间隙.PNG</ImageSource>
+    <ImageSource x:Key="ImgCommonNone">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Common/None.PNG</ImageSource>
+
+    <ImageSource x:Key="ImgCommonTractionInvertorState">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/Common/牵引逆变器辅助变流器.png</ImageSource>
+
+
+
+    <!--  显示图标  -->
+    <ImageSource x:Key="ImgTrainIconDoorAllClose">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/TrainIcon/门全锁.png</ImageSource>
+    <ImageSource x:Key="ImgTrainIconDoorNotAllClose">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/TrainIcon/门未全所.png</ImageSource>
+
+    <ImageSource x:Key="ImgTrainIconMainBreakerCanOpen">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/TrainIcon/主断允许合.png</ImageSource>
+    <ImageSource x:Key="ImgTrainIconMainBreakerNotCanOpen">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/TrainIcon/主断不允许合.png</ImageSource>
+
+    <ImageSource x:Key="ImgTrainIconChangePortCanChangePort">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/TrainIcon/换端条件满足.png</ImageSource>
+    <ImageSource x:Key="ImgTrainIconChangePortEnterChangePort">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/TrainIcon/进入换端.png</ImageSource>
+
+    <ImageSource x:Key="ImgTrainIconExternalPower">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/TrainIcon/外部供电.png</ImageSource>
+
+    <ImageSource x:Key="ImgTrainIconAssistInvertorStateIconAllRun">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/TrainIcon/辅均工 .PNG</ImageSource>
+    <ImageSource x:Key="ImgTrainIconAssistInvertorStateIconAllNotRun">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/TrainIcon/辅均未.PNG</ImageSource>
+    <ImageSource x:Key="ImgTrainIconAssistInvertorStateIconAllFault">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/TrainIcon/辅均障.PNG</ImageSource>
+    <ImageSource x:Key="ImgTrainIconAssistInvertorStateIconOnlyOneRun">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/TrainIcon/辅一工.PNG</ImageSource>
+
+    <ImageSource x:Key="ImgTrainIconBatteryChargerStateIconAllRun">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/TrainIcon/充均工.PNG</ImageSource>
+    <ImageSource x:Key="ImgTrainIconBatteryChargerStateIconAllNotRun">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/TrainIcon/充均未.PNG</ImageSource>
+    <ImageSource x:Key="ImgTrainIconBatteryChargerStateIconAllFault">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/TrainIcon/充均障.PNG</ImageSource>
+    <ImageSource x:Key="ImgTrainIconBatteryChargerStateIconOnlyOneRun">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/TrainIcon/充一工.PNG</ImageSource>
+
+    <ImageSource x:Key="ImgTrainIconPassengerCall">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/TrainIcon/乘客报警.PNG</ImageSource>
+
+    <ImageSource x:Key="ImgTrainIconDriverFoot">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/TrainIcon/司机警惕.png</ImageSource>
+
+    <ImageSource x:Key="ImgTrainIconFireHelp">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/TrainIcon/火灾报警.png</ImageSource>
+
+    <ImageSource x:Key="ImgTrainIconEmptyWork">pack://application:,,,/Motor.TCMS.CRH400BF;component/Resources/Image/Details/TrainIcon/空转滑行.png</ImageSource>
+
+</ResourceDictionary>

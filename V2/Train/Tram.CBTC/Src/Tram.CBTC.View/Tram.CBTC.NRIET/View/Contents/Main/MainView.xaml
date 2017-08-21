@@ -1,0 +1,136 @@
+﻿<UserControl
+    x:Class="Tram.CBTC.NRIET.View.Contents.Main.MainView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:constant="clr-namespace:Tram.CBTC.NRIET.Constant"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:regionMenu="clr-namespace:Tram.CBTC.NRIET.View.Contents.Main.RegionMenu"
+    xmlns:regions="http://www.codeplex.com/CompositeWPF"
+    xmlns:viewModel="clr-namespace:Tram.CBTC.NRIET.ViewModel"
+    xmlns:contents="clr-namespace:Tram.CBTC.NRIET.View.Contents"
+    d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+    d:DesignHeight="600"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="65*" />
+            <RowDefinition Height="535*" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" regions:RegionManager.RegionName="{x:Static constant:RegionNames.InfoContent}" />
+        <Grid Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="626*" />
+                <ColumnDefinition Width="174*" />
+            </Grid.ColumnDefinitions>
+            <Grid Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.05*" />
+                    <RowDefinition Height="0.40*" />
+                    <RowDefinition Height="0.06*" />
+                    <RowDefinition Height="0.44*" />
+                </Grid.RowDefinitions>
+                <Border Grid.Row="1" regions:RegionManager.RegionName="{x:Static constant:RegionNames.RunningContent}" />
+                <Grid Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.20*" />
+                        <ColumnDefinition Width="0.45*" />
+                        <ColumnDefinition Width="0.40*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.2183*" />
+                            <RowDefinition Height="0.2183*" />
+                            <RowDefinition Height="0.10915*" />
+                            <RowDefinition Height="0.18*" />
+                            <RowDefinition Height="0.10915*" />
+                            <RowDefinition Height="0.125*" />
+                        </Grid.RowDefinitions>
+                        <Grid Row="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.05*" />
+                                <ColumnDefinition Width="0.80*" />
+                                <ColumnDefinition Width="0.15*" />
+                            </Grid.ColumnDefinitions>
+                            <Button
+                                x:Name="SettingMenuButton"
+                                Grid.Column="1"
+                                Command="{Binding Path=Controller.Navigator.SettingMenuCommand}"
+                                CommandParameter="1"
+                                Content="{StaticResource Tram.CBTC.Nriet.String.Menu}"
+                                Style="{StaticResource Tram.CBTC.Nriet.GrayBtnStyle1}" />
+                            <Popup
+                                Grid.Column="1"
+                                Width="273"
+                                Height="323"
+                                HorizontalOffset="60"
+                                IsOpen="{Binding Controller.Navigator.IsOpenSettingMenu}"
+                                PlacementTarget="{Binding ElementName=SettingMenuButton}"
+                                StaysOpen="False"
+                                VerticalOffset="-420">
+                                <regionMenu:SettingMenu />
+                            </Popup>
+                            <Popup
+                                Grid.Column="1"
+                                Width="460"
+                                Height="390"
+                                HorizontalOffset="45"
+                                IsOpen="{Binding Controller.Navigator.IsOpenSettingViewMenuItem}"
+                                PlacementTarget="{Binding ElementName=SettingMenuButton}"
+                                StaysOpen="False"
+                                VerticalOffset="-432">
+                                <regionMenu:SettingView />
+                            </Popup>
+                            <Popup
+                                Grid.Column="1"
+                                Width="520"
+                                Height="450"
+                                HorizontalOffset="40"
+                                IsOpen="{Binding Controller.Navigator.IsOpenTrainTimeTableMenuItem}"
+                                PlacementTarget="{Binding ElementName=SettingMenuButton}"
+                                StaysOpen="False"
+                                VerticalOffset="-448">
+                                <regionMenu:TimeTableView />
+                            </Popup>
+                            <Popup
+                                Grid.Column="1"
+                                Width="480"
+                                Height="360"
+                                HorizontalOffset="30"
+                                IsOpen="{Binding Controller.Navigator.IsOpenMaintenViewMenuItem}"
+                                PlacementTarget="{Binding ElementName=SettingMenuButton}"
+                                StaysOpen="False"
+                                VerticalOffset="-460">
+                                <regionMenu:MaintenView />
+                            </Popup>
+                            <Popup
+                                Grid.Column="1"
+                                Width="550"
+                                Height="330"
+                                HorizontalOffset="120"
+                                IsOpen="{Binding CBTC.RoadInfo.ReturnState, Converter={StaticResource Tram.CBTC.Nriet.Converter.ReturnInfoVisibleConvert}}"
+                                PlacementTarget="{Binding ElementName=SettingMenuButton}"
+                                StaysOpen="True"
+                                VerticalOffset="-450">
+                                <contents:ReentryWindow />
+                            </Popup>
+                        </Grid>
+                    </Grid>
+                    <Border Grid.Column="1" regions:RegionManager.RegionName="{x:Static constant:RegionNames.SpeedContent}" />
+                    <Border Grid.Column="2" regions:RegionManager.RegionName="{x:Static constant:RegionNames.DeviceStatusContent}" />
+                </Grid>
+            </Grid>
+            <Grid Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="0.07*" />
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" regions:RegionManager.RegionName="{x:Static constant:RegionNames.RadarContent}" />
+                <Grid Row="1">
+                    <TextBlock Style="{StaticResource Tram.CBTC.Nriet.Style.Text.WhiteText}" Text="{Binding Model.CurrentTime, Converter={StaticResource Tram.CBTC.Nriet.Converter.TimeConverter}, ConverterParameter=2, Mode=OneWay}" />
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

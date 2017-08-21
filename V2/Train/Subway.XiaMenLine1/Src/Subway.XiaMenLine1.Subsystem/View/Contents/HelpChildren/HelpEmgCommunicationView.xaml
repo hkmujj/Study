@@ -1,0 +1,56 @@
+﻿<UserControl
+    x:Class="Subway.XiaMenLine1.Subsystem.View.Contents.HelpChildren.HelpEmgCommunicationView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:enum="clr-namespace:Subway.XiaMenLine1.Interface.Enum;assembly=Subway.XiaMenLine1.Interface"
+    xmlns:helpChildren="clr-namespace:Subway.XiaMenLine1.Subsystem.View.Contents.HelpChildren"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    d:DesignHeight="420"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <x:Array x:Key="States" Type="{x:Type system:Object}">
+                <enum:EmergencyTalkState>UnitFalt</enum:EmergencyTalkState>
+                <enum:EmergencyTalkState>UnitRequest</enum:EmergencyTalkState>
+                <enum:EmergencyTalkState>UnitActive</enum:EmergencyTalkState>
+                <enum:EmergencyTalkState>UnitNormal</enum:EmergencyTalkState>
+            </x:Array>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../../AppResouce.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <helpChildren:HelpGroupContent
+            ContentMargin="26,16"
+            GroupName="紧急通讯"
+            StateSource="{StaticResource States}">
+            <helpChildren:HelpGroupContent.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="12,3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="4*" />
+                        </Grid.ColumnDefinitions>
+                        <Image
+                            Width="32"
+                            Height="32"
+                            Source="{Binding Converter={StaticResource EmergencyTalkToImageConvert}}" />
+                        <TextBlock
+                            Grid.Column="1"
+                            Style="{StaticResource HelpContentTextStyle}"
+                            Text="{Binding Converter={StaticResource EnumToHelpDescriptionConverter}}"
+                            TextWrapping="Wrap" />
+                    </Grid>
+                </DataTemplate>
+            </helpChildren:HelpGroupContent.ItemTemplate>
+        </helpChildren:HelpGroupContent>
+    </Grid>
+</UserControl>

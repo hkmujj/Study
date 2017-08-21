@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="Engine.HMI.SS3B.CommonView.RectTextControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Name="UserControl"
+             d:DesignHeight="30"
+             d:DesignWidth="796"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="18" />
+        </Style>
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120*" />
+            <ColumnDefinition Width="60*" />
+            <ColumnDefinition Width="80*" />
+            <ColumnDefinition Width="80*" />
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="TextBlockOne"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center" />
+        <TextBlock x:Name="TextBlockTwo"
+                   Grid.Column="1"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center" />
+        <TextBlock x:Name="TextBlockThree"
+                   Grid.Column="2"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center" />
+        <TextBlock x:Name="TextBlockFour"
+                   Grid.Column="3"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center" />
+    </Grid>
+</UserControl>

@@ -1,0 +1,151 @@
+﻿<UserControl x:Class="LightRail.HMI.GZYGDC.View.Contents.SettingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LightRail.HMI.GZYGDC.View.Contents"
+             xmlns:viewModel="clr-namespace:LightRail.HMI.GZYGDC.ViewModel"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+             d:DesignHeight="480" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.13*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="0.13*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.25*"></ColumnDefinition>
+                <ColumnDefinition Width="0.05*"></ColumnDefinition>
+                <ColumnDefinition Width="0.70*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.8*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="0.3*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="0.3*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="0.3*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="0.3*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="0.5*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Row="1">
+                    <Button Style="{StaticResource BlueButtonStyle}" Content="{StaticResource SettingView.LightAutoAdjust}"></Button>
+                </Grid>
+                <Grid Row="3">
+                    <Button Style="{StaticResource CenterAlignButtonStyle}" Content="{StaticResource SettingView.CurLine}"></Button>
+                </Grid>
+                <Grid Row="5">
+                    <Button Style="{StaticResource CenterAlignButtonStyle}" Content="{StaticResource SettingView.LineSetting}"></Button>
+                </Grid>
+                <Grid Row="7">
+                    <Button Style="{StaticResource CenterAlignButtonStyle}" Content="{StaticResource SettingView.SoundCtrl}"></Button>
+                </Grid>
+                <Grid Row="9">
+                    <Button Style="{StaticResource CenterAlignButtonStyle}" Content="{StaticResource SettingView.ReportCtrl}"></Button>
+                </Grid>
+            </Grid>
+            <Grid Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.8*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="0.3*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="0.3*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="0.3*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="0.3*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="0.5*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.38*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.38*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Column="0">
+                        <Button Style="{StaticResource WhiteButtonStyle}" Content="{StaticResource SettingView.Reduce}"></Button>
+                    </Grid>
+                    <Grid Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="16*"></RowDefinition>
+                            <RowDefinition Height="2*"></RowDefinition>
+                            <RowDefinition Height="30*"></RowDefinition>
+                            <RowDefinition Height="16*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Row="1">
+                            <Border Background="White" VerticalAlignment="Top" Height="3"></Border>
+                        </Grid>
+                        <Grid Row="2">
+                            <ProgressBar Style="{StaticResource SoundCtrlProgressBarStyle}" Value="3"></ProgressBar>
+                            <TextBlock Style="{StaticResource SoundCtrlTextStyle}" Text="0%"></TextBlock>
+                        </Grid>
+                    </Grid>
+                    <Grid Column="4">
+                        <Button Style="{StaticResource WhiteButtonStyle}" Content="{StaticResource SettingView.Add}"></Button>
+                    </Grid>
+                </Grid>
+                <Grid Row="3">
+                    <Button Style="{StaticResource LeftAlignLineButtonStyle}"  Content="广州塔-万胜围"></Button>
+                </Grid>
+                <Grid Row="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Column="0">
+                        <Button Style="{StaticResource BlueButtonStyle}" Content="{StaticResource SettingView.UpDownGoing}"></Button>
+                    </Grid>
+                    <Grid Column="1">
+                        <Button Style="{StaticResource BlueButtonStyle}" Content="{StaticResource SettingView.LineConfirm}"></Button>
+                    </Grid>
+                    <Grid Column="2">
+                        <Button Style="{StaticResource BlueButtonStyle}" Content="{StaticResource SettingView.SelectStation}"></Button>
+                    </Grid>
+                </Grid>
+                <Grid Row="7">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Column="0">
+                        <Button Style="{StaticResource BlueButtonStyle}" Content="ON"></Button>
+                    </Grid>
+                    <Grid Column="1">
+                       
+                    </Grid>
+                    <Grid Column="2">
+                        
+                    </Grid>
+                </Grid>
+                <Grid Row="9">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Column="0">
+                        <Button Style="{StaticResource BlueButtonStyle}" Content="自动报站"></Button>
+                    </Grid>
+                    <Grid Column="1">
+
+                    </Grid>
+                    <Grid Column="2">
+
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

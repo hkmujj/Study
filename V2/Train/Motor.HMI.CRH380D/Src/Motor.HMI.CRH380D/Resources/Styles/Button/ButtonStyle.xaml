@@ -1,0 +1,432 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../../Converters/ConverterResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+
+    <Style x:Key="MainMenuBtnStyle" TargetType="Button">
+        <Style.Setters>
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Foreground" Value="{StaticResource ShellBackgroundBrush}" />
+            <Setter Property="BorderBrush" Value="{StaticResource ShellBackgroundBrush}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border x:Name="border"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    Tag="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                                 AncestorType={x:Type Button}},
+                                                  Path=Tag}">
+                                <Rectangle Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}, Path=ActualWidth}" Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}, Path=ActualHeight}">
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                            <GradientStop Offset="0." Color="Gainsboro" />
+                                            <GradientStop Offset="0.12" Color="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Border}}, Path=Tag}" />
+                                            <GradientStop Offset="0.85" Color="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Border}}, Path=Tag}" />
+                                            <GradientStop Offset="1" Color="#FF282828" />
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                            </Border>
+                            <ContentPresenter Margin="{TemplateBinding Padding}"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Focusable="False"
+                                              RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="border" Property="Tag" Value="{StaticResource BlueColor}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="WarringSumMenuBtnStyle" TargetType="Button">
+        <Style.Setters>
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Foreground" Value="{StaticResource ShellBackgroundBrush}" />
+            <Setter Property="BorderBrush" Value="{StaticResource ShellBackgroundBrush}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border x:Name="border"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    Tag="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                                 AncestorType={x:Type Button}},
+                                                  Path=Tag}">
+                                <Rectangle Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}, Path=ActualWidth}" Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}, Path=ActualHeight}">
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                            <GradientStop Offset="0." Color="Gainsboro" />
+                                            <GradientStop Offset="0.12" Color="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Border}}, Path=Tag}" />
+                                            <GradientStop Offset="0.85" Color="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Border}}, Path=Tag}" />
+                                            <GradientStop Offset="1" Color="#FF282828" />
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                            </Border>
+                            <TextBlock Style="{TemplateBinding IsEnabled, Converter={StaticResource BooleanToTextStyleConverter}}" Text="{TemplateBinding Content}" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="border" Property="Tag" Value="{StaticResource BlueColor}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="InterLockBtnStyle" TargetType="Button">
+        <Style.Setters>
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Foreground" Value="{StaticResource ShellBackgroundBrush}" />
+            <Setter Property="BorderBrush" Value="{StaticResource ShellBackgroundBrush}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border x:Name="border"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    Tag="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                                 AncestorType={x:Type Button}},
+                                                  Path=Tag}">
+                                <Rectangle Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}, Path=ActualWidth}" Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}, Path=ActualHeight}">
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                            <GradientStop Offset="0." Color="Gainsboro" />
+                                            <GradientStop Offset="0.12" Color="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Border}}, Path=Tag}" />
+                                            <GradientStop Offset="0.85" Color="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Border}}, Path=Tag}" />
+                                            <GradientStop Offset="1" Color="#FF282828" />
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                            </Border>
+                            <ContentPresenter Margin="{TemplateBinding Padding}"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Focusable="False"
+                                              RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="border" Property="Tag" Value="{StaticResource YellowColor}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="DoorBtnStyle" TargetType="ToggleButton">
+        <Setter Property="Background" Value="DarkGray" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Border Width="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                           AncestorType={x:Type ToggleButton}},
+                                            Path=ActualWidth}"
+                            Height="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                            AncestorType={x:Type ToggleButton}},
+                                             Path=ActualHeight}"
+                            Background="{TemplateBinding Content,
+                                                         Converter={StaticResource DoorUnitBackgroundConverter}}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <Ellipse Width="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                                AncestorType={x:Type ToggleButton}},
+                                                 Path=ActualWidth,
+                                                 Converter={StaticResource MathConverter},
+                                                 ConverterParameter=x/2}"
+                                 Height="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                                 AncestorType={x:Type ToggleButton}},
+                                                  Path=ActualHeight,
+                                                  Converter={StaticResource MathConverter},
+                                                  ConverterParameter=x/2}"
+                                 Fill="{TemplateBinding Content,
+                                                        Converter={StaticResource DoorUnitEllipseFillConverter}}" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="BorderThickness" Value="2" />
+                            <Setter Property="BorderBrush" Value="Black" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="StationBtnStyle" TargetType="ToggleButton">
+        <Setter Property="Background" Value="DarkGray" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Border Width="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                           AncestorType={x:Type ToggleButton}},
+                                            Path=ActualWidth}"
+                            Height="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                            AncestorType={x:Type ToggleButton}},
+                                             Path=ActualHeight}"
+                            Background="{TemplateBinding Content,
+                                                         Converter={StaticResource StationUnitBackgroundConverter}}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <Ellipse Width="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                                AncestorType={x:Type ToggleButton}},
+                                                 Path=ActualWidth,
+                                                 Converter={StaticResource MathConverter},
+                                                 ConverterParameter=x/2}"
+                                 Height="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                                 AncestorType={x:Type ToggleButton}},
+                                                  Path=ActualHeight,
+                                                  Converter={StaticResource MathConverter},
+                                                  ConverterParameter=x/2}"
+                                 Fill="{TemplateBinding Content,
+                                                        Converter={StaticResource StationUnitEllipseFillConverter}}" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="BorderThickness" Value="2" />
+                            <Setter Property="BorderBrush" Value="Black" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ImageBtnStyle" TargetType="ToggleButton">
+        <Setter Property="Background" Value="{StaticResource Gray2Background}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Border x:Name="border"
+                            Width="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                           AncestorType={x:Type ToggleButton}},
+                                            Path=ActualWidth}"
+                            Height="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                            AncestorType={x:Type ToggleButton}},
+                                             Path=ActualHeight}"
+                            Background="{TemplateBinding Background}">
+                        <Image Source="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ToggleButton}}, Path=Content}" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" Value="White" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ImageBtnBackgroundStyle" TargetType="ToggleButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Border x:Name="border"
+                            Width="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                           AncestorType={x:Type ToggleButton}},
+                                            Path=ActualWidth}"
+                            Height="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                            AncestorType={x:Type ToggleButton}},
+                                             Path=ActualHeight}"
+                            Background="{TemplateBinding Background}">
+                        <Image Source="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ToggleButton}}, Path=Content}" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="White" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CarBtnStyle" TargetType="ToggleButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Grid>
+                        <Grid Background="{StaticResource TrainBackground}">
+                            <Path Data="M0,0 L90,0 90,2 0,2" Fill="White" />
+                            <Path Data="M0,2 L1,2 1,65 0,65" Fill="White" />
+                            <Path Data="M89,2 L90,2 90,65 89,65" Fill="White" />
+                            <Border x:Name="border1"
+                                    BorderBrush="Transparent"
+                                    BorderThickness="3" />
+                            <Border Margin="27,15"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="3">
+                                <TextBlock Style="{StaticResource TrainNumTextStyle}" Text="{TemplateBinding Content}" />
+                            </Border>
+                        </Grid>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="border1" Property="BorderBrush" Value="White" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Car00BtnStyle" TargetType="ToggleButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Grid>
+                        <Path x:Name="Path1"
+                              Data="M0,20 L25,0 90,0 90,65 35,65 0,47 0,20"
+                              Fill="{StaticResource TrainBackground}"
+                              Stroke="Transparent"
+                              StrokeThickness="3" />
+                        <Path Data="M25,0 L90,0 90,2 25,2" Fill="White" />
+                        <Path Data="M89,2 L90,2 90,65 89,65" Fill="White" />
+                        <Border Margin="44,15,10,15"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="3">
+                            <TextBlock Style="{StaticResource TrainNumTextStyle}" Text="{TemplateBinding Content}" />
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="Path1" Property="Stroke" Value="White" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Car01BtnStyle" TargetType="ToggleButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Grid>
+                        <Path x:Name="Path1"
+                              Data="M0,0 65,0 89,20 89,47 56,65 0,65 0,0"
+                              Fill="{StaticResource TrainBackground}"
+                              Stroke="Transparent"
+                              StrokeThickness="3" />
+                        <Path Data="M0,0 L65,0 65,2 0,2" Fill="White" />
+                        <Path Data="M0,2 L1,2 1,65 0,65" Fill="White" />
+                        <Border Margin="10,15,44,15"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="3">
+                            <TextBlock Style="{StaticResource TrainNumTextStyle}" Text="{TemplateBinding Content}" />
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="Path1" Property="Stroke" Value="White" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="RadioBtnStyle" TargetType="RadioButton">
+        <Style.Setters>
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Foreground" Value="{StaticResource ShellBackgroundBrush}" />
+            <Setter Property="BorderBrush" Value="{StaticResource ShellBackgroundBrush}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Grid>
+                            <Border x:Name="border"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    Tag="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                                 AncestorType={x:Type RadioButton}},
+                                                  Path=Tag}">
+                                <Rectangle Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type RadioButton}}, Path=ActualWidth}" Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type RadioButton}}, Path=ActualHeight}">
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                            <GradientStop Offset="0." Color="Gainsboro" />
+                                            <GradientStop Offset="0.12" Color="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Border}}, Path=Tag}" />
+                                            <GradientStop Offset="0.85" Color="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Border}}, Path=Tag}" />
+                                            <GradientStop Offset="1" Color="#FF282828" />
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                            </Border>
+                            <ContentPresenter Margin="{TemplateBinding Padding}"
+                                              HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                              Focusable="False"
+                                              RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="true">
+                                <Setter TargetName="border" Property="Tag" Value="White" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="TextBtnStyle" TargetType="ToggleButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Grid>
+                        <Border x:Name="Border1"
+                                Background="Transparent"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="3">
+                            <TextBlock HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontSize="16"
+                                       FontWeight="Bold"
+                                       Foreground="{TemplateBinding BorderBrush}"
+                                       Text="{TemplateBinding Content}" />
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="Border1" Property="Background" Value="White" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,86 @@
+﻿<UserControl x:Class="Tram.CBTC.NRIET.View.Contents.Main.RegionSpeed.DegreeScaleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Tram.CBTC.NRIET.Model.RegionSpeed"
+             xmlns:viewModel="clr-namespace:Tram.CBTC.NRIET.ViewModel"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+             d:DesignHeight="220" d:DesignWidth="220">
+        <Grid>
+        <ItemsControl
+              MinWidth="220"
+              MinHeight="220"
+              HorizontalAlignment="Stretch"
+              VerticalAlignment="Stretch"
+              RenderTransformOrigin="0.5,0.5"
+              d:DesignHeight="220"
+              d:DesignWidth="220"
+            ItemsSource="{Binding Source={x:Static local:DegreeScaleResource.Instance},
+                                    Path=ItemCollection}"
+              mc:Ignorable="d">
+            <ItemsControl.RenderTransform>
+                <RotateTransform Angle="90" />
+            </ItemsControl.RenderTransform>
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid Height="30" RenderTransformOrigin="1,0.5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RenderTransform>
+                            <RotateTransform Angle="{Binding Angle}" />
+                        </Grid.RenderTransform>
+                        <TextBlock Grid.Column="0"
+                           Width="25"
+                           Height="25"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontFamily="Arial"
+                           FontSize="18"
+                           Foreground="White"
+                           RenderTransformOrigin="0.5,0.5"
+                           Text="{Binding Text}"
+                           TextAlignment="Center">
+                            <TextBlock.RenderTransform>
+                                <RotateTransform Angle="{Binding Angle, Converter={StaticResource Tram.CBTC.Nriet.Converter.NrietDegreeScaleTextAngleConverter}}" />
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                        <!--<Rectangle Grid.Column="1"
+                           Width="{Binding Lenght}"
+                           Height="2"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Fill="White" />-->
+                        <Rectangle Grid.Column="1"
+                           Width="{Binding Lenght}"
+                           Height="2"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center">
+                            <Rectangle.Fill>
+                                <MultiBinding Converter="{StaticResource Tram.CBTC.Nriet.Converter.NrietCompareSpeedConverter}">
+                                    <Binding Path="Value" />
+                                    <Binding RelativeSource="{RelativeSource FindAncestor,AncestorType=UserControl}" Path="DataContext.CBTC.SignalInfo.Speed.RecommendedSpeed.Value"></Binding>
+                                    <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=UserControl}" Path="DataContext.CBTC.SignalInfo.Speed.RecommendedSpeed.SpeedColor" Converter="{StaticResource Tram.CBTC.Nriet.Converter.CBTCColorConverter}"></Binding>
+                                    <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=UserControl}" Path="DataContext.CBTC.SignalInfo.Speed.AlarmSpeed.SpeedColor" Converter="{StaticResource Tram.CBTC.Nriet.Converter.CBTCColorConverter}"></Binding>
+                                </MultiBinding>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>
+</UserControl>

@@ -1,0 +1,77 @@
+﻿<UserControl
+    x:Class="Tram.CBTC.Casco.View.Contents.RegionPop.VehicleOperationSelectionView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="clr-namespace:Tram.CBTC.Casco.ViewModel"
+    d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+    d:DesignHeight="340"
+    d:DesignWidth="610"
+    Background="{StaticResource Tram.CBTC.Casco.PopBackgroud}"
+    mc:Ignorable="d">
+    <Canvas>
+        <!--<Canvas.Background>
+            <ImageBrush ImageSource="/Tram.CBTC.Casco;component/1502348885(1).jpg" />
+        </Canvas.Background>-->
+        <TextBlock
+            Canvas.Left="67"
+            Canvas.Top="44"
+            FontSize="20"
+            Text="车载运行模式" />
+        <RadioButton
+            Canvas.Left="76"
+            Canvas.Top="106"
+            Padding="22,0,0,0"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="车载联机"
+            FontSize="18"
+            IsChecked="{Binding Model.PopModel.VehicleOperationSelectionModel.IsOnBoardOnline, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}" />
+        <RadioButton
+            Canvas.Left="76"
+            Canvas.Top="178"
+            Padding="22,0,0,0"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="车载独立"
+            FontSize="18"
+            IsChecked="{Binding Model.PopModel.VehicleOperationSelectionModel.IsVehicleIndependent, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}" />
+        <RadioButton
+            Canvas.Left="76"
+            Canvas.Top="251"
+            Padding="22,0,0,0"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="手工控制"
+            FontSize="18"
+            IsChecked="{Binding Model.PopModel.VehicleOperationSelectionModel.IsManualControl, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}" />
+        <Button
+            Canvas.Left="443"
+            Canvas.Top="173"
+            Width="89"
+            Height="38"
+            Command="{Binding Model.PopModel.VehicleOperationSelectionModel.Confirm}"
+            Content="确定"
+            FontSize="20"
+            Style="{StaticResource Tram.CBTC.Casco.DriverIDInputBtn}" />
+        <Button
+            Canvas.Left="443"
+            Canvas.Top="173"
+            Width="89"
+            Height="38"
+            Command="{Binding Model.PopModel.VehicleOperationSelectionModel.Confirm}"
+            Content="确定"
+            FontSize="20"
+            Style="{StaticResource Tram.CBTC.Casco.DriverIDInputBtn}" />
+        <Button
+            Canvas.Left="443"
+            Canvas.Top="230"
+            Width="89"
+            Height="38"
+            Command="{Binding Model.PopModel.VehicleOperationSelectionModel.Cancel}"
+            Content="取消"
+            FontSize="20"
+            Style="{StaticResource Tram.CBTC.Casco.DriverIDInputBtn}" />
+    </Canvas>
+</UserControl>

@@ -1,0 +1,834 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="当前状态充排风结束" xml:space="preserve">
+    <value>当前状态-充排风结束</value>
+  </data>
+  <data name="当前状态充排风中" xml:space="preserve">
+    <value>当前状态-充排风中</value>
+  </data>
+  <data name="当前状态无充排风" xml:space="preserve">
+    <value>当前状态-无充排风</value>
+  </data>
+  <data name="压力变送器正常" xml:space="preserve">
+    <value>压力变送器-正常</value>
+  </data>
+  <data name="流量变送器正常" xml:space="preserve">
+    <value>流量变送器-正常</value>
+  </data>
+  <data name="停放制动异常施加" xml:space="preserve">
+    <value>停放制动-异常施加</value>
+  </data>
+  <data name="停放制动异常缓解" xml:space="preserve">
+    <value>停放制动-异常缓解</value>
+  </data>
+  <data name="检测类型出库检测" xml:space="preserve">
+    <value>检测类型-出库检测</value>
+  </data>
+  <data name="检测类型运行检测" xml:space="preserve">
+    <value>检测类型-运行检测</value>
+  </data>
+  <data name="绝缘状态正常" xml:space="preserve">
+    <value>绝缘状态-正常</value>
+  </data>
+  <data name="绝缘状态报警" xml:space="preserve">
+    <value>绝缘状态-报警</value>
+  </data>
+  <data name="功率模块故障" xml:space="preserve">
+    <value>功率模块故障</value>
+  </data>
+  <data name="外网有电" xml:space="preserve">
+    <value>外网有电</value>
+  </data>
+  <data name="电钥匙开" xml:space="preserve">
+    <value>电钥匙开</value>
+  </data>
+  <data name="供电申请1路" xml:space="preserve">
+    <value>供电申请1路</value>
+  </data>
+  <data name="供电申请2路" xml:space="preserve">
+    <value>供电申请2路</value>
+  </data>
+  <data name="供电钥匙闭合1路" xml:space="preserve">
+    <value>供电钥匙闭合1路</value>
+  </data>
+  <data name="供电钥匙闭合2路" xml:space="preserve">
+    <value>供电钥匙闭合2路</value>
+  </data>
+  <data name="客车电源有效1路" xml:space="preserve">
+    <value>客车电源有效1路</value>
+  </data>
+  <data name="客车电源有效2路" xml:space="preserve">
+    <value>客车电源有效2路</value>
+  </data>
+  <data name="供电允许1路" xml:space="preserve">
+    <value>供电允许1路</value>
+  </data>
+  <data name="供电允许2路" xml:space="preserve">
+    <value>供电允许2路</value>
+  </data>
+  <data name="A组运行1路" xml:space="preserve">
+    <value>A组运行1路</value>
+  </data>
+  <data name="A组运行2路" xml:space="preserve">
+    <value>A组运行2路</value>
+  </data>
+  <data name="B组运行1路" xml:space="preserve">
+    <value>B组运行1路</value>
+  </data>
+  <data name="B组运行2路" xml:space="preserve">
+    <value>B组运行2路</value>
+  </data>
+  <data name="接地隔离开关闭合1路" xml:space="preserve">
+    <value>接地隔离开关闭合1路</value>
+  </data>
+  <data name="接地隔离开关闭合2路" xml:space="preserve">
+    <value>接地隔离开关闭合2路</value>
+  </data>
+  <data name="集控隔离开关闭合1路" xml:space="preserve">
+    <value>集控隔离开关闭合1路</value>
+  </data>
+  <data name="集控隔离开关闭合2路" xml:space="preserve">
+    <value>集控隔离开关闭合2路</value>
+  </data>
+  <data name="温度继电器1动作1路" xml:space="preserve">
+    <value>温度继电器1动作1路</value>
+  </data>
+  <data name="温度继电器1动作2路" xml:space="preserve">
+    <value>温度继电器1动作2路</value>
+  </data>
+  <data name="温度继电器2动作1路" xml:space="preserve">
+    <value>温度继电器2动作1路</value>
+  </data>
+  <data name="温度继电器2动作2路" xml:space="preserve">
+    <value>温度继电器2动作2路</value>
+  </data>
+  <data name="端1占用" xml:space="preserve">
+    <value>1端占用</value>
+  </data>
+  <data name="端2占用" xml:space="preserve">
+    <value>2端占用</value>
+  </data>
+  <data name="端1电钥匙闭合" xml:space="preserve">
+    <value>1端电钥匙闭合</value>
+  </data>
+  <data name="端2电钥匙闭合" xml:space="preserve">
+    <value>2端电钥匙闭合</value>
+  </data>
+  <data name="辅变运行" xml:space="preserve">
+    <value>辅变运行</value>
+  </data>
+  <data name="主断闭合" xml:space="preserve">
+    <value>主断闭合</value>
+  </data>
+  <data name="列供风机运行" xml:space="preserve">
+    <value>列供风机运行</value>
+  </data>
+  <data name="轴1位1正常" xml:space="preserve">
+    <value>1轴1位正常</value>
+  </data>
+  <data name="轴1位1非正常" xml:space="preserve">
+    <value>1轴1位非正常</value>
+  </data>
+  <data name="轴1位2正常" xml:space="preserve">
+    <value>1轴2位正常</value>
+  </data>
+  <data name="轴1位2非正常" xml:space="preserve">
+    <value>1轴2位非正常</value>
+  </data>
+  <data name="轴1位3正常" xml:space="preserve">
+    <value>1轴3位正常</value>
+  </data>
+  <data name="轴1位3非正常" xml:space="preserve">
+    <value>1轴3位非正常</value>
+  </data>
+  <data name="轴1位4正常" xml:space="preserve">
+    <value>1轴4位正常</value>
+  </data>
+  <data name="轴1位4非正常" xml:space="preserve">
+    <value>1轴4位非正常</value>
+  </data>
+  <data name="轴1位5正常" xml:space="preserve">
+    <value>1轴5位正常</value>
+  </data>
+  <data name="轴1位5非正常" xml:space="preserve">
+    <value>1轴5位非正常</value>
+  </data>
+  <data name="轴1位6正常" xml:space="preserve">
+    <value>1轴6位正常</value>
+  </data>
+  <data name="轴1位6非正常" xml:space="preserve">
+    <value>1轴6位非正常</value>
+  </data>
+  <data name="轴2位1正常" xml:space="preserve">
+    <value>2轴1位正常</value>
+  </data>
+  <data name="轴2位1非正常" xml:space="preserve">
+    <value>2轴1位非正常</value>
+  </data>
+  <data name="轴2位2正常" xml:space="preserve">
+    <value>2轴2位正常</value>
+  </data>
+  <data name="轴2位2非正常" xml:space="preserve">
+    <value>2轴2位非正常</value>
+  </data>
+  <data name="轴2位3正常" xml:space="preserve">
+    <value>2轴3位正常</value>
+  </data>
+  <data name="轴2位3非正常" xml:space="preserve">
+    <value>2轴3位非正常</value>
+  </data>
+  <data name="轴2位4正常" xml:space="preserve">
+    <value>2轴4位正常</value>
+  </data>
+  <data name="轴2位4非正常" xml:space="preserve">
+    <value>2轴4位非正常</value>
+  </data>
+  <data name="轴2位5正常" xml:space="preserve">
+    <value>2轴5位正常</value>
+  </data>
+  <data name="轴2位5非正常" xml:space="preserve">
+    <value>2轴5位非正常</value>
+  </data>
+  <data name="轴2位6正常" xml:space="preserve">
+    <value>2轴6位正常</value>
+  </data>
+  <data name="轴2位6非正常" xml:space="preserve">
+    <value>2轴6位非正常</value>
+  </data>
+  <data name="轴3位1正常" xml:space="preserve">
+    <value>3轴1位正常</value>
+  </data>
+  <data name="轴3位1非正常" xml:space="preserve">
+    <value>3轴1位非正常</value>
+  </data>
+  <data name="轴3位2正常" xml:space="preserve">
+    <value>3轴2位正常</value>
+  </data>
+  <data name="轴3位2非正常" xml:space="preserve">
+    <value>3轴2位非正常</value>
+  </data>
+  <data name="轴3位3正常" xml:space="preserve">
+    <value>3轴3位正常</value>
+  </data>
+  <data name="轴3位3非正常" xml:space="preserve">
+    <value>3轴3位非正常</value>
+  </data>
+  <data name="轴3位4正常" xml:space="preserve">
+    <value>3轴4位正常</value>
+  </data>
+  <data name="轴3位4非正常" xml:space="preserve">
+    <value>3轴4位非正常</value>
+  </data>
+  <data name="轴3位5正常" xml:space="preserve">
+    <value>3轴5位正常</value>
+  </data>
+  <data name="轴3位5非正常" xml:space="preserve">
+    <value>3轴5位非正常</value>
+  </data>
+  <data name="轴3位6正常" xml:space="preserve">
+    <value>3轴6位正常</value>
+  </data>
+  <data name="轴3位6非正常" xml:space="preserve">
+    <value>3轴6位非正常</value>
+  </data>
+  <data name="轴4位1正常" xml:space="preserve">
+    <value>4轴1位正常</value>
+  </data>
+  <data name="轴4位1非正常" xml:space="preserve">
+    <value>4轴1位非正常</value>
+  </data>
+  <data name="轴4位2正常" xml:space="preserve">
+    <value>4轴2位正常</value>
+  </data>
+  <data name="轴4位2非正常" xml:space="preserve">
+    <value>4轴2位非正常</value>
+  </data>
+  <data name="轴4位3正常" xml:space="preserve">
+    <value>4轴3位正常</value>
+  </data>
+  <data name="轴4位3非正常" xml:space="preserve">
+    <value>4轴3位非正常</value>
+  </data>
+  <data name="轴4位4正常" xml:space="preserve">
+    <value>4轴4位正常</value>
+  </data>
+  <data name="轴4位4非正常" xml:space="preserve">
+    <value>4轴4位非正常</value>
+  </data>
+  <data name="轴4位5正常" xml:space="preserve">
+    <value>4轴5位正常</value>
+  </data>
+  <data name="轴4位5非正常" xml:space="preserve">
+    <value>4轴5位非正常</value>
+  </data>
+  <data name="轴4位6正常" xml:space="preserve">
+    <value>4轴6位正常</value>
+  </data>
+  <data name="轴4位6非正常" xml:space="preserve">
+    <value>4轴6位非正常</value>
+  </data>
+  <data name="轴5位1正常" xml:space="preserve">
+    <value>5轴1位正常</value>
+  </data>
+  <data name="轴5位1非正常" xml:space="preserve">
+    <value>5轴1位非正常</value>
+  </data>
+  <data name="轴5位2正常" xml:space="preserve">
+    <value>5轴2位正常</value>
+  </data>
+  <data name="轴5位2非正常" xml:space="preserve">
+    <value>5轴2位非正常</value>
+  </data>
+  <data name="轴5位3正常" xml:space="preserve">
+    <value>5轴3位正常</value>
+  </data>
+  <data name="轴5位3非正常" xml:space="preserve">
+    <value>5轴3位非正常</value>
+  </data>
+  <data name="轴5位4正常" xml:space="preserve">
+    <value>5轴4位正常</value>
+  </data>
+  <data name="轴5位4非正常" xml:space="preserve">
+    <value>5轴4位非正常</value>
+  </data>
+  <data name="轴5位5正常" xml:space="preserve">
+    <value>5轴5位正常</value>
+  </data>
+  <data name="轴5位5非正常" xml:space="preserve">
+    <value>5轴5位非正常</value>
+  </data>
+  <data name="轴5位6正常" xml:space="preserve">
+    <value>5轴6位正常</value>
+  </data>
+  <data name="轴5位6非正常" xml:space="preserve">
+    <value>5轴6位非正常</value>
+  </data>
+  <data name="轴6位1正常" xml:space="preserve">
+    <value>6轴1位正常</value>
+  </data>
+  <data name="轴6位1非正常" xml:space="preserve">
+    <value>6轴1位非正常</value>
+  </data>
+  <data name="轴6位2正常" xml:space="preserve">
+    <value>6轴2位正常</value>
+  </data>
+  <data name="轴6位2非正常" xml:space="preserve">
+    <value>6轴2位非正常</value>
+  </data>
+  <data name="轴6位3正常" xml:space="preserve">
+    <value>6轴3位正常</value>
+  </data>
+  <data name="轴6位3非正常" xml:space="preserve">
+    <value>6轴3位非正常</value>
+  </data>
+  <data name="轴6位4正常" xml:space="preserve">
+    <value>6轴4位正常</value>
+  </data>
+  <data name="轴6位4非正常" xml:space="preserve">
+    <value>6轴4位非正常</value>
+  </data>
+  <data name="轴6位5正常" xml:space="preserve">
+    <value>6轴5位正常</value>
+  </data>
+  <data name="轴6位5非正常" xml:space="preserve">
+    <value>6轴5位非正常</value>
+  </data>
+  <data name="轴6位6正常" xml:space="preserve">
+    <value>6轴6位正常</value>
+  </data>
+  <data name="轴6位6非正常" xml:space="preserve">
+    <value>6轴6位非正常</value>
+  </data>
+  <data name="轴7位1正常" xml:space="preserve">
+    <value>7轴1位正常</value>
+  </data>
+  <data name="轴7位1非正常" xml:space="preserve">
+    <value>7轴1位非正常</value>
+  </data>
+  <data name="轴7位2正常" xml:space="preserve">
+    <value>7轴2位正常</value>
+  </data>
+  <data name="轴7位2非正常" xml:space="preserve">
+    <value>7轴2位非正常</value>
+  </data>
+  <data name="轴7位3正常" xml:space="preserve">
+    <value>7轴3位正常</value>
+  </data>
+  <data name="轴7位3非正常" xml:space="preserve">
+    <value>7轴3位非正常</value>
+  </data>
+  <data name="轴7位4正常" xml:space="preserve">
+    <value>7轴4位正常</value>
+  </data>
+  <data name="轴7位4非正常" xml:space="preserve">
+    <value>7轴4位非正常</value>
+  </data>
+  <data name="轴7位5正常" xml:space="preserve">
+    <value>7轴5位正常</value>
+  </data>
+  <data name="轴7位5非正常" xml:space="preserve">
+    <value>7轴5位非正常</value>
+  </data>
+  <data name="轴7位6正常" xml:space="preserve">
+    <value>7轴6位正常</value>
+  </data>
+  <data name="轴7位6非正常" xml:space="preserve">
+    <value>7轴6位非正常</value>
+  </data>
+  <data name="轴8位1正常" xml:space="preserve">
+    <value>8轴1位正常</value>
+  </data>
+  <data name="轴8位1非正常" xml:space="preserve">
+    <value>8轴1位非正常</value>
+  </data>
+  <data name="轴8位2正常" xml:space="preserve">
+    <value>8轴2位正常</value>
+  </data>
+  <data name="轴8位2非正常" xml:space="preserve">
+    <value>8轴2位非正常</value>
+  </data>
+  <data name="轴8位3正常" xml:space="preserve">
+    <value>8轴3位正常</value>
+  </data>
+  <data name="轴8位3非正常" xml:space="preserve">
+    <value>8轴3位非正常</value>
+  </data>
+  <data name="轴8位4正常" xml:space="preserve">
+    <value>8轴4位正常</value>
+  </data>
+  <data name="轴8位4非正常" xml:space="preserve">
+    <value>8轴4位非正常</value>
+  </data>
+  <data name="轴8位5正常" xml:space="preserve">
+    <value>8轴5位正常</value>
+  </data>
+  <data name="轴8位5非正常" xml:space="preserve">
+    <value>8轴5位非正常</value>
+  </data>
+  <data name="轴8位6正常" xml:space="preserve">
+    <value>8轴6位正常</value>
+  </data>
+  <data name="轴8位6非正常" xml:space="preserve">
+    <value>8轴6位非正常</value>
+  </data>
+  <data name="一端构架横向晃动" xml:space="preserve">
+    <value>一端构架横向晃动</value>
+  </data>
+  <data name="二端构架横向晃动" xml:space="preserve">
+    <value>二端构架横向晃动</value>
+  </data>
+  <data name="一端车体纵向冲动" xml:space="preserve">
+    <value>一端车体纵向冲动</value>
+  </data>
+  <data name="二端车体纵向冲动" xml:space="preserve">
+    <value>二端车体纵向冲动</value>
+  </data>
+  <data name="装置状态监控调车" xml:space="preserve">
+    <value>装置状态-监控/调车</value>
+  </data>
+  <data name="装置状态监控非调车" xml:space="preserve">
+    <value>装置状态-监控/非调车</value>
+  </data>
+  <data name="装置状态降级调车" xml:space="preserve">
+    <value>装置状态-降级/调车</value>
+  </data>
+  <data name="装置状态降级非调车" xml:space="preserve">
+    <value>装置状态-降级/非调车</value>
+  </data>
+  <data name="客货本补客本" xml:space="preserve">
+    <value>客货本补-客/本</value>
+  </data>
+  <data name="客货本补客补" xml:space="preserve">
+    <value>客货本补-客/补</value>
+  </data>
+  <data name="客货本补货本" xml:space="preserve">
+    <value>客货本补-货/本</value>
+  </data>
+  <data name="客货本补货补" xml:space="preserve">
+    <value>客货本补-货/补</value>
+  </data>
+  <data name="工况牵引" xml:space="preserve">
+    <value>工况-牵引</value>
+  </data>
+  <data name="工况惰行" xml:space="preserve">
+    <value>工况-惰行</value>
+  </data>
+  <data name="工况制动" xml:space="preserve">
+    <value>工况-制动</value>
+  </data>
+  <data name="工况向前" xml:space="preserve">
+    <value>工况-向前</value>
+  </data>
+  <data name="工况零位" xml:space="preserve">
+    <value>工况-零位</value>
+  </data>
+  <data name="工况向后" xml:space="preserve">
+    <value>工况-向后</value>
+  </data>
+  <data name="司机室占用状态1端占用" xml:space="preserve">
+    <value>司机室占用状态-1端占用</value>
+  </data>
+  <data name="司机室占用状态2端占用" xml:space="preserve">
+    <value>司机室占用状态-2端占用</value>
+  </data>
+  <data name="受电弓升起" xml:space="preserve">
+    <value>受电弓-升起</value>
+  </data>
+  <data name="主断状态闭合" xml:space="preserve">
+    <value>主断状态-闭合</value>
+  </data>
+  <data name="大闸状态大闸运转" xml:space="preserve">
+    <value>大闸状态-大闸运转</value>
+  </data>
+  <data name="大闸状态大闸初制" xml:space="preserve">
+    <value>大闸状态-大闸初制</value>
+  </data>
+  <data name="大闸状态大闸常制" xml:space="preserve">
+    <value>大闸状态-大闸常制</value>
+  </data>
+  <data name="大闸状态大闸全制" xml:space="preserve">
+    <value>大闸状态-大闸全制</value>
+  </data>
+  <data name="大闸状态大闸重联" xml:space="preserve">
+    <value>大闸状态-大闸重联</value>
+  </data>
+  <data name="大闸状态大闸抑制" xml:space="preserve">
+    <value>大闸状态-大闸抑制</value>
+  </data>
+  <data name="大闸状态大闸紧急" xml:space="preserve">
+    <value>大闸状态-大闸紧急</value>
+  </data>
+  <data name="小闸状态小闸单缓" xml:space="preserve">
+    <value>小闸状态-小闸单缓</value>
+  </data>
+  <data name="小闸状态小闸运转" xml:space="preserve">
+    <value>小闸状态-小闸运转</value>
+  </data>
+  <data name="小闸状态小闸常制" xml:space="preserve">
+    <value>小闸状态-小闸常制</value>
+  </data>
+  <data name="小闸状态小闸全制" xml:space="preserve">
+    <value>小闸状态-小闸全制</value>
+  </data>
+  <data name="停放切除" xml:space="preserve">
+    <value>停放切除</value>
+  </data>
+  <data name="正向有功" xml:space="preserve">
+    <value>正向有功</value>
+  </data>
+  <data name="反向有功" xml:space="preserve">
+    <value>反向有功</value>
+  </data>
+  <data name="正向无功" xml:space="preserve">
+    <value>正向无功</value>
+  </data>
+  <data name="反向无功" xml:space="preserve">
+    <value>反向无功</value>
+  </data>
+  <data name="列车B当前状态充排风结束" xml:space="preserve">
+    <value>列车B当前状态-充排风结束</value>
+  </data>
+  <data name="列车B当前状态充排风中" xml:space="preserve">
+    <value>列车B当前状态-充排风中</value>
+  </data>
+  <data name="列车B当前状态无充排风" xml:space="preserve">
+    <value>列车B当前状态-无充排风</value>
+  </data>
+  <data name="列车B压力变送器正常" xml:space="preserve">
+    <value>列车B压力变送器-正常</value>
+  </data>
+  <data name="列车B流量变送器正常" xml:space="preserve">
+    <value>列车B流量变送器-正常</value>
+  </data>
+  <data name="列车B停放制动异常施加" xml:space="preserve">
+    <value>列车B停放制动-异常施加</value>
+  </data>
+  <data name="列车B停放制动异常缓解" xml:space="preserve">
+    <value>列车B停放制动-异常缓解</value>
+  </data>
+  <data name="列车B检测类型出库检测" xml:space="preserve">
+    <value>列车B检测类型-出库检测</value>
+  </data>
+  <data name="列车B检测类型运行检测" xml:space="preserve">
+    <value>列车B检测类型-运行检测</value>
+  </data>
+  <data name="列车B绝缘状态正常" xml:space="preserve">
+    <value>列车B绝缘状态-正常</value>
+  </data>
+  <data name="列车B绝缘状态报警" xml:space="preserve">
+    <value>列车B绝缘状态-报警</value>
+  </data>
+  <data name="列车B功率模块故障" xml:space="preserve">
+    <value>列车B功率模块故障</value>
+  </data>
+  <data name="列车B外网有电" xml:space="preserve">
+    <value>列车B外网有电</value>
+  </data>
+  <data name="列车B电钥匙开" xml:space="preserve">
+    <value>列车B电钥匙开</value>
+  </data>
+  <data name="列车B装置状态监控调车" xml:space="preserve">
+    <value>列车B装置状态-监控/调车</value>
+  </data>
+  <data name="列车B装置状态监控非调车" xml:space="preserve">
+    <value>列车B装置状态-监控/非调车</value>
+  </data>
+  <data name="列车B装置状态降级调车" xml:space="preserve">
+    <value>列车B装置状态-降级/调车</value>
+  </data>
+  <data name="列车B装置状态降级非调车" xml:space="preserve">
+    <value>列车B装置状态-降级/非调车</value>
+  </data>
+  <data name="列车B客货本补客本" xml:space="preserve">
+    <value>列车B客货本补-客/本</value>
+  </data>
+  <data name="列车B客货本补客补" xml:space="preserve">
+    <value>列车B客货本补-客/补</value>
+  </data>
+  <data name="列车B客货本补货本" xml:space="preserve">
+    <value>列车B客货本补-货/本</value>
+  </data>
+  <data name="列车B客货本补货补" xml:space="preserve">
+    <value>列车B客货本补-货/补</value>
+  </data>
+  <data name="列车B工况牵引" xml:space="preserve">
+    <value>列车B工况-牵引</value>
+  </data>
+  <data name="列车B工况惰行" xml:space="preserve">
+    <value>列车B工况-惰行</value>
+  </data>
+  <data name="列车B工况制动" xml:space="preserve">
+    <value>列车B工况-制动</value>
+  </data>
+  <data name="列车B工况向前" xml:space="preserve">
+    <value>列车B工况-向前</value>
+  </data>
+  <data name="列车B工况零位" xml:space="preserve">
+    <value>列车B工况-零位</value>
+  </data>
+  <data name="列车B工况向后" xml:space="preserve">
+    <value>列车B工况-向后</value>
+  </data>
+  <data name="列车B司机室占用状态1端占用" xml:space="preserve">
+    <value>列车B司机室占用状态-1端占用</value>
+  </data>
+  <data name="列车B司机室占用状态2端占用" xml:space="preserve">
+    <value>列车B司机室占用状态-2端占用</value>
+  </data>
+  <data name="列车B受电弓升起" xml:space="preserve">
+    <value>列车B受电弓-升起</value>
+  </data>
+  <data name="列车B主断状态闭合" xml:space="preserve">
+    <value>列车B主断状态-闭合</value>
+  </data>
+  <data name="列车B大闸状态大闸运转" xml:space="preserve">
+    <value>列车B大闸状态-大闸运转</value>
+  </data>
+  <data name="列车B大闸状态大闸初制" xml:space="preserve">
+    <value>列车B大闸状态-大闸初制</value>
+  </data>
+  <data name="列车B大闸状态大闸常制" xml:space="preserve">
+    <value>列车B大闸状态-大闸常制</value>
+  </data>
+  <data name="列车B大闸状态大闸全制" xml:space="preserve">
+    <value>列车B大闸状态-大闸全制</value>
+  </data>
+  <data name="列车B大闸状态大闸重联" xml:space="preserve">
+    <value>列车B大闸状态-大闸重联</value>
+  </data>
+  <data name="列车B大闸状态大闸抑制" xml:space="preserve">
+    <value>列车B大闸状态-大闸抑制</value>
+  </data>
+  <data name="列车B大闸状态大闸紧急" xml:space="preserve">
+    <value>列车B大闸状态-大闸紧急</value>
+  </data>
+  <data name="列车B小闸状态小闸单缓" xml:space="preserve">
+    <value>列车B小闸状态-小闸单缓</value>
+  </data>
+  <data name="列车B小闸状态小闸运转" xml:space="preserve">
+    <value>列车B小闸状态-小闸运转</value>
+  </data>
+  <data name="列车B小闸状态小闸常制" xml:space="preserve">
+    <value>列车B小闸状态-小闸常制</value>
+  </data>
+  <data name="列车B小闸状态小闸全制" xml:space="preserve">
+    <value>列车B小闸状态-小闸全制</value>
+  </data>
+  <data name="列车B停放切除" xml:space="preserve">
+    <value>列车B停放切除</value>
+  </data>
+  <data name="列车B正向有功" xml:space="preserve">
+    <value>列车B正向有功</value>
+  </data>
+  <data name="列车B反向有功" xml:space="preserve">
+    <value>列车B反向有功</value>
+  </data>
+  <data name="列车B正向无功" xml:space="preserve">
+    <value>列车B正向无功</value>
+  </data>
+  <data name="列车B反向无功" xml:space="preserve">
+    <value>列车B反向无功</value>
+  </data>
+  <data name="亮屏" xml:space="preserve">
+    <value>亮屏</value>
+  </data>
+  <data name="F1" xml:space="preserve">
+    <value>6A屏下方第一排按钮F1键</value>
+  </data>
+  <data name="F2" xml:space="preserve">
+    <value>6A屏下方第一排按钮F2键</value>
+  </data>
+  <data name="F3" xml:space="preserve">
+    <value>6A屏下方第一排按钮F3键</value>
+  </data>
+  <data name="F4" xml:space="preserve">
+    <value>6A屏下方第一排按钮F4键</value>
+  </data>
+  <data name="F5" xml:space="preserve">
+    <value>6A屏下方第一排按钮F5键</value>
+  </data>
+  <data name="上" xml:space="preserve">
+    <value>6A屏下方第二排按钮↑键</value>
+  </data>
+  <data name="上翻页" xml:space="preserve">
+    <value>6A屏下方右侧按钮上翻键</value>
+  </data>
+  <data name="下" xml:space="preserve">
+    <value>6A屏下方第二排按钮↓键</value>
+  </data>
+  <data name="下翻页" xml:space="preserve">
+    <value>6A屏下方右侧按钮下翻键</value>
+  </data>
+  <data name="右" xml:space="preserve">
+    <value>6A屏下方第二排按钮→键</value>
+  </data>
+  <data name="左" xml:space="preserve">
+    <value>6A屏下方第二排按钮←键</value>
+  </data>
+  <data name="测试" xml:space="preserve">
+    <value>6A屏下方右侧按钮测试键</value>
+  </data>
+  <data name="确定2" xml:space="preserve">
+    <value>6A屏下方右侧按钮确定键</value>
+  </data>
+  <data name="确认1" xml:space="preserve">
+    <value>6A屏下方第一排按钮确定键</value>
+  </data>
+</root>

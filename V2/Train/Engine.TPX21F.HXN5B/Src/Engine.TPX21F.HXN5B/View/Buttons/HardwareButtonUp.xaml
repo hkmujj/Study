@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="Engine.TPX21F.HXN5B.View.Buttons.HardwareButtonUp"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:Engine.TPX21F.HXN5B.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:HXN5BViewModel}"
+             d:DesignHeight="60"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <Grid Margin="0,3">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Button Command="{Binding Path=HardwareBtnViewModel.Model.BTemperatureCommand}"
+                Content="℃"
+                Style="{StaticResource HardwareBtnStyle}" />
+        <Button Grid.Column="1"
+                Content="灯光"
+                Style="{StaticResource HardwareBtnStyle}" />
+        <Button Grid.Column="2"
+                Command="{Binding Path=HardwareBtnViewModel.Model.BLightDownCommand}"
+                Content="亮-"
+                Style="{StaticResource HardwareBtnStyle}" />
+        <Button Grid.Column="3"
+                Command="{Binding Path=HardwareBtnViewModel.Model.BLightUpCommand}"
+                Content="亮+"
+                Style="{StaticResource HardwareBtnStyle}" />
+        <Button Grid.Column="4"
+                Command="{Binding Path=HardwareBtnViewModel.Model.BContrastCommand}"
+                Content="对比"
+                Style="{StaticResource HardwareBtnStyle}" />
+        <Button Grid.Column="5"
+                Command="{Binding Path=HardwareBtnViewModel.Model.BSoundDownCommand}"
+                Content="音-"
+                Style="{StaticResource HardwareBtnStyle}" />
+        <Button Grid.Column="6"
+                Command="{Binding Path=HardwareBtnViewModel.Model.BSoundUpCommand}"
+                Content="音+"
+                Style="{StaticResource HardwareBtnStyle}" />
+        <Button Grid.Column="7"
+                Command="{Binding Path=HardwareBtnViewModel.Model.BContextCommand}"
+                Content="故障"
+                Style="{StaticResource HardwareBtnStyle}" />
+        <Button Grid.Column="8"
+                Command="{Binding Path=HardwareBtnViewModel.Model.BExclamationCommand}"
+                Content="！"
+                Style="{StaticResource HardwareBtnStyle}" />
+        <Button Grid.Column="9"
+                Command="{Binding Path=HardwareBtnViewModel.Model.BQuestionMarkCommand}"
+                Content="？"
+                Style="{StaticResource HardwareBtnStyle}" />
+    </Grid>
+</UserControl>

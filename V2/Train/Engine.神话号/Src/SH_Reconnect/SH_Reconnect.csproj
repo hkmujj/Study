@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{44CB4F1C-0728-4278-839F-FCDC2CF55849}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SH_Reconnect</RootNamespace>
+    <AssemblyName>Engine.SH_Reconnect</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\MMI\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\MMI\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonUtil, Version=2.29.2016.517, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="Excel.Interface, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Excel.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="MMI.Facility.Interface, Version=2.30.2016.713, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ShenHuaHaoTMS\MMI\MMI.Facility.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="YunDa.JC.MMI.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Dell\Desktop\Engine.ShenHuaHao\ShenHuaHaoTMS\MMI\YunDa.JC.MMI.Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.cs" />
+    <Compile Include="GlobalParam.cs" />
+    <Compile Include="IDataChangedListener.cs" />
+    <Compile Include="DataChangedProxy.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SH_RC_V0_BackView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SH_RC_V0_BackView.Designer.cs">
+      <DependentUpon>SH_RC_V0_BackView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SH_RC_V3_1_Net.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SH_RC_V3_1_Net.Designer.cs">
+      <DependentUpon>SH_RC_V3_1_Net.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SH_RC_V3_2_Net.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SH_RC_V3_2_Net.Designer.cs">
+      <DependentUpon>SH_RC_V3_2_Net.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SH_RC_V3_3_Net.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SH_RC_V3_3_Net.Designer.cs">
+      <DependentUpon>SH_RC_V3_3_Net.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SH_RC_V3_4_Net.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SH_RC_V3_4_Net.Designer.cs">
+      <DependentUpon>SH_RC_V3_4_Net.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SH_RC_V3_Net.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SH_RC_V3_Net.Designer.cs">
+      <DependentUpon>SH_RC_V3_Net.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SH_RC_V2_Net.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SH_RC_V2_Net.Designer.cs">
+      <DependentUpon>SH_RC_V2_Net.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SH_RC_V1_EquipmentData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SH_RC_V1_EquipmentData.Designer.cs">
+      <DependentUpon>SH_RC_V1_EquipmentData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainView.Designer.cs">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\SH_RC_V4_1_Net.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SH_RC_V4_1_Net.Designer.cs">
+      <DependentUpon>SH_RC_V4_1_Net.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SH_RC_V4_Net.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SH_RC_V4_Net.Designer.cs">
+      <DependentUpon>SH_RC_V4_Net.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SH_RC_V5_Net.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SH_RC_V5_Net.Designer.cs">
+      <DependentUpon>SH_RC_V5_Net.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SH_RC_V6_Net.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SH_RC_V6_Net.Designer.cs">
+      <DependentUpon>SH_RC_V6_Net.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\SH_RC_V0_BackView.resx">
+      <DependentUpon>SH_RC_V0_BackView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SH_RC_V3_1_Net.resx">
+      <DependentUpon>SH_RC_V3_1_Net.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SH_RC_V3_2_Net.resx">
+      <DependentUpon>SH_RC_V3_2_Net.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SH_RC_V3_3_Net.resx">
+      <DependentUpon>SH_RC_V3_3_Net.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SH_RC_V3_4_Net.resx">
+      <DependentUpon>SH_RC_V3_4_Net.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SH_RC_V3_Net.resx">
+      <DependentUpon>SH_RC_V3_Net.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SH_RC_V2_Net.resx">
+      <DependentUpon>SH_RC_V2_Net.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SH_RC_V1_EquipmentData.resx">
+      <DependentUpon>SH_RC_V1_EquipmentData.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainView.resx">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SH_RC_V4_1_Net.resx">
+      <DependentUpon>SH_RC_V4_1_Net.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SH_RC_V4_Net.resx">
+      <DependentUpon>SH_RC_V4_Net.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SH_RC_V5_Net.resx">
+      <DependentUpon>SH_RC_V5_Net.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SH_RC_V6_Net.resx">
+      <DependentUpon>SH_RC_V6_Net.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Btn_0_N_N.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Btn_0_N.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Btn_10_N.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Btn_M_N.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Btn_10_N_N.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Btn_0_L.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Btn_M_M.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Btn_N_M.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Focused.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Btn_M_R.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Btn_M_Q.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\列车示意.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\轨道示意.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\输电线.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\触电弓.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyControls\MyControls.csproj">
+      <Project>{3567efd9-fc39-482c-9d83-616e7e427cdd}</Project>
+      <Name>MyControls</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

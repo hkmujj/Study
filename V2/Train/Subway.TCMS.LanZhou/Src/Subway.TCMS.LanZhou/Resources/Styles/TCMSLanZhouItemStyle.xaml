@@ -1,0 +1,2376 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:carPart="clr-namespace:Subway.TCMS.LanZhou.Model.Domain.Car.CarParts"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:fault="clr-namespace:Subway.TCMS.LanZhou.Model.Domain.Fault"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:train="clr-namespace:Subway.TCMS.LanZhou.Model.Domain.Car"
+                    xmlns:view="clr-namespace:MMI.Facility.WPFInfrastructure.View;assembly=MMI.Facility.WPFInfrastructure"
+                    mc:Ignorable="d">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Base/TCMSLanZhouBaseResource.xaml" />
+        <ResourceDictionary Source="../Image/TCMSLanZhouImageResource.xaml" />
+        <ResourceDictionary Source="../Converter/TCMSLanZhouConverterResources.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="Subway.TCMS.LanZhou.BrakePressureItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0" Visibility="{Binding Path=RunningViewData.RunningViewFloatDataLazy.Value.BrakePressure1.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Border Margin="-1,0,0,0"
+                                        Background="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center "
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="18"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                               Text="{Binding Path=RunningViewData.RunningViewFloatDataLazy.Value.BrakePressure1.State.Value,
+                                                              StringFormat={}0}"
+                                               TextAlignment="Center" />
+                                </Border>
+
+                                <Image Source="{StaticResource Subway.TCMS.LanZhou.ImgCommonUnKnowStatusBackSmall}"
+                                       Stretch="UniformToFill"
+                                       Visibility="{Binding Path=RunningViewData.RunningViewFloatDataLazy.Value.BrakePressure1.State.GeneralState,
+                                                            Converter={StaticResource BoolVisibilityConverter}}" />
+                            </Grid>
+                            <Grid Grid.Column="1" Visibility="{Binding Path=RunningViewData.RunningViewFloatDataLazy.Value.BrakePressure2.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Border Margin="-1,0,0,0"
+                                        Background="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center "
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="18"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                               Text="{Binding Path=RunningViewData.RunningViewFloatDataLazy.Value.BrakePressure2.State.Value,
+                                                              StringFormat={}0}"
+                                               TextAlignment="Center" />
+                                </Border>
+                                <Image Source="{StaticResource Subway.TCMS.LanZhou.ImgCommonUnKnowStatusBackSmall}"
+                                       Stretch="UniformToFill"
+                                       Visibility="{Binding Path=RunningViewData.RunningViewFloatDataLazy.Value.BrakePressure2.State.GeneralState,
+                                                            Converter={StaticResource BoolVisibilityConverter}}" />
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.PassengerProportionItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid Visibility="{Binding Path=RunningViewData.RunningViewFloatDataLazy.Value.Laden.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+                            <Border Margin="-1,0,0,0"
+                                    Background="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                    BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                    BorderThickness="1">
+                                <TextBlock VerticalAlignment="Center"
+                                           FontFamily="{StaticResource FontFamilySongTypeface}"
+                                           FontSize="18"
+                                           Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                           Text="{Binding Path=RunningViewData.RunningViewFloatDataLazy.Value.Laden.State.Value,
+                                                          StringFormat={}0}"
+                                           TextAlignment="Center" />
+                            </Border>
+                            <Image Source="{StaticResource Subway.TCMS.LanZhou.ImgCommonUnKnowStatusBackground}" Visibility="{Binding Path=RunningViewData.RunningViewFloatDataLazy.Value.Laden.State.GeneralState, Converter={StaticResource BoolVisibilityConverter}}" />
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.PassengerTemperatureItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid Visibility="{Binding Path=RunningViewData.RunningViewFloatDataLazy.Value.AirCoditionTemp.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+                            <Border Margin="-1,0,0,0"
+                                    Background="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                    BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                    BorderThickness="1">
+                                <TextBlock VerticalAlignment="Center"
+                                           FontFamily="{StaticResource FontFamilySongTypeface}"
+                                           FontSize="18"
+                                           Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                           Text="{Binding Path=RunningViewData.RunningViewFloatDataLazy.Value.AirCoditionTemp.State.Value,
+                                                          StringFormat={}0}"
+                                           TextAlignment="Center" />
+                            </Border>
+                            <Image Source="{StaticResource Subway.TCMS.LanZhou.ImgCommonUnKnowStatusBackground}" Visibility="{Binding Path=RunningViewData.RunningViewFloatDataLazy.Value.AirCoditionTemp.State.GeneralState, Converter={StaticResource BoolVisibilityConverter}}" />
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.MainPressureItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid Visibility="{Binding Path=RunningViewData.RunningViewFloatDataLazy.Value.MainPressure.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+                            <Border Margin="2" Background="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}">
+                                <TextBlock VerticalAlignment="Center"
+                                           FontFamily="{StaticResource FontFamilySongTypeface}"
+                                           FontSize="18"
+                                           Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                           Text="{Binding Path=RunningViewData.RunningViewFloatDataLazy.Value.MainPressure.State.Value,
+                                                          StringFormat={}0.0}"
+                                           TextAlignment="Center" />
+                            </Border>
+                            <Image Source="{StaticResource Subway.TCMS.LanZhou.ImgCommonUnKnowStatusBackground}" Visibility="{Binding Path=RunningViewData.RunningViewFloatDataLazy.Value.MainPressure.State.GeneralState, Converter={StaticResource BoolVisibilityConverter}}" />
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.CarDoorItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="carPart:DoorItem">
+                        <Image Source="{Binding Path=State, Converter={StaticResource Subway.TCMS.LanZhou.Converter.DoorStateImageConverter}}">
+                            <Image.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/5">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Image.Width>
+                        </Image>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.CarDoorIndexStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="carPart:DoorItem">
+                        <TextBlock VerticalAlignment="Top"
+                                   FontSize="15"
+                                   Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                   Text="{Binding Path=DoorIndex}"
+                                   TextAlignment="Center">
+                            <TextBlock.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/5">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </TextBlock.Width>
+                        </TextBlock>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.TrainBodyStatusItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Border Width="{Binding RelativeSource={RelativeSource AncestorType=ItemsControl,
+                                                                               Mode=FindAncestor},
+                                                Path=ActualWidth,
+                                                Converter={StaticResource MathConverter},
+                                                ConverterParameter=x/6}"
+                                BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                BorderThickness="2">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="0.3*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="0.5*" />
+                                    <RowDefinition Height="2*" />
+                                    <RowDefinition Height="0.5*" />
+                                    <RowDefinition Height="2*" />
+                                    <RowDefinition Height="0.5*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="0.3*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <Grid Row="7">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="15*" />
+                                        <ColumnDefinition Width="20*" />
+                                        <ColumnDefinition Width="3*" />
+                                        <ColumnDefinition Width="20*" />
+                                        <ColumnDefinition Width="15*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="1"
+                                           Source="{Binding Path=TrainBodyViewData.AuxiliarySystemStatus.State,
+                                                            Converter={StaticResource Subway.TCMS.LanZhou.Converter.AuxiliarySystemImageConverter}}"
+                                           Visibility="{Binding Path=TrainBodyViewData.AuxiliarySystemStatus.Visible,
+                                                                Converter={StaticResource BoolVisibilityConverter}}" />
+                                    <Image Grid.Column="3"
+                                           Source="{Binding Path=TrainBodyViewData.AirCompressorStatus.State,
+                                                            Converter={StaticResource Subway.TCMS.LanZhou.Converter.AirCompressorImageConverter}}"
+                                           Visibility="{Binding Path=TrainBodyViewData.AirCompressorStatus.Visible,
+                                                                Converter={StaticResource BoolVisibilityConverter}}" />
+                                </Grid>
+
+                                <Grid Row="9">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0"
+                                           Source="{Binding Path=TrainBodyViewData.Brake1Status.State,
+                                                            Converter={StaticResource Subway.TCMS.LanZhou.Converter.CommonBrakeImageConverter}}"
+                                           Visibility="{Binding Path=TrainBodyViewData.Brake1Status.Visible,
+                                                                Converter={StaticResource BoolVisibilityConverter}}" />
+                                    <Image Grid.Column="1"
+                                           Source="{Binding Path=TrainBodyViewData.ParkingBrakeStatus.State,
+                                                            Converter={StaticResource Subway.TCMS.LanZhou.Converter.ParkingBrakeImageConverter}}"
+                                           Visibility="{Binding Path=TrainBodyViewData.ParkingBrakeStatus.Visible,
+                                                                Converter={StaticResource BoolVisibilityConverter}}" />
+                                    <Image Grid.Column="2"
+                                           Source="{Binding Path=TrainBodyViewData.Brake2Status.State,
+                                                            Converter={StaticResource Subway.TCMS.LanZhou.Converter.CommonBrakeImageConverter}}"
+                                           Visibility="{Binding Path=TrainBodyViewData.Brake2Status.Visible,
+                                                                Converter={StaticResource BoolVisibilityConverter}}" />
+                                </Grid>
+                                <ItemsControl Grid.Row="0"
+                                              ItemsSource="{Binding Path=DoorModel.UpDoors}"
+                                              Style="{StaticResource Subway.TCMS.LanZhou.CarDoorIndexStyle}" />
+                                <ItemsControl Grid.Row="1"
+                                              ItemsSource="{Binding Path=DoorModel.UpDoors}"
+                                              Style="{StaticResource Subway.TCMS.LanZhou.CarDoorItemStyle}" />
+                                <TextBlock Grid.Row="3"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           FontFamily="{StaticResource FontFamilySongTypeface}"
+                                           FontSize="20"
+                                           FontWeight="Bold"
+                                           Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                           Text="{Binding Path=Name}" />
+                                <Image Grid.Row="5"
+                                       HorizontalAlignment="Center"
+                                       Source="{Binding Path=TrainBodyViewData.TowState.State,
+                                                        Converter={StaticResource Subway.TCMS.LanZhou.Converter.TractionSystemImageConverter}}"
+                                       Visibility="{Binding Path=TrainBodyViewData.TowState.Visible,
+                                                            Converter={StaticResource BoolVisibilityConverter}}" />
+                                <ItemsControl Grid.Row="11"
+                                              ItemsSource="{Binding Path=DoorModel.DownDoors}"
+                                              Style="{StaticResource Subway.TCMS.LanZhou.CarDoorItemStyle}" />
+
+                                <ItemsControl Grid.Row="12"
+                                              ItemsSource="{Binding Path=DoorModel.DownDoors}"
+                                              Style="{StaticResource Subway.TCMS.LanZhou.CarDoorIndexStyle}" />
+
+
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <!--  车辆状态。。。。牵引界面  -->
+
+    <Style x:Key="Subway.TCMS.LanZhou.TrainStatusTow.WorkshopPowerProtectStatusItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Border BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}" BorderThickness="1">
+                                <Image Margin="-1,0,-1,0"
+                                       HorizontalAlignment="Stretch"
+                                       Source="{StaticResource Subway.TCMS.LanZhou.ImgCommonUnKnowStatusBackground}" />
+                            </Border>
+                            <Grid Visibility="{Binding Path=TrainStatusDatas.TrainStatusTowViewLazy.Value.WorkshopPowerProtectStatus.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Grid.Width>
+                                    <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                    </MultiBinding>
+                                </Grid.Width>
+                                <Border Margin="0,0,-1,0"
+                                        Background="{Binding Path=TrainStatusDatas.TrainStatusTowViewLazy.Value.WorkshopPowerProtectStatus.State,
+                                                             Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusOpenOrClosedColorConverter}}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="16"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.BlackTextForeground}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusTowViewLazy.Value.WorkshopPowerProtectStatus.State,
+                                                              Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusOpenOrClosedTextConverter}}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.TrainStatusTow.IesContactorStatusItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Border BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}" BorderThickness="1">
+                                <Image Margin="-1,0,-1,0"
+                                       HorizontalAlignment="Stretch"
+                                       Source="{StaticResource Subway.TCMS.LanZhou.ImgCommonUnKnowStatusBackground}" />
+                            </Border>
+                            <Grid Visibility="{Binding Path=TrainStatusDatas.TrainStatusTowViewLazy.Value.IesContactorStatus.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Grid.Width>
+                                    <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                    </MultiBinding>
+                                </Grid.Width>
+                                <Border Margin="0,0,-1,0"
+                                        Background="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="16"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusTowViewLazy.Value.IesContactorStatus.State,
+                                                              Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusIesContactorStatusTextConverter}}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.TrainStatusTow.WorkshopPowerStatusItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Border BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}" BorderThickness="1">
+                                <Image Margin="-1,0,-1,0"
+                                       HorizontalAlignment="Stretch"
+                                       Source="{StaticResource Subway.TCMS.LanZhou.ImgCommonUnKnowStatusBackground}" />
+                            </Border>
+                            <Grid Visibility="{Binding Path=TrainStatusDatas.TrainStatusTowViewLazy.Value.WorkshopPowerStatus.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Grid.Width>
+                                    <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                    </MultiBinding>
+                                </Grid.Width>
+                                <Border Margin="0,0,-1,0"
+                                        Background="{Binding Path=TrainStatusDatas.TrainStatusTowViewLazy.Value.WorkshopPowerStatus.State,
+                                                             Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusWorkshopPowerStatusColorConverter}}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="16"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.BlackTextForeground}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusTowViewLazy.Value.WorkshopPowerStatus.State,
+                                                              Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusWorkshopPowerStatusTextConverter}}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.TrainStatusTow.TractionSafetyStatusItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Border BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}" BorderThickness="1">
+                                <Image Margin="-1,0,-1,0"
+                                       HorizontalAlignment="Stretch"
+                                       Source="{StaticResource Subway.TCMS.LanZhou.ImgCommonUnKnowStatusBackground}" />
+                            </Border>
+                            <Grid Visibility="{Binding Path=TrainStatusDatas.TrainStatusTowViewLazy.Value.TractionSafetyStatus.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Grid.Width>
+                                    <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                    </MultiBinding>
+                                </Grid.Width>
+                                <Border Margin="0,0,-1,0"
+                                        Background="{Binding Path=TrainStatusDatas.TrainStatusTowViewLazy.Value.TractionSafetyStatus.State,
+                                                             Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusTractionSafetyStatusColorConverter}}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="16"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.BlackTextForeground}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusTowViewLazy.Value.TractionSafetyStatus.State,
+                                                              Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusTractionSafetyStatusTextConverter}}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.TrainStatusTow.HighSpeedCircuitBreakerStatus1ItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Border BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}" BorderThickness="1">
+                                <Image Margin="-1,0,-1,0"
+                                       HorizontalAlignment="Stretch"
+                                       Source="{StaticResource Subway.TCMS.LanZhou.ImgCommonUnKnowStatusBackground}" />
+                            </Border>
+                            <Grid Visibility="{Binding Path=TrainStatusDatas.TrainStatusTowViewLazy.Value.HighSpeedCircuitBreaker1Status.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Grid.Width>
+                                    <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                    </MultiBinding>
+                                </Grid.Width>
+                                <Border Margin="0,0,-1,0"
+                                        Background="{Binding Path=TrainStatusDatas.TrainStatusTowViewLazy.Value.HighSpeedCircuitBreaker1Status.State,
+                                                             Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusOpenOrClosedColorConverter}}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="16"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.BlackTextForeground}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusTowViewLazy.Value.HighSpeedCircuitBreaker1Status.State,
+                                                              Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusOpenOrClosedTextConverter}}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.TrainStatusTow.HighSpeedCircuitBreakerStatus2ItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Border BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}" BorderThickness="1">
+                                <Image Margin="-1,0,-1,0"
+                                       HorizontalAlignment="Stretch"
+                                       Source="{StaticResource Subway.TCMS.LanZhou.ImgCommonUnKnowStatusBackground}" />
+                            </Border>
+                            <Grid Visibility="{Binding Path=TrainStatusDatas.TrainStatusTowViewLazy.Value.HighSpeedCircuitBreaker2Status.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Grid.Width>
+                                    <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                    </MultiBinding>
+                                </Grid.Width>
+                                <Border Margin="0,0,-1,0"
+                                        Background="{Binding Path=TrainStatusDatas.TrainStatusTowViewLazy.Value.HighSpeedCircuitBreaker2Status.State,
+                                                             Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusOpenOrClosedColorConverter}}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="16"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.BlackTextForeground}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusTowViewLazy.Value.HighSpeedCircuitBreaker2Status.State,
+                                                              Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusOpenOrClosedTextConverter}}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.TrainStatusTow.SeparationgContactorStatusItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Border BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}" BorderThickness="1">
+                                <Image Margin="-1,0,-1,0"
+                                       HorizontalAlignment="Stretch"
+                                       Source="{StaticResource Subway.TCMS.LanZhou.ImgCommonUnKnowStatusBackground}" />
+                            </Border>
+                            <Grid Visibility="{Binding Path=TrainStatusDatas.TrainStatusTowViewLazy.Value.SeparationgContactorStatus.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Grid.Width>
+                                    <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                    </MultiBinding>
+                                </Grid.Width>
+                                <Border Margin="0,0,-1,0"
+                                        Background="{Binding Path=TrainStatusDatas.TrainStatusTowViewLazy.Value.SeparationgContactorStatus.State,
+                                                             Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusOpenOrClosedColorConverter}}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="16"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.BlackTextForeground}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusTowViewLazy.Value.SeparationgContactorStatus.State,
+                                                              Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusOpenOrClosedTextConverter}}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.TrainStatusTow.DirectCurrentLinkVoltageItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Border BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}" BorderThickness="1">
+                                <Image Margin="-1,0,-1,0"
+                                       HorizontalAlignment="Stretch"
+                                       Source="{StaticResource Subway.TCMS.LanZhou.ImgCommonUnKnowStatusBackground}" />
+                            </Border>
+                            <Grid Visibility="{Binding Path=TrainStatusDatas.TrainStatusTowViewLazy.Value.DirectCurrentLinkVoltage.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Grid.Width>
+                                    <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                    </MultiBinding>
+                                </Grid.Width>
+                                <Border Margin="0,0,-1,0"
+                                        Background="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="16"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusTowViewLazy.Value.DirectCurrentLinkVoltage.State.Value,
+                                                              StringFormat={}0}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.TrainStatusTow.DirectCurrentLinkCurrentItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Border BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}" BorderThickness="1">
+                                <Image Margin="-1,0,-1,0"
+                                       HorizontalAlignment="Stretch"
+                                       Source="{StaticResource Subway.TCMS.LanZhou.ImgCommonUnKnowStatusBackground}" />
+                            </Border>
+                            <Grid Visibility="{Binding Path=TrainStatusDatas.TrainStatusTowViewLazy.Value.DirectCurrentLinkCurrent.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Grid.Width>
+                                    <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                    </MultiBinding>
+                                </Grid.Width>
+                                <Border Margin="0,0,-1,0"
+                                        Background="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="16"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusTowViewLazy.Value.DirectCurrentLinkCurrent.State.Value,
+                                                              StringFormat={}0}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.TrainStatusTow.MotorCurrentItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Border BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}" BorderThickness="1">
+                                <Image Margin="-1,0,-1,0"
+                                       HorizontalAlignment="Stretch"
+                                       Source="{StaticResource Subway.TCMS.LanZhou.ImgCommonUnKnowStatusBackground}" />
+                            </Border>
+                            <Grid Visibility="{Binding Path=TrainStatusDatas.TrainStatusTowViewLazy.Value.MotorCurrent.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Grid.Width>
+                                    <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                    </MultiBinding>
+                                </Grid.Width>
+                                <Border Margin="0,0,-1,0"
+                                        Background="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="16"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusTowViewLazy.Value.MotorCurrent.State.Value,
+                                                              StringFormat={}0}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.TrainStatusTow.OvervoltageStatusItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Border BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}" BorderThickness="1">
+                                <Image Margin="-1,0,-1,0"
+                                       HorizontalAlignment="Stretch"
+                                       Source="{StaticResource Subway.TCMS.LanZhou.ImgCommonUnKnowStatusBackground}" />
+                            </Border>
+                            <Grid Visibility="{Binding Path=TrainStatusDatas.TrainStatusTowViewLazy.Value.OvervoltageStatus.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Grid.Width>
+                                    <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                    </MultiBinding>
+                                </Grid.Width>
+                                <Border Margin="0,0,-1,0"
+                                        Background="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="16"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusTowViewLazy.Value.OvervoltageStatus.State,
+                                                              Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusOvervoltageStatusTextConverter}}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+
+
+    <!--  车辆状态。。。。制动界面  -->
+
+    <Style x:Key="Subway.TCMS.LanZhou.TrainStatusBrake.AirBrakeAvailableStatusItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0" Visibility="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.AirBrakeAvailableStatus1.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Border Margin="0,0,-1,0"
+                                        Background="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.AirBrakeAvailableStatus1.State,
+                                                             Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusAirBrakeAvailableStatusColorConverter}}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="12"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.BlackTextForeground}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.AirBrakeAvailableStatus1.State,
+                                                              Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusAirBrakeAvailableStatusTextConverter}}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                            <Grid Grid.Column="1" Visibility="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.AirBrakeAvailableStatus2.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Border Margin="0,0,-1,0"
+                                        Background="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.AirBrakeAvailableStatus2.State,
+                                                             Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusAirBrakeAvailableStatusColorConverter}}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="12"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.BlackTextForeground}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.AirBrakeAvailableStatus2.State,
+                                                              Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusAirBrakeAvailableStatusTextConverter}}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.TrainStatusBrake.AirBrakeApplicationStatusItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0" Visibility="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.AirBrakeApplicationStatus1.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Border Margin="0,0,-1,0"
+                                        Background="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.AirBrakeApplicationStatus1.State,
+                                                             Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusAirBrakeExertOrNotappliedStatusColorConverter}}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="12"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.BlackTextForeground}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.AirBrakeApplicationStatus1.State,
+                                                              Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusAirBrakeExertOrNotappliedStatusTextConverter}}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                            <Grid Grid.Column="1" Visibility="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.AirBrakeApplicationStatus2.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Border Margin="0,0,-1,0"
+                                        Background="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.AirBrakeApplicationStatus2.State,
+                                                             Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusAirBrakeExertOrNotappliedStatusColorConverter}}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="12"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.BlackTextForeground}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.AirBrakeApplicationStatus2.State,
+                                                              Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusAirBrakeExertOrNotappliedStatusTextConverter}}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.TrainStatusBrake.HoldBrakeApplyStatusItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0" Visibility="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.HoldBrakeApplyStatus1.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Border Margin="0,0,-1,0"
+                                        Background="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.HoldBrakeApplyStatus1.State,
+                                                             Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusAirBrakeExertOrNotappliedStatusColorConverter}}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="12"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.BlackTextForeground}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.HoldBrakeApplyStatus1.State,
+                                                              Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusAirBrakeExertOrNotappliedStatusTextConverter}}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                            <Grid Grid.Column="1" Visibility="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.HoldBrakeApplyStatus2.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Border Margin="0,0,-1,0"
+                                        Background="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.HoldBrakeApplyStatus2.State,
+                                                             Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusAirBrakeExertOrNotappliedStatusColorConverter}}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="12"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.BlackTextForeground}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.HoldBrakeApplyStatus2.State,
+                                                              Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusAirBrakeExertOrNotappliedStatusTextConverter}}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.TrainStatusBrake.EmergencyBrakeAvailableStatusItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0" Visibility="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.EmergencyBrakeAvailableStatus1.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Border Margin="0,0,-1,0"
+                                        Background="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.EmergencyBrakeAvailableStatus1.State,
+                                                             Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusEmergencyBrakeAvailableStatusColorConverter}}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="12"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.BlackTextForeground}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.EmergencyBrakeAvailableStatus1.State,
+                                                              Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusEmergencyBrakeAvailableStatusTextConverter}}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                            <Grid Grid.Column="1" Visibility="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.EmergencyBrakeAvailableStatus2.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Border Margin="0,0,-1,0"
+                                        Background="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.EmergencyBrakeAvailableStatus2.State,
+                                                             Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusEmergencyBrakeAvailableStatusColorConverter}}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="12"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.BlackTextForeground}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.EmergencyBrakeAvailableStatus2.State,
+                                                              Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusEmergencyBrakeAvailableStatusTextConverter}}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.TrainStatusBrake.EmergencyBrakeApplicationStatusItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0" Visibility="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.EmergencyBrakeApplicationStatus1.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Border Margin="0,0,-1,0"
+                                        Background="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.EmergencyBrakeApplicationStatus1.State,
+                                                             Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusAirBrakeExertOrNotappliedStatusColorConverter}}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="12"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.BlackTextForeground}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.EmergencyBrakeApplicationStatus1.State,
+                                                              Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusAirBrakeExertOrNotappliedStatusTextConverter}}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                            <Grid Grid.Column="1" Visibility="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.EmergencyBrakeApplicationStatus2.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Border Margin="0,0,-1,0"
+                                        Background="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.EmergencyBrakeApplicationStatus2.State,
+                                                             Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusAirBrakeExertOrNotappliedStatusColorConverter}}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="12"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.BlackTextForeground}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.EmergencyBrakeApplicationStatus2.State,
+                                                              Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusAirBrakeExertOrNotappliedStatusTextConverter}}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.TrainStatusBrake.ParkingBrakeStatusItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Grid Visibility="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.ParkingBrakeStatus.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Grid.Width>
+                                    <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                    </MultiBinding>
+                                </Grid.Width>
+                                <Border Margin="0,0,-1,0"
+                                        Background="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.ParkingBrakeStatus.State,
+                                                             Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusParkingBrakeStatusColorConverter}}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="16"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.BlackTextForeground}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.ParkingBrakeStatus.State,
+                                                              Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusParkingBrakeStatusTextConverter}}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.TrainStatusBrake.CarLadenItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Border BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}" BorderThickness="1">
+                                <Image Margin="-1,0,-1,0"
+                                       HorizontalAlignment="Stretch"
+                                       Source="{StaticResource Subway.TCMS.LanZhou.ImgCommonUnKnowStatusBackground}" />
+                            </Border>
+                            <Grid Visibility="{Binding Path=RunningViewData.RunningViewFloatDataLazy.Value.Laden.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Grid.Width>
+                                    <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                    </MultiBinding>
+                                </Grid.Width>
+                                <Border Margin="0,0,-1,0"
+                                        Background="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="16"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                               Text="{Binding Path=RunningViewData.RunningViewFloatDataLazy.Value.Laden.State.Value,
+                                                              StringFormat={}0}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.TrainStatusBrake.BrakeCylinderStatusItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0" Visibility="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.BrakeCylinderStatus1.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Border Margin="0,0,-1,0"
+                                        Background="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.BrakeCylinderStatus1.State,
+                                                             Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusBrakeCylinderStatusColorConverter}}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="12"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.BlackTextForeground}"
+                                               Text="{Binding Path=RunningViewData.RunningViewFloatDataLazy.Value.BrakePressure1.State.Value,
+                                                              StringFormat={}0}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                            <Grid Grid.Column="1" Visibility="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.BrakeCylinderStatus2.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Border Margin="0,0,-1,0"
+                                        Background="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.BrakeCylinderStatus2.State,
+                                                             Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusBrakeCylinderStatusColorConverter}}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="12"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.BlackTextForeground}"
+                                               Text="{Binding Path=RunningViewData.RunningViewFloatDataLazy.Value.BrakePressure2.State.Value,
+                                                              StringFormat={}0}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.TrainStatusBrake.BogieResectionStatusItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0" Visibility="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.BogieResectionStatus1.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Border Margin="0,0,-1,0"
+                                        Background="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.BogieResectionStatus1.State,
+                                                             Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusBogieResectionStatusColorConverter}}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="12"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.BlackTextForeground}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.BogieResectionStatus1.State,
+                                                              Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusBogieResectionStatusTextConverter}}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                            <Grid Grid.Column="1" Visibility="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.BogieResectionStatus2.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Border Margin="0,0,-1,0"
+                                        Background="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.BogieResectionStatus2.State,
+                                                             Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusBogieResectionStatusColorConverter}}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="12"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.BlackTextForeground}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.BogieResectionStatus2.State,
+                                                              Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusBogieResectionStatusTextConverter}}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.TrainStatusBrake.AirSpringPreStatusItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0" Visibility="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.AirSpringPreStatus1.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Border Margin="0,0,-1,0"
+                                        Background="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.AirSpringPreStatus1.State,
+                                                             Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusAirSpringPreStatusColorConverter}}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="12"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.BlackTextForeground}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.AirSpringPreData1.State.Value,
+                                                              StringFormat={}0}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                            <Grid Grid.Column="1" Visibility="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.AirSpringPreStatus2.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Border Margin="0,0,-1,0"
+                                        Background="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.AirSpringPreStatus2.State,
+                                                             Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusAirSpringPreStatusColorConverter}}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="12"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.BlackTextForeground}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusBrakeViewLazy.Value.AirSpringPreData2.State.Value,
+                                                              StringFormat={}0}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <!--  车辆状态。。。。辅助界面  -->
+    <Style x:Key="Subway.TCMS.LanZhou.TrainStatusAssist.PrechargeContactorStatusItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Border BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}" BorderThickness="1">
+                                <Image Margin="-1,0,-1,0"
+                                       HorizontalAlignment="Stretch"
+                                       Source="{StaticResource Subway.TCMS.LanZhou.ImgCommonUnKnowStatusBackground}" />
+                            </Border>
+                            <Grid Visibility="{Binding Path=TrainStatusDatas.TrainStatusAsisstViewLazy.Value.PrechargeContactorStatus.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Grid.Width>
+                                    <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                    </MultiBinding>
+                                </Grid.Width>
+                                <Border Margin="0,0,-1,0"
+                                        Background="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="16"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusAsisstViewLazy.Value.PrechargeContactorStatus.State,
+                                                              Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusOpenOrClosedTextConverter}}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.TrainStatusAssist.SeparationBreakerStatusItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Border BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}" BorderThickness="1">
+                                <Image Margin="-1,0,-1,0"
+                                       HorizontalAlignment="Stretch"
+                                       Source="{StaticResource Subway.TCMS.LanZhou.ImgCommonUnKnowStatusBackground}" />
+                            </Border>
+                            <Grid Visibility="{Binding Path=TrainStatusDatas.TrainStatusAsisstViewLazy.Value.SeparationBreakerStatus.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Grid.Width>
+                                    <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                    </MultiBinding>
+                                </Grid.Width>
+                                <Border Margin="0,0,-1,0"
+                                        Background="{Binding Path=TrainStatusDatas.TrainStatusAsisstViewLazy.Value.SeparationBreakerStatus.State,
+                                                             Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusOpenOrClosedColorConverter}}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="16"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.BlackTextForeground}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusAsisstViewLazy.Value.SeparationBreakerStatus.State,
+                                                              Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusOpenOrClosedTextConverter}}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.TrainStatusBrake.DirectCurrentLinkVoltageStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Border BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}" BorderThickness="1">
+                                <Image Margin="-1,0,-1,0"
+                                       HorizontalAlignment="Stretch"
+                                       Source="{StaticResource Subway.TCMS.LanZhou.ImgCommonUnKnowStatusBackground}" />
+                            </Border>
+                            <Grid Visibility="{Binding Path=TrainStatusDatas.TrainStatusAsisstViewLazy.Value.DirectCurrentLinkVoltageAsisstStatus.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Grid.Width>
+                                    <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                    </MultiBinding>
+                                </Grid.Width>
+                                <Border Margin="0,0,-1,0"
+                                        Background="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="16"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusAsisstViewLazy.Value.DirectCurrentLinkVoltageAsisstStatus.State.Value,
+                                                              StringFormat={}0}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.TrainStatusBrake.DirectCurrentLinkCurrentStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Border BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}" BorderThickness="1">
+                                <Image Margin="-1,0,-1,0"
+                                       HorizontalAlignment="Stretch"
+                                       Source="{StaticResource Subway.TCMS.LanZhou.ImgCommonUnKnowStatusBackground}" />
+                            </Border>
+                            <Grid Visibility="{Binding Path=TrainStatusDatas.TrainStatusAsisstViewLazy.Value.DirectCurrentLinkCurrentAssistStatus.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Grid.Width>
+                                    <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                    </MultiBinding>
+                                </Grid.Width>
+                                <Border Margin="0,0,-1,0"
+                                        Background="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="16"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusAsisstViewLazy.Value.DirectCurrentLinkCurrentAssistStatus.State.Value,
+                                                              StringFormat={}0}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.TrainStatusAssist.AuxiliaryLoadStatusItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Border BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}" BorderThickness="1">
+                                <Image Margin="-1,0,-1,0"
+                                       HorizontalAlignment="Stretch"
+                                       Source="{StaticResource Subway.TCMS.LanZhou.ImgCommonUnKnowStatusBackground}" />
+                            </Border>
+                            <Grid Visibility="{Binding Path=TrainStatusDatas.TrainStatusAsisstViewLazy.Value.AuxiliaryLoadStatus.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Grid.Width>
+                                    <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                    </MultiBinding>
+                                </Grid.Width>
+                                <Border Margin="0,0,-1,0"
+                                        Background="{Binding Path=TrainStatusDatas.TrainStatusAsisstViewLazy.Value.AuxiliaryLoadStatus.State,
+                                                             Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusOpenOrClosedColorConverter}}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="16"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.BlackTextForeground}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusAsisstViewLazy.Value.AuxiliaryLoadStatus.State,
+                                                              Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainStatusOpenOrClosedTextConverter}}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.TrainStatusBrake.AuxiliaryLoadCurrentStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Border BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}" BorderThickness="1">
+                                <Image Margin="-1,0,-1,0"
+                                       HorizontalAlignment="Stretch"
+                                       Source="{StaticResource Subway.TCMS.LanZhou.ImgCommonUnKnowStatusBackground}" />
+                            </Border>
+                            <Grid Visibility="{Binding Path=TrainStatusDatas.TrainStatusAsisstViewLazy.Value.AuxiliaryLoadCurrent.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Grid.Width>
+                                    <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                    </MultiBinding>
+                                </Grid.Width>
+                                <Border Margin="0,0,-1,0"
+                                        Background="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="16"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusAsisstViewLazy.Value.AuxiliaryLoadCurrent.State.Value,
+                                                              StringFormat={}0}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.TrainStatusBrake.AuxiliaryLoadVoltageStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Border BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}" BorderThickness="1">
+                                <Image Margin="-1,0,-1,0"
+                                       HorizontalAlignment="Stretch"
+                                       Source="{StaticResource Subway.TCMS.LanZhou.ImgCommonUnKnowStatusBackground}" />
+                            </Border>
+                            <Grid Visibility="{Binding Path=TrainStatusDatas.TrainStatusAsisstViewLazy.Value.AuxiliaryLoadVoltage.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Grid.Width>
+                                    <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                    </MultiBinding>
+                                </Grid.Width>
+                                <Border Margin="0,0,-1,0"
+                                        Background="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="16"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusAsisstViewLazy.Value.AuxiliaryLoadVoltage.State.Value,
+                                                              StringFormat={}0}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.TrainStatusBrake.CurrentBatteryChargerStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Border BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}" BorderThickness="1">
+                                <Image Margin="-1,0,-1,0"
+                                       HorizontalAlignment="Stretch"
+                                       Source="{StaticResource Subway.TCMS.LanZhou.ImgCommonUnKnowStatusBackground}" />
+                            </Border>
+                            <Grid Visibility="{Binding Path=TrainStatusDatas.TrainStatusAsisstViewLazy.Value.CurrentBatteryCharger.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Grid.Width>
+                                    <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                    </MultiBinding>
+                                </Grid.Width>
+                                <Border Margin="0,0,-1,0"
+                                        Background="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="16"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusAsisstViewLazy.Value.CurrentBatteryCharger.State.Value,
+                                                              StringFormat={}0}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.TrainStatusBrake.BatteryBusVoltageStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Border BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}" BorderThickness="1">
+                                <Image Margin="-1,0,-1,0"
+                                       HorizontalAlignment="Stretch"
+                                       Source="{StaticResource Subway.TCMS.LanZhou.ImgCommonUnKnowStatusBackground}" />
+                            </Border>
+                            <Grid Visibility="{Binding Path=TrainStatusDatas.TrainStatusAsisstViewLazy.Value.BatteryBusVoltage.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Grid.Width>
+                                    <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                    </MultiBinding>
+                                </Grid.Width>
+                                <Border Margin="0,0,-1,0"
+                                        Background="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="16"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusAsisstViewLazy.Value.BatteryBusVoltage.State.Value,
+                                                              StringFormat={}0}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.TrainStatusBrake.BatteryBusCurrentStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Border BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}" BorderThickness="1">
+                                <Image Margin="-1,0,-1,0"
+                                       HorizontalAlignment="Stretch"
+                                       Source="{StaticResource Subway.TCMS.LanZhou.ImgCommonUnKnowStatusBackground}" />
+                            </Border>
+                            <Grid Visibility="{Binding Path=TrainStatusDatas.TrainStatusAsisstViewLazy.Value.BatteryBusCurrent.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Grid.Width>
+                                    <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                    </MultiBinding>
+                                </Grid.Width>
+                                <Border Margin="0,0,-1,0"
+                                        Background="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="16"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                               Text="{Binding Path=TrainStatusDatas.TrainStatusAsisstViewLazy.Value.BatteryBusCurrent.State.Value,
+                                                              StringFormat={}0}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+
+    <!--  空调界面  -->
+    <Style x:Key="Subway.TCMS.LanZhou.AirConditionTargetTempItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid Visibility="{Binding Path=RunningViewData.RunningViewFloatDataLazy.Value.Laden.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+                            <Border Margin="-1,0,0,0"
+                                    Background="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                    BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                    BorderThickness="1">
+                                <TextBlock VerticalAlignment="Center"
+                                           FontFamily="{StaticResource FontFamilySongTypeface}"
+                                           FontSize="18"
+                                           Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                           Text="{Binding Path=AirConditionControl.AirConditionFloatDataLazy.Value.AirConditionTargetTemp.State.Value,
+                                                          StringFormat={}0}"
+                                           TextAlignment="Center" />
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.AirConditionRunningModelItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid Visibility="{Binding Path=RunningViewData.RunningViewFloatDataLazy.Value.Laden.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+                            <Border Margin="-1,0,0,0"
+                                    Background="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                    BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                    BorderThickness="1">
+                                <TextBlock VerticalAlignment="Center"
+                                           FontFamily="{StaticResource FontFamilySongTypeface}"
+                                           FontSize="18"
+                                           Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                           Text="{Binding Path=AirConditionControl.AirConditionStatusLazy.Value.AirConditionRunningStatus.State,
+                                                          Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainAirConditionRunningModelTextConverter}}"
+                                           TextAlignment="Center" />
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.AirConditionInDoorTempItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid Visibility="{Binding Path=RunningViewData.RunningViewFloatDataLazy.Value.Laden.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+                            <Border Margin="-1,0,0,0"
+                                    Background="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                    BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                    BorderThickness="1">
+                                <TextBlock VerticalAlignment="Center"
+                                           FontFamily="{StaticResource FontFamilySongTypeface}"
+                                           FontSize="18"
+                                           Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                           Text="{Binding Path=AirConditionControl.AirConditionFloatDataLazy.Value.AirConditionIndoorTemp.State.Value,
+                                                          StringFormat={}0}"
+                                           TextAlignment="Center" />
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.AirConditionOutDoorTempItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid Visibility="{Binding Path=RunningViewData.RunningViewFloatDataLazy.Value.Laden.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+                            <Border Margin="-1,0,0,0"
+                                    Background="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                    BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                    BorderThickness="1">
+                                <TextBlock VerticalAlignment="Center"
+                                           FontFamily="{StaticResource FontFamilySongTypeface}"
+                                           FontSize="18"
+                                           Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                           Text="{Binding Path=AirConditionControl.AirConditionFloatDataLazy.Value.AirConditionOutdoorTemp.State.Value,
+                                                          StringFormat={}0}"
+                                           TextAlignment="Center" />
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.AirConditionOutDamperItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0" Visibility="{Binding Path=AirConditionControl.AirConditionStatusLazy.Value.AirConditionOutsideDamper1Status.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Border Margin="-1,0,0,0"
+                                        Background="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center "
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="18"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                               Text="{Binding Path=AirConditionControl.AirConditionStatusLazy.Value.AirConditionOutsideDamper1Status.State,
+                                                              Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainAirConditionOutDamperStatusTextConverter}}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                            <Grid Grid.Column="1" Visibility="{Binding Path=AirConditionControl.AirConditionStatusLazy.Value.AirConditionOutsideDamper2Status.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Border Margin="-1,0,0,0"
+                                        Background="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                        BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                        BorderThickness="1">
+                                    <TextBlock VerticalAlignment="Center "
+                                               FontFamily="{StaticResource FontFamilySongTypeface}"
+                                               FontSize="18"
+                                               Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                               Text="{Binding Path=AirConditionControl.AirConditionStatusLazy.Value.AirConditionOutsideDamper2Status.State,
+                                                              Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainAirConditionOutDamperStatusTextConverter}}"
+                                               TextAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.CarAirConditionCompressorItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+                            <Border Margin="-1,0,0,0"
+                                    Background="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                    BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                    BorderThickness="1">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="1*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0" Visibility="{Binding Path=AirConditionControl.AirConditionStatusLazy.Value.AirConditionCompressor1Status.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                        <Border Margin="1"
+                                                Background="{Binding Path=AirConditionControl.AirConditionStatusLazy.Value.AirConditionCompressor1Status.State,
+                                                                     Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainAirConditionRunningStatusColorConverter}}"
+                                                BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                                BorderThickness="1">
+                                            <TextBlock VerticalAlignment="Center "
+                                                       FontFamily="{StaticResource FontFamilySongTypeface}"
+                                                       FontSize="18"
+                                                       Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                                       Text="1"
+                                                       TextAlignment="Center" />
+                                        </Border>
+                                    </Grid>
+                                    <Grid Grid.Column="1" Visibility="{Binding Path=AirConditionControl.AirConditionStatusLazy.Value.AirConditionCompressor2Status.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                        <Border Margin="1"
+                                                Background="{Binding Path=AirConditionControl.AirConditionStatusLazy.Value.AirConditionCompressor2Status.State,
+                                                                     Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainAirConditionRunningStatusColorConverter}}"
+                                                BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                                BorderThickness="1">
+                                            <TextBlock VerticalAlignment="Center "
+                                                       FontFamily="{StaticResource FontFamilySongTypeface}"
+                                                       FontSize="18"
+                                                       Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                                       Text="2"
+                                                       TextAlignment="Center" />
+                                        </Border>
+                                    </Grid>
+                                    <Grid Grid.Column="2" Visibility="{Binding Path=AirConditionControl.AirConditionStatusLazy.Value.AirConditionCompressor3Status.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                        <Border Margin="1"
+                                                Background="{Binding Path=AirConditionControl.AirConditionStatusLazy.Value.AirConditionCompressor3Status.State,
+                                                                     Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainAirConditionRunningStatusColorConverter}}"
+                                                BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                                BorderThickness="1">
+                                            <TextBlock VerticalAlignment="Center "
+                                                       FontFamily="{StaticResource FontFamilySongTypeface}"
+                                                       FontSize="18"
+                                                       Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                                       Text="1"
+                                                       TextAlignment="Center" />
+                                        </Border>
+                                    </Grid>
+                                    <Grid Grid.Column="3" Visibility="{Binding Path=AirConditionControl.AirConditionStatusLazy.Value.AirConditionCompressor4Status.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                        <Border Margin="1"
+                                                Background="{Binding Path=AirConditionControl.AirConditionStatusLazy.Value.AirConditionCompressor4Status.State,
+                                                                     Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainAirConditionRunningStatusColorConverter}}"
+                                                BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                                BorderThickness="1">
+                                            <TextBlock VerticalAlignment="Center "
+                                                       FontFamily="{StaticResource FontFamilySongTypeface}"
+                                                       FontSize="18"
+                                                       Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                                       Text="2"
+                                                       TextAlignment="Center" />
+                                        </Border>
+                                    </Grid>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.CarAirConditionCondensingMachineItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+                            <Border Margin="-1,0,0,0"
+                                    Background="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                    BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                    BorderThickness="1">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="1*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0" Visibility="{Binding Path=AirConditionControl.AirConditionStatusLazy.Value.AirConditionCondensing1Status.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                        <Border Margin="1"
+                                                Background="{Binding Path=AirConditionControl.AirConditionStatusLazy.Value.AirConditionCondensing1Status.State,
+                                                                     Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainAirConditionRunningStatusColorConverter}}"
+                                                BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                                BorderThickness="1">
+                                            <TextBlock VerticalAlignment="Center "
+                                                       FontFamily="{StaticResource FontFamilySongTypeface}"
+                                                       FontSize="18"
+                                                       Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                                       Text="1"
+                                                       TextAlignment="Center" />
+                                        </Border>
+                                    </Grid>
+                                    <Grid Grid.Column="1" Visibility="{Binding Path=AirConditionControl.AirConditionStatusLazy.Value.AirConditionCondensing2Status.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                        <Border Margin="1"
+                                                Background="{Binding Path=AirConditionControl.AirConditionStatusLazy.Value.AirConditionCondensing2Status.State,
+                                                                     Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainAirConditionRunningStatusColorConverter}}"
+                                                BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                                BorderThickness="1">
+                                            <TextBlock VerticalAlignment="Center "
+                                                       FontFamily="{StaticResource FontFamilySongTypeface}"
+                                                       FontSize="18"
+                                                       Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                                       Text="2"
+                                                       TextAlignment="Center" />
+                                        </Border>
+                                    </Grid>
+                                    <Grid Grid.Column="2" Visibility="{Binding Path=AirConditionControl.AirConditionStatusLazy.Value.AirConditionCondensing3Status.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                        <Border Margin="1"
+                                                Background="{Binding Path=AirConditionControl.AirConditionStatusLazy.Value.AirConditionCondensing3Status.State,
+                                                                     Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainAirConditionRunningStatusColorConverter}}"
+                                                BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                                BorderThickness="1">
+                                            <TextBlock VerticalAlignment="Center "
+                                                       FontFamily="{StaticResource FontFamilySongTypeface}"
+                                                       FontSize="18"
+                                                       Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                                       Text="1"
+                                                       TextAlignment="Center" />
+                                        </Border>
+                                    </Grid>
+                                    <Grid Grid.Column="3" Visibility="{Binding Path=AirConditionControl.AirConditionStatusLazy.Value.AirConditionCondensing4Status.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                        <Border Margin="1"
+                                                Background="{Binding Path=AirConditionControl.AirConditionStatusLazy.Value.AirConditionCondensing4Status.State,
+                                                                     Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainAirConditionRunningStatusColorConverter}}"
+                                                BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                                BorderThickness="1">
+                                            <TextBlock VerticalAlignment="Center "
+                                                       FontFamily="{StaticResource FontFamilySongTypeface}"
+                                                       FontSize="18"
+                                                       Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                                       Text="2"
+                                                       TextAlignment="Center" />
+                                        </Border>
+                                    </Grid>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Subway.TCMS.LanZhou.CarAirConditionVentilatorItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:CarModel">
+                        <Grid>
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+                            <Border Margin="-1,0,0,0"
+                                    Background="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                    BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                                    BorderThickness="1">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="1*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0" Visibility="{Binding Path=AirConditionControl.AirConditionStatusLazy.Value.AirConditionVentilator1Status.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                        <Border Margin="1"
+                                                Background="{Binding Path=AirConditionControl.AirConditionStatusLazy.Value.AirConditionVentilator1Status.State,
+                                                                     Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainAirConditionRunningStatusColorConverter}}"
+                                                BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                                BorderThickness="1">
+                                            <TextBlock VerticalAlignment="Center "
+                                                       FontFamily="{StaticResource FontFamilySongTypeface}"
+                                                       FontSize="18"
+                                                       Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                                       Text="1"
+                                                       TextAlignment="Center" />
+                                        </Border>
+                                    </Grid>
+                                    <Grid Grid.Column="1" Visibility="{Binding Path=AirConditionControl.AirConditionStatusLazy.Value.AirConditionVentilator2Status.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                        <Border Margin="1"
+                                                Background="{Binding Path=AirConditionControl.AirConditionStatusLazy.Value.AirConditionVentilator2Status.State,
+                                                                     Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainAirConditionRunningStatusColorConverter}}"
+                                                BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                                BorderThickness="1">
+                                            <TextBlock VerticalAlignment="Center "
+                                                       FontFamily="{StaticResource FontFamilySongTypeface}"
+                                                       FontSize="18"
+                                                       Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                                       Text="2"
+                                                       TextAlignment="Center" />
+                                        </Border>
+                                    </Grid>
+                                    <Grid Grid.Column="2" Visibility="{Binding Path=AirConditionControl.AirConditionStatusLazy.Value.AirConditionVentilator3Status.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                        <Border Margin="1"
+                                                Background="{Binding Path=AirConditionControl.AirConditionStatusLazy.Value.AirConditionVentilator3Status.State,
+                                                                     Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainAirConditionRunningStatusColorConverter}}"
+                                                BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                                BorderThickness="1">
+                                            <TextBlock VerticalAlignment="Center "
+                                                       FontFamily="{StaticResource FontFamilySongTypeface}"
+                                                       FontSize="18"
+                                                       Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                                       Text="1"
+                                                       TextAlignment="Center" />
+                                        </Border>
+                                    </Grid>
+                                    <Grid Grid.Column="3" Visibility="{Binding Path=AirConditionControl.AirConditionStatusLazy.Value.AirConditionVentilator4Status.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                        <Border Margin="1"
+                                                Background="{Binding Path=AirConditionControl.AirConditionStatusLazy.Value.AirConditionVentilator4Status.State,
+                                                                     Converter={StaticResource Subway.TCMS.LanZhou.Converter.TrainAirConditionRunningStatusColorConverter}}"
+                                                BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                                BorderThickness="1">
+                                            <TextBlock VerticalAlignment="Center "
+                                                       FontFamily="{StaticResource FontFamilySongTypeface}"
+                                                       FontSize="18"
+                                                       Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ContentBackground}"
+                                                       Text="2"
+                                                       TextAlignment="Center" />
+                                        </Border>
+                                    </Grid>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+</ResourceDictionary>

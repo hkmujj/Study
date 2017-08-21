@@ -1,0 +1,696 @@
+﻿<UserControl x:Class="Engine.TAX2.SS7C.View.Contents.RootContentView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:common="clr-namespace:Engine.TAX2.SS7C.View.Common"
+             xmlns:constant="clr-namespace:Engine.TAX2.SS7C.Constant"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:regions="http://www.codeplex.com/CompositeWPF"
+             xmlns:viewModel="clr-namespace:Engine.TAX2.SS7C.ViewModel"
+             xmlns:viewSource="clr-namespace:Engine.TAX2.SS7C.Model.ViewSource"
+             d:DataContext="{d:DesignInstance viewModel:SS7CViewModel}"
+             d:DesignHeight="550"
+             d:DesignWidth="800"
+             Background="{StaticResource ContentBackgroundBrush}"
+             mc:Ignorable="d">
+    <Grid Margin="0,3">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="43*" />
+                <RowDefinition Height="92*" />
+                <RowDefinition Height="409*" />
+            </Grid.RowDefinitions>
+
+            <ContentControl Grid.Row="0"
+                            Margin="3,0"
+                            BorderThickness="2"
+                            Style="{StaticResource ContentControlBulgeFrameStyle}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*" />
+                        <ColumnDefinition Width="350*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Margin="6,0"
+                               Style="{StaticResource ContentConstBlackTextStyle}"
+                               Text="{StaticResource StringCommunication}" />
+                    <Grid Grid.Column="1" Background="{StaticResource ContentDeepSkyBlueBrush}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Margin="6"
+                                   Style="{StaticResource ContentConstWhiteTextStyle}"
+                                   Text="{StaticResource String1Frame}" />
+                        <TextBlock Grid.Column="1"
+                                   Margin="6"
+                                   HorizontalAlignment="Center"
+                                   Style="{StaticResource ContentConstWhiteTextStyle}"
+                                   Text="{Binding Path=TrainInfoViewModel.Model.CutoffState1,
+                                                  Converter={StaticResource CutoffStateToStringConverter}}" />
+                        <TextBlock Grid.Column="2"
+                                   Margin="6"
+                                   Style="{StaticResource ContentConstWhiteTextStyle}"
+                                   Text="{StaticResource String2Frame}" />
+                        <TextBlock Grid.Column="3"
+                                   Margin="6"
+                                   HorizontalAlignment="Center"
+                                   Style="{StaticResource ContentConstWhiteTextStyle}"
+                                   Text="{Binding Path=TrainInfoViewModel.Model.CutoffState2,
+                                                  Converter={StaticResource CutoffStateToStringConverter}}" />
+                        <TextBlock Grid.Column="4"
+                                   Margin="6"
+                                   Style="{StaticResource ContentConstWhiteTextStyle}"
+                                   Text="{StaticResource StringLCU}" />
+                        <TextBlock Grid.Column="5"
+                                   Margin="6"
+                                   HorizontalAlignment="Center"
+                                   Style="{StaticResource ContentConstWhiteTextStyle}"
+                                   Text="{Binding Path=TrainInfoViewModel.Model.CutoffStateLCU,
+                                                  Converter={StaticResource CutoffStateToStringConverter}}" />
+                    </Grid>
+                </Grid>
+            </ContentControl>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <ContentControl Grid.Row="0"
+                                Margin="8,3"
+                                Style="{StaticResource ContentControlSunkenFrameStyle}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*" />
+                            <ColumnDefinition Width="4*" />
+                            <ColumnDefinition Width="4*" />
+                            <ColumnDefinition Width="4*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                            <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="{StaticResource StringTrain}" />
+                            <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="{StaticResource StringSpeed}" />
+                        </StackPanel>
+                        <Border Grid.Column="1" Background="{StaticResource ContentDeepSkyBlueBrush}">
+                            <StackPanel HorizontalAlignment="Right"
+                                        VerticalAlignment="Center"
+                                        Orientation="Horizontal">
+                                <TextBlock Margin="3,0"
+                                           Style="{StaticResource ContentConstWhiteTextStyle}"
+                                           Text="{Binding TrainInfoViewModel.Model.CurrentSpeed,
+                                                          StringFormat={}0}" />
+                                <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="km/h" />
+
+                            </StackPanel>
+                        </Border>
+
+                        <StackPanel Grid.Column="2"
+                                    VerticalAlignment="Center"
+                                    Orientation="Horizontal">
+                            <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="{StaticResource StringRunning}" />
+                            <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="{StaticResource StringLevel}" />
+                            <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="{StaticResource StringBit}" />
+                        </StackPanel>
+                        <Border Grid.Column="3" Background="{StaticResource ContentDeepSkyBlueBrush}">
+                            <TextBlock Margin="3,0"
+                                       HorizontalAlignment="Center"
+                                       Style="{StaticResource ContentConstWhiteTextStyle}"
+                                       Text="{Binding Path=TrainInfoViewModel.Model.RunningLevel,
+                                                      StringFormat={}0.0}" />
+                        </Border>
+
+                        <TextBlock Grid.Column="4"
+                                   Style="{StaticResource ContentConstBlackTextStyle}"
+                                   Text="{StaticResource StringLevel}" />
+                    </Grid>
+                </ContentControl>
+                <ContentControl Grid.Row="1"
+                                Margin="8,3"
+                                Style="{StaticResource ContentControlSunkenFrameStyle}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*" />
+                            <ColumnDefinition Width="4*" />
+                            <ColumnDefinition Width="4*" />
+                            <ColumnDefinition Width="4*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                            <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="{StaticResource StringMagneticCutting}" />
+                            <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="{StaticResource StringQuotiety}" />
+                        </StackPanel>
+                        <Border Grid.Column="1" Background="{StaticResource ContentDeepSkyBlueBrush}">
+                            <TextBlock Margin="3,0"
+                                       HorizontalAlignment="Center"
+                                       Style="{StaticResource ContentConstWhiteTextStyle}"
+                                       Text="{Binding Path=TrainInfoViewModel.Model.MagneticCuttingRatio,
+                                                      StringFormat={}0%}"
+                                       Visibility="{Binding Path=TrainInfoViewModel.Model.IsMagneticCuttingRatioVisible,
+                                                            Converter={StaticResource BoolToVisibilityConverter}}" />
+                        </Border>
+                        <StackPanel Grid.Column="2"
+                                    VerticalAlignment="Center"
+                                    Orientation="Horizontal">
+                            <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="{StaticResource StringFeedBack}" />
+                            <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="{StaticResource StringFlag}" />
+                        </StackPanel>
+
+                        <Border Grid.Column="3" Background="{StaticResource ContentDeepSkyBlueBrush}">
+                            <TextBlock Margin="3,0"
+                                       HorizontalAlignment="Center"
+                                       Style="{StaticResource ContentConstWhiteTextStyle}"
+                                       Text="{Binding Path=TrainInfoViewModel.Model.FeedbackFlag,
+                                                      Converter={StaticResource FeedbackFlagToStringConverter}}" />
+                        </Border>
+                    </Grid>
+                </ContentControl>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="98*" />
+                    <ColumnDefinition Width="204*" />
+                    <ColumnDefinition Width="98*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="183*" />
+                    <RowDefinition Height="12*" />
+                    <RowDefinition Height="16*" />
+                </Grid.RowDefinitions>
+                <ContentControl BorderThickness="2" Style="{StaticResource ContentControlBulgeFrameStyle}">
+                    <Grid Background="{StaticResource ForegroundWhiteBrush}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <ProgressBar Maximum="1750"
+                                     Style="{StaticResource ProgressBarOrdinaryStyle}"
+                                     Value="{Binding Path=TrainInfoViewModel.Model.EleV1}" />
+                        <ItemsControl Grid.Column="1"
+                                      ItemsSource="{Binding Source={x:Static viewSource:MainMax1750Scale.Instance},
+                                                            Path=TargitDistanceScaleItems}"
+                                      Style="{StaticResource ItemControlMainDegreeStyle}" />
+                        <TextBlock Grid.Column="1"
+                                   Margin="0,10,0,0"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Top"
+                                   Style="{StaticResource ContentConstBlackTextStyle}"
+                                   Text="V" />
+                        <Canvas Grid.Column="1">
+                            <common:DegreeIndicator Canvas.Left="3"
+                                                    Width="{Binding RelativeSource={RelativeSource AncestorType=Canvas},
+                                                                    Path=ActualWidth,
+                                                                    Converter={StaticResource MathConverter},
+                                                                    ConverterParameter=x-6}"
+                                                    Height="6">
+                                <Canvas.Top>
+                                    <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="(1-x/1750)*y-3">
+                                        <Binding Path="TrainInfoViewModel.Model.EmergEleV" />
+                                        <Binding Path="ActualHeight" RelativeSource="{RelativeSource AncestorType=Canvas}" />
+                                    </MultiBinding>
+                                </Canvas.Top>
+                            </common:DegreeIndicator>
+                        </Canvas>
+                        <ProgressBar Grid.Column="2"
+                                     Maximum="1750"
+                                     Style="{StaticResource ProgressBarOrdinaryStyle}"
+                                     Value="{Binding Path=TrainInfoViewModel.Model.EleV2}" />
+                    </Grid>
+                </ContentControl>
+                <ContentControl Grid.Row="0"
+                                Grid.Column="1"
+                                BorderThickness="2"
+                                Style="{StaticResource ContentControlBulgeFrameStyle}">
+                    <Grid Background="{StaticResource ForegroundWhiteBrush}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <ProgressBar Foreground="{StaticResource ContentGreeBrush}"
+                                     Maximum="1750"
+                                     Style="{StaticResource ProgressBarOrdinaryStyle}"
+                                     Value="{Binding Path=TrainInfoViewModel.Model.EleI1}" />
+                        <ProgressBar Grid.Column="1"
+                                     Foreground="{StaticResource ContentGreeBrush}"
+                                     Maximum="1750"
+                                     Style="{StaticResource ProgressBarOrdinaryStyle}"
+                                     Value="{Binding Path=TrainInfoViewModel.Model.EleI2}" />
+                        <ProgressBar Grid.Column="2"
+                                     Foreground="{StaticResource ContentGreeBrush}"
+                                     Maximum="1750"
+                                     Style="{StaticResource ProgressBarOrdinaryStyle}"
+                                     Value="{Binding Path=TrainInfoViewModel.Model.EleI3}" />
+                        <ItemsControl Grid.Column="3"
+                                      ItemsSource="{Binding Source={x:Static viewSource:MainMax1750Scale.Instance},
+                                                            Path=TargitDistanceScaleItems}"
+                                      Style="{StaticResource ItemControlMainDegreeStyle}" />
+
+                        <Canvas Grid.Column="3">
+                            <common:DegreeIndicator Canvas.Left="3"
+                                                    Width="{Binding RelativeSource={RelativeSource AncestorType=Canvas},
+                                                                    Path=ActualWidth,
+                                                                    Converter={StaticResource MathConverter},
+                                                                    ConverterParameter=x-6}"
+                                                    Height="6">
+                                <Canvas.Top>
+                                    <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="(1-x/1750)*y-3">
+                                        <Binding Path="TrainInfoViewModel.Model.EmergEleI" />
+                                        <Binding Path="ActualHeight" RelativeSource="{RelativeSource AncestorType=Canvas}" />
+                                    </MultiBinding>
+                                </Canvas.Top>
+                            </common:DegreeIndicator>
+                        </Canvas>
+
+
+                        <TextBlock Grid.Column="3"
+                                   Margin="0,10,0,0"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Top"
+                                   Style="{StaticResource ContentConstBlackTextStyle}"
+                                   Text="A" />
+                        <ProgressBar Grid.Column="4"
+                                     Foreground="{StaticResource ContentGreeBrush}"
+                                     Maximum="1750"
+                                     Style="{StaticResource ProgressBarOrdinaryStyle}"
+                                     Value="{Binding Path=TrainInfoViewModel.Model.EleI4}" />
+                        <ProgressBar Grid.Column="5"
+                                     Foreground="{StaticResource ContentGreeBrush}"
+                                     Maximum="1750"
+                                     Style="{StaticResource ProgressBarOrdinaryStyle}"
+                                     Value="{Binding Path=TrainInfoViewModel.Model.EleI5}" />
+                        <ProgressBar Grid.Column="6"
+                                     Foreground="{StaticResource ContentGreeBrush}"
+                                     Maximum="1750"
+                                     Style="{StaticResource ProgressBarOrdinaryStyle}"
+                                     Value="{Binding Path=TrainInfoViewModel.Model.EleI6}" />
+                    </Grid>
+                </ContentControl>
+                <ContentControl Grid.Row="0"
+                                Grid.Column="2"
+                                BorderThickness="2"
+                                Style="{StaticResource ContentControlBulgeFrameStyle}">
+                    <Grid Background="{StaticResource ForegroundWhiteBrush}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <ProgressBar Maximum="460"
+                                     Style="{StaticResource ProgressBarOrdinaryStyle}"
+                                     Value="{Binding Path=TrainInfoViewModel.Model.MagneticCuttingI1}" />
+                        <ItemsControl Grid.Column="1"
+                                      ItemsSource="{Binding Source={x:Static viewSource:MainMax460Scale.Instance},
+                                                            Path=TargitDistanceScaleItems}"
+                                      Style="{StaticResource ItemControlMainDegreeStyle}" />
+
+
+                        <Canvas Grid.Column="1">
+                            <common:DegreeIndicator Canvas.Left="3"
+                                                    Width="{Binding RelativeSource={RelativeSource AncestorType=Canvas},
+                                                                    Path=ActualWidth,
+                                                                    Converter={StaticResource MathConverter},
+                                                                    ConverterParameter=x-6}"
+                                                    Height="6">
+                                <Canvas.Top>
+                                    <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="(1-x/460)*y-3">
+                                        <Binding Path="TrainInfoViewModel.Model.EmergMagneticCuttingI" />
+                                        <Binding Path="ActualHeight" RelativeSource="{RelativeSource AncestorType=Canvas}" />
+                                    </MultiBinding>
+                                </Canvas.Top>
+                            </common:DegreeIndicator>
+                        </Canvas>
+
+                        <TextBlock Grid.Column="1"
+                                   Margin="0,10,0,0"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Top"
+                                   Style="{StaticResource ContentConstBlackTextStyle}"
+                                   Text="A" />
+                        <ProgressBar Grid.Column="2"
+                                     Maximum="460"
+                                     Style="{StaticResource ProgressBarOrdinaryStyle}"
+                                     Value="{Binding Path=TrainInfoViewModel.Model.MagneticCuttingI2}" />
+                    </Grid>
+                </ContentControl>
+                <Grid Grid.Row="1" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Center"
+                               Style="{StaticResource ContentConstBlackTextStyle}"
+                               Text="V1" />
+                    <TextBlock Grid.Column="2"
+                               HorizontalAlignment="Center"
+                               Style="{StaticResource ContentConstBlackTextStyle}"
+                               Text="V2" />
+                </Grid>
+                <Grid Grid.Row="1"
+                      Grid.Column="1"
+                      Margin="6,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Center"
+                               Style="{StaticResource ContentConstBlackTextStyle}"
+                               Text="I1" />
+                    <TextBlock Grid.Column="1"
+                               HorizontalAlignment="Center"
+                               Style="{StaticResource ContentConstBlackTextStyle}"
+                               Text="I2" />
+                    <TextBlock Grid.Column="2"
+                               HorizontalAlignment="Center"
+                               Style="{StaticResource ContentConstBlackTextStyle}"
+                               Text="I3" />
+                    <TextBlock Grid.Column="4"
+                               HorizontalAlignment="Center"
+                               Style="{StaticResource ContentConstBlackTextStyle}"
+                               Text="I4" />
+                    <TextBlock Grid.Column="5"
+                               HorizontalAlignment="Center"
+                               Style="{StaticResource ContentConstBlackTextStyle}"
+                               Text="I5" />
+                    <TextBlock Grid.Column="6"
+                               HorizontalAlignment="Center"
+                               Style="{StaticResource ContentConstBlackTextStyle}"
+                               Text="I6" />
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Center"
+                               Style="{StaticResource ContentConstBlackTextStyle}"
+                               Text="I1" />
+                    <TextBlock Grid.Column="2"
+                               HorizontalAlignment="Center"
+                               Style="{StaticResource ContentConstBlackTextStyle}"
+                               Text="I2" />
+                </Grid>
+                <StackPanel Grid.Row="2"
+                            Grid.Column="0"
+                            Width="72"
+                            Height="24"
+                            Margin="13,4"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="{StaticResource StringElectrical}" />
+                    <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="{StaticResource StringVoltage}" />
+                </StackPanel>
+
+                <StackPanel Grid.Row="2"
+                            Grid.Column="1"
+                            Width="72"
+                            Height="24"
+                            Margin="66,4"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="{StaticResource StringElectrical}" />
+                    <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="{StaticResource StringEleCurrent}" />
+                </StackPanel>
+
+                <StackPanel Grid.Row="2"
+                            Grid.Column="2"
+                            Width="72"
+                            Height="24"
+                            Margin="13,4"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="{StaticResource StringExcitation}" />
+                    <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="{StaticResource StringEleCurrent}" />
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60*" />
+                <RowDefinition Height="60*" />
+                <RowDefinition Height="430*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="129*" />
+                    <ColumnDefinition Width="271*" />
+                </Grid.ColumnDefinitions>
+                <ContentControl BorderThickness="2" Style="{StaticResource ContentControlBulgeFrameStyle}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="18*" />
+                            <RowDefinition Height="25*" />
+                        </Grid.RowDefinitions>
+                        <StackPanel Style="{StaticResource CenterHTextStackPancelStyle}">
+                            <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="{StaticResource StringTrain}" />
+                            <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="{StaticResource StringWorkState}" />
+                        </StackPanel>
+                        <ContentControl Grid.Row="1"
+                                        Background="{StaticResource ContentDeepSkyBlueBrush}"
+                                        Style="{StaticResource ContentControlSunkenFrameStyle}">
+                            <TextBlock HorizontalAlignment="Center"
+                                       Style="{StaticResource ContentConstWhiteTextStyle}"
+                                       Text="{Binding Path=TrainInfoViewModel.Model.WorkState,
+                                                      Converter={StaticResource WorkStateToStringConverter}}" />
+                        </ContentControl>
+                    </Grid>
+                </ContentControl>
+                <ContentControl Grid.Column="1"
+                                Margin="-6,0,0,0"
+                                BorderThickness="2"
+                                Style="{StaticResource ContentControlBulgeFrameStyle}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="47*" />
+                                <ColumnDefinition Width="208*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Margin="3,0"
+                                       Style="{StaticResource ContentConstBlackTextStyle}"
+                                       Text="{StaticResource StringDate}" />
+
+                            <Border Grid.Row="0"
+                                    Grid.Column="1"
+                                    Background="{StaticResource ContentDeepSkyBlueBrush}">
+                                <TextBlock Margin="12,0"
+                                           Style="{StaticResource ContentConstWhiteTextStyle}"
+                                           Text="{Binding OtherViewModel.Model.ShowTime,
+                                                          StringFormat={StaticResource DateFormart}}" />
+                            </Border>
+                        </Grid>
+                        <Border Grid.Row="0"
+                                Grid.RowSpan="2"
+                                Margin="-10,-10,-6,10"
+                                Panel.ZIndex="1"
+                                regions:RegionManager.RegionName="{x:Static constant:RegionNames.ContentModifyTime}" />
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="47*" />
+                                <ColumnDefinition Width="208*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Margin="3,0"
+                                       Style="{StaticResource ContentConstBlackTextStyle}"
+                                       Text="{StaticResource StringTime}" />
+                            <Grid Grid.Column="1" Background="{StaticResource ContentDeepSkyBlueBrush}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1.5*" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Margin="24,0,0,0"
+                                           Style="{StaticResource ContentConstWhiteTextStyle}"
+                                           Text="{Binding Path=OtherViewModel.Model.ShowTime,
+                                                          StringFormat={StaticResource TimeFormart}}" />
+                                <TextBlock Grid.Column="1"
+                                           Foreground="{StaticResource ContentRedBrush}"
+                                           Style="{StaticResource ContentConstWhiteTextStyle}"
+                                           Text="V1.0" />
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </ContentControl>
+            </Grid>
+
+            <ContentControl Grid.Row="1"
+                            BorderThickness="2,0"
+                            Style="{StaticResource ContentControlBulgeFrameStyle}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="0.4*" />
+                        <ColumnDefinition Width="0.6*" />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Row="0"
+                                Grid.Column="1"
+                                Style="{StaticResource CenterHTextStackPancelStyle}">
+                        <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="{StaticResource StringAix}" />
+                        <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="{StaticResource StringBit}" />
+                    </StackPanel>
+                    <StackPanel Grid.Row="0"
+                                Grid.Column="2"
+                                Style="{StaticResource CenterHTextStackPancelStyle}">
+                        <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="{StaticResource StringTemperature}" />
+                        <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="℃" />
+                    </StackPanel>
+                    <StackPanel Grid.Row="1"
+                                Grid.Column="0"
+                                Style="{StaticResource CenterHTextStackPancelStyle}">
+                        <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="{StaticResource StringAixTemperature}" />
+                        <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="max" />
+                    </StackPanel>
+                    <Border Grid.Row="1"
+                            Grid.Column="1"
+                            Grid.ColumnSpan="2"
+                            Margin="6,0"
+                            Background="{StaticResource ContentDeepSkyBlueBrush}" />
+                    <TextBlock Grid.Row="1"
+                               Grid.Column="1"
+                               Margin="6,0,0,0"
+                               Style="{StaticResource ContentConstWhiteTextStyle}"
+                               Text="{Binding Path=TrainInfoViewModel.Model.AxisLocation}" />
+                    <TextBlock Grid.Row="1"
+                               Grid.Column="2"
+                               Margin="0,0,6,0"
+                               HorizontalAlignment="Right"
+                               Style="{StaticResource ContentConstWhiteTextStyle}"
+                               Text="{Binding Path=TrainInfoViewModel.Model.AxisTemperature,
+                                              StringFormat={}0.0}" />
+                    <StackPanel Grid.Row="1"
+                                Grid.Column="3"
+                                Style="{StaticResource CenterHTextStackPancelStyle}">
+                        <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="{StaticResource StringAssisat}" />
+                        <TextBlock Style="{StaticResource ContentConstBlackTextStyle}" Text="{StaticResource StringSystem}" />
+                    </StackPanel>
+                    <Border Grid.Row="1"
+                            Grid.Column="4"
+                            Background="{StaticResource ContentDeepSkyBlueBrush}">
+                        <TextBlock HorizontalAlignment="Center"
+                                   Style="{StaticResource ContentConstWhiteTextStyle}"
+                                   Text="{Binding Path=TrainInfoViewModel.Model.AssistSystemInfoState,
+                                                  Converter={StaticResource AssistSystemInfoStateToStringConverter}}" />
+                    </Border>
+                </Grid>
+            </ContentControl>
+
+            <ContentControl Grid.Row="2"
+                            Background="{StaticResource ContentDeepSkyBlueBrush}"
+                            BorderThickness="2,0"
+                            Style="{StaticResource ContentControlBulgeFrameStyle}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="346*" />
+                        <RowDefinition Height="67*" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="TODO" />
+                    <Border Grid.Row="1"
+                            BorderBrush="{StaticResource ContentWhiteBorderBrush}"
+                            BorderThickness="0,2,0,0">
+                        <Grid>
+                            <Grid.Resources>
+                                <Style BasedOn="{StaticResource ContentConstWhiteTextStyle}" TargetType="TextBlock" />
+                                <Style TargetType="StackPanel">
+                                    <Setter Property="Orientation" Value="Horizontal" />
+                                </Style>
+                            </Grid.Resources>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel>
+                                <TextBlock Text="{StaticResource StringTrainPowerSupply}" />
+                                <TextBlock Text="1" />
+                                <TextBlock Text="{StaticResource StringEleCurrent}" />
+                            </StackPanel>
+
+                            <TextBlock Grid.Row="0"
+                                       Grid.Column="1"
+                                       HorizontalAlignment="Right"
+                                       Text="{Binding Path=TrainInfoViewModel.Model.PowerSupplyUnit1.Current,
+                                                      StringFormat={}0.0}" />
+                            <TextBlock Grid.Row="0"
+                                       Grid.Column="2"
+                                       Text="A   |   " />
+                            <StackPanel Grid.Row="0" Grid.Column="3">
+                                <TextBlock Text="{StaticResource StringTrainPowerSupply}" />
+                                <TextBlock Text="2" />
+                                <TextBlock Text="{StaticResource StringEleCurrent}" />
+                            </StackPanel>
+                            <TextBlock Grid.Row="0"
+                                       Grid.Column="4"
+                                       HorizontalAlignment="Right"
+                                       Text="{Binding Path=TrainInfoViewModel.Model.PowerSupplyUnit2.Current,
+                                                      StringFormat={}0.0}" />
+                            <TextBlock Grid.Row="0"
+                                       Grid.Column="5"
+                                       Text="A" />
+                            <StackPanel Grid.Row="1" Grid.Column="0">
+                                <TextBlock Text="{StaticResource StringTrainPowerSupply}" />
+                                <TextBlock Text="1" />
+                                <TextBlock Text="{StaticResource StringVoltage}" />
+                            </StackPanel>
+                            <TextBlock Grid.Row="1"
+                                       Grid.Column="1"
+                                       HorizontalAlignment="Right"
+                                       Text="{Binding Path=TrainInfoViewModel.Model.PowerSupplyUnit1.Voltage,
+                                                      StringFormat={}0.0}" />
+                            <TextBlock Grid.Row="1"
+                                       Grid.Column="2"
+                                       Text="V   |   " />
+                            <StackPanel Grid.Row="1" Grid.Column="3">
+                                <TextBlock Text="{StaticResource StringTrainPowerSupply}" />
+                                <TextBlock Text="2" />
+                                <TextBlock Text="{StaticResource StringVoltage}" />
+                            </StackPanel>
+                            <TextBlock Grid.Row="1"
+                                       Grid.Column="4"
+                                       HorizontalAlignment="Right"
+                                       Text="{Binding Path=TrainInfoViewModel.Model.PowerSupplyUnit2.Voltage,
+                                                      StringFormat={}0.0}" />
+                            <TextBlock Grid.Row="1"
+                                       Grid.Column="5"
+                                       Text="V" />
+                        </Grid>
+                    </Border>
+                </Grid>
+            </ContentControl>
+        </Grid>
+    </Grid>
+</UserControl>

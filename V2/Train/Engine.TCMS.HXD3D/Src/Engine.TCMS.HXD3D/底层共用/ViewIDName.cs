@@ -1,0 +1,37 @@
+﻿namespace Engine.TCMS.HXD3D.底层共用
+{
+    public enum ViewIDName
+    {
+        ClassOverScreen,
+        BlackScreen,
+        Main,
+        BottomTitleScreen,
+        TopTitleScreen,
+        MainScreen,
+        TrainOverview,
+        ConverterCutOff,
+        ControlPantoSelection,
+        DistanceCounters,
+        BrakeSetting,
+        CutOffState,
+        TrainPower,
+        ProcessDrives,
+        ProcessTebe,
+        ProcessCb,
+        ProcessAux,
+        ProcessBattery,
+        ProcessNetControl,
+        ProcessCounters,
+        DataInOthers,
+        MainControlTest,
+        StartTest,
+        ZeroOrderTest,
+        AuxPowerTest,
+        LampTest,
+        AlertToTest,
+        MaintenanceLubrificationValveTest,
+        FaultEnsure,
+        FaultFiltration,
+        FaultUnfiltration
+    }
+}

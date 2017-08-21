@@ -1,0 +1,146 @@
+﻿<UserControl x:Class="Other.ContactLine.JW4G.Views.DisplayInspector.DisplayInspector"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:commonView="clr-namespace:Other.ContactLine.JW4G.Views.CommonView"
+             xmlns:local="clr-namespace:Other.ContactLine.JW4G.Views.Shells"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:Other.ContactLine.JW4G.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:ContactLineViewModel}"
+             xmlns:groupRowLayout="clr-namespace:DevExpress.Xpf.Grid.GroupRowLayout;assembly=DevExpress.Xpf.Grid.v15.2"
+             d:DesignHeight="450"
+             d:DesignWidth="550"
+             Background="AntiqueWhite"
+             mc:Ignorable="d">
+    <Grid Margin="5,10,5,5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="7*"></RowDefinition>
+            <RowDefinition Height="1.2*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="4*"></ColumnDefinition>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="4*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Background="DarkCyan">
+                <TextBlock Grid.Column="0" 
+                       Text="发&#x0a;&#x0a;&#x0a;&#x0a;动&#x0a;&#x0a;&#x0a;&#x0a;机"
+                       Style="{DynamicResource VerticalStyle}"
+                       FontWeight="Bold"/>
+                <Border BorderBrush="AntiqueWhite"
+                        BorderThickness="5"></Border>
+            </Grid>
+            <Grid Grid.Column="3" Background="DarkCyan">
+                <TextBlock Grid.Column="0" 
+                       Text="发&#x0a;&#x0a;&#x0a;&#x0a;动&#x0a;&#x0a;&#x0a;&#x0a;机"
+                       Style="{DynamicResource VerticalStyle}"
+                       FontWeight="Bold"/>
+                <Border BorderBrush="AntiqueWhite" BorderThickness="5"></Border>
+            </Grid>
+            <Grid Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <commonView:DataSheet Grid.Row="0"
+                                      TextOneContext="转速"
+                                      TextTwoContent="{Binding Model.Speed,StringFormat={}{0:0}}"
+                                      TextThreeContent="rpm"
+                                      ></commonView:DataSheet>
+                <commonView:DataSheet Grid.Row="1"
+                                      TextOneContext="冷却&#x0a;水温"
+                                      TextTwoContent="{Binding Model.WaterTemputer,StringFormat={}{0:0}}"
+                                      TextThreeContent="℃"
+                                      ></commonView:DataSheet>
+                <commonView:DataSheet Grid.Row="2"
+                                      TextOneContext="机油&#x0a;压力"
+                                      TextTwoContent="{Binding Model.FuelPressure,StringFormat={}{0:0}}"
+                                      TextThreeContent="kpa"
+                                      ></commonView:DataSheet>
+                <commonView:DataSheet Grid.Row="3"
+                                      TextOneContext="增压&#x0a;压力"
+                                      TextTwoContent="{Binding Model.IncreasePressure,StringFormat={}{0:0}}"
+                                      TextThreeContent="kpa"
+                                      ></commonView:DataSheet>
+                <commonView:DataSheet Grid.Row="4"
+                                      TextOneContext="燃油&#x0a;消耗"
+                                      TextTwoContent="{Binding Model.FuelUse,StringFormat={}{0:0.0}}"
+                                      TextThreeContent="L/hr"
+                                      ></commonView:DataSheet>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="4*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <commonView:DataSheet2 Grid.Row="0"
+                                       TextOneContext="里&#x0a;程"
+                                       TextTwoContent="{Binding Model.Course,StringFormat={}{0:0.0}}"
+                                       TextThreeContent="km"
+                                       ></commonView:DataSheet2>
+                <commonView:DataSheet2 Grid.Row="1"
+                                       TextOneContext="车&#x0a;速"
+                                       TextTwoContent="{Binding Model.TrainSpeed,StringFormat={}{0:0}}"
+                                       TextThreeContent="km/h"
+                                       ></commonView:DataSheet2>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"></RowDefinition>
+                            <RowDefinition Height="1*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <commonView:Battery Grid.Row="0"></commonView:Battery>
+                        <commonView:Transmission Grid.Row="1"></commonView:Transmission>
+                    </Grid>
+                    <commonView:Fuel Grid.Column="1"></commonView:Fuel>
+                </Grid>
+            </Grid>
+            <Grid Column="4">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <commonView:DataSheet Grid.Row="0"
+                                      TextOneContext="进气&#x0a;温度"
+                                      TextTwoContent="{Binding Model.FlowTempreture,StringFormat={}{0:0}}"
+                                      TextThreeContent="℃"
+                                      ></commonView:DataSheet>
+                <commonView:DataSheet Grid.Row="1"
+                                      TextOneContext="机油&#x0a;温度"
+                                      TextTwoContent="{Binding Model.FuelTempreture,StringFormat={}{0:0}}"
+                                      TextThreeContent="℃"
+                                      ></commonView:DataSheet>
+                <commonView:DataSheet Grid.Row="2"
+                                      TextOneContext="电池&#x0a;电压"
+                                      TextTwoContent="{Binding Model.BatteryPressure,StringFormat={}{0:0.0}}"
+                                      TextThreeContent="V"
+                                      ></commonView:DataSheet>
+                <commonView:DataSheet Grid.Row="3"
+                                      TextOneContext="工作&#x0a;小时"
+                                      TextTwoContent="{Binding Model.WorkHours,StringFormat={}{0:0.0}}"
+                                      TextThreeContent="h"
+                                      ></commonView:DataSheet>
+                <commonView:DataSheet Grid.Row="4"
+                                      TextOneContext="发电&#x0a;电流"
+                                      TextTwoContent="{Binding Model.MakeElectric,StringFormat={}{0:0}}"
+                                      TextThreeContent="A"
+                                      ></commonView:DataSheet>
+            </Grid>
+        </Grid>
+        <commonView:FalutInfo Grid.Row="1"></commonView:FalutInfo>
+    </Grid>
+</UserControl>

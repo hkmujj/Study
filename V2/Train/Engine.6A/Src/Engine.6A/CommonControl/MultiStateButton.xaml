@@ -1,0 +1,90 @@
+﻿<Button x:Class="Engine._6A.CommonControl.MultiStateButton"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:commonControl="clr-namespace:Engine._6A.CommonControl"
+        d:DesignHeight="300"
+        d:DesignWidth="300"
+        mc:Ignorable="d">
+    <Button.Resources>
+        <SolidColorBrush x:Key="WhiteBrush" Color="White" />
+        <SolidColorBrush x:Key="BlackBrush" Color="Black" />
+    </Button.Resources>
+    <Button.Template>
+        <ControlTemplate>
+            <Border x:Name="Border"
+                    BorderBrush="#828790"
+                    BorderThickness="1">
+                <ListBox HorizontalContentAlignment="Center"
+                         Background="Transparent"
+                         BorderBrush="{TemplateBinding Button.BorderBrush}"
+                         BorderThickness="{TemplateBinding Button.BorderThickness}"
+                         FlowDirection="LeftToRight"
+                         ItemsSource="{TemplateBinding commonControl:MultiStateButton.StateCollection}"
+                         PreviewMouseDown="ListView1_OnPreviewMouseDown"
+                         PreviewMouseUp="ListView1_OnPreviewMouseUp"
+                         ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                         SelectedIndex="{TemplateBinding commonControl:MultiStateButton.SelectedIndex}">
+
+                    <ItemsControl.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem">
+                            <Style.Resources />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ListBoxItem">
+                                        <Border Margin="3,0" Background="Transparent">
+                                            <Rectangle x:Name="ContentRectangle"
+                                                       Width="10"
+                                                       Height="10"
+                                                       Fill="{TemplateBinding Background}"
+                                                       Stroke="{TemplateBinding Foreground}"
+                                                       StrokeThickness="1" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Foreground" Value="Black" />
+                                    <Setter Property="Background" Value="White" />
+                                    <!--<Setter Property="Tag" Value="{StaticResource WhiteBrush}" />-->
+                                </Trigger>
+                                <Trigger Property="IsSelected" Value="False">
+                                    <Setter Property="Foreground" Value="White" />
+                                    <Setter Property="Background" Value="Black" />
+                                    <!--<Setter Property="Tag" Value="{StaticResource BlackBrush}" />-->
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ItemsControl.ItemContainerStyle>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel HorizontalAlignment="Center"
+                                        Background="Transparent"
+                                        FlowDirection="LeftToRight"
+                                        IsItemsHost="True"
+                                        Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ListBox>
+
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="Button.IsPressed" Value="True">
+                    <Setter TargetName="Border" Property="Background" Value="White" />
+                </Trigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="Button.IsPressed" Value="True" />
+                        <Condition Property="Button.IsMouseOver" Value="False" />
+                    </MultiTrigger.Conditions>
+                    <MultiTrigger.Setters>
+                        <!--<Setter Property="Button.IsPressed" Value="False" />-->
+                        <Setter TargetName="Border" Property="Background" Value="Black" />
+                    </MultiTrigger.Setters>
+                </MultiTrigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Button.Template>
+</Button>

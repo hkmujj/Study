@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<IndexDescriptionConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <ProjectIndexDescriptionConfigs>
+        <ProjectIndexDescriptionConfig>
+            <ProjectType>Train</ProjectType>
+            <AppNames>
+                <Name>Engine.Angola.Diesel</Name>
+            </AppNames>
+            <ConfigItems>
+                <Item>
+                    <IndexType>InBool</IndexType>
+                    <File>Engine.Angola.Diesel.InBool.xls</File>
+                    <SheetNames>
+                        <Sheet>Sheet1</Sheet>
+                    </SheetNames>
+                    <ReadColoumns>
+                        <Coloumn IsPrimaryKey="true" Name="Name" />
+                        <Coloumn IsPrimaryKey="false" Name="Index" />
+                    </ReadColoumns>
+                </Item>
+                <Item>
+                    <IndexType>OutBool</IndexType>
+                    <File>Engine.Angola.Diesel.OutBool.xls</File>
+                    <SheetNames>
+                        <Sheet>Sheet1</Sheet>
+                    </SheetNames>
+                    <ReadColoumns>
+                        <Coloumn IsPrimaryKey="true" Name="Name" />
+                        <Coloumn IsPrimaryKey="false" Name="Index" />
+                    </ReadColoumns>
+                </Item>
+                <Item>
+                    <IndexType>InFloat</IndexType>
+                    <File>Engine.Angola.Diesel.InFloat.xls</File>
+                    <SheetNames>
+                        <Sheet>Sheet1</Sheet>
+                    </SheetNames>
+                    <ReadColoumns>
+                        <Coloumn IsPrimaryKey="true" Name="Name" />
+                        <Coloumn IsPrimaryKey="false" Name="Index" />
+                    </ReadColoumns>
+                </Item>
+                <Item>
+                    <IndexType>OutFloat</IndexType>
+                    <File>Engine.Angola.Diesel.OutFloat.xls</File>
+                    <SheetNames>
+                        <Sheet>Sheet1</Sheet>
+                    </SheetNames>
+                    <ReadColoumns>
+                        <Coloumn IsPrimaryKey="true" Name="Name" />
+                        <Coloumn IsPrimaryKey="false" Name="Index" />
+                    </ReadColoumns>
+                </Item>
+            </ConfigItems>
+        </ProjectIndexDescriptionConfig>
+    </ProjectIndexDescriptionConfigs>
+</IndexDescriptionConfig>

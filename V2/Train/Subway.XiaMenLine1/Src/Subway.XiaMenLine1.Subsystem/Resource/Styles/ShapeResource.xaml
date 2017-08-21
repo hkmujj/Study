@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Brushes/BrushResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <Style x:Key="CabDoorRecStyleOne" TargetType="Rectangle">
+        <Setter Property="Width" Value="15" />
+        <Setter Property="Height" Value="15" />
+    </Style>
+    <Style x:Key="CabDoorRecStyleTwo" TargetType="Rectangle">
+        <Setter Property="Width" Value="6" />
+        <Setter Property="Height" Value="15" />
+    </Style>
+    <Style x:Key="CouplingRecStyle" TargetType="Rectangle">
+        <Setter Property="Margin" Value="3,25" />
+        <Setter Property="Fill" Value="{StaticResource GreenBrush}" />
+    </Style>
+    <Style x:Key="CabActiveFalgE" TargetType="Ellipse">
+        <Setter Property="Width" Value="15" />
+        <Setter Property="Height" Value="15" />
+        <Setter Property="Fill" Value="{StaticResource GreenBrush}" />
+        <Setter Property="Margin" Value="6" />
+    </Style>
+</ResourceDictionary>

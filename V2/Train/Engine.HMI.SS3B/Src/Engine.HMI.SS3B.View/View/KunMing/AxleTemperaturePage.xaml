@@ -1,0 +1,286 @@
+﻿<UserControl x:Class="Engine.HMI.SS3B.View.View.KunMing.AxleTemperaturePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:commonView="clr-namespace:Engine.HMI.SS3B.CommonView;assembly=Engine.HMI.SS3B.CommonView"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:kunMing="clr-namespace:Engine.HMI.SS3B.View.ViewModel.KunMing"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel1="clr-namespace:Engine.HMI.SS3B.View.ViewModel"
+             d:DataContext="{d:DesignInstance kunMing:SS3BViewModel}"
+             d:DesignHeight="380"
+             d:DesignWidth="796"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary Source="../../KunMingAppResource.xaml" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row="0"
+                   Grid.RowSpan="16"
+                   Margin="-1"
+                   Stroke="{StaticResource BlueBruh}"
+                   StrokeThickness="2" />
+        <commonView:RectTextControl Grid.Row="0"
+                                    Grid.Column="0"
+                                    ContenTwo=""
+                                    ContentFour="它  车"
+                                    ContentOne=""
+                                    ContentThree="本  车"
+                                    Style="{StaticResource TitleStyle}" />
+        <commonView:RectTextControl Grid.Row="1"
+                                    ContenTwo=""
+                                    ContentFour="{Binding AxleTemperatureViewModel.EnvironmentTemperatureOther,
+                                                          StringFormat={}{0:f1}}"
+                                    ContentOne=" 1&gt;环境温度"
+                                    ContentThree="{Binding AxleTemperatureViewModel.EnvironmentTemperatureOrigin,
+                                                           StringFormat={}{0:f1}}"
+                                    Style="{StaticResource ContentStyleOne}" />
+        <commonView:RectTextControl Grid.Row="2"
+                                    ContenTwo=""
+                                    ContentOne=" 2&gt;1轴轮箱左 / 1轴抱轴左"
+                                    Style="{StaticResource ContentStyleTwo}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertThree}">
+                    <Binding Path="AxleTemperatureViewModel.Axis1AxisBoxLeftOther" />
+                    <Binding Path="AxleTemperatureViewModel.Axis1HeldBoxLeftOther" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertThree}">
+                    <Binding Path="AxleTemperatureViewModel.Axis1AxisBoxLeftOrigin" />
+                    <Binding Path="AxleTemperatureViewModel.Axis1HeldBoxLeftOrigin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="3"
+                                    ContenTwo=""
+                                    ContentOne=" 3&gt;1轴轮箱右 / 1轴抱轴右"
+                                    Style="{StaticResource ContentStyleOne}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertThree}">
+                    <Binding Path="AxleTemperatureViewModel.Axis1AxisBoxRighrOther" />
+                    <Binding Path="AxleTemperatureViewModel.Axis1HeldBoxRighrOther" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertThree}">
+                    <Binding Path="AxleTemperatureViewModel.Axis1AxisBoxRighrOrigin" />
+                    <Binding Path="AxleTemperatureViewModel.Axis1HeldBoxRighrOrigin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="4"
+                                    ContenTwo=""
+                                    ContentOne=" 4&gt;2轴轮箱左 / 2轴抱轴左"
+                                    Style="{StaticResource ContentStyleTwo}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertThree}">
+                    <Binding Path="AxleTemperatureViewModel.Axis2AxisBoxLeftOther" />
+                    <Binding Path="AxleTemperatureViewModel.Axis2HeldBoxLeftOther" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertThree}">
+                    <Binding Path="AxleTemperatureViewModel.Axis2AxisBoxLeftOrigin" />
+                    <Binding Path="AxleTemperatureViewModel.Axis2HeldBoxLeftOrigin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="5"
+                                    ContenTwo=""
+                                    ContentOne=" 5&gt;2轴轮箱右 / 2轴抱轴右"
+                                    Style="{StaticResource ContentStyleOne}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertThree}">
+                    <Binding Path="AxleTemperatureViewModel.Axis2AxisBoxRighrOther" />
+                    <Binding Path="AxleTemperatureViewModel.Axis2HeldBoxRighrOther" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertThree}">
+                    <Binding Path="AxleTemperatureViewModel.Axis2AxisBoxRighrOrigin" />
+                    <Binding Path="AxleTemperatureViewModel.Axis2HeldBoxRighrOrigin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="6"
+                                    ContenTwo="371/373"
+                                    ContentOne=" 6&gt;3轴轮箱左 / 3轴抱轴左"
+                                    Style="{StaticResource ContentStyleTwo}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertThree}">
+                    <Binding Path="AxleTemperatureViewModel.Axis3AxisBoxLeftOther" />
+                    <Binding Path="AxleTemperatureViewModel.Axis3HeldBoxLeftOther" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertThree}">
+                    <Binding Path="AxleTemperatureViewModel.Axis3AxisBoxLeftOrigin" />
+                    <Binding Path="AxleTemperatureViewModel.Axis3HeldBoxLeftOrigin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="7"
+                                    ContenTwo=""
+                                    ContentOne=" 7&gt;3轴轮箱右 / 3轴抱轴右"
+                                    Style="{StaticResource ContentStyleOne}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertThree}">
+                    <Binding Path="AxleTemperatureViewModel.Axis3AxisBoxRighrOther" />
+                    <Binding Path="AxleTemperatureViewModel.Axis3HeldBoxRighrOther" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertThree}">
+                    <Binding Path="AxleTemperatureViewModel.Axis3AxisBoxRighrOrigin" />
+                    <Binding Path="AxleTemperatureViewModel.Axis3HeldBoxRighrOrigin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="8"
+                                    ContenTwo=""
+                                    ContentOne=" 8&gt;4轴轮箱左 / 4轴抱轴左"
+                                    Style="{StaticResource ContentStyleTwo}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertThree}">
+                    <Binding Path="AxleTemperatureViewModel.Axis4AxisBoxLeftOther" />
+                    <Binding Path="AxleTemperatureViewModel.Axis4HeldBoxLeftOther" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertThree}">
+                    <Binding Path="AxleTemperatureViewModel.Axis4AxisBoxLeftOrigin" />
+                    <Binding Path="AxleTemperatureViewModel.Axis4HeldBoxLeftOrigin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="9"
+                                    ContenTwo=""
+                                    ContentOne=" 9&gt;4轴轮箱右 / 4轴抱轴右"
+                                    Style="{StaticResource ContentStyleOne}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertThree}">
+                    <Binding Path="AxleTemperatureViewModel.Axis4AxisBoxRighrOther" />
+                    <Binding Path="AxleTemperatureViewModel.Axis4HeldBoxRighrOther" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertThree}">
+                    <Binding Path="AxleTemperatureViewModel.Axis4AxisBoxRighrOrigin" />
+                    <Binding Path="AxleTemperatureViewModel.Axis4HeldBoxRighrOrigin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="10"
+                                    ContenTwo=""
+                                    ContentOne="10&gt;5轴轮箱左 / 5轴抱轴左"
+                                    Style="{StaticResource ContentStyleTwo}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertThree}">
+                    <Binding Path="AxleTemperatureViewModel.Axis5AxisBoxLeftOther" />
+                    <Binding Path="AxleTemperatureViewModel.Axis5HeldBoxLeftOther" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertThree}">
+                    <Binding Path="AxleTemperatureViewModel.Axis5AxisBoxLeftOrigin" />
+                    <Binding Path="AxleTemperatureViewModel.Axis5HeldBoxLeftOrigin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="11"
+                                    ContenTwo=""
+                                    ContentOne="11&gt;5轴轮箱右 / 5轴抱轴右"
+                                    Style="{StaticResource ContentStyleOne}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertThree}">
+                    <Binding Path="AxleTemperatureViewModel.Axis5AxisBoxRighrOther" />
+                    <Binding Path="AxleTemperatureViewModel.Axis5HeldBoxRighrOther" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertThree}">
+                    <Binding Path="AxleTemperatureViewModel.Axis5AxisBoxRighrOrigin" />
+                    <Binding Path="AxleTemperatureViewModel.Axis5HeldBoxRighrOrigin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="12"
+                                    ContenTwo=""
+                                    ContentOne="12&gt;6轴轮箱左 / 6轴抱轴左"
+                                    Style="{StaticResource ContentStyleTwo}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertThree}">
+                    <Binding Path="AxleTemperatureViewModel.Axis6AxisBoxLeftOther" />
+                    <Binding Path="AxleTemperatureViewModel.Axis6HeldBoxLeftOther" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertThree}">
+                    <Binding Path="AxleTemperatureViewModel.Axis6AxisBoxLeftOrigin" />
+                    <Binding Path="AxleTemperatureViewModel.Axis6HeldBoxLeftOrigin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="13"
+                                    ContenTwo=""
+                                    ContentOne="13&gt;6轴轮箱右 / 6轴抱轴右"
+                                    Style="{StaticResource ContentStyleOne}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertThree}">
+                    <Binding Path="AxleTemperatureViewModel.Axis6AxisBoxRighrOther" />
+                    <Binding Path="AxleTemperatureViewModel.Axis6HeldBoxRighrOther" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertThree}">
+                    <Binding Path="AxleTemperatureViewModel.Axis6AxisBoxRighrOrigin" />
+                    <Binding Path="AxleTemperatureViewModel.Axis6HeldBoxRighrOrigin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="14"
+                                    ContenTwo=""
+                                    ContentOne="14&gt;轴温最大值 / 最大轴温位置"
+                                    Style="{StaticResource ContentStyleTwo}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertThree}">
+                    <Binding Path="AxleTemperatureViewModel.MaxAxisTemperatureOther" />
+                    <Binding Path="AxleTemperatureViewModel.MaxAxisTemperatureLocationOther" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertThree}">
+                    <Binding Path="AxleTemperatureViewModel.MaxAxisTemperatureOrigin" />
+                    <Binding Path="AxleTemperatureViewModel.MaxAxisTemperatureLocationOrigin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="15"
+                                    ContenTwo=""
+                                    ContentFour="{Binding AxleTemperatureViewModel.SensorNumOther,
+                                                          StringFormat={}{0:f0}}"
+                                    ContentOne="15&gt;传感器个数"
+                                    ContentThree="{Binding AxleTemperatureViewModel.SensorNumOrigin,
+                                                           StringFormat={}{0:f0}}"
+                                    Style="{StaticResource ContentStyleOne}" />
+
+    </Grid>
+</UserControl>

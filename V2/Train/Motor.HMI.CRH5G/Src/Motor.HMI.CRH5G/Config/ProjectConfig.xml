@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ProjectConfig>
+
+    <DetailConfigFile>ProjectDetailConfig.xml</DetailConfigFile>
+    
+    <AccessControlConfig>
+        <CanSkipBeginViewByClickZeroButton>true</CanSkipBeginViewByClickZeroButton>
+    </AccessControlConfig>
+
+    <CRH5GFileConfig>
+        <!--通信接口文件-->
+        <CRH5GCommunicationConfigCollection>
+            <CRH5GCommunicationConfig DataType="InBool">
+                <!--相对于.exe的目录-->
+                <File>CRH5G型车接口适配_InBool.csv</File>
+                <ReadColoumns>
+                    <Coloumn IsPrimaryKey="true"  Name="Name" />
+                    <Coloumn IsPrimaryKey="false" Name="Index" />
+                </ReadColoumns>
+            </CRH5GCommunicationConfig>
+            <CRH5GCommunicationConfig DataType="InFloat">
+                <!--相对于.exe的目录-->
+                <File>CRH5G型车接口适配_InFloat.csv</File>
+                <ReadColoumns>
+                    <Coloumn IsPrimaryKey="true"  Name="Name" />
+                    <Coloumn IsPrimaryKey="false" Name="Index" />
+                </ReadColoumns>
+            </CRH5GCommunicationConfig>
+            <CRH5GCommunicationConfig DataType="OutBool">
+                <!--相对于.exe的目录-->
+                <File>CRH5G型车接口适配_OutBool.csv</File>
+                <ReadColoumns>
+                    <Coloumn IsPrimaryKey="true"  Name="Name" />
+                    <Coloumn IsPrimaryKey="false" Name="Index" />
+                </ReadColoumns>
+            </CRH5GCommunicationConfig>
+            <CRH5GCommunicationConfig DataType="OutFloat">
+                <!--相对于.exe的目录-->
+                <File>CRH5G型车接口适配_OutFloat.csv</File>
+                <ReadColoumns>
+                    <Coloumn IsPrimaryKey="true"  Name="Name" />
+                    <Coloumn IsPrimaryKey="false" Name="Index" />
+                </ReadColoumns>
+            </CRH5GCommunicationConfig>
+        </CRH5GCommunicationConfigCollection>
+
+    </CRH5GFileConfig>
+    
+</ProjectConfig>

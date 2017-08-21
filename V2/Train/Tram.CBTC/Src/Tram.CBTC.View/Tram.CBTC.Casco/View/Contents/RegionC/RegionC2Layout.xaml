@@ -1,0 +1,26 @@
+﻿<UserControl
+    x:Class="Tram.CBTC.Casco.View.Contents.RegionC.RegionC2Layout"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:command="clr-namespace:MMI.Facility.WPFInfrastructure.Command;assembly=MMI.Facility.WPFInfrastructure"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="clr-namespace:Tram.CBTC.Casco.ViewModel"
+    d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+    d:DesignHeight="60"
+    d:DesignWidth="400"
+    Background="{StaticResource Tram.CBTC.Casco.RegionABack}"
+    mc:Ignorable="d">
+    <Grid>
+        <StackPanel
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            command:CommandManager.Command="{Binding Controller.EndStationSelecCommand}"
+            command:CommandManager.EventName="PreviewMouseDown"
+            Background="Transparent"
+            Orientation="Horizontal">
+            <TextBlock Style="{StaticResource Tram.CBTC.Casco.Text.RegionC2TextSTyle1}" Text="{DynamicResource Subway.CBTC.Casco.String.EndStation}" />
+            <TextBlock Style="{StaticResource Tram.CBTC.Casco.Text.RegionC2TextSTyle2}" Text="{Binding CBTC.RoadInfo.StationInfo.EndStation}" />
+        </StackPanel>
+    </Grid>
+</UserControl>

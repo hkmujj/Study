@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="Subway.ShenZhenLine11.Views.MainContent.BypassView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Subway.ShenZhenLine11.Views.MainContent"
+             xmlns:viewModels="clr-namespace:Subway.ShenZhenLine11.ViewModels"
+             mc:Ignorable="d" 
+             FontSize="16"
+               d:DataContext="{d:DesignInstance viewModels:ShenZhenViewModel}"
+             d:DesignHeight="333"
+             d:DesignWidth="538"
+             Background="Transparent">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="186*"/>
+            <ColumnDefinition Width="83*"/>
+        </Grid.ColumnDefinitions>
+
+        <ItemsControl Margin="80,50,0,50" Style="{StaticResource BypassViewStyle}" ItemsSource="{Binding Bypass.BypassUnits}"></ItemsControl>
+
+        <Grid  Grid.Column="1" Margin="0,0,0,90">
+            <StackPanel  Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                <Border BorderThickness="1" BorderBrush="{StaticResource WhiteBrush}" Width="30" Height="28"></Border>
+                <TextBlock VerticalAlignment="Center" Text=" 分 " Foreground="{StaticResource WhiteBrush}"></TextBlock>
+                <Border BorderThickness="1" BorderBrush="{StaticResource WhiteBrush}" Background="{StaticResource YellowBrush}" Width="30" Height="28"></Border>
+                <TextBlock VerticalAlignment="Center" Text=" 合 " Foreground="{StaticResource WhiteBrush}"></TextBlock>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,27 @@
+﻿<Border x:Class="Engine.Angola.TCMS.View.Common.BorderText"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        x:Name="RootControl"
+        Background="{StaticResource ShellContentBackground}"
+        d:DesignHeight="80"
+        d:DesignWidth="300"
+        x:FieldModifier="private"
+        mc:Ignorable="d">
+    <Border Style="{Binding ElementName=RootControl, Path=InnerBorderStyle}">
+        <StackPanel Style="{Binding ElementName=RootControl, Path=StackPancelStyle}">
+            <TextBlock Margin="3"
+                       Style="{Binding ElementName=RootControl,
+                                       Path=LeftTextStyle}"
+                       Text="{Binding ElementName=RootControl,
+                                      Path=LeftText}" />
+            <TextBlock Margin="3"
+                       VerticalAlignment="Bottom"
+                       Style="{Binding ElementName=RootControl,
+                                       Path=RightTextStyle}"
+                       Text="{Binding ElementName=RootControl,
+                                      Path=RightText}" />
+        </StackPanel>
+    </Border>
+</Border>

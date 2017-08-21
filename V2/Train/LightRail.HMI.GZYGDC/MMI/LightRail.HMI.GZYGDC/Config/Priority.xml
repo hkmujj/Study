@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<PriorityConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DoorPriorities>
+    <Door Key="EmergencyLock" Prioritys="1" />
+    <Door Key="Cut" Prioritys="2" />
+    <Door Key="SeriousFault" Prioritys="3" />
+    <Door Key="MinorFault" Prioritys="4" />
+    <Door Key="Hinder" Prioritys="5" />
+	<Door Key="Opened" Prioritys="6" />
+	<Door Key="Closed" Prioritys="7" />
+  </DoorPriorities>
+  <AirConditionPriorities>
+    <AirCondition Key="SeriousFault" Prioritys="1" />
+    <AirCondition Key="MinorFault" Prioritys="2" />
+    <AirCondition Key="Aeration" Prioritys="3" />
+	<AirCondition Key="Deload" Prioritys="4" />
+    <AirCondition Key="Precool" Prioritys="5" />
+    <AirCondition Key="Run" Prioritys="6" />
+	<AirCondition Key="Off" Prioritys="7" />
+  </AirConditionPriorities>
+  <AssistPriorities>
+    <Assist Key="SeriousFault" Prioritys="1" />
+    <Assist Key="MinorFault" Prioritys="2" />
+    <Assist Key="Run" Prioritys="3" />
+  </AssistPriorities>
+  <EmergencyTalkPriorities>
+    <Emergency Key="SeriousFault" Prioritys="1" />
+    <Emergency Key="Calling" Prioritys="2" />
+    <Emergency Key="CallRequest" Prioritys="3" />
+    <Emergency Key="CallEnd" Prioritys="4" />
+  </EmergencyTalkPriorities>
+  <BrakePriorities>
+    <Brake Key="SeriousFault" Prioritys="1" />
+    <Brake Key="MinorFault" Prioritys="2" />
+    <Brake Key="EmergencyRelief" Prioritys="3" />
+    <Brake Key="Infliction" Prioritys="4" />
+    <Brake Key="Relief" Prioritys="5" />
+  </BrakePriorities>
+  <TractionPriorities>
+    <Traction Key="SeriousFault" Prioritys="1" />
+    <Traction Key="MinorFault" Prioritys="2" />
+    <Traction Key="SelfChecking" Prioritys="3" />
+    <Traction Key="Run" Prioritys="4" />
+    <Traction Key="Stop" Prioritys="5" />
+  </TractionPriorities>
+  <PantographPriorities>
+    <Pantograph Key="Rise" Prioritys="1" />
+    <Pantograph Key="Ecptoma" Prioritys="2" />
+  </PantographPriorities>
+  <HSCBPriorities>
+    <HSCB Key="SeriousFault" Prioritys="1" />
+    <HSCB Key="Close" Prioritys="2" />
+	<HSCB Key="Discon" Prioritys="3" />
+  </HSCBPriorities>
+   <BatteryPriorities>
+    <Battery Key="Fault" Prioritys="1" />
+    <Battery Key="Normal" Prioritys="2" />
+	<Battery Key="unCharged" Prioritys="3" />
+	<Battery Key="Charging" Prioritys="4" />
+  </BatteryPriorities>
+   <SpringPriorities>
+    <Spring Key="Infliction" Prioritys="1" />
+    <Spring Key="Relief" Prioritys="2" />
+  </SpringPriorities>
+</PriorityConfig>

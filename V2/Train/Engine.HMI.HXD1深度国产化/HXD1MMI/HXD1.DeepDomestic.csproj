@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{65C872E9-661E-4378-9959-4E633CD06D88}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HXD1.DeepDomestic</RootNamespace>
+    <AssemblyName>HXD1.DeepDomestic</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\MMI\Addin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\MMI\Addin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonUtil">
+      <HintPath>..\MMI\CommonUtil.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MMI.Facility.Interface">
+      <HintPath>..\MMI\MMI.Facility.Interface.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Alert.cs" />
+    <Compile Include="AllBackGround.cs" />
+    <Compile Include="AllFaultA.cs" />
+    <Compile Include="AllFaultB.cs" />
+    <Compile Include="AllFaultRect.cs" />
+    <Compile Include="AllFaultTitleRect.cs" />
+    <Compile Include="AssistSystem.cs" />
+    <Compile Include="AssistTest.cs" />
+    <Compile Include="BlackScreen.cs" />
+    <Compile Include="BowState.cs" />
+    <Compile Include="ButtonType.cs" />
+    <Compile Include="CurrentBackGround.cs" />
+    <Compile Include="CurrentFaultRect.cs" />
+    <Compile Include="CurrentFaultTitleRect.cs" />
+    <Compile Include="ExternalButtons.cs" />
+    <Compile Include="Common.cs" />
+    <Compile Include="ControlSystem.cs" />
+    <Compile Include="CurrentDial.cs" />
+    <Compile Include="CurrentFaultA.cs" />
+    <Compile Include="CurrentFaultB.cs" />
+    <Compile Include="Dial.cs" />
+    <Compile Include="DraughtBlock.cs" />
+    <Compile Include="DraughtBlockB.cs" />
+    <Compile Include="FaultAssistInfo.cs" />
+    <Compile Include="FaultAssistInfoRect.cs" />
+    <Compile Include="FaultEvent.cs" />
+    <Compile Include="FaultInfo.cs" />
+    <Compile Include="FaultLevel.cs" />
+    <Compile Include="FaultFacode.cs" />
+    <Compile Include="ForceDial.cs" />
+    <Compile Include="HisteryFault.cs" />
+    <Compile Include="KuLeiDongChe.cs" />
+    <Compile Include="MainData.cs" />
+    <Compile Include="MainDataView.cs" />
+    <Compile Include="MainSwitchState.cs" />
+    <Compile Include="MainView.cs" />
+    <Compile Include="MainViewRectText.cs" />
+    <Compile Include="PressureDial.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReceiveRequest.cs" />
+    <Compile Include="RectText.cs" />
+    <Compile Include="RightButon.cs" />
+    <Compile Include="RightInfo.cs" />
+    <Compile Include="Status.cs" />
+    <Compile Include="TrainParameter.cs" />
+    <Compile Include="Temperature.cs" />
+    <Compile Include="Title.cs" />
+    <Compile Include="TractionDataView.cs" />
+    <Compile Include="TrainConfig.cs" />
+    <Compile Include="BowStateB.cs" />
+    <Compile Include="MainSwitchStateB.cs" />
+    <Compile Include="TrainTopSwitch.cs" />
+    <Compile Include="Wheel.cs" />
+    <Compile Include="YellowAlert.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

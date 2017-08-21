@@ -1,0 +1,26 @@
+﻿<UserControl
+    x:Class="Tram.CBTC.Casco.View.Contents.RegionPop.InfoSerchView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="clr-namespace:Tram.CBTC.Casco.ViewModel"
+    d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+    d:DesignHeight="340"
+    d:DesignWidth="610"
+    Background="{StaticResource Tram.CBTC.Casco.PopBackgroud}"
+    mc:Ignorable="d">
+    <Canvas>
+        <Canvas.Background>
+            <ImageBrush ImageSource="/Tram.CBTC.Casco;component/1503019746(1).jpg" />
+        </Canvas.Background>
+        <Button
+            Canvas.Left="419"
+            Canvas.Top="302"
+            Width="77"
+            Height="25"
+            Command="{Binding Controller.ClosePop}"
+            Content="关闭"
+            Style="{StaticResource Tram.CBTC.Casco.PopButtonStyle}" />
+    </Canvas>
+</UserControl>

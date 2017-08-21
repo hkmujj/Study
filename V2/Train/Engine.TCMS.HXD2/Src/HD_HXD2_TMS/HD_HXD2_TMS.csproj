@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0AFC36D0-F935-4CA4-B355-1789C0122B0A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HD_HXD2_TMS</RootNamespace>
+    <AssemblyName>HD_HXD2_TMS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\MMI\Addin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\MMI\Addin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Excel.Interface, Version=2.28.2016.225, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MMI\Excel.Interface.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MMI.Facility.Interface, Version=2.29.2016.426, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MMI\MMI.Facility.Interface.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\ControlInfo.cs" />
+    <Compile Include="Common\FalutInfo.cs" />
+    <Compile Include="Common\MainViewType.cs" />
+    <Compile Include="Common\ViewType.cs" />
+    <Compile Include="ES.Facility.Common\Control\Button.cs" />
+    <Compile Include="ES.Facility.Common\Control\Common\IControl.cs" />
+    <Compile Include="ES.Facility.Common\Control\Common\IStyle.cs" />
+    <Compile Include="ES.Facility.Common\Control\Common\MouseEventArgs.cs" />
+    <Compile Include="ES.Facility.Common\Control\Grid.cs" />
+    <Compile Include="ES.Facility.Common\Control\Group.cs" />
+    <Compile Include="ES.Facility.Common\Control\Label.cs" />
+    <Compile Include="ES.Facility.Common\Control\ListBox.cs" />
+    <Compile Include="ES.Facility.Common\Control\ListView.cs" />
+    <Compile Include="ES.Facility.Common\Control\TextBox.cs" />
+    <Compile Include="ES.Facility.Common\FaultInfo.cs" />
+    <Compile Include="ES.Facility.Common\FontStyle.cs" />
+    <Compile Include="ES.Facility.Common\FontStyles.cs" />
+    <Compile Include="Extension\BaseClassExtension.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="V0黑屏\HD_V0_BlackView.cs" />
+    <Compile Include="V1主界面\HD_V1_FunctionBtns.cs" />
+    <Compile Include="V1主界面\HD_V1_LeftModule.cs" />
+    <Compile Include="V1主界面\HD_V1_MiddleModule.cs" />
+    <Compile Include="V1主界面\HD_V1_RightModule.cs" />
+    <Compile Include="V2机车信息\HD_V2_FunctionBtns.cs" />
+    <Compile Include="V2机车信息\HD_V2_TrainInfo.cs" />
+    <Compile Include="V3控制\HD_V3_Control_Bow_B.cs" />
+    <Compile Include="V3控制\HD_V3_Control_Bow_A.cs" />
+    <Compile Include="V3控制\HD_V3_Control_DistanceCount.cs" />
+    <Compile Include="V3控制\HD_V3_Control_LightTest.cs" />
+    <Compile Include="V3控制\HD_V3_FunctionBtns.cs" />
+    <Compile Include="V3控制\HD_V3_Control_Insulate_B.cs" />
+    <Compile Include="V3控制\HD_V3_Control_Insulate_A.cs" />
+    <Compile Include="V4空气制动\HD_V4_FunctionBtns.cs" />
+    <Compile Include="V4空气制动\HD_V4_AirBreaking.cs" />
+    <Compile Include="V5过程数据\HD_V5_Data_AuxiliaryB.cs" />
+    <Compile Include="V5过程数据\HD_V5_Data_AuxiliaryA.cs" />
+    <Compile Include="V5过程数据\HD_V5_Data_BreakerB.cs" />
+    <Compile Include="V5过程数据\HD_V5_Data_BreakerA.cs" />
+    <Compile Include="V5过程数据\HD_V5_Data_Breaking.cs" />
+    <Compile Include="V5过程数据\HD_V5_Data_TrafficState.cs" />
+    <Compile Include="V5过程数据\HD_V5_Data_Conveter.cs" />
+    <Compile Include="V5过程数据\HD_V5_Data_OnlineState.cs" />
+    <Compile Include="V5过程数据\HD_V5_Data_TrafficState_RIOM1.cs" />
+    <Compile Include="V5过程数据\HD_V5_Data_TrafficState_RIOM2.cs" />
+    <Compile Include="V5过程数据\HD_V5_Data_Version.cs" />
+    <Compile Include="V5过程数据\HD_V5_FunctionBtns.cs" />
+    <Compile Include="V5过程数据\HD_V5_Data_DriveB.cs" />
+    <Compile Include="V5过程数据\HD_V5_Data_DriveA.cs" />
+    <Compile Include="V6数据输入\HD_V6_OilSetting.cs" />
+    <Compile Include="V6数据输入\HD_V6_ScreenChang.cs" />
+    <Compile Include="V6数据输入\HD_V6_FunctionBtns.cs" />
+    <Compile Include="V6数据输入\HD_V6_OtherSetting.cs" />
+    <Compile Include="V6数据输入\HD_V6_TimeSetting.cs" />
+    <Compile Include="V7维护测试\HD_V7_Test_Auxiliary.cs" />
+    <Compile Include="V7维护测试\HD_V7_Test_380V.cs" />
+    <Compile Include="V7维护测试\HD_V7_Test_Phase.cs" />
+    <Compile Include="V7维护测试\HD_V7_Test_Wheel.cs" />
+    <Compile Include="V7维护测试\HD_V7_Test_Simulation.cs" />
+    <Compile Include="V7维护测试\HD_V7_FunctionBtns.cs" />
+    <Compile Include="V8故障浏览\HD_V8_Falut_ConvertB.cs" />
+    <Compile Include="V8故障浏览\HD_V8_Falut_Download.cs" />
+    <Compile Include="V8故障浏览\HD_V8_Falut_ConvertA.cs" />
+    <Compile Include="V8故障浏览\HD_V8_FunctionBtns.cs" />
+    <Compile Include="V8故障浏览\HD_V8_Falut_HistroyB.cs" />
+    <Compile Include="V8故障浏览\HD_V8_Falut_HistroyA.cs" />
+    <Compile Include="VC公共组件\HD_VC_ConverterManager.cs" />
+    <Compile Include="VC公共组件\HD_VC_CurrentFalut.cs" />
+    <Compile Include="VC公共组件\HD_VC_CurrentFalutB.cs" />
+    <Compile Include="VC公共组件\HD_VC_CurrentFalutA.cs" />
+    <Compile Include="VC公共组件\HD_VC_FalutManager.cs" />
+    <Compile Include="VC公共组件\HD_VC_MessageInfo.cs" />
+    <Compile Include="VC公共组件\HD_VC_Password.cs" />
+    <Compile Include="VC公共组件\HD_VC_PhaseFalut.cs" />
+    <Compile Include="VC公共组件\HD_VC_Title.cs" />
+    <Compile Include="VC公共组件\HD_VC_TrainChang.cs" />
+    <Compile Include="VC公共组件\HD_VC_ViewChange.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

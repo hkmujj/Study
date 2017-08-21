@@ -1,0 +1,241 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:constant="clr-namespace:Tram.CBTC.Infrasturcture.Model.Constant;assembly=Tram.CBTC.Infrasturcture"
+    xmlns:converter="clr-namespace:MMI.Facility.WPFInfrastructure.Converter;assembly=MMI.Facility.WPFInfrastructure"
+    xmlns:converter2="clr-namespace:Tram.CBTC.Infrasturcture.Converter;assembly=Tram.CBTC.Infrasturcture"
+    xmlns:converters="clr-namespace:Tram.CBTC.Casco.Converters"
+    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../String/Casco.xaml" />
+        <ResourceDictionary Source="../Base/CascoBaseResource.xaml" />
+        <ResourceDictionary Source="../Images/ImageResource_CH.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <converters:VehicleRunningModelConverter x:Key="Tram.CBTC.Casco.Converter.VehicleRunningModelConverter" />
+    <converter:MathConverter x:Key="Tram.CBTC.Casco.Converter.MathConverter" />
+    <converters:SelectItemConverter x:Key="Tram.CBTC.Casco.Converter.SelectItemConverter" />
+    <BooleanToVisibilityConverter x:Key="Tram.CBTC.Casco.Converter.BooleanToVisibilityConverter" />
+    <converters:HightInfoVisibilityConverter x:Key="Tram.CBTC.Casco.Converter.HightInfoVisibilityConverter" />
+    <converters:TextPrefixConverter x:Key="Tram.CBTC.Casco.Converter.TextPrefixConverter" />
+    <converters:DegreeScaleTextAngleConverter x:Key="Tram.CBTC.Casco.Converter.DegreeScaleTextAngleConverter" />
+    <converters:SpeedToAngleConverter x:Key="Tram.CBTC.Casco.Converter.SpeedToAngleConverter" />
+    <converters:TargitDistanceToScalConverter x:Key="Tram.CBTC.Casco.Converter.TargitDistanceToScalConverter" />
+    <converters:SpeedPointerConverter x:Key="Tram.CBTC.Casco.Converter.SpeedPointerConverter" />
+    <converter2:LightPercentToBackColorConverter x:Key="Tram.CBTC.Casco.Converter.LightToBackColor" />
+    <converters:DistanceAndTimeConverter x:Key="Tram.CBTC.Casco.Converter.DistanceAndTimeConverter" />
+    <converters:StringFroamatCovnerter x:Key="Tram.CBTC.Casco.Converter.StringFroamatCovnerter" />
+
+    <converter:IsNullToVisibilityConverter
+        x:Key="Tram.CBTC.Casco.Converter.NullToVisibility"
+        VisibilityWhenNotNull="Visible"
+        VisibilityWhenNull="Collapsed" />
+
+    <system:Boolean x:Key="BooleanTrue">True</system:Boolean>
+    <system:Boolean x:Key="BooleanFalse">False</system:Boolean>
+
+
+    <converter:SelectObjectContentConverter x:Key="Tram.CBTC.Casco.Converter.PowerStateToVisible">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:PowerState.Started}" Content="{x:Static Visibility.Visible}" />
+            <converter:ObjectContentPair Key="{x:Static constant:PowerState.Starting}" Content="{x:Static Visibility.Visible}" />
+            <converter:ObjectContentPair Key="{x:Static constant:PowerState.Stopped}" Content="{x:Static Visibility.Hidden}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+
+
+    <converter:SelectObjectContentConverter x:Key="Tram.CBTC.Casco.Converter.CBTCColorToBrush">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:CBTCColor.White}" Content="{StaticResource Tram.CBTC.Casco.Brush.White}" />
+            <converter:ObjectContentPair Key="{x:Static constant:CBTCColor.Yellow}" Content="{StaticResource Tram.CBTC.Casco.Brush.Yellow}" />
+            <converter:ObjectContentPair Key="{x:Static constant:CBTCColor.Green}" Content="{StaticResource Tram.CBTC.Casco.Brush.Green}" />
+            <converter:ObjectContentPair Key="{x:Static constant:CBTCColor.Red}" Content="{StaticResource Tram.CBTC.Casco.Brush.Red}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+
+    <converter:SelectObjectContentConverter x:Key="Tram.CBTC.Casco.Converter.TrainSoonerOrLaterStatusToString">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:TrainSoonerOrLaterStatus.None}" Content="{x:Null}" />
+            <converter:ObjectContentPair Key="{x:Static constant:TrainSoonerOrLaterStatus.TrainBreakfast}" Content="{StaticResource Subway.CBTC.Casco.String.TrainBreakfast}" />
+            <converter:ObjectContentPair Key="{x:Static constant:TrainSoonerOrLaterStatus.TrainLater}" Content="{StaticResource Subway.CBTC.Casco.String.Later}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Tram.CBTC.Casco.Converter.TrainSoonerOrLaterStatusToBrush">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:TrainSoonerOrLaterStatus.None}" Content="{x:Null}" />
+            <converter:ObjectContentPair Key="{x:Static constant:TrainSoonerOrLaterStatus.TrainBreakfast}" Content="{StaticResource Tram.CBTC.Casco.Brush.Yellow}" />
+            <converter:ObjectContentPair Key="{x:Static constant:TrainSoonerOrLaterStatus.TrainLater}" Content="{StaticResource Tram.CBTC.Casco.Brush.Red}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Tram.CBTC.Casco.Converter.VehicleRunningModelToString">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:VehicleRunningModel.None}" Content="{x:Null}" />
+            <converter:ObjectContentPair Key="{x:Static constant:VehicleRunningModel.OnBoardOnlineTimetable}" Content="{StaticResource Subway.CBTC.Casco.String.OnBoardOnlineTimetable}" />
+            <converter:ObjectContentPair Key="{x:Static constant:VehicleRunningModel.VehicleOnlineEqualinterval}" Content="{StaticResource Subway.CBTC.Casco.String.VehicleOnlineEqualinterval}" />
+            <converter:ObjectContentPair Key="{x:Static constant:VehicleRunningModel.VehicleMountedOnlineDestination}" Content="{StaticResource Subway.CBTC.Casco.String.VehicleMountedOnlineDestination}" />
+            <converter:ObjectContentPair Key="{x:Static constant:VehicleRunningModel.ManualControl}" Content="{StaticResource Subway.CBTC.Casco.String.ManualControl}" />
+            <converter:ObjectContentPair Key="{x:Static constant:VehicleRunningModel.VehicleIndependent}" Content="{StaticResource Subway.CBTC.Casco.String.VehicleIndependent}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Tram.CBTC.Casco.Converter.ReturnInfoToImage">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:ReturnInfo.None}" Content="{x:Null}" />
+            <converter:ObjectContentPair Key="{x:Static constant:ReturnInfo.CurrentStationReturn}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.本站折返}" />
+            <converter:ObjectContentPair Key="{x:Static constant:ReturnInfo.NextStationReurn}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.下一站折返}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Tram.CBTC.Casco.Converter.DeductionVisibility">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:StationControlCarStatus.Normal}" Content="{x:Static Visibility.Collapsed}" />
+            <converter:ObjectContentPair Key="{x:Static constant:StationControlCarStatus.Deduction}" Content="{x:Static Visibility.Visible}" />
+            <converter:ObjectContentPair Key="{x:Static constant:StationControlCarStatus.JumStop}" Content="{x:Static Visibility.Collapsed}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+    <converter:SelectObjectContentConverter x:Key="Tram.CBTC.Casco.Converter.JumStopVisibility">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:StationControlCarStatus.Normal}" Content="{x:Static Visibility.Collapsed}" />
+            <converter:ObjectContentPair Key="{x:Static constant:StationControlCarStatus.Deduction}" Content="{x:Static Visibility.Collapsed}" />
+            <converter:ObjectContentPair Key="{x:Static constant:StationControlCarStatus.JumStop}" Content="{x:Static Visibility.Visible}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+    <converter:SelectObjectContentConverter x:Key="Tram.CBTC.Casco.Converter.EmergentBrakeVisibility">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:SignalBrakeStatus.None}" Content="{x:Static Visibility.Collapsed}" />
+            <converter:ObjectContentPair Key="{x:Static constant:SignalBrakeStatus.EmergentBrake}" Content="{x:Static Visibility.Visible}" />
+            <converter:ObjectContentPair Key="{x:Static constant:SignalBrakeStatus.RequestBrake}" Content="{x:Static Visibility.Collapsed}" />
+            <converter:ObjectContentPair Key="{x:Static constant:SignalBrakeStatus.BrakeWarning}" Content="{x:Static Visibility.Collapsed}" />
+            <converter:ObjectContentPair Key="{x:Static constant:SignalBrakeStatus.Brake}" Content="{x:Static Visibility.Collapsed}" />
+            <converter:ObjectContentPair Key="{x:Static constant:SignalBrakeStatus.FastBrake}" Content="{x:Static Visibility.Collapsed}" />
+            <converter:ObjectContentPair Key="{x:Static constant:SignalBrakeStatus.ParkingBrake}" Content="{x:Static Visibility.Collapsed}" />
+            <converter:ObjectContentPair Key="{x:Static constant:SignalBrakeStatus.KeepBrake}" Content="{x:Static Visibility.Collapsed}" />
+            <converter:ObjectContentPair Key="{x:Static constant:SignalBrakeStatus.CutTow}" Content="{x:Static Visibility.Collapsed}" />
+            <converter:ObjectContentPair Key="{x:Static constant:SignalBrakeStatus.AllowRemission}" Content="{x:Static Visibility.Collapsed}" />
+
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Tram.CBTC.Casco.Converter.ATPProtectionControlStatusToImage">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:ATPProtectionControlStatus.None}" Content="{x:Null}" />
+            <converter:ObjectContentPair Key="{x:Static constant:ATPProtectionControlStatus.ATPProtectActive}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.ATP保护功能激活}" />
+            <converter:ObjectContentPair Key="{x:Static constant:ATPProtectionControlStatus.ATPProtectUnActive}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.ATP保护功能未激活}" />
+            <converter:ObjectContentPair Key="{x:Static constant:ATPProtectionControlStatus.AuthorizeToPassTheInhibitSignalAtLowSpeed}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.授权以低速越过禁止信号}" />
+            <converter:ObjectContentPair Key="{x:Static constant:ATPProtectionControlStatus.OdometerAnomaly}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.里程计信息异常}" />
+            <converter:ObjectContentPair Key="{x:Static constant:ATPProtectionControlStatus.TractionBrakeInformationAbnormality}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.牵引制动信息异常}" />
+
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Tram.CBTC.Casco.Converter.ATPProhibitStatusToImage">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:ATPProhibitStatus.None}" Content="{x:Null}" />
+            <converter:ObjectContentPair Key="{x:Static constant:ATPProhibitStatus.Enable}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.ATP启用}" />
+            <converter:ObjectContentPair Key="{x:Static constant:ATPProhibitStatus.Prohibit}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.ATP禁止}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Tram.CBTC.Casco.Converter.SemaphoreToImage">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:SemaphoreStaus.None}" Content="{x:Null}" />
+            <converter:ObjectContentPair Key="{x:Static constant:SemaphoreStaus.Blue}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.禁止信号}" />
+            <converter:ObjectContentPair Key="{x:Static constant:SemaphoreStaus.StraightWhite}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.直行信号}" />
+            <converter:ObjectContentPair Key="{x:Static constant:SemaphoreStaus.LeftWhite}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.左行信号}" />
+            <converter:ObjectContentPair Key="{x:Static constant:SemaphoreStaus.RightWhite}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.右行信号}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Tram.CBTC.Casco.Converter.ATPStatusToImage">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:ATPStatus.None}" Content="{x:Null}" />
+            <converter:ObjectContentPair Key="{x:Static constant:ATPStatus.Fault}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.ATP系统故障}" />
+            <converter:ObjectContentPair Key="{x:Static constant:ATPStatus.Normal}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.ATP系统正常}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+    <converter:SelectObjectContentConverter x:Key="Tram.CBTC.Casco.Converter.ELSStatusToImage">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:ELSStatus.None}" Content="{x:Null}" />
+            <converter:ObjectContentPair Key="{x:Static constant:ELSStatus.Fault}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.ELS故障}" />
+            <converter:ObjectContentPair Key="{x:Static constant:ELSStatus.Normal}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.ELS正常}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+    <converter:SelectObjectContentConverter x:Key="Tram.CBTC.Casco.Converter.RRStatusToImage">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:RRStatus.None}" Content="{x:Null}" />
+            <converter:ObjectContentPair Key="{x:Static constant:RRStatus.Fault}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.请求进路系统正常}" />
+            <converter:ObjectContentPair Key="{x:Static constant:RRStatus.Normal}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.请求进路系统正常}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+    <converter:SelectObjectContentConverter x:Key="Tram.CBTC.Casco.Converter.CPStatusToImage">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:CPStatus.None}" Content="{x:Null}" />
+            <converter:ObjectContentPair Key="{x:Static constant:CPStatus.Fault}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.CP故障}" />
+            <converter:ObjectContentPair Key="{x:Static constant:CPStatus.Normal}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.CP正常}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+    <converter:SelectObjectContentConverter x:Key="Tram.CBTC.Casco.Converter.BeaconStatusVisibility">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:BeaconStatus.Normal}" Content="{x:Static Visibility.Collapsed}" />
+            <converter:ObjectContentPair Key="{x:Static constant:BeaconStatus.None}" Content="{x:Static Visibility.Collapsed}" />
+            <converter:ObjectContentPair Key="{x:Static constant:BeaconStatus.BeaconMissingOrMissedRead}" Content="{x:Static Visibility.Visible}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Tram.CBTC.Casco.Converter.TrainPositionCarDepotToImage">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:TrainPosition.CarDepot}" Content="{x:Null}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Tram.CBTC.Casco.Converter.SystemStatusToImage">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:SystemStatus.None}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.系统正常}" />
+            <converter:ObjectContentPair Key="{x:Static constant:SystemStatus.Normal}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.系统正常}" />
+            <converter:ObjectContentPair Key="{x:Static constant:SystemStatus.PartFault}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.系统故障}" />
+            <converter:ObjectContentPair Key="{x:Static constant:SystemStatus.AllFault}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.系统故障}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Tram.CBTC.Casco.Converter.SoundToImage">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{StaticResource BooleanTrue}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.声音系统打开}" />
+            <converter:ObjectContentPair Key="{StaticResource BooleanFalse}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.声音系统关闭}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Tram.CBTC.Casco.Converter.VOBCOnBoardHostStatusToImage">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:VOBCOnBoardHostStatus.None}" Content="{x:Null}" />
+            <converter:ObjectContentPair Key="{x:Static constant:VOBCOnBoardHostStatus.Normal}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.BCM正常}" />
+            <converter:ObjectContentPair Key="{x:Static constant:VOBCOnBoardHostStatus.PartFault}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.BCM故障}" />
+            <converter:ObjectContentPair Key="{x:Static constant:VOBCOnBoardHostStatus.AllFault}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.BCM故障}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+    <converter:SelectObjectContentConverter x:Key="Tram.CBTC.Casco.Converter.VehicleLocationStatusToImage">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:VehicleLocationStatus.None}" Content="{x:Null}" />
+            <converter:ObjectContentPair Key="{x:Static constant:VehicleLocationStatus.AccuratelyPositioned}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.定位正常}" />
+            <converter:ObjectContentPair Key="{x:Static constant:VehicleLocationStatus.LostLocation}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.定位丢失}" />
+            <converter:ObjectContentPair Key="{x:Static constant:VehicleLocationStatus.PositioningProcess}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.定位中}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+    <converter:SelectObjectContentConverter x:Key="Tram.CBTC.Casco.Converter.VehicleCommunicationStatusToImage">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:VehicleCommunicationStatus.None}" Content="{x:Null}" />
+            <converter:ObjectContentPair Key="{x:Static constant:VehicleCommunicationStatus.Good}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.车载与调度中心通信良好}" />
+            <converter:ObjectContentPair Key="{x:Static constant:VehicleCommunicationStatus.Interrupt}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.车载与调度中心通信异常}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+    <converter:SelectObjectContentConverter x:Key="Tram.CBTC.Casco.Converter.GPSWorkStatusToImage">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:GPSWorkStatus.None}" Content="{x:Null}" />
+            <converter:ObjectContentPair Key="{x:Static constant:GPSWorkStatus.Nomal}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.GPS工作状态正常}" />
+            <converter:ObjectContentPair Key="{x:Static constant:GPSWorkStatus.NotRefresh}" Content="{StaticResource Tram.CBTC.Casco.Images.Content.GPS信号长时间未刷新}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+</ResourceDictionary>

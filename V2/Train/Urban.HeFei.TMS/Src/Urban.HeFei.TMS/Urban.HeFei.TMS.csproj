@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C7781122-89C9-47DA-9FBA-EFBC67649B3C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Urban.HeFei.TMS</RootNamespace>
+    <AssemblyName>Urban.HeFei.TMS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>MMI\Addin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\MMI\Addin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonUtil, Version=2.29.2016.517, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="MMI.Facility.Interface, Version=2.50.2017.214, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Brake\CommonUseBrake.cs" />
+    <Compile Include="Brake\EmergencyBrake.cs" />
+    <Compile Include="Brake\MasterFonVoltage.cs" />
+    <Compile Include="Common\Brushs.cs" />
+    <Compile Include="Common\CommonStatus.cs" />
+    <Compile Include="Common\Enums.cs" />
+    <Compile Include="Common\FontInfo.cs" />
+    <Compile Include="Common\LocomotiveFailure.cs" />
+    <Compile Include="Common\StationInfo.cs" />
+    <Compile Include="Common\StringFloatConverter.cs" />
+    <Compile Include="Help\HelpView.cs" />
+    <Compile Include="Help\FaultListManager.cs" />
+    <Compile Include="Maintenance\PasswordKeyInput.cs" />
+    <Compile Include="PIS\V605_PIS_SpecialInfo.cs" />
+    <Compile Include="PIS\V6_Common_Button.cs" />
+    <Compile Include="MainView\V101_MainFrame_Bypass_C0.cs" />
+    <Compile Include="MainView\V102_MainFrame_Bypass_C1.cs" />
+    <Compile Include="MainView\V111_MainFrame_Fault_C0_MainView.cs" />
+    <Compile Include="MainView\V112_MainFrame_Fault_AutoShow.cs" />
+    <Compile Include="MainView\V1_MainFrame_C4_TrainState.cs" />
+    <Compile Include="CommonPart\VC_C5_TrainInfo.cs" />
+    <Compile Include="CommonPart\VC_C6_Common_FaultBtn.cs" />
+    <Compile Include="CommonPart\VC_C7_Common_BypassBtn.cs" />
+    <Compile Include="Brake\V301_Brake_C0_Page2.cs" />
+    <Compile Include="Brake\V302_Brake_C0_Page3.cs" />
+    <Compile Include="Brake\V3_Brake_CommonBtn.cs" />
+    <Compile Include="Resource\InBoolKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InBoolKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\InFloatKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InFloatKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\OutBoolKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutBoolKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\OutFloatKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutFloatKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Traction\V2_Traction_C1_TractionKN.cs" />
+    <Compile Include="Traction\V2_Traction_C2_HSpeedCirBreak.cs" />
+    <Compile Include="AC\V501_AirConditioner_C0_Page2.cs" />
+    <Compile Include="AC\V5_AirConditioner_C0_Page1.cs" />
+    <Compile Include="CommonPart\VC_C2_BlackView.cs" />
+    <Compile Include="PIS\V601_PIS_AutoModel.cs" />
+    <Compile Include="PIS\V602_PIS_SemiAutoModel.cs" />
+    <Compile Include="PIS\V603_PIS_ManualModel.cs" />
+    <Compile Include="PIS\V604_PIS_RouteSet.cs" />
+    <Compile Include="History\V7_History_C0_MainView.cs" />
+    <Compile Include="CommonPart\VC_C0_Title.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Maintenance\V801_Maintenance_TrainInfo.cs" />
+    <Compile Include="Maintenance\V802_Maintenance_NetWorkStatus.cs" />
+    <Compile Include="Maintenance\V803_Maintenance_SoftWareVersion.cs" />
+    <Compile Include="Maintenance\V804_Maintenance_InterfaceCheck.cs" />
+    <Compile Include="Maintenance\V805_Maintenance_EnergyConsumptionInfo.cs" />
+    <Compile Include="Maintenance\V806_Maintenance_AccelerationTest.cs" />
+    <Compile Include="Maintenance\V807_Maintenance_BrakeSelfChecking.cs" />
+    <Compile Include="Maintenance\V808_Maintenance_PasswordSetting.cs" />
+    <Compile Include="Maintenance\V809_Maintenance_AdjustBrightness.cs" />
+    <Compile Include="Maintenance\V8_Maintenance_C0_MainView.cs" />
+    <Compile Include="Maintenance\V8_Maintenance_Common.cs" />
+    <Compile Include="BlackView\V0_C0_BlackView_Closed.cs" />
+    <Compile Include="MainView\V1_MainFrame_C1_AssistInvertor.cs" />
+    <Compile Include="MainView\V1_MainFrame_C2_TractionInvertor.cs" />
+    <Compile Include="MainView\V1_MainFrame_C3_FireAlarm.cs" />
+    <Compile Include="CommonPart\VC_C1_ViewChangeButton.cs" />
+    <Compile Include="Traction\V2_Traction_C0_TractionCurrent.cs" />
+    <Compile Include="Brake\V3_Brake_C0_Page1.cs" />
+    <Compile Include="Assist\V4_Assist_C0_Page1.cs" />
+    <Compile Include="Assist\V4_Assist_C1_Page2.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ES.Facility.Common\Urban.HeFei.Common.csproj">
+      <Project>{0dc1f4ff-bf12-4f12-9200-704a9410eddc}</Project>
+      <Name>Urban.HeFei.Common</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource\InBoolKeys.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>InBoolKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\InFloatKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InFloatKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\OutBoolKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OutBoolKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\OutFloatKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OutFloatKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,89 @@
+﻿<UserControl x:Class="Engine._6A.Views.Axle8.Axle8ButtonView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:commonControl="clr-namespace:Engine._6A.CommonControl"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:name="clr-namespace:Engine._6A.Constance"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:viewModel="clr-namespace:Engine._6A.Interface.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:IEngine6AViewModel}"
+             d:DesignHeight="60"
+             d:DesignWidth="640"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Resouce/Engine6AResource.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <x:Array x:Key="Array2" Type="system:Object">
+                <system:String>A节数据</system:String>
+                <system:String>B节数据</system:String>
+            </x:Array>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid x:Name="ButtonGrid" DataContext="{Binding Button}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <RadioButton x:Name="MainPage"
+                     Grid.Column="0"
+                     Command="{Binding Navigator}"
+                     CommandParameter="{x:Static name:CoontrolNameBase.MainContent}"
+                     Content="主界面"
+                     Style="{StaticResource RdoButtonStyle}" />
+        <RadioButton x:Name="MonitorDataButton"
+                     Grid.Column="1"
+                     Style="{StaticResource RdoButtonStyle}">
+            <RadioButton.Content>
+                <commonControl:ComboBox6A x:Name="MonitorComboBox"
+                                          Width="{Binding ElementName=MonitorDataButton,
+                                                          Path=ActualWidth}"
+                                          Height="{Binding ElementName=MonitorDataButton,
+                                                           Path=ActualHeight}"
+                                          Margin="0"
+                                          Background="Transparent"
+                                          Content="监控数据"
+                                          FontSize="18"
+                                          Foreground="{StaticResource WhiteBrush}"
+                                          ItemsSource="{StaticResource Array2}"
+                                          Tag="{x:Static name:CoontrolNameBase.Axle8DataMonitorShell}" />
+            </RadioButton.Content>
+        </RadioButton>
+
+        <RadioButton x:Name="VideoMonitorButton"
+                     Grid.Column="2"
+                     Style="{StaticResource RdoButtonStyle}">
+            <RadioButton.Content>
+                <commonControl:ComboBox6A x:Name="VideoComboBox"
+                                          Width="{Binding ElementName=VideoMonitorButton,
+                                                          Path=ActualWidth}"
+                                          Height="{Binding ElementName=VideoMonitorButton,
+                                                           Path=ActualHeight}"
+                                          Margin="0"
+                                          Background="Transparent"
+                                          Content="视频监控"
+                                          FontSize="18"
+                                          Foreground="{StaticResource WhiteBrush}"
+                                          ItemsSource="{StaticResource Array2}"
+                                          Tag="{x:Static name:CoontrolNameBase.VideoView}" />
+            </RadioButton.Content>
+        </RadioButton>
+        <RadioButton x:Name="FaultButton"
+                     Grid.Column="3"
+                     Command="{Binding Navigator}"
+                     CommandParameter="{x:Static name:CoontrolNameBase.Axle8FaultShell}"
+                     Content="故障记录"
+                     Style="{StaticResource RdoButtonStyle}" />
+        <RadioButton x:Name="SystemButton"
+                     Grid.Column="4"
+                     Command="{Binding Navigator}"
+                     CommandParameter="{x:Static name:CoontrolNameBase.SystemSettingShell}"
+                     Content="系统设置"
+                     Style="{StaticResource RdoButtonStyle}" />
+    </Grid>
+</UserControl>

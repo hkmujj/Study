@@ -1,0 +1,127 @@
+﻿<UserControl x:Class="Engine.TPX21F.HXN5B.View.Contents.Test.Self.TestSelfStartedView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:view="clr-namespace:MMI.Facility.WPFInfrastructure.View;assembly=MMI.Facility.WPFInfrastructure"
+             xmlns:viewModel="clr-namespace:Engine.TPX21F.HXN5B.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:HXN5BViewModel}"
+             d:DesignHeight="495"
+             d:DesignWidth="800"
+             Background="{StaticResource ContentBackgroundBrush}"
+             mc:Ignorable="d">
+    <Grid Margin="12">
+        <Grid.Resources>
+            <ResourceDictionary>
+                <Style BasedOn="{StaticResource TestGreenTextStyle}" TargetType="TextBlock">
+                    <Style.Setters>
+                        <Setter Property="Margin" Value="4,1" />
+                        <Setter Property="FontSize" Value="15" />
+                    </Style.Setters>
+                </Style>
+                <Style TargetType="StackPanel">
+                    <Setter Property="Orientation" Value="Vertical" />
+                </Style>
+            </ResourceDictionary>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="125*" />
+            <RowDefinition Height="304*" />
+            <RowDefinition Height="42*" />
+        </Grid.RowDefinitions>
+        <Grid view:GridLine.Brush="{StaticResource ForegroundWhiteBrush}"
+              view:GridLine.Style="ShowAll"
+              view:GridLine.Width="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+
+            <StackPanel Grid.Row="0" Grid.Column="0">
+                <TextBlock Text="{Binding Path=Domain.TestViewModel.TestSelfViewModel.Model.SelectedItem.ItemConfig.ItemTitle1}" />
+                <TextBlock HorizontalAlignment="Center" Text="{Binding Path=Domain.TestViewModel.TestSelfViewModel.Model.SelectedItem.ShowingContentCollection[0 ]}" />
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="1">
+                <TextBlock Text="{Binding Path=Domain.TestViewModel.TestSelfViewModel.Model.SelectedItem.ItemConfig.ItemTitle2}" />
+                <TextBlock HorizontalAlignment="Center" Text="{Binding Path=Domain.TestViewModel.TestSelfViewModel.Model.SelectedItem.ShowingContentCollection[1 ]}" />
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="2">
+                <TextBlock Text="{Binding Path=Domain.TestViewModel.TestSelfViewModel.Model.SelectedItem.ItemConfig.ItemTitle3}" />
+                <TextBlock HorizontalAlignment="Center" Text="{Binding Path=Domain.TestViewModel.TestSelfViewModel.Model.SelectedItem.ShowingContentCollection[2 ]}" />
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="3">
+                <TextBlock Text="{Binding Path=Domain.TestViewModel.TestSelfViewModel.Model.SelectedItem.ItemConfig.ItemTitle4}" />
+                <TextBlock HorizontalAlignment="Center" Text="{Binding Path=Domain.TestViewModel.TestSelfViewModel.Model.SelectedItem.ShowingContentCollection[3 ]}" />
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="4">
+                <TextBlock Text="{Binding Path=Domain.TestViewModel.TestSelfViewModel.Model.SelectedItem.ItemConfig.ItemTitle5}" />
+                <TextBlock HorizontalAlignment="Center" Text="{Binding Path=Domain.TestViewModel.TestSelfViewModel.Model.SelectedItem.ShowingContentCollection[4 ]}" />
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="0">
+                <TextBlock Text="{Binding Path=Domain.TestViewModel.TestSelfViewModel.Model.SelectedItem.ItemConfig.ItemTitle6}" />
+                <TextBlock HorizontalAlignment="Center" Text="{Binding Path=Domain.TestViewModel.TestSelfViewModel.Model.SelectedItem.ShowingContentCollection[5 ]}" />
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="1">
+                <TextBlock Text="{Binding Path=Domain.TestViewModel.TestSelfViewModel.Model.SelectedItem.ItemConfig.ItemTitle7}" />
+                <TextBlock HorizontalAlignment="Center" Text="{Binding Path=Domain.TestViewModel.TestSelfViewModel.Model.SelectedItem.ShowingContentCollection[6 ]}" />
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="2">
+                <TextBlock Text="{Binding Path=Domain.TestViewModel.TestSelfViewModel.Model.SelectedItem.ItemConfig.ItemTitle8}" />
+                <TextBlock HorizontalAlignment="Center" Text="{Binding Path=Domain.TestViewModel.TestSelfViewModel.Model.SelectedItem.ShowingContentCollection[7 ]}" />
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="3">
+                <TextBlock Text="{Binding Path=Domain.TestViewModel.TestSelfViewModel.Model.SelectedItem.ItemConfig.ItemTitle9}" />
+                <TextBlock HorizontalAlignment="Center" Text="{Binding Path=Domain.TestViewModel.TestSelfViewModel.Model.SelectedItem.ShowingContentCollection[8 ]}" />
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="4">
+                <TextBlock Text="{Binding Path=Domain.TestViewModel.TestSelfViewModel.Model.SelectedItem.ItemConfig.ItemTitle10}" />
+                <TextBlock HorizontalAlignment="Center" Text="{Binding Path=Domain.TestViewModel.TestSelfViewModel.Model.SelectedItem.ShowingContentCollection[9 ]}" />
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="0">
+                <TextBlock Text="{Binding Path=Domain.TestViewModel.TestSelfViewModel.Model.SelectedItem.ItemConfig.ItemTitle11}" />
+                <TextBlock HorizontalAlignment="Center" Text="{Binding Path=Domain.TestViewModel.TestSelfViewModel.Model.SelectedItem.ShowingContentCollection[10]}" />
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="1">
+                <TextBlock Text="{Binding Path=Domain.TestViewModel.TestSelfViewModel.Model.SelectedItem.ItemConfig.ItemTitle12}" />
+                <TextBlock HorizontalAlignment="Center" Text="{Binding Path=Domain.TestViewModel.TestSelfViewModel.Model.SelectedItem.ShowingContentCollection[11]}" />
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="2">
+                <TextBlock Text="{Binding Path=Domain.TestViewModel.TestSelfViewModel.Model.SelectedItem.ItemConfig.ItemTitle13}" />
+                <TextBlock HorizontalAlignment="Center" Text="{Binding Path=Domain.TestViewModel.TestSelfViewModel.Model.SelectedItem.ShowingContentCollection[12]}" />
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="3">
+                <TextBlock Text="{Binding Path=Domain.TestViewModel.TestSelfViewModel.Model.SelectedItem.ItemConfig.ItemTitle14}" />
+                <TextBlock HorizontalAlignment="Center" Text="{Binding Path=Domain.TestViewModel.TestSelfViewModel.Model.SelectedItem.ShowingContentCollection[13]}" />
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="4">
+                <TextBlock Text="{Binding Path=Domain.TestViewModel.TestSelfViewModel.Model.SelectedItem.ItemConfig.ItemTitle15}" />
+                <TextBlock HorizontalAlignment="Center" Text="{Binding Path=Domain.TestViewModel.TestSelfViewModel.Model.SelectedItem.ShowingContentCollection[14]}" />
+            </StackPanel>
+        </Grid>
+
+        <Border Grid.Row="1"
+                Margin="0,6"
+                BorderBrush="{StaticResource ForegroundWhiteBrush}"
+                BorderThickness="2">
+            <TextBlock HorizontalAlignment="Stretch"
+                       VerticalAlignment="Stretch"
+                       LineHeight="25"
+                       Text="{Binding Path=Domain.TestViewModel.TestSelfViewModel.Model.SelectedItem.ItemConfig.Description}" />
+        </Border>
+
+        <Border Grid.Row="2"
+                BorderBrush="{StaticResource ForegroundWhiteBrush}"
+                BorderThickness="0,2">
+            <TextBlock VerticalAlignment="Bottom" Text="TODO" />
+        </Border>
+    </Grid>
+</UserControl>

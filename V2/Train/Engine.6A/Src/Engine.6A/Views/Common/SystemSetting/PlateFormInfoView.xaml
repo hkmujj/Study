@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="Engine._6A.Views.Common.SystemSetting.PlateFormInfoView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:commonControl="clr-namespace:Engine._6A.CommonControl"
+             x:Name="UserControl"
+             xmlns:viewModel="clr-namespace:Engine._6A.Interface.ViewModel" d:DataContext="{d:DesignInstance viewModel:IEngine6AViewModel}"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary Source="../../../Resouce/Engine6AResource.xaml" />
+    </UserControl.Resources>
+    <Grid DataContext="{Binding SystemSetting.PlateformInfo}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="345*" />
+            <RowDefinition Height="35*" />
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="226*" />
+                <ColumnDefinition Width="307*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0"
+                       Grid.Column="0"
+                       Style="{StaticResource PlateFormTextStyle}"
+                       Text="中央处理平台处理器" />
+            <commonControl:RadioRecTest Grid.Row="0"
+                                     Grid.Column="1"
+                                     Content="{Binding CPUVersion}"
+                                     Style="{StaticResource PlateFormBoxStyle}" />
+            <TextBlock Grid.Row="1"
+                       Grid.Column="0"
+                       Style="{StaticResource PlateFormTextStyle}"
+                       Text="中央处理平台显示器" />
+            <commonControl:RadioRecTest Grid.Row="1"
+                                     Grid.Column="1"
+                                     Content="{Binding Plateform}"
+                                     Style="{StaticResource PlateFormBoxStyle}" />
+            <TextBlock Grid.Row="2"
+                       Grid.Column="0"
+                       Style="{StaticResource PlateFormTextStyle}"
+                       Text="技术支持" />
+            <commonControl:RadioRecTest Grid.Row="2"
+                                     Grid.Column="1"
+                                     Content="{Binding Technology}"
+                                     Style="{StaticResource PlateFormBoxStyle}" />
+            <TextBlock Grid.Row="3"
+                       Grid.Column="0"
+                       Style="{StaticResource PlateFormTextStyle}"
+                       Text="服务电话" />
+            <commonControl:RadioRecTest Grid.Row="3"
+                                     Grid.Column="1"
+                                     Content="{Binding TelNum}"
+                                     Style="{StaticResource PlateFormBoxStyle}" />
+
+        </Grid>
+        <Grid x:Name="Data" Grid.Row="1">
+            <Viewbox Width="{Binding ElementName=Data, Path=ActualWidth}" Height="{Binding ElementName=Data, Path=ActualHeight}">
+                <Canvas Width="510" Height="30">
+                    <Path Data="m 0,0 h 510"
+                          Fill="{StaticResource DarkGrayBrush}"
+                          Stroke="{StaticResource DarkGrayBrush}"
+                          StrokeThickness="1" />
+                </Canvas>
+            </Viewbox>
+            <TextBlock Style="{StaticResource PlateFormPageTextStyle2}" Text="{Binding ElementName=UserControl, Path=PageName}" />
+
+        </Grid>
+    </Grid>
+</UserControl>

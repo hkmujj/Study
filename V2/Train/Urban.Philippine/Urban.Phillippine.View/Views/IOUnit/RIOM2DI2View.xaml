@@ -1,0 +1,155 @@
+﻿<UserControl x:Class="Urban.Phillippine.View.Views.IOUnit.RIOM2DI2View"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Urban.Phillippine.View.Views.IOUnit"
+            d:DataContext="{d:DesignInstance viewModel:IPhilippineViewModel}"
+          
+             xmlns:viewModel="clr-namespace:Urban.Phillippine.View.Interface.ViewModel"
+             xmlns:helper="clr-namespace:Urban.Phillippine.View.Helper"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary Source="../../Resource/PhilippineResource.xaml" />
+    </UserControl.Resources>
+    <Grid Margin="10,50,10,20" helper:GridHelper.GridLineBrush="{StaticResource LogicGrayBrush}"
+          helper:GridHelper.GridLineThickness="2"
+          helper:GridHelper.ShowBorder="True">
+        <Grid.Resources>
+            <ResourceDictionary Source="../../Resource/PhilippineResource.xaml" />
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="0.6*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+        <Button Grid.Row="0" Grid.Column="0" Content="Channel"  Style="{StaticResource MainPageButton}" />
+        <Button Grid.Row="0" Grid.Column="1" Content="Connecto" Style="{StaticResource MainPageButton}" />
+        <Button Grid.Row="0" Grid.Column="2" Content="Signal Name" Style="{StaticResource MainPageButton}" />
+        <Button Grid.Row="0" Grid.Column="3" Content="State" Style="{StaticResource MainPageButton}" />
+        <Button Grid.Row="0" Grid.Column="4" Content="Channel" Style="{StaticResource MainPageButton}" />
+        <Button Grid.Row="0" Grid.Column="5" Content="Connecto" Style="{StaticResource MainPageButton}" />
+        <Button Grid.Row="0" Grid.Column="6" Content="Signal Name" Style="{StaticResource MainPageButton}" />
+        <Button Grid.Row="0" Grid.Column="7" Content="State" Style="{StaticResource MainPageButton}" />
+        <Button Content="IN1" Style="{StaticResource MainPageButton}" Grid.Row="1"   Grid.Column="0"></Button>
+        <Button Content="IN2" Style="{StaticResource MainPageButton}" Grid.Row="2"   Grid.Column="0"></Button>
+        <Button Content="IN3" Style="{StaticResource MainPageButton}" Grid.Row="3"   Grid.Column="0"></Button>
+        <Button Content="IN4" Style="{StaticResource MainPageButton}" Grid.Row="4"   Grid.Column="0"></Button>
+        <Button Content="IN5" Style="{StaticResource MainPageButton}" Grid.Row="5"   Grid.Column="0"></Button>
+        <Button Content="IN6" Style="{StaticResource MainPageButton}" Grid.Row="6"   Grid.Column="0"></Button>
+        <Button Content="IN7" Style="{StaticResource MainPageButton}" Grid.Row="7"   Grid.Column="0"></Button>
+        <Button Content="IN8" Style="{StaticResource MainPageButton}" Grid.Row="8"   Grid.Column="0"></Button>
+        <Button Content="IN9" Style="{StaticResource MainPageButton}" Grid.Row="9"   Grid.Column="0"></Button>
+        <Button Content="IN10" Style="{StaticResource MainPageButton}" Grid.Row="10" Grid.Column="0"></Button>
+        <Button Content="IN11" Style="{StaticResource MainPageButton}" Grid.Row="11" Grid.Column="0"></Button>
+        <Button Content="IN12" Style="{StaticResource MainPageButton}" Grid.Row="12" Grid.Column="0"></Button>
+        <Button Content="X1:S" Style="{StaticResource MainPageButton}" Grid.Row="1"   Grid.Column="1"></Button>
+        <Button Content="X1:M" Style="{StaticResource MainPageButton}" Grid.Row="2"   Grid.Column="1"></Button>
+        <Button Content="X1:P" Style="{StaticResource MainPageButton}" Grid.Row="3"   Grid.Column="1"></Button>
+        <Button Content="X1:K" Style="{StaticResource MainPageButton}" Grid.Row="4"   Grid.Column="1"></Button>
+        <Button Content="X1:H" Style="{StaticResource MainPageButton}" Grid.Row="5"   Grid.Column="1"></Button>
+        <Button Content="X1:C" Style="{StaticResource MainPageButton}" Grid.Row="6"   Grid.Column="1"></Button>
+        <Button Content="X1:E" Style="{StaticResource MainPageButton}" Grid.Row="7"   Grid.Column="1"></Button>
+        <Button Content="X1:A" Style="{StaticResource MainPageButton}" Grid.Row="8"   Grid.Column="1"></Button>
+        <Button Content="X1:N" Style="{StaticResource MainPageButton}" Grid.Row="9"   Grid.Column="1"></Button>
+        <Button Content="X1:J" Style="{StaticResource MainPageButton}" Grid.Row="10" Grid.Column="1"></Button>
+        <Button Content="X1:D" Style="{StaticResource MainPageButton}" Grid.Row="11" Grid.Column="1"></Button>
+        <Button Content="X1:T" Style="{StaticResource MainPageButton}" Grid.Row="12" Grid.Column="1"></Button>
+        <Button Content="Reverve" Style="{StaticResource MainPageButton}" Grid.Row="1"   Grid.Column="2"></Button>
+        <Button Content="Reverve" Style="{StaticResource MainPageButton}" Grid.Row="2"   Grid.Column="2"></Button>
+        <Button Content="Reverve" Style="{StaticResource MainPageButton}" Grid.Row="3"   Grid.Column="2"></Button>
+        <Button Content="Reverve" Style="{StaticResource MainPageButton}" Grid.Row="4"   Grid.Column="2"></Button>
+        <Button Content="Reverve" Style="{StaticResource MainPageButton}" Grid.Row="5"   Grid.Column="2"></Button>
+        <Button Content="Reverve" Style="{StaticResource MainPageButton}" Grid.Row="6"   Grid.Column="2"></Button>
+        <Button Content="Reverve" Style="{StaticResource MainPageButton}" Grid.Row="7"   Grid.Column="2"></Button>
+        <Button Content="Reverve" Style="{StaticResource MainPageButton}" Grid.Row="8"   Grid.Column="2"></Button>
+        <Button Content="Reverve" Style="{StaticResource MainPageButton}" Grid.Row="9"   Grid.Column="2"></Button>
+        <Button Content="Propulsion OK" Style="{StaticResource MainPageButton}" Grid.Row="10" Grid.Column="2"></Button>
+        <Button Content="TCU Wheel Slip/Slide" Style="{StaticResource MainPageButton}" Grid.Row="11" Grid.Column="2"></Button>
+        <Button Content="Forced Brake Relay" Style="{StaticResource MainPageButton}" Grid.Row="12" Grid.Column="2"></Button>
+        <Button Content="IN13" Style="{StaticResource MainPageButton}" Grid.Row="1"   Grid.Column="4"></Button>
+        <Button Content="IN14" Style="{StaticResource MainPageButton}" Grid.Row="2"   Grid.Column="4"></Button>
+        <Button Content="IN15" Style="{StaticResource MainPageButton}" Grid.Row="3"   Grid.Column="4"></Button>
+        <Button Content="IN16" Style="{StaticResource MainPageButton}" Grid.Row="4"   Grid.Column="4"></Button>
+        <Button Content="IN17" Style="{StaticResource MainPageButton}" Grid.Row="5"   Grid.Column="4"></Button>
+        <Button Content="IN18" Style="{StaticResource MainPageButton}" Grid.Row="6"   Grid.Column="4"></Button>
+        <Button Content="IN19" Style="{StaticResource MainPageButton}" Grid.Row="7"   Grid.Column="4"></Button>
+        <Button Content="IN20" Style="{StaticResource MainPageButton}" Grid.Row="8"   Grid.Column="4"></Button>
+        <Button Content="IN21" Style="{StaticResource MainPageButton}" Grid.Row="9"   Grid.Column="4"></Button>
+        <Button Content="IN22" Style="{StaticResource MainPageButton}" Grid.Row="10" Grid.Column="4"></Button>
+        <Button Content="IN23" Style="{StaticResource MainPageButton}" Grid.Row="11" Grid.Column="4"></Button>
+        <Button Content="IN24" Style="{StaticResource MainPageButton}" Grid.Row="12" Grid.Column="4"></Button>
+        <Button Content="X1:BB" Style="{StaticResource MainPageButton}" Grid.Row="1"   Grid.Column="5"></Button>
+        <Button Content="X1:LL" Style="{StaticResource MainPageButton}" Grid.Row="2"   Grid.Column="5"></Button>
+        <Button Content="X1:FF" Style="{StaticResource MainPageButton}" Grid.Row="3"   Grid.Column="5"></Button>
+        <Button Content="X1:X" Style="{StaticResource MainPageButton}" Grid.Row="4"   Grid.Column="5"></Button>
+        <Button Content="X1:MM" Style="{StaticResource MainPageButton}" Grid.Row="5"   Grid.Column="5"></Button>
+        <Button Content="X1:HH" Style="{StaticResource MainPageButton}" Grid.Row="6"   Grid.Column="5"></Button>
+        <Button Content="" Style="{StaticResource MainPageButton}" Grid.Row="7"   Grid.Column="5"></Button>
+        <Button Content="" Style="{StaticResource MainPageButton}" Grid.Row="8"   Grid.Column="5"></Button>
+        <Button Content="" Style="{StaticResource MainPageButton}" Grid.Row="9"   Grid.Column="5"></Button>
+        <Button Content="" Style="{StaticResource MainPageButton}" Grid.Row="10" Grid.Column="5"></Button>
+        <Button Content="" Style="{StaticResource MainPageButton}" Grid.Row="11" Grid.Column="5"></Button>
+        <Button Content="" Style="{StaticResource MainPageButton}" Grid.Row="12" Grid.Column="5"></Button>
+        <Button Content="HSCB Trip Relay" Style="{StaticResource MainPageButton}" Grid.Row="1"   Grid.Column="6" ></Button>
+        <Button Content="Track Brake Applied" Style="{StaticResource MainPageButton}" Grid.Row="2"   Grid.Column="6"></Button>
+        <Button Content="Reverve" Style="{StaticResource MainPageButton}" Grid.Row="3"   Grid.Column="6"></Button>
+        <Button Content="APS OK" Style="{StaticResource MainPageButton}" Grid.Row="4"   Grid.Column="6"></Button>
+        <Button Content="Safe Brake State" Style="{StaticResource MainPageButton}" Grid.Row="5"   Grid.Column="6"></Button>
+        <Button Content="Emergency Brake State" Style="{StaticResource MainPageButton}" Grid.Row="6"   Grid.Column="6"></Button>
+        <Button Content="Reverve" Style="{StaticResource MainPageButton}" Grid.Row="7"   Grid.Column="6"></Button>
+        <Button Content="Reverve" Style="{StaticResource MainPageButton}" Grid.Row="8"   Grid.Column="6"></Button>
+        <Button Content="Reverve" Style="{StaticResource MainPageButton}" Grid.Row="9"   Grid.Column="6"></Button>
+        <Button Content="Reverve" Style="{StaticResource MainPageButton}" Grid.Row="10" Grid.Column="6"></Button>
+        <Button Content="Reverve" Style="{StaticResource MainPageButton}" Grid.Row="11" Grid.Column="6"></Button>
+        <Button Content="Reverve" Style="{StaticResource MainPageButton}" Grid.Row="12" Grid.Column="6"></Button>
+        <Button Style="{StaticResource MainPageButton}" Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="8"></Button>
+        <Button Style="{StaticResource IoStateViewButtonStyleOne}" Background="{Binding IOState.IOState[114].SignalStatus,Converter={StaticResource SignalStatusConvert}}"  Grid.Row="1" Grid.Column="3" ></Button>
+        <Button Style="{StaticResource IoStateViewButtonStyleOne}" Background="{Binding IOState.IOState[115].SignalStatus,Converter={StaticResource SignalStatusConvert}}"  Grid.Row="2" Grid.Column="3" ></Button>
+        <Button Style="{StaticResource IoStateViewButtonStyleOne}" Background="{Binding IOState.IOState[116].SignalStatus,Converter={StaticResource SignalStatusConvert}}"  Grid.Row="3" Grid.Column="3" ></Button>
+        <Button Style="{StaticResource IoStateViewButtonStyleOne}" Background="{Binding IOState.IOState[117].SignalStatus,Converter={StaticResource SignalStatusConvert}}"  Grid.Row="4" Grid.Column="3" ></Button>
+        <Button Style="{StaticResource IoStateViewButtonStyleOne}" Background="{Binding IOState.IOState[118].SignalStatus,Converter={StaticResource SignalStatusConvert}}"  Grid.Row="5" Grid.Column="3" ></Button>
+        <Button Style="{StaticResource IoStateViewButtonStyleOne}" Background="{Binding IOState.IOState[119].SignalStatus,Converter={StaticResource SignalStatusConvert}}"  Grid.Row="6" Grid.Column="3" ></Button>
+        <Button Style="{StaticResource IoStateViewButtonStyleOne}" Background="{Binding IOState.IOState[120].SignalStatus,Converter={StaticResource SignalStatusConvert}}"  Grid.Row="7" Grid.Column="3" ></Button>
+        <Button Style="{StaticResource IoStateViewButtonStyleOne}" Background="{Binding IOState.IOState[121].SignalStatus,Converter={StaticResource SignalStatusConvert}}"  Grid.Row="8" Grid.Column="3" ></Button>
+        <Button Style="{StaticResource IoStateViewButtonStyleOne}" Background="{Binding IOState.IOState[122].SignalStatus,Converter={StaticResource SignalStatusConvert}}"  Grid.Row="9" Grid.Column="3" ></Button>
+        <Button Style="{StaticResource IoStateViewButtonStyleOne}" Background="{Binding IOState.IOState[123].SignalStatus,Converter={StaticResource SignalStatusConvert}}"  Grid.Row="10" Grid.Column="3" ></Button>
+        <Button Style="{StaticResource IoStateViewButtonStyleOne}" Background="{Binding IOState.IOState[124].SignalStatus,Converter={StaticResource SignalStatusConvert}}"  Grid.Row="11" Grid.Column="3" ></Button>
+        <Button Style="{StaticResource IoStateViewButtonStyleOne}" Background="{Binding IOState.IOState[125].SignalStatus,Converter={StaticResource SignalStatusConvert}}"  Grid.Row="12" Grid.Column="3" ></Button>
+        <Button Style="{StaticResource IoStateViewButtonStyleOne}" Background="{Binding IOState.IOState[126].SignalStatus,Converter={StaticResource SignalStatusConvert}}"  Grid.Row="1" Grid.Column="7" ></Button>
+        <Button Style="{StaticResource IoStateViewButtonStyleOne}" Background="{Binding IOState.IOState[127].SignalStatus,Converter={StaticResource SignalStatusConvert}}"  Grid.Row="2" Grid.Column="7" ></Button>
+        <Button Style="{StaticResource IoStateViewButtonStyleOne}" Background="{Binding IOState.IOState[128].SignalStatus,Converter={StaticResource SignalStatusConvert}}"  Grid.Row="3" Grid.Column="7" ></Button>
+        <Button Style="{StaticResource IoStateViewButtonStyleOne}" Background="{Binding IOState.IOState[129].SignalStatus,Converter={StaticResource SignalStatusConvert}}"  Grid.Row="4" Grid.Column="7" ></Button>
+        <Button Style="{StaticResource IoStateViewButtonStyleOne}" Background="{Binding IOState.IOState[130].SignalStatus,Converter={StaticResource SignalStatusConvert}}"  Grid.Row="5" Grid.Column="7" ></Button>
+        <Button Style="{StaticResource IoStateViewButtonStyleOne}" Background="{Binding IOState.IOState[131].SignalStatus,Converter={StaticResource SignalStatusConvert}}"  Grid.Row="6" Grid.Column="7" ></Button>
+        <Button Style="{StaticResource IoStateViewButtonStyleOne}" Background="{Binding IOState.IOState[132].SignalStatus,Converter={StaticResource SignalStatusConvert}}"  Grid.Row="7" Grid.Column="7" ></Button>
+        <Button Style="{StaticResource IoStateViewButtonStyleOne}" Background="{Binding IOState.IOState[133].SignalStatus,Converter={StaticResource SignalStatusConvert}}"  Grid.Row="8" Grid.Column="7" ></Button>
+        <Button Style="{StaticResource IoStateViewButtonStyleOne}" Background="{Binding IOState.IOState[134].SignalStatus,Converter={StaticResource SignalStatusConvert}}"  Grid.Row="9" Grid.Column="7" ></Button>
+        <Button Style="{StaticResource IoStateViewButtonStyleOne}" Background="{Binding IOState.IOState[135].SignalStatus,Converter={StaticResource SignalStatusConvert}}"  Grid.Row="10" Grid.Column="7" ></Button>
+        <Button Style="{StaticResource IoStateViewButtonStyleOne}" Background="{Binding IOState.IOState[136].SignalStatus,Converter={StaticResource SignalStatusConvert}}"  Grid.Row="11" Grid.Column="7" ></Button>
+        <Button Style="{StaticResource IoStateViewButtonStyleOne}" Background="{Binding IOState.IOState[137].SignalStatus,Converter={StaticResource SignalStatusConvert}}"  Grid.Row="12" Grid.Column="7" ></Button>
+    </Grid>
+</UserControl>

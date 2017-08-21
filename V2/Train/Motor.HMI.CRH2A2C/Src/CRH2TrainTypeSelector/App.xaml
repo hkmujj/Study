@@ -1,0 +1,15 @@
+﻿<Application x:Class="CRH2TrainTypeSelector.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:configModel="clr-namespace:CRH2MMI.Config.ConfigModel;assembly=CRH2MMI"
+             xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <Application.Resources>
+        <ObjectDataProvider x:Key="TrainTypes"
+                            MethodName="GetValues"
+                            ObjectType="{x:Type system:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="configModel:CRH2Type" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Application.Resources>
+</Application>

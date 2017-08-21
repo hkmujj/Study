@@ -1,0 +1,560 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CAE17752-3CC6-4DE4-AD0D-CF73E561B1D2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LightRail.HMI.GZYGDC</RootNamespace>
+    <AssemblyName>LightRail.HMI.GZYGDC</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\MMI\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>..\..\MMI\LightRail.HMI.GZYGDC.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonUtil, Version=2.29.2016.517, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="DevExpress.Data.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Core.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.PropertyGrid.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Excel.Interface, Version=2.30.2016.712, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Practices.Prism, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Engine.Angola.TCMS\MMI\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.MefExtensions, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Engine.Angola.TCMS\MMI\Microsoft.Practices.Prism.MefExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Engine.Angola.TCMS\MMI\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="MMI.Facility.Interface, Version=2.50.2017.214, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="MMI.Facility.WPFInfrastructure, Version=2.28.2016.929, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="WPFApp\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Resources\Base\GZYGDCBaseResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Converter\Converter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\GZYGDCResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Images\ImageResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\ControlStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\GZYGDCButtonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\TextStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Text\StringResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Buttons\BottomButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Buttons\HardwareButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Common\StartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\AirConditionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\BroadcastControlView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\EnmergencyBroadcastView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\EventInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\HelpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\MaintenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\RunningView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\SettingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DataMonitor\DataMonitorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DataMonitor\DataMonitorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Layout\ShellContentStyle1Layout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Layout\ShellContentStyle2Layout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shell\ShellWithButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shell\ShellWithoutButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shell\GZYGDCShell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Adapter\DomainAdapter.cs" />
+    <Compile Include="Adapter\IUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviderBase.cs" />
+    <Compile Include="Adapter\UpdateEventInfoDataProvider.cs" />
+    <Compile Include="Adapter\UpdateRunningViewDataProvider.cs" />
+    <Compile Include="Adapter\UpdateTitleViewDataProvider.cs" />
+    <Compile Include="Config\Priority.cs" />
+    <Compile Include="Constant\RegionNames.cs" />
+    <Compile Include="Controller\BtnActionResponser\BottomViewBtnActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\BroadcastControlViewBtnActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\BtnActionResponserBase.cs" />
+    <Compile Include="Controller\BtnActionResponser\EmergencyBroadcastViewBtnActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\EventInfoViewBtnActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\RunningViewBtnActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\HelpViewBtnActionResponser.cs" />
+    <Compile Include="Controller\BtnStragy\StateInterfaceFactory.cs" />
+    <Compile Include="Controller\DomainController.cs" />
+    <Compile Include="Controller\EmergencyBroadcastController.cs" />
+    <Compile Include="Controller\EventInfoController.cs" />
+    <Compile Include="Controller\RunningController.cs" />
+    <Compile Include="Controller\TitleController.cs" />
+    <Compile Include="Converter\ButtonContentConverter.cs" />
+    <Compile Include="Converter\EventInfoVisibleConverter.cs" />
+    <Compile Include="Converter\PowerValueBrushConverter.cs" />
+    <Compile Include="Converter\TimeConverter.cs" />
+    <Compile Include="Event\AnsyncNavigateViewByKeyEvent.cs" />
+    <Compile Include="Event\DataServiceDataChanged.cs" />
+    <Compile Include="Event\LazyValueCreatedEvent.cs" />
+    <Compile Include="Extension\CommunicationDataChangedArgsExtension.cs" />
+    <Compile Include="Extension\CommunicationDataServiceExtension.cs" />
+    <Compile Include="Extension\NetWorkDataExtention.cs" />
+    <Compile Include="Interface\IEventInfo.cs" />
+    <Compile Include="Interface\IStation.cs" />
+    <Compile Include="Interface\IUnit.cs" />
+    <Compile Include="Model\ConfigModel\EmergencyBroadcastItem.cs" />
+    <Compile Include="Model\ConfigModel\StateInterfaceItemBottom.cs" />
+    <Compile Include="Model\ConfigModel\StateInterfaceItemCenter.cs" />
+    <Compile Include="Model\ConfigModel\StationItem.cs" />
+    <Compile Include="Model\EmergencyBroadcastModel.cs" />
+    <Compile Include="Model\EventInfoModel.cs" />
+    <Compile Include="Model\IResetSupport.cs" />
+    <Compile Include="GZYGDCMefBootstrapper.cs" />
+    <Compile Include="GZYGDCSSubystem.cs" />
+    <Compile Include="Model\BtnStragy\ActionResponserExportAttribute.cs" />
+    <Compile Include="Model\BtnStragy\BtnItem.cs" />
+    <Compile Include="Model\BtnStragy\IBtnActionResponser.cs" />
+    <Compile Include="Model\BtnStragy\IStateInterface.cs" />
+    <Compile Include="Model\BtnStragy\IStateInterfaceFactory.cs" />
+    <Compile Include="Model\BtnStragy\StateInterface.cs" />
+    <Compile Include="Model\BtnStragy\StateInterfaceExportAttribute.cs" />
+    <Compile Include="Model\BtnStragy\StateInterfaceKey.cs" />
+    <Compile Include="Model\ConfigModel\StateInterfaceItem.cs" />
+    <Compile Include="Model\GlobalParam.cs" />
+    <Compile Include="Model\IRaiseResourceChangedProvider.cs" />
+    <Compile Include="Model\DomainModel.cs" />
+    <Compile Include="Controller\HardwareBtnController.cs" />
+    <Compile Include="Model\HardwareBtnModel.cs" />
+    <Compile Include="Model\RunningModel.cs" />
+    <Compile Include="Model\State\BatteryInfo.cs" />
+    <Compile Include="Model\State\TrainDirection.cs" />
+    <Compile Include="Model\State\WorkCondition.cs" />
+    <Compile Include="Model\TitleModel.cs" />
+    <Compile Include="Model\Units\AirConditionUnit.cs" />
+    <Compile Include="Model\Units\AssistUnit.cs" />
+    <Compile Include="Model\Units\BatteryUnit.cs" />
+    <Compile Include="Model\Units\BrakeUnit.cs" />
+    <Compile Include="Model\Units\DoorUnit.cs" />
+    <Compile Include="Model\Units\EnmergencyTalkUnit.cs" />
+    <Compile Include="Model\Units\EventInfo.cs" />
+    <Compile Include="Model\Units\HSCBUnit.cs" />
+    <Compile Include="Model\Units\PantographUnit.cs" />
+    <Compile Include="Model\Units\SpringUnit.cs" />
+    <Compile Include="Model\Units\TractionUnit.cs" />
+    <Compile Include="Resources\Keys\InBoolKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InBoolKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Keys\InFloatKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InFloatKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Keys\OutBoolKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutBoolKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Keys\OutFloatKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutFloatKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Keys\StateKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StateKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\AirConditionPriorityService.cs" />
+    <Compile Include="Service\AssistPriorityService.cs" />
+    <Compile Include="Service\BatteryPriorityService.cs" />
+    <Compile Include="Service\BrakePriorityService.cs" />
+    <Compile Include="Service\DoorPriorityService.cs" />
+    <Compile Include="Service\EmergencyTalkPriorityService.cs" />
+    <Compile Include="Service\EventManagerService.cs" />
+    <Compile Include="Service\HSCBPriorityService.cs" />
+    <Compile Include="Service\PantographPriorityService.cs" />
+    <Compile Include="Service\PriorityServiceBase.cs" />
+    <Compile Include="Service\SpringPriorityService.cs" />
+    <Compile Include="Service\StationManagerService.cs" />
+    <Compile Include="Service\TractionPriorityService.cs" />
+    <Compile Include="ViewModel\EmergencyBroadcastViewModel.cs" />
+    <Compile Include="ViewModel\EventInfoViewModel.cs" />
+    <Compile Include="ViewModel\HardwareBtnViewModel.cs" />
+    <Compile Include="ViewModel\DomainViewModel.cs" />
+    <Compile Include="ViewModel\RunningViewModel.cs" />
+    <Compile Include="ViewModel\TitleViewModel.cs" />
+    <Compile Include="View\Buttons\BottomButton.xaml.cs">
+      <DependentUpon>BottomButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Buttons\HardwareButton.xaml.cs">
+      <DependentUpon>HardwareButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\StartView.xaml.cs">
+      <DependentUpon>StartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\AirConditionView.xaml.cs">
+      <DependentUpon>AirConditionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\BroadcastControlView.xaml.cs">
+      <DependentUpon>BroadcastControlView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\EnmergencyBroadcastView.xaml.cs">
+      <DependentUpon>EnmergencyBroadcastView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\EventInfoView.xaml.cs">
+      <DependentUpon>EventInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\HelpView.xaml.cs">
+      <DependentUpon>HelpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\MaintenView.xaml.cs">
+      <DependentUpon>MaintenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\RunningView.xaml.cs">
+      <DependentUpon>RunningView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\SettingView.xaml.cs">
+      <DependentUpon>SettingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DataMonitor\DataMonitorView.xaml.cs">
+      <DependentUpon>DataMonitorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DataMonitor\DataMonitorWindow.xaml.cs">
+      <DependentUpon>DataMonitorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Layout\ShellContentStyle1Layout.xaml.cs">
+      <DependentUpon>ShellContentStyle1Layout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Layout\ShellContentStyle2Layout.xaml.cs">
+      <DependentUpon>ShellContentStyle2Layout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shell\ShellWithButton.xaml.cs">
+      <DependentUpon>ShellWithButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shell\ShellWithoutButton.xaml.cs">
+      <DependentUpon>ShellWithoutButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shell\GZYGDCForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Shell\GZYGDCForm.Designer.cs">
+      <DependentUpon>GZYGDCForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Title\TitleView.xaml.cs">
+      <DependentUpon>TitleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFApp\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\Shell\GZYGDCShell.xaml.cs">
+      <DependentUpon>GZYGDCShell.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\Title\TitleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Keys\InBoolKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InBoolKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Keys\InFloatKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InFloatKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Keys\OutBoolKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OutBoolKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Keys\OutFloatKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OutFloatKeys.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Keys\StateKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StateKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Shell\GZYGDCForm.resx">
+      <DependentUpon>GZYGDCForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="WPFApp\App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Changes.LightRail.HMI.GZYGDC.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\GZYGDC\4点向上透明箭头.png" />
+    <Resource Include="Resources\Images\GZYGDC\喇叭.png" />
+    <Resource Include="Resources\Images\GZYGDC\时钟.png" />
+    <Resource Include="Resources\Images\GZYGDC\红色向下箭头.png" />
+    <Resource Include="Resources\Images\GZYGDC\绿色向下箭头.png" />
+    <Resource Include="Resources\Images\GZYGDC\黑色向上箭头.png" />
+    <Resource Include="Resources\Images\GZYGDC\黑色向下箭头.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\GZYGDC\CSR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\GZYGDC\HSCB严重故障.png" />
+    <Resource Include="Resources\Images\GZYGDC\HSCB断开.png" />
+    <Resource Include="Resources\Images\GZYGDC\HSCB闭合.png" />
+    <Resource Include="Resources\Images\GZYGDC\受电弓升起.png" />
+    <Resource Include="Resources\Images\GZYGDC\受电弓落下.png" />
+    <Resource Include="Resources\Images\GZYGDC\牵引严重故障.png" />
+    <Resource Include="Resources\Images\GZYGDC\牵引停止.png" />
+    <Resource Include="Resources\Images\GZYGDC\牵引次要故障.png" />
+    <Resource Include="Resources\Images\GZYGDC\牵引正在自检.png" />
+    <Resource Include="Resources\Images\GZYGDC\牵引运行.png" />
+    <Resource Include="Resources\Images\GZYGDC\电池故障.png" />
+    <Resource Include="Resources\Images\GZYGDC\电池正常.png" />
+    <Resource Include="Resources\Images\GZYGDC\电源严重故障.png" />
+    <Resource Include="Resources\Images\GZYGDC\电源次要故障.png" />
+    <Resource Include="Resources\Images\GZYGDC\电源运行.png" />
+    <Resource Include="Resources\Images\GZYGDC\车门严重故障.png" />
+    <Resource Include="Resources\Images\GZYGDC\车门关.png" />
+    <Resource Include="Resources\Images\GZYGDC\车门切除.png" />
+    <Resource Include="Resources\Images\GZYGDC\车门开.png" />
+    <Resource Include="Resources\Images\GZYGDC\车门次要故障.png" />
+    <Resource Include="Resources\Images\GZYGDC\车门紧急解锁.png" />
+    <Resource Include="Resources\Images\GZYGDC\车门障碍.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\GZYGDC\电池充电中.png" />
+    <Resource Include="Resources\Images\GZYGDC\电池未充电.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\GZYGDC\制动严重故障.png" />
+    <Resource Include="Resources\Images\GZYGDC\制动施加.png" />
+    <Resource Include="Resources\Images\GZYGDC\制动次要故障.png" />
+    <Resource Include="Resources\Images\GZYGDC\制动紧急缓解.png" />
+    <Resource Include="Resources\Images\GZYGDC\制动缓解.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\GZYGDC\空调严重故障.png" />
+    <Resource Include="Resources\Images\GZYGDC\空调停止.png" />
+    <Resource Include="Resources\Images\GZYGDC\空调减载.png" />
+    <Resource Include="Resources\Images\GZYGDC\空调次要故障.png" />
+    <Resource Include="Resources\Images\GZYGDC\空调运行.png" />
+    <Resource Include="Resources\Images\GZYGDC\空调通风.png" />
+    <Resource Include="Resources\Images\GZYGDC\空调预冷.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\GZYGDC\通话严重故障.png" />
+    <Resource Include="Resources\Images\GZYGDC\通话中.png" />
+    <Resource Include="Resources\Images\GZYGDC\通话结束.png" />
+    <Resource Include="Resources\Images\GZYGDC\通话请求.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\GZYGDC\叉.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\GZYGDC\车门正在打开或关闭.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

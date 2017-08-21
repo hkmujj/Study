@@ -1,0 +1,1322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CAE17752-3CC6-4DE4-AD0D-CF73E561B1D2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Motor.HMI.CRH380BG</RootNamespace>
+    <AssemblyName>Motor.HMI.CRH380BG</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\MMI\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonUtil, Version=2.29.2016.517, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="DevExpress.Data.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>G:\MMI\DevExpress.Data.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Mvvm.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>G:\MMI\DevExpress.Mvvm.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>G:\MMI\DevExpress.Printing.v15.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Core.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>G:\MMI\DevExpress.Xpf.Core.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.PropertyGrid.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>G:\MMI\DevExpress.Xpf.PropertyGrid.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Excel.Interface, Version=2.30.2016.712, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Expression.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.Prism, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.Prism.MefExtensions, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="MMI.Facility.Control">
+      <HintPath>..\..\..\..\Bin\MMI\MMI.Facility.Control.dll</HintPath>
+    </Reference>
+    <Reference Include="MMI.Facility.DataType">
+      <HintPath>..\..\..\..\Bin\MMI\MMI.Facility.DataType.dll</HintPath>
+    </Reference>
+    <Reference Include="MMI.Facility.Interface, Version=2.50.2017.214, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\MMI\MMI.Facility.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="MMI.Facility.WPFInfrastructure, Version=2.50.2017.705, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="WPFApp\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Resources\Base\CRH380BGBaseResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Converter\CRH380BGConverterResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\CRH380BGResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Image\CRH380BGImageResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Strings\StringResource_CH.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Styles\CRH380BGBorderStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\CRH380BGButtonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\CRH380BGListStyleResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\CRH380BGProgressStyleResource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Styles\CRH380BGTextStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Buttons\HardwareButtonDown.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Buttons\HardwareButtonRight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Buttons\HardwareButtonUp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Buttons\SoftwareButtonDown.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\ATPSystem\ATPSystemView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\ATPSystem\EVCExchangeDisplayView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\AutoSpeedControl\AutoSpeedControlView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Begin\BeginView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\BrakeStatus\BrakeEfficientView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\BrakeStatus\BrakeFunctionStatusView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\BrakeStatus\BrakeStatusView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\BrakeStatus\BrakeTestView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\BrakeStatus\ParkingBrakeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\BrakeStatus\TotalDuctView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Door\DriverDoorView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Fault\ChangeLayoutView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Fault\FaultLessVView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Fault\FaultEqualVView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Fault\FaultReportView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Fault\FaultView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Info\NoOperableItem2View.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Info\NoOperableItem3View.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Info\NoOperableItem4View.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Info\NoOperableItem5View.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Info\NoOperableItem6View.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Info\NoOperableItem7View.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Info\NoOperableItem1View.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Info\OperableItem2View.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Info\OperableItem1View.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Info\StatusView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Info\ConductorDisplayView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Info\RightDisplayView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Info\LeftDisplayView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Info\HardwareView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Info\MaintainInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Maintain\InitializationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Maintain\IntermediateDClinkView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Maintain\MaintainCloseView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Maintain\EnergyMeteringView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Maintain\NumberFourCarVersion1View.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Maintain\NumberFourCarVersion2View.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Maintain\NumberOneCarVersionView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Maintain\NumberThreeCarVersionView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Maintain\NumberTwoCarVersionView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Maintain\RunSpeedSettingDetectionView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Maintain\TeletransmissionView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Maintain\TractionHandleDetectionView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Maintain\MaintainOpenView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Ready\ReadyView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\RootContentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Switch\AirConditionView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Switch\CarWashOperationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Switch\FanView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Switch\FrontWindowHeatingView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Switch\IlluminationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Switch\NetworkCurrentLimitView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Switch\SwitchView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Switch\TractionView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Systems\CompiledSuccessView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Systems\CompiledTrainReadyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Systems\ConfirmCompiledView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Systems\CompiledView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Systems\CloseCarCoverView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Systems\GroupHangsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\TrainConfig\TrainConfigView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Urgent\AccelerationAlarmView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Urgent\EmergencyModeGuideView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Urgent\ReleaseSpeedLimitView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Urgent\UrgentView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\DataMonitor\DataMonitorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DataMonitor\DataMonitorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Layout\ShellContentStyle1Layout.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Shell\CRH380BGShell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Shell\ShellWithButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Shell\ShellWithoutButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Adapter\Detail\UpdateBtnDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviderBase.cs" />
+    <Compile Include="Adapter\CRH380BGAdapter.cs" />
+    <Compile Include="Adapter\IUpdateDataProvider.cs" />
+    <Compile Include="Constant\RegionNames.cs" />
+    <Compile Include="Controller\BtnActionResponser\AirCompressorActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\AirConditionEmergencyCloseActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\AllAccelerationAlarmActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\AutoSpeedControlAscCloseActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\AutoSpeedControlMaxSpeedActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\AutoSpeedControl25kmActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\AutoSpeedControl10kmActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\AutoSpeedControl5kmActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\AutoSpeedControl2kmActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToDeleteFaultFlagActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToFaultChangeLayoutActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToFaultlVEqual0ActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToFaultlVBig0ActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToMaintainActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ConfirmTrainConfigActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\CurrentFaultDownActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\CurrentFaultUpActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToInitializationActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToMaintainInfoActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToNetworkCurrentLimitActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToNoOperableItem2ActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToStatusActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToNoOperableItem7ActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToNoOperableItem6ActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToNoOperableItem5ActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToNoOperableItem4ActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToNoOperableItem3ActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToNormalInfoActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToLeftDisplayActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToOperableItem2ActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToRightDisplayActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToConductorDisplayActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToOperableItem1ActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToNoOperableItem1ActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToHardwareActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToCloseCarCoverActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToGroupHangsActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToCompiledActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToConfirmCompiledActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToFaultReportActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToNetworkCurrentLimit600AActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToNetworkCurrentLimit500AActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToNetworkCurrentLimit400AActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToNetworkCurrentLimit300AActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToCompiledReadyActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ManualSelectHighNetActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\OkCloseCarCover6ActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\OkCloseCarCover5ActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\OkCloseCarCover4ActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\OkCloseCarCover3ActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\OkCloseCarCover2ActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\OkCloseCarCover1ActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\CloseCarCover2ActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\CloseCarCover1ActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\OkComPiledActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\PipeTwoLinkActionResponser .cs" />
+    <Compile Include="Controller\BtnActionResponser\PipeOneLinkActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\OkAllaccelerationAlarmActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\CancelAllaccelerationAlarmActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\CancelCancelSpeedLimitActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\FanAutoActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\FanMaxActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\FanMinActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\OkCancelSpeedLimitActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\CancelSpeedLimitActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToReleaseSpeedLimitActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\IlluminationDownActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\IlluminationLeftActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\RunSpeedPipeOneLinkActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\RunSpeedPipeTwoLinkActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\SandDryActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\SpeedLimit100ActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\SpeedLimitCancelOkActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\TractionLeftActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\IlluminationRightActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\TractionRightActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\IlluminationUpActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\TractionDownActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\AirConditionLeftActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\AirConditionRightActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\AirConditionDownActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\AirConditionUpActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\BtnActionResponserBase.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToAccelerationAlarmActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToEmergencyModeGuideActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToAirConditionActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToBatteryActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToBrakeEfficientActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToBrakeFunctionStatusActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToBrakeTestActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToCarWashOperationActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToCatenaryTypeActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToDeviceStatusActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToEnergyMeteringActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToEVCExchangeDisplayActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToFanActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToFaultActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToFreedDriverDoorActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToFrontWindowHeatingActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToGearboxMotorTemperatureActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToIlluminationActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToIntermediateDClinkActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToMaintainCloseActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToNetworkCurrentLimitMaxActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToNumberFourCarVersion1ActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToNumberFourCarVersion2ActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToNumberOneCarVersionActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToNumberThreeCarVersionActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToNumberTwoCarVersionActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToParkingBrakeActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToSpeedSettingDetectionActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToSystemActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToTeletransmissionActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToTotalDuctActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToTractionActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToTractionHandleDetectionActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToUrgentOpenActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToReadyActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToAutoSpeedControlActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToSwitchActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToRootActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToBrakeStatusActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToATPSystemActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToDisableDriverDoorActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToMaintainOpenActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToWheelTemperatureActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeTrainConfigurationActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\TractionUpActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\TrianPipeFillWithWindActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\VolumeDownActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\VolumeUpActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\LightUpActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\LightDownActionResponser.cs" />
+    <Compile Include="Controller\BtnStragy\StateInterfaceFactory.cs" />
+    <Compile Include="Controller\CRH380BGDebugger.cs" />
+    <Compile Include="Controller\Domain\FaultController.cs" />
+    <Compile Include="Controller\Domain\OtherController.cs" />
+    <Compile Include="Controller\StateController.cs" />
+    <Compile Include="Converters\FindItemIndexConverter.cs" />
+    <Compile Include="Converters\LightBushConverter.cs" />
+    <Compile Include="Converters\ProgressBarConverter.cs" />
+    <Compile Include="Converters\SetValueConverter.cs" />
+    <Compile Include="Converters\TestConverter.cs" />
+    <Compile Include="Event\DataServiceDataChanged.cs" />
+    <Compile Include="Event\LazyValueCreatedEvent.cs" />
+    <Compile Include="Extension\CommunicationDataChangedArgsExtension.cs" />
+    <Compile Include="Extension\CommunicationDataServiceExtension.cs" />
+    <Compile Include="Controller\MainCRH380BGController.cs" />
+    <Compile Include="Model\Common\ListWrapper.cs" />
+    <Compile Include="Model\Common\PageWrapper.cs" />
+    <Compile Include="Model\ConfigModel\NotifyInfoConfig.cs" />
+    <Compile Include="Model\Domain\Brake\BrakeEfficentModel.cs" />
+    <Compile Include="Model\Domain\Brake\BrakeFunctionStatusModel.cs" />
+    <Compile Include="Model\Domain\Brake\BrakeModel.cs" />
+    <Compile Include="Model\Domain\Brake\Efficence.cs" />
+    <Compile Include="Model\Domain\Brake\EfficenceClose.cs" />
+    <Compile Include="Model\Domain\Brake\EfficentState.cs" />
+    <Compile Include="Model\Domain\Brake\ParkingBrakeModel.cs" />
+    <Compile Include="Model\Domain\Brake\ParkingState.cs" />
+    <Compile Include="Model\Domain\Brake\ParkingStateEfficence.cs" />
+    <Compile Include="Model\Domain\Brake\ParkingStateUnkown.cs" />
+    <Compile Include="Model\Domain\Constant\AccelerationAlarmType.cs" />
+    <Compile Include="Model\Domain\Constant\AirConditionState.cs" />
+    <Compile Include="Model\Domain\Constant\AirConditionTemperatureState.cs" />
+    <Compile Include="Model\Domain\Constant\AscSettingState.cs" />
+    <Compile Include="Model\Domain\Constant\AtLeastOneDoorOpenState.cs" />
+    <Compile Include="Model\Domain\Constant\AutoSafeDeviceState.cs" />
+    <Compile Include="Model\Domain\Constant\AutoSpeedControlType.cs" />
+    <Compile Include="Model\Domain\Constant\CatenaryType.cs" />
+    <Compile Include="Model\Domain\Constant\ChargerState.cs" />
+    <Compile Include="Model\Domain\Constant\DoorDisableType.cs" />
+    <Compile Include="Model\Domain\Constant\DoorOpenType.cs" />
+    <Compile Include="Model\Domain\Constant\DoorState.cs" />
+    <Compile Include="Model\Domain\Constant\DriverRoomChangeModeState.cs" />
+    <Compile Include="Model\Domain\Constant\FanType.cs" />
+    <Compile Include="Model\Domain\Constant\FaultState.cs" />
+    <Compile Include="Model\Domain\Constant\FireState.cs" />
+    <Compile Include="Model\Domain\Constant\FrontWindowHeatingType.cs" />
+    <Compile Include="Model\Domain\Constant\GroupHangsType.cs" />
+    <Compile Include="Model\Domain\Constant\IlluminationState.cs" />
+    <Compile Include="Model\Domain\Constant\InfoDoorState.cs" />
+    <Compile Include="Model\Domain\Constant\InfoDriverRoomDoorState.cs" />
+    <Compile Include="Model\Domain\Constant\InfoLightState.cs" />
+    <Compile Include="Model\Domain\Constant\InfoMainBreakState.cs" />
+    <Compile Include="Model\Domain\Constant\MainBreakState.cs" />
+    <Compile Include="Model\Domain\Constant\NetWorkCurrentLimitType.cs" />
+    <Compile Include="Model\Domain\Constant\PantographState.cs" />
+    <Compile Include="Model\Domain\Constant\PrepareRunActivationState.cs" />
+    <Compile Include="Model\Domain\Constant\RoofIsolationState.cs" />
+    <Compile Include="Model\Domain\Constant\SettingPlacedInZeroType.cs" />
+    <Compile Include="Model\Domain\Constant\SpeedLimitState.cs" />
+    <Compile Include="Model\Domain\Constant\TractionBrakeType.cs" />
+    <Compile Include="Model\Domain\Constant\TrainIsReadyState.cs" />
+    <Compile Include="Model\Domain\Constant\TrainPipeCutoffState.cs" />
+    <Compile Include="Model\Domain\Constant\VoltageChargerState.cs" />
+    <Compile Include="Model\Domain\DomainModel.cs" />
+    <Compile Include="Model\Domain\Door\DoorModel.cs" />
+    <Compile Include="Model\Domain\Emergency\EmergencyModel.cs" />
+    <Compile Include="Model\Domain\Fault\Detail\FaultItem.cs" />
+    <Compile Include="Model\Domain\Fault\FaultModel.cs" />
+    <Compile Include="Model\Domain\MainData\GraduationResouce.cs" />
+    <Compile Include="Model\Domain\MainData\MainDataModel.cs" />
+    <Compile Include="Model\Domain\Maintain\MaintainModel.cs" />
+    <Compile Include="Model\Domain\Maintain\ModelState.cs" />
+    <Compile Include="Model\Domain\Maintain\PipeState.cs" />
+    <Compile Include="Model\Domain\Maintain\RunSpeedSettingDetectionModel.cs" />
+    <Compile Include="Model\Domain\Maintain\TractionHandleDetectionModel.cs" />
+    <Compile Include="Model\Domain\Other\OtherModel.cs" />
+    <Compile Include="Model\Domain\Switch\AirCondition\AirConditionModel.cs" />
+    <Compile Include="Model\Domain\Switch\Illumination\IlluminationModel.cs" />
+    <Compile Include="Model\Domain\Switch\SwitchModel.cs" />
+    <Compile Include="Model\Domain\Switch\Traction\TractionModel.cs" />
+    <Compile Include="Model\Domain\System\GearboxMotorTemperature\GearboxMotorTemperatureModel.cs" />
+    <Compile Include="Model\Domain\System\GroupHangs\GroupHangsModel.cs" />
+    <Compile Include="Model\Domain\System\SystemModel.cs" />
+    <Compile Include="Model\Domain\System\WheelTemperature\WheelTemperatureModel.cs" />
+    <Compile Include="Model\Domain\Title\TitleModel.cs" />
+    <Compile Include="Model\Interface\IClear.cs" />
+    <Compile Include="Model\Interface\IFaultInfo.cs" />
+    <Compile Include="Model\Interface\IModels.cs" />
+    <Compile Include="Model\Interface\IInitialize.cs" />
+    <Compile Include="Model\Interface\IResetSupport.cs" />
+    <Compile Include="Model\ModelBase.cs" />
+    <Compile Include="Model\ReserveCRH380BGModel.cs" />
+    <Compile Include="Model\StateModel.cs" />
+    <Compile Include="Model\Units\FaultInfo.cs" />
+    <Compile Include="Model\ViewLocation.cs" />
+    <Compile Include="Resources\Image\ImageResourceCreater.cs" />
+    <Compile Include="Resources\Keys\InBoolKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InBoolKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Keys\InFloatKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InFloatKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Keys\OutBoolKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutBoolKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Keys\OutFloatKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutFloatKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CRH380BGMefBootstrapper.cs" />
+    <Compile Include="CRH380BGSubystem.cs" />
+    <Compile Include="Model\BtnStragy\ActionResponserExportAttribute.cs" />
+    <Compile Include="Model\BtnStragy\BtnItem.cs" />
+    <Compile Include="Model\BtnStragy\IBtnActionResponser.cs" />
+    <Compile Include="Model\BtnStragy\IStateInterface.cs" />
+    <Compile Include="Model\BtnStragy\IStateInterfaceFactory.cs" />
+    <Compile Include="Model\BtnStragy\StateInterface.cs" />
+    <Compile Include="Model\BtnStragy\StateInterfaceExportAttribute.cs" />
+    <Compile Include="Model\BtnStragy\StateInterfaceKey.cs" />
+    <Compile Include="Model\ConfigModel\StateInterfaceItem.cs" />
+    <Compile Include="Model\GlobalParam.cs" />
+    <Compile Include="Model\IRaiseResourceChangedProvider.cs" />
+    <Compile Include="Model\CRH380BGModel.cs" />
+    <Compile Include="Controller\HardwareBtnController.cs" />
+    <Compile Include="Model\HardwareBtnModel.cs" />
+    <Compile Include="Resources\Keys\StateKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StateKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\IRegionManagerProvider.cs" />
+    <Compile Include="Services\RegionManagerProvider.cs" />
+    <Compile Include="Service\FaultManagerService.cs" />
+    <Compile Include="ViewModel\Domain\DomainViewModel.cs" />
+    <Compile Include="ViewModel\Domain\FaultViewModel.cs" />
+    <Compile Include="ViewModel\Domain\OtherViewModel.cs" />
+    <Compile Include="ViewModel\HardwareBtnViewModel.cs" />
+    <Compile Include="ViewModel\CRH380BGViewModel.cs" />
+    <Compile Include="ViewModel\StateViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelManager.cs" />
+    <Compile Include="View\Buttons\HardwareButtonDown.xaml.cs">
+      <DependentUpon>HardwareButtonDown.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Buttons\HardwareButtonRight.xaml.cs">
+      <DependentUpon>HardwareButtonRight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Buttons\HardwareButtonUp.xaml.cs">
+      <DependentUpon>HardwareButtonUp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Buttons\SoftwareButtonDown.xaml.cs">
+      <DependentUpon>SoftwareButtonDown.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\SoftwareButton.cs" />
+    <Compile Include="View\Contents\ATPSystem\ATPSystemView.xaml.cs">
+      <DependentUpon>ATPSystemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\ATPSystem\EVCExchangeDisplayView.xaml.cs">
+      <DependentUpon>EVCExchangeDisplayView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\AutoSpeedControl\AutoSpeedControlView.xaml.cs">
+      <DependentUpon>AutoSpeedControlView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Begin\BeginView.xaml.cs">
+      <DependentUpon>BeginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\BrakeStatus\BrakeEfficientView.xaml.cs">
+      <DependentUpon>BrakeEfficientView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\BrakeStatus\BrakeFunctionStatusView.xaml.cs">
+      <DependentUpon>BrakeFunctionStatusView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\BrakeStatus\BrakeStatusView.xaml.cs">
+      <DependentUpon>BrakeStatusView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\BrakeStatus\BrakeTestView.xaml.cs">
+      <DependentUpon>BrakeTestView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\BrakeStatus\ParkingBrakeView.xaml.cs">
+      <DependentUpon>ParkingBrakeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\BrakeStatus\TotalDuctView.xaml.cs">
+      <DependentUpon>TotalDuctView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Door\DriverDoorView.xaml.cs">
+      <DependentUpon>DriverDoorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Fault\ChangeLayoutView.xaml.cs">
+      <DependentUpon>ChangeLayoutView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Fault\FaultLessVView.xaml.cs">
+      <DependentUpon>FaultLessVView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Fault\FaultEqualVView.xaml.cs">
+      <DependentUpon>FaultEqualVView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Fault\FaultReportView.xaml.cs">
+      <DependentUpon>FaultReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Fault\FaultView.xaml.cs">
+      <DependentUpon>FaultView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Info\NoOperableItem2View.xaml.cs">
+      <DependentUpon>NoOperableItem2View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Info\NoOperableItem3View.xaml.cs">
+      <DependentUpon>NoOperableItem3View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Info\NoOperableItem4View.xaml.cs">
+      <DependentUpon>NoOperableItem4View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Info\NoOperableItem5View.xaml.cs">
+      <DependentUpon>NoOperableItem5View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Info\NoOperableItem6View.xaml.cs">
+      <DependentUpon>NoOperableItem6View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Info\NoOperableItem7View.xaml.cs">
+      <DependentUpon>NoOperableItem7View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Info\NoOperableItem1View.xaml.cs">
+      <DependentUpon>NoOperableItem1View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Info\OperableItem2View.xaml.cs">
+      <DependentUpon>OperableItem2View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Info\OperableItem1View.xaml.cs">
+      <DependentUpon>OperableItem1View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Info\StatusView.xaml.cs">
+      <DependentUpon>StatusView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Info\ConductorDisplayView.xaml.cs">
+      <DependentUpon>ConductorDisplayView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Info\RightDisplayView.xaml.cs">
+      <DependentUpon>RightDisplayView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Info\LeftDisplayView.xaml.cs">
+      <DependentUpon>LeftDisplayView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Info\HardwareView.xaml.cs">
+      <DependentUpon>HardwareView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Info\MaintainInfoView.xaml.cs">
+      <DependentUpon>MaintainInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Maintain\InitializationView.xaml.cs">
+      <DependentUpon>InitializationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Maintain\IntermediateDClinkView.xaml.cs">
+      <DependentUpon>IntermediateDClinkView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Maintain\MaintainCloseView.xaml.cs">
+      <DependentUpon>MaintainCloseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Maintain\EnergyMeteringView.xaml.cs">
+      <DependentUpon>EnergyMeteringView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Maintain\NumberFourCarVersion1View.xaml.cs">
+      <DependentUpon>NumberFourCarVersion1View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Maintain\NumberFourCarVersion2View.xaml.cs">
+      <DependentUpon>NumberFourCarVersion2View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Maintain\NumberOneCarVersionView.xaml.cs">
+      <DependentUpon>NumberOneCarVersionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Maintain\NumberThreeCarVersionView.xaml.cs">
+      <DependentUpon>NumberThreeCarVersionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Maintain\NumberTwoCarVersionView.xaml.cs">
+      <DependentUpon>NumberTwoCarVersionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Maintain\RunSpeedSettingDetectionView.xaml.cs">
+      <DependentUpon>RunSpeedSettingDetectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Maintain\TeletransmissionView.xaml.cs">
+      <DependentUpon>TeletransmissionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Maintain\TractionHandleDetectionView.xaml.cs">
+      <DependentUpon>TractionHandleDetectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Maintain\MaintainOpenView.xaml.cs">
+      <DependentUpon>MaintainOpenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Ready\ReadyView.xaml.cs">
+      <DependentUpon>ReadyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\RootContentView.xaml.cs">
+      <DependentUpon>RootContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Switch\AirConditionView.xaml.cs">
+      <DependentUpon>AirConditionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Switch\CarWashOperationView.xaml.cs">
+      <DependentUpon>CarWashOperationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Switch\FanView.xaml.cs">
+      <DependentUpon>FanView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Switch\FrontWindowHeatingView.xaml.cs">
+      <DependentUpon>FrontWindowHeatingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Switch\IlluminationView.xaml.cs">
+      <DependentUpon>IlluminationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Switch\NetworkCurrentLimitView.xaml.cs">
+      <DependentUpon>NetworkCurrentLimitView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Switch\SwitchView.xaml.cs">
+      <DependentUpon>SwitchView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Switch\TractionView.xaml.cs">
+      <DependentUpon>TractionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Systems\CompiledSuccessView.xaml.cs">
+      <DependentUpon>CompiledSuccessView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Systems\CompiledTrainReadyView.xaml.cs">
+      <DependentUpon>CompiledTrainReadyView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\Contents\Systems\ConfirmCompiledView.xaml.cs">
+      <DependentUpon>ConfirmCompiledView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Systems\CompiledView.xaml.cs">
+      <DependentUpon>CompiledView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Systems\CloseCarCoverView.xaml.cs">
+      <DependentUpon>CloseCarCoverView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Systems\GroupHangsView.xaml.cs">
+      <DependentUpon>GroupHangsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\TrainConfig\TrainConfigView.xaml.cs">
+      <DependentUpon>TrainConfigView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Urgent\AccelerationAlarmView.xaml.cs">
+      <DependentUpon>AccelerationAlarmView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Urgent\EmergencyModeGuideView.xaml.cs">
+      <DependentUpon>EmergencyModeGuideView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Urgent\ReleaseSpeedLimitView.xaml.cs">
+      <DependentUpon>ReleaseSpeedLimitView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Urgent\UrgentView.xaml.cs">
+      <DependentUpon>UrgentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DataMonitor\DataMonitorView.xaml.cs">
+      <DependentUpon>DataMonitorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DataMonitor\DataMonitorWindow.xaml.cs">
+      <DependentUpon>DataMonitorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Layout\ShellContentStyle1Layout.xaml.cs">
+      <DependentUpon>ShellContentStyle1Layout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shell\CRH380BGShell.xaml.cs">
+      <DependentUpon>CRH380BGShell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shell\ShellWithButton.xaml.cs">
+      <DependentUpon>ShellWithButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shell\ShellWithoutButton.xaml.cs">
+      <DependentUpon>ShellWithoutButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shell\CRH380BGForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Shell\CRH380BGForm.Designer.cs">
+      <DependentUpon>CRH380BGForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\StateIcon\TrainStateIcon.xaml.cs">
+      <DependentUpon>TrainStateIcon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Systems\BatteryView.xaml.cs">
+      <DependentUpon>BatteryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Systems\CatenaryTypeView.xaml.cs">
+      <DependentUpon>CatenaryTypeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Systems\DeviceStatusView.xaml.cs">
+      <DependentUpon>DeviceStatusView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Systems\GearboxMotorTemperatureView.xaml.cs">
+      <DependentUpon>GearboxMotorTemperatureView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Systems\SystemView.xaml.cs">
+      <DependentUpon>SystemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Systems\TrainConfigurationView.xaml.cs">
+      <DependentUpon>TrainConfigurationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Systems\WheelTemperatureView.xaml.cs">
+      <DependentUpon>WheelTemperatureView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Title\TitleView.xaml.cs">
+      <DependentUpon>TitleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TopAdorner\LightAdorner.xaml.cs">
+      <DependentUpon>LightAdorner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFApp\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\StateIcon\TrainStateIcon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Systems\BatteryView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Systems\CatenaryTypeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Systems\DeviceStatusView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Systems\GearboxMotorTemperatureView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Systems\SystemView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Systems\TrainConfigurationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Systems\WheelTemperatureView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Title\TitleView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\TopAdorner\LightAdorner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Keys\InBoolKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InBoolKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Keys\InFloatKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InFloatKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Keys\OutBoolKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OutBoolKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Keys\OutFloatKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OutFloatKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Keys\StateKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StateKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Shell\CRH380BGForm.resx">
+      <DependentUpon>CRH380BGForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="WPFApp\App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Changes.Motor.HMI.CRH380BG.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\Null.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\TrainHead.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\BC1隔离.png" />
+    <Resource Include="Resources\Image\Details\BC2隔离.png" />
+    <Resource Include="Resources\Image\Details\停放制动施加.png" />
+    <Resource Include="Resources\Image\Details\停放制动缓解.png" />
+    <Resource Include="Resources\Image\Details\停放制动隔离.png" />
+    <Resource Include="Resources\Image\Details\停放错误.png" />
+    <Resource Include="Resources\Image\Details\动力控制系统.png" />
+    <Resource Include="Resources\Image\Details\喇叭按钮.png" />
+    <Resource Include="Resources\Image\Details\常用制动施加.png" />
+    <Resource Include="Resources\Image\Details\常用制动缓解.png" />
+    <Resource Include="Resources\Image\Details\常用制动错误.png" />
+    <Resource Include="Resources\Image\Details\惩罚制动.png" />
+    <Resource Include="Resources\Image\Details\撒砂指示.png" />
+    <Resource Include="Resources\Image\Details\方向不明.png" />
+    <Resource Include="Resources\Image\Details\方向向前.png" />
+    <Resource Include="Resources\Image\Details\方向向后.png" />
+    <Resource Include="Resources\Image\Details\燃油量低警告.png" />
+    <Resource Include="Resources\Image\Details\紧急制动.png" />
+    <Resource Include="Resources\Image\Details\蓄电池不充电.png" />
+    <Resource Include="Resources\Image\Details\警惕状态.png" />
+    <Resource Include="Resources\Image\Details\车轮空转.png" />
+    <Resource Include="Resources\Image\Details\重联警铃信号.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Selectors\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\网络拓扑.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\che.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\doors1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\doors0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\小三角_0_1.png" />
+    <Resource Include="Resources\Image\CRH380BG\小三角_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\小三角_0_0.png" />
+    <Resource Include="Resources\Image\CRH380BG\小三角_1_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\升弓_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\降弓_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\受电弓切除_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\主断切除_0.png" />
+    <Resource Include="Resources\Image\CRH380BG\主断合_0.png" />
+    <Resource Include="Resources\Image\CRH380BG\主断断_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\未知.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\小方块_0_0.png" />
+    <Resource Include="Resources\Image\CRH380BG\小方块_0_1.png" />
+    <Resource Include="Resources\Image\CRH380BG\小方块_0_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\xfk_0_0.png" />
+    <Resource Include="Resources\Image\CRH380BG\xfk_0_1.png" />
+    <Resource Include="Resources\Image\CRH380BG\xfk_0_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\车顶隔离切除_0.png" />
+    <Resource Include="Resources\Image\CRH380BG\车顶隔离合_0.png" />
+    <Resource Include="Resources\Image\CRH380BG\车顶隔离断_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\照明1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\照明1_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\StatusBar0.bmp" />
+    <Resource Include="Resources\Image\CRH380BG\StatusBar1.bmp" />
+    <Resource Include="Resources\Image\CRH380BG\StatusBar10.bmp" />
+    <Resource Include="Resources\Image\CRH380BG\StatusBar11.bmp" />
+    <Resource Include="Resources\Image\CRH380BG\StatusBar12.bmp" />
+    <Resource Include="Resources\Image\CRH380BG\StatusBar13.bmp" />
+    <Resource Include="Resources\Image\CRH380BG\StatusBar14.bmp" />
+    <Resource Include="Resources\Image\CRH380BG\StatusBar15.bmp" />
+    <Resource Include="Resources\Image\CRH380BG\StatusBar16.bmp" />
+    <Resource Include="Resources\Image\CRH380BG\StatusBar2.bmp" />
+    <Resource Include="Resources\Image\CRH380BG\StatusBar3.bmp" />
+    <Resource Include="Resources\Image\CRH380BG\StatusBar4.bmp" />
+    <Resource Include="Resources\Image\CRH380BG\StatusBar5.bmp" />
+    <Resource Include="Resources\Image\CRH380BG\StatusBar6.bmp" />
+    <Resource Include="Resources\Image\CRH380BG\StatusBar7.bmp" />
+    <Resource Include="Resources\Image\CRH380BG\StatusBar8.bmp" />
+    <Resource Include="Resources\Image\CRH380BG\StatusBar9.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\车灯a.png" />
+    <Resource Include="Resources\Image\CRH380BG\车灯b.png" />
+    <Resource Include="Resources\Image\CRH380BG\车灯c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\AirEmergencyClose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\EmergencyModelGuide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\Black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\白1-1.png" />
+    <Resource Include="Resources\Image\CRH380BG\白1-2.png" />
+    <Resource Include="Resources\Image\CRH380BG\白2-1.png" />
+    <Resource Include="Resources\Image\CRH380BG\白2-2.png" />
+    <Resource Include="Resources\Image\CRH380BG\红1-1.png" />
+    <Resource Include="Resources\Image\CRH380BG\红1-2.png" />
+    <Resource Include="Resources\Image\CRH380BG\红2-1.png" />
+    <Resource Include="Resources\Image\CRH380BG\红2-2.png" />
+    <Resource Include="Resources\Image\CRH380BG\黄1-1.png" />
+    <Resource Include="Resources\Image\CRH380BG\黄1-2.png" />
+    <Resource Include="Resources\Image\CRH380BG\黄2-1.png" />
+    <Resource Include="Resources\Image\CRH380BG\黄2-2.png" />
+    <Resource Include="Resources\Image\CRH380BG\黑1-1.png" />
+    <Resource Include="Resources\Image\CRH380BG\黑1-2.png" />
+    <Resource Include="Resources\Image\CRH380BG\黑2-1.png" />
+    <Resource Include="Resources\Image\CRH380BG\黑2-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\White.png" />
+    <Resource Include="Resources\Image\CRH380BG\黑白.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\叉.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\doubleDoor.bmp" />
+    <Resource Include="Resources\Image\CRH380BG\sijishi.bmp" />
+    <Resource Include="Resources\Image\CRH380BG\zhou.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\小三角白.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\小三角黑.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\关闭.png" />
+    <Resource Include="Resources\Image\CRH380BG\准备联挂.png" />
+    <Resource Include="Resources\Image\CRH380BG\已联挂.png" />
+    <Resource Include="Resources\Image\CRH380BG\打开.png" />
+    <Resource Include="Resources\Image\CRH380BG\运动中.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\叉.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\Btn_3.png" />
+    <Resource Include="Resources\Image\CRH380BG\Btn_4.png" />
+    <Resource Include="Resources\Image\CRH380BG\Btn_5.png" />
+    <Resource Include="Resources\Image\CRH380BG\Btn_6.png" />
+    <Resource Include="Resources\Image\CRH380BG\Btn_7_1.png" />
+    <Resource Include="Resources\Image\CRH380BG\Btn_7_2.png" />
+    <Resource Include="Resources\Image\CRH380BG\Btn_8_1.png" />
+    <Resource Include="Resources\Image\CRH380BG\Btn_8_2.png" />
+    <Resource Include="Resources\Image\CRH380BG\Btn_8_3.png" />
+    <Resource Include="Resources\Image\CRH380BG\Btn_8_4.png" />
+    <Resource Include="Resources\Image\CRH380BG\Btn_8_5.png" />
+    <Resource Include="Resources\Image\CRH380BG\Btn_8_6.png" />
+    <Resource Include="Resources\Image\CRH380BG\Btn_8_7.png" />
+    <Resource Include="Resources\Image\CRH380BG\Btn_9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\双三角0_0.png" />
+    <Resource Include="Resources\Image\CRH380BG\双三角1_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\Siemens.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\Siemens1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\welcom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\开关按钮.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\亮度调节按钮.png" />
+    <Resource Include="Resources\Image\CRH380BG\帮助信息按钮.png" />
+    <Resource Include="Resources\Image\CRH380BG\昼夜模式切换按钮.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\CRH380BG\屏幕切换按钮.png" />
+    <Resource Include="Resources\Image\CRH380BG\故障按钮.png" />
+    <Resource Include="Resources\Image\CRH380BG\语言选择按钮.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

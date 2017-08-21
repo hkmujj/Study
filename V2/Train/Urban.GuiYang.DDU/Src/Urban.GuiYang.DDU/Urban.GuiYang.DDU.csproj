@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CAE17752-3CC6-4DE4-AD0D-CF73E561B1D2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Urban.GuiYang.DDU</RootNamespace>
+    <AssemblyName>Urban.GuiYang.DDU</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\MMI\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonUtil, Version=2.29.2016.517, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="DevExpress.Data.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Core.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.PropertyGrid.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Excel.Interface, Version=2.30.2016.712, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Expression.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.Prism, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.Prism.MefExtensions, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="MMI.Facility.Interface, Version=2.50.2017.214, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="MMI.Facility.WPFInfrastructure, Version=2.50.2017.705, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="WPFApp\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Resources\Base\GuiYangBaseResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Converter\GuiYangDDUConverterResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\GuiYangDDUResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Image\GuiYangDDUImageResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Strings\GuiYangDDUIStringsResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\GuiYandDDUTextStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\GuiYangDDUButtonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\GuiYangDDUProgressBarStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Styles\GuiYangDDUItemsStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Buttons\BottomButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Common\NullView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\ContentContentLayout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Contents\MainPageByPass2ContentView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Contents\MainPageByPass1ContentView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\Contents\AirConditionPage1ContentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Contents\AirConditionPage2ContentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Contents\AssistContentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Contents\BrakePage1ContentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Contents\BrakePage2ContentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Contents\BrakePage3ContentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Contents\HistoryContentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Contents\MaintenanceContentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Contents\MainViewContentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Fault\CurrentFault.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Help\HelpNullView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\PIS\EmergBroadcastView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\PIS\HalfAutoSettingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\PIS\LocationInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\PIS\PISContentLayoutView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\PIS\AutoModelView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\PIS\HalfAutoModelView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\PIS\ManualModelView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Contents\TowContentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\PIS\PopupView\LineIdListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\PIS\PopupView\StationListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\TrainRegion\TrainInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DataMonitor\DataMonitorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DataMonitor\DataMonitorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Help\MainHelpViewOne.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Layout\ShellContentStyle1Layout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shell\ShellWithoutButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shell\GuiYangShell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Adapter\DomainAdapter.cs" />
+    <Compile Include="Adapter\ISendInterface.cs" />
+    <Compile Include="Adapter\IUpdateDataProvider.cs" />
+    <Compile Include="Adapter\Send\SendInterface.cs" />
+    <Compile Include="Adapter\UpdateDataProviderBase.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarAirConditionUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarKeyBypassUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarDoorEnableBypassUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarATCCutOffBypassUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarControlModelUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarTemperatureUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarPantographEnableBypassUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarCoulplingStateUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarNormalBrakeBypassUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarDoorBypassUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarParkingRelaseBypassUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarMainWindLowPresByPassUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarAlertBypassUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarGroup2BackAirValveUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarGroup1BackAirValveUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarGroup2NewAirValveUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarGroup1NewAirValveUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarAirSpringPreesure2UpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarAssistInvertorStateUpDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarAirCompreeStateUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarAirSpringPreesure1UpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarBrakePressure2UpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarBrakePressure1UpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarLadenUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarMainPressureUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarDoorUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarBatteryChargerStateUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarAssistLoadSwitchUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarStorageBatteryAUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarStorageBatterytemperatureUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarPowerSwitchUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarWeightUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarTowBrakeKNStateUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarElveStateUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarMotoTemperatureState4UpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarMotoTemperatureState3UpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarMotoTemperatureState2UpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarMotoTemperatureState1UpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarEmergBrakeRelayState2UpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarEmergBrakeRelayState1UpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarPackingBrakeIsolationValveStateUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarBogieIsolationValveState2UpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarHightSwitchState1UpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarHightSwitchState2UpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarGroundConnectStateUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarBogieIsolationValveState1UpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarTractionInvertorStateUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarParkingBrakeUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarNormalBrake2UpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarNormalBrake1UpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarDoorLockUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\CarPECUUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\PISModelUpDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\TrainBaseInfoUpDataProvider.cs" />
+    <Compile Include="Config\CarControlModelConfig.cs" />
+    <Compile Include="Config\CarTemperatureConfig.cs" />
+    <Compile Include="Config\CarAirConditionConfig.cs" />
+    <Compile Include="Config\CarKeyBypassConfig.cs" />
+    <Compile Include="Config\CarDoorEnableBypassConfig.cs" />
+    <Compile Include="Config\CarATCCutOffBypassConfig.cs" />
+    <Compile Include="Config\CarPantographEnableBypassConfig.cs" />
+    <Compile Include="Config\CarCoulplingStateConfig.cs" />
+    <Compile Include="Config\CarDoorBypassConfig.cs" />
+    <Compile Include="Config\CarNormalBrakeBypassConfig.cs" />
+    <Compile Include="Config\CarParkingRelaseBypassConfig.cs" />
+    <Compile Include="Config\CarMainWindLowPresByPassConfig.cs" />
+    <Compile Include="Config\CarAlertBypassConfig.cs" />
+    <Compile Include="Config\CarGroup2BackAirValveConfig.cs" />
+    <Compile Include="Config\CarGroup1BackAirValveConfig.cs" />
+    <Compile Include="Config\CarGroup2NewAirValveConfig.cs" />
+    <Compile Include="Config\CarGroup1NewAirValveConfig.cs" />
+    <Compile Include="Config\CarAirSpringPreesureConfig.cs" />
+    <Compile Include="Config\CarBatteryChargerStateConfig.cs" />
+    <Compile Include="Config\CarMainPressureConfig.cs" />
+    <Compile Include="Config\CarBrakePressureConfig.cs" />
+    <Compile Include="Config\CarLadenConfig.cs" />
+    <Compile Include="Config\CarAssistLoadSwitchConfig.cs" />
+    <Compile Include="Config\CarStorageBatteryAConfig.cs" />
+    <Compile Include="Config\CarStorageBatterytemperatureConfig.cs" />
+    <Compile Include="Config\CarPowerSwitchConfig.cs" />
+    <Compile Include="Config\CarWeightConfig.cs" />
+    <Compile Include="Config\CarPackingBrakeIsolationValveConfig.cs" />
+    <Compile Include="Config\CarBogieIsolationValveConfig.cs" />
+    <Compile Include="Config\CarEmergBrakeRelayConfig.cs" />
+    <Compile Include="Config\CarAirCompreeConfig.cs" />
+    <Compile Include="Config\CarGroundConnectConfig.cs" />
+    <Compile Include="Config\CarAssistInvertorConfig.cs" />
+    <Compile Include="Config\CarBaseConfig.cs" />
+    <Compile Include="Config\CarDoorConfig.cs" />
+    <Compile Include="Config\CarDoorLockStateConfig.cs" />
+    <Compile Include="Config\CarFireConfig.cs" />
+    <Compile Include="Config\CarHightSwitchConfig.cs" />
+    <Compile Include="Config\CarTowBrakeKNConfig.cs" />
+    <Compile Include="Config\CarMotoTemperatureConfig.cs" />
+    <Compile Include="Config\CarElveConfig.cs" />
+    <Compile Include="Config\CarParkingBrakeConfig.cs" />
+    <Compile Include="Config\CarNormalBrakeConfig.cs" />
+    <Compile Include="Config\CarPECUConfig.cs" />
+    <Compile Include="Config\CarTowInvertorConfig.cs" />
+    <Compile Include="Config\EmergBroadcastConfig.cs" />
+    <Compile Include="Config\HelpViewAttribute.cs" />
+    <Compile Include="Config\StationConfig.cs" />
+    <Compile Include="Constant\RegionNames.cs" />
+    <Compile Include="Constant\ViewNames.cs" />
+    <Compile Include="Controller\BtnStragy\StateInterfaceFactory.cs" />
+    <Compile Include="Controller\BtnStragy\UserAction\ActionResponser\B1MainViewActionResponser.cs" />
+    <Compile Include="Controller\BtnStragy\UserAction\ActionResponser\B2TowActionResponser.cs" />
+    <Compile Include="Controller\BtnStragy\UserAction\ActionResponser\B3BrakeActionResponser.cs" />
+    <Compile Include="Controller\BtnStragy\UserAction\ActionResponser\B4AssistActionResponser.cs" />
+    <Compile Include="Controller\BtnStragy\UserAction\ActionResponser\B5AirConditionActionResponser.cs" />
+    <Compile Include="Controller\BtnStragy\UserAction\ActionResponser\B6PISActionResponser.cs" />
+    <Compile Include="Controller\BtnStragy\UserAction\ActionResponser\B7HistoryActionResponser.cs" />
+    <Compile Include="Controller\BtnStragy\UserAction\ActionResponser\B8EmergBroadcastReturnActionResponser.cs" />
+    <Compile Include="Controller\BtnStragy\UserAction\ActionResponser\B8MaintenanceActionResponser.cs" />
+    <Compile Include="Controller\BtnStragy\UserAction\ActionResponser\HelpResponse.cs" />
+    <Compile Include="Controller\BtnStragy\UserAction\ActionResponser\OrdinaryActionResponser.cs" />
+    <Compile Include="Controller\BtnStragy\UserAction\ActionResponser\ReturnActionResponser.cs" />
+    <Compile Include="Controller\BtnStragy\UserAction\StateProvider\B2TowStateProvider.cs" />
+    <Compile Include="Controller\BtnStragy\UserAction\StateProvider\B3BrakeStateProvider.cs" />
+    <Compile Include="Controller\BtnStragy\UserAction\StateProvider\B4AssistStateProvider.cs" />
+    <Compile Include="Controller\BtnStragy\UserAction\StateProvider\B5AirConditionStateProvider.cs" />
+    <Compile Include="Controller\BtnStragy\UserAction\StateProvider\B6PISStateProvider.cs" />
+    <Compile Include="Controller\BtnStragy\UserAction\StateProvider\B7HistoryStateProvider.cs" />
+    <Compile Include="Controller\BtnStragy\UserAction\StateProvider\B8MaintenanceStateProvider.cs" />
+    <Compile Include="Controller\BtnStragy\UserAction\StateProvider\EmptyStateProvider.cs" />
+    <Compile Include="Controller\BtnStragy\UserAction\StateProvider\OrdinaryStateProvider.cs" />
+    <Compile Include="Controller\BtnStragy\UserAction\StateProvider\B1MainViewStateProvider.cs" />
+    <Compile Include="Controller\BtnStragy\UserAction\StateProvider\ReturnStateProvider.cs" />
+    <Compile Include="Controller\Domain\DebuggerController.cs" />
+    <Compile Include="Controller\Domain\DomainController.cs" />
+    <Compile Include="Controller\Domain\OtherController.cs" />
+    <Compile Include="Controller\Domain\PIS\EmergBroadcastController.cs" />
+    <Compile Include="Controller\Domain\PIS\PISController.cs" />
+    <Compile Include="Controller\Domain\TrainController.cs" />
+    <Compile Include="Controller\Domain\Train\CarPart\AirConditionController.cs" />
+    <Compile Include="Controller\Domain\Train\CarPart\BrakeController.cs" />
+    <Compile Include="Converter\BottomContentToContentConverter.cs" />
+    <Compile Include="Converter\FloatToTowBrakeConverter.cs" />
+    <Compile Include="Converter\TestConverter.cs" />
+    <Compile Include="Events\ChangeToInitalizeViewEvent.cs" />
+    <Compile Include="Events\DataServiceDataChanged.cs" />
+    <Compile Include="Events\LazyValueCreatedEvent.cs" />
+    <Compile Include="Events\PISSelectCompletedEvent.cs" />
+    <Compile Include="Extension\CommunicationDataChangedArgsExtension.cs" />
+    <Compile Include="Extension\CommunicationDataServiceExtension.cs" />
+    <Compile Include="Extension\RegionManagerExtension.cs" />
+    <Compile Include="GuiYangDDUMefBootstrapper.cs" />
+    <Compile Include="GuiYangDDUSubystem.cs" />
+    <Compile Include="Model\BtnStragy\ActionResponserExportAttribute.cs" />
+    <Compile Include="Model\BtnStragy\BtnItem.cs" />
+    <Compile Include="Model\BtnStragy\IBtnActionResponser.cs" />
+    <Compile Include="Model\BtnStragy\IBtnStateProvider.cs" />
+    <Compile Include="Model\BtnStragy\IStateInterface.cs" />
+    <Compile Include="Model\BtnStragy\IStateInterfaceFactory.cs" />
+    <Compile Include="Model\BtnStragy\StateInterface.cs" />
+    <Compile Include="Model\BtnStragy\StateInterfaceExportAttribute.cs" />
+    <Compile Include="Model\BtnStragy\StateInterfaceKey.cs" />
+    <Compile Include="Model\ConfigModel\StateInterfaceItem.cs" />
+    <Compile Include="Model\Constant\AirConditionState.cs" />
+    <Compile Include="Model\Constant\BackAirValveState.cs" />
+    <Compile Include="Model\Constant\ControlState.cs" />
+    <Compile Include="Model\Constant\NewAirValveState.cs" />
+    <Compile Include="Model\Constant\BatteryChargerState.cs" />
+    <Compile Include="Model\Constant\AirCompreeState.cs" />
+    <Compile Include="Model\Constant\AssistInvertorState.cs" />
+    <Compile Include="Model\Constant\OpenDoorType.cs" />
+    <Compile Include="Model\Constant\ParkingBrakeState.cs" />
+    <Compile Include="Model\Constant\NormalBrakeState.cs" />
+    <Compile Include="Model\Constant\CouplingState.cs" />
+    <Compile Include="Model\Constant\CTSState.cs" />
+    <Compile Include="Model\Constant\ItemLocationStyle.cs" />
+    <Compile Include="Model\Constant\DoorLockState.cs" />
+    <Compile Include="Model\Constant\DoorState.cs" />
+    <Compile Include="Model\Constant\DriveModel.cs" />
+    <Compile Include="Model\Constant\DriverRoomState.cs" />
+    <Compile Include="Model\Constant\ElectricRelayState.cs" />
+    <Compile Include="Model\Constant\GroundConnectState.cs" />
+    <Compile Include="Model\Constant\IsolationValveState.cs" />
+    <Compile Include="Model\Constant\PISSelectedStationType.cs" />
+    <Compile Include="Model\Constant\PISSelecttedSettingType.cs" />
+    <Compile Include="Model\Constant\PISType.cs" />
+    <Compile Include="Model\Constant\SwitchState.cs" />
+    <Compile Include="Model\Constant\TractionInvertorState.cs" />
+    <Compile Include="Model\Constant\FireAlert.cs" />
+    <Compile Include="Model\Constant\NavigationButtonState.cs" />
+    <Compile Include="Model\Constant\PantographState.cs" />
+    <Compile Include="Model\Constant\PECUState.cs" />
+    <Compile Include="Model\Constant\RunningDirection.cs" />
+    <Compile Include="Model\Constant\VidioState.cs" />
+    <Compile Include="Model\Constant\WorkState.cs" />
+    <Compile Include="Model\GlobalParam.cs" />
+    <Compile Include="Model\GlobalTimer.cs" />
+    <Compile Include="Model\IRaiseResourceChangedProvider.cs" />
+    <Compile Include="Model\DomainModel.cs" />
+    <Compile Include="Model\IResetSupport.cs" />
+    <Compile Include="Model\PIS\SelectedSettingFlag.cs" />
+    <Compile Include="Model\PIS\SettingStationModel.cs" />
+    <Compile Include="Model\PIS\StationModel.cs" />
+    <Compile Include="Model\PIS\EmergBroadcast\EmergBroadcastModel.cs" />
+    <Compile Include="Model\PIS\Details\ManaulSettingModel.cs" />
+    <Compile Include="Model\PIS\Details\HalfAutoSettingModel.cs" />
+    <Compile Include="Model\PIS\PISModel.cs" />
+    <Compile Include="Model\PIS\Details\Station.cs" />
+    <Compile Include="Model\Train\AirConditionModel.cs" />
+    <Compile Include="Model\Train\Brake.cs" />
+    <Compile Include="Model\Train\Car.cs" />
+    <Compile Include="Model\Constant\AirConditionItemType.cs" />
+    <Compile Include="Model\Train\CarPart\AirConditionPage1.cs" />
+    <Compile Include="Model\Train\CarPart\AirConditionPage2.cs" />
+    <Compile Include="Model\Train\CarPart\AssistPage.cs" />
+    <Compile Include="Model\Train\CarPart\BrakePage3.cs" />
+    <Compile Include="Model\Train\CarPart\BrakePage1.cs" />
+    <Compile Include="Model\Train\CarPart\BrakePage2.cs" />
+    <Compile Include="Model\Train\CarPart\CarItem.cs" />
+    <Compile Include="Model\Train\CarPart\CarPartBase.cs" />
+    <Compile Include="Model\Train\CarPart\Coupling.cs" />
+    <Compile Include="Model\Train\CarPart\Door.cs" />
+    <Compile Include="Model\Train\CarPart\DriverRoom.cs" />
+    <Compile Include="Model\Train\CarPart\Fire.cs" />
+    <Compile Include="Model\Train\CarPart\MainPageBypass1.cs" />
+    <Compile Include="Model\Train\CarPart\MainPageBypass2.cs" />
+    <Compile Include="Model\Train\CarPart\MainViewPage.cs" />
+    <Compile Include="Model\Train\CarPart\Pantograph.cs" />
+    <Compile Include="Model\Train\CarPart\PECU.cs" />
+    <Compile Include="Model\Train\CarPart\TowPage.cs" />
+    <Compile Include="Model\Train\CarPart\ValidateFloatStateItem.cs" />
+    <Compile Include="Model\Train\CarPart\ValidateValueStateItem.cs" />
+    <Compile Include="Model\Train\CarPart\ValidateFloatItem.cs" />
+    <Compile Include="Model\Train\OtherModel.cs" />
+    <Compile Include="Model\Train\StationModel.cs" />
+    <Compile Include="Model\Train\TrainModel.cs" />
+    <Compile Include="Resources\Image\ImageResCreater.cs" />
+    <Compile Include="Resources\Keys\InbKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InbKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Keys\InfKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InfKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Keys\OubKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OubKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Keys\OufKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OufKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Keys\StateKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StateKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\PageWrapper.cs" />
+    <Compile Include="ViewModel\DebuggerViewModel.cs" />
+    <Compile Include="ViewModel\DomainViewModel.cs" />
+    <Compile Include="ViewModel\EmergBroadcastViewModel.cs" />
+    <Compile Include="ViewModel\PISViewModel.cs" />
+    <Compile Include="ViewModel\TrainViewModel.cs" />
+    <Compile Include="View\Buttons\BottomButton.xaml.cs">
+      <DependentUpon>BottomButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\ImageButton.cs" />
+    <Compile Include="View\Common\NavigationRadioButton.cs" />
+    <Compile Include="View\Common\NavigationButton.cs" />
+    <Compile Include="View\Common\NullView.xaml.cs">
+      <DependentUpon>NullView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\ContentContentLayout.xaml.cs">
+      <DependentUpon>ContentContentLayout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Contents\MainPageByPass2ContentView.xaml.cs">
+      <DependentUpon>MainPageByPass2ContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Contents\MainPageByPass1ContentView.xaml.cs">
+      <DependentUpon>MainPageByPass1ContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Contents\AirConditionPage1ContentView.xaml.cs">
+      <DependentUpon>AirConditionPage1ContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Contents\AirConditionPage2ContentView.xaml.cs">
+      <DependentUpon>AirConditionPage2ContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Contents\AssistContentView.xaml.cs">
+      <DependentUpon>AssistContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Contents\BrakePage1ContentView.xaml.cs">
+      <DependentUpon>BrakePage1ContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Contents\BrakePage2ContentView.xaml.cs">
+      <DependentUpon>BrakePage2ContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Contents\BrakePage3ContentView.xaml.cs">
+      <DependentUpon>BrakePage3ContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Contents\HistoryContentView.xaml.cs">
+      <DependentUpon>HistoryContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Contents\MaintenanceContentView.xaml.cs">
+      <DependentUpon>MaintenanceContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Contents\MainViewContentView.xaml.cs">
+      <DependentUpon>MainViewContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Fault\CurrentFault.xaml.cs">
+      <DependentUpon>CurrentFault.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Help\HelpNullView.xaml.cs">
+      <DependentUpon>HelpNullView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\PIS\EmergBroadcastView.xaml.cs">
+      <DependentUpon>EmergBroadcastView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\PIS\HalfAutoSettingView.xaml.cs">
+      <DependentUpon>HalfAutoSettingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\PIS\LocationInfoView.xaml.cs">
+      <DependentUpon>LocationInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\PIS\PISContentLayoutView.xaml.cs">
+      <DependentUpon>PISContentLayoutView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\PIS\AutoModelView.xaml.cs">
+      <DependentUpon>AutoModelView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\PIS\HalfAutoModelView.xaml.cs">
+      <DependentUpon>HalfAutoModelView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\PIS\ManualModelView.xaml.cs">
+      <DependentUpon>ManualModelView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Contents\TowContentView.xaml.cs">
+      <DependentUpon>TowContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\PIS\PopupView\LineIdListView.xaml.cs">
+      <DependentUpon>LineIdListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\PIS\PopupView\StationListView.xaml.cs">
+      <DependentUpon>StationListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\TrainRegion\TrainInfoView.xaml.cs">
+      <DependentUpon>TrainInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DataMonitor\DataMonitorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DataMonitor\DataMonitorForm.Designer.cs">
+      <DependentUpon>DataMonitorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DataMonitor\DataMonitorView.xaml.cs">
+      <DependentUpon>DataMonitorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DataMonitor\DataMonitorWindow.xaml.cs">
+      <DependentUpon>DataMonitorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Help\MainHelpViewOne.xaml.cs">
+      <DependentUpon>MainHelpViewOne.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Layout\ShellContentStyle1Layout.xaml.cs">
+      <DependentUpon>ShellContentStyle1Layout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shell\ShellWithoutButton.xaml.cs">
+      <DependentUpon>ShellWithoutButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shell\GuiDDUForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Shell\GuiDDUForm.Designer.cs">
+      <DependentUpon>GuiDDUForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Title\TitleView.xaml.cs">
+      <DependentUpon>TitleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFApp\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\Shell\GuiYangShell.xaml.cs">
+      <DependentUpon>GuiYangShell.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\Title\TitleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Resources\Keys\InbKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InbKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Keys\InfKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InfKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Keys\OubKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OubKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Keys\OufKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OufKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Keys\StateKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StateKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DataMonitor\DataMonitorForm.resx">
+      <DependentUpon>DataMonitorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Shell\GuiDDUForm.resx">
+      <DependentUpon>GuiDDUForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="WPFApp\App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Changes.Urban.GuiYang.DDU.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\TrainInfo\DoorClose.PNG" />
+    <Resource Include="Resources\Image\Details\TrainInfo\DoorEmergentUnlock.PNG" />
+    <Resource Include="Resources\Image\Details\TrainInfo\DoorFault.PNG" />
+    <Resource Include="Resources\Image\Details\TrainInfo\DoorIsolation.PNG" />
+    <Resource Include="Resources\Image\Details\TrainInfo\DoorObstacle.PNG" />
+    <Resource Include="Resources\Image\Details\TrainInfo\DoorOpen.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\Navigation\ButtonNoSelected.PNG" />
+    <Resource Include="Resources\Image\Details\Navigation\ButtonSelected.PNG" />
+    <Resource Include="Resources\Image\Details\Navigation\FaultNoSelected.PNG" />
+    <Resource Include="Resources\Image\Details\Navigation\FaultSelected.PNG" />
+    <Resource Include="Resources\Image\Details\Navigation\WarningNoSelected.PNG" />
+    <Resource Include="Resources\Image\Details\Navigation\WarningSelected.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\Temporary\ShellLayout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\Temporary\ContentTitle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\Temporary\ContentContentLayout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\Temporary\ContentTrain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\Navigation\ReturnArraw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\TrainInfo\DoorFaultClose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\TrainInfo\PantographDown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\TrainInfo\PantographDownFault.PNG" />
+    <Resource Include="Resources\Image\Details\TrainInfo\PantographUnknown.PNG" />
+    <Resource Include="Resources\Image\Details\TrainInfo\PantographUp.PNG" />
+    <Resource Include="Resources\Image\Details\TrainInfo\PantographUpFault.PNG" />
+    <Resource Include="Resources\Image\Details\TrainInfo\VidioNormal.PNG" />
+    <Resource Include="Resources\Image\Details\TrainInfo\VidioUnknow.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\TrainInfo\VidioFault.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\TrainInfo\FireAlert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\Temporary\MainView.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\MainView\TractionInvertorEleBrakeApply.png" />
+    <Resource Include="Resources\Image\Details\MainView\TractionInvertorTowApply.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\MainView\TractionInvertorFault.PNG" />
+    <Resource Include="Resources\Image\Details\MainView\TractionInvertorNormal.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\MainView\AssistInvertorFault.PNG" />
+    <Resource Include="Resources\Image\Details\MainView\AssistInvertorNormal.PNG" />
+    <Resource Include="Resources\Image\Details\MainView\AssistInvertorWorking.png" />
+    <Resource Include="Resources\Image\Details\MainView\ExtendedPowerOff.PNG" />
+    <Resource Include="Resources\Image\Details\MainView\ExtendedPowerOn.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\MainView\HeightSwitchOff.PNG" />
+    <Resource Include="Resources\Image\Details\MainView\HeightSwitchOn.PNG" />
+    <Resource Include="Resources\Image\Details\MainView\NormalBrakeApply.png" />
+    <Resource Include="Resources\Image\Details\MainView\NormalBrakeCutOff.png" />
+    <Resource Include="Resources\Image\Details\MainView\NormalBrakeFault.png" />
+    <Resource Include="Resources\Image\Details\MainView\NormalBrakeRelase.png" />
+    <Resource Include="Resources\Image\Details\MainView\ParkingBrakeApply.png" />
+    <Resource Include="Resources\Image\Details\MainView\ParkingBrakeCutOff.png" />
+    <Resource Include="Resources\Image\Details\MainView\ParkingBrakeFault.png" />
+    <Resource Include="Resources\Image\Details\MainView\ParkingBrakeRelase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\TowView\GroundConnectGround.PNG" />
+    <Resource Include="Resources\Image\Details\TowView\GroundConnectPantoGraph.PNG" />
+    <Resource Include="Resources\Image\Details\TowView\GroundConnectPower.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\BrakeView\AirCompreeFault.png" />
+    <Resource Include="Resources\Image\Details\BrakeView\AirCompreeRunning.png" />
+    <Resource Include="Resources\Image\Details\BrakeView\AirCompreeStoped.png" />
+    <Resource Include="Resources\Image\Details\BrakeView\BogieIsolationValveIsolation.png" />
+    <Resource Include="Resources\Image\Details\BrakeView\BogieIsolationValveUnisolation.png" />
+    <Resource Include="Resources\Image\Details\BrakeView\EmergBrakeRelayActived.PNG" />
+    <Resource Include="Resources\Image\Details\BrakeView\EmergBrakeRelayUnactive.PNG" />
+    <Resource Include="Resources\Image\Details\BrakeView\PackingBrakeIsolationValveIsolation.png" />
+    <Resource Include="Resources\Image\Details\BrakeView\PackingBrakeIsolationValveUnisolation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\Other\BtnDown.PNG" />
+    <Resource Include="Resources\Image\Details\Other\BtnUp.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\Temporary\PISAutoModel.png" />
+    <Resource Include="Resources\Image\Details\Temporary\PISHalfModel.png" />
+    <Resource Include="Resources\Image\Details\Temporary\PISManualModel.png" />
+    <Resource Include="Resources\Image\Details\Temporary\PISStationList.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\Common\UnkownBig.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\Common\UnkownSmall.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\PIS\PISContentBackFrame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\Temporary\PISItinerary.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\Temporary\PISEmergBroadcast.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\Temporary\PISLocationInfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\AirConditionView\Opened.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\AssistView\SwitchOff.PNG" />
+    <Resource Include="Resources\Image\Details\AssistView\SwitchOn.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\AirConditionView\Closed.png" />
+    <Resource Include="Resources\Image\Details\AirConditionView\Fault.png" />
+    <Resource Include="Resources\Image\Details\AirConditionView\One.png" />
+    <Resource Include="Resources\Image\Details\AirConditionView\Three.png" />
+    <Resource Include="Resources\Image\Details\AirConditionView\Two.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\AirConditionView\AllWarm.png" />
+    <Resource Include="Resources\Image\Details\AirConditionView\Cool.png" />
+    <Resource Include="Resources\Image\Details\AirConditionView\FocusControl.png" />
+    <Resource Include="Resources\Image\Details\AirConditionView\SelfControl.png" />
+    <Resource Include="Resources\Image\Details\AirConditionView\Warm.png" />
+    <Resource Include="Resources\Image\Details\AirConditionView\Wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\MainPageBypass\CTE.png" />
+    <Resource Include="Resources\Image\Details\MainPageBypass\Normal.png" />
+    <Resource Include="Resources\Image\Details\MainPageBypass\Off.PNG" />
+    <Resource Include="Resources\Image\Details\MainPageBypass\On.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Details\AirConditionView\Stoped.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

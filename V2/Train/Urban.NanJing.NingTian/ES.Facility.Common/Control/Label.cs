@@ -1,0 +1,165 @@
+﻿using System;
+using System.Drawing;
+using ES.Facility.Common.Control.Common;
+
+namespace ES.Facility.Common.Control
+{
+    public class LabelStyle:IStyle
+    {
+        /// <summary>
+        /// 读取或设置控件背景图片属性
+        /// </summary>
+        public Image Background { get; set; }
+
+        /// <summary>
+        /// 读取或设置字体样式属性
+        /// </summary>
+        public FontStyle_ES FontStyle { get; set; }
+
+        /// <summary>
+        /// 读取或设置背景画刷属性（当不使用图片作为背景时，使用画刷对背景进行绘制）
+        /// </summary>
+        public Brush BackgroundBrush { get; set; }
+        /// <summary>
+        /// 读取或设置边框画笔属性（不设置该属性，控件将没有边框）
+        /// </summary>
+        public Pen BorderPen { get; set; }
+    }
+
+    /// <summary>
+    /// 功能描述：文本显示框
+    /// 创建人：唐林
+    /// 创建时间：2014-07-16
+    /// </summary>
+    public class Label : IControl
+    {
+        #region 属性/变量
+        /// <summary>
+        /// 读取或设置按钮文本属性
+        /// </summary>
+        public string Text
+        {
+            get { return _text; }
+            set { _text = value; }
+        }
+        private string _text = string.Empty;
+
+        /// <summary>
+        /// 读取按钮标识ID属性
+        /// </summary>
+        public int ID
+        {
+            get { return _id; }
+        }
+        private int _id = -1;
+
+        /// <summary>
+        /// 读取按钮Style属性（使用时需转换为ButtonStyle）
+        /// </summary>
+        public IStyle Style
+        {
+            get { return _style; }
+        }
+        private IStyle _style;
+
+        /// <summary>
+        /// 读取或设置按钮所在矩形区域属性
+        /// </summary>
+        public RectangleF Rect
+        {
+            get { return _rect; }
+            set
+            {
+                if (_rect == value)
+                    return;
+
+                _rect = value;
+            }
+        }
+        private RectangleF _rect;
+
+        /// <summary>
+        /// 读取或设置是否获得焦点属性（功能后续添加）
+        /// </summary>
+        public bool IsFocus
+        {
+            get { return _isFocus; }
+            set
+            {
+                if (_isFocus == value)
+                    return;
+
+                _isFocus = value;
+            }
+        }
+        private bool _isFocus = false;
+        #endregion
+
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="rect">所在矩形区域</param>
+        /// <param name="style">样式</param>
+        /// <param name="id">id</param>
+        public Label(string text,RectangleF rect,LabelStyle style,int id)
+        {
+            _text = text;
+            _rect = rect;
+            _style = style;
+            _id = id;
+        }
+
+        /// <summary>
+        /// Label绘制（需在界面Paint函数中调用）
+        /// </summary>
+        /// <param name="g"></param>
+        public void Paint(Graphics g)
+        {
+            //if (((LabelStyle)this._style).Background != null)
+            //{
+            //    g.DrawImage(((LabelStyle)this._style).Background, this._rect);
+            //}
+            //else if (((LabelStyle)this._style).BackgroundBrush != null)
+            //{
+            //    g.DrawRectangle(new Pen(new SolidBrush(Color.Black)), _rect.X, _rect.Y, _rect.Width, _rect.Height);
+            //    g.FillRectangle(((LabelStyle)this._style).BackgroundBrush, new RectangleF(_rect.X + 1, _rect.Y + 1, _rect.Width - 2, _rect.Height - 2));
+            //}
+            //else
+            //{
+            //    g.DrawRectangle(new Pen(new SolidBrush(Color.Black)), _rect.X, _rect.Y, _rect.Width, _rect.Height);
+            //}
+
+            if (((LabelStyle)_style).BorderPen != null)
+            {
+                g.DrawRectangle(((LabelStyle)_style).BorderPen, _rect.X, _rect.Y, _rect.Width, _rect.Height);
+                if (((LabelStyle)_style).Background != null)
+                {
+                    g.DrawImage(((LabelStyle)_style).Background, new RectangleF(_rect.X + 1, _rect.Y + 1, _rect.Width - 1, _rect.Height - 1));
+                }
+                else if (((LabelStyle)_style).BackgroundBrush != null)
+                {
+                    g.FillRectangle(((LabelStyle)_style).BackgroundBrush, new RectangleF(_rect.X + 1, _rect.Y + 1, _rect.Width - 1, _rect.Height - 1));
+                }
+            }
+            else
+            {
+                if (((LabelStyle)_style).Background != null)
+                {
+                    g.DrawImage(((LabelStyle)_style).Background, _rect);
+                }
+                else if (((LabelStyle)_style).BackgroundBrush != null)
+                {
+                    g.FillRectangle(((LabelStyle)_style).BackgroundBrush, _rect);
+                }
+            }
+
+            g.DrawString(
+                _text, 
+                ((LabelStyle)_style).FontStyle.Font, 
+                ((LabelStyle)_style).FontStyle.TextBrush, 
+                new RectangleF(_rect.X-2, _rect.Y + 2, _rect.Width+4, _rect.Height), 
+                ((LabelStyle)_style).FontStyle.StringFormat
+                );
+        }
+    }
+}

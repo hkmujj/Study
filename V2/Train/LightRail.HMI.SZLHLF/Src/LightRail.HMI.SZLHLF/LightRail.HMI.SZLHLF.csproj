@@ -1,0 +1,795 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CAE17752-3CC6-4DE4-AD0D-CF73E561B1D2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LightRail.HMI.SZLHLF</RootNamespace>
+    <AssemblyName>LightRail.HMI.SZLHLF</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\MMI\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonUtil, Version=2.29.2016.517, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="DevExpress.Data.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Core.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.PropertyGrid.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Excel.Interface, Version=2.30.2016.712, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Practices.Prism, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.Prism.MefExtensions, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="MMI.Facility.Interface, Version=2.50.2017.214, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\MMI\MMI.Facility.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="MMI.Facility.WPFInfrastructure, Version=2.50.2017.705, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="WPFApp\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Resources\Base\SZLHLFBaseResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Converter\Converter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\FontSource\CH\SZLHLFStringResourceCH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\FontSource\EN\SZLHLFStringResourceEN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Image\ArrayImagesResource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Image\ImagesResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\SZLHLFItemControlStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\SZLHLFTextBlockStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Styles\SZLHLFListBoxStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\SZLHLFResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\SZLHLFButtonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\SZLHLFResourceManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Buttons\LanguageChangeButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Buttons\MainBottomButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Buttons\NavigatorButtons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Common\BroadcastControlView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Common\EmergencyBroadcastView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Common\LanguageSwitch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Common\MaintainView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Common\StationSetView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Common\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Common\AirConditionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Common\NetworkTopologyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\ContentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Common\HelpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\RootContentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Common\SettingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Common\MalfunctionInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DataMonitor\DataMonitorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DataMonitor\DataMonitorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Layout\ShellContentStyle1Layout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Layout\ShellContentStyle2Layout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MaintainView\DataView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MaintainView\InputKey.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\MaintainView\ParameterSettingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MaintainView\SoftwareVersionsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MaintainView\TestView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shell\ShellWithButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shell\ShellWithoutButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shell\SiteSettingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shell\SZLHLFShell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Adapter\DomainAdapter.cs" />
+    <Compile Include="Adapter\IUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviderBase.cs" />
+    <Compile Include="Adapter\UpdateOtherViewDataProvider.cs" />
+    <Compile Include="Adapter\UpdateEventInfoViewDataProvider.cs" />
+    <Compile Include="Adapter\UpdateTrainInfoViewDataProvider.cs" />
+    <Compile Include="Config\Priority.cs" />
+    <Compile Include="Constant\RegionNames.cs" />
+    <Compile Include="Constant\ViewNames.cs" />
+    <Compile Include="Controller\InputKeyController.cs" />
+    <Compile Include="Controller\StationSetController.cs" />
+    <Compile Include="Controller\SettingController.cs" />
+    <Compile Include="Controller\BtnStragy\StateInterfaceFactory.cs" />
+    <Compile Include="Controller\AirConditionController.cs" />
+    <Compile Include="Controller\EmergencyBroadcastController.cs" />
+    <Compile Include="Controller\EventInfoController.cs" />
+    <Compile Include="Controller\InfoSetController.cs" />
+    <Compile Include="Controller\InputTrainNumController.cs" />
+    <Compile Include="Controller\OtherController.cs" />
+    <Compile Include="Controller\SZLHLFController.cs" />
+    <Compile Include="Converter\StationSetConverter.cs" />
+    <Compile Include="Converter\EventLevelConverter.cs" />
+    <Compile Include="Converter\EventInfoVisibleConverter.cs" />
+    <Compile Include="Converter\LightBrushConverter.cs" />
+    <Compile Include="Converter\TimeConverter.cs" />
+    <Compile Include="Converter\TractionOrBrakeMulConverter.cs" />
+    <Compile Include="Converter\DirectionArrowRightMulConverter.cs" />
+    <Compile Include="Converter\DirectionArrowLeftMulConverter.cs" />
+    <Compile Include="Converter\StringToDoubleNegative.cs" />
+    <Compile Include="Converter\DriversConverter.cs" />
+    <Compile Include="Converter\ResourceConverter.cs" />
+    <Compile Include="Enum\Language.cs" />
+    <Compile Include="Event\DataServiceDataChanged.cs" />
+    <Compile Include="Event\NavigatorEvent.cs" />
+    <Compile Include="Event\ViewChangedEvent.cs" />
+    <Compile Include="Event\ViewChangedEventArgs.cs" />
+    <Compile Include="Event\ViewChangedNotifiEvent.cs" />
+    <Compile Include="Extension\CommunicationDataChangedArgsExtension.cs" />
+    <Compile Include="Extension\CommunicationDataServiceExtension.cs" />
+    <Compile Include="Extension\NetWorkDataExtention.cs" />
+    <Compile Include="Extension\UsercontrolExtention.cs" />
+    <Compile Include="GDICommonColor.cs" />
+    <Compile Include="Interface\IClear.cs" />
+    <Compile Include="Interface\ICourceStatusChanged.cs" />
+    <Compile Include="Interface\IDataChanged.cs" />
+    <Compile Include="Interface\IEventInfo.cs" />
+    <Compile Include="Interface\IInitialize.cs" />
+    <Compile Include="Interface\IModels.cs" />
+    <Compile Include="Interface\IResetSupport.cs" />
+    <Compile Include="Interface\ITargitDistanceScale.cs" />
+    <Compile Include="Interface\ITargitDistanceScaleItem.cs" />
+    <Compile Include="Interface\IStation.cs" />
+    <Compile Include="Interface\IUnit.cs" />
+    <Compile Include="Interface\IViewModelExtention.cs" />
+    <Compile Include="Model\AirModel\AirModelState.cs" />
+    <Compile Include="Model\BroadcastControlModel\EmergencyCall.cs" />
+    <Compile Include="Model\ConfigModel\EmergencyBroadcastItem.cs" />
+    <Compile Include="Model\ConfigModel\StationItem.cs" />
+    <Compile Include="Model\EmergencyBroadcastModel\EmergencyBroadcastInfoModel.cs" />
+    <Compile Include="Model\EventModel\EventInfoModel.cs" />
+    <Compile Include="Model\EventModel\EventLevel.cs" />
+    <Compile Include="Model\InputTrainNumModel.cs" />
+    <Compile Include="Model\IResetSupport.cs" />
+    <Compile Include="Model\BroadcastControlModel\EnmergencyTalkModel.cs" />
+    <Compile Include="Model\MaintainModel\InputKeyInfoModel.cs" />
+    <Compile Include="Model\ModelBase.cs" />
+    <Compile Include="Model\NetWorkModel\NetWorkState.cs" />
+    <Compile Include="Model\NetWorkModel\NetWorkInfoModel.cs" />
+    <Compile Include="Model\SettingModel\StationSetInfoModel.cs" />
+    <Compile Include="Model\SettingModel\SettingInfoModel.cs" />
+    <Compile Include="Model\TrainModel\RunModel.cs" />
+    <Compile Include="Model\TrainModel\AssistPowerSource.cs" />
+    <Compile Include="Model\TrainModel\BatteryCharger.cs" />
+    <Compile Include="Model\TrainModel\Drivers.cs" />
+    <Compile Include="Model\TrainModel\DirectionArrow.cs" />
+    <Compile Include="Model\TrainModel\HighSpeedBreaker.cs" />
+    <Compile Include="Model\TrainModel\Pantograph.cs" />
+    <Compile Include="Model\TrainModel\TurnLight.cs" />
+    <Compile Include="Model\TrainModel\WorkState.cs" />
+    <Compile Include="Model\Units\AirConditionUnit.cs" />
+    <Compile Include="Model\Units\NetWorkUnit.cs" />
+    <Compile Include="Model\Units\NewAirValueSetUnit.cs" />
+    <Compile Include="Model\Units\RoadLineSetUnit.cs" />
+    <Compile Include="Model\Units\StationBroadcasModeltSetUnit.cs" />
+    <Compile Include="Model\Units\WindSpeedSetUnit.cs" />
+    <Compile Include="Model\Units\BatteryUnit.cs" />
+    <Compile Include="Model\Units\BrakeUnit.cs" />
+    <Compile Include="Model\Units\DoorUnit.cs" />
+    <Compile Include="Model\Units\EnmergencyTalkUnit.cs" />
+    <Compile Include="Model\Units\EventInfo.cs" />
+    <Compile Include="Model\Units\TractionUnit.cs" />
+    <Compile Include="Model\ViewSource\KeybordStrings.cs" />
+    <Compile Include="Resources\Keys\InBoolKey.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InBoolKey.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Keys\InFolatKey.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InFolatKey.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Keys\OutBoolKey.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutBoolKey.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Keys\OutFolatKey.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutFolatKey.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\SZLHLFResourceManager.xaml.cs">
+      <DependentUpon>SZLHLFResourceManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service\AirConditionPriorityService.cs" />
+    <Compile Include="Service\BatteryPriorityService.cs" />
+    <Compile Include="Service\BrakePriorityService.cs" />
+    <Compile Include="Service\DoorPriorityService.cs" />
+    <Compile Include="Service\EmergencyTalkPriorityService.cs" />
+    <Compile Include="Service\EventManagerService.cs" />
+    <Compile Include="Service\PriorityServiceBase.cs" />
+    <Compile Include="Service\StationManagerService.cs" />
+    <Compile Include="Service\TractionPriorityService.cs" />
+    <Compile Include="SZLHLFAtt\DeactiveA.cs" />
+    <Compile Include="Model\AirModel\AirConditionModel.cs" />
+    <Compile Include="Model\Units\AirModelSetUnit.cs" />
+    <Compile Include="ViewModel\EventInfoViewModel.cs" />
+    <Compile Include="ViewModel\InfoSetModel.cs" />
+    <Compile Include="ViewModel\InputTrainNumViewModel.cs" />
+    <Compile Include="ViewModel\OtherModel.cs" />
+    <Compile Include="ViewModel\OtherViewModel.cs" />
+    <Compile Include="ViewModel\SecondLevelViewModel.cs" />
+    <Compile Include="ViewModel\SecondViewModel.cs" />
+    <Compile Include="Model\TrainModel\TrainInfoModel.cs" />
+    <Compile Include="Model\ViewSource\LineTargetDistanceScale.cs" />
+    <Compile Include="SZLHLFMefBootstrapper.cs" />
+    <Compile Include="SZLHLFTCMSSubystem.cs" />
+    <Compile Include="Model\BtnStragy\ActionResponserExportAttribute.cs" />
+    <Compile Include="Model\BtnStragy\BtnItem.cs" />
+    <Compile Include="Model\BtnStragy\IBtnActionResponser.cs" />
+    <Compile Include="Model\BtnStragy\IStateInterface.cs" />
+    <Compile Include="Model\BtnStragy\IStateInterfaceFactory.cs" />
+    <Compile Include="Model\BtnStragy\StateInterface.cs" />
+    <Compile Include="Model\BtnStragy\StateInterfaceExportAttribute.cs" />
+    <Compile Include="Model\BtnStragy\StateInterfaceKey.cs" />
+    <Compile Include="Model\ConfigModel\StateInterfaceItem.cs" />
+    <Compile Include="Model\GlobalParam.cs" />
+    <Compile Include="Model\IRaiseResourceChangedProvider.cs" />
+    <Compile Include="Model\SZLHLFModel.cs" />
+    <Compile Include="Resources\Keys\StateKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StateKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\SZLHLFViewModel.cs" />
+    <Compile Include="ViewModel\TrainInfoViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="View\Buttons\LanguageChangeButton.xaml.cs">
+      <DependentUpon>LanguageChangeButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Buttons\MainBottomButton.xaml.cs">
+      <DependentUpon>MainBottomButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Buttons\NavigatorButtons.xaml.cs">
+      <DependentUpon>NavigatorButtons.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\BroadcastControlView.xaml.cs">
+      <DependentUpon>BroadcastControlView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\EmergencyBroadcastView.xaml.cs">
+      <DependentUpon>EmergencyBroadcastView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\LanguageSwitch.xaml.cs">
+      <DependentUpon>LanguageSwitch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\MaintainView.xaml.cs">
+      <DependentUpon>MaintainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\StationSetView.xaml.cs">
+      <DependentUpon>StationSetView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\AirConditionView.xaml.cs">
+      <DependentUpon>AirConditionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\NetworkTopologyView.xaml.cs">
+      <DependentUpon>NetworkTopologyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\ContentView.xaml.cs">
+      <DependentUpon>ContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\HelpView.xaml.cs">
+      <DependentUpon>HelpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\RootContentView.xaml.cs">
+      <DependentUpon>RootContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\SettingView.xaml.cs">
+      <DependentUpon>SettingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\MalfunctionInfoView.xaml.cs">
+      <DependentUpon>MalfunctionInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DataMonitor\DataMonitorView.xaml.cs">
+      <DependentUpon>DataMonitorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DataMonitor\DataMonitorWindow.xaml.cs">
+      <DependentUpon>DataMonitorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Layout\ShellContentStyle1Layout.xaml.cs">
+      <DependentUpon>ShellContentStyle1Layout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Layout\ShellContentStyle2Layout.xaml.cs">
+      <DependentUpon>ShellContentStyle2Layout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MaintainView\DataView.xaml.cs">
+      <DependentUpon>DataView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MaintainView\InputKey.xaml.cs">
+      <DependentUpon>InputKey.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MaintainView\ParameterSettingView.xaml.cs">
+      <DependentUpon>ParameterSettingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MaintainView\SoftwareVersionsView.xaml.cs">
+      <DependentUpon>SoftwareVersionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MaintainView\TestView.xaml.cs">
+      <DependentUpon>TestView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shell\ShellWithButton.xaml.cs">
+      <DependentUpon>ShellWithButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shell\ShellWithoutButton.xaml.cs">
+      <DependentUpon>ShellWithoutButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shell\SiteSettingView.xaml.cs">
+      <DependentUpon>SiteSettingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shell\SZLHLFForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Shell\SZLHLFForm.Designer.cs">
+      <DependentUpon>SZLHLFForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WPFApp\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\Shell\SZLHLFShell.xaml.cs">
+      <DependentUpon>SZLHLFShell.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Keys\InBoolKey.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InBoolKey.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Keys\InFolatKey.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InFolatKey.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Keys\OutBoolKey.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OutBoolKey.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Keys\OutFolatKey.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OutFolatKey.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Keys\StateKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StateKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Shell\SZLHLFForm.resx">
+      <DependentUpon>SZLHLFForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="WPFApp\App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="LightRail.HMI.SZLHLF.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controller\BtnActionResponser\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\Background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\PowerNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\PowerTrouble.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\InverterNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\InverterNotOperation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\InverterSeriousTrouble.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\InverterSlightTrouble.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\AssistNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\AssistNotOperation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\AssistSeriousTrouble.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\AssistSlightTrouble.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\BatteryChargerNotOperation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\BatteryChargerOperation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\Down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\HSCBCombine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\HSCBPart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\Raise.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\DoorOpen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\DoorAgainstClip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\DoorClose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\DoorEmergency.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\DoorSeriousTrouble.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\DoorSlightTrouble.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\SelectiveDoorOperation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\BrakeExcision.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\BrakeInfliction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\BrakeEmergencyRemission.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\BrakeSerious.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\BrakeSlight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\FireAlarm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\DirectionLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\DirectionRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\LeftRestoration.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\LeftPress.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\RightPress.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\RightRestoration.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\AirEmergencyVentilate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\AirLimitRefrigeration.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\AirNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\AirSeriousTrouble.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\AirShutDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\AirSlightTrouble.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\AirVentilate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\DownAdjust.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\UpAdjust.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\HSCBCombineSerious.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\EmergencyCallNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\EmergencyCallOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\EmergencyCallRequest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\EmergencyCallTrouble.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\InverterSelfInspection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\BrakeRemission.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\ButtonDown.png" />
+    <Resource Include="Resources\Image\SZLHLF\ButtonError.png" />
+    <Resource Include="Resources\Image\SZLHLF\ButtonUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\Back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\TimeButton.png" />
+    <Resource Include="Resources\Image\SZLHLF\UpButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\Enter.png" />
+    <Resource Include="Resources\Image\SZLHLF\UnEnter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\SZLHLF\CloseWindow.png" />
+    <Resource Include="Resources\Image\SZLHLF\HelpWindow.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

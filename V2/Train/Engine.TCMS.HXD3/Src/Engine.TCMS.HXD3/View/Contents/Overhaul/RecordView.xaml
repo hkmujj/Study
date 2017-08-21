@@ -1,0 +1,157 @@
+﻿<UserControl x:Class="Engine.TCMS.HXD3.View.Contents.Overhaul.RecordView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Engine.TCMS.HXD3.View.Contents"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:Engine.TCMS.HXD3.ViewModel"
+             Background="{StaticResource ContentBackgroudBrush}"
+             d:DataContext="{d:DesignInstance viewModel:HXD3TCMSViewModel}"
+             d:DesignHeight="438"
+             d:DesignWidth="798"
+             mc:Ignorable="d">
+    <Grid Margin="0,0,0,50">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*" />
+            <RowDefinition Height="100*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0"
+              Grid.Column="0"
+              Margin="50,50,50,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30*" />
+                <ColumnDefinition Width="250*" />
+                <ColumnDefinition Width="30*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="70*" />
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0"
+                    Grid.RowSpan="2"
+                    Grid.Column="1"
+                    Panel.ZIndex="1"
+                    Style="{StaticResource RcordeViewBorderStyleOne}">
+                <TextBlock Style="{StaticResource MainContentTitleTextStyle}" Text="{StaticResource StringFaultRecord}" />
+            </Border>
+            <Border Grid.Row="1"
+                    Grid.RowSpan="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    Style="{StaticResource RcordeViewBorderStyleTwo}">
+                <StackPanel HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                    <Border Width="30"
+                            Height="30"
+                            Style="{StaticResource RcordeViewBorderStyleThree}" />
+                    <RadioButton x:Name="One"
+                                 Width="180"
+                                 Height="30"
+                                 Content="{StaticResource StringFaultResume}"
+                                 GroupName="Engine.TCMS.HXD3.View.Contents.Overhaul.RecordView"
+                                 Style="{StaticResource RecordViewRadioButonStyleOne}" />
+                </StackPanel>
+            </Border>
+
+        </Grid>
+        <Grid Grid.Row="0"
+              Grid.Column="1"
+              Margin="50,50,50,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30*" />
+                <ColumnDefinition Width="250*" />
+                <ColumnDefinition Width="30*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="70*" />
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0"
+                    Grid.RowSpan="2"
+                    Grid.Column="1"
+                    Panel.ZIndex="1"
+                    Style="{StaticResource RcordeViewBorderStyleOne}">
+                <TextBlock Style="{StaticResource MainContentTitleTextStyle}" Text="{StaticResource StringContinuityRecord}" />
+            </Border>
+            <Border Grid.Row="1"
+                    Grid.RowSpan="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    Style="{StaticResource RcordeViewBorderStyleTwo}">
+                <StackPanel HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                    <Border Width="30"
+                            Height="30"
+                            Style="{StaticResource RcordeViewBorderStyleThree}" />
+                    <RadioButton x:Name="Two"
+                                 Width="180"
+                                 Height="30"
+                                 Content="{StaticResource StringTestRunRecord}"
+                                 GroupName="Engine.TCMS.HXD3.View.Contents.Overhaul.RecordView"
+                                 Style="{StaticResource RecordViewRadioButonStyleOne}" />
+                </StackPanel>
+            </Border>
+
+        </Grid>
+        <Grid Grid.Row="1"
+              Grid.Column="0"
+              Margin="50,50,50,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30*" />
+                <ColumnDefinition Width="250*" />
+                <ColumnDefinition Width="30*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="70*" />
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0"
+                    Grid.RowSpan="2"
+                    Grid.Column="1"
+                    Panel.ZIndex="1"
+                    Style="{StaticResource RcordeViewBorderStyleOne}">
+                <TextBlock Style="{StaticResource MainContentTitleTextStyle}" Text="{StaticResource StringOverhaulRecord}" />
+            </Border>
+            <Border Grid.Row="1"
+                    Grid.RowSpan="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    Style="{StaticResource RcordeViewBorderStyleTwo}">
+                <StackPanel HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                    <Border Width="30"
+                            Height="30"
+                            Style="{StaticResource RcordeViewBorderStyleThree}" />
+                    <RadioButton x:Name="Three"
+                                 Width="180"
+                                 Height="30"
+                                 Content="{StaticResource StringOverhaul}"
+                                 GroupName="Engine.TCMS.HXD3.View.Contents.Overhaul.RecordView"
+                                 Style="{StaticResource RecordViewRadioButonStyleOne}" />
+                </StackPanel>
+            </Border>
+
+        </Grid>
+        <Button x:Name="Confirm"
+                Grid.Row="1"
+                Grid.Column="1"
+                Width="90"
+                Height="40"
+                Margin="0,0,20,-20"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Content="清除"
+                Style="{StaticResource PasswordSettingConfirmButton}"
+                Visibility="Hidden" />
+    </Grid>
+</UserControl>

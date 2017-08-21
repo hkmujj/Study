@@ -1,0 +1,320 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:tempModel="clr-namespace:Tram.CBTC.Casco.Model.TempModel"
+    xmlns:warning="clr-namespace:Tram.CBTC.Infrasturcture.Model.Signal.Warning;assembly=Tram.CBTC.Infrasturcture">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Converters/CascoConverter.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="Tram.CBTC.Casco.ProgressBar.OrdinaryStyle" TargetType="ProgressBar">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ProgressBar">
+                    <Border
+                        Name="border"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <Rectangle Name="PART_Track" Fill="{TemplateBinding Background}" />
+                            <Rectangle
+                                Name="PART_Indicator"
+                                HorizontalAlignment="Left"
+                                Fill="{TemplateBinding Foreground}" />
+                        </Grid>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Orientation" Value="Vertical">
+                            <Setter TargetName="border" Property="LayoutTransform">
+                                <Setter.Value>
+                                    <RotateTransform Angle="270" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+
+                        <Trigger Property="IsIndeterminate" Value="True">
+                            <Setter TargetName="PART_Indicator" Property="Style">
+                                <Setter.Value>
+                                    <Style TargetType="FrameworkElement">
+                                        <Setter Property="HorizontalAlignment" Value="Stretch" />
+                                        <Style.Triggers>
+                                            <EventTrigger RoutedEvent="Loaded">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <ColorAnimation
+                                                            AutoReverse="True"
+                                                            RepeatBehavior="Forever"
+                                                            Storyboard.TargetProperty="Fill.Color"
+                                                            To="Transparent"
+                                                            Duration="0:0:0.5" />
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Tram.CBTC.Casco.DialScaleStyle" TargetType="ItemsControl">
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <Grid
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        IsItemsHost="True">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Grid Height="30" RenderTransformOrigin="1,0.5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="{Binding Lenght}" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RenderTransform>
+                            <RotateTransform Angle="{Binding Angle}" />
+                        </Grid.RenderTransform>
+                        <Rectangle
+                            Grid.Column="0"
+                            Width="{Binding Lenght}"
+                            Height="2"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Fill="White" />
+
+                        <Grid Grid.Column="1">
+                            <TextBlock
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                FontFamily="Arial"
+                                RenderTransformOrigin="0.5,0.5"
+                                Text="{Binding Text}">
+                                <TextBlock.Foreground>
+                                    <SolidColorBrush Color="White" />
+                                </TextBlock.Foreground>
+                                <TextBlock.RenderTransform>
+                                    <RotateTransform Angle="-90" />
+                                </TextBlock.RenderTransform>
+                                <!--<TextBlock.RenderTransform>
+                            <RotateTransform Angle="{Binding Angle, Converter={StaticResource Tram.CBTC.Casco.Converter.DegreeScaleTextAngleConverter}}" />
+                        </TextBlock.RenderTransform>-->
+                            </TextBlock>
+                            <!--<StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                        <TextBlock
+                            Width="5"
+                            Opacity="1"
+                            Visibility="Collapsed" />
+                        <TextBlock
+                            Width="30"
+                            Height="25"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            FontFamily="Arial"
+                            RenderTransformOrigin="0.5,0.5"
+                            Text="{Binding Text}"
+                            TextAlignment="Center">
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="White" />
+                            </TextBlock.Foreground>
+                            <TextBlock.RenderTransform>
+                                <RotateTransform Angle="{Binding Angle, Converter={StaticResource Tram.CBTC.Casco.Converter.DegreeScaleTextAngleConverter}}" />
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                    </StackPanel>-->
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="FocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle
+                        Margin="2"
+                        SnapsToDevicePixels="true"
+                        Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"
+                        StrokeDashArray="1 2"
+                        StrokeThickness="1" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <SolidColorBrush x:Key="ComboBox.Static.Border" Color="#FFACACAC" />
+
+    <SolidColorBrush x:Key="ComboBox.Static.Glyph" Color="#FF606060" />
+    <Style x:Key="Tram.CBTC.Casco.ComboBoxToggleButton" TargetType="{x:Type ToggleButton}">
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="IsTabStop" Value="false" />
+        <Setter Property="Focusable" Value="false" />
+        <Setter Property="ClickMode" Value="Press" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Border
+                        x:Name="templateRoot"
+                        Background="#FCFCFC"
+                        BorderBrush="{StaticResource ComboBox.Static.Border}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        SnapsToDevicePixels="true">
+                        <Border
+                            x:Name="splitBorder"
+                            Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}"
+                            Margin="0"
+                            HorizontalAlignment="Right"
+                            BorderBrush="Transparent"
+                            BorderThickness="1"
+                            SnapsToDevicePixels="true">
+                            <Path
+                                x:Name="arrow"
+                                Margin="0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Data="F1 M 0,0 L 2.667,2.66665 L 5.3334,0 L 5.3334,-1.78168 L 2.6667,0.88501 L0,-1.78168 L0,0 Z"
+                                Fill="{StaticResource ComboBox.Static.Glyph}" />
+                        </Border>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <ControlTemplate x:Key="Tram.CBTC.Casco.ComboBoxTemplate" TargetType="{x:Type ComboBox}">
+        <Grid x:Name="templateRoot" SnapsToDevicePixels="true">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="0" MinWidth="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}" />
+            </Grid.ColumnDefinitions>
+            <Popup
+                x:Name="PART_Popup"
+                Grid.ColumnSpan="2"
+                Margin="1"
+                AllowsTransparency="true"
+                IsOpen="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                Placement="Bottom"
+                PopupAnimation="{DynamicResource {x:Static SystemParameters.ComboBoxPopupAnimationKey}}"
+                VerticalOffset="{Binding ActualHeight, ConverterParameter=x*-1, Converter={StaticResource Tram.CBTC.Casco.Converter.MathConverter}, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ComboBox}}}">
+                <Border
+                    x:Name="dropDownBorder"
+                    Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"
+                    BorderBrush="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}"
+                    BorderThickness="1">
+                    <Grid x:Name="grid" RenderOptions.ClearTypeHint="Enabled">
+                        <Canvas
+                            x:Name="canvas"
+                            Width="0"
+                            Height="0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top">
+                            <Rectangle
+                                x:Name="opaqueRect"
+                                Width="{Binding ActualWidth, ElementName=dropDownBorder}"
+                                Height="{Binding ActualHeight, ElementName=dropDownBorder}"
+                                Fill="{Binding Background, ElementName=dropDownBorder}" />
+                        </Canvas>
+                        <ItemsPresenter
+                            x:Name="ItemsPresenter"
+                            KeyboardNavigation.DirectionalNavigation="Contained"
+                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                    </Grid>
+                </Border>
+            </Popup>
+            <ToggleButton
+                x:Name="toggleButton"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                Style="{StaticResource Tram.CBTC.Casco.ComboBoxToggleButton}" />
+            <TextBlock
+                Grid.Column="0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Foreground="Black"
+                Text="{TemplateBinding SelectionBoxItem,
+                                       Converter={StaticResource Tram.CBTC.Casco.Converter.SelectItemConverter}}" />
+        </Grid>
+    </ControlTemplate>
+    <Style x:Key="Tram.CBTC.Casco.ComboxItemComtainStyle" TargetType="ComboBoxItem">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ComboBoxItem">
+                    <ContentPresenter />
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="Blue" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <DataTemplate x:Key="Tram.CBTC.Casco.XomboxDataTemplate1" DataType="tempModel:ComboxSelectItemModel">
+        <Border
+            Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=ComboBox}, Path=ActualWidth}"
+            Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=ComboBox}, Path=ActualHeight}"
+            Background="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=ComboBoxItem}, Path=Background}">
+            <TextBlock
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Text="{Binding Content}" />
+        </Border>
+    </DataTemplate>
+    <DataTemplate x:Key="Tram.CBTC.Casco.XomboxDataTemplate2" DataType="tempModel:ComboxSelectItemModel2">
+        <Border
+            Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=ComboBox}, Path=ActualWidth}"
+            Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=ComboBox}, Path=ActualHeight}"
+            Background="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=ComboBoxItem}, Path=Background}">
+            <TextBlock
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Text="{Binding Content}" />
+        </Border>
+    </DataTemplate>
+    <Style x:Key="Tram.CBTC.Casco.ComboBoxStyle1" TargetType="{x:Type ComboBox}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
+        <Setter Property="BorderBrush" Value="{StaticResource ComboBox.Static.Border}" />
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="ItemContainerStyle" Value="{StaticResource Tram.CBTC.Casco.ComboxItemComtainStyle}" />
+        <Setter Property="ItemTemplate" Value="{StaticResource Tram.CBTC.Casco.XomboxDataTemplate1}" />
+        <Setter Property="Padding" Value="6,3,5,3" />
+        <Setter Property="ScrollViewer.CanContentScroll" Value="true" />
+        <Setter Property="ScrollViewer.PanningMode" Value="Both" />
+        <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
+        <Setter Property="Template" Value="{StaticResource Tram.CBTC.Casco.ComboBoxTemplate}" />
+    </Style>
+    <Style x:Key="Tram.CBTC.Casco.ComboBoxStyle2" TargetType="{x:Type ComboBox}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
+        <Setter Property="BorderBrush" Value="{StaticResource ComboBox.Static.Border}" />
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="ItemContainerStyle" Value="{StaticResource Tram.CBTC.Casco.ComboxItemComtainStyle}" />
+        <Setter Property="ItemTemplate" Value="{StaticResource Tram.CBTC.Casco.XomboxDataTemplate1}" />
+        <Setter Property="Padding" Value="6,3,5,3" />
+        <Setter Property="ScrollViewer.CanContentScroll" Value="true" />
+        <Setter Property="ScrollViewer.PanningMode" Value="Both" />
+        <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
+        <Setter Property="Template" Value="{StaticResource Tram.CBTC.Casco.ComboBoxTemplate}" />
+    </Style>
+</ResourceDictionary>

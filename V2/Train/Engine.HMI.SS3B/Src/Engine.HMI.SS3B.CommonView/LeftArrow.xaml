@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="Engine.HMI.SS3B.CommonView.LeftArrow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Name="UserControl"
+             d:DesignHeight="3"
+             d:DesignWidth="25"
+             mc:Ignorable="d">
+
+    <Grid x:Name="LayoutRoot">
+
+        <ed:LineArrow Width="20"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center"
+                      ArrowSize="8"
+                      BendAmount="0"
+                      EndArrow="NoArrow"
+                      Fill="#FFF4F4F5"
+                      StartArrow="Arrow"
+                      Stroke="red" />
+
+    </Grid>
+</UserControl>

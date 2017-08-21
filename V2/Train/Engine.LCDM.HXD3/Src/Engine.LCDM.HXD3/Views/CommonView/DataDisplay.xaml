@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="Engine.LCDM.HXD3.Views.CommonView.DataDisplay"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:commonView="clr-namespace:Engine.LCDM.HXD3.Views.CommonView"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Engine.LCDM.HXD3.Views.Flow"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:Engine.LCDM.HXD3.ViewModels"
+             d:DataContext="{d:DesignInstance viewModel:LCDMViewModel}"
+      mc:Ignorable="d" 
+      d:DesignHeight="100" d:DesignWidth="150"
+	>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="40*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Row="1" Grid.ColumnSpan="2" BorderThickness="2"
+                Style="{DynamicResource BorderStyleOne}"/>
+        <Border Grid.Row="1" Grid.Column="1" BorderBrush="{DynamicResource WhiteBrush}"  BorderThickness="2,0,0,0"></Border>
+        <TextBlock Grid.Row="0" Grid.Column="0"
+                   Style="{DynamicResource RedTextStyle}"
+                   Text="{DynamicResource BalancedReservior}" FontSize="16"
+                   HorizontalAlignment="Right"
+                   />
+        <TextBlock Grid.Row="0" Grid.Column="1"
+                   Style="{DynamicResource FlowTextStyleOne}"
+                   Text="{DynamicResource TrainPipe}" FontSize="16"
+                   HorizontalAlignment="Left"
+                   ></TextBlock>
+        <TextBlock Visibility="{Binding Main.NorEmVisibility}" Grid.Row="1" Grid.Column="0"
+                   Style="{DynamicResource FlowTextBlockStyleTwo}"
+                   Text="{Binding Main.BalanceReservior}" FontSize="18"
+                   />
+        <TextBlock Visibility="{Binding Main.NorEmVisibility}" Grid.Row="1" Grid.Column="1"
+                   Style="{DynamicResource FlowTextBlockStyleTwo}"
+                   Text="{Binding Main.TrainPipe}" FontSize="18"
+                   />
+
+        <TextBlock Visibility="{Binding Main.EpcuVisibility}" Grid.Row="1" Grid.Column="0"
+                   Style="{DynamicResource FlowTextBlockStyleTwo}"
+                   Text="---" FontSize="18"
+                   VerticalAlignment="Bottom"
+                    Background="Black"
+                   Margin="0,0,0,6"
+                   />
+        <TextBlock Visibility="{Binding Main.EpcuVisibility}" Grid.Row="1" Grid.Column="1"
+                   Style="{DynamicResource FlowTextBlockStyleTwo}"
+                   Text="---" FontSize="18"
+                   VerticalAlignment="Bottom"
+                    Background="Black"
+                   Margin="0,0,0,6"
+                   />
+        <TextBlock Visibility="{Binding Main.MipuVisibility}" Grid.Row="1" Grid.Column="0"
+                   Style="{DynamicResource FlowTextBlockStyleTwo}"
+                   Text="***" FontSize="18"
+                   VerticalAlignment="Bottom"
+                    Background="Black"
+                   Margin="0,0,0,6"
+                   />
+        <TextBlock Visibility="{Binding Main.MipuVisibility}" Grid.Row="1" Grid.Column="1"
+                   Style="{DynamicResource FlowTextBlockStyleTwo}"
+                   Text="***" FontSize="18"
+                   VerticalAlignment="Bottom"
+                   Background="Black"
+                   Margin="0,0,0,6"
+                   />
+    </Grid>
+</UserControl>

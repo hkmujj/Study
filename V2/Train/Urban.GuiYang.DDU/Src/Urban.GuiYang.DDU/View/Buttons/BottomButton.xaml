@@ -1,0 +1,83 @@
+﻿<UserControl
+    x:Class="Urban.GuiYang.DDU.View.Buttons.BottomButton"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:common="clr-namespace:Urban.GuiYang.DDU.View.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="clr-namespace:Urban.GuiYang.DDU.ViewModel"
+    d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+    d:DesignHeight="80"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Grid DataContext="{Binding Path=Model.CurrentStateInterface}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <common:NavigationRadioButton
+            Grid.Column="0"
+            Command="{Binding Path=BtnB1.ClickCommand}"
+            Content="{Binding Path=BtnB1.Content, Converter={StaticResource BottomContentToContentConverter}}"
+            IsChecked="{Binding Path=BtnB1.StateProvider.IsSelected}"
+            State="{Binding Path=BtnB1.StateProvider.ButtonState}"
+            Visibility="{Binding Path=BtnB1.StateProvider.Visible, Converter={StaticResource BoolVisibilityConverter}}" />
+        <common:NavigationRadioButton
+            Grid.Column="1"
+            Command="{Binding Path=BtnB2.ClickCommand}"
+            Content="{Binding Path=BtnB2.Content, Converter={StaticResource BottomContentToContentConverter}}"
+            IsChecked="{Binding Path=BtnB2.StateProvider.IsSelected}"
+            State="{Binding Path=BtnB2.StateProvider.ButtonState}"
+            Visibility="{Binding Path=BtnB2.StateProvider.Visible, Converter={StaticResource BoolVisibilityConverter}}" />
+        <common:NavigationRadioButton
+            Grid.Column="2"
+            Command="{Binding Path=BtnB3.ClickCommand}"
+            Content="{Binding Path=BtnB3.Content, Converter={StaticResource BottomContentToContentConverter}}"
+            IsChecked="{Binding Path=BtnB3.StateProvider.IsSelected}"
+            State="{Binding Path=BtnB3.StateProvider.ButtonState}"
+            Visibility="{Binding Path=BtnB3.StateProvider.Visible, Converter={StaticResource BoolVisibilityConverter}}" />
+        <common:NavigationRadioButton
+            Grid.Column="3"
+            Command="{Binding Path=BtnB4.ClickCommand}"
+            Content="{Binding Path=BtnB4.Content, Converter={StaticResource BottomContentToContentConverter}}"
+            IsChecked="{Binding Path=BtnB4.StateProvider.IsSelected}"
+            State="{Binding Path=BtnB4.StateProvider.ButtonState}"
+            Visibility="{Binding Path=BtnB4.StateProvider.Visible, Converter={StaticResource BoolVisibilityConverter}}" />
+        <common:NavigationRadioButton
+            Grid.Column="4"
+            Command="{Binding Path=BtnB5.ClickCommand}"
+            Content="{Binding Path=BtnB5.Content, Converter={StaticResource BottomContentToContentConverter}}"
+            IsChecked="{Binding Path=BtnB5.StateProvider.IsSelected}"
+            State="{Binding Path=BtnB5.StateProvider.ButtonState}"
+            Visibility="{Binding Path=BtnB5.StateProvider.Visible, Converter={StaticResource BoolVisibilityConverter}}" />
+        <common:NavigationRadioButton
+            Grid.Column="5"
+            Command="{Binding Path=BtnB6.ClickCommand}"
+            Content="{Binding Path=BtnB6.Content, Converter={StaticResource BottomContentToContentConverter}}"
+            IsChecked="{Binding Path=BtnB6.StateProvider.IsSelected}"
+            State="{Binding Path=BtnB6.StateProvider.ButtonState}"
+            Visibility="{Binding Path=BtnB6.StateProvider.Visible, Converter={StaticResource BoolVisibilityConverter}}" />
+        <common:NavigationRadioButton
+            Grid.Column="6"
+            Command="{Binding Path=BtnB7.ClickCommand}"
+            Content="{Binding Path=BtnB7.Content, Converter={StaticResource BottomContentToContentConverter}}"
+            IsChecked="{Binding Path=BtnB7.StateProvider.IsSelected}"
+            State="{Binding Path=BtnB7.StateProvider.ButtonState}"
+            Visibility="{Binding Path=BtnB7.StateProvider.Visible, Converter={StaticResource BoolVisibilityConverter}}" />
+        <common:NavigationRadioButton
+            Grid.Column="7"
+            Command="{Binding Path=BtnB8.ClickCommand}"
+            Content="{Binding Path=BtnB8.Content, Converter={StaticResource BottomContentToContentConverter}}"
+            IsChecked="{Binding Path=BtnB8.StateProvider.IsSelected}"
+            State="{Binding Path=BtnB8.StateProvider.ButtonState}"
+            Visibility="{Binding Path=BtnB8.StateProvider.Visible, Converter={StaticResource BoolVisibilityConverter}}" />
+
+    </Grid>
+</UserControl>

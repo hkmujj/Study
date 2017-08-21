@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="Motor.ATP._200H.Subsys.WPFView.RegionB.CmdIsolatedItemView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:interface="clr-namespace:Motor.ATP.Infrasturcture.Interface;assembly=Motor.ATP.Infrasturcture"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             HorizontalAlignment="Center"
+             VerticalAlignment="Center"
+             d:DataContext="{d:DesignInstance interface:IATP}"
+             d:DesignHeight="36"
+             d:DesignWidth="36"
+             FontSize="16"
+             Foreground="{StaticResource Motor.ATP.200H.WhiteBrush}"
+             mc:Ignorable="d">
+    <ContentPresenter Content="{Binding Path=ForecastInformation.CmdIsolatedItem.Type, Converter={StaticResource Motor.ATP.200H.ForecastIsolatedTypeToTextConverter}}" />
+</UserControl>

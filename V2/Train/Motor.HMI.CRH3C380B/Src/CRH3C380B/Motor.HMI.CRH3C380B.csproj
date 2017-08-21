@@ -1,0 +1,638 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0637BD0E-88D7-4C59-A6F7-4E52B9031101}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Motor.HMI.CRH3C380B</RootNamespace>
+    <AssemblyName>Motor.HMI.CRH3C380B</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\MMI\Addin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\MMI\Addin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>..\MMI\Addin\CRH380B_D1.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;D:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\CRH380B_D1.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;D:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonUtil">
+      <HintPath>..\..\..\Bin\MMI\CommonUtil.dll</HintPath>
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Excel.Interface">
+      <HintPath>..\..\..\Bin\MMI\Excel.Interface.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\Bin\MMI\log4net.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mmi.Common.DateTimeInterpreter">
+      <HintPath>..\..\..\..\Bin\Common\Mmi.Common.DateTimeInterpreter.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MMI.Facility.Interface">
+      <HintPath>..\..\..\Bin\MMI\MMI.Facility.Interface.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MsgReceiveMod">
+      <HintPath>..\..\..\..\Bin\Common\MsgReceiveMod.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Appraise\Appraise.cs" />
+    <Compile Include="Appraise\AppraiseResource.cs" />
+    <Compile Include="Appraise\GlobalViewNavigate.cs" />
+    <Compile Include="Base\DMIBrakeSheet.cs" />
+    <Compile Include="Base\Fault\FaultContentViewEq0.cs" />
+    <Compile Include="Base\Fault\FaultContentViewReport.cs" />
+    <Compile Include="Base\Fault\FaultItemViewBase.cs" />
+    <Compile Include="Base\Fault\FaultViewResume.cs" />
+    <Compile Include="Base\Fault\FaultViewType.cs" />
+    <Compile Include="Base\Fault\FaultContentViewBase.cs" />
+    <Compile Include="Base\Fault\FaultContentViewVLarger0.cs" />
+    <Compile Include="Base\Global\GlobalControl.cs" />
+    <Compile Include="Base\Global\IViewControl.cs" />
+    <Compile Include="Base\Global\RestartControl.cs" />
+    <Compile Include="Base\Restart\ReconfigState.cs" />
+    <Compile Include="Base\Restart\ReconfigView.cs" />
+    <Compile Include="Base\Restart\ReconfigViewConfigingPage.cs" />
+    <Compile Include="Base\Restart\ReconfigViewPage.cs" />
+    <Compile Include="Base\Restart\ReconfigViewUnstartPage.cs" />
+    <Compile Include="Base\Restart\RestartView.cs" />
+    <Compile Include="Base\停放制动\ParkingBrakeRefreshModel.cs" />
+    <Compile Include="Base\停放制动\ParkingBrakeState.cs" />
+    <Compile Include="Base\制动有效率\DMIBrakingPower.cs" />
+    <Compile Include="Base\制动有效率\DMIVmaxTable.cs" />
+    <Compile Include="Base\制动测试\BrakeTestControl.cs" />
+    <Compile Include="Base\制动测试\BrakeTestType.cs" />
+    <Compile Include="Base\制动测试\DMIBrakeTest.cs" />
+    <Compile Include="Base\制动测试\ControlBrakeTest.cs" />
+    <Compile Include="Base\制动测试\TestItems\TestOfBpContinuity.cs" />
+    <Compile Include="Base\制动测试\TestItems\TestOfBpLeakage.cs" />
+    <Compile Include="Base\制动测试\TestItems\TestOfDirectBrake.cs" />
+    <Compile Include="Base\制动测试\TestItems\TestOfEmergenceUB.cs" />
+    <Compile Include="Base\制动测试\TestItems\TestOfEmergencyBrake.cs" />
+    <Compile Include="Base\制动测试\TestItems\TestOfIndirectBrake.cs" />
+    <Compile Include="Base\制动测试\TestItems\TestOfMrpContinuity.cs" />
+    <Compile Include="Base\制动状态\ControlStatusOfBrake.cs" />
+    <Compile Include="Base\制动状态\ControlTrainPipe.cs" />
+    <Compile Include="Base\制动状态\DMIBrakeStatus.cs" />
+    <Compile Include="Base\基本画面\BasePage380BL.cs" />
+    <Compile Include="Base\基本画面\BasePage3C.cs" />
+    <Compile Include="Base\基本画面\BasePage380B.cs" />
+    <Compile Include="Base\基本画面\BasePageContent.cs" />
+    <Compile Include="Base\底层共用\DMIButton.cs" />
+    <Compile Include="Base\Fault\DMIFault.cs" />
+    <Compile Include="Base\底层共用\DMIButtonResoure.cs" />
+    <Compile Include="Base\底层共用\DMITitle.cs" />
+    <Compile Include="Base\底层共用\TitleChirldren\LampStateControl.cs" />
+    <Compile Include="Base\底层共用\TitleChirldren\TitleChirldBase.cs" />
+    <Compile Include="Base\开关\AirConditioning\AirConditionBLViewBase.cs" />
+    <Compile Include="Base\开关\AirConditioning\AirconditionSelectStrategy.cs" />
+    <Compile Include="Base\开关\AirConditioning\AirconditionView16.cs" />
+    <Compile Include="Base\开关\AirConditioning\AirconditionView8.cs" />
+    <Compile Include="Base\开关\AirConditioning\AirconditionviewBase.cs" />
+    <Compile Include="Base\开关\AirConditioning\AirconditionViewBL.cs" />
+    <Compile Include="Base\开关\AirConditioning\AirConditionViewItem.cs" />
+    <Compile Include="Base\开关\AirConditioning\IAirConditionView.cs" />
+    <Compile Include="Base\开关\AirConditioning\SelectableAirconditionViewItemDecorator.cs" />
+    <Compile Include="Base\开关\ISelectStrategy.cs" />
+    <Compile Include="Base\开关\Lighting\LightingViewBL.cs" />
+    <Compile Include="Base\开关\Lighting\LightItemSelectStrategy.cs" />
+    <Compile Include="Base\开关\SwitchsState.cs" />
+    <Compile Include="Base\系统\CloseCouplerGuide.cs" />
+    <Compile Include="Base\系统\CloseCouplerHatches\CloseCouplerHatchesView1.cs" />
+    <Compile Include="Base\系统\CloseCouplerHatches\CloseCouplerHatchesView2.cs" />
+    <Compile Include="Base\系统\CloseCouplerHatches\CloseCouplerHatchesViewBase.cs" />
+    <Compile Include="Base\系统\CloseCouplerHatches\CouplerHatchesViewItem.cs" />
+    <Compile Include="Base\系统\CloseCouplerHatches\ICloseCouplerHatches.cs" />
+    <Compile Include="Base\系统\CloseCouplerHatches\SelectableCloseCouplerHatchesViewItemDecorator.cs" />
+    <Compile Include="Base\开关\Lighting\ILightingView.cs" />
+    <Compile Include="Base\开关\Lighting\LightingView16.cs" />
+    <Compile Include="Base\开关\Lighting\LightingView8.cs" />
+    <Compile Include="Base\开关\Lighting\LightViewBase.cs" />
+    <Compile Include="Base\开关\Lighting\LightViewItem.cs" />
+    <Compile Include="Base\开关\Lighting\SelectableLightViewItemDecorator.cs" />
+    <Compile Include="Base\系统\Coupling\CouplingContentView.cs" />
+    <Compile Include="Base\系统\Coupling\CouplingCouplingContentView.cs" />
+    <Compile Include="Base\系统\Decoupling\ConfirmDecouplingContentView.cs" />
+    <Compile Include="Base\系统\Decoupling\ConfirmTrainGroupDecouplingContentView.cs" />
+    <Compile Include="Base\系统\Decoupling\DecouplingContentView.cs" />
+    <Compile Include="Base\系统\Decoupling\DecouplingDecouplingContentView.cs" />
+    <Compile Include="Base\系统\Decoupling\DecouplingType.cs" />
+    <Compile Include="Base\系统\Decoupling\PreparedDecouplingContentView.cs" />
+    <Compile Include="Base\系统\Decoupling\PrepareingDecouplingContentView.cs" />
+    <Compile Include="Base\系统\DMITemperature.cs" />
+    <Compile Include="Base\系统\Temperature\GDITemperature.cs" />
+    <Compile Include="Base\系统\Temperature\TemperatureTrainView.cs" />
+    <Compile Include="Base\系统\TrainGroupView.cs" />
+    <Compile Include="Base\系统\TrainGroupViewType.cs" />
+    <Compile Include="Base\系统\WheelShaft\WheelShaftCar.cs" />
+    <Compile Include="Base\系统\关闭车钩罩.cs" />
+    <Compile Include="Base\系统\编组联挂.cs" />
+    <Compile Include="Base\系统\解编.cs" />
+    <Compile Include="Base\维修\DMIVersionsCar1.cs" />
+    <Compile Include="Base\维修\DMIVersionsCar2.cs" />
+    <Compile Include="Base\维修\DMIVersionsCar3.cs" />
+    <Compile Include="Base\维修\DMIVersionsCar4.cs" />
+    <Compile Include="Base\维修\DMIVersionsCar6.cs" />
+    <Compile Include="Base\维修\DMIVersionsCar7.cs" />
+    <Compile Include="Base\维修\DMIVersionsCar8.cs" />
+    <Compile Include="Base\维修\DMIVersionsCarBase.cs" />
+    <Compile Include="Base\自动速度控制\AutoSpeedControl.cs" />
+    <Compile Include="Base\车门\DoorUnit.cs" />
+    <Compile Include="Base\车门\SenvalueType.cs" />
+    <Compile Include="Base\黑屏\DMIBeginScreen.cs" />
+    <Compile Include="Base\黑屏\DMIClassOverScreen.cs" />
+    <Compile Include="Common\BaseClassExtenstion.cs" />
+    <Compile Include="Common\BottomBtnType.cs" />
+    <Compile Include="Common\ChargingGeneratorControl.cs" />
+    <Compile Include="Common\CompareTime.cs" />
+    <Compile Include="Common\ConfigExtension.cs" />
+    <Compile Include="Common\CRH3CBase.cs" />
+    <Compile Include="Common\CommunicationDataType.cs" />
+    <Compile Include="Common\ATP300DFloatStringInterpreter.cs" />
+    <Compile Include="Common\DoubleOutLineTextControl.cs" />
+    <Compile Include="Common\GetCarNum.cs" />
+    <Compile Include="Common\GlobalParam.cs" />
+    <Compile Include="Common\IFloatStringInterpreter.cs" />
+    <Compile Include="Common\ISelectable.cs" />
+    <Compile Include="Common\ObjectManager.cs" />
+    <Compile Include="Common\ObjectManagerExtenstion.cs" />
+    <Compile Include="Common\ProjectType.cs" />
+    <Compile Include="Common\TrainLength.cs" />
+    <Compile Include="Config\ConfigModel\ProjectConfig.cs" />
+    <Compile Include="Config\DifferenceConfig.cs" />
+    <Compile Include="Config\ProjectConfigExtension.cs" />
+    <Compile Include="Config\ViewConfig.cs" />
+    <Compile Include="Constant\LogicInterface.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Base\停放制动\停放制动.cs" />
+    <Compile Include="Base\制动功能状态\制动功能状态.cs" />
+    <Compile Include="Base\制动有效率\BrakingPower.cs" />
+    <Compile Include="Base\制动测试\DMIResultOfLastBrakeTest.cs" />
+    <Compile Include="Base\制动状态\ControlMainReservoirPipe.cs" />
+    <Compile Include="Base\ATP系统\ATP系统界面.cs" />
+    <Compile Include="Base\ATP系统\DMIDMIReplace.cs" />
+    <Compile Include="Base\ATP系统\DMIEVCReplace.cs" />
+    <Compile Include="Base\传动制动\传动制动.cs" />
+    <Compile Include="Base\准备整备\停放结束.cs" />
+    <Compile Include="Base\准备整备\准备和停放.cs" />
+    <Compile Include="Base\准备整备\列车编号和司机编号.cs" />
+    <Compile Include="Base\准备整备\开始停放操作.cs" />
+    <Compile Include="Base\基本画面\DMIBasePage.cs" />
+    <Compile Include="Base\开关\冲洗运行.cs" />
+    <Compile Include="Base\开关\前窗加热.cs" />
+    <Compile Include="Base\开关\开关.cs" />
+    <Compile Include="Base\开关\照明.cs" />
+    <Compile Include="Base\开关\牵引.cs" />
+    <Compile Include="Base\开关\空调.cs" />
+    <Compile Include="Base\开关\网侧电流限制.cs" />
+    <Compile Include="Base\开关\风扇.cs" />
+    <Compile Include="Base\系统\列车配置显示.cs" />
+    <Compile Include="Base\系统\系统.cs" />
+    <Compile Include="Base\系统\DMIBatteryVoltage110V.cs" />
+    <Compile Include="Base\系统\轮轴温度12.cs" />
+    <Compile Include="Base\系统\轮轴温度34.cs" />
+    <Compile Include="Base\紧急\取消牵引限制.cs" />
+    <Compile Include="Base\紧急\复位横向加速度报警.cs" />
+    <Compile Include="Base\紧急\空调紧急关.cs" />
+    <Compile Include="Base\紧急\紧急.cs" />
+    <Compile Include="Base\紧急\EmergencyModelGuide.cs" />
+    <Compile Include="Base\紧急\释放速度限制.cs" />
+    <Compile Include="Base\维修\中间直流环节.cs" />
+    <Compile Include="Base\维修\牵引手柄检测.cs" />
+    <Compile Include="Base\维修\维修.cs" />
+    <Compile Include="Base\维修\能量计量.cs" />
+    <Compile Include="Base\维修\DMIVersionsCar5.cs" />
+    <Compile Include="Base\维修\运行速度设定检测.cs" />
+    <Compile Include="Base\维修\远程数据传输.cs" />
+    <Compile Include="Base\自动速度控制\DMIASC.cs" />
+    <Compile Include="Base\车门\DMIDoors.cs" />
+    <Compile Include="Base\底层共用\CoordinateConversion.cs" />
+    <Compile Include="Base\底层共用\EnumItems.cs" />
+    <Compile Include="Base\底层共用\DMIInfoBox.cs" />
+    <Compile Include="Base\底层共用\UtilityClass.cs" />
+    <Compile Include="Base\底层共用\基础图元方法.cs" />
+    <Compile Include="Base\底层共用\按钮和标题.cs" />
+    <Compile Include="Base\底层共用\FaultInfo.cs" />
+    <Compile Include="Base\黑屏\DMIBlackScreen.cs" />
+    <Compile Include="Resource\Images\BtnImages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BtnImages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Images\CommonImages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommonImages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Images\DoorImages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoorImages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Images\Images1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Images1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Images\MaintainImages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MaintainImages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Images\MsgBoxImages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MsgBoxImages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Images\MSImages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSImages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Images\BrakeImages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BrakeImages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Images\SystemImages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SystemImages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Images\TitleImages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TitleImages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\InBoolKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InBoolKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\InFloatKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InFloatKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\OutBoolKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutBoolKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\OutFloatKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutFloatKeys.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\ProjectConfig.xml" />
+    <Content Include="Changes_CRH380B3C.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\Images\Resource\MS\380网压_0.png" />
+    <Content Include="Resource\Images\Resource\MS\380网压_1.png" />
+    <None Include="Resource\Images\Resource\新建文件夹\q7.png" />
+    <None Include="Resource\Images\Resource\新建文件夹\q6.png" />
+    <None Include="Resource\Images\Resource\新建文件夹\q4.png" />
+    <None Include="Resource\Images\Resource\新建文件夹\q3.png" />
+    <None Include="Resource\Images\Resource\新建文件夹\q2.png" />
+    <None Include="Resource\Images\Resource\新建文件夹\q1.png" />
+    <None Include="Resource\Images\Resource\新建文件夹\mubiaojuli.bmp" />
+    <None Include="Resource\Images\Resource\新建文件夹\Mrp1.bmp" />
+    <None Include="Resource\Images\Resource\新建文件夹\mrp.bmp" />
+    <None Include="Resource\Images\Resource\Title\Title_3_1.png" />
+    <None Include="Resource\Images\Resource\Title\Title_3_0.png" />
+    <None Include="Resource\Images\Resource\Title\Title_2_1.png" />
+    <None Include="Resource\Images\Resource\Title\Title_2_0.png" />
+    <None Include="Resource\Images\Resource\Title\Title_1_1.png" />
+    <None Include="Resource\Images\Resource\Title\Title_1_0.png" />
+    <None Include="Resource\Images\Resource\Title\StatusBar16.bmp" />
+    <None Include="Resource\Images\Resource\Title\StatusBar15.bmp" />
+    <None Include="Resource\Images\Resource\Title\StatusBar14.bmp" />
+    <None Include="Resource\Images\Resource\Title\StatusBar13.bmp" />
+    <None Include="Resource\Images\Resource\Title\StatusBar12.bmp" />
+    <None Include="Resource\Images\Resource\Title\StatusBar11.bmp" />
+    <None Include="Resource\Images\Resource\Title\StatusBar10.bmp" />
+    <None Include="Resource\Images\Resource\Title\StatusBar9.bmp" />
+    <None Include="Resource\Images\Resource\Title\StatusBar8.bmp" />
+    <None Include="Resource\Images\Resource\Title\StatusBar7.bmp" />
+    <None Include="Resource\Images\Resource\Title\StatusBar6.bmp" />
+    <None Include="Resource\Images\Resource\Title\StatusBar5.bmp" />
+    <None Include="Resource\Images\Resource\Title\StatusBar4.bmp" />
+    <None Include="Resource\Images\Resource\Title\StatusBar3.bmp" />
+    <None Include="Resource\Images\Resource\Title\StatusBar2.bmp" />
+    <None Include="Resource\Images\Resource\Title\StatusBar1.bmp" />
+    <None Include="Resource\Images\Resource\Title\StatusBar0.bmp" />
+    <None Include="Resource\Images\Resource\Title\faultTitle_1_1.png" />
+    <None Include="Resource\Images\Resource\Title\faultTitle_1_0.png" />
+    <None Include="Resource\Images\Resource\MsgBox\Btn_9.png" />
+    <None Include="Resource\Images\Resource\MsgBox\Btn_8_7.png" />
+    <None Include="Resource\Images\Resource\MsgBox\Btn_8_6.png" />
+    <None Include="Resource\Images\Resource\MsgBox\Btn_8_5.png" />
+    <None Include="Resource\Images\Resource\MsgBox\Btn_8_4.png" />
+    <None Include="Resource\Images\Resource\MsgBox\Btn_8_3.png" />
+    <None Include="Resource\Images\Resource\MsgBox\Btn_8_2.png" />
+    <None Include="Resource\Images\Resource\MsgBox\Btn_8_1.png" />
+    <None Include="Resource\Images\Resource\MsgBox\Btn_7_2.png" />
+    <None Include="Resource\Images\Resource\MsgBox\Btn_7_1.png" />
+    <None Include="Resource\Images\Resource\MsgBox\Btn_6.png" />
+    <None Include="Resource\Images\Resource\MsgBox\Btn_5.png" />
+    <None Include="Resource\Images\Resource\MsgBox\Btn_4.png" />
+    <None Include="Resource\Images\Resource\MsgBox\Btn_3.png" />
+    <None Include="Resource\Images\Resource\Maintain\speedTest.png" />
+    <None Include="Resource\Images\Resource\Maintain\dclink.bmp" />
+    <None Include="Resource\Images\Resource\Maintain\car8.png" />
+    <None Include="Resource\Images\Resource\Maintain\car7.png" />
+    <None Include="Resource\Images\Resource\Maintain\car6.png" />
+    <None Include="Resource\Images\Resource\Maintain\car5.png" />
+    <None Include="Resource\Images\Resource\Maintain\car4.png" />
+    <None Include="Resource\Images\Resource\Maintain\car3.png" />
+    <None Include="Resource\Images\Resource\Maintain\car2.png" />
+    <None Include="Resource\Images\Resource\Maintain\car1.png" />
+    <None Include="Resource\Images\Resource\Door\instruction_1.png" />
+    <None Include="Resource\Images\Resource\Door\instruction_0.png" />
+    <None Include="Resource\Images\Resource\Door\doors1.png" />
+    <None Include="Resource\Images\Resource\Door\doors0.png" />
+    <None Include="Resource\Images\Resource\Door\doors.png" />
+    <None Include="Resource\Images\Resource\Btns\TitleUp.png" />
+    <None Include="Resource\Images\Resource\Btns\TitleDown.png" />
+    <None Include="Resource\Images\Resource\Btns\Title_Right.png" />
+    <None Include="Resource\Images\Resource\Btns\baia.png" />
+    <None Include="Resource\Images\Resource\Btns\bai.png" />
+    <None Include="Resource\Images\Resource\Door\instruction.psd" />
+    <None Include="Resource\Images\Resource\升弓_1.png" />
+    <None Include="Resource\Images\Resource\升弓_0.png" />
+    <None Include="Resource\Images\Resource\开关牵引16_1.png" />
+    <None Include="Resource\Images\Resource\开关牵引16_0.png" />
+    <None Include="Resource\Images\Resource\开关牵引8_1.png" />
+    <None Include="Resource\Images\Resource\开关牵引8_0.png" />
+    <None Include="Resource\Images\Resource\降弓_1.png" />
+    <None Include="Resource\Images\Resource\降弓_0.png" />
+    <None Include="Resource\Images\Resource\车灯f.bmp" />
+    <None Include="Resource\Images\Resource\车灯e.png" />
+    <None Include="Resource\Images\Resource\车灯d.png" />
+    <None Include="Resource\Images\Resource\车灯c.png" />
+    <None Include="Resource\Images\Resource\车灯b.png" />
+    <None Include="Resource\Images\Resource\车灯a.png" />
+    <None Include="Resource\Images\Resource\zhou.bmp" />
+    <None Include="Resource\Images\Resource\welcom.png" />
+    <None Include="Resource\Images\Resource\StateUnkown.png" />
+    <None Include="Resource\Images\Resource\sijishi.bmp" />
+    <None Include="Resource\Images\Resource\EmergencyModelGuide.png" />
+    <None Include="Resource\Images\Resource\doubleDoor.bmp" />
+    <None Include="Resource\Images\Resource\che.bmp" />
+    <None Include="Resource\Images\Resource\制动屏\总风管长.png" />
+    <None Include="Resource\Images\Resource\制动屏\总风管短.png" />
+    <None Include="Resource\Images\Resource\制动屏\制动有效率16.png" />
+    <None Include="Resource\Images\Resource\制动屏\制动有效率8.png" />
+    <None Include="Resource\Images\Resource\制动屏\制动试验结果1.png" />
+    <None Include="Resource\Images\Resource\制动屏\制动试验结果0.png" />
+    <None Include="Resource\Images\Resource\制动屏\停放制动.png" />
+    <None Include="Resource\Images\Resource\制动屏\竖线_短.png" />
+    <None Include="Resource\Images\Resource\制动屏\列车管长.png" />
+    <None Include="Resource\Images\Resource\制动屏\列车管.png" />
+    <None Include="Resource\Images\Resource\制动屏\叉.png" />
+    <None Include="Resource\Images\Resource\制动屏\Mrp1.bmp" />
+    <None Include="Resource\Images\Resource\制动屏\ED.png" />
+    <None Include="Resource\Images\Resource\制动屏\D.png" />
+    <None Include="Resource\Images\Resource\System\Battery_0_380.png" />
+    <None Include="Resource\Images\Resource\System\Battery_0_3C.png" />
+    <None Include="Resource\Images\Resource\System\3CBattery_0_0.png" />
+    <None Include="Resource\Images\Resource\System\TrainConfig.png" />
+    <None Include="Resource\Images\Resource\System\trainconfig.bmp" />
+    <None Include="Resource\Images\Resource\System\doors.png" />
+    <None Include="Resource\Images\Resource\MS\3C网压_1.png" />
+    <None Include="Resource\Images\Resource\MS\3C网压_0.png" />
+    <None Include="Resource\Images\Resource\MS\主断切除_1.png" />
+    <None Include="Resource\Images\Resource\MS\主断切除_0.png" />
+    <None Include="Resource\Images\Resource\MS\主断合_1.png" />
+    <None Include="Resource\Images\Resource\MS\主断合_0.png" />
+    <None Include="Resource\Images\Resource\MS\主断断_1.png" />
+    <None Include="Resource\Images\Resource\MS\主断断_0.png" />
+    <None Include="Resource\Images\Resource\MS\小三角_1_1.png" />
+    <None Include="Resource\Images\Resource\MS\小三角_1_0.png" />
+    <None Include="Resource\Images\Resource\MS\小三角_0_1.png" />
+    <None Include="Resource\Images\Resource\MS\小三角_0_0.png" />
+    <None Include="Resource\Images\Resource\MS\小方块_1_2.png" />
+    <None Include="Resource\Images\Resource\MS\小方块_1_1.png" />
+    <None Include="Resource\Images\Resource\MS\小方块_1_0.png" />
+    <None Include="Resource\Images\Resource\MS\小方块_0_2.png" />
+    <None Include="Resource\Images\Resource\MS\小方块_0_1.png" />
+    <None Include="Resource\Images\Resource\MS\小方块_0_0.png" />
+    <None Include="Resource\Images\Resource\MS\未知.png" />
+    <None Include="Resource\Images\Resource\MS\双三角1_0.png" />
+    <None Include="Resource\Images\Resource\MS\双三角0_0.png" />
+    <None Include="Resource\Images\Resource\MS\受电弓切除_1.png" />
+    <None Include="Resource\Images\Resource\MS\受电弓切除_0.png" />
+    <None Include="Resource\Images\Resource\MS\升弓_1.png" />
+    <None Include="Resource\Images\Resource\MS\升弓_0.png" />
+    <None Include="Resource\Images\Resource\MS\牵引制动_1.png" />
+    <None Include="Resource\Images\Resource\MS\牵引制动_0.png" />
+    <None Include="Resource\Images\Resource\MS\牵引图_1_1.png" />
+    <None Include="Resource\Images\Resource\MS\牵引图_1_0.png" />
+    <None Include="Resource\Images\Resource\MS\牵引图_0_1.png" />
+    <None Include="Resource\Images\Resource\MS\牵引图_0_0.png" />
+    <None Include="Resource\Images\Resource\MS\降弓_1.png" />
+    <None Include="Resource\Images\Resource\MS\降弓_0.png" />
+    <None Include="Resource\Images\Resource\MS\车顶隔离切除_1.png" />
+    <None Include="Resource\Images\Resource\MS\车顶隔离切除_0.png" />
+    <None Include="Resource\Images\Resource\MS\车顶隔离合_1.png" />
+    <None Include="Resource\Images\Resource\MS\车顶隔离合_0.png" />
+    <None Include="Resource\Images\Resource\MS\车顶隔离断_1.png" />
+    <None Include="Resource\Images\Resource\MS\车顶隔离断_0.png" />
+    <None Include="Resource\Images\Resource\MS\xfk_1_2.png" />
+    <None Include="Resource\Images\Resource\MS\xfk_1_1.png" />
+    <None Include="Resource\Images\Resource\MS\xfk_1_0.png" />
+    <None Include="Resource\Images\Resource\MS\xfk_0_2.png" />
+    <None Include="Resource\Images\Resource\MS\xfk_0_1.png" />
+    <None Include="Resource\Images\Resource\MS\xfk_0_0.png" />
+    <None Include="Resource\Images\Resource\MS\voltage_1_1.png" />
+    <None Include="Resource\Images\Resource\MS\voltage_1_0.png" />
+    <None Include="Resource\Images\Resource\MS\voltage_0_1.png" />
+    <None Include="Resource\Images\Resource\MS\voltage_0_0.png" />
+    <None Include="Resource\Images\Resource\MS\powerCurrent_1.png" />
+    <None Include="Resource\Images\Resource\MS\powerCurrent_0.png" />
+    <None Include="Resource\Images\Resource\MS\3C主界面_1.png" />
+    <None Include="Resource\Images\Resource\MS\3C主界面_0.png" />
+    <None Include="Resource\Images\Resource\制动屏\Mrp1.psd" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource\Images\BtnImages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>BtnImages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Images\CommonImages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CommonImages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Images\DoorImages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DoorImages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Images\Images1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Images1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Images\MaintainImages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MaintainImages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Images\MsgBoxImages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MsgBoxImages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Images\MSImages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MSImages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Images\BrakeImages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>BrakeImages.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Images\SystemImages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SystemImages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Images\TitleImages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TitleImages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\InBoolKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InBoolKeys.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\InFloatKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InFloatKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\OutBoolKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OutBoolKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\OutFloatKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OutFloatKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy /y "$(TargetPath)" "$(SolutionDir)\MMI\Addin\$(TargetFileName)"
+xcopy /y "$(ProjectDir)\Config\*.xml" "$(SolutionDir)\MMI\Config\"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,33 @@
+﻿<UserControl
+    x:Class="Tram.CBTC.Casco.View.Contents.RegionB.RegionB3Layout"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="clr-namespace:Tram.CBTC.Casco.ViewModel"
+    d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+    d:DesignHeight="285"
+    d:DesignWidth="75"
+    Background="{StaticResource Tram.CBTC.Casco.RegionABack}"
+    mc:Ignorable="d">
+    <Grid Margin="5,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Image
+            Grid.Row="0"
+            Margin="1"
+            Source="{Binding CBTC.SignalInfo.ATPProtectionControlStatus, Converter={StaticResource Tram.CBTC.Casco.Converter.ATPProtectionControlStatusToImage}}" />
+        <Image
+            Grid.Row="1"
+            Margin="1"
+            Source="{Binding CBTC.SignalInfo.ATPProhibitStatus, Converter={StaticResource Tram.CBTC.Casco.Converter.ATPProhibitStatusToImage}}" />
+        <Image
+            Grid.Row="2"
+            Margin="1"
+            Source="{StaticResource Tram.CBTC.Casco.Images.Content.信息丢失}"
+            Visibility="{Binding CBTC.SignalInfo.BeaconStatus, Converter={StaticResource Tram.CBTC.Casco.Converter.BeaconStatusVisibility}}" />
+    </Grid>
+</UserControl>

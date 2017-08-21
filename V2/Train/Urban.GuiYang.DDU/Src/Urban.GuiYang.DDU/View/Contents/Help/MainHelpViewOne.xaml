@@ -1,0 +1,187 @@
+﻿<UserControl
+    x:Class="Urban.GuiYang.DDU.View.Help.MainHelpViewOne"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:constant="clr-namespace:Urban.GuiYang.DDU.Model.Constant"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="355"
+    d:DesignWidth="480"
+    Background="{StaticResource ContentBackgroundBrush}"
+    mc:Ignorable="d">
+    <Grid>
+        <Border BorderBrush="White" BorderThickness="2,2,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1.2*" />
+                    <RowDefinition Height="1.5*" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Margin="10,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Text="车门状态:" />
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0" Orientation="Horizontal">
+                            <Image
+                                Width="20"
+                                Height="20"
+                                Source="{Binding Source={x:Static constant:DoorState.Close}, Converter={StaticResource DoorStateImageConverter}}" />
+                            <TextBlock
+                                Margin="5,0,0,0"
+                                VerticalAlignment="Center"
+                                Text="门关闭" />
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" Orientation="Horizontal">
+                            <Image
+                                Width="20"
+                                Height="20"
+                                Source="{Binding Source={x:Static constant:DoorState.Isolation}, Converter={StaticResource DoorStateImageConverter}}" />
+                            <TextBlock
+                                Margin="5,0,0,0"
+                                VerticalAlignment="Center"
+                                Text="隔离" />
+                        </StackPanel>
+                        <StackPanel Grid.Column="2" Orientation="Horizontal">
+                            <Image
+                                Width="20"
+                                Height="20"
+                                Source="{Binding Source={x:Static constant:DoorState.FaultClose}, Converter={StaticResource DoorStateImageConverter}}" />
+                            <TextBlock
+                                Margin="5,0,0,0"
+                                VerticalAlignment="Center"
+                                Text="故障关" />
+                        </StackPanel>
+                        <StackPanel Grid.Column="3" Orientation="Horizontal">
+                            <Image
+                                Width="20"
+                                Height="20"
+                                Source="{Binding Source={x:Static constant:DoorState.CheckedObstruction}, Converter={StaticResource DoorStateImageConverter}}" />
+                            <TextBlock
+                                Margin="5,0,0,0"
+                                VerticalAlignment="Center"
+                                Text="检测到障碍物" />
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0" Orientation="Horizontal">
+                            <Image
+                                Width="20"
+                                Height="20"
+                                Source="{Binding Source={x:Static constant:DoorState.Open}, Converter={StaticResource DoorStateImageConverter}}" />
+                            <TextBlock
+                                Margin="5,0,0,0"
+                                VerticalAlignment="Center"
+                                Text="门打开" />
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" Orientation="Horizontal">
+                            <Image
+                                Width="20"
+                                Height="20"
+                                Source="{Binding Source={x:Static constant:DoorState.Unkonw}, Converter={StaticResource DoorStateImageConverter}}" />
+                            <TextBlock
+                                Margin="5,0,0,0"
+                                VerticalAlignment="Center"
+                                Text="未知" />
+                        </StackPanel>
+                        <StackPanel Grid.Column="2" Orientation="Horizontal">
+                            <Image
+                                Width="20"
+                                Height="20"
+                                Source="{Binding Source={x:Static constant:DoorState.FaultOpen}, Converter={StaticResource DoorStateImageConverter}}" />
+                            <TextBlock
+                                Margin="5,0,0,0"
+                                VerticalAlignment="Center"
+                                Text="故障开" />
+                        </StackPanel>
+                        <StackPanel Grid.Column="3" Orientation="Horizontal">
+                            <Image
+                                Width="20"
+                                Height="20"
+                                Source="{Binding Source={x:Static constant:DoorState.EmergLock}, Converter={StaticResource DoorStateImageConverter}}" />
+                            <TextBlock
+                                Margin="5,0,0,0"
+                                VerticalAlignment="Center"
+                                Text="紧急解锁" />
+                        </StackPanel>
+                    </Grid>
+
+                </Grid>
+                <Line
+                    Grid.Row="0"
+                    Height="5"
+                    VerticalAlignment="Bottom"
+                    Stroke="Black"
+                    StrokeThickness="2"
+                    X1="5"
+                    X2="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Grid}, Path=ActualWidth, Converter={StaticResource MathConverter}, ConverterParameter=x-5}"
+                    Y1="5"
+                    Y2="5" />
+                <Line
+                    Grid.Row="1"
+                    Height="5"
+                    VerticalAlignment="Bottom"
+                    Stroke="Black"
+                    StrokeThickness="2"
+                    X1="5"
+                    X2="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Grid}, Path=ActualWidth, Converter={StaticResource MathConverter}, ConverterParameter=x-5}"
+                    Y1="5"
+                    Y2="5" />
+                <Line
+                    Grid.Row="2"
+                    Height="5"
+                    VerticalAlignment="Bottom"
+                    Stroke="Black"
+                    StrokeThickness="2"
+                    X1="5"
+                    X2="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Grid}, Path=ActualWidth, Converter={StaticResource MathConverter}, ConverterParameter=x-5}"
+                    Y1="5"
+                    Y2="5" />
+                <Line
+                    Grid.Row="3"
+                    Height="5"
+                    VerticalAlignment="Bottom"
+                    Stroke="Black"
+                    StrokeThickness="2"
+                    X1="5"
+                    X2="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Grid}, Path=ActualWidth, Converter={StaticResource MathConverter}, ConverterParameter=x-5}"
+                    Y1="5"
+                    Y2="5" />
+                <Line
+                    Grid.Row="4"
+                    Height="5"
+                    VerticalAlignment="Bottom"
+                    Stroke="Black"
+                    StrokeThickness="2"
+                    X1="5"
+                    X2="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Grid}, Path=ActualWidth, Converter={StaticResource MathConverter}, ConverterParameter=x-5}"
+                    Y1="5"
+                    Y2="5" />
+            </Grid>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="0,0,2,2" />
+    </Grid>
+
+
+</UserControl>

@@ -1,0 +1,48 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Brush/BrushResource.xaml" />
+
+        <ResourceDictionary Source="../Converter/ConverterResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+
+    <ControlTemplate x:Key="ProgressOne" TargetType="ProgressBar">
+        <Grid x:Name="LayoutRoot">
+            <Border x:Name="PART_Track" Background="{TemplateBinding Background}" />
+            <Border x:Name="PART_Indicator"
+                    HorizontalAlignment="Left"
+                    Background="{TemplateBinding Foreground}" />
+
+        </Grid>
+        <ControlTemplate.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="Orientation" Value="Vertical" />
+                    <Condition Property="Tag" Value="Top" />
+                </MultiTrigger.Conditions>
+                <Setter TargetName="LayoutRoot" Property="LayoutTransform">
+                    <Setter.Value>
+                        <RotateTransform Angle="-90" />
+                    </Setter.Value>
+                </Setter>
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="Orientation" Value="Vertical" />
+                    <Condition Property="Tag" Value="Bottom" />
+                </MultiTrigger.Conditions>
+                <Setter TargetName="LayoutRoot" Property="LayoutTransform">
+                    <Setter.Value>
+                        <RotateTransform Angle="90" />
+                    </Setter.Value>
+                </Setter>
+            </MultiTrigger>
+        </ControlTemplate.Triggers>
+
+    </ControlTemplate>
+    <Style x:Key="MainMasterProgressBasrStyle" TargetType="ProgressBar">
+        <Setter Property="Template" Value="{StaticResource ProgressOne}" />
+        <Setter Property="Background" Value="{StaticResource TitleBackBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource GreenBrush}" />
+    </Style>
+</ResourceDictionary>

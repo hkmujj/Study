@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="Engine._6A.Views.Common.DataMonitor.FirePreventionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:viewModel="clr-namespace:Engine._6A.Interface.ViewModel" d:DataContext="{d:DesignInstance viewModel:IEngine6AViewModel}"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <x:Array x:Key="Array2" Type="system:Object">
+                <system:String>1</system:String>
+                <system:String>2</system:String>
+                <system:String>3</system:String>
+            </x:Array>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../../Resouce/Engine6AResource.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid DataContext="{Binding DataMonitor.FirePrevention}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="345*" />
+            <RowDefinition Height="35*" />
+        </Grid.RowDefinitions>
+    </Grid>
+
+</UserControl>

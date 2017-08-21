@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="Urban.Phillippine.View.Views.MainShell"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Urban.Phillippine.View.Views"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:name="clr-namespace:Urban.Phillippine.View.Constant"
+             xmlns:region="http://www.codeplex.com/prism"
+             Background="Black"
+             d:DesignHeight="600"
+             xmlns:viewModel="clr-namespace:Urban.Phillippine.View.Interface.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:IPhilippineViewModel}"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <Viewbox Stretch="Fill">
+        <Grid Width="800" Height="600">
+            <ContentControl Width="800"
+                        Height="600"
+                        region:RegionManager.RegionName="{x:Static name:RegionNames.MainShellRegion}" />
+            <ContentControl Visibility="{Binding FaultRecord.Visibility}" Width="800" Height="600" region:RegionManager.RegionName="{x:Static name:RegionNames.PopUpRegion}"></ContentControl>
+            <ContentControl  Width="800" Height="600" region:RegionManager.RegionName="{x:Static name:RegionNames.ReLoginRegion}"></ContentControl>
+        </Grid>
+
+    </Viewbox>
+</UserControl>

@@ -1,0 +1,99 @@
+﻿<UserControl x:Class="Engine._6A.Views.Common.DataMonitor.RunLineViewTwo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:commonControl="clr-namespace:Engine._6A.CommonControl"
+             xmlns:viewModel="clr-namespace:Engine._6A.Interface.ViewModel" d:DataContext="{d:DesignInstance viewModel:IEngine6AViewModel}"
+             d:DesignHeight="400"
+             d:DesignWidth="640"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary Source="../../../Resouce/Engine6AResource.xaml" />
+    </UserControl.Resources>
+    <Grid DataContext="{Binding DataMonitor.RunLineTwo}">
+        <Grid Margin="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="345*" />
+                <RowDefinition Height="35*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="5,5,5,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0"
+                           Grid.Column="0"
+                           Style="{StaticResource CommonTextStyleTwo}"
+                           Text="参考速度" />
+
+                <commonControl:RadioRecTest Grid.Row="0"
+                                         Grid.Column="1"
+                                         Content="{Binding ReferenceVelocity}"
+                                         Style="{StaticResource RunLineTwoBoxStyle}" />
+
+                <TextBlock Grid.Row="1"
+                           Grid.Column="0"
+                           Style="{StaticResource CommonTextStyleTwo}"
+                           Text="一端架构横向晃动" />
+                <commonControl:RadioRecTest Grid.Row="1"
+                                         Grid.Column="1"
+                                         Content="{Binding OneEndCarcass}"
+                                         Style="{StaticResource RunLineTwoBoxStyle}" />
+                <TextBlock Grid.Row="2"
+                           Grid.Column="0"
+                           Style="{StaticResource CommonTextStyleTwo}"
+                           Text="二端架构横向晃动" />
+                <commonControl:RadioRecTest Grid.Row="2"
+                                         Grid.Column="1"
+                                         Content="{Binding TwoEndCarcass}"
+                                         Style="{StaticResource RunLineTwoBoxStyle}" />
+                <TextBlock Grid.Row="3"
+                           Grid.Column="0"
+                           Style="{StaticResource CommonTextStyleTwo}"
+                           Text="一端车体纵向冲动" />
+                <commonControl:RadioRecTest Grid.Row="3"
+                                         Grid.Column="1"
+                                         Content="{Binding OneEndBody}"
+                                         Style="{StaticResource RunLineTwoBoxStyle}" />
+                <TextBlock Grid.Row="4"
+                           Grid.Column="0"
+                           Style="{StaticResource CommonTextStyleTwo}"
+                           Text="二端车体纵向冲动" />
+                <commonControl:RadioRecTest Grid.Row="4"
+                                         Grid.Column="1"
+                                         Content="{Binding TwoEndBody}"
+                                         Style="{StaticResource RunLineTwoBoxStyle}" />
+
+            </Grid>
+            <Grid x:Name="Data" Grid.Row="1">
+                <Viewbox Width="{Binding ElementName=Data, Path=ActualWidth}" Height="{Binding ElementName=Data, Path=ActualHeight}">
+                    <Canvas Width="510" Height="30">
+                        <Path Data="m 0,0 h 510"
+                              Fill="{StaticResource DarkGrayBrush}"
+                              Stroke="{StaticResource DarkGrayBrush}"
+                              StrokeThickness="1" />
+                    </Canvas>
+                </Viewbox>
+                <StackPanel Orientation="Horizontal">
+                    <Image Style="{StaticResource CommonNoDataImgStyle}" />
+                    <TextBlock Style="{StaticResource CommonNoDataTextStyle}" Text="无数据" />
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+
+</UserControl>

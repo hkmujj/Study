@@ -1,0 +1,92 @@
+﻿<UserControl x:Class="Motor.HMI.CRH380BG.View.Buttons.HardwareButtonUp"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:Motor.HMI.CRH380BG.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:CRH380BGViewModel}"
+             d:DesignHeight="60"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <Grid Margin="0,3">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="1"
+                Command="{Binding Path=HardwareBtnViewModel.Model.BSwitchCommand}"
+                Content=""
+                Style="{StaticResource Motor.HMI.CRH380BG.HardwareBtnUpStyle}">
+            <Button.Background>
+                <ImageBrush ImageSource="{StaticResource Motor.HMI.CRH380BG.ImgSwitchButton}" />
+            </Button.Background>
+        </Button>
+        <Button Grid.Column="2"
+                Command="{Binding Path=HardwareBtnViewModel.Model.BLightCommand}"
+                Content=""
+                Style="{StaticResource Motor.HMI.CRH380BG.HardwareBtnUpStyle}">
+            <Button.Background>
+                <ImageBrush ImageSource="{StaticResource Motor.HMI.CRH380BG.ImgLightButton}" />
+            </Button.Background>
+        </Button>
+        <Button Grid.Column="3"
+                Command="{Binding Path=HardwareBtnViewModel.Model.BDayandnightSwitchCommand}"
+                Content=""
+                Style="{StaticResource Motor.HMI.CRH380BG.HardwareBtnUpStyle}">
+            <Button.Background>
+                <ImageBrush ImageSource="{StaticResource Motor.HMI.CRH380BG.ImgDayandNightButton}" />
+            </Button.Background>
+        </Button>
+        <Button Grid.Column="4"
+                Command="{Binding Path=HardwareBtnViewModel.Model.BLanguageSelectCommand}"
+                Content=""
+                Style="{StaticResource Motor.HMI.CRH380BG.HardwareBtnUpStyle}">
+            <Button.Background>
+                <ImageBrush ImageSource="{StaticResource Motor.HMI.CRH380BG.ImgLanguageSelectButton}" />
+            </Button.Background>
+        </Button>
+        <Button Grid.Column="5"
+                Command="{Binding Path=HardwareBtnViewModel.Model.BIofoBoxCommand}"
+                Content=""
+                Style="{StaticResource Motor.HMI.CRH380BG.HardwareBtnUpStyle}">
+            <Button.Background>
+                <ImageBrush ImageSource="{StaticResource Motor.HMI.CRH380BG.ImgHelpInfoButton}" />
+            </Button.Background>
+        </Button>
+        <Button Grid.Column="6"
+                Command="{Binding Path=HardwareBtnViewModel.Model.BFaultInfoCommand}"
+                Content=""
+                Style="{StaticResource Motor.HMI.CRH380BG.HardwareBtnFaultStyle}">
+            <Button.Background>
+                <ImageBrush ImageSource="{StaticResource Motor.HMI.CRH380BG.ImgFaultButton}" />
+            </Button.Background>
+        </Button>
+        <Button Grid.Column="7"
+                Command="{Binding Path=HardwareBtnViewModel.Model.BTrainRunningCheckCommand}"
+                Content="V&gt;0"
+                Foreground="{StaticResource Motor.HMI.CRH380BG.HarwareButtonGrayBrush}"
+                Style="{StaticResource Motor.HMI.CRH380BG.HardwareBtnUpStyle}" />
+        <Button Grid.Column="8"
+                Command="{Binding Path=HardwareBtnViewModel.Model.BTrainStopCheckCommand}"
+                Content="V=0"
+                Foreground="{StaticResource Motor.HMI.CRH380BG.HarwareButtonGrayBrush}"
+                Style="{StaticResource Motor.HMI.CRH380BG.HardwareBtnUpStyle}" />
+        <Button Grid.Column="9"
+                Command="{Binding Path=HardwareBtnViewModel.Model.BSwitchDisplayCommand}"
+                Content=""
+                Style="{StaticResource Motor.HMI.CRH380BG.HardwareBtnUpStyle}">
+            <Button.Background>
+                <ImageBrush ImageSource="{StaticResource Motor.HMI.CRH380BG.ImgSwitchDisplayButton}" />
+            </Button.Background>
+        </Button>
+    </Grid>
+</UserControl>

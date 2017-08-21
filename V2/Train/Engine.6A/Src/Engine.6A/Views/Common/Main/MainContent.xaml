@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="Engine._6A.Views.Common.Main.MainContent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:Engine._6A.Interface.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:IEngine6AViewModel}"
+             d:DesignHeight="400"
+             d:DesignWidth="640"
+             mc:Ignorable="d">
+    <Grid Background="Black" DataContext="{Binding MainView}">
+        <i:Interaction.Triggers>
+            <i:EventTrigger EventName="MouseDown">
+                <i:InvokeCommandAction Command="{Binding Back}" />
+            </i:EventTrigger>
+        </i:Interaction.Triggers>
+        <TextBlock HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="30"
+                   Foreground="White"
+                   Text="当前无警报" />
+        <Rectangle Margin="5"
+                   Stroke="White"
+                   StrokeThickness="2" />
+    </Grid>
+</UserControl>

@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="列车管压力" xml:space="preserve">
+    <value>列车管压力</value>
+  </data>
+  <data name="停放缸压力" xml:space="preserve">
+    <value>停放缸压力</value>
+  </data>
+  <data name="停放缸2压力预留" xml:space="preserve">
+    <value>停放缸2压力-预留</value>
+  </data>
+  <data name="均衡缸压力" xml:space="preserve">
+    <value>均衡缸压力</value>
+  </data>
+  <data name="均衡缸2压力" xml:space="preserve">
+    <value>均衡缸2压力</value>
+  </data>
+  <data name="制动缸压力预留" xml:space="preserve">
+    <value>制动缸压力-预留</value>
+  </data>
+  <data name="列车辆数" xml:space="preserve">
+    <value>列车辆数</value>
+  </data>
+  <data name="当前流量" xml:space="preserve">
+    <value>当前流量</value>
+  </data>
+  <data name="参考速度" xml:space="preserve">
+    <value>参考速度</value>
+  </data>
+  <data name="贯通辆数" xml:space="preserve">
+    <value>贯通辆数</value>
+  </data>
+  <data name="检测电压" xml:space="preserve">
+    <value>检测电压</value>
+  </data>
+  <data name="报警门限" xml:space="preserve">
+    <value>报警门限</value>
+  </data>
+  <data name="漏电流1路" xml:space="preserve">
+    <value>漏电流1路</value>
+  </data>
+  <data name="漏电流2路" xml:space="preserve">
+    <value>漏电流2路</value>
+  </data>
+  <data name="交流输入电压1路" xml:space="preserve">
+    <value>交流输入电压1路</value>
+  </data>
+  <data name="交流输入电压2路" xml:space="preserve">
+    <value>交流输入电压2路</value>
+  </data>
+  <data name="交流输入电流1路" xml:space="preserve">
+    <value>交流输入电流1路</value>
+  </data>
+  <data name="交流输入电流2路" xml:space="preserve">
+    <value>交流输入电流2路</value>
+  </data>
+  <data name="供电电压1路" xml:space="preserve">
+    <value>供电电压1路</value>
+  </data>
+  <data name="供电电压2路" xml:space="preserve">
+    <value>供电电压2路</value>
+  </data>
+  <data name="供电电流1路" xml:space="preserve">
+    <value>供电电流1路</value>
+  </data>
+  <data name="供电电流2路" xml:space="preserve">
+    <value>供电电流2路</value>
+  </data>
+  <data name="半电压1路" xml:space="preserve">
+    <value>半电压1路</value>
+  </data>
+  <data name="半电压2路" xml:space="preserve">
+    <value>半电压2路</value>
+  </data>
+  <data name="使用电量1路" xml:space="preserve">
+    <value>使用电量1路</value>
+  </data>
+  <data name="使用电量2路" xml:space="preserve">
+    <value>使用电量2路</value>
+  </data>
+  <data name="轴1位1温度" xml:space="preserve">
+    <value>1轴1位温度</value>
+  </data>
+  <data name="轴1位2温度" xml:space="preserve">
+    <value>1轴2位温度</value>
+  </data>
+  <data name="轴1位3温度" xml:space="preserve">
+    <value>1轴3位温度</value>
+  </data>
+  <data name="轴1位4温度" xml:space="preserve">
+    <value>1轴4位温度</value>
+  </data>
+  <data name="轴1位5温度" xml:space="preserve">
+    <value>1轴5位温度</value>
+  </data>
+  <data name="轴1位6温度" xml:space="preserve">
+    <value>1轴6位温度</value>
+  </data>
+  <data name="轴2位1温度" xml:space="preserve">
+    <value>2轴1位温度</value>
+  </data>
+  <data name="轴2位2温度" xml:space="preserve">
+    <value>2轴2位温度</value>
+  </data>
+  <data name="轴2位3温度" xml:space="preserve">
+    <value>2轴3位温度</value>
+  </data>
+  <data name="轴2位4温度" xml:space="preserve">
+    <value>2轴4位温度</value>
+  </data>
+  <data name="轴2位5温度" xml:space="preserve">
+    <value>2轴5位温度</value>
+  </data>
+  <data name="轴2位6温度" xml:space="preserve">
+    <value>2轴6位温度</value>
+  </data>
+  <data name="轴3位1温度" xml:space="preserve">
+    <value>3轴1位温度</value>
+  </data>
+  <data name="轴3位2温度" xml:space="preserve">
+    <value>3轴2位温度</value>
+  </data>
+  <data name="轴3位3温度" xml:space="preserve">
+    <value>3轴3位温度</value>
+  </data>
+  <data name="轴3位4温度" xml:space="preserve">
+    <value>3轴4位温度</value>
+  </data>
+  <data name="轴3位5温度" xml:space="preserve">
+    <value>3轴5位温度</value>
+  </data>
+  <data name="轴3位6温度" xml:space="preserve">
+    <value>3轴6位温度</value>
+  </data>
+  <data name="轴4位1温度" xml:space="preserve">
+    <value>4轴1位温度</value>
+  </data>
+  <data name="轴4位2温度" xml:space="preserve">
+    <value>4轴2位温度</value>
+  </data>
+  <data name="轴4位3温度" xml:space="preserve">
+    <value>4轴3位温度</value>
+  </data>
+  <data name="轴4位4温度" xml:space="preserve">
+    <value>4轴4位温度</value>
+  </data>
+  <data name="轴4位5温度" xml:space="preserve">
+    <value>4轴5位温度</value>
+  </data>
+  <data name="轴4位6温度" xml:space="preserve">
+    <value>4轴6位温度</value>
+  </data>
+  <data name="轴5位1温度" xml:space="preserve">
+    <value>5轴1位温度</value>
+  </data>
+  <data name="轴5位2温度" xml:space="preserve">
+    <value>5轴2位温度</value>
+  </data>
+  <data name="轴5位3温度" xml:space="preserve">
+    <value>5轴3位温度</value>
+  </data>
+  <data name="轴5位4温度" xml:space="preserve">
+    <value>5轴4位温度</value>
+  </data>
+  <data name="轴5位5温度" xml:space="preserve">
+    <value>5轴5位温度</value>
+  </data>
+  <data name="轴5位6温度" xml:space="preserve">
+    <value>5轴6位温度</value>
+  </data>
+  <data name="轴6位1温度" xml:space="preserve">
+    <value>6轴1位温度</value>
+  </data>
+  <data name="轴6位2温度" xml:space="preserve">
+    <value>6轴2位温度</value>
+  </data>
+  <data name="轴6位3温度" xml:space="preserve">
+    <value>6轴3位温度</value>
+  </data>
+  <data name="轴6位4温度" xml:space="preserve">
+    <value>6轴4位温度</value>
+  </data>
+  <data name="轴6位5温度" xml:space="preserve">
+    <value>6轴5位温度</value>
+  </data>
+  <data name="轴6位6温度" xml:space="preserve">
+    <value>6轴6位温度</value>
+  </data>
+  <data name="公里标LKJ" xml:space="preserve">
+    <value>公里标-LKJ</value>
+  </data>
+  <data name="机车车号LKJ" xml:space="preserve">
+    <value>机车车号-LKJ</value>
+  </data>
+  <data name="运用车次LKJ" xml:space="preserve">
+    <value>运用车次-LKJ</value>
+  </data>
+  <data name="正司机号LKJ" xml:space="preserve">
+    <value>正司机号-LKJ</value>
+  </data>
+  <data name="副司机号LKJ" xml:space="preserve">
+    <value>副司机号-LKJ</value>
+  </data>
+  <data name="速度" xml:space="preserve">
+    <value>速度</value>
+  </data>
+  <data name="辆数" xml:space="preserve">
+    <value>辆数</value>
+  </data>
+  <data name="总重" xml:space="preserve">
+    <value>总重</value>
+  </data>
+  <data name="计长" xml:space="preserve">
+    <value>计长</value>
+  </data>
+  <data name="手柄级位" xml:space="preserve">
+    <value>手柄级位</value>
+  </data>
+  <data name="电压" xml:space="preserve">
+    <value>电压</value>
+  </data>
+  <data name="电流" xml:space="preserve">
+    <value>电流</value>
+  </data>
+  <data name="电压频率" xml:space="preserve">
+    <value>电压频率</value>
+  </data>
+  <data name="功率因素" xml:space="preserve">
+    <value>功率因素</value>
+  </data>
+  <data name="有功功率" xml:space="preserve">
+    <value>有功功率</value>
+  </data>
+  <data name="无功功率" xml:space="preserve">
+    <value>无功功率</value>
+  </data>
+  <data name="油量" xml:space="preserve">
+    <value>油量</value>
+  </data>
+  <data name="循环计数第1页" xml:space="preserve">
+    <value>循环计数-第1页</value>
+  </data>
+  <data name="错误标识第1页" xml:space="preserve">
+    <value>错误标识-第1页</value>
+  </data>
+  <data name="循环计数第2页" xml:space="preserve">
+    <value>循环计数-第2页</value>
+  </data>
+  <data name="错误标识第2页" xml:space="preserve">
+    <value>错误标识-第2页</value>
+  </data>
+  <data name="循环计数第3页" xml:space="preserve">
+    <value>循环计数-第3页</value>
+  </data>
+  <data name="错误标识第3页" xml:space="preserve">
+    <value>错误标识-第3页</value>
+  </data>
+  <data name="循环计数第4页" xml:space="preserve">
+    <value>循环计数-第4页</value>
+  </data>
+  <data name="错误标识第4页" xml:space="preserve">
+    <value>错误标识-第4页</value>
+  </data>
+  <data name="列车B列车管压力" xml:space="preserve">
+    <value>列车B列车管压力</value>
+  </data>
+  <data name="列车B停放缸压力" xml:space="preserve">
+    <value>列车B停放缸压力</value>
+  </data>
+  <data name="列车B停放缸2压力预留" xml:space="preserve">
+    <value>列车B停放缸2压力-预留</value>
+  </data>
+  <data name="列车B均衡缸压力" xml:space="preserve">
+    <value>列车B均衡缸压力</value>
+  </data>
+  <data name="列车B均衡缸2压力" xml:space="preserve">
+    <value>列车B均衡缸2压力</value>
+  </data>
+  <data name="列车B制动缸压力预留" xml:space="preserve">
+    <value>列车B制动缸压力-预留</value>
+  </data>
+  <data name="列车B列车辆数" xml:space="preserve">
+    <value>列车B列车辆数</value>
+  </data>
+  <data name="列车B当前流量" xml:space="preserve">
+    <value>列车B当前流量</value>
+  </data>
+  <data name="列车B参考速度" xml:space="preserve">
+    <value>列车B参考速度</value>
+  </data>
+  <data name="列车B贯通辆数" xml:space="preserve">
+    <value>列车B贯通辆数</value>
+  </data>
+  <data name="列车B检测电压" xml:space="preserve">
+    <value>列车B检测电压</value>
+  </data>
+  <data name="列车B报警门限" xml:space="preserve">
+    <value>列车B报警门限</value>
+  </data>
+  <data name="轴7位1温度" xml:space="preserve">
+    <value>7轴1位温度</value>
+  </data>
+  <data name="轴7位2温度" xml:space="preserve">
+    <value>7轴2位温度</value>
+  </data>
+  <data name="轴7位3温度" xml:space="preserve">
+    <value>7轴3位温度</value>
+  </data>
+  <data name="轴7位4温度" xml:space="preserve">
+    <value>7轴4位温度</value>
+  </data>
+  <data name="轴7位5温度" xml:space="preserve">
+    <value>7轴5位温度</value>
+  </data>
+  <data name="轴7位6温度" xml:space="preserve">
+    <value>7轴6位温度</value>
+  </data>
+  <data name="轴8位1温度" xml:space="preserve">
+    <value>8轴1位温度</value>
+  </data>
+  <data name="轴8位2温度" xml:space="preserve">
+    <value>8轴2位温度</value>
+  </data>
+  <data name="轴8位3温度" xml:space="preserve">
+    <value>8轴3位温度</value>
+  </data>
+  <data name="轴8位4温度" xml:space="preserve">
+    <value>8轴4位温度</value>
+  </data>
+  <data name="轴8位5温度" xml:space="preserve">
+    <value>8轴5位温度</value>
+  </data>
+  <data name="轴8位6温度" xml:space="preserve">
+    <value>8轴6位温度</value>
+  </data>
+</root>

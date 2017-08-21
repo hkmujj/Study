@@ -1,0 +1,457 @@
+﻿<UserControl x:Class="Motor.HMI.CRH380D.View.Contents.HandleTestView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:constant="clr-namespace:Motor.HMI.CRH380D.Constant"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:regions="http://www.codeplex.com/CompositeWPF"
+             xmlns:viewModel="clr-namespace:Motor.HMI.CRH380D.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+             d:DesignHeight="420"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <Grid Background="{StaticResource Gray2Background}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="33*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="240*" />
+            <RowDefinition Height="122*" />
+            <RowDefinition Height="15*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <TextBlock Style="{StaticResource TitleTextStyle}" Text="手柄测试" />
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="70*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="1"
+                           Width="15"
+                           Height="15"
+                           HorizontalAlignment="Left"
+                           Source="{Binding Model.HandleTestModel.Handle0TestState1,
+                                            Converter={StaticResource HandleTestStateConverter}}" />
+                    <Image Grid.Column="2"
+                           Width="15"
+                           Height="15"
+                           HorizontalAlignment="Left"
+                           Source="{Binding Model.HandleTestModel.Handle1TestState1,
+                                            Converter={StaticResource HandleTestStateConverter}}" />
+                    <TextBlock Grid.Column="3"
+                               VerticalAlignment="Center"
+                               FontSize="18"
+                               Text="手柄控制3级增速位置" />
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="70*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="1"
+                           Width="15"
+                           Height="15"
+                           HorizontalAlignment="Left"
+                           Source="{Binding Model.HandleTestModel.Handle0TestState2,
+                                            Converter={StaticResource HandleTestStateConverter}}" />
+                    <Image Grid.Column="2"
+                           Width="15"
+                           Height="15"
+                           HorizontalAlignment="Left"
+                           Source="{Binding Model.HandleTestModel.Handle1TestState2,
+                                            Converter={StaticResource HandleTestStateConverter}}" />
+                    <TextBlock Grid.Column="3"
+                               VerticalAlignment="Center"
+                               FontSize="18"
+                               Text="手柄控制2级增速位置" />
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="70*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="1"
+                           Width="15"
+                           Height="15"
+                           HorizontalAlignment="Left"
+                           Source="{Binding Model.HandleTestModel.Handle0TestState3,
+                                            Converter={StaticResource HandleTestStateConverter}}" />
+                    <Image Grid.Column="2"
+                           Width="15"
+                           Height="15"
+                           HorizontalAlignment="Left"
+                           Source="{Binding Model.HandleTestModel.Handle1TestState3,
+                                            Converter={StaticResource HandleTestStateConverter}}" />
+                    <TextBlock Grid.Column="3"
+                               VerticalAlignment="Center"
+                               FontSize="18"
+                               Text="手柄控制1级增速位置" />
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="70*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="1"
+                           Width="15"
+                           Height="15"
+                           HorizontalAlignment="Left"
+                           Source="{Binding Model.HandleTestModel.Handle0TestState4,
+                                            Converter={StaticResource HandleTestStateConverter}}" />
+                    <Image Grid.Column="2"
+                           Width="15"
+                           Height="15"
+                           HorizontalAlignment="Left"
+                           Source="{Binding Model.HandleTestModel.Handle1TestState4,
+                                            Converter={StaticResource HandleTestStateConverter}}" />
+                    <TextBlock Grid.Column="3"
+                               VerticalAlignment="Center"
+                               FontSize="18"
+                               Text="手柄控制恒速位置" />
+                </Grid>
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="70*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="1"
+                           Width="15"
+                           Height="15"
+                           HorizontalAlignment="Left"
+                           Source="{Binding Model.HandleTestModel.Handle0TestState5,
+                                            Converter={StaticResource HandleTestStateConverter}}" />
+                    <Image Grid.Column="2"
+                           Width="15"
+                           Height="15"
+                           HorizontalAlignment="Left"
+                           Source="{Binding Model.HandleTestModel.Handle1TestState5,
+                                            Converter={StaticResource HandleTestStateConverter}}" />
+                    <TextBlock Grid.Column="3"
+                               VerticalAlignment="Center"
+                               FontSize="18"
+                               Text="手柄控制1级减速位置" />
+                </Grid>
+                <Grid Grid.Row="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="70*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="1"
+                           Width="15"
+                           Height="15"
+                           HorizontalAlignment="Left"
+                           Source="{Binding Model.HandleTestModel.Handle0TestState6,
+                                            Converter={StaticResource HandleTestStateConverter}}" />
+                    <Image Grid.Column="2"
+                           Width="15"
+                           Height="15"
+                           HorizontalAlignment="Left"
+                           Source="{Binding Model.HandleTestModel.Handle1TestState6,
+                                            Converter={StaticResource HandleTestStateConverter}}" />
+                    <TextBlock Grid.Column="3"
+                               VerticalAlignment="Center"
+                               FontSize="18"
+                               Text="手柄控制2级减速位置" />
+                </Grid>
+                <Grid Grid.Row="6">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="70*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="1"
+                           Width="15"
+                           Height="15"
+                           HorizontalAlignment="Left"
+                           Source="{Binding Model.HandleTestModel.Handle0TestState7,
+                                            Converter={StaticResource HandleTestStateConverter}}" />
+                    <Image Grid.Column="2"
+                           Width="15"
+                           Height="15"
+                           HorizontalAlignment="Left"
+                           Source="{Binding Model.HandleTestModel.Handle1TestState7,
+                                            Converter={StaticResource HandleTestStateConverter}}" />
+                    <TextBlock Grid.Column="3"
+                               VerticalAlignment="Center"
+                               FontSize="18"
+                               Text="手柄控制3级减速位置" />
+                </Grid>
+                <Grid Grid.Row="7">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="70*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="1"
+                           Width="15"
+                           Height="15"
+                           HorizontalAlignment="Left"
+                           Source="{Binding Model.HandleTestModel.Handle0TestState8,
+                                            Converter={StaticResource HandleTestStateConverter}}" />
+                    <Image Grid.Column="2"
+                           Width="15"
+                           Height="15"
+                           HorizontalAlignment="Left"
+                           Source="{Binding Model.HandleTestModel.Handle1TestState8,
+                                            Converter={StaticResource HandleTestStateConverter}}" />
+                    <TextBlock Grid.Column="3"
+                               VerticalAlignment="Center"
+                               FontSize="18"
+                               Text="手柄控制0位置" />
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="80*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0"
+                           Width="15"
+                           Height="15"
+                           HorizontalAlignment="Left"
+                           Source="{Binding Model.HandleTestModel.Handle0TestState9,
+                                            Converter={StaticResource HandleTestStateConverter}}" />
+                    <Image Grid.Column="1"
+                           Width="15"
+                           Height="15"
+                           HorizontalAlignment="Left"
+                           Source="{Binding Model.HandleTestModel.Handle1TestState9,
+                                            Converter={StaticResource HandleTestStateConverter}}" />
+                    <TextBlock Grid.Column="2"
+                               VerticalAlignment="Center"
+                               FontSize="18"
+                               Text="手柄控制1级制动位置" />
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="80*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0"
+                           Width="15"
+                           Height="15"
+                           HorizontalAlignment="Left"
+                           Source="{Binding Model.HandleTestModel.Handle0TestState10,
+                                            Converter={StaticResource HandleTestStateConverter}}" />
+                    <Image Grid.Column="1"
+                           Width="15"
+                           Height="15"
+                           HorizontalAlignment="Left"
+                           Source="{Binding Model.HandleTestModel.Handle1TestState10,
+                                            Converter={StaticResource HandleTestStateConverter}}" />
+                    <TextBlock Grid.Column="2"
+                               VerticalAlignment="Center"
+                               FontSize="18"
+                               Text="手柄控制2级制动位置" />
+                </Grid>
+
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="80*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0"
+                           Width="15"
+                           Height="15"
+                           HorizontalAlignment="Left"
+                           Source="{Binding Model.HandleTestModel.Handle0TestState11,
+                                            Converter={StaticResource HandleTestStateConverter}}" />
+                    <Image Grid.Column="1"
+                           Width="15"
+                           Height="15"
+                           HorizontalAlignment="Left"
+                           Source="{Binding Model.HandleTestModel.Handle1TestState11,
+                                            Converter={StaticResource HandleTestStateConverter}}" />
+                    <TextBlock Grid.Column="2"
+                               VerticalAlignment="Center"
+                               FontSize="18"
+                               Text="手柄控制3级制动位置" />
+                </Grid>
+
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="80*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0"
+                           Width="15"
+                           Height="15"
+                           HorizontalAlignment="Left"
+                           Source="{Binding Model.HandleTestModel.Handle0TestState12,
+                                            Converter={StaticResource HandleTestStateConverter}}" />
+                    <Image Grid.Column="1"
+                           Width="15"
+                           Height="15"
+                           HorizontalAlignment="Left"
+                           Source="{Binding Model.HandleTestModel.Handle1TestState12,
+                                            Converter={StaticResource HandleTestStateConverter}}" />
+                    <TextBlock Grid.Column="2"
+                               VerticalAlignment="Center"
+                               FontSize="18"
+                               Text="手柄控制4级制动位置" />
+                </Grid>
+
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="80*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0"
+                           Width="15"
+                           Height="15"
+                           HorizontalAlignment="Left"
+                           Source="{Binding Model.HandleTestModel.Handle0TestState13,
+                                            Converter={StaticResource HandleTestStateConverter}}" />
+                    <Image Grid.Column="1"
+                           Width="15"
+                           Height="15"
+                           HorizontalAlignment="Left"
+                           Source="{Binding Model.HandleTestModel.Handle1TestState13,
+                                            Converter={StaticResource HandleTestStateConverter}}" />
+                    <TextBlock Grid.Column="2"
+                               VerticalAlignment="Center"
+                               FontSize="18"
+                               Text="手柄控制5级制动位置" />
+                </Grid>
+
+                <Grid Grid.Row="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="80*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0"
+                           Width="15"
+                           Height="15"
+                           HorizontalAlignment="Left"
+                           Source="{Binding Model.HandleTestModel.Handle0TestState14,
+                                            Converter={StaticResource HandleTestStateConverter}}" />
+                    <Image Grid.Column="1"
+                           Width="15"
+                           Height="15"
+                           HorizontalAlignment="Left"
+                           Source="{Binding Model.HandleTestModel.Handle1TestState14,
+                                            Converter={StaticResource HandleTestStateConverter}}" />
+                    <TextBlock Grid.Column="2"
+                               VerticalAlignment="Center"
+                               FontSize="18"
+                               Text="手柄控制6级制动位置" />
+                </Grid>
+
+                <Grid Grid.Row="6">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="80*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0"
+                           Width="15"
+                           Height="15"
+                           HorizontalAlignment="Left"
+                           Source="{Binding Model.HandleTestModel.Handle0TestState15,
+                                            Converter={StaticResource HandleTestStateConverter}}" />
+                    <Image Grid.Column="1"
+                           Width="15"
+                           Height="15"
+                           HorizontalAlignment="Left"
+                           Source="{Binding Model.HandleTestModel.Handle1TestState15,
+                                            Converter={StaticResource HandleTestStateConverter}}" />
+                    <TextBlock Grid.Column="2"
+                               VerticalAlignment="Center"
+                               FontSize="18"
+                               Text="手柄控制7级制动位置" />
+                </Grid>
+
+                <Grid Grid.Row="7">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="80*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0"
+                           Width="15"
+                           Height="15"
+                           HorizontalAlignment="Left"
+                           Source="{Binding Model.HandleTestModel.Handle0TestState16,
+                                            Converter={StaticResource HandleTestStateConverter}}" />
+                    <Image Grid.Column="1"
+                           Width="15"
+                           Height="15"
+                           HorizontalAlignment="Left"
+                           Source="{Binding Model.HandleTestModel.Handle1TestState16,
+                                            Converter={StaticResource HandleTestStateConverter}}" />
+                    <TextBlock Grid.Column="2"
+                               VerticalAlignment="Center"
+                               FontSize="18"
+                               Text="手柄控制紧急制动位置" />
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="3"
+              Margin="25,0"
+              Background="{StaticResource Gray1Background}">
+            <TextBlock Width="100"
+                       Height="25"
+                       Margin="10,0,640,97"
+                       FontSize="18"
+                       Foreground="White"
+                       Text="用法说明"
+                       Visibility="{Binding Model.HandleTestModel.IsEnable,
+                                            Converter={StaticResource BooleanToVisibilityConverter}}" />
+            <TextBlock Width="700"
+                       Height="80"
+                       Margin="25,25,25,17"
+                       FontSize="18"
+                       Foreground="White"
+                       Text="{Binding Model.HandleTestModel.HandleTestInfoDisplay}"
+                       TextWrapping="Wrap" />
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,498 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="确认按钮" xml:space="preserve">
+    <value>确认按钮</value>
+  </data>
+  <data name="亮屏" xml:space="preserve">
+    <value>亮屏</value>
+  </data>
+  <data name="定位建立" xml:space="preserve">
+    <value>定位建立</value>
+  </data>
+  <data name="列车完整性" xml:space="preserve">
+    <value>列车完整性</value>
+  </data>
+  <data name="确认折返" xml:space="preserve">
+    <value>确认折返</value>
+  </data>
+  <data name="进入车辆段" xml:space="preserve">
+    <value>进入车辆段</value>
+  </data>
+  <data name="所有门关闭状态" xml:space="preserve">
+    <value>所有门关闭状态</value>
+  </data>
+  <data name="屏蔽门全部关闭标志" xml:space="preserve">
+    <value>屏蔽门全部关闭标志</value>
+  </data>
+  <data name="停车对标状态" xml:space="preserve">
+    <value>停车对标状态</value>
+  </data>
+  <data name="自动折返允许" xml:space="preserve">
+    <value>自动折返允许</value>
+  </data>
+  <data name="人工折返允许" xml:space="preserve">
+    <value>人工折返允许</value>
+  </data>
+  <data name="列车在站内" xml:space="preserve">
+    <value>列车在站内</value>
+  </data>
+  <data name="列车正在折返" xml:space="preserve">
+    <value>列车正在折返</value>
+  </data>
+  <data name="屏保" xml:space="preserve">
+    <value>屏保</value>
+  </data>
+  <data name="警惕按钮" xml:space="preserve">
+    <value>警惕按钮</value>
+  </data>
+  <data name="模式闪烁标志" xml:space="preserve">
+    <value>模式闪烁标志</value>
+  </data>
+  <data name="车载设备电源" xml:space="preserve">
+    <value>车载设备电源</value>
+  </data>
+  <data name="电钥匙" xml:space="preserve">
+    <value>电钥匙</value>
+  </data>
+  <data name="ATC切除开关" xml:space="preserve">
+    <value>ATC切除开关</value>
+  </data>
+  <data name="ATB按钮" xml:space="preserve">
+    <value>ATB按钮</value>
+  </data>
+  <data name="模式升按钮" xml:space="preserve">
+    <value>模式升按钮</value>
+  </data>
+  <data name="模式降按钮" xml:space="preserve">
+    <value>模式降按钮</value>
+  </data>
+  <data name="进站标志" xml:space="preserve">
+    <value>进站标志</value>
+  </data>
+  <data name="低速释放" xml:space="preserve">
+    <value>低速释放</value>
+  </data>
+  <data name="制动测试状态" xml:space="preserve">
+    <value>制动测试状态</value>
+  </data>
+  <data name="MMI黑屏文字显示" xml:space="preserve">
+    <value>MMI黑屏文字显示</value>
+  </data>
+  <data name="红网状态" xml:space="preserve">
+    <value>红网状态</value>
+  </data>
+  <data name="蓝网状态" xml:space="preserve">
+    <value>蓝网状态</value>
+  </data>
+  <data name="信号屏是否显示停站倒计时" xml:space="preserve">
+    <value>信号屏是否显示停站倒计时</value>
+  </data>
+  <data name="反馈_制动测试试闸" xml:space="preserve">
+    <value>反馈_制动测试试闸</value>
+  </data>
+  <data name="反馈_制动测试缓解" xml:space="preserve">
+    <value>反馈_制动测试缓解</value>
+  </data>
+  <data name="反馈_广播测试" xml:space="preserve">
+    <value>反馈_广播测试</value>
+  </data>
+  <data name="反馈_灯测试" xml:space="preserve">
+    <value>反馈_灯测试</value>
+  </data>
+  <data name="CBTC_BM按钮" xml:space="preserve">
+    <value>CBTC_BM按钮</value>
+  </data>
+  <data name="反馈_强制BM确认" xml:space="preserve">
+    <value>反馈_强制BM确认</value>
+  </data>
+  <data name="反馈_非强制BM确认" xml:space="preserve">
+    <value>反馈_非强制BM确认</value>
+  </data>
+  <data name="故障1" xml:space="preserve">
+    <value>故障1</value>
+  </data>
+  <data name="故障2" xml:space="preserve">
+    <value>故障2</value>
+  </data>
+  <data name="故障3" xml:space="preserve">
+    <value>故障3</value>
+  </data>
+  <data name="故障4" xml:space="preserve">
+    <value>故障4</value>
+  </data>
+  <data name="故障5" xml:space="preserve">
+    <value>故障5</value>
+  </data>
+  <data name="故障6" xml:space="preserve">
+    <value>故障6</value>
+  </data>
+  <data name="故障7" xml:space="preserve">
+    <value>故障7</value>
+  </data>
+  <data name="故障8" xml:space="preserve">
+    <value>故障8</value>
+  </data>
+  <data name="故障9" xml:space="preserve">
+    <value>故障9</value>
+  </data>
+  <data name="故障10" xml:space="preserve">
+    <value>故障10</value>
+  </data>
+  <data name="故障11" xml:space="preserve">
+    <value>故障11</value>
+  </data>
+  <data name="故障12" xml:space="preserve">
+    <value>故障12</value>
+  </data>
+  <data name="故障13" xml:space="preserve">
+    <value>故障13</value>
+  </data>
+  <data name="故障14" xml:space="preserve">
+    <value>故障14</value>
+  </data>
+  <data name="故障15" xml:space="preserve">
+    <value>故障15</value>
+  </data>
+  <data name="故障16" xml:space="preserve">
+    <value>故障16</value>
+  </data>
+  <data name="故障17" xml:space="preserve">
+    <value>故障17</value>
+  </data>
+  <data name="故障18" xml:space="preserve">
+    <value>故障18</value>
+  </data>
+  <data name="故障19" xml:space="preserve">
+    <value>故障19</value>
+  </data>
+  <data name="故障20" xml:space="preserve">
+    <value>故障20</value>
+  </data>
+  <data name="故障21" xml:space="preserve">
+    <value>故障21</value>
+  </data>
+  <data name="故障22" xml:space="preserve">
+    <value>故障22</value>
+  </data>
+  <data name="故障23" xml:space="preserve">
+    <value>故障23</value>
+  </data>
+  <data name="故障24" xml:space="preserve">
+    <value>故障24</value>
+  </data>
+  <data name="故障25" xml:space="preserve">
+    <value>故障25</value>
+  </data>
+  <data name="故障26" xml:space="preserve">
+    <value>故障26</value>
+  </data>
+  <data name="故障27" xml:space="preserve">
+    <value>故障27</value>
+  </data>
+  <data name="故障28" xml:space="preserve">
+    <value>故障28</value>
+  </data>
+  <data name="故障29" xml:space="preserve">
+    <value>故障29</value>
+  </data>
+  <data name="故障30" xml:space="preserve">
+    <value>故障30</value>
+  </data>
+  <data name="故障31" xml:space="preserve">
+    <value>故障31</value>
+  </data>
+  <data name="故障32" xml:space="preserve">
+    <value>故障32</value>
+  </data>
+  <data name="故障33" xml:space="preserve">
+    <value>故障33</value>
+  </data>
+  <data name="故障34" xml:space="preserve">
+    <value>故障34</value>
+  </data>
+  <data name="故障35" xml:space="preserve">
+    <value>故障35</value>
+  </data>
+  <data name="故障36" xml:space="preserve">
+    <value>故障36</value>
+  </data>
+  <data name="故障37" xml:space="preserve">
+    <value>故障37</value>
+  </data>
+  <data name="故障38" xml:space="preserve">
+    <value>故障38</value>
+  </data>
+  <data name="故障39" xml:space="preserve">
+    <value>故障39</value>
+  </data>
+  <data name="故障40" xml:space="preserve">
+    <value>故障40</value>
+  </data>
+  <data name="故障41" xml:space="preserve">
+    <value>故障41</value>
+  </data>
+  <data name="故障42" xml:space="preserve">
+    <value>故障42</value>
+  </data>
+  <data name="故障43" xml:space="preserve">
+    <value>故障43</value>
+  </data>
+  <data name="故障44" xml:space="preserve">
+    <value>故障44</value>
+  </data>
+  <data name="故障45" xml:space="preserve">
+    <value>故障45</value>
+  </data>
+  <data name="故障46" xml:space="preserve">
+    <value>故障46</value>
+  </data>
+  <data name="故障47" xml:space="preserve">
+    <value>故障47</value>
+  </data>
+  <data name="故障48" xml:space="preserve">
+    <value>故障48</value>
+  </data>
+  <data name="故障49" xml:space="preserve">
+    <value>故障49</value>
+  </data>
+  <data name="故障50" xml:space="preserve">
+    <value>故障50</value>
+  </data>
+  <data name="消息1" xml:space="preserve">
+    <value>消息1</value>
+  </data>
+  <data name="消息2" xml:space="preserve">
+    <value>消息2</value>
+  </data>
+  <data name="消息3" xml:space="preserve">
+    <value>消息3</value>
+  </data>
+  <data name="消息4" xml:space="preserve">
+    <value>消息4</value>
+  </data>
+  <data name="消息5" xml:space="preserve">
+    <value>消息5</value>
+  </data>
+  <data name="消息6" xml:space="preserve">
+    <value>消息6</value>
+  </data>
+  <data name="消息7" xml:space="preserve">
+    <value>消息7</value>
+  </data>
+  <data name="消息8" xml:space="preserve">
+    <value>消息8</value>
+  </data>
+  <data name="消息9" xml:space="preserve">
+    <value>消息9</value>
+  </data>
+  <data name="消息10" xml:space="preserve">
+    <value>消息10</value>
+  </data>
+  <data name="消息11" xml:space="preserve">
+    <value>消息11</value>
+  </data>
+  <data name="消息12" xml:space="preserve">
+    <value>消息12</value>
+  </data>
+  <data name="消息13" xml:space="preserve">
+    <value>消息13</value>
+  </data>
+  <data name="消息14" xml:space="preserve">
+    <value>消息14</value>
+  </data>
+  <data name="消息15" xml:space="preserve">
+    <value>消息15</value>
+  </data>
+  <data name="消息16" xml:space="preserve">
+    <value>消息16</value>
+  </data>
+  <data name="消息17" xml:space="preserve">
+    <value>消息17</value>
+  </data>
+  <data name="消息18" xml:space="preserve">
+    <value>消息18</value>
+  </data>
+  <data name="消息19" xml:space="preserve">
+    <value>消息19</value>
+  </data>
+  <data name="消息20" xml:space="preserve">
+    <value>消息20</value>
+  </data>
+  <data name="消息21" xml:space="preserve">
+    <value>消息21</value>
+  </data>
+  <data name="消息22" xml:space="preserve">
+    <value>消息22</value>
+  </data>
+  <data name="消息23" xml:space="preserve">
+    <value>消息23</value>
+  </data>
+  <data name="消息24" xml:space="preserve">
+    <value>消息24</value>
+  </data>
+  <data name="消息25" xml:space="preserve">
+    <value>消息25</value>
+  </data>
+  <data name="消息26" xml:space="preserve">
+    <value>消息26</value>
+  </data>
+  <data name="消息27" xml:space="preserve">
+    <value>消息27</value>
+  </data>
+  <data name="消息28" xml:space="preserve">
+    <value>消息28</value>
+  </data>
+  <data name="消息29" xml:space="preserve">
+    <value>消息29</value>
+  </data>
+  <data name="消息30" xml:space="preserve">
+    <value>消息30</value>
+  </data>
+  <data name="消息31" xml:space="preserve">
+    <value>消息31</value>
+  </data>
+  <data name="消息32" xml:space="preserve">
+    <value>消息32</value>
+  </data>
+  <data name="消息33" xml:space="preserve">
+    <value>消息33</value>
+  </data>
+  <data name="消息34" xml:space="preserve">
+    <value>消息34</value>
+  </data>
+  <data name="消息35" xml:space="preserve">
+    <value>消息35</value>
+  </data>
+  <data name="消息36" xml:space="preserve">
+    <value>消息36</value>
+  </data>
+  <data name="消息37" xml:space="preserve">
+    <value>消息37</value>
+  </data>
+  <data name="消息38" xml:space="preserve">
+    <value>消息38</value>
+  </data>
+  <data name="消息39" xml:space="preserve">
+    <value>消息39</value>
+  </data>
+  <data name="消息40" xml:space="preserve">
+    <value>消息40</value>
+  </data>
+</root>

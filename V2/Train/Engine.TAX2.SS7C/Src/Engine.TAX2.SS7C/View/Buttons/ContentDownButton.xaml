@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="Engine.TAX2.SS7C.View.Buttons.ContentDownButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:Engine.TAX2.SS7C.ViewModel"
+             Background="{StaticResource ContentBackgroundBrush}"
+             d:DataContext="{d:DesignInstance viewModel:SS7CViewModel}"
+             d:DesignHeight="50"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <Border BorderBrush="{StaticResource ContentBlackBorderBrush}" BorderThickness="0,4,0,0">
+        <Border Margin="6,0,6,6" Background="{StaticResource ContentBlackBorderBrush}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0"
+                        Command="{Binding Path=HardwareBtnViewModel.Model.B1Command}"
+                        Content="{Binding Path=Model.CurrentStateInterface.BtnB1.Content,Converter={StaticResource DownBtnContentToShowingContentConverter},ConverterParameter=1:,Mode=OneWay}"
+                        Style="{StaticResource ContentDownBtnStyle}" />
+                <Button Grid.Column="1"
+                        Command="{Binding Path=HardwareBtnViewModel.Model.B2Command}"
+                        Content="{Binding Path=Model.CurrentStateInterface.BtnB2.Content,
+                                          Converter={StaticResource DownBtnContentToShowingContentConverter},
+                                          ConverterParameter=2:,
+                                          Mode=OneWay}"
+                        Style="{StaticResource ContentDownBtnStyle}" />
+                <Button Grid.Column="2"
+                        Command="{Binding Path=HardwareBtnViewModel.Model.B3Command}"
+                        Content="{Binding Path=Model.CurrentStateInterface.BtnB3.Content,
+                                          Converter={StaticResource DownBtnContentToShowingContentConverter},
+                                          ConverterParameter=3:,
+                                          Mode=OneWay}"
+                        Style="{StaticResource ContentDownBtnStyle}" />
+                <Button Grid.Column="3"
+                        Command="{Binding Path=HardwareBtnViewModel.Model.B4Command}"
+                        Content="{Binding Path=Model.CurrentStateInterface.BtnB4.Content,
+                                          Converter={StaticResource DownBtnContentToShowingContentConverter},
+                                          ConverterParameter=4:,
+                                          Mode=OneWay}"
+                        Style="{StaticResource ContentDownBtnStyle}" />
+                <Button Grid.Column="4"
+                        Command="{Binding Path=HardwareBtnViewModel.Model.B5Command}"
+                        Content="{Binding Path=Model.CurrentStateInterface.BtnB5.Content,
+                                          Converter={StaticResource DownBtnContentToShowingContentConverter},
+                                          ConverterParameter=5:,
+                                          Mode=OneWay}"
+                        Style="{StaticResource ContentDownBtnStyle}" />
+            </Grid>
+        </Border>
+    </Border>
+
+</UserControl>

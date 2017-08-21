@@ -1,0 +1,1277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C7781122-89C9-47DA-9FBA-EFBC67649B3C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SS4B_TMS</RootNamespace>
+    <AssemblyName>SS4B_TMS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>MMI\Addin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>MMI\Addin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonUtil, Version=2.29.2016.517, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="ES.Facility.PublicModule, Version=1.12.2.9, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\MMI\ES.Facility.PublicModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Excel.Interface, Version=2.28.2016.518, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="MMI.Facility.Interface, Version=2.29.2016.510, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Brushs.cs" />
+    <Compile Include="Common\CommonStatus.cs" />
+    <Compile Include="Common\Enums.cs" />
+    <Compile Include="Common\FontInfo.cs" />
+    <Compile Include="Common\LocomotiveFailure.cs" />
+    <Compile Include="Common\SS4BListBox.cs" />
+    <Compile Include="Common\SS4BButton.cs" />
+    <Compile Include="Common\StationInfo.cs" />
+    <Compile Include="Config\GlobalConfig.cs" />
+    <Compile Include="JournalTemperature\V9_JT_Info.cs" />
+    <Compile Include="PatternTwo\V10_PatternTwo_DataSheet.cs" />
+    <Compile Include="PatternTwo\V10_PatternTwo_RunInfo.cs" />
+    <Compile Include="PatternTwo\V10_PatternTwo_WorkCondition.cs" />
+    <Compile Include="Resource\InBoolKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InBoolKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\InFloatKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InFloatKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\OutBoolKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutBoolKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\OutFloatKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutFloatKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\ImageResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImageResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CommonPart\VC_C2_BlackView.cs" />
+    <Compile Include="Config\TrainNumberConfig.cs" />
+    <Compile Include="WirelessInterface\FaultInfo.cs" />
+    <Compile Include="WirelessInterface\TrainDecodingView.cs" />
+    <Compile Include="WirelessInterface\V70101_WI_BrakeStatus.cs" />
+    <Compile Include="WirelessInterface\V70102_WI_VersionInfo.cs" />
+    <Compile Include="WirelessInterface\V70103_WI_FaultLamp.cs" />
+    <Compile Include="WirelessInterface\V701_WI_ShowStatus.cs" />
+    <Compile Include="WirelessInterface\V704_WI_RemoveBZ.cs" />
+    <Compile Include="WirelessInterface\V706_WI_BZSetting.cs" />
+    <Compile Include="WirelessInterface\V708_WI_BZInfoTS.cs" />
+    <Compile Include="WirelessInterface\V7_History_C0_MainView.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="LCUInfo\V801_Maintenance_TrainInfo.cs" />
+    <Compile Include="LCUInfo\V802_Maintenance_NetWorkStatus.cs" />
+    <Compile Include="LCUInfo\V803_Maintenance_SoftWareVersion.cs" />
+    <Compile Include="LCUInfo\V804_Maintenance_InterfaceCheck.cs" />
+    <Compile Include="LCUInfo\V805_Maintenance_EnergyConsumptionInfo.cs" />
+    <Compile Include="LCUInfo\V806_Maintenance_AccelerationTest.cs" />
+    <Compile Include="LCUInfo\V807_Maintenance_BrakeSelfChecking.cs" />
+    <Compile Include="LCUInfo\V808_Maintenance_PasswordSetting.cs" />
+    <Compile Include="LCUInfo\V8_Maintenance_C0_MainView.cs" />
+    <Compile Include="BlackView\V0_C0_BlackView_Closed.cs" />
+    <Compile Include="MainView\V1_MainFrame_C1_WorkCondition.cs" />
+    <Compile Include="MainView\V1_MainFrame_C2_DataSheet.cs" />
+    <Compile Include="MainView\V1_MainFrame_C3_RunInfo.cs" />
+    <Compile Include="CommonPart\VC_C1_ViewChangeButton.cs" />
+    <Compile Include="SecondInterface\V2_Second_C0_Password.cs" />
+    <Compile Include="TimeSetting\V4_Assist_C0_Page1.cs" />
+    <Compile Include="TimeSetting\V4_Assist_C1_Page2.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource\InBoolKeys.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>InBoolKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\InFloatKeys.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>InFloatKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\OutBoolKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OutBoolKeys.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\OutFloatKeys.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OutFloatKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\ImageResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ImageResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="ES.Facility.Common\ES.JCTMS.Common.csproj">
+      <Project>{0dc1f4ff-bf12-4f12-9200-704a9410eddc}</Project>
+      <Name>ES.JCTMS.Common</Name>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\AirConditioner\AirConditioner-AllCooll.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\AirConditioner\AirConditioner-Fault.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\AirConditioner\AirConditioner-HalfCooll.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\AirConditioner\AirConditioner-Precool.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\AirConditioner\AirConditioner-Stop.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\AirConditioner\AirConditioner-Unknown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\AirConditioner\AirConditioner-Ventilate.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\AirConditioner\AirConditioner-Warming.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\AirConditioner\Button-NoSelected.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\AirConditioner\Button-Selected.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\AirConditioner\ControlModel-CenterControl.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\AirConditioner\ControlModel-SelfControl.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\AirConditioner\NewAirValve-1-3Open.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\AirConditioner\NewAirValve-2-3Open.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\AirConditioner\NewAirValve-AllOpen.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\AirConditioner\NewAirValve-Close.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\AirConditioner\NewAirValve-Fault.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\AirConditioner\NewAirValve-Unknown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\AirConditioner\PABtnDown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\AirConditioner\PABtnUp.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\AirConditioner\ReturnAirValve-Close.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\AirConditioner\ReturnAirValve-Fault.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\AirConditioner\ReturnAirValve-Open.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Assist\AssistAirPump-Cease.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Assist\AssistAirPump-Working.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Assist\AssistInvertor-Glitch.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Assist\AssistInvertor-MajorFailure.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Assist\AssistInvertor-OK.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Assist\AssistInvertor-UnKnown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Assist\AssistLoadFuse-Break.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Assist\AssistLoadFuse-Close.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Assist\AssistLoadFuse-Unknown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Assist\ChargingGenerator-Fault.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Assist\ChargingGenerator-OK.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Assist\ChargingGenerator-Separate.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Assist\ChargingGenerator-Unknown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Assist\EarthShieldedSwitch-Landing.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Assist\EarthShieldedSwitch-OK.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Assist\EarthShieldedSwitch-WorkShopSource.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Assist\PABtnDown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Assist\PABtnUp.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Assist\StorageBattery-OK.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Assist\StorageBattery-Separate.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Brake\AirPump-Cease.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Brake\AirPump-Fault.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Brake\AirPump-Unknown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Brake\AirPump-Working.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Brake\EmergencyBrake-Activate.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Brake\EmergencyBrake-Unactivated.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Brake\EmergencyBrake-Unknown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Brake\PABtnDown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Brake\PABtnUp.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Brake\ParkBrake-Add.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Brake\ParkBrake-Fault.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Brake\ParkBrake-Release.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Brake\ParkBrake-Separate.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Brake\ParkBrake-Unknown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Brake\Pressure-Unknown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Brake\ServiceBraking-Add.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Brake\ServiceBraking-Fault.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Brake\ServiceBraking-Release.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Brake\ServiceBraking-Separate.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Brake\ServiceBraking-Unknown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Bypass\AssistLoadFuse-Break.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Bypass\AssistLoadFuse-Close.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Bypass\AssistLoadFuse-Unknown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Bypass\PABtnDown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Bypass\PABtnUp.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\CommonBtn\btn-b-down.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\CommonBtn\btn-b-up.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\CommonBtn\btn-g-down.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\CommonBtn\btn-g-up.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\CommonBtn\btn-r-down.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\CommonBtn\btn-r-up.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\CommonBtn\btn-y-down.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\CommonBtn\btn-y-up.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\CommonBtn\Button-NoSelected.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\CommonBtn\Button-Selected.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\CommonBtn\Bypass.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\CommonBtn\BypassBtn-Act.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\CommonBtn\BypassBtn-Attonity.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\CommonBtn\BypassReturn.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\CommonBtn\downBtn.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\CommonBtn\FaultBtn-Arise.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\CommonBtn\FaultBtn-Nothing.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\CommonBtn\flag1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\CommonBtn\flag2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Fault\AutoShowConfirm.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Fault\AutoShowConfirm-down.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Fault\Button-NoSelected.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Fault\Button-Selected.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Fault\EventFrame.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Fault\FaultFrame.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Fault\PABtnDown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Fault\PABtnUp.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Fault\return-arrow.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\MainFrame\AssistInvertor-Glitch.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\MainFrame\AssistInvertor-MajorFailure.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\MainFrame\AssistInvertor-OK.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\MainFrame\AssistInvertor-UnKnown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\MainFrame\FireAlarm-Glitch.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\MainFrame\FireAlarm-Happen.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\MainFrame\FireAlarm-MajoyFailure.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\MainFrame\FireAlarm-OK.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\MainFrame\FireAlarm-Unknown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\MainFrame\TractionInvertor-ElectricBraking.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\MainFrame\TractionInvertor-Glitch.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\MainFrame\TractionInvertor-MajorFailure.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\MainFrame\TractionInvertor-OK.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\MainFrame\TractionInvertor-TractionAdd.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\MainFrame\TractionInvertor-Unknown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Maintenance\backMMainView.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Maintenance\BrightAdd.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Maintenance\BrightReduce.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Maintenance\Button-NoSelected.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Maintenance\Button-Selected.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Maintenance\digitBack.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Maintenance\digitBack-down.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Maintenance\digitBtn-NS.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Maintenance\digitBtn-S.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Maintenance\digitFrame.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Maintenance\icheckFrame.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Maintenance\inputCancel.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Maintenance\inputCancel-down.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Maintenance\inputConfirm.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Maintenance\inputConfirm-down.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Maintenance\MMFrame.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Maintenance\NetWork.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Maintenance\PABtnDown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Maintenance\PABtnUp.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Navigation\Button-NoSelected.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Navigation\Button-Selected.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Navigation\Fault-NoSelected.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Navigation\Fault-Selected.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Navigation\Warning-NoSelected.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Navigation\Warning-Selected.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\PIS\AutoModelFrame.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\PIS\Button-NoSelected.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\PIS\Button-Selected.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\PIS\EventFrame.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\PIS\FaultFrame.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\PIS\ModelShowFrame.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\PIS\PABtnDown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\PIS\PABtnUp.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\PIS\return-arrow.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\PIS\StationInfoFrame.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Traction\back.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Traction\confirm.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Traction\H-SpeedCirBreaker-Close.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Traction\H-SpeedCirBreaker-Discon.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\Traction\H-SpeedCirBreaker-Unknown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\TrainInfo\Cab-Activation-Left.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\TrainInfo\Cab-Activation-Right.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\TrainInfo\Cab-NoActivation-Left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\TrainInfo\Cab-NoActivation-Right.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\TrainInfo\Cab-Unknown-Left.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\TrainInfo\Cab-Unknown-Right.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\TrainInfo\Direction-Left.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\TrainInfo\Direction-Right.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\TrainInfo\Direction-Unknown-Left.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\TrainInfo\Direction-Unknown-Right.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\TrainInfo\Door-Close.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\TrainInfo\Door-EmergentUnlock.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\TrainInfo\Door-Fault.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\TrainInfo\Door-Isolation.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\TrainInfo\Door-Obstacle.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\TrainInfo\Door-Open.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\TrainInfo\Door-Unknown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\TrainInfo\Pantograph-Down.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\TrainInfo\Pantograph-DownFault.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\TrainInfo\Pantograph-DownFault-Right.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\TrainInfo\Pantograph-Down-Right.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\TrainInfo\Pantograph-Unknown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\TrainInfo\Pantograph-Unknown-Right.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\TrainInfo\Pantograph-Up.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\TrainInfo\Pantograph-UpFault.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\TrainInfo\Pantograph-UpFault-Right.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\TrainInfo\Pantograph-Up-Right.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\TrainInfo\PECU-Activation.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\TrainInfo\PECU-Talking.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\TrainInfo\test.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MMI\SS4B车辆屏\resources\start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button-NoSelected5.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button-Selected.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button-Selected1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button-Selected2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button-Selected3.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button-Selected4.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button-Selected5.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bypass.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BypassBtn-Act.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BypassBtn-Attonity.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BypassReturn.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cab-Activation-Left.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cab-Activation-Right.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cab-NoActivation-Left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cab-NoActivation-Right.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cab-Unknown-Left.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cab-Unknown-Right.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChargingGenerator-Fault.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChargingGenerator-OK.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChargingGenerator-Separate.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChargingGenerator-Unknown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\confirm.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ControlModel-CenterControl.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ControlModel-SelfControl.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\digitBack.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\digitBack-down.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\digitBtn-NS.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\digitBtn-S.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\digitFrame.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Direction-Left.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Direction-Right.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Direction-Unknown-Left.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Direction-Unknown-Right.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Door-Close.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Door-EmergentUnlock.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Door-Fault.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Door-Isolation.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Door-Obstacle.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Door-Open.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Door-Unknown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\downBtn.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EarthShieldedSwitch-Landing.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EarthShieldedSwitch-OK.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EarthShieldedSwitch-WorkShopSource.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EmergencyBrake-Activate.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EmergencyBrake-Unactivated.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EmergencyBrake-Unknown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EventFrame.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EventFrame1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FaultBtn-Arise.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FaultBtn-Nothing.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FaultFrame.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FaultFrame1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fault-NoSelected.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fault-Selected.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FireAlarm-Glitch.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FireAlarm-Happen.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FireAlarm-MajoyFailure.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FireAlarm-OK.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FireAlarm-Unknown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flag1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flag2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\H-SpeedCirBreaker-Close.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\H-SpeedCirBreaker-Discon.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\H-SpeedCirBreaker-Unknown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icheckFrame.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inputCancel.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inputCancel-down.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inputConfirm.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inputConfirm-down.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MMFrame.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelShowFrame.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NetWork.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewAirValve-1-3Open.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewAirValve-2-3Open.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewAirValve-AllOpen.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewAirValve-Close.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewAirValve-Fault.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewAirValve-Unknown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PABtnDown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PABtnDown1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PABtnDown2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PABtnDown3.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PABtnDown4.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PABtnDown5.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PABtnDown6.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PABtnUp.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PABtnUp1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PABtnUp2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PABtnUp3.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PABtnUp4.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PABtnUp5.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PABtnUp6.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pantograph-Down.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pantograph-DownFault.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pantograph-DownFault-Right.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pantograph-Down-Right.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pantograph-Unknown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pantograph-Unknown-Right.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pantograph-Up.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pantograph-UpFault.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pantograph-UpFault-Right.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pantograph-Up-Right.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ParkBrake-Add.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ParkBrake-Fault.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ParkBrake-Release.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ParkBrake-Separate.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ParkBrake-Unknown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PECU-Activation.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PECU-Talking.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pressure-Unknown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ReturnAirValve-Close.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ReturnAirValve-Fault.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ReturnAirValve-Open.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\return-arrow.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\return-arrow1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ServiceBraking-Add.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ServiceBraking-Fault.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ServiceBraking-Release.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ServiceBraking-Separate.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ServiceBraking-Unknown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StationInfoFrame.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StorageBattery-OK.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StorageBattery-Separate.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\test.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TractionInvertor-ElectricBraking.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TractionInvertor-Glitch.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TractionInvertor-MajorFailure.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TractionInvertor-OK.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TractionInvertor-TractionAdd.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TractionInvertor-Unknown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warning-NoSelected.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warning-Selected.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AirConditioner-AllCooll.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AirConditioner-Fault.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AirConditioner-HalfCooll.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AirConditioner-Precool.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AirConditioner-Stop.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AirConditioner-Unknown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AirConditioner-Ventilate.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AirConditioner-Warming.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AirPump-Cease.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AirPump-Fault.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AirPump-Unknown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AirPump-Working.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AssistAirPump-Cease.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AssistAirPump-Working.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AssistInvertor-Glitch.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AssistInvertor-Glitch1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AssistInvertor-MajorFailure.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AssistInvertor-MajorFailure1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AssistInvertor-OK.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AssistInvertor-OK1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AssistInvertor-UnKnown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AssistInvertor-UnKnown1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AssistLoadFuse-Break.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AssistLoadFuse-Break1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AssistLoadFuse-Close.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AssistLoadFuse-Close1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AssistLoadFuse-Unknown.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AssistLoadFuse-Unknown1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AutoModelFrame.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AutoShowConfirm.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AutoShowConfirm-down.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backMMainView.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BrightAdd.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BrightReduce.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-b-down.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-b-up.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-g-down.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-g-up.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-r-down.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-r-up.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-y-down.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-y-up.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button-NoSelected.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button-NoSelected1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button-NoSelected2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button-NoSelected3.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button-NoSelected4.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BlanckSpace\" />
+    <Folder Include="BrightnessControl\" />
+    <Folder Include="KMHClear\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

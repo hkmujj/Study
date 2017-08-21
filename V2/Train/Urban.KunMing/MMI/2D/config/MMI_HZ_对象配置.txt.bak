@@ -1,0 +1,63 @@
+;;; 类名  从属视图   			输入_Bool_对应表        						 输入_Float_对应表   			输出_bool_对应表       				输出_Float_对应表      		参数表     备注
+;;; 字符串  <数字 数字>   		[#bool编号 bool编号#]     						 [*Float编号 Float编号*]  			[-bool编号 bool编号-]       				[+Float编号 Float编号+]     		{参数1 参数2 参数3}
+;;;TMS上下标题
+	Title			[~301~]	< 11  12  13  14  15  16  17  18  19  20  21 22 23 24 25 26 27 29 30 31 >	[# 200 201 202 203 1100 1299 #]		[* 50 7 8 51 3 *]					[--]				[++]						{ Pub\jingbao.png  Pub\hui1.bmp  Pub\hui2.bmp  Pub\hui3.bmp  Pub\hui4.bmp  Pub\logo.png  Pub\lan1.png  Pub\down.png Pub\an.png Pub\car.png  Pub\hui5.png  Pub\huang2.png  Pub\fangxiang1.png  Pub\fangxiang2.png }
+	;;;运行
+	Run			[~302~]	< 11 >							[##]					[**]						[--]				[++]						{ Pub\car.png  Pub\hui5.png  Pub\huang2.png  Pub\fangxiang1.png  Pub\fangxiang2.png  Run\对讲.png  Run\报警故障.png  Run\报警.png  Run\报警正常.png  Run\烟火报警正常.png Run\烟火报警.png Run\烟火报警故障.png Run\烟火报警未知.png Run\通讯故障.png Run\门隔离.png Run\门紧急解锁.png Run\门检测.png Run\门关.png Run\门开.png Run\门故障.png Run\门动作中.png Pub\lan1.png Pub\down.png Run\LS.png Run\RS.png Run\喇叭1.png Run\喇叭2.png Pub\hui3.bmp Pub\hui4.bmp Pub\huang1.png Run\LS1.png Run\RS1.png Run\喇叭11.png Run\喇叭21.png Run\主断合.png Run\主断分.png}
+	;;;运行帮助
+	RunHelp 			[~303~]	< 16 >							[##]					[**]						[--]				[++]						{ Help\运行帮助.png }
+	;;;车辆状态
+	CarState 			[~304~]	< 12 >							[##]					[**]						[--]				[++]						{ Pub\lan1.png Pub\down.png }
+	;;;车辆状态帮助
+	CarStateHelp 		[~305~]	< 17 >							[##]					[**]						[--]				[++]						{ Help\车辆状态帮助.png }
+	;;;空调设置
+	Air_condition		[~306~]	< 13 >							[##]					[**]						[--]				[++]						{ Air\空调关闭.png Air\空调故障.png Air\空调制冷.png Air\空调火灾.png Air\空调紧急通风.png Air\空调通风.png Air\空调半冷.png Pub\lan1.png Pub\down.png }
+	;;;空调设置帮助
+	Air_conditionHelp		[~307~]	<18>							[##]					[**]						[--]				[++]						{ Help\空调帮助.png }
+	;;;通讯状态
+	Communication		[~308~]	<15>							[##]					[**]						[--]				[++]						{}
+	;;;通信状态帮助
+	CommunicationHelp	[~309~]	<20>							[##]					[**]						[--]				[++]						{ Help\通讯帮助.png }
+	;;;事件
+	Fault			[~310~]	<14>							[# 1100 1299 #]				[**]						[--]				[++]						{ Def\anjian1.png Def\anjian6.png Def\anjian5.png Def\anjian.png Def\anjian4.png Def\anjian3.png }
+	;;;紧急广播
+	EmergencyRadio		[~320~]	<29>							[##]					[**]						[- 1616 1632-]			[++]						{ Pub\JJGBT.bmp	Pub\JJGBA.bmp }
+	;;;站点设置
+	StationSet		[~321~]	<30>							[##]					[* 45 *]						[--]				[+ 214 215 216 +]					{ Pub\ZDSZT.bmp Pub\ZDSZA1.bmp Pub\ZDSZA2.bmp Pub\SZZM.bmp Pub\hui4.bmp }
+	;;;旁路
+	Bypass			[~322~]	<31>							[##]					[**]						[--]				[++]						{ Pub\ZDSZT.bmp Pub\ZDSZA1.bmp Pub\旁路1.bmp Pub\旁路0.bmp}
+	;;;登录
+	Password		[~311~]	<21>							[##]					[**]						[--]				[++]						{}
+	;;;检修主界面
+	RepairMain		[~312~]	<22>							[##]					[**]						[--]				[++]						{ Repair\sheding.png Repair\sheding2.png}
+	;;;轮径设置
+	WheelDia			[~313~]	<23>							[##]					[**]						[--]				[++]						{ Repair\chelun1.png Repair\chelun2.png }
+	;;;车号设置	
+	TrainNumSetup		[~314~]	<24>							[##]					[**]						[--]				[+ 208 209 210 211 212 213 +]				{ Pub\chelun1.png Pub\chelun2.png}
+	;;;加速度测试
+	AccelerationTest		[~315~]	<25>							[##]					[**]						[--]				[++]						{}
+	;;;测试
+	Test			[~316~]	<26>							[##]					[**]						[--]				[++]						{ Repair\anjian.png Repair\ceshi.png Repair\anjian2.png}
+	;;;数据记录
+	DataLog			[~317~]	<27>							[##]					[**]						[--]				[++]						{ Repair\anjian.png Repair\anjian2.png }
+	;;;USB下载
+	USB			[~318~]	<28>							[##]					[**]						[--]				[++]						{ Repair\USB.png }
+	;;;亮度调节
+	Lightness			[~319~]	<19>							[##]					[**]						[--]				[++]						{ Def\anjian.png Pub\light1.png Pub\light2.png Pub\light3.png Pub\light4.png }
+	;;;TMS黑屏
+	TMS_Black		[~340~]	< 40 >							[##]					[**]						[--]				[++]						{}
+	;;;TMS课程结束视图
+	TMS_Classover		[~341~]	< 0 >							[##]					[**]						[--]				[++]						{}
+
+
+
+
+
+
+
+
+
+
+
+
+

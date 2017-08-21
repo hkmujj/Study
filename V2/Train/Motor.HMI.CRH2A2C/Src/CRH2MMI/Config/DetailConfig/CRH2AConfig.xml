@@ -1,0 +1,1667 @@
+﻿<?xml version="1.0"?>
+<CRH2DetailConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Data Type="CRH2A">
+        <GlobalInfoConfig>
+            <Reversal InBoolNames="操作端 / 换操作端"/>
+        </GlobalInfoConfig>
+
+        <!--启动界面-->
+        <StartViewConfig>
+            <Speed>200</Speed>
+            <MoveTail></MoveTail>
+            <StartPeriod>25</StartPeriod>
+        </StartViewConfig>
+
+        <FaultConfig Speed="标题栏 / 当前速度" Distance="标题栏 / 公里数(显示当前的公里数)">
+            <TrainViewLocation Location="224,350"/>
+            <!--更新间隔, ms, -1 代表不采用-->
+            <UpdateIntervale>-1</UpdateIntervale>
+        </FaultConfig>
+
+        <!--TMSPowerConfig-->
+        <TMSPowerConfig>
+            <!--当开启两个屏时, 第二个屏设置为  -->
+            <PowerOn InBoolNames="车辆屏开关 / 车辆屏1显示黑屏  0：TMS黑屏   1：TMS亮屏,车辆屏开关 / 车辆屏2显示黑屏  0：TMS黑屏   1：TMS亮屏"/>
+
+        </TMSPowerConfig>
+
+        <!--TrainConfig-->
+        <TrainConfig>
+            <TrainUnits>
+                <Unit UnitName="1 U" CarNos="0,1,2,3" Colors="White,#00FF00,Red" InBoolNames="单元状态 / 单元 1     白,单元状态 / 单元 1     绿,单元状态 / 单元 1     红" />
+                <Unit UnitName="2 U" CarNos="4,5,6,7" Colors="White,#00FF00,Red" InBoolNames="单元状态 / 单元 2     白,单元状态 / 单元 2     绿,单元状态 / 单元 2     红" />
+            </TrainUnits>
+            <CarConfigs>
+                <CarConfig CarNo="0 " CarName="T1" CarType="Trail" Colors="White,#00FF00,Yellow,Red" InBoolNames="操作端/ 1车  操作端" IsHeadCar="true" HeadDirection="Left"/>
+                <CarConfig CarNo="1 " CarName="M1" CarType="Move"  Colors="White,#00FF00,Yellow,Red" InBoolNames="动车状态 / 2车  惰行  白,动车状态 / 2车  牵引  绿,动车状态 / 2车  电制  黄"  />
+                <CarConfig CarNo="2 " CarName="M2" CarType="Move"  Colors="White,#00FF00,Yellow,Red" InBoolNames="动车状态 / 3车  惰行  白,动车状态 / 3车  牵引  绿,动车状态 / 3车  电制  黄"  />
+                <CarConfig CarNo="3 " CarName="T2" CarType="Trail" Colors="White,#00FF00,Yellow,Red" InBoolNames="动车状态 / 4车  惰行  白,动车状态 / 4车  牵引  绿,动车状态 / 4车  电制  黄"  />
+                <CarConfig CarNo="4 " CarName="T3" CarType="Trail" Colors="White,#00FF00,Yellow,Red" InBoolNames="动车状态 / 5车  惰行  白,动车状态 / 5车  牵引  绿,动车状态 / 5车  电制  黄"  />
+                <CarConfig CarNo="5 " CarName="M3" CarType="Move"  Colors="White,#00FF00,Yellow,Red" InBoolNames="动车状态 / 6车  惰行  白,动车状态 / 6车  牵引  绿,动车状态 / 6车  电制  黄"  />
+                <CarConfig CarNo="6 " CarName="M4" CarType="Move"  Colors="White,#00FF00,Yellow,Red" InBoolNames="动车状态 / 7车  惰行  白,动车状态 / 7车  牵引  绿,动车状态 / 7车  电制  黄"  />
+                <CarConfig CarNo="7 " CarName="T4" CarType="Trail" Colors="White,#00FF00,Yellow,Red" InBoolNames="操作端/ 8车  操作端" IsHeadCar="true" HeadDirection="Right"/>
+            </CarConfigs>
+            <AcceptEleCarConfigs>
+                <AcceptEleCar CarNo="3" Location="Left" Direction="Left"  InBoolNames="受电弓 / 4车  受电弓    1：升  0：降"/>
+                <AcceptEleCar CarNo="5" Location="Left" Direction="Right" InBoolNames="受电弓 / 6车  受电弓    1：升  0：降"/>
+            </AcceptEleCarConfigs>
+        </TrainConfig>
+
+        <!-- 主菜单的配置 -->
+        <MenuView>
+            <DriverMenus>
+                <Menu Name="行驶状态" Goto="2" Yoffset="0" Xoffset="0" />
+                <Menu Name="车辆信息" Goto="3" Yoffset="0" Xoffset="1" />
+                <Menu Name="故障一览" Goto="21" Yoffset="0" Xoffset="2" />
+                <Menu Name="联解编组信息" Goto="20" Yoffset="0" Xoffset="3" />
+                <Menu Name="配电盘信息" Goto="17" Yoffset="1" Xoffset="0" />
+                <Menu Name="出库信息" Goto="22" Yoffset="1" Xoffset="1" />
+                <Menu Name="切除状态" Goto="4" Yoffset="1" Xoffset="2" />
+                <Menu Name="制动信息" Goto="5" Yoffset="1" Xoffset="3" />
+                <Menu Name="牵引变流器(编)" Goto="6" Yoffset="2" Xoffset="0" />
+                <Menu Name="牵引变流器(车)" Goto="10" Yoffset="2" Xoffset="1" />
+                <Menu Name="累计电力" Goto="11" Yoffset="2" Xoffset="2" />
+                <Menu Name="空转滑行" Goto="9" Yoffset="2" Xoffset="3" />
+                <Menu Name="电源电压" Goto="7" Yoffset="3" Xoffset="0" />
+                <Menu Name="供电分类" Goto="23" Yoffset="3" Xoffset="1" />
+                <Menu Name="车门信息" Goto="8" Yoffset="3" Xoffset="2" />
+                <Menu Name="光传输状态" Goto="24" Yoffset="3" Xoffset="3" />
+                <Menu Name="车次设定" Goto="15" Yoffset="5" Xoffset="0" />
+                <Menu Name="监控设定" Goto="16" Yoffset="5" Xoffset="1" />
+                <Menu Name="轴温切除" Goto="12" Yoffset="5" Xoffset="2" />
+                <Menu Name="远程控制切除" Goto="13" Yoffset="5" Xoffset="3" />
+                <Menu Name="抱死切除" Goto="14" Yoffset="6" Xoffset="0" />
+                <Menu Name="当前站设定" Goto="18" Yoffset="6" Xoffset="1" />
+                <Menu Name="车次转换" Goto="19" Yoffset="6" Xoffset="2" />
+                <Menu Name="警惕报警" Goto="58" Yoffset="6" Xoffset="3" />
+                <Menu Name="BP救援" Goto="59" Yoffset="7" Xoffset="0" />
+                <Menu Name="轴温实时检测" Goto="1" Yoffset="7" Xoffset="1" />
+            </DriverMenus>
+        </MenuView>
+
+        <!--标题栏-->
+        <TitleConfig >
+            <TitleUnits>
+                <TitleUnit  X="11" Y="34" Width="158" Height="18" BkImgaeIndex="-1" InBoolNames="标题栏 / 主故障蜂鸣器切除" Name="主故障蜂鸣器切除" TextColor="White"  BkColor="Red"/>
+                <TitleUnit  X="175" Y="28" Width="90" Height="29" BkImgaeIndex="1"  InBoolNames="标题栏 / 紧急报警键" Name="紧急报警" TextColor="White" />
+                <TitleUnit  X="269" Y="28" Width="90" Height="29" BkImgaeIndex="1"  InBoolNames="标题栏 / 火灾报警键" Name="火灾报警" TextColor="White" />
+                <TitleUnit  X="358" Y="29" Width="40" Height="25" BkImgaeIndex="-1" InBoolNames="标题栏 / REC" Name="REC"  TextColor="Black"  BkColor="#00FF00"/>
+                <TitleUnit  X="416" Y="9" Width="136" Height="43" BkImgaeIndex="2"  InBoolNames="标题栏 / 故障发生" Name="故障发生" TextColor="White" />
+
+                <TitleUnit  X="221" Y="64" Width="118" Height="36" FontWidth="32" ToStringFormat="F0" InFloatNames = "标题栏 / 当前速度" Name="当前速度" TextColor="White" />
+                <TitleUnit  X="405" Y="64" Width="160" Height="36" FontWidth="22" InFloatNames = "标题栏 / 线路(显示当前线路)" Name="线路" TextColor="White" />
+                <TitleUnit  X="562" Y="64" Width="201" Height="36" FontWidth="32" ToStringFormat="#,#0.0" InFloatNames = "标题栏 / 公里数(显示当前的公里数)" Name="公里数" TextColor="White" />
+            </TitleUnits>
+            <FaultConfig Speed="标题栏 / 当前速度" Distance="标题栏 / 公里数(显示当前的公里数)"/>
+        </TitleConfig>
+
+        <!--工况-->
+        <WorkStateConfig>
+
+            <ParkConfigs>
+                <ParkConfig Rectangle="178, 111,60, 20"  Name="恒速" TextColor="Yellow" BkColor="Black" InBoolNames="工况 / 恒速"/>
+                <ParkConfig Rectangle="570, 111,60, 20"  Name="耐雪" TextColor="Yellow" BkColor="Black" InBoolNames="工况 / 耐雪"/>
+                <ParkConfig Rectangle="450, 111,60, 20"  Name="快速" TextColor="Yellow" BkColor="Black" InBoolNames="工况 / 快速"/>
+                <ParkConfig Rectangle="392, 111,60, 20"  Name="紧急" TextColor="Red"    BkColor="Black" InBoolNames="工况 / 紧急"/>
+                <ParkConfig Rectangle="630, 111,60, 20"  Name="停放" TextColor="Yellow" BkColor="Black" InBoolNames="工况 / 停放"/>
+                <ParkConfig Rectangle="510, 111,60, 20"  Name="常用" TextColor="Yellow" BkColor="Black" InBoolNames="工况 / 常用"/>
+            </ParkConfigs>
+
+            <LevenConfigs Rectangle="90, 111,60, 20" >
+                <!--0 优先级最低-->
+                <Level  Name="P1"   Priority="0 " InBoolNames="工况 / 牵引 P1"/>
+                <Level  Name="P2"   Priority="1 " InBoolNames="工况 / 牵引 P2"/>
+                <Level  Name="P3"   Priority="2 " InBoolNames="工况 / 牵引 P3"/>
+                <Level  Name="P4"   Priority="3 " InBoolNames="工况 / 牵引 P4"/>
+                <Level  Name="P5"   Priority="4 " InBoolNames="工况 / 牵引 P5"/>
+                <Level  Name="P6"   Priority="5 " InBoolNames="工况 / 牵引 P6"/>
+                <Level  Name="P7"   Priority="6 " InBoolNames="工况 / 牵引 P7"/>
+                <Level  Name="P8"   Priority="7 " InBoolNames="工况 / 牵引 P8"/>
+                <Level  Name="P9"   Priority="8 " InBoolNames="工况 / 牵引 P9"/>
+                <Level  Name="P10"  Priority="9 " InBoolNames="工况 / 牵引 P10"/>
+                <Level  Name="B1"   Priority="10" InBoolNames="工况 / 制动  B1"/>
+                <Level  Name="B2"   Priority="11" InBoolNames="工况 / 制动  B2"/>
+                <Level  Name="B3"   Priority="12" InBoolNames="工况 / 制动  B3"/>
+                <Level  Name="B4"   Priority="13" InBoolNames="工况 / 制动  B4"/>
+                <Level  Name="B5"   Priority="14" InBoolNames="工况 / 制动  B5"/>
+                <Level  Name="B6"   Priority="15" InBoolNames="工况 / 制动  B6"/>
+                <Level  Name="B7"   Priority="16" InBoolNames="工况 / 制动  B7"/>
+                <Level  Name="快速" Priority="17" InBoolNames="工况 / 制动  快速"/>
+            </LevenConfigs>
+
+        </WorkStateConfig>
+
+        <!--行驶状态-->
+        <DriveStateConfig >
+            <TrainViewLocation Location="235,419"/>
+            <CutInfoRegions>
+                <!--<Region Rectangle="376, 232, 170, 20" CutValueFrom="Event">
+                    <DriveStateCutInfo Text="解联准备就绪" InBoolNames="联解编组信息 / 解联准备就绪"  />
+                </Region>-->
+                <Region Rectangle="108, 303, 170, 20" CutValueFrom="Event">
+                    <DriveStateCutInfo Text="4号车厢受电弓切除" InBoolNames="切除状态/ 4车  受电弓切除   1：切除"  />
+                </Region>
+                <Region Rectangle="365, 303, 170, 20" CutValueFrom="Event">
+                    <DriveStateCutInfo Text="3号车厢压缩机切除" InBoolNames="切除状态/ 3车  压缩机切除（CMP）   1：切除"  />
+                </Region>
+                <Region Rectangle="619, 303, 170, 20" CutValueFrom="Event">
+                    <DriveStateCutInfo Text="1号车厢紧急隔离" InBoolNames="切除状态/ 1车  紧急隔离  1：切除"  />
+                </Region>
+            </CutInfoRegions>
+            <DoorConfigs>
+                <DoorColse CarNo="0" Rectangle="235,381,42,12"  InBoolNames="车门状态 / 1车  车门关闭  0：关  1：开"  />
+                <DoorColse CarNo="1" Rectangle="278,381,42,12"  InBoolNames="车门状态 / 2车  车门关闭  0：关  1：开"  />
+                <DoorColse CarNo="2" Rectangle="321,381,42,12"  InBoolNames="车门状态 / 3车  车门关闭  0：关  1：开"  />
+                <DoorColse CarNo="3" Rectangle="364,381,42,12"  InBoolNames="车门状态 / 4车  车门关闭  0：关  1：开"  />
+                <DoorColse CarNo="4" Rectangle="407,381,42,12"  InBoolNames="车门状态 / 5车  车门关闭  0：关  1：开"  />
+                <DoorColse CarNo="5" Rectangle="450,381,42,12"  InBoolNames="车门状态 / 6车  车门关闭  0：关  1：开"  />
+                <DoorColse CarNo="6" Rectangle="493,381,42,12"  InBoolNames="车门状态 / 7车  车门关闭  0：关  1：开"  />
+                <DoorColse CarNo="7" Rectangle="536,381,42,12"  InBoolNames="车门状态 / 8车  车门关闭  0：关  1：开"  />
+            </DoorConfigs>
+        </DriveStateConfig>
+
+        <!-- 车辆信息界面配置 -->
+        <CarInfoConfig >
+
+            <TrainViewLocation Location="220,145"/>
+
+            <Page1UpGrid GridType="GridLine" AbsX="240" AbsY="206" Width="300" Height="120" RowCount="6" ColumnCount="8" RoundnessR="8" LineVisible="true">
+                <Rows>
+                    <Row Name="快速制动位" RowIndex="0" ItemType="Roudness" Colors="White,Red">
+                        <Columns ColumIndex="0" InBoolNames="车辆信息 / 1车  快速制动位"/>
+                        <Columns ColumIndex="7" InBoolNames="车辆信息 / 8车  快速制动位"/>
+                    </Row>
+                    <Row Name="紧急 B 开关" RowIndex="1" ItemType="Roudness" Colors="White,Red">
+                        <Columns ColumIndex="0" InBoolNames="车辆信息 / 1车  B开关"/>
+                        <Columns ColumIndex="4" InBoolNames="车辆信息 / 7车  B开关"/>
+                        <Columns ColumIndex="7" InBoolNames="车辆信息 / 8车  B开关"/>
+                    </Row>
+                    <Row Name="制动不足" RowIndex="2" ItemType="Roudness" Colors="White,Red">
+                        <Columns ColumIndex="0" InBoolNames="车辆信息 / 1车  制动力不足"/>
+                        <Columns ColumIndex="1" InBoolNames="车辆信息 / 2车  制动力不足"/>
+                        <Columns ColumIndex="2" InBoolNames="车辆信息 / 3车  制动力不足"/>
+                        <Columns ColumIndex="3" InBoolNames="车辆信息 / 4车  制动力不足"/>
+                        <Columns ColumIndex="4" InBoolNames="车辆信息 / 5车  制动力不足"/>
+                        <Columns ColumIndex="5" InBoolNames="车辆信息 / 6车  制动力不足"/>
+                        <Columns ColumIndex="6" InBoolNames="车辆信息 / 7车  制动力不足"/>
+                        <Columns ColumIndex="7" InBoolNames="车辆信息 / 8车  制动力不足"/>
+                    </Row>
+                    <Row Name="MR 压低" RowIndex="3" ItemType="Roudness" Colors="White,Red">
+                        <Columns ColumIndex="0" InBoolNames="车辆信息 / 1车  MR低压     1：表示低压"/>
+                        <Columns ColumIndex="7" InBoolNames="车辆信息 / 8车  MR低压     1：表示低压"/>
+                    </Row>
+                    <Row Name="无电压" RowIndex="4" ItemType="Roudness" Colors="White,Red">
+                        <Columns ColumIndex="1" InBoolNames="车辆信息 / 2车  无电压  1：表示无压"/>
+                        <Columns ColumIndex="5" InBoolNames="车辆信息 / 7车  无电压  1：表示无压"/>
+                    </Row>
+                    <Row Name="警惕制动" RowIndex="5" ItemType="Roudness" Colors="White,Red">
+                        <Columns ColumIndex="0" InBoolNames="车辆信息 / 1车  警惕制动     1：表示警惕制动"/>
+                        <Columns ColumIndex="7" InBoolNames="车辆信息 / 8车  警惕制动     1：表示警惕制动"/>
+                    </Row>
+                </Rows>
+            </Page1UpGrid>
+
+            <Page1DownGrid GridType="GridLine" AbsX="240" AbsY="395" Width="300" Height="100" RowCount="4" ColumnCount="8" TextWidth="38" TextHeight="20" RoundnessR="8" LineVisible="true">
+                <Rows>
+                    <Row Name="牵引变流器" RowIndex="0" ItemType="Roudness" Colors="White,Red">
+                        <Columns ColumIndex="1" InBoolNames="车辆信息 / 2车  牵引逆变器"/>
+                        <Columns ColumIndex="2" InBoolNames="车辆信息 / 3车  牵引逆变器"/>
+                        <Columns ColumIndex="5" InBoolNames="车辆信息 / 6车  牵引逆变器"/>
+                        <Columns ColumIndex="6" InBoolNames="车辆信息 / 7车  牵引逆变器"/>
+                    </Row>
+                    <Row Name="BUC (kPa)" RowIndex="1" ItemType="Text" >
+                        <Columns ColumIndex="0"  InFloatNames="制动信息/ 1车  制动气缸压力（kPa）"/>
+                        <Columns ColumIndex="1"  InFloatNames="制动信息/ 2车  制动气缸压力（kPa）"/>
+                        <Columns ColumIndex="2"  InFloatNames="制动信息/ 3车  制动气缸压力（kPa）"/>
+                        <Columns ColumIndex="3"  InFloatNames="制动信息/ 4车  制动气缸压力（kPa）"/>
+                        <Columns ColumIndex="4"  InFloatNames="制动信息/ 5车  制动气缸压力（kPa）"/>
+                        <Columns ColumIndex="5"  InFloatNames="制动信息/ 6车  制动气缸压力（kPa）"/>
+                        <Columns ColumIndex="6"  InFloatNames="制动信息/ 7车  制动气缸压力（kPa）"/>
+                        <Columns ColumIndex="7"  InFloatNames="制动信息/ 8车  制动气缸压力（kPa）"/>
+                    </Row>
+                    <Row Name="辅助电源" RowIndex="2" ItemType="Roudness" Colors="White,Red">
+                        <Columns ColumIndex="0" InBoolNames="车辆信息 / 1车  辅助电源   1:异常  0:正常"/>
+                        <Columns ColumIndex="7" InBoolNames="车辆信息 / 8车  辅助电源   1:异常  0:正常"/>
+                    </Row>
+                    <Row Name="监控器" RowIndex="3" ItemType="Roudness" Colors="White,Red">
+                        <Columns ColumIndex="0" InBoolNames="车辆信息 / 1车  监控器  1：故障" />
+                        <Columns ColumIndex="1" InBoolNames="车辆信息 / 2车  监控器  1：故障" />
+                        <Columns ColumIndex="2" InBoolNames="车辆信息 / 3车  监控器  1：故障" />
+                        <Columns ColumIndex="3" InBoolNames="车辆信息 / 4车  监控器  1：故障" />
+                        <Columns ColumIndex="4" InBoolNames="车辆信息 / 5车  监控器  1：故障" />
+                        <Columns ColumIndex="5" InBoolNames="车辆信息 / 6车  监控器  1：故障" />
+                        <Columns ColumIndex="6" InBoolNames="车辆信息 / 7车  监控器  1：故障" />
+                        <Columns ColumIndex="7" InBoolNames="车辆信息 / 8车  监控器  1：故障" />
+                    </Row>
+                </Rows>
+            </Page1DownGrid>
+
+            <Page2Grid GridType="GridLine" AbsX="240" AbsY="230" Width="294" Height="200" RowCount="4" ColumnCount="8" TextWidth="50" TextHeight="24" LineVisible="true">
+                <Rows>
+                    <Row Name="C M P" RowIndex="0" ItemType="Text" Texts="停止,打风" TextBkColors="Black,GreenYellow" Colors="White,Black">
+                        <Columns ColumIndex="2" InBoolNames="车辆信息 / 3车  CMP（空压机）   1：打风  0：停止"/>
+                        <Columns ColumIndex="4" InBoolNames="车辆信息 / 5车  CMP（空压机）   1：打风  0：停止"/>
+                        <Columns ColumIndex="6" InBoolNames="车辆信息 / 7车  CMP（空压机）   1：打风  0：停止"/>
+                    </Row>
+                    <Row Name="E G S" RowIndex="1" ItemType="Text" Texts="断,合" TextBkColors="Black,Red" Colors="White,Black">
+                        <Columns ColumIndex="3"  InBoolNames="车辆信息 / 4车  EGS（主接地）   1：合  0：断"/>
+                        <Columns ColumIndex="5"  InBoolNames="车辆信息 / 6车  EGS（主接地）   1：合  0：断"/>
+                    </Row>
+                    <Row Name="无电压" RowIndex="2" ItemType="Text" Texts="无,有" TextBkColors="Black,GreenYellow" Colors="White,Black">
+                        <Columns ColumIndex="1" InBoolNames="车辆信息 / 2车  无电压  1：有" />
+                        <Columns ColumIndex="5" InBoolNames="车辆信息 / 6车  无电压  1：有" />
+                    </Row>
+                    <Row Name="M R 压" RowIndex="3" ItemType="Text" Texts="正常,低压" TextBkColors="GreenYellow,Black" Colors="Black,White">
+                        <Columns ColumIndex="0" InBoolNames="车辆信息 / 1车  MR低压   1：低压  0：正常" />
+                        <Columns ColumIndex="7" InBoolNames="车辆信息 / 8车  MR低压   1：低压  0：正常" />
+                    </Row>
+                </Rows>
+            </Page2Grid>
+        </CarInfoConfig>
+
+        <!-- 配电盘信息 -->
+        <JackConfig  UnitWidth="22" UnitHeight="180">
+            <JackOfCars CarNo="0">
+                <JackUnit InBoolNames="配电盘信息 / 1车  转向架"  Page="0" RelationShip="1" Y="0" X="0"  TextBkColors="White,Red" Name=" 转向架" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  转向架 1轴温"  Page="0" RelationShip="1" Y="1" X="0"  TextBkColors="White,Red" Name=" 转向架1轴温" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  转向架 2轴温"  Page="0" RelationShip="1" Y="1" X="1"  TextBkColors="White,Red" Name=" 转向架2轴温" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  转向架 1抱死"  Page="0" RelationShip="1" Y="1" X="2"  TextBkColors="White,Red" Name=" 转向架1抱死" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  转向架 2抱死"  Page="0" RelationShip="1" Y="1" X="3"  TextBkColors="White,Red" Name=" 转向架2抱死" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  转向架 制动不缓解"  Page="0" RelationShip="1" Y="1" X="4"  TextBkColors="White,Red" Name=" 制动不缓解" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  一位侧车门关门"  Page="0" RelationShip="0" Y="0" X="1"  TextBkColors="White,Red" Name=" 一位侧车门故障" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  二位侧车门关门"  Page="0" RelationShip="0" Y="0" X="2"  TextBkColors="White,Red" Name=" 二位侧车门故障" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  一位侧车灯"  Page="0" RelationShip="0" Y="0" X="3"  TextBkColors="White,#00FF00" Name=" 一位侧车灯" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  二位侧车灯"  Page="0" RelationShip="0" Y="0" X="4"  TextBkColors="White,#00FF00" Name=" 二位侧车灯" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  紧急制动"  Page="0" RelationShip="2" Y="0" X="6"  TextBkColors="White,Red" Name=" 紧急制动" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  制动力不足"  Page="0" RelationShip="2" Y="1" X="6"  TextBkColors="White,Red" Name=" 制动力不足" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  UVR"  Page="0" RelationShip="2" Y="1" X="7"  TextBkColors="White,Red" Name=" UVR" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  JTR"  Page="0" RelationShip="2" Y="1" X="8"  TextBkColors="White,Red" Name=" JTR" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  紧急蜂鸣器"  Page="0" RelationShip="0" Y="0" X="7"  TextBkColors="White,Red" Name=" 紧急蜂鸣器" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  火灾蜂鸣器"  Page="0" RelationShip="0" Y="0" X="8"  TextBkColors="White,Red" Name=" 火灾蜂鸣器" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  卫生间蜂鸣器"  Page="0" RelationShip="0" Y="0" X="9"  TextBkColors="White,Red" Name=" 卫生间蜂鸣器" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  卫生间1故障"  Page="0" RelationShip="0" Y="1" X="9"  TextBkColors="White,Red" Name=" 卫生间故障" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  设备切除"  Page="0" RelationShip="3" Y="0" X="10"  TextBkColors="White,Red" Name=" 设备切除" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  紧急隔离"  Page="0" RelationShip="3" Y="1" X="11"  TextBkColors="White,Red" Name=" 紧急隔离" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  一位侧门关状态隔离"  Page="0" RelationShip="3" Y="1" X="12"  TextBkColors="White,Red" Name=" 一位侧门状态隔离" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  一位侧门关状态隔离2"  Page="0" RelationShip="3" Y="1" X="13"  TextBkColors="White,Red" Name=" 二位侧门状态隔离" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  停放制动隔离"  Page="0" RelationShip="3" Y="1" X="14"  TextBkColors="White,Red" Name=" 停放制动隔离" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  警惕隔离"  Page="0" RelationShip="3" Y="1" X="17"  TextBkColors="White,Red" Name=" 警惕隔离" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  辅助电源报警切除"  Page="0" RelationShip="0" Y="0" X="13"  TextBkColors="White,Red" Name=" 辅助电源报警切除" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  主故障蜂鸣器切除"  Page="0" RelationShip="0" Y="0" X="16"  TextBkColors="White,Red" Name=" 主故障蜂鸣器切除" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  管路泄露报警"  Page="1" RelationShip="0" Y="0" X="0"  TextBkColors="White,Red" Name="管路泄露报警" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  辅助电源装置故障"  Page="1" RelationShip="0" Y="1" X="1"  TextBkColors="White,Red" Name="辅助电源装置故障" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  辅助电源装置通风"  Page="1" RelationShip="0" Y="1" X="2"  TextBkColors="White,#00FF00" Name="辅助电源装置通风" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  辅助整流装置1"  Page="1" RelationShip="0" Y="1" X="3"  TextBkColors="White,#00FF00" Name="辅助整流装置1" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  辅助整流装置2"  Page="1" RelationShip="0" Y="1" X="4"  TextBkColors="White,#00FF00" Name="辅助整流装置2" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  IVK1"  Page="1" RelationShip="0" Y="1" X="5"  TextBkColors="White,#00FF00" Name="I V K 1" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  辅助变压器"  Page="1" RelationShip="0" Y="1" X="6"  TextBkColors="White,#00FF00" Name="辅助变压器" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  电气设备"  Page="1" RelationShip="1" Y="0" X="7"  TextBkColors="White,#00FF00" Name="电气设备" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  辅助交流电源1"  Page="1" RelationShip="1" Y="1" X="7"  TextBkColors="White,#00FF00" Name="辅助交流电源1" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  辅助交流电源2"  Page="1" RelationShip="1" Y="1" X="8"  TextBkColors="White,#00FF00" Name="辅助交流电源2" />
+                <JackUnit InBoolNames="配电盘信息 / 1车  供排气装置"  Page="1" RelationShip="0" Y="0" X="14"  TextBkColors="White,#00FF00" Name="供排气装置" />
+            </JackOfCars>
+            <JackOfCars CarNo="1">
+                <JackUnit InBoolNames="配电盘信息 / 2车  准备未完"  Page="0" RelationShip="1" Y="0" X="0"  TextBkColors="White,#00FF00" Name="准备未完" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  辅助压缩机"  Page="0" RelationShip="1" Y="1" X="1"  TextBkColors="White,#00FF00" Name="B a t 1接触器" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  Bat1接触器"  Page="0" RelationShip="0" Y="0" X="1"  TextBkColors="White,#00FF00" Name="B a t 2接触器" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  Bat2接触器"  Page="0" RelationShip="2" Y="0" X="2"  TextBkColors="White,Red" Name="转向架" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  转向架"  Page="0" RelationShip="2" Y="1" X="2"  TextBkColors="White,Red" Name="转向架 1轴温" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  转向架 1轴温"  Page="0" RelationShip="2" Y="1" X="3"  TextBkColors="White,Red" Name="转向架 2轴温" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  转向架 2轴温"  Page="0" RelationShip="2" Y="1" X="4"  TextBkColors="White,Red" Name="转向架 1抱死" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  转向架 1抱死"  Page="0" RelationShip="2" Y="1" X="5"  TextBkColors="White,Red" Name="转向架 2抱死" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  转向架 2抱死"  Page="0" RelationShip="2" Y="1" X="6"  TextBkColors="White,Red" Name="转向架 制动不缓解" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  转向架 制动不缓解"  Page="0" RelationShip="2" Y="1" X="7"  TextBkColors="White,Red" Name="转向架 转向架异常" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  一位侧关门"  Page="0" RelationShip="0" Y="0" X="3"  TextBkColors="White,Red" Name="一位侧车门故障" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  二位侧关门"  Page="0" RelationShip="0" Y="0" X="4"  TextBkColors="White,Red" Name="一位侧车门故障" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  一位侧车灯"  Page="0" RelationShip="0" Y="0" X="5"  TextBkColors="White,#00FF00" Name="一位侧车灯" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  二位侧车灯"  Page="0" RelationShip="0" Y="0" X="6"  TextBkColors="White,#00FF00" Name="二位侧车灯" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  空转"  Page="0" RelationShip="0" Y="1" X="8"  TextBkColors="White,Red" Name="空转" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  紧急制动"  Page="0" RelationShip="3" Y="0" X="9"  TextBkColors="White,Red" Name="紧急制动" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  制动力不足"  Page="0" RelationShip="3" Y="1" X="9"  TextBkColors="White,Red" Name="制动力不足" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  UVR"  Page="0" RelationShip="3" Y="1" X="10"  TextBkColors="White,Red" Name="UVR" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  紧急蜂鸣器"  Page="0" RelationShip="0" Y="0" X="10"  TextBkColors="White,Red" Name="紧急蜂鸣器" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  火灾蜂鸣器"  Page="0" RelationShip="0" Y="0" X="11"  TextBkColors="White,Red" Name="火灾蜂鸣器" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  卫生间蜂鸣器"  Page="0" RelationShip="0" Y="0" X="12"  TextBkColors="White,Red" Name="卫生间蜂鸣器" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  卫生间故障"  Page="0" RelationShip="0" Y="1" X="12"  TextBkColors="White,Red" Name="卫生间故障" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  设备切除"  Page="0" RelationShip="4" Y="0" X="13"  TextBkColors="White,Red" Name="设备切除" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  紧急隔离"  Page="0" RelationShip="4" Y="1" X="14"  TextBkColors="White,Red" Name="紧急隔离" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  一位侧门关状态隔离"  Page="0" RelationShip="4" Y="1" X="15"  TextBkColors="White,Red" Name="一位侧门关状态隔离" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  二位侧门关状态隔离2"  Page="0" RelationShip="4" Y="1" X="16"  TextBkColors="White,Red" Name="二位侧门关状态隔离" />
+                <JackUnit InBoolNames="配电盘信息 / 2车 三次电源切除条件"  Page="0" RelationShip="4" Y="1" X="17"  TextBkColors="White,Red" Name="M车切除" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  M车切除"  Page="0" RelationShip="4" Y="1" X="18"  TextBkColors="White,Red" Name="三次电源切换条件" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  VCB切除"  Page="0" RelationShip="4" Y="1" X="19"  TextBkColors="White,Red" Name="VCB切除" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  水箱0%"  Page="0" RelationShip="0" Y="0" X="14"  TextBkColors="White,Red" Name="水箱0%" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  水箱25%"  Page="0" RelationShip="0" Y="0" X="15"  TextBkColors="White,Red" Name="水箱25%" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  蓄电池报警切除"  Page="0" RelationShip="0" Y="0" X="18"  TextBkColors="White,Red" Name="蓄电池报警切除" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  主故障蜂鸣器切除"  Page="0" RelationShip="0" Y="0" X="19"  TextBkColors="White,Red" Name="主故障蜂鸣器切除" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  VCB"  Page="1" RelationShip="1" Y="0" X="0"  TextBkColors="White,Red" Name="VCB" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  VCB2"  Page="1" RelationShip="1" Y="1" X="0"  TextBkColors="White,Red" Name="VCB" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  一次侧过电流"  Page="1" RelationShip="1" Y="1" X="1"  TextBkColors="White,Red" Name="一次侧过电流" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  三次侧接地"  Page="1" RelationShip="1" Y="1" X="2"  TextBkColors="White,Red" Name="三次侧接地" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  三次侧过电流"  Page="1" RelationShip="1" Y="1" X="3"  TextBkColors="White,Red" Name="三次侧过电流" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  空挡"  Page="1" RelationShip="0" Y="0" X="1"  TextBkColors="White,#00FF00" Name="空挡" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  三次电源供电条件"  Page="1" RelationShip="0" Y="0" X="2"  TextBkColors="White,#00FF00" Name="三次电源供电条件" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  管路泄露报警"  Page="1" RelationShip="0" Y="0" X="3"  TextBkColors="White,Red" Name="管路泄露报警" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  电气设备"  Page="1" RelationShip="2" Y="0" X="9"  TextBkColors="White,Red" Name="电气设备" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  牵引电机温度高"  Page="1" RelationShip="2" Y="1" X="12"  TextBkColors="White,Red" Name="牵引电机温度高" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  主电路接地"  Page="1" RelationShip="2" Y="1" X="13"  TextBkColors="White,#00FF00" Name="主电路接地" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  CI故障"  Page="1" RelationShip="2" Y="1" X="14"  TextBkColors="White,Red" Name="C I故障" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  CI微机故障"  Page="1" RelationShip="2" Y="1" X="15"  TextBkColors="White,Red" Name="C I微机故障" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  CIBM故障"  Page="1" RelationShip="2" Y="1" X="16"  TextBkColors="White,Red" Name="C IBM故障" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  MMBM1故障"  Page="1" RelationShip="2" Y="1" X="17"  TextBkColors="White,Red" Name="MMBM1故障" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  MMBM2故障"  Page="1" RelationShip="2" Y="1" X="18"  TextBkColors="White,Red" Name="MMBM2故障" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  MTr温度"  Page="1" RelationShip="2" Y="1" X="19"  TextBkColors="White,#00FF00" Name="M T r温度" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  MTr油流"  Page="1" RelationShip="2" Y="1" X="20"  TextBkColors="White,#00FF00" Name="M T r油流" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  MTr油泵"  Page="1" RelationShip="2" Y="0" X="11"  TextBkColors="White,#00FF00" Name="M T r油泵" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  MTr切除"  Page="1" RelationShip="0" Y="0" X="12"  TextBkColors="White,Red" Name="M T r切除" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  无电压"  Page="1" RelationShip="0" Y="0" X="13"  TextBkColors="White,#00FF00" Name="无电压" />
+                <JackUnit InBoolNames="配电盘信息 / 2车  供排气装置"  Page="1" RelationShip="0" Y="0" X="18"  TextBkColors="White,#00FF00" Name="供排气装置" />
+            </JackOfCars>
+            <JackOfCars CarNo="2">
+                <JackUnit InBoolNames="配电盘信息 / 3车  准备未完"  Page="0" RelationShip="1" Y="0" X="0"  TextBkColors="White,#00FF00" Name="准备未完" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  Bat1接触器"  Page="0" RelationShip="1" Y="1" X="1"  TextBkColors="White,#00FF00" Name="B a t 1接触器" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  Bat2接触器"  Page="0" RelationShip="0" Y="0" X="1"  TextBkColors="White,#00FF00" Name="B a t 2接触器" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  转向架"  Page="0" RelationShip="2" Y="0" X="2"  TextBkColors="White,Red" Name="转向架" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  转向架 1轴温"  Page="0" RelationShip="2" Y="1" X="2"  TextBkColors="White,Red" Name="转向架 1轴温" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  转向架 2轴温"  Page="0" RelationShip="2" Y="1" X="3"  TextBkColors="White,Red" Name="转向架 2轴温" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  转向架 1抱死"  Page="0" RelationShip="2" Y="1" X="4"  TextBkColors="White,Red" Name="转向架 1抱死" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  转向架 2抱死"  Page="0" RelationShip="2" Y="1" X="5"  TextBkColors="White,Red" Name="转向架 2抱死" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  转向架 制动不缓解"  Page="0" RelationShip="2" Y="1" X="6"  TextBkColors="White,Red" Name="制动不缓解" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  转向架 转向架异常"  Page="0" RelationShip="2" Y="1" X="7"  TextBkColors="White,Red" Name="转向架异常" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  一位侧关门"  Page="0" RelationShip="0" Y="0" X="3"  TextBkColors="White,Red" Name="一位侧车门故障" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  二位侧关门"  Page="0" RelationShip="0" Y="0" X="4"  TextBkColors="White,Red" Name="二位侧车门故障" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  一位侧车灯"  Page="0" RelationShip="0" Y="0" X="5"  TextBkColors="White,#00FF00" Name="一位侧车灯" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  二位侧车灯"  Page="0" RelationShip="0" Y="0" X="6"  TextBkColors="White,#00FF00" Name="二位侧车灯" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  空转"  Page="0" RelationShip="0" Y="1" X="8"  TextBkColors="White,Red" Name="空转" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  紧急制动"  Page="0" RelationShip="3" Y="0" X="9"  TextBkColors="White,Red" Name="紧急制动" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  制动力不足"  Page="0" RelationShip="3" Y="1" X="9"  TextBkColors="White,Red" Name="制动力不足" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  UVR"  Page="0" RelationShip="3" Y="1" X="10"  TextBkColors="White,Red" Name="UVR" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  紧急蜂鸣器"  Page="0" RelationShip="0" Y="0" X="10"  TextBkColors="White,Red" Name="紧急蜂鸣器" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  火灾蜂鸣器"  Page="0" RelationShip="0" Y="0" X="11"  TextBkColors="White,Red" Name="火灾蜂鸣器" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  卫生间蜂鸣器"  Page="0" RelationShip="0" Y="0" X="12"  TextBkColors="White,Red" Name="卫生间蜂鸣器" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  卫生间1故障"  Page="0" RelationShip="0" Y="1" X="12"  TextBkColors="White,Red" Name="卫生间故障" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  设备切除"  Page="0" RelationShip="4" Y="0" X="13"  TextBkColors="White,Red" Name="设备切除" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  紧急隔离"  Page="0" RelationShip="4" Y="1" X="14"  TextBkColors="White,Red" Name="紧急隔离" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  一位侧门关状态隔离"  Page="0" RelationShip="4" Y="1" X="15"  TextBkColors="White,Red" Name="一位侧门关状态隔离" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  二位侧门关状态隔离"  Page="0" RelationShip="4" Y="1" X="16"  TextBkColors="White,Red" Name="二位侧门关状态隔离" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  压缩机切除"  Page="0" RelationShip="4" Y="1" X="18"  TextBkColors="White,Red" Name="压缩机切除" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  M车切除"  Page="0" RelationShip="4" Y="1" X="19"  TextBkColors="White,Red" Name="M车切除" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  水箱0%"  Page="0" RelationShip="0" Y="0" X="14"  TextBkColors="White,Red" Name="水箱0%" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  水箱25%"  Page="0" RelationShip="0" Y="0" X="15"  TextBkColors="White,Red" Name="水箱25%" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  蓄电池报警切除"  Page="0" RelationShip="0" Y="0" X="18"  TextBkColors="White,Red" Name="蓄电池报警切除" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  主故障蜂鸣器切除"  Page="0" RelationShip="0" Y="0" X="19"  TextBkColors="White,Red" Name="主故障蜂鸣器切除" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  空挡"  Page="1" RelationShip="0" Y="0" X="0"  TextBkColors="White,#00FF00" Name="空挡" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  管路泄露报警"  Page="1" RelationShip="0" Y="0" X="2"  TextBkColors="White,Red" Name="管路泄露报警" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  电气设备"  Page="1" RelationShip="1" Y="0" X="8"  TextBkColors="White,#00FF00" Name="电气设备" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  牵引电机温度高"  Page="1" RelationShip="1" Y="1" X="10"  TextBkColors="White,Red" Name="牵引电机温度高" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  主电路接地"  Page="1" RelationShip="1" Y="1" X="11"  TextBkColors="White,Red" Name="主电路接地" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  CI故障"  Page="1" RelationShip="1" Y="1" X="12"  TextBkColors="White,Red" Name="C I故障" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  CI微机故障"  Page="1" RelationShip="1" Y="1" X="13"  TextBkColors="White,Red" Name="C I微机故障" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  CIBM故障"  Page="1" RelationShip="1" Y="1" X="14"  TextBkColors="White,Red" Name="C I BM故障" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  MMBM1故障"  Page="1" RelationShip="1" Y="1" X="15"  TextBkColors="White,Red" Name="MMBM1故障" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  MMBM2故障"  Page="1" RelationShip="1" Y="1" X="16"  TextBkColors="White,Red" Name="MMBM2故障" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  压缩机"  Page="1" RelationShip="0" Y="0" X="15"  TextBkColors="White,#00FF00" Name="压缩机" />
+                <JackUnit InBoolNames="配电盘信息 / 3车  供排气装置"  Page="1" RelationShip="0" Y="0" X="16"  TextBkColors="White,#00FF00" Name="供排气装置" />
+            </JackOfCars>
+            <JackOfCars CarNo="3">
+                <JackUnit InBoolNames="配电盘信息 / 4车  准备未完成"  Page="0" RelationShip="1" Y="0" X="0"  TextBkColors="White,#00FF00" Name="准备未完成" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  辅助压缩机"  Page="0" RelationShip="1" Y="1" X="0"  TextBkColors="White,#00FF00" Name="辅助压缩机" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  转向架"  Page="0" RelationShip="2" Y="0" X="2"  TextBkColors="White,Red" Name="转向架" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  转向架 1轴温"  Page="0" RelationShip="2" Y="1" X="2"  TextBkColors="White,Red" Name="转向架 1轴温" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  转向架 2轴温"  Page="0" RelationShip="2" Y="1" X="3"  TextBkColors="White,Red" Name="转向架 2轴温" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  转向架 1抱死"  Page="0" RelationShip="2" Y="1" X="4"  TextBkColors="White,Red" Name="转向架 1抱死" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  转向架 2抱死"  Page="0" RelationShip="2" Y="1" X="5"  TextBkColors="White,Red" Name="转向架 2抱死" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  转向架 制动不缓解"  Page="0" RelationShip="2" Y="1" X="6"  TextBkColors="White,Red" Name="制动不缓解" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  转向架 转向架异常"  Page="0" RelationShip="2" Y="1" X="7"  TextBkColors="White,Red" Name="转向架异常" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  一位侧关门"  Page="0" RelationShip="0" Y="0" X="3"  TextBkColors="White,Red" Name="一位侧车门故障" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  二位侧关门"  Page="0" RelationShip="0" Y="0" X="4"  TextBkColors="White,Red" Name="二位侧车门故障" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  一位侧车灯"  Page="0" RelationShip="0" Y="0" X="5"  TextBkColors="White,#00FF00" Name="一位侧车灯" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  二位侧车灯"  Page="0" RelationShip="0" Y="0" X="6"  TextBkColors="White,#00FF00" Name="二位侧车灯" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  紧急制动"  Page="0" RelationShip="3" Y="0" X="9"  TextBkColors="White,Red" Name="紧急制动" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  制动力不足"  Page="0" RelationShip="3" Y="1" X="9"  TextBkColors="White,Red" Name="制动力不足" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  UVR"  Page="0" RelationShip="3" Y="1" X="10"  TextBkColors="White,Red" Name="UVR" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  紧急蜂鸣器"  Page="0" RelationShip="0" Y="0" X="10"  TextBkColors="White,Red" Name="紧急蜂鸣器" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  火灾蜂鸣器"  Page="0" RelationShip="0" Y="0" X="11"  TextBkColors="White,Red" Name="火灾蜂鸣器" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  卫生间蜂鸣器"  Page="0" RelationShip="0" Y="0" X="12"  TextBkColors="White,Red" Name="卫生间蜂鸣器" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  卫生间故障"  Page="0" RelationShip="0" Y="1" X="12"  TextBkColors="White,Red" Name="卫生间故障" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  设备切除"  Page="0" RelationShip="4" Y="0" X="13"  TextBkColors="White,Red" Name="设备切除" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  受电弓切除"  Page="0" RelationShip="4" Y="1" X="13"  TextBkColors="White,Red" Name="受电弓切除" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  紧急隔离"  Page="0" RelationShip="4" Y="1" X="14"  TextBkColors="White,Red" Name="紧急隔离" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  一位侧门关状态隔离"  Page="0" RelationShip="4" Y="1" X="15"  TextBkColors="White,Red" Name="一位侧门关状态隔离" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  二位侧门关状态隔离"  Page="0" RelationShip="4" Y="1" X="16"  TextBkColors="White,Red" Name="二位侧门关状态隔离" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  停放制动隔离"  Page="0" RelationShip="4" Y="1" X="17"  TextBkColors="White,Red" Name="停放制动隔离" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  水箱0%"  Page="0" RelationShip="0" Y="0" X="14"  TextBkColors="White,Red" Name="水箱0%" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  水箱25%"  Page="0" RelationShip="0" Y="0" X="15"  TextBkColors="White,Red" Name="水箱25%" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  辅助压缩机报警切除"  Page="0" RelationShip="0" Y="0" X="17"  TextBkColors="White,Red" Name="辅助压缩机报警切除" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  主故障蜂鸣器切除"  Page="0" RelationShip="0" Y="0" X="19"  TextBkColors="White,Red" Name="主故障蜂鸣器切除" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  管路泄露报警"  Page="1" RelationShip="0" Y="0" X="0"  TextBkColors="White,Red" Name="管路泄露报警" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  电气设备"  Page="1" RelationShip="1" Y="0" X="5"  TextBkColors="White,#00FF00" Name="电气设备" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  EGS"  Page="1" RelationShip="1" Y="1" X="15"  TextBkColors="White,#00FF00" Name="EGS" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  受电弓隔离开关"  Page="1" RelationShip="0" Y="0" X="9"  TextBkColors="White,Red" Name="受电弓隔离开关" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  受电弓上升检测"  Page="1" RelationShip="0" Y="0" X="10"  TextBkColors="White,#00FF00" Name="受电弓上升检测" />
+                <JackUnit InBoolNames="配电盘信息 / 4车  供排气装置"  Page="1" RelationShip="0" Y="0" X="12"  TextBkColors="White,#00FF00" Name="供排气装置" />
+            </JackOfCars>
+            <JackOfCars CarNo="4">
+                <JackUnit InBoolNames="配电盘信息 / 5车  准备未完"  Page="0" RelationShip="1" Y="0" X="0"  TextBkColors="White,#00FF00" Name="准备未完" />
+                <JackUnit InBoolNames="配电盘信息 / 5车  Bat1接触器"  Page="0" RelationShip="1" Y="1" X="1"  TextBkColors="White,#00FF00" Name="B a t 1接触器" />
+                <JackUnit InBoolNames="配电盘信息 / 5车  Bat2接触器"  Page="0" RelationShip="0" Y="0" X="1"  TextBkColors="White,#00FF00" Name="B a t 2接触器" />
+                <JackUnit InBoolNames="配电盘信息 / 5车  转向架"  Page="0" RelationShip="2" Y="0" X="2"  TextBkColors="White,Red" Name="转向架" />
+                <JackUnit InBoolNames="配电盘信息 / 5车  转向架 1轴温"  Page="0" RelationShip="2" Y="1" X="2"  TextBkColors="White,Red" Name="转向架 1轴温" />
+                <JackUnit InBoolNames="配电盘信息 / 5车  转向架 2轴温"  Page="0" RelationShip="2" Y="1" X="3"  TextBkColors="White,Red" Name="转向架 2轴温" />
+                <JackUnit InBoolNames="配电盘信息 / 5车  转向架 1抱死"  Page="0" RelationShip="2" Y="1" X="4"  TextBkColors="White,Red" Name="转向架 1抱死" />
+                <JackUnit InBoolNames="配电盘信息 / 5车  转向架 2抱死"  Page="0" RelationShip="2" Y="1" X="5"  TextBkColors="White,Red" Name="转向架 2抱死" />
+                <JackUnit InBoolNames="配电盘信息 / 5车  转向架 制动不缓解"  Page="0" RelationShip="2" Y="1" X="6"  TextBkColors="White,Red" Name="制动不缓解" />
+                <JackUnit InBoolNames="配电盘信息 / 5车  转向架 转向架异常"  Page="0" RelationShip="2" Y="1" X="7"  TextBkColors="White,Red" Name="转向架异常" />
+                <JackUnit InBoolNames="配电盘信息 / 5车  一位侧关门"  Page="0" RelationShip="0" Y="0" X="3"  TextBkColors="White,Red" Name="一位侧车门故障" />
+                <JackUnit InBoolNames="配电盘信息 / 5车  二位侧关门"  Page="0" RelationShip="0" Y="0" X="4"  TextBkColors="White,Red" Name="二位侧车门故障" />
+                <JackUnit InBoolNames="配电盘信息 / 5车  一位侧车灯"  Page="0" RelationShip="0" Y="0" X="5"  TextBkColors="White,#00FF00" Name="一位侧车灯" />
+                <JackUnit InBoolNames="配电盘信息 / 5车  二位侧车灯"  Page="0" RelationShip="0" Y="0" X="6"  TextBkColors="White,#00FF00" Name="二位侧车灯" />
+                <JackUnit InBoolNames="配电盘信息 / 5车  紧急制动"  Page="0" RelationShip="3" Y="0" X="9"  TextBkColors="White,Red" Name="紧急制动" />
+                <JackUnit InBoolNames="配电盘信息 / 5车  制动力不足"  Page="0" RelationShip="3" Y="1" X="9"  TextBkColors="White,Red" Name="制动力不足" />
+                <JackUnit InBoolNames="配电盘信息 / 5车  UVR"  Page="0" RelationShip="3" Y="1" X="10"  TextBkColors="White,Red" Name="UVR" />
+                <JackUnit InBoolNames="配电盘信息 / 5车  紧急蜂鸣器"  Page="0" RelationShip="0" Y="0" X="10"  TextBkColors="White,Red" Name="紧急蜂鸣器" />
+                <JackUnit InBoolNames="配电盘信息 / 5车  火灾蜂鸣器"  Page="0" RelationShip="0" Y="0" X="11"  TextBkColors="White,Red" Name="火灾蜂鸣器" />
+                <JackUnit InBoolNames="配电盘信息 / 5车  设备切除"  Page="0" RelationShip="4" Y="0" X="13"  TextBkColors="White,Red" Name="设备切除" />
+                <JackUnit InBoolNames="配电盘信息 / 5车  紧急隔离"  Page="0" RelationShip="4" Y="1" X="14"  TextBkColors="White,Red" Name="紧急隔离" />
+                <JackUnit InBoolNames="配电盘信息 / 5车  一位侧门关状态隔离"  Page="0" RelationShip="4" Y="1" X="15"  TextBkColors="White,Red" Name="一位侧门关状态隔离" />
+                <JackUnit InBoolNames="配电盘信息 / 5车  二位侧门关状态隔离"  Page="0" RelationShip="4" Y="1" X="16"  TextBkColors="White,Red" Name="二位侧门关状态隔离" />
+                <JackUnit InBoolNames="配电盘信息 / 5车  停放制动隔离"  Page="0" RelationShip="4" Y="1" X="17"  TextBkColors="White,Red" Name="停放制动隔离" />
+                <JackUnit InBoolNames="配电盘信息 / 5车  压缩机切除"  Page="0" RelationShip="4" Y="1" X="18"  TextBkColors="White,Red" Name="压缩机切除" />
+                <JackUnit InBoolNames="配电盘信息 / 5车  水箱0%"  Page="0" RelationShip="0" Y="0" X="14"  TextBkColors="White,Red" Name="水箱0%" />
+                <JackUnit InBoolNames="配电盘信息 / 5车  水箱25%"  Page="0" RelationShip="0" Y="0" X="15"  TextBkColors="White,Red" Name="水箱25%" />
+                <JackUnit InBoolNames="配电盘信息 / 5车  蓄电池报警切除"  Page="0" RelationShip="0" Y="0" X="18"  TextBkColors="White,Red" Name="蓄电池报警切除" />
+                <JackUnit InBoolNames="配电盘信息 / 5车  主故障蜂鸣器切除"  Page="0" RelationShip="0" Y="0" X="19"  TextBkColors="White,Red" Name="主故障蜂鸣器切除" />
+                <JackUnit InBoolNames="配电盘信息 / 5车  管路泄露报警"  Page="1" RelationShip="0" Y="0" X="1"  TextBkColors="White,Red" Name="管路泄露报警" />
+                <JackUnit InBoolNames="配电盘信息 / 5车  压缩机"  Page="1" RelationShip="0" Y="0" X="9"  TextBkColors="White,#00FF00" Name="压缩机" />
+                <JackUnit InBoolNames="配电盘信息 / 5车  供排气装置"  Page="1" RelationShip="0" Y="0" X="10"  TextBkColors="White,#00FF00" Name="供排气装置" />
+            </JackOfCars>
+            <JackOfCars CarNo="5">
+                <JackUnit InBoolNames="配电盘信息 / 6车  准备未完成"  Page="0" RelationShip="1" Y="0" X="0"  TextBkColors="White,#00FF00" Name="准备未完成" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  辅助压缩机"  Page="0" RelationShip="1" Y="1" X="0"  TextBkColors="White,#00FF00" Name="辅助压缩机" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  转向架"  Page="0" RelationShip="2" Y="0" X="2"  TextBkColors="White,Red" Name="转向架" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  转向架 1轴温"  Page="0" RelationShip="2" Y="1" X="2"  TextBkColors="White,Red" Name="转向架 1轴温" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  转向架 2轴温"  Page="0" RelationShip="2" Y="1" X="3"  TextBkColors="White,Red" Name="转向架 2轴温" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  转向架 1抱死"  Page="0" RelationShip="2" Y="1" X="4"  TextBkColors="White,Red" Name="转向架 1抱死" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  转向架 2抱死"  Page="0" RelationShip="2" Y="1" X="5"  TextBkColors="White,Red" Name="转向架 2抱死" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  转向架 制动不缓解"  Page="0" RelationShip="2" Y="1" X="6"  TextBkColors="White,Red" Name="制动不缓解" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  转向架 转向架异常"  Page="0" RelationShip="2" Y="1" X="7"  TextBkColors="White,Red" Name="转向架异常" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  一位侧关门"  Page="0" RelationShip="0" Y="0" X="3"  TextBkColors="White,Red" Name="一位侧车门故障" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  二位侧关门"  Page="0" RelationShip="0" Y="0" X="4"  TextBkColors="White,Red" Name="一位侧车门故障" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  一位侧车灯"  Page="0" RelationShip="0" Y="0" X="5"  TextBkColors="White,#00FF00" Name="一位侧车灯" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  二位侧车灯"  Page="0" RelationShip="0" Y="0" X="6"  TextBkColors="White,#00FF00" Name="二位侧车灯" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  空转"  Page="0" RelationShip="0" Y="1" X="8"  TextBkColors="White,Red" Name="空转" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  紧急制动"  Page="0" RelationShip="3" Y="0" X="9"  TextBkColors="White,Red" Name="紧急制动" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  制动力不足"  Page="0" RelationShip="3" Y="1" X="9"  TextBkColors="White,Red" Name="制动力不足" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  UVR"  Page="0" RelationShip="3" Y="1" X="10"  TextBkColors="White,Red" Name="UVR" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  紧急蜂鸣器"  Page="0" RelationShip="0" Y="0" X="10"  TextBkColors="White,Red" Name="紧急蜂鸣器" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  火灾蜂鸣器"  Page="0" RelationShip="0" Y="0" X="11"  TextBkColors="White,Red" Name="火灾蜂鸣器" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  卫生间蜂鸣器"  Page="0" RelationShip="0" Y="0" X="12"  TextBkColors="White,Red" Name="卫生间蜂鸣器" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  卫生间故障"  Page="0" RelationShip="0" Y="1" X="12"  TextBkColors="White,Red" Name="卫生间故障" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  设备切除"  Page="0" RelationShip="4" Y="0" X="13"  TextBkColors="White,Red" Name="设备切除" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  受电弓切除"  Page="0" RelationShip="4" Y="1" X="13"  TextBkColors="White,Red" Name="受电弓切除" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  紧急隔离"  Page="0" RelationShip="4" Y="1" X="14"  TextBkColors="White,Red" Name="紧急隔离" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  一位侧门关状态隔离"  Page="0" RelationShip="4" Y="1" X="15"  TextBkColors="White,Red" Name="一位侧门关状态隔离" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  二位侧门关状态隔离2"  Page="0" RelationShip="4" Y="1" X="16"  TextBkColors="White,Red" Name="二位侧门关状态隔离" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  M车切除"  Page="0" RelationShip="4" Y="1" X="18"  TextBkColors="White,Red" Name="M车切除" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  三次电源切换条件"  Page="0" RelationShip="4" Y="1" X="19"  TextBkColors="White,Red" Name="三次电源切换条件" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  VCB切除"  Page="0" RelationShip="4" Y="1" X="20"  TextBkColors="White,Red" Name="V C B 切除" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  水箱0%"  Page="0" RelationShip="0" Y="0" X="14"  TextBkColors="White,Red" Name="水箱0%" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  水箱25%"  Page="0" RelationShip="0" Y="0" X="15"  TextBkColors="White,Red" Name="水箱25%" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  辅助压缩机报警切除"  Page="0" RelationShip="0" Y="0" X="17"  TextBkColors="White,Red" Name="辅助压缩机报警切除" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  主故障蜂鸣器切除"  Page="0" RelationShip="0" Y="0" X="19"  TextBkColors="White,Red" Name="主故障蜂鸣器切除" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  VCB"  Page="1" RelationShip="1" Y="0" X="0"  TextBkColors="White,Red" Name="VCB" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  VCB2"  Page="1" RelationShip="1" Y="1" X="0"  TextBkColors="White,Red" Name="VCB" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  一次侧过电流"  Page="1" RelationShip="1" Y="1" X="1"  TextBkColors="White,Red" Name="一次侧过电流" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  三次侧接地"  Page="1" RelationShip="1" Y="1" X="2"  TextBkColors="White,Red" Name="三次侧接地" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  三次侧过电流"  Page="1" RelationShip="1" Y="1" X="3"  TextBkColors="White,Red" Name="三次侧过电流" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  空挡"  Page="1" RelationShip="0" Y="0" X="1"  TextBkColors="White,#00FF00" Name="空挡" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  三次电源供电条件"  Page="1" RelationShip="0" Y="0" X="2"  TextBkColors="White,#00FF00" Name="三次电源供电条件" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  管路泄露报警"  Page="1" RelationShip="0" Y="0" X="3"  TextBkColors="White,Red" Name="管路泄露报警" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  牵引电机温度高"  Page="1" RelationShip="2" Y="1" X="12"  TextBkColors="White,#00FF00" Name="牵引电机温度高" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  电气设备"  Page="1" RelationShip="2" Y="0" X="9"  TextBkColors="White,#00FF00" Name="电气设备" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  主电路接地"  Page="1" RelationShip="2" Y="1" X="13"  TextBkColors="White,#00FF00" Name="主电路接地" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  CI故障"  Page="1" RelationShip="2" Y="1" X="14"  TextBkColors="White,Red" Name="C I故障" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  CI微机故障"  Page="1" RelationShip="2" Y="1" X="15"  TextBkColors="White,Red" Name="C I微机故障" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  CIBM故障"  Page="1" RelationShip="2" Y="1" X="16"  TextBkColors="White,Red" Name="C IBM故障" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  MMBM1故障"  Page="1" RelationShip="2" Y="1" X="17"  TextBkColors="White,Red" Name="MMBM1故障" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  MMBM2故障"  Page="1" RelationShip="2" Y="1" X="18"  TextBkColors="White,Red" Name="MMBM2故障" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  MTr温度"  Page="1" RelationShip="2" Y="1" X="19"  TextBkColors="White,#00FF00" Name="M T r温度" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  MTr油流"  Page="1" RelationShip="2" Y="1" X="20"  TextBkColors="White,#00FF00" Name="M T r油流" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  EGS"  Page="1" RelationShip="0" Y="1" X="21"  TextBkColors="White,#00FF00" Name="E G S" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  MTr油泵"  Page="1" RelationShip="0" Y="0" X="11"  TextBkColors="White,#00FF00" Name="M T r油泵" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  MTr切除"  Page="1" RelationShip="0" Y="0" X="12"  TextBkColors="White,Red" Name="M T r切除" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  无电压"  Page="1" RelationShip="0" Y="0" X="13"  TextBkColors="White,#00FF00" Name="无电压" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  受电弓隔离开关"  Page="1" RelationShip="0" Y="0" X="15"  TextBkColors="White,Red" Name="受电弓隔离开关" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  受电弓上升检测"  Page="1" RelationShip="0" Y="0" X="16"  TextBkColors="White,#00FF00" Name="受电弓上升检测" />
+                <JackUnit InBoolNames="配电盘信息 / 6车  供排气装置"  Page="1" RelationShip="0" Y="0" X="18"  TextBkColors="White,#00FF00" Name="供排气装置" />
+            </JackOfCars>
+            <JackOfCars CarNo="6">
+                <JackUnit InBoolNames="配电盘信息 / 7车  准备未完"  Page="0" RelationShip="1" Y="0" X="0"  TextBkColors="White,#00FF00" Name="准备未完" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  Bat1接触器"  Page="0" RelationShip="1" Y="1" X="1"  TextBkColors="White,#00FF00" Name="B a t 1接触器" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  Bat2接触器"  Page="0" RelationShip="0" Y="0" X="1"  TextBkColors="White,#00FF00" Name="B a t 2接触器" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  转向架"  Page="0" RelationShip="2" Y="0" X="2"  TextBkColors="White,Red" Name="转向架" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  转向架 1轴温"  Page="0" RelationShip="2" Y="1" X="2"  TextBkColors="White,Red" Name="转向架 1轴温" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  转向架 2轴温"  Page="0" RelationShip="2" Y="1" X="3"  TextBkColors="White,Red" Name="转向架 2轴温" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  转向架 1抱死"  Page="0" RelationShip="2" Y="1" X="4"  TextBkColors="White,Red" Name="转向架 1抱死" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  转向架 2抱死"  Page="0" RelationShip="2" Y="1" X="5"  TextBkColors="White,Red" Name="转向架 2抱死" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  转向架 制动不缓解"  Page="0" RelationShip="2" Y="1" X="6"  TextBkColors="White,Red" Name="制动不缓解" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  转向架 转向架异常"  Page="0" RelationShip="2" Y="1" X="7"  TextBkColors="White,Red" Name="转向架异常" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  一位侧关门"  Page="0" RelationShip="0" Y="0" X="3"  TextBkColors="White,Red" Name="一位侧车门故障" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  二位侧关门"  Page="0" RelationShip="0" Y="0" X="4"  TextBkColors="White,Red" Name="二位侧车门故障" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  一位侧车灯"  Page="0" RelationShip="0" Y="0" X="5"  TextBkColors="White,#00FF00" Name="一位侧车灯" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  二位侧车灯"  Page="0" RelationShip="0" Y="0" X="6"  TextBkColors="White,#00FF00" Name="二位侧车灯" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  空转"  Page="0" RelationShip="0" Y="1" X="8"  TextBkColors="White,Red" Name="空转" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  紧急制动"  Page="0" RelationShip="3" Y="0" X="9"  TextBkColors="White,Red" Name="紧急制动" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  制动力不足"  Page="0" RelationShip="3" Y="1" X="9"  TextBkColors="White,Red" Name="制动力不足" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  UVR"  Page="0" RelationShip="3" Y="1" X="10"  TextBkColors="White,Red" Name="UVR" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  紧急蜂鸣器"  Page="0" RelationShip="0" Y="0" X="10"  TextBkColors="White,Red" Name="紧急蜂鸣器" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  火灾蜂鸣器"  Page="0" RelationShip="0" Y="0" X="11"  TextBkColors="White,Red" Name="火灾蜂鸣器" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  卫生间蜂鸣器"  Page="0" RelationShip="0" Y="0" X="12"  TextBkColors="White,Red" Name="卫生间蜂鸣器" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  卫生间1故障"  Page="0" RelationShip="0" Y="1" X="12"  TextBkColors="White,Red" Name="卫生间故障" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  设备切除"  Page="0" RelationShip="4" Y="0" X="13"  TextBkColors="White,Red" Name="设备切除" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  紧急隔离"  Page="0" RelationShip="4" Y="1" X="14"  TextBkColors="White,Red" Name="紧急隔离" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  一位侧门关状态隔离"  Page="0" RelationShip="4" Y="1" X="15"  TextBkColors="White,Red" Name="一位侧门关状态隔离" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  二位侧门关状态隔离"  Page="0" RelationShip="4" Y="1" X="16"  TextBkColors="White,Red" Name="二位侧门关状态隔离" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  压缩机切除"  Page="0" RelationShip="4" Y="1" X="18"  TextBkColors="White,Red" Name="压缩机切除" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  M车切除"  Page="0" RelationShip="4" Y="1" X="19"  TextBkColors="White,Red" Name="M车切除" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  水箱0%"  Page="0" RelationShip="0" Y="0" X="14"  TextBkColors="White,Red" Name="水箱0%" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  水箱25%"  Page="0" RelationShip="0" Y="0" X="15"  TextBkColors="White,Red" Name="水箱25%" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  蓄电池报警切除"  Page="0" RelationShip="0" Y="0" X="18"  TextBkColors="White,Red" Name="蓄电池报警切除" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  主故障蜂鸣器切除"  Page="0" RelationShip="0" Y="0" X="19"  TextBkColors="White,Red" Name="主故障蜂鸣器切除" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  空挡"  Page="1" RelationShip="0" Y="0" X="0"  TextBkColors="White,#00FF00" Name="空挡" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  管路泄露报警"  Page="1" RelationShip="0" Y="0" X="2"  TextBkColors="White,Red" Name="管路泄露报警" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  电气设备"  Page="1" RelationShip="1" Y="0" X="8"  TextBkColors="White,#00FF00" Name="电气设备" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  牵引电机温度高"  Page="1" RelationShip="1" Y="1" X="10"  TextBkColors="White,#00FF00" Name="牵引电机温度高" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  主电路接地"  Page="1" RelationShip="1" Y="1" X="11"  TextBkColors="White,#00FF00" Name="主电路接地" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  CI故障"  Page="1" RelationShip="1" Y="1" X="12"  TextBkColors="White,Red" Name="C I故障" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  CI微机故障"  Page="1" RelationShip="1" Y="1" X="13"  TextBkColors="White,Red" Name="C I微机故障" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  CIBM故障"  Page="1" RelationShip="1" Y="1" X="14"  TextBkColors="White,Red" Name="C I BM故障" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  MMBM1故障"  Page="1" RelationShip="1" Y="1" X="15"  TextBkColors="White,Red" Name="MMBM1故障" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  MMBM2故障"  Page="1" RelationShip="1" Y="1" X="16"  TextBkColors="White,Red" Name="MMBM2故障" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  压缩机"  Page="1" RelationShip="0" Y="0" X="15"  TextBkColors="White,#00FF00" Name="压缩机" />
+                <JackUnit InBoolNames="配电盘信息 / 7车  供排气装置"  Page="1" RelationShip="0" Y="0" X="16"  TextBkColors="White,#00FF00" Name="供排气装置" />
+            </JackOfCars>
+            <JackOfCars CarNo="7">
+                <JackUnit InBoolNames="配电盘信息 / 8车  转向架"  Page="0" RelationShip="1" Y="0" X="0"  TextBkColors="White,Red" Name=" 转向架" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  转向架 1轴温"  Page="0" RelationShip="1" Y="1" X="0"  TextBkColors="White,Red" Name=" 转向架1轴温" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  转向架 2轴温"  Page="0" RelationShip="1" Y="1" X="1"  TextBkColors="White,Red" Name=" 转向架2轴温" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  转向架 1抱死"  Page="0" RelationShip="1" Y="1" X="2"  TextBkColors="White,Red" Name=" 转向架1抱死" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  转向架 2抱死"  Page="0" RelationShip="1" Y="1" X="3"  TextBkColors="White,Red" Name=" 转向架2抱死" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  转向架 制动不缓解"  Page="0" RelationShip="1" Y="1" X="4"  TextBkColors="White,Red" Name=" 制动不缓解" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  转向架 转向架异常"  Page="0" RelationShip="1" Y="1" X="5"  TextBkColors="White,Red" Name=" 转向架异常" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  一位侧关门"  Page="0" RelationShip="0" Y="0" X="1"  TextBkColors="White,Red" Name=" 一位侧车门故障" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  二位侧关门"  Page="0" RelationShip="0" Y="0" X="2"  TextBkColors="White,Red" Name=" 二位侧车门故障" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  一位侧车灯"  Page="0" RelationShip="0" Y="0" X="3"  TextBkColors="White,#00FF00" Name=" 一位侧车灯" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  二位侧车灯"  Page="0" RelationShip="0" Y="0" X="4"  TextBkColors="White,#00FF00" Name=" 二位侧车灯" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  紧急制动"  Page="0" RelationShip="2" Y="0" X="7"  TextBkColors="White,Red" Name=" 紧急制动" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  制动力不足"  Page="0" RelationShip="2" Y="1" X="7"  TextBkColors="White,Red" Name=" 制动力不足" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  UVR"  Page="0" RelationShip="2" Y="1" X="8"  TextBkColors="White,Red" Name=" UVR" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  JTR"  Page="0" RelationShip="2" Y="1" X="9"  TextBkColors="White,Red" Name=" JTR" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  紧急蜂鸣器"  Page="0" RelationShip="0" Y="0" X="8"  TextBkColors="White,Red" Name=" 紧急蜂鸣器" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  火灾蜂鸣器"  Page="0" RelationShip="0" Y="0" X="9"  TextBkColors="White,Red" Name=" 火灾蜂鸣器" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  卫生间蜂鸣器"  Page="0" RelationShip="0" Y="0" X="10"  TextBkColors="White,Red" Name=" 卫生间蜂鸣器" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  卫生间故障"  Page="0" RelationShip="0" Y="1" X="10"  TextBkColors="White,Red" Name=" 卫生间故障" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  设备切除"  Page="0" RelationShip="3" Y="0" X="11"  TextBkColors="White,Red" Name=" 设备切除" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  紧急隔离"  Page="0" RelationShip="3" Y="1" X="12"  TextBkColors="White,Red" Name=" 紧急隔离" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  一位侧门关状态隔离"  Page="0" RelationShip="3" Y="1" X="13"  TextBkColors="White,Red" Name=" 一位侧门状态隔离" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  一位侧门关状态隔离2"  Page="0" RelationShip="3" Y="1" X="14"  TextBkColors="White,Red" Name=" 二位侧门状态隔离" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  停放制动隔离"  Page="0" RelationShip="3" Y="1" X="15"  TextBkColors="White,Red" Name="停放制动隔离" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  警惕隔离"  Page="0" RelationShip="3" Y="1" X="17"  TextBkColors="White,Red" Name="警惕隔离" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  水箱0%"  Page="0" RelationShip="0" Y="0" X="12"  TextBkColors="White,Red" Name=" 水箱0 %" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  水箱25%"  Page="0" RelationShip="0" Y="0" X="13"  TextBkColors="White,Red" Name=" 水箱25%" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  辅助电源报警切除"  Page="0" RelationShip="0" Y="0" X="14"  TextBkColors="White,Red" Name=" 辅助电源报警切除" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  主故障蜂鸣器切除"  Page="0" RelationShip="0" Y="0" X="17"  TextBkColors="White,Red" Name=" 主故障蜂鸣器切除" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  管路泄露报警"  Page="1" RelationShip="0" Y="0" X="0"  TextBkColors="White,Red" Name="管路泄露报警" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  辅助电源装置故障"  Page="1" RelationShip="0" Y="1" X="1"  TextBkColors="White,Red" Name="辅助电源装置故障" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  辅助电源装置通风"  Page="1" RelationShip="0" Y="1" X="2"  TextBkColors="White,#00FF00" Name="辅助电源装置通风" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  辅助整流装置1"  Page="1" RelationShip="0" Y="1" X="3"  TextBkColors="White,#00FF00" Name="辅助整流装置1" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  辅助整流装置2"  Page="1" RelationShip="0" Y="1" X="4"  TextBkColors="White,#00FF00" Name="辅助整流装置2" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  IVK1"  Page="1" RelationShip="0" Y="1" X="5"  TextBkColors="White,#00FF00" Name="I V K 1" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  辅助变压器"  Page="1" RelationShip="0" Y="1" X="6"  TextBkColors="White,#00FF00" Name="辅助变压器" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  电气设备"  Page="1" RelationShip="1" Y="0" X="7"  TextBkColors="White,#00FF00" Name="电气设备" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  辅助交流电源1"  Page="1" RelationShip="1" Y="1" X="7"  TextBkColors="White,#00FF00" Name="辅助交流电源1" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  辅助交流电源2"  Page="1" RelationShip="1" Y="1" X="8"  TextBkColors="White,#00FF00" Name="辅助交流电源2" />
+                <JackUnit InBoolNames="配电盘信息 / 8车  供电气装置"  Page="1" RelationShip="0" Y="0" X="14"  TextBkColors="White,#00FF00" Name="供排气装置" />
+            </JackOfCars>
+        </JackConfig>
+
+        <!--出库信息-->
+        <DeliverConfig>
+            <TrainViewLocation Location="220,145" />
+            <DeliverResultType>Abnormal</DeliverResultType>
+            <DeliverCarConfigs>
+                <DeliverCarConfig CarNo="0 " Colors="White,Red" InBoolNames="出库信息 / 1  车 正常   1：异常"></DeliverCarConfig>
+                <DeliverCarConfig CarNo="1 " Colors="White,Red" InBoolNames="出库信息 / 2  车 正常   1：异常"></DeliverCarConfig>
+                <DeliverCarConfig CarNo="2 " Colors="White,Red" InBoolNames="出库信息 / 3  车 正常   1：异常"></DeliverCarConfig>
+                <DeliverCarConfig CarNo="3 " Colors="White,Red" InBoolNames="出库信息 / 4  车 正常   1：异常"></DeliverCarConfig>
+                <DeliverCarConfig CarNo="4 " Colors="White,Red" InBoolNames="出库信息 / 5  车 正常   1：异常"></DeliverCarConfig>
+                <DeliverCarConfig CarNo="5 " Colors="White,Red" InBoolNames="出库信息 / 6  车 正常   1：异常"></DeliverCarConfig>
+                <DeliverCarConfig CarNo="6 " Colors="White,Red" InBoolNames="出库信息 / 7  车 正常   1：异常"></DeliverCarConfig>
+                <DeliverCarConfig CarNo="7 " Colors="White,Red" InBoolNames="出库信息 / 8  车 正常   1：异常"></DeliverCarConfig>
+            </DeliverCarConfigs>
+        </DeliverConfig>
+
+        <!--切除状态配置-->
+        <CutInfoConfig >
+
+            <TrainViewLocation Location="259,173"/>
+
+            <Grid GridType="GridLine" AbsX="270" AbsY="273" Width="315" Height="172" RowCount="8" ColumnCount="8" RoundnessR="8" LineVisible="true">
+                <Rows>
+                    <Row Name="受电弓切除" RowIndex="0" ItemType="Roudness" Colors="White,Red">
+                        <Columns ColumIndex="3" InBoolNames="切除状态/ 4车  受电弓切除   1：切除"  />
+                        <Columns ColumIndex="5" InBoolNames="切除状态/ 6车  受电弓切除   1：切除"  />
+                    </Row>
+                    <Row Name="VCB切除" RowIndex="1" ItemType="Roudness" Colors="White,Red">
+                        <Columns ColumIndex="1" InBoolNames="切除状态/ 2车  VCB切除  1：切除" />
+                        <Columns ColumIndex="5" InBoolNames="切除状态/ 6车  VCB切除  1：切除" />
+                    </Row>
+                    <Row Name="M车切除" RowIndex="2" ItemType="Roudness" Colors="White,Red">
+                        <Columns ColumIndex="1" InBoolNames="切除状态/ 2车  M车牵引切除  1：切除"/>
+                        <Columns ColumIndex="2" InBoolNames="切除状态/ 3车  M车牵引切除  1：切除"/>
+                        <Columns ColumIndex="5" InBoolNames="切除状态/ 6车  M车牵引切除  1：切除"/>
+                        <Columns ColumIndex="6" InBoolNames="切除状态/ 7车  M车牵引切除  1：切除"/>
+                    </Row>
+                    <Row Name="压缩机切除" RowIndex="3" ItemType="Roudness" Colors="White,Red">
+                        <Columns ColumIndex="2" InBoolNames="切除状态/ 3车  压缩机切除（CMP）   1：切除" />
+                        <Columns ColumIndex="4" InBoolNames="切除状态/ 5车  压缩机切除（CMP）   1：切除" />
+                        <Columns ColumIndex="6" InBoolNames="切除状态/ 7车  压缩机切除（CMP）   1：切除" />
+                    </Row>
+                    <Row Name="紧急隔离" RowIndex="4" ItemType="Roudness" Colors="White,Red">
+                        <Columns ColumIndex="0" InBoolNames="切除状态/ 1车  紧急隔离  1：切除" />
+                        <Columns ColumIndex="1" InBoolNames="切除状态/ 2车  紧急隔离  1：切除" />
+                        <Columns ColumIndex="2" InBoolNames="切除状态/ 3车  紧急隔离  1：切除" />
+                        <Columns ColumIndex="3" InBoolNames="切除状态/ 4车  紧急隔离  1：切除" />
+                        <Columns ColumIndex="4" InBoolNames="切除状态/ 5车  紧急隔离  1：切除" />
+                        <Columns ColumIndex="5" InBoolNames="切除状态/ 6车  紧急隔离  1：切除" />
+                        <Columns ColumIndex="6" InBoolNames="切除状态/ 7车  紧急隔离  1：切除" />
+                        <Columns ColumIndex="7" InBoolNames="切除状态/ 8车  紧急隔离  1：切除" />
+                    </Row>
+                    <Row Name="门状态隔离" RowIndex="5" ItemType="Roudness" Colors="White,Red">
+                        <Columns ColumIndex="0" InBoolNames="切除状态/ 1车  门状态隔离 1：隔离" />
+                        <Columns ColumIndex="1" InBoolNames="切除状态/ 2车  门状态隔离 1：隔离" />
+                        <Columns ColumIndex="2" InBoolNames="切除状态/ 3车  门状态隔离 1：隔离" />
+                        <Columns ColumIndex="3" InBoolNames="切除状态/ 4车  门状态隔离 1：隔离" />
+                        <Columns ColumIndex="4" InBoolNames="切除状态/ 5车  门状态隔离 1：隔离" />
+                        <Columns ColumIndex="5" InBoolNames="切除状态/ 6车  门状态隔离 1：隔离" />
+                        <Columns ColumIndex="6" InBoolNames="切除状态/ 7车  门状态隔离 1：隔离" />
+                        <Columns ColumIndex="7" InBoolNames="切除状态/ 8车  门状态隔离 1：隔离" />
+                    </Row>
+                    <Row Name="停放B隔离" RowIndex="6" ItemType="Roudness" Colors="White,Red">
+                        <Columns ColumIndex="0" InBoolNames="切除状态/ 1车  停放B隔离  1：隔离"/>
+                        <Columns ColumIndex="3" InBoolNames="切除状态/ 4车  停放B隔离  1：隔离"/>
+                        <Columns ColumIndex="4" InBoolNames="切除状态/ 5车  停放B隔离  1：隔离"/>
+                        <Columns ColumIndex="7" InBoolNames="切除状态/ 8车  停放B隔离  1：隔离"/>
+                    </Row>
+                    <Row Name="警惕隔离" RowIndex="7" ItemType="Roudness" Colors="White,Red">
+                        <Columns ColumIndex="0" InBoolNames="切除状态/ 1车  警惕隔离   1：隔离"/>
+                        <Columns ColumIndex="7" InBoolNames="切除状态/ 8车  警惕隔离   1：隔离"/>
+                    </Row>
+                </Rows>
+            </Grid>
+        </CutInfoConfig>
+
+        <!-- 制动信息 -->
+        <BrakeInfoConfig>
+            <TrainViewLocation Location="228,155"/>
+            <PageConfigs>
+                <Page PageName="Base">
+                    <Grid GridType="GridLine" AbsX="245" AbsY="210" Width="294" Height="24" RowCount="2" ColumnCount="8" TextWidth="42" TextHeight="22" LineVisible="false">
+                        <Rows>
+                            <Row Name="制动信号" RowIndex="0" ItemType="Text" >
+                                <Columns ColumIndex="0" />
+                                <Columns ColumIndex="1" />
+                                <Columns ColumIndex="2" />
+                                <Columns ColumIndex="3" />
+                                <Columns ColumIndex="4" />
+                                <Columns ColumIndex="5" />
+                                <Columns ColumIndex="6" />
+                                <Columns ColumIndex="7" />
+                            </Row>
+                            <!--耐雪-->
+                            <Row Name="" RowIndex="1" ItemType="Text" >
+                                <Columns ColumIndex="0" InBoolNames="制动信息/ 1 车 耐雪 1：耐雪"/>
+                                <Columns ColumIndex="1" InBoolNames="制动信息/ 2 车 耐雪 1：耐雪"/>
+                                <Columns ColumIndex="2" InBoolNames="制动信息/ 3 车 耐雪 1：耐雪"/>
+                                <Columns ColumIndex="3" InBoolNames="制动信息/ 4 车 耐雪 1：耐雪"/>
+                                <Columns ColumIndex="4" InBoolNames="制动信息/ 5 车 耐雪 1：耐雪"/>
+                                <Columns ColumIndex="5" InBoolNames="制动信息/ 6 车 耐雪 1：耐雪"/>
+                                <Columns ColumIndex="6" InBoolNames="制动信息/ 7 车 耐雪 1：耐雪"/>
+                                <Columns ColumIndex="7" InBoolNames="制动信息/ 8 车 耐雪 1：耐雪"/>
+                            </Row>
+                        </Rows>
+                    </Grid>
+                </Page>
+
+                <Page PageName="制动">
+                    <Grid GridType="GridLine" AbsX="245" AbsY="210" Width="294" Height="260" RowCount="6" ColumnCount="8" TextWidth="42" TextHeight="22" LineVisible="false">
+                        <Rows>
+                            <Row Name="制动气缸\r\n压力(kPa)" RowIndex="0" ItemType="Text" FloatToStringFormat="F0">
+                                <Columns ColumIndex="0" InFloatNames="制动信息/ 1车  制动气缸压力（kPa）"/>
+                                <Columns ColumIndex="1" InFloatNames="制动信息/ 2车  制动气缸压力（kPa）"/>
+                                <Columns ColumIndex="2" InFloatNames="制动信息/ 3车  制动气缸压力（kPa）"/>
+                                <Columns ColumIndex="3" InFloatNames="制动信息/ 4车  制动气缸压力（kPa）"/>
+                                <Columns ColumIndex="4" InFloatNames="制动信息/ 5车  制动气缸压力（kPa）"/>
+                                <Columns ColumIndex="5" InFloatNames="制动信息/ 6车  制动气缸压力（kPa）"/>
+                                <Columns ColumIndex="6" InFloatNames="制动信息/ 7车  制动气缸压力（kPa）"/>
+                                <Columns ColumIndex="7" InFloatNames="制动信息/ 8车  制动气缸压力（kPa）"/>
+                            </Row>
+
+                            <Row Name="AS压力\r\n(kPa)" RowIndex="1" ItemType="Text" FloatToStringFormat="F0">
+                                <Columns ColumIndex="0" InFloatNames="制动信息/ 1车  AS压力（kPa）"/>
+                                <Columns ColumIndex="1" InFloatNames="制动信息/ 2车  AS压力（kPa）"/>
+                                <Columns ColumIndex="2" InFloatNames="制动信息/ 3车  AS压力（kPa）"/>
+                                <Columns ColumIndex="3" InFloatNames="制动信息/ 4车  AS压力（kPa）"/>
+                                <Columns ColumIndex="4" InFloatNames="制动信息/ 5车  AS压力（kPa）"/>
+                                <Columns ColumIndex="5" InFloatNames="制动信息/ 6车  AS压力（kPa）"/>
+                                <Columns ColumIndex="6" InFloatNames="制动信息/ 7车  AS压力（kPa）"/>
+                                <Columns ColumIndex="7" InFloatNames="制动信息/ 8车  AS压力（kPa）"/>
+                            </Row>
+
+                            <Row Name="MR压力\r\n(kPa)" RowIndex="2" ItemType="Text" FloatToStringFormat="F0">
+                                <Columns ColumIndex="2" InFloatNames="制动信息/ 3车  MR压力（kPa）"/>
+                                <Columns ColumIndex="4" InFloatNames="制动信息/ 5车  MR压力（kPa）"/>
+                                <Columns ColumIndex="6" InFloatNames="制动信息/ 7车  MR压力（kPa）"/>
+                            </Row>
+                            <Row Name="EP阀\r\n(mA)" RowIndex="3" ItemType="Text" FloatToStringFormat="F0">
+                                <Columns ColumIndex="0" InFloatNames="制动信息/ 1车  EP阀（mA）"/>
+                                <Columns ColumIndex="1" InFloatNames="制动信息/ 2车  EP阀（mA）"/>
+                                <Columns ColumIndex="2" InFloatNames="制动信息/ 3车  EP阀（mA）"/>
+                                <Columns ColumIndex="3" InFloatNames="制动信息/ 4车  EP阀（mA）"/>
+                                <Columns ColumIndex="4" InFloatNames="制动信息/ 5车  EP阀（mA）"/>
+                                <Columns ColumIndex="5" InFloatNames="制动信息/ 6车  EP阀（mA）"/>
+                                <Columns ColumIndex="6" InFloatNames="制动信息/ 7车  EP阀（mA）"/>
+                                <Columns ColumIndex="7" InFloatNames="制动信息/ 8车  EP阀（mA）"/>
+                            </Row>
+                            <Row Name="再生BCU\r\n(V)" RowIndex="4" ItemType="Text" FloatToStringFormat="#,#0.0">
+                                <Columns ColumIndex="1" InFloatNames="制动信息/ 2车  BCU再生制动电压（V）"/>
+                                <Columns ColumIndex="2" InFloatNames="制动信息/ 3车  BCU再生制动电压（V）"/>
+                                <Columns ColumIndex="5" InFloatNames="制动信息/ 6车  BCU再生制动电压（V）"/>
+                                <Columns ColumIndex="6" InFloatNames="制动信息/ 7车  BCU再生制动电压（V）"/>
+                            </Row>
+                            <Row Name="再生C1\r\n(V)" RowIndex="5" ItemType="Text" FloatToStringFormat="#,#0.0">
+                                <Columns ColumIndex="1" InFloatNames="制动信息/ 2车  CI再生制动电压（V）"/>
+                                <Columns ColumIndex="2" InFloatNames="制动信息/ 3车  CI再生制动电压（V）"/>
+                                <Columns ColumIndex="5" InFloatNames="制动信息/ 6车  CI再生制动电压（V）"/>
+                                <Columns ColumIndex="6" InFloatNames="制动信息/ 7车  CI再生制动电压（V）"/>
+                            </Row>
+                        </Rows>
+                    </Grid>
+                </Page>
+
+                <Page PageName="制动气缸压力">
+                    <Grid GridType="GridLine" AbsX="245" AbsY="461" Width="294" Height="24" RowCount="2" ColumnCount="8" TextWidth="42" TextHeight="22" LineVisible="false">
+                        <Rows>
+                            <Row Name="制动气缸压力(kPa)" RowIndex="0" />
+                            <Row Name="EP 阀电流" RowIndex="0" ItemType="Text" Colors="Yellow">
+                                <Columns ColumIndex="0" InFloatNames="制动信息/ 1车  制动气缸压力（kPa）"/>
+                                <Columns ColumIndex="1" InFloatNames="制动信息/ 2车  制动气缸压力（kPa）"/>
+                                <Columns ColumIndex="2" InFloatNames="制动信息/ 3车  制动气缸压力（kPa）"/>
+                                <Columns ColumIndex="3" InFloatNames="制动信息/ 4车  制动气缸压力（kPa）"/>
+                                <Columns ColumIndex="4" InFloatNames="制动信息/ 5车  制动气缸压力（kPa）"/>
+                                <Columns ColumIndex="5" InFloatNames="制动信息/ 6车  制动气缸压力（kPa）"/>
+                                <Columns ColumIndex="6" InFloatNames="制动信息/ 7车  制动气缸压力（kPa）"/>
+                                <Columns ColumIndex="7" InFloatNames="制动信息/ 8车  制动气缸压力（kPa）"/>
+                            </Row>
+                            <Row Name="(mA)" RowIndex="1" ItemType="Text" Colors="Yellow">
+                                <Columns ColumIndex="0" InFloatNames="制动信息/ 1车  EP阀（mA）"/>
+                                <Columns ColumIndex="1" InFloatNames="制动信息/ 2车  EP阀（mA）"/>
+                                <Columns ColumIndex="2" InFloatNames="制动信息/ 3车  EP阀（mA）"/>
+                                <Columns ColumIndex="3" InFloatNames="制动信息/ 4车  EP阀（mA）"/>
+                                <Columns ColumIndex="4" InFloatNames="制动信息/ 5车  EP阀（mA）"/>
+                                <Columns ColumIndex="5" InFloatNames="制动信息/ 6车  EP阀（mA）"/>
+                                <Columns ColumIndex="6" InFloatNames="制动信息/ 7车  EP阀（mA）"/>
+                                <Columns ColumIndex="7" InFloatNames="制动信息/ 8车  EP阀（mA）"/>
+                            </Row>
+                        </Rows>
+                    </Grid>
+                </Page>
+
+                <Page PageName="AS压力">
+                    <Grid GridType="GridLine" AbsX="245" AbsY="461" Width="294" Height="24" RowCount="2" ColumnCount="8" TextWidth="42" TextHeight="22" LineVisible="false">
+                        <Rows>
+                            <Row Name="AS压力\r\n(kPa)" RowIndex="0" />
+                            <Row Name="" RowIndex="0" ItemType="Text" Colors="Yellow">
+                                <Columns ColumIndex="0" InFloatNames="制动信息/ 1车  AS压力（kPa）"/>
+                                <Columns ColumIndex="1" InFloatNames="制动信息/ 2车  AS压力（kPa）"/>
+                                <Columns ColumIndex="2" InFloatNames="制动信息/ 3车  AS压力（kPa）"/>
+                                <Columns ColumIndex="3" InFloatNames="制动信息/ 4车  AS压力（kPa）"/>
+                                <Columns ColumIndex="4" InFloatNames="制动信息/ 5车  AS压力（kPa）"/>
+                                <Columns ColumIndex="5" InFloatNames="制动信息/ 6车  AS压力（kPa）"/>
+                                <Columns ColumIndex="6" InFloatNames="制动信息/ 7车  AS压力（kPa）"/>
+                                <Columns ColumIndex="7" InFloatNames="制动信息/ 8车  AS压力（kPa）"/>
+                            </Row>
+                        </Rows>
+                    </Grid>
+                </Page>
+
+                <Page PageName="MR压力">
+                    <Grid GridType="GridLine" AbsX="245" AbsY="461" Width="294" Height="24" RowCount="2" ColumnCount="8" TextWidth="42" TextHeight="22" LineVisible="false">
+                        <Rows>
+                            <Row Name="MR 压力\r\n(kPa)" RowIndex="0" ></Row>
+                            <Row Name="" RowIndex="0" ItemType="Text" Colors="Yellow">
+                                <Columns ColumIndex="2" InFloatNames="制动信息/ 3车  MR压力（kPa）"/>
+                                <Columns ColumIndex="4" InFloatNames="制动信息/ 5车  MR压力（kPa）"/>
+                                <Columns ColumIndex="6" InFloatNames="制动信息/ 7车  MR压力（kPa）"/>
+                            </Row>
+                        </Rows>
+                    </Grid>
+                </Page>
+
+                <Page PageName="EP阀">
+                    <Grid GridType="GridLine" AbsX="245" AbsY="461" Width="294" Height="24" RowCount="2" ColumnCount="8" TextWidth="42" TextHeight="22" LineVisible="false">
+                        <Rows>
+                            <Row Name="EP阀\r\n(mA)" RowIndex="0" ItemType="Text" />
+                            <Row Name="" RowIndex="0" ItemType="Text" FloatToStringFormat="F0" Colors="Yellow">
+                                <Columns ColumIndex="0" InFloatNames="制动信息/ 1车  EP阀（mA）"/>
+                                <Columns ColumIndex="1" InFloatNames="制动信息/ 2车  EP阀（mA）"/>
+                                <Columns ColumIndex="2" InFloatNames="制动信息/ 3车  EP阀（mA）"/>
+                                <Columns ColumIndex="3" InFloatNames="制动信息/ 4车  EP阀（mA）"/>
+                                <Columns ColumIndex="4" InFloatNames="制动信息/ 5车  EP阀（mA）"/>
+                                <Columns ColumIndex="5" InFloatNames="制动信息/ 6车  EP阀（mA）"/>
+                                <Columns ColumIndex="6" InFloatNames="制动信息/ 7车  EP阀（mA）"/>
+                                <Columns ColumIndex="7" InFloatNames="制动信息/ 8车  EP阀（mA）"/>
+                            </Row>
+                        </Rows>
+                    </Grid>
+                </Page>
+
+                <Page PageName="再生">
+                    <Grid GridType="GridLine" AbsX="245" AbsY="461" Width="294" Height="24" RowCount="2" ColumnCount="8" TextWidth="42" TextHeight="22" LineVisible="false">
+                        <Rows>
+                            <Row Name="再生设定值\r\n(V)" RowIndex="0" ItemType="Text" />
+                            <Row Name="BCU" RowIndex="0" ItemType="Text" FloatToStringFormat="#,#0.0" Colors="#00FF00">
+                                <Columns ColumIndex="1" InFloatNames="制动信息/ 2车  BCU再生制动电压（V）"/>
+                                <Columns ColumIndex="2" InFloatNames="制动信息/ 3车  BCU再生制动电压（V）"/>
+                                <Columns ColumIndex="5" InFloatNames="制动信息/ 6车  BCU再生制动电压（V）"/>
+                                <Columns ColumIndex="6" InFloatNames="制动信息/ 7车  BCU再生制动电压（V）"/>
+                            </Row>
+                            <Row Name="C1" RowIndex="1" ItemType="Text" FloatToStringFormat="#,#0.0" Colors="Yellow">
+                                <Columns ColumIndex="1" InFloatNames="制动信息/ 2车  CI再生制动电压（V）"/>
+                                <Columns ColumIndex="2" InFloatNames="制动信息/ 3车  CI再生制动电压（V）"/>
+                                <Columns ColumIndex="5" InFloatNames="制动信息/ 6车  CI再生制动电压（V）"/>
+                                <Columns ColumIndex="6" InFloatNames="制动信息/ 7车  CI再生制动电压（V）"/>
+                            </Row>
+                        </Rows>
+                    </Grid>
+                </Page>
+
+            </PageConfigs>
+        </BrakeInfoConfig>
+
+        <!-- 牵引变流器 编 -->
+        <Tow1Config>
+
+            <TrainViewLocation Location="220,200"/>
+
+            <PageConfigs>
+                <Page PageName="Base">
+                    <Grid GridType="GridLine" AbsX="240" AbsY="155" Width="294" Height="26" RowCount="1" ColumnCount="8" TextWidth="42" TextHeight="26" LineVisible="false">
+                        <Rows>
+                            <Row Name="K" RowIndex="0" ItemType="Text" Texts="断,合" Colors="White,Black" TextBkColors="Black,Yellow" >
+                                <Columns ColumIndex="1" InBoolNames="K状态/ 2车   K  1：闭合   0：断开"/>
+                                <Columns ColumIndex="2" InBoolNames="K状态/ 3车   K  1：闭合   0：断开"/>
+                                <Columns ColumIndex="5" InBoolNames="K状态/ 6车   K  1：闭合   0：断开"/>
+                                <Columns ColumIndex="6" InBoolNames="K状态/ 7车   K  1：闭合   0：断开"/>
+                            </Row>
+                        </Rows>
+                    </Grid>
+                </Page>
+
+                <Page PageName="Common">
+                    <Grid GridType="GridLine" AbsX="240" AbsY="255" Width="294" Height="26" RowCount="1" ColumnCount="8" TextWidth="42" TextHeight="26" LineVisible="false">
+                        <Rows>
+                            <Row Name="制动信号" RowIndex="0" ItemType="Text" >
+                                <Columns ColumIndex="1" />
+                                <Columns ColumIndex="2" />
+                                <Columns ColumIndex="5" />
+                                <Columns ColumIndex="6" />
+                            </Row>
+                        </Rows>
+                    </Grid>
+                </Page>
+
+                <Page PageName="牵引变流器">
+                    <Grid GridType="GridLine" AbsX="240" AbsY="230" Width="294" Height="286" RowCount="11" ColumnCount="8" TextWidth="42" TextHeight="22" LineVisible="false">
+                        <Rows>
+                            <Row Name="电机电流(A)" RowIndex="0" ItemType="Text" />
+                            <Row Name="设定值" RowIndex="1" ItemType="Text" FloatToStringFormat="00" >
+                                <Columns ColumIndex="1" InFloatNames="牵引变流器(编)/2车  电机电流  设定值（A）"/>
+                                <Columns ColumIndex="2" InFloatNames="牵引变流器(编)/3车  电机电流  设定值（A）"/>
+                                <Columns ColumIndex="5" InFloatNames="牵引变流器(编)/6车  电机电流  设定值（A）"/>
+                                <Columns ColumIndex="6" InFloatNames="牵引变流器(编)/7车  电机电流  设定值（A）"/>
+                            </Row>
+
+                            <Row Name="反馈值" RowIndex="2" ItemType="Text" FloatToStringFormat="00" >
+                                <Columns ColumIndex="1" InFloatNames="牵引变流器(编)/2车  电机电流  反馈值（A）"/>
+                                <Columns ColumIndex="2" InFloatNames="牵引变流器(编)/3车  电机电流  反馈值（A）"/>
+                                <Columns ColumIndex="5" InFloatNames="牵引变流器(编)/6车  电机电流  反馈值（A）"/>
+                                <Columns ColumIndex="6" InFloatNames="牵引变流器(编)/7车  电机电流  反馈值（A）"/>
+                            </Row>
+
+                            <Row Name="直流电压(V)" RowIndex="3" ItemType="Text" />
+                            <Row Name="设定值" RowIndex="4" ItemType="Text" FloatToStringFormat="F0" >
+                                <Columns ColumIndex="1" InFloatNames="牵引变流器(编)/2车  直流电压  设定值（V）"/>
+                                <Columns ColumIndex="2" InFloatNames="牵引变流器(编)/3车  直流电压  设定值（V）"/>
+                                <Columns ColumIndex="5" InFloatNames="牵引变流器(编)/6车  直流电压  设定值（V）"/>
+                                <Columns ColumIndex="6" InFloatNames="牵引变流器(编)/7车  直流电压  设定值（V）"/>
+                            </Row>
+
+                            <Row Name="反馈值" RowIndex="5" ItemType="Text" FloatToStringFormat="F0">
+                                <Columns ColumIndex="1" InFloatNames="牵引变流器(编)/2车  直流电压  反馈值（V）"/>
+                                <Columns ColumIndex="2" InFloatNames="牵引变流器(编)/3车  直流电压  反馈值（V）"/>
+
+                                <Columns ColumIndex="5" InFloatNames="牵引变流器(编)/6车  直流电压  反馈值（V）"/>
+                                <Columns ColumIndex="6" InFloatNames="牵引变流器(编)/7车  直流电压  反馈值（V）"/>
+                            </Row>
+                            <!--<Row Name="" RowIndex="6" ItemType="Text" />-->
+                            <Row Name="电机转子频率" RowIndex="7" ItemType="Text">
+                                <Columns ColumIndex="1" InFloatNames="牵引变流器(编)/2车  电机转子频率（Hz）"/>
+                                <Columns ColumIndex="2" InFloatNames="牵引变流器(编)/3车  电机转子频率（Hz）"/>
+                                <Columns ColumIndex="5" InFloatNames="牵引变流器(编)/6车  电机转子频率（Hz）"/>
+                                <Columns ColumIndex="6" InFloatNames="牵引变流器(编)/7车  电机转子频率（Hz）"/>
+                            </Row>
+                            <Row Name="(Hz)" RowIndex="8" ItemType="Text" FloatToStringFormat="0.0" />
+                            <Row Name="再生制动力" RowIndex="9" ItemType="Text" FloatToStringFormat="0.0" >
+                                <Columns ColumIndex="1" InFloatNames="牵引变流器(编)/2车  再生制动力（T）"/>
+                                <Columns ColumIndex="2" InFloatNames="牵引变流器(编)/3车  再生制动力（T）"/>
+                                <Columns ColumIndex="5" InFloatNames="牵引变流器(编)/6车  再生制动力（T）"/>
+                                <Columns ColumIndex="6" InFloatNames="牵引变流器(编)/7车  再生制动力（T）"/>
+                            </Row>
+                            <Row Name="(t)" RowIndex="10" ItemType="Text" FloatToStringFormat="F0" />
+                        </Rows>
+                    </Grid>
+                </Page>
+
+                <Page PageName="电机电流">
+                    <Grid GridType="GridLine" AbsX="240" AbsY="481" Width="294" Height="24" RowCount="2" ColumnCount="8" TextWidth="42" TextHeight="22" LineVisible="false">
+                        <Rows>
+                            <Row Name="电机电流(A)" RowIndex="0" ItemType="Text" />
+                            <Row Name="设定值" RowIndex="0" ItemType="Text" FloatToStringFormat="00" Colors="#00FF00">
+                                <Columns ColumIndex="1" InFloatNames="牵引变流器(编)/2车  电机电流  设定值（A）"/>
+                                <Columns ColumIndex="2" InFloatNames="牵引变流器(编)/3车  电机电流  设定值（A）"/>
+                                <Columns ColumIndex="5" InFloatNames="牵引变流器(编)/6车  电机电流  设定值（A）"/>
+                                <Columns ColumIndex="6" InFloatNames="牵引变流器(编)/7车  电机电流  设定值（A）"/>
+                            </Row>
+
+                            <Row Name="反馈值" RowIndex="1" ItemType="Text" FloatToStringFormat="00" Colors="Yellow" >
+                                <Columns ColumIndex="1" InFloatNames="牵引变流器(编)/2车  电机电流  反馈值（A）"/>
+                                <Columns ColumIndex="2" InFloatNames="牵引变流器(编)/3车  电机电流  反馈值（A）"/>
+                                <Columns ColumIndex="5" InFloatNames="牵引变流器(编)/6车  电机电流  反馈值（A）"/>
+                                <Columns ColumIndex="6" InFloatNames="牵引变流器(编)/7车  电机电流  反馈值（A）"/>
+                            </Row>
+                        </Rows>
+                    </Grid>
+                </Page>
+
+                <Page PageName="直流电压">
+                    <Grid GridType="GridLine" AbsX="240" AbsY="481" Width="294" Height="24" RowCount="2" ColumnCount="8" TextWidth="42" TextHeight="22" LineVisible="false">
+                        <Rows>
+                            <Row Name="直流电压(V)" RowIndex="0" ItemType="Text" />
+                            <Row Name="设定值" RowIndex="0" ItemType="Text" FloatToStringFormat="F0" Colors="#00FF00" >
+                                <Columns ColumIndex="1" InFloatNames="牵引变流器(编)/2车  直流电压  设定值（V）"/>
+                                <Columns ColumIndex="2" InFloatNames="牵引变流器(编)/3车  直流电压  设定值（V）"/>
+                                <Columns ColumIndex="5" InFloatNames="牵引变流器(编)/6车  直流电压  设定值（V）"/>
+                                <Columns ColumIndex="6" InFloatNames="牵引变流器(编)/7车  直流电压  设定值（V）"/>
+                            </Row>
+
+                            <Row Name="反馈值" RowIndex="1" ItemType="Text" FloatToStringFormat="F0" Colors="Yellow"  >
+                                <Columns ColumIndex="1" InFloatNames="牵引变流器(编)/2车  直流电压  反馈值（V）"/>
+                                <Columns ColumIndex="2" InFloatNames="牵引变流器(编)/3车  直流电压  反馈值（V）"/>
+                                <Columns ColumIndex="5" InFloatNames="牵引变流器(编)/6车  直流电压  反馈值（V）"/>
+                                <Columns ColumIndex="6" InFloatNames="牵引变流器(编)/7车  直流电压  反馈值（V）"/>
+                            </Row>
+                        </Rows>
+                    </Grid>
+                </Page>
+
+                <Page PageName="电机转子">
+                    <Grid GridType="GridLine" AbsX="240" AbsY="481" Width="294" Height="24" RowCount="1" ColumnCount="8" TextWidth="42" TextHeight="22" LineVisible="false">
+                        <Rows>
+                            <Row Name="电机转子频率(Hz)" RowIndex="0" ItemType="Text" Colors="Yellow" >
+                                <Columns ColumIndex="1" InFloatNames="牵引变流器(编)/2车  电机转子频率（Hz）"/>
+                                <Columns ColumIndex="2" InFloatNames="牵引变流器(编)/3车  电机转子频率（Hz）"/>
+                                <Columns ColumIndex="5" InFloatNames="牵引变流器(编)/6车  电机转子频率（Hz）"/>
+                                <Columns ColumIndex="6" InFloatNames="牵引变流器(编)/7车  电机转子频率（Hz）"/>
+                            </Row>
+
+                        </Rows>
+                    </Grid>
+                </Page>
+
+                <Page PageName="再生制动">
+                    <Grid GridType="GridLine" AbsX="240" AbsY="481" Width="294" Height="24" RowCount="1" ColumnCount="8" TextWidth="42" TextHeight="22" LineVisible="false">
+                        <Rows>
+                            <Row Name="再生制动力(t)" RowIndex="0" ItemType="Text" FloatToStringFormat="0.0" Colors="Yellow" >
+                                <Columns ColumIndex="1" InFloatNames="牵引变流器(编)/2车  再生制动力（T）"/>
+                                <Columns ColumIndex="2" InFloatNames="牵引变流器(编)/3车  再生制动力（T）"/>
+                                <Columns ColumIndex="5" InFloatNames="牵引变流器(编)/6车  再生制动力（T）"/>
+                                <Columns ColumIndex="6" InFloatNames="牵引变流器(编)/7车  再生制动力（T）"/>
+                            </Row>
+                        </Rows>
+                    </Grid>
+                </Page>
+
+            </PageConfigs>
+        </Tow1Config>
+
+        <!--牵引变流器 车-->
+        <TowInfo2Config>
+            <Cars>
+                <Car CarName="2 车厢" InBoolNames="牵引变流器/2车 恒速 ,牵引变流器/2车 制动,牵引变流器/2车 动力,牵引变流器/2车 后向,牵引变流器/2车 前向,牵引变流器/2车 空挡,牵引变流器/2车 接触器K闭合,牵引变流器/2车 充电不良,牵引变流器/2车 再生制动过大,牵引变流器/2车 再生制动失效,牵引变流器/2车 复位,牵引变流器/2车 空转,牵引变流器/2车 OVTh误动作,牵引变流器/2车 直流过电压3,牵引变流器/2车 直流低电压2,牵引变流器/2车 变流器箱内部温度高,牵引变流器/2车 二次侧过电流1,牵引变流器/2车 二次侧过电流2,牵引变流器/2车 三次侧低电压,牵引变流器/2车 三次侧过电压,牵引变流器/2车 接触网无电,牵引变流器/2车 CI故障,牵引变流器/2车 主电路元件异常,牵引变流器/2车 冷却器温度高,牵引变流器/2车 控制电源低压,牵引变流器/2车 牵引电机电流不平衡,牵引变流器/2车 牵引电机过电流1,牵引变流器/2车 牵引电机过电流2,牵引变流器/2车 PG故障,牵引变流器/2车 通风机工作,牵引变流器/2车 主变压器异常,牵引变流器/2车 牵引不动作,牵引变流器/2车 主电路工作牵引,牵引变流器/2车 主电路工作再生,牵引变流器/2车 门极电源故障,牵引变流器/2车 直流100V异常,牵引变流器/2车 二次侧接地1,牵引变流器/2车 二次侧接地2"/>
+                <Car CarName="3 车厢" InBoolNames="牵引变流器/3车 恒速 ,牵引变流器/3车 制动,牵引变流器/3车 动力,牵引变流器/3车 后向,牵引变流器/3车 前向,牵引变流器/3车 空挡,牵引变流器/3车 接触器K闭合,牵引变流器/3车 充电不良,牵引变流器/3车 再生制动过大,牵引变流器/3车 再生制动失效,牵引变流器/3车 复位,牵引变流器/3车 空转,牵引变流器/3车 OVTh误动作,牵引变流器/3车 直流过电压3,牵引变流器/3车 直流低电压2,牵引变流器/3车 变流器箱内部温度高,牵引变流器/3车 二次侧过电流1,牵引变流器/3车 二次侧过电流2,牵引变流器/3车 三次侧低电压,牵引变流器/3车 三次侧过电压,牵引变流器/3车 接触网无电,牵引变流器/3车 CI故障,牵引变流器/3车 主电路元件异常,牵引变流器/3车 冷却器温度高,牵引变流器/3车 控制电源低压,牵引变流器/3车 牵引电机电流不平衡,牵引变流器/3车 牵引电机过电流1,牵引变流器/3车 牵引电机过电流2,牵引变流器/3车 PG故障,牵引变流器/3车 通风机工作,牵引变流器/3车 主变压器异常,牵引变流器/3车 牵引不动作,牵引变流器/3车 主电路工作牵引,牵引变流器/3车 主电路工作再生,牵引变流器/3车 门极电源故障,牵引变流器/3车 直流100V异常,牵引变流器/3车 二次侧接地1,牵引变流器/3车 二次侧接地2"/>
+                <!--<Car CarName="4 车厢" InBoolNames="牵引变流器/4车 恒速 ,牵引变流器/4车 制动,牵引变流器/4车 动力,牵引变流器/4车 后向,牵引变流器/4车 前向,牵引变流器/4车 空挡,牵引变流器/4车 接触器K闭合,牵引变流器/4车 充电不良,牵引变流器/4车 再生制动过大,牵引变流器/4车 再生制动失效,牵引变流器/4车 复位,牵引变流器/4车 空转,牵引变流器/4车 OVTh误动作,牵引变流器/4车 直流过电压3,牵引变流器/4车 直流低电压2,牵引变流器/4车 变流器箱内部温度高,牵引变流器/4车 二次侧过电流1,牵引变流器/4车 二次侧过电流2,牵引变流器/4车 三次侧低电压,牵引变流器/4车 三次侧过电压,牵引变流器/4车 接触网无电,牵引变流器/4车 CI故障,牵引变流器/4车 主电路元件异常,牵引变流器/4车 冷却器温度高,牵引变流器/4车 控制电源低压,牵引变流器/4车 牵引电机电流不平衡,牵引变流器/4车 牵引电机过电流1,牵引变流器/4车 牵引电机过电流2,牵引变流器/4车 PG故障,牵引变流器/4车 通风机工作,牵引变流器/4车 主变压器异常,牵引变流器/4车 牵引不动作,牵引变流器/4车 主电路工作牵引,牵引变流器/4车 主电路工作再生,牵引变流器/4车 门极电源故障,牵引变流器/4车 直流100V异常,牵引变流器/4车 二次侧接地1,牵引变流器/4车 二次侧接地2"/>
+                        <Car CarName="5 车厢" InBoolNames="牵引变流器/5车 恒速 ,牵引变流器/5车 制动,牵引变流器/5车 动力,牵引变流器/5车 后向,牵引变流器/5车 前向,牵引变流器/5车 空挡,牵引变流器/5车 接触器K闭合,牵引变流器/5车 充电不良,牵引变流器/5车 再生制动过大,牵引变流器/5车 再生制动失效,牵引变流器/5车 复位,牵引变流器/5车 空转,牵引变流器/5车 OVTh误动作,牵引变流器/5车 直流过电压3,牵引变流器/5车 直流低电压2,牵引变流器/5车 变流器箱内部温度高,牵引变流器/5车 二次侧过电流1,牵引变流器/5车 二次侧过电流2,牵引变流器/5车 三次侧低电压,牵引变流器/5车 三次侧过电压,牵引变流器/5车 接触网无电,牵引变流器/5车 CI故障,牵引变流器/5车 主电路元件异常,牵引变流器/5车 冷却器温度高,牵引变流器/5车 控制电源低压,牵引变流器/5车 牵引电机电流不平衡,牵引变流器/5车 牵引电机过电流1,牵引变流器/5车 牵引电机过电流2,牵引变流器/5车 PG故障,牵引变流器/5车 通风机工作,牵引变流器/5车 主变压器异常,牵引变流器/5车 牵引不动作,牵引变流器/5车 主电路工作牵引,牵引变流器/5车 主电路工作再生,牵引变流器/5车 门极电源故障,牵引变流器/5车 直流100V异常,牵引变流器/5车 二次侧接地1,牵引变流器/5车 二次侧接地2"/>-->
+                <Car CarName="6 车厢" InBoolNames="牵引变流器/6车 恒速 ,牵引变流器/6车 制动,牵引变流器/6车 动力,牵引变流器/6车 后向,牵引变流器/6车 前向,牵引变流器/6车 空挡,牵引变流器/6车 接触器K闭合,牵引变流器/6车 充电不良,牵引变流器/6车 再生制动过大,牵引变流器/6车 再生制动失效,牵引变流器/6车 复位,牵引变流器/6车 空转,牵引变流器/6车 OVTh误动作,牵引变流器/6车 直流过电压3,牵引变流器/6车 直流低电压2,牵引变流器/6车 变流器箱内部温度高,牵引变流器/6车 二次侧过电流1,牵引变流器/6车 二次侧过电流2,牵引变流器/6车 三次侧低电压,牵引变流器/6车 三次侧过电压,牵引变流器/6车 接触网无电,牵引变流器/6车 CI故障,牵引变流器/6车 主电路元件异常,牵引变流器/6车 冷却器温度高,牵引变流器/6车 控制电源低压,牵引变流器/6车 牵引电机电流不平衡,牵引变流器/6车 牵引电机过电流1,牵引变流器/6车 牵引电机过电流2,牵引变流器/6车 PG故障,牵引变流器/6车 通风机工作,牵引变流器/6车 主变压器异常,牵引变流器/6车 牵引不动作,牵引变流器/6车 主电路工作牵引,牵引变流器/6车 主电路工作再生,牵引变流器/6车 门极电源故障,牵引变流器/6车 直流100V异常,牵引变流器/6车 二次侧接地1,牵引变流器/6车 二次侧接地2"/>
+                <Car CarName="7 车厢" InBoolNames="牵引变流器/7车 恒速 ,牵引变流器/7车 制动,牵引变流器/7车 动力,牵引变流器/7车 后向,牵引变流器/7车 前向,牵引变流器/7车 空挡,牵引变流器/7车 接触器K闭合,牵引变流器/7车 充电不良,牵引变流器/7车 再生制动过大,牵引变流器/7车 再生制动失效,牵引变流器/7车 复位,牵引变流器/7车 空转,牵引变流器/7车 OVTh误动作,牵引变流器/7车 直流过电压3,牵引变流器/7车 直流低电压2,牵引变流器/7车 变流器箱内部温度高,牵引变流器/7车 二次侧过电流1,牵引变流器/7车 二次侧过电流2,牵引变流器/7车 三次侧低电压,牵引变流器/7车 三次侧过电压,牵引变流器/7车 接触网无电,牵引变流器/7车 CI故障,牵引变流器/7车 主电路元件异常,牵引变流器/7车 冷却器温度高,牵引变流器/7车 控制电源低压,牵引变流器/7车 牵引电机电流不平衡,牵引变流器/7车 牵引电机过电流1,牵引变流器/7车 牵引电机过电流2,牵引变流器/7车 PG故障,牵引变流器/7车 通风机工作,牵引变流器/7车 主变压器异常,牵引变流器/7车 牵引不动作,牵引变流器/7车 主电路工作牵引,牵引变流器/7车 主电路工作再生,牵引变流器/7车 门极电源故障,牵引变流器/7车 直流100V异常,牵引变流器/7车 二次侧接地1,牵引变流器/7车 二次侧接地2"/>
+            </Cars>
+        </TowInfo2Config>
+
+        <!--空转滑行-->
+        <EmputyRollConfig>
+
+            <TrainViewLocation Location="220,145"/>
+
+            <Grid GridType="GridLine" AbsX="240" AbsY="205" Width="294" Height="234" RowCount="9" ColumnCount="8" TextWidth="42" TextHeight="26" LineVisible="false">
+                <Rows>
+                    <Row Name="空  转\r\n(次)" RowIndex="0" ItemType="Text" >
+                        <Columns ColumIndex="1" InBoolList="0" />
+                        <Columns ColumIndex="2" InBoolList="0" />
+                        <!--<Columns ColumIndex="3" InBoolList="0" />
+                            <Columns ColumIndex="4" InBoolList="0" />-->
+                        <Columns ColumIndex="5" InBoolList="0" />
+                        <Columns ColumIndex="6" InBoolList="0" />
+                    </Row>
+                    <Row Name="滑  行1\r\n(次)" RowIndex="2" ItemType="Text"  >
+                        <Columns ColumIndex="0" InBoolList="0" />
+                        <Columns ColumIndex="1" InBoolList="0" />
+                        <Columns ColumIndex="2" InBoolList="0" />
+                        <Columns ColumIndex="3" InBoolList="0" />
+                        <Columns ColumIndex="4" InBoolList="0" />
+                        <Columns ColumIndex="5" InBoolList="0" />
+                        <Columns ColumIndex="6" InBoolList="0" />
+                        <Columns ColumIndex="7" InBoolList="0" />
+                    </Row>
+                    <Row Name="滑  行2\r\n(次)" RowIndex="4" ItemType="Text"  >
+                        <Columns ColumIndex="0" InBoolList="0" />
+                        <Columns ColumIndex="1" InBoolList="0" />
+                        <Columns ColumIndex="2" InBoolList="0" />
+                        <Columns ColumIndex="3" InBoolList="0" />
+                        <Columns ColumIndex="4" InBoolList="0" />
+                        <Columns ColumIndex="5" InBoolList="0" />
+                        <Columns ColumIndex="6" InBoolList="0" />
+                        <Columns ColumIndex="7" InBoolList="0" />
+                    </Row>
+                    <Row Name="滑  行3\r\n(次)" RowIndex="6" ItemType="Text"  >
+                        <Columns ColumIndex="0" InBoolList="0" />
+                        <Columns ColumIndex="1" InBoolList="0" />
+                        <Columns ColumIndex="2" InBoolList="0" />
+                        <Columns ColumIndex="3" InBoolList="0" />
+                        <Columns ColumIndex="4" InBoolList="0" />
+                        <Columns ColumIndex="5" InBoolList="0" />
+                        <Columns ColumIndex="6" InBoolList="0" />
+                        <Columns ColumIndex="7" InBoolList="0" />
+                    </Row>
+                    <Row Name="滑  行4\r\n(次)" RowIndex="8" ItemType="Text"  >
+                        <Columns ColumIndex="0" InBoolList="0" />
+                        <Columns ColumIndex="1" InBoolList="0" />
+                        <Columns ColumIndex="2" InBoolList="0" />
+                        <Columns ColumIndex="3" InBoolList="0" />
+                        <Columns ColumIndex="4" InBoolList="0" />
+                        <Columns ColumIndex="5" InBoolList="0" />
+                        <Columns ColumIndex="6" InBoolList="0" />
+                        <Columns ColumIndex="7" InBoolList="0" />
+                    </Row>
+                </Rows>
+            </Grid>
+        </EmputyRollConfig>
+
+        <!--供电分类-->
+        <PowerClassifyConfig>
+            <TrainViewLocation Location="220,135"/>
+            <MtrInBools>
+                <Mtr CarNo="1" InBoolNames="供电分类 / 2车   MTr    1：有压  0：无压" />
+                <!--<Mtr CarNo="3" InBoolNames="供电分类 / 4车   MTr    1：有压  0：无压" />-->
+                <Mtr CarNo="5" InBoolNames="供电分类 / 6车   MTr    1：有压  0：无压" />
+            </MtrInBools>
+            <ACK1InBools>
+                <ACK1 CarNo="1" InBoolNames="供电分类 / 2车   ACK1   1：闭合  0：断开"/>
+                <ACK1 CarNo="3" InBoolNames="供电分类 / 4车   ACK1   1：闭合  0：断开"/>
+                <ACK1 CarNo="5" InBoolNames="供电分类 / 6车   ACK1   1：闭合  0：断开"/>
+            </ACK1InBools>
+            <ACK2InBools>
+                <ACK2 CarNo="3" InBoolNames="供电分类 / 4车   ACK2   1：闭合  0：断开"/>
+            </ACK2InBools>
+            <BKKInBools>
+                <BKK  CarNo="4" InBoolNames="供电分类 / 5车   BKK    1：闭合  0：断开"/>
+            </BKKInBools>
+            <BKK2InBools>
+                <BKK2 CarNo="4" InBoolNames="供电分类 / 5车   BKK2   1：闭合  0：断开"/>
+            </BKK2InBools>
+            <BKKOutBools>
+                <BKK Rectangle="50, 526, 150, 45"  Text="BKK 投入" OutBoolNames="供电分类 / BKK 投入"/>
+                <BKK Rectangle="205, 526, 150, 45" Text="BKK 复位" OutBoolNames="供电分类 / BKK 复位"/>
+            </BKKOutBools>
+            <APUInBools>
+                <APU CarNo="0" InBoolNames="供电分类 / 1车   APU   2车供电,供电分类 / 1车   APU   6车供电" />
+                <!--<Mtr CarNo="3" InBoolNames="供电分类 / 4车   MTr    1：有压  0：无压" />-->
+                <APU CarNo="7" InBoolNames="供电分类 / 8车   APU   2车供电,供电分类 / 8车   APU   6车供电" />
+            </APUInBools>
+        </PowerClassifyConfig>
+
+        <!--电源电压 配置-->
+        <PowerVoltageConfig>
+
+            <FirstPageModels>
+                <PowerVoltageModel VoltageType="三次内侧电压" MaxVoltage="500" FirstAbsX="108" FirstAbsY="485" TextWidth="45" TextHeight="20">
+                    <VoltageCar CarName="2" InFloatNames="电源电压/三次内侧电压-2车"/>
+
+                    <VoltageCar CarName="6" InFloatNames="电源电压/三次内侧电压-6车"/>
+                </PowerVoltageModel>
+                <PowerVoltageModel VoltageType="A C 4 0 0 V" MaxVoltage="500" FirstAbsX="280" FirstAbsY="485" TextWidth="45" TextHeight="20">
+                    <VoltageCar CarName="1" InFloatNames="电源电压/A C 4 0 0 V-1车"/>
+
+                    <VoltageCar CarName="8" InFloatNames="电源电压/A C 4 0 0 V-8车"/>
+                </PowerVoltageModel>
+                <PowerVoltageModel VoltageType="A C 1 0 0 V\r\n  (稳压)" MaxVoltage="500" FirstAbsX="440" FirstAbsY="485" TextWidth="45" TextHeight="20">
+                    <VoltageCar CarName="1" InFloatNames="电源电压/A C 1 0 0 V(稳压)-1车"/>
+                    <VoltageCar CarName="8" InFloatNames="电源电压/A C 1 0 0 V(稳压)-8车"/>
+                </PowerVoltageModel>
+                <PowerVoltageModel VoltageType="电池电压" MaxVoltage="500" FirstAbsX="580" FirstAbsY="485" TextWidth="45" TextHeight="20">
+                    <VoltageCar CarName="2" InFloatNames="电源电压/电池电压 -2车"/>
+                    <VoltageCar CarName="3" InFloatNames="电源电压/电池电压 -3车"/>
+                    <VoltageCar CarName="5" InFloatNames="电源电压/电池电压 -5车"/>
+                    <VoltageCar CarName="7" InFloatNames="电源电压/电池电压 -7车"/>
+                </PowerVoltageModel>
+            </FirstPageModels>
+
+            <SecondPageModels>
+                <PowerVoltageModel VoltageType="电容器电压" MaxVoltage="2000" FirstAbsX="120" FirstAbsY="485" TextWidth="45" TextHeight="20">
+                    <VoltageCar CarName="1" FloatIndex="12" InFloatNames="电源电压/电容器电压 -1车"/>
+
+                    <VoltageCar CarName="8" FloatIndex="14" InFloatNames="电源电压/电容器电压 -8车"/>
+                </PowerVoltageModel>
+            </SecondPageModels>
+
+        </PowerVoltageConfig>
+
+        <!--车门配置-->
+        <DoorConfig>
+            <DoorInBoolModels>
+                <DoorInBoolModel CarNo="0" DoorLocation="Door1" Type="OpenClose"    InBoolNames="门状态 / 1车 右1车门  1：关    0：开"/>
+                <DoorInBoolModel CarNo="0" DoorLocation="Door1" Type="PressRelase"  InBoolNames="门状态 / 1车 右1车门  1：压紧    0：松"/>
+                <DoorInBoolModel CarNo="0" DoorLocation="Door2" Type="OpenClose"    InBoolNames="门状态 / 1车 左1车门  1：关    0：开"/>
+                <DoorInBoolModel CarNo="0" DoorLocation="Door2" Type="PressRelase"  InBoolNames="门状态 / 1车 左1车门  1：压紧    0：松"/>
+                <!--<DoorInBoolModel CarNo="0" DoorLocation="Door3" Type="OpenClose"    InBoolNames="门状态 / 1车 右2车门  1：关    0：开"/>-->
+                <!--<DoorInBoolModel CarNo="0" DoorLocation="Door3" Type="PressRelase"  InBoolNames="门状态 / 1车 右2车门  1：压紧    0：松"/>-->
+                <!--<DoorInBoolModel CarNo="0" DoorLocation="Door4" Type="OpenClose"    InBoolNames="门状态 / 1车 左2车门  1：关    0：开"/>-->
+                <!--<DoorInBoolModel CarNo="0" DoorLocation="Door4" Type="PressRelase"  InBoolNames="门状态 / 1车 左2车门  1：压紧    0：松"/>-->
+                <DoorInBoolModel CarNo="1" DoorLocation="Door1" Type="OpenClose"    InBoolNames="门状态 / 2车 右1车门  1：关    0：开"/>
+                <DoorInBoolModel CarNo="1" DoorLocation="Door1" Type="PressRelase"  InBoolNames="门状态 / 2车 右1车门  1：压紧    0：松"/>
+                <DoorInBoolModel CarNo="1" DoorLocation="Door2" Type="OpenClose"    InBoolNames="门状态 / 2车 左1车门  1：关    0：开"/>
+                <DoorInBoolModel CarNo="1" DoorLocation="Door2" Type="PressRelase"  InBoolNames="门状态 / 2车 左1车门  1：压紧    0：松"/>
+                <DoorInBoolModel CarNo="1" DoorLocation="Door3" Type="OpenClose"    InBoolNames="门状态 / 2车 右2车门  1：关    0：开"/>
+                <DoorInBoolModel CarNo="1" DoorLocation="Door3" Type="PressRelase"  InBoolNames="门状态 / 2车 右2车门  1：压紧    0：松"/>
+                <DoorInBoolModel CarNo="1" DoorLocation="Door4" Type="OpenClose"    InBoolNames="门状态 / 2车 左2车门  1：关    0：开"/>
+                <DoorInBoolModel CarNo="1" DoorLocation="Door4" Type="PressRelase"  InBoolNames="门状态 / 2车 左2车门  1：压紧    0：松"/>
+                <DoorInBoolModel CarNo="2" DoorLocation="Door1" Type="OpenClose"    InBoolNames="门状态 / 3车 右1车门  1：关    0：开"/>
+                <DoorInBoolModel CarNo="2" DoorLocation="Door1" Type="PressRelase"  InBoolNames="门状态 / 3车 右1车门  1：压紧    0：松"/>
+                <DoorInBoolModel CarNo="2" DoorLocation="Door2" Type="OpenClose"    InBoolNames="门状态 / 3车 左1车门  1：关    0：开"/>
+                <DoorInBoolModel CarNo="2" DoorLocation="Door2" Type="PressRelase"  InBoolNames="门状态 / 3车 左1车门  1：压紧    0：松"/>
+                <DoorInBoolModel CarNo="2" DoorLocation="Door3" Type="OpenClose"    InBoolNames="门状态 / 3车 右2车门  1：关    0：开"/>
+                <DoorInBoolModel CarNo="2" DoorLocation="Door3" Type="PressRelase"  InBoolNames="门状态 / 3车 右2车门  1：压紧    0：松"/>
+                <DoorInBoolModel CarNo="2" DoorLocation="Door4" Type="OpenClose"    InBoolNames="门状态 / 3车 左2车门  1：关    0：开"/>
+                <DoorInBoolModel CarNo="2" DoorLocation="Door4" Type="PressRelase"  InBoolNames="门状态 / 3车 左2车门  1：压紧    0：松"/>
+                <DoorInBoolModel CarNo="3" DoorLocation="Door1" Type="OpenClose"    InBoolNames="门状态 / 4车 右1车门  1：关    0：开"/>
+                <DoorInBoolModel CarNo="3" DoorLocation="Door1" Type="PressRelase"  InBoolNames="门状态 / 4车 右1车门  1：压紧    0：松"/>
+                <DoorInBoolModel CarNo="3" DoorLocation="Door2" Type="OpenClose"    InBoolNames="门状态 / 4车 左1车门  1：关    0：开"/>
+                <DoorInBoolModel CarNo="3" DoorLocation="Door2" Type="PressRelase"  InBoolNames="门状态 / 4车 左1车门  1：压紧    0：松"/>
+                <DoorInBoolModel CarNo="3" DoorLocation="Door3" Type="OpenClose"    InBoolNames="门状态 / 4车 右2车门  1：关    0：开"/>
+                <DoorInBoolModel CarNo="3" DoorLocation="Door3" Type="PressRelase"  InBoolNames="门状态 / 4车 右2车门  1：压紧    0：松"/>
+                <DoorInBoolModel CarNo="3" DoorLocation="Door4" Type="OpenClose"    InBoolNames="门状态 / 4车 左2车门  1：关    0：开"/>
+                <DoorInBoolModel CarNo="3" DoorLocation="Door4" Type="PressRelase"  InBoolNames="门状态 / 4车 左2车门  1：压紧    0：松"/>
+                <DoorInBoolModel CarNo="4" DoorLocation="Door1" Type="OpenClose"    InBoolNames="门状态 / 5车 右1车门  1：关    0：开"/>
+                <DoorInBoolModel CarNo="4" DoorLocation="Door1" Type="PressRelase"  InBoolNames="门状态 / 5车 右1车门  1：压紧    0：松"/>
+                <DoorInBoolModel CarNo="4" DoorLocation="Door2" Type="OpenClose"    InBoolNames="门状态 / 5车 左1车门  1：关    0：开"/>
+                <DoorInBoolModel CarNo="4" DoorLocation="Door2" Type="PressRelase"  InBoolNames="门状态 / 5车 左1车门  1：压紧    0：松"/>
+                <!--<DoorInBoolModel CarNo="4" DoorLocation="Door3" Type="OpenClose"    InBoolNames="门状态 / 5车 右2车门  1：关    0：开"/>-->
+                <!--<DoorInBoolModel CarNo="4" DoorLocation="Door3" Type="PressRelase"  InBoolNames="门状态 / 5车 右2车门  1：压紧    0：松"/>-->
+                <!--<DoorInBoolModel CarNo="4" DoorLocation="Door4" Type="OpenClose"    InBoolNames="门状态 / 5车 左2车门  1：关    0：开"/>-->
+                <!--<DoorInBoolModel CarNo="4" DoorLocation="Door4" Type="PressRelase"  InBoolNames="门状态 / 5车 左2车门  1：压紧    0：松"/>-->
+                <DoorInBoolModel CarNo="5" DoorLocation="Door1" Type="OpenClose"    InBoolNames="门状态 / 6车 右1车门  1：关    0：开"/>
+                <DoorInBoolModel CarNo="5" DoorLocation="Door1" Type="PressRelase"  InBoolNames="门状态 / 6车 右1车门  1：压紧    0：松"/>
+                <DoorInBoolModel CarNo="5" DoorLocation="Door2" Type="OpenClose"    InBoolNames="门状态 / 6车 左1车门  1：关    0：开"/>
+                <DoorInBoolModel CarNo="5" DoorLocation="Door2" Type="PressRelase"  InBoolNames="门状态 / 6车 左1车门  1：压紧    0：松"/>
+                <DoorInBoolModel CarNo="5" DoorLocation="Door3" Type="OpenClose"    InBoolNames="门状态 / 6车 右2车门  1：关    0：开"/>
+                <DoorInBoolModel CarNo="5" DoorLocation="Door3" Type="PressRelase"  InBoolNames="门状态 / 6车 右2车门  1：压紧    0：松"/>
+                <DoorInBoolModel CarNo="5" DoorLocation="Door4" Type="OpenClose"    InBoolNames="门状态 / 6车 左2车门  1：关    0：开"/>
+                <DoorInBoolModel CarNo="5" DoorLocation="Door4" Type="PressRelase"  InBoolNames="门状态 / 6车 左2车门  1：压紧    0：松"/>
+                <DoorInBoolModel CarNo="6" DoorLocation="Door1" Type="OpenClose"    InBoolNames="门状态 / 7车 右1车门  1：关    0：开"/>
+                <DoorInBoolModel CarNo="6" DoorLocation="Door1" Type="PressRelase"  InBoolNames="门状态 / 7车 右1车门  1：压紧    0：松"/>
+                <DoorInBoolModel CarNo="6" DoorLocation="Door2" Type="OpenClose"    InBoolNames="门状态 / 7车 左1车门  1：关    0：开"/>
+                <DoorInBoolModel CarNo="6" DoorLocation="Door2" Type="PressRelase"  InBoolNames="门状态 / 7车 左1车门  1：压紧    0：松"/>
+                <DoorInBoolModel CarNo="6" DoorLocation="Door3" Type="OpenClose"    InBoolNames="门状态 / 7车 右2车门  1：关    0：开"/>
+                <DoorInBoolModel CarNo="6" DoorLocation="Door3" Type="PressRelase"  InBoolNames="门状态 / 7车 右2车门  1：压紧    0：松"/>
+                <DoorInBoolModel CarNo="6" DoorLocation="Door4" Type="OpenClose"    InBoolNames="门状态 / 7车 左2车门  1：关    0：开"/>
+                <DoorInBoolModel CarNo="6" DoorLocation="Door4" Type="PressRelase"  InBoolNames="门状态 / 7车 左2车门  1：压紧    0：松"/>
+                <!--<DoorInBoolModel CarNo="7" DoorLocation="Door1" Type="OpenClose"    InBoolNames="门状态 / 8车 右1车门  1：关    0：开"/>-->
+                <!--<DoorInBoolModel CarNo="7" DoorLocation="Door1" Type="PressRelase"  InBoolNames="门状态 / 8车 右1车门  1：压紧    0：松"/>-->
+                <!--<DoorInBoolModel CarNo="7" DoorLocation="Door2" Type="OpenClose"    InBoolNames="门状态 / 8车 左1车门  1：关    0：开"/>-->
+                <!--<DoorInBoolModel CarNo="7" DoorLocation="Door2" Type="PressRelase"  InBoolNames="门状态 / 8车 左1车门  1：压紧    0：松"/>-->
+                <DoorInBoolModel CarNo="7" DoorLocation="Door3" Type="OpenClose"    InBoolNames="门状态 / 8车 右2车门  1：关    0：开"/>
+                <DoorInBoolModel CarNo="7" DoorLocation="Door3" Type="PressRelase"  InBoolNames="门状态 / 8车 右2车门  1：压紧    0：松"/>
+                <DoorInBoolModel CarNo="7" DoorLocation="Door4" Type="OpenClose"    InBoolNames="门状态 / 8车 左2车门  1：关    0：开"/>
+                <DoorInBoolModel CarNo="7" DoorLocation="Door4" Type="PressRelase"  InBoolNames="门状态 / 8车 左2车门  1：压紧    0：松"/>
+
+            </DoorInBoolModels>
+        </DoorConfig>
+
+        <!--光传输状态-->
+        <LightTrainsConfig >
+
+            <LightTransPage Page="Page0">
+                <TrainViewLocation Location="120,139" />
+
+                <LightUnitConfigs>
+                    <LightUnit InBoolNames="中1CCU1——中1CCU2  0:正常  1：异常,中1CCU1——中1CCU2  1:不知">
+                        <Line CarName="1" Type="Middle" />
+                        <Line CarName="1" Type="Middle" />
+                    </LightUnit>
+                    <LightUnit InBoolNames="中1CCU1 ——端2     0:正常  1：异常,中1CCU1 ——端2     1:不知">
+                        <Line CarName="1" Type="Middle" />
+                        <Line CarName="2" Type="EndPoint" />
+                    </LightUnit>
+                    <LightUnit InBoolNames="端2——BCU          0:正常  1：异常,端2——BCU          1:不知">
+                        <Line CarName="2" Type="BCU" />
+                        <Line CarName="2" Type="EndPoint" />
+                    </LightUnit>
+                    <LightUnit InBoolNames="端2——CI           0:正常  1：异常,端2——CI           1:不知">
+                        <Line CarName="2" Type="CI" />
+                        <Line CarName="2" Type="EndPoint" />
+                    </LightUnit>
+                    <LightUnit InBoolNames="端2——端4          0:正常  1：异常,端2——端4          1:不知">
+                        <Line CarName="2" Type="EndPoint" />
+                        <Line CarName="4" Type="EndPoint" />
+                    </LightUnit>
+                    <LightUnit InBoolNames="端4——BCU          0:正常  1：异常,端4——BCU          1:不知">
+                        <Line CarName="4" Type="BCU" />
+                        <Line CarName="4" Type="EndPoint" />
+                    </LightUnit>
+                    <LightUnit InBoolNames="端4——端6          0:正常  1：异常,端4——端6          1:不知">
+                        <Line CarName="4" Type="EndPoint" />
+                        <Line CarName="6" Type="EndPoint" />
+                    </LightUnit>
+                    <LightUnit InBoolNames="端6——BCU          0:正常  1：异常,端6——BCU          1:不知">
+                        <Line CarName="6" Type="BCU" />
+                        <Line CarName="6" Type="EndPoint" />
+                    </LightUnit>
+                    <LightUnit InBoolNames="端6——CI           0:正常  1：异常,端6——CI           1:不知">
+                        <Line CarName="6" Type="CI" />
+                        <Line CarName="6" Type="EndPoint" />
+                    </LightUnit>
+                    <LightUnit InBoolNames="端6——端8          0:正常  1：异常,端6——端8          1:不知">
+                        <Line CarName="8" Type="EndPoint" />
+                        <Line CarName="6" Type="EndPoint" />
+                    </LightUnit>
+                    <LightUnit InBoolNames="端8——BCU          0:正常  1：异常,端8——BCU          1:不知">
+                        <Line CarName="8" Type="EndPoint" />
+                        <Line CarName="8" Type="BCU" />
+                    </LightUnit>
+                    <LightUnit InBoolNames="端8——CCU中8       0:正常  1：异常,端8——CCU中8       1:不知">
+                        <Line CarName="8" Type="EndPoint" />
+                        <Line CarName="8" Type="Middle" />
+                    </LightUnit>
+                    <LightUnit InBoolNames="中8CCU2——中8CCU1  0:正常  1：异常,中8CCU2——中8CCU1  1:不知">
+                        <Line CarName="8" Type="Middle" />
+                        <Line CarName="8" Type="Middle" />
+                    </LightUnit>
+                    <LightUnit InBoolNames="中8CCU1——端7      0:正常  1：异常,中8CCU1——端7      1:不知">
+                        <Line CarName="7" Type="EndPoint" />
+                        <Line CarName="8" Type="Middle" />
+                    </LightUnit>
+                    <LightUnit InBoolNames="端7——BCU          0:正常  1：异常,端7——BCU          1:不知">
+                        <Line CarName="7" Type="EndPoint" />
+                        <Line CarName="7" Type="BCU" />
+                    </LightUnit>
+                    <LightUnit InBoolNames="端7——CI           0:正常  1：异常,端7——CI           1:不知">
+                        <Line CarName="7" Type="EndPoint" />
+                        <Line CarName="7" Type="CI" />
+                    </LightUnit>
+                    <LightUnit InBoolNames="端7——端5          0:正常  1：异常,端7——端5          1:不知">
+                        <Line CarName="7" Type="EndPoint" />
+                        <Line CarName="5" Type="EndPoint" />
+                    </LightUnit>
+                    <LightUnit InBoolNames="端5——BCU          0:正常  1：异常,端5——BCU          1:不知">
+                        <Line CarName="5" Type="EndPoint" />
+                        <Line CarName="5" Type="BCU" />
+                    </LightUnit>
+
+                    <LightUnit InBoolNames="端5——CI           0:正常  1：异常,端5——CI           1:不知">
+                        <Line CarName="5" Type="EndPoint" />
+                        <Line CarName="5" Type="CI" />
+                    </LightUnit>
+
+                    <LightUnit InBoolNames="端5——端3          0:正常  1：异常,端5——端3          1:不知">
+                        <Line CarName="3" Type="EndPoint" />
+                        <Line CarName="5" Type="EndPoint" />
+                    </LightUnit>
+                    <LightUnit InBoolNames="端3——BCU          0:正常  1：异常,端3——BCU          1:不知">
+                        <Line CarName="3" Type="EndPoint" />
+                        <Line CarName="3" Type="BCU" />
+                    </LightUnit>
+                    <LightUnit InBoolNames="端3——CI           0:正常  1：异常,端3——CI           1:不知">
+                        <Line CarName="3" Type="EndPoint" />
+                        <Line CarName="3" Type="CI" />
+                    </LightUnit>
+                    <LightUnit InBoolNames="端3——端1          0:正常  1：异常,端3——端1          1:不知">
+                        <Line CarName="3" Type="EndPoint" />
+                        <Line CarName="1" Type="EndPoint" />
+                    </LightUnit>
+                    <LightUnit InBoolNames="端1——BCU          0:正常  1：异常,端1——BCU          1:不知">
+                        <Line CarName="1" Type="BCU" />
+                        <Line CarName="1" Type="EndPoint" />
+                    </LightUnit>
+                    <LightUnit InBoolNames="端1——中1CCU2      0:正常  1：异常,端1——中1CCU2      1:不知">
+                        <Line CarName="1" Type="Middle" />
+                        <Line CarName="1" Type="EndPoint" />
+                    </LightUnit>
+                </LightUnitConfigs>
+            </LightTransPage>
+
+        </LightTrainsConfig>
+
+        <!--轴温切除 -->
+        <AxisTemperatureConfig>
+            <TrainViewLocation Location="230,140"/>
+            <Grid AbsX="247" AbsY="202" Width="294" Height="25"  RowCount="2" ColumnCount="8" RoundnessR="8" LineVisible="true">
+                <Rows>
+                    <Row Name="轴温 1" RowIndex="0" ItemType="Roudness" Colors="White,Yellow,Red">
+                        <Columns ColumIndex="0" InBoolNames="轴温切除 / 1 车厢 1轴温   0：正常 1：切除,轴温切除 / 1 车厢 1轴温   1：异常" />
+                        <Columns ColumIndex="1" InBoolNames="轴温切除 / 2 车厢 1轴温   0：正常 1：切除,轴温切除 / 2 车厢 1轴温   1：异常" />
+                        <Columns ColumIndex="2" InBoolNames="轴温切除 / 3 车厢 1轴温   0：正常 1：切除,轴温切除 / 3 车厢 1轴温   1：异常" />
+                        <Columns ColumIndex="3" InBoolNames="轴温切除 / 4 车厢 1轴温   0：正常 1：切除,轴温切除 / 4 车厢 1轴温   1：异常" />
+                        <Columns ColumIndex="4" InBoolNames="轴温切除 / 5 车厢 1轴温   0：正常 1：切除,轴温切除 / 5 车厢 1轴温   1：异常" />
+                        <Columns ColumIndex="5" InBoolNames="轴温切除 / 6 车厢 1轴温   0：正常 1：切除,轴温切除 / 6 车厢 1轴温   1：异常" />
+                        <Columns ColumIndex="6" InBoolNames="轴温切除 / 7 车厢 1轴温   0：正常 1：切除,轴温切除 / 7 车厢 1轴温   1：异常" />
+                        <Columns ColumIndex="7" InBoolNames="轴温切除 / 8 车厢 1轴温   0：正常 1：切除,轴温切除 / 8 车厢 1轴温   1：异常" />
+                    </Row>
+                    <Row Name="轴温 2" RowIndex="1" ItemType="Roudness" Colors="White,Yellow,Red">
+                        <Columns ColumIndex="0" InBoolNames="轴温切除 / 1 车厢 2轴温   0：正常 1：切除,轴温切除 / 1 车厢 2轴温   1：异常" />
+                        <Columns ColumIndex="1" InBoolNames="轴温切除 / 2 车厢 2轴温   0：正常 1：切除,轴温切除 / 2 车厢 2轴温   1：异常" />
+                        <Columns ColumIndex="2" InBoolNames="轴温切除 / 3 车厢 2轴温   0：正常 1：切除,轴温切除 / 3 车厢 2轴温   1：异常" />
+                        <Columns ColumIndex="3" InBoolNames="轴温切除 / 4 车厢 2轴温   0：正常 1：切除,轴温切除 / 4 车厢 2轴温   1：异常" />
+                        <Columns ColumIndex="4" InBoolNames="轴温切除 / 5 车厢 2轴温   0：正常 1：切除,轴温切除 / 5 车厢 2轴温   1：异常" />
+                        <Columns ColumIndex="5" InBoolNames="轴温切除 / 6 车厢 2轴温   0：正常 1：切除,轴温切除 / 6 车厢 2轴温   1：异常" />
+                        <Columns ColumIndex="6" InBoolNames="轴温切除 / 7 车厢 2轴温   0：正常 1：切除,轴温切除 / 7 车厢 2轴温   1：异常" />
+                        <Columns ColumIndex="7" InBoolNames="轴温切除 / 8 车厢 2轴温   0：正常 1：切除,轴温切除 / 8 车厢 2轴温   1：异常" />
+                    </Row>
+                </Rows>
+            </Grid>
+            <AxisTemperatureSendModels>
+                <SendModel CarNo="0" AxisTemperaturedLocation="1" Type="CutOff" OutBoolNames="轴温切除 / 1车厢 轴温1  1：切除"/>
+                <SendModel CarNo="1" AxisTemperaturedLocation="1" Type="CutOff" OutBoolNames="轴温切除 / 2车厢 轴温1  1：切除"/>
+                <SendModel CarNo="2" AxisTemperaturedLocation="1" Type="CutOff" OutBoolNames="轴温切除 / 3车厢 轴温1  1：切除"/>
+                <SendModel CarNo="3" AxisTemperaturedLocation="1" Type="CutOff" OutBoolNames="轴温切除 / 4车厢 轴温1  1：切除"/>
+                <SendModel CarNo="4" AxisTemperaturedLocation="1" Type="CutOff" OutBoolNames="轴温切除 / 5车厢 轴温1  1：切除"/>
+                <SendModel CarNo="5" AxisTemperaturedLocation="1" Type="CutOff" OutBoolNames="轴温切除 / 6车厢 轴温1  1：切除"/>
+                <SendModel CarNo="6" AxisTemperaturedLocation="1" Type="CutOff" OutBoolNames="轴温切除 / 7车厢 轴温1  1：切除"/>
+                <SendModel CarNo="7" AxisTemperaturedLocation="1" Type="CutOff" OutBoolNames="轴温切除 / 8车厢 轴温1  1：切除"/>
+                <SendModel CarNo="0" AxisTemperaturedLocation="2" Type="CutOff" OutBoolNames="轴温切除 / 1车厢 轴温2  1：切除"/>
+                <SendModel CarNo="1" AxisTemperaturedLocation="2" Type="CutOff" OutBoolNames="轴温切除 / 2车厢 轴温2  1：切除"/>
+                <SendModel CarNo="2" AxisTemperaturedLocation="2" Type="CutOff" OutBoolNames="轴温切除 / 3车厢 轴温2  1：切除"/>
+                <SendModel CarNo="3" AxisTemperaturedLocation="2" Type="CutOff" OutBoolNames="轴温切除 / 4车厢 轴温2  1：切除"/>
+                <SendModel CarNo="4" AxisTemperaturedLocation="2" Type="CutOff" OutBoolNames="轴温切除 / 5车厢 轴温2  1：切除"/>
+                <SendModel CarNo="5" AxisTemperaturedLocation="2" Type="CutOff" OutBoolNames="轴温切除 / 6车厢 轴温2  1：切除"/>
+                <SendModel CarNo="6" AxisTemperaturedLocation="2" Type="CutOff" OutBoolNames="轴温切除 / 7车厢 轴温2  1：切除"/>
+                <SendModel CarNo="7" AxisTemperaturedLocation="2" Type="CutOff" OutBoolNames="轴温切除 / 8车厢 轴温2  1：切除"/>
+                <SendModel CarNo="0" AxisTemperaturedLocation="1" Type="Reset"  OutBoolNames="轴温切除 / 1车厢 轴温1  1：复位"/>
+                <SendModel CarNo="1" AxisTemperaturedLocation="1" Type="Reset"  OutBoolNames="轴温切除 / 2车厢 轴温1  1：复位"/>
+                <SendModel CarNo="2" AxisTemperaturedLocation="1" Type="Reset"  OutBoolNames="轴温切除 / 3车厢 轴温1  1：复位"/>
+                <SendModel CarNo="3" AxisTemperaturedLocation="1" Type="Reset"  OutBoolNames="轴温切除 / 4车厢 轴温1  1：复位"/>
+                <SendModel CarNo="4" AxisTemperaturedLocation="1" Type="Reset"  OutBoolNames="轴温切除 / 5车厢 轴温1  1：复位"/>
+                <SendModel CarNo="5" AxisTemperaturedLocation="1" Type="Reset"  OutBoolNames="轴温切除 / 6车厢 轴温1  1：复位"/>
+                <SendModel CarNo="6" AxisTemperaturedLocation="1" Type="Reset"  OutBoolNames="轴温切除 / 7车厢 轴温1  1：复位"/>
+                <SendModel CarNo="7" AxisTemperaturedLocation="1" Type="Reset"  OutBoolNames="轴温切除 / 8车厢 轴温1  1：复位"/>
+                <SendModel CarNo="0" AxisTemperaturedLocation="2" Type="Reset"  OutBoolNames="轴温切除 / 1车厢 轴温2  1：复位"/>
+                <SendModel CarNo="1" AxisTemperaturedLocation="2" Type="Reset"  OutBoolNames="轴温切除 / 2车厢 轴温2  1：复位"/>
+                <SendModel CarNo="2" AxisTemperaturedLocation="2" Type="Reset"  OutBoolNames="轴温切除 / 3车厢 轴温2  1：复位"/>
+                <SendModel CarNo="3" AxisTemperaturedLocation="2" Type="Reset"  OutBoolNames="轴温切除 / 4车厢 轴温2  1：复位"/>
+                <SendModel CarNo="4" AxisTemperaturedLocation="2" Type="Reset"  OutBoolNames="轴温切除 / 5车厢 轴温2  1：复位"/>
+                <SendModel CarNo="5" AxisTemperaturedLocation="2" Type="Reset"  OutBoolNames="轴温切除 / 6车厢 轴温2  1：复位"/>
+                <SendModel CarNo="6" AxisTemperaturedLocation="2" Type="Reset"  OutBoolNames="轴温切除 / 7车厢 轴温2  1：复位"/>
+                <SendModel CarNo="7" AxisTemperaturedLocation="2" Type="Reset"  OutBoolNames="轴温切除 / 8车厢 轴温2  1：复位"/>
+            </AxisTemperatureSendModels>
+        </AxisTemperatureConfig>
+
+        <!--抱死切除 -->
+        <BrakeLockedConfig>
+            <TrainViewLocation Location="230,140"/>
+            <Grid AbsX="247" AbsY="202" Width="294" Height="25"  RowCount="2" ColumnCount="8" RoundnessR="8" LineVisible="true">
+                <Rows>
+                    <Row Name="抱死1" RowIndex="0" ItemType="Roudness" Colors="White,Yellow,Red">
+                        <Columns ColumIndex="0" InBoolNames="抱死切除 / 1 车厢 1抱死   0：正常 1：切除,抱死切除 / 1 车厢 1抱死   1：异常" />
+                        <Columns ColumIndex="1" InBoolNames="抱死切除 / 2 车厢 1抱死   0：正常 1：切除,抱死切除 / 2 车厢 1抱死   1：异常" />
+                        <Columns ColumIndex="2" InBoolNames="抱死切除 / 3 车厢 1抱死   0：正常 1：切除,抱死切除 / 3 车厢 1抱死   1：异常" />
+                        <Columns ColumIndex="3" InBoolNames="抱死切除 / 4 车厢 1抱死   0：正常 1：切除,抱死切除 / 4 车厢 1抱死   1：异常" />
+                        <Columns ColumIndex="4" InBoolNames="抱死切除 / 5 车厢 1抱死   0：正常 1：切除,抱死切除 / 5 车厢 1抱死   1：异常" />
+                        <Columns ColumIndex="5" InBoolNames="抱死切除 / 6 车厢 1抱死   0：正常 1：切除,抱死切除 / 6 车厢 1抱死   1：异常" />
+                        <Columns ColumIndex="6" InBoolNames="抱死切除 / 7 车厢 1抱死   0：正常 1：切除,抱死切除 / 7 车厢 1抱死   1：异常" />
+                        <Columns ColumIndex="7" InBoolNames="抱死切除 / 8 车厢 1抱死   0：正常 1：切除,抱死切除 / 8 车厢 1抱死   1：异常" />
+                    </Row>
+                    <Row Name="抱死2" RowIndex="1" ItemType="Roudness" Colors="White,Yellow,Red">
+                        <Columns ColumIndex="0" InBoolNames="抱死切除 / 1 车厢 2抱死   0：正常 1：切除,抱死切除 / 1 车厢 2抱死   1：异常" />
+                        <Columns ColumIndex="1" InBoolNames="抱死切除 / 2 车厢 2抱死   0：正常 1：切除,抱死切除 / 2 车厢 2抱死   1：异常" />
+                        <Columns ColumIndex="2" InBoolNames="抱死切除 / 3 车厢 2抱死   0：正常 1：切除,抱死切除 / 3 车厢 2抱死   1：异常" />
+                        <Columns ColumIndex="3" InBoolNames="抱死切除 / 4 车厢 2抱死   0：正常 1：切除,抱死切除 / 4 车厢 2抱死   1：异常" />
+                        <Columns ColumIndex="4" InBoolNames="抱死切除 / 5 车厢 2抱死   0：正常 1：切除,抱死切除 / 5 车厢 2抱死   1：异常" />
+                        <Columns ColumIndex="5" InBoolNames="抱死切除 / 6 车厢 2抱死   0：正常 1：切除,抱死切除 / 6 车厢 2抱死   1：异常" />
+                        <Columns ColumIndex="6" InBoolNames="抱死切除 / 7 车厢 2抱死   0：正常 1：切除,抱死切除 / 7 车厢 2抱死   1：异常" />
+                        <Columns ColumIndex="7" InBoolNames="抱死切除 / 8 车厢 2抱死   0：正常 1：切除,抱死切除 / 8 车厢 2抱死   1：异常" />
+                    </Row>
+                </Rows>
+            </Grid>
+            <BreakLockedSendModels>
+                <SendModel CarNo="0" LockedLocation="1" Type="CutOff" OutBoolNames="抱死切除 / 1车厢 抱死1  1：切除"/>
+                <SendModel CarNo="1" LockedLocation="1" Type="CutOff" OutBoolNames="抱死切除 / 2车厢 抱死1  1：切除"/>
+                <SendModel CarNo="2" LockedLocation="1" Type="CutOff" OutBoolNames="抱死切除 / 3车厢 抱死1  1：切除"/>
+                <SendModel CarNo="3" LockedLocation="1" Type="CutOff" OutBoolNames="抱死切除 / 4车厢 抱死1  1：切除"/>
+                <SendModel CarNo="4" LockedLocation="1" Type="CutOff" OutBoolNames="抱死切除 / 5车厢 抱死1  1：切除"/>
+                <SendModel CarNo="5" LockedLocation="1" Type="CutOff" OutBoolNames="抱死切除 / 6车厢 抱死1  1：切除"/>
+                <SendModel CarNo="6" LockedLocation="1" Type="CutOff" OutBoolNames="抱死切除 / 7车厢 抱死1  1：切除"/>
+                <SendModel CarNo="7" LockedLocation="1" Type="CutOff" OutBoolNames="抱死切除 / 8车厢 抱死1  1：切除"/>
+                <SendModel CarNo="0" LockedLocation="2" Type="CutOff" OutBoolNames="抱死切除 / 1车厢 抱死2  1：切除"/>
+                <SendModel CarNo="1" LockedLocation="2" Type="CutOff" OutBoolNames="抱死切除 / 2车厢 抱死2  1：切除"/>
+                <SendModel CarNo="2" LockedLocation="2" Type="CutOff" OutBoolNames="抱死切除 / 3车厢 抱死2  1：切除"/>
+                <SendModel CarNo="3" LockedLocation="2" Type="CutOff" OutBoolNames="抱死切除 / 4车厢 抱死2  1：切除"/>
+                <SendModel CarNo="4" LockedLocation="2" Type="CutOff" OutBoolNames="抱死切除 / 5车厢 抱死2  1：切除"/>
+                <SendModel CarNo="5" LockedLocation="2" Type="CutOff" OutBoolNames="抱死切除 / 6车厢 抱死2  1：切除"/>
+                <SendModel CarNo="6" LockedLocation="2" Type="CutOff" OutBoolNames="抱死切除 / 7车厢 抱死2  1：切除"/>
+                <SendModel CarNo="7" LockedLocation="2" Type="CutOff" OutBoolNames="抱死切除 / 8车厢 抱死2  1：切除"/>
+                <SendModel CarNo="0" LockedLocation="1" Type="Reset"  OutBoolNames="抱死切除 / 1车厢 抱死1  1：复位"/>
+                <SendModel CarNo="1" LockedLocation="1" Type="Reset"  OutBoolNames="抱死切除 / 2车厢 抱死1  1：复位"/>
+                <SendModel CarNo="2" LockedLocation="1" Type="Reset"  OutBoolNames="抱死切除 / 3车厢 抱死1  1：复位"/>
+                <SendModel CarNo="3" LockedLocation="1" Type="Reset"  OutBoolNames="抱死切除 / 4车厢 抱死1  1：复位"/>
+                <SendModel CarNo="4" LockedLocation="1" Type="Reset"  OutBoolNames="抱死切除 / 5车厢 抱死1  1：复位"/>
+                <SendModel CarNo="5" LockedLocation="1" Type="Reset"  OutBoolNames="抱死切除 / 6车厢 抱死1  1：复位"/>
+                <SendModel CarNo="6" LockedLocation="1" Type="Reset"  OutBoolNames="抱死切除 / 7车厢 抱死1  1：复位"/>
+                <SendModel CarNo="7" LockedLocation="1" Type="Reset"  OutBoolNames="抱死切除 / 8车厢 抱死1  1：复位"/>
+                <SendModel CarNo="0" LockedLocation="2" Type="Reset"  OutBoolNames="抱死切除 / 1车厢 抱死2  1：复位"/>
+                <SendModel CarNo="1" LockedLocation="2" Type="Reset"  OutBoolNames="抱死切除 / 2车厢 抱死2  1：复位"/>
+                <SendModel CarNo="2" LockedLocation="2" Type="Reset"  OutBoolNames="抱死切除 / 3车厢 抱死2  1：复位"/>
+                <SendModel CarNo="3" LockedLocation="2" Type="Reset"  OutBoolNames="抱死切除 / 4车厢 抱死2  1：复位"/>
+                <SendModel CarNo="4" LockedLocation="2" Type="Reset"  OutBoolNames="抱死切除 / 5车厢 抱死2  1：复位"/>
+                <SendModel CarNo="5" LockedLocation="2" Type="Reset"  OutBoolNames="抱死切除 / 6车厢 抱死2  1：复位"/>
+                <SendModel CarNo="6" LockedLocation="2" Type="Reset"  OutBoolNames="抱死切除 / 7车厢 抱死2  1：复位"/>
+                <SendModel CarNo="7" LockedLocation="2" Type="Reset"  OutBoolNames="抱死切除 / 8车厢 抱死2  1：复位"/>
+            </BreakLockedSendModels>
+        </BrakeLockedConfig>
+
+        <!--远程控制切除-->
+        <TeleControlConfig>
+
+            <TrainViewLocation Location="220,145"/>
+
+            <TeleRectangles>
+                <TeleRectangleConfig Rectangle="50 ,354,100,60" Type="AcceptEleDown"        />
+                <TeleRectangleConfig Rectangle="150,354,100,60" Type="VCBOff"               />
+                <TeleRectangleConfig Rectangle="250,354,100,60" Type="TCarCompressorCutOff" />
+                <TeleRectangleConfig Rectangle="350,354,100,60" Type="MCarCompressorCutOff" />
+                <TeleRectangleConfig Rectangle="450,354,100,60" Type="ACK2On"               />
+                <TeleRectangleConfig Rectangle="550,354,100,60" Type="MCarWithoutTransformerCutOff"  />
+                <TeleRectangleConfig Rectangle="650,354,100,60" Type="MCarWithTransformerCutOff"     />
+                <TeleRectangleConfig Rectangle="50 ,414,100,60" Type="AcceptEleUp"          />
+                <TeleRectangleConfig Rectangle="150,414,100,60" Type="VCBOn"                />
+                <TeleRectangleConfig Rectangle="250,414,100,60" Type="TCarCompressorReset"  />
+                <TeleRectangleConfig Rectangle="350,414,100,60" Type="MCarCompressorReset"  />
+                <TeleRectangleConfig Rectangle="450,414,100,60" Type="ACK2Off"              />
+                <TeleRectangleConfig Rectangle="550,414,200,60" Type="MCarReset"            />
+            </TeleRectangles>
+            <TeleOutBoolConfigs>
+                <TeleOutBoolConfig Unit="1" Type="AcceptEleDown"        OutBoolNames="远程控制切除 / 1U 受电弓下降     1：下降"/>
+                <TeleOutBoolConfig Unit="1" Type="VCBOff"               OutBoolNames="远程控制切除 / 1U VCB断  1：断"/>
+                <TeleOutBoolConfig Unit="1" Type="TCarCompressorCutOff" OutBoolNames="远程控制切除 / 1U-T车-压缩机切除    1：切除"/>
+                <TeleOutBoolConfig Unit="1" Type="MCarCompressorCutOff" OutBoolNames="远程控制切除 / 1U-M车-压缩机切除    1：切除"/>
+                <TeleOutBoolConfig Unit="1" Type="ACK2On"               OutBoolNames="远程控制切除 / 1U 电源切换（ACK2合）   1：ACK2合"/>
+                <TeleOutBoolConfig Unit="1" Type="MCarWithoutTransformerCutOff" OutBoolNames="远程控制切除 / 1U 无变压器M车切除  1：切除"/>
+                <TeleOutBoolConfig Unit="1" Type="MCarWithTransformerCutOff"    OutBoolNames="远程控制切除 / 1U 有变压器M车切除  1：切除"/>
+                <TeleOutBoolConfig Unit="1" Type="AcceptEleUp"          OutBoolNames="远程控制切除 / 1U 受电弓升起     1：升起 "/>
+                <TeleOutBoolConfig Unit="1" Type="VCBOn"                OutBoolNames="远程控制切除 / 1U VCB合  1：合 "/>
+                <TeleOutBoolConfig Unit="1" Type="TCarCompressorReset"  OutBoolNames="远程控制切除 / 1U-T车-压缩机切除复位    1：切除复位"/>
+                <TeleOutBoolConfig Unit="1" Type="MCarCompressorReset"  OutBoolNames="远程控制切除 / 1U-M车-压缩机切除复位    1：切除复位"/>
+                <TeleOutBoolConfig Unit="1" Type="ACK2Off"              OutBoolNames="远程控制切除 / 1U 切除复位（ACK2断）   1：ACK2复位"/>
+                <TeleOutBoolConfig Unit="1" Type="MCarReset"            OutBoolNames="远程控制切除 / 1U M车切除复位  1：复位"/>
+
+                <TeleOutBoolConfig Unit="2" Type="AcceptEleDown"        OutBoolNames="远程控制切除 / 2U 受电弓下降     1：下降"/>
+                <TeleOutBoolConfig Unit="2" Type="VCBOff"               OutBoolNames="远程控制切除 / 2U VCB断  1：断"/>
+                <TeleOutBoolConfig Unit="2" Type="TCarCompressorCutOff" OutBoolNames="远程控制切除 / 2U-T车-压缩机切除    1：切除"/>
+                <TeleOutBoolConfig Unit="2" Type="MCarCompressorCutOff" OutBoolNames="远程控制切除 / 2U-M车-压缩机切除    1：切除"/>
+                <TeleOutBoolConfig Unit="2" Type="ACK2On"               OutBoolNames="远程控制切除 / 2U 电源切换（ACK2合）   1：ACK2合"/>
+                <TeleOutBoolConfig Unit="2" Type="MCarWithoutTransformerCutOff" OutBoolNames="远程控制切除 / 2U 无变压器M车切除  1：切除"/>
+                <TeleOutBoolConfig Unit="2" Type="MCarWithTransformerCutOff"    OutBoolNames="远程控制切除 / 2U 有变压器M车切除  1：切除"/>
+                <TeleOutBoolConfig Unit="2" Type="AcceptEleUp"          OutBoolNames="远程控制切除 / 2U 受电弓升起     1：升起 "/>
+                <TeleOutBoolConfig Unit="2" Type="VCBOn"                OutBoolNames="远程控制切除 / 2U VCB合  1：合 "/>
+                <TeleOutBoolConfig Unit="2" Type="TCarCompressorReset"  OutBoolNames="远程控制切除 / 2U-T车-压缩机切除复位    1：切除复位"/>
+                <TeleOutBoolConfig Unit="2" Type="MCarCompressorReset"  OutBoolNames="远程控制切除 / 2U-M车-压缩机切除复位    1：切除复位"/>
+                <TeleOutBoolConfig Unit="2" Type="ACK2Off"              OutBoolNames="远程控制切除 / 2U 切除复位（ACK2断）   1：ACK2复位"/>
+                <TeleOutBoolConfig Unit="2" Type="MCarReset"            OutBoolNames="远程控制切除 / 2U M车切除复位  1：复位"/>
+            </TeleOutBoolConfigs>
+        </TeleControlConfig>
+
+        <!--警惕-->
+        <VigilantConfig>
+            <TrainViewLocation Location="220,145"/>
+
+            <MatrixViews>
+                <MatrixViewItem Name="警惕按钮" RowIndex="0" ColumnIndex="0" ItemType="Roudness">
+
+                    <Items>
+                        <Item CarNo="0" InBoolNames="警惕 /1车 警惕按钮     0:不动作  1:动作"/>
+                        <Item CarNo="7" InBoolNames="警惕 /8车 警惕按钮     0:不动作  1:动作"/>
+                    </Items>
+                </MatrixViewItem>
+                <MatrixViewItem Name="警惕隔离" RowIndex="0" ColumnIndex="1" ItemType="Roudness">
+
+                    <Items>
+                        <Item CarNo="0" InBoolNames="警惕 /1车 警惕隔离     0:不动作  1:动作"/>
+                        <Item CarNo="7" InBoolNames="警惕 /8车 警惕隔离     0:不动作  1:动作"/>
+                    </Items>
+                </MatrixViewItem>
+                <MatrixViewItem Name="警惕报警" RowIndex="0" ColumnIndex="0" Region="1" ItemType="Roudness">
+
+                    <Items>
+                        <Item CarNo="0" InBoolNames="警惕 /1车 警惕报警     0:正常    1:异常"/>
+                        <Item CarNo="7" InBoolNames="警惕 /8车 警惕报警     0:正常    1:异常"/>
+                    </Items>
+                </MatrixViewItem>
+                <MatrixViewItem Name="警惕制动" RowIndex="0" ColumnIndex="1" Region="1" ItemType="Roudness">
+                    <Items>
+                        <Item CarNo="0" InBoolNames="警惕 /1车 警惕制动     0:正常    1:异常"/>
+                        <Item CarNo="7" InBoolNames="警惕 /8车 警惕制动     0:正常    1:异常"/>
+                    </Items>
+                </MatrixViewItem>
+                <MatrixViewItem Name="JTR" RowIndex="0" ColumnIndex="2" Region="1" ItemType="Roudness">
+
+                    <Items>
+                        <Item CarNo="0" InBoolNames="警惕 /1车 JTR          0:正常    1:异常"/>
+                        <Item CarNo="7" InBoolNames="警惕 /8车 JTR          0:正常    1:异常"/>
+                    </Items>
+                </MatrixViewItem>
+
+                <MatrixViewItem Name="警惕制动(次)" RowIndex="0" ColumnIndex="3" Region="1" ItemType="Text">
+
+                    <Items>
+                        <Item CarNo="0"  />
+                        <Item CarNo="7"  />
+                    </Items>
+                </MatrixViewItem>
+            </MatrixViews>
+        </VigilantConfig>
+
+        <!--BP 救援-->
+        <BPRescueConfig >
+            <TrainViewLocation Location="220,145"/>
+            <BPGridLine AbsX="240" AbsY="206" Width="300" Height="60"  RowCount="3" ColumnCount="8" TextWidth="44" TextHeight="20" RoundnessR="8">
+                <BPViewItem Name="BP救援装置" RowIndex="0" ColumnIndex="0" ItemType="Text">
+                    <ItemValues>
+                        <Value>停止</Value>
+                        <Value>有</Value>
+                    </ItemValues>
+                    <Items>
+                        <Item CarNo="0" InBoolNames="BP救援 / 1车 BP救援装置     0:停止  1:有" />
+                        <Item CarNo="7" InBoolNames="BP救援 / 8车 BP救援装置     0:停止  1:有" />
+                    </Items>
+                </BPViewItem>
+                <BPViewItem Name="BP救援有效信号" RowIndex="0" ColumnIndex="1" ItemType="Roudness">
+
+                    <Items>
+                        <Item CarNo="0" InBoolNames="BP救援 / 1车 BP救援有效信号   0:无  1:有" />
+                        <Item CarNo="1" InBoolNames="BP救援 / 2车 BP救援有效信号   0:无  1:有" />
+                        <Item CarNo="2" InBoolNames="BP救援 / 3车 BP救援有效信号   0:无  1:有" />
+                        <Item CarNo="3" InBoolNames="BP救援 / 4车 BP救援有效信号   0:无  1:有" />
+                        <Item CarNo="4" InBoolNames="BP救援 / 5车 BP救援有效信号   0:无  1:有" />
+                        <Item CarNo="5" InBoolNames="BP救援 / 6车 BP救援有效信号   0:无  1:有" />
+                        <Item CarNo="6" InBoolNames="BP救援 / 7车 BP救援有效信号   0:无  1:有" />
+                        <Item CarNo="7" InBoolNames="BP救援 / 8车 BP救援有效信号   0:无  1:有" />
+                    </Items>
+                </BPViewItem>
+                <BPViewItem Name="BP压力(kPa)" RowIndex="0" ColumnIndex="2" ItemType="Text">
+                    <Items>
+                        <Item CarNo="0" InFloatNames="BP救援 / 1车  BP 压力（kPa)" />
+                        <Item CarNo="7" InFloatNames="BP救援 / 8车  BP 压力（kPa)" />
+                    </Items>
+                </BPViewItem>
+            </BPGridLine>
+        </BPRescueConfig>
+
+        <!--通知状态-->
+        <NotifyConfig>
+            <TrainViewLocation Location="224,152"/>
+            <Grid GridType="GridLine" AbsX="240" AbsY="226" Width="315" Height="50"  RowCount="2" ColumnCount="8" RoundnessR="8" LineVisible="true">
+                <Rows>
+                    <Row Name="紧急报警" RowIndex="0" ItemType="Roudness" Colors="White,Red">
+                        <Columns ColumIndex="0" InBoolNames="通知状态 / 1车 紧急报警   0:无  1:有" />
+                        <Columns ColumIndex="1" InBoolNames="通知状态 / 2车 紧急报警   0:无  1:有" />
+                        <Columns ColumIndex="2" InBoolNames="通知状态 / 3车 紧急报警   0:无  1:有" />
+                        <Columns ColumIndex="3" InBoolNames="通知状态 / 4车 紧急报警   0:无  1:有" />
+                        <Columns ColumIndex="4" InBoolNames="通知状态 / 5车 紧急报警   0:无  1:有" />
+                        <Columns ColumIndex="5" InBoolNames="通知状态 / 6车 紧急报警   0:无  1:有" />
+                        <Columns ColumIndex="6" InBoolNames="通知状态 / 7车 紧急报警   0:无  1:有" />
+                        <Columns ColumIndex="7" InBoolNames="通知状态 / 8车 紧急报警   0:无  1:有" />
+                    </Row>
+                    <Row Name="火灾报警" RowIndex="1" ItemType="Roudness" Colors="White,Red">
+                        <Columns ColumIndex="0" InBoolNames="通知状态 / 1车 火灾报警   0:无  1:有" />
+                        <Columns ColumIndex="1" InBoolNames="通知状态 / 2车 火灾报警   0:无  1:有" />
+                        <Columns ColumIndex="2" InBoolNames="通知状态 / 3车 火灾报警   0:无  1:有" />
+                        <Columns ColumIndex="3" InBoolNames="通知状态 / 4车 火灾报警   0:无  1:有" />
+                        <Columns ColumIndex="4" InBoolNames="通知状态 / 5车 火灾报警   0:无  1:有" />
+                        <Columns ColumIndex="5" InBoolNames="通知状态 / 6车 火灾报警   0:无  1:有" />
+                        <Columns ColumIndex="6" InBoolNames="通知状态 / 7车 火灾报警   0:无  1:有" />
+                        <Columns ColumIndex="7" InBoolNames="通知状态 / 8车 火灾报警   0:无  1:有" />
+                    </Row>
+                </Rows>
+            </Grid>
+        </NotifyConfig>
+
+    </Data>
+
+</CRH2DetailConfig>

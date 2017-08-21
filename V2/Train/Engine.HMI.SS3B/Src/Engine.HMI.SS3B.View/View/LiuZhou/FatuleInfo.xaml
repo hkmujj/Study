@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="Engine.HMI.SS3B.View.View.LiuZhou.FatuleInfo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:kunMing="clr-namespace:Engine.HMI.SS3B.View.ViewModel.KunMing"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:Engine.HMI.SS3B.View.ViewModel"
+             d:DataContext="{d:DesignInstance kunMing:SS3BViewModel}"
+             d:DesignHeight="60"
+             d:DesignWidth="796"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary Source="../../LiuZhouAppResouce.xaml" />
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="140*" />
+            <ColumnDefinition Width="50*" />
+        </Grid.ColumnDefinitions>
+        <Rectangle Grid.ColumnSpan="2"
+                   RadiusX="15"
+                   RadiusY="15"
+                   Stroke="red"
+                   StrokeThickness="2" />
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <TextBlock Style="{StaticResource TBS0001}" Text="重      中      轻" />
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <TextBlock Style="{StaticResource TBS0001}" Text="命令:" />
+                <TextBlock Margin="5,0,0,0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontSize="15"
+                           Foreground="White"
+                           Text="{Binding CommandStr}" />
+            </StackPanel>
+
+
+
+        </Grid>
+
+
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="General.CIR.Views.Screen.StatusSerchView" Background="#FF0000FF" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="100*" />
+      <RowDefinition Height="15*" />
+    </Grid.RowDefinitions>
+    <Grid>
+      <Grid.Resources>
+        <Style x:Key="{x:Type TextBlock}" TargetType="{x:Type TextBlock}">
+          <Setter Property="FrameworkElement.HorizontalAlignment" Value="Left" />
+          <Setter Property="FrameworkElement.VerticalAlignment" Value="Center" />
+          <Setter Property="TextBlock.FontSize" Value="14" />
+          <Setter Property="TextBlock.Foreground" Value="#FFFFFF00" />
+          <Setter Property="FrameworkElement.Margin" Value="20,0,0,0" />
+        </Style>
+      </Grid.Resources>
+      <Grid.RowDefinitions>
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="1.3*" />
+        <ColumnDefinition Width="1*" />
+      </Grid.ColumnDefinitions>
+      <TextBlock Grid.Row="0" Grid.Column="0" Text="GSM-R语音接收电平：" />
+      <TextBlock Grid.Row="0" Grid.Column="1" Text="&gt;=-53" />
+      <TextBlock Grid.Row="1" Grid.Column="0" Text="GSM-R数据接收电平：" />
+      <TextBlock Grid.Row="1" Grid.Column="1" Text="&gt;=-53" />
+      <TextBlock Grid.Row="2" Grid.Column="0" Text="主机系统时间：" />
+      <TextBlock Grid.Row="2" Grid.Column="1" Text="--" />
+      <TextBlock Grid.Row="3" Grid.Column="0" Text="记录单元时间：" />
+      <TextBlock Grid.Row="3" Grid.Column="1" Text="--" />
+      <TextBlock Grid.Row="4" Grid.Column="0" Text="当前GRIS IP：" />
+      <TextBlock Grid.Row="4" Grid.Column="1" Text="000.000.000.000" />
+      <TextBlock Grid.Row="5" Grid.Column="0" Text="本机 IP：" />
+      <TextBlock Grid.Row="5" Grid.Column="1" Text="000.000.000.000" />
+      <TextBlock Grid.Row="6" Grid.Column="0" Text="列尾 IP：" />
+      <TextBlock Grid.Row="6" Grid.Column="1" Text="000.000.000.000" />
+      <TextBlock Grid.Row="7" Grid.Column="0" Text="卫星定位单元：" />
+      <TextBlock Grid.Row="7" Grid.Column="1" Text="故障" />
+      <TextBlock Grid.Row="8" Grid.Column="0" Text="卫星定位信息：" />
+      <TextBlock Grid.Row="8" Grid.Column="1" Text="无效" />
+      <TextBlock Grid.Row="9" Grid.Column="0" Text="电池状态：" />
+      <TextBlock Grid.Row="9" Grid.Column="1" Text="--" />
+    </Grid>
+    <TextBlock Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.Foreground="#FF00FFFF" Text="按[退出]键返回上级菜单" />
+  </Grid>
+</UserControl>

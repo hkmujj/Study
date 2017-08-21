@@ -1,0 +1,232 @@
+﻿<?xml version="1.0"?>
+<CRH2Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <Type>CRH2A</Type>
+
+    <DetailConfigFile>
+        <TypeFileRelationShips Type="CRH2A" File="CRH2AConfig.xml" />
+        <TypeFileRelationShips Type="CRH2C" File="CRH2CConfig.xml" />
+        <TypeFileRelationShips Type="CRH2B" File="CRH2BConfig.xml" />
+        <TypeFileRelationShips Type="CRH380A"  File="CRH380AConfig.xml" />
+        <TypeFileRelationShips Type="CRH380AReconnection"  File="CRH380AReconnectionConfig.xml" />
+        <TypeFileRelationShips Type="CRH380AL" File="CRH380ALConfig.xml" />
+        <TypeFileRelationShips Type="CRH380AUnion" File="CRH380AUnionConfig.xml" />
+    </DetailConfigFile>
+
+    <DebugConfig>
+        <AutoLightUpScreen>true</AutoLightUpScreen>
+    </DebugConfig>
+
+    <CRH2FileConfig>
+        <!--通信接口文件-->
+        <CommunicationPortReaderConfigs>
+            <CRH2CommunicationPortReaderConfig Type="CRH2A">
+                <!--相对于.exe的目录-->
+                <File>CRH2型车接口适配.xls</File>
+                <SheetNames>
+                    <Sheet>InBool</Sheet>
+                    <Sheet>OutBool</Sheet>
+                    <Sheet>InFloat</Sheet>
+                    <Sheet>OutFloat</Sheet>
+                </SheetNames>
+                <ReadColoumns>
+                    <Coloumn IsPrimaryKey="true"  Name="Name" />
+                    <Coloumn IsPrimaryKey="false" Name="CRH2A" />
+                </ReadColoumns>
+            </CRH2CommunicationPortReaderConfig>
+            <CRH2CommunicationPortReaderConfig Type="CRH2B">
+                <!--相对于.exe的目录-->
+                <File>CRH2型车接口适配.xls</File>
+                <SheetNames>
+                    <Sheet>InBool</Sheet>
+                    <Sheet>OutBool</Sheet>
+                    <Sheet>InFloat</Sheet>
+                    <Sheet>OutFloat</Sheet>
+                </SheetNames>
+                <ReadColoumns>
+                    <Coloumn IsPrimaryKey="true"  Name="Name" />
+                    <Coloumn IsPrimaryKey="false" Name="CRH2B" />
+                </ReadColoumns>
+            </CRH2CommunicationPortReaderConfig>
+            <CRH2CommunicationPortReaderConfig Type="CRH2C">
+                <!--相对于.exe的目录-->
+                <File>CRH2型车接口适配.xls</File>
+                <SheetNames>
+                    <Sheet>InBool</Sheet>
+                    <Sheet>OutBool</Sheet>
+                    <Sheet>InFloat</Sheet>
+                    <Sheet>OutFloat</Sheet>
+                </SheetNames>
+                <ReadColoumns>
+                    <Coloumn IsPrimaryKey="true"  Name="Name" />
+                    <Coloumn IsPrimaryKey="false" Name="CRH2C" />
+                </ReadColoumns>
+            </CRH2CommunicationPortReaderConfig>
+            <CRH2CommunicationPortReaderConfig Type="CRH380A">
+                <!--相对于.exe的目录-->
+                <File>CRH2型车接口适配.xls</File>
+                <SheetNames>
+                    <Sheet>InBool</Sheet>
+                    <Sheet>OutBool</Sheet>
+                    <Sheet>InFloat</Sheet>
+                    <Sheet>OutFloat</Sheet>
+                </SheetNames>
+                <ReadColoumns>
+                    <Coloumn IsPrimaryKey="true"  Name="Name" />
+                    <Coloumn IsPrimaryKey="false" Name="CRH380A" />
+                </ReadColoumns>
+            </CRH2CommunicationPortReaderConfig>   
+            <CRH2CommunicationPortReaderConfig Type="CRH380AL">
+                <!--相对于.exe的目录-->
+                <File>CRH2型车接口适配.xls</File>
+                <SheetNames>
+                    <Sheet>InBool</Sheet>
+                    <Sheet>OutBool</Sheet>
+                    <Sheet>InFloat</Sheet>
+                    <Sheet>OutFloat</Sheet>
+                </SheetNames>
+                <ReadColoumns>
+                    <Coloumn IsPrimaryKey="true"  Name="Name" />
+                    <Coloumn IsPrimaryKey="false" Name="CRH380AL" />
+                </ReadColoumns>
+            </CRH2CommunicationPortReaderConfig>
+            <CRH2CommunicationPortReaderConfig Type="CRH380AReconnection">
+                <!--相对于.exe的目录-->
+                <File>CRH2型车接口适配.xls</File>
+                <SheetNames>
+                    <Sheet>InBool</Sheet>
+                    <Sheet>OutBool</Sheet>
+                    <Sheet>InFloat</Sheet>
+                    <Sheet>OutFloat</Sheet>
+                </SheetNames>
+                <ReadColoumns>
+                    <Coloumn IsPrimaryKey="true"  Name="Name" />
+                    <Coloumn IsPrimaryKey="false" Name="CRH380AReconnection" />
+                </ReadColoumns>
+            </CRH2CommunicationPortReaderConfig>
+          <CRH2CommunicationPortReaderConfig Type="CRH380AUnion">
+            <!--相对于.exe的目录-->
+            <File>CRH2型车接口适配.xls</File>
+            <SheetNames>
+              <Sheet>InBool</Sheet>
+              <Sheet>OutBool</Sheet>
+              <Sheet>InFloat</Sheet>
+              <Sheet>OutFloat</Sheet>
+            </SheetNames>
+            <ReadColoumns>
+              <Coloumn IsPrimaryKey="true"  Name="Name" />
+              <Coloumn IsPrimaryKey="false" Name="CRH380AUnion" />
+            </ReadColoumns>
+          </CRH2CommunicationPortReaderConfig>
+        </CommunicationPortReaderConfigs>
+
+        <FaultReaderConfigs>
+            <FaultReaderConfig Type="CRH2A">
+                <!--相对于.exe的目录-->
+                <File>CRH2型车故障信息.xls</File>
+                <SheetNames>
+                    <Sheet>CRH2A</Sheet>
+                </SheetNames>
+                <ReadColoumns>
+                    <Coloumn IsPrimaryKey="true"  Name="故障逻辑位" />
+                    <Coloumn IsPrimaryKey="false" Name="故障代码" />
+                    <Coloumn IsPrimaryKey="false" Name="故障车厢号" />
+                    <Coloumn IsPrimaryKey="false" Name="故障名称" />
+                    <Coloumn IsPrimaryKey="false" Name="保护装置" />
+                    <Coloumn IsPrimaryKey="false" Name="处理措施图片" />
+                </ReadColoumns>
+            </FaultReaderConfig>
+            <FaultReaderConfig Type="CRH2B">
+                <!--相对于.exe的目录-->
+                <File>CRH2型车故障信息.xls</File>
+                <SheetNames>
+                    <Sheet>CRH2B</Sheet>
+                </SheetNames>
+                <ReadColoumns>
+                    <Coloumn IsPrimaryKey="true"  Name="故障逻辑位" />
+                    <Coloumn IsPrimaryKey="false" Name="故障代码" />
+                    <Coloumn IsPrimaryKey="false" Name="故障车厢号" />
+                    <Coloumn IsPrimaryKey="false" Name="故障名称" />
+                    <Coloumn IsPrimaryKey="false" Name="保护装置" />
+                    <Coloumn IsPrimaryKey="false" Name="处理措施图片" />
+                </ReadColoumns>
+            </FaultReaderConfig>
+            <FaultReaderConfig Type="CRH2C">
+                <!--相对于.exe的目录-->
+                <File>CRH2型车故障信息.xls</File>
+                <SheetNames>
+                    <Sheet>CRH2C</Sheet>
+                </SheetNames>
+                <ReadColoumns>
+                    <Coloumn IsPrimaryKey="true"  Name="故障逻辑位" />
+                    <Coloumn IsPrimaryKey="false" Name="故障代码" />
+                    <Coloumn IsPrimaryKey="false" Name="故障车厢号" />
+                    <Coloumn IsPrimaryKey="false" Name="故障名称" />
+                    <Coloumn IsPrimaryKey="false" Name="保护装置" />
+                    <Coloumn IsPrimaryKey="false" Name="处理措施图片" />
+                </ReadColoumns>
+            </FaultReaderConfig>
+            <FaultReaderConfig Type="CRH380A">
+                <!--相对于.exe的目录-->
+                <File>CRH2型车故障信息.xls</File>
+                <SheetNames>
+                    <Sheet>CRH380A</Sheet>
+                </SheetNames>
+                <ReadColoumns>
+                    <Coloumn IsPrimaryKey="true"  Name="故障逻辑位" />
+                    <Coloumn IsPrimaryKey="false" Name="故障代码" />
+                    <Coloumn IsPrimaryKey="false" Name="故障车厢号" />
+                    <Coloumn IsPrimaryKey="false" Name="故障名称" />
+                    <Coloumn IsPrimaryKey="false" Name="保护装置" />
+                    <Coloumn IsPrimaryKey="false" Name="处理措施图片" />
+                </ReadColoumns>
+            </FaultReaderConfig>
+            <FaultReaderConfig Type="CRH380AL">
+                <!--相对于.exe的目录-->
+                <File>CRH2型车故障信息.xls</File>
+                <SheetNames>
+                    <Sheet>CRH380AL</Sheet>
+                </SheetNames>
+                <ReadColoumns>
+                    <Coloumn IsPrimaryKey="true"  Name="故障逻辑位" />
+                    <Coloumn IsPrimaryKey="false" Name="故障代码" />
+                    <Coloumn IsPrimaryKey="false" Name="故障车厢号" />
+                    <Coloumn IsPrimaryKey="false" Name="故障名称" />
+                    <Coloumn IsPrimaryKey="false" Name="保护装置" />
+                    <Coloumn IsPrimaryKey="false" Name="处理措施图片" />
+                </ReadColoumns>
+            </FaultReaderConfig>  
+            <FaultReaderConfig Type="CRH380AReconnection">
+                <!--相对于.exe的目录-->
+                <File>CRH2型车故障信息.xls</File>
+                <SheetNames>
+                    <Sheet>CRH380AReconnection</Sheet>
+                </SheetNames>
+                <ReadColoumns>
+                    <Coloumn IsPrimaryKey="true"  Name="故障逻辑位" />
+                    <Coloumn IsPrimaryKey="false" Name="故障代码" />
+                    <Coloumn IsPrimaryKey="false" Name="故障车厢号" />
+                    <Coloumn IsPrimaryKey="false" Name="故障名称" />
+                    <Coloumn IsPrimaryKey="false" Name="保护装置" />
+                    <Coloumn IsPrimaryKey="false" Name="处理措施图片" />
+                </ReadColoumns>
+            </FaultReaderConfig>
+          <FaultReaderConfig Type="CRH380AUnion">
+            <!--相对于.exe的目录-->
+            <File>CRH2型车故障信息.xls</File>
+            <SheetNames>
+              <Sheet>CRH380AUnion</Sheet>
+            </SheetNames>
+            <ReadColoumns>
+              <Coloumn IsPrimaryKey="true"  Name="故障逻辑位" />
+              <Coloumn IsPrimaryKey="false" Name="故障代码" />
+              <Coloumn IsPrimaryKey="false" Name="故障车厢号" />
+              <Coloumn IsPrimaryKey="false" Name="故障名称" />
+              <Coloumn IsPrimaryKey="false" Name="保护装置" />
+              <Coloumn IsPrimaryKey="false" Name="处理措施图片" />
+            </ReadColoumns>
+          </FaultReaderConfig>
+        </FaultReaderConfigs>
+      
+    </CRH2FileConfig>
+</CRH2Config>

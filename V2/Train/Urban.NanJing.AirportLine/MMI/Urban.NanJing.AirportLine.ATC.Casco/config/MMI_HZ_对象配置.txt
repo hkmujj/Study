@@ -1,0 +1,19 @@
+;;; 类名 				从属视图					输入_Bool_对应表 				输入_Float_对应表 					输出_bool_对应表 						输出_Float_对应表 							参数表 			备注
+;;; 字符串 			<数字 数字> 			[#bool编号 bool编号#] 	Float编号 Float编号*] 			[-bool编号 bool编号-] 			[+Float编号 Float编号+] 				{参数1 参数2 参数3}
+;;;课程结束视图
+V0C0BlackView                [~ 0 ~]	     < 103 104 105 106 >			[#1#]			        [**]			[--]			[++]			{}
+VCGetFaluts                   [~ 1 ~]	     < 104 105 106 >			[##]			        [**]			[--]			[++]			{}
+V1C0Frame                    [~ 2 ~]	     < 104 105 >			[##]			        [**]			[--]			[++]			{Frame/Frame.png}
+V1C1States                   [~ 3 ~]	     < 104 105 >			[#4 13 17 20#]			[**]			[--]			[++]			{Frame/闪烁.png}
+V1C2Door                     [~ 4 ~]	     < 104 >			[#24 28 60#]			[**]			[--]			[++]			{}
+V1C3AvailabilityIndicator    [~ 5 ~]	     < 104 >			[#34 36 38#]			[**]			[--]			[++]			{}
+V1C4StationIndicator         [~ 6 ~]	     < 104 >			[#40 42 44#]			[*6 7*]			[--]			[++]			{}
+V1C5PositionEBIndicator    [~ 7 ~]	     < 104 >			[#46 48 32 50#]			[**]			[--]			[++]			{}
+V1C6SystemInfo               [~ 8 ~]	     < 104 105 >			[##]		         	[*1 8 9 10*]		[--]			[++]			{}
+V1C7SpeedDial                [~ 9 ~]	     < 104 >			[#53 55#]		         	[*3 4 5 2*]		[--]			[++]			{SpeedDial/Pointer1.png SpeedDial/TargetSpeed.png SpeedDial/MaxSpeed.png}
+V1C8ConfirmListButton      [~ 10 ~]	     < 104 105 >			[##]		         	[**]	        	[-66-]			[++]			{ Frame/btn_Up.png Frame/btn_Down.png }
+V1C9InNoMessage              [~ 11 ~]	     < 104 >			[#58#]		         	[**]	        	[--]			[++]			{}
+V1C10FalutMessage            [~ 12 ~]	     < 104 >			[#115 66#]		         	[**]	        	[--]			[++]			{}
+;;;V2C0ButtonDriverIDQuit     [~ 13 ~]	     < 105 >			[##]		         	[**]	        	[--]			[++]			{}
+V2C1DriverID                 [~ 14 ~]	     < 105 >			[##]		         	[**]	        	[--]			[+201+]			{Frame/btn_Up_1.png Frame/btn_Down_1.png Frame/btn_Up_2.png Frame/btn_Down_2.png}
+V3C0NoMessage                [~ 15 ~]	     < 106 >			[#59#]		         	[**]	        	[--]			[++]			{}

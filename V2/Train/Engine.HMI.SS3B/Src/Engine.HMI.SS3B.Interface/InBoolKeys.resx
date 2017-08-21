@@ -1,0 +1,1374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="主从连接成功标志" xml:space="preserve">
+    <value>主从连接成功标志</value>
+  </data>
+  <data name="解除编组成功标志" xml:space="preserve">
+    <value>解除编组成功标志</value>
+  </data>
+  <data name="LCU状态有信息" xml:space="preserve">
+    <value>LCU状态有信息</value>
+  </data>
+  <data name="加馈标志" xml:space="preserve">
+    <value>加馈标志</value>
+  </data>
+  <data name="黑屏标志" xml:space="preserve">
+    <value>黑屏标志</value>
+  </data>
+  <data name="课程界面调转" xml:space="preserve">
+    <value>课程界面调转</value>
+  </data>
+  <data name="警惕按下状态" xml:space="preserve">
+    <value>警惕按下状态</value>
+  </data>
+  <data name="解锁按下状态" xml:space="preserve">
+    <value>解锁按下状态</value>
+  </data>
+  <data name="缓解按下状态" xml:space="preserve">
+    <value>缓解按下状态</value>
+  </data>
+  <data name="向前1按下状态MMI1键按下状态" xml:space="preserve">
+    <value>向前1按下状态MMI1键按下状态</value>
+  </data>
+  <data name="调车2按下状态MMI2键按下状态" xml:space="preserve">
+    <value>调车2按下状态MMI2键按下状态</value>
+  </data>
+  <data name="车位3按下状态MMI3键按下状态" xml:space="preserve">
+    <value>车位3按下状态MMI3键按下状态</value>
+  </data>
+  <data name="进路号4按下状态MMI4键按下状态" xml:space="preserve">
+    <value>进路号4按下状态MMI4键按下状态</value>
+  </data>
+  <data name="定标5按下状态MMI5键按下状态" xml:space="preserve">
+    <value>定标5按下状态MMI5键按下状态</value>
+  </data>
+  <data name="向后6按下状态MMI6键按下状态" xml:space="preserve">
+    <value>向后6按下状态MMI6键按下状态</value>
+  </data>
+  <data name="开车7按下状态MMI7键按下状态" xml:space="preserve">
+    <value>开车7按下状态MMI7键按下状态</value>
+  </data>
+  <data name="自动校正8按下状态MMI8键按下状态" xml:space="preserve">
+    <value>自动校正8按下状态MMI8键按下状态</value>
+  </data>
+  <data name="出入库9按下状态MMI9键按下状态" xml:space="preserve">
+    <value>出入库9按下状态MMI9键按下状态</value>
+  </data>
+  <data name="巡检0按下状态MMI0键按下状态" xml:space="preserve">
+    <value>巡检0按下状态MMI0键按下状态</value>
+  </data>
+  <data name="方向向前按下状态MMI向上按键按下状态" xml:space="preserve">
+    <value>方向向前按下状态MMI向上按键按下状态</value>
+  </data>
+  <data name="方向向后按下状态MMI向下按键按下状态" xml:space="preserve">
+    <value>方向向后按下状态MMI向下按键按下状态</value>
+  </data>
+  <data name="方向向左按下状态MMI向左按键按下状态" xml:space="preserve">
+    <value>方向向左按下状态MMI向左按键按下状态</value>
+  </data>
+  <data name="方向向右按下状态MMI向右按键按下状态" xml:space="preserve">
+    <value>方向向右按下状态MMI向右按键按下状态</value>
+  </data>
+  <data name="转储按下状态" xml:space="preserve">
+    <value>转储按下状态</value>
+  </data>
+  <data name="设定按下状态" xml:space="preserve">
+    <value>设定按下状态</value>
+  </data>
+  <data name="确认按下状态MMIE确认键按下状态" xml:space="preserve">
+    <value>确认按下状态MMIE（确认）键按下状态</value>
+  </data>
+  <data name="本车主断正常" xml:space="preserve">
+    <value>本车主断正常</value>
+  </data>
+  <data name="本车预备正常" xml:space="preserve">
+    <value>本车预备正常</value>
+  </data>
+  <data name="本车预备1正常" xml:space="preserve">
+    <value>本车预备1正常</value>
+  </data>
+  <data name="本车通讯1正常" xml:space="preserve">
+    <value>本车通讯1正常</value>
+  </data>
+  <data name="本车通讯2正常" xml:space="preserve">
+    <value>本车通讯2正常</value>
+  </data>
+  <data name="本车劈相机1正常" xml:space="preserve">
+    <value>本车劈相机1正常</value>
+  </data>
+  <data name="本车劈相机2正常" xml:space="preserve">
+    <value>本车劈相机2正常</value>
+  </data>
+  <data name="从车主断正常" xml:space="preserve">
+    <value>从车主断正常</value>
+  </data>
+  <data name="从车预备正常" xml:space="preserve">
+    <value>从车预备正常</value>
+  </data>
+  <data name="从车预备1正常" xml:space="preserve">
+    <value>从车预备1正常</value>
+  </data>
+  <data name="从车通讯1正常" xml:space="preserve">
+    <value>从车通讯1正常</value>
+  </data>
+  <data name="从车通讯2正常" xml:space="preserve">
+    <value>从车通讯2正常</value>
+  </data>
+  <data name="从车劈相机1正常" xml:space="preserve">
+    <value>从车劈相机1正常</value>
+  </data>
+  <data name="从车劈相机2正常" xml:space="preserve">
+    <value>从车劈相机2正常</value>
+  </data>
+  <data name="网络界面" xml:space="preserve">
+    <value>网络界面</value>
+  </data>
+  <data name="本车CCU正常" xml:space="preserve">
+    <value>本车CCU正常</value>
+  </data>
+  <data name="本车IDU2正常" xml:space="preserve">
+    <value>本车IDU2正常</value>
+  </data>
+  <data name="本车TAX2正常" xml:space="preserve">
+    <value>本车TAX2正常</value>
+  </data>
+  <data name="本车LCU2正常" xml:space="preserve">
+    <value>本车LCU2正常</value>
+  </data>
+  <data name="本车SCU正常" xml:space="preserve">
+    <value>本车SCU正常</value>
+  </data>
+  <data name="本车IDU1正常" xml:space="preserve">
+    <value>本车IDU1正常</value>
+  </data>
+  <data name="本车DCU1正常" xml:space="preserve">
+    <value>本车DCU1正常</value>
+  </data>
+  <data name="本车DCU2正常" xml:space="preserve">
+    <value>本车DCU2正常</value>
+  </data>
+  <data name="本车LCU1正常" xml:space="preserve">
+    <value>本车LCU1正常</value>
+  </data>
+  <data name="从车CCU正常" xml:space="preserve">
+    <value>从车CCU正常</value>
+  </data>
+  <data name="从车IDU2正常" xml:space="preserve">
+    <value>从车IDU2正常</value>
+  </data>
+  <data name="从车TAX2正常" xml:space="preserve">
+    <value>从车TAX2正常</value>
+  </data>
+  <data name="从车LCU2正常" xml:space="preserve">
+    <value>从车LCU2正常</value>
+  </data>
+  <data name="从车SCU正常" xml:space="preserve">
+    <value>从车SCU正常</value>
+  </data>
+  <data name="从车IDU1正常" xml:space="preserve">
+    <value>从车IDU1正常</value>
+  </data>
+  <data name="从车DCU1正常" xml:space="preserve">
+    <value>从车DCU1正常</value>
+  </data>
+  <data name="从车DCU2正常" xml:space="preserve">
+    <value>从车DCU2正常</value>
+  </data>
+  <data name="从车LCU1正常" xml:space="preserve">
+    <value>从车LCU1正常</value>
+  </data>
+  <data name="辅系统" xml:space="preserve">
+    <value>辅系统</value>
+  </data>
+  <data name="本车起牵引风机1" xml:space="preserve">
+    <value>本车起牵引风机1</value>
+  </data>
+  <data name="本车起牵引风机3" xml:space="preserve">
+    <value>本车起牵引风机3</value>
+  </data>
+  <data name="本车起牵引风机2" xml:space="preserve">
+    <value>本车起牵引风机2</value>
+  </data>
+  <data name="本车起牵引风机4" xml:space="preserve">
+    <value>本车起牵引风机4</value>
+  </data>
+  <data name="本车起制动风机1" xml:space="preserve">
+    <value>本车起制动风机1</value>
+  </data>
+  <data name="本车起制动风机2" xml:space="preserve">
+    <value>本车起制动风机2</value>
+  </data>
+  <data name="本车起变压器风机" xml:space="preserve">
+    <value>本车起变压器风机</value>
+  </data>
+  <data name="本车起油泵" xml:space="preserve">
+    <value>本车起油泵</value>
+  </data>
+  <data name="本车起劈相机1" xml:space="preserve">
+    <value>本车起劈相机1</value>
+  </data>
+  <data name="本车起劈相机2" xml:space="preserve">
+    <value>本车起劈相机2</value>
+  </data>
+  <data name="本车合劈相机启动继电器" xml:space="preserve">
+    <value>本车合劈相机启动继电器</value>
+  </data>
+  <data name="本车起压缩机" xml:space="preserve">
+    <value>本车起压缩机</value>
+  </data>
+  <data name="本车起干燥器" xml:space="preserve">
+    <value>本车起干燥器</value>
+  </data>
+  <data name="本车起轮喷" xml:space="preserve">
+    <value>本车起轮喷</value>
+  </data>
+  <data name="本车牵引1风机接触器闭合" xml:space="preserve">
+    <value>本车牵引1风机接触器闭合</value>
+  </data>
+  <data name="本车牵引3风机接触器闭合" xml:space="preserve">
+    <value>本车牵引3风机接触器闭合</value>
+  </data>
+  <data name="本车牵引2风机接触器闭合" xml:space="preserve">
+    <value>本车牵引2风机接触器闭合</value>
+  </data>
+  <data name="本车牵引4风机接触器闭合" xml:space="preserve">
+    <value>本车牵引4风机接触器闭合</value>
+  </data>
+  <data name="本车制动1风机接触器闭合" xml:space="preserve">
+    <value>本车制动1风机接触器闭合</value>
+  </data>
+  <data name="本车制动2风机接触器闭合" xml:space="preserve">
+    <value>本车制动2风机接触器闭合</value>
+  </data>
+  <data name="本车变压器风机" xml:space="preserve">
+    <value>本车变压器风机</value>
+  </data>
+  <data name="本车油泵继电器合" xml:space="preserve">
+    <value>本车油泵继电器合</value>
+  </data>
+  <data name="本车劈相机1接触器闭合" xml:space="preserve">
+    <value>本车劈相机1接触器闭合</value>
+  </data>
+  <data name="本车劈相机2接触器闭合" xml:space="preserve">
+    <value>本车劈相机2接触器闭合</value>
+  </data>
+  <data name="本车劈相机启动继电器合" xml:space="preserve">
+    <value>本车劈相机启动继电器合</value>
+  </data>
+  <data name="本车压缩机接触器闭合" xml:space="preserve">
+    <value>本车压缩机接触器闭合</value>
+  </data>
+  <data name="从车起牵引风机1" xml:space="preserve">
+    <value>从车起牵引风机1</value>
+  </data>
+  <data name="从车起牵引风机3" xml:space="preserve">
+    <value>从车起牵引风机3</value>
+  </data>
+  <data name="从车起牵引风机2" xml:space="preserve">
+    <value>从车起牵引风机2</value>
+  </data>
+  <data name="从车起牵引风机4" xml:space="preserve">
+    <value>从车起牵引风机4</value>
+  </data>
+  <data name="从车起制动风机1" xml:space="preserve">
+    <value>从车起制动风机1</value>
+  </data>
+  <data name="从车起制动风机2" xml:space="preserve">
+    <value>从车起制动风机2</value>
+  </data>
+  <data name="从车起变压器风机" xml:space="preserve">
+    <value>从车起变压器风机</value>
+  </data>
+  <data name="从车起油泵" xml:space="preserve">
+    <value>从车起油泵</value>
+  </data>
+  <data name="从车起劈相机1" xml:space="preserve">
+    <value>从车起劈相机1</value>
+  </data>
+  <data name="从车起劈相机2" xml:space="preserve">
+    <value>从车起劈相机2</value>
+  </data>
+  <data name="从车合劈相机启动继电器" xml:space="preserve">
+    <value>从车合劈相机启动继电器</value>
+  </data>
+  <data name="从车起压缩机" xml:space="preserve">
+    <value>从车起压缩机</value>
+  </data>
+  <data name="从车起干燥器" xml:space="preserve">
+    <value>从车起干燥器</value>
+  </data>
+  <data name="从车起轮喷" xml:space="preserve">
+    <value>从车起轮喷</value>
+  </data>
+  <data name="从车牵引风机1接触器闭合" xml:space="preserve">
+    <value>从车牵引风机1接触器闭合</value>
+  </data>
+  <data name="从车牵引风机3接触器闭合" xml:space="preserve">
+    <value>从车牵引风机3接触器闭合</value>
+  </data>
+  <data name="从车牵引风机2接触器闭合" xml:space="preserve">
+    <value>从车牵引风机2接触器闭合</value>
+  </data>
+  <data name="从车牵引风机4接触器闭合" xml:space="preserve">
+    <value>从车牵引风机4接触器闭合</value>
+  </data>
+  <data name="从车制动风机1接触器闭合" xml:space="preserve">
+    <value>从车制动风机1接触器闭合</value>
+  </data>
+  <data name="从车制动风机2接触器闭合" xml:space="preserve">
+    <value>从车制动风机2接触器闭合</value>
+  </data>
+  <data name="从车变压器风机" xml:space="preserve">
+    <value>从车变压器风机</value>
+  </data>
+  <data name="从车油泵继电器合" xml:space="preserve">
+    <value>从车油泵继电器合</value>
+  </data>
+  <data name="从车劈相机1接触器闭合" xml:space="preserve">
+    <value>从车劈相机1接触器闭合</value>
+  </data>
+  <data name="从车劈相机2接触器闭合" xml:space="preserve">
+    <value>从车劈相机2接触器闭合</value>
+  </data>
+  <data name="从车劈相机启动继电器合" xml:space="preserve">
+    <value>从车劈相机启动继电器合</value>
+  </data>
+  <data name="从车压缩机接触器闭合" xml:space="preserve">
+    <value>从车压缩机接触器闭合</value>
+  </data>
+  <data name="状态" xml:space="preserve">
+    <value>状态</value>
+  </data>
+  <data name="本车线路接触器故障1" xml:space="preserve">
+    <value>本车线路接触器故障1</value>
+  </data>
+  <data name="本车线路接触器故障2" xml:space="preserve">
+    <value>本车线路接触器故障2</value>
+  </data>
+  <data name="本车线路接触器故障隔离3" xml:space="preserve">
+    <value>本车线路接触器故障隔离3</value>
+  </data>
+  <data name="本车线路接触器故障隔离4" xml:space="preserve">
+    <value>本车线路接触器故障隔离4</value>
+  </data>
+  <data name="本车线路接触器故障隔离5" xml:space="preserve">
+    <value>本车线路接触器故障隔离5</value>
+  </data>
+  <data name="本车线路接触器故障隔离6" xml:space="preserve">
+    <value>本车线路接触器故障隔离6</value>
+  </data>
+  <data name="本车风速继电器故障隔离1" xml:space="preserve">
+    <value>本车风速继电器故障隔离1</value>
+  </data>
+  <data name="本车风速继电器故障隔离2" xml:space="preserve">
+    <value>本车风速继电器故障隔离2</value>
+  </data>
+  <data name="本车劈相机故障隔离1" xml:space="preserve">
+    <value>本车劈相机故障隔离1</value>
+  </data>
+  <data name="本车劈相机故障隔离2" xml:space="preserve">
+    <value>本车劈相机故障隔离2</value>
+  </data>
+  <data name="本车压缩机故障隔离" xml:space="preserve">
+    <value>本车压缩机故障隔离</value>
+  </data>
+  <data name="本车牵引风机故障隔离1" xml:space="preserve">
+    <value>本车牵引风机故障隔离1</value>
+  </data>
+  <data name="本车牵引风机故障隔离2" xml:space="preserve">
+    <value>本车牵引风机故障隔离2</value>
+  </data>
+  <data name="本车牵引风机故障隔离3" xml:space="preserve">
+    <value>本车牵引风机故障隔离3</value>
+  </data>
+  <data name="本车牵引风机故障隔离4" xml:space="preserve">
+    <value>本车牵引风机故障隔离4</value>
+  </data>
+  <data name="本车制动风机故障隔离1" xml:space="preserve">
+    <value>本车制动风机故障隔离1</value>
+  </data>
+  <data name="本车制动风机故障隔离2" xml:space="preserve">
+    <value>本车制动风机故障隔离2</value>
+  </data>
+  <data name="本车变压器风机故障隔离" xml:space="preserve">
+    <value>本车变压器风机故障隔离</value>
+  </data>
+  <data name="本车油泵故障隔离" xml:space="preserve">
+    <value>本车油泵故障隔离</value>
+  </data>
+  <data name="本车零压故障隔离" xml:space="preserve">
+    <value>本车零压故障隔离</value>
+  </data>
+  <data name="本车库用开关1" xml:space="preserve">
+    <value>本车库用开关1</value>
+  </data>
+  <data name="本车库用开关2" xml:space="preserve">
+    <value>本车库用开关2</value>
+  </data>
+  <data name="本车空载试验开关1" xml:space="preserve">
+    <value>本车空载试验开关1</value>
+  </data>
+  <data name="本车空载试验开关2" xml:space="preserve">
+    <value>本车空载试验开关2</value>
+  </data>
+  <data name="本车受电弓风压隔离" xml:space="preserve">
+    <value>本车受电弓风压隔离</value>
+  </data>
+  <data name="本车主断隔离开关" xml:space="preserve">
+    <value>本车主断隔离开关</value>
+  </data>
+  <data name="从车线路接触器故障1" xml:space="preserve">
+    <value>从车线路接触器故障1</value>
+  </data>
+  <data name="从车线路接触器故障2" xml:space="preserve">
+    <value>从车线路接触器故障2</value>
+  </data>
+  <data name="从车线路接触器故障隔离3" xml:space="preserve">
+    <value>从车线路接触器故障隔离3</value>
+  </data>
+  <data name="从车线路接触器故障隔离4" xml:space="preserve">
+    <value>从车线路接触器故障隔离4</value>
+  </data>
+  <data name="从车线路接触器故障隔离5" xml:space="preserve">
+    <value>从车线路接触器故障隔离5</value>
+  </data>
+  <data name="从车线路接触器故障隔离6" xml:space="preserve">
+    <value>从车线路接触器故障隔离6</value>
+  </data>
+  <data name="从车风速继电器故障隔离1" xml:space="preserve">
+    <value>从车风速继电器故障隔离1</value>
+  </data>
+  <data name="从车风速继电器故障隔离2" xml:space="preserve">
+    <value>从车风速继电器故障隔离2</value>
+  </data>
+  <data name="从车劈相机故障隔离1" xml:space="preserve">
+    <value>从车劈相机故障隔离1</value>
+  </data>
+  <data name="从车劈相机故障隔离2" xml:space="preserve">
+    <value>从车劈相机故障隔离2</value>
+  </data>
+  <data name="从车压缩机故障隔离" xml:space="preserve">
+    <value>从车压缩机故障隔离</value>
+  </data>
+  <data name="从车牵引风机故障隔离1" xml:space="preserve">
+    <value>从车牵引风机故障隔离1</value>
+  </data>
+  <data name="从车牵引风机故障隔离2" xml:space="preserve">
+    <value>从车牵引风机故障隔离2</value>
+  </data>
+  <data name="从车牵引风机故障隔离3" xml:space="preserve">
+    <value>从车牵引风机故障隔离3</value>
+  </data>
+  <data name="从车牵引风机故障隔离4" xml:space="preserve">
+    <value>从车牵引风机故障隔离4</value>
+  </data>
+  <data name="从车制动风机故障隔离1" xml:space="preserve">
+    <value>从车制动风机故障隔离1</value>
+  </data>
+  <data name="从车制动风机故障隔离2" xml:space="preserve">
+    <value>从车制动风机故障隔离2</value>
+  </data>
+  <data name="从车变压器风机故障隔离" xml:space="preserve">
+    <value>从车变压器风机故障隔离</value>
+  </data>
+  <data name="从车油泵故障隔离" xml:space="preserve">
+    <value>从车油泵故障隔离</value>
+  </data>
+  <data name="从车零压故障隔离" xml:space="preserve">
+    <value>从车零压故障隔离</value>
+  </data>
+  <data name="从车库用开关1" xml:space="preserve">
+    <value>从车库用开关1</value>
+  </data>
+  <data name="从车库用开关2" xml:space="preserve">
+    <value>从车库用开关2</value>
+  </data>
+  <data name="从车空载试验开关1" xml:space="preserve">
+    <value>从车空载试验开关1</value>
+  </data>
+  <data name="从车空载试验开关2" xml:space="preserve">
+    <value>从车空载试验开关2</value>
+  </data>
+  <data name="从车受电弓风压隔离" xml:space="preserve">
+    <value>从车受电弓风压隔离</value>
+  </data>
+  <data name="从车主断隔离开关" xml:space="preserve">
+    <value>从车主断隔离开关</value>
+  </data>
+  <data name="主电路" xml:space="preserve">
+    <value>主电路</value>
+  </data>
+  <data name="本车牵引" xml:space="preserve">
+    <value>本车牵引</value>
+  </data>
+  <data name="本车制动" xml:space="preserve">
+    <value>本车制动</value>
+  </data>
+  <data name="本车1架隔离" xml:space="preserve">
+    <value>本车1架隔离</value>
+  </data>
+  <data name="本车2架隔离" xml:space="preserve">
+    <value>本车2架隔离</value>
+  </data>
+  <data name="本车降弓分主断" xml:space="preserve">
+    <value>本车降弓分主断</value>
+  </data>
+  <data name="本车它车禁止主断" xml:space="preserve">
+    <value>本车它车禁止主断</value>
+  </data>
+  <data name="本车合主断" xml:space="preserve">
+    <value>本车合主断</value>
+  </data>
+  <data name="本车主断已合" xml:space="preserve">
+    <value>本车主断已合</value>
+  </data>
+  <data name="本车线路接触器1" xml:space="preserve">
+    <value>本车线路接触器1</value>
+  </data>
+  <data name="本车线路接触器23" xml:space="preserve">
+    <value>本车线路接触器23</value>
+  </data>
+  <data name="本车线路接触器4" xml:space="preserve">
+    <value>本车线路接触器4</value>
+  </data>
+  <data name="本车线路接触器56" xml:space="preserve">
+    <value>本车线路接触器56</value>
+  </data>
+  <data name="本车励磁接触器" xml:space="preserve">
+    <value>本车励磁接触器</value>
+  </data>
+  <data name="本车位1牵引" xml:space="preserve">
+    <value>本车位1牵引</value>
+  </data>
+  <data name="本车位1制动" xml:space="preserve">
+    <value>本车位1制动</value>
+  </data>
+  <data name="本车位2牵引" xml:space="preserve">
+    <value>本车位2牵引</value>
+  </data>
+  <data name="本车位2制动" xml:space="preserve">
+    <value>本车位2制动</value>
+  </data>
+  <data name="本车级13磁削" xml:space="preserve">
+    <value>本车级13磁削</value>
+  </data>
+  <data name="本车级23磁削" xml:space="preserve">
+    <value>本车级23磁削</value>
+  </data>
+  <data name="本车司机钥匙" xml:space="preserve">
+    <value>本车司机钥匙</value>
+  </data>
+  <data name="从车牵引" xml:space="preserve">
+    <value>从车牵引</value>
+  </data>
+  <data name="从车制动" xml:space="preserve">
+    <value>从车制动</value>
+  </data>
+  <data name="从车架1隔离" xml:space="preserve">
+    <value>从车架1隔离</value>
+  </data>
+  <data name="从车架2隔离" xml:space="preserve">
+    <value>从车架2隔离</value>
+  </data>
+  <data name="从车降弓分主断" xml:space="preserve">
+    <value>从车降弓分主断</value>
+  </data>
+  <data name="从车它车禁止主断" xml:space="preserve">
+    <value>从车它车禁止主断</value>
+  </data>
+  <data name="从车合主断" xml:space="preserve">
+    <value>从车合主断</value>
+  </data>
+  <data name="从车主断已合" xml:space="preserve">
+    <value>从车主断已合</value>
+  </data>
+  <data name="从车线路接触器1" xml:space="preserve">
+    <value>从车线路接触器1</value>
+  </data>
+  <data name="从车线路接触器23" xml:space="preserve">
+    <value>从车线路接触器23</value>
+  </data>
+  <data name="从车线路接触器4" xml:space="preserve">
+    <value>从车线路接触器4</value>
+  </data>
+  <data name="从车线路接触器56" xml:space="preserve">
+    <value>从车线路接触器56</value>
+  </data>
+  <data name="从车励磁接触器" xml:space="preserve">
+    <value>从车励磁接触器</value>
+  </data>
+  <data name="从车位1牵引" xml:space="preserve">
+    <value>从车位1牵引</value>
+  </data>
+  <data name="从车位1制动" xml:space="preserve">
+    <value>从车位1制动</value>
+  </data>
+  <data name="从车位2牵引" xml:space="preserve">
+    <value>从车位2牵引</value>
+  </data>
+  <data name="从车位2制动" xml:space="preserve">
+    <value>从车位2制动</value>
+  </data>
+  <data name="从车级13磁削" xml:space="preserve">
+    <value>从车级13磁削</value>
+  </data>
+  <data name="从车级23磁削" xml:space="preserve">
+    <value>从车级23磁削</value>
+  </data>
+  <data name="从车司机钥匙" xml:space="preserve">
+    <value>从车司机钥匙</value>
+  </data>
+  <data name="RACK11微机故障" xml:space="preserve">
+    <value>RACK11微机故障</value>
+  </data>
+  <data name="RACK12微机故障" xml:space="preserve">
+    <value>RACK12微机故障</value>
+  </data>
+  <data name="RACK21微机故障" xml:space="preserve">
+    <value>RACK21微机故障</value>
+  </data>
+  <data name="RACK22微机故障" xml:space="preserve">
+    <value>RACK22微机故障</value>
+  </data>
+  <data name="A车变流器原边电流过流" xml:space="preserve">
+    <value>A车变流器原边电流过流</value>
+  </data>
+  <data name="B车变流器原边电流过流" xml:space="preserve">
+    <value>B车变流器原边电流过流</value>
+  </data>
+  <data name="A车第一转向架桥过流" xml:space="preserve">
+    <value>A车第一转向架桥过流</value>
+  </data>
+  <data name="A车第二转向架桥过流" xml:space="preserve">
+    <value>A车第二转向架桥过流</value>
+  </data>
+  <data name="A车第三转向架桥过流" xml:space="preserve">
+    <value>A车第三转向架桥过流</value>
+  </data>
+  <data name="B车第一转向架桥过流" xml:space="preserve">
+    <value>B车第一转向架桥过流</value>
+  </data>
+  <data name="B车第二转向架桥过流" xml:space="preserve">
+    <value>B车第二转向架桥过流</value>
+  </data>
+  <data name="B车第三转向架桥过流" xml:space="preserve">
+    <value>B车第三转向架桥过流</value>
+  </data>
+  <data name="A车原边过压" xml:space="preserve">
+    <value>A车原边过压</value>
+  </data>
+  <data name="B车原边过压" xml:space="preserve">
+    <value>B车原边过压</value>
+  </data>
+  <data name="A车第一转向架主电路接地" xml:space="preserve">
+    <value>A车第一转向架主电路接地</value>
+  </data>
+  <data name="A车第二转向架主电路接地" xml:space="preserve">
+    <value>A车第二转向架主电路接地</value>
+  </data>
+  <data name="A车第三转向架主电路接地" xml:space="preserve">
+    <value>A车第三转向架主电路接地</value>
+  </data>
+  <data name="B车第一转向架主电路接地" xml:space="preserve">
+    <value>B车第一转向架主电路接地</value>
+  </data>
+  <data name="B车第二转向架主电路接地" xml:space="preserve">
+    <value>B车第二转向架主电路接地</value>
+  </data>
+  <data name="B车第三转向架主电路接地" xml:space="preserve">
+    <value>B车第三转向架主电路接地</value>
+  </data>
+  <data name="A车辅助回路接地" xml:space="preserve">
+    <value>A车辅助回路接地</value>
+  </data>
+  <data name="B车辅助回路接地" xml:space="preserve">
+    <value>B车辅助回路接地</value>
+  </data>
+  <data name="A车劈相机故障" xml:space="preserve">
+    <value>A车劈相机故障</value>
+  </data>
+  <data name="B车劈相机故障" xml:space="preserve">
+    <value>B车劈相机故障</value>
+  </data>
+  <data name="A车压缩机故障" xml:space="preserve">
+    <value>A车压缩机故障</value>
+  </data>
+  <data name="B车压缩机故障" xml:space="preserve">
+    <value>B车压缩机故障</value>
+  </data>
+  <data name="A车110V过压" xml:space="preserve">
+    <value>A车110V过压</value>
+  </data>
+  <data name="B车110V过压" xml:space="preserve">
+    <value>B车110V过压</value>
+  </data>
+  <data name="A车110V欠压" xml:space="preserve">
+    <value>A车110V欠压</value>
+  </data>
+  <data name="B车110V欠压" xml:space="preserve">
+    <value>B车110V欠压</value>
+  </data>
+  <data name="A车1号电机电枢电流过流" xml:space="preserve">
+    <value>A车1号电机电枢电流过流</value>
+  </data>
+  <data name="A车2号电机电枢电流过流" xml:space="preserve">
+    <value>A车2号电机电枢电流过流</value>
+  </data>
+  <data name="A车3号电机电枢电流过流" xml:space="preserve">
+    <value>A车3号电机电枢电流过流</value>
+  </data>
+  <data name="A车4号电机电枢电流过流" xml:space="preserve">
+    <value>A车4号电机电枢电流过流</value>
+  </data>
+  <data name="A车5号电机电枢电流过流" xml:space="preserve">
+    <value>A车5号电机电枢电流过流</value>
+  </data>
+  <data name="A车6号电机电枢电流过流" xml:space="preserve">
+    <value>A车6号电机电枢电流过流</value>
+  </data>
+  <data name="B车1号电机电枢电流过流" xml:space="preserve">
+    <value>B车1号电机电枢电流过流</value>
+  </data>
+  <data name="B车2号电机电枢电流过流" xml:space="preserve">
+    <value>B车2号电机电枢电流过流</value>
+  </data>
+  <data name="B车3号电机电枢电流过流" xml:space="preserve">
+    <value>B车3号电机电枢电流过流</value>
+  </data>
+  <data name="B车4号电机电枢电流过流" xml:space="preserve">
+    <value>B车4号电机电枢电流过流</value>
+  </data>
+  <data name="B车5号电机电枢电流过流" xml:space="preserve">
+    <value>B车5号电机电枢电流过流</value>
+  </data>
+  <data name="B车6号电机电枢电流过流" xml:space="preserve">
+    <value>B车6号电机电枢电流过流</value>
+  </data>
+  <data name="A车制动励磁电流过流" xml:space="preserve">
+    <value>A车制动励磁电流过流</value>
+  </data>
+  <data name="B车制动励磁电流过流" xml:space="preserve">
+    <value>B车制动励磁电流过流</value>
+  </data>
+  <data name="A车1架UM1过压" xml:space="preserve">
+    <value>A车1架UM1过压</value>
+  </data>
+  <data name="A车1架UM2过压" xml:space="preserve">
+    <value>A车1架UM2过压</value>
+  </data>
+  <data name="A车2架UM1过压" xml:space="preserve">
+    <value>A车2架UM1过压</value>
+  </data>
+  <data name="A车2架UM2过压" xml:space="preserve">
+    <value>A车2架UM2过压</value>
+  </data>
+  <data name="A车3架UM1过压" xml:space="preserve">
+    <value>A车3架UM1过压</value>
+  </data>
+  <data name="A车3架UM2过压" xml:space="preserve">
+    <value>A车3架UM2过压</value>
+  </data>
+  <data name="B车1架UM1过压" xml:space="preserve">
+    <value>B车1架UM1过压</value>
+  </data>
+  <data name="B车1架UM2过压" xml:space="preserve">
+    <value>B车1架UM2过压</value>
+  </data>
+  <data name="B车2架UM1过压" xml:space="preserve">
+    <value>B车2架UM1过压</value>
+  </data>
+  <data name="B车2架UM2过压" xml:space="preserve">
+    <value>B车2架UM2过压</value>
+  </data>
+  <data name="B车3架UM1过压" xml:space="preserve">
+    <value>B车3架UM1过压</value>
+  </data>
+  <data name="B车3架UM2过压" xml:space="preserve">
+    <value>B车3架UM2过压</value>
+  </data>
+  <data name="A车1架调制器故障" xml:space="preserve">
+    <value>A车1架调制器故障</value>
+  </data>
+  <data name="A车2架调制器故障" xml:space="preserve">
+    <value>A车2架调制器故障</value>
+  </data>
+  <data name="A车3架调制器故障" xml:space="preserve">
+    <value>A车3架调制器故障</value>
+  </data>
+  <data name="B车1架调制器故障" xml:space="preserve">
+    <value>B车1架调制器故障</value>
+  </data>
+  <data name="B车2架调制器故障" xml:space="preserve">
+    <value>B车2架调制器故障</value>
+  </data>
+  <data name="B车3架调制器故障" xml:space="preserve">
+    <value>B车3架调制器故障</value>
+  </data>
+  <data name="A车1号电机超速" xml:space="preserve">
+    <value>A车1号电机超速</value>
+  </data>
+  <data name="A车2号电机超速" xml:space="preserve">
+    <value>A车2号电机超速</value>
+  </data>
+  <data name="A车3号电机超速" xml:space="preserve">
+    <value>A车3号电机超速</value>
+  </data>
+  <data name="A车4号电机超速" xml:space="preserve">
+    <value>A车4号电机超速</value>
+  </data>
+  <data name="A车5号电机超速" xml:space="preserve">
+    <value>A车5号电机超速</value>
+  </data>
+  <data name="A车6号电机超速" xml:space="preserve">
+    <value>A车6号电机超速</value>
+  </data>
+  <data name="B车1号电机超速" xml:space="preserve">
+    <value>B车1号电机超速</value>
+  </data>
+  <data name="B车2号电机超速" xml:space="preserve">
+    <value>B车2号电机超速</value>
+  </data>
+  <data name="B车3号电机超速" xml:space="preserve">
+    <value>B车3号电机超速</value>
+  </data>
+  <data name="B车4号电机超速" xml:space="preserve">
+    <value>B车4号电机超速</value>
+  </data>
+  <data name="B车5号电机超速" xml:space="preserve">
+    <value>B车5号电机超速</value>
+  </data>
+  <data name="B车6号电机超速" xml:space="preserve">
+    <value>B车6号电机超速</value>
+  </data>
+  <data name="A车1架大空转" xml:space="preserve">
+    <value>A车1架大空转</value>
+  </data>
+  <data name="A车2架大空转" xml:space="preserve">
+    <value>A车2架大空转</value>
+  </data>
+  <data name="A车3架大空转" xml:space="preserve">
+    <value>A车3架大空转</value>
+  </data>
+  <data name="B车1架大空转" xml:space="preserve">
+    <value>B车1架大空转</value>
+  </data>
+  <data name="B车2架大空转" xml:space="preserve">
+    <value>B车2架大空转</value>
+  </data>
+  <data name="B车3架大空转" xml:space="preserve">
+    <value>B车3架大空转</value>
+  </data>
+  <data name="A车1架小齿轮弛缓" xml:space="preserve">
+    <value>A车1架小齿轮弛缓</value>
+  </data>
+  <data name="A车2架小齿轮弛缓" xml:space="preserve">
+    <value>A车2架小齿轮弛缓</value>
+  </data>
+  <data name="A车3架小齿轮弛缓" xml:space="preserve">
+    <value>A车3架小齿轮弛缓</value>
+  </data>
+  <data name="B车1架小齿轮弛缓" xml:space="preserve">
+    <value>B车1架小齿轮弛缓</value>
+  </data>
+  <data name="B车2架小齿轮弛缓" xml:space="preserve">
+    <value>B车2架小齿轮弛缓</value>
+  </data>
+  <data name="B车3架小齿轮弛缓" xml:space="preserve">
+    <value>B车3架小齿轮弛缓</value>
+  </data>
+  <data name="A车1轴速度传感器故障" xml:space="preserve">
+    <value>A车1轴速度传感器故障</value>
+  </data>
+  <data name="A车2轴速度传感器故障" xml:space="preserve">
+    <value>A车2轴速度传感器故障</value>
+  </data>
+  <data name="A车3轴速度传感器故障" xml:space="preserve">
+    <value>A车3轴速度传感器故障</value>
+  </data>
+  <data name="A车4轴速度传感器故障" xml:space="preserve">
+    <value>A车4轴速度传感器故障</value>
+  </data>
+  <data name="A车5轴速度传感器故障" xml:space="preserve">
+    <value>A车5轴速度传感器故障</value>
+  </data>
+  <data name="A车6轴速度传感器故障" xml:space="preserve">
+    <value>A车6轴速度传感器故障</value>
+  </data>
+  <data name="B车1轴速度传感器故障" xml:space="preserve">
+    <value>B车1轴速度传感器故障</value>
+  </data>
+  <data name="B车2轴速度传感器故障" xml:space="preserve">
+    <value>B车2轴速度传感器故障</value>
+  </data>
+  <data name="B车3轴速度传感器故障" xml:space="preserve">
+    <value>B车3轴速度传感器故障</value>
+  </data>
+  <data name="B车4轴速度传感器故障" xml:space="preserve">
+    <value>B车4轴速度传感器故障</value>
+  </data>
+  <data name="B车5轴速度传感器故障" xml:space="preserve">
+    <value>B车5轴速度传感器故障</value>
+  </data>
+  <data name="B车6轴速度传感器故障" xml:space="preserve">
+    <value>B车6轴速度传感器故障</value>
+  </data>
+  <data name="A车1号牵引风机故障" xml:space="preserve">
+    <value>A车1号牵引风机故障</value>
+  </data>
+  <data name="A车2号牵引风机故障" xml:space="preserve">
+    <value>A车2号牵引风机故障</value>
+  </data>
+  <data name="B车1号牵引风机故障" xml:space="preserve">
+    <value>B车1号牵引风机故障</value>
+  </data>
+  <data name="B车2号牵引风机故障" xml:space="preserve">
+    <value>B车2号牵引风机故障</value>
+  </data>
+  <data name="A车1号制动风机故障" xml:space="preserve">
+    <value>A车1号制动风机故障</value>
+  </data>
+  <data name="A车2号制动风机故障" xml:space="preserve">
+    <value>A车2号制动风机故障</value>
+  </data>
+  <data name="B车1号制动风机故障" xml:space="preserve">
+    <value>B车1号制动风机故障</value>
+  </data>
+  <data name="B车2号制动风机故障" xml:space="preserve">
+    <value>B车2号制动风机故障</value>
+  </data>
+  <data name="A车1号硅机组风机故障" xml:space="preserve">
+    <value>A车1号硅机组风机故障</value>
+  </data>
+  <data name="A车2号硅机组风机故障" xml:space="preserve">
+    <value>A车2号硅机组风机故障</value>
+  </data>
+  <data name="B车1号硅机组风机故障" xml:space="preserve">
+    <value>B车1号硅机组风机故障</value>
+  </data>
+  <data name="B车2号硅机组风机故障" xml:space="preserve">
+    <value>B车2号硅机组风机故障</value>
+  </data>
+  <data name="A车油泵电机故障" xml:space="preserve">
+    <value>A车油泵电机故障</value>
+  </data>
+  <data name="A车油泵故障" xml:space="preserve">
+    <value>A车油泵故障</value>
+  </data>
+  <data name="B车油泵电机故障" xml:space="preserve">
+    <value>B车油泵电机故障</value>
+  </data>
+  <data name="B车油泵故障" xml:space="preserve">
+    <value>B车油泵故障</value>
+  </data>
+  <data name="A车1号电机一级磁削控制器故障" xml:space="preserve">
+    <value>A车1号电机一级磁削控制器故障</value>
+  </data>
+  <data name="A车2号电机一级磁削控制器故障" xml:space="preserve">
+    <value>A车2号电机一级磁削控制器故障</value>
+  </data>
+  <data name="A车3号电机一级磁削控制器故障" xml:space="preserve">
+    <value>A车3号电机一级磁削控制器故障</value>
+  </data>
+  <data name="A车4号电机一级磁削控制器故障" xml:space="preserve">
+    <value>A车4号电机一级磁削控制器故障</value>
+  </data>
+  <data name="A车5号电机一级磁削控制器故障" xml:space="preserve">
+    <value>A车5号电机一级磁削控制器故障</value>
+  </data>
+  <data name="A车6号电机一级磁削控制器故障" xml:space="preserve">
+    <value>A车6号电机一级磁削控制器故障</value>
+  </data>
+  <data name="B车1号电机一级磁削控制器故障" xml:space="preserve">
+    <value>B车1号电机一级磁削控制器故障</value>
+  </data>
+  <data name="B车2号电机一级磁削控制器故障" xml:space="preserve">
+    <value>B车2号电机一级磁削控制器故障</value>
+  </data>
+  <data name="B车3号电机一级磁削控制器故障" xml:space="preserve">
+    <value>B车3号电机一级磁削控制器故障</value>
+  </data>
+  <data name="B车4号电机一级磁削控制器故障" xml:space="preserve">
+    <value>B车4号电机一级磁削控制器故障</value>
+  </data>
+  <data name="B车5号电机一级磁削控制器故障" xml:space="preserve">
+    <value>B车5号电机一级磁削控制器故障</value>
+  </data>
+  <data name="B车6号电机一级磁削控制器故障" xml:space="preserve">
+    <value>B车6号电机一级磁削控制器故障</value>
+  </data>
+  <data name="A车1号电机二级磁削控制器故障" xml:space="preserve">
+    <value>A车1号电机二级磁削控制器故障</value>
+  </data>
+  <data name="A车2号电机二级磁削控制器故障" xml:space="preserve">
+    <value>A车2号电机二级磁削控制器故障</value>
+  </data>
+  <data name="A车3号电机二级磁削控制器故障" xml:space="preserve">
+    <value>A车3号电机二级磁削控制器故障</value>
+  </data>
+  <data name="A车4号电机二级磁削控制器故障" xml:space="preserve">
+    <value>A车4号电机二级磁削控制器故障</value>
+  </data>
+  <data name="A车5号电机二级磁削控制器故障" xml:space="preserve">
+    <value>A车5号电机二级磁削控制器故障</value>
+  </data>
+  <data name="A车6号电机二级磁削控制器故障" xml:space="preserve">
+    <value>A车6号电机二级磁削控制器故障</value>
+  </data>
+  <data name="B车1号电机二级磁削控制器故障" xml:space="preserve">
+    <value>B车1号电机二级磁削控制器故障</value>
+  </data>
+  <data name="B车2号电机二级磁削控制器故障" xml:space="preserve">
+    <value>B车2号电机二级磁削控制器故障</value>
+  </data>
+  <data name="B车3号电机二级磁削控制器故障" xml:space="preserve">
+    <value>B车3号电机二级磁削控制器故障</value>
+  </data>
+  <data name="B车4号电机二级磁削控制器故障" xml:space="preserve">
+    <value>B车4号电机二级磁削控制器故障</value>
+  </data>
+  <data name="B车5号电机二级磁削控制器故障" xml:space="preserve">
+    <value>B车5号电机二级磁削控制器故障</value>
+  </data>
+  <data name="B车6号电机二级磁削控制器故障" xml:space="preserve">
+    <value>B车6号电机二级磁削控制器故障</value>
+  </data>
+  <data name="A车功补装置故障" xml:space="preserve">
+    <value>A车功补装置故障</value>
+  </data>
+  <data name="B车功补装置故障" xml:space="preserve">
+    <value>B车功补装置故障</value>
+  </data>
+  <data name="A车1号牵引电机电流传感器故障" xml:space="preserve">
+    <value>A车1号牵引电机电流传感器故障</value>
+  </data>
+  <data name="A车2号牵引电机电流传感器故障" xml:space="preserve">
+    <value>A车2号牵引电机电流传感器故障</value>
+  </data>
+  <data name="A车3号牵引电机电流传感器故障" xml:space="preserve">
+    <value>A车3号牵引电机电流传感器故障</value>
+  </data>
+  <data name="A车4号牵引电机电流传感器故障" xml:space="preserve">
+    <value>A车4号牵引电机电流传感器故障</value>
+  </data>
+  <data name="A车5号牵引电机电流传感器故障" xml:space="preserve">
+    <value>A车5号牵引电机电流传感器故障</value>
+  </data>
+  <data name="A车6号牵引电机电流传感器故障" xml:space="preserve">
+    <value>A车6号牵引电机电流传感器故障</value>
+  </data>
+  <data name="B车1号牵引电机电流传感器故障" xml:space="preserve">
+    <value>B车1号牵引电机电流传感器故障</value>
+  </data>
+  <data name="B车2号牵引电机电流传感器故障" xml:space="preserve">
+    <value>B车2号牵引电机电流传感器故障</value>
+  </data>
+  <data name="B车3号牵引电机电流传感器故障" xml:space="preserve">
+    <value>B车3号牵引电机电流传感器故障</value>
+  </data>
+  <data name="B车4号牵引电机电流传感器故障" xml:space="preserve">
+    <value>B车4号牵引电机电流传感器故障</value>
+  </data>
+  <data name="B车5号牵引电机电流传感器故障" xml:space="preserve">
+    <value>B车5号牵引电机电流传感器故障</value>
+  </data>
+  <data name="B车6号牵引电机电流传感器故障" xml:space="preserve">
+    <value>B车6号牵引电机电流传感器故障</value>
+  </data>
+  <data name="A车励磁电压传感器故障" xml:space="preserve">
+    <value>A车励磁电压传感器故障</value>
+  </data>
+  <data name="B车励磁电压传感器故障" xml:space="preserve">
+    <value>B车励磁电压传感器故障</value>
+  </data>
+  <data name="A车1号牵引电机电压传感器故障" xml:space="preserve">
+    <value>A车1号牵引电机电压传感器故障</value>
+  </data>
+  <data name="A车2号牵引电机电压传感器故障" xml:space="preserve">
+    <value>A车2号牵引电机电压传感器故障</value>
+  </data>
+  <data name="A车3号牵引电机电压传感器故障" xml:space="preserve">
+    <value>A车3号牵引电机电压传感器故障</value>
+  </data>
+  <data name="A车4号牵引电机电压传感器故障" xml:space="preserve">
+    <value>A车4号牵引电机电压传感器故障</value>
+  </data>
+  <data name="A车5号牵引电机电压传感器故障" xml:space="preserve">
+    <value>A车5号牵引电机电压传感器故障</value>
+  </data>
+  <data name="A车6号牵引电机电压传感器故障" xml:space="preserve">
+    <value>A车6号牵引电机电压传感器故障</value>
+  </data>
+  <data name="B车1号牵引电机电压传感器故障" xml:space="preserve">
+    <value>B车1号牵引电机电压传感器故障</value>
+  </data>
+  <data name="B车2号牵引电机电压传感器故障" xml:space="preserve">
+    <value>B车2号牵引电机电压传感器故障</value>
+  </data>
+  <data name="B车3号牵引电机电压传感器故障" xml:space="preserve">
+    <value>B车3号牵引电机电压传感器故障</value>
+  </data>
+  <data name="B车4号牵引电机电压传感器故障" xml:space="preserve">
+    <value>B车4号牵引电机电压传感器故障</value>
+  </data>
+  <data name="B车5号牵引电机电压传感器故障" xml:space="preserve">
+    <value>B车5号牵引电机电压传感器故障</value>
+  </data>
+  <data name="B车6号牵引电机电压传感器故障" xml:space="preserve">
+    <value>B车6号牵引电机电压传感器故障</value>
+  </data>
+  <data name="A车1架故障记忆溢出" xml:space="preserve">
+    <value>A车1架故障记忆溢出</value>
+  </data>
+  <data name="A车2架故障记忆溢出" xml:space="preserve">
+    <value>A车2架故障记忆溢出</value>
+  </data>
+  <data name="A车3架故障记忆溢出" xml:space="preserve">
+    <value>A车3架故障记忆溢出</value>
+  </data>
+  <data name="B车1架故障记忆溢出" xml:space="preserve">
+    <value>B车1架故障记忆溢出</value>
+  </data>
+  <data name="B车2架故障记忆溢出" xml:space="preserve">
+    <value>B车2架故障记忆溢出</value>
+  </data>
+  <data name="B车3架故障记忆溢出" xml:space="preserve">
+    <value>B车3架故障记忆溢出</value>
+  </data>
+  <data name="返回按钮按下" xml:space="preserve">
+    <value>返回按钮按下</value>
+  </data>
+  <data name="查询按钮按下" xml:space="preserve">
+    <value>查询按钮按下</value>
+  </data>
+  <data name="本车主断故障" xml:space="preserve">
+    <value>本车主断故障</value>
+  </data>
+  <data name="本车预备故障" xml:space="preserve">
+    <value>本车预备故障</value>
+  </data>
+  <data name="本车预备1故障" xml:space="preserve">
+    <value>本车预备1故障</value>
+  </data>
+  <data name="本车通讯1故障" xml:space="preserve">
+    <value>本车通讯1故障</value>
+  </data>
+  <data name="本车通讯2故障" xml:space="preserve">
+    <value>本车通讯2故障</value>
+  </data>
+  <data name="本车劈相机1故障" xml:space="preserve">
+    <value>本车劈相机1故障</value>
+  </data>
+  <data name="本车劈相机2故障" xml:space="preserve">
+    <value>本车劈相机2故障</value>
+  </data>
+  <data name="从车主断故障" xml:space="preserve">
+    <value>从车主断故障</value>
+  </data>
+  <data name="从车预备故障" xml:space="preserve">
+    <value>从车预备故障</value>
+  </data>
+  <data name="从车预备1故障" xml:space="preserve">
+    <value>从车预备1故障</value>
+  </data>
+  <data name="从车通讯1故障" xml:space="preserve">
+    <value>从车通讯1故障</value>
+  </data>
+  <data name="从车通讯2故障" xml:space="preserve">
+    <value>从车通讯2故障</value>
+  </data>
+  <data name="从车劈相机1故障" xml:space="preserve">
+    <value>从车劈相机1故障</value>
+  </data>
+  <data name="从车劈相机2故障" xml:space="preserve">
+    <value>从车劈相机2故障</value>
+  </data>
+  <data name="本车CCU异常" xml:space="preserve">
+    <value>本车CCU异常</value>
+  </data>
+  <data name="本车IDU2异常" xml:space="preserve">
+    <value>本车IDU2异常</value>
+  </data>
+  <data name="本车TAX2异常" xml:space="preserve">
+    <value>本车TAX2异常</value>
+  </data>
+  <data name="本车LCU2异常" xml:space="preserve">
+    <value>本车LCU2异常</value>
+  </data>
+  <data name="本车SCU异常" xml:space="preserve">
+    <value>本车SCU异常</value>
+  </data>
+  <data name="本车IDU1异常" xml:space="preserve">
+    <value>本车IDU1异常</value>
+  </data>
+  <data name="本车DCU1异常" xml:space="preserve">
+    <value>本车DCU1异常</value>
+  </data>
+  <data name="本车DCU2异常" xml:space="preserve">
+    <value>本车DCU2异常</value>
+  </data>
+  <data name="本车LCU1异常" xml:space="preserve">
+    <value>本车LCU1异常</value>
+  </data>
+  <data name="从车CCU异常" xml:space="preserve">
+    <value>从车CCU异常</value>
+  </data>
+  <data name="从车IDU2异常" xml:space="preserve">
+    <value>从车IDU2异常</value>
+  </data>
+  <data name="从车TAX2异常" xml:space="preserve">
+    <value>从车TAX2异常</value>
+  </data>
+  <data name="从车LCU2异常" xml:space="preserve">
+    <value>从车LCU2异常</value>
+  </data>
+  <data name="从车SCU异常" xml:space="preserve">
+    <value>从车SCU异常</value>
+  </data>
+  <data name="从车IDU1异常" xml:space="preserve">
+    <value>从车IDU1异常</value>
+  </data>
+  <data name="从车DCU1异常" xml:space="preserve">
+    <value>从车DCU1异常</value>
+  </data>
+  <data name="从车DCU2异常" xml:space="preserve">
+    <value>从车DCU2异常</value>
+  </data>
+  <data name="从车LCU1异常" xml:space="preserve">
+    <value>从车LCU1异常</value>
+  </data>
+  <data name="它车分主段" xml:space="preserve">
+    <value>它车分主段</value>
+  </data>
+  <data name="本车分主段" xml:space="preserve">
+    <value>本车分主段</value>
+  </data>
+  <data name="从车单机运行开关" xml:space="preserve">
+    <value>从车单机运行开关</value>
+  </data>
+  <data name="它车重联运行" xml:space="preserve">
+    <value>它车重联运行</value>
+  </data>
+  <data name="本车单机运行开关" xml:space="preserve">
+    <value>本车单机运行开关</value>
+  </data>
+  <data name="本车重联运行" xml:space="preserve">
+    <value>本车重联运行</value>
+  </data>
+</root>

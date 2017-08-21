@@ -1,0 +1,219 @@
+﻿<UserControl x:Class="Motor.HMI.CRH380D.View.Contents.BreakView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:common="clr-namespace:Motor.HMI.CRH380D.View.Common"
+             xmlns:constant="clr-namespace:Motor.HMI.CRH380D.Constant"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:regions="http://www.codeplex.com/CompositeWPF"
+             xmlns:viewModel="clr-namespace:Motor.HMI.CRH380D.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+             d:DesignHeight="420"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <Grid Background="{StaticResource Gray2Background}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="33*" />
+            <RowDefinition Height="65*" />
+            <RowDefinition Height="0*" />
+            <RowDefinition Height="40*" />
+            <RowDefinition Height="40*" />
+            <RowDefinition Height="40*" />
+            <RowDefinition Height="187*" />
+            <RowDefinition Height="15*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <TextBlock Style="{StaticResource TitleTextStyle}" Text="制动" />
+        </Grid>
+        <Grid Grid.Row="1">
+            <common:TrainCommon2 />
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="90*" />
+                <ColumnDefinition Width="90*" />
+                <ColumnDefinition Width="90*" />
+                <ColumnDefinition Width="90*" />
+                <ColumnDefinition Width="90*" />
+                <ColumnDefinition Width="90*" />
+                <ColumnDefinition Width="90*" />
+                <ColumnDefinition Width="90*" />
+                <ColumnDefinition Width="70*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Border Margin="20,3,34,3"
+                        BorderBrush="{Binding Model.BreakModel.BCU0.State,
+                                              Converter={StaticResource BCUStateToColorConverter}}"
+                        BorderThickness="3" />
+                <Border Margin="60,12,0,3"
+                        BorderBrush="{StaticResource NumForeground}"
+                        BorderThickness="2">
+                    <TextBlock Style="{StaticResource NumTextStyle}" Text="{Binding Model.BreakModel.BreakValue0}" />
+                </Border>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Border Margin="20,3,34,3"
+                        BorderBrush="{Binding Model.BreakModel.BCU7.State,
+                                              Converter={StaticResource BCUStateToColorConverter}}"
+                        BorderThickness="3" />
+                <Border Margin="60,12,0,3"
+                        BorderBrush="{StaticResource NumForeground}"
+                        BorderThickness="2">
+                    <TextBlock Style="{StaticResource NumTextStyle}" Text="{Binding Model.BreakModel.BreakValue7}" />
+                </Border>
+            </Grid>
+            <Grid Grid.Column="3">
+                <Border Margin="20,3,34,3"
+                        BorderBrush="{Binding Model.BreakModel.BCU6.State,
+                                              Converter={StaticResource BCUStateToColorConverter}}"
+                        BorderThickness="3" />
+                <Border Margin="60,12,0,3"
+                        BorderBrush="{StaticResource NumForeground}"
+                        BorderThickness="2">
+                    <TextBlock Style="{StaticResource NumTextStyle}" Text="{Binding Model.BreakModel.BreakValue6}" />
+                </Border>
+            </Grid>
+            <Grid Grid.Column="4">
+                <Border Margin="20,3,34,3"
+                        BorderBrush="{Binding Model.BreakModel.BCU5.State,
+                                              Converter={StaticResource BCUStateToColorConverter}}"
+                        BorderThickness="3" />
+                <Border Margin="60,12,0,3"
+                        BorderBrush="{StaticResource NumForeground}"
+                        BorderThickness="2">
+                    <TextBlock Style="{StaticResource NumTextStyle}" Text="{Binding Model.BreakModel.BreakValue5}" />
+                </Border>
+            </Grid>
+            <Grid Grid.Column="5">
+                <Border Margin="20,3,34,3"
+                        BorderBrush="{Binding Model.BreakModel.BCU4.State,
+                                              Converter={StaticResource BCUStateToColorConverter}}"
+                        BorderThickness="3" />
+                <Border Margin="60,12,0,3"
+                        BorderBrush="{StaticResource NumForeground}"
+                        BorderThickness="2">
+                    <TextBlock Style="{StaticResource NumTextStyle}" Text="{Binding Model.BreakModel.BreakValue4}" />
+                </Border>
+            </Grid>
+            <Grid Grid.Column="6">
+                <Border Margin="20,3,34,3"
+                        BorderBrush="{Binding Model.BreakModel.BCU3.State,
+                                              Converter={StaticResource BCUStateToColorConverter}}"
+                        BorderThickness="3" />
+                <Border Margin="60,12,0,3"
+                        BorderBrush="{StaticResource NumForeground}"
+                        BorderThickness="2">
+                    <TextBlock Style="{StaticResource NumTextStyle}" Text="{Binding Model.BreakModel.BreakValue3}" />
+                </Border>
+            </Grid>
+            <Grid Grid.Column="7">
+                <Border Margin="20,3,34,3"
+                        BorderBrush="{Binding Model.BreakModel.BCU2.State,
+                                              Converter={StaticResource BCUStateToColorConverter}}"
+                        BorderThickness="3" />
+                <Border Margin="60,12,0,3"
+                        BorderBrush="{StaticResource NumForeground}"
+                        BorderThickness="2">
+                    <TextBlock Style="{StaticResource NumTextStyle}" Text="{Binding Model.BreakModel.BreakValue2}" />
+                </Border>
+            </Grid>
+            <Grid Grid.Column="8">
+                <Border Margin="20,3,34,3"
+                        BorderBrush="{Binding Model.BreakModel.BCU1.State,
+                                              Converter={StaticResource BCUStateToColorConverter}}"
+                        BorderThickness="3" />
+                <Border Margin="60,12,0,3"
+                        BorderBrush="{StaticResource NumForeground}"
+                        BorderThickness="2">
+                    <TextBlock Style="{StaticResource NumTextStyle}" Text="{Binding Model.BreakModel.BreakValue1}" />
+                </Border>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="90*" />
+                <ColumnDefinition Width="90*" />
+                <ColumnDefinition Width="90*" />
+                <ColumnDefinition Width="90*" />
+                <ColumnDefinition Width="90*" />
+                <ColumnDefinition Width="90*" />
+                <ColumnDefinition Width="90*" />
+                <ColumnDefinition Width="90*" />
+                <ColumnDefinition Width="70*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Border Margin="20,3,34,3">
+                    <Image Source="{Binding Model.BreakModel.EmergencyBreak0.State, Converter={StaticResource EmergencyBreakStateConverter}}" />
+                </Border>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Border Margin="20,3,34,3">
+                    <Image Source="{Binding Model.BreakModel.EmergencyBreak7.State, Converter={StaticResource EmergencyBreakStateConverter}}" />
+                </Border>
+            </Grid>
+            <Grid Grid.Column="3">
+                <Border Margin="20,3,34,3">
+                    <Image Source="{Binding Model.BreakModel.EmergencyBreak6.State, Converter={StaticResource EmergencyBreakStateConverter}}" />
+                </Border>
+            </Grid>
+            <Grid Grid.Column="4">
+                <Border Margin="20,3,34,3">
+                    <Image Source="{Binding Model.BreakModel.EmergencyBreak5.State, Converter={StaticResource EmergencyBreakStateConverter}}" />
+                </Border>
+            </Grid>
+            <Grid Grid.Column="5">
+                <Border Margin="20,3,34,3">
+                    <Image Source="{Binding Model.BreakModel.EmergencyBreak4.State, Converter={StaticResource EmergencyBreakStateConverter}}" />
+                </Border>
+            </Grid>
+            <Grid Grid.Column="6">
+                <Border Margin="20,3,34,3">
+                    <Image Source="{Binding Model.BreakModel.EmergencyBreak3.State, Converter={StaticResource EmergencyBreakStateConverter}}" />
+                </Border>
+            </Grid>
+            <Grid Grid.Column="7">
+                <Border Margin="20,3,34,3">
+                    <Image Source="{Binding Model.BreakModel.EmergencyBreak2.State, Converter={StaticResource EmergencyBreakStateConverter}}" />
+                </Border>
+            </Grid>
+            <Grid Grid.Column="8">
+                <Border Margin="20,3,34,3">
+                    <Image Source="{Binding Model.BreakModel.EmergencyBreak1.State, Converter={StaticResource EmergencyBreakStateConverter}}" />
+                </Border>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="90*" />
+                <ColumnDefinition Width="90*" />
+                <ColumnDefinition Width="90*" />
+                <ColumnDefinition Width="90*" />
+                <ColumnDefinition Width="90*" />
+                <ColumnDefinition Width="90*" />
+                <ColumnDefinition Width="90*" />
+                <ColumnDefinition Width="90*" />
+                <ColumnDefinition Width="70*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="2">
+                <Border Margin="20,3,34,3">
+                    <Image Source="{Binding Model.BreakModel.ParkBreak7.State, Converter={StaticResource ParkBreakStateConverter}}" />
+                </Border>
+            </Grid>
+
+            <Grid Grid.Column="4">
+                <Border Margin="20,3,34,3">
+                    <Image Source="{Binding Model.BreakModel.ParkBreak5.State, Converter={StaticResource ParkBreakStateConverter}}" />
+                </Border>
+            </Grid>
+
+            <Grid Grid.Column="7">
+                <Border Margin="20,3,34,3">
+                    <Image Source="{Binding Model.BreakModel.ParkBreak2.State, Converter={StaticResource ParkBreakStateConverter}}" />
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

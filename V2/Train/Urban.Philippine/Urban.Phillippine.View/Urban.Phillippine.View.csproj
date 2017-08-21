@@ -1,0 +1,685 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AD9B800B-F5F4-43E8-9219-A7636785BDF9}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Urban.Phillippine.View</RootNamespace>
+    <AssemblyName>Urban.Phillippine.View</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonUtil, Version=2.29.2016.517, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="Excel.Interface, Version=2.30.2016.712, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Expression.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.Prism, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="MMI.Common.Msg.Interface">
+      <HintPath>..\MMI\MMI.Common.Msg.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="MMI.Facility.Interface, Version=2.40.2016.927, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="MMI.Facility.WPFInfrastructure, Version=2.28.2016.913, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="MMICommon, Version=1.1.0.0, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="ComViews\Car.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ComViews\DirectionControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ComViews\TrainAngle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\Brsuhes\BrushResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\Characters\CharactersResouce.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\Converters\Converter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\PhilippineResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\Styles\ButtonStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\Styles\RadioButtonStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\Styles\TextBlockStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\APSViewPageOne.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\APSViewPageTwo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BlackView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BrakeViewPageFour.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BrakeViewPageOne.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BrakeViewPageThree.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BrakeViewPageTwo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Button\FaultRecordButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Button\RIOMButtonView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Button\SoftVersionButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChangedPwdView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ContentButtonShell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FaultRecordView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InstructionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\IOUnit\RIOM1DI1View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\IOUnit\RIOM1DI2View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\IOUnit\RIOM1DI3View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\IOUnit\RIOM1DI4View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\IOUnit\RIOM2DI1View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\IOUnit\RIOM2DI2View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\IOUnit\RIOM2DI3View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\IOUnit\RIOMAXView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Button\MainButtonView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainContentShell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainContentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainShell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MaintainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PopUp\FaultInfomation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PopUp\ReLoginPop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ReLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SoftwareVersionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TitleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TMSContentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VACTestView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VAC\VACShell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VAC\VACViewPageFive.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VAC\VACViewPageFour.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VAC\VACViewPageOne.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VAC\VACViewPageSix.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VAC\VACViewPageThree.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VAC\VACViewPageTwo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VVVFViewPageFive.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VVVFViewPageOne.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VVVFViewPageFour.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VVVFViewPageThree.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VVVFViewPageTwo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ComViews\Car.xaml.cs">
+      <DependentUpon>Car.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ComViews\DirectionControl.xaml.cs">
+      <DependentUpon>DirectionControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ComViews\PhilippineButton.cs" />
+    <Compile Include="ComViews\TrainAngle.xaml.cs">
+      <DependentUpon>TrainAngle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Config\APSViewUnit.cs" />
+    <Compile Include="Config\BrakeViewUnit.cs" />
+    <Compile Include="Config\GlobalParam.cs" />
+    <Compile Include="Config\IOStateViewUnit.cs" />
+    <Compile Include="Config\KeyResouce\InBoolKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InBoolKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Config\KeyResouce\InFloatKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InFloatKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Config\KeyResouce\OutBoolKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutBoolKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Config\KeyResouce\OutFloatKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutFloatKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Config\MainViewStatusConfig\APSUnit.cs" />
+    <Compile Include="Config\MainViewStatusConfig\BogieUnit.cs" />
+    <Compile Include="Config\MainViewStatusConfig\CABUnit.cs" />
+    <Compile Include="Config\MainViewStatusConfig\DoorUnit.cs" />
+    <Compile Include="Config\IndexConfigure.cs" />
+    <Compile Include="Config\MainViewStatusConfig\HSCBUnit.cs" />
+    <Compile Include="Config\MainViewStatusConfig\PantographUnit.cs" />
+    <Compile Include="Config\MainViewStatusConfig\PCUUnit.cs" />
+    <Compile Include="Config\MainViewStatusConfig\TemperatureUnit.cs" />
+    <Compile Include="Config\MainViewStatusConfig\VACUnit.cs" />
+    <Compile Include="Config\TMSViewUnit.cs" />
+    <Compile Include="Config\UserConfig.cs" />
+    <Compile Include="Config\MainViewStatusConfig\VVVFUnit.cs" />
+    <Compile Include="Config\VACViewUnit.cs" />
+    <Compile Include="Config\ViewUnitBase.cs" />
+    <Compile Include="Config\VVVFViewUnit.cs" />
+    <Compile Include="Constant\ControlNames.cs" />
+    <Compile Include="Constant\EList.cs" />
+    <Compile Include="Constant\FaultInfo.cs" />
+    <Compile Include="Constant\FaultManager.cs" />
+    <Compile Include="Constant\RegionNames.cs" />
+    <Compile Include="Constant\SolidColorBrushParam.cs" />
+    <Compile Include="Convert\APSStatusConverter.cs" />
+    <Compile Include="Convert\ATPModelConvert.cs" />
+    <Compile Include="Convert\BogieConverter.cs" />
+    <Compile Include="Convert\BoolToVisibilty.cs" />
+    <Compile Include="Convert\DataConverter.cs" />
+    <Compile Include="Convert\DoorStatusConverter.cs" />
+    <Compile Include="Convert\FaultCodelConvert.cs" />
+    <Compile Include="Convert\FaultSignalStatusConvert.cs" />
+    <Compile Include="Convert\FaultTimeConvert.cs" />
+    <Compile Include="Convert\HSCBConverter.cs" />
+    <Compile Include="Convert\LevelColorConvert.cs" />
+    <Compile Include="Convert\LevelConvert.cs" />
+    <Compile Include="Convert\MaskConveter.cs" />
+    <Compile Include="Convert\PasswordConvert.cs" />
+    <Compile Include="Convert\PCUStatusConverter.cs" />
+    <Compile Include="Convert\SignalStatusConvert.cs" />
+    <Compile Include="Convert\TimerConverter.cs" />
+    <Compile Include="Convert\UnitConvert.cs" />
+    <Compile Include="Convert\UnitConverterToF2.cs" />
+    <Compile Include="Convert\VACStatusConverter.cs" />
+    <Compile Include="Convert\VVVFStatusConverter.cs" />
+    <Compile Include="EventArgs\ButtonInitEvenArgs.cs" />
+    <Compile Include="EventArgs\FalueChangedArgd.cs" />
+    <Compile Include="EventArgs\NavigatorEventArgs.cs" />
+    <Compile Include="EventArgs\SendDataEventArgs.cs" />
+    <Compile Include="Event\ButtonInitEvent.cs" />
+    <Compile Include="Event\NavigatorEvent.cs" />
+    <Compile Include="Event\SendDataEvent.cs" />
+    <Compile Include="Extend\BoolExtention.cs" />
+    <Compile Include="Extend\LevelExtend.cs" />
+    <Compile Include="Extend\StringExtend.cs" />
+    <Compile Include="Helper\GridHelper.cs" />
+    <Compile Include="Interface\Enum\APSStatus.cs" />
+    <Compile Include="Interface\Enum\ATPModel.cs" />
+    <Compile Include="Interface\Enum\BogieStatus.cs" />
+    <Compile Include="Interface\Enum\ButtonType.cs" />
+    <Compile Include="Interface\Enum\CabStatus.cs" />
+    <Compile Include="Interface\Enum\Dirction.cs" />
+    <Compile Include="Interface\Enum\DoorStatus.cs" />
+    <Compile Include="Interface\Enum\FaultSignalStatus.cs" />
+    <Compile Include="Interface\Enum\FaultType.cs" />
+    <Compile Include="Interface\Enum\HSCBStatus.cs" />
+    <Compile Include="Interface\Enum\NetPageStatus.cs" />
+    <Compile Include="Interface\Enum\PantographStatus.cs" />
+    <Compile Include="Interface\Enum\PCUStatus.cs" />
+    <Compile Include="Interface\Enum\SignalStatus.cs" />
+    <Compile Include="Interface\Enum\SignalType.cs" />
+    <Compile Include="Interface\Enum\StatusBar.cs" />
+    <Compile Include="Interface\Enum\TractionBrakeLevel.cs" />
+    <Compile Include="Interface\Enum\UserType.cs" />
+    <Compile Include="Interface\Enum\VACModel.cs" />
+    <Compile Include="Interface\Enum\VACStatus.cs" />
+    <Compile Include="Interface\Enum\VVVFStatus.cs" />
+    <Compile Include="Interface\IDataClear.cs" />
+    <Compile Include="Interface\IFaultInfo.cs" />
+    <Compile Include="Interface\IFaultManager.cs" />
+    <Compile Include="Interface\IKeysFileConfig.cs" />
+    <Compile Include="Interface\IStatusChanged.cs" />
+    <Compile Include="Interface\IUnit.cs" />
+    <Compile Include="Interface\ViewModel\DataServiceViewModel.cs" />
+    <Compile Include="Interface\ViewModel\IAPSViewModel.cs" />
+    <Compile Include="Interface\ViewModel\IBrakeViewModel.cs" />
+    <Compile Include="Interface\ViewModel\IButtonViewModel.cs" />
+    <Compile Include="Interface\ViewModel\IChangedPasswordViewModel.cs" />
+    <Compile Include="Interface\ViewModel\IFaultRecordVIewModel.cs" />
+    <Compile Include="Interface\ViewModel\IInstrusctionViewModel.cs" />
+    <Compile Include="Interface\ViewModel\IIOStateViewModel.cs" />
+    <Compile Include="Interface\ViewModel\ILoginViewModel.cs" />
+    <Compile Include="Interface\ViewModel\IMainViewModel.cs" />
+    <Compile Include="Interface\ViewModel\IPhilippineViewModel.cs" />
+    <Compile Include="Interface\ViewModel\IReLoginViewModel.cs" />
+    <Compile Include="Interface\ViewModel\ITitleViewModel.cs" />
+    <Compile Include="Interface\ViewModel\ITMSViewModel.cs" />
+    <Compile Include="Interface\ViewModel\IVACTestViewModel.cs" />
+    <Compile Include="Interface\ViewModel\IVACViewModel.cs" />
+    <Compile Include="Interface\ViewModel\IViewModelBase.cs" />
+    <Compile Include="Interface\ViewModel\IVVVFViewModel.cs" />
+    <Compile Include="ViewModel\APSViewModel.cs" />
+    <Compile Include="ViewModel\BrakeViewModel.cs" />
+    <Compile Include="ViewModel\ChangedPasswordViewModel.cs" />
+    <Compile Include="ViewModel\FaultRecordViewModel.cs" />
+    <Compile Include="ViewModel\InstrusctionViewModel.cs" />
+    <Compile Include="ViewModel\DataServiceViewModel.cs" />
+    <Compile Include="ViewModel\IOStateViewModel.cs" />
+    <Compile Include="ViewModel\ReLoginViewModel.cs" />
+    <Compile Include="ViewModel\TMSViewModel.cs" />
+    <Compile Include="ViewModel\VACTestViewModel.cs" />
+    <Compile Include="ViewModel\VACViewModel.cs" />
+    <Compile Include="ViewModel\VVVFViewModel.cs" />
+    <Compile Include="ViewModel\ButtonViewModel.cs" />
+    <Compile Include="ViewModel\TitleViewModel.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\PhilippineViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="Views\APSViewPageOne.xaml.cs">
+      <DependentUpon>APSViewPageOne.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\APSViewPageTwo.xaml.cs">
+      <DependentUpon>APSViewPageTwo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BlackView.xaml.cs">
+      <DependentUpon>BlackView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BrakeViewPageFour.xaml.cs">
+      <DependentUpon>BrakeViewPageFour.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BrakeViewPageOne.xaml.cs">
+      <DependentUpon>BrakeViewPageOne.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BrakeViewPageThree.xaml.cs">
+      <DependentUpon>BrakeViewPageThree.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BrakeViewPageTwo.xaml.cs">
+      <DependentUpon>BrakeViewPageTwo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Button\FaultRecordButton.xaml.cs">
+      <DependentUpon>FaultRecordButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Button\RIOMButtonView.xaml.cs">
+      <DependentUpon>RIOMButtonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Button\SoftVersionButton.xaml.cs">
+      <DependentUpon>SoftVersionButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChangedPwdView.xaml.cs">
+      <DependentUpon>ChangedPwdView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ContentButtonShell.xaml.cs">
+      <DependentUpon>ContentButtonShell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FaultRecordView.xaml.cs">
+      <DependentUpon>FaultRecordView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InstructionView.xaml.cs">
+      <DependentUpon>InstructionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IOUnit\RIOM1DI1View.xaml.cs">
+      <DependentUpon>RIOM1DI1View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IOUnit\RIOM1DI2View.xaml.cs">
+      <DependentUpon>RIOM1DI2View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IOUnit\RIOM1DI3View.xaml.cs">
+      <DependentUpon>RIOM1DI3View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IOUnit\RIOM1DI4View.xaml.cs">
+      <DependentUpon>RIOM1DI4View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IOUnit\RIOM2DI1View.xaml.cs">
+      <DependentUpon>RIOM2DI1View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IOUnit\RIOM2DI2View.xaml.cs">
+      <DependentUpon>RIOM2DI2View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IOUnit\RIOM2DI3View.xaml.cs">
+      <DependentUpon>RIOM2DI3View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IOUnit\RIOMAXView.xaml.cs">
+      <DependentUpon>RIOMAXView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Button\MainButtonView.xaml.cs">
+      <DependentUpon>MainButtonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainContentShell.xaml.cs">
+      <DependentUpon>MainContentShell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainContentView.xaml.cs">
+      <DependentUpon>MainContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainShell.xaml.cs">
+      <DependentUpon>MainShell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MaintainView.xaml.cs">
+      <DependentUpon>MaintainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopUp\FaultInfomation.xaml.cs">
+      <DependentUpon>FaultInfomation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopUp\ReLoginPop.xaml.cs">
+      <DependentUpon>ReLoginPop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReLogin.xaml.cs">
+      <DependentUpon>ReLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SoftwareVersionView.xaml.cs">
+      <DependentUpon>SoftwareVersionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TitleView.xaml.cs">
+      <DependentUpon>TitleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TMSContentView.xaml.cs">
+      <DependentUpon>TMSContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VACTestView.xaml.cs">
+      <DependentUpon>VACTestView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VAC\VACShell.xaml.cs">
+      <DependentUpon>VACShell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VAC\VACViewPageFive.xaml.cs">
+      <DependentUpon>VACViewPageFive.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VAC\VACViewPageFour.xaml.cs">
+      <DependentUpon>VACViewPageFour.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VAC\VACViewPageOne.xaml.cs">
+      <DependentUpon>VACViewPageOne.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VAC\VACViewPageSix.xaml.cs">
+      <DependentUpon>VACViewPageSix.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VAC\VACViewPageThree.xaml.cs">
+      <DependentUpon>VACViewPageThree.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VAC\VACViewPageTwo.xaml.cs">
+      <DependentUpon>VACViewPageTwo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VVVFViewPageFive.xaml.cs">
+      <DependentUpon>VVVFViewPageFive.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VVVFViewPageOne.xaml.cs">
+      <DependentUpon>VVVFViewPageOne.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VVVFViewPageFour.xaml.cs">
+      <DependentUpon>VVVFViewPageFour.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VVVFViewPageThree.xaml.cs">
+      <DependentUpon>VVVFViewPageThree.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VVVFViewPageTwo.xaml.cs">
+      <DependentUpon>VVVFViewPageTwo.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Config\KeyResouce\InBoolKeys.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>InBoolKeys.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\KeyResouce\InFloatKeys.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>InFloatKeys.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\KeyResouce\OutBoolKeys.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OutBoolKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\KeyResouce\OutFloatKeys.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OutFloatKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Image\CarDrive3.png" />
+    <Resource Include="Resource\Image\CarDrive4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Image\ArrowLeft.png" />
+    <Resource Include="Resource\Image\ArrowRight.png" />
+    <Resource Include="Resource\Image\Background.png" />
+    <Resource Include="Resource\Image\Button1.png" />
+    <Resource Include="Resource\Image\Button2.png" />
+    <Resource Include="Resource\Image\CarBody.png" />
+    <Resource Include="Resource\Image\CarDrive1.png" />
+    <Resource Include="Resource\Image\CarDrive2.png" />
+    <Resource Include="Resource\Image\PantographDown.png" />
+    <Resource Include="Resource\Image\PantographUp.png" />
+    <Resource Include="Resource\Image\RedFault.png" />
+    <Resource Include="Resource\Image\YellowFault.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Image\SandBoxLoW.png" />
+    <Resource Include="Resource\Image\Sanding.png" />
+    <Resource Include="Resource\Image\Separate.png" />
+    <Resource Include="Resource\Image\Sliding.png" />
+    <Resource Include="Resource\Image\TractionAllwo.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

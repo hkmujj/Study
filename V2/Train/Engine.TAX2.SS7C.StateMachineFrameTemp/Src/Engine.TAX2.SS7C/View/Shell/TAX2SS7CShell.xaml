@@ -1,0 +1,15 @@
+﻿<Window x:Class="Engine.TAX2.SS7C.View.Shell.TAX2SS7CShell"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:shell="clr-namespace:Engine.TAX2.SS7C.View.Shell"
+        Title="Engine.TAX2.SS7C"
+        Width="800"
+        Height="800"
+        Loaded="Window_Loaded"
+        mc:Ignorable="d">
+    <Viewbox Stretch="Fill">
+        <shell:ShellWithButton Width="800" Height="800" />
+    </Viewbox>
+</Window>

@@ -1,0 +1,201 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Base/NrietBaseResource.xaml" />
+        <ResourceDictionary Source="../Font/NrietFont.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="Tram.CBTC.Nriet.Style.Text.ContentTitle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontFamily" Value="黑体" />
+            <Setter Property="FontSize" Value="30" />
+            <Setter Property="FontWeight" Value="Medium" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Tram.CBTC.Nriet.Style.Text.BoldTitle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontFamily" Value="{StaticResource Tram.CBTC.Nriet.Font.小扣折纸体}" />
+            <Setter Property="FontSize" Value="44" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Tram.CBTC.Nriet.Style.Text.BoldTitle1" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="17" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+        </Style.Setters>
+    </Style>
+
+
+    <Style x:Key="Tram.CBTC.Nriet.Style.Text.InputTitle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontFamily" Value="黑体" />
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="FontWeight" Value="Medium" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Tram.CBTC.Nriet.Style.Text.InputValue" TargetType="TextBox">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontFamily" Value="黑体" />
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="FontWeight" Value="Medium" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="MinWidth" Value="235" />
+            <Setter Property="Padding" Value="5,10,0,0" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Tram.CBTC.Nriet.Style.Text.InputValuePasswordBox" TargetType="PasswordBox">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontFamily" Value="黑体" />
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="FontWeight" Value="Medium" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="MinWidth" Value="235" />
+            <Setter Property="Padding" Value="5,10,0,0" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Tram.CBTC.Nriet.Style.Text.InputTitle1" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontFamily" Value="宋体" />
+            <Setter Property="FontSize" Value="22" />
+            <Setter Property="FontWeight" Value="Medium" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Tram.CBTC.Nriet.Style.Text.InputValue1" TargetType="TextBox">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="BorderBrush" Value="Black" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="FontFamily" Value="黑体" />
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="FontWeight" Value="Medium" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="Margin" Value="0,10,0,10" />
+            <Setter Property="MinWidth" Value="220" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Tram.CBTC.Nriet.Style.Text.WhiteText" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="25" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Tram.CBTC.Nriet.Style.Text.WhiteText1" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="22" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Tram.CBTC.Nriet.Style.Text.WhiteText2" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontFamily" Value="宋体" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="TextAlignment" Value="Left"></Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Tram.CBTC.Nriet.Style.Text.WhiteText3" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Tram.CBTC.Nriet.Style.Text.WhiteText4" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontFamily" Value="宋体" />
+            <Setter Property="FontSize" Value="45" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Tram.CBTC.Nriet.Style.Text.WhiteText5" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontFamily" Value="宋体" />
+            <Setter Property="FontSize" Value="150" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="TextWrapping" Value="WrapWithOverflow" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Tram.CBTC.Nriet.Style.Text.BlackText" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Tram.CBTC.Nriet.Style.Text.RedText1" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="OrangeRed" />
+            <Setter Property="FontFamily" Value="宋体" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+
+    <Style x:Key="Tram.CBTC.Nriet.Style.Text.RedText2" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="OrangeRed" />
+            <Setter Property="FontFamily" Value="宋体" />
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Tram.CBTC.Nriet.Style.Text.WhiteText6" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="GhostWhite" />
+            <Setter Property="FontFamily" Value="宋体" />
+            <Setter Property="FontSize" Value="22" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+</ResourceDictionary>

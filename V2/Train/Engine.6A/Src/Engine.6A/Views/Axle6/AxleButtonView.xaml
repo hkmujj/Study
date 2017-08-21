@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="Engine._6A.Views.Axle6.AxleButtonView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:names="clr-namespace:Engine._6A.Constance"
+             xmlns:viewModel="clr-namespace:Engine._6A.Interface.ViewModel" d:DataContext="{d:DesignInstance viewModel:IEngine6AViewModel}"
+             d:DesignHeight="60"
+             d:DesignWidth="640"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary Source="../../Resouce/Engine6AResource.xaml" />
+    </UserControl.Resources>
+    <Grid x:Name="ButtonGrid" DataContext="{Binding Button}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <RadioButton x:Name="F1"
+                     Grid.Column="0"
+                     Command="{Binding Navigator}"
+                     CommandParameter="{x:Static names:Axle6ControlName.MainContent}"
+                     Content="主界面"
+                     Style="{StaticResource RdoButtonStyle}" />
+        <RadioButton x:Name="F2"
+                     Grid.Column="1"
+                     Command="{Binding Navigator}"
+                     CommandParameter="{x:Static names:Axle6ControlName.DataMonitorShell}"
+                     Content="监控数据"
+                     Style="{StaticResource RdoButtonStyle}" />
+        <RadioButton x:Name="F3"
+                     Grid.Column="2"
+                     Command="{Binding Navigator}"
+                     CommandParameter="{x:Static names:Axle6ControlName.VideoView}"
+                     Content="视频监控"
+                     Style="{StaticResource RdoButtonStyle}" />
+        <RadioButton x:Name="F4"
+                     Grid.Column="3"
+                     Command="{Binding Navigator}"
+                     CommandParameter="{x:Static names:Axle6ControlName.FaultShell}"
+                     Content="故障记录"
+                     Style="{StaticResource RdoButtonStyle}" />
+        <RadioButton x:Name="F5"
+                     Grid.Column="4"
+                     Command="{Binding Navigator}"
+                     CommandParameter="{x:Static names:Axle6ControlName.SystemSettingShell}"
+                     Content="系统设置"
+                     Style="{StaticResource RdoButtonStyle}" />
+
+    </Grid>
+</UserControl>

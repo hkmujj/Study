@@ -1,0 +1,228 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converter="clr-namespace:Subway.ShenZhenLine9.Converter"
+    xmlns:converter1="clr-namespace:MMI.Facility.WPFInfrastructure.Converter;assembly=MMI.Facility.WPFInfrastructure"
+    xmlns:interfaces="clr-namespace:Subway.ShenZhenLine9.Interfaces"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:units="clr-namespace:Subway.ShenZhenLine9.Models.Units"
+    xmlns:viewModels="clr-namespace:Subway.ShenZhenLine9.ViewModels">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Images/ImageResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <converter1:MathConverter x:Key="Subway.ShenZhenLine9.MaxthConverter" />
+    <converter:BtnConverter x:Key="Subway.ShenZhenLine9.BtnConverter" />
+    <converter:EnumToStringConverter x:Key="Subway.ShenZhenLine9.EnumToStringConverter" />
+    <converter:EvelLevelConverter x:Key="Subway.ShenZhenLine9.EvelLevelConverter" />
+    <converter:StartTimeConverter x:Key="Subway.ShenZhenLine9.StartTimeConverter" />
+    <converter:TitleTimeConverter x:Key="Subway.ShenZhenLine9.TitleTimeConverter" />
+    <Visibility x:Key="Subway.ShenZhenLine9.VisibilityVisible">Visible</Visibility>
+    <Visibility x:Key="Subway.ShenZhenLine9.VisibilityHidden">Hidden</Visibility>
+    <system:Boolean x:Key="Subway.ShenZhenLine9.BooleanTrue">True</system:Boolean>
+    <system:Boolean x:Key="Subway.ShenZhenLine9.BooleanFalse">False</system:Boolean>
+
+    <converter1:SelectObjectContentConverter x:Key="Subway.ShenZhenLine9.GeneratrixToImage">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static units:Generatrix.Open}" Content="{StaticResource Subway.ShenZhenLine9.母线断路器断开}" />
+            <converter1:ObjectContentPair Key="{x:Static units:Generatrix.Close}" Content="{StaticResource Subway.ShenZhenLine9.母线断路器闭合}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+    <converter1:SelectObjectContentConverter x:Key="Subway.ShenZhenLine9.PowerGridToBrush">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{StaticResource Subway.ShenZhenLine9.BooleanTrue}">
+                <converter1:ObjectContentPair.Content>
+                    <SolidColorBrush Color="#FF00FF00" />
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+            <converter1:ObjectContentPair Key="{StaticResource Subway.ShenZhenLine9.BooleanFalse}" Content="{x:Null}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+    <converter1:SelectObjectContentConverter x:Key="Subway.ShenZhenLine9.BoolToVisibility">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{StaticResource Subway.ShenZhenLine9.BooleanFalse}" Content="{StaticResource Subway.ShenZhenLine9.VisibilityVisible}" />
+            <converter1:ObjectContentPair Key="{StaticResource Subway.ShenZhenLine9.BooleanTrue}" Content="{StaticResource Subway.ShenZhenLine9.VisibilityHidden}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+    <converter1:SelectObjectContentConverter x:Key="Subway.ShenZhenLine9.BoolToVisibility2">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{StaticResource Subway.ShenZhenLine9.BooleanFalse}" Content="{StaticResource Subway.ShenZhenLine9.VisibilityHidden}" />
+            <converter1:ObjectContentPair Key="{StaticResource Subway.ShenZhenLine9.BooleanTrue}" Content="{StaticResource Subway.ShenZhenLine9.VisibilityVisible}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+    <converter1:SelectObjectContentConverter x:Key="Subway.ShenZhenLine9.TractionLockColorConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{StaticResource Subway.ShenZhenLine9.BooleanTrue}">
+                <converter1:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Red" />
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+            <converter1:ObjectContentPair Key="{StaticResource Subway.ShenZhenLine9.BooleanFalse}">
+                <converter1:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Transparent" />
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Subway.ShenZhenLine9WorkStateToBackBrush">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static interfaces:WorkState.Emergency}">
+                <converter1:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Red" />
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Subway.ShenZhenLine9.DoorConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static units:DoorState.EmergencyLock}" Content="{StaticResource Subway.ShenZhenLine9.门紧急}" />
+            <converter1:ObjectContentPair Key="{x:Static units:DoorState.Cut}" Content="{StaticResource Subway.ShenZhenLine9.门切除}" />
+            <converter1:ObjectContentPair Key="{x:Static units:DoorState.Fault}" Content="{StaticResource Subway.ShenZhenLine9.门严重故障}" />
+            <converter1:ObjectContentPair Key="{x:Static units:DoorState.Check}" Content="{StaticResource Subway.ShenZhenLine9.门检测到障碍物}" />
+            <converter1:ObjectContentPair Key="{x:Static units:DoorState.Flicker}" Content="{StaticResource Subway.ShenZhenLine9.门开}" />
+            <converter1:ObjectContentPair Key="{x:Static units:DoorState.Closed}" Content="{StaticResource Subway.ShenZhenLine9.门开}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+    <converter1:SelectObjectContentConverter x:Key="Subway.ShenZhenLine9.DoorVisibilityConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static units:DoorState.EmergencyLock}" Content="{StaticResource Subway.ShenZhenLine9.BooleanFalse}" />
+            <converter1:ObjectContentPair Key="{x:Static units:DoorState.Cut}" Content="{StaticResource Subway.ShenZhenLine9.BooleanFalse}" />
+            <converter1:ObjectContentPair Key="{x:Static units:DoorState.Fault}" Content="{StaticResource Subway.ShenZhenLine9.BooleanFalse}" />
+            <converter1:ObjectContentPair Key="{x:Static units:DoorState.Check}" Content="{StaticResource Subway.ShenZhenLine9.BooleanFalse}" />
+            <converter1:ObjectContentPair Key="{x:Static units:DoorState.Flicker}" Content="{StaticResource Subway.ShenZhenLine9.BooleanTrue}" />
+            <converter1:ObjectContentPair Key="{x:Static units:DoorState.Closed}" Content="{StaticResource Subway.ShenZhenLine9.BooleanFalse}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Subway.ShenZhenLine9.AirConditionConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static units:AirConditionState.Fault}" Content="{StaticResource Subway.ShenZhenLine9.空调故障}" />
+            <converter1:ObjectContentPair Key="{x:Static units:AirConditionState.Run}" Content="{StaticResource Subway.ShenZhenLine9.空调运行}" />
+            <converter1:ObjectContentPair Key="{x:Static units:AirConditionState.Off}" Content="{StaticResource Subway.ShenZhenLine9.空调断开}" />
+            <converter1:ObjectContentPair Key="{x:Static units:AirConditionState.Cut}" Content="{StaticResource Subway.ShenZhenLine9.空调警告}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Subway.ShenZhenLine9.AssistConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static units:AssistState.ACOff}" Content="{StaticResource Subway.ShenZhenLine9.AC辅助电源断开}" />
+            <converter1:ObjectContentPair Key="{x:Static units:AssistState.ACRun}" Content="{StaticResource Subway.ShenZhenLine9.AC辅助电源运行}" />
+            <converter1:ObjectContentPair Key="{x:Static units:AssistState.ACFault}" Content="{StaticResource Subway.ShenZhenLine9.AC辅助电源故障}" />
+            <converter1:ObjectContentPair Key="{x:Static units:AssistState.DCOff}" Content="{StaticResource Subway.ShenZhenLine9.DC辅助电源断开}" />
+            <converter1:ObjectContentPair Key="{x:Static units:AssistState.DCRun}" Content="{StaticResource Subway.ShenZhenLine9.DC辅助电源运行}" />
+            <converter1:ObjectContentPair Key="{x:Static units:AssistState.DCFault}" Content="{StaticResource Subway.ShenZhenLine9.DC辅助电源故障}" />
+            <converter1:ObjectContentPair Key="{x:Static units:AssistState.ACCut}" Content="{StaticResource Subway.ShenZhenLine9.AC辅助电源警告}" />
+            <converter1:ObjectContentPair Key="{x:Static units:AssistState.DCCut}" Content="{StaticResource Subway.ShenZhenLine9.DC辅助电源警告}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Subway.ShenZhenLine9.EmergencyTalkConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static units:EmergencyTalkState.Fault}" Content="{StaticResource Subway.ShenZhenLine9.乘客紧急通讯单元红}" />
+            <converter1:ObjectContentPair Key="{x:Static units:EmergencyTalkState.Active}" Content="{StaticResource Subway.ShenZhenLine9.乘客紧急通讯单元橘黄}" />
+            <converter1:ObjectContentPair Key="{x:Static units:EmergencyTalkState.Talk}" Content="{StaticResource Subway.ShenZhenLine9.乘客紧急通讯单元绿}" />
+            <converter1:ObjectContentPair Key="{x:Static units:EmergencyTalkState.UnActive}" Content="{StaticResource Subway.ShenZhenLine9.乘客紧急通讯单元灰}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Subway.ShenZhenLine9.BrakeConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static units:BrakeState.BrakeCut}" Content="{StaticResource Subway.ShenZhenLine9.制动中等故障}" />
+            <converter1:ObjectContentPair Key="{x:Static units:BrakeState.BrakeFault}" Content="{StaticResource Subway.ShenZhenLine9.制动严重故障}" />
+            <converter1:ObjectContentPair Key="{x:Static units:BrakeState.BrakeUnRemit}" Content="{StaticResource Subway.ShenZhenLine9.制动施加}" />
+            <converter1:ObjectContentPair Key="{x:Static units:BrakeState.BrakeRemit}" Content="{StaticResource Subway.ShenZhenLine9.制动释放}" />
+            <converter1:ObjectContentPair Key="{x:Static units:BrakeState.BrakeUnKnow}" Content="{StaticResource Subway.ShenZhenLine9.常用制动未知}" />
+            <converter1:ObjectContentPair Key="{x:Static units:BrakeState.ParkingUnRemit}" Content="{StaticResource Subway.ShenZhenLine9.制动停放}" />
+            <converter1:ObjectContentPair Key="{x:Static units:BrakeState.ParkingRemit}" Content="{StaticResource Subway.ShenZhenLine9.停放制动缓解}" />
+            <converter1:ObjectContentPair Key="{x:Static units:BrakeState.ParkingCut}" Content="{StaticResource Subway.ShenZhenLine9.停放制动切除}" />
+            <converter1:ObjectContentPair Key="{x:Static units:BrakeState.Noaml}" Content="{x:Null}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Subway.ShenZhenLine9.LCUConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static units:LCUStatus.Off}">
+                <converter1:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Transparent" />
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+            <converter1:ObjectContentPair Key="{x:Static units:LCUStatus.Run}">
+                <converter1:ObjectContentPair.Content>
+                    <SolidColorBrush Color="#FF00FF00" />
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Subway.ShenZhenLine9.BrakeVisibility">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static units:BrakeState.BrakeCut}" Content="{StaticResource Subway.ShenZhenLine9.VisibilityHidden}" />
+            <converter1:ObjectContentPair Key="{x:Static units:BrakeState.BrakeFault}" Content="{StaticResource Subway.ShenZhenLine9.VisibilityHidden}" />
+            <converter1:ObjectContentPair Key="{x:Static units:BrakeState.BrakeUnRemit}" Content="{StaticResource Subway.ShenZhenLine9.VisibilityHidden}" />
+            <converter1:ObjectContentPair Key="{x:Static units:BrakeState.BrakeRemit}" Content="{StaticResource Subway.ShenZhenLine9.VisibilityHidden}" />
+            <converter1:ObjectContentPair Key="{x:Static units:BrakeState.ParkingRemit}" Content="{StaticResource Subway.ShenZhenLine9.VisibilityVisible}" />
+            <converter1:ObjectContentPair Key="{x:Static units:BrakeState.ParkingUnRemit}" Content="{StaticResource Subway.ShenZhenLine9.VisibilityHidden}" />
+            <converter1:ObjectContentPair Key="{x:Static units:BrakeState.Noaml}" Content="{StaticResource Subway.ShenZhenLine9.VisibilityVisible}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Subway.ShenZhenLine9.TractionConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static units:TractionState.Cut}" Content="{StaticResource Subway.ShenZhenLine9.牵引警告}" />
+            <converter1:ObjectContentPair Key="{x:Static units:TractionState.Active}" Content="{StaticResource Subway.ShenZhenLine9.牵引激活}" />
+            <converter1:ObjectContentPair Key="{x:Static units:TractionState.Fault}" Content="{StaticResource Subway.ShenZhenLine9.牵引故障}" />
+            <converter1:ObjectContentPair Key="{x:Static units:TractionState.Off}" Content="{StaticResource Subway.ShenZhenLine9.牵引断开}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+    <converter1:SelectObjectContentConverter x:Key="Subway.ShenZhenLine9.SmokeConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static viewModels:SmokeState.Normal}" Content="{StaticResource Subway.ShenZhenLine9.未检测到烟火}" />
+            <converter1:ObjectContentPair Key="{x:Static viewModels:SmokeState.Invalid}" Content="{StaticResource Subway.ShenZhenLine9.探头故障}" />
+            <converter1:ObjectContentPair Key="{x:Static viewModels:SmokeState.Smoke}" Content="{StaticResource Subway.ShenZhenLine9.探测到烟火}" />
+            <converter1:ObjectContentPair Key="{x:Static viewModels:SmokeState.OffLine}" Content="{StaticResource Subway.ShenZhenLine9.离线}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Subway.ShenZhenLine9.AirPumpConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static viewModels:AirPumpState.Fault}" Content="{StaticResource Subway.ShenZhenLine9.空压机故障}" />
+            <converter1:ObjectContentPair Key="{x:Static viewModels:AirPumpState.Run}" Content="{StaticResource Subway.ShenZhenLine9.空压机运行}" />
+            <converter1:ObjectContentPair Key="{x:Static viewModels:AirPumpState.Off}" Content="{StaticResource Subway.ShenZhenLine9.空压机断开}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Subway.ShenZhenLine9.WorkPowerHisgSpeedConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static units:WorkPowerState.ConnectPower}" Content="{StaticResource Subway.ShenZhenLine9.车间电源供电}" />
+            <converter1:ObjectContentPair Key="{x:Static units:WorkPowerState.Connect}" Content="{StaticResource Subway.ShenZhenLine9.车间电源未供电}" />
+            <converter1:ObjectContentPair Key="{x:Static units:WorkPowerState.UnConnect}" Content="{StaticResource Subway.ShenZhenLine9.未检测到烟火}" />
+            <converter1:ObjectContentPair Key="{x:Static units:PantographState.UpFault}" Content="{StaticResource Subway.ShenZhenLine9.受电弓升起故障}" />
+            <converter1:ObjectContentPair Key="{x:Static units:PantographState.DownFault}" Content="{StaticResource Subway.ShenZhenLine9.受电弓降下故障}" />
+            <converter1:ObjectContentPair Key="{x:Static units:PantographState.Up}" Content="{StaticResource Subway.ShenZhenLine9.受电弓升起}" />
+            <converter1:ObjectContentPair Key="{x:Static units:PantographState.Down}" Content="{StaticResource Subway.ShenZhenLine9.受电弓降下}" />
+            <converter1:ObjectContentPair Key="{x:Static units:HighSpeedState.CloseFault}" Content="{StaticResource Subway.ShenZhenLine9.HSCB闭合故障}" />
+            <converter1:ObjectContentPair Key="{x:Static units:HighSpeedState.OpedFault}" Content="{StaticResource Subway.ShenZhenLine9.HSCB断开故障}" />
+            <converter1:ObjectContentPair Key="{x:Static units:HighSpeedState.Close}" Content="{StaticResource Subway.ShenZhenLine9.HSCB合上}" />
+            <converter1:ObjectContentPair Key="{x:Static units:HighSpeedState.Open}" Content="{StaticResource Subway.ShenZhenLine9.HSCB断开}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+    <converter:TwoBoolConverter x:Key="Subway.ShenZhenLine9.TwoBoolConverter" />
+    <converter1:SelectObjectContentConverter x:Key="Subway.ShenZhenLine9.EvetLevelImageConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static interfaces:EventLevel.Normal}" Content="{x:Null}" />
+            <converter1:ObjectContentPair Key="{x:Static interfaces:EventLevel.Light}" Content="{StaticResource Subway.ShenZhenLine9.中等故障}" />
+            <converter1:ObjectContentPair Key="{x:Static interfaces:EventLevel.Medium}" Content="{StaticResource Subway.ShenZhenLine9.中等故障}" />
+            <converter1:ObjectContentPair Key="{x:Static interfaces:EventLevel.Grave}" Content="{StaticResource Subway.ShenZhenLine9.严重故障}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="IntervalAndEvacuateDoorConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{StaticResource Subway.ShenZhenLine9.BooleanTrue}" Content="{StaticResource Subway.ShenZhenLine9.疏散门未锁打开}" />
+            <converter1:ObjectContentPair Key="{StaticResource Subway.ShenZhenLine9.BooleanFalse}" Content="{StaticResource Subway.ShenZhenLine9.疏散门锁闭}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+</ResourceDictionary>

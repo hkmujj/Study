@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="速度" xml:space="preserve">
+    <value>速度</value>
+  </data>
+  <data name="牵引制动级位" xml:space="preserve">
+    <value>牵引制动级位</value>
+  </data>
+  <data name="网压原边电压kv" xml:space="preserve">
+    <value>网压原边电压(kv)</value>
+  </data>
+  <data name="原边电流A" xml:space="preserve">
+    <value>原边电流(A)</value>
+  </data>
+  <data name="控制电压V" xml:space="preserve">
+    <value>控制电压(V)</value>
+  </data>
+  <data name="主变流器_牵引电机画面_牵引_制动kN01" xml:space="preserve">
+    <value>主变流器/牵引电机画面/牵引/制动(kN)01</value>
+  </data>
+  <data name="主变流器_牵引电机画面_牵引_制动kN02" xml:space="preserve">
+    <value>主变流器/牵引电机画面/牵引/制动(kN)02</value>
+  </data>
+  <data name="主变流器_牵引电机画面_牵引_制动kN03" xml:space="preserve">
+    <value>主变流器/牵引电机画面/牵引/制动(kN)03</value>
+  </data>
+  <data name="主变流器_牵引电机画面_牵引_制动kN04" xml:space="preserve">
+    <value>主变流器/牵引电机画面/牵引/制动(kN)04</value>
+  </data>
+  <data name="主变流器_牵引电机画面_牵引_制动kN05" xml:space="preserve">
+    <value>主变流器/牵引电机画面/牵引/制动(kN)05</value>
+  </data>
+  <data name="主变流器_牵引电机画面_牵引_制动kN06" xml:space="preserve">
+    <value>主变流器/牵引电机画面/牵引/制动(kN)06</value>
+  </data>
+  <data name="主变流器_牵引电机画面_中间电压01" xml:space="preserve">
+    <value>主变流器/牵引电机画面/中间电压01</value>
+  </data>
+  <data name="主变流器_牵引电机画面_中间电压02" xml:space="preserve">
+    <value>主变流器/牵引电机画面/中间电压02</value>
+  </data>
+  <data name="主变流器_牵引电机画面_中间电压03" xml:space="preserve">
+    <value>主变流器/牵引电机画面/中间电压03</value>
+  </data>
+  <data name="主变流器_牵引电机画面_中间电压04" xml:space="preserve">
+    <value>主变流器/牵引电机画面/中间电压04</value>
+  </data>
+  <data name="主变流器_牵引电机画面_中间电压05" xml:space="preserve">
+    <value>主变流器/牵引电机画面/中间电压05</value>
+  </data>
+  <data name="主变流器_牵引电机画面_中间电压06" xml:space="preserve">
+    <value>主变流器/牵引电机画面/中间电压06</value>
+  </data>
+  <data name="主变流器_牵引电机画面_电机电流01" xml:space="preserve">
+    <value>主变流器/牵引电机画面/电机电流01</value>
+  </data>
+  <data name="主变流器_牵引电机画面_电机电流02" xml:space="preserve">
+    <value>主变流器/牵引电机画面/电机电流02</value>
+  </data>
+  <data name="主变流器_牵引电机画面_电机电流03" xml:space="preserve">
+    <value>主变流器/牵引电机画面/电机电流03</value>
+  </data>
+  <data name="主变流器_牵引电机画面_电机电流04" xml:space="preserve">
+    <value>主变流器/牵引电机画面/电机电流04</value>
+  </data>
+  <data name="主变流器_牵引电机画面_电机电流05" xml:space="preserve">
+    <value>主变流器/牵引电机画面/电机电流05</value>
+  </data>
+  <data name="主变流器_牵引电机画面_电机电流06" xml:space="preserve">
+    <value>主变流器/牵引电机画面/电机电流06</value>
+  </data>
+  <data name="主变流器_牵引电机画面_电机频率01" xml:space="preserve">
+    <value>主变流器/牵引电机画面/电机频率01</value>
+  </data>
+  <data name="主变流器_牵引电机画面_电机频率02" xml:space="preserve">
+    <value>主变流器/牵引电机画面/电机频率02</value>
+  </data>
+  <data name="主变流器_牵引电机画面_电机频率03" xml:space="preserve">
+    <value>主变流器/牵引电机画面/电机频率03</value>
+  </data>
+  <data name="主变流器_牵引电机画面_电机频率04" xml:space="preserve">
+    <value>主变流器/牵引电机画面/电机频率04</value>
+  </data>
+  <data name="主变流器_牵引电机画面_电机频率05" xml:space="preserve">
+    <value>主变流器/牵引电机画面/电机频率05</value>
+  </data>
+  <data name="主变流器_牵引电机画面_电机频率06" xml:space="preserve">
+    <value>主变流器/牵引电机画面/电机频率06</value>
+  </data>
+  <data name="辅助电源画面_辅助变流器1输出电压左" xml:space="preserve">
+    <value>辅助电源画面/辅助变流器1输出电压左</value>
+  </data>
+  <data name="辅助电源画面_辅助变流器2输出电压右" xml:space="preserve">
+    <value>辅助电源画面/辅助变流器2输出电压右</value>
+  </data>
+  <data name="辅助电源画面_辅助变流器1输出电流左" xml:space="preserve">
+    <value>辅助电源画面/辅助变流器1输出电流左</value>
+  </data>
+  <data name="辅助电源画面_辅助变流器2输出电流右" xml:space="preserve">
+    <value>辅助电源画面/辅助变流器2输出电流右</value>
+  </data>
+  <data name="辅助电源画面_辅助变流器1输出频率左" xml:space="preserve">
+    <value>辅助电源画面/辅助变流器1输出频率左</value>
+  </data>
+  <data name="辅助电源画面_辅助变流器2输出频率右" xml:space="preserve">
+    <value>辅助电源画面/辅助变流器2输出频率右</value>
+  </data>
+  <data name="试运行画面_加速度" xml:space="preserve">
+    <value>试运行画面/加速度</value>
+  </data>
+  <data name="试运行画面_走行距离" xml:space="preserve">
+    <value>试运行画面/走行距离</value>
+  </data>
+  <data name="试运行画面_走行时间" xml:space="preserve">
+    <value>试运行画面/走行时间</value>
+  </data>
+</root>

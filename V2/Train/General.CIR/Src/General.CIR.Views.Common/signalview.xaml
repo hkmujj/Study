@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UserControl
+    x:Class="General.CIR.Views.Common.SignalView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Name="UserControl">
+    <Grid>
+        <ProgressBar
+            x:Name="Bar"
+            Background="{Binding ElementName=UserControl, Path=BackBrush}"
+            BorderBrush="{Binding ElementName=UserControl, Path=BorBrush}"
+            BorderThickness="{Binding ElementName=UserControl, Path=BorderThick}"
+            Foreground="{Binding ElementName=UserControl, Path=ForBrush}"
+            Maximum="4"
+            Minimum="0"
+            Style="{StaticResource ProgressBarStyle1}">
+            <ProgressBar.Value>
+                <MultiBinding Converter="{StaticResource ProgressbarValueConverter}">
+                    <Binding Path="MainContentViewModel.TitleViewModel.Signal" />
+                    <Binding ElementName="Bar" Path="Maximum" />
+                    <Binding ElementName="Bar" Path="Minimum" />
+                </MultiBinding>
+            </ProgressBar.Value>
+        </ProgressBar>
+    </Grid>
+</UserControl>

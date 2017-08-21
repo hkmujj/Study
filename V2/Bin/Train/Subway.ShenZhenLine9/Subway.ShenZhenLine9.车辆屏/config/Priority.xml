@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<PriorityConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DoorPriorities>
+    <Door Key="EmergencyLock" Prioritys="1" />
+    <Door Key="Cut" Prioritys="2" />
+    <Door Key="Fault" Prioritys="3" />
+    <Door Key="Check" Prioritys="4" />
+    <Door Key="Flicker" Prioritys="5" />
+    <Door Key="Closed" Prioritys="6" />
+  </DoorPriorities>
+  <AirConditionPriorities>
+    <AirCondition Key="Fault" Prioritys="1" />
+	<AirCondition Key="Cut" Prioritys="2" />
+    <AirCondition Key="Run" Prioritys="3" />
+    <AirCondition Key="Off" Prioritys="4" />	
+  </AirConditionPriorities>
+  <AssistPriorities>
+    <Assist Key="ACFault" Prioritys="1" />
+    <Assist Key="DCFault" Prioritys="1" />
+    <Assist Key="ACRun" Prioritys="2" />
+    <Assist Key="DCRun" Prioritys="2" />
+    <Assist Key="ACOff" Prioritys="3" />
+    <Assist Key="DCOff" Prioritys="3" />
+  </AssistPriorities>
+  <EmergencyTalkPriorities>
+    <Emergency Key="Fault" Prioritys="1" />
+    <Emergency Key="Active" Prioritys="2" />
+    <Emergency Key="Talk" Prioritys="3" />
+    <Emergency Key="UnActive" Prioritys="4" />
+  </EmergencyTalkPriorities>
+  <BrakePriorities>
+    <Brake Key="BrakeCut" Prioritys="1" />
+    <Brake Key="BrakeFault" Prioritys="2" />
+    <Brake Key="BrakeUnRemit" Prioritys="3" />
+    <Brake Key="BrakeRemit" Prioritys="4" />
+    <Brake Key="ParkingUnRemit" Prioritys="5" />
+    <Brake Key="ParkingRemit" Prioritys="6" />
+	<Brake Key="ParkingCut" Prioritys="7" />
+    <Brake Key="Noaml" Prioritys="8" />
+  </BrakePriorities>
+</PriorityConfig>

@@ -1,0 +1,38 @@
+﻿<UserControl
+    x:Class="Tram.CBTC.NRIET.View.Contents.Main.RegionSpeed.SpeedDial"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:regionSpeed="clr-namespace:Tram.CBTC.NRIET.View.Contents.Main.RegionSpeed"
+    xmlns:viewModel="clr-namespace:Tram.CBTC.NRIET.ViewModel"
+    d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+    d:DesignHeight="221"
+    d:DesignWidth="263"
+    mc:Ignorable="d">
+    <Grid>
+        <Viewbox Stretch="Uniform">
+            <Grid>
+                <regionSpeed:DegreeScaleView
+                    x:Name="DegreeScaleView"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Stretch" />
+                <regionSpeed:Pointer
+                    ContentBrush="White"
+                    PointerVisibility="{Binding CBTC.SignalInfo.Speed.RunSpeed.Visible}"
+                    SpeedBrush="{Binding CBTC.SignalInfo.Speed.RunSpeed.SpeedColor, Converter={StaticResource Tram.CBTC.Nriet.Converter.CBTCColorConverter}}"
+                    SpeedValue="{Binding CBTC.SignalInfo.Speed.RunSpeed.Value}">
+                    <regionSpeed:Pointer.PointerAngle>
+                        <MultiBinding Converter="{StaticResource Tram.CBTC.Nriet.Converter.NrietSpeedToAngleConverter}">
+                            <Binding Path="Domain.SignalInfo.Speed.SpeedDialPlate" />
+                            <Binding Path="Domain.SignalInfo.Speed.RunSpeed.Value" />
+                        </MultiBinding>
+                    </regionSpeed:Pointer.PointerAngle>
+                </regionSpeed:Pointer>
+            </Grid>
+        </Viewbox>
+    </Grid>
+</UserControl>
+
+
+

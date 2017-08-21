@@ -1,0 +1,23 @@
+;;; 类名 				从属视图					输入_Bool_对应表 				输入_Float_对应表 					输出_bool_对应表 						输出_Float_对应表 							参数表 			备注
+;;; 字符串 			<数字 数字> 			[#bool编号 bool编号#] 	Float编号 Float编号*] 			[-bool编号 bool编号-] 			[+Float编号 Float编号+] 				{参数1 参数2 参数3}
+;;;课程结束视图
+V0_C0_BlackView_1D                [~ 0 ~]	     < 103 104 105 106 107 108>			[#1#]			        [**]			[--]			[++]			{}
+V0_C1_OverCourse_1D            [~ 0 ~]	     < 100 >			[##]			        [**]			[--]			[++]			{}
+V1_C0_Frame                    [~ 1 ~]	     < 104 105>			[##]			        [**]			[--]			[++]			{Frame/Frame.png}
+V1_C1_States                   [~ 2 ~]	     < 104 105>			[#5 13 17 20#]			[**]			[--]			[++]			{Frame/闪烁.png}
+V1_C2_Door                     [~ 3 ~]	     < 104 >			[#24 28 32 32 50 26 30#]			[**]			[--]			[++]			{}
+V1_C3_AvailabilityIndicator    [~ 4 ~]	     < 104 >			[#34 35 107 36 37 108 38 39 109#]			[**]			[--]			[++]			{}
+V1_C4_StationIndicator         [~ 5 ~]	     < 104 >			[#40 42 44#]			[*6 7*]			[--]			[++]			{}
+V1_C5_Position_EB_Indicator    [~ 6 ~]	     < 104 >			[#46 48#]			[**]			[--]			[++]			{}
+V1_C6_SystemInfo               [~ 7 ~]	     < 104 105>			[##]		         	[*1 8 9 10 11*]		[--]			[++]			{}
+V1_C7_SpeedDial                [~ 8 ~]	     < 104 >			[#53 55#]		         	[*3 4 5 2*]		[--]			[++]			{SpeedDial/Pointer.png SpeedDial/TargetSpeedPointer.png SpeedDial/MaxSpeedPointer.png}
+V1_C8_Confirm_List_Button      [~ 9 ~]	     < 104 105>			[##]		         	[**]	        	[--]			[++]			{}
+V1_C10_Button_DriverID         [~ 10 ~]	     < 104>			[##]		         	[**]	        	[--]			[++]			{}
+V1_C9_InNoMessage              [~ 11 ~]	     < 104 >			[#58#]		         	[**]	        	[--]			[++]			{}
+V1_C10_FalutMessage            [~ 12 ~]	     < 104 >			[#115#]		         	[**]	        	[--]			[++]			{}
+V2_C0_Button_DriverID_Quit     [~ 11 ~]	     < 105>			[##]		         	[**]	        	[--]			[++]			{}
+V2_C1_DriverID                 [~ 13 ~]	     < 105>			[##]		         	[**]	        	[--]			[+201+]			{}
+V3_C0_NoMessage                [~ 15 ~]	     < 106 >			[#58#]		         	[**]	        	[--]			[++]			{}
+V4_C0_InfoList                [~ 16 ~]	     < 107 >			[##]		         	[**]	        	[--]			[++]			{List/Frame.png}
+V5_C0_FalutList                [~ 17 ~]	     < 108 >			[##]		         	[**]	        	[--]			[++]			{List/Frame.png}
+VC_C0_GetValue                [~ 18 ~]	     < 104 105 106 107 108 >			[##]		         	[**]	        	[--]			[++]			{}

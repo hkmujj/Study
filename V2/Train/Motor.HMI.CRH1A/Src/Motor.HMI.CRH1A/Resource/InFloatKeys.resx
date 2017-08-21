@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="InF列车速度" xml:space="preserve">
+    <value>列车速度</value>
+  </data>
+  <data name="InF接触网电压" xml:space="preserve">
+    <value>接触网电压</value>
+  </data>
+  <data name="InF外部空气温度" xml:space="preserve">
+    <value>外部空气温度</value>
+  </data>
+  <data name="InF动力制动参考" xml:space="preserve">
+    <value>动力制动参考</value>
+  </data>
+  <data name="InF01号司机室温度" xml:space="preserve">
+    <value>01号司机室温度</value>
+  </data>
+  <data name="InF02乘客室温度" xml:space="preserve">
+    <value>02乘客室温度</value>
+  </data>
+  <data name="InF03乘客室温度" xml:space="preserve">
+    <value>03乘客室温度</value>
+  </data>
+  <data name="InF04乘客室温度" xml:space="preserve">
+    <value>04乘客室温度</value>
+  </data>
+  <data name="InF05乘客室温度" xml:space="preserve">
+    <value>05乘客室温度</value>
+  </data>
+  <data name="InF06乘客室温度" xml:space="preserve">
+    <value>06乘客室温度</value>
+  </data>
+  <data name="InF07乘客室温度" xml:space="preserve">
+    <value>07乘客室温度</value>
+  </data>
+  <data name="InF08乘客室温度" xml:space="preserve">
+    <value>08乘客室温度</value>
+  </data>
+  <data name="InF01车污物箱液位" xml:space="preserve">
+    <value>01车污物箱液位</value>
+  </data>
+  <data name="InF02车污物箱液位" xml:space="preserve">
+    <value>02车污物箱液位</value>
+  </data>
+  <data name="InF03车污物箱液位" xml:space="preserve">
+    <value>03车污物箱液位</value>
+  </data>
+  <data name="InF04车污物箱液位" xml:space="preserve">
+    <value>04车污物箱液位</value>
+  </data>
+  <data name="InF05车污物箱液位" xml:space="preserve">
+    <value>05车污物箱液位</value>
+  </data>
+  <data name="InF06车污物箱液位" xml:space="preserve">
+    <value>06车污物箱液位</value>
+  </data>
+  <data name="InF07车污物箱液位" xml:space="preserve">
+    <value>07车污物箱液位</value>
+  </data>
+  <data name="InF08车污物箱液位" xml:space="preserve">
+    <value>08车污物箱液位</value>
+  </data>
+  <data name="InF01车净水箱液位" xml:space="preserve">
+    <value>01车净水箱液位</value>
+  </data>
+  <data name="InF02车净水箱液位" xml:space="preserve">
+    <value>02车净水箱液位</value>
+  </data>
+  <data name="InF03车净水箱液位" xml:space="preserve">
+    <value>03车净水箱液位</value>
+  </data>
+  <data name="InF04车净水箱液位" xml:space="preserve">
+    <value>04车净水箱液位</value>
+  </data>
+  <data name="InF05车净水箱液位" xml:space="preserve">
+    <value>05车净水箱液位</value>
+  </data>
+  <data name="InF06车净水箱液位" xml:space="preserve">
+    <value>06车净水箱液位</value>
+  </data>
+  <data name="InF07车净水箱液位" xml:space="preserve">
+    <value>07车净水箱液位</value>
+  </data>
+  <data name="InF08车净水箱液位" xml:space="preserve">
+    <value>08车净水箱液位</value>
+  </data>
+  <data name="InF01车转向架平均温度" xml:space="preserve">
+    <value>01车转向架平均温度</value>
+  </data>
+  <data name="InF02车转向架平均温度" xml:space="preserve">
+    <value>02车转向架平均温度</value>
+  </data>
+  <data name="InF03车转向架平均温度" xml:space="preserve">
+    <value>03车转向架平均温度</value>
+  </data>
+  <data name="InF04车转向架平均温度" xml:space="preserve">
+    <value>04车转向架平均温度</value>
+  </data>
+  <data name="InF05车转向架平均温度" xml:space="preserve">
+    <value>05车转向架平均温度</value>
+  </data>
+  <data name="InF06车转向架平均温度" xml:space="preserve">
+    <value>06车转向架平均温度</value>
+  </data>
+  <data name="InF07车转向架平均温度" xml:space="preserve">
+    <value>07车转向架平均温度</value>
+  </data>
+  <data name="InF08车转向架平均温度" xml:space="preserve">
+    <value>08车转向架平均温度</value>
+  </data>
+  <data name="InF1号以实现的制动力" xml:space="preserve">
+    <value>1号以实现的制动力</value>
+  </data>
+  <data name="InF2号以实现的制动力" xml:space="preserve">
+    <value>2号以实现的制动力</value>
+  </data>
+  <data name="InF3号以实现的制动力" xml:space="preserve">
+    <value>3号以实现的制动力</value>
+  </data>
+  <data name="InF4号以实现的制动力" xml:space="preserve">
+    <value>4号以实现的制动力</value>
+  </data>
+  <data name="InF5号以实现的制动力" xml:space="preserve">
+    <value>5号以实现的制动力</value>
+  </data>
+  <data name="InF6号以实现的制动力" xml:space="preserve">
+    <value>6号以实现的制动力</value>
+  </data>
+  <data name="InF7号以实现的制动力" xml:space="preserve">
+    <value>7号以实现的制动力</value>
+  </data>
+  <data name="InF8号以实现的制动力" xml:space="preserve">
+    <value>8号以实现的制动力</value>
+  </data>
+  <data name="InF2号网侧电压" xml:space="preserve">
+    <value>2号网侧电压</value>
+  </data>
+  <data name="InF2号网侧电流" xml:space="preserve">
+    <value>2号网侧电流</value>
+  </data>
+  <data name="InF5号网侧电压" xml:space="preserve">
+    <value>5号网侧电压</value>
+  </data>
+  <data name="InF5号网侧电流" xml:space="preserve">
+    <value>5号网侧电流</value>
+  </data>
+  <data name="InF7号网侧电压" xml:space="preserve">
+    <value>7号网侧电压</value>
+  </data>
+  <data name="InF7号网侧电流" xml:space="preserve">
+    <value>7号网侧电流</value>
+  </data>
+  <data name="InF2号蓄电池充电电流" xml:space="preserve">
+    <value>2号蓄电池充电电流</value>
+  </data>
+  <data name="InF3号蓄电池充电电流" xml:space="preserve">
+    <value>3号蓄电池充电电流</value>
+  </data>
+  <data name="InF4号蓄电池充电电流" xml:space="preserve">
+    <value>4号蓄电池充电电流</value>
+  </data>
+  <data name="InF6号蓄电池充电电流" xml:space="preserve">
+    <value>6号蓄电池充电电流</value>
+  </data>
+  <data name="InF7号蓄电池充电电流" xml:space="preserve">
+    <value>7号蓄电池充电电流</value>
+  </data>
+  <data name="InF2号蓄电池充电电压" xml:space="preserve">
+    <value>2号蓄电池充电电压</value>
+  </data>
+  <data name="InF3号蓄电池充电电压" xml:space="preserve">
+    <value>3号蓄电池充电电压</value>
+  </data>
+  <data name="InF4号蓄电池充电电压" xml:space="preserve">
+    <value>4号蓄电池充电电压</value>
+  </data>
+  <data name="InF6号蓄电池充电电压" xml:space="preserve">
+    <value>6号蓄电池充电电压</value>
+  </data>
+  <data name="InF7号蓄电池充电电压" xml:space="preserve">
+    <value>7号蓄电池充电电压</value>
+  </data>
+  <data name="InF02号风压" xml:space="preserve">
+    <value>02号风压</value>
+  </data>
+  <data name="InF05号风压" xml:space="preserve">
+    <value>05号风压</value>
+  </data>
+  <data name="InF07号风压" xml:space="preserve">
+    <value>07号风压</value>
+  </data>
+  <data name="InF01号辅助载荷电压" xml:space="preserve">
+    <value>01号辅助载荷电压</value>
+  </data>
+  <data name="InF03号辅助载荷电压" xml:space="preserve">
+    <value>03号辅助载荷电压</value>
+  </data>
+  <data name="InF04号辅助载荷电压" xml:space="preserve">
+    <value>04号辅助载荷电压</value>
+  </data>
+  <data name="InF06号辅助载荷电压" xml:space="preserve">
+    <value>06号辅助载荷电压</value>
+  </data>
+  <data name="InF08号辅助载荷电压" xml:space="preserve">
+    <value>08号辅助载荷电压</value>
+  </data>
+  <data name="InF01号DC环节电压" xml:space="preserve">
+    <value>01号DC环节电压</value>
+  </data>
+  <data name="InF03号DC环节电压" xml:space="preserve">
+    <value>03号DC环节电压</value>
+  </data>
+  <data name="InF04号DC环节电压" xml:space="preserve">
+    <value>04号DC环节电压</value>
+  </data>
+  <data name="InF06号DC环节电压" xml:space="preserve">
+    <value>06号DC环节电压</value>
+  </data>
+  <data name="InF08号DC环节电压" xml:space="preserve">
+    <value>08号DC环节电压</value>
+  </data>
+  <data name="InF01号MCM1已实现的牵引力" xml:space="preserve">
+    <value>01号MCM1已实现的牵引力</value>
+  </data>
+  <data name="InF03号MCM1已实现的牵引力" xml:space="preserve">
+    <value>03号MCM1已实现的牵引力</value>
+  </data>
+  <data name="InF04号MCM1已实现的牵引力" xml:space="preserve">
+    <value>04号MCM1已实现的牵引力</value>
+  </data>
+  <data name="InF06号MCM1已实现的牵引力" xml:space="preserve">
+    <value>06号MCM1已实现的牵引力</value>
+  </data>
+  <data name="InF08号MCM1已实现的牵引力" xml:space="preserve">
+    <value>08号MCM1已实现的牵引力</value>
+  </data>
+  <data name="InF01号MCM2已实现的牵引力" xml:space="preserve">
+    <value>01号MCM2已实现的牵引力</value>
+  </data>
+  <data name="InF03号MCM2已实现的牵引力" xml:space="preserve">
+    <value>03号MCM2已实现的牵引力</value>
+  </data>
+  <data name="InF04号MCM2已实现的牵引力" xml:space="preserve">
+    <value>04号MCM2已实现的牵引力</value>
+  </data>
+  <data name="InF06号MCM2已实现的牵引力" xml:space="preserve">
+    <value>06号MCM2已实现的牵引力</value>
+  </data>
+  <data name="InF08号MCM2已实现的牵引力" xml:space="preserve">
+    <value>08号MCM2已实现的牵引力</value>
+  </data>
+  <data name="InF屏幕亮度" xml:space="preserve">
+    <value>屏幕亮度</value>
+  </data>
+  <data name="InF1号牵引力百分比" xml:space="preserve">
+    <value>1号牵引力百分比</value>
+  </data>
+  <data name="InF2号牵引力百分比" xml:space="preserve">
+    <value>2号牵引力百分比</value>
+  </data>
+  <data name="InF3号牵引力百分比" xml:space="preserve">
+    <value>3号牵引力百分比</value>
+  </data>
+  <data name="InF4号牵引力百分比" xml:space="preserve">
+    <value>4号牵引力百分比</value>
+  </data>
+  <data name="InF5号牵引力百分比" xml:space="preserve">
+    <value>5号牵引力百分比</value>
+  </data>
+  <data name="InF6号牵引力百分比" xml:space="preserve">
+    <value>6号牵引力百分比</value>
+  </data>
+  <data name="InF7号牵引力百分比" xml:space="preserve">
+    <value>7号牵引力百分比</value>
+  </data>
+  <data name="InF8号牵引力百分比" xml:space="preserve">
+    <value>8号牵引力百分比</value>
+  </data>
+  <data name="InF1号再生电制动力百分比" xml:space="preserve">
+    <value>1号再生（电）制动力百分比</value>
+  </data>
+  <data name="InF2号再生电制动力百分比" xml:space="preserve">
+    <value>2号再生（电）制动力百分比</value>
+  </data>
+  <data name="InF3号再生电制动力百分比" xml:space="preserve">
+    <value>3号再生（电）制动力百分比</value>
+  </data>
+  <data name="InF4号再生电制动力百分比" xml:space="preserve">
+    <value>4号再生（电）制动力百分比</value>
+  </data>
+  <data name="InF5号再生电制动力百分比" xml:space="preserve">
+    <value>5号再生（电）制动力百分比</value>
+  </data>
+  <data name="InF6号再生电制动力百分比" xml:space="preserve">
+    <value>6号再生（电）制动力百分比</value>
+  </data>
+  <data name="InF7号再生电制动力百分比" xml:space="preserve">
+    <value>7号再生（电）制动力百分比</value>
+  </data>
+  <data name="InF8号再生电制动力百分比" xml:space="preserve">
+    <value>8号再生（电）制动力百分比</value>
+  </data>
+  <data name="InF1号机械制动力百分比" xml:space="preserve">
+    <value>1号机械制动力百分比</value>
+  </data>
+  <data name="InF2号机械制动力百分比" xml:space="preserve">
+    <value>2号机械制动力百分比</value>
+  </data>
+  <data name="InF3号机械制动力百分比" xml:space="preserve">
+    <value>3号机械制动力百分比</value>
+  </data>
+  <data name="InF4号机械制动力百分比" xml:space="preserve">
+    <value>4号机械制动力百分比</value>
+  </data>
+  <data name="InF5号机械制动力百分比" xml:space="preserve">
+    <value>5号机械制动力百分比</value>
+  </data>
+  <data name="InF6号机械制动力百分比" xml:space="preserve">
+    <value>6号机械制动力百分比</value>
+  </data>
+  <data name="InF7号机械制动力百分比" xml:space="preserve">
+    <value>7号机械制动力百分比</value>
+  </data>
+  <data name="InF8号机械制动力百分比" xml:space="preserve">
+    <value>8号机械制动力百分比</value>
+  </data>
+  <data name="InF列车状态_牵引力" xml:space="preserve">
+    <value>列车状态——牵引力</value>
+  </data>
+  <data name="InF列车状态_制动力1" xml:space="preserve">
+    <value>列车状态——制动力1</value>
+  </data>
+  <data name="InF列车状态_接触网电流1" xml:space="preserve">
+    <value>列车状态——接触网电流1</value>
+  </data>
+  <data name="InF列车状态_限速1" xml:space="preserve">
+    <value>列车状态——限速1</value>
+  </data>
+  <data name="InF加速_减速" xml:space="preserve">
+    <value>加速/减速</value>
+  </data>
+  <data name="InF显示日期" xml:space="preserve">
+    <value>显示日期</value>
+  </data>
+  <data name="InF显示时间" xml:space="preserve">
+    <value>显示时间</value>
+  </data>
+</root>

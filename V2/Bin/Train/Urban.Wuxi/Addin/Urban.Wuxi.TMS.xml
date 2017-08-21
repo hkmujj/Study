@@ -1,0 +1,2145 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Urban.Wuxi.TMS</name>
+    </assembly>
+    <members>
+        <member name="T:Urban.Wuxi.TMS.TMSBaseClass">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.Lightness.mouseUp(System.Drawing.Point)">
+            <summary>
+            鼠标弹起的状态
+            </summary>
+            <param name="nPoint"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.Lightness.DrawOn(System.Drawing.Graphics)">
+            <summary>
+            绘图
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.Lightness.InitData">
+            <summary>
+            初始化坐标、数组、热区
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.Lightness.m_IsDraw">
+            <summary>
+            是否在亮度调节画面
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.Lightness.m_LightNum">
+            <summary>
+            绿色的键值
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.Lightness.m_PDrawPoint">
+            <summary>
+            坐标集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.Lightness.m_Rects">
+            <summary>
+            矩形框集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.Lightness.m_Images">
+            <summary>
+            图片集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.Lightness.m_Regions">
+            <summary>
+            按键列表
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.Meter.m_BoolsList">
+            <summary>
+            裸机号
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.Meter.m_FoolatList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.Meter.m_ImgList">
+            <summary>
+            图片列表
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.Meter.m_Rectangles">
+            <summary>
+            矩形框列表
+            </summary>
+        </member>
+        <member name="T:Urban.Wuxi.TMS.故障事件.DefaultInfo">
+            <summary>
+            故障结构体
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.DefaultInfo.m_PicType">
+            <summary>
+            故障图标类型
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.DefaultInfo.m_Code">
+            <summary>
+            故障代码
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.DefaultInfo.m_StartTime">
+            <summary>
+            故障开始时间
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.DefaultInfo.m_OverTime">
+            <summary>
+            故障结束时间
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.DefaultInfo.m_FauleName">
+            <summary>
+            故障名称
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.DefaultInfo.m_SolveName">
+            <summary>
+            故障解决方法
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.DefaultInfo.m_SolvePic">
+            <summary>
+            故障解决方法的图片
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.DefaultInfo.m_SendCmd">
+            <summary>
+            发送确认位
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.DefaultInfo.m_EventOver">
+            <summary>
+            故障是否结束
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.DefaultInfo.m_IsReceiveCmd">
+            <summary>
+            是否已按确认
+            </summary>
+        </member>
+        <member name="T:Urban.Wuxi.TMS.故障事件.DefaultItemInfo">
+            <summary>
+            故障类
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.故障事件.DefaultItemInfo.DrawTest(System.Drawing.Graphics,System.Drawing.Rectangle)">
+            <summary>
+            故障解决方法
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.故障事件.DefaultItemInfo.DrawTitle(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Font,System.Drawing.Brush,System.Drawing.Rectangle,System.Drawing.StringFormat)">
+            <summary>
+            故障名称
+            </summary>
+            <param name="e"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.故障事件.DefaultItemInfo.DefaultLevelPic(System.String)">
+            <summary>
+            故障等级相应图片显示
+            </summary>
+            <param name="level"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.故障事件.DefaultItemInfo.AddEvent(Urban.Wuxi.TMS.故障事件.DefaultInfo)">
+            <summary>
+            记录历史事件（事件发生）[未用]
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.故障事件.DefaultItemInfo.AddEventOver(Urban.Wuxi.TMS.故障事件.DefaultInfo)">
+            <summary>
+            记录时间（事件结束）
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.故障事件.DefaultItemInfo.ReceiveTheItem(System.Collections.Generic.List{Urban.Wuxi.TMS.故障事件.DefaultInfo},System.String)">
+            <summary>
+            临时添加
+            判断是否接受到确认
+            </summary>
+            <param name="nItemInfo"></param>
+            <param name="nCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.故障事件.DefaultItemInfo.HasTheItem(System.Collections.Generic.List{Urban.Wuxi.TMS.故障事件.DefaultInfo},System.String)">
+            <summary>
+            校验方法，判断是否相应的故障结束
+            </summary>
+            <param name="nItemInfo"></param>
+            <param name="nCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.故障事件.DefaultItemInfo.DefaultSort">
+            <summary>
+            故障排序
+            排过序的当前故障列表清空，重新添加
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.故障事件.DefaultItemInfo.GetDefault">
+            <summary>
+            故障获取
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.故障事件.DefaultItemInfo.SendConfirmation">
+            <summary>
+            按确认后
+            返回给逻辑当前故障确认
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.故障事件.DefaultItemInfo.#ctor(System.Boolean[]@,System.Boolean[]@,System.Int32[]@,System.Collections.Generic.SortedList{System.Int32,System.String[]},System.Collections.Generic.List{System.Int32},System.Drawing.Image[],System.Drawing.Image[])">
+            <summary>
+            构造函数
+            和谐2机车用
+            </summary>
+            <param name="defBValue">故障量</param>
+            <param name="oldDefBValue">上一周期的故障量</param>
+            <param name="memoryIndex">故障所在的内存地址</param>
+            <param name="_FaultList">故障列表</param>
+            <param name="imgs">故障操作提示用图片</param>
+            <param name="levelImgs">故障等级图片</param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.故障事件.DefaultItemInfo.#ctor(System.Boolean[]@,System.Boolean[]@,System.Int32[]@,System.Collections.Generic.SortedList{System.Int32,System.String[]},System.Drawing.Image[])">
+            <summary>
+            构造函数
+            </summary>
+            <param name="defBValue">故障量</param>
+            <param name="oldDefBValue">上一周期的故障量</param>
+            <param name="memoryIndex">故障所在的内存地址</param>
+            <param name="_FaultList">故障列表</param>
+            <param name="imgs">故障操作提示用图片</param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.故障事件.DefaultItemInfo.#ctor(System.Boolean[]@,System.Boolean[]@,System.Int32[]@,System.Collections.Generic.SortedList{System.Int32,System.String[]},System.Collections.Generic.SortedList{System.Int32,System.String[]})">
+            <summary>
+            构造函数
+            </summary>
+            <param name="defBValue">故障亮</param>
+            <param name="oldDefBValue">上一周期的故障量</param>
+            <param name="memoryIndex">故障所在的内存地址</param>
+            <param name="_FaultList">故障列表</param>
+            <param name="_Solution">读文本故障操作提示</param>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.DefaultItemInfo.m_DefType">
+            <summary>
+            故障类型
+            根据构造函数不同而不同
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.DefaultItemInfo.m_DefValue">
+            <summary>
+            当前循环故障状态
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.DefaultItemInfo.m_OldDefValue">
+            <summary>
+            前一循环故障状态
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.DefaultItemInfo.m_MenmoryAddress">
+            <summary>
+            逻辑号
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.DefaultItemInfo.m_GetImgs">
+            <summary>
+            故障解决方法图片集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.DefaultItemInfo.m_LevelImgs">
+            <summary>
+            故障等级图片
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.DefaultItemInfo.m_DefaultTmp">
+            <summary>
+            故障实例
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.DefaultItemInfo.m_BeDefault">
+            <summary>
+            当前是否存在故障
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.DefaultItemInfo.m_FaultList">
+            <summary>
+            故障键值列表
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.DefaultItemInfo.m_Soultion">
+            <summary>
+            故障操作提示
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.DefaultItemInfo.m_SendConfNumb">
+            <summary>
+            按确认后发送故障编号
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.DefaultItemInfo.m_GradeAllDefault">
+            <summary>
+            所有故障
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.DefaultItemInfo.m_TheNoOverDefault">
+            <summary>
+            未排除故障
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.DefaultItemInfo.m_TheCurrentDefault">
+            <summary>
+            当前故障
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.DefaultItemInfo.m_TheNoOverDefault1">
+            <summary>
+            未排除1级故障
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.DefaultItemInfo.m_TheNoOverDefault2">
+            <summary>
+            未排除2级故障
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.DefaultItemInfo.m_TheNoOverDefault3">
+            <summary>
+            未排除3级故障
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.DefaultItemInfo.m_DefaultSort">
+            <summary>
+            排完序的当前故障
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.DMITitle.Title.ButtonReset">
+            <summary>
+            按键复位
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.DMITitle.Title.DrawFrameUp(System.Drawing.Graphics)">
+            <summary>
+            绘制框架
+            上方部分
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.DMITitle.Title.DrawFrameDown(System.Drawing.Graphics)">
+            <summary>
+            绘制框架
+            下方部分
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.DMITitle.Title.DrawOn(System.Drawing.Graphics)">
+            <summary>
+            绘图
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.DMITitle.Title.InitData">
+            <summary>
+            初始化坐标、数组、热区
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.DMITitle.Title.InitEditModel">
+            <summary>
+            jiaz
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.DMITitle.Title.m_RectColor">
+            <summary>
+            工况区颜色
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.DMITitle.Title.m_StationList">
+            <summary>
+            车站列表
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.DMITitle.Title.m_EndStation">
+            <summary>
+            终点站
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.DMITitle.Title.m_NextStation">
+            <summary>
+            下一站
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.DMITitle.Title.m_ReadTxtID">
+            <summary>
+            读文本信息的编号
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.DMITitle.Title.AllMsgList">
+            <summary>
+            读文本
+            消息列表
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.DMITitle.Title.m_MsgInfList">
+            <summary>
+            所有发生过的消息
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.DMITitle.Title.m_ReceiveNewMsg">
+            <summary>
+            收到新消息
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.DMITitle.Title.m_MsgBeginAdress">
+            <summary>
+            故障开始地址
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.DMITitle.Title.m_MsgLen">
+            <summary>
+            故障长度个数
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.DMITitle.Title.m_IsExistHelp">
+            <summary>
+            根据当前视图判断是否有帮助页面
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.DMITitle.Title.m_TitleName">
+            <summary>
+            标题名称
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.DMITitle.Title.m_IsShowCar">
+            <summary>
+            是否要画列车
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.DMITitle.Title.m_IsShowDirection">
+            <summary>
+            是否要画方向
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.DMITitle.Title.m_CurrentView">
+            <summary>
+            当前视图
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.DMITitle.Title.m_BisValue">
+            <summary>
+            当前周期接收数字量
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.DMITitle.Title.m_OldisValue">
+            <summary>
+            前一个周期接收的数字量
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.DMITitle.Title.m_SetBisValue">
+            <summary>
+            发送的数字量
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.DMITitle.Title.m_SetValueNumb">
+            <summary>
+            发送的数字量在boollist中的序号
+            </summary>
+            
+            
+        </member>
+        <member name="F:Urban.Wuxi.TMS.DMITitle.Title.m_FValue">
+            <summary>
+            接收模拟量
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.DMITitle.Title.m_OldfValue">
+            <summary>
+            前一个周期接收的模拟量
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.DMITitle.Title.m_SetFValue">
+            <summary>
+            发送的模拟量
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.DMITitle.Title.m_SetFValueNumb">
+            <summary>
+            发送的模拟量在floatlist中的序号
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.DMITitle.Title.m_PDrawPoint">
+            <summary>
+            坐标集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.DMITitle.Title.m_Rects">
+            <summary>
+            矩形框集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.DMITitle.Title.m_Images">
+            <summary>
+            图片集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.DMITitle.Title.m_ButtonIsDown">
+            <summary>
+            键是否按下
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.DMITitle.Title.m_Regions">
+            <summary>
+            按键列表
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.DMITitle.Title.m_BoolIds">
+            <summary>
+            bool逻辑号
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.DMITitle.Title.m_FoolatIds">
+            <summary>
+            float逻辑号
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.DMITitle.Title.GetValue">
+            <summary>
+            初始化数据
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.DMITitle.Title.TrainStation(System.Int32,System.String)">
+            <summary>
+            车站名
+            </summary>
+            <param name="stationNum"></param>
+            <param name="stationName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.DMITitle.Title.RecAndDispMsg">
+            <summary>
+            接受和处理消息
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.DMITitle.Title.GkColor">
+            <summary>
+            工况区颜色
+            </summary>
+        </member>
+        <member name="P:Urban.Wuxi.TMS.DMITitle.Title.MsgInfList">
+            <summary>
+            所有发生过的消息
+            </summary>
+        </member>
+        <member name="T:Urban.Wuxi.TMS.故障事件.FaultConfirm">
+            <summary>
+            故障确认页面
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.故障事件.FaultConfirm.init(System.Int32@)">
+            <summary>
+            初始化类
+            </summary>
+            <param name="nErrorObjectIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Urban.Wuxi.TMS.空调.AirCondition">
+            <summary>
+            空调设置
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.空调.AirCondition.m_SetTemp">
+            <summary>
+            空调设定温度
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.空调.AirCondition.ChangeBtnState(System.Int32,System.Int32)">
+            <summary>
+            空调设定按钮状态变化
+            </summary>
+            <param name="btnID"></param>
+            <param name="typeID"></param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.空调.AirCondition.DrawFrame(System.Drawing.Graphics)">
+            <summary>
+            画框架
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.空调.AirCondition.DrawValue(System.Drawing.Graphics)">
+            <summary>
+            画值
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.空调.AirCondition.InitData">
+            <summary>
+            初始化坐标、数组、热区
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.空调.AirCondition.m_PDrawPoint">
+            <summary>
+            坐标集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.空调.AirCondition.m_Rects">
+            <summary>
+            矩形框集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.空调.AirCondition.m_Images">
+            <summary>
+            图片集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.空调.AirCondition.m_ButtonIsDown">
+            <summary>
+            键是否按下
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.空调.AirCondition.m_Regions">
+            <summary>
+            按键列表
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.空调.AirCondition.m_BoolIds">
+            <summary>
+            bool逻辑号
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.空调.AirCondition.m_FoolatIds">
+            <summary>
+            float逻辑号
+            </summary>
+        </member>
+        <member name="T:Urban.Wuxi.TMS.空调.AirConditionHelp">
+            <summary>
+            空调设置帮助
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.空调.AirConditionHelp.InitData">
+            <summary>
+            初始化坐标、数组、热区
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.空调.AirConditionHelp.m_PDrawPoint">
+            <summary>
+            坐标集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.空调.AirConditionHelp.m_Rects">
+            <summary>
+            矩形框集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.空调.AirConditionHelp.m_Images">
+            <summary>
+            图片集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.空调.AirConditionHelp.m_ButtonIsDown">
+            <summary>
+            键是否按下
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.空调.AirConditionHelp.m_Regions">
+            <summary>
+            按键列表
+            </summary>
+        </member>
+        <member name="T:Urban.Wuxi.TMS.维护.Password">
+            <summary>
+            登录
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.维护.Password.InitData">
+            <summary>
+            初始化坐标、数组、热区
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.Password.m_PDrawPoint">
+            <summary>
+            坐标集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.Password.m_Rects">
+            <summary>
+            矩形框集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.Password.m_Images">
+            <summary>
+            图片集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.Password.m_ButtonIsDown">
+            <summary>
+            键是否按下
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.Password.m_Regions">
+            <summary>
+            按键列表
+            </summary>
+        </member>
+        <member name="T:Urban.Wuxi.TMS.维护.RepairMain">
+            <summary>
+            检修主界面
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.维护.RepairMain.InitData">
+            <summary>
+            初始化坐标、数组、热区
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.RepairMain.m_PDrawPoint">
+            <summary>
+            坐标集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.RepairMain.m_Rects">
+            <summary>
+            矩形框集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.RepairMain.m_Images">
+            <summary>
+            图片集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.RepairMain.m_ButtonIsDown">
+            <summary>
+            键是否按下
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.RepairMain.m_Rect">
+            <summary>
+            按键列表
+            </summary>
+        </member>
+        <member name="T:Urban.Wuxi.TMS.维护.WheelDia">
+            <summary>
+            轮径设置
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.维护.WheelDia.InitData">
+            <summary>
+            初始化坐标、数组、热区
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.WheelDia.m_PDrawPoint">
+            <summary>
+            坐标集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.WheelDia.m_Rects">
+            <summary>
+            矩形框集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.WheelDia.m_Images">
+            <summary>
+            图片集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.WheelDia.m_ButtonIsDown">
+            <summary>
+            键是否按下
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.WheelDia.m_Regions">
+            <summary>
+            按键列表
+            </summary>
+        </member>
+        <member name="T:Urban.Wuxi.TMS.维护.TrainNumSetup">
+            <summary>
+            车号设置
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.维护.TrainNumSetup.InitData">
+            <summary>
+            初始化坐标、数组、热区
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.TrainNumSetup.m_PDrawPoint">
+            <summary>
+            坐标集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.TrainNumSetup.m_Rects">
+            <summary>
+            矩形框集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.TrainNumSetup.m_Images">
+            <summary>
+            图片集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.TrainNumSetup.m_ButtonIsDown">
+            <summary>
+            键是否按下
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.TrainNumSetup.m_Regions">
+            <summary>
+            按键列表
+            </summary>
+        </member>
+        <member name="T:Urban.Wuxi.TMS.维护.AccelerationTest">
+            <summary>
+            加速度测试
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.维护.AccelerationTest.InitData">
+            <summary>
+            初始化坐标、数组、热区
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.AccelerationTest.m_PDrawPoint">
+            <summary>
+            坐标集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.AccelerationTest.m_Rects">
+            <summary>
+            矩形框集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.AccelerationTest.m_Images">
+            <summary>
+            图片集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.AccelerationTest.m_ButtonIsDown">
+            <summary>
+            键是否按下
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.AccelerationTest.m_Regions">
+            <summary>
+            按键列表
+            </summary>
+        </member>
+        <member name="T:Urban.Wuxi.TMS.维护.Test">
+            <summary>
+            测试
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.维护.Test.InitData">
+            <summary>
+            初始化坐标、数组、热区
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.Test.m_PDrawPoint">
+            <summary>
+            坐标集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.Test.m_Rects">
+            <summary>
+            矩形框集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.Test.m_Images">
+            <summary>
+            图片集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.Test.m_ButtonIsDown">
+            <summary>
+            键是否按下
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.Test.m_Regions">
+            <summary>
+            按键列表
+            </summary>
+        </member>
+        <member name="T:Urban.Wuxi.TMS.维护.DataLog">
+            <summary>
+            数据记录
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.维护.DataLog.InitData">
+            <summary>
+            初始化坐标、数组、热区
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.DataLog.m_PDrawPoint">
+            <summary>
+            坐标集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.DataLog.m_Rects">
+            <summary>
+            矩形框集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.DataLog.m_Images">
+            <summary>
+            图片集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.DataLog.m_ButtonIsDown">
+            <summary>
+            键是否按下
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.DataLog.m_Regions">
+            <summary>
+            按键列表
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.维护.USB.InitData">
+            <summary>
+            初始化坐标、数组、热区
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.USB.m_PDrawPoint">
+            <summary>
+            坐标集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.USB.m_Rects">
+            <summary>
+            矩形框集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.USB.m_Images">
+            <summary>
+            图片集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.USB.m_ButtonIsDown">
+            <summary>
+            键是否按下
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.维护.USB.m_Regions">
+            <summary>
+            按键列表
+            </summary>
+        </member>
+        <member name="T:Urban.Wuxi.TMS.车辆状态.CarState">
+            <summary>
+            车辆状态
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.车辆状态.CarState.DrawFrame(System.Drawing.Graphics)">
+            <summary>
+            框架
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.车辆状态.CarState.DrawValue(System.Drawing.Graphics)">
+            <summary>
+            屏上数据
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.车辆状态.CarState.InitData">
+            <summary>
+            初始化坐标、数组、热区
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.车辆状态.CarState.m_PDrawPoint">
+            <summary>
+            坐标集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.车辆状态.CarState.m_Rects">
+            <summary>
+            矩形框集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.车辆状态.CarState.m_Images">
+            <summary>
+            图片集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.车辆状态.CarState.m_ButtonIsDown">
+            <summary>
+            键是否按下
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.车辆状态.CarState.m_Regions">
+            <summary>
+            按键列表
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.车辆状态.CarState.m_BoolIds">
+            <summary>
+            bool逻辑号
+            </summary>
+        </member>
+        <member name="T:Urban.Wuxi.TMS.车辆状态.CarStateHelp">
+            <summary>
+            车辆状态帮助
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.车辆状态.CarStateHelp.InitData">
+            <summary>
+            初始化坐标、数组、热区
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.车辆状态.CarStateHelp.m_PDrawPoint">
+            <summary>
+            坐标集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.车辆状态.CarStateHelp.m_Rects">
+            <summary>
+            矩形框集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.车辆状态.CarStateHelp.m_Images">
+            <summary>
+            图片集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.车辆状态.CarStateHelp.m_ButtonIsDown">
+            <summary>
+            键是否按下
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.车辆状态.CarStateHelp.m_Regions">
+            <summary>
+            按键列表
+            </summary>
+        </member>
+        <member name="T:Urban.Wuxi.TMS.运行.EmergencyRadio">
+            <summary>
+            紧急广播
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.EmergencyRadio.DrawFrame(System.Drawing.Graphics)">
+            <summary>
+            框架
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.EmergencyRadio.DrawValue(System.Drawing.Graphics)">
+            <summary>
+            填充数值
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.EmergencyRadio.DrawOn(System.Drawing.Graphics)">
+            <summary>
+            绘图
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.EmergencyRadio.InitData">
+            <summary>
+            初始化坐标、数组、热区
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.EmergencyRadio.m_PDrawPoint">
+            <summary>
+            坐标集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.EmergencyRadio.m_Rects">
+            <summary>
+            矩形框集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.EmergencyRadio.m_Images">
+            <summary>
+            图片集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.EmergencyRadio.m_ButtonIsDown">
+            <summary>
+            键是否按下
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.EmergencyRadio.m_Regions">
+            <summary>
+            按键列表
+            </summary>
+        </member>
+        <member name="T:Urban.Wuxi.TMS.运行.Bypass">
+            <summary>
+            旁路
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.Bypass.DrawValue(System.Drawing.Graphics)">
+            <summary>
+            填充数值
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.Bypass.DrawOn(System.Drawing.Graphics)">
+            <summary>
+            绘图
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.Bypass.InitData">
+            <summary>
+            初始化坐标、数组、热区
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.Bypass.m_PDrawPoint">
+            <summary>
+            坐标集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.Bypass.m_Rects">
+            <summary>
+            矩形框集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.Bypass.m_Images">
+            <summary>
+            图片集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.Bypass.m_ButtonIsDown">
+            <summary>
+            键是否按下
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.Bypass.m_Regions">
+            <summary>
+            按键列表
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.Bypass.m_BoolIds">
+            <summary>
+            逻辑号
+            </summary>
+        </member>
+        <member name="T:Urban.Wuxi.TMS.运行.Firewoks">
+            <summary>
+            烟火报警
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.Firewoks.m_Imgs">
+            <summary>
+            图片集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.Firewoks.m_Rect">
+            <summary>
+            矩形集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.Firewoks.m_BtnRectArrs">
+            <summary>
+            按钮相关框
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.Firewoks.m_IsbuttonDown">
+            <summary>
+            按钮是否能按下
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.Firewoks.m_SetModel">
+            <summary>
+            发送的逻辑位
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.Firewoks.m_Regions">
+            <summary>
+            按键列表
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.Firewoks.m_BoolIds">
+            <summary>
+            bool逻辑号
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.Firewoks.m_FoolatIds">
+            <summary>
+            float逻辑号
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.Firewoks.mouseDown(System.Drawing.Point)">
+            <summary>
+            按钮按下发送逻辑值
+            </summary>
+            <param name="nPoint"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.Firewoks.mouseUp(System.Drawing.Point)">
+            <summary>
+            按钮弹起时不发送值
+            </summary>
+            <param name="nPoint"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.Firewoks.DrawOn(System.Drawing.Graphics)">
+            <summary>
+            画烟火报警界面各车门的显示状态
+            </summary>
+            <param name="e">画图对象</param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.Firewoks.DrawButton(System.Drawing.Graphics)">
+            <summary>
+            画按钮框，按下和弹起，颜色的不同
+            </summary>
+            <param name="e">画图对象</param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.Firewoks.InitData">
+            <summary>
+            初始化坐标、数组、热区
+            </summary>
+        </member>
+        <member name="T:Urban.Wuxi.TMS.运行.HelpInformation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.HelpInformation.mouseDown(System.Drawing.Point)">
+            <summary>
+            鼠标按下的状态
+            </summary>
+            <param name="nPoint"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.HelpInformation.mouseUp(System.Drawing.Point)">
+            <summary>
+            鼠标弹起的状态
+            </summary>
+            <param name="nPoint"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.HelpInformation.DrawFrame(System.Drawing.Graphics)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.HelpInformation.DrawValue(System.Drawing.Graphics)">
+            <summary>
+            填充数值
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.HelpInformation.DrawOn(System.Drawing.Graphics)">
+            <summary>
+            绘图
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.HelpInformation.InitData">
+            <summary>
+            初始化坐标、数组、热区
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.HelpInformation.m_MenuID">
+            <summary>
+            菜单页码
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.HelpInformation.m_Type1Msg">
+            <summary>
+            紧急制动条件提示
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.HelpInformation.m_Type2Msg">
+            <summary>
+            牵引封锁条件提示
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.HelpInformation.m_Type3Msg">
+            <summary>
+            限速条件提示
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.HelpInformation.m_Type4Msg">
+            <summary>
+            紧急牵引提示
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.HelpInformation.m_Type5Msg">
+            <summary>
+            其他信息提示
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.HelpInformation.m_Menu1Rect">
+            <summary>
+            id为1的框
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.HelpInformation.m_Menu2Rect">
+            <summary>
+            id为2的框
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.HelpInformation.m_Menu3Rect">
+            <summary>
+            id为3的框
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.HelpInformation.m_Menu4Rect">
+            <summary>
+            id为4的框
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.HelpInformation.m_Menu5Rect">
+            <summary>
+            id为5的框
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.HelpInformation.m_PDrawPoint">
+            <summary>
+            坐标集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.HelpInformation.m_Rects">
+            <summary>
+            矩形框集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.HelpInformation.m_Images">
+            <summary>
+            图片集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.HelpInformation.m_ButtonIsDown">
+            <summary>
+            键是否按下
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.HelpInformation.m_Rect">
+            <summary>
+            按键列表
+            </summary>
+        </member>
+        <member name="T:Urban.Wuxi.TMS.运行.RunHelp">
+            <summary>
+            运行帮助
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.RunHelp.InitData">
+            <summary>
+            初始化坐标、数组、热区
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.RunHelp.m_PDrawPoint">
+            <summary>
+            坐标集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.RunHelp.m_Rects">
+            <summary>
+            矩形框集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.RunHelp.m_Img">
+            <summary>
+            图片集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.RunHelp.m_ButtonIsDown">
+            <summary>
+            键是否按下
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.RunHelp.m_Rect">
+            <summary>
+            按键列表
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.DoorState.#ctor(System.Int32,System.Drawing.RectangleF,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="firstDoorLogicId">门对应的第一个逻辑位</param>
+            <param name="rect">门所在位置大小</param>
+            <param name="doorName">门名称</param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.DoorState.DoorStateUpdata(System.Boolean[])">
+            <summary>
+            门状态更新
+            </summary>
+            <param name="doorState"></param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.DoorState.DrawDoorState(System.Drawing.Graphics)">
+            <summary>
+            门状态绘制
+            </summary>
+            <param name="g"></param>
+        </member>
+        <member name="P:Urban.Wuxi.TMS.运行.DoorState.LogicIdArr">
+            <summary>
+            门逻辑接口
+            </summary>
+        </member>
+        <member name="T:Urban.Wuxi.TMS.运行.Run">
+            <summary>
+            运行
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.Run.InitData">
+            <summary>
+            初始化坐标、数组、热区
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.Run.m_PDrawPoint">
+            <summary>
+            坐标集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.Run.m_Rects">
+            <summary>
+            矩形框集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.Run.m_LineRectArr">
+            <summary>
+            线条框
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.Run.m_RectsList">
+            <summary>
+            所有矩形框集合
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.Run.m_BtnRectArr">
+            <summary>
+            按钮相关框
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.Run.m_Images">
+            <summary>
+            图片集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.Run.m_ButtonIsDown">
+            <summary>
+            键是否按下
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.Run.m_BtnCanDown">
+            <summary>
+            键是否能按下
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.Run.m_Rect">
+            <summary>
+            按键列表
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.Run.m_Rectangles">
+            <summary>
+            修改按键列表
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.Run.m_BoolIds">
+            <summary>
+            bool逻辑号
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.Run.m_FoolatIds">
+            <summary>
+            float逻辑号
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.Run.m_DoorNameArr">
+            <summary>
+            各车门的名字
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.Run.mouseDown(System.Drawing.Point)">
+            <summary>
+            鼠标按下是否在区域内
+            </summary>
+            <param name="nPoint"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.Run.mouseUp(System.Drawing.Point)">
+            <summary>
+            鼠标弹起是否在区域内
+            </summary>
+            <param name="nPoint"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.Run.DrawFrame(System.Drawing.Graphics)">
+            <summary>
+            框架
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.Run.DrawP(System.Drawing.Graphics)">
+            <summary>
+            //乘客报警//故障—>报警—>对讲—>正常       
+            </summary>
+            <param name="e">绘图对象</param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.Run.DrawB(System.Drawing.Graphics)">
+            <summary>
+            //BHB//BLB
+            </summary>
+            <param name="e">绘图对象</param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.Run.DrawR(System.Drawing.Graphics)">
+            <summary>
+              //空气制动 //主断状态 //客室温度  ////电制动可用性
+            </summary>
+            <param name="e">绘图对象</param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.Run.DrawM(System.Drawing.Graphics)">
+            <summary>
+             //画门的名字的位置
+            </summary>
+            <param name="e">绘图对象</param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.Run.DrawE(System.Drawing.Graphics)">
+            <summary>
+            画主界面的字
+            </summary>
+            <param name="e">绘图对象</param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.Run.DrawBground(System.Drawing.Graphics)">
+            <summary>
+            当在紧急制动，牵引封锁，限速条件，紧急牵引，其他
+            二级界面的内容被选中后背景颜色变红色。
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.Run.DrawOn(System.Drawing.Graphics)">
+            <summary>
+            调用各个绘图的方法
+            </summary>
+            <param name="e">绘图对象</param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.Run.GetValue">
+            <summary>
+            传递门的7种状态
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.Run.InitRect">
+            <summary>
+            门的位置初始化
+            </summary>
+        </member>
+        <member name="T:Urban.Wuxi.TMS.运行.StationSet">
+            <summary>
+            站点设置
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.StationSet.DrawTrainLinesSelect(System.Drawing.Graphics)">
+            <summary>
+            线路选择
+            </summary>
+            <param name="e">画图对象</param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.StationSet.DrawFrame(System.Drawing.Graphics)">
+            <summary>
+            框架
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.StationSet.DrawStationNamesAndLineID(System.Drawing.Graphics)">
+            <summary>
+            始发站、终点站、选择线路和运行线路
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.StationSet.DrawValue(System.Drawing.Graphics)">
+            <summary>
+            填充数值
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.StationSet.DrawStationsBtn(System.Drawing.Graphics)">
+            <summary>
+            根据选择的菜单编号绘制
+            相应的站点信息
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.StationSet.DrawOn(System.Drawing.Graphics)">
+            <summary>
+            绘图
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.StationSet.LinesCount(System.Int32)">
+            <summary>
+            线路计算
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.StationSet.StationBtnState(System.Int32,System.Boolean)">
+            <summary>
+            判断当前点下的站点是起点站还是终点站
+            获取相应站点并正确显示
+            </summary>
+            <param name="btnId">按键的序号</param>
+            <param name="isPressStartStation">当前是否选择起点站</param>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.StationSet.m_Cursorcount">
+            <summary>
+            光标计数器
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.StationSet.Cursor">
+            <summary>
+            光标计数器方法
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.StationSet.ResetInfo(System.Int32)">
+            <summary>
+            复位信息
+            </summary>
+            <param name="typeId">复位类型:0为始发终点站复位;1为始发终点站清空;2为所有按键复位</param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.StationSet.NeedResetStartAndEndStation(System.Int32)">
+            <summary>
+            判断是否需要重置始发站和终点站
+            包括按键框和光标
+            根据上一次按的线路与当前线路判断
+            </summary>
+            <param name="currentID">当前所在的运行线路界面</param>
+            <returns></returns>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.StationSet.BtnNumbers(Urban.Wuxi.TMS.运行.StationSettingMenuID)">
+            <summary>
+            根据menusID判断当前线路
+            并返回需要创建的地铁站按钮个数
+            </summary>
+            <param name="menusID">线路参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.StationSet.StationName(System.Int32,System.Boolean)">
+            <summary>
+            获取始发站和终点站名称以及编号
+            </summary>
+            <param name="btnIndex">按键的编号</param>
+            <param name="isStartStation">当前为选择始发站还是终点站</param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.运行.StationSet.InitData">
+            <summary>
+            初始化坐标、数组、热区
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.StationSet.m_SetLineID">
+            <summary>
+            新线路
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.StationSet.m_SetLineRight">
+            <summary>
+            是否有这条新线路
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.StationSet.m_IsShowErrorMsg">
+            <summary>
+            是否要显示错误消息
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.StationSet.m_IsInLinesSelectView">
+            <summary>
+            是否进入线路选择界面
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.StationSet.m_CursorID">
+            <summary>
+            光标所在位置
+            -1表示没有选择站点框
+            0表示在起点站框
+            1表示在终点站框
+            2表示始发站和终点站都已经选择完毕，可以按设定按钮
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.StationSet.m_StartStationBtnLock">
+            <summary>
+            -1表示未选择起点站，当按下站点后
+            将站点代表的按键编号赋给当前变量
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.StationSet.m_EndStationBtnLock">
+            <summary>
+            -1表示未选择终点站，当按下站点后
+            将站点代表的按键编号赋给当前变量
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.StationSet.m_SetisBtnCanRun">
+            <summary>
+            判断选站操作是否结束，可以按设定按钮
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.StationSet.m_LastbtnOfLineID">
+            <summary>
+            上一次按键编号，与始发站终点站有关
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.StationSet.m_CurrentLineID">
+            <summary>
+            当前线路ID
+            默认为1
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.StationSet.m_RouteLineID">
+            <summary>
+            选择运行线路
+            默认为1
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.StationSet.m_SetStartStationId">
+            <summary>
+            始发站ID
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.StationSet.m_SetStartStationName">
+            <summary>
+            始发站名称
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.StationSet.m_SetEndStationID">
+            <summary>
+            终点站ID
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.StationSet.m_SetEndStationName">
+            <summary>
+            终点站名称
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.StationSet.m_Stations">
+            <summary>
+            所有站点名称
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.StationSet.m_PDrawPoint">
+            <summary>
+            坐标集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.StationSet.m_Rects">
+            <summary>
+            矩形框集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.StationSet.m_Images">
+            <summary>
+            图片集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.StationSet.m_ButtonIsDown">
+            <summary>
+            键是否按下
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.StationSet.m_BtnCanDown">
+            <summary>
+            按钮是否可以按
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.运行.StationSet.m_Regions">
+            <summary>
+            按键列表
+            </summary>
+        </member>
+        <member name="T:Urban.Wuxi.TMS.运行.StationSettingMenuID">
+            <summary>
+            站点设置右排选择菜单
+            </summary>
+        </member>
+        <member name="T:Urban.Wuxi.TMS.通讯.Communication">
+            <summary>
+            通讯状态
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.通讯.Communication.InitData">
+            <summary>
+            初始化坐标、数组、热区
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.通讯.Communication.GetValue">
+            <summary>
+            初始化数据
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.通讯.Communication.m_PointsList1">
+            <summary>
+            坐标集1
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.通讯.Communication.m_PointsList2">
+            <summary>
+            坐标集2
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.通讯.Communication.m_RectsList">
+            <summary>
+            矩形框集1
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.通讯.Communication.m_BValue">
+            <summary>
+            当前周期接收数字量
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.通讯.Communication.m_OldbValue">
+            <summary>
+            前一个周期接收的数字量
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.通讯.Communication.m_SetBValue">
+            <summary>
+            发送的数字量
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.通讯.Communication.m_SetBValueNumb">
+            <summary>
+            发送的数字量在boollist中的序号
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.通讯.Communication.m_FValue">
+            <summary>
+            接收模拟量
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.通讯.Communication.m_OldfValue">
+            <summary>
+            前一个周期接收的模拟量
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.通讯.Communication.m_SetFValue">
+            <summary>
+            发送的模拟量
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.通讯.Communication.m_SetFValueNumb">
+            <summary>
+            发送的模拟量在floatlist中的序号
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.通讯.Communication.m_PDrawPoint">
+            <summary>
+            坐标集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.通讯.Communication.m_Rects">
+            <summary>
+            矩形框集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.通讯.Communication.rect1">
+            <summary>
+            图片集
+            </summary>
+            六个房间矩形框
+        </member>
+        <member name="F:Urban.Wuxi.TMS.通讯.Communication.m_ButtonIsDown">
+            <summary>
+            键是否按下
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.通讯.Communication.m_Rect">
+            <summary>
+            按键列表
+            </summary>
+        </member>
+        <member name="T:Urban.Wuxi.TMS.通讯.CommunicationHelp">
+            <summary>
+            通讯状态帮助
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.通讯.CommunicationHelp.InitData">
+            <summary>
+            初始化坐标、数组、热区
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.通讯.CommunicationHelp.m_PDrawPoint">
+            <summary>
+            坐标集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.通讯.CommunicationHelp.m_Rects">
+            <summary>
+            矩形框集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.通讯.CommunicationHelp.m_Images">
+            <summary>
+            图片集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.通讯.CommunicationHelp.m_ButtonIsDown">
+            <summary>
+            键是否按下
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.通讯.CommunicationHelp.m_Rect">
+            <summary>
+            按键列表
+            </summary>
+        </member>
+        <member name="T:Urban.Wuxi.TMS.故障事件.Fault">
+            <summary>
+            故障事件
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.Fault.m_NoOverDefNumb">
+            <summary>
+            当前故障个数
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.Fault.m_AllDefNumb">
+            <summary>
+            历史故障个数
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.故障事件.Fault.DrDef(System.Drawing.Graphics)">
+            <summary>
+            绘图
+            </summary>
+            <param name="e"></param>
+            <summary>
+            故障解决方法界面
+            </summary>
+            <param name="e"></param>        
+        </member>
+        <member name="M:Urban.Wuxi.TMS.故障事件.Fault.DrawFrame(System.Drawing.Graphics)">
+            <summary>
+            框架
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.故障事件.Fault.DrawCurrentDef(System.Drawing.Graphics)">
+            <summary>
+            当前故障
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.故障事件.Fault.DrawAllDef(System.Drawing.Graphics)">
+            <summary>
+            所有故障
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.故障事件.Fault.InitData">
+            <summary>
+            初始化坐标、数组、热区
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.Fault.m_PDrawPoint">
+            <summary>
+            坐标集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.Fault.m_Rects">
+            <summary>
+            矩形框集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.Fault.m_Rect1">
+            <summary>
+            选中矩形框集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.Fault.m_Img">
+            <summary>
+            图片集
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.Fault.m_ButtonIsDown">
+            <summary>
+            按键
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.Fault.m_BtnCanDown">
+            <summary>
+            键是否能按下
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.Fault.m_DefPage">
+            <summary>
+            故障总页码
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.Fault.m_CurrentPage">
+            <summary>
+            当前故障页码
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.Fault.m_RowId">
+            <summary>
+            所在行号
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.Fault.m_MenuId">
+            <summary>
+            0为当前故障
+            1为历史故障
+            2为故障提示
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.Fault.m_Regions">
+            <summary>
+            按键列表
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.Fault.m_Regions1">
+            <summary>
+            选列表
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.Fault.m_SelectCurrentList">
+            <summary>
+            当前故障列表中的解决方案
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.故障事件.Fault.m_IDInFaultList">
+            <summary>
+            故障下标
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.FormatStyle.m_WhitePen">
+            <summary>
+            宽1白线
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.FormatStyle.m_BlackPen">
+            <summary>
+            宽1黑线
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.FormatStyle.m_MediumGreyPen">
+            <summary>
+            宽3中灰
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.FormatStyle.m_DarkGreyPen">
+            <summary>
+            宽1深灰
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.FormatStyle.m_WhiteBrush">
+            <summary>
+            白色
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.FormatStyle.m_BlackBrush">
+            <summary>
+            黑色
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.FormatStyle.m_LightGreenBrush">
+            <summary>
+            淡绿
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.FormatStyle.m_DarkGreyBrush">
+            <summary>
+            深灰
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.FormatStyle.m_MediumGreySolidBrush">
+            <summary>
+            中灰
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.FormatStyle.m_HalfPGreySolidBrush">
+            <summary>
+            50%灰
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.FormatStyle.m_YellowBrush">
+            <summary>
+            黄色
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.FormatStyle.m_OrangeBrush">
+            <summary>
+            桔黄色
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.FormatStyle.m_RedBrush">
+            <summary>
+            红色
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.FormatStyle.m_BlueBrush">
+            <summary>
+            蓝色
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.FormatStyle.m_GreyBrush">
+            <summary>
+            浅灰
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.FormatStyle.m_GreenBrush">
+            <summary>
+            绿色
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.FormatStyle.m_BgrBursh">
+            <summary>
+            白灰
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.FormatStyle.m_ThinBlue">
+             <summary>
+            淡蓝色
+             </summary>
+        </member>
+        <member name="P:Urban.Wuxi.TMS.FormatStyle.Scale">
+            <summary>
+            比例尺寸
+            </summary>
+        </member>
+        <member name="P:Urban.Wuxi.TMS.FormatStyle.ScreenMoveX">
+            <summary>
+            屏横向移动像素
+            </summary>
+        </member>
+        <member name="P:Urban.Wuxi.TMS.FormatStyle.ScreenMoveY">
+            <summary>
+            屏纵向移动像素
+            </summary>
+        </member>
+        <member name="T:Urban.Wuxi.TMS.黑屏.BlackScreenClosed">
+            <summary>
+            关闭显示器黑屏
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.黑屏.BlackScreenClosed.InitData">
+            <summary>
+            初始化坐标、数组、热区
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.黑屏.BlackScreenClosed.m_BoolIds">
+            <summary>
+            bool逻辑号
+            </summary>
+        </member>
+        <member name="F:Urban.Wuxi.TMS.黑屏.BlackScreenClosed.m_FoolatIds">
+            <summary>
+            float逻辑号
+            </summary>
+        </member>
+        <member name="T:Urban.Wuxi.TMS.黑屏.BlackScreenClassOver">
+            <summary>
+            课程结束黑屏
+            </summary>
+        </member>
+        <member name="M:Urban.Wuxi.TMS.黑屏.BlackScreenClassOver.InitData">
+            <summary>
+            初始化坐标、数组、热区
+            </summary>
+        </member>
+    </members>
+</doc>

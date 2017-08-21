@@ -1,0 +1,652 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CAE17752-3CC6-4DE4-AD0D-CF73E561B1D2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Engine.TAX2.SS7C</RootNamespace>
+    <AssemblyName>Engine.TAX2.SS7C</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\MMI\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Engine.TAX2.SS7C.WPFApp.App</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonUtil, Version=2.29.2016.517, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="DevExpress.Data.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Core.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.PropertyGrid.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Excel.Interface, Version=2.30.2016.712, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Practices.Prism, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.Prism.MefExtensions, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="MMI.Facility.Interface, Version=2.30.2016.713, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\Platform\MMI.Facility.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="MMI.Facility.WPFInfrastructure, Version=2.28.2016.929, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\Platform\MMI.Facility.WPFInfrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="WPFApp\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Resources\Base\SS7CBaseResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Converter\SS7CConverterResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Image\SS7CImageResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\SS7CResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Strings\StringResource_CH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\ProgressStyleResource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Styles\SS7CButtonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\SS7CContentControlStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\SS7CListControlStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\SS7CPanelStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\SS7CTxtStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Buttons\ContentDownButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Buttons\ContentUpButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Buttons\HardwareButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Common\NullView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Common\DegreeIndicator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\ModifyTimeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\RootContentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\SecondLevel\FaultSerachView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\SecondLevel\InputPasswordView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\SecondLevel\MonitorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\SecondLevel\ParamSetView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\SecondLevel\ParamSet\Detail\WaitGettingDataView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\SecondLevel\ParamSet\SetAccDataView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\SecondLevel\ParamSet\SetMonitorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\SecondLevel\ParamSet\SetWheelRView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\SecondLevel\SelfCheckView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\SecondLevel\WelcomView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\TrainState\TAX2Info\CommunicationFailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\TrainState\TAX2Info\TestDMISView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\TrainState\TAX2Info\TestPantographView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\TrainState\TAX2Info\TestRailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\TrainState\TAX2Info\TestTMISView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\TrainState\TAX2Info\TestSoundRecordeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\TrainState\TAX2Info\TestSuonaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\TrainState\TAX2Info\TestTMView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\TrainState\TAX2Info\TestWalkView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\TrainState\TrainStateRoot2View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\TrainState\TrainStateRootView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DataMonitor\DataMonitorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DataMonitor\DataMonitorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Layout\ShellContentStyle1Layout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Layout\ShellContentStyle2Layout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shell\ShellWithButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shell\ShellWithoutButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shell\TAX2SS7CShell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Adapter\Detail\UpdateBtnProvider.cs" />
+    <Compile Include="Adapter\Detail\UpdateTrainInfoProvider.cs" />
+    <Compile Include="Adapter\Detail\UpdateTrainStateProvider.cs" />
+    <Compile Include="Adapter\Detail\UpdateTruckStateProvider.cs" />
+    <Compile Include="Adapter\IUpdateDataProvider.cs" />
+    <Compile Include="Adapter\SS7CAdapter.cs" />
+    <Compile Include="Adapter\UpdateDataProviderBase.cs" />
+    <Compile Include="Constant\RegionNames.cs" />
+    <Compile Include="Controller\BtnActionResponser\BtnActionResponserBase.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeLightActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToLevel2FaultSerachActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToLevel2InputPasswordActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToLevel2MonitorActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToLevel2ParamSetAccDataActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToLevel2ParamSetActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToLevel2ParamSetMonitoActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToLevel2ParamSetMonitoNextItemActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToLevel2ParamSetMonitoOkReturnActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToLevel2ParamSetMonitoSeletCurrentActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToLevel2ParamSetWheelRActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToLevel2SelfCheckActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToLevel2WelcomActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToModifyTimeActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToSoundRecordeActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToTAX2ActionResponserBase.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToTAX2InfoActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToTestDMISActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToTestPantographActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToTestRailActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToTestTMISActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToTestSuonaActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToTestTMActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToTestWalkActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToTrainInfo2ActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToTrainStateActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\DecreaseAccDataActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ExistTAX2ActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ModifyTimeReturnActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\MoveAccDataCaretLeftActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\MoveAccDataCaretRightActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\MoveCaretLeftInInputPasswordActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\MoveCaretLeftInMonitorDataSetdActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\MoveCaretLeftInWheelRSetdActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\MoveCaretRightInInputPasswordActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\MoveCaretRightInMonitorDataSetdActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\MoveCaretRightInWheelRSetdActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\OkSetAccDataReturnActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\PasswordChangeActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\PasswordOkActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ReturnActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ReturnToRootActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\SelectNextAccDataActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\SelectPassworkKeybordDownActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\SelectPassworkKeybordLeftActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\SelectPassworkKeybordRightActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\SelectPassworkKeybordUpActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\SetAccDataReturnActionResponser.cs" />
+    <Compile Include="Controller\BtnStragy\StateInterfaceFactory.cs" />
+    <Compile Include="Controller\Domain\ModifyTimeController.cs" />
+    <Compile Include="Controller\Domain\OtherController.cs" />
+    <Compile Include="Controller\Domain\SecondLevel\InputPasswordController.cs" />
+    <Compile Include="Controller\Domain\SecondLevel\SetAccDataController.cs" />
+    <Compile Include="Controller\Domain\SecondLevel\SetMonitorController.cs" />
+    <Compile Include="Controller\Domain\SecondLevel\SetWhellRController.cs" />
+    <Compile Include="Controller\Domain\TAX2\CheckDMISContrller.cs" />
+    <Compile Include="Controller\Domain\TAX2\CheckPantographContrller.cs" />
+    <Compile Include="Controller\Domain\TAX2\CheckSonaContrller.cs" />
+    <Compile Include="Controller\Domain\TAX2\CheckTMISContrller.cs" />
+    <Compile Include="Controller\Domain\TAX2\CheckTrackContrller.cs" />
+    <Compile Include="Controller\Domain\TAX2\CheckTrainControlContrller.cs" />
+    <Compile Include="Controller\Domain\TAX2\CheckWalkContrller.cs" />
+    <Compile Include="Controller\Domain\TAX2\CheckSoundContrller.cs" />
+    <Compile Include="Controller\Domain\TAX2\TAXController.cs" />
+    <Compile Include="Controller\Domain\TrainStateController.cs" />
+    <Compile Include="Controller\SS7CController.cs" />
+    <Compile Include="Converter\PasswordToMaskStringConverter.cs" />
+    <Compile Include="Converter\TargetDistanceScalLengthToLineTicknessConverter.cs" />
+    <Compile Include="Converter\DownBtnContentToShowingContentConverter.cs" />
+    <Compile Include="Converter\StringNullToTargetStringConverter.cs" />
+    <Compile Include="Converter\TimespanToRunningTimeConverter.cs" />
+    <Compile Include="Events\CurrentTAXStateChangedEvent.cs" />
+    <Compile Include="Events\AsyncNavigateToByStateInterfaceKeyEvent.cs" />
+    <Compile Include="Events\DomainmodelLazyValueCreatedEvent.cs" />
+    <Compile Include="Events\ResetRunningTimeEvent.cs" />
+    <Compile Include="Extension\CommunicationDataExtension.cs" />
+    <Compile Include="Extension\DomainmodelLazyValueCreatedEventExtension.cs" />
+    <Compile Include="Extension\TAX2CommunicationStateExtensnio.cs" />
+    <Compile Include="Model\ConfigModel\ContentViewLocation.cs" />
+    <Compile Include="Model\ConfigModel\SetAccDataItemConfig.cs" />
+    <Compile Include="Model\ConfigModel\SetMonitorItemConfig.cs" />
+    <Compile Include="Model\ConfigModel\TrainInfoPage2Config.cs" />
+    <Compile Include="Model\Domain\Constant\AbnormalState.cs" />
+    <Compile Include="Model\Domain\Constant\AssistSystemInfoState.cs" />
+    <Compile Include="Model\Domain\Constant\FeedbackFlag.cs" />
+    <Compile Include="Model\Domain\Constant\CutoffState.cs" />
+    <Compile Include="Model\Domain\Constant\StartType.cs" />
+    <Compile Include="Model\Domain\Constant\TAX2CommunicationState.cs" />
+    <Compile Include="Model\Domain\Constant\WorkState.cs" />
+    <Compile Include="Model\Domain\Details\ModifyTimeModel.cs" />
+    <Compile Include="Model\Domain\Details\PowerSupplyUnit.cs" />
+    <Compile Include="Model\Domain\OtherModel.cs" />
+    <Compile Include="Model\Domain\Details\TrainState2Item.cs" />
+    <Compile Include="Model\Domain\SecondLevel\Details\AccDataItem.cs" />
+    <Compile Include="Model\Domain\SecondLevel\InputPasswordModel.cs" />
+    <Compile Include="Model\Domain\SecondLevel\Details\MonitorItem.cs" />
+    <Compile Include="Model\Domain\SecondLevel\SetAccDataModel.cs" />
+    <Compile Include="Model\Domain\SecondLevel\SetMonitorModel.cs" />
+    <Compile Include="Model\Domain\SecondLevel\SetWhellRModel.cs" />
+    <Compile Include="Model\Domain\TrainInfoModel.cs" />
+    <Compile Include="Model\Domain\TrainState\Detail\TruckState.cs" />
+    <Compile Include="Model\Domain\TrainState\TAX\Detail\AixeTemperItem.cs" />
+    <Compile Include="Model\Domain\TrainState\TAX\CheckDMISModel.cs" />
+    <Compile Include="Model\Domain\TrainState\TAX\CheckPantographModel.cs" />
+    <Compile Include="Model\Domain\TrainState\TAX\CheckSonaModel.cs" />
+    <Compile Include="Model\Domain\TrainState\TAX\CheckTMISModel.cs" />
+    <Compile Include="Model\Domain\TrainState\TAX\CheckTrackModel.cs" />
+    <Compile Include="Model\Domain\TrainState\TAX\CheckTrainControlModel.cs" />
+    <Compile Include="Model\Domain\TrainState\TAX\CheckWalkModel.cs" />
+    <Compile Include="Model\Domain\TrainState\TAX\CheckSoundModel.cs" />
+    <Compile Include="Model\Domain\TrainState\TAX\ITAXCommunicationStateProvider.cs" />
+    <Compile Include="Model\Domain\TrainState\TAX\TAXModel.cs" />
+    <Compile Include="Model\Domain\TrainState\TAX\TAXModelBase.cs" />
+    <Compile Include="Model\Domain\TrainState\TrainStateModel.cs" />
+    <Compile Include="Model\GlobalTimer.cs" />
+    <Compile Include="Model\Interface\IResetSupport.cs" />
+    <Compile Include="Model\Interface\ITargitDistanceScale.cs" />
+    <Compile Include="Model\Interface\ITargitDistanceScaleItem.cs" />
+    <Compile Include="Model\ViewSource\KeybordStrings.cs" />
+    <Compile Include="Model\ViewSource\LineTargetDistanceScale.cs" />
+    <Compile Include="Resources\Image\ImageResourceCreate.cs" />
+    <Compile Include="Resources\Keys\InB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InB.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Keys\Inf.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Inf.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Keys\StateKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StateKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SS7CTAX2MefBootstrapper.cs" />
+    <Compile Include="SS7CTCMSSubystem.cs" />
+    <Compile Include="Model\BtnStragy\ActionResponserExportAttribute.cs" />
+    <Compile Include="Model\BtnStragy\BtnItem.cs" />
+    <Compile Include="Model\BtnStragy\IBtnActionResponser.cs" />
+    <Compile Include="Model\BtnStragy\IStateInterface.cs" />
+    <Compile Include="Model\BtnStragy\IStateInterfaceFactory.cs" />
+    <Compile Include="Model\BtnStragy\StateInterface.cs" />
+    <Compile Include="Model\BtnStragy\StateInterfaceExportAttribute.cs" />
+    <Compile Include="Model\BtnStragy\StateInterfaceKey.cs" />
+    <Compile Include="Model\ConfigModel\StateInterfaceItem.cs" />
+    <Compile Include="Model\GlobalParam.cs" />
+    <Compile Include="Model\IRaiseResourceChangedProvider.cs" />
+    <Compile Include="Model\SS7CModel.cs" />
+    <Compile Include="Controller\HardwareBtnController.cs" />
+    <Compile Include="Model\HardwareBtnModel.cs" />
+    <Compile Include="ViewModel\Domain\OtherViewModel.cs" />
+    <Compile Include="ViewModel\Domain\SecondLevelViewModel.cs" />
+    <Compile Include="ViewModel\Domain\SecondLevel\InputPasswordViewModel.cs" />
+    <Compile Include="ViewModel\Domain\SecondLevel\SetAccDataViewModel.cs" />
+    <Compile Include="ViewModel\Domain\SecondLevel\SetMonitorViewModel.cs" />
+    <Compile Include="ViewModel\Domain\SecondLevel\SetWhellRViewModel.cs" />
+    <Compile Include="ViewModel\Domain\TAX2Info\CheckDMISViewModel.cs" />
+    <Compile Include="ViewModel\Domain\TAX2Info\CheckPantographViewModel.cs" />
+    <Compile Include="ViewModel\Domain\TAX2Info\CheckSonaViewModel.cs" />
+    <Compile Include="ViewModel\Domain\TAX2Info\CheckSoundViewModel.cs" />
+    <Compile Include="ViewModel\Domain\TAX2Info\CheckTMISViewModel.cs" />
+    <Compile Include="ViewModel\Domain\TAX2Info\CheckTrackViewModel.cs" />
+    <Compile Include="ViewModel\Domain\TAX2Info\CheckTrainControlViewModel.cs" />
+    <Compile Include="ViewModel\Domain\TAX2Info\CheckWalkViewModel.cs" />
+    <Compile Include="ViewModel\Domain\TAX2ViewModel.cs" />
+    <Compile Include="ViewModel\Domain\TrainStateViewModel.cs" />
+    <Compile Include="ViewModel\HardwareBtnViewModel.cs" />
+    <Compile Include="ViewModel\SS7CViewModel.cs" />
+    <Compile Include="ViewModel\Domain\TrainInfoViewModel.cs" />
+    <Compile Include="View\Buttons\ContentDownButton.xaml.cs">
+      <DependentUpon>ContentDownButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Buttons\ContentUpButton.xaml.cs">
+      <DependentUpon>ContentUpButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Buttons\HardwareButton.xaml.cs">
+      <DependentUpon>HardwareButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\TAX2ViewInfoAttached.cs" />
+    <Compile Include="View\Common\TextBoxAttached.cs" />
+    <Compile Include="View\Common\NullView.xaml.cs">
+      <DependentUpon>NullView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\DegreeIndicator.xaml.cs">
+      <DependentUpon>DegreeIndicator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\ModifyTimeView.xaml.cs">
+      <DependentUpon>ModifyTimeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\RootContentView.xaml.cs">
+      <DependentUpon>RootContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\SecondLevel\FaultSerachView.xaml.cs">
+      <DependentUpon>FaultSerachView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\SecondLevel\InputPasswordView.xaml.cs">
+      <DependentUpon>InputPasswordView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\SecondLevel\MonitorView.xaml.cs">
+      <DependentUpon>MonitorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\SecondLevel\ParamSetView.xaml.cs">
+      <DependentUpon>ParamSetView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\SecondLevel\ParamSet\Detail\WaitGettingDataView.xaml.cs">
+      <DependentUpon>WaitGettingDataView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\SecondLevel\ParamSet\SetAccDataView.xaml.cs">
+      <DependentUpon>SetAccDataView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\SecondLevel\ParamSet\SetMonitorView.xaml.cs">
+      <DependentUpon>SetMonitorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\SecondLevel\ParamSet\SetWheelRView.xaml.cs">
+      <DependentUpon>SetWheelRView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\SecondLevel\SelfCheckView.xaml.cs">
+      <DependentUpon>SelfCheckView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\SecondLevel\WelcomView.xaml.cs">
+      <DependentUpon>WelcomView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\TrainState\TAX2Info\CommunicationFailView.xaml.cs">
+      <DependentUpon>CommunicationFailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\TrainState\TAX2Info\TestDMISView.xaml.cs">
+      <DependentUpon>TestDMISView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\TrainState\TAX2Info\TestPantographView.xaml.cs">
+      <DependentUpon>TestPantographView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\TrainState\TAX2Info\TestRailView.xaml.cs">
+      <DependentUpon>TestRailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\TrainState\TAX2Info\TestTMISView.xaml.cs">
+      <DependentUpon>TestTMISView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\TrainState\TAX2Info\TestSoundRecordeView.xaml.cs">
+      <DependentUpon>TestSoundRecordeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\TrainState\TAX2Info\TestSuonaView.xaml.cs">
+      <DependentUpon>TestSuonaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\TrainState\TAX2Info\TestTMView.xaml.cs">
+      <DependentUpon>TestTMView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\TrainState\TAX2Info\TestWalkView.xaml.cs">
+      <DependentUpon>TestWalkView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\TrainState\TrainStateRoot2View.xaml.cs">
+      <DependentUpon>TrainStateRoot2View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\TrainState\TrainStateRootView.xaml.cs">
+      <DependentUpon>TrainStateRootView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DataMonitor\DataMonitorView.xaml.cs">
+      <DependentUpon>DataMonitorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DataMonitor\DataMonitorWindow.xaml.cs">
+      <DependentUpon>DataMonitorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Layout\ShellContentStyle1Layout.xaml.cs">
+      <DependentUpon>ShellContentStyle1Layout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Layout\ShellContentStyle2Layout.xaml.cs">
+      <DependentUpon>ShellContentStyle2Layout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shell\ShellWithButton.xaml.cs">
+      <DependentUpon>ShellWithButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shell\ShellWithoutButton.xaml.cs">
+      <DependentUpon>ShellWithoutButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shell\SS7CForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Shell\SS7CForm.Designer.cs">
+      <DependentUpon>SS7CForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TopAdorner\LightTopAdorner.xaml.cs">
+      <DependentUpon>LightTopAdorner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFApp\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\Shell\TAX2SS7CShell.xaml.cs">
+      <DependentUpon>TAX2SS7CShell.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\TopAdorner\LightTopAdorner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Keys\InB.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InB.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Keys\Inf.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Inf.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Keys\StateKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StateKeys.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Shell\SS7CForm.resx">
+      <DependentUpon>SS7CForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="WPFApp\App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Changes.Engine.TAX2.SS7C.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Behavior\" />
+    <Folder Include="Resources\Image\Detail\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

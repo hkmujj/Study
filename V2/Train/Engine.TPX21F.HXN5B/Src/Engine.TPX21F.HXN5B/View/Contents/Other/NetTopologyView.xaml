@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="Engine.TPX21F.HXN5B.View.Contents.Other.NetTopologyView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:common="clr-namespace:Engine.TPX21F.HXN5B.View.Common"
+             xmlns:constant="clr-namespace:Engine.TPX21F.HXN5B.Constant"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:designData="clr-namespace:Engine.TPX21F.HXN5B.Model.ViewSource.DesignData"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:regions="http://www.codeplex.com/CompositeWPF"
+             xmlns:view="clr-namespace:MMI.Facility.WPFInfrastructure.View;assembly=MMI.Facility.WPFInfrastructure"
+             xmlns:viewModel="clr-namespace:Engine.TPX21F.HXN5B.ViewModel"
+             xmlns:viewSource="clr-namespace:Engine.TPX21F.HXN5B.Model.ViewSource"
+             Background="{StaticResource ContentBackgroundBrush}"
+             d:DataContext="{d:DesignInstance viewModel:HXN5BViewModel}"
+             d:DesignHeight="495"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <Grid>
+        <!--<Image VerticalAlignment="Top" Source="{StaticResource Img网络拓扑}" />-->
+        <Canvas d:DesignHeight="495" d:DesignWidth="800">
+            <Path Height="32.998"
+                  Margin="59.749,84.252,118.75,0"
+                  VerticalAlignment="Top"
+                  Data="M59.749597,84.354298 L59.75,93.5 227,93.5 227.125,117.04959 239.25,117.29132 239.12419,93 583,93.625 582.875,116.27066 595.6254,116.39566 595.625,93.25 681.125,93.375 681.25,84.233447 z"
+                  Fill="White"
+                  Stretch="Fill" />
+            <Path Canvas.Left="56"
+                  Canvas.Top="151.25"
+                  Width="654.5"
+                  Height="113.75"
+                  Data="M2,41.484375 L2,111 M2,43.5 L652.5,43 M88.75,42 L88.75,111 M166.5,42 L166.5,111 M255.5,42 L255.5,111 M345,42 L345,111 M427.5,42 L427.5,111 M504,42 L504,111 M580.5,42 L580.5,111 M652.5,41.375 L652.5,111.75 M118.5,3.625 L118.25,42.25 M478.25,2 L478.5,43.25"
+                  Stretch="Fill"
+                  Stroke="Red"
+                  StrokeThickness="4" />
+            <Path Canvas.Left="57.625"
+                  Canvas.Top="50.427"
+                  Width="623.129"
+                  Height="68.073"
+                  Data="M59.871393,52.364052 L59.621393,62.298361 168.8726,62.037412 168.8726,116 181.90946,116.16667 182.05496,62.287369 523.25063,61.942112 523.50061,116.24966 535.50063,116.49966 535.19846,61.899843 678.75877,61.897146 678.50877,53.897188 z"
+                  Fill="White"
+                  Stretch="Fill" />
+            <Path Canvas.Left="77.004"
+                  Canvas.Top="151.75"
+                  Width="665.988"
+                  Height="114.25"
+                  Data="M0.99999722,74.75 L663.00002,74.666667 M3,76.000006 L3,112.24999 M89.75,75.5 L89.75,111.75 M153.75,2.75 L153.66667,73.749995 M171.25,74.500003 L171.25,110.75 M260.5,75.5 L260.5,111.75 M353.5,75.5 L353.5,111.75 M436.5,75.5 L436.5,111.75 M513,2 L513.12499,111.25 M588,74.5 L588,110.75 M661,75.5 L661,111.75"
+                  Stretch="Fill"
+                  Stroke="Blue"
+                  StrokeThickness="4" />
+
+
+        </Canvas>
+    </Grid>
+
+</UserControl>

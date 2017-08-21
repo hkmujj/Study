@@ -1,0 +1,138 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:common="clr-namespace:Engine.TAX2.SS7C.View.Common"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    mc:Ignorable="d">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Base/SS7CBaseResource.xaml" />
+        <ResourceDictionary Source="../Converter/SS7CConverterResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="ContentUpBtnStyle" TargetType="Button">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="{StaticResource ContentTextBlackBrush}" />
+            <Setter Property="Background" Value="{StaticResource ContentBackgroundBrush}" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Margin" Value="3" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+
+                        <Border x:Name="Part_Border"
+                                Width="{TemplateBinding Width}"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{StaticResource ForegroundWhiteBrush}"
+                                BorderThickness="2"
+                                CornerRadius="2"
+                                SnapsToDevicePixels="True">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Ellipse Height="{Binding RelativeSource={RelativeSource Self},
+                                                          Path=ActualWidth}"
+                                         Margin="3"
+                                         Fill="{Binding RelativeSource={RelativeSource AncestorType=Button},
+                                                        Path=(common:TAX2ViewInfoAttached.CommunicationState),
+                                                        Converter={StaticResource TAX2CommunicationStateToEllipseForegroundConverter}}"
+                                         Stroke="Black"
+                                         Visibility="{Binding RelativeSource={RelativeSource AncestorType=Button},
+                                                              Path=(common:TAX2ViewInfoAttached.CommunicationState),
+                                                              Converter={StaticResource TAX2CommunicationStateToEllipseVisibleConverter}}" />
+                                <ContentPresenter Grid.Column="1"
+                                                  Margin="{TemplateBinding Padding}"
+                                                  HorizontalAlignment="Left"
+                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                  Focusable="False"
+                                                  RecognizesAccessKey="True"
+                                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                            </Grid>
+
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="common:TAX2ViewInfoAttached.IsSelected" Value="true">
+                                <Trigger.Setters>
+                                    <Setter TargetName="Part_Border" Property="Background" Value="Yellow" />
+                                </Trigger.Setters>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="ContentDownBtnStyle" TargetType="Button">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="{StaticResource ContentTextBlackBrush}" />
+            <Setter Property="Background" Value="{StaticResource ContentBackgroundBrush}" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Margin" Value="3" />
+            <Setter Property="Padding" Value="12,0" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{StaticResource ForegroundWhiteBrush}"
+                                BorderThickness="2"
+                                CornerRadius="2"
+                                SnapsToDevicePixels="True">
+                            <ContentPresenter Margin="{TemplateBinding Padding}"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Focusable="False"
+                                              RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="HardwareBtnStyle" TargetType="Button">
+        <Style.Setters>
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Foreground" Value="{StaticResource HarwareButtonWhiteBrush}" />
+            <Setter Property="BorderBrush" Value="{StaticResource HarwareButtonWhiteBrush}" />
+            <Setter Property="Background" Value="{StaticResource ShellBackgroundBrush}" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="Width" Value="57" />
+            <Setter Property="Height" Value="57" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="10"
+                                SnapsToDevicePixels="true">
+                            <ContentPresenter Margin="{TemplateBinding Padding}"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Focusable="False"
+                                              RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="border" Property="Background" Value="{StaticResource HarwareButtonPressedBackground}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style.Setters>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,277 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:common="clr-namespace:Urban.GuiYang.DDU.View.Common"
+                    xmlns:constant="clr-namespace:Urban.GuiYang.DDU.Model.Constant">
+
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Urban.GuiYang.DDU;component/Resources/GuiYangDDUResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="{x:Type common:ImageButton}">
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="Margin" Value="2" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontFamily" Value="{StaticResource FontFamilySongTypeface}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="common:ImageButton">
+                    <BulletDecorator Background="Transparent">
+                        <Border x:Name="bd"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch">
+                            <ContentPresenter Width="{TemplateBinding Width}"
+                                              Height="{TemplateBinding Height}"
+                                              Margin="{TemplateBinding Padding}"
+                                              HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              Content="{TemplateBinding Content}" />
+                        </Border>
+                    </BulletDecorator>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="False">
+                            <Trigger.Setters>
+                                <Setter TargetName="bd" Property="Background">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="{Binding RelativeSource={RelativeSource AncestorType=common:ImageButton}, Path=RelasedImage}" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger.Setters>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.Setters>
+                                <Setter TargetName="bd" Property="Background">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="{Binding RelativeSource={RelativeSource AncestorType=common:ImageButton}, Path=PressedImage}" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger.Setters>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style TargetType="{x:Type common:NavigationRadioButton}">
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="Margin" Value="2" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontFamily" Value="{StaticResource FontFamilySongTypeface}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="common:NavigationRadioButton">
+                    <BulletDecorator Background="Transparent">
+                        <Border x:Name="bd"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch"
+                                Padding="12">
+                            <ContentPresenter Margin="{TemplateBinding Padding}"
+                                              HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              Content="{TemplateBinding Content}" />
+                        </Border>
+                    </BulletDecorator>
+                    <ControlTemplate.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Setters>
+                                <Setter TargetName="bd" Property="Background">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="{StaticResource ImgNavigationButtonNoSelected}" />
+                                    </Setter.Value>
+                                </Setter>
+                            </MultiTrigger.Setters>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsChecked" Value="false" />
+                                <Condition Property="State" Value="{x:Static constant:NavigationButtonState.Normal}" />
+                            </MultiTrigger.Conditions>
+                        </MultiTrigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Setters>
+                                <Setter TargetName="bd" Property="Background">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="{StaticResource ImgNavigationFaultNoSelected}" />
+                                    </Setter.Value>
+                                </Setter>
+                            </MultiTrigger.Setters>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsChecked" Value="false" />
+                                <Condition Property="State" Value="{x:Static constant:NavigationButtonState.Fault}" />
+                            </MultiTrigger.Conditions>
+                        </MultiTrigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Setters>
+                                <Setter TargetName="bd" Property="Background">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="{StaticResource ImgNavigationWarningNoSelected}" />
+                                    </Setter.Value>
+                                </Setter>
+                            </MultiTrigger.Setters>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsChecked" Value="false" />
+                                <Condition Property="State" Value="{x:Static constant:NavigationButtonState.Warning}" />
+                            </MultiTrigger.Conditions>
+                        </MultiTrigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Setters>
+                                <Setter TargetName="bd" Property="Background">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="{StaticResource ImgNavigationButtonSelected}" />
+                                    </Setter.Value>
+                                </Setter>
+                            </MultiTrigger.Setters>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsChecked" Value="true" />
+                                <Condition Property="State" Value="{x:Static constant:NavigationButtonState.Normal}" />
+                            </MultiTrigger.Conditions>
+                        </MultiTrigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Setters>
+                                <Setter TargetName="bd" Property="Background">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="{StaticResource ImgNavigationFaultSelected}" />
+                                    </Setter.Value>
+                                </Setter>
+                            </MultiTrigger.Setters>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsChecked" Value="true" />
+                                <Condition Property="State" Value="{x:Static constant:NavigationButtonState.Fault}" />
+                            </MultiTrigger.Conditions>
+                        </MultiTrigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Setters>
+                                <Setter TargetName="bd" Property="Background">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="{StaticResource ImgNavigationWarningSelected}" />
+                                    </Setter.Value>
+                                </Setter>
+                            </MultiTrigger.Setters>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsChecked" Value="true" />
+                                <Condition Property="State" Value="{x:Static constant:NavigationButtonState.Warning}" />
+                            </MultiTrigger.Conditions>
+                        </MultiTrigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type common:NavigationButton}">
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="Margin" Value="2" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontFamily" Value="{StaticResource FontFamilySongTypeface}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Padding" Value="14,12" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="common:NavigationButton">
+                    <BulletDecorator Background="Transparent">
+                        <Border x:Name="bd"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch">
+                            <ContentPresenter Margin="{TemplateBinding Padding}"
+                                              HorizontalAlignment="Center"
+                                              VerticalAlignment="Center" />
+                        </Border>
+                    </BulletDecorator>
+                    <ControlTemplate.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Setters>
+                                <Setter TargetName="bd" Property="Background">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="{StaticResource ImgNavigationButtonNoSelected}" />
+                                    </Setter.Value>
+                                </Setter>
+                            </MultiTrigger.Setters>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsPressed" Value="false" />
+                                <Condition Property="State" Value="{x:Static constant:NavigationButtonState.Normal}" />
+                            </MultiTrigger.Conditions>
+                        </MultiTrigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Setters>
+                                <Setter TargetName="bd" Property="Background">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="{StaticResource ImgNavigationFaultNoSelected}" />
+                                    </Setter.Value>
+                                </Setter>
+                            </MultiTrigger.Setters>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsPressed" Value="false" />
+                                <Condition Property="State" Value="{x:Static constant:NavigationButtonState.Fault}" />
+                            </MultiTrigger.Conditions>
+                        </MultiTrigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Setters>
+                                <Setter TargetName="bd" Property="Background">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="{StaticResource ImgNavigationWarningNoSelected}" />
+                                    </Setter.Value>
+                                </Setter>
+                            </MultiTrigger.Setters>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsPressed" Value="false" />
+                                <Condition Property="State" Value="{x:Static constant:NavigationButtonState.Warning}" />
+                            </MultiTrigger.Conditions>
+                        </MultiTrigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Setters>
+                                <Setter TargetName="bd" Property="Background">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="{StaticResource ImgNavigationButtonSelected}" />
+                                    </Setter.Value>
+                                </Setter>
+                            </MultiTrigger.Setters>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsPressed" Value="true" />
+                                <Condition Property="State" Value="{x:Static constant:NavigationButtonState.Normal}" />
+                            </MultiTrigger.Conditions>
+                        </MultiTrigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Setters>
+                                <Setter TargetName="bd" Property="Background">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="{StaticResource ImgNavigationFaultSelected}" />
+                                    </Setter.Value>
+                                </Setter>
+                            </MultiTrigger.Setters>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsPressed" Value="true" />
+                                <Condition Property="State" Value="{x:Static constant:NavigationButtonState.Fault}" />
+                            </MultiTrigger.Conditions>
+                        </MultiTrigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Setters>
+                                <Setter TargetName="bd" Property="Background">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="{StaticResource ImgNavigationWarningSelected}" />
+                                    </Setter.Value>
+                                </Setter>
+                            </MultiTrigger.Setters>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsPressed" Value="true" />
+                                <Condition Property="State" Value="{x:Static constant:NavigationButtonState.Warning}" />
+                            </MultiTrigger.Conditions>
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

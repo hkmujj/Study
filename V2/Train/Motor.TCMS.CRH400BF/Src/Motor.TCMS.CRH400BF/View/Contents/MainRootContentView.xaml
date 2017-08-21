@@ -1,0 +1,596 @@
+﻿<UserControl
+    x:Class="Motor.TCMS.CRH400BF.View.Contents.MainRootContentView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+    xmlns:local="clr-namespace:Motor.TCMS.CRH400BF.View.Contents"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="clr-namespace:Motor.TCMS.CRH400BF.ViewModel"
+    xmlns:viewSource="clr-namespace:Motor.TCMS.CRH400BF.Model.ViewSource"
+    d:DataContext="{d:DesignInstance {x:Type viewModel:DomainViewModel}}"
+    d:DesignHeight="400"
+    d:DesignWidth="800"
+    Background="Black"
+    mc:Ignorable="d">
+    <Grid Width="800" HorizontalAlignment="Right">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15*" />
+            <RowDefinition Height="110*" />
+            <RowDefinition Height="265*" />
+            <RowDefinition Height="10*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="1">
+            <StackPanel
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Orientation="Horizontal">
+                <TextBlock
+                    VerticalAlignment="Center"
+                    Foreground="White"
+                    Text="CR400BF"
+                    TextAlignment="Right" />
+                <TextBlock
+                    VerticalAlignment="Center"
+                    Foreground="White"
+                    Text="-"
+                    TextAlignment="Left" />
+                <TextBlock
+                    VerticalAlignment="Center"
+                    Foreground="White"
+                    Text="0207"
+                    TextAlignment="Left" />
+            </StackPanel>
+        </Grid>
+
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="0"
+            Margin="78,9,27,79"
+            VerticalAlignment="Center "
+            FontSize="16"
+            Foreground="White "
+            Text="网 压 (kV)"
+            TextAlignment="Center" />
+        <Grid
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Grid.Column="0"
+            Margin="40,0,50,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="3*" />
+            </Grid.RowDefinitions>
+            <Border
+                Grid.Row="1"
+                Grid.RowSpan="2"
+                Grid.ColumnSpan="2"
+                Margin="35,258,2,0"
+                BorderBrush="White"
+                BorderThickness="0,0,2,0"
+                RenderTransformOrigin="1.225,0.483" />
+            <TextBlock
+                Grid.Row="1"
+                Grid.RowSpan="2"
+                Height="29"
+                Margin="0,258,20,61"
+                VerticalAlignment="Center"
+                FontSize="14"
+                Foreground="White"
+                Text="17.5"
+                TextAlignment="Left" />
+            <ItemsControl
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Margin="0,0,0,10"
+                ItemsSource="{Binding TargitDistanceScaleItems, Source={x:Static viewSource:MainNetVRoteRateScale.Instance}}"
+                Style="{StaticResource ItemNetVStyle}" />
+            <ProgressBar
+                Grid.Row="1"
+                Grid.Column="2"
+                Maximum="14.5"
+                Style="{StaticResource ProgressBarStyle}"
+                Value="{Binding TrainViewModel.Model.TouchNetV1}" />
+
+            <Border
+                Grid.Row="2"
+                Grid.ColumnSpan="2"
+                Margin="32,0,2,0"
+                BorderBrush="White"
+                BorderThickness="0,2,0,0"
+                RenderTransformOrigin="1.225,0.483" />
+
+            <Border
+                Grid.Row="2"
+                Grid.Column="1"
+                Grid.ColumnSpan="3"
+                BorderBrush="White"
+                BorderThickness="0,0,0,1" />
+
+
+            <ProgressBar
+                Grid.Row="2"
+                Grid.Column="2"
+                Maximum="17.5"
+                Style="{StaticResource ProgressBarStyle}"
+                Value="{Binding TrainViewModel.Model.TouchNetV}" />
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Line
+                Stroke="Red"
+                StrokeThickness="3"
+                X1="145"
+                X2="95"
+                Y1="45"
+                Y2="45" />
+            <Line
+                Stroke="Green"
+                StrokeThickness="3"
+                X1="145"
+                X2="95"
+                Y1="55.5"
+                Y2="55.5" />
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20*" />
+                <RowDefinition Height="45*" />
+                <RowDefinition Height="45*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.0*" />
+                <ColumnDefinition Width="1.2*" />
+                <ColumnDefinition Width="1.1*" />
+                <ColumnDefinition Width="2.7*" />
+                <ColumnDefinition Width="1.1*" />
+                <ColumnDefinition Width="2.1*" />
+                <ColumnDefinition Width="0.8*" />
+            </Grid.ColumnDefinitions>
+            <Image
+                Grid.RowSpan="3"
+                Grid.Column="0"
+                Margin="0,0,0,15"
+                Source="{StaticResource Img钥匙}"
+                Visibility="{Binding TrainViewModel.Model.FirstDriverRoom, Converter={StaticResource BoolVisibilityConverter}}" />
+            <Image
+                Grid.RowSpan="3"
+                Grid.Column="5"
+                Grid.ColumnSpan="2"
+                Margin="75,0,0,15"
+                Source="{StaticResource Img钥匙}"
+                Visibility="{Binding TrainViewModel.Model.EighthDriverRoom, Converter={StaticResource BoolVisibilityConverter}}" />
+            <ed:BlockArrow
+                Grid.Row="0"
+                Grid.RowSpan="2"
+                Grid.Column="0"
+                Height="20"
+                Margin="10,6,10,0"
+                VerticalAlignment="Top"
+                Fill="LawnGreen"
+                Orientation="Left"
+                RenderTransformOrigin="0.1,0.072"
+                Stroke="Black"
+                Visibility="{Binding TrainViewModel.Model.DirectionState, Converter={StaticResource DirectionState1ToImageConverter}}" />
+            <Border
+                Grid.Row="0"
+                Grid.Column="1"
+                Grid.ColumnSpan="5"
+                BorderBrush="White"
+                BorderThickness="0,0,0,1" />
+            <Border
+                Grid.Row="0"
+                Grid.RowSpan="3"
+                Grid.Column="1"
+                BorderBrush="White"
+                BorderThickness="1,0,0,0" />
+
+            <TextBlock
+                Grid.Row="0"
+                Grid.Column="2"
+                VerticalAlignment="Center"
+                Foreground="White"
+                Text="03"
+                TextAlignment="Center " />
+            <TextBlock
+                Grid.Row="0"
+                Grid.Column="4"
+                VerticalAlignment="Center"
+                Foreground="White"
+                Text="06"
+                TextAlignment="Center " />
+
+            <ed:BlockArrow
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Height="20"
+                Margin="28,3,40,0"
+                VerticalAlignment="Top"
+                Fill="LawnGreen"
+                Orientation="Left"
+                RenderTransformOrigin="0.1,0.072"
+                Stroke="Black"
+                Visibility="{Binding TrainViewModel.Model.DirectionState, Converter={StaticResource DirectionState2ToImageConverter}}">
+                <ed:BlockArrow.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform Angle="-180" />
+                        <TranslateTransform />
+                    </TransformGroup>
+                </ed:BlockArrow.RenderTransform>
+            </ed:BlockArrow>
+
+            <Image
+                Grid.Row="1"
+                Grid.Column="2"
+                Source="{Binding Path=TrainViewModel.Model.CarCollection[2].EquipmentCutOffPage.Value.PantographState.State, Converter={StaticResource PantographStateToImageConverter}}" />
+            <Image
+                Grid.Row="1"
+                Grid.Column="4"
+                Source="{Binding Path=TrainViewModel.Model.CarCollection[5].EquipmentCutOffPage.Value.PantographState.State, Converter={StaticResource PantographStateToImageConverter}}" />
+
+            <Image
+                Grid.Row="2"
+                Grid.Column="2"
+                Source="{Binding Path=TrainViewModel.Model.CarCollection[2].EquipmentCutOffPage.Value.MainBreakerState.State, Converter={StaticResource MainBreakerStateToImageConverter}}" />
+            <Image
+                Grid.Row="2"
+                Grid.Column="4"
+                Source="{Binding Path=TrainViewModel.Model.CarCollection[5].EquipmentCutOffPage.Value.MainBreakerState.State, Converter={StaticResource MainBreakerStateToImageConverter}}" />
+        </Grid>
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="2"
+            Margin="27,9,78,79"
+            VerticalAlignment="Center "
+            FontSize="16"
+            Foreground="White"
+            Text="网 流 (A)"
+            TextAlignment="Center" />
+
+        <Grid
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Grid.Column="2"
+            Margin="50,0,40,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="5*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="10*" />
+            </Grid.RowDefinitions>
+            <Border
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                BorderBrush="White"
+                BorderThickness="0,0,0,1" />
+            <ProgressBar
+                Grid.Row="1"
+                Grid.Column="1"
+                Maximum="800"
+                Style="{StaticResource ProgressBarStyle}"
+                Value="{Binding TrainViewModel.Model.TouchNetA}" />
+            <ItemsControl
+                Grid.Row="1"
+                Grid.Column="2"
+                Grid.ColumnSpan="2"
+                Margin="0,0,0,1"
+                ItemsSource="{Binding TargitDistanceScaleItems, Source={x:Static viewSource:MainNetARoteRateScale.Instance}}"
+                Style="{StaticResource ItemNetAStyle}" />
+        </Grid>
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            Margin="370,27,194,222"
+            VerticalAlignment="Center"
+            Foreground="White"
+            Text="100%"
+            TextAlignment="Left" />
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="1"
+            Margin="370,141,0,108"
+            VerticalAlignment="Center"
+            Foreground="White"
+            Text="50%"
+            TextAlignment="Left" />
+        <TextBlock
+            Grid.Row="2"
+            Grid.RowSpan="2"
+            Grid.Column="1"
+            Margin="370,253,0,8"
+            VerticalAlignment="Center"
+            Foreground="White"
+            Text="0%"
+            TextAlignment="Left" />
+        <Grid
+            Grid.Row="2"
+            Grid.Column="1"
+            Margin="45,0,35,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="10*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40*" />
+                <ColumnDefinition Width="20*" />
+                <ColumnDefinition Width="30*" />
+                <ColumnDefinition Width="40*" />
+                <ColumnDefinition Width="20*" />
+                <ColumnDefinition Width="40*" />
+                <ColumnDefinition Width="20*" />
+                <ColumnDefinition Width="30*" />
+                <ColumnDefinition Width="40*" />
+                <ColumnDefinition Width="20*" />
+                <ColumnDefinition Width="20*" />
+            </Grid.ColumnDefinitions>
+            <Grid
+                Grid.Row="0"
+                Grid.RowSpan="4"
+                Grid.Column="0"
+                Grid.ColumnSpan="11">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="10*" />
+                    <RowDefinition Height="10*" />
+                </Grid.RowDefinitions>
+                <Border
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    BorderBrush="White"
+                    BorderThickness="0,1,0,1" />
+                <Border
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    BorderBrush="White"
+                    BorderThickness="0,0,0,1" />
+            </Grid>
+            <TextBlock
+                Grid.Row="0"
+                Grid.Column="0"
+                VerticalAlignment="Center"
+                Foreground="White "
+                Text="02"
+                TextAlignment="Center" />
+            <TextBlock
+                Grid.Row="0"
+                Grid.Column="3"
+                VerticalAlignment="Center"
+                Foreground="White "
+                Text="04"
+                TextAlignment="Center" />
+            <TextBlock
+                Grid.Row="0"
+                Grid.Column="5"
+                VerticalAlignment="Center"
+                Foreground="White "
+                Text="05"
+                TextAlignment="Center" />
+            <TextBlock
+                Grid.Row="0"
+                Grid.Column="8"
+                VerticalAlignment="Center"
+                Foreground="White "
+                Text="07"
+                TextAlignment="Center" />
+            <Canvas
+                Grid.Row="2"
+                Grid.RowSpan="2"
+                Grid.Column="0"
+                Panel.ZIndex="1">
+                <ed:RegularPolygon
+                    Canvas.Left="0"
+                    Width="20"
+                    Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Canvas}, Path=ActualWidth}"
+                    Fill="{Binding TrainViewModel.Model.TrainWorkConditionState, Converter={StaticResource TrainWorkConditionStateSetValueToImageConverter}}"
+                    InnerRadius="1"
+                    PointCount="3"
+                    RenderTransformOrigin="0,1"
+                    Stretch="Fill">
+                    <Canvas.Top>
+                        <MultiBinding Converter="{StaticResource SetValueConverter}">
+                            <Binding Path="TrainViewModel.Model.TrainWorkConditionState" />
+                            <Binding Path="TrainViewModel.Model.CarCollection[1].TowPercentSet" />
+                            <Binding Path="TrainViewModel.Model.CarCollection[1].BrakePercentSet" />
+                            <Binding Path="ActualHeight" RelativeSource="{RelativeSource FindAncestor, AncestorType=Canvas}" />
+                        </MultiBinding>
+                    </Canvas.Top>
+                    <ed:RegularPolygon.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform />
+                            <SkewTransform />
+                            <RotateTransform Angle="90" />
+                            <TranslateTransform />
+                        </TransformGroup>
+                    </ed:RegularPolygon.RenderTransform>
+                </ed:RegularPolygon>
+            </Canvas>
+            <ProgressBar
+                Grid.Row="1"
+                Grid.RowSpan="3"
+                Grid.Column="0"
+                Foreground="{Binding TrainViewModel.Model.TrainWorkConditionState, Converter={StaticResource TrainWorkConditionStateToImageConverter}}"
+                Maximum="110"
+                Style="{StaticResource ProgressBarStyle}"
+                Value="{Binding TrainViewModel.Model.CarCollection[1].ShowPercentNow}" />
+            <Canvas
+                Grid.Row="2"
+                Grid.RowSpan="2"
+                Grid.Column="3"
+                Panel.ZIndex="1">
+                <ed:RegularPolygon
+                    Canvas.Left="0"
+                    Width="20"
+                    Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Canvas}, Path=ActualWidth}"
+                    Fill="{Binding TrainViewModel.Model.TrainWorkConditionState, Converter={StaticResource TrainWorkConditionStateSetValueToImageConverter}}"
+                    InnerRadius="1"
+                    PointCount="3"
+                    RenderTransformOrigin="0,1"
+                    Stretch="Fill">
+                    <Canvas.Top>
+                        <MultiBinding Converter="{StaticResource SetValueConverter}">
+                            <Binding Path="TrainViewModel.Model.TrainWorkConditionState" />
+                            <Binding Path="TrainViewModel.Model.CarCollection[3].TowPercentSet" />
+                            <Binding Path="TrainViewModel.Model.CarCollection[3].BrakePercentSet" />
+                            <Binding Path="ActualHeight" RelativeSource="{RelativeSource FindAncestor, AncestorType=Canvas}" />
+                        </MultiBinding>
+                    </Canvas.Top>
+                    <ed:RegularPolygon.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform />
+                            <SkewTransform />
+                            <RotateTransform Angle="90" />
+                            <TranslateTransform />
+                        </TransformGroup>
+                    </ed:RegularPolygon.RenderTransform>
+                </ed:RegularPolygon>
+            </Canvas>
+            <ProgressBar
+                Grid.Row="1"
+                Grid.RowSpan="3"
+                Grid.Column="3"
+                Foreground="{Binding TrainViewModel.Model.TrainWorkConditionState, Converter={StaticResource TrainWorkConditionStateToImageConverter}}"
+                Maximum="110"
+                Style="{StaticResource ProgressBarStyle}"
+                Value="{Binding TrainViewModel.Model.CarCollection[3].ShowPercentNow}" />
+            <Canvas
+                Grid.Row="2"
+                Grid.RowSpan="2"
+                Grid.Column="5"
+                Panel.ZIndex="1">
+                <ed:RegularPolygon
+                    Canvas.Left="0"
+                    Width="20"
+                    Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Canvas}, Path=ActualWidth}"
+                    Fill="{Binding TrainViewModel.Model.TrainWorkConditionState, Converter={StaticResource TrainWorkConditionStateSetValueToImageConverter}}"
+                    InnerRadius="1"
+                    PointCount="3"
+                    RenderTransformOrigin="0,1"
+                    Stretch="Fill">
+                    <Canvas.Top>
+                        <MultiBinding Converter="{StaticResource SetValueConverter}">
+                            <Binding Path="TrainViewModel.Model.TrainWorkConditionState" />
+                            <Binding Path="TrainViewModel.Model.CarCollection[4].TowPercentSet" />
+                            <Binding Path="TrainViewModel.Model.CarCollection[4].BrakePercentSet" />
+                            <Binding Path="ActualHeight" RelativeSource="{RelativeSource FindAncestor, AncestorType=Canvas}" />
+                        </MultiBinding>
+                    </Canvas.Top>
+                    <ed:RegularPolygon.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform />
+                            <SkewTransform />
+                            <RotateTransform Angle="90" />
+                            <TranslateTransform />
+                        </TransformGroup>
+                    </ed:RegularPolygon.RenderTransform>
+                </ed:RegularPolygon>
+            </Canvas>
+            <ProgressBar
+                Grid.Row="1"
+                Grid.RowSpan="3"
+                Grid.Column="5"
+                Foreground="{Binding TrainViewModel.Model.TrainWorkConditionState, Converter={StaticResource TrainWorkConditionStateToImageConverter}}"
+                Maximum="110"
+                Style="{StaticResource ProgressBarStyle}"
+                Value="{Binding TrainViewModel.Model.CarCollection[4].ShowPercentNow}" />
+
+            <Canvas
+                Grid.Row="2"
+                Grid.RowSpan="2"
+                Grid.Column="8"
+                Panel.ZIndex="1">
+                <ed:RegularPolygon
+                    Canvas.Left="0"
+                    Width="20"
+                    Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Canvas}, Path=ActualWidth}"
+                    Fill="{Binding TrainViewModel.Model.TrainWorkConditionState, Converter={StaticResource TrainWorkConditionStateSetValueToImageConverter}}"
+                    InnerRadius="1"
+                    PointCount="3"
+                    RenderTransformOrigin="0,1"
+                    Stretch="Fill">
+                    <Canvas.Top>
+                        <MultiBinding Converter="{StaticResource SetValueConverter}">
+                            <Binding Path="TrainViewModel.Model.TrainWorkConditionState" />
+                            <Binding Path="TrainViewModel.Model.CarCollection[6].TowPercentSet" />
+                            <Binding Path="TrainViewModel.Model.CarCollection[6].BrakePercentSet" />
+                            <Binding Path="ActualHeight" RelativeSource="{RelativeSource FindAncestor, AncestorType=Canvas}" />
+                        </MultiBinding>
+                    </Canvas.Top>
+                    <ed:RegularPolygon.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform />
+                            <SkewTransform />
+                            <RotateTransform Angle="90" />
+                            <TranslateTransform />
+                        </TransformGroup>
+                    </ed:RegularPolygon.RenderTransform>
+                </ed:RegularPolygon>
+            </Canvas>
+            <ProgressBar
+                Grid.Row="1"
+                Grid.RowSpan="3"
+                Grid.Column="8"
+                Foreground="{Binding TrainViewModel.Model.TrainWorkConditionState, Converter={StaticResource TrainWorkConditionStateToImageConverter}}"
+                Maximum="110"
+                Style="{StaticResource ProgressBarStyle}"
+                Value="{Binding TrainViewModel.Model.CarCollection[6].ShowPercentNow}" />
+
+            <ItemsControl
+                Grid.Row="2"
+                Grid.RowSpan="2"
+                Grid.Column="1"
+                Margin="0,0,0,1"
+                ItemsSource="{Binding TargitDistanceScaleItems, Source={x:Static viewSource:MainTowRoteRateScale.Instance}}"
+                Style="{StaticResource ItemTowStyle}" />
+
+            <ItemsControl
+                Grid.Row="2"
+                Grid.RowSpan="2"
+                Grid.Column="4"
+                Margin="0,0,0,1"
+                ItemsSource="{Binding TargitDistanceScaleItems, Source={x:Static viewSource:MainTowRoteRateScale.Instance}}"
+                Style="{StaticResource ItemTowStyle}" />
+
+            <ItemsControl
+                Grid.Row="2"
+                Grid.RowSpan="2"
+                Grid.Column="6"
+                Margin="0,0,0,1"
+                ItemsSource="{Binding TargitDistanceScaleItems, Source={x:Static viewSource:MainTowRoteRateScale.Instance}}"
+                Style="{StaticResource ItemTowStyle}" />
+            <ItemsControl
+                Grid.Row="2"
+                Grid.RowSpan="2"
+                Grid.Column="9"
+                Margin="0,0,0,1"
+                ItemsSource="{Binding TargitDistanceScaleItems, Source={x:Static viewSource:MainTowRoteRateScale.Instance}}"
+                Style="{StaticResource ItemTowStyle}" />
+
+        </Grid>
+
+    </Grid>
+</UserControl>

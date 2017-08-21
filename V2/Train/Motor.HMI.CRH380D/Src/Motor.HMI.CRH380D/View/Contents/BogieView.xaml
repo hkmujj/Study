@@ -1,0 +1,325 @@
+﻿<UserControl x:Class="Motor.HMI.CRH380D.View.Contents.BogieView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:common="clr-namespace:Motor.HMI.CRH380D.View.Common"
+             xmlns:constant="clr-namespace:Motor.HMI.CRH380D.Constant"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:regions="http://www.codeplex.com/CompositeWPF"
+             xmlns:viewModel="clr-namespace:Motor.HMI.CRH380D.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+             d:DesignHeight="420"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <Viewbox>
+        <Grid Width="800"
+              Height="420"
+              Background="{StaticResource Gray2Background}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="33*" />
+                <RowDefinition Height="65*" />
+                <RowDefinition Height="36*" />
+                <RowDefinition Height="116*" />
+                <RowDefinition Height="155*" />
+                <RowDefinition Height="15*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <TextBlock Style="{StaticResource TitleTextStyle}" Text="转向架" />
+            </Grid>
+            <Grid Grid.Row="1">
+                <common:TrainCommon3 DataContext="{Binding Model.BogieModel.TrainModel}" />
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="45*" />
+                    <ColumnDefinition Width="55*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="55*" />
+                    <ColumnDefinition Width="105*" />
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="1"
+                        Width="40"
+                        Height="30"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        BorderBrush="Black"
+                        BorderThickness="1">
+                    <TextBlock Style="{StaticResource NumTextStyle}" Text="{Binding Model.BogieModel.BogieTemperature0}" />
+                </Border>
+                <Border Grid.Column="2"
+                        Width="40"
+                        Height="30"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        BorderBrush="Black"
+                        BorderThickness="1">
+                    <TextBlock Style="{StaticResource NumTextStyle}" Text="{Binding Model.BogieModel.BogieTemperature7}" />
+                </Border>
+                <Border Grid.Column="3"
+                        Width="40"
+                        Height="30"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        BorderBrush="Black"
+                        BorderThickness="1">
+                    <TextBlock Style="{StaticResource NumTextStyle}" Text="{Binding Model.BogieModel.BogieTemperature6}" />
+                </Border>
+                <Border Grid.Column="4"
+                        Width="40"
+                        Height="30"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        BorderBrush="Black"
+                        BorderThickness="1">
+                    <TextBlock Style="{StaticResource NumTextStyle}" Text="{Binding Model.BogieModel.BogieTemperature5}" />
+                </Border>
+                <Border Grid.Column="5"
+                        Width="40"
+                        Height="30"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        BorderBrush="Black"
+                        BorderThickness="1">
+                    <TextBlock Style="{StaticResource NumTextStyle}" Text="{Binding Model.BogieModel.BogieTemperature4}" />
+                </Border>
+                <Border Grid.Column="6"
+                        Width="40"
+                        Height="30"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        BorderBrush="Black"
+                        BorderThickness="1">
+                    <TextBlock Style="{StaticResource NumTextStyle}" Text="{Binding Model.BogieModel.BogieTemperature3}" />
+                </Border>
+                <Border Grid.Column="7"
+                        Width="40"
+                        Height="30"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        BorderBrush="Black"
+                        BorderThickness="1">
+                    <TextBlock Style="{StaticResource NumTextStyle}" Text="{Binding Model.BogieModel.BogieTemperature2}" />
+                </Border>
+                <Border Grid.Column="8"
+                        Width="40"
+                        Height="30"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        BorderBrush="Black"
+                        BorderThickness="1">
+                    <TextBlock Style="{StaticResource NumTextStyle}" Text="{Binding Model.BogieModel.BogieTemperature1}" />
+                </Border>
+            </Grid>
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="12*" />
+                    <ColumnDefinition Width="15*" />
+                    <ColumnDefinition Width="13*" />
+                </Grid.ColumnDefinitions>
+                <Viewbox Grid.Column="1">
+                    <Grid Visibility="{Binding Model.BogieModel.BogieVisibility, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <Border BorderBrush="{StaticResource NumForeground}" BorderThickness="1" />
+                        <Border x:Name="齿轮箱温度1"
+                                Width="45"
+                                Height="45"
+                                Margin="10,10,245,100"
+                                BorderBrush="Green"
+                                BorderThickness="5">
+                            <TextBlock HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontSize="18"
+                                       FontWeight="Bold"
+                                       Foreground="Green"
+                                       Text="{Binding Model.BogieModel.BogieDisplay.GearTemperature1}" />
+                        </Border>
+                        <Border x:Name="齿轮箱温度2"
+                                Width="45"
+                                Height="45"
+                                Margin="10,100,245,10"
+                                BorderBrush="Green"
+                                BorderThickness="5">
+                            <TextBlock HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontSize="18"
+                                       FontWeight="Bold"
+                                       Foreground="Green"
+                                       Text="{Binding Model.BogieModel.BogieDisplay.GearTemperature2}" />
+                        </Border>
+                        <Border x:Name="齿轮箱温度3"
+                                Width="45"
+                                Height="45"
+                                Margin="65,10,190,100"
+                                BorderBrush="Green"
+                                BorderThickness="5">
+                            <TextBlock HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontSize="18"
+                                       FontWeight="Bold"
+                                       Foreground="Green"
+                                       Text="{Binding Model.BogieModel.BogieDisplay.GearTemperature3}" />
+                        </Border>
+                        <Border x:Name="齿轮箱温度4"
+                                Width="45"
+                                Height="45"
+                                Margin="65,100,190,10"
+                                BorderBrush="Green"
+                                BorderThickness="5">
+                            <TextBlock HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontSize="18"
+                                       FontWeight="Bold"
+                                       Foreground="Green"
+                                       Text="{Binding Model.BogieModel.BogieDisplay.GearTemperature4}" />
+                        </Border>
+                        <Border x:Name="齿轮箱温度5"
+                                Width="45"
+                                Height="45"
+                                Margin="190,10,65,100"
+                                BorderBrush="Green"
+                                BorderThickness="5">
+                            <TextBlock HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontSize="18"
+                                       FontWeight="Bold"
+                                       Foreground="Green"
+                                       Text="{Binding Model.BogieModel.BogieDisplay.GearTemperature5}" />
+                        </Border>
+                        <Border x:Name="齿轮箱温度6"
+                                Width="45"
+                                Height="45"
+                                Margin="190,100,65,10"
+                                BorderBrush="Green"
+                                BorderThickness="5">
+                            <TextBlock HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontSize="18"
+                                       FontWeight="Bold"
+                                       Foreground="Green"
+                                       Text="{Binding Model.BogieModel.BogieDisplay.GearTemperature6}" />
+                        </Border>
+                        <Border x:Name="齿轮箱温度7"
+                                Width="45"
+                                Height="45"
+                                Margin="245,10,10,100"
+                                BorderBrush="Green"
+                                BorderThickness="5">
+                            <TextBlock HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontSize="18"
+                                       FontWeight="Bold"
+                                       Foreground="Green"
+                                       Text="{Binding Model.BogieModel.BogieDisplay.GearTemperature7}" />
+                        </Border>
+                        <Border x:Name="齿轮箱温度8"
+                                Width="45"
+                                Height="45"
+                                Margin="245,100,10,10"
+                                BorderBrush="Green"
+                                BorderThickness="5">
+                            <TextBlock HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontSize="18"
+                                       FontWeight="Bold"
+                                       Foreground="Green"
+                                       Text="{Binding Model.BogieModel.BogieDisplay.GearTemperature8}" />
+                        </Border>
+                        <Border x:Name="轴温1"
+                                Width="45"
+                                Height="25"
+                                Margin="10,65,245,65"
+                                BorderBrush="Green"
+                                BorderThickness="3">
+                            <TextBlock HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontSize="15"
+                                       Foreground="Green"
+                                       Text="{Binding Model.BogieModel.BogieDisplay.AxleTemperature1}" />
+                        </Border>
+                        <Border x:Name="轴温2"
+                                Width="45"
+                                Height="25"
+                                Margin="245,65,10,65"
+                                BorderBrush="Green"
+                                BorderThickness="3">
+                            <TextBlock HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontSize="15"
+                                       Foreground="Green"
+                                       Text="{Binding Model.BogieModel.BogieDisplay.AxleTemperature2}" />
+                        </Border>
+                        <Border x:Name="IMS1"
+                                Width="45"
+                                Height="25"
+                                Margin="65,65,190,65"
+                                BorderBrush="{Binding Model.BogieModel.BogieDisplay.IMSState1,
+                                                      Converter={StaticResource IMSStateToColorConverter}}"
+                                BorderThickness="1">
+                            <TextBlock HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontSize="18"
+                                       FontWeight="Bold"
+                                       Foreground="{Binding Model.BogieModel.BogieDisplay.IMSState1,
+                                                            Converter={StaticResource IMSStateToColorConverter}}"
+                                       Text="IMS" />
+                        </Border>
+                        <Border x:Name="IMS2"
+                                Width="45"
+                                Height="25"
+                                Margin="190,65,65,65"
+                                BorderBrush="{Binding Model.BogieModel.BogieDisplay.IMSState2,
+                                                      Converter={StaticResource IMSStateToColorConverter}}"
+                                BorderThickness="1">
+                            <TextBlock HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontSize="18"
+                                       FontWeight="Bold"
+                                       Foreground="{Binding Model.BogieModel.BogieDisplay.IMSState2,
+                                                            Converter={StaticResource IMSStateToColorConverter}}"
+                                       Text="IMS" />
+                        </Border>
+                        <Path Data="M120,10 L180,10 180,145 120,145 120,10"
+                              Stroke="Green"
+                              StrokeThickness="3" />
+                        <Ellipse Width="10"
+                                 Height="10"
+                                 Margin="115,5,175,140"
+                                 Fill="Green" />
+                        <Ellipse Width="10"
+                                 Height="10"
+                                 Margin="145,5,145,140"
+                                 Fill="Green" />
+                        <Ellipse Width="10"
+                                 Height="10"
+                                 Margin="175,5,115,140"
+                                 Fill="Green" />
+                        <Ellipse Width="10"
+                                 Height="10"
+                                 Margin="175,72.5,115,72.5"
+                                 Fill="Green" />
+                        <Ellipse Width="10"
+                                 Height="10"
+                                 Margin="175,140,115,5"
+                                 Fill="Green" />
+                        <Ellipse Width="10"
+                                 Height="10"
+                                 Margin="145,140,145,5"
+                                 Fill="Green" />
+                        <Ellipse Width="10"
+                                 Height="10"
+                                 Margin="115,140,175,5"
+                                 Fill="Green" />
+                        <Ellipse Width="10"
+                                 Height="10"
+                                 Margin="115,72.5,175,72.5"
+                                 Fill="Green" />
+                    </Grid>
+                </Viewbox>
+            </Grid>
+        </Grid>
+    </Viewbox>
+</UserControl>

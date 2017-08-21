@@ -1,0 +1,104 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Basic/BasicResource.xaml" />
+        <ResourceDictionary Source="../Converter/ConvertResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="BackGridBorderStyleLeft" TargetType="Border">
+        <Style.Setters>
+            <Setter Property="BorderBrush" Value="{StaticResource GridLineForegroundBrush}" />
+            <Setter Property="BorderThickness" Value="2,0,0,0" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="BackGridBorderStyleNoLeft" TargetType="Border">
+        <Style.Setters>
+            <Setter Property="BorderBrush" Value="{StaticResource GridLineForegroundBrush}" />
+            <Setter Property="BorderThickness" Value="0,2,2,2" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="BackGridBorderStyleLeftUp" TargetType="Border">
+        <Style.Setters>
+            <Setter Property="BorderBrush" Value="{StaticResource GridLineForegroundBrush}" />
+            <Setter Property="BorderThickness" Value="2,2,0,0" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="BackGridBorderStyleUp" TargetType="Border">
+        <Style.Setters>
+            <Setter Property="BorderBrush" Value="{StaticResource GridLineForegroundBrush}" />
+            <Setter Property="BorderThickness" Value="0,2,0,0" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="BackGridBorderStyleRight" TargetType="Border">
+        <Style.Setters>
+            <Setter Property="BorderBrush" Value="{StaticResource GridLineForegroundBrush}" />
+            <Setter Property="BorderThickness" Value="0,0,2,0" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="BackGridBorderStyleRightDown" TargetType="Border">
+        <Style.Setters>
+            <Setter Property="BorderBrush" Value="{StaticResource GridLineForegroundBrush}" />
+            <Setter Property="BorderThickness" Value="0,0,2,2" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="BackGridBorderStyleNoDown" TargetType="Border">
+        <Style.Setters>
+            <Setter Property="BorderBrush" Value="{StaticResource GridLineForegroundBrush}" />
+            <Setter Property="BorderThickness" Value="2,2,2,0" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="BackGridBorderStyleNoUp" TargetType="Border">
+        <Style.Setters>
+            <Setter Property="BorderBrush" Value="{StaticResource GridLineForegroundBrush}" />
+            <Setter Property="BorderThickness" Value="2,0,2,2" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="BackGridBorderStyleAll" TargetType="Border">
+        <Style.Setters>
+            <Setter Property="BorderBrush" Value="{StaticResource GridLineForegroundBrush}" />
+            <Setter Property="BorderThickness" Value="2,2,2,2" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="PasswordSettingBorderStyleOne" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource BlueBrush}" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Width" Value="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}, Path=ActualWidth, Converter={StaticResource BesizeConverter3}}" />
+        <Setter Property="CornerRadius" Value="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight, Converter={StaticResource BesizeConverter2}}" />
+    </Style>
+
+    <Style x:Key="PasswordSettingBorderStyleTwo" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource PasswordSetteingBack}" />
+        <Setter Property="CornerRadius" Value="20" />
+    </Style>
+    <Style x:Key="RcordeViewBorderStyleOne" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource BlueBrush}" />
+        <Setter Property="CornerRadius" Value="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight, Converter={StaticResource BesizeConverter2}}" />
+    </Style>
+    <Style x:Key="RcordeViewBorderStyleTwo" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource PasswordSetteingBack}" />
+        <Setter Property="CornerRadius" Value="20" />
+    </Style>
+    <Style x:Key="RcordeViewBorderStyleThree" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource VioletBrush}" />
+        <Setter Property="CornerRadius" Value="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight, Converter={StaticResource BesizeConverter2}}" />
+        <Setter Property="BorderThickness" Value="3" />
+        <Setter Property="BorderBrush" Value="{StaticResource DeepSkyBlueBrush}" />
+        <Style.Triggers>
+            <Trigger Property="Tag" Value="True">
+                <Setter Property="Background" Value="{StaticResource WhiteBrush}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="TestViewBorderStyle" TargetType="Border">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="{StaticResource WhiteBrush}" />
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<PriorityConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DoorPriorities>
+    <Door Key="Cut" Prioritys="1" />
+    <Door Key="OpenAndCut" Prioritys="2" />
+    <Door Key="Fault" Prioritys="3" />
+    <Door Key="Release" Prioritys="4" />
+    <Door Key="Opened" Prioritys="5" />
+	<Door Key="Closed" Prioritys="6" />
+  </DoorPriorities>
+  
+  <StationPriorities>
+    <Station Key="Cut" Prioritys="1" />
+    <Station Key="OpenAndCut" Prioritys="2" />
+    <Station Key="Fault" Prioritys="3" />
+    <Station Key="Release" Prioritys="4" />
+    <Station Key="Opened" Prioritys="5" />
+	<Station Key="Closed" Prioritys="6" />
+  </StationPriorities>
+
+  <PantographPriorities>
+    <Pantograph Key="CutOff" Prioritys="1" />
+    <Pantograph Key="TurnUpFault" Prioritys="2" />
+    <Pantograph Key="TurnDownFault" Prioritys="3" />
+    <Pantograph Key="TurnDown" Prioritys="4" />
+    <Pantograph Key="TurnUp" Prioritys="5" />
+  </PantographPriorities>
+
+  <LCBPriorities>
+    <LCB Key="CutOff" Prioritys="1" />
+    <LCB Key="Fault" Prioritys="2" />
+    <LCB Key="TurnOff" Prioritys="3" />
+    <LCB Key="TurnOn" Prioritys="4" />
+  </LCBPriorities>
+
+  <QuickBreakPriorities>
+    <QuickBreak Key="Fault" Prioritys="1" />
+    <QuickBreak Key="Closed" Prioritys="2" />
+    <QuickBreak Key="Open" Prioritys="3" />
+  </QuickBreakPriorities>
+
+  <GroundingPriorities>
+    <Grounding Key="Fault" Prioritys="1" />
+    <Grounding Key="Closed" Prioritys="2" />
+    <Grounding Key="Open" Prioritys="3" />
+  </GroundingPriorities>
+
+  <ACMPriorities>
+    <ACM Key="Cut" Prioritys="1" />
+    <ACM Key="Fault" Prioritys="2" />
+    <ACM Key="TurnOff" Prioritys="3" />	
+    <ACM Key="TurnOn" Prioritys="4" />
+  </ACMPriorities>
+
+  <LCMPriorities>
+    <LCM Key="Cut" Prioritys="1" />
+    <LCM Key="Fault" Prioritys="2" />
+    <LCM Key="TurnOff" Prioritys="3" />	
+    <LCM Key="TurnOn" Prioritys="4" />
+  </LCMPriorities>
+
+  <MCMPriorities>
+    <MCM Key="Cut" Prioritys="1" />
+    <MCM Key="Fault" Prioritys="2" />
+    <MCM Key="TurnOff" Prioritys="3" />	
+    <MCM Key="TurnOn" Prioritys="4" />
+  </MCMPriorities>
+
+  <BCUPriorities>
+    <BCU Key="Fault" Prioritys="1" />
+    <BCU Key="TurnOn" Prioritys="2" />
+  </BCUPriorities>
+
+  <EmergencyBreakPriorities>
+    <EmergencyBreak Key="Fault" Prioritys="1" />
+    <EmergencyBreak Key="EmergencyBreakForce" Prioritys="2" />
+    <EmergencyBreak Key="SafeBreakForce" Prioritys="3" />	
+    <EmergencyBreak Key="Remit" Prioritys="4" />
+  </EmergencyBreakPriorities>
+
+  <ParkBreakPriorities>
+    <ParkBreak Key="Cut" Prioritys="1" />
+    <ParkBreak Key="Fault" Prioritys="2" />
+    <ParkBreak Key="Force" Prioritys="3" />	
+    <ParkBreak Key="Remit" Prioritys="4" />
+  </ParkBreakPriorities>
+
+  <CarComfortPriorities>
+    <CarComfort Key="Fault" Prioritys="1" />
+    <CarComfort Key="Cut" Prioritys="2" />
+    <CarComfort Key="TurnOff" Prioritys="3" />	
+    <CarComfort Key="TurnOn" Prioritys="4" />
+  </CarComfortPriorities>
+
+  <PrimaryCompressorPriorities>
+    <PrimaryCompressor Key="Fault" Prioritys="1" />
+    <PrimaryCompressor Key="Cut" Prioritys="2" />
+    <PrimaryCompressor Key="TurnOff" Prioritys="3" />
+    <PrimaryCompressor Key="ManualTurnOn" Prioritys="4" />
+    <PrimaryCompressor Key="TurnOn" Prioritys="5" />
+  </PrimaryCompressorPriorities>
+
+  <PressureSensorPriorities>
+    <PressureSensor Key="Fault" Prioritys="1" />
+    <PressureSensor Key="Cut" Prioritys="2" />
+    <PressureSensor Key="TurnOn" Prioritys="3" />
+  </PressureSensorPriorities>
+
+  <SubCompressorPriorities>
+    <SubCompressor Key="Fault" Prioritys="1" />
+    <SubCompressor Key="TurnOff" Prioritys="2" />	
+    <SubCompressor Key="TurnOn" Prioritys="3" />
+  </SubCompressorPriorities>
+
+  <DCDevice1Priorities>
+    <DCDevice1 Key="Fault" Prioritys="1" />
+    <DCDevice1 Key="Normal" Prioritys="2" />	
+  </DCDevice1Priorities>
+
+  <DCDevice2Priorities>
+    <DCDevice2 Key="Fault" Prioritys="1" />
+    <DCDevice2 Key="Normal" Prioritys="2" />	
+  </DCDevice2Priorities>
+
+  <DCDevice3Priorities>
+    <DCDevice3 Key="Fault" Prioritys="1" />
+    <DCDevice3 Key="Normal" Prioritys="2" />	
+  </DCDevice3Priorities>
+</PriorityConfig>

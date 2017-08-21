@@ -1,0 +1,114 @@
+﻿<UserControl x:Class="Engine.TPX21F.HXN5B.View.Contents.Maintenance.Train.TimeSetView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:behaviors="clr-namespace:MMI.Facility.WPFInfrastructure.Behaviors;assembly=MMI.Facility.WPFInfrastructure"
+             xmlns:common="clr-namespace:Engine.TPX21F.HXN5B.View.Common"
+             xmlns:constant="clr-namespace:Engine.TPX21F.HXN5B.Constant"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:designData="clr-namespace:Engine.TPX21F.HXN5B.Model.ViewSource.DesignData"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:interactivity="clr-namespace:MMI.Facility.WPFInfrastructure.Interactivity;assembly=MMI.Facility.WPFInfrastructure"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:regions="http://www.codeplex.com/CompositeWPF"
+             xmlns:view="clr-namespace:MMI.Facility.WPFInfrastructure.View;assembly=MMI.Facility.WPFInfrastructure"
+             xmlns:viewModel="clr-namespace:Engine.TPX21F.HXN5B.ViewModel"
+             xmlns:viewSource="clr-namespace:Engine.TPX21F.HXN5B.Model.ViewSource"
+             d:DataContext="{d:DesignInstance viewModel:HXN5BViewModel}"
+             d:DesignHeight="495"
+             d:DesignWidth="800"
+             Background="{StaticResource ContentBackgroundBrush}"
+             mc:Ignorable="d">
+    <GroupBox Margin="71,115,105,208"
+              common:GroupBoxHeader.HeaderWidth="{Binding ElementName=HeaderText,
+                                                          Path=ActualWidth,
+                                                          Converter={StaticResource MathConverter},
+                                                          ConverterParameter=x+120}"
+              Style="{StaticResource CenterHeaderGroupBoxStyle}">
+        <GroupBox.Header>
+            <TextBlock x:Name="HeaderText"
+                       Style="{StaticResource ContentConstWhiteTextStyle}"
+                       Text="{StaticResource StringTimeSet}" />
+        </GroupBox.Header>
+
+        <Grid Margin="60,10">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringCurrent}" />
+                <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringTime}" />
+                <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text=":" />
+                <TextBlock Width="80"
+                           Style="{StaticResource ContentConstWhiteTextStyle}"
+                           Text="{Binding Path=OtherViewModel.Model.ShowTime.Year,
+                                          StringFormat={}0000}" />
+                <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringYear}" />
+                <TextBlock Width="40"
+                           Style="{StaticResource ContentConstWhiteTextStyle}"
+                           Text="{Binding Path=OtherViewModel.Model.ShowTime.Month,
+                                          StringFormat={}00}" />
+                <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringMonth}" />
+                <TextBlock Width="40"
+                           Style="{StaticResource ContentConstWhiteTextStyle}"
+                           Text="{Binding Path=OtherViewModel.Model.ShowTime.Day,
+                                          StringFormat={}00}" />
+                <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringDay}" />
+                <TextBlock Width="40"
+                           Style="{StaticResource ContentConstWhiteTextStyle}"
+                           Text="{Binding Path=OtherViewModel.Model.ShowTime.Hour,
+                                          StringFormat={}00}" />
+                <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringHour}" />
+                <TextBlock Width="40"
+                           Style="{StaticResource ContentConstWhiteTextStyle}"
+                           Text="{Binding Path=OtherViewModel.Model.ShowTime.Minute,
+                                          StringFormat={}00}" />
+                <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringMinite}" />
+                <TextBlock Width="40"
+                           Style="{StaticResource ContentConstWhiteTextStyle}"
+                           Text="{Binding Path=OtherViewModel.Model.ShowTime.Second,
+                                          StringFormat={}00}" />
+                <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringSecond}" />
+            </StackPanel>
+
+
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringSetting}" />
+                <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text="{StaticResource StringTime}" />
+                <TextBlock Style="{StaticResource ContentConstWhiteTextStyle}" Text=":" />
+
+                <TextBlock Width="80"
+                           Style="{StaticResource ContentConstGreenTextStyle}"
+                           Text="{Binding Path=OtherViewModel.Model.SettingTime.Year,
+                                          StringFormat={}0000}" />
+                <TextBlock Style="{StaticResource ContentConstGreenTextStyle}" Text="{StaticResource StringYear}" />
+                <TextBlock Width="40"
+                           Style="{StaticResource ContentConstGreenTextStyle}"
+                           Text="{Binding Path=OtherViewModel.Model.SettingTime.Month,
+                                          StringFormat={}00}" />
+                <TextBlock Style="{StaticResource ContentConstGreenTextStyle}" Text="{StaticResource StringMonth}" />
+                <TextBlock Width="40"
+                           Style="{StaticResource ContentConstGreenTextStyle}"
+                           Text="{Binding Path=OtherViewModel.Model.SettingTime.Day,
+                                          StringFormat={}00}" />
+                <TextBlock Style="{StaticResource ContentConstGreenTextStyle}" Text="{StaticResource StringDay}" />
+                <TextBlock Width="40"
+                           Style="{StaticResource ContentConstGreenTextStyle}"
+                           Text="{Binding Path=OtherViewModel.Model.SettingTime.Hour,
+                                          StringFormat={}00}" />
+                <TextBlock Style="{StaticResource ContentConstGreenTextStyle}" Text="{StaticResource StringHour}" />
+                <TextBlock Width="40"
+                           Style="{StaticResource ContentConstGreenTextStyle}"
+                           Text="{Binding Path=OtherViewModel.Model.SettingTime.Minute,
+                                          StringFormat={}00}" />
+                <TextBlock Style="{StaticResource ContentConstGreenTextStyle}" Text="{StaticResource StringMinite}" />
+                <TextBlock Width="40"
+                           Style="{StaticResource ContentConstGreenTextStyle}"
+                           Text="{Binding Path=OtherViewModel.Model.SettingTime.Second,
+                                          StringFormat={}00}" />
+                <TextBlock Style="{StaticResource ContentConstGreenTextStyle}" Text="{StaticResource StringSecond}" />
+            </StackPanel>
+        </Grid>
+    </GroupBox>
+</UserControl>

@@ -1,0 +1,249 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:viewModel="clr-namespace:Engine.TAX2.SS7C.ViewModel"
+                    mc:Ignorable="d">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Base/SS7CBaseResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="ContentControlSetWhellRStyle" TargetType="ContentControl">
+        <Style.Setters>
+            <Setter Property="Background" Value="{StaticResource ContentBackgroundBrush}" />
+            <Setter Property="BorderBrush" Value="{StaticResource ContentWhiteBorderBrush}" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ContentControl">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{StaticResource ContentWhiteBorderBrush}"
+                                BorderThickness="2,2,0,0">
+                            <Border BorderBrush="{StaticResource ContentBlackBorderBrush}" BorderThickness="0,0,2,2">
+                                <ContentPresenter />
+                            </Border>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="ContentControlSecondLevelParamSetStyle" TargetType="ContentControl">
+        <Style.Setters>
+            <Setter Property="Background" Value="{StaticResource ContentBackgroundBrush}" />
+            <Setter Property="BorderBrush" Value="{StaticResource ContentWhiteBorderBrush}" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ContentControl">
+                        <Border>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="25" />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="25" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="20" />
+                                    <RowDefinition />
+                                    <RowDefinition Height="20" />
+                                </Grid.RowDefinitions>
+                                <Border Grid.Row="0"
+                                        Grid.RowSpan="2"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="2"
+                                        Panel.ZIndex="1"
+                                        Background="{TemplateBinding Background}">
+                                    <Border Margin="8"
+                                            BorderBrush="{TemplateBinding BorderBrush}"
+                                            BorderThickness="{TemplateBinding BorderThickness}">
+                                        <Border Margin="4"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}" />
+                                    </Border>
+                                </Border>
+
+                                <ContentPresenter Grid.Row="0"
+                                                  Grid.RowSpan="2"
+                                                  Grid.Column="0"
+                                                  Grid.ColumnSpan="2"
+                                                  Panel.ZIndex="2" />
+
+                                <Rectangle Grid.Row="1"
+                                           Grid.RowSpan="2"
+                                           Grid.Column="1"
+                                           Grid.ColumnSpan="2"
+                                           Panel.ZIndex="0"
+                                           Fill="{StaticResource ContentBlackBorderBrush}" />
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="ContentControlSecondLevelBlueStyle" TargetType="ContentControl">
+        <Style.Setters>
+            <Setter Property="Background" Value="{StaticResource ContentDeepSkyBlueBrush}" />
+            <Setter Property="BorderBrush" Value="{StaticResource ContentBackgroundBrush}" />
+            <Setter Property="BorderThickness" Value="18" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ContentControl">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <Border BorderBrush="Silver" BorderThickness="2">
+                                <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                    <Border Background="{TemplateBinding Background}"
+                                            BorderBrush="Silver"
+                                            BorderThickness="2">
+                                        <ContentPresenter />
+                                    </Border>
+                                </Border>
+                            </Border>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <!--  凸起  -->
+    <Style x:Key="ContentControlBulgeFrameStyle" TargetType="ContentControl">
+        <Style.Setters>
+            <Setter Property="BorderBrush" Value="{StaticResource ContentBackgroundBrush}" />
+            <Setter Property="BorderThickness" Value="8" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ContentControl">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{StaticResource ContentWhiteBorderBrush}"
+                                BorderThickness="2,2,0,0"
+                                CornerRadius="2,2,0,0">
+                            <Border BorderBrush="{StaticResource ContentBlackBorderBrush}"
+                                    BorderThickness="0,0,4,4"
+                                    CornerRadius="2,2,0,0">
+                                <Border BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                        CornerRadius="2,2,0,0">
+                                    <Border BorderBrush="{StaticResource ContentBlackBorderBrush}"
+                                            BorderThickness="4,4,0,0"
+                                            CornerRadius="2,2,0,0">
+                                        <Border BorderBrush="{StaticResource ContentWhiteBorderBrush}"
+                                                BorderThickness="0,0,2,2"
+                                                CornerRadius="2,2,0,0">
+                                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                                              VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                                              Content="{TemplateBinding Content}" />
+                                        </Border>
+                                    </Border>
+                                </Border>
+                            </Border>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <!--  凹陷  -->
+    <Style x:Key="ContentControlSunkenFrameStyle" TargetType="ContentControl">
+        <Style.Setters>
+            <Setter Property="BorderBrush" Value="{StaticResource ContentBackgroundBrush}" />
+            <Setter Property="BorderThickness" Value="8" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ContentControl">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{StaticResource ContentBlackBorderBrush}"
+                                BorderThickness="4,4,0,0"
+                                CornerRadius="2,2,0,0">
+                            <Border BorderBrush="{StaticResource ContentWhiteBorderBrush}"
+                                    BorderThickness="0,0,2,2"
+                                    CornerRadius="2,2,0,0">
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                                  VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                                  Content="{TemplateBinding Content}" />
+                            </Border>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <!--  SecondLevel 凹陷  -->
+    <Style x:Key="ContentControlSecondLevelBulgeFrameStyle" TargetType="ContentControl">
+        <Style.Setters>
+            <Setter Property="BorderBrush" Value="{StaticResource ContentBackgroundBrush}" />
+            <Setter Property="BorderThickness" Value="8" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ContentControl">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{StaticResource ContentBlackBorderBrush}"
+                                BorderThickness="2,2,0,0">
+                            <Border BorderBrush="{StaticResource ContentWhiteBorderBrush}"
+                                    BorderThickness="0,0,2,2"
+                                    CornerRadius="2,2,0,0">
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                                  VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                                  Content="{TemplateBinding Content}" />
+                            </Border>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <!--  SecondLevel 凸起  -->
+    <Style x:Key="ContentControlSecondLevelSunkenFrameStyle" TargetType="ContentControl">
+        <Style.Setters>
+            <Setter Property="BorderBrush" Value="{StaticResource ContentBackgroundBrush}" />
+            <Setter Property="BorderThickness" Value="8" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ContentControl">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{StaticResource ContentWhiteBorderBrush}"
+                                BorderThickness="2,2,0,0">
+                            <Border BorderBrush="{StaticResource ContentBlackBorderBrush}"
+                                    BorderThickness="0,0,2,2"
+                                    CornerRadius="2,2,0,0">
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                                  VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                                  Content="{TemplateBinding Content}" />
+                            </Border>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <!--  SecondLevel 内容  -->
+    <Style x:Key="ContentControlSecondLevelContentStyle" TargetType="ContentControl">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ContentControl">
+                        <Border BorderBrush="{StaticResource ContentBlackBorderBrush}" BorderThickness="1">
+                            <Border Background="{TemplateBinding Background}"
+                                    BorderBrush="{StaticResource ContentBackgroundBrush}"
+                                    BorderThickness="3">
+                                <Border BorderBrush="{StaticResource ContentBlackBorderBrush}" BorderThickness="1,1,0,0">
+                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                                      VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                                      Content="{TemplateBinding Content}" />
+                                </Border>
+                            </Border>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+</ResourceDictionary>

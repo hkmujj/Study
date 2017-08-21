@@ -1,0 +1,728 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:commonViews="clr-namespace:Subway.ShenZhenLine11.Views.CommonViews"
+                    xmlns:controller="clr-namespace:Subway.ShenZhenLine11.Controller"
+                    xmlns:info="clr-namespace:Subway.ShenZhenLine11.Info"
+                    xmlns:model="clr-namespace:Subway.ShenZhenLine11.Constance"
+                    xmlns:viewModels="clr-namespace:Subway.ShenZhenLine11.ViewModels">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Brush/BrushResource.xaml" />
+
+        <ResourceDictionary Source="../Styles/ButtonStyleResource.xaml" />
+        <ResourceDictionary Source="../Converter/ConverterResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="DoorItemStyleOne" TargetType="ItemsControl">
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="{x:Type model:DoorUnit}">
+                    <Border Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualWidth, Converter={StaticResource BesizeConverter5}}" Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualHeight}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1.5*" />
+                            </Grid.RowDefinitions>
+                            <Border Grid.Row="0"
+                                    Margin="3,0"
+                                    Background="{StaticResource WhiteBrush}">
+                                <TextBlock HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Foreground="Black"
+                                           Text="{Binding Path=DoorIndex}" />
+                            </Border>
+                            <Border Grid.Row="1" Margin="1,0,1,2">
+                                <Border.Background>
+                                    <ImageBrush ImageSource="{Binding Path=DoorStatus, Converter={StaticResource DoorImageConverter}}" />
+                                </Border.Background>
+
+                            </Border>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Margin" Value="2,0" />
+    </Style>
+    <Style x:Key="DoorItemStyleTwo" TargetType="ItemsControl">
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel VerticalAlignment="Top" Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="{x:Type model:DoorUnit}">
+                    <Border Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualWidth, Converter={StaticResource BesizeConverter5}}" Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualHeight}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1.5*" />
+                                <RowDefinition Height="1*" />
+                            </Grid.RowDefinitions>
+                            <Border Grid.Row="0" Margin="1,0,1,2">
+                                <Border.Background>
+                                    <ImageBrush ImageSource="{Binding Path=DoorStatus, Converter={StaticResource DoorImageConverter}}" />
+                                </Border.Background>
+                                <!--<Image Source="{Binding Path=DoorStatus, Converter={StaticResource DoorImageConverter}}" />-->
+                            </Border>
+                            <Border Grid.Row="1"
+                                    Margin="3,0"
+                                    Background="{StaticResource WhiteBrush}">
+                                <TextBlock HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Foreground="Black"
+                                           Text="{Binding Path=DoorIndex}" />
+                            </Border>
+
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Margin" Value="2,0" />
+    </Style>
+    <Style x:Key="DoorItemStyleThree" TargetType="ItemsControl">
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel HorizontalAlignment="Center"
+                                VerticalAlignment="Bottom"
+                                Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="{x:Type model:DoorUnit}">
+                    <Border Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualWidth, Converter={StaticResource BesizeConverter3}}" Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualHeight}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1.5*" />
+                            </Grid.RowDefinitions>
+                            <Border Grid.Row="0"
+                                    Margin="3,0"
+                                    Background="{StaticResource WhiteBrush}">
+                                <TextBlock HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Foreground="Black"
+                                           Text="{Binding Path=DoorIndex}" />
+                            </Border>
+                            <Border Grid.Row="1" Margin="1,0,1,2">
+                                <Border.Background>
+                                    <ImageBrush ImageSource="{Binding Path=DoorStatus, Converter={StaticResource DoorImageConverter}}" />
+                                </Border.Background>
+                                <!--<Image Source="{Binding Path=DoorStatus, Converter={StaticResource DoorImageConverter}}" />-->
+                            </Border>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Margin" Value="2,0" />
+    </Style>
+    <Style x:Key="DoorItemStyleFour" TargetType="ItemsControl">
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel HorizontalAlignment="Center"
+                                VerticalAlignment="Top"
+                                Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="{x:Type model:DoorUnit}">
+                    <Border Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualWidth, Converter={StaticResource BesizeConverter3}}" Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualHeight}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1.5*" />
+                                <RowDefinition Height="1*" />
+                            </Grid.RowDefinitions>
+                            <Border Grid.Row="0" Margin="1,0,1,2">
+                                <Border.Background>
+                                    <ImageBrush ImageSource="{Binding Path=DoorStatus, Converter={StaticResource DoorImageConverter}}" />
+                                </Border.Background>
+                                <!--<Image Source="{Binding Path=DoorStatus, Converter={StaticResource DoorImageConverter}}" />-->
+                            </Border>
+                            <Border Grid.Row="1"
+                                    Margin="3,0"
+                                    Background="{StaticResource WhiteBrush}">
+                                <TextBlock HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Foreground="Black"
+                                           Text="{Binding Path=DoorIndex}" />
+                            </Border>
+
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Margin" Value="2,0" />
+    </Style>
+
+
+    <Style x:Key="EmergencyBordercastItemStyle" TargetType="ItemsControl">
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="info:EmergencyBordercastInfo">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="10*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Foreground="White"
+                                   Text="{Binding Num}" />
+                        <RadioButton x:Name="RadioButton"
+                                     Grid.Column="1"
+                                     Height="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                                     AncestorType={x:Type ItemsControl}},
+                                                      Path=ActualHeight,
+                                                      Converter={StaticResource BesizeConverter8}}"
+                                     Content="{Binding Content}"
+                                     IsChecked="{Binding IsSelcet,
+                                                         Mode=TwoWay,
+                                                         UpdateSourceTrigger=PropertyChanged}">
+                            <RadioButton.Template>
+                                <ControlTemplate TargetType="RadioButton">
+                                    <Border x:Name="PART_Border" Background="Transparent">
+                                        <TextBlock HorizontalAlignment="Left"
+                                                   VerticalAlignment="Center"
+                                                   Foreground="{StaticResource WhiteBrush}"
+                                                   Text="{TemplateBinding Content}" />
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsChecked" Value="True">
+                                            <Setter TargetName="PART_Border" Property="Background" Value="{StaticResource EmergencySelctBrush}" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </RadioButton.Template>
+                        </RadioButton>
+                    </Grid>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FontSize" Value="18" />
+    </Style>
+    <Style x:Key="EmergencyTalkItemUpStyle" TargetType="ItemsControl">
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel Margin="0,-3,0,0"
+                                HorizontalAlignment="Center"
+                                IsItemsHost="True"
+                                Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="model:EmergencyTalkUnit">
+                    <Grid Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualWidth, Converter={StaticResource BesizeConverter3}}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1.5*" />
+                        </Grid.RowDefinitions>
+                        <Border Grid.Row="0"
+                                Margin="7,0"
+                                Background="White">
+                            <TextBlock HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Foreground="Black"
+                                       Text="{Binding Index}" />
+                        </Border>
+
+                        <Border Grid.Row="1" Margin="4,0">
+                            <Border.Background>
+                                <ImageBrush ImageSource="{Binding Status, Converter={StaticResource EmergencyTalkConverter}}" />
+                            </Border.Background>
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="EmergencyTalkItemDownStyle" TargetType="ItemsControl">
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel Margin="0,0,0,-3"
+                                HorizontalAlignment="Center"
+                                IsItemsHost="True"
+                                Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="model:EmergencyTalkUnit">
+                    <Grid Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualWidth, Converter={StaticResource BesizeConverter3}}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1.5*" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+
+                        <Border Grid.Row="0" Margin="4,0">
+                            <Border.Background>
+                                <ImageBrush ImageSource="{Binding Status, Converter={StaticResource EmergencyTalkConverter}}" />
+                            </Border.Background>
+                        </Border>
+                        <Border Grid.Row="1"
+                                Margin="7,0"
+                                Background="White">
+                            <TextBlock HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Foreground="Black"
+                                       Text="{Binding Index}" />
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="BypassViewStyle" TargetType="ItemsControl">
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical" />
+                </ItemsPanelTemplate>
+
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="model:BypassUnit">
+                    <Border Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualHeight, Converter={StaticResource BesizeConverter10}}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       FontSize="16"
+                                       Foreground="{StaticResource WhiteBrush}"
+                                       Text="{Binding Name}" />
+                            <Border x:Name="PART_Border1"
+                                    Grid.Column="1"
+                                    Width="50"
+                                    Height="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                                    AncestorType={x:Type Grid}},
+                                                     Path=ActualHeight,
+                                                     Converter={StaticResource BesizeConverter1.5}}"
+                                    Margin="10,0,0,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    BorderBrush="{StaticResource WhiteBrush}"
+                                    BorderThickness="0,0,1,1" />
+                            <Border Grid.Column="1"
+                                    Width="50"
+                                    Height="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                                    AncestorType={x:Type Grid}},
+                                                     Path=ActualHeight,
+                                                     Converter={StaticResource BesizeConverter1.5}}"
+                                    Margin="10,0,0,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    BorderBrush="{StaticResource TitleBackBrush}"
+                                    BorderThickness="1,1,0,0" />
+                            <Border x:Name="PART_Border2"
+                                    Grid.Column="2"
+                                    Width="50"
+                                    Height="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                                    AncestorType={x:Type Grid}},
+                                                     Path=ActualHeight,
+                                                     Converter={StaticResource BesizeConverter1.5}}"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Center"
+                                    BorderBrush="{StaticResource WhiteBrush}"
+                                    BorderThickness="0,0,1,1" />
+                            <Border Grid.Column="2"
+                                    Width="50"
+                                    Height="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                                    AncestorType={x:Type Grid}},
+                                                     Path=ActualHeight,
+                                                     Converter={StaticResource BesizeConverter1.5}}"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Center"
+                                    BorderBrush="{StaticResource TitleBackBrush}"
+                                    BorderThickness="1,1,0,0" />
+                        </Grid>
+                    </Border>
+
+                    <DataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding CarA1Bypass}" Value="true">
+                            <Setter TargetName="PART_Border1" Property="Background" Value="{StaticResource YellowBrush}" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding CarA2Bypass}" Value="true">
+                            <Setter TargetName="PART_Border2" Property="Background" Value="{StaticResource YellowBrush}" />
+                        </DataTrigger>
+                    </DataTemplate.Triggers>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="TractionViewItemStyleOne" TargetType="ItemsControl">
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="model:TractionLockUnit">
+                    <Border Margin="15,5">
+                        <Grid x:Name="PART_Grid" Visibility="{Binding LogicName, Converter={StaticResource NullStringToVisibility}}">
+
+                            <Border Width="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                                   AncestorType={x:Type ItemsControl}},
+                                                    Path=ActualWidth,
+                                                    Converter={StaticResource BesizeConverter8},
+                                                    ConverterParameter=30}"
+                                    Height="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                                    AncestorType={x:Type ItemsControl}},
+                                                     Path=ActualHeight,
+                                                     Converter={StaticResource BesizeConverter1},
+                                                     ConverterParameter=10}"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    BorderBrush="{StaticResource WhiteBrush}"
+                                    BorderThickness="0,0,1,1" />
+                            <Border Width="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                                   AncestorType={x:Type ItemsControl}},
+                                                    Path=ActualWidth,
+                                                    Converter={StaticResource BesizeConverter8},
+                                                    ConverterParameter=30}"
+                                    Height="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                                    AncestorType={x:Type ItemsControl}},
+                                                     Path=ActualHeight,
+                                                     Converter={StaticResource BesizeConverter1},
+                                                     ConverterParameter=10}"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    BorderBrush="{StaticResource TitleBackBrush}"
+                                    BorderThickness="1,1,0,0" />
+
+                        </Grid>
+                    </Border>
+
+                    <DataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding IsLock}" Value="true">
+                            <Setter TargetName="PART_Grid" Property="Background" Value="{StaticResource RedBrush}" />
+                        </DataTrigger>
+                    </DataTemplate.Triggers>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Margin" Value="-15,0" />
+    </Style>
+
+
+
+
+
+    <Style x:Key="BorderCastItemStyle" TargetType="ItemsControl">
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="model:StationUnit">
+                    <Border Width="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                           AncestorType={x:Type ItemsControl}},
+                                            Path=ActualWidth,
+                                            Converter={StaticResource BesizeConverter3},
+                                            ConverterParameter=10}"
+                            Height="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                            AncestorType={x:Type ItemsControl}},
+                                             Path=ActualHeight,
+                                             Converter={StaticResource BesizeConverter6},
+                                             ConverterParameter=30}"
+                            Margin="5,0,5,30"
+                            BorderBrush="{StaticResource WhiteBrush}"
+                            BorderThickness="0,0,0,2">
+                        <Button Background="Transparent"
+                                Command="{Binding Source={x:Static viewModels:BorderCastViewModel.Instance},
+                                                  Path=Controller.StationDown}"
+                                CommandParameter="{Binding RelativeSource={RelativeSource Self},
+                                                           Path=Tag,
+                                                           Converter={StaticResource IntToStringConverter}}"
+                                FontSize="16"
+                                Tag="{Binding Index}">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <TextBlock HorizontalAlignment="Center"
+                                                           VerticalAlignment="Bottom"
+                                                           Foreground="{StaticResource WhiteBrush}"
+                                                           Text="{Binding Name}" />
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </Border>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="HelpBase" TargetType="ItemsControl">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="AirConditionHelpItemStyle"
+           BasedOn="{StaticResource HelpBase}"
+           TargetType="ItemsControl">
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="model:HelpUnit">
+                    <Border Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualWidth}" Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualHeight, Converter={StaticResource BesizeConverter4}, ConverterParameter=10}">
+                        <StackPanel HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                    VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                    Orientation="Horizontal">
+                            <Image Margin="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=Tag}" Source="{Binding Key, Converter={StaticResource ALlStateConverter}}" />
+                            <TextBlock Margin="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                                       AncestorType={x:Type ItemsControl}},
+                                                        Path=Padding}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       Foreground="White"
+                                       Text="{Binding Name}" />
+                        </StackPanel>
+                    </Border>
+
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="AssistPowerHelpItemStyle"
+           BasedOn="{StaticResource HelpBase}"
+           TargetType="ItemsControl">
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="model:HelpUnit">
+                    <Border Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualWidth}" Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualHeight, Converter={StaticResource BesizeConverter4}, ConverterParameter=10}">
+                        <StackPanel HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Stretch"
+                                    Orientation="Horizontal">
+                            <Image Margin="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=Tag}" Source="{Binding Key, Converter={StaticResource ALlStateConverter}}" />
+                            <TextBlock Margin="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                                       AncestorType={x:Type ItemsControl}},
+                                                        Path=Padding}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       Foreground="White"
+                                       Text="{Binding Name}" />
+                        </StackPanel>
+                    </Border>
+
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="BrakeHelpItemStyle"
+           BasedOn="{StaticResource HelpBase}"
+           TargetType="ItemsControl">
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="model:HelpUnit">
+                    <Border Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualWidth}" Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualHeight, Converter={StaticResource BesizeConverter4}, ConverterParameter=20}">
+                        <StackPanel HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Stretch"
+                                    Orientation="Horizontal">
+                            <Image Margin="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=Tag}" Source="{Binding Key, Converter={StaticResource ALlStateConverter}}" />
+                            <TextBlock Margin="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                                       AncestorType={x:Type ItemsControl}},
+                                                        Path=Padding}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       Foreground="White"
+                                       Text="{Binding Name}" />
+                        </StackPanel>
+                    </Border>
+
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="DoorHelpItemStyle"
+           BasedOn="{StaticResource HelpBase}"
+           TargetType="ItemsControl">
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="model:HelpUnit">
+                    <Border Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualWidth}" Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualHeight, Converter={StaticResource BesizeConverter8}, ConverterParameter=10}">
+                        <StackPanel HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Stretch"
+                                    Orientation="Horizontal">
+                            <Image Margin="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=Tag}" Source="{Binding Key, Converter={StaticResource ALlStateConverter}}" />
+                            <TextBlock Margin="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                                       AncestorType={x:Type ItemsControl}},
+                                                        Path=Padding}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       Foreground="White"
+                                       Text="{Binding Name}" />
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="DoorHelpItemStyleEscape"
+           BasedOn="{StaticResource HelpBase}"
+           TargetType="ItemsControl">
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="model:HelpUnit">
+                    <Grid Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualHeight, Converter={StaticResource BesizeConverter2}}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="10*" />
+                        </Grid.ColumnDefinitions>
+                        <commonViews:EscapeDoor Margin="2" DoorState="{Binding Key}" />
+                        <TextBlock Grid.Column="1"
+                                   Margin="10,2,2,2"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   Foreground="White"
+                                   Text="{Binding Name}" />
+                    </Grid>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="DoorHelpItemStyleDrive"
+           BasedOn="{StaticResource HelpBase}"
+           TargetType="ItemsControl">
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="model:HelpUnit">
+                    <Grid Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualHeight, Converter={StaticResource BesizeConverter3}}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="10*" />
+                        </Grid.ColumnDefinitions>
+                        <commonViews:DriveDoor Margin="2" DoorState="{Binding Key}" />
+                        <TextBlock Grid.Column="1"
+                                   Margin="10,2,2,2"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   Foreground="White"
+                                   Text="{Binding Name}" />
+                    </Grid>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="DoorHelpItemStyleAirPort"
+           BasedOn="{StaticResource HelpBase}"
+           TargetType="ItemsControl">
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="model:HelpUnit">
+                    <Grid Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualHeight, Converter={StaticResource BesizeConverter2}}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="10*" />
+                        </Grid.ColumnDefinitions>
+                        <commonViews:AirportDoor Margin="2" DoorState="{Binding Key}" />
+                        <TextBlock Grid.Column="1"
+                                   Margin="10,2,2,2"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   Foreground="White"
+                                   Text="{Binding Name}" />
+                    </Grid>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="HSCBItemStyle"
+           BasedOn="{StaticResource HelpBase}"
+           TargetType="ItemsControl">
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="model:HelpUnit">
+                    <Border Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualWidth}" Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualHeight, Converter={StaticResource BesizeConverter6}, ConverterParameter=10}">
+                        <StackPanel HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                    VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                    Orientation="Horizontal">
+                            <Image Margin="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=Tag}" Source="{Binding Key, Converter={StaticResource ALlStateConverter}}" />
+                            <TextBlock Margin="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                                       AncestorType={x:Type ItemsControl}},
+                                                        Path=Padding}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       Foreground="White"
+                                       Text="{Binding Name}" />
+                        </StackPanel>
+                    </Border>
+
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="HSCBItemStyleTwo"
+           BasedOn="{StaticResource HelpBase}"
+           TargetType="ItemsControl">
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="model:HelpUnit">
+                    <Border Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualWidth}" Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=ActualHeight, Converter={StaticResource BesizeConverter2}, ConverterParameter=10}">
+                        <StackPanel HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                    VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                    Orientation="Horizontal">
+                            <Image Margin="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=Tag}" Source="{Binding Key, Converter={StaticResource ALlStateConverter}}" />
+                            <TextBlock Margin="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                                       AncestorType={x:Type ItemsControl}},
+                                                        Path=Padding}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       Foreground="White"
+                                       Text="{Binding Name}" />
+                        </StackPanel>
+                    </Border>
+
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

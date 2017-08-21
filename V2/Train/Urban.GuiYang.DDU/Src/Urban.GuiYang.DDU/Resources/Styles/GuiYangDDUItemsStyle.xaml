@@ -1,0 +1,1902 @@
+﻿
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:carPart="clr-namespace:Urban.GuiYang.DDU.Model.Train.CarPart"
+    xmlns:common="clr-namespace:Urban.GuiYang.DDU.View.Common"
+    xmlns:config="clr-namespace:Urban.GuiYang.DDU.Config"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:details="clr-namespace:Urban.GuiYang.DDU.Model.PIS.Details"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:interactivity="clr-namespace:MMI.Facility.WPFInfrastructure.Interactivity;assembly=MMI.Facility.WPFInfrastructure"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:train="clr-namespace:Urban.GuiYang.DDU.Model.Train"
+    xmlns:view="clr-namespace:MMI.Facility.WPFInfrastructure.View;assembly=MMI.Facility.WPFInfrastructure"
+    mc:Ignorable="d">
+
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Image/GuiYangDDUImageResource.xaml" />
+        <ResourceDictionary Source="../Base/GuiYangBaseResource.xaml" />
+        <ResourceDictionary Source="../Converter/GuiYangDDUConverterResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="CarDoorItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="carPart:DoorStateItem">
+                        <Image Source="{Binding Path=State, Converter={StaticResource DoorStateImageConverter}}" Stretch="Fill">
+                            <Image.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/4">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Image.Width>
+                        </Image>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="CarPECUItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="carPart:PECUItem">
+                        <Border
+                            view:FlickerManager.DurationMiliSecond="500"
+                            view:FlickerManager.Flicking="{Binding Path=State, Converter={StaticResource PECUStateFlickConverter}}"
+                            view:FlickerManager.VisibilityAfterFlicking="Visible">
+                            <Ellipse
+                                Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"
+                                Margin="6,3,6,2"
+                                Fill="Yellow"
+                                Stroke="{StaticResource BlackBrush}"
+                                Visibility="{Binding Path=State, Converter={StaticResource PECUStateVisibilityConverter}}" />
+                        </Border>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="CarBodyItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+
+            <Setter Property="Margin" Value="0,0,-6,0" />
+
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Border
+                            Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=ItemsControl}, Path=ActualWidth, Converter={StaticResource MathConverter}, ConverterParameter=x/6-6}"
+                            Margin="0,0,6,0"
+                            BorderBrush="{StaticResource BlackBrush}"
+                            BorderThickness="1">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="16*" />
+                                    <RowDefinition Height="13*" />
+                                    <RowDefinition Height="15*" />
+                                    <RowDefinition Height="13*" />
+                                    <RowDefinition Height="16*" />
+                                </Grid.RowDefinitions>
+
+                                <ItemsControl
+                                    Grid.Row="0"
+                                    ItemsSource="{Binding Path=Door.UpItems}"
+                                    Style="{StaticResource CarDoorItemStyle}" />
+
+                                <ItemsControl
+                                    Grid.Row="1"
+                                    ItemsSource="{Binding Path=PECU.UpItems}"
+                                    Style="{StaticResource CarPECUItemStyle}" />
+
+                                <TextBlock
+                                    Grid.Row="2"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    FontFamily="{StaticResource FontFamilyArial}"
+                                    FontSize="18"
+                                    FontWeight="Bold"
+                                    Text="{Binding Path=Name}" />
+
+                                <ItemsControl
+                                    Grid.Row="3"
+                                    ItemsSource="{Binding Path=PECU.DownItems}"
+                                    Style="{StaticResource CarPECUItemStyle}" />
+
+
+                                <ItemsControl
+                                    Grid.Row="4"
+                                    ItemsSource="{Binding Path=Door.DownItems}"
+                                    Style="{StaticResource CarDoorItemStyle}" />
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="CarFireItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Image Source="{Binding Fire.FireAlert, Converter={StaticResource FireAlertToImageConverter}}" Stretch="Uniform">
+                            <Image.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Image.Width>
+                        </Image>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+
+    <Style x:Key="UpDoorLockItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Line
+                            Stroke="{Binding Path=Door.UpDoorLockStateItem.State, Converter={StaticResource DoorLockStataColorConverter}}"
+                            X1="0"
+                            X2="{Binding RelativeSource={RelativeSource AncestorType=Grid}, Path=ActualWidth}"
+                            Y1="5"
+                            Y2="5">
+                            <Line.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Line.Width>
+                        </Line>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="DownDoorLockItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Line
+                            Height="3"
+                            Stroke="{Binding Path=Door.DownDoorLockStateItem.State, Converter={StaticResource DoorLockStataColorConverter}}"
+                            X1="0"
+                            X2="{Binding RelativeSource={RelativeSource AncestorType=Grid}, Path=ActualWidth}"
+                            Y1="7"
+                            Y2="7">
+                            <Line.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Line.Width>
+                        </Line>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="TractionInvertorItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Image
+                            Source="{Binding MainViewPage.TractionInvertorState.State, Converter={StaticResource TractionInvertorToImageConverter}}"
+                            Stretch="Uniform"
+                            Visibility="{Binding Path=MainViewPage.TractionInvertorState.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Image.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Image.Width>
+                        </Image>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="AssistInvertorItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Image
+                            Source="{Binding MainViewPage.AssistInvertorState.State, Converter={StaticResource AssistInvertorToImageConverter}}"
+                            Stretch="Uniform"
+                            Visibility="{Binding Path=MainViewPage.AssistInvertorState.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Image.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Image.Width>
+                        </Image>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+
+
+    <Style x:Key="NormalBrakeItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="0.1*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+
+                            <Image
+                                Grid.Column="0"
+                                Margin="10,0,-3,3"
+                                Source="{Binding MainViewPage.NormalBrake1.State, Converter={StaticResource NormalBrakeToImageConverter}}"
+                                Stretch="Fill"
+                                Visibility="{Binding Path=MainViewPage.NormalBrake1.Visible, Converter={StaticResource BoolVisibilityConverter}}" />
+
+
+                            <Image
+                                Grid.Column="2"
+                                Margin="-3,0,8,3"
+                                Source="{Binding MainViewPage.NormalBrake2.State, Converter={StaticResource NormalBrakeToImageConverter}}"
+                                Stretch="Fill"
+                                Visibility="{Binding Path=MainViewPage.NormalBrake2.Visible, Converter={StaticResource BoolVisibilityConverter}}" />
+
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+
+    <Style x:Key="HeightSwitchItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="0.1*" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+                            <Image
+                                Grid.Column="0"
+                                Margin="10,0,-3,3"
+                                Source="{Binding MainViewPage.HightSwitchState1.State, Converter={StaticResource HeightSwitchToImageConverter}}"
+                                Stretch="UniformToFill"
+                                Visibility="{Binding Path=MainViewPage.HightSwitchState1.Visible, Converter={StaticResource BoolVisibilityConverter}}" />
+                            <Image
+                                Grid.Column="2"
+                                Margin="-3,0,8,3"
+                                Source="{Binding MainViewPage.HightSwitchState2.State, Converter={StaticResource HeightSwitchToImageConverter}}"
+                                Stretch="UniformToFill"
+                                Visibility="{Binding Path=MainViewPage.HightSwitchState2.Visible, Converter={StaticResource BoolVisibilityConverter}}" />
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+
+    <Style x:Key="ParkingBrakeItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Image
+                            Source="{Binding MainViewPage.ParkingBrake.State, Converter={StaticResource ParkingBrakeToImageConverter}}"
+                            Stretch="Uniform"
+                            Visibility="{Binding Path=MainViewPage.ParkingBrake.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Image.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Image.Width>
+                        </Image>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+
+    <Style x:Key="GroundConnectItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Image Source="{Binding TowPage.Value.GroundConnectState.State, Converter={StaticResource GroundConnectToImageConverter}}" Visibility="{Binding Path=TowPage.Value.GroundConnectState.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Image.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Image.Width>
+                        </Image>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="ElveItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Grid Visibility="{Binding Path=TowPage.Value.ElveState.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+                            <Border Margin="9,3" Background="{StaticResource Blue2Brush}">
+                                <TextBlock
+                                    VerticalAlignment="Center"
+                                    FontFamily="{StaticResource FontFamilySongTypeface}"
+                                    FontSize="26"
+                                    Text="{Binding Path=TowPage.Value.ElveState.State.Value, StringFormat={}0}"
+                                    TextAlignment="Center" />
+                            </Border>
+                            <Image Source="{StaticResource ImgCommonUnkownBig}" Visibility="{Binding Path=TowPage.Value.ElveState.State.GeneralState, Converter={StaticResource BoolVisibilityConverter}}" />
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+
+    <Style x:Key="MotoTemperature1ItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Grid>
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="0.1*" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <Grid
+                                Grid.Column="0"
+                                Margin="9,3,0,0"
+                                Visibility="{Binding Path=TowPage.Value.MotoTemperatureState1.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Border Margin="0,2,0,0" Background="{StaticResource Blue2Brush}">
+                                    <TextBlock
+                                        VerticalAlignment="Center "
+                                        FontFamily="{StaticResource FontFamilySongTypeface}"
+                                        FontSize="26"
+                                        Text="{Binding Path=TowPage.Value.MotoTemperatureState1.State.Value, StringFormat={}0}"
+                                        TextAlignment="Center" />
+                                </Border>
+
+                                <Image
+                                    Source="{StaticResource ImgCommonUnkownSmall}"
+                                    Stretch="UniformToFill"
+                                    Visibility="{Binding Path=TowPage.Value.MotoTemperatureState1.State.GeneralState, Converter={StaticResource BoolVisibilityConverter}}" />
+                            </Grid>
+
+                            <Grid
+                                Grid.Column="2"
+                                Margin="0,3,9,0"
+                                Visibility="{Binding Path=TowPage.Value.MotoTemperatureState2.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Border Margin="0,2,0,0" Background="{StaticResource Blue2Brush}">
+                                    <TextBlock
+                                        VerticalAlignment="Center "
+                                        FontFamily="{StaticResource FontFamilySongTypeface}"
+                                        FontSize="26"
+                                        Text="{Binding Path=TowPage.Value.MotoTemperatureState2.State.Value, StringFormat={}0}"
+                                        TextAlignment="Center" />
+                                </Border>
+
+                                <Image
+                                    Source="{StaticResource ImgCommonUnkownSmall}"
+                                    Stretch="UniformToFill"
+                                    Visibility="{Binding Path=TowPage.Value.MotoTemperatureState2.State.GeneralState, Converter={StaticResource BoolVisibilityConverter}}" />
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="MotoTemperature2ItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Grid>
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="0.1*" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <Grid
+                                Grid.Column="0"
+                                Margin="9,0,0,3"
+                                Visibility="{Binding Path=TowPage.Value.MotoTemperatureState3.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Border Margin="0,2,0,0" Background="{StaticResource Blue2Brush}">
+                                    <TextBlock
+                                        VerticalAlignment="Center "
+                                        FontFamily="{StaticResource FontFamilySongTypeface}"
+                                        FontSize="26"
+                                        Text="{Binding Path=TowPage.Value.MotoTemperatureState3.State.Value, StringFormat={}0}"
+                                        TextAlignment="Center" />
+                                </Border>
+
+                                <Image
+                                    Source="{StaticResource ImgCommonUnkownSmall}"
+                                    Stretch="UniformToFill"
+                                    Visibility="{Binding Path=TowPage.Value.MotoTemperatureState3.State.GeneralState, Converter={StaticResource BoolVisibilityConverter}}" />
+                            </Grid>
+
+                            <Grid
+                                Grid.Column="2"
+                                Margin="0,0,9,3"
+                                Visibility="{Binding Path=TowPage.Value.MotoTemperatureState4.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Border Margin="0,2,0,0" Background="{StaticResource Blue2Brush}">
+                                    <TextBlock
+                                        VerticalAlignment="Center "
+                                        FontFamily="{StaticResource FontFamilySongTypeface}"
+                                        FontSize="26"
+                                        Text="{Binding Path=TowPage.Value.MotoTemperatureState4.State.Value, StringFormat={}0}"
+                                        TextAlignment="Center" />
+                                </Border>
+
+                                <Image
+                                    Source="{StaticResource ImgCommonUnkownSmall}"
+                                    Stretch="UniformToFill"
+                                    Visibility="{Binding Path=TowPage.Value.MotoTemperatureState4.State.GeneralState, Converter={StaticResource BoolVisibilityConverter}}" />
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+
+    <Style x:Key="TowBrakeKnItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Grid Visibility="{Binding Path=TowPage.Value.TowBrakeKNState.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+                            <Border Margin="9,3" Background="{StaticResource Blue2Brush}">
+                                <TextBlock
+                                    VerticalAlignment="Center"
+                                    FontFamily="{StaticResource FontFamilySongTypeface}"
+                                    FontSize="22"
+                                    Text="{Binding Path=TowPage.Value.TowBrakeKNState.State.Value, StringFormat={}0.00}"
+                                    TextAlignment="Center" />
+                            </Border>
+                            <Image Source="{StaticResource ImgCommonUnkownBig}" Visibility="{Binding Path=TowPage.Value.TowBrakeKNState.State.GeneralState, Converter={StaticResource BoolVisibilityConverter}}" />
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="BogieIsolationValveState1ItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Image
+                            Source="{Binding Path=Brake.BrakePage1.Value.BogieIsolationValveState1.State, Converter={StaticResource BogieIsolationValveToImageConverter}}"
+                            Stretch="Uniform"
+                            Visibility="{Binding Path=Brake.BrakePage1.Value.BogieIsolationValveState1.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Image.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Image.Width>
+                        </Image>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+
+    <Style x:Key="BogieIsolationValveState2ItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Image
+                            Source="{Binding Path=Brake.BrakePage1.Value.BogieIsolationValveState2.State, Converter={StaticResource BogieIsolationValveToImageConverter}}"
+                            Stretch="Uniform"
+                            Visibility="{Binding Path=Brake.BrakePage1.Value.BogieIsolationValveState2.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Image.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Image.Width>
+                        </Image>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+
+    <Style x:Key="PackingBrakeIsolationValveStateItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Image
+                            Source="{Binding Path=Brake.BrakePage1.Value.PackingBrakeIsolationValveState.State, Converter={StaticResource PackingBrakeIsolationValveToImageConverter}}"
+                            Stretch="Uniform"
+                            Visibility="{Binding Path=Brake.BrakePage1.Value.PackingBrakeIsolationValveState.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Image.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Image.Width>
+                        </Image>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+
+    <Style x:Key="AirCompreeStateItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Image
+                            Source="{Binding Path=Brake.BrakePage1.Value.AirCompreeState.State, Converter={StaticResource AirCompreeToImageConverter}}"
+                            Stretch="Uniform"
+                            Visibility="{Binding Path=Brake.BrakePage1.Value.AirCompreeState.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Image.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Image.Width>
+                        </Image>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="EmergBrakeRelayStateItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="0.1*" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+                            <Image
+                                Grid.Column="0"
+                                Margin="10,0,-3,3"
+                                Source="{Binding Brake.BrakePage1.Value.EmergBrakeRelayState1.State, Converter={StaticResource EmergBrakeRelayToImageConverter}}"
+                                Stretch="UniformToFill"
+                                Visibility="{Binding Brake.BrakePage1.Value.EmergBrakeRelayState1.Visible, Converter={StaticResource BoolVisibilityConverter}}" />
+                            <Image
+                                Grid.Column="2"
+                                Margin="-3,0,8,3"
+                                Source="{Binding Brake.BrakePage1.Value.EmergBrakeRelayState2.State, Converter={StaticResource EmergBrakeRelayToImageConverter}}"
+                                Stretch="UniformToFill"
+                                Visibility="{Binding Brake.BrakePage1.Value.EmergBrakeRelayState2.Visible, Converter={StaticResource BoolVisibilityConverter}}" />
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="AirSpringPreesure1ItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Grid Visibility="{Binding Path=Brake.BrakePage2.Value.AirSpringPreesure1.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+                            <Border Margin="9,3" Background="{StaticResource Blue2Brush}">
+                                <TextBlock
+                                    VerticalAlignment="Center"
+                                    FontFamily="{StaticResource FontFamilySongTypeface}"
+                                    FontSize="26"
+                                    Text="{Binding Path=Brake.BrakePage2.Value.AirSpringPreesure1.State.Value, StringFormat={}0.0}"
+                                    TextAlignment="Center" />
+                            </Border>
+
+                            <Image Source="{StaticResource ImgCommonUnkownBig}" Visibility="{Binding Path=Brake.BrakePage2.Value.AirSpringPreesure1.State.GeneralState, Converter={StaticResource BoolVisibilityConverter}}" />
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="AirSpringPreesure2ItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Grid Visibility="{Binding Path=Brake.BrakePage2.Value.AirSpringPreesure2.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+                            <Border Margin="9,3" Background="{StaticResource Blue2Brush}">
+                                <TextBlock
+                                    VerticalAlignment="Center"
+                                    FontFamily="{StaticResource FontFamilySongTypeface}"
+                                    FontSize="26"
+                                    Text="{Binding Path=Brake.BrakePage2.Value.AirSpringPreesure2.State.Value, StringFormat={}0.0}"
+                                    TextAlignment="Center" />
+                            </Border>
+                            <Image Source="{StaticResource ImgCommonUnkownBig}" Visibility="{Binding Path=Brake.BrakePage2.Value.AirSpringPreesure2.State.GeneralState, Converter={StaticResource BoolVisibilityConverter}}" />
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="BrakePressure1ItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Grid Visibility="{Binding Path=Brake.BrakePage2.Value.BrakePressure1.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+                            <Border Margin="9,3" Background="{StaticResource Blue2Brush}">
+                                <TextBlock
+                                    VerticalAlignment="Center"
+                                    FontFamily="{StaticResource FontFamilySongTypeface}"
+                                    FontSize="26"
+                                    Text="{Binding Path=Brake.BrakePage2.Value.BrakePressure1.State.Value, StringFormat={}0.0}"
+                                    TextAlignment="Center" />
+                            </Border>
+
+                            <Image Source="{StaticResource ImgCommonUnkownBig}" Visibility="{Binding Path=Brake.BrakePage2.Value.BrakePressure1.State.GeneralState, Converter={StaticResource BoolVisibilityConverter}}" />
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="BrakePressure2ItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Grid Visibility="{Binding Path=Brake.BrakePage2.Value.BrakePressure2.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+                            <Border Margin="9,3" Background="{StaticResource Blue2Brush}">
+                                <TextBlock
+                                    VerticalAlignment="Center"
+                                    FontFamily="{StaticResource FontFamilySongTypeface}"
+                                    FontSize="26"
+                                    Text="{Binding Path=Brake.BrakePage2.Value.BrakePressure2.State.Value, StringFormat={}0.0}"
+                                    TextAlignment="Center" />
+                            </Border>
+                            <Image Source="{StaticResource ImgCommonUnkownBig}" Visibility="{Binding Path=Brake.BrakePage2.Value.BrakePressure2.State.GeneralState, Converter={StaticResource BoolVisibilityConverter}}" />
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="MainPressureItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Grid Visibility="{Binding Path=Brake.BrakePage2.Value.MainPressure.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+                            <Border Margin="9,3" Background="{StaticResource Blue2Brush}">
+                                <TextBlock
+                                    VerticalAlignment="Center"
+                                    FontFamily="{StaticResource FontFamilySongTypeface}"
+                                    FontSize="26"
+                                    Text="{Binding Path=Brake.BrakePage2.Value.MainPressure.State.Value, StringFormat={}0.0}"
+                                    TextAlignment="Center" />
+                            </Border>
+
+                            <Image Source="{StaticResource ImgCommonUnkownBig}" Visibility="{Binding Path=Brake.BrakePage2.Value.MainPressure.State.GeneralState, Converter={StaticResource BoolVisibilityConverter}}" />
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="WeightItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Grid Visibility="{Binding Path=Brake.BrakePage3.Value.Weight.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+                            <Border Margin="9,3" Background="{StaticResource Blue2Brush}">
+                                <TextBlock
+                                    VerticalAlignment="Center"
+                                    FontFamily="{StaticResource FontFamilySongTypeface}"
+                                    FontSize="26"
+                                    Text="{Binding Path=Brake.BrakePage3.Value.Weight.State.Value, StringFormat={}0.0}"
+                                    TextAlignment="Center" />
+                            </Border>
+                            <Image Source="{StaticResource ImgCommonUnkownBig}" Visibility="{Binding Path=Brake.BrakePage3.Value.Weight.State.GeneralState, Converter={StaticResource BoolVisibilityConverter}}" />
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="LadenItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Grid Visibility="{Binding Path=Brake.BrakePage3.Value.Laden.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+                            <Border Margin="9,3" Background="{StaticResource Blue2Brush}">
+                                <TextBlock
+                                    VerticalAlignment="Center"
+                                    FontFamily="{StaticResource FontFamilySongTypeface}"
+                                    FontSize="26"
+                                    Text="{Binding Path=Brake.BrakePage3.Value.Laden.State.Value, StringFormat={}0.0}"
+                                    TextAlignment="Center" />
+                            </Border>
+                            <Image Source="{StaticResource ImgCommonUnkownBig}" Visibility="{Binding Path=Brake.BrakePage3.Value.Laden.State.GeneralState, Converter={StaticResource BoolVisibilityConverter}}" />
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="EmergBroadcastItemStyle" TargetType="ListBox">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Background" Value="{StaticResource BlackBrush}" />
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled" />
+            <Setter Property="ScrollViewer.CanContentScroll" Value="False" />
+            <Setter Property="BorderBrush" Value="{StaticResource WhiteBrush}" />
+            <Setter Property="BorderThickness" Value="0,1" />
+            <Setter Property="ItemContainerStyle">
+                <Setter.Value>
+                    <Style TargetType="ListBoxItem">
+                        <Style.Setters>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ListBoxItem">
+                                        <Border
+                                            Margin="0"
+                                            Padding="3,6"
+                                            d:DataContext="{d:DesignInstance config:EmergBroadcastConfig}"
+                                            Background="{TemplateBinding Background}"
+                                            BorderBrush="{StaticResource WhiteBrush}"
+                                            BorderThickness="1,0,1,1">
+                                            <TextBlock Foreground="{TemplateBinding Foreground}" Text="{Binding Path=Content}">
+                                                <TextBlock.Style>
+                                                    <Style TargetType="TextBlock">
+                                                        <Style.Setters>
+                                                            <Setter Property="FontSize" Value="20" />
+                                                            <Setter Property="FontFamily" Value="{StaticResource FontFamilySongTypeface}" />
+                                                            <Setter Property="VerticalAlignment" Value="Center" />
+                                                            <Setter Property="HorizontalAlignment" Value="Left" />
+                                                        </Style.Setters>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                        </Border>
+
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Trigger.Setters>
+                                                    <Setter Property="Foreground" Value="{StaticResource BlackBrush}" />
+                                                    <Setter Property="Background" Value="{StaticResource WhiteBrush}" />
+                                                </Trigger.Setters>
+                                            </Trigger>
+                                            <Trigger Property="IsSelected" Value="False">
+                                                <Trigger.Setters>
+                                                    <Setter Property="Foreground" Value="{StaticResource WhiteBrush}" />
+                                                    <Setter Property="Background" Value="{StaticResource BlackBrush}" />
+                                                </Trigger.Setters>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+
+                                </Setter.Value>
+                            </Setter>
+                        </Style.Setters>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="PISStationListItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <WrapPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="details:Station">
+                        <common:NavigationButton
+                            Width="{Binding RelativeSource={RelativeSource AncestorType=ItemsControl}, Path=ActualWidth, Converter={StaticResource MathConverter}, ConverterParameter=x/8}"
+                            Height="{Binding RelativeSource={RelativeSource AncestorType=ItemsControl}, Path=ActualHeight, Converter={StaticResource MathConverter}, ConverterParameter=x/5}"
+                            Margin="0"
+                            Padding="10"
+                            Background="Bisque"
+                            Command="{Binding RelativeSource={RelativeSource AncestorType=ItemsControl}, Path=DataContext.PISViewModel.Model.ItemSelectedCommand}"
+                            CommandParameter="{Binding}"
+                            Content="{Binding Path=Name}"
+                            FontSize="12" />
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+
+    <Style x:Key="CarPowerSwitchItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Image
+                            Source="{Binding AssistPage.Value.CarPowerSwitch.State, Converter={StaticResource SwitchStateToImageConverter}}"
+                            Stretch="Uniform"
+                            Visibility="{Binding Path=AssistPage.Value.CarPowerSwitch.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Image.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Image.Width>
+                        </Image>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+
+    <Style x:Key="BatteryChargerStateItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Grid Visibility="{Binding Path=AssistPage.Value.BatteryChargerState.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+                            <Border Margin="9,3" Background="{Binding AssistPage.Value.BatteryChargerState.State.BatteryChargerState, Converter={StaticResource BatteryChargerStateToColorConverter}}">
+                                <TextBlock
+                                    VerticalAlignment="Center"
+                                    FontFamily="{StaticResource FontFamilySongTypeface}"
+                                    FontSize="26"
+                                    Text="{Binding AssistPage.Value.BatteryChargerState.State.Value, StringFormat={}0.0}"
+                                    TextAlignment="Center" />
+                            </Border>
+                            <Image Source="{StaticResource ImgCommonUnkownBig}" Visibility="{Binding Path=AssistPage.Value.BatteryChargerState.State.GeneralState, Converter={StaticResource BoolVisibilityConverter}}" />
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="StorageBatterytemperatureItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Grid Visibility="{Binding Path=AssistPage.Value.StorageBatterytemperature.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+                            <Border Margin="9,3" Background="{StaticResource Blue2Brush}">
+                                <TextBlock
+                                    VerticalAlignment="Center"
+                                    FontFamily="{StaticResource FontFamilySongTypeface}"
+                                    FontSize="26"
+                                    Text="{Binding Path=AssistPage.Value.StorageBatterytemperature.State.Value, StringFormat={}0.0}"
+                                    TextAlignment="Center" />
+                            </Border>
+                            <Image Source="{StaticResource ImgCommonUnkownBig}" Visibility="{Binding Path=AssistPage.Value.StorageBatterytemperature.State.GeneralState, Converter={StaticResource BoolVisibilityConverter}}" />
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="AssistLoadSwitchItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Image
+                            Source="{Binding AssistPage.Value.AssistLoadSwitch.State, Converter={StaticResource SwitchStateToImageConverter}}"
+                            Stretch="Uniform"
+                            Visibility="{Binding Path=AssistPage.Value.AssistLoadSwitch.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Image.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Image.Width>
+                        </Image>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="StorageBatteryAItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Grid Visibility="{Binding Path=AssistPage.Value.StorageBatteryA.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+                            <Border Margin="9,3" Background="{StaticResource Blue2Brush}">
+                                <TextBlock
+                                    VerticalAlignment="Center"
+                                    FontFamily="{StaticResource FontFamilySongTypeface}"
+                                    FontSize="26"
+                                    Text="{Binding Path=AssistPage.Value.StorageBatteryA.State.Value, StringFormat={}0.0}"
+                                    TextAlignment="Center" />
+                            </Border>
+                            <Image Source="{StaticResource ImgCommonUnkownBig}" Visibility="{Binding Path=AssistPage.Value.StorageBatteryA.State.GeneralState, Converter={StaticResource BoolVisibilityConverter}}" />
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+
+
+    <Style x:Key="Group1NewAirValveItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="0.1*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+
+                            <Image
+                                Grid.Column="0"
+                                Margin="10,0,-3,3"
+                                Source="{Binding AirCondition.AirConditionPage2.Value.Group1NewAirValve1.State, Converter={StaticResource NewAirValveStateToImageConverter}}"
+                                Stretch="Fill"
+                                Visibility="{Binding Path=AirCondition.AirConditionPage2.Value.Group1NewAirValve1.Visible, Converter={StaticResource BoolVisibilityConverter}}" />
+                            <Image
+                                Grid.Column="2"
+                                Margin="-3,0,8,3"
+                                Source="{Binding AirCondition.AirConditionPage2.Value.Group1NewAirValve2.State, Converter={StaticResource NewAirValveStateToImageConverter}}"
+                                Stretch="Fill"
+                                Visibility="{Binding Path=AirCondition.AirConditionPage2.Value.Group1NewAirValve2.Visible, Converter={StaticResource BoolVisibilityConverter}}" />
+
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Group2NewAirValveItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="0.1*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+
+                            <Image
+                                Grid.Column="0"
+                                Margin="10,0,-3,3"
+                                Source="{Binding AirCondition.AirConditionPage2.Value.Group2NewAirValve1.State, Converter={StaticResource NewAirValveStateToImageConverter}}"
+                                Stretch="Fill"
+                                Visibility="{Binding Path=AirCondition.AirConditionPage2.Value.Group2NewAirValve1.Visible, Converter={StaticResource BoolVisibilityConverter}}" />
+                            <Image
+                                Grid.Column="2"
+                                Margin="-3,0,8,3"
+                                Source="{Binding AirCondition.AirConditionPage2.Value.Group2NewAirValve2.State, Converter={StaticResource NewAirValveStateToImageConverter}}"
+                                Stretch="Fill"
+                                Visibility="{Binding Path=AirCondition.AirConditionPage2.Value.Group2NewAirValve2.Visible, Converter={StaticResource BoolVisibilityConverter}}" />
+
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Group2BackAirValveItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="0.1*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+
+                            <Image
+                                Grid.Column="0"
+                                Margin="10,0,-3,3"
+                                Source="{Binding AirCondition.AirConditionPage2.Value.Group2BackAirValve1.State, Converter={StaticResource BackAirValveStateToImageConverter}}"
+                                Stretch="Fill"
+                                Visibility="{Binding Path=AirCondition.AirConditionPage2.Value.Group2BackAirValve1.Visible, Converter={StaticResource BoolVisibilityConverter}}" />
+                            <Image
+                                Grid.Column="2"
+                                Margin="-3,0,8,3"
+                                Source="{Binding AirCondition.AirConditionPage2.Value.Group2BackAirValve2.State, Converter={StaticResource BackAirValveStateToImageConverter}}"
+                                Stretch="Fill"
+                                Visibility="{Binding Path=AirCondition.AirConditionPage2.Value.Group2BackAirValve2.Visible, Converter={StaticResource BoolVisibilityConverter}}" />
+
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Group1BackAirValveItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="0.1*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+
+                            <Image
+                                Grid.Column="0"
+                                Margin="10,0,-3,3"
+                                Source="{Binding AirCondition.AirConditionPage2.Value.Group1BackAirValve1.State, Converter={StaticResource BackAirValveStateToImageConverter}}"
+                                Stretch="Fill"
+                                Visibility="{Binding Path=AirCondition.AirConditionPage2.Value.Group1BackAirValve1.Visible, Converter={StaticResource BoolVisibilityConverter}}" />
+                            <Image
+                                Grid.Column="2"
+                                Margin="-3,0,8,3"
+                                Source="{Binding AirCondition.AirConditionPage2.Value.Group1BackAirValve2.State, Converter={StaticResource BackAirValveStateToImageConverter}}"
+                                Stretch="Fill"
+                                Visibility="{Binding Path=AirCondition.AirConditionPage2.Value.Group1BackAirValve2.Visible, Converter={StaticResource BoolVisibilityConverter}}" />
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="AlertBypassItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Image
+                            Source="{Binding MainPageByPass1.Value.AlertBypass.State, Converter={StaticResource ByPassSwitchStateToImageConverter}}"
+                            Stretch="Uniform"
+                            Visibility="{Binding Path=MainPageByPass1.Value.AlertBypass.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Image.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Image.Width>
+                        </Image>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="MainWindLowPresByPassItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Image
+                            Source="{Binding MainPageByPass1.Value.MainWindLowPresByPass.State, Converter={StaticResource ByPassSwitchStateToImageConverter}}"
+                            Stretch="Uniform"
+                            Visibility="{Binding Path=MainPageByPass1.Value.MainWindLowPresByPass.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Image.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Image.Width>
+                        </Image>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="ParkingRelaseBypassItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Image
+                            Source="{Binding MainPageByPass1.Value.ParkingRelaseBypass.State, Converter={StaticResource ByPassSwitchStateToImageConverter}}"
+                            Stretch="Uniform"
+                            Visibility="{Binding Path=MainPageByPass1.Value.ParkingRelaseBypass.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Image.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Image.Width>
+                        </Image>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="NormalBrakeBypassItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Image
+                            Source="{Binding MainPageByPass1.Value.NormalBrakeBypass.State, Converter={StaticResource ByPassSwitchStateToImageConverter}}"
+                            Stretch="Uniform"
+                            Visibility="{Binding Path=MainPageByPass1.Value.NormalBrakeBypass.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Image.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Image.Width>
+                        </Image>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="DoorBypassItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Image
+                            Source="{Binding MainPageByPass1.Value.DoorBypass.State, Converter={StaticResource ByPassSwitchStateToImageConverter}}"
+                            Stretch="Uniform"
+                            Visibility="{Binding Path=MainPageByPass1.Value.DoorBypass.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Image.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Image.Width>
+                        </Image>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="CoulplingStateItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Image
+                            Source="{Binding MainPageByPass2.Value.CoulplingState.State, Converter={StaticResource ByPassCoulplingStateToImageConverter}}"
+                            Stretch="Uniform"
+                            Visibility="{Binding Path=MainPageByPass2.Value.CoulplingState.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Image.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Image.Width>
+                        </Image>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="PantographEnableBypassItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Image
+                            Source="{Binding MainPageByPass2.Value.PantographEnableBypass.State, Converter={StaticResource ByPassSwitchStateToImageConverter}}"
+                            Stretch="Uniform"
+                            Visibility="{Binding Path=MainPageByPass2.Value.PantographEnableBypass.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Image.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Image.Width>
+                        </Image>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="AtcCutOffBypassItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Image
+                            Source="{Binding MainPageByPass2.Value.ATCCutOffBypass.State, Converter={StaticResource ByPassSwitchStateToImageConverter}}"
+                            Stretch="Uniform"
+                            Visibility="{Binding Path=MainPageByPass2.Value.ATCCutOffBypass.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Image.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Image.Width>
+                        </Image>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="DoorEnableBypassItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Image
+                            Source="{Binding MainPageByPass2.Value.DoorEnableBypass.State, Converter={StaticResource ByPassSwitchStateToImageConverter}}"
+                            Stretch="Uniform"
+                            Visibility="{Binding Path=MainPageByPass2.Value.DoorEnableBypass.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Image.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Image.Width>
+                        </Image>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="KeyBypassItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Image
+                            Source="{Binding MainPageByPass2.Value.KeyBypass.State, Converter={StaticResource ByPassSwitchStateToImageConverter}}"
+                            Stretch="Uniform"
+                            Visibility="{Binding Path=MainPageByPass2.Value.KeyBypass.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Image.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Image.Width>
+                        </Image>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="AirCondition1ItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+
+                        <Grid Visibility="{Binding Path=AirCondition.CurrentAirConditionPage1.AirCondition1.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+                            <Image
+                                view:FlickerManager.DurationMiliSecond="500"
+                                view:FlickerManager.Flicking="{Binding Path=AirCondition.CurrentAirConditionPage1.AirCondition1.State, Converter={StaticResource AirConditionStateToFlickConverter}}"
+                                view:FlickerManager.VisibilityAfterFlicking="Visible"
+                                Source="{Binding AirCondition.CurrentAirConditionPage1.AirCondition1.State, Converter={StaticResource AirConditionStateToImageConverter}}"
+                                Stretch="Uniform" />
+                        </Grid>
+
+
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="AirCondition2ItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Grid Visibility="{Binding Path=AirCondition.CurrentAirConditionPage1.AirCondition2.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+                            <Image
+                                view:FlickerManager.DurationMiliSecond="500"
+                                view:FlickerManager.Flicking="{Binding Path=AirCondition.CurrentAirConditionPage1.AirCondition2.State, Converter={StaticResource AirConditionStateToFlickConverter}}"
+                                view:FlickerManager.VisibilityAfterFlicking="Visible"
+                                Source="{Binding AirCondition.CurrentAirConditionPage1.AirCondition2.State, Converter={StaticResource AirConditionStateToImageConverter}}"
+                                Stretch="Uniform" />
+
+
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="CarTemperatureItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Grid Visibility="{Binding Path=AirCondition.CurrentAirConditionPage1.CarTemperature.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Grid.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Grid.Width>
+                            <Border Margin="9,3" Background="{StaticResource Blue2Brush}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition Width="0.2*" />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock
+                                        Grid.Column="0"
+                                        VerticalAlignment="Center"
+                                        FontFamily="{StaticResource FontFamilyArial}"
+                                        FontSize="20"
+                                        Text="{Binding Path=AirCondition.CurrentAirConditionPage1.CarTemperature.State.Value1, StringFormat={}0}"
+                                        TextAlignment="Right" />
+                                    <TextBlock
+                                        Grid.Column="1"
+                                        VerticalAlignment="Center"
+                                        FontFamily="{StaticResource FontFamilyArial}"
+                                        FontSize="20"
+                                        Text="/"
+                                        TextAlignment="Center" />
+                                    <TextBlock
+                                        Grid.Column="2"
+                                        VerticalAlignment="Center"
+                                        FontFamily="{StaticResource FontFamilyArial}"
+                                        FontSize="20"
+                                        Text="{Binding Path=AirCondition.CurrentAirConditionPage1.CarTemperature.State.Value2, StringFormat={}0}"
+                                        TextAlignment="Left" />
+                                </Grid>
+                            </Border>
+                            <Image Source="{StaticResource ImgCommonUnkownBig}" Visibility="{Binding Path=AirCondition.CurrentAirConditionPage1.CarTemperature.State.GeneralState, Converter={StaticResource BoolVisibilityConverter}}" />
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="ControlModelItemStyle" TargetType="ItemsControl">
+        <Style.Setters>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="train:Car">
+                        <Image
+                            Source="{Binding AirCondition.CurrentAirConditionPage1.ControlModel.State, Converter={StaticResource ControlStateToImageConverter}}"
+                            Stretch="Uniform"
+                            Visibility="{Binding Path=AirCondition.CurrentAirConditionPage1.ControlModel.Visible, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Image.Width>
+                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
+                                </MultiBinding>
+                            </Image.Width>
+                        </Image>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+</ResourceDictionary>

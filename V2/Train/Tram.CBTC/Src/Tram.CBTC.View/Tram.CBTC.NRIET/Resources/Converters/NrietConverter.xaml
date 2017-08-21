@@ -1,0 +1,110 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:constant="clr-namespace:Tram.CBTC.Infrasturcture.Model.Constant;assembly=Tram.CBTC.Infrasturcture"
+    xmlns:converter="clr-namespace:MMI.Facility.WPFInfrastructure.Converter;assembly=MMI.Facility.WPFInfrastructure"
+    xmlns:converters="clr-namespace:Tram.CBTC.NRIET.Converters">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../String/NrietString.xaml" />
+        <ResourceDictionary Source="../Base/NrietBaseResource.xaml" />
+        <ResourceDictionary Source="../Images/ImageResource_CH.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <converter:SelectObjectContentConverter x:Key="Tram.CBTC.Nriet.Converter.PowerStateToVisible">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:PowerState.Started}" Content="{x:Static Visibility.Visible}" />
+            <converter:ObjectContentPair Key="{x:Static constant:PowerState.Starting}" Content="{x:Static Visibility.Visible}" />
+            <converter:ObjectContentPair Key="{x:Static constant:PowerState.Stopped}" Content="{x:Static Visibility.Hidden}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Tram.CBTC.Nriet.Converter.CBTCColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:CBTCColor.Gray}" Content="{StaticResource Tram.CBTC.Nriet.Brush.Gray}" />
+            <converter:ObjectContentPair Key="{x:Static constant:CBTCColor.Red}" Content="{StaticResource Tram.CBTC.Nriet.Brush.Red}" />
+            <converter:ObjectContentPair Key="{x:Static constant:CBTCColor.Yellow}" Content="{StaticResource Tram.CBTC.Nriet.Brush.Yellow}" />
+            <converter:ObjectContentPair Key="{x:Static constant:CBTCColor.White}" Content="{StaticResource Tram.CBTC.Nriet.Brush.White}" />
+            <converter:ObjectContentPair Key="{x:Static constant:CBTCColor.Green}" Content="{StaticResource Tram.CBTC.Nriet.Brush.Green}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Tram.CBTC.Nriet.Converter.CurrentDeviceStatusColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+
+            <converter:ObjectContentPair Key="{x:Static constant:DeviceState.AllNormal}" Content="{StaticResource Tram.CBTC.Nriet.Brush.Green}" />
+            <converter:ObjectContentPair Key="{x:Static constant:DeviceState.CurrentFault}" Content="{StaticResource Tram.CBTC.Nriet.Brush.Red}" />
+            <converter:ObjectContentPair Key="{x:Static constant:DeviceState.RemoteFault}" Content="{StaticResource Tram.CBTC.Nriet.Brush.Green}" />
+            <converter:ObjectContentPair Key="{x:Static constant:DeviceState.AllFault}" Content="{StaticResource Tram.CBTC.Nriet.Brush.Red}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Tram.CBTC.Nriet.Converter.RemoteDeviceStatusColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+
+            <converter:ObjectContentPair Key="{x:Static constant:DeviceState.AllNormal}" Content="{StaticResource Tram.CBTC.Nriet.Brush.Green}" />
+            <converter:ObjectContentPair Key="{x:Static constant:DeviceState.CurrentFault}" Content="{StaticResource Tram.CBTC.Nriet.Brush.Green}" />
+            <converter:ObjectContentPair Key="{x:Static constant:DeviceState.RemoteFault}" Content="{StaticResource Tram.CBTC.Nriet.Brush.Red}" />
+            <converter:ObjectContentPair Key="{x:Static constant:DeviceState.AllFault}" Content="{StaticResource Tram.CBTC.Nriet.Brush.Red}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Tram.CBTC.Nriet.Converter.CurrentDeviceStatusTextConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:DeviceState.AllNormal}" Content="{StaticResource Tram.CBTC.Nriet.String.Normal}" />
+            <converter:ObjectContentPair Key="{x:Static constant:DeviceState.CurrentFault}" Content="{StaticResource Tram.CBTC.Nriet.String.Fault}" />
+            <converter:ObjectContentPair Key="{x:Static constant:DeviceState.RemoteFault}" Content="{StaticResource Tram.CBTC.Nriet.String.Normal}" />
+            <converter:ObjectContentPair Key="{x:Static constant:DeviceState.AllFault}" Content="{StaticResource Tram.CBTC.Nriet.String.Fault}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Tram.CBTC.Nriet.Converter.RemoteDeviceStatusTextConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:DeviceState.AllNormal}" Content="{StaticResource Tram.CBTC.Nriet.String.Normal}" />
+            <converter:ObjectContentPair Key="{x:Static constant:DeviceState.CurrentFault}" Content="{StaticResource Tram.CBTC.Nriet.String.Normal}" />
+            <converter:ObjectContentPair Key="{x:Static constant:DeviceState.RemoteFault}" Content="{StaticResource Tram.CBTC.Nriet.String.Fault}" />
+            <converter:ObjectContentPair Key="{x:Static constant:DeviceState.AllFault}" Content="{StaticResource Tram.CBTC.Nriet.String.Fault}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="Tram.CBTC.Nriet.Converter.LineRunDirectionToUpChecked">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:LineRunDirection.Up}" Content="true" />
+            <converter:ObjectContentPair Key="{x:Static constant:LineRunDirection.Down}" Content="false" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+
+    <converter:SelectObjectContentConverter x:Key="Tram.CBTC.Nriet.Converter.LineRunDirectionToDownChecked">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:LineRunDirection.Up}" Content="false" />
+            <converter:ObjectContentPair Key="{x:Static constant:LineRunDirection.Down}" Content="true" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+
+    <converters:TimeConverter x:Key="Tram.CBTC.Nriet.Converter.TimeConverter" />
+    <converters:SpeedToAngleConverter x:Key="Tram.CBTC.Nriet.Converter.NrietSpeedToAngleConverter" />
+    <converters:DegreeScaleTextAngleConverter x:Key="Tram.CBTC.Nriet.Converter.NrietDegreeScaleTextAngleConverter" />
+    <converter:BoolVisibilityConverter x:Key="Tram.CBTC.Nriet.Converter.NrietBooleanToVisibilityConverter" />
+    <converters:CompareSpeedConverter x:Key="Tram.CBTC.Nriet.Converter.NrietCompareSpeedConverter" />
+    <converters:BrakeDetailsConvert x:Key="Tram.CBTC.Nriet.Converter.NrietBrakeDetailsConvert" />
+    <converters:CabStatusToTextConverter x:Key="Tram.CBTC.Nriet.Converter.CabStatusToTextConverter" />
+    <converters:ReturnInfoVisibleConvert x:Key="Tram.CBTC.Nriet.Converter.ReturnInfoVisibleConvert" />
+    <converters:ReturnInfoToTextConvert x:Key="Tram.CBTC.Nriet.Converter.ReturnInfoToTextConvert" />
+    <converters:RadarTargetHorizontaldistanceConvert x:Key="Tram.CBTC.Nriet.Converter.RadarTargetHorizontaldistanceConvert" />
+    <converters:RadarTargetVerticalDistanceConvert x:Key="Tram.CBTC.Nriet.Converter.RadarTargetVerticalDistanceConvert" />
+    <converters:LineRunDirectionConvert x:Key="Tram.CBTC.Nriet.Converter.LineRunDirectionConvert" />
+    <converter:MathConverter x:Key="Tram.CBTC.Nriet.Converter.MathConverter"/>
+    <converters:ReturnIndicateInfoToOrientationConverter x:Key="Tram.CBTC.Nriet.Converter.ReturnIndicateInfoToOrientationConverter" />
+    <converters:ReturnIndicateInfoToVisibleConvert x:Key="Tram.CBTC.Nriet.Converter.ReturnIndicateInfoToVisibleConvert" />
+    <converters:GarageIndicateInfoToVisibleConvert x:Key="Tram.CBTC.Nriet.Converter.GarageIndicateInfoToVisibleConvert" />
+    <converters:GarageIndicateInfoToStartCornerConverter x:Key="Tram.CBTC.Nriet.Converter.GarageIndicateInfoToStartCornerConverter" />
+
+
+    <converter:BoolToObjectConverter
+        x:Key="Tram.CBTC.Nriet.Converter.SoundCtrlConverter"
+        FalseObject="{StaticResource Tram.CBTC.Nriet.Image.SoundClosed}"
+        TrueObject="{StaticResource Tram.CBTC.Nriet.Image.SoundOpened}" />
+
+</ResourceDictionary>

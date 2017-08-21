@@ -1,0 +1,452 @@
+﻿<UserControl
+    x:Class="Subway.ShenZhenLine7.Views.MainContent.MainContentShell"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:baseInfo="clr-namespace:Subway.ShenZhenLine7.Views.BaseInfo"
+    xmlns:car="clr-namespace:Subway.ShenZhenLine7.Views.Car"
+    xmlns:constance="clr-namespace:Subway.ShenZhenLine7.Constance"
+    xmlns:converter="clr-namespace:Subway.ShenZhenLine7.Converter"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+    xmlns:helper="clr-namespace:Subway.ShenZhenLine7.Helper"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:regions="http://www.codeplex.com/CompositeWPF"
+    xmlns:viewModels="clr-namespace:Subway.ShenZhenLine7.ViewModels"
+    d:DataContext="{d:DesignInstance {x:Type viewModels:ShenZhenLine7ViewModel}}"
+    d:DesignHeight="480"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80*" />
+            <RowDefinition Height="400*" />
+        </Grid.RowDefinitions>
+        <baseInfo:BaseInfoView />
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="12*" />
+                <RowDefinition Height="4*" />
+                <RowDefinition Height="21*" />
+                <RowDefinition Height="5*" />
+            </Grid.RowDefinitions>
+            <car:CarNumberView Panel.ZIndex="1" />
+            <ContentControl Grid.Row="0" regions:RegionManager.RegionName="{x:Static constance:RegionNames.CarRegion}" />
+
+            <ed:RegularPolygon
+                Grid.Row="0"
+                Width="30"
+                Height="15"
+                Margin="10,65,0,30"
+                HorizontalAlignment="Left"
+                Fill="#FF00FF00"
+                InnerRadius="1"
+                PointCount="3"
+                RenderTransformOrigin="0.5,0.5"
+                Stretch="Fill"
+                Stroke="Black"
+                StrokeLineJoin="Round">
+
+                <ed:RegularPolygon.Visibility>
+                    <Binding Converter="{StaticResource Subway.ShenZhenLine7.BoolToVisibility2}" Path="MasterPageViewModel.IsRunCar1" />
+                </ed:RegularPolygon.Visibility>
+                <ed:RegularPolygon.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform Angle="-90" />
+                        <TranslateTransform />
+                    </TransformGroup>
+                </ed:RegularPolygon.RenderTransform>
+            </ed:RegularPolygon>
+            <ed:RegularPolygon
+                Grid.Row="0"
+                Width="30"
+                Height="15"
+                Margin="0,65,8,34"
+                HorizontalAlignment="Right"
+                Fill="#FF00FF00"
+                InnerRadius="1"
+                PointCount="3"
+                RenderTransformOrigin="0.5,0.5"
+                Stretch="Fill"
+                Stroke="Black"
+                StrokeLineJoin="Round">
+
+                <ed:RegularPolygon.Visibility>
+                    <Binding Converter="{StaticResource Subway.ShenZhenLine7.BoolToVisibility2}" Path="MasterPageViewModel.IsRunCar6" />
+                </ed:RegularPolygon.Visibility>
+                <ed:RegularPolygon.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform Angle="90" />
+                        <TranslateTransform />
+                    </TransformGroup>
+                </ed:RegularPolygon.RenderTransform>
+            </ed:RegularPolygon>
+            <Image
+                Grid.Row="0"
+                Width="{Binding ElementName=TagetImage, Path=ActualWidth}"
+                Height="{Binding ElementName=TagetImage, Path=ActualHeight}"
+                Margin="0,6,29,70"
+                HorizontalAlignment="Right"
+                Panel.ZIndex="999"
+                Source="{StaticResource Subway.ShenZhenLine7.列车预开门侧}">
+                <Image.Visibility>
+                    <MultiBinding Converter="{StaticResource Subway.ShenZhenLine7.TwoBoolConverter}">
+                        <Binding Path="MasterPageViewModel.IsActiveCar6" />
+                        <Binding Path="MasterPageViewModel.IsRightOpenDoor" />
+                    </MultiBinding>
+                </Image.Visibility>
+            </Image>
+            <Image
+                Grid.Row="0"
+                Width="{Binding ElementName=TagetImage, Path=ActualWidth}"
+                Height="{Binding ElementName=TagetImage, Path=ActualHeight}"
+                Margin="34,6,0,70"
+                HorizontalAlignment="Left"
+                Panel.ZIndex="999"
+                Source="{StaticResource Subway.ShenZhenLine7.列车预开门侧}">
+                <Image.Visibility>
+                    <MultiBinding Converter="{StaticResource Subway.ShenZhenLine7.TwoBoolConverter}">
+                        <Binding Path="MasterPageViewModel.IsActiveCar1" />
+                        <Binding Path="MasterPageViewModel.IsRightOpenDoor" />
+                    </MultiBinding>
+                </Image.Visibility>
+            </Image>
+            <Image
+                Grid.Row="1"
+                Margin="0,0,29,0"
+                HorizontalAlignment="Right"
+                Panel.ZIndex="999"
+                Source="{StaticResource Subway.ShenZhenLine7.列车预开门侧}">
+                <Image.Visibility>
+                    <MultiBinding Converter="{StaticResource Subway.ShenZhenLine7.TwoBoolConverter}">
+                        <Binding Path="MasterPageViewModel.IsActiveCar6" />
+                        <Binding Path="MasterPageViewModel.IsLeftOpenDoor" />
+                    </MultiBinding>
+                </Image.Visibility>
+            </Image>
+            <Image
+                x:Name="TagetImage"
+                Grid.Row="1"
+                Margin="34,0,0,0"
+                HorizontalAlignment="Left"
+                Panel.ZIndex="999"
+                Source="{StaticResource Subway.ShenZhenLine7.列车预开门侧}">
+                <Image.Visibility>
+                    <MultiBinding Converter="{StaticResource Subway.ShenZhenLine7.TwoBoolConverter}">
+                        <Binding Path="MasterPageViewModel.IsActiveCar1" />
+                        <Binding Path="MasterPageViewModel.IsLeftOpenDoor" />
+                    </MultiBinding>
+                </Image.Visibility>
+            </Image>
+
+            <ContentControl Grid.Row="1" regions:RegionManager.RegionName="{x:Static constance:RegionNames.HightSpeedRegion}" />
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="15*" />
+                    <ColumnDefinition Width="35*" />
+                    <ColumnDefinition Width="8*" />
+                    <ColumnDefinition Width="12*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" Margin="0,20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Button
+                        Grid.Row="1"
+                        Content="{Binding MasterPageViewModel.RunModel, Converter={StaticResource Subway.ShenZhenLine7.EnumToStringConverter}}"
+                        Style="{StaticResource Subway.ShenZhenLine7.MasterPageButtonStyle1}" />
+                    <Button
+                        Grid.Row="2"
+                        Background="{Binding MasterPageViewModel.BrakeStatus, Converter={StaticResource Subway.ShenZhenLine7.BrakeStatusConverter}}"
+                        Content="{Binding MasterPageViewModel.BrakeStatus, Converter={StaticResource Subway.ShenZhenLine7.EnumToStringConverter}}"
+                        Style="{StaticResource Subway.ShenZhenLine7.MasterPageButtonStyle1}" />
+                </Grid>
+                <Grid
+                    x:Name="ButtonGrid"
+                    Grid.Column="1"
+                    Margin="0,25">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <RadioButton
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        helper:RadionButtomHelper.CheckedImage="{StaticResource Subway.ShenZhenLine7.空调按钮选中}"
+                        helper:RadionButtomHelper.FaultImage="{StaticResource Subway.ShenZhenLine7.空调按钮故障}"
+                        helper:RadionButtomHelper.NormalImage="{StaticResource Subway.ShenZhenLine7.空调按钮正常}"
+                        Command="{Binding Controller.NavigatorToKeyCommand}"
+                        CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"
+                        Content="空调子页面"
+                        Style="{StaticResource Subway.ShenZhenLine7.MainContenRdioBtnStyle}"
+                        Tag="{Binding MasterPageViewModel.MainContentBrnViewModel.AirConditionFault}" />
+                    <RadioButton
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        helper:RadionButtomHelper.CheckedImage="{StaticResource Subway.ShenZhenLine7.辅助电源按钮选中}"
+                        helper:RadionButtomHelper.FaultImage="{StaticResource Subway.ShenZhenLine7.辅助电源按钮故障}"
+                        helper:RadionButtomHelper.NormalImage="{StaticResource Subway.ShenZhenLine7.辅助电源按钮正常}"
+                        Command="{Binding Controller.NavigatorToKeyCommand}"
+                        CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"
+                        Content="辅助电源页面"
+                        Style="{StaticResource Subway.ShenZhenLine7.MainContenRdioBtnStyle}"
+                        Tag="{Binding MasterPageViewModel.MainContentBrnViewModel.AssistFault}" />
+                    <RadioButton
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        helper:RadionButtomHelper.CheckedImage="{StaticResource Subway.ShenZhenLine7.紧急广播按钮选中}"
+                        helper:RadionButtomHelper.FaultImage="{StaticResource Subway.ShenZhenLine7.紧急广播按钮故障}"
+                        helper:RadionButtomHelper.NormalImage="{StaticResource Subway.ShenZhenLine7.紧急广播按钮正常}"
+                        Command="{Binding Controller.NavigatorToKeyCommand}"
+                        CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"
+                        Content="紧急广播界面"
+                        Style="{StaticResource Subway.ShenZhenLine7.MainContenRdioBtnStyle}"
+                        Tag="{Binding MasterPageViewModel.MainContentBrnViewModel.EmergencyBorderCastFault}" />
+                    <RadioButton
+                        Grid.Row="0"
+                        Grid.Column="3"
+                        helper:RadionButtomHelper.CheckedImage="{StaticResource Subway.ShenZhenLine7.门按钮选中}"
+                        helper:RadionButtomHelper.FaultImage="{StaticResource Subway.ShenZhenLine7.门按钮故障}"
+                        helper:RadionButtomHelper.NormalImage="{StaticResource Subway.ShenZhenLine7.门按钮正常}"
+                        Command="{Binding Controller.NavigatorToKeyCommand}"
+                        CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"
+                        Content="主页面"
+                        IsChecked="True"
+                        Style="{StaticResource Subway.ShenZhenLine7.MainContenRdioBtnStyle}"
+                        Tag="{Binding MasterPageViewModel.MainContentBrnViewModel.DoorFault}" />
+                    <RadioButton
+                        Grid.Row="0"
+                        Grid.Column="4"
+                        helper:RadionButtomHelper.CheckedImage="{StaticResource Subway.ShenZhenLine7.紧急对讲按钮选中}"
+                        helper:RadionButtomHelper.FaultImage="{StaticResource Subway.ShenZhenLine7.紧急对讲按钮故障}"
+                        helper:RadionButtomHelper.NormalImage="{StaticResource Subway.ShenZhenLine7.紧急对讲按钮正常}"
+                        Command="{Binding Controller.NavigatorToKeyCommand}"
+                        CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"
+                        Content="紧急对讲页面"
+                        Style="{StaticResource Subway.ShenZhenLine7.MainContenRdioBtnStyle}"
+                        Tag="{Binding MasterPageViewModel.MainContentBrnViewModel.EmergencyTalkFault}" />
+                    <RadioButton
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        helper:RadionButtomHelper.CheckedImage="{StaticResource Subway.ShenZhenLine7.制动按钮选中}"
+                        helper:RadionButtomHelper.FaultImage="{StaticResource Subway.ShenZhenLine7.制动按钮故障}"
+                        helper:RadionButtomHelper.NormalImage="{StaticResource Subway.ShenZhenLine7.制动按钮正常}"
+                        Command="{Binding Controller.NavigatorToKeyCommand}"
+                        CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"
+                        Content="制动页面"
+                        Style="{StaticResource Subway.ShenZhenLine7.MainContenRdioBtnStyle}"
+                        Tag="{Binding MasterPageViewModel.MainContentBrnViewModel.BrakeFault}" />
+                    <RadioButton
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        helper:RadionButtomHelper.CheckedImage="{StaticResource Subway.ShenZhenLine7.牵引按钮选中}"
+                        helper:RadionButtomHelper.FaultImage="{StaticResource Subway.ShenZhenLine7.牵引按钮故障}"
+                        helper:RadionButtomHelper.NormalImage="{StaticResource Subway.ShenZhenLine7.牵引按钮正常}"
+                        Command="{Binding Controller.NavigatorToKeyCommand}"
+                        CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"
+                        Content="牵引页面"
+                        Style="{StaticResource Subway.ShenZhenLine7.MainContenRdioBtnStyle}"
+                        Tag="{Binding MasterPageViewModel.MainContentBrnViewModel.TractionFault}" />
+                    <RadioButton
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        helper:RadionButtomHelper.CheckedImage="{StaticResource Subway.ShenZhenLine7.烟火按钮选中}"
+                        helper:RadionButtomHelper.FaultImage="{StaticResource Subway.ShenZhenLine7.烟火按钮故障}"
+                        helper:RadionButtomHelper.NormalImage="{StaticResource Subway.ShenZhenLine7.烟火按钮正常}"
+                        Command="{Binding Controller.NavigatorToKeyCommand}"
+                        CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"
+                        Content="烟火检测"
+                        Style="{StaticResource Subway.ShenZhenLine7.MainContenRdioBtnStyle}"
+                        Tag="{Binding MasterPageViewModel.MainContentBrnViewModel.SmokeFault}" />
+                    <RadioButton
+                        Grid.Row="1"
+                        Grid.Column="3"
+                        helper:RadionButtomHelper.CheckedImage="{StaticResource Subway.ShenZhenLine7.空压机按钮选中}"
+                        helper:RadionButtomHelper.FaultImage="{StaticResource Subway.ShenZhenLine7.空压机按钮故障}"
+                        helper:RadionButtomHelper.NormalImage="{StaticResource Subway.ShenZhenLine7.空压机按钮正常}"
+                        Command="{Binding Controller.NavigatorToKeyCommand}"
+                        CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"
+                        Content="空压机"
+                        Style="{StaticResource Subway.ShenZhenLine7.MainContenRdioBtnStyle}"
+                        Tag="{Binding MasterPageViewModel.MainContentBrnViewModel.AirPumpFault}" />
+                    <RadioButton
+                        Grid.Row="1"
+                        Grid.Column="4"
+                        helper:RadionButtomHelper.CheckedImage="{StaticResource Subway.ShenZhenLine7.受电弓按钮选中}"
+                        helper:RadionButtomHelper.FaultImage="{StaticResource Subway.ShenZhenLine7.受电弓按钮故障}"
+                        helper:RadionButtomHelper.NormalImage="{StaticResource Subway.ShenZhenLine7.受电弓按钮正常}"
+                        Command="{Binding Controller.NavigatorToKeyCommand}"
+                        CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"
+                        Content="HSCB页面"
+                        Style="{StaticResource Subway.ShenZhenLine7.MainContenRdioBtnStyle}"
+                        Tag="{Binding MasterPageViewModel.MainContentBrnViewModel.HSCBFault}" />
+
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="18"
+                        Foreground="Red"
+                        Text="{Binding MasterPageViewModel.Traction, StringFormat=\{0:F0\}}" />
+                    <ProgressBar
+                        Grid.Row="0"
+                        Margin="30,0"
+                        Maximum="100"
+                        Minimum="0"
+                        Orientation="Vertical"
+                        Style="{StaticResource Subway.ShenZhenLine7.MainMasterProgressBasrStyle}"
+                        Tag="Top"
+                        Value="{Binding MasterPageViewModel.Traction}" />
+                    <TextBlock
+                        Grid.Row="1"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="18"
+                        Foreground="Red"
+                        Text="{Binding MasterPageViewModel.Brake, StringFormat=\{0:F0\}}" />
+                    <ProgressBar
+                        Grid.Row="1"
+                        Margin="30,0"
+                        Maximum="100"
+                        Minimum="0"
+                        Orientation="Vertical"
+                        Style="{StaticResource Subway.ShenZhenLine7.MainMasterProgressBasrStyle}"
+                        Tag="Bottom"
+                        Value="{Binding MasterPageViewModel.Brake}" />
+                </Grid>
+                <Grid Grid.Column="3" Margin="0,30,25,30">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        FontSize="18"
+                        Foreground="White"
+                        Text="报站:" />
+                    <Button
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Margin="0,7,10,7"
+                        Content="{Binding MasterPageViewModel.StationModel, Converter={StaticResource Subway.ShenZhenLine7.EnumToStringConverter}}"
+                        Style="{StaticResource Subway.ShenZhenLine7.MasterPageButtonStyle1}" />
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        FontSize="18"
+                        Foreground="White"
+                        Text="限速:" />
+                    <Button
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Margin="0,7,10,7"
+                        Content="{Binding MasterPageViewModel.LimitSpeed}"
+                        ContentStringFormat="F0"
+                        Style="{StaticResource Subway.ShenZhenLine7.MasterPageButtonStyle1}" />
+                    <TextBlock
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        FontSize="18"
+                        Foreground="White"
+                        Text="速度:" />
+                    <Button
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Margin="0,7,10,7"
+                        Content="{Binding MasterPageViewModel.Speed}"
+                        Style="{StaticResource Subway.ShenZhenLine7.MasterPageButtonStyle1}" />
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Button Background="Yellow">
+                    <Button.Resources>
+                        <converter:FaultVisibleConverter x:Key="Subway.ShenZhenLine7.FaultVisibleConverter" />
+                        <converter:EventInfoConverter x:Key="Subway.ShenZhenLine7.EventInfoConverter" />
+                    </Button.Resources>
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="FontSize" Value="16" />
+                            <Setter Property="Visibility" Value="{Binding EventInfoViewModel.ConfirmEventInfo, Converter={StaticResource Subway.ShenZhenLine7.FaultVisibleConverter}}" />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="108*" />
+                                                <ColumnDefinition Width="230*" />
+                                                <ColumnDefinition Width="381*" />
+                                                <ColumnDefinition Width="81*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Border
+                                                Grid.Column="0"
+                                                Grid.ColumnSpan="3"
+                                                Background="{TemplateBinding Background}">
+                                                <Grid>
+                                                    <Grid.Resources>
+                                                        <Style TargetType="{x:Type TextBlock}">
+                                                            <Setter Property="HorizontalAlignment" Value="Center" />
+                                                            <Setter Property="VerticalAlignment" Value="Center" />
+                                                        </Style>
+                                                    </Grid.Resources>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="108*" />
+                                                        <ColumnDefinition Width="230*" />
+                                                        <ColumnDefinition Width="381*" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="{Binding EventInfoViewModel.ConfirmEventInfo.Index}" />
+                                                    <TextBlock Grid.Column="1" Text="{Binding EventInfoViewModel.ConfirmEventInfo.HappenTime, StringFormat=\{0:yyyy-MM-dd  hh:mm:ss\}}" />
+                                                    <TextBlock
+                                                        Grid.Column="2"
+                                                        HorizontalAlignment="Left"
+                                                        Text="{Binding EventInfoViewModel.ConfirmEventInfo, Converter={StaticResource Subway.ShenZhenLine7.EventInfoConverter}}" />
+                                                </Grid>
+                                            </Border>
+                                            <Button
+                                                Grid.Column="3"
+                                                Margin="0"
+                                                Command="{Binding EventInfoViewModel.Controller.Confirm}"
+                                                Content="确定"
+                                                Style="{StaticResource Subway.ShenZhenLine7.MasterPageButtonStyle1}" />
+
+                                        </Grid>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </Grid>
+
+        </Grid>
+    </Grid>
+</UserControl>

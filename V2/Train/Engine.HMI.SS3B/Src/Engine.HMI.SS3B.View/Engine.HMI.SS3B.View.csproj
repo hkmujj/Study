@@ -1,0 +1,552 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BCFB4740-6D43-43F4-9BF3-1DFB5337AF29}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Engine.HMI.SS3B.View</RootNamespace>
+    <AssemblyName>Engine.HMI.SS3B.View</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <ExpressionBlendVersion>12.0.50429.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\MMI\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonUtil, Version=1.3.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Bin\MMI\CommonUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="Excel.Interface, Version=2.26.2016.115, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MMI\Excel.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Controls" />
+    <Reference Include="Microsoft.Practices.Prism, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MMI\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MMI\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Mmi.Communication.Index.Adapter">
+      <HintPath>..\..\..\..\Bin\MMI\Mmi.Communication.Index.Adapter.dll</HintPath>
+    </Reference>
+    <Reference Include="MMI.Facility.Interface">
+      <HintPath>..\..\..\Bin\MMI\MMI.Facility.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="MMI.Facility.WPFInfrastructure">
+      <HintPath>..\MMI\MMI.Facility.WPFInfrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="Urban.Info.Interface">
+      <HintPath>..\..\MMI\Urban.Info.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ColorSolidBrushMgr.cs" />
+    <Compile Include="Config\GlobalParam.cs" />
+    <Compile Include="Config\IndexConfigure.cs" />
+    <Compile Include="Config\SS3BConfig.cs" />
+    <Compile Include="Constance\KunMingRegionNames.cs" />
+    <Compile Include="Constance\KunMingViewFullNames.cs" />
+    <Compile Include="Constance\LiuZhouRegionNames.cs" />
+    <Compile Include="Constance\LiuZhouViewFullNames.cs" />
+    <Compile Include="Converter\BarValueConvert.cs" />
+    <Compile Include="Converter\ColorLevelConvert.cs" />
+    <Compile Include="Converter\DateTimeConverter.cs" />
+    <Compile Include="Converter\DirectionConvert.cs" />
+    <Compile Include="Converter\DoubleConvertToOne.cs" />
+    <Compile Include="Converter\DoubleConvertToZero.cs" />
+    <Compile Include="Converter\FaultConverter.cs" />
+    <Compile Include="Converter\NetPageColorConvert.cs" />
+    <Compile Include="Converter\ThreeDoubleToOne.cs" />
+    <Compile Include="Converter\TwoDoubleConverterFour.cs" />
+    <Compile Include="Converter\TwoDoubleConvertOne.cs" />
+    <Compile Include="Converter\TwoDoubleConvertThree.cs" />
+    <Compile Include="Converter\TwoDoubleConvertTwo.cs" />
+    <Compile Include="Converter\WorkCOnvert.cs" />
+    <Compile Include="Event\ChangeViewContentEventArg.cs" />
+    <Compile Include="Model\LineResouceOne.cs" />
+    <Compile Include="Model\LineResouceTwo.cs" />
+    <Compile Include="Model\MainViewTableItemModel.cs" />
+    <Compile Include="Model\MainViewTableModel.cs" />
+    <Compile Include="Model\MessageMgr.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="ViewModel\ISS3BViewModel.cs" />
+    <Compile Include="ViewModel\KunMing\AssistSysytemPageViewModel.cs" />
+    <Compile Include="ViewModel\KunMing\AxleTemperatureViewModel.cs" />
+    <Compile Include="ViewModel\KunMing\BottomButtonViewModel.cs" />
+    <Compile Include="ViewModel\KunMing\MainCircuitPageViewModel.cs" />
+    <Compile Include="ViewModel\KunMing\MasterViewModel.cs" />
+    <Compile Include="ViewModel\KunMing\NetPageViewModel.cs" />
+    <Compile Include="ViewModel\KunMing\PartViewModelBase.cs" />
+    <Compile Include="ViewModel\KunMing\PasswordInputViewModel.cs" />
+    <Compile Include="ViewModel\KunMing\SS3BViewModel.cs" />
+    <Compile Include="ViewModel\KunMing\StatusViewModel.cs" />
+    <Compile Include="ViewModel\KunMing\TitleViewModel.cs" />
+    <Compile Include="ViewModel\KunMing\ViewModelBase.cs" />
+    <Compile Include="ViewModel\LiuZhou\AssistSysytemPageViewModel.cs" />
+    <Compile Include="ViewModel\LiuZhou\AxleTemperatureViewModel.cs" />
+    <Compile Include="ViewModel\LiuZhou\BottomButtonViewModel.cs" />
+    <Compile Include="ViewModel\LiuZhou\MainCircuitPageViewModel.cs" />
+    <Compile Include="ViewModel\LiuZhou\MasterViewModel.cs" />
+    <Compile Include="ViewModel\LiuZhou\NetPageViewModel.cs" />
+    <Compile Include="ViewModel\LiuZhou\PartViewModelBase.cs" />
+    <Compile Include="ViewModel\LiuZhou\SS3BViewModel.cs" />
+    <Compile Include="ViewModel\LiuZhou\StatusViewModel.cs" />
+    <Compile Include="ViewModel\LiuZhou\TitleViewModel.cs" />
+    <Compile Include="ViewModel\LiuZhou\ViewModelBase.cs" />
+    <Compile Include="View\KunMing\AssistSysytemPage.cs">
+      <DependentUpon>AssistSysytemPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KunMing\AxleTemperaturePage.cs">
+      <DependentUpon>AxleTemperaturePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KunMing\ButtonView.cs">
+      <DependentUpon>ButtonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KunMing\CheckModelFault.xaml.cs">
+      <DependentUpon>CheckModelFault.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KunMing\DoMain.cs">
+      <DependentUpon>DoMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KunMing\FatuleInfo.cs">
+      <DependentUpon>FatuleInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KunMing\FatulePage.cs">
+      <DependentUpon>FatulePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KunMing\FaultView.cs">
+      <DependentUpon>FaultView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KunMing\GraduationLine.xaml.cs" />
+    <Compile Include="View\KunMing\Main.cs">
+      <DependentUpon>Main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KunMing\MainCircuitPage.cs">
+      <DependentUpon>MainCircuitPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KunMing\MainNetPage.cs">
+      <DependentUpon>MainNetPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KunMing\MainPageFour.cs">
+      <DependentUpon>MainPageFour.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KunMing\MasterGraduationOne.cs">
+      <DependentUpon>MasterGraduationOne.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KunMing\MasterGraduationTreen.cs">
+      <DependentUpon>MasterGraduationTreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KunMing\MasterGraduationTwo.cs">
+      <DependentUpon>MasterGraduationTwo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KunMing\MasterMainPage.cs">
+      <DependentUpon>MasterMainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KunMing\ModelSelectPage.cs">
+      <DependentUpon>ModelSelectPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KunMing\ReconditionMainView.xaml.cs">
+      <DependentUpon>ReconditionMainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KunMing\RectText.cs">
+      <DependentUpon>RectText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KunMing\StatusPage.cs">
+      <DependentUpon>StatusPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KunMing\Tax2Page.cs">
+      <DependentUpon>Tax2Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KunMing\TestFaultxaml.cs">
+      <DependentUpon>TestFaultxaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KunMing\Title.cs">
+      <DependentUpon>Title.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LiuZhou\AssistSysytemPage.cs">
+      <DependentUpon>AssistSysytemPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LiuZhou\AxleTemperaturePage.cs">
+      <DependentUpon>AxleTemperaturePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LiuZhou\ButtonView.cs">
+      <DependentUpon>ButtonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LiuZhou\DoMain.cs">
+      <DependentUpon>DoMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LiuZhou\FatuleInfo.cs">
+      <DependentUpon>FatuleInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LiuZhou\FatulePage.cs">
+      <DependentUpon>FatulePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LiuZhou\FaultView.cs">
+      <DependentUpon>FaultView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LiuZhou\MainCircuitPage.cs">
+      <DependentUpon>MainCircuitPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LiuZhou\MainNetPage.cs">
+      <DependentUpon>MainNetPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LiuZhou\MainPageFour.cs">
+      <DependentUpon>MainPageFour.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LiuZhou\MasterGraduationOne.cs">
+      <DependentUpon>MasterGraduationOne.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LiuZhou\MasterGraduationTreen.cs">
+      <DependentUpon>MasterGraduationTreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LiuZhou\MasterGraduationTwo.cs">
+      <DependentUpon>MasterGraduationTwo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LiuZhou\MasterMainPage.cs">
+      <DependentUpon>MasterMainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LiuZhou\ModelSelectPage.cs">
+      <DependentUpon>ModelSelectPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LiuZhou\RectText.cs">
+      <DependentUpon>RectText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LiuZhou\StatusPage.cs">
+      <DependentUpon>StatusPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LiuZhou\Tax2Page.cs">
+      <DependentUpon>Tax2Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LiuZhou\TestFaultxaml.cs">
+      <DependentUpon>TestFaultxaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LiuZhou\Title.cs">
+      <DependentUpon>Title.xaml</DependentUpon>
+    </Compile>
+    <Page Include="KunMingAppResource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LiuZhouAppResouce.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\KunMing\AssistSysytemPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\KunMing\AxleTemperaturePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\KunMing\ButtonView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\KunMing\CheckModelFault.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\KunMing\DoMain.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\KunMing\FatuleInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\KunMing\FatulePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\KunMing\FaultView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\KunMing\GraduationLine.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\KunMing\Main.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\KunMing\MainCircuitPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\KunMing\MainNetPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\KunMing\MainPageFour.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\KunMing\MasterGraduationOne.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\KunMing\MasterGraduationTreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\KunMing\MasterGraduationTwo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\KunMing\MasterMainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\KunMing\ModelSelectPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\KunMing\ReconditionMainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\KunMing\RectText.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\KunMing\StatusPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\KunMing\Tax2Page.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\KunMing\TestFaultxaml.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\KunMing\Title.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\LiuZhou\AssistSysytemPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LiuZhou\AxleTemperaturePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LiuZhou\ButtonView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LiuZhou\DoMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LiuZhou\FatuleInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LiuZhou\FatulePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LiuZhou\FaultView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LiuZhou\Main.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="View\LiuZhou\Main.cs">
+      <DependentUpon>Main.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\LiuZhou\MainCircuitPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LiuZhou\MainNetPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LiuZhou\MainPageFour.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LiuZhou\MasterGraduationOne.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LiuZhou\MasterGraduationTreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LiuZhou\MasterGraduationTwo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LiuZhou\MasterMainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LiuZhou\ModelSelectPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LiuZhou\RectText.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LiuZhou\StatusPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LiuZhou\Tax2Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LiuZhou\TestFaultxaml.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LiuZhou\Title.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Engine.HMI.SS3B.CommonView\Engine.HMI.SS3B.CommonView.csproj">
+      <Project>{fd849644-adf4-4705-a038-4fd887fe66a1}</Project>
+      <Name>Engine.HMI.SS3B.CommonView</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Engine.HMI.SS3B.Interface\Engine.HMI.SS3B.Interface.csproj">
+      <Project>{a53e6803-5de9-4140-af44-9e4a2036d148}</Project>
+      <Name>Engine.HMI.SS3B.Interface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\ModelSelect.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\KunMingModelSelect1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resouce\ic卡.png" />
+    <Resource Include="Resouce\KunMingModelSelect.png" />
+    <Resource Include="Resouce\事件记录.png" />
+    <Resource Include="Resouce\关闭.png" />
+    <Resource Include="Resouce\密码.png" />
+    <Resource Include="Resouce\按键测试.png" />
+    <Resource Include="Resouce\数据查询.png" />
+    <Resource Include="Resouce\文件检查.png" />
+    <Resource Include="Resouce\最小化.png" />
+    <Resource Include="Resouce\机车自检.png" />
+    <Resource Include="Resouce\版本检查.png" />
+    <Resource Include="Resouce\设置时间.png" />
+    <Resource Include="Resouce\轮径.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

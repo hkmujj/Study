@@ -1,0 +1,22 @@
+﻿<UserControl
+    x:Class="Subway.CBTC.Casco.View.Contents.RegionD.RegionDLayout"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:common="clr-namespace:Subway.CBTC.Casco.View.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:model="clr-namespace:Subway.CBTC.Casco.Model"
+    xmlns:viewModel="clr-namespace:Subway.CBTC.Casco.ViewModel"
+    d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+    d:DesignHeight="65"
+    d:DesignWidth="88"
+    mc:Ignorable="d">
+    <UserControl.Resources />
+
+    <Grid>
+        <TextBlock
+            Style="{DynamicResource Subway.CBTC.Casco.Style.Text.RegionDTextStyle}"
+            Text="{Binding CBTC.RoadInfo.StationInfo.PSD.DepartSecond}"
+            Visibility="{Binding CBTC.RoadInfo.StationInfo.PSD.DepartSecondVisble, Converter={StaticResource Subway.CBTC.Casco.Converter.BooleanToVisibilityConverter}}" />
+    </Grid>
+</UserControl>

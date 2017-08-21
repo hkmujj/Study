@@ -1,0 +1,278 @@
+﻿<UserControl x:Class="Engine._6A.Views.Common.DataMonitor.RunLineViewOne"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:commonControl="clr-namespace:Engine._6A.CommonControl"
+             xmlns:viewModel="clr-namespace:Engine._6A.Interface.ViewModel" d:DataContext="{d:DesignInstance viewModel:IEngine6AViewModel}"
+             d:DesignHeight="400"
+             d:DesignWidth="640"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary Source="../../../Resouce/Engine6AResource.xaml" />
+    </UserControl.Resources>
+    <Grid DataContext="{Binding DataMonitor.RunLineOne}">
+        <Grid Margin="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="345*" />
+                <RowDefinition Height="35*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="5,5,40,20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0"
+                           Grid.Column="1"
+                           HorizontalAlignment="Center"
+                           Style="{StaticResource CommonTextStyleTwo}"
+                           Text="1位" />
+                <TextBlock Grid.Row="0"
+                           Grid.Column="2"
+                           HorizontalAlignment="Center"
+                           Style="{StaticResource CommonTextStyleTwo}"
+                           Text="2位" />
+                <TextBlock Grid.Row="0"
+                           Grid.Column="3"
+                           HorizontalAlignment="Center"
+                           Style="{StaticResource CommonTextStyleTwo}"
+                           Text="3位" />
+                <TextBlock Grid.Row="0"
+                           Grid.Column="4"
+                           HorizontalAlignment="Center"
+                           Style="{StaticResource CommonTextStyleTwo}"
+                           Text="4位" />
+                <TextBlock Grid.Row="0"
+                           Grid.Column="5"
+                           HorizontalAlignment="Center"
+                           Style="{StaticResource CommonTextStyleTwo}"
+                           Text="5位" />
+                <TextBlock Grid.Row="0"
+                           Grid.Column="6"
+                           HorizontalAlignment="Center"
+                           Style="{StaticResource CommonTextStyleTwo}"
+                           Text="6位" />
+
+                <TextBlock Grid.Row="1"
+                           Grid.Column="0"
+                           HorizontalAlignment="Center"
+                           Style="{StaticResource CommonTextStyleTwo}"
+                           Text="1轴" />
+
+                <commonControl:RadioTwoLineRecText Grid.Row="1"
+                                                Grid.Column="1"
+                                                Content="{Binding Axle1Bit1}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <commonControl:RadioTwoLineRecText Grid.Row="1"
+                                                Grid.Column="2"
+                                                Content="{Binding Axle1Bit2}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <commonControl:RadioTwoLineRecText Grid.Row="1"
+                                                Grid.Column="3"
+                                                Content="{Binding Axle1Bit3}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <commonControl:RadioTwoLineRecText Grid.Row="1"
+                                                Grid.Column="4"
+                                                Content="{Binding Axle1Bit4}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <commonControl:RadioTwoLineRecText Grid.Row="1"
+                                                Grid.Column="5"
+                                                Content="{Binding Axle1Bit5}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <commonControl:RadioTwoLineRecText Grid.Row="1"
+                                                Grid.Column="6"
+                                                Content="{Binding Axle1Bit6}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+
+                <TextBlock Grid.Row="2"
+                           Grid.Column="0"
+                           HorizontalAlignment="Center"
+                           Style="{StaticResource CommonTextStyleTwo}"
+                           Text="2轴" />
+                <commonControl:RadioTwoLineRecText Grid.Row="2"
+                                                Grid.Column="1"
+                                                Content="{Binding Axle2Bit1}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <commonControl:RadioTwoLineRecText Grid.Row="2"
+                                                Grid.Column="2"
+                                                Content="{Binding Axle2Bit2}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <commonControl:RadioTwoLineRecText Grid.Row="2"
+                                                Grid.Column="3"
+                                                Content="{Binding Axle2Bit3}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <commonControl:RadioTwoLineRecText Grid.Row="2"
+                                                Grid.Column="4"
+                                                Content="{Binding Axle2Bit4}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <commonControl:RadioTwoLineRecText Grid.Row="2"
+                                                Grid.Column="5"
+                                                Content="{Binding Axle2Bit5}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <commonControl:RadioTwoLineRecText Grid.Row="2"
+                                                Grid.Column="6"
+                                                Content="{Binding Axle2Bit6}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <TextBlock Grid.Row="3"
+                           Grid.Column="0"
+                           HorizontalAlignment="Center"
+                           Style="{StaticResource CommonTextStyleTwo}"
+                           Text="3轴" />
+                <commonControl:RadioTwoLineRecText Grid.Row="3"
+                                                Grid.Column="1"
+                                                Content="{Binding Axle3Bit1}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <commonControl:RadioTwoLineRecText Grid.Row="3"
+                                                Grid.Column="2"
+                                                Content="{Binding Axle3Bit2}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <commonControl:RadioTwoLineRecText Grid.Row="3"
+                                                Grid.Column="3"
+                                                Content="{Binding Axle3Bit3}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <commonControl:RadioTwoLineRecText Grid.Row="3"
+                                                Grid.Column="4"
+                                                Content="{Binding Axle3Bit4}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <commonControl:RadioTwoLineRecText Grid.Row="3"
+                                                Grid.Column="5"
+                                                Content="{Binding Axle3Bit5}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <commonControl:RadioTwoLineRecText Grid.Row="3"
+                                                Grid.Column="6"
+                                                Content="{Binding Axle3Bit6}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <TextBlock Grid.Row="4"
+                           Grid.Column="0"
+                           HorizontalAlignment="Center"
+                           Style="{StaticResource CommonTextStyleTwo}"
+                           Text="4轴" />
+                <commonControl:RadioTwoLineRecText Grid.Row="4"
+                                                Grid.Column="1"
+                                                Content="{Binding Axle4Bit1}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <commonControl:RadioTwoLineRecText Grid.Row="4"
+                                                Grid.Column="2"
+                                                Content="{Binding Axle4Bit2}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <commonControl:RadioTwoLineRecText Grid.Row="4"
+                                                Grid.Column="3"
+                                                Content="{Binding Axle4Bit3}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <commonControl:RadioTwoLineRecText Grid.Row="4"
+                                                Grid.Column="4"
+                                                Content="{Binding Axle4Bit4}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <commonControl:RadioTwoLineRecText Grid.Row="4"
+                                                Grid.Column="5"
+                                                Content="{Binding Axle4Bit5}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <commonControl:RadioTwoLineRecText Grid.Row="4"
+                                                Grid.Column="6"
+                                                Content="{Binding Axle4Bit6}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <TextBlock Grid.Row="5"
+                           Grid.Column="0"
+                           HorizontalAlignment="Center"
+                           Style="{StaticResource CommonTextStyleTwo}"
+                           Text="5轴" />
+                <commonControl:RadioTwoLineRecText Grid.Row="5"
+                                                Grid.Column="1"
+                                                Content="{Binding Axle5Bit1}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <commonControl:RadioTwoLineRecText Grid.Row="5"
+                                                Grid.Column="2"
+                                                Content="{Binding Axle5Bit2}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <commonControl:RadioTwoLineRecText Grid.Row="5"
+                                                Grid.Column="3"
+                                                Content="{Binding Axle5Bit3}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <commonControl:RadioTwoLineRecText Grid.Row="5"
+                                                Grid.Column="4"
+                                                Content="{Binding Axle5Bit4}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <commonControl:RadioTwoLineRecText Grid.Row="5"
+                                                Grid.Column="5"
+                                                Content="{Binding Axle5Bit5}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <commonControl:RadioTwoLineRecText Grid.Row="5"
+                                                Grid.Column="6"
+                                                Content="{Binding Axle5Bit6}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <TextBlock Grid.Row="6"
+                           Grid.Column="0"
+                           HorizontalAlignment="Center"
+                           Style="{StaticResource CommonTextStyleTwo}"
+                           Text="6轴" />
+                <commonControl:RadioTwoLineRecText Grid.Row="6"
+                                                Grid.Column="1"
+                                                Content="{Binding Axle6Bit1}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <commonControl:RadioTwoLineRecText Grid.Row="6"
+                                                Grid.Column="2"
+                                                Content="{Binding Axle6Bit2}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <commonControl:RadioTwoLineRecText Grid.Row="6"
+                                                Grid.Column="3"
+                                                Content="{Binding Axle6Bit3}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <commonControl:RadioTwoLineRecText Grid.Row="6"
+                                                Grid.Column="4"
+                                                Content="{Binding Axle6Bit4}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <commonControl:RadioTwoLineRecText Grid.Row="6"
+                                                Grid.Column="5"
+                                                Content="{Binding Axle6Bit5}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+                <commonControl:RadioTwoLineRecText Grid.Row="6"
+                                                Grid.Column="6"
+                                                Content="{Binding Axle6Bit6}"
+                                                Style="{StaticResource RunLineOneBoxStyle}" />
+
+            </Grid>
+            <Grid x:Name="Data" Grid.Row="1">
+                <Viewbox Width="{Binding ElementName=Data, Path=ActualWidth}" Height="{Binding ElementName=Data, Path=ActualHeight}">
+                    <Canvas Width="510" Height="30">
+                        <Path Data="m 0,0 h 510"
+                              Fill="{StaticResource DarkGrayBrush}"
+                              Stroke="{StaticResource DarkGrayBrush}"
+                              StrokeThickness="1" />
+                    </Canvas>
+                </Viewbox>
+                <StackPanel Orientation="Horizontal">
+                    <Image Style="{StaticResource CommonNoDataImgStyle}" />
+                    <TextBlock Style="{StaticResource CommonNoDataTextStyle}" Text="无数据" />
+                    <Image Margin="7"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Source="../../../Resouce/Image/Pic1.png" />
+                    <TextBlock Margin="0,0,0,2"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontWeight="Bold"
+                               Foreground="{StaticResource WhiteBrush}"
+                               Text="--/--" />
+                </StackPanel>
+
+            </Grid>
+        </Grid>
+    </Grid>
+
+</UserControl>

@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C7781122-89C9-47DA-9FBA-EFBC67649B3C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NC_TMS</RootNamespace>
+    <AssemblyName>NC_TMS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\MMI\Addin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ES.Facility.PublicModule">
+      <HintPath>..\..\..\..\Bin\MMI\ES.Facility.PublicModule.dll</HintPath>
+    </Reference>
+    <Reference Include="MMI.Facility.Interface">
+      <HintPath>..\MMI\MMI.Facility.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Brushs.cs" />
+    <Compile Include="Common\Enums.cs" />
+    <Compile Include="Common\FontInfo.cs" />
+    <Compile Include="ES.Facility.Common\Control\Button.cs" />
+    <Compile Include="ES.Facility.Common\Control\Common\IControl.cs" />
+    <Compile Include="ES.Facility.Common\Control\Common\IStyle.cs" />
+    <Compile Include="ES.Facility.Common\Control\Common\MouseEventArgs.cs" />
+    <Compile Include="ES.Facility.Common\Control\Group.cs" />
+    <Compile Include="ES.Facility.Common\Control\ListBox.cs" />
+    <Compile Include="ES.Facility.Common\Control\TextBox.cs" />
+    <Compile Include="ES.Facility.Common\FaultInfo.cs" />
+    <Compile Include="ES.Facility.Common\FontStyle.cs" />
+    <Compile Include="ES.Facility.Common\FontStyles.cs" />
+    <Compile Include="公共组件\VC_C2_GetValue.cs" />
+    <Compile Include="公共组件\VC_C5_BlackView.cs" />
+    <Compile Include="帮助\V601_Help_RunView_C0.cs" />
+    <Compile Include="帮助\V602_Help_TrainView_C0.cs" />
+    <Compile Include="帮助\V603_Help_AriConditionView_C0.cs" />
+    <Compile Include="帮助\V604_Help_MessageView_C0.cs" />
+    <Compile Include="检修\V702_Check_TimeSetting_C0.cs" />
+    <Compile Include="检修\V703_Check_PasswordSetting_C0.cs" />
+    <Compile Include="检修\V704_Check_WheelRadius_C0.cs" />
+    <Compile Include="检修\V705_Check_TrainIDSetting_C0.cs" />
+    <Compile Include="检修\V706_Check_AccelerateTest_C0.cs" />
+    <Compile Include="检修\V707_Check_Test_C0.cs" />
+    <Compile Include="检修\V708_Check_DataNotes_C0.cs" />
+    <Compile Include="检修\V7_Check_Common_Frame.cs" />
+    <Compile Include="运行\V101_Run_C0_Fault.cs" />
+    <Compile Include="运行\V102_Run_Fireworks_C0_MainView.cs" />
+    <Compile Include="运行\V103_Run_Broad_C0_MianView.cs" />
+    <Compile Include="运行\V104_Run_StationSet_C0_MainView.cs" />
+    <Compile Include="检修\V701_Check_Login_C0_MainView.cs" />
+    <Compile Include="检修\V7_Check_C0_MainView.cs" />
+    <Compile Include="公共组件\VC_C0_Title.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="运行\V105_Run_DirectionList_C0.cs" />
+    <Compile Include="运行\V106_Run_TrainLogic_C0.cs" />
+    <Compile Include="运行\V107_Run_SpeedLimiting_C0.cs" />
+    <Compile Include="运行\V108_Run_DishRoad_C0.cs" />
+    <Compile Include="运行\V1_Run_Common_C0_List.cs" />
+    <Compile Include="黑屏\V0_C0_BlackView.cs" />
+    <Compile Include="黑屏\V0_C0_BlackView_Close.cs" />
+    <Compile Include="黑屏\V0_C0_BlackView_Closed.cs" />
+    <Compile Include="运行\V1_Run_C1_RightButton.cs" />
+    <Compile Include="公共组件\VC_C3_Car.cs" />
+    <Compile Include="公共组件\VC_C4_GetFault.cs" />
+    <Compile Include="运行\V1_Run_C2_State.cs" />
+    <Compile Include="运行\V1_Run_C3_DownButton.cs" />
+    <Compile Include="运行\V1_Run_C4_ModeAndGK.cs" />
+    <Compile Include="公共组件\VC_C1_ViewChangeButton.cs" />
+    <Compile Include="车辆状态\V2_TrainState_C0_MainView.cs" />
+    <Compile Include="空调状态\V301_AirCondition_C2_TemperatureControl.cs" />
+    <Compile Include="空调状态\V3_AirCondition_C0_MainView.cs" />
+    <Compile Include="空调状态\V3_AirCondition_C1_RightButton.cs" />
+    <Compile Include="空调状态\V3_AirCondition_C2_AirConditionControl.cs" />
+    <Compile Include="事件\V4_Event_C0_MianView.cs" />
+    <Compile Include="通讯状态\V5_Message_C0_MainView.cs" />
+    <Compile Include="通讯状态\V5_Message_C1_Tc1_Tc2.cs" />
+    <Compile Include="通讯状态\V5_Message_C2_Mp1_Mp2.cs" />
+    <Compile Include="通讯状态\V5_Message_C3_M1_M2.cs" />
+    <Compile Include="黑屏\V0_C1_OverCourse.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

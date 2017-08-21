@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Oub维护0为关闭1为开启" xml:space="preserve">
+    <value>维护(0为关闭，1为开启)</value>
+  </data>
+  <data name="OubEVC替换显示" xml:space="preserve">
+    <value>EVC替换显示</value>
+  </data>
+  <data name="Oub自动速度控制_速度设定关闭" xml:space="preserve">
+    <value>自动速度控制---速度设定关闭</value>
+  </data>
+  <data name="Oub自动速度控制_2kmh连挂速度" xml:space="preserve">
+    <value>自动速度控制---2km/h(连挂速度)</value>
+  </data>
+  <data name="Oub自动速度控制_5kmh" xml:space="preserve">
+    <value>自动速度控制---5km/h</value>
+  </data>
+  <data name="Oub自动速度控制_10kmh" xml:space="preserve">
+    <value>自动速度控制---10km/h</value>
+  </data>
+  <data name="Oub自动速度控制_25kmh" xml:space="preserve">
+    <value>自动速度控制---25km/h</value>
+  </data>
+  <data name="Oub最大速度" xml:space="preserve">
+    <value>最大速度</value>
+  </data>
+  <data name="Oub开始整备运行" xml:space="preserve">
+    <value>开始整备运行</value>
+  </data>
+  <data name="Oub行驶" xml:space="preserve">
+    <value>行驶</value>
+  </data>
+  <data name="Oub取消速度限制100kmh" xml:space="preserve">
+    <value>取消速度限制100km/h</value>
+  </data>
+  <data name="Oub横向加速度监控_限速" xml:space="preserve">
+    <value>横向加速度监控--限速</value>
+  </data>
+  <data name="Oub复位所有横向加速度报警" xml:space="preserve">
+    <value>复位所有横向加速度报警</value>
+  </data>
+  <data name="Oub所有单车空调紧急关闭" xml:space="preserve">
+    <value>所有单车空调紧急关闭</value>
+  </data>
+  <data name="Oub网侧电流限制_600A" xml:space="preserve">
+    <value>网侧电流限制---600A</value>
+  </data>
+  <data name="Oub网侧电流限制_最大" xml:space="preserve">
+    <value>网侧电流限制---最大</value>
+  </data>
+  <data name="Oub风扇_最小" xml:space="preserve">
+    <value>风扇---最小</value>
+  </data>
+  <data name="Oub风扇_最大" xml:space="preserve">
+    <value>风扇---最大</value>
+  </data>
+  <data name="Oub牵引手柄检测通道1" xml:space="preserve">
+    <value>牵引手柄检测通道1</value>
+  </data>
+  <data name="Oub牵引手柄检测通道2" xml:space="preserve">
+    <value>牵引手柄检测通道2</value>
+  </data>
+  <data name="Oub受电弓1隔离" xml:space="preserve">
+    <value>受电弓1隔离</value>
+  </data>
+  <data name="Oub受电弓2隔离" xml:space="preserve">
+    <value>受电弓2隔离</value>
+  </data>
+  <data name="Oub受电弓3隔离" xml:space="preserve">
+    <value>受电弓3隔离</value>
+  </data>
+  <data name="Oub受电弓4隔离" xml:space="preserve">
+    <value>受电弓4隔离</value>
+  </data>
+  <data name="Oub真空断路器1隔离" xml:space="preserve">
+    <value>真空断路器1隔离</value>
+  </data>
+  <data name="Oub真空断路器2隔离" xml:space="preserve">
+    <value>真空断路器2隔离</value>
+  </data>
+  <data name="Oub真空断路器3隔离" xml:space="preserve">
+    <value>真空断路器3隔离</value>
+  </data>
+  <data name="Oub真空断路器4隔离" xml:space="preserve">
+    <value>真空断路器4隔离</value>
+  </data>
+  <data name="Oub车顶隔离开关1隔离" xml:space="preserve">
+    <value>车顶隔离开关1隔离</value>
+  </data>
+  <data name="Oub车顶隔离开关2隔离" xml:space="preserve">
+    <value>车顶隔离开关2隔离</value>
+  </data>
+  <data name="Oub车顶隔离开关3隔离" xml:space="preserve">
+    <value>车顶隔离开关3隔离</value>
+  </data>
+  <data name="Oub车顶隔离开关4隔离" xml:space="preserve">
+    <value>车顶隔离开关4隔离</value>
+  </data>
+  <data name="Oub牵引变流器1隔离" xml:space="preserve">
+    <value>牵引变流器1隔离</value>
+  </data>
+  <data name="Oub牵引变流器2隔离" xml:space="preserve">
+    <value>牵引变流器2隔离</value>
+  </data>
+  <data name="Oub牵引变流器3隔离" xml:space="preserve">
+    <value>牵引变流器3隔离</value>
+  </data>
+  <data name="Oub牵引变流器4隔离" xml:space="preserve">
+    <value>牵引变流器4隔离</value>
+  </data>
+  <data name="Oub牵引变流器5隔离" xml:space="preserve">
+    <value>牵引变流器5隔离</value>
+  </data>
+  <data name="Oub牵引变流器6隔离" xml:space="preserve">
+    <value>牵引变流器6隔离</value>
+  </data>
+  <data name="Oub牵引变流器7隔离" xml:space="preserve">
+    <value>牵引变流器7隔离</value>
+  </data>
+  <data name="Oub牵引变流器8隔离" xml:space="preserve">
+    <value>牵引变流器8隔离</value>
+  </data>
+  <data name="Oub受电弓1恢复" xml:space="preserve">
+    <value>受电弓1恢复</value>
+  </data>
+  <data name="Oub受电弓2恢复" xml:space="preserve">
+    <value>受电弓2恢复</value>
+  </data>
+  <data name="Oub受电弓3恢复" xml:space="preserve">
+    <value>受电弓3恢复</value>
+  </data>
+  <data name="Oub受电弓4恢复" xml:space="preserve">
+    <value>受电弓4恢复</value>
+  </data>
+  <data name="Oub真空断路器1恢复" xml:space="preserve">
+    <value>真空断路器1恢复</value>
+  </data>
+  <data name="Oub真空断路器2恢复" xml:space="preserve">
+    <value>真空断路器2恢复</value>
+  </data>
+  <data name="Oub真空断路器3恢复" xml:space="preserve">
+    <value>真空断路器3恢复</value>
+  </data>
+  <data name="Oub真空断路器4恢复" xml:space="preserve">
+    <value>真空断路器4恢复</value>
+  </data>
+  <data name="Oub车顶隔离开关1恢复" xml:space="preserve">
+    <value>车顶隔离开关1恢复</value>
+  </data>
+  <data name="Oub车顶隔离开关2恢复" xml:space="preserve">
+    <value>车顶隔离开关2恢复</value>
+  </data>
+  <data name="Oub车顶隔离开关3恢复" xml:space="preserve">
+    <value>车顶隔离开关3恢复</value>
+  </data>
+  <data name="Oub车顶隔离开关4恢复" xml:space="preserve">
+    <value>车顶隔离开关4恢复</value>
+  </data>
+  <data name="Oub牵引变流器1恢复" xml:space="preserve">
+    <value>牵引变流器1恢复</value>
+  </data>
+  <data name="Oub牵引变流器2恢复" xml:space="preserve">
+    <value>牵引变流器2恢复</value>
+  </data>
+  <data name="Oub牵引变流器3恢复" xml:space="preserve">
+    <value>牵引变流器3恢复</value>
+  </data>
+  <data name="Oub牵引变流器4恢复" xml:space="preserve">
+    <value>牵引变流器4恢复</value>
+  </data>
+  <data name="Oub牵引变流器5恢复" xml:space="preserve">
+    <value>牵引变流器5恢复</value>
+  </data>
+  <data name="Oub牵引变流器6恢复" xml:space="preserve">
+    <value>牵引变流器6恢复</value>
+  </data>
+  <data name="Oub牵引变流器7恢复" xml:space="preserve">
+    <value>牵引变流器7恢复</value>
+  </data>
+  <data name="Oub牵引变流器8恢复" xml:space="preserve">
+    <value>牵引变流器8恢复</value>
+  </data>
+  <data name="Oub直接制动试验开始" xml:space="preserve">
+    <value>直接制动试验开始</value>
+  </data>
+  <data name="Oub紧急制动试验开始" xml:space="preserve">
+    <value>紧急制动试验开始</value>
+  </data>
+  <data name="OubMRP贯通性试验开始" xml:space="preserve">
+    <value>MRP贯通性试验开始</value>
+  </data>
+  <data name="OubBP泄漏试验开始" xml:space="preserve">
+    <value>BP泄漏试验开始</value>
+  </data>
+  <data name="Oub间接制动试验开始" xml:space="preserve">
+    <value>间接制动试验开始</value>
+  </data>
+  <data name="OubBP贯通性试验开始" xml:space="preserve">
+    <value>BP贯通性试验开始</value>
+  </data>
+  <data name="Oub直接制动试验结束" xml:space="preserve">
+    <value>直接制动试验结束</value>
+  </data>
+  <data name="Oub紧急制动试验结束" xml:space="preserve">
+    <value>紧急制动试验结束</value>
+  </data>
+  <data name="OubMRP贯通性试验结束" xml:space="preserve">
+    <value>MRP贯通性试验结束</value>
+  </data>
+  <data name="OubBP泄漏试验结束" xml:space="preserve">
+    <value>BP泄漏试验结束</value>
+  </data>
+  <data name="Oub制动试验间接试验成功" xml:space="preserve">
+    <value>制动试验/间接试验成功</value>
+  </data>
+  <data name="OubBP贯通性试验结束" xml:space="preserve">
+    <value>BP贯通性试验结束</value>
+  </data>
+  <data name="OubBP排风" xml:space="preserve">
+    <value>BP排风</value>
+  </data>
+  <data name="Oub停止排风" xml:space="preserve">
+    <value>停止排风</value>
+  </data>
+  <data name="Oub直接制动试验结束1" xml:space="preserve">
+    <value>直接制动试验结束1</value>
+  </data>
+  <data name="Oub紧急制动试验结束1" xml:space="preserve">
+    <value>紧急制动试验结束1</value>
+  </data>
+  <data name="OubMRP贯通性试验结束1" xml:space="preserve">
+    <value>MRP贯通性试验结束1</value>
+  </data>
+  <data name="OubBP泄漏试验结束1" xml:space="preserve">
+    <value>BP泄漏试验结束1</value>
+  </data>
+  <data name="Oub间接制动试验结束1" xml:space="preserve">
+    <value>间接制动试验结束1</value>
+  </data>
+  <data name="OubBP贯通性试验结束1" xml:space="preserve">
+    <value>BP贯通性试验结束1</value>
+  </data>
+  <data name="Oub停止排风1" xml:space="preserve">
+    <value>停止排风1</value>
+  </data>
+  <data name="Oub网侧电流_300A" xml:space="preserve">
+    <value>网侧电流--300A</value>
+  </data>
+  <data name="Oub网侧电流_400A" xml:space="preserve">
+    <value>网侧电流--400A</value>
+  </data>
+  <data name="Oub动车组12解编" xml:space="preserve">
+    <value>动车组1/2解编</value>
+  </data>
+  <data name="Oub请求动车组1前车钩关闭" xml:space="preserve">
+    <value>请求动车组1前车钩关闭</value>
+  </data>
+  <data name="Oub请求动车组1前车钩打开" xml:space="preserve">
+    <value>请求动车组1前车钩打开</value>
+  </data>
+  <data name="Oub请求动车组1后车钩关闭" xml:space="preserve">
+    <value>请求动车组1后车钩关闭</value>
+  </data>
+  <data name="Oub请求动车组1后车钩打开" xml:space="preserve">
+    <value>请求动车组1后车钩打开</value>
+  </data>
+  <data name="Oub请求动车组2前车钩关闭" xml:space="preserve">
+    <value>请求动车组2前车钩关闭</value>
+  </data>
+  <data name="Oub请求动车组2前车钩打开" xml:space="preserve">
+    <value>请求动车组2前车钩打开</value>
+  </data>
+  <data name="Oub请求动车组2后车钩关闭" xml:space="preserve">
+    <value>请求动车组2后车钩关闭</value>
+  </data>
+  <data name="Oub请求动车组2后车钩打开" xml:space="preserve">
+    <value>请求动车组2后车钩打开</value>
+  </data>
+  <data name="Oub列车就绪" xml:space="preserve">
+    <value>列车就绪</value>
+  </data>
+  <data name="Oub取消牵引限制门开" xml:space="preserve">
+    <value>取消牵引限制（门开）</value>
+  </data>
+  <data name="Oub测试结果5104" xml:space="preserve">
+    <value>Oub测试结果5104</value>
+  </data>
+  <data name="Oub测试结果5105" xml:space="preserve">
+    <value>Oub测试结果5105</value>
+  </data>
+  <data name="Oub测试结果5106" xml:space="preserve">
+    <value>Oub测试结果5106</value>
+  </data>
+  <data name="Oub测试结果5107" xml:space="preserve">
+    <value>Oub测试结果5107</value>
+  </data>
+  <data name="Oub测试结果5108" xml:space="preserve">
+    <value>Oub测试结果5108</value>
+  </data>
+  <data name="Oub测试结果5109" xml:space="preserve">
+    <value>Oub测试结果5109</value>
+  </data>
+  <data name="Oub5144" xml:space="preserve">
+    <value>Oub5144</value>
+  </data>
+  <data name="Oub5145" xml:space="preserve">
+    <value>Oub5145</value>
+  </data>
+  <data name="Oub5146" xml:space="preserve">
+    <value>Oub5146</value>
+  </data>
+  <data name="Oub380B确认停放制动12车" xml:space="preserve">
+    <value>380B确认停放制动12车</value>
+  </data>
+  <data name="Oub380B确认停放制动17车" xml:space="preserve">
+    <value>380B确认停放制动17车</value>
+  </data>
+  <data name="Oub380B确认停放制动22车" xml:space="preserve">
+    <value>380B确认停放制动22车</value>
+  </data>
+  <data name="Oub380B确认停放制动27车" xml:space="preserve">
+    <value>380B确认停放制动27车</value>
+  </data>
+  <data name="Oub3C确认停放制动12车" xml:space="preserve">
+    <value>3C确认停放制动12车</value>
+  </data>
+  <data name="Oub3C确认停放制动14车" xml:space="preserve">
+    <value>3C确认停放制动14车</value>
+  </data>
+  <data name="Oub3C确认停放制动15车" xml:space="preserve">
+    <value>3C确认停放制动15车</value>
+  </data>
+  <data name="Oub3C确认停放制动17车" xml:space="preserve">
+    <value>3C确认停放制动17车</value>
+  </data>
+  <data name="Oub3C确认停放制动22车" xml:space="preserve">
+    <value>3C确认停放制动22车</value>
+  </data>
+  <data name="Oub3C确认停放制动24车" xml:space="preserve">
+    <value>3C确认停放制动24车</value>
+  </data>
+  <data name="Oub3C确认停放制动25车" xml:space="preserve">
+    <value>3C确认停放制动25车</value>
+  </data>
+  <data name="Oub3C确认停放制动27车" xml:space="preserve">
+    <value>3C确认停放制动27车</value>
+  </data>
+  <data name="Oub给评价接口处于门界面" xml:space="preserve">
+    <value>给评价接口处于门界面</value>
+  </data>
+  <data name="Oub发送30S间隔提示声音0" xml:space="preserve">
+    <value>发送30S间隔提示声音0</value>
+  </data>
+  <data name="Oub发送30S间隔提示声音1" xml:space="preserve">
+    <value>发送30S间隔提示声音1</value>
+  </data>
+  <data name="Oub是否还有未确认的故障发生着" xml:space="preserve">
+    <value>是否还有未确认的故障发生着</value>
+  </data>
+  <data name="Oub火灾报警声音控制位" xml:space="preserve">
+    <value>火灾报警声音控制位</value>
+  </data>
+  <data name="Oub接触网类型手动选择53米" xml:space="preserve">
+    <value>接触网类型手动选择53米</value>
+  </data>
+  <data name="Oub接触网类型手动选择64米" xml:space="preserve">
+    <value>接触网类型手动选择64米</value>
+  </data>
+  <data name="Oub接触网类型自动选择" xml:space="preserve">
+    <value>接触网类型自动选择</value>
+  </data>
+</root>

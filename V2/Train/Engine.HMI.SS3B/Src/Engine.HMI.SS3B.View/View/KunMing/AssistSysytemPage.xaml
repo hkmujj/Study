@@ -1,0 +1,274 @@
+﻿<UserControl x:Class="Engine.HMI.SS3B.View.View.KunMing.AssistSysytemPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:commonView="clr-namespace:Engine.HMI.SS3B.CommonView;assembly=Engine.HMI.SS3B.CommonView"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:kunMing="clr-namespace:Engine.HMI.SS3B.View.ViewModel.KunMing"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DataContext="{d:DesignInstance kunMing:SS3BViewModel}"
+             d:DesignHeight="380"
+             d:DesignWidth="796"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary Source="../../KunMingAppResource.xaml" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <Rectangle Grid.Row="0"
+                   Grid.RowSpan="18"
+                   Margin="-1"
+                   Stroke="{StaticResource BlueBruh}"
+                   StrokeThickness="2" />
+        <commonView:RectTextControl Grid.Row="0"
+                                    Grid.Column="0"
+                                    ContenTwo=""
+                                    ContentFour="它  车"
+                                    ContentOne=""
+                                    ContentThree="本  车"
+                                    Style="{StaticResource TitleStyle}" />
+        <commonView:RectTextControl Grid.Row="1"
+                                    ContenTwo="485/487"
+                                    ContentOne=" 1&gt;启引风机1/启牵引风机3"
+                                    Style="{StaticResource ContentStyleOne}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="AssistSysytemPageViewModel.TractionFan1Other" />
+                    <Binding Path="AssistSysytemPageViewModel.TractionFan3Other" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="AssistSysytemPageViewModel.TractionFan1Origin" />
+                    <Binding Path="AssistSysytemPageViewModel.TractionFan3Origin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="2"
+                                    ContenTwo="486/488"
+                                    ContentOne=" 2&gt;启牵引风机2/启牵引风机4"
+                                    Style="{StaticResource ContentStyleTwo}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="AssistSysytemPageViewModel.TractionFan2Other" />
+                    <Binding Path="AssistSysytemPageViewModel.TractionFan4Other" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="AssistSysytemPageViewModel.TractionFan2Origin" />
+                    <Binding Path="AssistSysytemPageViewModel.TractionFan4Origin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="3"
+                                    ContenTwo="475/476"
+                                    ContentOne=" 3&gt;启制动风机1/启制动风机2"
+                                    Style="{StaticResource ContentStyleOne}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="AssistSysytemPageViewModel.BrakeFan1Other" />
+                    <Binding Path="AssistSysytemPageViewModel.BrakeFan2Other" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="AssistSysytemPageViewModel.BrakeFan1Origin" />
+                    <Binding Path="AssistSysytemPageViewModel.BrakeFan2Origin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="4"
+                                    ContenTwo="466/465"
+                                    ContentOne=" 4&gt;启起变压器风机/启油泵"
+                                    Style="{StaticResource ContentStyleTwo}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="AssistSysytemPageViewModel.TransformerFanOpenOther" />
+                    <Binding Path="AssistSysytemPageViewModel.OilPumpOther" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="AssistSysytemPageViewModel.TransformerFanOpenOrigin" />
+                    <Binding Path="AssistSysytemPageViewModel.OilPumpOrigin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="5"
+                                    ContenTwo="433/436"
+                                    ContentOne=" 5&gt;起劈相机1/启劈相机2"
+                                    Style="{StaticResource ContentStyleOne}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="AssistSysytemPageViewModel.Camera1Other" />
+                    <Binding Path="AssistSysytemPageViewModel.Camera2Other" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="AssistSysytemPageViewModel.Camera1Origin" />
+                    <Binding Path="AssistSysytemPageViewModel.Camera2Origin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="6"
+                                    ContenTwo="467"
+                                    ContentFour="{Binding AssistSysytemPageViewModel.CameraRelayOther,
+                                                          StringFormat={}{0:f0}}"
+                                    ContentOne=" 6&gt;合劈相机启动继电器"
+                                    ContentThree="{Binding AssistSysytemPageViewModel.CameraRelayOrigin,
+                                                           StringFormat={}{0:f0}}"
+                                    Style="{StaticResource ContentStyleTwo}" />
+        <commonView:RectTextControl Grid.Row="7"
+                                    ContenTwo="477"
+                                    ContentFour="{Binding AssistSysytemPageViewModel.CompressOther,
+                                                          StringFormat={}{0:f0}}"
+                                    ContentOne=" 7&gt;启压缩机"
+                                    ContentThree="{Binding AssistSysytemPageViewModel.CompressOrigin,
+                                                           StringFormat={}{0:f0}}"
+                                    Style="{StaticResource ContentStyleOne}" />
+        <commonView:RectTextControl Grid.Row="8"
+                                    ContenTwo="884"
+                                    ContentFour="{Binding AssistSysytemPageViewModel.DesiccationOther,
+                                                          StringFormat={}{0:f0}}"
+                                    ContentOne=" 8&gt;启干燥器"
+                                    ContentThree="{Binding AssistSysytemPageViewModel.DesiccationOrigin,
+                                                           StringFormat={}{0:f0}}"
+                                    Style="{StaticResource ContentStyleTwo}" />
+        <commonView:RectTextControl Grid.Row="9"
+                                    ContenTwo="893"
+                                    ContentFour="{Binding AssistSysytemPageViewModel.SpurtWheelOther,
+                                                          StringFormat={}{0:f0}}"
+                                    ContentOne=" 9&gt;启轮喷"
+                                    ContentThree="{Binding AssistSysytemPageViewModel.SpurtWheelOrigin,
+                                                           StringFormat={}{0:f0}}"
+                                    Style="{StaticResource ContentStyleOne}" />
+        <commonView:RectTextControl Grid.Row="10"
+                                    ContenTwo="L481/L483"
+                                    ContentOne="10&gt;1/3牵引风机接触器闭合"
+                                    Style="{StaticResource ContentStyleTwo}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="AssistSysytemPageViewModel.Traction1FanTouchOther" />
+                    <Binding Path="AssistSysytemPageViewModel.Traction3FanTouchOther" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="AssistSysytemPageViewModel.Traction1FanTouchOrigin" />
+                    <Binding Path="AssistSysytemPageViewModel.Traction3FanTouchOrigin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="11"
+                                    ContenTwo="L482/L484"
+                                    ContentOne="11&gt;2/4牵引风机接触器闭合"
+                                    Style="{StaticResource ContentStyleOne}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="AssistSysytemPageViewModel.Traction2FanTouchOther" />
+                    <Binding Path="AssistSysytemPageViewModel.Traction4FanTouchOther" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="AssistSysytemPageViewModel.Traction2FanTouchOrigin" />
+                    <Binding Path="AssistSysytemPageViewModel.Traction4FanTouchOrigin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="12"
+                                    ContenTwo="L464/L498"
+                                    ContentOne="12&gt;1/2制动风机接触器闭合"
+                                    Style="{StaticResource ContentStyleTwo}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="AssistSysytemPageViewModel.Brake1FanTouchOther" />
+                    <Binding Path="AssistSysytemPageViewModel.Brake2FanTouchOther" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="AssistSysytemPageViewModel.Brake1FanTouchOrigin" />
+                    <Binding Path="AssistSysytemPageViewModel.Brake2FanTouchOrigin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="13"
+                                    ContenTwo="L497/L496"
+                                    ContentOne="13&gt;变压器风机 /油泵继电器合"
+                                    Style="{StaticResource ContentStyleOne}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="AssistSysytemPageViewModel.TransformerFanOther" />
+                    <Binding Path="AssistSysytemPageViewModel.OilPumpRelayOther" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="AssistSysytemPageViewModel.TransformerFanOrigin" />
+                    <Binding Path="AssistSysytemPageViewModel.OilPumpRelayOrigin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="14"
+                                    ContenTwo="L468/L428"
+                                    ContentOne="14&gt;1/2劈相机接触器闭合"
+                                    Style="{StaticResource ContentStyleTwo}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="AssistSysytemPageViewModel.Camera1TouchOther" />
+                    <Binding Path="AssistSysytemPageViewModel.Camera2TouchOther" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="AssistSysytemPageViewModel.Camera1TouchOrigin" />
+                    <Binding Path="AssistSysytemPageViewModel.Camera2TouchOrigin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="15"
+                                    ContenTwo="L432"
+                                    ContentFour="{Binding Path=AssistSysytemPageViewModel.CameraRelayOpenOther,
+                                                          StringFormat={}{0:f0}}"
+                                    ContentOne="15&gt;劈相机启动继电器合"
+                                    ContentThree="{Binding Path=AssistSysytemPageViewModel.CameraRelayOpenOrigin,
+                                                           StringFormat={}{0:f0}}"
+                                    Style="{StaticResource ContentStyleOne}" />
+        <commonView:RectTextControl Grid.Row="16"
+                                    ContenTwo="L445"
+                                    ContentFour="{Binding Path=AssistSysytemPageViewModel.CompressTouchOther,
+                                                          StringFormat={}{0:f0}}"
+                                    ContentOne="16&gt;压缩机接触器闭合"
+                                    ContentThree="{Binding Path=AssistSysytemPageViewModel.CompressTouchOrigin,
+                                                           StringFormat={}{0:f0}}"
+                                    Style="{StaticResource ContentStyleTwo}" />
+        <commonView:RectTextControl Grid.Row="17"
+                                    ContenTwo=""
+                                    ContentFour=""
+                                    ContentOne=""
+                                    ContentThree=""
+                                    Style="{StaticResource ContentStyleOne}" />
+    </Grid>
+</UserControl>

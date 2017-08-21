@@ -1,0 +1,517 @@
+﻿<UserControl x:Class="LightRail.HMI.SZLHLF.View.Common.NetworkTopologyView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:constance="clr-namespace:LightRail.HMI.SZLHLF.Constant"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:events="clr-namespace:LightRail.HMI.SZLHLF.Event"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:LightRail.HMI.SZLHLF.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:SZLHLFViewModel}"
+             d:DesignHeight="500"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <Viewbox>
+        <Grid>
+            <Grid>
+                <Path Width="800"
+                      Height="500"
+                      Data="M80,96 L80,145 365,145 365,96 370,96 370,145 683,145 683,96 688,96 688,145 708,145 708,190 703,190 703,150 688,150 688,235 683,235 683,150 370,150 370,190 365,190 365,150 80,150 80,235 75,235 75,150 58,150 58,190 53,190 53,145 75,145 75,96"
+                      Fill="Cyan"
+                      Stroke="White" />
+                <Path Width="800"
+                      Height="500"
+                      Data="M75,272 L80,272 80,344 684,344 684,264 689,264 689,344 742,344 742,375 737,375 737,350 689,349 689,375 684,375 684,349 547,349 547,375 542,375 542,349 480,349 480,375 475,375 475,349 433,349 433,379 428,375 428,349 370,349 370,375 365,375 365,349 323,349 323,375 318,375 318,349 143,349 143,375 138,375 138,349 88,349 88,375 83,375 83,349 40,349 40,375 35,375 35,344 75,344 75,272"
+                      Fill="#FFB4B4FF"
+                      Stroke="White" />
+                <Path Width="800"
+                      Height="500"
+                      Data="M29,281 L29,244 50,244 100,248 122,248 122,222 127,222 127,248 167,248 167,222 172,222 172,248 217,248 217,222 222,222 222,248 311,248 311,222 316,222 316,248 360,248 360,222 365,222 365,248 425,248 425,222 430,222 430,248 468,248 468,222 473,222 473,248 534,248 534,222 539,222 539,248 585,248 585,222 590,222 590,248 640,248 640,222 645,222 645,248 660,248 708,244 743,244 743,280 738,280 738,249 708,249 665,253 643,253 643,271 638,271 638,253 539,253 539,271 534,271 534,253 452,253 452,271 447,271 447,253 365,253 365,271 360,271 360,253 320,253 320,271 315,271 315,253 270,253 270,271 265,271 265,253 220,253 220,271 215,271 215,253 175,253 175,271 170,271 170,253 100,253 50,249 34,249 34,281"
+                      Fill="#FFFFB100"
+                      Stroke="White" />
+                <Path Width="800"
+                      Height="500"
+                      Data="M200,395 L200,400 150,400 150,395"
+                      Fill="White"
+                      Stroke="White" />
+                <Path Width="800"
+                      Height="500"
+                      Data="M570,395 570,400 620,400 620,395"
+                      Fill="White"
+                      Stroke="White" />
+                <Path Width="800"
+                      Height="500"
+                      Margin="100.666,0,-100.667,0"
+                      Data="M300,0 302,0 302,420 300,420"
+                      Fill="White"
+                      Stroke="White" />
+                <Path Width="800"
+                      Height="500"
+                      Margin="207.333,0,-207.334,0"
+                      Data="M300,0 302,0 302,420 300,420"
+                      Fill="White"
+                      Stroke="White" />
+                <Path Width="800"
+                      Height="500"
+                      Margin="-56,0,56,0"
+                      Data="M300,0 302,0 302,420 300,420"
+                      Fill="White"
+                      Stroke="White" />
+            </Grid>
+            <Grid>
+                <Grid.Resources>
+                    <Style x:Key="blacktextStyle" TargetType="TextBlock">
+                        <Setter Property="Foreground" Value="Black" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                        <Setter Property="HorizontalAlignment" Value="Center" />
+                        <Setter Property="FontFamily" Value="楷体" />
+                        <Setter Property="FontSize" Value="16" />
+                    </Style>
+                </Grid.Resources>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="31*" />
+                    <ColumnDefinition Width="20*" />
+                    <ColumnDefinition Width="14*" />
+                    <ColumnDefinition Width="37*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="3*" />
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="5*" />
+                        <RowDefinition Height="4*" />
+                        <RowDefinition Height="5*" />
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="5*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="5*" />
+                        <RowDefinition Height="6*" />
+                        <RowDefinition Height="7*" />
+                        <RowDefinition Height="5*" />
+                        <RowDefinition Height="10*" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="16*" />
+                            <ColumnDefinition Width="8*" />
+                            <ColumnDefinition Width="8*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="1"
+                                   FontSize="24"
+                                   Style="{StaticResource TextStyle}"
+                                   Text="MC1" />
+                    </Grid>
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="7*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="18*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1" Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[0].State, Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="HMI" />
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="8*" />
+                            <ColumnDefinition Width="17*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1" Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[1].State, Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="Switch" />
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="7">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="4*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="6*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1" Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[2].State, Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="FIRE" />
+                        </Grid>
+                        <Grid Grid.Column="3" Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[3].State, Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="Door1" />
+                        </Grid>
+                        <Grid Grid.Column="4" Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[4].State, Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="CMS" />
+                        </Grid>
+                        <Grid Grid.Column="5" Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[5].State, Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="Door2" />
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="7*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="18*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1" Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[6].State, Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="VCMe" />
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="12*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="6*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1"
+                              Margin="0,7,0,0"
+                              Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[7].State,
+                                                   Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="PIS" />
+                        </Grid>
+                        <Grid Grid.Column="3"
+                              Margin="0,0,0,7"
+                              Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[8].State,
+                                                   Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="HVAC" />
+                        </Grid>
+                        <Grid Grid.Column="4"
+                              Margin="0,0,0,7"
+                              Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[9].State,
+                                                   Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="Door3" />
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="12">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*" />
+                            <ColumnDefinition Width="12*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="12*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="12*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="12*" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1" Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[10].State, Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="SKS2" />
+                        </Grid>
+                        <Grid Grid.Column="3" Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[11].State, Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="VCU/&#x0a;ICU" />
+                        </Grid>
+                        <Grid Grid.Column="5" Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[12].State, Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="SKS3" />
+                        </Grid>
+                        <Grid Grid.Column="7" Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[13].State, Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="APS" />
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="3*" />
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="5*" />
+                        <RowDefinition Height="4*" />
+                        <RowDefinition Height="5*" />
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="5*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="5*" />
+                        <RowDefinition Height="6*" />
+                        <RowDefinition Height="7*" />
+                        <RowDefinition Height="5*" />
+                        <RowDefinition Height="10*" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="1"
+                               Margin="0,0,30,0"
+                               HorizontalAlignment="Right"
+                               FontSize="24"
+                               Style="{StaticResource TextStyle}"
+                               Text="T" />
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="13*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1" Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[14].State, Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="SIG" />
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="7">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1" Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[15].State, Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="CMS" />
+                        </Grid>
+                        <Grid Grid.Column="3" Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[16].State, Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="RIOM" />
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="24*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="24*" />
+                            <ColumnDefinition Width="4*" />
+                            <ColumnDefinition Width="24*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1"
+                              Margin="0,0,0,7"
+                              Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[17].State,
+                                                   Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="HVAC" />
+                        </Grid>
+                        <Grid Grid.Column="3"
+                              Margin="0,0,0,7"
+                              Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[18].State,
+                                                   Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="Door4" />
+                        </Grid>
+                        <Grid Grid.Column="5"
+                              Margin="0,0,0,7"
+                              Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[19].State,
+                                                   Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="Door5" />
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="12">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="7*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1" Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[20].State, Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="BCU" />
+                        </Grid>
+                        <Grid Grid.Column="2" Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[21].State, Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="SKS4" />
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="3*" />
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="5*" />
+                        <RowDefinition Height="4*" />
+                        <RowDefinition Height="5*" />
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="5*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="5*" />
+                        <RowDefinition Height="6*" />
+                        <RowDefinition Height="7*" />
+                        <RowDefinition Height="5*" />
+                        <RowDefinition Height="10*" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="1"
+                               FontSize="24"
+                               Style="{StaticResource TextStyle}"
+                               Text="M" />
+                    <Grid Grid.Row="7">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*" />
+                            <ColumnDefinition Width="36*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="36*" />
+                            <ColumnDefinition Width="5*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1" Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[22].State, Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="Door6" />
+                        </Grid>
+                        <Grid Grid.Column="3" Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[23].State, Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="HVAC" />
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="4*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1"
+                              Margin="0,0,0,7"
+                              Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[24].State,
+                                                   Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="Door7" />
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="12">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1" Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[25].State, Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="SKS8" />
+                        </Grid>
+                        <Grid Grid.Column="2" Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[26].State, Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="VCU/&#x0a;ICU" />
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="3*" />
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="5*" />
+                        <RowDefinition Height="4*" />
+                        <RowDefinition Height="5*" />
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="5*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="5*" />
+                        <RowDefinition Height="6*" />
+                        <RowDefinition Height="7*" />
+                        <RowDefinition Height="5*" />
+                        <RowDefinition Height="10*" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*" />
+                            <ColumnDefinition Width="8*" />
+                            <ColumnDefinition Width="25*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="1"
+                                   FontSize="24"
+                                   Style="{StaticResource TextStyle}"
+                                   Text="MC2" />
+                    </Grid>
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="19*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="11*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1" Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[27].State, Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="HMI" />
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="17*" />
+                            <ColumnDefinition Width="8*" />
+                            <ColumnDefinition Width="10*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1" Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[28].State, Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="Switch" />
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="7">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="4*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="7*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1" Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[29].State, Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="Door8" />
+                        </Grid>
+                        <Grid Grid.Column="3" Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[30].State, Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="HVAC" />
+                        </Grid>
+                        <Grid Grid.Column="5" Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[31].State, Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="CMS" />
+                        </Grid>
+                        <Grid Grid.Column="7" Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[32].State, Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="FIRE" />
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="18*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="9*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1" Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[33].State, Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="VCMe" />
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="7*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="7*" />
+                            <ColumnDefinition Width="7*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="4*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0"
+                              Margin="0,0,0,7"
+                              Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[34].State,
+                                                   Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="Door9" />
+                        </Grid>
+                        <Grid Grid.Column="2"
+                              Margin="0,0,0,7"
+                              Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[35].State,
+                                                   Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="Door10" />
+                        </Grid>
+                        <Grid Grid.Column="4"
+                              Margin="0,7,0,0"
+                              Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[36].State,
+                                                   Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="PIS" />
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="12">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="5*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="5*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1" Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[37].State, Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="SKS5" />
+                        </Grid>
+                        <Grid Grid.Column="3" Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[38].State, Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="APS" />
+                        </Grid>
+                        <Grid Grid.Column="5" Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[39].State, Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="VCU/&#x0a;ICU" />
+                        </Grid>
+                        <Grid Grid.Column="6" Background="{Binding TrainInfoViewModel.NetWorkInfoModel.AllSatte[40].State, Converter={StaticResource NetWorkConverter}}">
+                            <TextBlock Style="{StaticResource blacktextStyle}" Text="SKS9" />
+                        </Grid>
+                    </Grid>
+                    <Button Grid.Row="13"
+                            Width="65"
+                            Height="40"
+                            Margin="0,0,10,20"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Command="{Binding Controller.Navigator}"
+                            Content="返回"
+                            Style="{StaticResource HardwareBtnStyle}">
+                        <Button.CommandParameter>
+                            <events:NavigatorEventArgs CurViewTitle="运行" ViewName="{x:Static constance:ViewNames.OperationView}" />
+                        </Button.CommandParameter>
+                    </Button>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Viewbox>
+</UserControl>

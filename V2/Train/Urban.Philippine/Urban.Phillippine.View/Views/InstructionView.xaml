@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="Urban.Phillippine.View.Views.InstructionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Urban.Phillippine.View.Views"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:name="clr-namespace:Urban.Phillippine.View.Constant"
+             xmlns:viewModel="clr-namespace:Urban.Phillippine.View.Interface.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:IPhilippineViewModel}"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <Grid Margin="70,50,70,0">
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="../Resource/PhilippineResource.xaml" />
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <RadioButton Command="{Binding Instrusction.Instruction}" CommandParameter="1" Content="Train1 TCU1 Cut Out" Grid.Row="0" Grid.Column="0" Style="{StaticResource InstructionViewRadioStyle}"></RadioButton>
+        <RadioButton Command="{Binding Instrusction.Instruction}" CommandParameter="2" Content="Train2 TCU1 Cut Out" Grid.Row="0" Grid.Column="1" Style="{StaticResource InstructionViewRadioStyle}"></RadioButton>
+        <RadioButton Command="{Binding Instrusction.Instruction}" CommandParameter="3" Content="Train3 TCU1 Cut Out" Grid.Row="0" Grid.Column="2" Style="{StaticResource InstructionViewRadioStyle}"></RadioButton>
+        <RadioButton Command="{Binding Instrusction.Instruction}" CommandParameter="4" Content="Train4 TCU1 Cut Out" Grid.Row="0" Grid.Column="3" Style="{StaticResource InstructionViewRadioStyle}"></RadioButton>
+        <RadioButton Command="{Binding Instrusction.Instruction}" CommandParameter="5" Content="Train1 TCU2 Cut Out" Grid.Row="1" Grid.Column="0" Style="{StaticResource InstructionViewRadioStyle}"></RadioButton>
+        <RadioButton Command="{Binding Instrusction.Instruction}" CommandParameter="6" Content="Train2 TCU2 Cut Out" Grid.Row="1" Grid.Column="1" Style="{StaticResource InstructionViewRadioStyle}"></RadioButton>
+        <RadioButton Command="{Binding Instrusction.Instruction}" CommandParameter="7" Content="Train3 TCU2 Cut Out" Grid.Row="1" Grid.Column="2" Style="{StaticResource InstructionViewRadioStyle}"></RadioButton>
+        <RadioButton Command="{Binding Instrusction.Instruction}" CommandParameter="8" Content="Train4 TCU2 Cut Out" Grid.Row="1" Grid.Column="3" Style="{StaticResource InstructionViewRadioStyle}"></RadioButton>
+        <RadioButton Command="{Binding Instrusction.Instruction}" CommandParameter="9" Content="All Battery Charge" Grid.Row="2" Grid.Column="0" Style="{StaticResource InstructionViewRadioStyle}"></RadioButton>
+        <RadioButton Command="{Binding Instrusction.Instruction}" CommandParameter="10" Content="EB Cut Out" Grid.Row="2" Grid.Column="1" Style="{StaticResource InstructionViewRadioStyle}"></RadioButton>
+    </Grid>
+</UserControl>

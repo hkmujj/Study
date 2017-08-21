@@ -1,0 +1,24 @@
+﻿<UserControl
+    x:Class="Tram.CBTC.Casco.View.Common.CascoLog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Tram.CBTC.Casco.View.Common"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="40"
+    d:DesignWidth="40"
+    mc:Ignorable="d">
+    <Viewbox Stretch="Fill">
+        <Grid Width="40" Height="40">
+            <Path
+                Data="M22,1 L1.5,20 21,40 27,35.5 5,20 27,6 z"
+                Fill="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}, Path=LogBrushOne}"
+                Stretch="None" />
+            <Path
+                Data="M31.5,10 L 7,20 31.5,30 38,23 15,20 38,17 Z  "
+                Fill="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}, Path=LogBrushTwo}"
+                Stretch="None" />
+        </Grid>
+    </Viewbox>
+
+</UserControl>

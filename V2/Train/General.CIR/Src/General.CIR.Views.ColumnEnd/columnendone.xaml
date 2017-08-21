@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="General.CIR.Views.ColumnEnd.ColumnEndOne" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="50*" />
+      <ColumnDefinition Width="60*" />
+    </Grid.ColumnDefinitions>
+    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal">
+      <TextBlock Style="{StaticResource ColumnEndTextStyle}" Text="{Binding MainContentViewModel.ColumnEndViewModel.ColumnEndStr}" />
+      <TextBlock Style="{StaticResource ColumnEndTextStyle}" TextBlock.Foreground="{Binding MainContentViewModel.ColumnEndViewModel.ColumnEndStatusBrush}" Text="{Binding MainContentViewModel.ColumnEndViewModel.ColumnEndStatusStr}" />
+    </StackPanel>
+    <StackPanel Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal">
+      <TextBlock Style="{StaticResource ColumnEndTextStyle}" Text="{Binding MainContentViewModel.ColumnEndViewModel.FanPressDisplay}" />
+    </StackPanel>
+  </Grid>
+</UserControl>

@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="Engine.LCDM.HXD3.Views.LanguageChoose.LanguageSwitch"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Engine.LCDM.HXD3.Views.MainRoot"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:name="clr-namespace:Engine.LCDM.HXD3.Constance"
+             xmlns:regiom="http://www.codeplex.com/CompositeWPF"
+             xmlns:commonView="clr-namespace:Engine.LCDM.HXD3.Views.CommonView"
+             xmlns:viewModels="clr-namespace:Engine.LCDM.HXD3.ViewModels"
+             d:DesignHeight="200"
+             d:DesignWidth="500"
+             d:DataContext="{d:DesignInstance viewModels:LCDMViewModel}"
+             mc:Ignorable="d">
+    <Grid Background="Black">
+        <Grid.Resources>
+            <ResourceDictionary Source="../../Resource/Converter/ConverterResource.xaml"></ResourceDictionary>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1.2*"/>
+            <RowDefinition Height="1.2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="0"
+                Grid.Row="0"
+                Grid.ColumnSpan="3"
+                Grid.RowSpan="3"
+                BorderThickness="3"
+                BorderBrush="White"/>
+        <TextBlock Grid.Column="0"
+                   Grid.Row="0"
+                   Grid.ColumnSpan="2"
+                   Text="{DynamicResource LanguageChoose}"
+                   Style="{DynamicResource FlowTextStyleOne}"
+                   FontSize="20"
+                   ></TextBlock>
+        <TextBlock Grid.Column="0"
+                   Grid.Row="1"
+                   Text="{DynamicResource NewSetting}"
+                   Style="{DynamicResource FlowTextStyleOne}"
+                   FontSize="20"
+                   />
+        <TextBlock Grid.Column="0"
+                   Grid.Row="2"
+                   Text="{DynamicResource CurrentSetting}"
+                   Style="{DynamicResource FlowTextStyleOne}"
+                   FontSize="20"
+                   />
+        <TextBlock Grid.Column="1"
+                   Grid.Row="2"
+                   Tag="{DynamicResource ChOrEn}"
+                   Style="{DynamicResource FlowTextStyleOne}"
+                   FontSize="20"
+                   >
+            <TextBlock.Text>
+                <MultiBinding Converter="{StaticResource ResourceConverter}">
+                    <Binding RelativeSource="{RelativeSource Self}" Path="Tag"></Binding>
+                    <Binding Path="InfoData.CurIsCh"></Binding>
+                </MultiBinding>
+            </TextBlock.Text>
+        </TextBlock>
+        <TextBlock Grid.Column="1"
+                   Grid.Row="1"
+                   Tag="{DynamicResource ChOrEn}"
+                   Style="{DynamicResource FlowTextStyleOne}"
+                   FontSize="20"
+                   >
+            <TextBlock.Text>
+                <MultiBinding Converter="{StaticResource ResourceConverter}">
+                    <Binding RelativeSource="{RelativeSource Self}" Path="Tag"></Binding>
+                    <Binding Path="InfoData.NewIsCh"></Binding>
+                </MultiBinding>
+            </TextBlock.Text>
+        </TextBlock>
+    </Grid>
+</UserControl>

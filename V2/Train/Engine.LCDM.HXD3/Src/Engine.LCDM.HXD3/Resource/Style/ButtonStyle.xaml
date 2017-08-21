@@ -1,0 +1,41 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:commonView="clr-namespace:Engine.LCDM.HXD3.Views.CommonView">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Brushes/BrusheResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <ControlTemplate x:Key="ButtonControlTemplete" TargetType="Button">
+        <Border Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}">
+            <commonView:VerticalTextBlock HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          Foreground="{TemplateBinding Foreground}"
+                                          SplitChar="\r\n"
+                                          Text="{TemplateBinding Content}" />
+        </Border>
+
+    </ControlTemplate>
+
+    <Style x:Key="BottonButtonStyle" TargetType="Button">
+        <Setter Property="Template" Value="{StaticResource ButtonControlTemplete}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="Background" Value="{StaticResource ButtonBrush}" />
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="BorderBrush" Value="Silver"/>
+    </Style>
+    <Style x:Key="StatusButtonStyle" TargetType="Button">
+        <Setter Property="Template" Value="{StaticResource ButtonControlTemplete}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Margin" Value="1,0,1,0" />
+        <Setter Property="Background" Value="{StaticResource RedBrush}" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontFamily" Value="宋体"/>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,276 @@
+﻿<UserControl x:Class="Engine.HMI.SS3B.View.View.LiuZhou.StatusPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:commonView="clr-namespace:Engine.HMI.SS3B.CommonView;assembly=Engine.HMI.SS3B.CommonView"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:kunMing="clr-namespace:Engine.HMI.SS3B.View.ViewModel.KunMing"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel1="clr-namespace:Engine.HMI.SS3B.View.ViewModel"
+             d:DataContext="{d:DesignInstance kunMing:SS3BViewModel}"
+             d:DesignHeight="380"
+             d:DesignWidth="796"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary Source="../../LiuZhouAppResouce.xaml" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row="0"
+                   Grid.RowSpan="18"
+                   Margin="-1"
+                   Stroke="{StaticResource BlueBruh}"
+                   StrokeThickness="2" />
+        <commonView:RectTextControl Grid.Row="0"
+                                    Grid.Column="0"
+                                    ContenTwo=""
+                                    ContentFour="它  车"
+                                    ContentOne=""
+                                    ContentThree="本  车"
+                                    Style="{StaticResource TitleStyle}" />
+        <commonView:RectTextControl Grid.Row="1"
+                                    ContenTwo="L391/L392"
+                                    ContentOne=" 1 ) 线路接触器故隔1/2"
+                                    Style="{StaticResource ContentStyleOne}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="StatusViewModel.LineTouchFault1Other" />
+                    <Binding Path="StatusViewModel.LineTouchFault2Other" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="StatusViewModel.LineTouchFault1Origin" />
+                    <Binding Path="StatusViewModel.LineTouchFault2Origin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+
+        <commonView:RectTextControl Grid.Row="2"
+                                    ContenTwo="L393/L394"
+                                    ContentOne=" 2 ) 线路接触器故隔3/4"
+                                    Style="{StaticResource ContentStyleTwo}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="StatusViewModel.LineTouchFault3Other" />
+                    <Binding Path="StatusViewModel.LineTouchFault4Other" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="StatusViewModel.LineTouchFault3Origin" />
+                    <Binding Path="StatusViewModel.LineTouchFault4Origin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+
+        <commonView:RectTextControl Grid.Row="3"
+                                    ContenTwo="L395/L396"
+                                    ContentOne=" 3 ) 线路接触器故隔5/6"
+                                    Style="{StaticResource ContentStyleOne}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="StatusViewModel.LineTouchFault5Other" />
+                    <Binding Path="StatusViewModel.LineTouchFault6Other" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="StatusViewModel.LineTouchFault5Origin" />
+                    <Binding Path="StatusViewModel.LineTouchFault6Origin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="4"
+                                    ContenTwo="l352/L356"
+                                    ContentOne=" 4 ) 风速继电故隔1/2"
+                                    Style="{StaticResource ContentStyleTwo}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="StatusViewModel.FanSpeedRelayFault1Other" />
+                    <Binding Path="StatusViewModel.FanSpeedRelayFault2Other" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="StatusViewModel.FanSpeedRelayFault1Origin" />
+                    <Binding Path="StatusViewModel.FanSpeedRelayFault2Origin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="5"
+                                    ContenTwo="433/436"
+                                    ContentOne=" 5 ) 起劈相机故隔1/2"
+                                    Style="{StaticResource ContentStyleOne}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="StatusViewModel.CameraFault1Other" />
+                    <Binding Path="StatusViewModel.CameraFault2Other" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="StatusViewModel.CameraFault1Origin" />
+                    <Binding Path="StatusViewModel.CameraFault2Origin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="6"
+                                    ContenTwo="L442"
+                                    ContentFour="{Binding StatusViewModel.CompressFaultOther,
+                                                          StringFormat={}{0:f0}}"
+                                    ContentOne=" 6 ) 压缩机故隔"
+                                    ContentThree="{Binding StatusViewModel.CompressFaultOrigin,
+                                                           StringFormat={}{0:f0}}"
+                                    Style="{StaticResource ContentStyleTwo}" />
+        <commonView:RectTextControl Grid.Row="7"
+                                    ContenTwo="L451/L453"
+                                    ContentOne=" 7 ) 牵引风机故隔1/2"
+                                    Style="{StaticResource ContentStyleOne}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="StatusViewModel.TractionFanFault1Other" />
+                    <Binding Path="StatusViewModel.TractionFanFault2Other" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="StatusViewModel.TractionFanFault1Origin" />
+                    <Binding Path="StatusViewModel.TractionFanFault2Origin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="8"
+                                    ContenTwo="L455/L457"
+                                    ContentOne=" 8 ) 牵引风机故隔3/4"
+                                    Style="{StaticResource ContentStyleTwo}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="StatusViewModel.TractionFanFault3Other" />
+                    <Binding Path="StatusViewModel.TractionFanFault4Other" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="StatusViewModel.TractionFanFault3Origin" />
+                    <Binding Path="StatusViewModel.TractionFanFault4Origin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="9"
+                                    ContenTwo="L471/L473"
+                                    ContentOne=" 9 ) 制动风机故隔1/2"
+                                    Style="{StaticResource ContentStyleOne}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="StatusViewModel.BrakeFanFault1Other" />
+                    <Binding Path="StatusViewModel.BrakeFanFault2Other" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="StatusViewModel.BrakeFanFault1Origin" />
+                    <Binding Path="StatusViewModel.BrakeFanFault2Origin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="10"
+                                    ContenTwo="L460"
+                                    ContentFour="{Binding StatusViewModel.TransformerFanFaultOther,
+                                                          StringFormat={}{0:f0}}"
+                                    ContentOne="10) 变压器风机故隔"
+                                    ContentThree="{Binding StatusViewModel.TransformerFanFaultOrigin,
+                                                           StringFormat={}{0:f0}}"
+                                    Style="{StaticResource ContentStyleTwo}" />
+        <commonView:RectTextControl Grid.Row="11"
+                                    ContenTwo="L459"
+                                    ContentFour="{Binding StatusViewModel.OilPumpFaultOther,
+                                                          StringFormat={}{0:f0}}"
+                                    ContentOne="11) 油泵故隔"
+                                    ContentThree="{Binding StatusViewModel.OilPumpFaultOrigin,
+                                                           StringFormat={}{0:f0}}"
+                                    Style="{StaticResource ContentStyleOne}" />
+        <commonView:RectTextControl Grid.Row="12"
+                                    ContenTwo="L416"
+                                    ContentFour="{Binding StatusViewModel.ZeroPressFaultOther,
+                                                          StringFormat={}{0:f0}}"
+                                    ContentOne="12) 零压故隔"
+                                    ContentThree="{Binding StatusViewModel.ZeroPressFaultOrigin,
+                                                           StringFormat={}{0:f0}}"
+                                    Style="{StaticResource ContentStyleTwo}" />
+        <commonView:RectTextControl Grid.Row="13"
+                                    ContenTwo="L323/L390"
+                                    ContentOne="13) 库用开关1/2"
+                                    Style="{StaticResource ContentStyleOne}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="StatusViewModel.StoreroomSwitch1Other" />
+                    <Binding Path="StatusViewModel.StoreroomSwitch2Other" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="StatusViewModel.StoreroomSwitch1Origin" />
+                    <Binding Path="StatusViewModel.StoreroomSwitch2Origin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="14"
+                                    ContenTwo="L2051/L2052"
+                                    ContentOne="14) 空载实验开关1/2"
+                                    Style="{StaticResource ContentStyleTwo}">
+            <commonView:RectTextControl.ContentFour>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="StatusViewModel.EmptyTestSwitch1Other" />
+                    <Binding Path="StatusViewModel.EmptyTestSwitch2Other" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentFour>
+            <commonView:RectTextControl.ContentThree>
+                <MultiBinding Converter="{StaticResource TwoDoubleConvertOne}">
+                    <Binding Path="StatusViewModel.EmptyTestSwitch1Origin" />
+                    <Binding Path="StatusViewModel.EmptyTestSwitch2Origin" />
+                </MultiBinding>
+            </commonView:RectTextControl.ContentThree>
+        </commonView:RectTextControl>
+        <commonView:RectTextControl Grid.Row="15"
+                                    ContenTwo="L427"
+                                    ContentFour="{Binding StatusViewModel.BowFaultOther,
+                                                          StringFormat={}{0:f0}}"
+                                    ContentOne="15) 受电弓风压隔离"
+                                    ContentThree="{Binding StatusViewModel.BowFaultOrigin,
+                                                           StringFormat={}{0:f0}}"
+                                    Style="{StaticResource ContentStyleOne}" />
+        <commonView:RectTextControl Grid.Row="16"
+                                    ContenTwo="L420"
+                                    ContentFour="{Binding StatusViewModel.MasterFaultOther,
+                                                          StringFormat={}{0:f0}}"
+                                    ContentOne="16) 主断隔离开关"
+                                    ContentThree="{Binding StatusViewModel.MasterFaultOrigin,
+                                                           StringFormat={}{0:f0}}"
+                                    Style="{StaticResource ContentStyleTwo}" />
+        <commonView:RectTextControl Grid.Row="17"
+                                    ContenTwo=""
+                                    ContentFour=""
+                                    ContentOne=""
+                                    ContentThree=""
+                                    Style="{StaticResource ContentStyleOne}" />
+    </Grid>
+</UserControl>

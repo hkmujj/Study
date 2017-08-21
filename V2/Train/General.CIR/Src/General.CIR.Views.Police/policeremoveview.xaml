@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UserControl
+    x:Class="General.CIR.Views.Police.PoliceRemoveView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30*" />
+            <ColumnDefinition Width="150*" />
+        </Grid.ColumnDefinitions>
+        <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+            <TextBlock
+                x:Name="TextBlock"
+                Margin="2,0,4,0"
+                Text="报警"
+                TextBlock.Foreground="#FFFFFF00" />
+            <Ellipse
+                Width="{Binding ElementName=TextBlock, Path=ActualHeight, Converter={StaticResource MathConverter}, ConverterParameter=x-2}"
+                Height="{Binding ElementName=TextBlock, Path=ActualHeight, Converter={StaticResource MathConverter}, ConverterParameter=x-2}"
+                Stroke="#FFFFFF00"
+                StrokeThickness="1" />
+        </StackPanel>
+        <StackPanel
+            Grid.Column="1"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Orientation="Horizontal">
+            <TextBlock
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Text="{Binding MainContentViewModel.TitleViewModel.TrainNumber}"
+                TextBlock.Foreground="#FFFFFF00" />
+            <TextBlock
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Text="次列车报警解除，注意运行"
+                TextBlock.Foreground="#FFFFFF00" />
+        </StackPanel>
+    </Grid>
+</UserControl>

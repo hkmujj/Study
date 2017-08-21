@@ -1,0 +1,191 @@
+﻿<UserControl x:Class="Engine._6A.Views.Common.DataMonitor.BrakeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:commonControl="clr-namespace:Engine._6A.CommonControl"
+             xmlns:viewModel="clr-namespace:Engine._6A.Interface.ViewModel" d:DataContext="{d:DesignInstance viewModel:IEngine6AViewModel}"
+             d:DesignHeight="400"
+             d:DesignWidth="640"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary Source="../../../Resouce/Engine6AResource.xaml" />
+    </UserControl.Resources>
+    <Grid DataContext="{Binding DataMonitor.Brake}">
+        <Grid Margin="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="345*" />
+                <RowDefinition Height="35*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="245*" />
+                    <RowDefinition Height="120*" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Margin="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1.2*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1.2*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0"
+                               Grid.Column="0"
+                               Style="{StaticResource CommonTextStyleTwo}"
+                               Text="列车管压力" />
+                    <commonControl:ProgressBar6A Grid.Row="0"
+                                              Grid.Column="1"
+                                              Style="{StaticResource ProgressStyleOne}"
+                                              Value="{Binding TrainPipe}" />
+
+                    <TextBlock Grid.Row="0"
+                               Grid.Column="2"
+                               Style="{StaticResource CommonTextStyleTwo}"
+                               Text="列车辆数" />
+                    <commonControl:RadioRecTest Grid.Row="0"
+                                             Grid.Column="3"
+                                             Content="{Binding TrainNumber}"
+                                             Style="{StaticResource BrakeViewBoxStyle}" />
+                    <TextBlock Grid.Row="1"
+                               Grid.Column="0"
+                               Style="{StaticResource CommonTextStyleTwo}"
+                               Text="停放缸压力" />
+                    <commonControl:ProgressBar6A Grid.Row="1"
+                                              Grid.Column="1"
+                                              Style="{StaticResource ProgressStyleOne}"
+                                              Value="{Binding ParkingCylinderOne}" />
+                    <TextBlock Grid.Row="1"
+                               Grid.Column="2"
+                               Style="{StaticResource CommonTextStyleTwo}"
+                               Text="当前状态" />
+                    <commonControl:RadioRecTest Grid.Row="1"
+                                             Grid.Column="3"
+                                             Content="{Binding CurrentState}"
+                                             Style="{StaticResource BrakeViewBoxStyle}" />
+                    <TextBlock Grid.Row="2"
+                               Grid.Column="0"
+                               Style="{StaticResource CommonTextStyleTwo}"
+                               Text="停放缸2压力" />
+                    <commonControl:ProgressBar6A Grid.Row="2"
+                                              Grid.Column="1"
+                                              Style="{StaticResource ProgressStyleOne}"
+                                              Value="{Binding ParkingCylinderTwo}" />
+                    <TextBlock Grid.Row="2"
+                               Grid.Column="2"
+                               Style="{StaticResource CommonTextStyleTwo}"
+                               Text="当前流量" />
+                    <commonControl:RadioRecTest Grid.Row="2"
+                                             Grid.Column="3"
+                                             Content="{Binding CurrentNetworkFlow}"
+                                             Style="{StaticResource BrakeViewBoxStyle}" />
+                    <TextBlock Grid.Row="3"
+                               Grid.Column="0"
+                               Style="{StaticResource CommonTextStyleTwo}"
+                               Text="均衡缸压力" />
+                    <commonControl:ProgressBar6A Grid.Row="3"
+                                              Grid.Column="1"
+                                              Style="{StaticResource ProgressStyleOne}"
+                                              Value="{Binding BalancingCylinderOne}" />
+                    <TextBlock Grid.Row="3"
+                               Grid.Column="2"
+                               Style="{StaticResource CommonTextStyleTwo}"
+                               Text="子板信息" />
+                    <commonControl:RadioRecTest Grid.Row="3"
+                                             Grid.Column="3"
+                                             Content="{Binding BoardInformation}"
+                                             Style="{StaticResource BrakeViewBoxStyle}" />
+                    <TextBlock Grid.Row="4"
+                               Grid.Column="0"
+                               Style="{StaticResource CommonTextStyleTwo}"
+                               Text="均衡缸2压力" />
+                    <commonControl:ProgressBar6A Grid.Row="4"
+                                              Grid.Column="1"
+                                              Style="{StaticResource ProgressStyleOne}"
+                                              Value="{Binding BalancingCylinderTwo}" />
+                    <TextBlock Grid.Row="4"
+                               Grid.Column="2"
+                               Style="{StaticResource CommonTextStyleTwo}"
+                               Text="压力变送器" />
+                    <commonControl:RadioRecTest Grid.Row="4"
+                                             Grid.Column="3"
+                                             Content="{Binding PressureTransmitter}"
+                                             Style="{StaticResource BrakeViewBoxStyle}" />
+                    <TextBlock Grid.Row="5"
+                               Grid.Column="0"
+                               Style="{StaticResource CommonTextStyleTwo}"
+                               Text="制动缸压力" />
+                    <commonControl:ProgressBar6A Grid.Row="5"
+                                              Grid.Column="1"
+                                              Style="{StaticResource ProgressStyleOne}"
+                                              Value="{Binding BrakeCylinder}" />
+                    <TextBlock Grid.Row="5"
+                               Grid.Column="2"
+                               Style="{StaticResource CommonTextStyleTwo}"
+                               Text="流量变送器" />
+                    <commonControl:RadioRecTest Grid.Row="5"
+                                             Grid.Column="3"
+                                             Content="{Binding FlowTransmitter}"
+                                             Style="{StaticResource BrakeViewBoxStyle}" />
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="44*" />
+                        <RowDefinition Height="75*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <commonControl:RecTextButton Grid.Row="0"
+                                              Grid.Column="0"
+                                              Content="停放制动"
+                                              Style="{StaticResource BrakePageStyle}" />
+                    <commonControl:RecTextButton Grid.Row="0"
+                                              Grid.Column="1"
+                                              Content="参考速度(km/h)"
+                                              Style="{StaticResource BrakePageStyle}" />
+                    <commonControl:RecTextButton Grid.Row="0"
+                                              Grid.Column="2"
+                                              Content="贯通辆数"
+                                              Style="{StaticResource BrakePageStyle}" />
+                    <commonControl:RecTextButton Grid.Row="1"
+                                              Grid.Column="0"
+                                              Content="{Binding ParkingBrake}"
+                                              Style="{StaticResource BrakePageValueStyle}" />
+                    <commonControl:RecTextButton Grid.Row="1"
+                                              Grid.Column="1"
+                                              Content="{Binding ReferSpeed}"
+                                              Style="{StaticResource BrakePageValueStyle}" />
+                    <commonControl:RecTextButton Grid.Row="1"
+                                              Grid.Column="2"
+                                              Content="{Binding TransNum}"
+                                              Style="{StaticResource BrakePageValueStyle}" />
+                </Grid>
+            </Grid>
+            <Grid x:Name="Data" Grid.Row="1">
+                <Viewbox Width="{Binding ElementName=Data, Path=ActualWidth}" Height="{Binding ElementName=Data, Path=ActualHeight}">
+                    <Canvas Width="510" Height="30">
+                        <Path Data="m 0,0 h 510"
+                              Fill="{StaticResource DarkGrayBrush}"
+                              Stroke="{StaticResource DarkGrayBrush}"
+                              StrokeThickness="1" />
+                    </Canvas>
+                </Viewbox>
+                <StackPanel Orientation="Horizontal">
+                    <Image Style="{StaticResource CommonNoDataImgStyle}" />
+                    <TextBlock Style="{StaticResource CommonNoDataTextStyle}" Text="无数据" />
+                </StackPanel>
+
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

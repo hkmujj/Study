@@ -1,0 +1,188 @@
+﻿<UserControl x:Class="Urban.Phillippine.View.Views.LoginView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Urban.Phillippine.View.Views"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:Urban.Phillippine.View.Interface.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:IPhilippineViewModel}"
+             d:DesignHeight="600"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary Source="../Resource/PhilippineResource.xaml" />
+    </UserControl.Resources>
+    <Grid x:Name="Grid"
+          Margin="160,100"
+          DataContext="{Binding Login}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0"
+              Grid.Column="0"
+              Grid.ColumnSpan="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100*" />
+                <ColumnDefinition Width="300*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Style="{StaticResource LoginTextBlockStyle}" Text="User Name:" />
+            <Button x:Name="User"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Background="{Binding UserBrush}"
+                    Command="{Binding SetChanged}"
+                    CommandParameter="User"
+                    Content="{Binding UserName,
+                                      Converter={StaticResource PasswordConvert}}"
+                    Style="{StaticResource LogicButtonStyle}" />
+        </Grid>
+        <Grid Grid.Row="1"
+              Grid.Column="0"
+              Grid.ColumnSpan="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100*" />
+                <ColumnDefinition Width="300*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Style="{StaticResource LoginTextBlockStyle}" Text="Password:" />
+
+            <Button Grid.Row="0"
+                    Grid.Column="1"
+                    Background="{Binding PasswordBrush}"
+                    Command="{Binding SetChanged}"
+                    CommandParameter="Password"
+                    Content="{Binding Password,
+                                      Converter={StaticResource PasswordConvert},
+                                      ConverterParameter=*}"
+                    Style="{StaticResource LogicButtonStyle}" />
+        </Grid>
+        <Grid Grid.Row="2"
+              Grid.Column="0"
+              Grid.ColumnSpan="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="154*" />
+                <ColumnDefinition Width="156*" />
+                <ColumnDefinition Width="171*" />
+            </Grid.ColumnDefinitions>
+            <RadioButton Grid.Column="1"
+                         Margin="0,10,0,11"
+                         HorizontalAlignment="Left"
+                         VerticalAlignment="Center"
+                         Command="{Binding TypeSet}"
+                         CommandParameter="Drive"
+                         Content="{StaticResource Drive}"
+                         FontSize="18"
+                         Foreground="{StaticResource WhiteBrush}"
+                         IsChecked="True" />
+            <RadioButton Grid.Column="2"
+                         Margin="0,10,0,11"
+                         HorizontalAlignment="Left"
+                         VerticalAlignment="Center"
+                         Command="{Binding TypeSet}"
+                         CommandParameter="Maintainer"
+                         Content="{StaticResource Maintainer}"
+                         FontSize="18"
+                         Foreground="{StaticResource WhiteBrush}" />
+        </Grid>
+
+        <RadioButton Grid.Row="4"
+                     Grid.Column="0"
+                     Grid.ColumnSpan="2"
+                     Command="{Binding ButtonDown}"
+                     CommandParameter="One"
+                     Content="1"
+                     Style="{StaticResource LogicNumButton}" />
+        <RadioButton Grid.Row="4"
+                     Grid.Column="2"
+                     Grid.ColumnSpan="2"
+                     Command="{Binding ButtonDown}"
+                     CommandParameter="Two"
+                     Content="2"
+                     Style="{StaticResource LogicNumButton}" />
+        <RadioButton Grid.Row="4"
+                     Grid.Column="4"
+                     Grid.ColumnSpan="2"
+                     Command="{Binding ButtonDown}"
+                     CommandParameter="Three"
+                     Content="3"
+                     Style="{StaticResource LogicNumButton}" />
+        <RadioButton Grid.Row="5"
+                     Grid.Column="0"
+                     Grid.ColumnSpan="2"
+                     Command="{Binding ButtonDown}"
+                     CommandParameter="Four"
+                     Content="4"
+                     Style="{StaticResource LogicNumButton}" />
+        <RadioButton Grid.Row="5"
+                     Grid.Column="2"
+                     Grid.ColumnSpan="2"
+                     Command="{Binding ButtonDown}"
+                     CommandParameter="Five"
+                     Content="5"
+                     Style="{StaticResource LogicNumButton}" />
+        <RadioButton Grid.Row="5"
+                     Grid.Column="4"
+                     Grid.ColumnSpan="2"
+                     Command="{Binding ButtonDown}"
+                     CommandParameter="Six"
+                     Content="6"
+                     Style="{StaticResource LogicNumButton}" />
+        <RadioButton Grid.Row="6"
+                     Grid.Column="0"
+                     Grid.ColumnSpan="2"
+                     Command="{Binding ButtonDown}"
+                     CommandParameter="Seven"
+                     Content="7"
+                     Style="{StaticResource LogicNumButton}" />
+        <RadioButton Grid.Row="6"
+                     Grid.Column="2"
+                     Grid.ColumnSpan="2"
+                     Command="{Binding ButtonDown}"
+                     CommandParameter="Eight"
+                     Content="8"
+                     Style="{StaticResource LogicNumButton}" />
+        <RadioButton Grid.Row="6"
+                     Grid.Column="4"
+                     Grid.ColumnSpan="2"
+                     Command="{Binding ButtonDown}"
+                     CommandParameter="Nine"
+                     Content="9"
+                     Style="{StaticResource LogicNumButton}" />
+        <RadioButton Grid.Row="7"
+                     Grid.Column="0"
+                     Grid.ColumnSpan="3"
+                     Command="{Binding ButtonDown}"
+                     CommandParameter="Zero"
+                     Content="0"
+                     Style="{StaticResource LogicNumButton}" />
+        <RadioButton Grid.Row="7"
+                     Grid.Column="3"
+                     Grid.ColumnSpan="3"
+                     Command="{Binding ButtonDown}"
+                     CommandParameter="Cancel"
+                     Content="C"
+                     Style="{StaticResource LogicNumButton}" />
+        <RadioButton Grid.Row="8"
+                     Grid.Column="0"
+                     Grid.ColumnSpan="6"
+                     Command="{Binding ButtonDown}"
+                     CommandParameter="Login"
+                     Content="{StaticResource Login}"
+                     Style="{StaticResource LogicNumButton}" />
+    </Grid>
+</UserControl>

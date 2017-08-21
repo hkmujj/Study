@@ -1,0 +1,27 @@
+﻿<Window x:Class="Engine.LCDM.HDX2.ConfigureTool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:config="clr-namespace:Engine.LCDM.HDX2.Entity.Model.Config;assembly=Engine.LCDM.HDX2.Entity"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="HXD2制动屏配置"
+        Width="525"
+        Height="350"
+        d:DataContext="{d:DesignInstance config:HXD2Config}"
+        mc:Ignorable="d">
+    <Grid Margin="6">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="49" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical">
+            <CheckBox Content="是否需要外部按键" IsChecked="{Binding Path=NeedOutButton}" />
+        </StackPanel>
+        <Button Grid.Row="1"
+                Width="60"
+                Height="39"
+                HorizontalAlignment="Right"
+                Click="ButtonBase_OnClick"
+                Content="OK" />
+    </Grid>
+</Window>

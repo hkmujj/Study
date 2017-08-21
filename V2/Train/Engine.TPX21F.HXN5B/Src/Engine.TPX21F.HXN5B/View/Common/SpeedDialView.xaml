@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="Engine.TPX21F.HXN5B.View.Common.SpeedDialView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:common="clr-namespace:Engine.TPX21F.HXN5B.View.Common"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewSource="clr-namespace:Engine.TPX21F.HXN5B.Model.ViewSource"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             mc:Ignorable="d">
+    <Grid>
+        <ItemsControl ItemsSource="{Binding Source={x:Static viewSource:TestSpeedSpeedValueDialPlate.Instance}, Path=AllValueDegrees}" Style="{StaticResource ItemControlDialPlatInSpeedTestStyle}" />
+        <common:PointerView Margin="20"
+                            ContentBrush="#C0C0C0"
+                            PointerAngle="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                                  AncestorType=common:SpeedDialView},
+                                                   Path=SpeedValue,
+                                                   Converter={StaticResource TestSpeedToAngleConverter}}"
+                            PointerBrush="{StaticResource ContentLimeGreenBrush}" />
+        <TextBlock FontWeight="Bold"
+                   Style="{StaticResource ContentConstBlackTextStyle}"
+                   Text="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                 AncestorType=common:SpeedDialView},
+                                  Path=SpeedValue,
+                                  StringFormat={}0.0}" />
+    </Grid>
+</UserControl>

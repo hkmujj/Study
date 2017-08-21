@@ -1,0 +1,40 @@
+﻿<UserControl
+    x:Class="Tram.CBTC.Casco.View.Contents.RegionB.RegionB1Layout"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="clr-namespace:Tram.CBTC.Casco.ViewModel"
+    d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+    d:DesignHeight="285"
+    d:DesignWidth="70"
+    Background="{StaticResource Tram.CBTC.Casco.RegionABack}"
+    mc:Ignorable="d">
+    <Grid Margin="5,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Image
+            Grid.Row="0"
+            Margin="1"
+            Source="{Binding CBTC.RoadInfo.ReturnState, Converter={StaticResource Tram.CBTC.Casco.Converter.ReturnInfoToImage}}" />
+        <Image
+            Grid.Row="1"
+            Margin="1"
+            Source="{StaticResource Tram.CBTC.Casco.Images.Content.下一站跳站}"
+            Visibility="{Binding CBTC.RoadInfo.StationInfo.PSD.StationControlCarStatus, Converter={StaticResource Tram.CBTC.Casco.Converter.JumStopVisibility}}" />
+        <Image
+            Grid.Row="2"
+            Margin="1"
+            Source="{StaticResource Tram.CBTC.Casco.Images.Content.扣车}"
+            Visibility="{Binding CBTC.RoadInfo.StationInfo.PSD.StationControlCarStatus, Converter={StaticResource Tram.CBTC.Casco.Converter.DeductionVisibility}}" />
+        <Image
+            Grid.Row="3"
+            Margin="1"
+            Source="{StaticResource Tram.CBTC.Casco.Images.Content.紧急制动}"
+            Visibility="{Binding CBTC.TrainInfo.BrakeInfo.SignalBrakeStatus, Converter={StaticResource Tram.CBTC.Casco.Converter.EmergentBrakeVisibility}}" />
+    </Grid>
+</UserControl>

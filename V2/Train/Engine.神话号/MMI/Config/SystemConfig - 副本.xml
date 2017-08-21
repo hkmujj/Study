@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<SystemConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsDebugModel>true</IsDebugModel>
+  <StartModel>Edit</StartModel>
+  <SubsystemConfigs>
+    <SubsystemConfig SubsystemType="Subsys" ProjectType="Unkown" NeedLoad="true" Name="TMS" Dll="ShenHuaHaoTMS.dll" EntryClass="ShenHuaHaoTMS.App" />
+    <SubsystemConfig SubsystemType="Subsys" ProjectType="Unkown" NeedLoad="false" Name="ReConnect" Dll="SH_Reconnect.dll" EntryClass="SH_Reconnect.App" />
+    <SubsystemConfig SubsystemType="Addin" ProjectType="Unkown" NeedLoad="false" Name="1D" />
+  </SubsystemConfigs>
+</SystemConfig>

@@ -1,0 +1,16 @@
+﻿<Window x:Class="LightRail.HMI.SZLHLF.View.Shell.SZLHLFShell"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:shell="clr-namespace:LightRail.HMI.SZLHLF.View.Shell"
+        Title="LightRail.HMI.SZLHLF"
+        Width="800"
+        Height="600"
+        Loaded="Window_Loaded"
+        mc:Ignorable="d">
+    
+    <Viewbox Stretch="Fill">
+        <shell:ShellWithButton Width="800" Height="600" />
+    </Viewbox>
+</Window>

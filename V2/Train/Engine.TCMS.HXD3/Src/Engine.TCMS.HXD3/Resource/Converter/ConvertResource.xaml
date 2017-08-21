@@ -1,0 +1,267 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converter="clr-namespace:MMI.Facility.WPFInfrastructure.Converter;assembly=MMI.Facility.WPFInfrastructure"
+                    xmlns:converter1="clr-namespace:Engine.TCMS.HXD3.Converter"
+                    xmlns:states="clr-namespace:Engine.TCMS.HXD3.Model.TCMS.Domain.Constant"
+                    xmlns:tcms="clr-namespace:Engine.TCMS.HXD3.Model.TCMS">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Basic/BasicResource.xaml" />
+        <ResourceDictionary Source="../Strings/StringResource_CH.xaml" />
+        <ResourceDictionary Source="../Images/ImageResource.xaml" />
+
+    </ResourceDictionary.MergedDictionaries>
+
+    <converter:BoolVisibilityConverter x:Key="BoolToVisibilityConverter" />
+    <converter1:FaultResumeDateTimeToShowingConverter x:Key="FaultResumeDateTimeToShowingConverter" />
+
+    <converter1:SwitchItemContentToVisibleConverter x:Key="SwitchItemContentToVisibleConverter" />
+    <converter1:AcceleratedFormatConverter x:Key="AcceleratedFormatConverter" />
+    <converter:ResourceKeyToResourceContentResource x:Key="ResourceKeyToResourceContentResource" />
+    <converter1:FaultHandIdToContentConverter x:Key="FaultHandIdToContentConverter" />
+
+    <converter:SelectObjectContentConverter x:Key="TestResultStateToStringConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static states:TestResult.Unkown}" Content="" />
+            <converter:ObjectContentPair Key="{x:Static states:TestResult.Normal}" Content="{StaticResource StringNormal}" />
+            <converter:ObjectContentPair Key="{x:Static states:TestResult.Abnormal}" Content="{StaticResource StringAbnormal}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="OpenStateToContentConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static states:OpenStateState.Open}" Content="{StaticResource StringOpenTo}" />
+            <converter:ObjectContentPair Key="{x:Static states:OpenStateState.Normal}" Content="{StaticResource StringNormal}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="OpenStateToContentBackgroundConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static states:OpenStateState.Open}" Content="{StaticResource RedBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:OpenStateState.Normal}" Content="{StaticResource GreenBrush}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="OpenStateToContentForegroundConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static states:OpenStateState.Open}" Content="{StaticResource WhiteBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:OpenStateState.Normal}" Content="{StaticResource BlackBrush}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="TochMahineStateToTochBrushConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static states:TochMahineState.Work}" Content="{StaticResource GreenBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:TochMahineState.NotWork}" Content="{StaticResource TransparentBrush}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="APUWorkStateToBackgroundConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static states:APUWorkState.OFF}" Content="{StaticResource RedBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:APUWorkState.ON}" Content="{StaticResource GreenBrush}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="BoolToBlackBrushConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{StaticResource BoolTrue}" Content="{StaticResource BlackBrush}" />
+            <converter:ObjectContentPair Key="{StaticResource BoolFalse}" Content="{StaticResource WhiteBrush}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="IsTestingToContentConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{StaticResource BoolTrue}" Content="{StaticResource StringOver}" />
+            <converter:ObjectContentPair Key="{StaticResource BoolFalse}" Content="{StaticResource StringStartup}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="SwitchItemStateToBlackBrushConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static states:SwitchItemState.None}" Content="{StaticResource WhiteBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:SwitchItemState.Blue}" Content="{StaticResource BlackBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:SwitchItemState.Red}" Content="{StaticResource BlackBrush}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="BoolToGreenBrushConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{StaticResource BoolTrue}" Content="{StaticResource GreenBrush}" />
+            <converter:ObjectContentPair Key="{StaticResource BoolFalse}" Content="{StaticResource TransparentBrush}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="SwitchItemStateToBackgroundConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static states:SwitchItemState.None}" Content="{StaticResource TransparentBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:SwitchItemState.Blue}" Content="{StaticResource GreenBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:SwitchItemState.Red}" Content="{StaticResource RedBrush}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="AirBrakeItemStateToBackgroundConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static states:AirBrakeItemState.Unkown}" Content="{StaticResource TransparentBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:AirBrakeItemState.Normal}" Content="{StaticResource GreenBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:AirBrakeItemState.Fault}" Content="{StaticResource RedBrush}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="AirBrakeItemStateToForegroundConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static states:AirBrakeItemState.Unkown}" Content="{StaticResource WhiteBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:AirBrakeItemState.Normal}" Content="{StaticResource ContentBackgroudBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:AirBrakeItemState.Fault}" Content="{StaticResource ContentBackgroudBrush}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="AirBrakeItemStateToCloseOrOpenBrushConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static states:AirBrakeItemState.Unkown}" Content="{StaticResource StringClose}" />
+            <converter:ObjectContentPair Key="{x:Static states:AirBrakeItemState.Normal}" Content="{StaticResource StringOpen}" />
+            <converter:ObjectContentPair Key="{x:Static states:AirBrakeItemState.Fault}" Content="{StaticResource StringClose}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="RunDirectionToLeftShowConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static states:RunDirection.Unkown}" Content="{StaticResource Hidden}" />
+            <converter:ObjectContentPair Key="{x:Static states:RunDirection.Left}" Content="{StaticResource Visible}" />
+            <converter:ObjectContentPair Key="{x:Static states:RunDirection.Right}" Content="{StaticResource Hidden}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+    <converter:SelectObjectContentConverter x:Key="RunDirectionToRightShowConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static states:RunDirection.Unkown}" Content="{StaticResource Hidden}" />
+            <converter:ObjectContentPair Key="{x:Static states:RunDirection.Left}" Content="{StaticResource Hidden}" />
+            <converter:ObjectContentPair Key="{x:Static states:RunDirection.Right}" Content="{StaticResource Visible}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+
+    <converter:SelectObjectContentConverter x:Key="LeftPantographStateToContentConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static states:PantographState.Unkown}" Content=" " />
+            <converter:ObjectContentPair Key="{x:Static states:PantographState.Up}" Content="&lt;" />
+            <converter:ObjectContentPair Key="{x:Static states:PantographState.Down}" Content="-" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+    <converter:SelectObjectContentConverter x:Key="RightPantographStateToContentConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static states:PantographState.Unkown}" Content=" " />
+            <converter:ObjectContentPair Key="{x:Static states:PantographState.Up}" Content="&gt;" />
+            <converter:ObjectContentPair Key="{x:Static states:PantographState.Down}" Content="-" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="AxisStateToForegroundConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static states:AxisState.Yellow}" Content="{StaticResource YellowBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:AxisState.Blue}" Content="{StaticResource DeepSkyBlueBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:AxisState.Green}" Content="{StaticResource GreenBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:AxisState.Violet}" Content="{StaticResource VioletBrush}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+    <converter:SelectObjectContentConverter x:Key="MainSwitchToSwitchOnBackgroundConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static states:MainSwitchState.Unkonwn}" Content="{StaticResource TransparentBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:MainSwitchState.SwitchOn}" Content="{StaticResource GreenBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:MainSwitchState.SwitchOff}" Content="{StaticResource TransparentBrush}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+    <converter:SelectObjectContentConverter x:Key="MainSwitchToSwitchOffBackgroundConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static states:MainSwitchState.Unkonwn}" Content="{StaticResource TransparentBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:MainSwitchState.SwitchOn}" Content="{StaticResource TransparentBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:MainSwitchState.SwitchOff}" Content="{StaticResource GreenBrush}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+    <converter:SelectObjectContentConverter x:Key="MainSwitchToSwitchOnForegroundConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static states:MainSwitchState.Unkonwn}" Content="{StaticResource WhiteBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:MainSwitchState.SwitchOn}" Content="{StaticResource BlackBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:MainSwitchState.SwitchOff}" Content="{StaticResource WhiteBrush}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+    <converter:SelectObjectContentConverter x:Key="MainSwitchToSwitchOffForegroundConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static states:MainSwitchState.Unkonwn}" Content="{StaticResource WhiteBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:MainSwitchState.SwitchOn}" Content="{StaticResource WhiteBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:MainSwitchState.SwitchOff}" Content="{StaticResource BlackBrush}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="LightLevelToColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static tcms:LightLevel.Low}" Content="{StaticResource LowLightBrush}" />
+            <converter:ObjectContentPair Key="{x:Static tcms:LightLevel.Midlle}" Content="{StaticResource MidLightBrush}" />
+            <converter:ObjectContentPair Key="{x:Static tcms:LightLevel.High}" Content="{StaticResource HighLightBrush}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="ConstaSpeedStateToBackgroundConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static states:ConstantSpeedState.None}" Content="{StaticResource TransparentBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:ConstantSpeedState.Normal}" Content="{StaticResource TransparentBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:ConstantSpeedState.Green}" Content="{StaticResource GreenBrush}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+    <converter:SelectObjectContentConverter x:Key="ConstaSpeedStateToForegroundConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static states:ConstantSpeedState.None}" Content="{StaticResource TransparentBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:ConstantSpeedState.Normal}" Content="{StaticResource WhiteBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:ConstantSpeedState.Green}" Content="{StaticResource BlackBrush}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+
+    <converter:SelectObjectContentConverter x:Key="NobodyWarnToBackgroundConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static states:NobodyWarningLevel.None}" Content="{StaticResource TransparentBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:NobodyWarningLevel.Green}" Content="{StaticResource GreenBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:NobodyWarningLevel.YellowFlick}" Content="{StaticResource YellowBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:NobodyWarningLevel.Red}" Content="{StaticResource RedBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:NobodyWarningLevel.RedFlick}" Content="{StaticResource RedBrush}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+    <converter:SelectObjectContentConverter x:Key="NobodyWarnToForegroundConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static states:NobodyWarningLevel.None}" Content="{StaticResource WhiteBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:NobodyWarningLevel.Green}" Content="{StaticResource BlackBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:NobodyWarningLevel.YellowFlick}" Content="{StaticResource BlackBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:NobodyWarningLevel.Red}" Content="{StaticResource BlackBrush}" />
+            <converter:ObjectContentPair Key="{x:Static states:NobodyWarningLevel.RedFlick}" Content="{StaticResource BlackBrush}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+    <converter:SelectObjectContentConverter x:Key="NobodyWarnToFlickConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static states:NobodyWarningLevel.None}" Content="{StaticResource BoolFalse}" />
+            <converter:ObjectContentPair Key="{x:Static states:NobodyWarningLevel.Green}" Content="{StaticResource BoolFalse}" />
+            <converter:ObjectContentPair Key="{x:Static states:NobodyWarningLevel.YellowFlick}" Content="{StaticResource BoolTrue}" />
+            <converter:ObjectContentPair Key="{x:Static states:NobodyWarningLevel.Red}" Content="{StaticResource BoolFalse}" />
+            <converter:ObjectContentPair Key="{x:Static states:NobodyWarningLevel.RedFlick}" Content="{StaticResource BoolTrue}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="WorkStateToTextConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static states:TowBrakeWorkState.Tow}" Content="{StaticResource StringTow}" />
+            <converter:ObjectContentPair Key="{x:Static states:TowBrakeWorkState.Slow}" Content="{StaticResource StringCoasting}" />
+            <converter:ObjectContentPair Key="{x:Static states:TowBrakeWorkState.Brake}" Content="{StaticResource StringBrake}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter1:BesizeConverter x:Key="BesizeConverter2" Besize="2" />
+    <converter1:BesizeConverter x:Key="BesizeConverter3" Besize="3" />
+    <converter1:BesizeConverter x:Key="BesizeConverter5" Besize="5" />
+    <converter1:BesizeConverter x:Key="BesizeConverter6" Besize="6" />
+    <converter1:BesizeConverter x:Key="BesizeConverter8" Besize="8" />
+    <converter1:BesizeConverter x:Key="BesizeConverter10" Besize="10" />
+    <converter1:MaskConverter x:Key="MaskConverter*" Mask="*" />
+    <converter1:SignalInfoPageVisibility x:Key="SignalInfoPageVisibilityTrue" Flag="True" />
+    <converter1:SignalInfoPageVisibility x:Key="SignalInfoPageVisibilityFalse" Flag="False" />
+    <converter1:PasswordSetConfirmConverter x:Key="PasswordSetConfirmConverter" />
+    <converter1:NullValueVisibilityConverter x:Key="NullValueVisibilityConverter" />
+    <converter1:SignalFlickerConverter x:Key="SignalFlickerConverter" />
+
+</ResourceDictionary>

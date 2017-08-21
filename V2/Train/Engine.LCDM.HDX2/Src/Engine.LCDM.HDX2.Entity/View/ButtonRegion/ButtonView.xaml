@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="Engine.LCDM.HDX2.Entity.View.ButtonRegion.ButtonView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:buttonRegion="clr-namespace:Engine.LCDM.HDX2.Entity.View.ButtonRegion"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:Engine.LCDM.HDX2.Entity.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:HXD2ViewModel}"
+             d:DesignHeight="100"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <Style TargetType="buttonRegion:ButtonItem">
+                <Setter Property="Margin" Value="6,12" />
+            </Style>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Engine.LCDM.HDX2.Resource;component/HXD2ResourceManager.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Rectangle Margin="2"
+                   Fill="{StaticResource ButtonViewContentBackBrush}"
+                   RadiusX="5"
+                   RadiusY="5"
+                   Stroke="{StaticResource MainOutlineBrush}"
+                   StrokeThickness="2" />
+        <Grid Margin="6,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <buttonRegion:ButtonItem DataContext="{Binding Path=Model.StateInterface.BtnF1}" />
+            <buttonRegion:ButtonItem Grid.Column="1" DataContext="{Binding Path=Model.StateInterface.BtnF2}" />
+            <buttonRegion:ButtonItem Grid.Column="2" DataContext="{Binding Path=Model.StateInterface.BtnF3}" />
+            <buttonRegion:ButtonItem Grid.Column="3" DataContext="{Binding Path=Model.StateInterface.BtnF4}" />
+            <buttonRegion:ButtonItem Grid.Column="4" DataContext="{Binding Path=Model.StateInterface.BtnF5}" />
+            <buttonRegion:ButtonItem Grid.Column="5" DataContext="{Binding Path=Model.StateInterface.BtnF6}" />
+            <buttonRegion:ButtonItem Grid.Column="6" DataContext="{Binding Path=Model.StateInterface.BtnF7}" />
+            <buttonRegion:ButtonItem Grid.Column="7" DataContext="{Binding Path=Model.StateInterface.BtnF8}" />
+        </Grid>
+    </Grid>
+</UserControl>

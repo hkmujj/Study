@@ -1,0 +1,376 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Base/HXN5BBaseResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="ContentTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontFamily" Value="新宋体" />
+            <Setter Property="FontSize" Value="20" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="ContentConstBlackTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontFamily" Value="新宋体" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="ContentConstWhiteTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontFamily" Value="新宋体" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="ContentConstGreenTextStyle"
+           BasedOn="{StaticResource ContentConstWhiteTextStyle}"
+           TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="{StaticResource ContentLimeGreenBrush}" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="MaintenceMainTextStyle" TargetType="Label">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Height" Value="60" />
+            <Setter Property="Width" Value="80" />
+            <Setter Property="Margin" Value="12,0" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="Foreground" Value="{StaticResource ForegroundWhiteBrush}" />
+            <Setter Property="FontFamily" Value="新宋体" />
+            <Setter Property="BorderThickness" Value="1,1,0,0" />
+            <Setter Property="BorderBrush" Value="{StaticResource ForegroundWhiteBrush}" />
+            <Setter Property="Background" Value="Blue" />
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Label">
+                        <Border x:Name="Part_Border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <TextBlock HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                       VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                       Foreground="{TemplateBinding Foreground}"
+                                       Text="{TemplateBinding Content}"
+                                       TextAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="TestVigilantStartedItemWhiteTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontFamily" Value="新宋体" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="TextAlignment" Value="Left" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="ContentConstGrayTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontFamily" Value="新宋体" />
+            <Setter Property="Foreground" Value="DarkGray" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="ContentBrakeSysWhiteSmallTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontFamily" Value="新宋体" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="ContentBrakeSysWhiteBigTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontFamily" Value="新宋体" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="ContentBrakeSysRedTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontFamily" Value="新宋体" />
+            <Setter Property="Foreground" Value="Red" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="ContentBrakeSysGreenSmallTextStyle1" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontFamily" Value="新宋体" />
+            <Setter Property="Foreground" Value="{StaticResource ContentLimeGreenBrush}" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+
+    <Style x:Key="ContentBrakeSysGreenSmallTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontFamily" Value="新宋体" />
+            <Setter Property="Foreground" Value="{StaticResource ContentLimeGreenBrush}" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="ContentBrakeSysGreenBigTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="26" />
+            <Setter Property="FontFamily" Value="新宋体" />
+            <Setter Property="Foreground" Value="{StaticResource ContentLimeGreenBrush}" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="TestGreenTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Margin" Value="4" />
+            <Setter Property="FontFamily" Value="新宋体" />
+            <Setter Property="Foreground" Value="{StaticResource ContentLimeGreenBrush}" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="SettingSoftSwitchTitleTextStyle1" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontFamily" Value="新宋体" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="SettingSoftSwitchTitleTextStyle3" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="32" />
+            <Setter Property="FontFamily" Value="新宋体" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="SettingSoftSwitchContentTextStyle1" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontFamily" Value="新宋体" />
+            <Setter Property="Foreground" Value="{StaticResource ContentBlueBrush}" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="SettingSoftSwitchContentTextStyle3" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontFamily" Value="新宋体" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="SettingLowSpeedContentTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="Margin" Value="0,6" />
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="FontFamily" Value="新宋体" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="SettingLowSpeedContentGreenTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="Margin" Value="0,6" />
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="FontFamily" Value="新宋体" />
+            <Setter Property="Foreground" Value="{StaticResource ContentLimeGreenBrush}" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="SettingLowSpeedContentBlueTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="FontFamily" Value="新宋体" />
+            <Setter Property="Foreground" Value="{StaticResource ContentBlueBrush}" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="MonitorGroudHeaderWhiteTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontFamily" Value="新宋体" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="MonitorGroudHeaderGreenTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="FontFamily" Value="新宋体" />
+            <Setter Property="Foreground" Value="{StaticResource ContentLimeGreenBrush}" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="MonitorSpeedWhiteTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="40" />
+            <Setter Property="Margin" Value="-12,0,0,-3" />
+            <Setter Property="FontFamily" Value="新宋体" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="TextAlignment" Value="Right" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="MonitorGridGreenTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Margin" Value="4" />
+            <Setter Property="FontFamily" Value="新宋体" />
+            <Setter Property="Foreground" Value="{StaticResource ContentLimeGreenBrush}" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="MonitorPageIndicatorGreenTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontFamily" Value="新宋体" />
+            <Setter Property="Foreground" Value="{StaticResource ContentLimeGreenBrush}" />
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="MonitorGridWhiteTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Margin" Value="6,4" />
+            <Setter Property="MinWidth" Value="40" />
+            <Setter Property="FontFamily" Value="新宋体" />
+            <Setter Property="Foreground" Value="{StaticResource ForegroundWhiteBrush}" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="TextAlignment" Value="Center" />
+
+        </Style.Setters>
+    </Style>
+    <Style x:Key="MonitorSpeedUnitWhiteTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Margin" Value="6,0,12,3" />
+            <Setter Property="FontFamily" Value="新宋体" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="MonitorBrakePipeUnitWhiteTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Margin" Value="3,0" />
+            <Setter Property="FontFamily" Value="新宋体" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="BorderText" TargetType="TextBox">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontFamily" Value="新宋体" />
+            <Setter Property="TextAlignment" Value="Center" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="{StaticResource ForegroundWhiteBrush}" />
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border x:Name="Part_Border"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <TextBlock VerticalAlignment="Center" Text="{TemplateBinding Text}" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="InputtingTextStyle" TargetType="TextBox">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Foreground" Value="{StaticResource ContentBackgroundBrush}" />
+            <Setter Property="FontFamily" Value="新宋体" />
+            <Setter Property="TextAlignment" Value="Left" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="{StaticResource ForegroundWhiteBrush}" />
+            <Setter Property="Background" Value="{StaticResource ForegroundWhiteBrush}" />
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border x:Name="Part_Border"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <Border Background="{TemplateBinding Background}"
+                                    BorderBrush="{StaticResource ContentForegroundBlackBrush}"
+                                    BorderThickness="1">
+                                <TextBlock VerticalAlignment="Center" Text="{TemplateBinding Text}" />
+                            </Border>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+</ResourceDictionary>

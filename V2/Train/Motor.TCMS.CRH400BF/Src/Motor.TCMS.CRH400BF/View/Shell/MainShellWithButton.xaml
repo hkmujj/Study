@@ -1,0 +1,48 @@
+﻿<UserControl
+    x:Class="Motor.TCMS.CRH400BF.View.Shell.MainShellWithButton"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:constant="clr-namespace:Motor.TCMS.CRH400BF.Constant"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:regions="http://www.codeplex.com/CompositeWPF"
+    xmlns:shell="clr-namespace:Motor.TCMS.CRH400BF.View.Shell"
+    xmlns:viewModel="clr-namespace:Motor.TCMS.CRH400BF.ViewModel"
+    d:DataContext="{d:DesignInstance {x:Type viewModel:DomainViewModel}}"
+    d:DesignHeight="720"
+    d:DesignWidth="960"
+    Background="{StaticResource ShellBackgroundBrush}"
+    mc:Ignorable="d">
+    <Viewbox Stretch="Fill">
+        <Grid Width="960" Height="720">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60*" />
+                <RowDefinition Height="600*" />
+                <RowDefinition Height="60*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80*" />
+                <ColumnDefinition Width="800*" />
+                <ColumnDefinition Width="80*" />
+            </Grid.ColumnDefinitions>
+            <Border
+                Grid.Row="0"
+                Grid.Column="1"
+                regions:RegionManager.RegionName="{x:Static constant:RegionNames.MainHardwareButtonTop}" />
+            <Border
+                Grid.Row="1"
+                Grid.Column="1"
+                regions:RegionManager.RegionName="{x:Static constant:RegionNames.MainShellContent}"
+                Background="{StaticResource ContentBackgroundBrush}"
+                Visibility="{Binding Path=Model.IsVisble, Converter={StaticResource BoolVisibilityConverter}}" />
+            <Border
+                Grid.Row="1"
+                Grid.Column="2"
+                regions:RegionManager.RegionName="{x:Static constant:RegionNames.MainHardwareButtonRight}" />
+            <Border
+                Grid.Row="2"
+                Grid.Column="1"
+                regions:RegionManager.RegionName="{x:Static constant:RegionNames.MainHardwareButtonBottom}" />
+        </Grid>
+    </Viewbox>
+</UserControl>

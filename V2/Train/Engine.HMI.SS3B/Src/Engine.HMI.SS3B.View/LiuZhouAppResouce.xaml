@@ -1,0 +1,127 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:c="clr-namespace:Engine.HMI.SS3B.View.Converter"
+                    xmlns:commonView="clr-namespace:Engine.HMI.SS3B.CommonView;assembly=Engine.HMI.SS3B.CommonView">
+
+    <SolidColorBrush x:Key="MainPageTextColor" Color="Aquamarine" />
+    <SolidColorBrush x:Key="BackGroundColor" Color="Black" />
+    <SolidColorBrush x:Key="Orange" Color="Yellow" />
+    <SolidColorBrush x:Key="TextColor1" Color="#70CFB8" />
+    <SolidColorBrush x:Key="TextColor2" Color="#5EBDC8" />
+    <SolidColorBrush x:Key="TextColor3" Color="#6CC052" />
+    <SolidColorBrush x:Key="WhiteColor" Color="White" />
+    <SolidColorBrush x:Key="TitleBackDarkGray" Color="#8C9CB5" />
+    <SolidColorBrush x:Key="BlueBruh" Color="Blue" />
+    <ControlTemplate x:Key="RecLblSS3BTemplate">
+        <Grid>
+            <Rectangle RadiusX="20"
+                       RadiusY="20"
+                       Stroke="{StaticResource MainPageTextColor}" />
+        </Grid>
+    </ControlTemplate>
+    <Style x:Key="SS3BButtonStyle" TargetType="TextBox">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="Background" Value="Aqua" />
+        <Setter Property="Foreground" Value="{StaticResource Orange}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="BorderThickness" Value="1,2,2,1" />
+        <Setter Property="IsReadOnly" Value="True" />
+    </Style>
+    <Style x:Key="TBS0001" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="Foreground" Value="Green" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+    <Style x:Key="TitleStyle" TargetType="commonView:RectTextControl">
+        <Setter Property="ForeGroundOne" Value="{StaticResource Orange}" />
+        <Setter Property="ForeGroundTwo" Value="{StaticResource Orange}" />
+        <Setter Property="ForedGroundThree" Value="{StaticResource Orange}" />
+        <Setter Property="ForeGroundFour" Value="{StaticResource Orange}" />
+        <Setter Property="BackBrush" Value="{StaticResource TitleBackDarkGray}" />
+    </Style>
+    <Style x:Key="ContentStyleOne" TargetType="commonView:RectTextControl">
+        <Setter Property="ForeGroundOne" Value="{StaticResource Orange}" />
+        <Setter Property="ForeGroundTwo" Value="{StaticResource TextColor2}" />
+        <Setter Property="ForedGroundThree" Value="{StaticResource TextColor3}" />
+        <Setter Property="ForeGroundFour" Value="{StaticResource TextColor3}" />
+        <Setter Property="BackBrush" Value="{StaticResource BackGroundColor}" />
+    </Style>
+    <Style x:Key="ContentStyleTwo" TargetType="commonView:RectTextControl">
+        <Setter Property="ForeGroundOne" Value="{StaticResource Orange}" />
+        <Setter Property="ForeGroundTwo" Value="{StaticResource TextColor2}" />
+        <Setter Property="ForedGroundThree" Value="{StaticResource WhiteColor}" />
+        <Setter Property="ForeGroundFour" Value="{StaticResource WhiteColor}" />
+        <Setter Property="BackBrush" Value="{StaticResource TitleBackDarkGray}" />
+    </Style>
+    <Style x:Key="DataGridColumnHeaderStyleOne" TargetType="{x:Type DataGridColumnHeader}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
+                    <Grid Background="{StaticResource TitleBackDarkGray}">
+                        <TextBlock HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Foreground="{StaticResource Orange}"
+                                   Text="{TemplateBinding Content}" />
+
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="NetTextBlockStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontSize" Value="18" />
+    </Style>
+    <Style x:Key="NetTextBoxStyle" TargetType="{x:Type TextBox}">
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Background" Value="{StaticResource BackGroundColor}" />
+        <Setter Property="Foreground" Value="{StaticResource BackGroundColor}" />
+        <Setter Property="BorderThickness" Value="2" />
+    </Style>
+    <Style x:Key="NetTextBlockStyle2" TargetType="{x:Type TextBlock}">
+        <!--<Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Center" />-->
+        <Setter Property="Foreground" Value="{StaticResource Orange}" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="Height" Value="20" />
+        <Setter Property="Width" Value="30" />
+        <Setter Property="MinHeight" Value="20" />
+        <Setter Property="MinWidth" Value="20" />
+        <Setter Property="TextAlignment" Value="Right" />
+    </Style>
+    <ControlTemplate x:Key="Template">
+        <Grid>
+            <Viewbox Margin="10,2,10,2">
+                <TextBlock HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="16"
+                           Foreground="#FF8396A0"
+                           Text="{TemplateBinding Label.Content}" />
+            </Viewbox>
+
+            <Rectangle Margin="10,2,10,2"
+                       RadiusX="10"
+                       RadiusY="20"
+                       Stroke="#FF8396A0"
+                       StrokeThickness="2" />
+        </Grid>
+
+    </ControlTemplate>
+    <c:DoubleConvertToOne x:Key="DoubleConvertToOne" />
+    <c:DoubleConvertToZero x:Key="DoubleConvertToZero" />
+    <c:BarValueConvert x:Key="BarValueConvert" />
+    <c:ColorLevelConvert x:Key="ColorLevelConvert" />
+    <c:WorkConvert x:Key="WorkConvert" />
+    <c:DirectionConvert x:Key="DirectionConvert" />
+    <c:NetPageColorConvert x:Key="NetPageColorConvert" />
+    <c:TwoDoubleConvertOne x:Key="TwoDoubleConvertOne" />
+    <c:TwoDoubleConvertTwo x:Key="TwoDoubleConvertTwo" />
+    <c:TwoDoubleConvertThree x:Key="TwoDoubleConvertThree" />
+    <c:ThreeDoubleToOne x:Key="ThreeDoubleToOne" />
+</ResourceDictionary>

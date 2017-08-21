@@ -1,0 +1,197 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converter="clr-namespace:MMI.Facility.WPFInfrastructure.Converter;assembly=MMI.Facility.WPFInfrastructure"
+                    xmlns:converter1="clr-namespace:LightRail.HMI.GZYGDC.Converter"
+                    xmlns:units="clr-namespace:LightRail.HMI.GZYGDC.Model.Units"
+                    xmlns:state="clr-namespace:LightRail.HMI.GZYGDC.Model.State"
+                    xmlns:Interface="clr-namespace:LightRail.HMI.GZYGDC.Interface">
+    
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Images/ImageResource.xaml"/>
+        <ResourceDictionary Source="../Base/GZYGDCBaseResource.xaml"/>
+        <ResourceDictionary Source="../Text/StringResource.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <converter:BoolVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+
+    <converter1:ButtonContentConverter x:Key="ButtonContentConverter" />
+    
+    <converter1:TimeConverter x:Key="TimeConverter"/>
+    
+    <converter:SelectObjectContentConverter x:Key="DoorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:DoorState.EmergencyLock}" Content="{StaticResource RunningView.车门紧急解锁}" />
+            <converter:ObjectContentPair Key="{x:Static units:DoorState.Cut}" Content="{StaticResource RunningView.车门切除}"/>
+            <converter:ObjectContentPair Key="{x:Static units:DoorState.SeriousFault}" Content="{StaticResource RunningView.车门严重故障}"/>
+            <converter:ObjectContentPair Key="{x:Static units:DoorState.MinorFault}" Content="{StaticResource RunningView.车门正在打开或关闭}"/>
+            <converter:ObjectContentPair Key="{x:Static units:DoorState.Hinder}" Content="{StaticResource RunningView.车门障碍}"/>
+            <converter:ObjectContentPair Key="{x:Static units:DoorState.Opened}" Content="{StaticResource RunningView.车门开}"/>
+            <converter:ObjectContentPair Key="{x:Static units:DoorState.Closed}" Content="{StaticResource RunningView.车门关}"/>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="AirConditionConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:AirConditionState.SeriousFault}" Content="{StaticResource HelpView.空调严重故障}" />
+            <converter:ObjectContentPair Key="{x:Static units:AirConditionState.MinorFault}" Content="{StaticResource HelpView.空调次要故障}"/>
+            <converter:ObjectContentPair Key="{x:Static units:AirConditionState.Aeration}" Content="{StaticResource HelpView.空调通风}"/>
+            <converter:ObjectContentPair Key="{x:Static units:AirConditionState.Deload}" Content="{StaticResource HelpView.空调减载}"/>
+            <converter:ObjectContentPair Key="{x:Static units:AirConditionState.Precool}" Content="{StaticResource HelpView.空调预冷}"/>
+            <converter:ObjectContentPair Key="{x:Static units:AirConditionState.Run}" Content="{StaticResource HelpView.空调运行}"/>
+            <converter:ObjectContentPair Key="{x:Static units:AirConditionState.Off}" Content="{StaticResource HelpView.空调停止}"/>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+
+    <converter:SelectObjectContentConverter x:Key="AssistConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:AssistState.SeriousFault}" Content="{StaticResource RunningView.电源严重故障}" />
+            <converter:ObjectContentPair Key="{x:Static units:AssistState.MinorFault}" Content="{StaticResource RunningView.电源次要故障}"/>
+            <converter:ObjectContentPair Key="{x:Static units:AssistState.Run}" Content="{StaticResource RunningView.电源运行}"/>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="BrakeConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:BrakeState.SeriousFault}" Content="{StaticResource RunningView.制动严重故障}" />
+            <converter:ObjectContentPair Key="{x:Static units:BrakeState.MinorFault}" Content="{StaticResource RunningView.制动次要故障}"/>
+            <converter:ObjectContentPair Key="{x:Static units:BrakeState.EmergencyRelief}" Content="{StaticResource RunningView.制动紧急缓解}"/>
+            <converter:ObjectContentPair Key="{x:Static units:BrakeState.Infliction}" Content="{StaticResource RunningView.制动施加}"/>
+            <converter:ObjectContentPair Key="{x:Static units:BrakeState.Relief}" Content="{StaticResource RunningView.制动缓解}"/>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+
+    <converter:SelectObjectContentConverter x:Key="TractionConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:TractionState.SeriousFault}" Content="{StaticResource RunningView.牵引严重故障}" />
+            <converter:ObjectContentPair Key="{x:Static units:TractionState.MinorFault}" Content="{StaticResource RunningView.牵引次要故障}"/>
+            <converter:ObjectContentPair Key="{x:Static units:TractionState.SelfChecking}" Content="{StaticResource RunningView.牵引正在自检}"/>
+            <converter:ObjectContentPair Key="{x:Static units:TractionState.Run}" Content="{StaticResource RunningView.牵引运行}"/>
+            <converter:ObjectContentPair Key="{x:Static units:TractionState.Stop}" Content="{StaticResource RunningView.牵引停止}"/>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+
+    <converter:SelectObjectContentConverter x:Key="PantographConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:PantographState.Rise}" Content="{StaticResource RunningView.受电弓升起}" />
+            <converter:ObjectContentPair Key="{x:Static units:PantographState.Ecptoma}" Content="{StaticResource RunningView.受电弓落下}"/>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+
+    <converter:SelectObjectContentConverter x:Key="HSCBConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:HSCBState.SeriousFault}" Content="{StaticResource RunningView.HSCB严重故障}" />
+            <converter:ObjectContentPair Key="{x:Static units:HSCBState.Close}" Content="{StaticResource RunningView.HSCB闭合}"/>
+            <converter:ObjectContentPair Key="{x:Static units:HSCBState.Discon}" Content="{StaticResource RunningView.HSCB断开}"/>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+
+    <converter:SelectObjectContentConverter x:Key="BatteryConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:BatteryState.Fault}" Content="{StaticResource RunningView.电池故障}" />
+            <converter:ObjectContentPair Key="{x:Static units:BatteryState.Normal}" Content="{StaticResource RunningView.电池正常}"/>
+            <converter:ObjectContentPair Key="{x:Static units:BatteryState.unCharged}" Content="{StaticResource RunningView.电池未充电}"/>
+            <converter:ObjectContentPair Key="{x:Static units:BatteryState.Charging}" Content="{StaticResource RunningView.电池充电中}"/>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+
+    <converter:SelectObjectContentConverter x:Key="SpringConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:SpringState.Relief}" Content="{StaticResource RunningView.SpringReliefBackgroundBrush}" />
+            <converter:ObjectContentPair Key="{x:Static units:SpringState.Infliction}" Content="{StaticResource RunningView.SpringInflictionBackgroundBrush}"/>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter1:PowerValueBrushConverter x:Key="PowerValueBrushConverter"/>
+
+    <converter:EnumDescritionConverter x:Key="DescritionConverter"/>
+
+    <converter:BoolToObjectConverter  TrueObject="{StaticResource RunningView.TrainActiveBackgroundBrush}" FalseObject="{StaticResource RunningView.TrainNoActiveBackgroundBrush}" x:Key="TrainActiveConverter"/>
+
+    <converter:MathConverter x:Key="MathConverter"/>
+
+    <converter:SelectObjectContentConverter x:Key="TractionTextConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static state:WorkCondition.Traction}" Content="{StaticResource HelpView.Traction}" />
+            <converter:ObjectContentPair Key="{x:Static state:WorkCondition.ConmonBrake}" Content=""/>
+            <converter:ObjectContentPair Key="{x:Static state:WorkCondition.AutoEmergencyBrake}" Content=""/>
+            <converter:ObjectContentPair Key="{x:Static state:WorkCondition.None}" Content=""/>
+            <converter:ObjectContentPair Key="{x:Static state:WorkCondition.Lazy}" Content=""/>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="BrakeTextConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static state:WorkCondition.Traction}" Content="" />
+            <converter:ObjectContentPair Key="{x:Static state:WorkCondition.ConmonBrake}" Content="{StaticResource HelpView.Break}"/>
+            <converter:ObjectContentPair Key="{x:Static state:WorkCondition.AutoEmergencyBrake}" Content="{StaticResource HelpView.Break}"/>
+            <converter:ObjectContentPair Key="{x:Static state:WorkCondition.None}" Content=""/>
+            <converter:ObjectContentPair Key="{x:Static state:WorkCondition.Lazy}" Content=""/>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="AllFaultBackGroundConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static Interface:EventLevel.Normal}" Content="DodgerBlue" />
+            <converter:ObjectContentPair Key="{x:Static Interface:EventLevel.Tip}" Content="#303030"/>
+            <converter:ObjectContentPair Key="{x:Static Interface:EventLevel.Light}" Content="#303030"/>
+            <converter:ObjectContentPair Key="{x:Static Interface:EventLevel.Medium}" Content="#303030"/>
+            <converter:ObjectContentPair Key="{x:Static Interface:EventLevel.Grave}" Content="#303030"/>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+
+    <converter:SelectObjectContentConverter x:Key="TipBackGroundConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static Interface:EventLevel.Normal}" Content="#303030" />
+            <converter:ObjectContentPair Key="{x:Static Interface:EventLevel.Tip}" Content="DodgerBlue"/>
+            <converter:ObjectContentPair Key="{x:Static Interface:EventLevel.Light}" Content="#303030"/>
+            <converter:ObjectContentPair Key="{x:Static Interface:EventLevel.Medium}" Content="#303030"/>
+            <converter:ObjectContentPair Key="{x:Static Interface:EventLevel.Grave}" Content="#303030"/>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+
+    <converter:SelectObjectContentConverter x:Key="LightBackGroundConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static Interface:EventLevel.Normal}" Content="#303030" />
+            <converter:ObjectContentPair Key="{x:Static Interface:EventLevel.Tip}" Content="#303030"/>
+            <converter:ObjectContentPair Key="{x:Static Interface:EventLevel.Light}" Content="DodgerBlue"/>
+            <converter:ObjectContentPair Key="{x:Static Interface:EventLevel.Medium}" Content="#303030"/>
+            <converter:ObjectContentPair Key="{x:Static Interface:EventLevel.Grave}" Content="#303030"/>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+
+
+    <converter:SelectObjectContentConverter x:Key="MediumBackGroundConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static Interface:EventLevel.Normal}" Content="#303030" />
+            <converter:ObjectContentPair Key="{x:Static Interface:EventLevel.Tip}" Content="#303030"/>
+            <converter:ObjectContentPair Key="{x:Static Interface:EventLevel.Light}" Content="#303030"/>
+            <converter:ObjectContentPair Key="{x:Static Interface:EventLevel.Medium}" Content="DodgerBlue"/>
+            <converter:ObjectContentPair Key="{x:Static Interface:EventLevel.Grave}" Content="#303030"/>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+
+    <converter:SelectObjectContentConverter x:Key="GraveBackGroundConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static Interface:EventLevel.Normal}" Content="#303030" />
+            <converter:ObjectContentPair Key="{x:Static Interface:EventLevel.Tip}" Content="#303030"/>
+            <converter:ObjectContentPair Key="{x:Static Interface:EventLevel.Light}" Content="#303030"/>
+            <converter:ObjectContentPair Key="{x:Static Interface:EventLevel.Medium}" Content="#303030"/>
+            <converter:ObjectContentPair Key="{x:Static Interface:EventLevel.Grave}" Content="DodgerBlue"/>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+
+    <converter1:EventInfoVisibleConverter x:Key="EventInfoVisibleConverter"/>
+    
+
+</ResourceDictionary>

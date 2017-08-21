@@ -1,0 +1,108 @@
+﻿<UserControl x:Class="Engine.TAX2.SS7C.View.Contents.SecondLevel.ParamSet.SetAccDataView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:detail="clr-namespace:Engine.TAX2.SS7C.View.Contents.SecondLevel.ParamSet.Detail"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:Engine.TAX2.SS7C.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:SS7CViewModel}"
+             d:DesignHeight="550"
+             d:DesignWidth="800"
+             Background="{StaticResource ContentDeepSkyBlueBrush}"
+             mc:Ignorable="d">
+    <ContentControl Margin="80" Style="{StaticResource ContentControlSecondLevelParamSetStyle}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="164*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="47*" />
+            </Grid.RowDefinitions>
+
+            <ContentControl Grid.Row="1"
+                            Height="220"
+                            Opacity="{Binding ElementName=GettingDataView,
+                                              Path=Opacity,
+                                              Converter={StaticResource MathConverter},
+                                              ConverterParameter=1-x}"
+                            Style="{StaticResource ContentControlSetWhellRStyle}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <ContentControl Width="300"
+                                    BorderThickness="1"
+                                    Style="{StaticResource ContentControlSecondLevelBulgeFrameStyle}">
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                            <TextBlock FontSize="18" Text="{StaticResource StringParam}" />
+                            <TextBlock FontSize="18" Text="{StaticResource StringTable}" />
+                            <TextBlock FontSize="18" Text="{StaticResource StringWindow}" />
+                        </StackPanel>
+                    </ContentControl>
+
+                    <Border Grid.Row="1"
+                            Margin="2,4,2,2"
+                            BorderBrush="{StaticResource ContentBlackBorderBrush}"
+                            BorderThickness="1">
+                        <Border BorderBrush="{StaticResource ContentBackgroundBrush}" BorderThickness="2">
+                            <Border Background="{StaticResource ContentDeepSkyBlueBrush}"
+                                    BorderBrush="{StaticResource ContentBlackBorderBrush}"
+                                    BorderThickness="1">
+                                <ListBox Height="220"
+                                         Margin="6"
+                                         ItemsSource="{Binding Path=SecondLevelViewModel.SetAccDataViewModel.Model.AccDataItemCollection.Value}"
+                                         SelectedIndex="0"
+                                         SelectedItem="{Binding Path=SecondLevelViewModel.SetAccDataViewModel.Model.CurrentSelectedAccDataItem}"
+                                         Style="{StaticResource ListBoxSetAccDataStyle}" />
+                            </Border>
+                        </Border>
+                    </Border>
+                </Grid>
+            </ContentControl>
+
+            <!--  确认修改  -->
+            <ContentControl Grid.Row="1"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Style="{StaticResource ContentControlSetWhellRStyle}"
+                            Visibility="{Binding Path=SecondLevelViewModel.SetAccDataViewModel.Model.IsSureModify,
+                                                 Converter={StaticResource BoolToVisibilityConverter}}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <ContentControl Width="260"
+                                    BorderThickness="1"
+                                    Style="{StaticResource ContentControlSecondLevelBulgeFrameStyle}">
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                            <TextBlock FontSize="18" Text="{StaticResource StringTalk}" />
+                            <TextBlock FontSize="18" Text="{StaticResource StringWindow}" />
+                        </StackPanel>
+                    </ContentControl>
+
+                    <Border Grid.Row="1"
+                            Margin="2,4,2,2"
+                            BorderBrush="{StaticResource ContentBlackBorderBrush}"
+                            BorderThickness="1">
+                        <Border BorderBrush="{StaticResource ContentBackgroundBrush}" BorderThickness="2">
+                            <Border Background="{StaticResource ForegroundWhiteBrush}"
+                                    BorderBrush="{StaticResource ContentBlackBorderBrush}"
+                                    BorderThickness="1">
+                                <TextBlock Margin="10,10,100,10"
+                                           FontSize="16"
+                                           Text="{StaticResource StringSureSetAccDataContent}" />
+                            </Border>
+                        </Border>
+                    </Border>
+                </Grid>
+            </ContentControl>
+
+            <detail:WaitGettingDataView x:Name="GettingDataView"
+                                        Grid.Row="1"
+                                        VerticalAlignment="Center"
+                                        x:FieldModifier="private"
+                                        Background="{StaticResource ContentBackgroundBrush}" />
+        </Grid>
+    </ContentControl>
+</UserControl>

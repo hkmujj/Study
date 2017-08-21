@@ -1,0 +1,27 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converter="clr-namespace:Engine.Dial.Turkmenistan.Converter">
+    <converter:AngleConverter
+        x:Key="AngleConverterOne"
+        InitAngle="-50"
+        MaxAngle="230"
+        MaxValue="1600"
+        MinValue="0" />
+    <converter:AngleConverter
+        x:Key="AngleConverterTwo"
+        InitAngle="-45"
+        MaxAngle="225"
+        MaxValue="1200"
+        MinValue="0" />
+    <converter:AngleConverter
+        x:Key="AngleConverterThree"
+        InitAngle="-46"
+        MaxAngle="221"
+        MaxValue="30"
+        MinValue="0" />
+    <converter:LEDValueConverter x:Key="LedValueConverter" />
+    <converter:ItemWitdthConverter x:Key="ItemWitdthConverter" ItemNum="4.5" />
+    <converter:WidthMultiConverter x:Key="WightConverter" />
+    <converter:HeightMultiConverter x:Key="HeightConverter" />
+</ResourceDictionary>

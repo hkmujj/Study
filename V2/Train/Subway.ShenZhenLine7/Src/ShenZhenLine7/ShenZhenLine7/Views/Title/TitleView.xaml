@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="Subway.ShenZhenLine7.Views.Title.TitleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:Subway.ShenZhenLine7.ViewModels"
+             d:DataContext="{d:DesignInstance viewModels:ShenZhenLine7ViewModel}"
+             d:DesignHeight="40"
+             d:DesignWidth="800"
+             Background="{StaticResource  Subway.ShenZhenLine7.DarkGrayBrush}"
+             mc:Ignorable="d">
+    <Grid>
+        <TextBlock HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="18"
+                   Text="{Binding CurrentState.TitleName}" />
+        <TextBlock HorizontalAlignment="Right"
+                   VerticalAlignment="Center"
+                   FontSize="18"
+                   Text="{Binding CurrentTime,
+                                  Converter={StaticResource  Subway.ShenZhenLine7.TitleTimeConverter}}" />
+    </Grid>
+</UserControl>

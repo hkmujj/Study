@@ -1,0 +1,9 @@
+	;;; 类名 				从属视图 																								输入_Bool_对应表 																																																	输入_Float_对应表 						输出_bool_对应表 						输出_Float_对应表 							参数表 			备注
+	;;; 字符串 			<数字 数字> 																						[#bool编号 bool编号#] 																																														[*Float编号 Float编号*] 			[-bool编号 bool编号-] 			[+Float编号 Float编号+] 				{参数1 参数2 参数3}
+	MMI_Main				[~ 100 ~] < 1 >		[# 1 2 9 8 10 11 12 13 14 20 21 22 23 24 25 26 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 15 56 57 58 59 16 17 18 27 #] 				[* 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15*]						[- 4821 4822  -]												[+ 201 +]					{ zhizhen.png zhizhenYew.png zhizhenRed.png yellow.png red.png 目标距离.png 牵引.png 惰行.png 制动.png 制动降低.png S0.png S1.png S2.png S3.png S4.png S6.png S5.png 折返绿.png 折返黄.png 停车绿.png 停车红.png 左侧门开.png 右侧门开.png 两侧门打开.png 车门未授权打开.png 请求车门关闭.png ATC请求离站.png 车辆施加EB.png 空转.png PSD未关闭.png PSD状态未知.png 无线中断.png RM模式ATC未定位.png 向上-暗.png 向上-亮.png 向下-暗.png 向下-亮.png 声音-暗.png 声音-亮.png 亮度-暗.png 亮度-亮.png 指示.png btn2.png btn1.png btn3.png 工号.png 勾.png 叉.png 菜单.png 声音调节.png 亮度调节.png btn4.png 扣车.png 跳停.png 列车即将离开ATC区域.png }
+	MMI_Menu	[~ 102 ~] < 2 >		[# #] 				[* *]						[- -]												[+ +]					{ btn2.png btn1.png btn3.png 菜单.png }
+	MMI_MsgReceive	[~ 101 ~] < 1 2 >		[# #] 				[* *]						[- -]												[+ +]					{ }
+	MMI_ClassBegin		[~ 105 ~] < 1 2 3 >		[# #] 				[* *]						[- -]												[+ +]					{ }
+	MMI_Black		[~ 103 ~] < 3 >		[# #] 				[* *]						[- -]												[+ +]					{ start.png }
+	MMI_ClassOver		[~ 104 ~] < 0 >		[# #] 				[* *]						[- -]												[+ +]					{ }
+	

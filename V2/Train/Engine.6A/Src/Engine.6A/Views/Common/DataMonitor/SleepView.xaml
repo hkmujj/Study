@@ -1,0 +1,104 @@
+﻿<UserControl x:Class="Engine._6A.Views.Common.DataMonitor.SleepView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:commonControl="clr-namespace:Engine._6A.CommonControl"
+             xmlns:viewModel="clr-namespace:Engine._6A.Interface.ViewModel" d:DataContext="{d:DesignInstance viewModel:IEngine6AViewModel}"
+             d:DesignHeight="400"
+             d:DesignWidth="640"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary Source="../../../Resouce/Engine6AResource.xaml" />
+    </UserControl.Resources>
+    <Grid Margin="0" DataContext="{Binding DataMonitor.Sleep}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="345*" />
+            <RowDefinition Height="35*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="243*" />
+                <ColumnDefinition Width="290*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0"
+                       Grid.Column="0"
+                       Style="{StaticResource CommonTextStyleTwo}"
+                       Text="一端司机室启用" />
+
+            <commonControl:RadioRecTest Grid.Row="0"
+                                     Grid.Column="1"
+                                     Content="{Binding OneDriverOpen}"
+                                     Style="{StaticResource SleepViewBoxStyle}" />
+            <TextBlock Grid.Row="1"
+                       Grid.Column="0"
+                       Style="{StaticResource CommonTextStyleTwo}"
+                       Text="二端司机室启用" />
+            <commonControl:RadioRecTest Grid.Row="1"
+                                     Grid.Column="1"
+                                     Content="{Binding TwoDriverOpen}"
+                                     Style="{StaticResource SleepViewBoxStyle}" />
+            <TextBlock Grid.Row="2"
+                       Grid.Column="0"
+                       Style="{StaticResource CommonTextStyleTwo}"
+                       Text="一端摄像头自检" />
+            <commonControl:RadioRecTest Grid.Row="2"
+                                     Grid.Column="1"
+                                     Content="{Binding OneVideoCheck}"
+                                     Style="{StaticResource SleepViewBoxStyle}" />
+            <TextBlock Grid.Row="3"
+                       Grid.Column="0"
+                       Style="{StaticResource CommonTextStyleTwo}"
+                       Text="二端摄像头自检" />
+            <commonControl:RadioRecTest Grid.Row="3"
+                                     Grid.Column="1"
+                                     Content="{Binding TwoVideoCheck}"
+                                     Style="{StaticResource SleepViewBoxStyle}" />
+            <TextBlock Grid.Row="4"
+                       Grid.Column="0"
+                       Style="{StaticResource CommonTextStyleTwo}"
+                       Text="板卡自检" />
+            <commonControl:RadioRecTest Grid.Row="4"
+                                     Grid.Column="1"
+                                     Content="{Binding BoardInfo}"
+                                     Style="{StaticResource SleepViewBoxStyle}" />
+            <TextBlock Grid.Row="5"
+                       Grid.Column="0"
+                       Style="{StaticResource CommonTextStyleTwo}"
+                       Text="司机状态" />
+            <commonControl:RadioRecTest Grid.Row="5"
+                                     Grid.Column="1"
+                                     Content="{Binding DriverState}"
+                                     Style="{StaticResource SleepViewBoxStyle}" />
+        </Grid>
+        <Grid x:Name="Data" Grid.Row="1">
+            <Viewbox Width="{Binding ElementName=Data, Path=ActualWidth}" Height="{Binding ElementName=Data, Path=ActualHeight}">
+                <Canvas Width="510" Height="30">
+                    <Path Data="m 0,0 h 510"
+                          Fill="{StaticResource DarkGrayBrush}"
+                          Stroke="{StaticResource DarkGrayBrush}"
+                          StrokeThickness="1" />
+                </Canvas>
+            </Viewbox>
+            <StackPanel Orientation="Horizontal">
+                <Image Style="{StaticResource CommonNoDataImgStyle}" />
+                <TextBlock Style="{StaticResource CommonNoDataTextStyle}" Text="无数据" />
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+
+
+</UserControl>

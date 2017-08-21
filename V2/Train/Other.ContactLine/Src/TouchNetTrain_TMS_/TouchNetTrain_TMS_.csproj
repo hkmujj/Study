@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ED539119-7BA4-4B30-B334-B8671D5552FC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TouchNetTrain_TMS_</RootNamespace>
+    <AssemblyName>TouchNetTrain_TMS_</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\MMI\Addin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\MMI\Addin\TouchNetTrain_TMS_.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\MMI\Addin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonUtil">
+      <HintPath>..\MMI\CommonUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="MMI.Facility.Interface, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MMI\MMI.Facility.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Enums.cs" />
+    <Compile Include="Common\Global.cs" />
+    <Compile Include="ES.Facility.Common\Control\Button.cs" />
+    <Compile Include="ES.Facility.Common\Control\Common\IControl.cs" />
+    <Compile Include="ES.Facility.Common\Control\Common\IStyle.cs" />
+    <Compile Include="ES.Facility.Common\Control\Common\MouseEventArgs.cs" />
+    <Compile Include="ES.Facility.Common\Control\Grid.cs" />
+    <Compile Include="ES.Facility.Common\Control\Group.cs" />
+    <Compile Include="ES.Facility.Common\Control\ListBox.cs" />
+    <Compile Include="ES.Facility.Common\Control\TextBox.cs" />
+    <Compile Include="ES.Facility.Common\FaultInfo.cs" />
+    <Compile Include="ES.Facility.Common\FontStyle.cs" />
+    <Compile Include="ES.Facility.Common\FontStyles.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Pub\VC_C0_Title.cs" />
+    <Compile Include="Pub\VC_C1_ViewChangeButton.cs" />
+    <Compile Include="Pub\VC_C2_GetAlarm.cs" />
+    <Compile Include="V4开关状态\V4_C0_Switch.cs" />
+    <Compile Include="V3手动控制\V302_C0_HandlerControl_Turn.cs" />
+    <Compile Include="V3手动控制\V303_C0_HandlerControl_ProtectRemove.cs" />
+    <Compile Include="V3手动控制\V3_C0_HandlerControl.cs" />
+    <Compile Include="V3手动控制\V301_C0_HandlerControl_Clutch.cs" />
+    <Compile Include="V5故障履历\V5_C0_Alarm.cs" />
+    <Compile Include="V6累计信息\V6_C0_AddInfo.cs" />
+    <Compile Include="V7调试界面\V7_C0_Debug.cs" />
+    <Compile Include="V8辅助功能\V8_C0_Assist.cs" />
+    <Compile Include="V1牵引界面\V1_C0_Run_Left.cs" />
+    <Compile Include="V1牵引界面\V1_C1_Run_Centre.cs" />
+    <Compile Include="V1牵引界面\V1_C2_Run_Right.cs" />
+    <Compile Include="V0黑屏\V0_C0_BlackView_Closed.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="V2运行信息\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

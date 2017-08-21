@@ -1,0 +1,96 @@
+﻿<UserControl x:Class="Other.ContactLine.JW4G.Views.CommonView.Fuel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModel="clr-namespace:Other.ContactLine.JW4G.ViewModel"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance viewModel:ContactLineViewModel}"
+             d:DesignHeight="270" d:DesignWidth="65">
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="7*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border Grid.RowSpan="2" BorderThickness="5"
+                BorderBrush="AntiqueWhite"></Border>
+        <Border Grid.Row="0" BorderBrush="AntiqueWhite"
+                BorderThickness="2"></Border>
+        <TextBlock Grid.Row="0"
+                   Text="燃油"
+                   Style="{DynamicResource DataSheetOne}"></TextBlock>
+        <Grid Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0"
+                    BorderBrush="AntiqueWhite"
+                    BorderThickness="2"></Border>
+            <Border Grid.Column="1"
+                    BorderBrush="AntiqueWhite"
+                    BorderThickness="2"></Border>
+            <ProgressBar Grid.Column="0"
+                         Margin="5,2,2,5"
+                     Background="Transparent"
+                     BorderBrush="Black"
+                     BorderThickness="0,2,0,1"
+                     Foreground="Aqua"
+                     Maximum="1"
+                     Minimum="0"
+                     Orientation="Vertical"
+                     Value="{Binding Model.FuelPosition}">
+                <ProgressBar.Template>
+                    <ControlTemplate TargetType="ProgressBar">
+                        <Border x:Name="border"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                            <Grid>
+                                <Rectangle x:Name="PART_Track" Fill="{TemplateBinding Background}" />
+                                <Rectangle x:Name="PART_Indicator"
+                                       HorizontalAlignment="Left"
+                                       Fill="{TemplateBinding Foreground}" />
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="ProgressBar.Orientation" Value="Vertical">
+                                <Setter TargetName="border" Property="LayoutTransform">
+                                    <Setter.Value>
+                                        <RotateTransform Angle="270" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </ProgressBar.Template>
+            </ProgressBar>
+            <Grid Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.RowSpan="2"
+                           Text="4/5"
+                           
+                           Style="{DynamicResource DataSheetOne}"
+                           FontSize="15" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Grid.Row="1" Grid.RowSpan="2"
+                           Text="3/5"
+                           Style="{DynamicResource DataSheetOne}"
+                           FontSize="15">
+                </TextBlock>
+                <TextBlock Grid.Row="2" Grid.RowSpan="2"
+                           Text="2/5"
+                           Style="{DynamicResource DataSheetOne}"
+                           FontSize="15"></TextBlock>
+                <TextBlock Grid.Row="3" Grid.RowSpan="2"
+                           Text="1/5"
+                           Style="{DynamicResource DataSheetOne}"
+                           FontSize="15"></TextBlock>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

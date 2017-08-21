@@ -1,0 +1,89 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:constant="clr-namespace:Engine.TAX2.SS7C.Model.Domain.Constant"
+                    xmlns:converter="clr-namespace:MMI.Facility.WPFInfrastructure.Converter;assembly=MMI.Facility.WPFInfrastructure"
+                    xmlns:converter1="clr-namespace:Engine.TAX2.SS7C.Converter">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Base/SS7CBaseResource.xaml" />
+        <ResourceDictionary Source="../Strings/StringResource_CH.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <converter:BoolVisibilityConverter x:Key="BoolToVisibilityConverter" />
+
+    <converter:MathConverter x:Key="MathConverter" />
+
+    <converter1:TimespanToRunningTimeConverter x:Key="TimespanToRunningTimeConverter" />
+
+    <converter1:StringNullToTargetStringConverter x:Key="StringNullToWhiteSpaceConverter" TargetString="" />
+
+    <converter1:TargetDistanceScalLengthToLineTicknessConverter x:Key="TargetDistanceScalLengthToLineTicknessConverter" />
+
+    <converter1:PasswordToMaskStringConverter x:Key="PasswordToMaskStringConverter" />
+
+    <converter:SelectObjectContentConverter x:Key="CutoffStateToStringConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:CutoffState.Unkown}" Content="" />
+            <converter:ObjectContentPair Key="{x:Static constant:CutoffState.Normal}" Content="{StaticResource StringNormal}" />
+            <converter:ObjectContentPair Key="{x:Static constant:CutoffState.Cutoff}" Content="{StaticResource StringIsolation}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="AssistSystemInfoStateToStringConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:AssistSystemInfoState.None}" Content="" />
+            <converter:ObjectContentPair Key="{x:Static constant:AssistSystemInfoState.HasInfo}" Content="有信息" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="AbnormalStateToForegroundConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:AbnormalState.Normal}" Content="{StaticResource ForegroundWhiteBrush}" />
+            <converter:ObjectContentPair Key="{x:Static constant:AbnormalState.Abnormal}" Content="{StaticResource ContentRedBrush}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+    <converter:SelectObjectContentConverter x:Key="FeedbackFlagToStringConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:FeedbackFlag.None}" Content="" />
+            <converter:ObjectContentPair Key="{x:Static constant:FeedbackFlag.Feedback}" Content="加馈" />
+            <converter:ObjectContentPair Key="{x:Static constant:FeedbackFlag.NoFeedback}" Content="未加馈" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="WorkStateToStringConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:WorkState.None}" Content="" />
+            <converter:ObjectContentPair Key="{x:Static constant:WorkState.PowerOn}" Content="蓄电池合" />
+            <converter:ObjectContentPair Key="{x:Static constant:WorkState.MainSwitchOn}" Content="主断合" />
+            <converter:ObjectContentPair Key="{x:Static constant:WorkState.Tow}" Content="牵   引" />
+            <converter:ObjectContentPair Key="{x:Static constant:WorkState.Brake}" Content="制   动" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="TAX2CommunicationStateToEllipseForegroundConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:TAX2CommunicationState.None}" Content="{x:Null}" />
+            <converter:ObjectContentPair Key="{x:Static constant:TAX2CommunicationState.Fault}" Content="{StaticResource ContentRedBrush}" />
+            <converter:ObjectContentPair Key="{x:Static constant:TAX2CommunicationState.Normal}" Content="{StaticResource ContentGreeBrush}" />
+            <converter:ObjectContentPair Key="{x:Static constant:TAX2CommunicationState.Unkown}" Content="{x:Null}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="TAX2CommunicationStateToEllipseVisibleConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:TAX2CommunicationState.None}" Content="{x:Static Visibility.Hidden}" />
+            <converter:ObjectContentPair Key="{x:Static constant:TAX2CommunicationState.Fault}" Content="{x:Static Visibility.Visible}" />
+            <converter:ObjectContentPair Key="{x:Static constant:TAX2CommunicationState.Normal}" Content="{x:Static Visibility.Visible}" />
+            <converter:ObjectContentPair Key="{x:Static constant:TAX2CommunicationState.Unkown}" Content="{x:Static Visibility.Visible}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="TAX2CommunicationStateToCommunicationFaultInfoVisibleConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static constant:TAX2CommunicationState.None}" Content="{x:Static Visibility.Hidden}" />
+            <converter:ObjectContentPair Key="{x:Static constant:TAX2CommunicationState.Fault}" Content="{x:Static Visibility.Visible}" />
+            <converter:ObjectContentPair Key="{x:Static constant:TAX2CommunicationState.Normal}" Content="{x:Static Visibility.Visible}" />
+            <converter:ObjectContentPair Key="{x:Static constant:TAX2CommunicationState.Unkown}" Content="{x:Static Visibility.Hidden}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+</ResourceDictionary>

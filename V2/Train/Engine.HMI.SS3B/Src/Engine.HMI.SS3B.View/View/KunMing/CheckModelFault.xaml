@@ -1,0 +1,211 @@
+﻿<UserControl x:Class="Engine.HMI.SS3B.View.View.KunMing.CheckModelFault"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:kunMing="clr-namespace:Engine.HMI.SS3B.View.ViewModel.KunMing"
+             xmlns:local="clr-namespace:Engine.HMI.SS3B.View.View.KunMing"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:model="clr-namespace:Engine.HMI.SS3B.View.Model"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             d:DataContext="{d:DesignInstance kunMing:SS3BViewModel}"
+             d:DesignHeight="380"
+             d:DesignWidth="796"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary Source="../../KunMingAppResource.xaml" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="ItemsControl">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ItemsControl">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="50" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="2.5*" />
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="7*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.Resources>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Center" />
+                                        <Setter Property="VerticalAlignment" Value="Center" />
+                                        <Setter Property="Foreground" Value="White" />
+                                        <Setter Property="FontSize" Value="18" />
+                                    </Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="BorderThickness" Value="1" />
+                                        <Setter Property="BorderBrush" Value="White" />
+                                        <Setter Property="Background" Value="DarkBlue" />
+                                    </Style>
+                                </Grid.Resources>
+                                <Border Grid.Row="0" Grid.Column="0">
+                                    <TextBlock HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"
+                                               Foreground="White"
+                                               Text="编号" />
+                                </Border>
+                                <Border Grid.Row="0" Grid.Column="1">
+                                    <TextBlock HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"
+                                               Foreground="White"
+                                               Text="级别" />
+                                </Border>
+                                <Border Grid.Row="0" Grid.Column="2">
+                                    <TextBlock HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"
+                                               Foreground="White"
+                                               Text="发生日期" />
+                                </Border>
+                                <Border Grid.Row="0" Grid.Column="3">
+                                    <TextBlock HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"
+                                               Foreground="White"
+                                               Text="发生时间" />
+                                </Border>
+                                <Border Grid.Row="0" Grid.Column="4">
+                                    <TextBlock Text="事件内容" />
+                                </Border>
+                                <Border Grid.Row="0" Grid.Column="5">
+                                    <TextBlock TextAlignment="Center">
+                                        <Run Text="速度" />
+                                        <LineBreak />
+                                        <Run Text="km/h" />
+                                    </TextBlock>
+                                </Border>
+                                <Border Grid.Row="0" Grid.Column="6">
+                                    <TextBlock TextAlignment="Center">
+                                        <Run Text="网压" />
+                                        <LineBreak />
+                                        <Run Text="kV" />
+                                    </TextBlock>
+                                </Border>
+                                <Border Grid.Row="0" Grid.Column="7">
+                                    <TextBlock Text="级别" />
+                                </Border>
+                                <Border Grid.Row="0" Grid.Column="8">
+                                    <TextBlock TextAlignment="Center">
+                                        <Run Text="电流" />
+                                        <LineBreak />
+                                        <Run Text="A" />
+                                    </TextBlock>
+                                </Border>
+                                <ItemsPresenter Grid.Row="1"
+                                                Grid.Column="0"
+                                                Grid.ColumnSpan="9" />
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="ItemsPanel">
+                    <Setter.Value>
+                        <ItemsPanelTemplate>
+                            <StackPanel VerticalAlignment="Top"
+                                        IsItemsHost="True"
+                                        Orientation="Vertical" />
+                        </ItemsPanelTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="ItemTemplate">
+                    <Setter.Value>
+                        <DataTemplate DataType="model:MessageInfo">
+                            <Grid Width="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                                 AncestorType=ItemsControl},
+                                                  Path=ActualWidth}"
+                                  Height="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                                  AncestorType=ItemsControl},
+                                                   Path=ActualHeight,
+                                                   Converter={StaticResource MathConverter},
+                                                   ConverterParameter=((x-50)/18)}"
+                                  VerticalAlignment="Top">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="2.5*" />
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="7*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.Resources>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Foreground" Value="Black" />
+                                        <Setter Property="FontSize" Value="18" />
+                                        <Setter Property="HorizontalAlignment" Value="Left" />
+                                        <Setter Property="VerticalAlignment" Value="Center" />
+                                    </Style>
+                                    <system:Boolean x:Key="False">False</system:Boolean>
+                                    <Style TargetType="Border">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding IsCurrent}" Value="{StaticResource False}">
+                                                <Setter Property="Background" Value="Red" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Background" Value="White" />
+                                        <Setter Property="BorderThickness" Value="0,0,1,1" />
+                                        <Setter Property="BorderBrush" Value="Black" />
+                                    </Style>
+                                </Grid.Resources>
+                                <Border Grid.Column="0">
+                                    <TextBlock Text="{Binding Number}" />
+                                </Border>
+                                <Border Grid.Column="1">
+                                    <TextBlock Text="{Binding Level}" />
+                                </Border>
+                                <Border Grid.Column="2">
+                                    <TextBlock Text="{Binding Time, Converter={StaticResource DateTimeConverter},ConverterParameter=True}" />
+                                </Border>
+                                <Border Grid.Column="3">
+                                    <TextBlock Text="{Binding Time, Converter={StaticResource DateTimeConverter},ConverterParameter=False}" />
+                                </Border>
+                                <Border Grid.Column="4">
+                                    <TextBlock Text="{Binding Content}" />
+                                </Border>
+                                <Border Grid.Column="5">
+                                    <TextBlock Text="{Binding Number,Converter={StaticResource FaultConverter}}" />
+                                </Border>
+                                <Border Grid.Column="6">
+                                    <TextBlock Text="{Binding Number,Converter={StaticResource FaultConverter}}" />
+                                </Border>
+                                <Border Grid.Column="7">
+                                    <TextBlock Text="{Binding Number,Converter={StaticResource FaultConverter}}" />
+                                </Border>
+                                <Border Grid.Column="8">
+                                    <TextBlock Text="{Binding Number,Converter={StaticResource FaultConverter}}" />
+                                </Border>
+                            </Grid>
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition ></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="Blue">
+            <Grid>
+                <Image Source="../../Resouce/最小化.png" HorizontalAlignment="Left"></Image>
+                <Image Source="../../Resouce/关闭.png" HorizontalAlignment="Right"></Image>
+                <TextBlock Text="检 修 模 式-[事件记录查询]" FontSize="22" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"></TextBlock>
+            </Grid>
+        </Border>
+        <Grid Grid.Row="1" Background="Aqua">
+            <ItemsControl Margin="10,30,10,50" ItemsSource="{Binding CheckInfos}" />
+            <TextBlock Text="操作提示:[ ↑ ]-上一页       [ ↓ ]-下一页       [确认]-退出" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="20" Foreground="White" Margin="0,0,0,2"></TextBlock>
+        </Grid>
+        
+    </Grid>
+</UserControl>

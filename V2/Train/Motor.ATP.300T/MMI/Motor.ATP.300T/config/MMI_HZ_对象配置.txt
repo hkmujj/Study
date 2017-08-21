@@ -1,0 +1,25 @@
+;;; 类名 				从属视图					输入_Bool_对应表 				输入_Float_对应表 					输出_bool_对应表 						输出_Float_对应表 							参数表 			备注
+;;; 字符串 			<数字 数字> 			[#bool编号 bool编号#] 	Float编号 Float编号*] 			[-bool编号 bool编号-] 			[+Float编号 Float编号+] 				{参数1 参数2 参数3}
+
+Motor.ATP._300T.ProjectSwitch [~ 1 ~]	< 0 1 2 3 100 >			[##]			[**]			[--]			[++]			{ 300T Motor.ATP.300D }
+
+;;;按钮
+Motor.ATP._300T.共用.ATPButtonScreen	[~ 14 ~]	<0 1 2 3 100>	[# #]	[**]	[- -]	[++]	{  }
+
+;;;课程结束视图
+Motor.ATP._300T.黑屏.ATPClassoverScreen [~ 10 ~]	< 100 >			[##]			[**]			[--]			[++]			{ }
+
+;;;黑屏视图
+Motor.ATP._300T.黑屏.ATPBlackScreen [~ 11 ~]	< 0 >				[# #]			[**]			[--]			[++]			{  }
+
+;;;主视图启动
+Motor.ATP._300T.主屏.Start.ATPMainStartScreen  	[~ 11 ~]	< 2 >				[# #]			[**]			[- -]			[++]			{ }
+
+;;;主视图
+Motor.ATP._300T.主屏.ATPMainScreen	[~13~]	< 1 3 >	[# #]	[**]	[- -]	[+ +]	{}
+
+;;;黑屏故障视图
+Motor.ATP._300T.黑屏.BlackFault   [~ 10 ~]	< 0 1 2 100 >			[# #]			[**]			[--]			[++]			{ }
+
+
+Motor.ATP._300T.TopAdorner  [~ 15 ~]	<0 1 2 3 100>	[# #]	[**]	[- -]	[++]	{  }

@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6CC813BA-AB3E-4F3D-8F4D-8ED0831ADF12}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Urban.QingDao3Line.MMI</RootNamespace>
+    <AssemblyName>Urban.QingDao3Line.车辆屏</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\MMI\Addin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <DocumentationFile>
+    </DocumentationFile>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>..\MMI\Addin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonUtil, Version=2.29.2016.517, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="Excel.Interface, Version=2.30.2016.712, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Dell\Desktop\MMI\Excel.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="MMI.Facility.Interface, Version=2.40.2016.1101, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="MsgReceiveMod">
+      <HintPath>..\..\..\Bin\MMI\MsgReceiveMod.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseEvent.cs" />
+    <Compile Include="ExternalButton.cs" />
+    <Compile Include="FaultEvent.cs" />
+    <Compile Include="MVB网络\MVBNet.cs" />
+    <Compile Include="MVB网络\MVBNetData.cs" />
+    <Compile Include="WaitForStart .cs" />
+    <Compile Include="乘客信息系统\PassengerData.cs" />
+    <Compile Include="乘客信息系统\PassengerInformation.cs" />
+    <Compile Include="事件\Event.cs" />
+    <Compile Include="事件\EventData.cs" />
+    <Compile Include="事件\EventMsg.cs" />
+    <Compile Include="制动故障信息\FaultInformation.cs" />
+    <Compile Include="制动故障信息\FaultInformationData.cs" />
+    <Compile Include="底层共用\CursorMovecs.cs" />
+    <Compile Include="性能界面\Performance.cs" />
+    <Compile Include="性能界面\PerformanceData.cs" />
+    <Compile Include="故障信息\EmergencyAlarm.cs" />
+    <Compile Include="故障信息\FaultBottomTitle.cs" />
+    <Compile Include="故障信息\StopFault.cs" />
+    <Compile Include="维护界面底部按钮\HomePageBottom.cs" />
+    <Compile Include="警报列表界面\ChangePage.cs" />
+    <Compile Include="FaultAlarm.cs" />
+    <Compile Include="SatartEndView.cs" />
+    <Compile Include="警报列表界面\AlarmData.cs" />
+    <Compile Include="Read.cs" />
+    <Compile Include="警报列表界面\Alarm.cs" />
+    <Compile Include="主驾驶界面\MainScreen.cs" />
+    <Compile Include="SDI\Sdi.cs" />
+    <Compile Include="SDI\SdiData.cs" />
+    <Compile Include="车门列车线维护界面\DoorsTarinline.cs" />
+    <Compile Include="车门列车线维护界面\DoorsTrainlineData.cs" />
+    <Compile Include="车门维护界面\DoorsMaintenance.cs" />
+    <Compile Include="Doors.cs" />
+    <Compile Include="车门维护界面\DoorsData.cs" />
+    <Compile Include="HVAC\Hvac.cs" />
+    <Compile Include="HVAC\HvacData.cs" />
+    <Compile Include="空气压缩机维护界面\AirCopressorcs.cs" />
+    <Compile Include="空气压缩机维护界面\AirData.cs" />
+    <Compile Include="蓄电池系统维护界面\BaterryData.cs" />
+    <Compile Include="蓄电池系统维护界面\BaterryMaintance.cs" />
+    <Compile Include="软件版本\SoftWareData.cs" />
+    <Compile Include="软件版本\SoftWareVersion.cs" />
+    <Compile Include="辅助变流器故障界面\AuxiliaryFaultDatacs.cs" />
+    <Compile Include="辅助变流器故障界面\AuxiliaryFault.cs" />
+    <Compile Include="辅助变流器\AuxiliaryConverter.cs" />
+    <Compile Include="辅助变流器\AuxiliaryData.cs" />
+    <Compile Include="LeftButton.cs" />
+    <Compile Include="牵引维护界面\PmData.cs" />
+    <Compile Include="牵引维护界面\PropulsionMaintennance.cs" />
+    <Compile Include="自我测试\SelfTest.cs" />
+    <Compile Include="自我测试\SelftestData.cs" />
+    <Compile Include="制动列车线\TrainLinesData.cs" />
+    <Compile Include="制动列车线\TrainLines.cs" />
+    <Compile Include="维护界面底部按钮\MaintanceBottomButton.cs" />
+    <Compile Include="维护界面底部按钮\MBD.cs" />
+    <Compile Include="底层共用\Title\BottomTitle.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="列车启动管理界面\TrainStartUpBottom.cs" />
+    <Compile Include="常规维护界面\GeneralData.cs" />
+    <Compile Include="常规维护界面\General.cs" />
+    <Compile Include="维护界面\MaintanceData.cs" />
+    <Compile Include="Common.cs" />
+    <Compile Include="维护界面\Maintenance.cs" />
+    <Compile Include="NewQBaseclass.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadConfigcs.cs" />
+    <Compile Include="停靠站界面\StopStaionButon.cs" />
+    <Compile Include="停靠站界面\StopStation.cs" />
+    <Compile Include="主驾驶界面\MainDrivingScreen.cs" />
+    <Compile Include="列车启动管理界面\TrainStartUpManagementScreen.cs" />
+    <Compile Include="参数界面\HVACModeSelectionScreen.cs" />
+    <Compile Include="常规维护界面\ParameterScreen.cs" />
+    <Compile Include="密码和日期\DateAndTimeScreen.cs" />
+    <Compile Include="密码和日期\PassWordScreen.cs" />
+    <Compile Include="底层共用\CoordinateConversion.cs" />
+    <Compile Include="底层共用\EnumItems.cs" />
+    <Compile Include="底层共用\QingDaoBaseClass.cs" />
+    <Compile Include="底层共用\Title\Title.cs" />
+    <Compile Include="底层共用\UtilityClass.cs" />
+    <Compile Include="手动列车启动管理界面\ManualTrainStartUpManagementScreen.cs" />
+    <Compile Include="紧急消息界面\EmergencyMessagesScreen.cs" />
+    <Compile Include="辅助变流器界面\AuxiliaryConverter.cs" />
+    <Compile Include="辅助变流器界面\AuxiliaryConverterData.cs" />
+    <Compile Include="高加速\HighAccelerate.cs" />
+    <Compile Include="高加速\HighAccelerateData.cs" />
+    <Compile Include="黑匣子\BlackBoxButtons.cs" />
+    <Compile Include="黑匣子\BlackBoxData.cs" />
+    <Compile Include="黑匣子\BlackBoxFault.cs" />
+    <Compile Include="黑匣子\BlackBoxFigure.cs" />
+    <Compile Include="黑匣子\BlackBoxTrainsLine.cs" />
+    <Compile Include="黑屏\BlackScreen.cs" />
+    <Compile Include="黑屏\ClassOverScreen.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="obj\x86\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Urban.QingDao3Line.车辆屏.Resource.Facade\Urban.QingDao3Line.车辆屏.Resource.Facade.csproj">
+      <Project>{4a941b94-bd1e-429d-8218-e6343d86ff09}</Project>
+      <Name>Urban.QingDao3Line.车辆屏.Resource.Facade</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="bin\x86\Release\" />
+    <Folder Include="obj\x86\Debug\TempPE\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

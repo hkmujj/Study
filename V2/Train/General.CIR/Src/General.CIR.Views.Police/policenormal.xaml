@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="General.CIR.Views.Police.PoliceNormal" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="30*" />
+      <ColumnDefinition Width="150*" />
+    </Grid.ColumnDefinitions>
+    <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+      <TextBlock Name="TextBlock" Margin="2,0,4,0" TextBlock.Foreground="#FFFFFF00" Text="报警" />
+      <Ellipse Stroke="#FFFFFF00" StrokeThickness="1" Width="{Binding ElementName=TextBlock, Path=ActualHeight, Converter={StaticResource MathConverter}, ConverterParameter=x-2}" Height="{Binding ElementName=TextBlock, Path=ActualHeight, Converter={StaticResource MathConverter}, ConverterParameter=x-2}" />
+    </StackPanel>
+  </Grid>
+</UserControl>

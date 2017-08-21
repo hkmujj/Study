@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="Engine.LCDM.HXD3.Views.ChangeToGood.OtherChoiceH"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:commonView="clr-namespace:Engine.LCDM.HXD3.Views.CommonView"
+             xmlns:local="clr-namespace:Engine.LCDM.HXD3.Views.ChangeToGood"
+             mc:Ignorable="d" 
+             xmlns:viewModel="clr-namespace:Engine.LCDM.HXD3.ViewModels"
+             d:DataContext="{d:DesignInstance viewModel:LCDMViewModel}"
+             xmlns:name="clr-namespace:Engine.LCDM.HXD3.Constance"
+             d:DesignHeight="60"
+             d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Button Visibility="{Binding BrakeData.ButtonOne}" x:Name="ButtonF1" Grid.Column="0 "
+                Content="{DynamicResource Execute}"
+                Command="{Binding BrakeData.Controller.ExcuteOperation}"
+                Style="{DynamicResource BottonButtonStyle}" />
+        <Button Visibility="{Binding BrakeData.ButtonTwo}" x:Name="ButtonF2" Grid.Column="1 "
+                Content="{DynamicResource Cancel}"
+                Command="{Binding BrakeData.Controller.CancelOperation}"
+                Style="{DynamicResource BottonButtonStyle}" />
+        <Button x:Name="ButtonF3" Grid.Column="2"
+                Content="{DynamicResource Constant500600}"
+                Command="{Binding BrakeData.Controller.SteadyPressure}"
+                Style="{DynamicResource BottonButtonStyle}" />
+        <Button x:Name="ButtonF4" Grid.Column="3"
+                Content="{DynamicResource Reduce10}"
+                Command="{Binding BrakeData.Controller.DeCreasePressure}"
+                Style="{DynamicResource BottonButtonStyle}" />
+        <Button x:Name="ButtonF5" Grid.Column="4"
+                Content="{DynamicResource Add10}"
+                Command="{Binding BrakeData.Controller.AddPressure}"
+                Style="{DynamicResource BottonButtonStyle}" />
+        <!--<Button x:Name="ButtonF6" Grid.Column="5"
+                Content="{DynamicResource TrainType}"
+                Style="{DynamicResource BottonButtonStyle}" />-->
+        <Button x:Name="ButtonF7" Grid.Column="6"
+                Content="{DynamicResource WindSupply}"
+                Command="{Binding BrakeData.Controller.MakeWindCommand}"
+                Style="{DynamicResource BottonButtonStyle}" />
+        <Button x:Name="ButtonF8" Grid.Column="7"
+                Content="{DynamicResource Exit}"
+                Command="{Binding BrakeData.Controller.CancelOperation}"
+                Style="{DynamicResource BottonButtonStyle}" />
+    </Grid>
+</UserControl>

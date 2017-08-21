@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<ATP200HBrakeConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--填写项目,每个项目对应下面BrakeConfig中的一条 --><!--填写项目,每个项目对应下面BrakeConfig中的一条 -->
+  <ProjectName>Other</ProjectName>
+  <!-- 制动显示方式配置，当前只有Brake7和Normal两种配置 -->
+  <!-- Normal情况下 正常显示1级制动对应一条，4级制动对应2条横杠，7级制动对应3条横杠-->
+  <!-- Brake7情况下  常用制动都显示三条横杠 -->
+  <BrakeConfig ProjectName="ChengDu" Display="Brake7" />
+  <BrakeConfig ProjectName="Other" Display="Normal" />
+</ATP200HBrakeConfig>

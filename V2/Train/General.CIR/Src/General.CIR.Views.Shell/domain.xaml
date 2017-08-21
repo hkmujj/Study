@@ -1,0 +1,15 @@
+﻿<UserControl
+    x:Class="General.CIR.Views.Shell.DoMain"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:contance="clr-namespace:General.CIR.Contance"
+    xmlns:regions="http://www.codeplex.com/CompositeWPF">
+    <Grid>
+        <Viewbox Stretch="Fill">
+            <ContentControl
+                Width="2835"
+                Height="3937"
+                regions:RegionManager.RegionName="{x:Static contance:RegionNames.Master}" />
+        </Viewbox>
+    </Grid>
+</UserControl>

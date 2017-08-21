@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="Engine._6A.Views.Axle6.ForTheColumnButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:commonControl="clr-namespace:Engine._6A.CommonControl"
+             xmlns:constant="clr-namespace:Engine._6A.Constance"
+             xmlns:viewModel="clr-namespace:Engine._6A.Interface.ViewModel" d:DataContext="{d:DesignInstance viewModel:IEngine6AViewModel}"
+             d:DesignHeight="30"
+             d:DesignWidth="530"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary Source="../../Resouce/Engine6AResource.xaml" />
+    </UserControl.Resources>
+    <Grid DataContext="{Binding DataMonitor}">
+
+        <StackPanel x:Name="StackPanels" Orientation="Horizontal">
+            <Image Style="{StaticResource CommonNoDataImgStyle}" />
+            <TextBlock Style="{StaticResource CommonNoDataTextStyle}" Text="无数据" />
+
+            <commonControl:RecTextButton x:Name="ButtonOne"
+                                      Margin="95,2,1,2"
+                                      HorizontalAlignment="Center"
+                                      HorizontalContentAlignment="Center"
+                                      Background="{StaticResource ButtonDownThree}"
+                                      Content="挂车前记录"
+                                      PreviewMouseDown="ButtonOne_OnPreviewMouseDown"
+                                      PreviewMouseUp="ButtonOne_OnPreviewMouseUp"
+                                      Style="{StaticResource ColumnPageTextStyle}"
+                                      Tag="TrainUp" />
+            <commonControl:RecTextButton x:Name="ButtonTwo"
+                                      HorizontalAlignment="Center"
+                                      HorizontalContentAlignment="Center"
+                                      Content="挂车后记录"
+                                      PreviewMouseDown="ButtonOne_OnPreviewMouseDown"
+                                      PreviewMouseUp="ButtonOne_OnPreviewMouseUp"
+                                      Style="{StaticResource ColumnPageTextStyle}"
+                                      Tag="TrainDown" />
+
+
+            <commonControl:MultiStateButton x:Name="MultiStateButton"
+                                         Width="90"
+                                         Margin="1,4"
+                                         BorderThickness="1"
+                                         StateCollection="{Binding ColumnCollection}"
+                                         Tag="{x:StaticExtension constant:RegionNames.ColumnRegion}" />
+
+        </StackPanel>
+    </Grid>
+</UserControl>

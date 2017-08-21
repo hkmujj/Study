@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C3DA8759-012D-4D88-8D5D-8D4044BC604A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Engine.Angola.TCMS</RootNamespace>
+    <AssemblyName>Engine.Angola.TCMS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\MMI\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonUtil, Version=2.29.2016.517, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="DevExpress.Data.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Core.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.PropertyGrid.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Excel.Interface, Version=2.30.2016.712, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Practices.Prism, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.Prism.MefExtensions, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="MMI.Facility.Interface, Version=2.50.2017.214, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="MMI.Facility.WPFInfrastructure, Version=2.28.2016.929, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="Startup\DesignApp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Controller\BtnActionResponser\BtnActionResponserBase.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToF4Content2ActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToF4Content1ActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToFaultSelectActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToIntensityControlActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToMaintainActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToRootActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToRootInfoActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToFirstLevelActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\ChangeToSwActionResponser.cs" />
+    <Compile Include="Converter\LocaliadaColorConverter.cs" />
+    <Compile Include="Events\AsyncAdapteDataEvent.cs" />
+    <Compile Include="Model\BtnStragy\StateInterface.cs" />
+    <Compile Include="Model\ConfigModel\StateInterfaceItem.cs" />
+    <Compile Include="Constant\RegionNames.cs" />
+    <Compile Include="Controller\AngolaTCMSShellController.cs" />
+    <Compile Include="Controller\BtnStragy\StateInterfaceFactory.cs" />
+    <Compile Include="Controller\RightBtnController.cs" />
+    <Compile Include="Converter\Color12Converter.cs" />
+    <Compile Include="Converter\Color11Converter.cs" />
+    <Compile Include="Converter\Color10Converter.cs" />
+    <Compile Include="Converter\Color9Converter.cs" />
+    <Compile Include="Converter\Color8Converter.cs" />
+    <Compile Include="Converter\Color7Converter.cs" />
+    <Compile Include="Converter\Color6Converter.cs" />
+    <Compile Include="Converter\Color5Converter.cs" />
+    <Compile Include="Converter\Color4Converter.cs" />
+    <Compile Include="Converter\Color3Converter.cs" />
+    <Compile Include="Converter\Color2Converter.cs" />
+    <Compile Include="Converter\Color1Converter.cs" />
+    <Compile Include="DataAdapter\TcmsModelAdapter.cs" />
+    <Compile Include="Events\AsyncNavigateToByStateInterfaceKeyEvent.cs" />
+    <Compile Include="Events\ResetRunningTimeEvent.cs" />
+    <Compile Include="Extension\CommunicationDataChangedArgsExtension.cs" />
+    <Compile Include="Extension\CommunicationDataServiceExtension.cs" />
+    <Compile Include="GDICommonColor.cs" />
+    <Compile Include="Model\AngolaTCMSShellModel.cs" />
+    <Compile Include="Model\BtnStragy\BtnItem.cs" />
+    <Compile Include="Model\BtnStragy\IBtnActionResponser.cs" />
+    <Compile Include="Model\BtnStragy\IStateInterface.cs" />
+    <Compile Include="Model\BtnStragy\IStateInterfaceFactory.cs" />
+    <Compile Include="Model\BtnStragy\StateInterfaceKey.cs" />
+    <Compile Include="Model\Domain\Constant\StartType.cs" />
+    <Compile Include="Model\Domain\F4Data.cs" />
+    <Compile Include="Model\MainData\CMD.cs" />
+    <Compile Include="Model\MainData\Localiada.cs" />
+    <Compile Include="Model\MainData\LocaliadaColor.cs" />
+    <Compile Include="Model\SWData\Color12.cs" />
+    <Compile Include="Model\SWData\Color11.cs" />
+    <Compile Include="Model\SWData\Color3.cs" />
+    <Compile Include="Model\SWData\Color4.cs" />
+    <Compile Include="Model\SWData\Color5.cs" />
+    <Compile Include="Model\SWData\Color6.cs" />
+    <Compile Include="Model\SWData\Color7.cs" />
+    <Compile Include="Model\SWData\Color8.cs" />
+    <Compile Include="Model\SWData\Color9.cs" />
+    <Compile Include="Model\SWData\Color10.cs" />
+    <Compile Include="Model\SWData\Color2.cs" />
+    <Compile Include="Model\SWData\Color1.cs" />
+    <Compile Include="Model\Domain\MainData.cs" />
+    <Compile Include="Model\Domain\SWData.cs" />
+    <Compile Include="Model\Domain\TCMSModel.cs" />
+    <Compile Include="Model\IRaiseResourceChangedProvider.cs" />
+    <Compile Include="Model\RightBtnModel.cs" />
+    <Compile Include="Model\Screen\Other.cs" />
+    <Compile Include="Model\SWData\AirStartDelay.cs" />
+    <Compile Include="Model\SWData\AirStartIn.cs" />
+    <Compile Include="Model\SWData\PropCargaCmd.cs" />
+    <Compile Include="Model\SWData\FieldWeakening.cs" />
+    <Compile Include="Model\SWData\EfcNo.cs" />
+    <Compile Include="Model\SWData\MotorFbkIn.cs" />
+    <Compile Include="Model\SWData\BrakeFbkIn.cs" />
+    <Compile Include="Model\SWData\AirFbk.cs" />
+    <Compile Include="Model\SWData\VigilanciaSwt.cs" />
+    <Compile Include="Model\SWData\LocospeedCont.cs" />
+    <Compile Include="Model\SWData\DynPreioCmd.cs" />
+    <Compile Include="Model\SWData\ThacaoCmd.cs" />
+    <Compile Include="Resource\Keys\Inb1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Inb.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Keys\InFloatKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InFloatKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Keys\StateKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StateKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\AngolaTCMSShellViewModel.cs" />
+    <Compile Include="ViewModel\RightBtnViewModel.cs" />
+    <Compile Include="View\Common\BorderText.xaml.cs">
+      <DependentUpon>BorderText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\SWContentView.xaml.cs">
+      <DependentUpon>SWContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\F4Content1View.xaml.cs">
+      <DependentUpon>F4Content1View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\F4Content\F4Content2View.xaml.cs">
+      <DependentUpon>F4Content2View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\FirstLevel\FaultSelectView.xaml.cs">
+      <DependentUpon>FaultSelectView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\FirstLevel\MaintainView.xaml.cs">
+      <DependentUpon>MaintainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\FirstLevel\IntensityControlView.xaml.cs">
+      <DependentUpon>IntensityControlView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\FirstLevelView.xaml.cs">
+      <DependentUpon>FirstLevelView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\RootContentView.xaml.cs">
+      <DependentUpon>RootContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\RootContent\RootContentInfoView.xaml.cs">
+      <DependentUpon>RootContentInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Frame\RightButtonView.xaml.cs">
+      <DependentUpon>RightButtonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Monitor\DataMonitor.xaml.cs">
+      <DependentUpon>DataMonitor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Monitor\DataMonitorWindow.xaml.cs">
+      <DependentUpon>DataMonitorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shell\AngolaTCMSShellContentLayout.xaml.cs">
+      <DependentUpon>AngolaTCMSShellContentLayout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shell\AngolaTCMSShellForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Shell\AngolaTCMSShellForm.Designer.cs">
+      <DependentUpon>AngolaTCMSShellForm.cs</DependentUpon>
+    </Compile>
+    <Page Include="Resource\AngolaTCMSResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\Basic\TCMSBasicResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\Converter\ConverterResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\Image\ImageResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\Strings\TCMSString_AG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\Styles\BorderStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\Styles\BtnStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\Styles\ProgressStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\Styles\TextStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Common\BorderText.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\SWContentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\F4Content1View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\F4Content\F4Content2View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\FirstLevel\FaultSelectView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\FirstLevel\MaintainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\FirstLevel\IntensityControlView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\FirstLevelView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\RootContentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\RootContent\RootContentInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Frame\RightButtonView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Monitor\DataMonitor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Monitor\DataMonitorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shell\AngolaTCMSShell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Model\GlobalParam.cs" />
+    <Compile Include="AngolaTCMSSubsystem.cs" />
+    <Compile Include="View\Shell\AngolaTCMSShellLayout.xaml.cs">
+      <DependentUpon>AngolaTCMSShellLayout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Startup\DesignApp.xaml.cs">
+      <DependentUpon>DesignApp.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnginAngolaTCMSMefBootstrapper.cs" />
+    <Compile Include="View\Shell\AngolaTCMSShell.xaml.cs">
+      <DependentUpon>AngolaTCMSShell.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\Shell\AngolaTCMSShellContentLayout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shell\AngolaTCMSShellLayout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Keys\Inb.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Inb1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Keys\InFloatKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InFloatKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Keys\StateKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StateKeys.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Shell\AngolaTCMSShellForm.resx">
+      <DependentUpon>AngolaTCMSShellForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Basic\Fonts\digifaw.ttf" />
+    <None Include="Startup\App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Config\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Image\Details\表a.png" />
+    <Resource Include="Resource\Image\Details\表B.png" />
+    <Resource Include="Resource\Image\Details\表C.png" />
+    <Resource Include="Resource\Image\Details\表D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Changes.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

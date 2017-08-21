@@ -1,0 +1,104 @@
+;;; 类名 				从属视图		输入_Bool_对应表 	输入_Float_对应表 			输出_bool_对应表 			输出_Float_对应表 						参数表 			备注
+;;; 字符串 			<数字 数字> 			[#bool编号 bool编号#] 	Float编号 Float编号*] 			[-bool编号 bool编号-] 			[+Float编号 Float编号+] 				{参数1 参数2 参数3}
+;;;课程结束视图
+ClassOverScreen		[~ 10 ~]	< 1 >			[##]			[**]			[--]			[+ 660 +]			{}
+;;;黑屏视图
+BlackScreen		[~ 11 ~]	< 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 50 51 52 53 54 55 56>			[# 600 #]		[**]			[--]			[+ 660 +]			{}
+;;;标题视图
+TitleScreen		[~ 12 ~]	< 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 50 51 52 53 54 55 56>			[# 601 602 603 604 605 606 607 608 609 717 718 719 720 721 722#]		[*100 101 102 103 104 105*]			[--]			[]			{救援.png 清客.png 线路终点.png 日运行结束.png 乘客紧急警报.png 火情警报.png 紧急制动.png 牵引抑制警报.png Btn2.png Btn3.png Btn4.png Btn5.png Btn6.png Btn7.png Btn8.png }
+;;;主驾驶视图
+MainDrivingScreen	[~ 13 ~]	< 1 >			[#626 627 628 629 630 631 632 633 634 635#]		        [**]			[--]			[]			{PCE车轮打滑.png 网关阀车轮打滑.png} 
+;;;列车启动管理界面
+TrainStartUpManagementScreen	[~ 14 ~]	< 2 >		[#1396 4 1428 4 626 6 811 18#]			[*114 6*]			[-4801 4802-]			[]			{ 辅助变流器故障或无通信.png 辅助变流器隔离.png 辅助变流器运行.png 辅助变流器默认状态.png 空气压缩机故障.png 空气压缩机运行.png 空气压缩机默认状态.png HVAC故障.png HVAC运行.png HVAC默认状态.png 运行自动准备.png 启动列车自动退出准备.png 维护界面\btnup.png 维护界面\btndown.png}
+;;;手动列车启动管理界面
+ManualTrainStartUpManagementScreen	[~ 15 ~]	< 3 >		[#1396 4 1428 4 626 6 811 18#]			[*114 6*]			[-4803 4804-]			[]			{辅助变流器故障或无通信.png 辅助变流器隔离.png 辅助变流器运行.png 辅助变流器默认状态.png 空气压缩机故障.png 空气压缩机运行.png 空气压缩机默认状态.png HVAC故障.png HVAC运行.png HVAC默认状态.png cvs.png HVAC.png 维护界面\btnup.png 维护界面\btndown.png}
+;;;紧急消息界面
+EmergencyMessagesScreen	[~ 16 ~]	< 4 >			[##]			[**]			[--]			[+609+]			{Up.png Down.png btnup.png btndown.png}
+;;;参数界面
+ParameterScreen		[~ 17 ~]	< 5 >			[##]			[**]			[-4806 4807-]			[+610+]			{UP.png DOWN.png LOCK.png btnup.png btndown.png btnupLong.png btndownLong.png}
+;;;空调模式选择
+HVACModeSelectionScreen	[~ 18 ~]	< 6 >			[##]			[**]			[-4810 4811 4812 4813 4814 4815-]			[]			{UP.png DOWN.png btnup.png btndown.png}
+;;;密码界面
+PassWordScreen	        [~ 19 ~]	< 7 >			[##]			[**]			[--]			[]			{btnup.png btndown.png}
+;;;日期和时间
+DateAndTimeScreen	[~ 20 ~]	< 8 >			[##]			[**]			[--]			[]			{}
+;;;停靠站界面
+StopStation     	[~ 21 ~]	< 9 >			[#4105 62#]			[*103 2 130 4*]			[--]			[]			{停靠站\Button.png 停靠站\箭头.png 停靠站\黑色箭头.png 停靠站\Up.png 停靠站\Down.png 停靠站\station.png 停靠站\Button1.png 停靠站\行车方向.png 停靠站\行车方向1.png}
+;;;停靠站界面按钮					
+StopStaionButon     	[~ 22 ~]	< 9 >			[#4105 62#]			[**]			[--]			[]			{停靠站\Button.png 停靠站\箭头.png 停靠站\黑色箭头.png 停靠站\Up.png 停靠站\Down.png 停靠站\station.png}
+;;;维护主界面					
+Maintenance  	[~ 23 ~]	< 10>			[#4105 32#]			[**]			[--]			[]			{ 维护界面\General.png 维护界面\Brake.png 维护界面\AirCpr.png 维护界面\Traction.png 维护界面\StaticInv.png 维护界面\Battery.png 维护界面\SoftVers.png 维护界面\Hvac.png  维护界面\Doorlines.png 维护界面\BlackBox.png  维护界面\FireDet.png  维护界面\PassInfo.png  维护界面\Riom.png 维护界面\MvbNet.png 维护界面\Door.png 维护界面\Performance.png 维护界面\Generala.png 维护界面\Brakea.png 维护界面\AirCpra.png 维护界面\Tractiona.png 维护界面\StaticInva.png 维护界面\Batterya.png 维护界面\SoftVersa.png 维护界面\Hvaca.png  维护界面\Doorlinesa.png 维护界面\BlackBoxa.png  维护界面\FireDeta.png  维护界面\PassInfoa.png  维护界面\Rioma.png 维护界面\MvbNeta.png 维护界面\Doora.png 维护界面\Performancea.png 维护界面\Generalb.png 维护界面\Brakeb.png 维护界面\AirCprb.png 维护界面\Tractionb.png 维护界面\StaticInvb.png 维护界面\Batteryb.png 维护界面\SoftVersb.png 维护界面\Hvacb.png  维护界面\Doorlinesb.png 维护界面\BlackBoxb.png  维护界面\FireDetb.png  维护界面\PassInfob.png  维护界面\Riomb.png 维护界面\MvbNetb.png 维护界面\Doorb.png 维护界面\Performanceb.png}
+;;;常规维护界面					
+General   	[~ 24 ~]	< 11>			[#727 40#]			[*156 21*]			[--]			[]			{常规维护界面\速度.png 维护界面\正常.png 维护界面\故障.png 维护界面\进行中.png  维护界面\退出.png}																											
+;;;底部标题					
+BottomTitle	[~ 25 ~]	< 1 4 5 6 7 8 9 27>			[#649 7#]			[**]			[--]			[]			{Btn5.png Btn2.png Btn3.png Btn4.png  Btn6.png Btn7.png Btn8.png btnup.png btndown.png}	
+;;;列车启动管理界面底部按钮					
+ TrainStartUpBottom	[~ 26 ~]	< 2 3>			[##]			[**]			[--]			[]			{ Btn2.png Btn3.png Btn4.png Btn9.png Btn10.png Btn7.png Btn8.png btnup.png btndown.png}
+;;;维护界面底部按钮					
+ MaintanceBottomButton	[~ 27 ~]	< 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 28 50 51 52 53 54>			[##]			[**]			[--]			[]			{Btn1.png Btn7.png Btn8.png Btn11.png btnup.png btndown.png}	
+;;; 制动故障信息				
+FaultInformation   [~ 28 ~] 	<12>			[#769 4 803 8 975 12#]			[**]			[--]			[]			{ 维护界面\btnup.png 维护界面\btndown.png 维护界面\Up.png 维护界面\Down.png 维护界面\正常.png 维护界面\故障.png 维护界面\进行中.png}																																																																																														
+;;; 自动测试界面				
+ SelfTest   [~ 29 ~] 	< 13>			[#850 32#]			[**]			[-4817-]			[]			{ 维护界面\btnup.png 维护界面\btndown.png 维护界面\btnup1.png 维护界面\btndown1.png 自动测试\测试正常.png 自动测试\测试条件不正常.png 自动测试\自动测试中.png 自动测试\其他.png 自动测试\自动测试失败.png 自动测试\自动测试退出.png 自动测试\自动测试成功.png 自动测试\正在自动测试中.png}
+;;; 牵引维护界面				
+ PropulsionMaintennance   [~ 30 ~] 	< 14>			[#882 32#]			[**]			[--]			[]			{ 维护界面\btnup.png 维护界面\btndown.png 维护界面\Up.png 维护界面\Down.png  维护界面\btnup1.png 维护界面\btndown1.png 维护界面\提示.png 维护界面\正常.png 维护界面\故障.png 维护界面\进行中.png }																				
+;;; 维护界面左侧按钮				
+ LeftButton             [~ 31 ~] 	  < 14>			[##]			[**]			[--]			[]			{  维护界面\Up.png 维护界面\Down.png 维护界面\btnup.png 维护界面\btndown.png}																																																				
+;;; 辅助变流器界面				
+AuxiliaryConverter          [~ 32 ~] 	  < 15>			[#832 12 845 2 700 9#]			[*195 12*]			[--]			[]			{  维护界面\底图a.png 维护界面\btnup.png 维护界面\btndown.png 维护界面\底图b.png}																					
+;;; 辅助变流器故障界面				
+ AuxiliaryFault             [~ 33 ~] 	  < 16>			[#775 20#]			[**]			[-4819 4820-]			[]			{  维护界面\底图.png 维护界面\btnup.png 维护界面\btndown.png 维护界面\故障.png 维护界面\正常.png 维护界面\进行中.png}					
+;;;蓄电池系统维护界面				
+ BaterryMaintance             [~ 34 ~] 	  < 17>			[#943 4#]			[*210 8*]			[--]			[]			{  维护界面\底图.png 维护界面\B底图.png }																																																		
+;;;空气压缩机维护界面				
+AirCopressorcs               [~ 35 ~] 	          < 18>			[#640 6 690 6#]			[*139 2*]			[--]			[]			{  维护界面\进行中.png 维护界面\正常.png 维护界面\故障.png}	
+;;;HVAC界面				
+Hvac             [~ 36 ~] 	          < 19>			[#1506 36 1542 42 1584 48 1632 48 1680 216#]			[*181 12*]			[--]			[]			{ 维护界面\正常.png 维护界面\故障.png 维护界面\进行中.png 维护界面\温度传感器故障.png 维护界面\温度传感器默认.png 维护界面\温度传感器正常.png}	
+;;;车头				
+Doors           [~ 37 ~] 	          <1 20 21>			[#610 8 988 336 610 8 958 12#]			[**]			[--]			[]			{车头1_1.png 车头1_2.png 车头1_3.png 车头1_4.png 车头2_1.png 车头2_2.png 车头2_3.png 车头2_4.png 驾驶室车门_开.png 驾驶室车门_旁路.png 驾驶室车门_关.png 车门无通信.png 车门已开启.png 车门故障.png 车门关闭且锁定.png 车门已隔离.png 检测到障碍.png 车门紧急解锁.png  车门\车门无通信.png 车门\车门已开启.png 车门\车门故障.png 车门\车门关闭且锁定.png 车门\车门已隔离.png 车门\车门检测到障碍.png 车门\车门紧急解锁.png}																																																																							
+;;;车门维护界面				
+DoorsMaintenance         [~ 38 ~] 	          < 20>			[#2100 1920#]			[**]			[--]			[]			{维护界面\btnup.png 维护界面\btndown.png Right.png Left.png 维护界面\进行中.png 维护界面\正常.png 维护界面\故障.png}																																																				
+;;;车门列车线维护界面				
+DoorsTarinline        [~ 39 ~] 	          < 21>			[#2072 26 4145 26#]			[**]			[--]			[]			{维护界面\进行中.png 维护界面\正常.png 维护界面\故障.png}																																																																																								
+;;;SDI界面				
+Sdi      [~ 40 ~] 	          < 22>			[#2020 36#]			[**]			[--]			[]			{维护界面\进行中.png 维护界面\正常.png 维护界面\故障.png}																																																																																																																																																																																																																																																																																																																																					
+;;;主驾驶界面增加				
+MainScreen     [~ 41 ~] 	          <1>			[#1324 72 1408 36 914 24 1396 36 618 2 657 12#]			[*106 2 227 12 120 10*]			[--]			[]			{转向架制动施加.png 转向架制动缓解.png 转向架制动故障.png 制动被隔离.png 停放制动施加.png 停放制动缓解.png 停放制动故障.png 停放制动隔离.png 旁路已激活.png 旁路未激活.png 辅助变流器故障或无通信.png 辅助变流器隔离.png 辅助变流器运行.png 辅助变流器默认状态.png PCE运行.png PCE无通信或故障.png PCE隔离.png PCE默认状态.png HSCB状态正常.png HSCB状态故障.png HSCB默认状态.png 总风压力正常.png 总风压力不正常.png 常用制动压力正常.png 常用制动压力不正常.png 常用制动压力默认.png}																																																																																																																																																																																																																																																																																																																																																											
+;;;警报界面				
+Alarm     [~ 42 ~] 	          < 23>			[#1450 1#]			[**]			[--]			[]			{UP.png  DOWN.png  Left.png  Right.png 维护界面\进行中.png 维护界面\正常.png 维护界面\故障.png btnup.png btndown.png}																																																																																																																																																																																																																																																																																																																																																	
+;;;课程开始结束视图			
+SatartEndView     [~ 43 ~] 	          < 44>			[# 632 1 600 1#]			[**]			[--]			[]			{}		
+;;;事件界面			
+Event     [~ 44 ~] 	          <54>			[##]			[**]			[--]			[]			{btnup.png btndown.png Btn_Up.png Btn_Down.png}
+;;;外侧按钮			
+ExternalButton   [~ 45 ~] 	          <1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 50 51 52 53 54 55 56>			[##]			[**]			[--]			[]			{按钮\上1.png 按钮\上2.png 按钮\下1.png 按钮\下2.png}	
+;;; 制动列车线				
+TrainLines   [~ 46 ~] 	<50>			[#1900 40#]			[**]			[--]			[]			{ 维护界面\btnup.png 维护界面\btndown.png 维护界面\正常.png 维护界面\故障.png 维护界面\进行中.png}
+;;;维护主界面底部按钮
+HomePageBottom	[~ 47 ~]	<10>			[##]			[**]			[--]			[]			{Btn7.png Btn8.png Btn11.png btnup.png btndown.png}	
+;;;软件版本
+SoftWareVersion	[~ 48 ~]	<25>			[##]			[**]			[--]			[]			{车头1_1.png 车头1_2.png 车头1_3.png 车头1_4.png 车头2_1.png 车头2_2.png 车头2_3.png 车头2_4.png}   	
+;;;黑匣子故障事件
+BlackBoxFault	[~ 49 ~]	<26>			[#1945 12#]			[**]			[--]			[]			{维护界面\进行中.png 维护界面\故障.png 维护界面\正常.png}
+;;;黑匣子左侧按钮
+BlackBoxButton	[~ 50 ~]	<26 52 53>			[##]			[**]			[--]			[]			{btnup.png btndown.png}
+;;;黑匣子列车线界面
+BlackBoxTrainsLine [~ 51 ~]	<52>	            [#1960 60#]			[**]			[--]			[]			{维护界面\进行中.png 维护界面\故障.png 维护界面\正常.png btnup.png btndown.png Btn_Down.png}
+;;;黑匣子数据界面
+BlackBoxFigure [~ 52 ~]	        <53>	            [##]			[*220 6*]			[--]			[]			{}
+;;;乘客信息系统
+PassengerInformation [~ 53 ~]	        <51>	            [#2056 16#]			[**]			[--]			[]	         {维护界面\进行中.png 维护界面\故障.png 维护界面\正常.png}
+;;;MVB网络
+MVBNet [~ 54 ~]	        <24>	            [#610 8 4020 84#]			[**]			[--]			[]	         {车头1_1.png 车头1_2.png 车头1_3.png 车头1_4.png 车头2_1.png 车头2_2.png 车头2_3.png 车头2_4.png}
+;;;高加速
+HighAccelerate [~ 55 ~]	        <27>	            [##]			[**]			[-4818-]			[]	         {btnup.png btndown.png}
+;;;性能
+Performance [~ 56 ~]	        <28>	            [##]			[*242 5*]			[-4821 4822 4823-]			[]	         {btnupLong.png btndownLong.png}
+;;;停止故障
+StopFault [~ 58 ~]	        <55>	            [#675 9#]			[**]			[--]			[]	         {按钮图片范例.png 单键.png 清客图标.png 日运行结束.png 线路终点.png Btn_Up.png Btn_Down.png btnup.png btndown.png}
+;;;紧急制动报警
+EmergencyAlarm [~ 61 ~]	        <56>	            [##]			[**]			[--]			[]	         {紧急制动.png 确认.png}
+;;;故障底部标题					
+FaultBottomTitle	[~ 62 ~]	< 55 56>			[#650 6#]			[**]			[--]			[]			{Btn1.png Btn2.png Btn3.png Btn4.png  Btn6.png Btn7.png Btn8.png btnup.png btndown.png}	
+;;;启动等待界面			
+WaitForStart     [~ 63 ~] 	          <57>			[##]			[*110 1*]			[--]			[]			{启动等待.png}																																																																																																																																																																																																																																																																																																																																																																																				

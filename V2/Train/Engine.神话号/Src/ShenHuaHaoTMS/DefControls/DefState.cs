@@ -1,0 +1,621 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
+using CommonControls;
+using YunDa.JC.MMI.Common.Extensions;
+using YunDa.JC.MMI.Common;
+
+namespace ShenHuaHaoTMS.DefControls
+{
+    public partial class DefState : PictureBox, ILogic
+    {
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [Description("接收到的数据配置信息集合"), Category("数据配置属性")]
+        [Browsable(true)]
+        public List<DataConfigInfo> DataConfigInfoCollection
+        {
+            get { return _dataConfigInfoCollection; }
+            set { _dataConfigInfoCollection = value; }
+        }
+
+        private List<DataConfigInfo> _dataConfigInfoCollection = new List<DataConfigInfo>();
+
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [Description("发送布尔数据配置信息集合"), Category("数据配置属性")]
+        [Browsable(true)]
+        public List<Int32> OutBoolConfigInfoCollection
+        {
+            get { return _outBoolConfigInfoCollection; }
+            set { _outBoolConfigInfoCollection = value; }
+        }
+
+        private List<Int32> _outBoolConfigInfoCollection = new List<int>();
+
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [Description("发送浮点数据配置信息集合"), Category("数据配置属性")]
+        [Browsable(true)]
+        public List<Int32> OutFloatConfigInfoCollection
+        {
+            get { return _outFloatConfigInfoCollection; }
+            set { _outFloatConfigInfoCollection = value; }
+        }
+
+        private List<Int32> _outFloatConfigInfoCollection = new List<int>();
+
+        [Description("边框信息"), Category("自定义属性")]
+        [Browsable(true)]
+        public BorderInfo DefBorderInfo
+        {
+            get { return _defBorderInfo; }
+            set { _defBorderInfo = value; }
+        }
+
+        private BorderInfo _defBorderInfo = new BorderInfo();
+
+        [Description("Y方向偏移"), Category("自定义属性")]
+        [Browsable(true)]
+        public float YOffset
+        {
+            get { return _yOffset; }
+            set { _yOffset = value; }
+        }
+
+        private float _yOffset = 0;
+
+        [Description("X方向偏移"), Category("自定义属性")]
+        [Browsable(true)]
+        public float XOffset
+        {
+            get { return _xOffset; }
+            set { _xOffset = value; }
+        }
+
+        private float _xOffset = 0;
+
+        [Description("默认背景"), Category("自定义属性")]
+        [Browsable(true)]
+        public Image DefalutBack
+        {
+            get { return _defalutBack; }
+            set { _defalutBack = value; }
+        }
+
+        private Image _defalutBack = null;
+
+        [Description("默认文本"), Category("自定义属性")]
+        [Browsable(true)]
+        public String DefalutText
+        {
+            get { return _defalutText; }
+            set { _defalutText = value; }
+        }
+
+        private String _defalutText = null;
+
+        [Description("默认字体"), Category("自定义属性")]
+        [Browsable(true)]
+        public Font DefFont
+        {
+            get { return _defFont; }
+            set { _defFont = value; }
+        }
+
+        private Font _defFont = new Font("宋体", 13);
+
+        [Description("默认画刷"), Category("自定义属性")]
+        [Browsable(true)]
+        public SolidBrush DefBrush
+        {
+            get { return _defBrush; }
+            set { _defBrush = value; }
+        }
+
+        private SolidBrush _defBrush = (SolidBrush) Brushes.Black;
+
+        [Browsable(false)]
+        public DataConfigInfo CurrentDataConfigInfo
+        {
+            set
+            {
+                _currentDataConfigInfo = value;
+
+                Invalidate();
+            }
+        }
+
+        private DataConfigInfo _currentDataConfigInfo = null;
+
+        [Description("是否恢复"), Category("自定义属性")]
+        [Browsable(true)]
+        public bool IsSelfReset
+        {
+            get { return m_IsSelfReset; }
+            set
+            {
+                m_IsSelfReset = value;
+                if (IsSelfReset)
+                {
+                    GlobalTimer.Instance.TimersElapsed1000MS -= _timer_Elapsed;
+                    GlobalTimer.Instance.TimersElapsed1000MS += _timer_Elapsed;
+                }
+            }
+        }
+
+        private StateCondition _stateCondition = null;
+        private Int32 _count = 0;
+
+        public DefState()
+        {
+            InitializeComponent();
+
+            SetStyle(
+                ControlStyles.ResizeRedraw | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint |
+                ControlStyles.OptimizedDoubleBuffer, true);
+        }
+
+        void _timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            _count++;
+            if (_count < 4)
+            {
+                return;
+            }
+
+            if (_currentDataConfigInfo != null)
+            {
+                _dataConfigInfoCollection.Find(a => a.BoolLogic == _currentDataConfigInfo.BoolLogic).BoolValue = false;
+            }
+            _currentDataConfigInfo = null;
+            this.InvokeInvalidate();
+            _count = 0;
+
+            GlobalTimer.Instance.TimersElapsed1000MS -= _timer_Elapsed;
+
+        }
+
+        public void SetState(Int32 logicID, Boolean state)
+        {
+            var clone = _dataConfigInfoCollection.FindAll(a => a.BoolLogic == logicID);
+            switch (clone.Count)
+            {
+                case 1:
+                    if (state)
+                    {
+                        for (int i = 0; i < _dataConfigInfoCollection.Count; i++)
+                        {
+                            if (_dataConfigInfoCollection[i].BoolLogic != logicID)
+                            {
+                                continue;
+                            }
+
+                            _dataConfigInfoCollection[i].BoolValue = true;
+                            if (_currentDataConfigInfo != null)
+                            {
+                                if (_currentDataConfigInfo.Grade <= _dataConfigInfoCollection[i].Grade)
+                                {
+                                    _currentDataConfigInfo = new DataConfigInfo()
+                                    {
+                                        BoolLogic = _dataConfigInfoCollection[i].BoolLogic,
+                                        DefBackground = _dataConfigInfoCollection[i].DefBackground,
+                                        BoolValue = _dataConfigInfoCollection[i].BoolValue,
+                                        DefFontInfo = _dataConfigInfoCollection[i].DefFontInfo,
+                                        DefText = _dataConfigInfoCollection[i].DefText,
+                                        FloatLogic = _dataConfigInfoCollection[i].FloatLogic,
+                                        Format = _dataConfigInfoCollection[i].Format,
+                                        BackColor = _dataConfigInfoCollection[i].BackColor,
+                                        Grade = _dataConfigInfoCollection[i].Grade
+                                    };
+                                    Invalidate();
+                                }
+                            }
+                            else
+                            {
+                                _currentDataConfigInfo = new DataConfigInfo()
+                                {
+                                    BoolLogic = _dataConfigInfoCollection[i].BoolLogic,
+                                    DefBackground = _dataConfigInfoCollection[i].DefBackground,
+                                    BoolValue = _dataConfigInfoCollection[i].BoolValue,
+                                    DefFontInfo = _dataConfigInfoCollection[i].DefFontInfo,
+                                    DefText = _dataConfigInfoCollection[i].DefText,
+                                    FloatLogic = _dataConfigInfoCollection[i].FloatLogic,
+                                    Format = _dataConfigInfoCollection[i].Format,
+                                    BackColor = _dataConfigInfoCollection[i].BackColor,
+                                    Grade = _dataConfigInfoCollection[i].Grade
+                                };
+                                Invalidate();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (_currentDataConfigInfo == null)
+                        {
+                            return;
+                        }
+
+                        if (_currentDataConfigInfo.BoolLogic == logicID)
+                        {
+                            _dataConfigInfoCollection.Find(a => a.BoolLogic == logicID).BoolValue = state;
+                            var dc = _dataConfigInfoCollection.Find(a => a.BoolValue);
+                            if (dc == null)
+                            {
+                                _currentDataConfigInfo = null;
+                            }
+                            else
+                            {
+                                _currentDataConfigInfo = new DataConfigInfo()
+                                {
+                                    BoolLogic = dc.BoolLogic,
+                                    DefBackground = dc.DefBackground,
+                                    BoolValue = dc.BoolValue,
+                                    DefFontInfo = dc.DefFontInfo,
+                                    DefText = dc.DefText,
+                                    FloatLogic = dc.FloatLogic,
+                                    Format = dc.Format,
+                                    Grade = dc.Grade
+                                };
+                            }
+                            Invalidate();
+                        }
+                        else
+                        {
+                            var dci = _dataConfigInfoCollection.Find(a => a.BoolLogic == logicID);
+                            if (dci != null)
+                            {
+                                dci.BoolValue = false;
+                            }
+                        }
+                    }
+
+                    break;
+                case 2:
+                    if (state)
+                    {
+                        _currentDataConfigInfo = new DataConfigInfo()
+                        {
+                            BoolLogic = clone[0].BoolLogic,
+                            DefBackground = clone[0].DefBackground,
+                            BoolValue = clone[0].BoolValue,
+                            DefFontInfo = clone[0].DefFontInfo,
+                            DefText = clone[0].DefText,
+                            FloatLogic = clone[0].FloatLogic,
+                            Format = clone[0].Format,
+                            Grade = clone[0].Grade
+                        };
+                        Invalidate();
+                    }
+                    else
+                    {
+                        _currentDataConfigInfo = new DataConfigInfo()
+                        {
+                            BoolLogic = clone[1].BoolLogic,
+                            DefBackground = clone[1].DefBackground,
+                            BoolValue = clone[1].BoolValue,
+                            DefFontInfo = clone[1].DefFontInfo,
+                            DefText = clone[1].DefText,
+                            FloatLogic = clone[1].FloatLogic,
+                            Format = clone[1].Format,
+                            Grade = clone[0].Grade
+                        };
+                        Invalidate();
+                    }
+                    break;
+            }
+        }
+
+        public void SetValue(Int32 logicID, float state)
+        {
+            foreach (var item in _dataConfigInfoCollection)
+            {
+                if (item.FloatLogic == logicID)
+                {
+                    item.DefText = state.ToString();
+                    if (item.BoolValue)
+                    {
+                        if (_currentDataConfigInfo != null && _currentDataConfigInfo.Grade <= item.Grade)
+                        {
+                            _currentDataConfigInfo = new DataConfigInfo()
+                            {
+                                BoolLogic = item.BoolLogic,
+                                DefBackground = item.DefBackground,
+                                BoolValue = item.BoolValue,
+                                DefFontInfo = item.DefFontInfo,
+                                DefText = item.DefText,
+                                FloatLogic = item.FloatLogic,
+                                Format = item.Format,
+                                Grade = item.Grade,
+                                BackColor = item.BackColor
+                            };
+                            Invalidate();
+                        }
+                        else if (_currentDataConfigInfo == null)
+                        {
+                            _currentDataConfigInfo = new DataConfigInfo()
+                            {
+                                BoolLogic = item.BoolLogic,
+                                DefBackground = item.DefBackground,
+                                BoolValue = item.BoolValue,
+                                DefFontInfo = item.DefFontInfo,
+                                DefText = item.DefText,
+                                FloatLogic = item.FloatLogic,
+                                Format = item.Format,
+                                Grade = item.Grade,
+                                BackColor = item.BackColor
+                            };
+                            Invalidate();
+                        }
+                    }
+                }
+            }
+        }
+
+        public Font TextFont
+        {
+            set
+            {
+                if (_textFont == value)
+                {
+                    return;
+                }
+
+                _textFont = value;
+            }
+            get { return _textFont; }
+        }
+
+        private Font _textFont = new Font("宋体", 11);
+
+        public StringFormat SF
+        {
+            get { return _sf; }
+            set
+            {
+                if (_sf.Alignment == value.Alignment && _sf.LineAlignment == value.LineAlignment)
+                {
+                    value.Dispose();
+                    return;
+                }
+
+                _sf = value;
+            }
+        }
+
+        private StringFormat _sf = new StringFormat()
+        {
+            Alignment = StringAlignment.Center,
+            LineAlignment = StringAlignment.Center
+        };
+
+        public SolidBrush FontBrush
+        {
+            get { return _fontBrush; }
+            set
+            {
+                if (_fontBrush.Color == value.Color)
+                {
+                    value.Dispose();
+                    return;
+                }
+
+                _fontBrush = value;
+            }
+        }
+
+        private SolidBrush _fontBrush = new SolidBrush(Color.White);
+
+        public SolidBrush BackBrush
+        {
+            get { return _backBrush; }
+            set
+            {
+                if (_backBrush.Color == value.Color)
+                {
+                    value.Dispose();
+                    return;
+                }
+
+                _backBrush = value;
+            }
+        }
+
+        private SolidBrush _backBrush = new SolidBrush(Color.White);
+
+        public Pen BorderPen
+        {
+            get { return _borderPen; }
+            set
+            {
+                if (_borderPen.Color == value.Color)
+                {
+                    value.Dispose();
+                    return;
+                }
+
+                _borderPen = value;
+            }
+        }
+
+        private Pen _borderPen = new Pen(new SolidBrush(Color.White));
+        private bool m_IsSelfReset;
+
+        protected override void OnPaint(PaintEventArgs pe)
+        {
+            base.OnPaint(pe);
+
+            if (_currentDataConfigInfo == null)
+            {
+                _currentDataConfigInfo = DataConfigInfoCollection.Find(a => a.BoolValue);
+            }
+            else
+            {
+                var dc = DataConfigInfoCollection.Find(a => a.BoolValue);
+                if (dc == null)
+                {
+                    _currentDataConfigInfo = null;
+                }
+            }
+
+            if (_currentDataConfigInfo != null)
+            {
+                if (_currentDataConfigInfo.DefBackground != null)
+                {
+                    //绘制按钮背景
+                    pe.Graphics.DrawImage(
+                        _currentDataConfigInfo.DefBackground,
+                        new RectangleF(
+                            0,
+                            0,
+                            Size.Width,
+                            Size.Height)
+                        );
+                }
+
+                if (!string.IsNullOrEmpty(_currentDataConfigInfo.DefText))
+                {
+                    var str = _currentDataConfigInfo.DefText;
+                    TextFont = _currentDataConfigInfo.DefFontInfo.DefFont;
+                    //FontBrush = new SolidBrush(_currentDataConfigInfo.DefFontInfo.FontColor);
+                    FontBrush.Color = _currentDataConfigInfo.DefFontInfo.FontColor;
+                    if (_stateCondition != null)
+                    {
+                        if (!string.IsNullOrEmpty(_stateCondition.DefText))
+                        {
+                            str = _stateCondition.DefText;
+                        }
+                        TextFont = _stateCondition.DefFont;
+                        //FontBrush = new SolidBrush(_stateCondition.TextColor);
+                        FontBrush.Color = _stateCondition.TextColor;
+                    }
+
+                    if (!String.Equals(SF.Alignment.ToString(), _currentDataConfigInfo.DefFontInfo.Vertical.ToString()))
+                    {
+                        SF.Alignment =
+                            (StringAlignment)
+                                Enum.Parse(typeof(StringAlignment),
+                                    _currentDataConfigInfo.DefFontInfo.Vertical.ToString());
+                    }
+                    if (
+                        !String.Equals(SF.LineAlignment.ToString(),
+                            _currentDataConfigInfo.DefFontInfo.Horizontal.ToString()))
+                    {
+                        SF.LineAlignment =
+                            (StringAlignment)
+                                Enum.Parse(typeof(StringAlignment),
+                                    _currentDataConfigInfo.DefFontInfo.Horizontal.ToString());
+                    }
+                    //SF = new StringFormat()
+                    //{
+                    //    Alignment = (StringAlignment)Enum.Parse(typeof(StringAlignment), _currentDataConfigInfo.DefFontInfo.Vertical.ToString()),
+                    //    LineAlignment = (StringAlignment)Enum.Parse(typeof(StringAlignment), _currentDataConfigInfo.DefFontInfo.Horizontal.ToString())
+                    //};
+
+                    //去掉“{ }”
+                    if (str.Contains("{") && str.Contains("}"))
+                    {
+                        int indexStart = str.IndexOf('{');
+                        str = str.Remove(indexStart, 1);
+                        int indexEnd = str.IndexOf('}');
+                        str = str.Remove(indexEnd, 1);
+                    }
+                    else if (!string.IsNullOrEmpty(_currentDataConfigInfo.Format))
+                    {
+                        try
+                        {
+                            str = (Convert.ToSingle(str)).ToString(_currentDataConfigInfo.Format);
+                        }
+                        catch (Exception e)
+                        {
+                        }
+                    }
+
+                    BackBrush.Color = _currentDataConfigInfo.BackColor;
+                    //BackBrush = new SolidBrush(_currentDataConfigInfo.BackColor);
+                    pe.Graphics.FillRectangle(
+                        BackBrush,
+                        new RectangleF(
+                            0 + XOffset,
+                            0 + YOffset,
+                            Size.Width,
+                            Size.Height)
+                        );
+
+                    String strClone = str;
+                    try
+                    {
+                        float fData;
+                        if (float.TryParse(str, out fData))
+                        {
+                            Int32 data = Convert.ToInt32(fData);
+                            if (data == 10000)
+                            {
+                                strClone = "--";
+                            }
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                    }
+                    pe.Graphics.DrawString(
+                        strClone,
+                        TextFont,
+                        FontBrush,
+                        new RectangleF(
+                            0 + XOffset,
+                            0 + YOffset,
+                            Size.Width,
+                            Size.Height),
+                        SF
+                        );
+                }
+            }
+            else
+            {
+                if (_defalutBack != null)
+                {
+                    pe.Graphics.DrawImage(
+                        _defalutBack,
+                        new RectangleF(
+                            0,
+                            0,
+                            Size.Width,
+                            Size.Height)
+                        );
+                }
+                if (_defalutText != null)
+                {
+                    pe.Graphics.DrawString(
+                        _defalutText,
+                        _defFont,
+                        _defBrush,
+                        new RectangleF(
+                            0 + XOffset,
+                            0 + YOffset,
+                            Size.Width,
+                            Size.Height),
+                        StaticProperty.SfCenter
+                        );
+                }
+            }
+
+            BorderPen.Color = _defBorderInfo.BorderColor;
+            //BorderPen = new Pen(new SolidBrush(_defBorderInfo.BorderColor), _defBorderInfo.BorderWidth);
+            pe.Graphics.DrawRectangle(
+                BorderPen,
+                new Rectangle(0, 0, Size.Width - 1, Size.Height - 1)
+                );
+
+
+        }
+
+        public void Dispose()
+        {
+            GlobalTimer.Instance.TimersElapsed1000MS -= _timer_Elapsed;
+            TextFont.Dispose();
+            BackBrush.Dispose();
+            FontBrush.Dispose();
+            SF.Dispose();
+        }
+    }
+}

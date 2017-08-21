@@ -1,0 +1,881 @@
+﻿<UserControl
+    x:Class="Subway.CBTC.THALES.View.Layout.ShellContentLayout"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:common="clr-namespace:Subway.CBTC.THALES.View.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:model="clr-namespace:Subway.CBTC.THALES.Model"
+    xmlns:view="clr-namespace:MMI.Facility.WPFInfrastructure.View;assembly=MMI.Facility.WPFInfrastructure"
+    xmlns:viewModel="clr-namespace:Subway.CBTC.THALES.ViewModel"
+    d:DataContext="{d:DesignInstance {x:Type viewModel:DomainViewModel}}"
+    d:DesignHeight="600"
+    d:DesignWidth="800"
+    Background="{StaticResource Subway.CBTC.THALES.ContentBackgroundBrush}"
+    mc:Ignorable="d">
+    <Viewbox Stretch="Fill">
+        <Grid Width="800" Height="600">
+            <Grid view:GridLine.Brush="{x:Static model:DesignData.GridLineBrush}" view:GridLine.Width="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60*" />
+                    <RowDefinition Height="380*" />
+                    <RowDefinition Height="55*" />
+                    <RowDefinition Height="50*" />
+                    <RowDefinition Height="60*" />
+                </Grid.RowDefinitions>
+                <!--<Grid.Background>
+                    <ImageBrush ImageSource="../../1497331666(1).png" />
+                </Grid.Background>-->
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid
+                        Grid.Column="0"
+                        Margin="8,6,2,8"
+                        Background="{StaticResource Subway.CBTC.THALES.Brush.Black}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock
+                            Grid.Column="0"
+                            Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle1}"
+                            Text="{DynamicResource Subway.CBTC.THALES.String.Model}" />
+                        <TextBlock
+                            Grid.Column="1"
+                            Margin="0,0,14,5"
+                            Foreground="{StaticResource Subway.CBTC.THALES.Brush.Cyan}"
+                            Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle2}"
+                            Text="{Binding CBTC.RunningInfo.TrainOperatingMode, Converter={StaticResource Subway.CBTC.THALES.Converter.OperationTextConverter}}" />
+                    </Grid>
+                    <Grid
+                        Grid.Column="1"
+                        Margin="6,6,2,8"
+                        Background="{StaticResource Subway.CBTC.THALES.Brush.Black}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock
+                            Grid.Column="0"
+                            Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle1}"
+                            Text="{DynamicResource Subway.CBTC.THALES.String.Docked}" />
+                        <TextBlock
+                            Grid.Column="1"
+                            Margin="0,0,22,5"
+                            Foreground="{Binding CBTC.RunningInfo.ParkingState, Converter={StaticResource Subway.CBTC.THALES.Converter.DockedStatusColorConverter}}"
+                            Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle2}"
+                            Text="{Binding CBTC.RunningInfo.ParkingState, Converter={StaticResource Subway.CBTC.THALES.Converter.DockedStatusTextConverter}}" />
+                    </Grid>
+                    <Grid
+                        Grid.Column="2"
+                        Margin="6,6,2,8"
+                        Background="{StaticResource Subway.CBTC.THALES.Brush.Black}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock
+                            Grid.Column="0"
+                            Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle1}"
+                            Text="{DynamicResource Subway.CBTC.THALES.String.Dwell}" />
+                        <common:DwellValuesView
+                            Grid.Column="1"
+                            Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
+                            Margin="0,0,20,0"
+                            IsOutTime="{Binding CBTC.RoadInfo.StationInfo.PSD.IsTimeOut}"
+                            TextValue="{Binding CBTC.RoadInfo.StationInfo.PSD.StopStationTime}"
+                            Visibility="{Binding CBTC.RoadInfo.StationInfo.PSD.StopStationTimeVisibility, Converter={StaticResource Subway.CBTC.THALES.Converter.BooleanToVisibilityConverter}}" />
+                    </Grid>
+                    <Grid
+                        Grid.Column="3"
+                        Margin="6,6,8,8"
+                        Background="{StaticResource Subway.CBTC.THALES.Brush.Black}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock
+                            Grid.Column="0"
+                            Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle1}"
+                            Text="{DynamicResource Subway.CBTC.THALES.String.Depart}" />
+                        <TextBlock
+                            Grid.Column="1"
+                            Margin="0,0,22,5"
+                            Foreground="{Binding CBTC.RunningInfo.DepartState, Converter={StaticResource Subway.CBTC.THALES.Converter.DepartColorConverter}}"
+                            Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle2}"
+                            Text="{Binding CBTC.RunningInfo.DepartState, Converter={StaticResource Subway.CBTC.THALES.Converter.DepartTextConverter}}" />
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="161*" />
+                        <ColumnDefinition Width="342*" />
+                        <ColumnDefinition Width="297*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid
+                        Grid.Column="0"
+                        Margin="10,6,1,8"
+                        Background="{StaticResource Subway.CBTC.THALES.Brush.Black}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25*" />
+                            <ColumnDefinition Width="22*" />
+                            <ColumnDefinition Width="45*" />
+                            <ColumnDefinition Width="43*" />
+                            <ColumnDefinition Width="15*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="56*" />
+                            <RowDefinition Height="271*" />
+                            <RowDefinition Height="36*" />
+                        </Grid.RowDefinitions>
+                        <Grid
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50*" />
+                                <ColumnDefinition Width="43*" />
+                                <ColumnDefinition Width="44*" />
+                                <ColumnDefinition Width="13*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock
+                                Grid.Column="0"
+                                Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle10}"
+                                Text="{Binding CBTC.SignalInfo.WarningIntervention.ParkingPointDistance, StringFormat=\{0:F0\}}" />
+                            <TextBlock
+                                Grid.Column="1"
+                                Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle9}"
+                                Text="{DynamicResource Subway.CBTC.THALES.String.Rice}" />
+                            <TextBlock
+                                Grid.Column="2"
+                                Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle10}"
+                                Text="{Binding CBTC.SignalInfo.WarningIntervention.TargetDistance, StringFormat=\{0:F0\}}" />
+                        </Grid>
+                        <Grid
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle9}"
+                                Text="{DynamicResource Subway.CBTC.THALES.String.StopPoint}" />
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle9}"
+                                Text="{DynamicResource Subway.CBTC.THALES.String.TagetSpeed}" />
+                            <StackPanel
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2"
+                                HorizontalAlignment="Right"
+                                Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle10}" Text="{Binding CBTC.SignalInfo.WarningIntervention.TagetSpeed, StringFormat=\{0:F0\}}" />
+                                <TextBlock Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle9}" Text="{DynamicResource Subway.CBTC.THALES.String.KilometerTime}" />
+                            </StackPanel>
+                        </Grid>
+                        <Grid Grid.Row="1" Grid.Column="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <TextBlock
+                                Grid.Row="0"
+                                Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle9}"
+                                Text="1000" />
+                            <TextBlock
+                                Grid.Row="1"
+                                Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle9}"
+                                Text="500" />
+                            <TextBlock
+                                Grid.Row="2"
+                                Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle9}"
+                                Text="200" />
+                            <TextBlock
+                                Grid.Row="3"
+                                Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle9}"
+                                Text="100" />
+                            <TextBlock
+                                Grid.Row="4"
+                                Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle9}"
+                                Text="50" />
+                            <TextBlock
+                                Grid.Row="5"
+                                Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle9}"
+                                Text="20" />
+                            <TextBlock
+                                Grid.Row="6"
+                                Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle9}"
+                                Text="10" />
+                            <TextBlock
+                                Grid.Row="7"
+                                Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle9}"
+                                Text="5" />
+                            <TextBlock
+                                Grid.Row="8"
+                                Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle9}"
+                                Text="2" />
+                            <TextBlock
+                                Grid.Row="9"
+                                Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle9}"
+                                Text="1" />
+                            <TextBlock
+                                Grid.Row="10"
+                                Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle9}"
+                                Text="0" />
+                        </Grid>
+                        <Canvas
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="2"
+                            Margin="5,11,0,-2"
+                            Panel.ZIndex="1">
+                            <common:InstructionsView
+                                Canvas.Left="0"
+                                Canvas.Right="0"
+                                Width="{Binding ActualWidth, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Canvas}}}"
+                                Height="3">
+                                <Canvas.Bottom>
+                                    <MultiBinding Converter="{StaticResource Subway.CBTC.THALES.Converter.MathConverter}" ConverterParameter="x*y">
+                                        <Binding Converter="{StaticResource Subway.CBTC.THALES.Converter.TagitDistanceToProportionConverter}" Path="CBTC.SignalInfo.WarningIntervention.TargetDistance" />
+                                        <Binding Path="ActualHeight" RelativeSource="{RelativeSource FindAncestor, AncestorType={x:Type Canvas}}" />
+                                    </MultiBinding>
+                                </Canvas.Bottom>
+                            </common:InstructionsView>
+                        </Canvas>
+                        <Canvas
+                            Grid.Row="1"
+                            Grid.Column="3"
+                            Margin="0,11,0,-2"
+                            Panel.ZIndex="1">
+                            <common:InstructionsView
+                                Canvas.Left="0"
+                                Canvas.Right="0"
+                                Width="{Binding ActualWidth, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Canvas}}}"
+                                Height="3">
+                                <Canvas.Bottom>
+                                    <MultiBinding Converter="{StaticResource Subway.CBTC.THALES.Converter.MathConverter}" ConverterParameter="x*y">
+                                        <Binding Converter="{StaticResource Subway.CBTC.THALES.Converter.TagitDistanceToProportionConverter}" Path="CBTC.SignalInfo.WarningIntervention.ParkingPointDistance" />
+                                        <Binding Path="ActualHeight" RelativeSource="{RelativeSource FindAncestor, AncestorType={x:Type Canvas}}" />
+                                    </MultiBinding>
+                                </Canvas.Bottom>
+                            </common:InstructionsView>
+                        </Canvas>
+                        <ItemsControl
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="0,10,0,0"
+                            ItemsSource="{Binding Items, Source={x:Static model:TargitDistanceScale120.Instance}}"
+                            Style="{StaticResource Subway.CBTC.THALES.MainDistanceScalStyle1}" />
+                        <ItemsControl
+                            Grid.Row="1"
+                            Grid.Column="3"
+                            Margin="22,10,0,0"
+                            ItemsSource="{Binding Items, Source={x:Static model:TargitDistanceScale120.Instance}}"
+                            Style="{StaticResource Subway.CBTC.THALES.MainDistanceScalStyle1}" />
+                        <Canvas Grid.Row="1" Grid.Column="0">
+                            <Line
+                                Stroke="{DynamicResource Subway.CBTC.THALES.Brush.White}"
+                                StrokeThickness="2"
+                                X1="{Binding ActualWidth, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Canvas}}}"
+                                X2="{Binding ActualWidth, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Canvas}}}"
+                                Y1="0"
+                                Y2="{Binding ActualHeight, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Canvas}}}" />
+                        </Canvas>
+
+                        <ProgressBar
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Margin="10,10,2,0"
+                            Maximum="1"
+                            Style="{StaticResource Subway.CBTC.THALES.ProgressBar.OrdinaryStyle}"
+                            Value="{Binding CBTC.SignalInfo.WarningIntervention.ParkingPointDistance, Converter={StaticResource Subway.CBTC.THALES.Converter.TagitDistanceToProportionConverter}}" />
+                        <ProgressBar
+                            Grid.Row="1"
+                            Grid.Column="3"
+                            Margin="8,10,24,0"
+                            Maximum="1"
+                            Style="{StaticResource Subway.CBTC.THALES.ProgressBar.OrdinaryStyle}"
+                            Value="{Binding CBTC.SignalInfo.WarningIntervention.TargetDistance, Converter={StaticResource Subway.CBTC.THALES.Converter.TagitDistanceToProportionConverter}}" />
+                        <Canvas
+                            Grid.Row="1"
+                            Grid.Column="3"
+                            Margin="0,0,22,0">
+                            <Line
+                                Stroke="{DynamicResource Subway.CBTC.THALES.Brush.White}"
+                                StrokeThickness="2"
+                                X1="{Binding ActualWidth, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Canvas}}}"
+                                X2="{Binding ActualWidth, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Canvas}}}"
+                                Y1="0"
+                                Y2="{Binding ActualHeight, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Canvas}}}" />
+                        </Canvas>
+
+                    </Grid>
+                    <Grid
+                        Grid.Column="1"
+                        Margin="3,8,1,10"
+                        Background="{StaticResource Subway.CBTC.THALES.Brush.Black}">
+                        <Ellipse
+                            Width="30"
+                            Height="30"
+                            Margin="0,30,30,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource Subway.CBTC.THALES.Brush.Red}"
+                            Visibility="{Binding CBTC.SignalInfo.Speed.IsSpeeding, Converter={StaticResource Subway.CBTC.THALES.Converter.BooleanToVisibilityConverter}}" />
+                        <StackPanel
+                            Margin="0,150,0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center">
+                            <TextBlock
+                                Foreground="{StaticResource Subway.CBTC.THALES.Brush.White}"
+                                Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle19}"
+                                Text="{StaticResource Subway.CBTC.THALES.String.KilometerTime}" />
+                            <TextBlock
+                                Foreground="{StaticResource Subway.CBTC.THALES.Brush.LightGreen}"
+                                Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle19}"
+                                Text="{Binding CBTC.RunningInfo.RunDirection, Converter={StaticResource Subway.CBTC.THALES.Converter.RunDirectionToText}}" />
+                            <TextBlock
+                                Foreground="{Binding CBTC.SignalInfo.IsCalibration, Converter={StaticResource Subway.CBTC.THALES.Converter.CalibrationToBrush}}"
+                                Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle19}"
+                                Text="{Binding CBTC.SignalInfo.IsCalibration, Converter={StaticResource Subway.CBTC.THALES.Converter.CalibrationToText}}" />
+                        </StackPanel>
+
+                        <StackPanel
+                            Margin="10"
+                            VerticalAlignment="Bottom"
+                            Orientation="Horizontal">
+                            <TextBlock Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle13}" Text="{StaticResource Subway.CBTC.THALES.String.Actual}" />
+                            <TextBlock Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle14}" Text="{Binding CBTC.SignalInfo.Speed.CurrentSpeed.Value}" />
+
+                            <TextBlock
+                                Margin="185,0,0,0"
+                                Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle15}"
+                                Text="{StaticResource Subway.CBTC.THALES.String.Max}" />
+                            <TextBlock Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle16}" Text="{Binding CBTC.SignalInfo.Speed.EmergencyBrakeInterventionSpeed.Value}" />
+                        </StackPanel>
+                        <common:DialScalView Margin="19,29" FontSize="26" />
+                        <common:ArrowView
+                            Margin="-6"
+                            Panel.ZIndex="9"
+                            ContentBrush="{StaticResource Subway.CBTC.THALES.Brush.Yellow}"
+                            Visibility="{Binding CBTC.SignalInfo.Speed.TargetSpeed.Visible, Converter={StaticResource Subway.CBTC.THALES.Converter.BooleanToVisibilityConverter}}">
+                            <common:ArrowView.PointerAngle>
+                                <MultiBinding Converter="{StaticResource Subway.CBTC.THALES.Converter.SpeedToAngleConverter}">
+                                    <Binding Path="CBTC.SignalInfo.Speed.SpeedDialPlate" />
+                                    <Binding Path="CBTC.SignalInfo.Speed.TargetSpeed.Value" />
+                                </MultiBinding>
+                            </common:ArrowView.PointerAngle>
+                        </common:ArrowView>
+                        <common:ArrowView
+                            Margin="-6"
+                            Panel.ZIndex="10"
+                            ContentBrush="{StaticResource Subway.CBTC.THALES.Brush.Red}"
+                            Visibility="{Binding CBTC.SignalInfo.Speed.PermittedSpeed.Visible, Converter={StaticResource Subway.CBTC.THALES.Converter.BooleanToVisibilityConverter}}">
+                            <common:ArrowView.PointerAngle>
+                                <MultiBinding Converter="{StaticResource Subway.CBTC.THALES.Converter.SpeedToAngleConverter}">
+                                    <Binding Path="CBTC.SignalInfo.Speed.SpeedDialPlate" />
+                                    <Binding Path="CBTC.SignalInfo.Speed.PermittedSpeed.Value" />
+                                </MultiBinding>
+                            </common:ArrowView.PointerAngle>
+                        </common:ArrowView>
+                        <Grid Margin="14,24" RenderTransformOrigin="0.5,0.5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RenderTransform>
+                                <RotateTransform>
+                                    <RotateTransform.Angle>
+                                        <MultiBinding Converter="{StaticResource Subway.CBTC.THALES.Converter.SpeedToAngleConverter}">
+                                            <Binding Path="CBTC.SignalInfo.Speed.SpeedDialPlate" />
+                                            <Binding Path="CBTC.SignalInfo.Speed.CurrentSpeed.Value" />
+                                        </MultiBinding>
+                                    </RotateTransform.Angle>
+                                </RotateTransform>
+                            </Grid.RenderTransform>
+                            <Ellipse
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2"
+                                Width="18"
+                                Height="18"
+                                Panel.ZIndex="1"
+                                Fill="{Binding CBTC.SignalInfo.Speed.CurrentSpeed.SpeedColor, Converter={StaticResource Subway.CBTC.THALES.Converter.CBTCColorToBrush}}"
+                                Stroke="{DynamicResource Subway.CBTC.THALES.Brush.Black}"
+                                StrokeThickness="1" />
+
+                            <Border
+                                Grid.Column="0"
+                                Width="130"
+                                Height="5"
+                                HorizontalAlignment="Right"
+                                Background="{Binding CBTC.SignalInfo.Speed.CurrentSpeed.SpeedColor, Converter={StaticResource Subway.CBTC.THALES.Converter.CBTCColorToBrush}}"
+                                CornerRadius="2" />
+                        </Grid>
+
+                        <ed:Arc
+                            Margin="14,24,14,24"
+                            ArcThickness="0"
+                            ArcThicknessUnit="Percent"
+                            EndAngle="134.5"
+                            StartAngle="-133"
+                            Stretch="None"
+                            Stroke="{DynamicResource Subway.CBTC.THALES.Brush.White}"
+                            StrokeThickness="5" />
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="59*" />
+                            <RowDefinition Height="51*" />
+                            <RowDefinition Height="50*" />
+                            <RowDefinition Height="95*" />
+                            <RowDefinition Height="61*" />
+                            <RowDefinition Height="61*" />
+                        </Grid.RowDefinitions>
+                        <Grid
+                            Grid.Row="0"
+                            Margin="2,10,8,1"
+                            Background="{StaticResource Subway.CBTC.THALES.Brush.Black}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <GridSplitter Grid.Column="0" Style="{StaticResource Subway.CBTC.THALES.Style.Button.MainFridSplitterStyle}" />
+                            <GridSplitter Grid.Column="1" Style="{StaticResource Subway.CBTC.THALES.Style.Button.MainFridSplitterStyle}" />
+                            <StackPanel
+                                Grid.Column="0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Orientation="Horizontal">
+                                <TextBlock
+                                    Margin="4,0,0,0"
+                                    FontSize="20"
+                                    FontWeight="Bold"
+                                    Foreground="{Binding CBTC.RunningInfo.IATPAvailable, Converter={StaticResource TrainOperatingModeStatusColorConverter}}"
+                                    Text="I" />
+                                <TextBlock
+                                    Margin="4,0,0,0"
+                                    FontSize="20"
+                                    FontWeight="Bold"
+                                    Foreground="{Binding CBTC.RunningInfo.IATPAvailable, Converter={StaticResource TrainOperatingModeStatusColorConverter}}"
+                                    Text="A" />
+                                <TextBlock
+                                    Margin="4,0,0,0"
+                                    FontSize="20"
+                                    FontWeight="Bold"
+                                    Foreground="{Binding CBTC.RunningInfo.IATPAvailable, Converter={StaticResource TrainOperatingModeStatusColorConverter}}"
+                                    Text="T" />
+                                <TextBlock
+                                    Margin="4,0,4,0"
+                                    FontSize="20"
+                                    FontWeight="Bold"
+                                    Foreground="{Binding CBTC.RunningInfo.IATPAvailable, Converter={StaticResource TrainOperatingModeStatusColorConverter}}"
+                                    Text="P" />
+                            </StackPanel>
+                            <StackPanel
+                                Grid.Column="1"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Orientation="Horizontal">
+                                <TextBlock
+                                    Margin="4,0,0,0"
+                                    FontSize="20"
+                                    FontWeight="Bold"
+                                    Foreground="{Binding CBTC.RunningInfo.ATPAvailable, Converter={StaticResource TrainOperatingModeStatusColorConverter}}"
+                                    Text="A" />
+                                <TextBlock
+                                    Margin="4,0,0,0"
+                                    FontSize="20"
+                                    FontWeight="Bold"
+                                    Foreground="{Binding CBTC.RunningInfo.ATPAvailable, Converter={StaticResource TrainOperatingModeStatusColorConverter}}"
+                                    Text="T" />
+                                <TextBlock
+                                    Margin="4,0,4,0"
+                                    FontSize="20"
+                                    FontWeight="Bold"
+                                    Foreground="{Binding CBTC.RunningInfo.ATPAvailable, Converter={StaticResource TrainOperatingModeStatusColorConverter}}"
+                                    Text="P" />
+                            </StackPanel>
+                            <StackPanel
+                                Grid.Column="2"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Orientation="Horizontal">
+                                <TextBlock
+                                    Margin="4,0,0,0"
+                                    FontSize="20"
+                                    FontWeight="Bold"
+                                    Foreground="{Binding CBTC.RunningInfo.ATOAvailable, Converter={StaticResource TrainOperatingModeStatusColorConverter}}"
+                                    Text="A" />
+                                <TextBlock
+                                    Margin="4,0,0,0"
+                                    FontSize="20"
+                                    FontWeight="Bold"
+                                    Foreground="{Binding CBTC.RunningInfo.ATOAvailable, Converter={StaticResource TrainOperatingModeStatusColorConverter}}"
+                                    Text="T" />
+                                <TextBlock
+                                    Margin="4,0,4,0"
+                                    FontSize="20"
+                                    FontWeight="Bold"
+                                    Foreground="{Binding CBTC.RunningInfo.ATOAvailable, Converter={StaticResource TrainOperatingModeStatusColorConverter}}"
+                                    Text="O" />
+                            </StackPanel>
+                        </Grid>
+                        <Grid
+                            Grid.Row="1"
+                            Margin="2,1,8,1"
+                            Background="{StaticResource Subway.CBTC.THALES.Brush.Black}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <GridSplitter Grid.Column="0" Style="{StaticResource Subway.CBTC.THALES.Style.Button.MainFridSplitterStyle}" />
+                            <TextBlock
+                                Grid.Column="0"
+                                Foreground="{Binding CBTC.TrainInfo.DepotDriver, Converter={StaticResource Subway.CBTC.THALES.Converter.PositionColorConverter}}"
+                                Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle2}"
+                                Text="{Binding CBTC.TrainInfo.DepotDriver, Converter={StaticResource Subway.CBTC.THALES.Converter.PositionTextConverter}}" />
+                            <Border
+                                Grid.Column="1"
+                                Margin="1"
+                                Background="{StaticResource Subway.CBTC.THALES.Brush.Yellow}"
+                                Visibility="{Binding CBTC.TrainInfo.BrakeInfo.EmergencyBrake, Converter={StaticResource Subway.CBTC.THALES.Converter.BooleanToVisibilityConverter}}">
+                                <TextBlock
+                                    view:FlickerManager.DurationMiliSecond="1000"
+                                    view:FlickerManager.Flicking="{Binding CBTC.TrainInfo.BrakeInfo.EmergencyBrake}"
+                                    view:FlickerManager.VisibilityAfterFlicking="Visible"
+                                    Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle5}"
+                                    Text="{DynamicResource Subway.CBTC.THALES.String.EmergencyBrake}" />
+                            </Border>
+
+                        </Grid>
+
+                        <Grid
+                            Grid.Row="2"
+                            Margin="2,1,8,1"
+                            Background="{StaticResource Subway.CBTC.THALES.Brush.Black}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <GridSplitter Grid.Column="0" Style="{StaticResource Subway.CBTC.THALES.Style.Button.MainFridSplitterStyle}" />
+                            <TextBlock
+                                Grid.Column="0"
+                                Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle20}"
+                                Text="{Binding CBTC.TrainInfo.DoorInfo.DoorControlMode, Converter={StaticResource Subway.CBTC.THALES.Converter.DoorControlModelToString}}" />
+                            <TextBlock
+                                Grid.Column="1"
+                                Style="{DynamicResource Subway.CBTC.THALES.Style.Text.TextStyle6}"
+                                Text="{Binding CBTC.TrainInfo.WorkState, Converter={StaticResource Subway.CBTC.THALES.Converter.WorkStateConverter}}" />
+
+                        </Grid>
+                        <Grid
+                            Grid.Row="3"
+                            Margin="2,1,8,1"
+                            Background="{StaticResource Subway.CBTC.THALES.Brush.Black}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <GridSplitter Grid.Column="0" Style="{StaticResource Subway.CBTC.THALES.Style.Button.MainFridSplitterStyle}" />
+                            <Grid Grid.Column="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle7}"
+                                    Text="{DynamicResource Subway.CBTC.THALES.String.TrainDoor}" />
+                                <TextBlock
+                                    Grid.Row="1"
+                                    Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle8}"
+                                    Text="{DynamicResource Subway.CBTC.THALES.String.Enable}"
+                                    Visibility="{Binding CBTC.TrainInfo.DoorInfo.DoorAllowState, Converter={StaticResource Subway.CBTC.THALES.Converter.EnableConverter}}" />
+                                <TextBlock Grid.Row="2" Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle7}">
+                                    <TextBlock.Text>
+                                        <MultiBinding Converter="{StaticResource Subway.CBTC.THALES.Converter.DoorOpenConverter}">
+                                            <Binding Path="CBTC.TrainInfo.DoorInfo.LeftDoorState" />
+                                            <Binding Path="CBTC.TrainInfo.DoorInfo.RightDoorState" />
+                                            <Binding Source="{StaticResource Subway.CBTC.THALES.String.Open}" />
+                                            <Binding Source="{StaticResource Subway.CBTC.THALES.String.Close}" />
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                    <TextBlock.Foreground>
+                                        <MultiBinding Converter="{StaticResource Subway.CBTC.THALES.Converter.DoorOpenConverter}">
+                                            <Binding Path="CBTC.TrainInfo.DoorInfo.LeftDoorState" />
+                                            <Binding Path="CBTC.TrainInfo.DoorInfo.RightDoorState" />
+                                            <Binding Source="{StaticResource Subway.CBTC.THALES.Brush.Yellow}" />
+                                            <Binding Source="{StaticResource Subway.CBTC.THALES.Brush.LightGreen}" />
+                                        </MultiBinding>
+                                    </TextBlock.Foreground>
+                                </TextBlock>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle7}"
+                                    Text="{DynamicResource Subway.CBTC.THALES.String.PlatformDoor}" />
+                                <TextBlock
+                                    Grid.Row="1"
+                                    Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle8}"
+                                    Text="{DynamicResource Subway.CBTC.THALES.String.Enable}"
+                                    Visibility="{Binding CBTC.TrainInfo.DoorInfo.StationAllowState, Converter={StaticResource Subway.CBTC.THALES.Converter.EnableConverter}}" />
+                                <TextBlock Grid.Row="2" Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle7}">
+                                    <TextBlock.Text>
+                                        <MultiBinding Converter="{StaticResource Subway.CBTC.THALES.Converter.DoorOpenConverter}">
+                                            <Binding Path="CBTC.TrainInfo.DoorInfo.LeftPSDState" />
+                                            <Binding Path="CBTC.TrainInfo.DoorInfo.RightPSDState" />
+                                            <Binding Source="{StaticResource Subway.CBTC.THALES.String.Open}" />
+                                            <Binding Source="{StaticResource Subway.CBTC.THALES.String.Close}" />
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                    <TextBlock.Foreground>
+                                        <MultiBinding Converter="{StaticResource Subway.CBTC.THALES.Converter.DoorOpenConverter}">
+                                            <Binding Path="CBTC.TrainInfo.DoorInfo.LeftPSDState" />
+                                            <Binding Path="CBTC.TrainInfo.DoorInfo.RightPSDState" />
+                                            <Binding Source="{StaticResource Subway.CBTC.THALES.Brush.Yellow}" />
+                                            <Binding Source="{StaticResource Subway.CBTC.THALES.Brush.LightGreen}" />
+                                        </MultiBinding>
+                                    </TextBlock.Foreground>
+                                </TextBlock>
+                            </Grid>
+                        </Grid>
+                        <Grid
+                            Grid.Row="4"
+                            Margin="2,1,8,1"
+                            Background="{StaticResource Subway.CBTC.THALES.Brush.Black}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <GridSplitter
+                                Grid.RowSpan="2"
+                                Grid.Column="0"
+                                Style="{StaticResource Subway.CBTC.THALES.Style.Button.MainFridSplitterStyle}" />
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle7}"
+                                Text="{DynamicResource Subway.CBTC.THALES.String.NextStation}" />
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle7}"
+                                Text="{DynamicResource Subway.CBTC.THALES.String.FinalStation}" />
+                            <TextBlock
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle11}">
+                                <TextBlock.Text>
+                                    <MultiBinding Converter="{StaticResource Subway.CBTC.THALES.Converter.NextStationConverter}">
+                                        <Binding Path="CBTC.RoadInfo.StationInfo.NextStation" />
+                                        <Binding Path="CBTC.TrainInfo.DoorInfo.NextStationDoorOpenDirection" />
+                                    </MultiBinding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                            <TextBlock
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle12}"
+                                Text="{Binding CBTC.RoadInfo.StationInfo.EndStation}" />
+                        </Grid>
+                        <Grid
+                            Grid.Row="5"
+                            Margin="2,1,8,12"
+                            Background="{StaticResource Subway.CBTC.THALES.Brush.Black}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <GridSplitter
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2"
+                                HorizontalAlignment="Center"
+                                Style="{StaticResource Subway.CBTC.THALES.Style.Button.MainFridSplitterStyle}" />
+                            <Border
+                                Grid.Column="0"
+                                Margin="2,2,3,2"
+                                Background="{StaticResource Subway.CBTC.THALES.Brush.Yellow}"
+                                Visibility="{Binding CBTC.SignalInfo.JumpStop, Converter={StaticResource Subway.CBTC.THALES.Converter.DetainCarCovnerter}}">
+                                <TextBlock Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle5}" Text="{DynamicResource Subway.CBTC.THALES.String.Hold}" />
+                            </Border>
+                            <Border
+                                Grid.Column="1"
+                                Margin="2,2,3,2"
+                                Background="{StaticResource Subway.CBTC.THALES.Brush.Yellow}"
+                                Visibility="{Binding CBTC.SignalInfo.JumpStop, Converter={StaticResource Subway.CBTC.THALES.Converter.JumpStopCovnerter}}">
+                                <TextBlock Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle5}" Text="{DynamicResource Subway.CBTC.THALES.String.Skip}" />
+                            </Border>
+                        </Grid>
+                    </Grid>
+
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="55*" />
+                        <ColumnDefinition Width="227*" />
+                        <ColumnDefinition Width="45*" />
+                        <ColumnDefinition Width="73*" />
+                    </Grid.ColumnDefinitions>
+                    <Button
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Margin="11,10,1,3"
+                        Command="{Binding Controller.InfoConfirm}"
+                        Content="{DynamicResource Subway.CBTC.THALES.String.Confirm}"
+                        Style="{DynamicResource Subway.CBTC.THALES.Style.Button.ConfirmButtonStyle}" />
+                    <Button
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        Margin="1,10,1,3"
+                        Content="{DynamicResource Subway.CBTC.THALES.String.List}"
+                        Style="{DynamicResource Subway.CBTC.THALES.Style.Button.ConfirmButtonStyle}" />
+                    <Button
+                        Grid.Row="0"
+                        Grid.Column="3"
+                        Margin="33,10,27,3"
+                        Content="{DynamicResource Subway.CBTC.THALES.String.Language}"
+                        Style="{DynamicResource Subway.CBTC.THALES.Style.Button.ConfirmButtonStyle}" />
+                    <Grid
+                        Grid.Column="1"
+                        Margin="0,11,0,4"
+                        Background="{StaticResource Subway.CBTC.THALES.Brush.Black}">
+                        <TextBlock Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle17}" Text="{Binding CBTC.Message.FirstInfoShowItem.InformationContent.Content}" />
+                    </Grid>
+
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="55*" />
+                        <ColumnDefinition Width="227*" />
+                        <ColumnDefinition Width="45*" />
+                        <ColumnDefinition Width="73*" />
+                    </Grid.ColumnDefinitions>
+                    <Button
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Margin="11,5,1,6"
+                        Command="{Binding Controller.FaultConfirm}"
+                        Content="{DynamicResource Subway.CBTC.THALES.String.Confirm}"
+                        Style="{DynamicResource Subway.CBTC.THALES.Style.Button.ConfirmButtonStyle}" />
+                    <Button
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        Margin="1,5,1,6"
+                        Content="{DynamicResource Subway.CBTC.THALES.String.List}"
+                        Style="{DynamicResource Subway.CBTC.THALES.Style.Button.ConfirmButtonStyle}" />
+                    <Button
+                        Grid.Row="0"
+                        Grid.Column="3"
+                        Margin="33,5,27,6"
+                        Content="{DynamicResource Subway.CBTC.THALES.String.Setting}"
+                        Style="{DynamicResource Subway.CBTC.THALES.Style.Button.ConfirmButtonStyle}" />
+                    <Grid
+                        Grid.Column="1"
+                        Margin="0,5,0,6"
+                        Background="{StaticResource Subway.CBTC.THALES.Brush.Black}">
+                        <TextBlock Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle18}" Text="{Binding CBTC.Message.FirstFaultShowItem.InformationContent.Content}" />
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="173*" />
+                        <ColumnDefinition Width="112*" />
+                        <ColumnDefinition Width="118*" />
+                        <ColumnDefinition Width="101*" />
+                        <ColumnDefinition Width="82*" />
+                        <ColumnDefinition Width="95*" />
+                        <ColumnDefinition Width="119*" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel
+                        Grid.Column="0"
+                        Margin="8,14,3,16"
+                        Background="{StaticResource Subway.CBTC.THALES.Brush.Black}"
+                        Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle3}" Text="{DynamicResource Subway.CBTC.THALES.String.Date}" />
+                        <TextBlock Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle4}" Text="{Binding CBTC.Other.ShowingDateTime, StringFormat=\{0:yyyy.MM.dd\}}" />
+                    </StackPanel>
+                    <StackPanel
+                        Grid.Column="1"
+                        Margin="3,14,3,16"
+                        Background="{StaticResource Subway.CBTC.THALES.Brush.Black}"
+                        Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle3}" Text="{DynamicResource Subway.CBTC.THALES.String.Time}" />
+                        <TextBlock Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle4}" Text="{Binding CBTC.Other.ShowingDateTime, StringFormat=\{0:HH.dd\}}" />
+                    </StackPanel>
+                    <StackPanel
+                        Grid.Column="2"
+                        Margin="3,14,3,16"
+                        Background="{StaticResource Subway.CBTC.THALES.Brush.Black}"
+                        Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle3}" Text="{DynamicResource Subway.CBTC.THALES.String.Staff}" />
+                        <TextBlock Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle4}" Text="{Binding CBTC.RoadInfo.DriverID}" />
+                    </StackPanel>
+                    <StackPanel
+                        Grid.Column="3"
+                        Margin="2,14,3,16"
+                        Background="{StaticResource Subway.CBTC.THALES.Brush.Black}"
+                        Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle3}" Text="{DynamicResource Subway.CBTC.THALES.String.Train}" />
+                        <TextBlock Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle4}" Text="{Binding CBTC.RoadInfo.TrainID}" />
+                    </StackPanel>
+                    <StackPanel
+                        Grid.Column="4"
+                        Margin="3,14,2,16"
+                        Background="{StaticResource Subway.CBTC.THALES.Brush.Black}"
+                        Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle3}" Text="{DynamicResource Subway.CBTC.THALES.String.Car}" />
+                        <TextBlock Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle4}" Text="{Binding CBTC.TrainInfo.TrainLength}" />
+                    </StackPanel>
+                    <StackPanel
+                        Grid.Column="5"
+                        Margin="2,14,3,16"
+                        Background="{StaticResource Subway.CBTC.THALES.Brush.Black}"
+                        Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle3}" Text="{DynamicResource Subway.CBTC.THALES.String.VOBCs}" />
+                        <TextBlock Style="{StaticResource Subway.CBTC.THALES.Style.Text.TextStyle4}" Text="{Binding CBTC.TrainInfo.VOBCNumber}" />
+                    </StackPanel>
+                </Grid>
+
+            </Grid>
+        </Grid>
+    </Viewbox>
+
+</UserControl>
+

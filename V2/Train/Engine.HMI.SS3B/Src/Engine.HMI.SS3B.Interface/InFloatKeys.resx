@@ -1,0 +1,513 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="机车速度" xml:space="preserve">
+    <value>机车速度</value>
+  </data>
+  <data name="运行级位" xml:space="preserve">
+    <value>运行级位</value>
+  </data>
+  <data name="本次运行里程" xml:space="preserve">
+    <value>本次运行里程</value>
+  </data>
+  <data name="本次运行时间" xml:space="preserve">
+    <value>本次运行时间</value>
+  </data>
+  <data name="工况" xml:space="preserve">
+    <value>工况</value>
+  </data>
+  <data name="磁削级数" xml:space="preserve">
+    <value>磁削级数</value>
+  </data>
+  <data name="方向" xml:space="preserve">
+    <value>方向</value>
+  </data>
+  <data name="A车电机电压V1" xml:space="preserve">
+    <value>A车电机电压V1</value>
+  </data>
+  <data name="A车电机电压V2" xml:space="preserve">
+    <value>A车电机电压V2</value>
+  </data>
+  <data name="B车电机电压V1" xml:space="preserve">
+    <value>B车电机电压V1</value>
+  </data>
+  <data name="B车电机电压V2" xml:space="preserve">
+    <value>B车电机电压V2</value>
+  </data>
+  <data name="A车电机电流I1" xml:space="preserve">
+    <value>A车电机电流I1</value>
+  </data>
+  <data name="A车电机电流I2" xml:space="preserve">
+    <value>A车电机电流I2</value>
+  </data>
+  <data name="A车电机电流I3" xml:space="preserve">
+    <value>A车电机电流I3</value>
+  </data>
+  <data name="A车电机电流I4" xml:space="preserve">
+    <value>A车电机电流I4</value>
+  </data>
+  <data name="A车电机电流I5" xml:space="preserve">
+    <value>A车电机电流I5</value>
+  </data>
+  <data name="A车电机电流I6" xml:space="preserve">
+    <value>A车电机电流I6</value>
+  </data>
+  <data name="B车电机电流I1" xml:space="preserve">
+    <value>B车电机电流I1</value>
+  </data>
+  <data name="B车电机电流I2" xml:space="preserve">
+    <value>B车电机电流I2</value>
+  </data>
+  <data name="B车电机电流I3" xml:space="preserve">
+    <value>B车电机电流I3</value>
+  </data>
+  <data name="B车电机电流I4" xml:space="preserve">
+    <value>B车电机电流I4</value>
+  </data>
+  <data name="B车电机电流I5" xml:space="preserve">
+    <value>B车电机电流I5</value>
+  </data>
+  <data name="B车电机电流I6" xml:space="preserve">
+    <value>B车电机电流I6</value>
+  </data>
+  <data name="励磁电流A1" xml:space="preserve">
+    <value>励磁电流A1</value>
+  </data>
+  <data name="励磁电流A2" xml:space="preserve">
+    <value>励磁电流A2</value>
+  </data>
+  <data name="励磁电流B1" xml:space="preserve">
+    <value>励磁电流B1</value>
+  </data>
+  <data name="励磁电流B2" xml:space="preserve">
+    <value>励磁电流B2</value>
+  </data>
+  <data name="本车阀缸压力1" xml:space="preserve">
+    <value>本车阀缸压力1</value>
+  </data>
+  <data name="本车阀缸压力2" xml:space="preserve">
+    <value>本车阀缸压力2</value>
+  </data>
+  <data name="从车阀缸压力1" xml:space="preserve">
+    <value>从车阀缸压力1</value>
+  </data>
+  <data name="从车阀缸压力2" xml:space="preserve">
+    <value>从车阀缸压力2</value>
+  </data>
+  <data name="本车ID" xml:space="preserve">
+    <value>本车ID</value>
+  </data>
+  <data name="本车车辆编号" xml:space="preserve">
+    <value>本车车辆编号</value>
+  </data>
+  <data name="本车故障等级严重" xml:space="preserve">
+    <value>本车故障等级严重</value>
+  </data>
+  <data name="本车故障等级中等" xml:space="preserve">
+    <value>本车故障等级中等</value>
+  </data>
+  <data name="本车故障等级轻微" xml:space="preserve">
+    <value>本车故障等级轻微</value>
+  </data>
+  <data name="从车故障等级严重" xml:space="preserve">
+    <value>从车故障等级严重</value>
+  </data>
+  <data name="从车故障等级中等" xml:space="preserve">
+    <value>从车故障等级中等</value>
+  </data>
+  <data name="从车故障等级轻微" xml:space="preserve">
+    <value>从车故障等级轻微</value>
+  </data>
+  <data name="主电路" xml:space="preserve">
+    <value>主电路</value>
+  </data>
+  <data name="本车架1电机电压" xml:space="preserve">
+    <value>本车架1电机电压</value>
+  </data>
+  <data name="本车架2电机电压" xml:space="preserve">
+    <value>本车架2电机电压</value>
+  </data>
+  <data name="本车励磁电流" xml:space="preserve">
+    <value>本车励磁电流</value>
+  </data>
+  <data name="本车电机电流1" xml:space="preserve">
+    <value>本车电机电流1</value>
+  </data>
+  <data name="本车电机电流2" xml:space="preserve">
+    <value>本车电机电流2</value>
+  </data>
+  <data name="本车电机电流3" xml:space="preserve">
+    <value>本车电机电流3</value>
+  </data>
+  <data name="本车电机电流4" xml:space="preserve">
+    <value>本车电机电流4</value>
+  </data>
+  <data name="本车电机电流5" xml:space="preserve">
+    <value>本车电机电流5</value>
+  </data>
+  <data name="本车电机电流6" xml:space="preserve">
+    <value>本车电机电流6</value>
+  </data>
+  <data name="本车网压" xml:space="preserve">
+    <value>本车网压</value>
+  </data>
+  <data name="从车架1电机电压" xml:space="preserve">
+    <value>从车架1电机电压</value>
+  </data>
+  <data name="从车架2电机电压" xml:space="preserve">
+    <value>从车架2电机电压</value>
+  </data>
+  <data name="从车励磁电流" xml:space="preserve">
+    <value>从车励磁电流</value>
+  </data>
+  <data name="从车电机电流1" xml:space="preserve">
+    <value>从车电机电流1</value>
+  </data>
+  <data name="从车电机电流2" xml:space="preserve">
+    <value>从车电机电流2</value>
+  </data>
+  <data name="从车电机电流3" xml:space="preserve">
+    <value>从车电机电流3</value>
+  </data>
+  <data name="从车电机电流4" xml:space="preserve">
+    <value>从车电机电流4</value>
+  </data>
+  <data name="从车电机电流5" xml:space="preserve">
+    <value>从车电机电流5</value>
+  </data>
+  <data name="从车电机电流6" xml:space="preserve">
+    <value>从车电机电流6</value>
+  </data>
+  <data name="从车网压" xml:space="preserve">
+    <value>从车网压</value>
+  </data>
+  <data name="本车环境温度" xml:space="preserve">
+    <value>本车环境温度</value>
+  </data>
+  <data name="本车轴1轴箱左" xml:space="preserve">
+    <value>本车轴1轴箱左</value>
+  </data>
+  <data name="本车轴1抱箱左" xml:space="preserve">
+    <value>本车轴1抱箱左</value>
+  </data>
+  <data name="本车轴1轴箱右" xml:space="preserve">
+    <value>本车轴1轴箱右</value>
+  </data>
+  <data name="本车轴1抱箱右" xml:space="preserve">
+    <value>本车轴1抱箱右</value>
+  </data>
+  <data name="本车轴2轴箱左" xml:space="preserve">
+    <value>本车轴2轴箱左</value>
+  </data>
+  <data name="本车轴2抱箱左" xml:space="preserve">
+    <value>本车轴2抱箱左</value>
+  </data>
+  <data name="本车轴2轴箱右" xml:space="preserve">
+    <value>本车轴2轴箱右</value>
+  </data>
+  <data name="本车轴2抱箱右" xml:space="preserve">
+    <value>本车轴2抱箱右</value>
+  </data>
+  <data name="本车轴3轴箱左" xml:space="preserve">
+    <value>本车轴3轴箱左</value>
+  </data>
+  <data name="本车轴3抱箱左" xml:space="preserve">
+    <value>本车轴3抱箱左</value>
+  </data>
+  <data name="本车轴3轴箱右" xml:space="preserve">
+    <value>本车轴3轴箱右</value>
+  </data>
+  <data name="本车轴3抱箱右" xml:space="preserve">
+    <value>本车轴3抱箱右</value>
+  </data>
+  <data name="本车轴4轴箱左" xml:space="preserve">
+    <value>本车轴4轴箱左</value>
+  </data>
+  <data name="本车轴4抱箱左" xml:space="preserve">
+    <value>本车轴4抱箱左</value>
+  </data>
+  <data name="本车轴4轴箱右" xml:space="preserve">
+    <value>本车轴4轴箱右</value>
+  </data>
+  <data name="本车轴4抱箱右" xml:space="preserve">
+    <value>本车轴4抱箱右</value>
+  </data>
+  <data name="本车轴5轴箱左" xml:space="preserve">
+    <value>本车轴5轴箱左</value>
+  </data>
+  <data name="本车轴5抱箱左" xml:space="preserve">
+    <value>本车轴5抱箱左</value>
+  </data>
+  <data name="本车轴5轴箱右" xml:space="preserve">
+    <value>本车轴5轴箱右</value>
+  </data>
+  <data name="本车轴5抱箱右" xml:space="preserve">
+    <value>本车轴5抱箱右</value>
+  </data>
+  <data name="本车轴6轴箱左" xml:space="preserve">
+    <value>本车轴6轴箱左</value>
+  </data>
+  <data name="本车轴6抱箱左" xml:space="preserve">
+    <value>本车轴6抱箱左</value>
+  </data>
+  <data name="本车轴6轴箱右" xml:space="preserve">
+    <value>本车轴6轴箱右</value>
+  </data>
+  <data name="本车轴6抱箱右" xml:space="preserve">
+    <value>本车轴6抱箱右</value>
+  </data>
+  <data name="本车轴温最大值" xml:space="preserve">
+    <value>本车轴温最大值</value>
+  </data>
+  <data name="本车最大轴温位置" xml:space="preserve">
+    <value>本车最大轴温位置</value>
+  </data>
+  <data name="本车传感器个数" xml:space="preserve">
+    <value>本车传感器个数</value>
+  </data>
+  <data name="从车环境温度" xml:space="preserve">
+    <value>从车环境温度</value>
+  </data>
+  <data name="从车轴1轴箱左" xml:space="preserve">
+    <value>从车轴1轴箱左</value>
+  </data>
+  <data name="从车轴1抱箱左" xml:space="preserve">
+    <value>从车轴1抱箱左</value>
+  </data>
+  <data name="从车轴1轴箱右" xml:space="preserve">
+    <value>从车轴1轴箱右</value>
+  </data>
+  <data name="从车轴1抱箱右" xml:space="preserve">
+    <value>从车轴1抱箱右</value>
+  </data>
+  <data name="从车轴2轴箱左" xml:space="preserve">
+    <value>从车轴2轴箱左</value>
+  </data>
+  <data name="从车轴2抱箱左" xml:space="preserve">
+    <value>从车轴2抱箱左</value>
+  </data>
+  <data name="从车轴2轴箱右" xml:space="preserve">
+    <value>从车轴2轴箱右</value>
+  </data>
+  <data name="从车轴2抱箱右" xml:space="preserve">
+    <value>从车轴2抱箱右</value>
+  </data>
+  <data name="从车轴3轴箱左" xml:space="preserve">
+    <value>从车轴3轴箱左</value>
+  </data>
+  <data name="从车轴3抱箱左" xml:space="preserve">
+    <value>从车轴3抱箱左</value>
+  </data>
+  <data name="从车轴3轴箱右" xml:space="preserve">
+    <value>从车轴3轴箱右</value>
+  </data>
+  <data name="从车轴3抱箱右" xml:space="preserve">
+    <value>从车轴3抱箱右</value>
+  </data>
+  <data name="从车轴4轴箱左" xml:space="preserve">
+    <value>从车轴4轴箱左</value>
+  </data>
+  <data name="从车轴4抱箱左" xml:space="preserve">
+    <value>从车轴4抱箱左</value>
+  </data>
+  <data name="从车轴4轴箱右" xml:space="preserve">
+    <value>从车轴4轴箱右</value>
+  </data>
+  <data name="从车轴4抱箱右" xml:space="preserve">
+    <value>从车轴4抱箱右</value>
+  </data>
+  <data name="从车轴5轴箱左" xml:space="preserve">
+    <value>从车轴5轴箱左</value>
+  </data>
+  <data name="从车轴5抱箱左" xml:space="preserve">
+    <value>从车轴5抱箱左</value>
+  </data>
+  <data name="从车轴5轴箱右" xml:space="preserve">
+    <value>从车轴5轴箱右</value>
+  </data>
+  <data name="从车轴5抱箱右" xml:space="preserve">
+    <value>从车轴5抱箱右</value>
+  </data>
+  <data name="从车轴6轴箱左" xml:space="preserve">
+    <value>从车轴6轴箱左</value>
+  </data>
+  <data name="从车轴6抱箱左" xml:space="preserve">
+    <value>从车轴6抱箱左</value>
+  </data>
+  <data name="从车轴6轴箱右" xml:space="preserve">
+    <value>从车轴6轴箱右</value>
+  </data>
+  <data name="从车轴6抱箱右" xml:space="preserve">
+    <value>从车轴6抱箱右</value>
+  </data>
+  <data name="从车轴温最大值" xml:space="preserve">
+    <value>从车轴温最大值</value>
+  </data>
+  <data name="从车最大轴温位置" xml:space="preserve">
+    <value>从车最大轴温位置</value>
+  </data>
+  <data name="从车传感器个数" xml:space="preserve">
+    <value>从车传感器个数</value>
+  </data>
+  <data name="Tax" xml:space="preserve">
+    <value>Tax</value>
+  </data>
+  <data name="本车弓网检测结果" xml:space="preserve">
+    <value>本车弓网检测结果</value>
+  </data>
+  <data name="本车轨道检测结果" xml:space="preserve">
+    <value>本车轨道检测结果</value>
+  </data>
+  <data name="本车TMIS信息" xml:space="preserve">
+    <value>本车TMIS信息</value>
+  </data>
+  <data name="本车DMIS信息" xml:space="preserve">
+    <value>本车DMIS信息</value>
+  </data>
+  <data name="从车弓网检测结果" xml:space="preserve">
+    <value>从车弓网检测结果</value>
+  </data>
+  <data name="从车轨道检测结果" xml:space="preserve">
+    <value>从车轨道检测结果</value>
+  </data>
+  <data name="从车TMIS信息" xml:space="preserve">
+    <value>从车TMIS信息</value>
+  </data>
+  <data name="从车DMIS信息" xml:space="preserve">
+    <value>从车DMIS信息</value>
+  </data>
+  <data name="从车1架网压" xml:space="preserve">
+    <value>从车1架网压</value>
+  </data>
+  <data name="从车2架网压" xml:space="preserve">
+    <value>从车2架网压</value>
+  </data>
+  <data name="从车削磁级数" xml:space="preserve">
+    <value>从车削磁级数</value>
+  </data>
+  <data name="从车级位" xml:space="preserve">
+    <value>从车级位</value>
+  </data>
+  <data name="本车1架网压" xml:space="preserve">
+    <value>本车1架网压</value>
+  </data>
+  <data name="本车2架网压" xml:space="preserve">
+    <value>本车2架网压</value>
+  </data>
+</root>

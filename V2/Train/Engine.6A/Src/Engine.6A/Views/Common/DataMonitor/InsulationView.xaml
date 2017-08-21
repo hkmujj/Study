@@ -1,0 +1,161 @@
+﻿<UserControl x:Class="Engine._6A.Views.Common.DataMonitor.InsulationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:commonControl="clr-namespace:Engine._6A.CommonControl"
+             xmlns:viewModel="clr-namespace:Engine._6A.Interface.ViewModel" d:DataContext="{d:DesignInstance viewModel:IEngine6AViewModel}"
+             d:DesignHeight="400"
+             d:DesignWidth="640"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary Source="../../../Resouce/Engine6AResource.xaml" />
+    </UserControl.Resources>
+    <Grid DataContext="{Binding DataMonitor.Insulation}" DataContextChanged="FrameworkElement_OnDataContextChanged">
+        <Grid Margin="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="345*" />
+                <RowDefinition Height="35*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1.2*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Style="{StaticResource CommonTextStyleTwo}" Text="检测类型" />
+
+                    <commonControl:RadioRecTest Grid.Row="0"
+                                                Grid.Column="1"
+                                                Content="{Binding TestType}"
+                                                Style="{StaticResource InsulationViewBoxStyle}" />
+
+
+                    <TextBlock Grid.Row="1"
+                               Grid.Column="0"
+                               Style="{StaticResource CommonTextStyleTwo}"
+                               Text="检测结果" />
+                    <commonControl:RadioRecTest Grid.Row="1"
+                                                Grid.Column="1"
+                                                Content="{Binding TestResult}"
+                                                Style="{StaticResource InsulationViewBoxStyle}" />
+                    <TextBlock Grid.Row="2"
+                               Grid.Column="0"
+                               Style="{StaticResource CommonTextStyleTwo}"
+                               Text="电钥匙开" />
+                    <commonControl:RadioRecTest Grid.Row="2"
+                                                Grid.Column="1"
+                                                Content="{Binding ElectricKey}"
+                                                Style="{StaticResource InsulationViewBoxStyle}" />
+                    <TextBlock Grid.Row="3"
+                               Grid.Column="0"
+                               Style="{StaticResource CommonTextStyleTwo}"
+                               Text="外网有电" />
+                    <commonControl:RadioRecTest Grid.Row="3"
+                                                Grid.Column="1"
+                                                Content="{Binding ElectricNetwork}"
+                                                Style="{StaticResource InsulationViewBoxStyle}" />
+                    <TextBlock Grid.Row="4"
+                               Grid.Column="0"
+                               Style="{StaticResource CommonTextStyleTwo}"
+                               Text="功率模块" />
+                    <commonControl:RadioRecTest Grid.Row="4"
+                                                Grid.Column="1"
+                                                Content="{Binding PowerModule}"
+                                                Style="{StaticResource InsulationViewBoxStyle}" />
+                    <TextBlock Grid.Row="5"
+                               Grid.Column="0"
+                               Style="{StaticResource CommonTextStyleTwo}"
+                               Text="报警门限" />
+                    <commonControl:RadioRecTest Grid.Row="5"
+                                                Grid.Column="1"
+                                                Content="{Binding AlarmThreshold}"
+                                                Style="{StaticResource InsulationViewBoxStyle}" />
+
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Canvas Width="533" Height="118">
+                        <Path Data="m 71,87 v 12 m 6.75,-12 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v12 m 6.75,-12 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v12 m 6.75,-12 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v12 m 6.75,-12 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v12 m 6.75,-12 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v12 m 6.75,-12 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v6 m 6.75,-6 v12 " Stroke="{StaticResource AquaBrush}" />
+                        <TextBlock Canvas.Left="67"
+                                   Canvas.Top="40"
+                                   FontSize="18"
+                                   Foreground="White"
+                                   Text="检测电压" />
+                        <TextBlock Canvas.Left="67"
+                                   Canvas.Top="97"
+                                   Style="{StaticResource CommonTextStyleTwo}"
+                                   Text="0" />
+                        <ProgressBar Canvas.Left="70"
+                                     Canvas.Top="68"
+                                     Width="408"
+                                     Height="19"
+                                     Maximum="30"
+                                     Minimum="0"
+                                     Style="{StaticResource ProgressBarStyle}"
+                                     Value="{Binding TestVoltage}" />
+                        <TextBlock Canvas.Left="133"
+                                   Canvas.Top="97"
+                                   Style="{StaticResource CommonTextStyleTwo}"
+                                   Text="5" />
+                        <TextBlock Canvas.Left="199"
+                                   Canvas.Top="97"
+                                   Style="{StaticResource CommonTextStyleTwo}"
+                                   Text="10" />
+                        <TextBlock Canvas.Left="265"
+                                   Canvas.Top="97"
+                                   Style="{StaticResource CommonTextStyleTwo}"
+                                   Text="15" />
+                        <TextBlock Canvas.Left="331"
+                                   Canvas.Top="97"
+                                   Style="{StaticResource CommonTextStyleTwo}"
+                                   Text="20" />
+                        <TextBlock Canvas.Left="397"
+                                   Canvas.Top="97"
+                                   Style="{StaticResource CommonTextStyleTwo}"
+                                   Text="25" />
+                        <TextBlock Canvas.Left="455"
+                                   Canvas.Top="40"
+                                   FontSize="18"
+                                   Foreground="White"
+                                   Text="KV" />
+                        <TextBlock Canvas.Left="466"
+                                   Canvas.Top="97"
+                                   Style="{StaticResource CommonTextStyleTwo}"
+                                   Text="30" />
+                    </Canvas>
+                </Grid>
+            </Grid>
+            <Grid x:Name="Data" Grid.Row="1">
+                <Viewbox Width="{Binding ElementName=Data, Path=ActualWidth}" Height="{Binding ElementName=Data, Path=ActualHeight}">
+                    <Canvas Width="510" Height="30">
+                        <Path Data="m 0,0 h 510"
+                              Fill="{StaticResource DarkGrayBrush}"
+                              Stroke="{StaticResource DarkGrayBrush}"
+                              StrokeThickness="1" />
+                    </Canvas>
+                </Viewbox>
+                <StackPanel Orientation="Horizontal">
+                    <Image Style="{StaticResource CommonNoDataImgStyle}" />
+                    <TextBlock Style="{StaticResource CommonNoDataTextStyle}" Text="无数据" />
+                </StackPanel>
+
+            </Grid>
+        </Grid>
+    </Grid>
+
+</UserControl>

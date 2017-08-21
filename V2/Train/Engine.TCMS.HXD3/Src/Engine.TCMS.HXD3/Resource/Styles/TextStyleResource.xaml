@@ -1,0 +1,112 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Basic/BasicResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="ShellTitleTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="{StaticResource TextForegroundBrush}" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="MainContentTitleTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="{StaticResource TextForegroundBrush}" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="TransferTextStyleOne" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="{StaticResource TextForegroundBrush}" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="TransferTextStyleTwo" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="{StaticResource TextForegroundBrush}" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="Margin" Value="5" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="MainContentLeftTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="{StaticResource TextForegroundBrush}" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="MainContentRightTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="{StaticResource TextForegroundBrush}" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="MainContentContentTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="{StaticResource TextForegroundBrush}" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="AssitPowerOutputTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="{StaticResource TextForegroundBrush}" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="Margin" Value="10,3,64,3" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="MainContentDegreeTextStyle" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="{StaticResource TextForegroundBrush}" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="MainContentTitleLEDTextStyle"
+           BasedOn="{StaticResource MainContentTitleTextStyle}"
+           TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="FontFamily" Value="{StaticResource LEDFontFamily}" />
+            <Setter Property="FontSize" Value="30" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="PasswordSettingTextStyleOne" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource WhiteBrush}" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="18" />
+    </Style>
+    <Style x:Key="TestTestStyleOne" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="{StaticResource WhiteBrush}" />
+    </Style>
+    <Style x:Key="TestTestStyleTwo" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="{StaticResource WhiteBrush}" />
+    </Style>
+</ResourceDictionary>

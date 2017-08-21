@@ -1,0 +1,44 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:Engine.LCDM.HDX2.Entity.Controls">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Engine.LCDM.HDX2.Resource;component/HXD2UnchangeableResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <Style TargetType="{x:Type controls:LEDTextBox}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:LEDTextBox}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <TextBlock Margin="15,0"
+                                   VerticalAlignment="Center"
+                                   FontFamily="{StaticResource LEDFontFamily}"
+                                   FontSize="24"
+                                   Foreground="{TemplateBinding Foreground}"
+                                   Text="{TemplateBinding Text}"
+                                   TextAlignment="Right" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type controls:HXD2TextBox}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:HXD2TextBox}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <TextBlock Margin="{TemplateBinding Padding}"
+                                   Foreground="{TemplateBinding Foreground}"
+                                   Text="{TemplateBinding Text}"
+                                   TextAlignment="{TemplateBinding TextAlignment}" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

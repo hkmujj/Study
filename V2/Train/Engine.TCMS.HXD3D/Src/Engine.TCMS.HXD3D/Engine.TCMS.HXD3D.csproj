@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F7ACC5AB-CDBE-45D7-8E5A-36901F8718AC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Engine.TCMS.HXD3D</RootNamespace>
+    <AssemblyName>Engine.TCMS.HXD3D</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\MMI\Addin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <LangVersion>4</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonUtil">
+      <HintPath>..\MMI\CommonUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="Excel.Interface, Version=2.30.2016.712, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="MMI.Facility.Interface, Version=2.50.2017.214, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="MsgReceiveMod">
+      <HintPath>..\..\..\..\Bin\Common\MsgReceiveMod.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommonControl\HXD3DBlueButton.cs" />
+    <Compile Include="Config\FaultItemConfig.cs" />
+    <Compile Include="Config\GlobalParam.cs" />
+    <Compile Include="Config\HXD3DProject.cs" />
+    <Compile Include="Config\NetControlItemConfig.cs" />
+    <Compile Include="Config\ProjectConfig.cs" />
+    <Compile Include="Config\SingalInfoContentConfig.cs" />
+    <Compile Include="Constant\ViewId.cs" />
+    <Compile Include="Extension\MsgLevelsExtension.cs" />
+    <Compile Include="Fault\Common\FaultEnsureItemsView.cs" />
+    <Compile Include="Fault\Common\FaultHistoryItemsView.cs" />
+    <Compile Include="Fault\Common\FaultLineView.cs" />
+    <Compile Include="Fault\Common\FautItemsView.cs" />
+    <Compile Include="Fault\Ensure\Detail\EnsureAllView.cs" />
+    <Compile Include="Fault\Ensure\Detail\EnsureItemView.cs" />
+    <Compile Include="Fault\Ensure\Detail\FaultEnsureView.cs" />
+    <Compile Include="Fault\Ensure\EnsureType.cs" />
+    <Compile Include="Fault\History\FaultHistoryBase.cs" />
+    <Compile Include="HXD3D\ButtonState.cs" />
+    <Compile Include="HXD3D\TheCountdown.cs" />
+    <Compile Include="Resource\InbKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InbKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\InfKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InfKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Title\ButtomTitleScreen.cs" />
+    <Compile Include="HXD3D\PenItems.cs" />
+    <Compile Include="HXD3D\SolidBrushsItems.cs" />
+    <Compile Include="HXD3D\Keyboard.cs" />
+    <Compile Include="HXD3D\NeedChangeLength.cs" />
+    <Compile Include="HXD3D\FontsItems.cs" />
+    <Compile Include="HXD3D\FlashTimer.cs" />
+    <Compile Include="HXD3D\CommonRes.cs" />
+    <Compile Include="HXD3D\ButtonState1.cs" />
+    <Compile Include="MainInstance\AlertToTest.cs" />
+    <Compile Include="MainInstance\AuxPowerTest.cs" />
+    <Compile Include="MainInstance\ZeroOrderTest.cs" />
+    <Compile Include="MainInstance\TopWeelTest.cs" />
+    <Compile Include="MainInstance\StartTest.cs" />
+    <Compile Include="MainInstance\MaintenanceLubrificationValveTest.cs" />
+    <Compile Include="MainInstance\MainControlTest.cs" />
+    <Compile Include="MainInstance\LampTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource\Images.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Images.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Title\TopTitle\ITopTitleNameFixder.cs" />
+    <Compile Include="Title\TopTitle\NetControlNameFixder.cs" />
+    <Compile Include="Title\TopTitle\TopTitleManticeNameFixder.cs" />
+    <Compile Include="Title\TopTitle\TopTitleNameProvider.cs" />
+    <Compile Include="主菜单\Draw.cs" />
+    <Compile Include="主菜单\Main.cs" />
+    <Compile Include="主菜单\MainScreen.cs" />
+    <Compile Include="列车信息\TrainOverview.cs" />
+    <Compile Include="受电弓\ControlPantoSelection.cs" />
+    <Compile Include="Fault\MsgShowType.cs" />
+    <Compile Include="Fault\HXD3D_MsgHandler.cs" />
+    <Compile Include="Fault\FaultReceive.cs" />
+    <Compile Include="Fault\FaultMsgHXD3D.cs" />
+    <Compile Include="Fault\Ensure\FaultEnsure.cs" />
+    <Compile Include="底层共用\ButtonControl.cs" />
+    <Compile Include="底层共用\ButtonStyle.cs" />
+    <Compile Include="底层共用\ViewIDName.cs" />
+    <Compile Include="Title\TopTitleScreen.cs" />
+    <Compile Include="底层共用\Rect_Rise_Direction.cs" />
+    <Compile Include="底层共用\HXD3BaseClass.cs" />
+    <Compile Include="底层共用\KeyboardStyle.cs" />
+    <Compile Include="底层共用\FontName.cs" />
+    <Compile Include="底层共用\Font_Related.cs" />
+    <Compile Include="底层共用\Coordinate.cs" />
+    <Compile Include="开机\BlackScreen.cs" />
+    <Compile Include="开机\ClassOverScreen.cs" />
+    <Compile Include="控制\DistanceCounters.cs" />
+    <Compile Include="Fault\History\FaultUnfiltration.cs" />
+    <Compile Include="Fault\History\FaultFiltration.cs" />
+    <Compile Include="数据输入\DataInOthers.cs" />
+    <Compile Include="空气制动系统\BrakeSetting.cs" />
+    <Compile Include="空气制动系统\CutOffState.cs" />
+    <Compile Include="过程数据\NetControl\Child\NetControlRootView.cs" />
+    <Compile Include="过程数据\NetControl\Child\NetSiganlInfoView.cs" />
+    <Compile Include="过程数据\NetControl\Child\NetSoftVersionView.cs" />
+    <Compile Include="过程数据\NetControl\Child\NetTrainsInfoView.cs" />
+    <Compile Include="过程数据\NetControl\Child\SignalInfo\AUX1View.cs" />
+    <Compile Include="过程数据\NetControl\Child\SignalInfo\AUX2View.cs" />
+    <Compile Include="过程数据\NetControl\Child\SignalInfo\DI1View.cs" />
+    <Compile Include="过程数据\NetControl\Child\SignalInfo\DI2View.cs" />
+    <Compile Include="过程数据\NetControl\Child\SignalInfo\SingalInfoChild.cs" />
+    <Compile Include="过程数据\NetControl\Child\TransInfo\TransInfoContent.cs" />
+    <Compile Include="过程数据\NetControl\Child\TransInfo\TransType.cs" />
+    <Compile Include="过程数据\NetControl\NetControlChildType.cs" />
+    <Compile Include="过程数据\NetControl\NetControlChildView.cs" />
+    <Compile Include="过程数据\NetControl\ProcessNetControl.cs" />
+    <Compile Include="过程数据\ProcessCounters.cs" />
+    <Compile Include="过程数据\TrainPower.cs" />
+    <Compile Include="过程数据\ProcessTebe.cs" />
+    <Compile Include="过程数据\ProcessDrives.cs" />
+    <Compile Include="过程数据\ProcessCb.cs" />
+    <Compile Include="过程数据\ProcessBattery.cs" />
+    <Compile Include="过程数据\ProcessAux.cs" />
+    <Compile Include="隔离\ConverterCutOff.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Resource\Images.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Images.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\InbKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InbKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\InfKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InfKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Changes.Engine.TCMS.HXD3D.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\Images\Base_D.png" />
+    <Content Include="Resource\Images\Base_U.png" />
+    <Content Include="Resource\Images\NetSoftVersion.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

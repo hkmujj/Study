@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UserControl
+    x:Class="General.CIR.Views.Screen.MainContent"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    
+    xmlns:constance="clr-namespace:General.CIR.Contance"
+    xmlns:regions="http://www.codeplex.com/CompositeWPF"
+    xmlns:common="clr-namespace:General.CIR.Views.Common">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="22*" />
+            <RowDefinition Height="21*" />
+            <RowDefinition Height="107*" />
+            <RowDefinition Height="53*" />
+            <RowDefinition Height="19*" />
+            <RowDefinition Height="18*" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="#FF0000FF">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20*" />
+                    <ColumnDefinition Width="25*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="85*" />
+                    <ColumnDefinition Width="25*" />
+                    <ColumnDefinition Width="19*" />
+                </Grid.ColumnDefinitions>
+                <Image
+                    Grid.Column="0"
+                    Source="{StaticResource RecverImage}"
+                    Stretch="Fill"
+                    Visibility="{Binding MainContentViewModel.TitleViewModel.IsSpeaker, Converter={StaticResource RecvicerVisibleConverter}}" />
+                <Image
+                    Grid.Column="0"
+                    Source="{StaticResource SpeakerImage}"
+                    Stretch="Fill"
+                    Visibility="{Binding MainContentViewModel.TitleViewModel.IsSpeaker, Converter={StaticResource SpeakerVisibleConverter}}" />
+                <common:ReciverSoundView Grid.Column="1" Visibility="{Binding MainContentViewModel.TitleViewModel.IsSpeaker, Converter={StaticResource RecvicerVisibleConverter}}" />
+                <common:SpeakerSoundView Grid.Column="1" Visibility="{Binding MainContentViewModel.TitleViewModel.IsSpeaker, Converter={StaticResource SpeakerVisibleConverter}}" />
+                <TextBlock
+                    Grid.Column="2"
+                    Style="{StaticResource ColumnEndTextStyle}"
+                    Text="车次号:"
+                    TextBlock.Foreground="{Binding MainContentViewModel.TitleViewModel.TrainNumberIsAuto, Converter={StaticResource RegisterColor}}" />
+                <TextBlock
+                    Grid.Column="3"
+                    Style="{StaticResource ColumnEndTextStyle}"
+                    Text="{Binding MainContentViewModel.TitleViewModel.TrainNumber}"
+                    TextBlock.Foreground="{Binding MainContentViewModel.TitleViewModel.TrainNumberIsRegister, Converter={StaticResource RegisterColor}}" />
+                <TextBlock
+                    Grid.Column="4"
+                    Style="{StaticResource ColumnEndTextStyle}"
+                    Text="机车号:"
+                    TextBlock.Foreground="#FFF5DEB3" />
+                <TextBlock
+                    Grid.Column="5"
+                    Style="{StaticResource ColumnEndTextStyle}"
+                    Text="{Binding MainContentViewModel.TitleViewModel.EngineNumber}"
+                    TextBlock.Foreground="{Binding MainContentViewModel.TitleViewModel.EngineNumberIsRegister, Converter={StaticResource RegisterColor}}" />
+                <common:SignalView Grid.Column="6">
+                    <common:SignalView.LayoutTransform>
+                        <MatrixTransform Matrix="-1,0,0,1,0,0" />
+                    </common:SignalView.LayoutTransform>
+                </common:SignalView>
+                <Image
+                    Grid.Column="7"
+                    Source="{StaticResource SignalImage}"
+                    Stretch="Fill" />
+            </Grid>
+        </Border>
+        <Border Grid.Row="1" Background="{StaticResource BackgroundBrushOne}">
+            <ContentControl regions:RegionManager.RegionName="{x:Static constance:RegionNames.ColumnEnd}" />
+        </Border>
+        <Border Grid.Row="2" Background="#FF000000">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="90*" />
+                    <RowDefinition Height="20*" />
+                </Grid.RowDefinitions>
+                <ContentControl regions:RegionManager.RegionName="{x:Static constance:RegionNames.PoliceRegion}" Visibility="{Binding MainContentViewModel.PoliceViewModel.CanPolice, Converter={StaticResource SpeakerVisibleConverter}}" />
+                <Grid Grid.Row="1">
+                    <StackPanel Orientation="Horizontal">
+                        <Grid>
+                            <Grid>
+                                <TextBlock Text="自动" TextBlock.Foreground="#FFFFFF00" />
+                                <Border
+                                    xmlns:p11="clr-namespace:MMI.Facility.WPFInfrastructure.View;assembly=MMI.Facility.WPFInfrastructure"
+                                    p11:FlickerManager.DurationMiliSecond="1000"
+                                    p11:FlickerManager.Flicking="True"
+                                    p11:FlickerManager.VisibilityAfterFlicking="Visible"
+                                    Background="#FF000000">
+                                    <TextBlock Text="自动" TextBlock.Foreground="#FFFF0000" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+                        <TextBlock
+                            Margin="10,0,0,0"
+                            Text="{Binding MainContentViewModel.SystemInfosViewModel.LineName}"
+                            TextBlock.Foreground="{StaticResource GreenBrush}" />
+                        <TextBlock
+                            Margin="10,0,0,0"
+                            Text="{Binding MainContentViewModel.SystemInfosViewModel.SignalModel}"
+                            TextBlock.Foreground="{StaticResource GreenBrush}" />
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Border>
+        <Border Grid.Row="3" Background="#FFC7CDEF">
+            <Grid
+                xmlns:p6="clr-namespace:MMI.Facility.WPFInfrastructure.View;assembly=MMI.Facility.WPFInfrastructure"
+                p6:GridLine.Brush="#FFFFFFFF"
+                p6:GridLine.Style="ShowAll"
+                p6:GridLine.Width="1"
+                p6:GridLine.WidthStyle="AllLineSame">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="130*" />
+                </Grid.ColumnDefinitions>
+                <ContentControl Grid.Column="1" regions:RegionManager.RegionName="{x:Static constance:RegionNames.MasterInfo}" />
+            </Grid>
+        </Border>
+        <Grid
+            Grid.Row="4"
+            Grid.RowSpan="2"
+            IsEnabled="{Binding MainContentViewModel.ButtonViewModel.IsCalling}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button
+                Grid.Column="0"
+                Content="{Binding MainContentViewModel.ButtonViewModel.F1}"
+                Style="{StaticResource ButtonStyle}" />
+            <Button
+                Grid.Column="1"
+                Content="{Binding MainContentViewModel.ButtonViewModel.F2}"
+                Style="{StaticResource ButtonStyle}" />
+            <Button
+                Grid.Column="2"
+                Content="{Binding MainContentViewModel.ButtonViewModel.F3}"
+                Style="{StaticResource ButtonStyle}" />
+            <Button
+                Grid.Column="3"
+                Content="{Binding MainContentViewModel.ButtonViewModel.F4}"
+                Style="{StaticResource ButtonStyle}" />
+            <Button
+                Grid.Column="4"
+                Content="{Binding MainContentViewModel.ButtonViewModel.F5}"
+                Style="{StaticResource ButtonStyle}" />
+            <Button
+                Grid.Column="5"
+                Content="{Binding MainContentViewModel.ButtonViewModel.F6}"
+                Style="{StaticResource ButtonStyle}" />
+            <Button
+                Grid.Column="6"
+                Content="{Binding MainContentViewModel.ButtonViewModel.F7}"
+                Style="{StaticResource ButtonStyle}" />
+            <Button
+                Grid.Column="7"
+                Content="{Binding MainContentViewModel.ButtonViewModel.F8}"
+                Style="{StaticResource ButtonStyle}" />
+        </Grid>
+    </Grid>
+</UserControl>

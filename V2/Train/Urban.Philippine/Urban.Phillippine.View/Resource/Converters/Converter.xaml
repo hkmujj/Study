@@ -1,0 +1,52 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:wpfConverter="clr-namespace:MMI.Facility.WPFInfrastructure.Converter;assembly=MMI.Facility.WPFInfrastructure"
+                    xmlns:convert="clr-namespace:Urban.Phillippine.View.Convert"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <convert:PasswordConvert x:Key="PasswordConvert" />
+    <convert:UnitConvert x:Key="UnitConvert" />
+    <convert:TimerConverter x:Key="TimerConverter" />
+    <convert:DataConverter x:Key="DataConverter" />
+    <convert:DoorStatusConverter x:Key="DoorStatusConverter" />
+    <convert:VVVFStatusConverter x:Key="VVVFStatusConverter" />
+    <convert:APSStatusConverter x:Key="APSStatusConverter" />
+    <convert:HscbConverter x:Key="HSCBConverter" />
+    <convert:BogieConverter x:Key="BogieConverter" />
+    <convert:VACStatusConverter x:Key="VACStatusConverter" />
+    <convert:PcuStatusConverter x:Key="PCUStatusConverter" />
+    <convert:BoolToVisibilty x:Key="BoolToVisibilty" />
+    <convert:FaultSignalStatusConvert x:Key="FaultSignalStatusConvert" />
+    <convert:SignalStatusConvert x:Key="SignalStatusConvert" />
+    <convert:LevelConvert x:Key="LevelConvert" />
+    <convert:AtpModelConvert x:Key="AtpModelConvert" />
+    <convert:MaskConveter x:Key="MaskConveter" />
+    <convert:LevelColorConvert x:Key="LevelColorConvert" />
+    <convert:UnitConverterToF2 x:Key="ConverterToF2"></convert:UnitConverterToF2>
+    <convert:FaultTimeConvert x:Key="FaultTimeConvert"></convert:FaultTimeConvert>
+    <convert:FaultCodelConvert x:Key="FaultCodelConvert"></convert:FaultCodelConvert>
+
+    <BitmapImage x:Key="RedFault" UriSource="../Image/RedFault.png"></BitmapImage>
+    <BitmapImage x:Key="YellowFault" UriSource="../Image/YellowFault.png"></BitmapImage>
+
+    <system:Boolean x:Key="True">True</system:Boolean>
+    <system:Boolean x:Key="False">False</system:Boolean>
+    <wpfConverter:SelectObjectContentConverter x:Key="FaultImageConverter">
+        <wpfConverter:SelectObjectContentConverter.ObjectContentCollection>
+            <wpfConverter:ObjectContentPair Key="{StaticResource True}" Content="{StaticResource RedFault}"></wpfConverter:ObjectContentPair>
+            <wpfConverter:ObjectContentPair Key="{StaticResource False}" Content="{StaticResource YellowFault}"></wpfConverter:ObjectContentPair>
+        </wpfConverter:SelectObjectContentConverter.ObjectContentCollection>
+    </wpfConverter:SelectObjectContentConverter>
+
+    <BitmapImage x:Key="PantographDownFault" UriSource="../Image/PantographDown.png"></BitmapImage>
+    <BitmapImage x:Key="PantographUpFault" UriSource="../Image/PantographUp.png"></BitmapImage>
+
+    <wpfConverter:SelectObjectContentConverter x:Key="FaultPantograph">
+        <wpfConverter:SelectObjectContentConverter.ObjectContentCollection>
+            <wpfConverter:ObjectContentPair Key="{StaticResource True}" Content="{StaticResource PantographUpFault}"></wpfConverter:ObjectContentPair>
+            <wpfConverter:ObjectContentPair Key="{StaticResource False}" Content="{StaticResource PantographDownFault}"></wpfConverter:ObjectContentPair>
+        </wpfConverter:SelectObjectContentConverter.ObjectContentCollection>
+    </wpfConverter:SelectObjectContentConverter>
+
+    
+
+</ResourceDictionary>

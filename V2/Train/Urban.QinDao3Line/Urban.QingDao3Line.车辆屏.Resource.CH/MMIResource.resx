@@ -1,0 +1,957 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DrivingViewResourceBrakeEffortAchieved" xml:space="preserve">
+    <value>施加的制动力</value>
+  </data>
+  <data name="DrivingViewResourceBrakeEffortDemand" xml:space="preserve">
+    <value>制动力需求</value>
+  </data>
+  <data name="DrivingViewResourceByPass" xml:space="preserve">
+    <value>旁路</value>
+  </data>
+  <data name="DrivingViewResourceLoadOfTheCar" xml:space="preserve">
+    <value>车辆载荷</value>
+  </data>
+  <data name="DrivingViewResourceMPR1" xml:space="preserve">
+    <value>MPR1</value>
+  </data>
+  <data name="DrivingViewResourceMPR2" xml:space="preserve">
+    <value>MPR2</value>
+  </data>
+  <data name="DrivingViewResourceSBPressure" xml:space="preserve">
+    <value>制动缸压力</value>
+  </data>
+  <data name="DrivingViewResourceTractionBrakeEffort" xml:space="preserve">
+    <value>牵引/制动力</value>
+  </data>
+  <data name="DrivingViewResourceTractionEffortAchieved" xml:space="preserve">
+    <value>牵引力需求</value>
+  </data>
+  <data name="DrivingViewResourceTractionEffortDemand" xml:space="preserve">
+    <value>施加的牵引力</value>
+  </data>
+  <data name="DrivingViewResourceSKTDB" xml:space="preserve">
+    <value>SKTDB</value>
+  </data>
+  <data name="DrivingViewResourceSKCDB" xml:space="preserve">
+    <value>SKCDB</value>
+  </data>
+  <data name="DrivingViewResourceSKTIB" xml:space="preserve">
+    <value>SKTIB</value>
+  </data>
+  <data name="DrivingViewResourceSKTPB" xml:space="preserve">
+    <value>SKTPB</value>
+  </data>
+  <data name="DrivingViewResourceSKNRB" xml:space="preserve">
+    <value>SKNRB</value>
+  </data>
+  <data name="DrivingViewResourceSKZVB" xml:space="preserve">
+    <value>SKZVB</value>
+  </data>
+  <data name="DrivingViewResourceSKESS" xml:space="preserve">
+    <value>SKESS</value>
+  </data>
+  <data name="DrivingViewResourceSKEBB" xml:space="preserve">
+    <value>SKEBB</value>
+  </data>
+  <data name="DrivingViewResourceSKMPB" xml:space="preserve">
+    <value>SKMPB</value>
+  </data>
+  <data name="DrivingViewResourceSKPRB" xml:space="preserve">
+    <value>SKPRB</value>
+  </data>
+  <data name="DrivingViewResourceSKDMB" xml:space="preserve">
+    <value>SKDMB</value>
+  </data>
+  <data name="DrivingViewResourceSKATP" xml:space="preserve">
+    <value>SKATP</value>
+  </data>
+  <data name="DrivingViewResourceDateFormat" xml:space="preserve">
+    <value>yyyy-MM-dd</value>
+  </data>
+  <data name="DrivingViewResourceErrorInfo" xml:space="preserve">
+    <value>The equipment is not operational or disconnected.\n Do not take into account informations of this equipment.\n Switch to Backup mode</value>
+  </data>
+  <data name="DrivingViewResourceFinalStation" xml:space="preserve">
+    <value>终点站 :</value>
+  </data>
+  <data name="DrivingViewResourceIOS" xml:space="preserve">
+    <value>IOS :</value>
+  </data>
+  <data name="DrivingViewResourcekmPerh" xml:space="preserve">
+    <value>km/h</value>
+  </data>
+  <data name="DrivingViewResourceManual" xml:space="preserve">
+    <value>手动</value>
+  </data>
+  <data name="DrivingViewResourceNextStation" xml:space="preserve">
+    <value>下一站 : </value>
+  </data>
+  <data name="DrivingViewResourceTimeFormat" xml:space="preserve">
+    <value>HH:mm</value>
+  </data>
+  <data name="MaintenanceAirCopressorcsResourceCompressorcontrolTc1" xml:space="preserve">
+    <value>空压机控制TC 1</value>
+  </data>
+  <data name="MaintenanceAirCopressorcsResourceCompressorcontrolTc2" xml:space="preserve">
+    <value>空压机控制TC 2</value>
+  </data>
+  <data name="MaintenanceAirCopressorcsResourceCommand" xml:space="preserve">
+    <value>命令</value>
+  </data>
+  <data name="MaintenanceAirCopressorcsResourceRuning" xml:space="preserve">
+    <value>运行</value>
+  </data>
+  <data name="MaintenanceAirCopressorcsResourceInfault" xml:space="preserve">
+    <value>故障</value>
+  </data>
+  <data name="MaintenanceAuxiliaryResourceStates" xml:space="preserve">
+    <value>状态</value>
+  </data>
+  <data name="MaintenanceAuxiliaryResourceMVBcommunication" xml:space="preserve">
+    <value>MCB 通信</value>
+  </data>
+  <data name="MaintenanceAuxiliaryResourceCriticalFault" xml:space="preserve">
+    <value>致命故障</value>
+  </data>
+  <data name="MaintenanceAuxiliaryResourceMajorFault" xml:space="preserve">
+    <value>重大故障</value>
+  </data>
+  <data name="MaintenanceAuxiliaryResourceMinorFault" xml:space="preserve">
+    <value>轻微故障</value>
+  </data>
+  <data name="MaintenanceAuxiliaryResourceStopCVSSwitch" xml:space="preserve">
+    <value>Stop CVS Switch</value>
+  </data>
+  <data name="MaintenanceAuxiliaryResourceReverseCVSSwitch" xml:space="preserve">
+    <value>重置 CVS 开关</value>
+  </data>
+  <data name="MaintenanceAuxiliaryResourceCVSiscorrestlyrunning" xml:space="preserve">
+    <value>CVS 正在运行</value>
+  </data>
+  <data name="MaintenanceAuxiliaryResourceACE1ACE2" xml:space="preserve">
+    <value>ACE1 ACE2</value>
+  </data>
+  <data name="MaintenanceAuxiliaryResourceResetCVS1" xml:space="preserve">
+    <value>重置 CVS1</value>
+  </data>
+  <data name="MaintenanceAuxiliaryResourceResetCVS2" xml:space="preserve">
+    <value>重置 CVS2</value>
+  </data>
+  <data name="MaintenanceAuxiliaryResourceCVSScheme" xml:space="preserve">
+    <value>CVS Scheme</value>
+  </data>
+  <data name="MaintenanceAuxiliaryResourceListoffaults" xml:space="preserve">
+    <value>故障列表</value>
+  </data>
+  <data name="MaintenanceAuxiliaryResourceInputblockpemanentfault" xml:space="preserve">
+    <value>Input block pemanent fault</value>
+  </data>
+  <data name="MaintenanceAuxiliaryResourceTrasfimerthemalimagefault" xml:space="preserve">
+    <value>Trasfimer themal image fault</value>
+  </data>
+  <data name="MaintenanceAuxiliaryResourceInverteroutofservice" xml:space="preserve">
+    <value>Inverter out of service</value>
+  </data>
+  <data name="MaintenanceAuxiliaryResourceAnflowlowleveldetection" xml:space="preserve">
+    <value>Anflow low level detection</value>
+  </data>
+  <data name="MaintenanceAuxiliaryResourceCVS1A501" xml:space="preserve">
+    <value>CVS1</value>
+  </data>
+  <data name="MaintenanceAuxiliaryResourceCVS2A501" xml:space="preserve">
+    <value>CVS2</value>
+  </data>
+  <data name="MaintenanceAuxiliaryResourceFaultEvent" xml:space="preserve">
+    <value>故障事件</value>
+  </data>
+  <data name="MaintenanceAuxiliaryResourceCouplingContactor" xml:space="preserve">
+    <value>扩展供电接触器</value>
+  </data>
+  <data name="MaintenanceAuxiliaryResourceON" xml:space="preserve">
+    <value>ON</value>
+  </data>
+  <data name="MaintenanceAuxiliaryResourceOFF" xml:space="preserve">
+    <value>OFF</value>
+  </data>
+  <data name="MaintenanceAuxiliaryResourceMaintenanceAuxiliary" xml:space="preserve">
+    <value>维护：辅助逆变器</value>
+  </data>
+  <data name="MaintenanceBasicResourceMVBcommunication" xml:space="preserve">
+    <value>MVB 通信</value>
+  </data>
+  <data name="MaintenanceBasicResourceOperational" xml:space="preserve">
+    <value>运行</value>
+  </data>
+  <data name="MaintenanceBasicResourceEffortDemand" xml:space="preserve">
+    <value>力的需求</value>
+  </data>
+  <data name="MaintenanceBasicResourceEffortAchieved" xml:space="preserve">
+    <value>施加的力</value>
+  </data>
+  <data name="MaintenanceBasicResourceEffortPossible" xml:space="preserve">
+    <value>施加的力</value>
+  </data>
+  <data name="MaintenanceBasicResourceMPU" xml:space="preserve">
+    <value>MPU</value>
+  </data>
+  <data name="MaintenanceBasicResourcePCE1" xml:space="preserve">
+    <value>PCE1</value>
+  </data>
+  <data name="MaintenanceBasicResourcePCE2" xml:space="preserve">
+    <value>PCE2</value>
+  </data>
+  <data name="MaintenanceBasicResourcePCE3" xml:space="preserve">
+    <value>PCE3</value>
+  </data>
+  <data name="MaintenanceBasicResourcePCE4" xml:space="preserve">
+    <value>PCE4</value>
+  </data>
+  <data name="MaintenanceBasicResourceGTW1" xml:space="preserve">
+    <value>GTW1</value>
+  </data>
+  <data name="MaintenanceBasicResourceGTW2" xml:space="preserve">
+    <value>GTW2</value>
+  </data>
+  <data name="MaintenanceBasicResourceGTW3" xml:space="preserve">
+    <value>GTW3</value>
+  </data>
+  <data name="MaintenanceBasicResourceGTW4" xml:space="preserve">
+    <value>GTW4</value>
+  </data>
+  <data name="MaintenanceBasicResourcekN" xml:space="preserve">
+    <value>----kN</value>
+  </data>
+  <data name="MaintenanceBasicResourceTOTAL" xml:space="preserve">
+    <value>总计</value>
+  </data>
+  <data name="MaintenanceBasicResourceEnergyConsumed" xml:space="preserve">
+    <value>已消耗能量</value>
+  </data>
+  <data name="MaintenanceBasicResourceEnergyRegenerated" xml:space="preserve">
+    <value>已再生能量</value>
+  </data>
+  <data name="MaintenanceBasicResourcekWh" xml:space="preserve">
+    <value>---- kWh</value>
+  </data>
+  <data name="MaintenanceBaterryResourceBattery1capacity" xml:space="preserve">
+    <value>蓄电池 1 容量</value>
+  </data>
+  <data name="MaintenanceBaterryResourceBattery2capacity" xml:space="preserve">
+    <value>蓄电池 2 容量</value>
+  </data>
+  <data name="MaintenanceBaterryResourceOK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="MaintenanceBaterryResourceNOK" xml:space="preserve">
+    <value>NOK</value>
+  </data>
+  <data name="MaintenanceBrakeResourceTrainLines" xml:space="preserve">
+    <value>列车线</value>
+  </data>
+  <data name="MaintenanceBrakeResourceSelfTest" xml:space="preserve">
+    <value>自检</value>
+  </data>
+  <data name="MaintenanceBrakeResourceStates" xml:space="preserve">
+    <value>状态</value>
+  </data>
+  <data name="MaintenanceBrakeResourceMVBCommunication" xml:space="preserve">
+    <value>MVB 通信</value>
+  </data>
+  <data name="MaintenanceBrakeResourceMajorFault" xml:space="preserve">
+    <value>重大故障</value>
+  </data>
+  <data name="MaintenanceBrakeResourceMinorFault" xml:space="preserve">
+    <value>轻微故障</value>
+  </data>
+  <data name="MaintenanceBrakeResourceGTW1" xml:space="preserve">
+    <value>网关阀1</value>
+  </data>
+  <data name="MaintenanceBrakeResourceGTW2" xml:space="preserve">
+    <value>网关阀2</value>
+  </data>
+  <data name="MaintenanceBrakeResourceGTW3" xml:space="preserve">
+    <value>网关阀3</value>
+  </data>
+  <data name="MaintenanceBrakeResourceGTW4" xml:space="preserve">
+    <value>网关阀4</value>
+  </data>
+  <data name="MaintenanceBrakeResourceTc1" xml:space="preserve">
+    <value>Tc1</value>
+  </data>
+  <data name="MaintenanceBrakeResourceM1" xml:space="preserve">
+    <value>M1</value>
+  </data>
+  <data name="MaintenanceBrakeResourceM2" xml:space="preserve">
+    <value>M2</value>
+  </data>
+  <data name="MaintenanceBrakeResourceM3" xml:space="preserve">
+    <value>M3</value>
+  </data>
+  <data name="MaintenanceBrakeResourceM4" xml:space="preserve">
+    <value>M4</value>
+  </data>
+  <data name="MaintenanceBrakeResourceTc2" xml:space="preserve">
+    <value>Tc2</value>
+  </data>
+  <data name="MaintenanceBrakeResourceListoffaults" xml:space="preserve">
+    <value>故障清单</value>
+  </data>
+  <data name="MaintenanceBrakeResourceDIA_BOARD_CB09A_1" xml:space="preserve">
+    <value>DIA_BOARD_CB09A_1</value>
+  </data>
+  <data name="MaintenanceBrakeResourceDIA_PRESSURE_UP_3" xml:space="preserve">
+    <value>DIA_PRESSURE-UP-3</value>
+  </data>
+  <data name="MaintenanceBrakeResourceDIA_DV_AXLE_1_HOLD" xml:space="preserve">
+    <value>DIA_DV_AXLE_1_HOLD</value>
+  </data>
+  <data name="MaintenanceBrakeResourceDIA_RELAY_MAJOR_EVENT" xml:space="preserve">
+    <value>DIA_RELAY_MAJOR_EVENT</value>
+  </data>
+  <data name="MaintenanceBrakeResourceDIA_RELAY_ZERO_SPEED" xml:space="preserve">
+    <value>DIA-RELAY-ZERO-SPEED</value>
+  </data>
+  <data name="MaintenanceBrakeResourceStartingcondition" xml:space="preserve">
+    <value>启动条件（OK/NOK)</value>
+  </data>
+  <data name="MaintenanceBrakeResourceTestinprogress" xml:space="preserve">
+    <value>测试进行中（进行中/其它）</value>
+  </data>
+  <data name="MaintenanceBrakeResourceTestresult" xml:space="preserve">
+    <value>测试结果（中止/失败/成功）</value>
+  </data>
+  <data name="MaintenanceBrakeResourceSTART" xml:space="preserve">
+    <value>开始</value>
+  </data>
+  <data name="MaintenanceBrakeResourceSelfTestCondition" xml:space="preserve">
+    <value>自检条件</value>
+  </data>
+  <data name="MaintenanceBrakeResourceTobedefine" xml:space="preserve">
+    <value>To be define</value>
+  </data>
+  <data name="MaintenanceHVACResourceEquipmentmode" xml:space="preserve">
+    <value>设备模式</value>
+  </data>
+  <data name="MaintenanceHVACResourceVACswitchsattus" xml:space="preserve">
+    <value>空调开关状态</value>
+  </data>
+  <data name="MaintenanceHVACResourceFreshairtemperature" xml:space="preserve">
+    <value>新风温度</value>
+  </data>
+  <data name="MaintenanceHVACResourceReturnairtemperature" xml:space="preserve">
+    <value>回风温度</value>
+  </data>
+  <data name="MaintenanceHVACResourceCondsender1" xml:space="preserve">
+    <value>冷凝风机断路器</value>
+  </data>
+  <data name="MaintenanceHVACResourceCondsender2" xml:space="preserve">
+    <value>冷凝风机接触器</value>
+  </data>
+  <data name="MaintenanceHVACResourceEvaporator" xml:space="preserve">
+    <value>蒸发器风机断路器</value>
+  </data>
+  <data name="MaintenanceHVACResourceCompressor1highpressure" xml:space="preserve">
+    <value>压缩机1高压</value>
+  </data>
+  <data name="MaintenanceHVACResourceCompressor1lowpressure" xml:space="preserve">
+    <value>压缩机1低压</value>
+  </data>
+  <data name="MaintenanceHVACResourceHeating1contactor" xml:space="preserve">
+    <value>加热器接触器1</value>
+  </data>
+  <data name="MaintenanceHVACResourceCompressor2highpressure" xml:space="preserve">
+    <value>压缩机2高压</value>
+  </data>
+  <data name="MaintenanceHVACResourceCompressor2lowpressure" xml:space="preserve">
+    <value>压缩机2低压</value>
+  </data>
+  <data name="MaintenanceHVACResourceHeating2contactor" xml:space="preserve">
+    <value>加热器接触器2</value>
+  </data>
+  <data name="MaintenanceHVACResourceCompressor2contactor" xml:space="preserve">
+    <value>压缩机2接触器</value>
+  </data>
+  <data name="MaintenanceHVACResourceVAC1" xml:space="preserve">
+    <value>VAC1</value>
+  </data>
+  <data name="MaintenanceHVACResourceVAC2" xml:space="preserve">
+    <value>VAC2</value>
+  </data>
+  <data name="MaintenanceHVACResourceVAC3" xml:space="preserve">
+    <value>VAC3</value>
+  </data>
+  <data name="MaintenanceHVACResourceVAC4" xml:space="preserve">
+    <value>VAC4</value>
+  </data>
+  <data name="MaintenanceHVACResourceVAC5" xml:space="preserve">
+    <value>VAC5</value>
+  </data>
+  <data name="MaintenanceHVACResourceVAC6" xml:space="preserve">
+    <value>VAC6</value>
+  </data>
+  <data name="MaintenanceHVACResourceUnit1" xml:space="preserve">
+    <value>Unit1</value>
+  </data>
+  <data name="MaintenanceHVACResourceUnit2" xml:space="preserve">
+    <value>Unit2</value>
+  </data>
+  <data name="MaintenanceHVACResourceCooling" xml:space="preserve">
+    <value>全冷</value>
+  </data>
+  <data name="MaintenanceHVACResourceAutomatic" xml:space="preserve">
+    <value>自动状态</value>
+  </data>
+  <data name="MaintenanceResourceAccessToSoftwareConfigurationInformation" xml:space="preserve">
+    <value>进入软件配置信息</value>
+  </data>
+  <data name="MaintenanceResourceMaintenancefunctionselector" xml:space="preserve">
+    <value>维护：功能选择</value>
+  </data>
+  <data name="MaintenanceTractionResourcePCEStates" xml:space="preserve">
+    <value>PCE状态</value>
+  </data>
+  <data name="MaintenanceTractionResourceCriticalFault" xml:space="preserve">
+    <value>致命故障</value>
+  </data>
+  <data name="MaintenanceTractionResourceMajorFault" xml:space="preserve">
+    <value>重大故障</value>
+  </data>
+  <data name="MaintenanceTractionResourceMinorFault" xml:space="preserve">
+    <value>轻微故障</value>
+  </data>
+  <data name="MaintenanceTractionResourceMVBchannelAandchannelBstatus" xml:space="preserve">
+    <value>MVB网络通道A和通道B状态</value>
+  </data>
+  <data name="MaintenanceTractionResourceListoffaults" xml:space="preserve">
+    <value>故障清单</value>
+  </data>
+  <data name="MaintenanceTractionResourcePCE1PCE2PCE3PCE4" xml:space="preserve">
+    <value>PCE1 PCE2 PCE3 PCE4</value>
+  </data>
+  <data name="MaintenanceTractionResourceABABABAB" xml:space="preserve">
+    <value>A B  A B  A B  A B</value>
+  </data>
+  <data name="MaintenanceTractionResourceAccesstoauthonisedmaintenancemodeconditionsfast" xml:space="preserve">
+    <value>进入授权维护模式的条件：</value>
+  </data>
+  <data name="MaintenanceTractionResourcebrakeappliedandvellocitynull" xml:space="preserve">
+    <value>车辆静止且已施加快速制动</value>
+  </data>
+  <data name="MaintenanceTractionResourceMaintenanceTraction" xml:space="preserve">
+    <value>维护牵引</value>
+  </data>
+  <data name="MaintenanceTrainLineResourceDoorclosestatussideA" xml:space="preserve">
+    <value>A侧车门关闭状态</value>
+  </data>
+  <data name="MaintenanceTrainLineResourceDoorclosestatussideB" xml:space="preserve">
+    <value>B侧车门关闭状态</value>
+  </data>
+  <data name="MaintenanceTrainLineResourceTc1" xml:space="preserve">
+    <value>Tc1</value>
+  </data>
+  <data name="MaintenanceTrainLineResourceM1" xml:space="preserve">
+    <value>M1</value>
+  </data>
+  <data name="MaintenanceTrainLineResourceM2" xml:space="preserve">
+    <value>M2</value>
+  </data>
+  <data name="MaintenanceTrainLineResourceM3" xml:space="preserve">
+    <value>M3</value>
+  </data>
+  <data name="MaintenanceTrainLineResourceM4" xml:space="preserve">
+    <value>M4</value>
+  </data>
+  <data name="MaintenanceTrainLineResourceTc2" xml:space="preserve">
+    <value>Tc2</value>
+  </data>
+  <data name="MaintenanceTrainLineResourceRequestrightdooropened" xml:space="preserve">
+    <value>请求开右门</value>
+  </data>
+  <data name="MaintenanceTrainLineResourceRequestleftdooropened" xml:space="preserve">
+    <value>请求开左门</value>
+  </data>
+  <data name="MaintenanceTrainLineResourceRequestrightdoorclosed" xml:space="preserve">
+    <value>请求关右门</value>
+  </data>
+  <data name="MaintenanceTrainLineResourceRequestleftdoorclosed" xml:space="preserve">
+    <value>请求关左门</value>
+  </data>
+  <data name="MaintenanceTrainLineResourceAuthorizationtoopenrightdoors" xml:space="preserve">
+    <value>右侧车门开门授权</value>
+  </data>
+  <data name="MaintenanceTrainLineResourceAuthorizationtoopenleftdoors" xml:space="preserve">
+    <value>左侧车门开门授权</value>
+  </data>
+  <data name="MaintenanceTrainLineResourceAuthorityofdrivertoopendoors" xml:space="preserve">
+    <value>Authority of driver to open doors</value>
+  </data>
+  <data name="MaintenanceTrainLineResourceAlldoorsclosedandlocked" xml:space="preserve">
+    <value>所有车门关好并锁闭</value>
+  </data>
+  <data name="PISResourceMessage" xml:space="preserve">
+    <value>信息</value>
+  </data>
+  <data name="PISResourceSEND" xml:space="preserve">
+    <value>发送</value>
+  </data>
+  <data name="SettingResourceAIRPURIFICATION" xml:space="preserve">
+    <value>空气净化</value>
+  </data>
+  <data name="SettingResourceAirTemperature" xml:space="preserve">
+    <value>空气温度</value>
+  </data>
+  <data name="SettingResourceEnterPassword" xml:space="preserve">
+    <value>输入密码</value>
+  </data>
+  <data name="SettingResourceHALFCOOLING" xml:space="preserve">
+    <value>制冷</value>
+  </data>
+  <data name="SettingResourceHVACModeSelection" xml:space="preserve">
+    <value>HVAC 模式选择</value>
+  </data>
+  <data name="SettingResourceOUTSIDFIREMODE" xml:space="preserve">
+    <value>外部火灾模式</value>
+  </data>
+  <data name="SettingResourceProtectedMenu" xml:space="preserve">
+    <value>受保护菜单</value>
+  </data>
+  <data name="TrainLineResourceConfirm" xml:space="preserve">
+    <value>确认</value>
+  </data>
+  <data name="TrainLineResourceDeparture" xml:space="preserve">
+    <value>Departure</value>
+  </data>
+  <data name="TrainLineResourceDestition" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="TrainLineResourceSkipped" xml:space="preserve">
+    <value>跳过</value>
+  </data>
+  <data name="TrainLineResourceStartStation" xml:space="preserve">
+    <value>起始站</value>
+  </data>
+  <data name="SDIResourceSDI" xml:space="preserve">
+    <value>维护 ： 烟火检测</value>
+  </data>
+  <data name="SDIResourceFailurestate" xml:space="preserve">
+    <value>故障状态</value>
+  </data>
+  <data name="SDIResourceAlarmdetection" xml:space="preserve">
+    <value>报警检测</value>
+  </data>
+  <data name="SDIResourcePre_Alarmdetection" xml:space="preserve">
+    <value>预警检测</value>
+  </data>
+  <data name="SDIResourceTc1" xml:space="preserve">
+    <value>Tc1</value>
+  </data>
+  <data name="SDIResourceM1" xml:space="preserve">
+    <value>M1</value>
+  </data>
+  <data name="SDIResourceM2" xml:space="preserve">
+    <value>M2</value>
+  </data>
+  <data name="SDIResourceM3" xml:space="preserve">
+    <value>M3</value>
+  </data>
+  <data name="SDIResourceM4" xml:space="preserve">
+    <value>M4</value>
+  </data>
+  <data name="SDIResourceTc2" xml:space="preserve">
+    <value>Tc2</value>
+  </data>
+  <data name="DoorsMaintenanceResourceM2" xml:space="preserve">
+    <value>M2</value>
+  </data>
+  <data name="DoorsMaintenanceResourceGateway1" xml:space="preserve">
+    <value>Gateway 1</value>
+  </data>
+  <data name="DoorsMaintenanceResourceGateway2" xml:space="preserve">
+    <value>Gateway 2</value>
+  </data>
+  <data name="DoorsMaintenanceResourceMediumOKA" xml:space="preserve">
+    <value>Medium OK A</value>
+  </data>
+  <data name="DoorsMaintenanceResourceMediumOKB" xml:space="preserve">
+    <value>Medium OK B</value>
+  </data>
+  <data name="DoorsMaintenanceResourceDoordrivingmotorfault" xml:space="preserve">
+    <value>门驱电机电路故障</value>
+  </data>
+  <data name="DoorsMaintenanceResourceDoorlockswitchfault" xml:space="preserve">
+    <value>Door lock switch fault</value>
+  </data>
+  <data name="DoorsMaintenanceResourceDoorcloseswitchfault" xml:space="preserve">
+    <value>Door close switch fault</value>
+  </data>
+  <data name="DoorsMaintenanceResourceDoornotunlockedwithin3sec" xml:space="preserve">
+    <value>Door not unlocked within 3 sec</value>
+  </data>
+  <data name="DoorsMaintenanceResourceDoorpositionsensorfault" xml:space="preserve">
+    <value>Door position sensor fault</value>
+  </data>
+  <data name="DoorsMaintenanceResourceObstacledetectedduringclosing" xml:space="preserve">
+    <value>Obstacle detected during closing</value>
+  </data>
+  <data name="DoorsMaintenanceResourceObstacledetectedduringopenging" xml:space="preserve">
+    <value>Obstacle detected during openging</value>
+  </data>
+  <data name="DoorsMaintenanceResourceDoorsafetyrelayfault" xml:space="preserve">
+    <value>Door safety relay fault</value>
+  </data>
+  <data name="DoorsMaintenanceResourceDoorpositionnotpermited" xml:space="preserve">
+    <value>Door position not permited</value>
+  </data>
+  <data name="DoorsMaintenanceResourceDCU5" xml:space="preserve">
+    <value>DCU5</value>
+  </data>
+  <data name="DoorsMaintenanceResourceDoorlockeddevicefault" xml:space="preserve">
+    <value>Door locked device fault</value>
+  </data>
+  <data name="DoorsMaintenanceResourceDoorsafetloopfault" xml:space="preserve">
+    <value>Door safet loop fault</value>
+  </data>
+  <data name="DoorsMaintenanceResourceOutput0fault" xml:space="preserve">
+    <value>Output 0 fault</value>
+  </data>
+  <data name="DoorsMaintenanceResourceOutput1fault" xml:space="preserve">
+    <value>Output 1 fault</value>
+  </data>
+  <data name="DoorsMaintenanceResourceOutput3fault" xml:space="preserve">
+    <value>Output 3 fault</value>
+  </data>
+  <data name="DoorsMaintenanceResourceOutput4fault" xml:space="preserve">
+    <value>Output 4 fault</value>
+  </data>
+  <data name="DoorsMaintenanceResourceDiadnosememoryfault" xml:space="preserve">
+    <value>Diadnose memory fault</value>
+  </data>
+  <data name="DoorsMaintenanceResourceCommunicationbusfault" xml:space="preserve">
+    <value>Communication bus fault</value>
+  </data>
+  <data name="DoorsMaintenanceResourceOutput2fault" xml:space="preserve">
+    <value>Output 2 fault</value>
+  </data>
+  <data name="DrivingViewResourceBCULosing" xml:space="preserve">
+    <value>至少两个制动被隔离</value>
+  </data>
+  <data name="DrivingViewResourcePleaseBack" xml:space="preserve">
+    <value>请回库</value>
+  </data>
+  <data name="MaintenanceHVACResourceEmergencyVentilation" xml:space="preserve">
+    <value>紧急通风</value>
+  </data>
+  <data name="MaintenanceHVACResourceMaintenance" xml:space="preserve">
+    <value>维护</value>
+  </data>
+  <data name="MaintenanceHVACResourceOff" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="MaintenanceHVACResourceReduce" xml:space="preserve">
+    <value>降级</value>
+  </data>
+  <data name="MaintenanceHVACResourceVentilation" xml:space="preserve">
+    <value>通风</value>
+  </data>
+  <data name="MaintenanceHVACResourceVACCentralControl" xml:space="preserve">
+    <value>中央控制</value>
+  </data>
+  <data name="MaintenanceHVACResourceVACFullCooling" xml:space="preserve">
+    <value>全冷却</value>
+  </data>
+  <data name="MaintenanceHVACResourceVACHalfCooling" xml:space="preserve">
+    <value>半冷却</value>
+  </data>
+  <data name="MaintenanceHVACResourceVACMaintenance" xml:space="preserve">
+    <value>维护状态</value>
+  </data>
+  <data name="MaintenanceHVACResourceVACOff" xml:space="preserve">
+    <value>关闭状态</value>
+  </data>
+  <data name="MaintenanceHVACResourceVACVentilation" xml:space="preserve">
+    <value>通风状态</value>
+  </data>
+  <data name="DrivingViewResourceRIOM" xml:space="preserve">
+    <value>RIOM 故障</value>
+  </data>
+  <data name="MaintenanceHVACResourceCompressor1contactor" xml:space="preserve">
+    <value>压缩机1接触器</value>
+  </data>
+  <data name="MaintenanceResourceMaintenanceBaseInformation" xml:space="preserve">
+    <value>维护:基本信息</value>
+  </data>
+  <data name="MaintenanceResourceMaintenanceBrake" xml:space="preserve">
+    <value>维护：制动</value>
+  </data>
+  <data name="MaintenanceTractionResourceMVBCorrespond" xml:space="preserve">
+    <value>MVB通信</value>
+  </data>
+  <data name="MaintenanceAuxiliaryResourceMaintenanceAirCompressor" xml:space="preserve">
+    <value>维护：空气压缩机</value>
+  </data>
+  <data name="MaintenanceResourceMaintenanceTraction" xml:space="preserve">
+    <value>维护:牵引</value>
+  </data>
+  <data name="MaintenanceResourceMaintenanceHVAC" xml:space="preserve">
+    <value>维护：HVAC</value>
+  </data>
+  <data name="DrivingViewResourceATO" xml:space="preserve">
+    <value>ATO</value>
+  </data>
+  <data name="DrivingViewResourceBreaking" xml:space="preserve">
+    <value>断开</value>
+  </data>
+  <data name="DrivingViewResourceLimittingBack" xml:space="preserve">
+    <value>限速向后</value>
+  </data>
+  <data name="DrivingViewResourceLimittingForward" xml:space="preserve">
+    <value>限速向前</value>
+  </data>
+  <data name="DrivingViewResourceWashing" xml:space="preserve">
+    <value>洗车</value>
+  </data>
+  <data name="MaintenanceBrakeResourceBreakingCommandTrainLines" xml:space="preserve">
+    <value>制动指令线（低电平有效）</value>
+  </data>
+  <data name="MaintenanceBrakeResourceDraggingAccreditTrainLines" xml:space="preserve">
+    <value>牵引授权列车线</value>
+  </data>
+  <data name="MaintenanceBrakeResourceDraggingTrainLines" xml:space="preserve">
+    <value>牵引列车线</value>
+  </data>
+  <data name="MaintenanceBrakeResourceReserveTrainLines" xml:space="preserve">
+    <value>备用模式列车线</value>
+  </data>
+  <data name="MaintenanceBrakeResourceUrgentBreakingTrainLines" xml:space="preserve">
+    <value>快速制动列车线（低电平有效）</value>
+  </data>
+  <data name="MaintenanceAuxiliaryResourceMaintenanceSoftWareVersion" xml:space="preserve">
+    <value>维护：软件版本</value>
+  </data>
+  <data name="MaintenanceResourceMaintenanceBlackBox" xml:space="preserve">
+    <value>维护：黑匣子</value>
+  </data>
+  <data name="MaintenanceResourceMaintenanceBBO1" xml:space="preserve">
+    <value>BBO1</value>
+  </data>
+  <data name="MaintenanceResourceMaintenanceBBO2" xml:space="preserve">
+    <value>BBO2</value>
+  </data>
+  <data name="MaintenanceBlackBoxResourceData" xml:space="preserve">
+    <value>数据</value>
+  </data>
+  <data name="MaintenanceBrakeResourceFalutEvent" xml:space="preserve">
+    <value>故障信息</value>
+  </data>
+  <data name="MaintenanceBlackBoxResourceTrainDistance" xml:space="preserve">
+    <value>车辆总里程</value>
+  </data>
+  <data name="MaintenanceBlackBoxResourceTrainSpeed" xml:space="preserve">
+    <value>列车速度</value>
+  </data>
+  <data name="MaintenanceBlackBoxResourceWheelDiameter" xml:space="preserve">
+    <value>车轮直径</value>
+  </data>
+  <data name="MaintenanceResourceControllerFault" xml:space="preserve">
+    <value>控制单元故障</value>
+  </data>
+  <data name="MaintenanceResourceHostAndGuest" xml:space="preserve">
+    <value>主/从</value>
+  </data>
+  <data name="MaintenanceResourcePassengerInformation" xml:space="preserve">
+    <value>维护:乘客信息系统</value>
+  </data>
+  <data name="MaintenancePassengerInformationPIS1" xml:space="preserve">
+    <value>PIS1</value>
+  </data>
+  <data name="MaintenancePassengerInformationPIS2" xml:space="preserve">
+    <value>PIS2</value>
+  </data>
+  <data name="MaintenancePassengerInformationPISState" xml:space="preserve">
+    <value>PIS状态</value>
+  </data>
+  <data name="MaintenanceResourceMaintenanceDoors" xml:space="preserve">
+    <value>维护：车门</value>
+  </data>
+  <data name="MaintenanceResoursRIOMSelect" xml:space="preserve">
+    <value>RIOM选择</value>
+  </data>
+  <data name="MaintenanceResourceMaintenanceMVBNet" xml:space="preserve">
+    <value>维护：MVB网络</value>
+  </data>
+  <data name="MPUEventList" xml:space="preserve">
+    <value>MPU事件清单</value>
+  </data>
+  <data name="MPUEventResourceEvents" xml:space="preserve">
+    <value>事件</value>
+  </data>
+  <data name="MPUEventResourcePage" xml:space="preserve">
+    <value>页</value>
+  </data>
+  <data name="MPUEventResourceReLoad" xml:space="preserve">
+    <value>重新加载</value>
+  </data>
+  <data name="MPUEventDateAndTime" xml:space="preserve">
+    <value>日期和时间</value>
+  </data>
+  <data name="MPUEventDescription" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="MPUEventLocation" xml:space="preserve">
+    <value>位置</value>
+  </data>
+  <data name="MPUEventStackName" xml:space="preserve">
+    <value>标识</value>
+  </data>
+  <data name="AccelerationHasActivation" xml:space="preserve">
+    <value>高加速已激活</value>
+  </data>
+  <data name="CommonUserNo" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="CommonUserYes" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="MaintenanceBattery" xml:space="preserve">
+    <value>维护：蓄电池</value>
+  </data>
+  <data name="MaintenceAccelerateTest" xml:space="preserve">
+    <value>加速测试</value>
+  </data>
+  <data name="MaintenceAverageAcceleration" xml:space="preserve">
+    <value>平均加速度</value>
+  </data>
+  <data name="MaintenceAverageReduce" xml:space="preserve">
+    <value>平均减速度</value>
+  </data>
+  <data name="MaintenceBrakeDistance" xml:space="preserve">
+    <value>制动距离</value>
+  </data>
+  <data name="MaintenceDragAndBrake" xml:space="preserve">
+    <value>维护：牵引及制动性能</value>
+  </data>
+  <data name="MaintenceReduceTest" xml:space="preserve">
+    <value>减速测试</value>
+  </data>
+  <data name="MaintenceTargetSpeed" xml:space="preserve">
+    <value>目标速度</value>
+  </data>
+</root>

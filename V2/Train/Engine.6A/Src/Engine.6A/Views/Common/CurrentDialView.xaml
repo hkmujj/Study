@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="Engine._6A.Views.Common.CurrentDialView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:common="clr-namespace:Engine._6A.Views.Common"
+             xmlns:viewModel="clr-namespace:Engine._6A.Interface.ViewModel" d:DataContext="{d:DesignInstance viewModel:IEngine6AViewModel}"
+             mc:Ignorable="d" 
+              d:DesignHeight="440"
+             d:DesignWidth="640">
+    <Grid DataContext="{Binding Dial}">
+        <Rectangle Margin="5"
+                   Fill="Black"
+                   Stroke="White"
+                   StrokeThickness="1" >
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="PreviewMouseDown">
+                    <i:InvokeCommandAction Command="{Binding ChangedView}" CommandParameter="MainView" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Rectangle>
+        <common:DialView x:Name="Dial"
+                        Width="260"
+                        Height="260"
+                        Margin="0,40,0,100">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="PreviewMouseDown">
+                    <i:InvokeCommandAction Command="{Binding ChangedView}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </common:DialView>
+        <TextBlock Margin="0,0,0,80"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Bottom"
+                   FontSize="25"
+                   Foreground="White"
+                   Text="当前无警报">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="PreviewMouseDown">
+                    <i:InvokeCommandAction Command="{Binding ChangedView}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </TextBlock>
+
+    </Grid>
+</UserControl>

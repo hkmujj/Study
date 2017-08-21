@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="Subway.ShenZhenLine11.Views.Shell.DoMainShell"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:name="clr-namespace:Subway.ShenZhenLine11.Constance"
+             xmlns:region="http://www.codeplex.com/CompositeWPF"
+             d:DesignHeight="600"
+             d:DesignWidth="800"
+             Background="{StaticResource BackgroundBrush}"
+             mc:Ignorable="d">
+    <Grid>
+        <Viewbox>
+            <Grid>
+                <ContentControl Width="800"
+                                Height="600"
+                                region:RegionManager.RegionName="{x:Static name:RegionNames.MainRoot}" />
+                <ContentControl Margin="200" region:RegionManager.RegionName="{x:Static name:RegionNames.PasswordSetteing}" />
+            </Grid>
+        </Viewbox>
+
+    </Grid>
+</UserControl>

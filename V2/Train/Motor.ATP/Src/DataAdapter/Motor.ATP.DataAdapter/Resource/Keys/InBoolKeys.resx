@@ -1,0 +1,627 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Key_F1" xml:space="preserve">
+    <value>F1</value>
+  </data>
+  <data name="Key_F2" xml:space="preserve">
+    <value>F2</value>
+  </data>
+  <data name="Key_F3" xml:space="preserve">
+    <value>F3</value>
+  </data>
+  <data name="Key_F4" xml:space="preserve">
+    <value>F4</value>
+  </data>
+  <data name="Key_F5" xml:space="preserve">
+    <value>F5</value>
+  </data>
+  <data name="Key_F6" xml:space="preserve">
+    <value>F6</value>
+  </data>
+  <data name="Key_F7" xml:space="preserve">
+    <value>F7</value>
+  </data>
+  <data name="Key_F8" xml:space="preserve">
+    <value>F8</value>
+  </data>
+  <data name="Key_1" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Key_2" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Key_3" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="Key_4" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="Key_5" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="Key_6" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="Key_7" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Key_8" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="Key_9" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="Key_0" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="警惕" xml:space="preserve">
+    <value>警惕</value>
+  </data>
+  <data name="黑屏" xml:space="preserve">
+    <value>黑屏</value>
+  </data>
+  <data name="定位建立" xml:space="preserve">
+    <value>定位建立</value>
+  </data>
+  <data name="列车完整性" xml:space="preserve">
+    <value>列车完整性</value>
+  </data>
+  <data name="溜逸防护" xml:space="preserve">
+    <value>溜逸防护</value>
+  </data>
+  <data name="启动条件" xml:space="preserve">
+    <value>启动条件</value>
+  </data>
+  <data name="启动完成" xml:space="preserve">
+    <value>启动完成</value>
+  </data>
+  <data name="反馈_目视警惕确认" xml:space="preserve">
+    <value>反馈_目视警惕确认</value>
+  </data>
+  <data name="冒进提示" xml:space="preserve">
+    <value>冒进提示</value>
+  </data>
+  <data name="禁止调车_应答器数据包" xml:space="preserve">
+    <value>禁止调车（应答器数据包）</value>
+  </data>
+  <data name="驾驶室激活" xml:space="preserve">
+    <value>驾驶室激活</value>
+  </data>
+  <data name="ATP电源" xml:space="preserve">
+    <value>ATP电源</value>
+  </data>
+  <data name="ATP隔离" xml:space="preserve">
+    <value>ATP隔离</value>
+  </data>
+  <data name="公里标是否可见" xml:space="preserve">
+    <value>公里标是否可见</value>
+  </data>
+  <data name="屏启动完成" xml:space="preserve">
+    <value>屏启动完成</value>
+  </data>
+  <data name="绝对停车_应答器数据包" xml:space="preserve">
+    <value>绝对停车（应答器数据包）</value>
+  </data>
+  <data name="请求_允许缓解" xml:space="preserve">
+    <value>请求_允许缓解</value>
+  </data>
+  <data name="请求_警惕确认" xml:space="preserve">
+    <value>请求_警惕确认</value>
+  </data>
+  <data name="请求_冒进确认" xml:space="preserve">
+    <value>请求_冒进确认</value>
+  </data>
+  <data name="请求_确认越行" xml:space="preserve">
+    <value>请求_确认越行</value>
+  </data>
+  <data name="请求_引导确认" xml:space="preserve">
+    <value>请求_引导确认</value>
+  </data>
+  <data name="请求_进入C2等级确认" xml:space="preserve">
+    <value>请求_进入C2等级确认</value>
+  </data>
+  <data name="请求_进入C3等级确认" xml:space="preserve">
+    <value>请求_进入C3等级确认</value>
+  </data>
+  <data name="请求_常用制动故障确认" xml:space="preserve">
+    <value>请求_常用制动故障确认</value>
+  </data>
+  <data name="请求_已选择越行确认越行" xml:space="preserve">
+    <value>请求_已选择越行，确认越行</value>
+  </data>
+  <data name="请求_退行防护制动确认" xml:space="preserve">
+    <value>请求_退行防护制动确认</value>
+  </data>
+  <data name="请求_溜逸防护制动确认" xml:space="preserve">
+    <value>请求_溜逸防护制动确认</value>
+  </data>
+  <data name="请求_启动完成确认" xml:space="preserve">
+    <value>请求_启动完成确认</value>
+  </data>
+  <data name="请求_确认紧急制动缓解" xml:space="preserve">
+    <value>请求_确认紧急制动缓解</value>
+  </data>
+  <data name="请求_确认常用制动缓解" xml:space="preserve">
+    <value>请求_确认常用制动缓解</value>
+  </data>
+  <data name="请求_应答器信息丢失确认" xml:space="preserve">
+    <value>请求_应答器信息丢失确认</value>
+  </data>
+  <data name="请求_制动测试请求" xml:space="preserve">
+    <value>请求_制动测试请求</value>
+  </data>
+  <data name="故障1" xml:space="preserve">
+    <value>故障1</value>
+  </data>
+  <data name="故障2" xml:space="preserve">
+    <value>故障2</value>
+  </data>
+  <data name="故障3" xml:space="preserve">
+    <value>故障3</value>
+  </data>
+  <data name="故障4" xml:space="preserve">
+    <value>故障4</value>
+  </data>
+  <data name="故障5" xml:space="preserve">
+    <value>故障5</value>
+  </data>
+  <data name="故障6" xml:space="preserve">
+    <value>故障6</value>
+  </data>
+  <data name="故障7" xml:space="preserve">
+    <value>故障7</value>
+  </data>
+  <data name="故障8" xml:space="preserve">
+    <value>故障8</value>
+  </data>
+  <data name="故障9" xml:space="preserve">
+    <value>故障9</value>
+  </data>
+  <data name="故障10" xml:space="preserve">
+    <value>故障10</value>
+  </data>
+  <data name="故障11" xml:space="preserve">
+    <value>故障11</value>
+  </data>
+  <data name="故障12" xml:space="preserve">
+    <value>故障12</value>
+  </data>
+  <data name="故障13" xml:space="preserve">
+    <value>故障13</value>
+  </data>
+  <data name="故障14" xml:space="preserve">
+    <value>故障14</value>
+  </data>
+  <data name="故障15" xml:space="preserve">
+    <value>故障15</value>
+  </data>
+  <data name="故障16" xml:space="preserve">
+    <value>故障16</value>
+  </data>
+  <data name="故障17" xml:space="preserve">
+    <value>故障17</value>
+  </data>
+  <data name="故障18" xml:space="preserve">
+    <value>故障18</value>
+  </data>
+  <data name="故障19" xml:space="preserve">
+    <value>故障19</value>
+  </data>
+  <data name="故障20" xml:space="preserve">
+    <value>故障20</value>
+  </data>
+  <data name="故障21" xml:space="preserve">
+    <value>故障21</value>
+  </data>
+  <data name="故障22" xml:space="preserve">
+    <value>故障22</value>
+  </data>
+  <data name="故障23" xml:space="preserve">
+    <value>故障23</value>
+  </data>
+  <data name="故障24" xml:space="preserve">
+    <value>故障24</value>
+  </data>
+  <data name="故障25" xml:space="preserve">
+    <value>故障25</value>
+  </data>
+  <data name="故障26" xml:space="preserve">
+    <value>故障26</value>
+  </data>
+  <data name="故障27" xml:space="preserve">
+    <value>故障27</value>
+  </data>
+  <data name="故障28" xml:space="preserve">
+    <value>故障28</value>
+  </data>
+  <data name="故障29" xml:space="preserve">
+    <value>故障29</value>
+  </data>
+  <data name="故障30" xml:space="preserve">
+    <value>故障30</value>
+  </data>
+  <data name="故障31" xml:space="preserve">
+    <value>故障31</value>
+  </data>
+  <data name="故障32" xml:space="preserve">
+    <value>故障32</value>
+  </data>
+  <data name="故障33" xml:space="preserve">
+    <value>故障33</value>
+  </data>
+  <data name="故障34" xml:space="preserve">
+    <value>故障34</value>
+  </data>
+  <data name="故障35" xml:space="preserve">
+    <value>故障35</value>
+  </data>
+  <data name="故障36" xml:space="preserve">
+    <value>故障36</value>
+  </data>
+  <data name="故障37" xml:space="preserve">
+    <value>故障37</value>
+  </data>
+  <data name="故障38" xml:space="preserve">
+    <value>故障38</value>
+  </data>
+  <data name="故障39" xml:space="preserve">
+    <value>故障39</value>
+  </data>
+  <data name="故障40" xml:space="preserve">
+    <value>故障40</value>
+  </data>
+  <data name="故障41" xml:space="preserve">
+    <value>故障41</value>
+  </data>
+  <data name="故障42" xml:space="preserve">
+    <value>故障42</value>
+  </data>
+  <data name="故障43" xml:space="preserve">
+    <value>故障43</value>
+  </data>
+  <data name="故障44" xml:space="preserve">
+    <value>故障44</value>
+  </data>
+  <data name="故障45" xml:space="preserve">
+    <value>故障45</value>
+  </data>
+  <data name="故障46" xml:space="preserve">
+    <value>故障46</value>
+  </data>
+  <data name="故障47" xml:space="preserve">
+    <value>故障47</value>
+  </data>
+  <data name="故障48" xml:space="preserve">
+    <value>故障48</value>
+  </data>
+  <data name="故障49" xml:space="preserve">
+    <value>故障49</value>
+  </data>
+  <data name="故障50" xml:space="preserve">
+    <value>故障50</value>
+  </data>
+  <data name="反馈_启动确认" xml:space="preserve">
+    <value>反馈_启动确认</value>
+  </data>
+  <data name="反馈_执行制动测试" xml:space="preserve">
+    <value>反馈_执行制动测试</value>
+  </data>
+  <data name="反馈_确认CTCS2" xml:space="preserve">
+    <value>反馈_确认CTCS-2</value>
+  </data>
+  <data name="反馈_确认CTCS3" xml:space="preserve">
+    <value>反馈_确认CTCS-3</value>
+  </data>
+  <data name="反馈_载频上行" xml:space="preserve">
+    <value>反馈_载频上行</value>
+  </data>
+  <data name="反馈_载频下行" xml:space="preserve">
+    <value>反馈_载频下行</value>
+  </data>
+  <data name="反馈_允许缓解" xml:space="preserve">
+    <value>反馈_允许缓解</value>
+  </data>
+  <data name="反馈_调车模式" xml:space="preserve">
+    <value>反馈_调车模式</value>
+  </data>
+  <data name="反馈_目视模式" xml:space="preserve">
+    <value>反馈_目视模式</value>
+  </data>
+  <data name="反馈_机信模式" xml:space="preserve">
+    <value>反馈_机信模式</value>
+  </data>
+  <data name="反馈_退出调车模式" xml:space="preserve">
+    <value>反馈_退出调车模式</value>
+  </data>
+  <data name="反馈_退出目视模式" xml:space="preserve">
+    <value>反馈_退出目视模式</value>
+  </data>
+  <data name="反馈_退出机信模式" xml:space="preserve">
+    <value>反馈_退出机信模式</value>
+  </data>
+  <data name="反馈_启动确认_没有消息提示与确认" xml:space="preserve">
+    <value>反馈_启动确认(没有消息提示与确认)</value>
+  </data>
+  <data name="反馈_警惕确认" xml:space="preserve">
+    <value>反馈_警惕确认</value>
+  </data>
+  <data name="反馈_电话号码发送确认" xml:space="preserve">
+    <value>反馈_电话号码发送确认</value>
+  </data>
+  <data name="反馈_重新进行制动测试" xml:space="preserve">
+    <value>反馈_重新进行制动测试？</value>
+  </data>
+  <data name="反馈_冒进确认" xml:space="preserve">
+    <value>反馈_冒进确认</value>
+  </data>
+  <data name="反馈_确认越行" xml:space="preserve">
+    <value>反馈_确认越行</value>
+  </data>
+  <data name="反馈_确认常用制动故障" xml:space="preserve">
+    <value>反馈_确认常用制动故障</value>
+  </data>
+  <data name="反馈_进入CTCS3级" xml:space="preserve">
+    <value>反馈_进入CTCS-3级</value>
+  </data>
+  <data name="反馈_进入CTCS2级" xml:space="preserve">
+    <value>反馈_进入CTCS-2级</value>
+  </data>
+  <data name="反馈_引导确认" xml:space="preserve">
+    <value>反馈_引导确认</value>
+  </data>
+  <data name="反馈_人工RBC连接请求" xml:space="preserve">
+    <value>反馈_人工RBC连接请求</value>
+  </data>
+  <data name="反馈_警惕按钮" xml:space="preserve">
+    <value>反馈_警惕按钮</value>
+  </data>
+  <data name="反馈_确认溜逸防护制动" xml:space="preserve">
+    <value>反馈_确认溜逸防护制动</value>
+  </data>
+  <data name="反馈_确认紧急制动缓解" xml:space="preserve">
+    <value>反馈_确认紧急制动缓解</value>
+  </data>
+  <data name="反馈_确认常用制动缓解" xml:space="preserve">
+    <value>反馈_确认常用制动缓解</value>
+  </data>
+  <data name="反馈_屏幕启动过程" xml:space="preserve">
+    <value>反馈_屏幕启动过程</value>
+  </data>
+  <data name="反馈_应答器丢失确认" xml:space="preserve">
+    <value>反馈_应答器丢失确认</value>
+  </data>
+  <data name="反馈_确认退行防护制动" xml:space="preserve">
+    <value>反馈_确认退行防护制动</value>
+  </data>
+  <data name="反馈_确认选择越行" xml:space="preserve">
+    <value>反馈_确认选择越行</value>
+  </data>
+  <data name="车载设备自检状态" xml:space="preserve">
+    <value>车载设备自检状态</value>
+  </data>
+  <data name="请求_进入目视模式" xml:space="preserve">
+    <value>请求_进入目视模式</value>
+  </data>
+  <data name="反馈_确认进入目视模式" xml:space="preserve">
+    <value>反馈_确认进入目视模式</value>
+  </data>
+  <data name="启动_列车数据已确认" xml:space="preserve">
+    <value>启动_列车数据已确认</value>
+  </data>
+  <data name="启动_列车数据已选择" xml:space="preserve">
+    <value>启动_列车数据已选择</value>
+  </data>
+  <data name="启动_司机号已确认" xml:space="preserve">
+    <value>启动_司机号已确认</value>
+  </data>
+  <data name="启动_等级已选择" xml:space="preserve">
+    <value>启动_等级已选择</value>
+  </data>
+  <data name="启动_车次号已确认" xml:space="preserve">
+    <value>启动_车次号已确认</value>
+  </data>
+  <data name="启动_载频已确认" xml:space="preserve">
+    <value>启动_载频已确认</value>
+  </data>
+  <data name="启动_载频已选择" xml:space="preserve">
+    <value>启动_载频已选择</value>
+  </data>
+  <data name="反馈_启动列车数据已确认" xml:space="preserve">
+    <value>反馈_启动列车数据已确认</value>
+  </data>
+  <data name="反馈_启动载频已确认" xml:space="preserve">
+    <value>反馈_启动载频已确认</value>
+  </data>
+  <data name="车载设备自动换系" xml:space="preserve">
+    <value>车载设备自动换系</value>
+  </data>
+  <data name="反馈_取消确认越行" xml:space="preserve">
+    <value>反馈_取消确认越行</value>
+  </data>
+  <data name="反馈_取消确认选择越行" xml:space="preserve">
+    <value>反馈_取消确认选择越行</value>
+  </data>
+  <data name="反馈_输入列车长度" xml:space="preserve">
+    <value>反馈_输入列车长度</value>
+  </data>
+  <data name="反馈_输入车次号" xml:space="preserve">
+    <value>反馈_输入车次号</value>
+  </data>
+  <data name="请求_输入列车长度" xml:space="preserve">
+    <value>请求_输入列车长度</value>
+  </data>
+  <data name="请求_输入车次号" xml:space="preserve">
+    <value>请求_输入车次号</value>
+  </data>
+  <data name="反馈_RBC呼叫失败" xml:space="preserve">
+    <value>反馈_RBC呼叫失败</value>
+  </data>
+  <data name="请求_RBC呼叫失败" xml:space="preserve">
+    <value>请求_RBC呼叫失败</value>
+  </data>
+  <data name="反馈_制动测试失败" xml:space="preserve">
+    <value>反馈_制动测试失败</value>
+  </data>
+  <data name="请求_制动测试失败" xml:space="preserve">
+    <value>请求_制动测试失败</value>
+  </data>
+  <data name="反馈_请缓解列车制动" xml:space="preserve">
+    <value>反馈_请缓解列车制动</value>
+  </data>
+  <data name="请求_请缓解列车制动" xml:space="preserve">
+    <value>请求_请缓解列车制动</value>
+  </data>
+  <data name="请求_引导警惕确认" xml:space="preserve">
+    <value>请求_引导警惕确认</value>
+  </data>
+  <data name="请求_目视警惕确认" xml:space="preserve">
+    <value>请求_目视警惕确认</value>
+  </data>
+  <data name="反馈_引导警惕确认" xml:space="preserve">
+    <value>反馈_引导警惕确认</value>
+  </data>
+  <data name="越行提示" xml:space="preserve">
+    <value>越行提示</value>
+  </data>
+  <data name="反馈_确认CTCS0" xml:space="preserve">
+    <value>反馈_确认CTCS-0</value>
+  </data>
+  <data name="反馈_执行最大常用制动测试" xml:space="preserve">
+    <value>反馈_执行最大常用制动测试</value>
+  </data>
+  <data name="反馈_执行紧急制动测试" xml:space="preserve">
+    <value>反馈_执行紧急制动测试</value>
+  </data>
+  <data name="反馈_进入C0等级确认" xml:space="preserve">
+    <value>反馈_进入C0等级确认</value>
+  </data>
+  <data name="请求_进入C0等级确认" xml:space="preserve">
+    <value>请求_进入C0等级确认</value>
+  </data>
+  <data name="目视使能" xml:space="preserve">
+    <value>目视使能</value>
+  </data>
+  <data name="反馈_快捷键" xml:space="preserve">
+    <value>反馈_快捷键</value>
+  </data>
+  <data name="辅屏控制" xml:space="preserve">
+    <value>辅屏控制</value>
+  </data>
+</root>

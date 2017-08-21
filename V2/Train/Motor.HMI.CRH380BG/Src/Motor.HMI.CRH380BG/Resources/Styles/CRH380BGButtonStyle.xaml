@@ -1,0 +1,204 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:common="clr-namespace:Motor.HMI.CRH380BG.View.Common">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Base/CRH380BGBaseResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+
+    <Style x:Key="Motor.HMI.CRH380BG.HardwareBtnStyle" TargetType="Button">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="{StaticResource Motor.HMI.CRH380BG.HarwareButtonGrayBrush}" />
+            <Setter Property="BorderBrush" Value="{StaticResource Motor.HMI.CRH380BG.HarwareButtonGrayBrush}" />
+            <Setter Property="Background" Value="{StaticResource Motor.HMI.CRH380BG.ShellBackgroundBrush}" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="Margin" Value="5,0" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="50"
+                                SnapsToDevicePixels="true">
+                            <ContentPresenter Margin="{TemplateBinding Padding}"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Focusable="False"
+                                              RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="border" Property="Background" Value="{StaticResource Motor.HMI.CRH380BG.HarwareButtonPressedBackground}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Motor.HMI.CRH380BG.HardwareBtnFaultStyle" TargetType="Button">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="{StaticResource Motor.HMI.CRH380BG.HarwareButtonGrayBrush}" />
+            <Setter Property="BorderBrush" Value="{StaticResource Motor.HMI.CRH380BG.HarwareButtonGrayBrush}" />
+            <Setter Property="Background" Value="{StaticResource Motor.HMI.CRH380BG.ShellBackgroundBrush}" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="30"
+                                SnapsToDevicePixels="true">
+                            <ContentPresenter Margin="{TemplateBinding Padding}"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Focusable="False"
+                                              RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="border" Property="Background" Value="{StaticResource Motor.HMI.CRH380BG.HarwareButtonPressedBackground}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Motor.HMI.CRH380BG.HardwareBtnUpStyle" TargetType="Button">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="{StaticResource Motor.HMI.CRH380BG.HarwareButtonWhiteBrush}" />
+            <Setter Property="BorderBrush" Value="{StaticResource Motor.HMI.CRH380BG.HarwareButtonGrayBrush}" />
+            <Setter Property="Background" Value="{StaticResource Motor.HMI.CRH380BG.ShellBackgroundBrush}" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="Margin" Value="8,0" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="50"
+                                SnapsToDevicePixels="true">
+                            <ContentPresenter Margin="{TemplateBinding Padding}"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Focusable="False"
+                                              RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="border" Property="Background" Value="{StaticResource Motor.HMI.CRH380BG.HarwareButtonPressedBackground}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Motor.HMI.CRH380BG.HardwareBtnRightStyle" TargetType="Button">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="{StaticResource Motor.HMI.CRH380BG.HarwareButtonGrayBrush}" />
+            <Setter Property="BorderBrush" Value="{StaticResource Motor.HMI.CRH380BG.HarwareButtonGrayBrush}" />
+            <Setter Property="Background" Value="{StaticResource Motor.HMI.CRH380BG.ShellBackgroundBrush}" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="Margin" Value="7,4" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="50"
+                                SnapsToDevicePixels="true">
+                            <ContentPresenter Margin="{TemplateBinding Padding}"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Focusable="False"
+                                              RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="border" Property="Background" Value="{StaticResource Motor.HMI.CRH380BG.HarwareButtonPressedBackground}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="Motor.HMI.CRH380BG.SoftwareBtnStyle" TargetType="common:SoftwareButton">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="{StaticResource Motor.HMI.CRH380BG.HarwareButtonWhiteBrush}" />
+            <Setter Property="BorderBrush" Value="{StaticResource Motor.HMI.CRH380BG.HarwareButtonWhiteBrush}" />
+            <Setter Property="Background" Value="{StaticResource Motor.HMI.CRH380BG.ContentBackgroundBrush}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Padding" Value="3" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="common:SoftwareButton">
+                        <Border x:Name="Part_Border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                SnapsToDevicePixels="true">
+                            <Border x:Name="Part_InnerBorder" SnapsToDevicePixels="True">
+                                <TextBlock x:Name="Part_Text"
+                                           Margin="{TemplateBinding Padding}"
+                                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                           Focusable="False"
+                                           FontWeight="Light"
+                                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                           Text="{TemplateBinding Content}"
+                                           TextAlignment="Center"
+                                           TextWrapping="Wrap" />
+                            </Border>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="Part_Border" Property="Background" Value="{StaticResource Motor.HMI.CRH380BG.ForegroundWhiteBrush}" />
+                                <Setter TargetName="Part_Text" Property="Foreground" Value="{StaticResource Motor.HMI.CRH380BG.ContentBackgroundBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="Part_Border" Property="Background" Value="{StaticResource Motor.HMI.CRH380BG.ForegroundWhiteBrush}" />
+                                <Setter Property="BorderBrush" Value="{StaticResource Motor.HMI.CRH380BG.ForegroundWhiteBrush}" />
+                                <Setter Property="BorderThickness" Value="2" />
+                                <Setter TargetName="Part_InnerBorder" Property="BorderBrush" Value="{StaticResource Motor.HMI.CRH380BG.ContentBackgroundBrush}" />
+                                <Setter TargetName="Part_InnerBorder" Property="BorderThickness" Value="2,2,1,1" />
+                                <Setter TargetName="Part_Text" Property="Foreground" Value="{StaticResource Motor.HMI.CRH380BG.ContentBackgroundBrush}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style.Setters>
+    </Style>
+
+</ResourceDictionary>

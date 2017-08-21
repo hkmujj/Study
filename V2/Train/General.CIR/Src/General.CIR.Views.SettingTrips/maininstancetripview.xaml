@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="General.CIR.Views.SettingTrips.MainInstanceTripView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ctb="clr-namespace:MMI.Facility.WPFInfrastructure.View;assembly=MMI.Facility.WPFInfrastructure">
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition />
+      <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+    <TextBlock Text="请输入维护密码:" TextBlock.FontSize="12" HorizontalAlignment="Right" VerticalAlignment="Center" TextBlock.Foreground="#FF00FFFF" />
+    <ctb:CaretTextBox Margin="0,2" Grid.Column="1" AlwaysShowCaret="True" CaretLocation="Right" PasswordMaskChar="*" Foreground="#FF00FFFF" Style="{StaticResource PasswordSettingStyle}" TextVerticalAlignment="Center" CaretTextModel="{Binding SettingViewModel.MaininstanceText}" />
+  </Grid>
+</UserControl>

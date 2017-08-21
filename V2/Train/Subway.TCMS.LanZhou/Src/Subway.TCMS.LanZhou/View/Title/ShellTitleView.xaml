@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="Subway.TCMS.LanZhou.View.Title.ShellTitleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:Subway.TCMS.LanZhou.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+             d:DesignHeight="27"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <UserControl.Background>
+        <!--<ImageBrush ImageSource="{StaticResource  Subway.TCMS.LanZhou.ImgTemporaryTitle}" Opacity="0.4" />-->
+        <LinearGradientBrush StartPoint="0,1" EndPoint="0,0">
+            <GradientStop Offset="0.95" Color="LightSteelBlue" />
+            <GradientStop Offset="0.3" Color="Black" />
+        </LinearGradientBrush>
+    </UserControl.Background>
+    <Border BorderBrush="{StaticResource Subway.TCMS.LanZhou.Brush.ButtonBackground}" BorderThickness="2">
+        <Grid Margin="3,0,0,4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60*" />
+                <ColumnDefinition Width="58*" />
+                <ColumnDefinition Width="529*" />
+                <ColumnDefinition Width="150*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="20"
+                       Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                       Text="{StaticResource Subway.TCMS.LanZhou.String.Group}" />
+            <TextBlock Grid.Column="1"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="18"
+                       Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.FontForeground}"
+                       RenderTransformOrigin="0.35,0.455"
+                       Text="{Binding Path=TrainViewModel.Model.CurrentShowingGroupId}" />
+
+            <TextBlock Grid.Column="2"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="20"
+                       Foreground="{StaticResource Subway.TCMS.LanZhou.Brush.ForegroundWhite}"
+                       Text="{Binding Path=Model.CurrentContentViewType,
+                                      Converter={StaticResource Subway.TCMS.LanZhou.Converter.ContentViewTypeToShellTitleTextConverter}}" />
+        </Grid>
+    </Border>
+</UserControl>

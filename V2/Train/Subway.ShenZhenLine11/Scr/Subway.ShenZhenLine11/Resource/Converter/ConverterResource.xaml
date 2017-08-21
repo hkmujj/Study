@@ -1,0 +1,245 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converter="clr-namespace:Subway.ShenZhenLine11.Converter"
+                    xmlns:converter1="clr-namespace:MMI.Facility.WPFInfrastructure.Converter;assembly=MMI.Facility.WPFInfrastructure"
+                    xmlns:enum="clr-namespace:Subway.ShenZhenLine11.Enum"
+                    xmlns:info="clr-namespace:Subway.ShenZhenLine11.Info"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Images/ImageResource.xaml" />
+        <ResourceDictionary Source="../Brush/BrushResource.xaml"></ResourceDictionary>
+    </ResourceDictionary.MergedDictionaries>
+
+    <converter:BtnConverter x:Key="BtnConverter"></converter:BtnConverter>
+
+    <converter:DoubleToString x:Key="DoubleToStringZero"
+                              Digit="F0"
+                              Symbol="" />
+    <converter:IntToStringConverter x:Key="IntToStringConverter" />
+    <converter:DoubleToString x:Key="DoubleToStringOne"
+                              Digit="F1"
+                              Symbol="" />
+    <converter:DoubleToString x:Key="DoubleToStringTwo"
+                              Digit="F2"
+                              Symbol="" />
+    <converter:BoolToString x:Key="BoolToString" />
+    <converter:NullStringToVisibility x:Key="NullStringToVisibility" />
+    <converter:ContentToString x:Key="ContentToString" />
+    <converter:EnumConverterToString x:Key="EnumConverterToString" />
+    <converter:TitleTimeConverter x:Key="TitleTimeConverter" />
+    <converter:BesizeConverter x:Key="BesizeConverter2" Besize="2" />
+    <converter:BesizeConverter x:Key="BesizeConverter1" Besize="1" />
+    <converter:BesizeConverter x:Key="BesizeConverter1.5" Besize="1.5" />
+    <converter:BesizeConverter x:Key="BesizeConverter5" Besize="5" />
+    <converter:BesizeConverter x:Key="BesizeConverter6" Besize="6" />
+    <converter:BesizeConverter x:Key="BesizeConverter3" Besize="3" />
+    <converter:BesizeConverter x:Key="BesizeConverter4" Besize="4" />
+    <converter:BesizeConverter x:Key="BesizeConverter8" Besize="8" />
+    <converter:BesizeConverter x:Key="BesizeConverter10" Besize="10" />
+    <converter:BesizeConverter x:Key="BesizeConverte16"
+                               Besize="16"
+                               Offset="2" />
+    <system:Boolean x:Key="False">False</system:Boolean>
+    <system:Boolean x:Key="True">True</system:Boolean>
+
+    <converter1:SelectObjectContentConverter x:Key="ActiveCarConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{StaticResource False}" Content="{StaticResource TitleBackBrush}"></converter1:ObjectContentPair>
+            <converter1:ObjectContentPair Key="{StaticResource True}" Content="{StaticResource GreenBrush}"></converter1:ObjectContentPair>
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="EveltLevelToIamge">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static info:EventLevel.Noaml}" Content="{x:Null}"></converter1:ObjectContentPair>
+            <converter1:ObjectContentPair Key="{x:Static info:EventLevel.Light}" Content="{StaticResource 中等故障}"></converter1:ObjectContentPair>
+            <converter1:ObjectContentPair Key="{x:Static info:EventLevel.Medium}" Content="{StaticResource 中等故障}"></converter1:ObjectContentPair>
+            <converter1:ObjectContentPair Key="{x:Static info:EventLevel.Serious}" Content="{StaticResource 严重故障}"></converter1:ObjectContentPair>
+            <converter1:ObjectContentPair Key="{x:Static info:EventLevel.Temporary}" Content="{x:Null}"></converter1:ObjectContentPair>
+
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter:EnumImageConverter x:Key="AssistPowerACConverter">
+        <converter:EnumImageConverter.TupleImages>
+            <converter:ImageTuple Key="{x:Static enum:AssistPowerAC.Normal}" ImageSource="{x:Null}" />
+            <converter:ImageTuple Key="{x:Static enum:AssistPowerAC.Fault}" ImageSource="{StaticResource AC辅助电源故障}" />
+            <converter:ImageTuple Key="{x:Static enum:AssistPowerAC.Warn}" ImageSource="{StaticResource AC辅助电源警告}" />
+            <converter:ImageTuple Key="{x:Static enum:AssistPowerAC.Run}" ImageSource="{StaticResource AC辅助电源运行}" />
+            <converter:ImageTuple Key="{x:Static enum:AssistPowerAC.Off}" ImageSource="{StaticResource AC辅助电源断开}" />
+        </converter:EnumImageConverter.TupleImages>
+    </converter:EnumImageConverter>
+    <converter:EnumImageConverter x:Key="AssistPowerDCConverter">
+        <converter:EnumImageConverter.TupleImages>
+            <converter:ImageTuple Key="{x:Static enum:AssistPowerDC.Normal}" ImageSource="{x:Null}" />
+            <converter:ImageTuple Key="{x:Static enum:AssistPowerDC.Fault}" ImageSource="{StaticResource DC辅助电源故障}" />
+            <converter:ImageTuple Key="{x:Static enum:AssistPowerDC.Warn}" ImageSource="{StaticResource DC辅助电源警告}" />
+            <converter:ImageTuple Key="{x:Static enum:AssistPowerDC.Run}" ImageSource="{StaticResource DC辅助电源运行}" />
+            <converter:ImageTuple Key="{x:Static enum:AssistPowerDC.Off}" ImageSource="{StaticResource DC辅助电源断开}" />
+        </converter:EnumImageConverter.TupleImages>
+    </converter:EnumImageConverter>
+    <converter:EnumImageConverter x:Key="AirConfitionConverter">
+        <converter:EnumImageConverter.TupleImages>
+            <converter:ImageTuple Key="{x:Static enum:AirCondition.Normal}" ImageSource="{x:Null}" />
+            <converter:ImageTuple Key="{x:Static enum:AirCondition.Falut}" ImageSource="{StaticResource 空调故障}" />
+            <converter:ImageTuple Key="{x:Static enum:AirCondition.Warn}" ImageSource="{StaticResource 空调警告}" />
+            <converter:ImageTuple Key="{x:Static enum:AirCondition.EmergencyAir}" ImageSource="{StaticResource 空调紧急通风}" />
+            <converter:ImageTuple Key="{x:Static enum:AirCondition.Limit}" ImageSource="{StaticResource 空调通风}" />
+            <converter:ImageTuple Key="{x:Static enum:AirCondition.Air}" ImageSource="{StaticResource 空调通风}" />
+            <converter:ImageTuple Key="{x:Static enum:AirCondition.Run}" ImageSource="{StaticResource 空调运行}" />
+            <converter:ImageTuple Key="{x:Static enum:AirCondition.Off}" ImageSource="{StaticResource 空调断开}" />
+        </converter:EnumImageConverter.TupleImages>
+    </converter:EnumImageConverter>
+    <converter:EnumImageConverter x:Key="DoorImageConverter">
+        <converter:EnumImageConverter.TupleImages>
+            <converter:ImageTuple Key="{x:Static enum:Door.Normal}" ImageSource="{x:Null}" />
+            <converter:ImageTuple Key="{x:Static enum:Door.Emergency}" ImageSource="{StaticResource 门紧急}" />
+            <converter:ImageTuple Key="{x:Static enum:Door.Cut}" ImageSource="{StaticResource 门切除}" />
+            <converter:ImageTuple Key="{x:Static enum:Door.SeverityFault}" ImageSource="{StaticResource 门严重故障}" />
+            <converter:ImageTuple Key="{x:Static enum:Door.MediumFaulr}" ImageSource="{StaticResource 门中等故障}" />
+            <converter:ImageTuple Key="{x:Static enum:Door.Check}" ImageSource="{StaticResource 门检测到障碍物}" />
+            <converter:ImageTuple Key="{x:Static enum:Door.Open}" ImageSource="{StaticResource 门开}" />
+            <converter:ImageTuple Key="{x:Static enum:Door.Close}" ImageSource="{StaticResource 门关}" />
+        </converter:EnumImageConverter.TupleImages>
+    </converter:EnumImageConverter>
+    <converter:EnumImageConverter x:Key="EmergencyTalkConverter">
+        <converter:EnumImageConverter.TupleImages>
+            <converter:ImageTuple Key="{x:Static enum:EmergncyTalk.Normal}" ImageSource="{x:Null}" />
+            <converter:ImageTuple Key="{x:Static enum:EmergncyTalk.Falut}" ImageSource="{StaticResource 乘客紧急通讯单元红}" />
+            <converter:ImageTuple Key="{x:Static enum:EmergncyTalk.FareActive}" ImageSource="{StaticResource 乘客紧急通讯单元橘黄}" />
+            <converter:ImageTuple Key="{x:Static enum:EmergncyTalk.DriverActive}" ImageSource="{StaticResource 乘客紧急通讯单元绿}" />
+            <converter:ImageTuple Key="{x:Static enum:EmergncyTalk.UnActive}" ImageSource="{StaticResource 乘客紧急通讯单元灰}" />
+        </converter:EnumImageConverter.TupleImages>
+    </converter:EnumImageConverter>
+    <converter:EnumImageConverter x:Key="BrakeImageConverter">
+        <converter:EnumImageConverter.TupleImages>
+            <converter:ImageTuple Key="{x:Static enum:Brake.Normal}" ImageSource="{x:Null}" />
+            <converter:ImageTuple Key="{x:Static enum:Brake.Park}" ImageSource="{StaticResource 制动停放}" />
+            <converter:ImageTuple Key="{x:Static enum:Brake.Cut}" ImageSource="{StaticResource 制动切除}" />
+            <converter:ImageTuple Key="{x:Static enum:Brake.SeverityFault}" ImageSource="{StaticResource 制动严重故障}" />
+            <converter:ImageTuple Key="{x:Static enum:Brake.MediumFaulr}" ImageSource="{StaticResource 制动中等故障}" />
+            <converter:ImageTuple Key="{x:Static enum:Brake.ParkRemit}" ImageSource="{StaticResource 制动中等故障}" />
+            <converter:ImageTuple Key="{x:Static enum:Brake.BrakeInfliction}" ImageSource="{StaticResource 制动施加}" />
+            <converter:ImageTuple Key="{x:Static enum:Brake.BarkeRemit}" ImageSource="{StaticResource 制动释放}" />
+        </converter:EnumImageConverter.TupleImages>
+    </converter:EnumImageConverter>
+    <converter:EnumImageConverter x:Key="TractionImageConverter">
+        <converter:EnumImageConverter.TupleImages>
+            <converter:ImageTuple Key="{x:Static enum:Traction.Normal}" ImageSource="{x:Null}" />
+            <converter:ImageTuple Key="{x:Static enum:Traction.Fault}" ImageSource="{StaticResource 牵引故障}" />
+            <converter:ImageTuple Key="{x:Static enum:Traction.Warn}" ImageSource="{StaticResource 牵引警告}" />
+            <converter:ImageTuple Key="{x:Static enum:Traction.Active}" ImageSource="{StaticResource 牵引激活}" />
+            <converter:ImageTuple Key="{x:Static enum:Traction.Off}" ImageSource="{StaticResource 牵引断开}" />
+        </converter:EnumImageConverter.TupleImages>
+    </converter:EnumImageConverter>
+    <converter:EnumImageConverter x:Key="SmokeImageConverter">
+        <converter:EnumImageConverter.TupleImages>
+            <converter:ImageTuple Key="{x:Static enum:Smoke.Normal}" ImageSource="{x:Null}" />
+            <converter:ImageTuple Key="{x:Static enum:Smoke.Smoke}" ImageSource="{StaticResource 探测到烟火}" />
+            <converter:ImageTuple Key="{x:Static enum:Smoke.Fault}" ImageSource="{StaticResource 探头故障}" />
+            <converter:ImageTuple Key="{x:Static enum:Smoke.NoSmoke}" ImageSource="{StaticResource 未检测到烟火}" />
+        </converter:EnumImageConverter.TupleImages>
+    </converter:EnumImageConverter>
+    <converter:EnumImageConverter x:Key="AirPumpImageConverter">
+        <converter:EnumImageConverter.TupleImages>
+            <converter:ImageTuple Key="{x:Static enum:AirPump.Normal}" ImageSource="{x:Null}" />
+            <converter:ImageTuple Key="{x:Static enum:AirPump.Fault}" ImageSource="{StaticResource 空压机故障}" />
+            <converter:ImageTuple Key="{x:Static enum:AirPump.Warn}" ImageSource="{StaticResource 空压机警告}" />
+            <converter:ImageTuple Key="{x:Static enum:AirPump.Run}" ImageSource="{StaticResource 空压机运行}" />
+            <converter:ImageTuple Key="{x:Static enum:AirPump.Off}" ImageSource="{StaticResource 空压机断开}" />
+        </converter:EnumImageConverter.TupleImages>
+    </converter:EnumImageConverter>
+
+    <converter:EnumImageConverter x:Key="HightSpeedConverter">
+        <converter:EnumImageConverter.TupleImages>
+            <converter:ImageTuple Key="{x:Static enum:HighSpeed.Normal}" ImageSource="{x:Null}" />
+            <converter:ImageTuple Key="{x:Static enum:HighSpeed.Close}" ImageSource="{StaticResource HSCB合上}" />
+            <converter:ImageTuple Key="{x:Static enum:HighSpeed.Open}" ImageSource="{StaticResource HSCB断开}" />
+        </converter:EnumImageConverter.TupleImages>
+    </converter:EnumImageConverter>
+    <converter:EnumImageConverter x:Key="PantographImageConverter">
+        <converter:EnumImageConverter.TupleImages>
+            <converter:ImageTuple Key="{x:Static enum:Pantograph.Normal}" ImageSource="{x:Null}" />
+            <converter:ImageTuple Key="{x:Static enum:Pantograph.ConnectPower}" ImageSource="{StaticResource 车间电源供电}" />
+            <converter:ImageTuple Key="{x:Static enum:Pantograph.ConnectUnPower}" ImageSource="{StaticResource 车间电源未供电}" />
+            <converter:ImageTuple Key="{x:Static enum:Pantograph.PantographNetPressure}" ImageSource="{StaticResource 升弓无网压}" />
+            <converter:ImageTuple Key="{x:Static enum:Pantograph.PantographSeparate}" ImageSource="{StaticResource 受电弓隔离}"></converter:ImageTuple>
+            <converter:ImageTuple Key="{x:Static enum:Pantograph.ConnectUnPower}" ImageSource="{StaticResource 车间电源未供电}" />
+            <converter:ImageTuple Key="{x:Static enum:Pantograph.PantographUpFault}" ImageSource="{StaticResource 受电弓升起故障}" />
+            <converter:ImageTuple Key="{x:Static enum:Pantograph.PantographDownFault}" ImageSource="{StaticResource 受电弓降下故障}" />
+            <converter:ImageTuple Key="{x:Static enum:Pantograph.PantographUp}" ImageSource="{StaticResource 受电弓升起}" />
+            <converter:ImageTuple Key="{x:Static enum:Pantograph.PantographDown}" ImageSource="{StaticResource 受电弓降下}" />
+        </converter:EnumImageConverter.TupleImages>
+    </converter:EnumImageConverter>
+
+
+    <converter:EnumImageConverter x:Key="ALlStateConverter">
+        <converter:EnumImageConverter.TupleImages>
+            <converter:ImageTuple Key="{x:Static enum:AssistPowerAC.Normal}" ImageSource="{x:Null}" />
+            <converter:ImageTuple Key="{x:Static enum:AssistPowerAC.Fault}" ImageSource="{StaticResource AC辅助电源故障}" />
+            <converter:ImageTuple Key="{x:Static enum:AssistPowerAC.Warn}" ImageSource="{StaticResource AC辅助电源警告}" />
+            <converter:ImageTuple Key="{x:Static enum:AssistPowerAC.Run}" ImageSource="{StaticResource AC辅助电源运行}" />
+            <converter:ImageTuple Key="{x:Static enum:AssistPowerAC.Off}" ImageSource="{StaticResource AC辅助电源断开}" />
+            <converter:ImageTuple Key="{x:Static enum:AssistPowerDC.Normal}" ImageSource="{x:Null}" />
+            <converter:ImageTuple Key="{x:Static enum:AssistPowerDC.Fault}" ImageSource="{StaticResource DC辅助电源故障}" />
+            <converter:ImageTuple Key="{x:Static enum:AssistPowerDC.Warn}" ImageSource="{StaticResource DC辅助电源警告}" />
+            <converter:ImageTuple Key="{x:Static enum:AssistPowerDC.Run}" ImageSource="{StaticResource DC辅助电源运行}" />
+            <converter:ImageTuple Key="{x:Static enum:AssistPowerDC.Off}" ImageSource="{StaticResource DC辅助电源断开}" />
+            <converter:ImageTuple Key="{x:Static enum:AirCondition.Normal}" ImageSource="{x:Null}" />
+            <converter:ImageTuple Key="{x:Static enum:AirCondition.Falut}" ImageSource="{StaticResource 空调故障}" />
+            <converter:ImageTuple Key="{x:Static enum:AirCondition.Warn}" ImageSource="{StaticResource 空调警告}" />
+            <converter:ImageTuple Key="{x:Static enum:AirCondition.EmergencyAir}" ImageSource="{StaticResource 空调紧急通风}" />
+            <converter:ImageTuple Key="{x:Static enum:AirCondition.Limit}" ImageSource="{StaticResource 空调通风}" />
+            <converter:ImageTuple Key="{x:Static enum:AirCondition.Air}" ImageSource="{StaticResource 空调通风}" />
+            <converter:ImageTuple Key="{x:Static enum:AirCondition.Run}" ImageSource="{StaticResource 空调运行}" />
+            <converter:ImageTuple Key="{x:Static enum:AirCondition.Off}" ImageSource="{StaticResource 空调断开}" />
+            <converter:ImageTuple Key="{x:Static enum:Door.Normal}" ImageSource="{x:Null}" />
+            <converter:ImageTuple Key="{x:Static enum:Door.Emergency}" ImageSource="{StaticResource 门紧急}" />
+            <converter:ImageTuple Key="{x:Static enum:Door.Cut}" ImageSource="{StaticResource 门切除}" />
+            <converter:ImageTuple Key="{x:Static enum:Door.SeverityFault}" ImageSource="{StaticResource 门严重故障}" />
+            <converter:ImageTuple Key="{x:Static enum:Door.MediumFaulr}" ImageSource="{StaticResource 门中等故障}" />
+            <converter:ImageTuple Key="{x:Static enum:Door.Check}" ImageSource="{StaticResource 门检测到障碍物}" />
+            <converter:ImageTuple Key="{x:Static enum:Door.Open}" ImageSource="{StaticResource 门开}" />
+            <converter:ImageTuple Key="{x:Static enum:Door.Close}" ImageSource="{StaticResource 门关}" />
+            <converter:ImageTuple Key="{x:Static enum:EmergncyTalk.Normal}" ImageSource="{x:Null}" />
+            <converter:ImageTuple Key="{x:Static enum:EmergncyTalk.Falut}" ImageSource="{StaticResource 乘客紧急通讯单元红}" />
+            <converter:ImageTuple Key="{x:Static enum:EmergncyTalk.FareActive}" ImageSource="{StaticResource 乘客紧急通讯单元橘黄}" />
+            <converter:ImageTuple Key="{x:Static enum:EmergncyTalk.DriverActive}" ImageSource="{StaticResource 乘客紧急通讯单元绿}" />
+            <converter:ImageTuple Key="{x:Static enum:EmergncyTalk.UnActive}" ImageSource="{StaticResource 乘客紧急通讯单元灰}" />
+            <converter:ImageTuple Key="{x:Static enum:Brake.Normal}" ImageSource="{x:Null}" />
+            <converter:ImageTuple Key="{x:Static enum:Brake.Park}" ImageSource="{StaticResource 制动停放}" />
+            <converter:ImageTuple Key="{x:Static enum:Brake.Cut}" ImageSource="{StaticResource 制动切除}" />
+            <converter:ImageTuple Key="{x:Static enum:Brake.SeverityFault}" ImageSource="{StaticResource 制动严重故障}" />
+            <converter:ImageTuple Key="{x:Static enum:Brake.ParkRemit}" ImageSource="{StaticResource 制动中等故障}" />
+            <converter:ImageTuple Key="{x:Static enum:Brake.MediumFaulr}" ImageSource="{StaticResource 制动中等故障}" />
+            <converter:ImageTuple Key="{x:Static enum:Brake.BrakeInfliction}" ImageSource="{StaticResource 制动施加}" />
+            <converter:ImageTuple Key="{x:Static enum:Brake.BarkeRemit}" ImageSource="{StaticResource 制动释放}" />
+            <converter:ImageTuple Key="{x:Static enum:Traction.Normal}" ImageSource="{x:Null}" />
+            <converter:ImageTuple Key="{x:Static enum:Traction.Fault}" ImageSource="{StaticResource 牵引故障}" />
+            <converter:ImageTuple Key="{x:Static enum:Traction.Warn}" ImageSource="{StaticResource 牵引警告}" />
+            <converter:ImageTuple Key="{x:Static enum:Traction.Active}" ImageSource="{StaticResource 牵引激活}" />
+            <converter:ImageTuple Key="{x:Static enum:Traction.Off}" ImageSource="{StaticResource 牵引断开}" />
+            <converter:ImageTuple Key="{x:Static enum:Smoke.Normal}" ImageSource="{x:Null}" />
+            <converter:ImageTuple Key="{x:Static enum:Smoke.Smoke}" ImageSource="{StaticResource 探测到烟火}" />
+            <converter:ImageTuple Key="{x:Static enum:Smoke.Fault}" ImageSource="{StaticResource 探头故障}" />
+            <converter:ImageTuple Key="{x:Static enum:Smoke.NoSmoke}" ImageSource="{StaticResource 未检测到烟火}" />
+            <converter:ImageTuple Key="{x:Static enum:AirPump.Normal}" ImageSource="{x:Null}" />
+            <converter:ImageTuple Key="{x:Static enum:AirPump.Fault}" ImageSource="{StaticResource 空压机故障}" />
+            <converter:ImageTuple Key="{x:Static enum:AirPump.Warn}" ImageSource="{StaticResource 空压机警告}" />
+            <converter:ImageTuple Key="{x:Static enum:AirPump.Run}" ImageSource="{StaticResource 空压机运行}" />
+            <converter:ImageTuple Key="{x:Static enum:AirPump.Off}" ImageSource="{StaticResource 空压机断开}" />
+            <converter:ImageTuple Key="{x:Static enum:HighSpeed.Normal}" ImageSource="{x:Null}" />
+            <converter:ImageTuple Key="{x:Static enum:HighSpeed.Close}" ImageSource="{StaticResource HSCB合上}" />
+            <converter:ImageTuple Key="{x:Static enum:HighSpeed.Open}" ImageSource="{StaticResource HSCB断开}" />
+            <converter:ImageTuple Key="{x:Static enum:Pantograph.Normal}" ImageSource="{x:Null}" />
+            <converter:ImageTuple Key="{x:Static enum:Pantograph.ConnectPower}" ImageSource="{StaticResource 车间电源供电}" />
+            <converter:ImageTuple Key="{x:Static enum:Pantograph.ConnectUnPower}" ImageSource="{StaticResource 车间电源未供电}" />
+            <converter:ImageTuple Key="{x:Static enum:Pantograph.PantographNetPressure}" ImageSource="{StaticResource 升弓无网压}" />
+            <converter:ImageTuple Key="{x:Static enum:Pantograph.PantographSeparate}" ImageSource="{StaticResource 受电弓隔离}"></converter:ImageTuple>
+            <converter:ImageTuple Key="{x:Static enum:Pantograph.PantographUpFault}" ImageSource="{StaticResource 受电弓升起故障}" />
+            <converter:ImageTuple Key="{x:Static enum:Pantograph.PantographDownFault}" ImageSource="{StaticResource 受电弓降下故障}" />
+            <converter:ImageTuple Key="{x:Static enum:Pantograph.PantographUp}" ImageSource="{StaticResource 受电弓升起}" />
+            <converter:ImageTuple Key="{x:Static enum:Pantograph.PantographDown}" ImageSource="{StaticResource 受电弓降下}" />
+        </converter:EnumImageConverter.TupleImages>
+    </converter:EnumImageConverter>
+</ResourceDictionary>

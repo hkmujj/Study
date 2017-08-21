@@ -1,0 +1,66 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Brushes/BrusheResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+
+    <Style x:Key="FlowTextStyleOne" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource WhiteBrush}" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="TimeStyleOne" TargetType="TextBlock">
+        <Setter Property="Margin" Value="5,0,0,0"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Foreground" Value="{StaticResource WhiteBrush}" />
+    </Style>
+    <Style x:Key="TimeStyleTwo" TargetType="TextBlock">
+        <Setter Property="Margin" Value="5,0,20,0" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Foreground" Value="{StaticResource WhiteBrush}" />
+    </Style>
+    <Style x:Key="FlowTextBlockStyleTwo" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource GreenBrush}" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+
+    </Style>
+    <Style x:Key="ButtonTextStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource BlackBrush}" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+
+    </Style>
+    <Style x:Key="OrangeTextStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource OrangeBrush}" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="RedTextStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource RedBrush}" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="BrakeSetStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource BlueTextBrush}" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="16" />
+    </Style>
+    <Style x:Key="NewSetStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource WhiteBrush}" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="16" />
+    </Style>
+    <Style x:Key="TrainNumbStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource BlackBrush}" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+    </Style>
+</ResourceDictionary>

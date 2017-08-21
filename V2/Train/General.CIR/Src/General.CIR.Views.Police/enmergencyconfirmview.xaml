@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="General.CIR.Views.Police.EnmergencyConfirmView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="30*" />
+      <ColumnDefinition Width="150*" />
+    </Grid.ColumnDefinitions>
+    <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+      <TextBlock Name="TextBlock" Margin="2,0,4,0" TextBlock.Foreground="#FFFFFF00" Text="报警" />
+      <Ellipse p5:FlickerManager.DurationMiliSecond="1000" p5:FlickerManager.Flicking="True" p5:FlickerManager.VisibilityAfterFlicking="Visible" Fill="#FFFF0000" Width="{Binding ElementName=TextBlock, Path=ActualHeight, Converter={StaticResource MathConverter}, ConverterParameter=x-2}" Height="{Binding ElementName=TextBlock, Path=ActualHeight, Converter={StaticResource MathConverter}, ConverterParameter=x-2}" xmlns:p5="clr-namespace:MMI.Facility.WPFInfrastructure.View;assembly=MMI.Facility.WPFInfrastructure" />
+    </StackPanel>
+    <Grid Grid.Column="1">
+      <Grid.RowDefinitions>
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+      </Grid.RowDefinitions>
+      <StackPanel Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal">
+        <TextBlock TextBlock.Foreground="#FFFF0000" Text="紧急，" />
+        <TextBlock TextBlock.Foreground="#FFFF0000" Text="{Binding MainContentViewModel.TitleViewModel.TrainNumber}" />
+        <TextBlock TextBlock.Foreground="#FFFF0000" Text="次列车" />
+        <TextBlock TextBlock.Foreground="#FFFF0000" Text="{Binding MainContentViewModel.SystemInfosViewModel.KMMark}" />
+        <TextBlock TextBlock.Foreground="#FFFF0000" Text="公里事故，注意" />
+      </StackPanel>
+      <TextBlock Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" TextBlock.Foreground="#FFFF0000" Text="运行" />
+      <TextBlock Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" TextBlock.Foreground="#FFFFFF00" Text="请按“确认”键确认！" />
+    </Grid>
+  </Grid>
+</UserControl>

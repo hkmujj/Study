@@ -1,0 +1,66 @@
+﻿using System;
+using System.Windows.Forms;
+using MMI.Facility.Interface.Service;
+using YunDa.JC.MMI.Common;
+using YunDa.JC.MMI.Common.Extensions;
+
+namespace SH_Reconnect.Views
+{
+    public partial class SH_RC_V0_BackView : UserControl, IView
+    {
+        public int ID { get; set; }
+
+        public bool IsShow
+        {
+            get { return _isShow; }
+            set
+            {
+                if (_isShow == value) return;
+                _isShow = value;
+
+                if (_isShow) //显示
+                {
+                    if (!ViewManger.Contains(this))
+                    {
+                        ViewManger.Add(this);
+
+                        this.InvokeShow();
+                    }
+                }
+                else//隐藏
+                {
+                    if (ViewManger.Contains(this))
+                    {
+                        ViewManger.Remove(this);
+                        this.InvokeHide();
+                    }
+                }
+            }
+        }
+        private bool _isShow = false;
+
+        private ICommunicationDataService _dataService;
+
+        public ViewManager ViewManger { get; set; }
+
+        public SH_RC_V0_BackView()
+        {
+            InitializeComponent();
+        }
+
+        public SH_RC_V0_BackView(Int32 id, ViewManager viewManager, ICommunicationDataService dataService)
+        {
+            InitializeComponent();
+
+            Dock = DockStyle.Fill;
+            Margin = new Padding(0);
+
+            ID = id;
+            ViewManger = viewManager;
+            ViewManger.Register(this);
+
+            _dataService = dataService;
+        }
+        public void InvalidateNew() { }
+    }
+}

@@ -1,0 +1,174 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <system:String x:Key="Subway.TCMS.LanZhou.String.PassengerTemperature" xml:space="preserve">客室温度(℃)</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.PassengerProportion" xml:space="preserve">载重/载客率（%）</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.BrakePressure" xml:space="preserve">制动缸压力(kPa)</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.MainPressure" xml:space="preserve">主风压力(kPa)</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.EndStatiion" xml:space="preserve">终点站</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.CurrentStation" xml:space="preserve">当前站</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.Group" xml:space="preserve">编组:</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TractionInstruction" xml:space="preserve">牵引指令</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.BrakeInstruction" xml:space="preserve">制动指令</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TargetTemperature" xml:space="preserve">目标温度 ℃</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.AriConditonRunningMode" xml:space="preserve">空调运行模式</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.StartAndStopControl" xml:space="preserve">起停控制:</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.ModeSetting" xml:space="preserve">模式设定:</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TemperatureSetting" xml:space="preserve">温度设定:</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.NewAirValve" xml:space="preserve">新风阀:</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.NormalEquipment" xml:space="preserve">正常</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.EquipmentFailure" xml:space="preserve">故障</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.EquipmentPollution" xml:space="preserve">污染</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.EquipmentInvalid" xml:space="preserve">无效</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.EquipmentFireAlarm" xml:space="preserve">火警</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.SerialNumber" xml:space="preserve">序号</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.FaultNumber" xml:space="preserve">故障车号</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.FaultCode" xml:space="preserve">故障代码</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.Grade" xml:space="preserve">等级</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.FaultDescription" xml:space="preserve">故障描述</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.DateforFailure" xml:space="preserve">故障发生日期时间</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.EndDateforFailure" xml:space="preserve">故障结束日期时间</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.FaultLevel" xml:space="preserve">故障等级</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.FaultLocation" xml:space="preserve">故障位置</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.OccurrenceTime" xml:space="preserve">发生时间</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.DriverTips" xml:space="preserve">司机操作提示</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TotalFault" xml:space="preserve">故障总数:</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.CurrentPage" xml:space="preserve">当前页数:</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TotalPages" xml:space="preserve">所有页数:</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.PleaseEnterPasswords" xml:space="preserve">请输入密码:</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.BypassName" xml:space="preserve">旁路名称</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.AtpResection" xml:space="preserve">ATP切除</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.SemiAutomaticCouplerStateBypassSwitch" xml:space="preserve">半自动车钩状态旁路开关</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.CautionButtonBypassSwitch" xml:space="preserve">警惕按钮旁路开关</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TotalWindPressure" xml:space="preserve">总风地压旁路</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.ParkingBrakeReleaseBypass" xml:space="preserve">停放制动缓解旁路</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.BrakeReleaseBypass" xml:space="preserve">常用制动缓解旁路</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.AllDoorsClosedBypass" xml:space="preserve">所有门关好旁路</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.AtpGateEnableBypass" xml:space="preserve">ATP门使能旁路</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.ZeroSpeedBypass" xml:space="preserve">零速旁路</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.LiftBowAllowsBypass" xml:space="preserve">升弓允许旁路</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.Bypass" xml:space="preserve">旁路</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.Regular" xml:space="preserve">正常</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.OutDoorTemperature" xml:space="preserve">室外温度 ℃</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.InDoorTemperature" xml:space="preserve">室内温度 ℃</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.FanOperation" xml:space="preserve">通风机运行</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.CompressorOperation" xml:space="preserve">压缩机运行</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.CondenserOperation" xml:space="preserve">冷凝机运行</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.NewAirValveNoColon" xml:space="preserve">新风阀</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.WorkshopPowerProtectionCover" xml:space="preserve">车间电源保护盖</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.IesContactor" xml:space="preserve">IES接触器</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.WorkshopPowerStatus" xml:space="preserve">车间电源状态</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TractionSafetyEnable" xml:space="preserve">牵引安全使能</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.HighSpeedCircuitBreaker1" xml:space="preserve">高速断路器1</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.HighSpeedCircuitBreaker2" xml:space="preserve">高速断路器2</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.SeparationContactor" xml:space="preserve">线路断路器</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.SeparationBreaker" xml:space="preserve">分离接触器</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.DirectCurrentLinkVoltage" xml:space="preserve">直流环节电压</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.DirectCurrentLinkCurrent" xml:space="preserve">直流环节电流</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.MotorCurrent" xml:space="preserve">电机电流</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.OvervoltageAbsorptionDevice" xml:space="preserve">过压吸收装置工作</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.AirBrakeAvailable" xml:space="preserve">空气制动可用</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.AirBrakeApplication" xml:space="preserve">空气制动施加</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.HoldBrakeApply" xml:space="preserve">保持制动施加</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.EmergencyBrakeAvailable" xml:space="preserve">紧急制动可用</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.EmergencyBrakeApplication" xml:space="preserve">紧急制动施加</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.ParkingBrakeRelease" xml:space="preserve">停放制动缓解</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.RideRate" xml:space="preserve">乘车率(%)</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.BrakeCylinderPressure" xml:space="preserve">制动缸风压(KPa)</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.BogieResection" xml:space="preserve">转向架切除</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.AirSpringPressure" xml:space="preserve">空簧压力(KPa)</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.PrechargeContactor" xml:space="preserve">预充电接触器</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.AuxiliaryLoadContactor" xml:space="preserve">辅逆负载接触器</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.AuxiliaryLoadVoltage" xml:space="preserve">辅逆负载电压</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.AuxiliaryLoadCurrent" xml:space="preserve">辅逆负载电流</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.CurrentBatteryCharger" xml:space="preserve">蓄电池充电机电流</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.BatteryBusVoltage" xml:space="preserve">蓄电池母线电压</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.BatteryBusCurrent" xml:space="preserve">蓄电池母线电流</system:String>
+
+    <!--  converter  -->
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainStatusOpen" xml:space="preserve">打开</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainStatusClosed" xml:space="preserve">闭合</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainStatusWorkshopPower" xml:space="preserve">车间电源</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainStatusUnknow" xml:space="preserve">状态未知</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainStatusRunning" xml:space="preserve">运行</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainStatusEarthCircuit" xml:space="preserve">接地</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainStatusConnect" xml:space="preserve">连接</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainStatusNotConnect" xml:space="preserve">未连接</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainStatusEffective" xml:space="preserve">有效</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainStatusInvalid" xml:space="preserve">无效</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainStatusWork" xml:space="preserve">工作</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainStatusNotWork" xml:space="preserve">未工作</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainStatusNormal" xml:space="preserve">正常</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainStatusNotAvailable" xml:space="preserve">不可用</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainStatusExert" xml:space="preserve">施加</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainStatusNotApplied" xml:space="preserve">未施加</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainStatusRelieve" xml:space="preserve">缓解</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainStatusRemission" xml:space="preserve">未缓解</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainStatusResection" xml:space="preserve">切除</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainStatusNotResection" xml:space="preserve">未切除</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainAirConditionLocalControl" xml:space="preserve">本地控制</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainAirConditionAutoCold" xml:space="preserve">自动冷</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainAirConditionAirout" xml:space="preserve">通风</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainAirConditionStrongWind" xml:space="preserve">强风</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainAirConditionShudDown" xml:space="preserve">紧急停机</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainAirConditionStatusUnknow" xml:space="preserve">状态未知</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainAirConditionOutDamperClosed" xml:space="preserve">全关</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainAirConditionOutDamperHalf" xml:space="preserve">50%</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainAirConditionOutDamperSevevtyFive" xml:space="preserve">75%</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainAirConditionOutDamperTotally" xml:space="preserve">100%</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainAirConditionOutDamperUnknow" xml:space="preserve">未知</system:String>
+
+
+    <!--  按钮  -->
+    <system:String x:Key="Subway.TCMS.LanZhou.String.LineInformation" xml:space="preserve">旁路信息</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainStatusTow" xml:space="preserve">牵引</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainStatusBrake" xml:space="preserve">制动</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainStatusAssist" xml:space="preserve">辅助</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.SetControlStart" xml:space="preserve">集控启动</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.CabStart" xml:space="preserve">本车启动</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.StopButton" xml:space="preserve">停止</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.AutomaticCold" xml:space="preserve">自动冷</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.AerationButton" xml:space="preserve">通风</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.FierceWindButton" xml:space="preserve">强风</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.SettingButton" xml:space="preserve">设定</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.CloseButton" xml:space="preserve">关闭</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.RecoverButton" xml:space="preserve">恢复</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.AirConditiongStatus" xml:space="preserve">空调状态</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.AirConditiongSetting" xml:space="preserve">空调设置</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.SilencerButton" xml:space="preserve">消音</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.ResetButton" xml:space="preserve">复位</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.CancelSilence" xml:space="preserve">取消消音</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.PreviousPage" xml:space="preserve">上一页</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.NextPage" xml:space="preserve">下一页</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.HomePage" xml:space="preserve">首页</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.CancelButton" xml:space="preserve">返回</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.MakeSureButton" xml:space="preserve">确定</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.ClearButton" xml:space="preserve">清除</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.BackSpaceButton" xml:space="preserve">退格</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.ReturnRunningView" xml:space="preserve">返回运行</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TreeLevelFault" xml:space="preserve">三级故障</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.SecondLevelFault" xml:space="preserve">二级故障</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.ReturnStatus" xml:space="preserve">返回状态</system:String>
+
+    <!--  界面  -->
+    <system:String x:Key="Subway.TCMS.LanZhou.String.RunningPage" xml:space="preserve">运行界面</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.RunningHelpPage" xml:space="preserve">运行帮助</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.LineInformationPage" xml:space="preserve">旁路信息</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainStatusPage" xml:space="preserve">车辆状态</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.TrainStatusHelpPage" xml:space="preserve">车辆状态帮助</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.AirConditionSettingPage" xml:space="preserve">空调设置</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.AirConditionSettingHelpPage" xml:space="preserve">空调设置帮助</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.AirConditionStatusPage" xml:space="preserve">空调状态</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.AirConditionStatusHelpPage" xml:space="preserve">空调状态帮助</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.CurrentBreakdownPage" xml:space="preserve">当前故障</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.FaultOperateTipsPage" xml:space="preserve">故障操作提示</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.CommunicationStatusPage" xml:space="preserve">通讯状态</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.FireAlarmPage" xml:space="preserve">烟火报警</system:String>
+    <system:String x:Key="Subway.TCMS.LanZhou.String.ExamineAndRepairPage" xml:space="preserve">检修维护</system:String>
+
+
+
+
+
+</ResourceDictionary>

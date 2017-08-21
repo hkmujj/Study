@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="Engine._6A.Views.Common.Fault.FaultInfo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="30"
+             d:DesignWidth="530"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#00EFEF" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+    </UserControl.Resources>
+    <Grid x:Name="Grid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="123*" />
+            <ColumnDefinition Width="58*" />
+            <ColumnDefinition Width="218*" />
+            <ColumnDefinition Width="49*" />
+            <ColumnDefinition Width="41*" />
+            <ColumnDefinition Width="44*" />
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="One" Text="02/23 11:22" />
+        <TextBlock x:Name="Two"
+                   Grid.Column="1"
+                   HorizontalAlignment="Left"
+                   Text="TAX" />
+        <TextBlock x:Name="Three"
+                   Grid.Column="2"
+                   HorizontalAlignment="Left"
+                   Text="监控/非调车/辆数90" />
+        <TextBlock x:Name="Four"
+                   Grid.Column="3"
+                   HorizontalAlignment="Left"
+                   Text="---" />
+        <TextBlock x:Name="Five"
+                   Grid.Column="4"
+                   Text="" />
+        <TextBlock x:Name="Fix"
+                   Grid.Column="5"
+                   Text="20" />
+    </Grid>
+</UserControl>

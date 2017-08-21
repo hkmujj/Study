@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Urban.ATC.Siemens.WPF.Control.View.RegionC.RegionC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Urban.ATC.Siemens.WPF.Control.View.RegionC"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:Urban.ATC.Siemens.WPF.Control.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:RegionCViewModel}"
+             d:DesignHeight="54"
+             d:DesignWidth="376"
+             mc:Ignorable="d">
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="FontSize" Value="34" />
+                <Setter Property="FontWeight" Value="ExtraBold" />
+            </Style>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*" />
+            <ColumnDefinition Width="78*" />
+            <ColumnDefinition Width="78*" />
+            <ColumnDefinition Width="78*" />
+            <ColumnDefinition Width="42*" />
+        </Grid.ColumnDefinitions>
+        <local:DrivingBraking Grid.Column="0" />
+        <local:MaximumModel Grid.Column="1" />
+        <local:TrainIntegrity Grid.Column="2" />
+        <local:TrainBrakeState Grid.Column="3" />
+        <local:OBCU Grid.Column="4" Margin="12,0" />
+    </Grid>
+</UserControl>

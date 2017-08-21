@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="Engine.TCMS.HXD3.View.Contents.FaultPopView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:Engine.TCMS.HXD3.ViewModel"
+             Background="{StaticResource ContentBackgroudBrush}"
+             Visibility="{Binding Path=TCMS.FaultViewModel.PopingFaultItemNamesVisible,
+                                  Converter={StaticResource BoolToVisibilityConverter}}"
+             d:DataContext="{d:DesignInstance viewModel:HXD3TCMSViewModel}"
+             d:DesignHeight="360"
+             d:DesignWidth="330"
+             mc:Ignorable="d">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40*" />
+            <RowDefinition Height="280*" />
+        </Grid.RowDefinitions>
+        <Border Background="{StaticResource RedBrush}" Style="{StaticResource BackGridBorderStyleNoDown}">
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <TextBlock Style="{StaticResource MainContentContentTextStyle}" Text="{StaticResource StringFault}" />
+                <TextBlock Style="{StaticResource MainContentContentTextStyle}" Text="{StaticResource StringInfo}" />
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="1" Style="{StaticResource BackGridBorderStyleAll}">
+            <ListBox ItemsSource="{Binding Path=TCMS.FaultViewModel.PopingFaultItemNames}" Style="{StaticResource PopingFaultItemStyle}" />
+        </Border>
+    </Grid>
+</UserControl>

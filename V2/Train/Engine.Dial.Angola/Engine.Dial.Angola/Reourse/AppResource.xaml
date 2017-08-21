@@ -1,0 +1,44 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+
+        <ResourceDictionary Source="Converter/ConverterResouce.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <SolidColorBrush x:Key="LECFontBack" Color="#AE9F57" />
+    <FontFamily x:Key="LEDFontOne">/Engine.Dial.Angola;component/Reourse/Font/#UnidreamLED</FontFamily>
+    <FontFamily x:Key="LEDFontTwo">/Engine.Dial.Angola;component/Reourse/Font/#DigifaceWide</FontFamily>
+    <FontFamily x:Key="LEDFontThree">/Engine.Dial.Angola;component/Reourse/Font/#Ds-Digital</FontFamily>
+    <ImageBrush x:Key="LECBack" ImageSource="Image/LED背景.png" />
+
+    <Style x:Key="LEDStyle" TargetType="ItemsControl">
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Border Width="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                           AncestorType={x:Type ItemsControl}},
+                                            Path=ActualWidth,Converter={StaticResource ItemWitdthConverter}}"
+                            Margin="5,-8,5,0"
+                            HorizontalAlignment="Right">
+                        <Grid>
+                            <ContentPresenter HorizontalAlignment="Right"
+                                              Panel.ZIndex="1"
+                                              Content="{Binding}" />
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FontFamily" Value="{StaticResource LEDFontThree}" />
+        <Setter Property="FontSize" Value="50" />
+        <Setter Property="Foreground" Value="Yellow" />
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,106 @@
+﻿<UserControl
+    x:Class="Subway.XiaMenLine1.Subsystem.View.Contents.MainContentContents.EnmergencyBoradercastView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:resouce="clr-namespace:Subway.XiaMenLine1.Interface.Resouce;assembly=Subway.XiaMenLine1.Interface"
+    xmlns:viewModels="clr-namespace:Subway.XiaMenLine1.Subsystem.ViewModels"
+    d:DataContext="{d:DesignInstance {x:Type viewModels:ShellViewModel}}"
+    d:DesignHeight="380"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary Source="../../../AppResouce.xaml" />
+    </UserControl.Resources>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding Model.EnmergencyBorader.GetCurrent}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid Margin="20,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TextBlock
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="16"
+            Foreground="White"
+            Text="爱心广播" />
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="2"
+            Grid.ColumnSpan="3"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="16"
+            Foreground="White"
+            Text="紧急广播" />
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="5"
+            Grid.ColumnSpan="1"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="16"
+            Foreground="White"
+            Text="定制信息广播" />
+        <ItemsControl
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Margin="5,5,5,20"
+            ItemsSource="{Binding Model.EnmergencyBorader.LoveBoradcast}"
+            Style="{StaticResource LoveBoradcast}" />
+        <ItemsControl
+            Grid.Row="1"
+            Grid.Column="2"
+            Grid.ColumnSpan="3"
+            Margin="5,5,5,20"
+            ItemsSource="{Binding Model.EnmergencyBorader.EmergentBoradcast}"
+            Style="{StaticResource EmergentBoradcast}" />
+        <ItemsControl
+            Grid.Row="1"
+            Grid.Column="5"
+            Grid.ColumnSpan="1"
+            Margin="5,5,5,20"
+            ItemsSource="{Binding Model.EnmergencyBorader.CustBoradcast}"
+            Style="{StaticResource CustBoradcast}" />
+        <StackPanel
+            Grid.Row="1"
+            Grid.Column="6"
+            Margin="0,-20,0,0"
+            Orientation="Vertical">
+            <RadioButton
+                Command="{Binding Model.EnmergencyBorader.SendBoradType}"
+                CommandParameter="{Binding Source={x:Static resouce:OutBoolKeys.单次广播}}"
+                Content="单次广播"
+                Style="{StaticResource EmergencyBtnStyle2}" />
+            <RadioButton
+                Command="{Binding Model.EnmergencyBorader.SendBoradType}"
+                CommandParameter="{Binding Source={x:Static resouce:OutBoolKeys.循环广播}}"
+                Content="循环广播"
+                Style="{StaticResource EmergencyBtnStyle2}" />
+            <RadioButton
+                Command="{Binding Model.EnmergencyBorader.SendBoradType}"
+                CommandParameter="{Binding Source={x:Static resouce:OutBoolKeys.广播暂停}}"
+                Content="暂停"
+                Style="{StaticResource EmergencyBtnStyle2}" />
+        </StackPanel>
+    </Grid>
+
+</UserControl>

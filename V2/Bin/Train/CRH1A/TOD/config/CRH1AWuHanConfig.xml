@@ -1,0 +1,53 @@
+﻿<?xml version="1.0"?>
+<CRH1ADetailConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <PasswordConfigs>
+        <PasswordConfig UserType="Driver" Password="2500"></PasswordConfig>
+        <PasswordConfig UserType="Mechanician" Password="7878"></PasswordConfig>
+        <PasswordConfig UserType="Mechanician" Password="7717"></PasswordConfig>
+        <PasswordConfig UserType="Mechanician" Password="7100"></PasswordConfig>
+    </PasswordConfigs>
+
+    <DefaultFaultLogicCollection>
+        <Value>1308</Value>
+        <Value>1311</Value>
+    </DefaultFaultLogicCollection>
+    <MainNode>
+        <MainNodeNum>
+            <Unit>0</Unit>
+            <Num>2</Num>
+        </MainNodeNum>
+        <MainNodeNum>
+            <Unit>1</Unit>
+            <Num>2</Num>
+        </MainNodeNum>
+        <MainNodeNum>
+            <Unit>2</Unit>
+            <Num>2</Num>
+        </MainNodeNum>
+    </MainNode>
+
+    <StationConfig>
+        <!-- enum  Solid 实心，适用武汉等, Hollow 空心， 适用成都等-->
+        <DoorStyle>Solid</DoorStyle>
+    </StationConfig>
+    <!--武汉-->
+    <SystemMenuConfig>
+        <Region  Rectangle="2,215,785,240" RowCount="3" ColumnCount="4" ButtonWidth="100" ButtonHeight="50" XOffset="90" YOffset="25" >
+            <ButtonConfig ColoumnIndex="0" RowIndex="0" Goto="SystemHightVol"     Text="高压"/>
+            <ButtonConfig ColoumnIndex="1" RowIndex="0" Goto="SystemTow"          Text="牵引"/>
+            <ButtonConfig ColoumnIndex="2" RowIndex="0" Goto="SystemDoor"         Text="外门"/>
+            <ButtonConfig ColoumnIndex="3" RowIndex="0" Goto="SystemComfort"      Text="舒适度"/>
+
+            <ButtonConfig ColoumnIndex="0" RowIndex="1" Goto="SystemPowerSupply"  Text="电池供电"/>
+            <ButtonConfig ColoumnIndex="1" RowIndex="1" Goto="SystemBrake"        Text="制动"/>
+            <ButtonConfig ColoumnIndex="2" RowIndex="1" Goto="SystemSanitary"     Text="污物箱"/>
+            <ButtonConfig ColoumnIndex="3" RowIndex="1" Goto="SystemFire"         Text="烟雾报警器"/>
+
+            <ButtonConfig ColoumnIndex="0" RowIndex="2" Goto="SystemRoller"       Text="轴报"/>
+            <ButtonConfig ColoumnIndex="1" RowIndex="2" Goto="SystemAirSupply"    Text="供风"/>
+            <ButtonConfig ColoumnIndex="2" RowIndex="2" Goto="SystemFont"         Text="前端"/>
+        </Region>
+
+    </SystemMenuConfig>
+</CRH1ADetailConfig>

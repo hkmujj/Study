@@ -1,0 +1,580 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:brake="clr-namespace:Motor.HMI.CRH380BG.Model.Domain.Brake"
+                    xmlns:constant="clr-namespace:Motor.HMI.CRH380BG.Model.Domain.Constant"
+                    xmlns:converter="clr-namespace:Motor.HMI.CRH380BG.Converters"
+                    xmlns:converter1="clr-namespace:MMI.Facility.WPFInfrastructure.Converter;assembly=MMI.Facility.WPFInfrastructure"
+                    xmlns:maintain="clr-namespace:Motor.HMI.CRH380BG.Model.Domain.Maintain">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Base/CRH380BGBaseResource.xaml" />
+        <ResourceDictionary Source="../Image/CRH380BGImageResource.xaml" />
+        <ResourceDictionary Source="../Strings/StringResource_CH.xaml" />
+        <ResourceDictionary Source="../Styles/CRH380BGTextStyle.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <BooleanToVisibilityConverter x:Key="Motor.HMI.CRH380BG.BooleanToVisibilityConverter" />
+    <converter:LightBushConverter x:Key="Motor.HMI.CRH380BG.LightBushConverter" />
+    <converter:FindItemIndexConverter x:Key="Motor.HMI.CRH380BG.FindItemIndexConverter" />
+    <converter:SetValueConverter x:Key="Motor.HMI.CRH380BG.SetValueConverter" />
+    <converter1:MathConverter x:Key="Motor.HMI.CRH380BG.MathConverter" />
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.SelectObjectContentConverter" />
+    <converter:ProgressBarConverter x:Key="Motor.HMI.CRH380BG.ProgressBarConverter" />
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.MaintainStateBackground">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static maintain:ModelState.Closed}" Content="{StaticResource Motor.HMI.CRH380BG.TransparentBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static maintain:ModelState.Open}" Content="{StaticResource Motor.HMI.CRH380BG.ContentBackgroundRedBrush}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.MaintainStateTitleString">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static maintain:ModelState.Closed}" Content="{StaticResource Motor.HMI.CRH380BG.MaintainStateClosed}" />
+            <converter1:ObjectContentPair Key="{x:Static maintain:ModelState.Open}" Content="{StaticResource Motor.HMI.CRH380BG.MaintainStateOpen}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.FaultReadStateToString">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:FaultReadState.Read}" Content="{StaticResource Motor.HMI.CRH380BG.FaultStringState}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:FaultReadState.NotRead}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.ParkingEfficentStateToBackGround">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static brake:ParkingStateEfficence.UnEfficent}" Content="{StaticResource Motor.HMI.CRH380BG.ContentForegroundBlackBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static brake:ParkingStateEfficence.Efficent}" Content="{StaticResource Motor.HMI.CRH380BG.SelectedBlueBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static brake:ParkingStateEfficence.Defualut}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.Convert.ParkingEfficentStateToImage">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static brake:ParkingStateEfficence.UnEfficent}" Content="{StaticResource Img叉}" />
+            <converter1:ObjectContentPair Key="{x:Static brake:ParkingStateEfficence.Efficent}" />
+            <converter1:ObjectContentPair Key="{x:Static brake:ParkingStateEfficence.Defualut}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.BrakeParkingToFillImage">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{StaticResource BoolFalse}" Content="{StaticResource Img紧急制动}" />
+            <converter1:ObjectContentPair Key="{StaticResource BoolTrue}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.AirBrakeToFillImage">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static brake:Efficence.NotEfficent}" Content="{StaticResource Img叉}" />
+            <converter1:ObjectContentPair Key="{x:Static brake:Efficence.Efficent}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.BrakeFunctionStatusUnlinkedBackgroud">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static brake:Efficence.NotEfficent}" Content="{StaticResource Motor.HMI.CRH380BG.ForegroundWhiteBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static brake:Efficence.Efficent}" Content="{StaticResource Motor.HMI.CRH380BG.ContentForegroundBlackBrush}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.BrakeFunctionStatusUnlinkedForegroud">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static brake:Efficence.NotEfficent}" Content="{StaticResource Motor.HMI.CRH380BG.ContentForegroundBlackBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static brake:Efficence.Efficent}" Content="{StaticResource Motor.HMI.CRH380BG.ForegroundWhiteBrush}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.BrakeFunctionStatusLinkedBackgroud">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static brake:Efficence.NotEfficent}" Content="{StaticResource Motor.HMI.CRH380BG.ContentForegroundBlackBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static brake:Efficence.Efficent}" Content="{StaticResource Motor.HMI.CRH380BG.ForegroundWhiteBrush}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.BrakeFunctionStatusLinkedForegroud">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static brake:Efficence.NotEfficent}" Content="{StaticResource Motor.HMI.CRH380BG.ForegroundWhiteBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static brake:Efficence.Efficent}" Content="{StaticResource Motor.HMI.CRH380BG.ContentForegroundBlackBrush}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.AirBrakeCloseToFillImage">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static brake:EfficenceClose.Close}" Content="{StaticResource Img叉}" />
+            <converter1:ObjectContentPair Key="{x:Static brake:EfficenceClose.Open}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.PipeState">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static maintain:PipeState.Linked}" Content="{StaticResource Motor.HMI.CRH380BG.ContentBackgroundYellowBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static maintain:PipeState.UnLined}" Content="{StaticResource Motor.HMI.CRH380BG.ContentForegroundBlackBrush}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.BrakeStateToFillImage">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static brake:EfficentState.UnKonwn}" Content="{StaticResource Motor.HMI.CRH380BG.ImgUnknown}" />
+            <converter1:ObjectContentPair Key="{x:Static brake:EfficentState.Efficent}" />
+            <converter1:ObjectContentPair Key="{x:Static brake:EfficentState.Not}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.ParkingBrakeStateToFillImage">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static brake:ParkingStateUnkown.UnKown}" Content="{StaticResource Motor.HMI.CRH380BG.ImgUnknown}" />
+            <converter1:ObjectContentPair Key="{x:Static brake:ParkingStateUnkown.Konwn}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.BrakeStateToFillBackground">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static brake:EfficentState.Not}" Content="{StaticResource Motor.HMI.CRH380BG.ContentForegroundBlackBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static brake:EfficentState.Efficent}" Content="{StaticResource Motor.HMI.CRH380BG.BackgroundBlueBrsh}" />
+            <converter1:ObjectContentPair Key="{x:Static brake:EfficentState.UnKonwn}" Content="{StaticResource Motor.HMI.CRH380BG.ContentForegroundBlackBrush}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.BrakeStateToFillImageBackground">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static brake:EfficentState.Not}" Content="{StaticResource Motor.HMI.CRH380BG.TransparentBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static brake:EfficentState.Efficent}" Content="{StaticResource Motor.HMI.CRH380BG.TransparentBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static brake:EfficentState.UnKonwn}" Content="{StaticResource Motor.HMI.CRH380BG.ContentForegroundBlackBrush}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.ParkingBrakeUmkown">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static brake:ParkingStateUnkown.UnKown}" Content="{StaticResource Motor.HMI.CRH380BG.ContentForegroundBlackBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static brake:ParkingStateUnkown.Konwn}" Content="{StaticResource Motor.HMI.CRH380BG.TransparentBrush}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.ParkingBrakeApply">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static brake:ParkingState.Efficent}" Content="{StaticResource Motor.HMI.CRH380BG.BackgroundBlueBrsh}" />
+            <converter1:ObjectContentPair Key="{x:Static brake:ParkingState.UnEfficent}" Content="{StaticResource Motor.HMI.CRH380BG.ContentForegroundBlackBrush}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.BrakeStateToApplyFillBackground">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{StaticResource BoolTrue}" Content="{StaticResource Motor.HMI.CRH380BG.BrakeEfficientBorderDarkOrange}" />
+            <converter1:ObjectContentPair Key="{StaticResource BoolFalse}">
+                <converter1:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Transparent" />
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.BrakeStateToFillBrush">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static brake:Efficence.Efficent}" Content="{StaticResource Motor.HMI.CRH380BG.SelectedBlueBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static brake:Efficence.NotEfficent}">
+                <converter1:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Transparent" />
+                </converter1:ObjectContentPair.Content>
+            </converter1:ObjectContentPair>
+            <converter1:ObjectContentPair Key="{x:Static constant:PantographState.Rise}" Content="{StaticResource Motor.HMI.CRH380BG.ImgPantographRise}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:PantographState.Down}" Content="{StaticResource Motor.HMI.CRH380BG.ImgPantographDown}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:PantographState.Removal}" Content="{StaticResource Motor.HMI.CRH380BG.ImgPantographRemoval}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.PantographStateConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:PantographState.Unkown}" Content="{StaticResource Motor.HMI.CRH380BG.ImgUnknown}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:PantographState.Rise}" Content="{StaticResource Motor.HMI.CRH380BG.ImgPantographRise}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:PantographState.Down}" Content="{StaticResource Motor.HMI.CRH380BG.ImgPantographDown}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:PantographState.Removal}" Content="{StaticResource Motor.HMI.CRH380BG.ImgPantographRemoval}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.MainBreakStateConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:MainBreakState.Unkonw}" Content="{StaticResource Motor.HMI.CRH380BG.ImgUnknown}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:MainBreakState.Closure}" Content="{StaticResource Motor.HMI.CRH380BG.ImgMainBreakClosure}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:MainBreakState.Disconnect}" Content="{StaticResource Motor.HMI.CRH380BG.ImgMainBreakDisconnect}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:MainBreakState.Removal}" Content="{StaticResource Motor.HMI.CRH380BG.ImgMainBreakRemoval}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.VoltageChargerStateConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:VoltageChargerState.Black}" Content="{StaticResource Motor.HMI.CRH380BG.ImgVoltageChargerBlack}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:VoltageChargerState.Yellow}" Content="{StaticResource Motor.HMI.CRH380BG.ImgVoltageChargerYellow}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:VoltageChargerState.Blue}" Content="{StaticResource Motor.HMI.CRH380BG.ImgVoltageChargerBlue}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:VoltageChargerState.Unknow}" Content="{StaticResource Motor.HMI.CRH380BG.ImgUnknown}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.ChargerStateConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:ChargerState.Black}" Content="{StaticResource Motor.HMI.CRH380BG.ImgChargerBlack}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:ChargerState.Yellow}" Content="{StaticResource Motor.HMI.CRH380BG.ImgChargerYellow}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:ChargerState.Blue}" Content="{StaticResource Motor.HMI.CRH380BG.ImgChargerBlue}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:ChargerState.Unknow}" Content="{StaticResource Motor.HMI.CRH380BG.ImgUnknown}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.DoorDisableTypeConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:DoorDisableType.Null}" Content="{StaticResource Motor.HMI.CRH380BG.ImgNull}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:DoorDisableType.Disable}" Content="{StaticResource Motor.HMI.CRH380BG.ImgDoorDisable}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.DoorOpenTypeConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:DoorOpenType.AllClose}" Content="{StaticResource Motor.HMI.CRH380BG.ImgBlackWhite}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:DoorOpenType.AtleastOnedoorOpen}" Content="{StaticResource Motor.HMI.CRH380BG.ImgWhite}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:DoorOpenType.Unknow}" Content="{StaticResource Motor.HMI.CRH380BG.ImgUnknown}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.DoorState11Converter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:DoorState.Close}" Content="{StaticResource Motor.HMI.CRH380BG.ImgBlack1_1}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:DoorState.Fault}" Content="{StaticResource Motor.HMI.CRH380BG.ImgRed1_1}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:DoorState.Open}" Content="{StaticResource Motor.HMI.CRH380BG.ImgWhite1_1}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:DoorState.Lock}" Content="{StaticResource Motor.HMI.CRH380BG.ImgYellow1_1}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:DoorState.Unkown}" Content="{StaticResource Motor.HMI.CRH380BG.ImgUnknown}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.DoorState12Converter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:DoorState.Close}" Content="{StaticResource Motor.HMI.CRH380BG.ImgBlack1_2}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:DoorState.Fault}" Content="{StaticResource Motor.HMI.CRH380BG.ImgRed1_2}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:DoorState.Open}" Content="{StaticResource Motor.HMI.CRH380BG.ImgWhite1_2}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:DoorState.Lock}" Content="{StaticResource Motor.HMI.CRH380BG.ImgYellow1_2}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:DoorState.Unkown}" Content="{StaticResource Motor.HMI.CRH380BG.ImgUnknown}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.DoorState21Converter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:DoorState.Close}" Content="{StaticResource Motor.HMI.CRH380BG.ImgBlack2_1}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:DoorState.Fault}" Content="{StaticResource Motor.HMI.CRH380BG.ImgRed2_1}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:DoorState.Open}" Content="{StaticResource Motor.HMI.CRH380BG.ImgWhite2_1}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:DoorState.Lock}" Content="{StaticResource Motor.HMI.CRH380BG.ImgYellow2_1}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:DoorState.Unkown}" Content="{StaticResource Motor.HMI.CRH380BG.ImgUnknown}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.DoorState22Converter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:DoorState.Close}" Content="{StaticResource Motor.HMI.CRH380BG.ImgBlack2_2}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:DoorState.Fault}" Content="{StaticResource Motor.HMI.CRH380BG.ImgRed2_2}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:DoorState.Open}" Content="{StaticResource Motor.HMI.CRH380BG.ImgWhite2_2}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:DoorState.Lock}" Content="{StaticResource Motor.HMI.CRH380BG.ImgYellow2_2}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:DoorState.Unkown}" Content="{StaticResource Motor.HMI.CRH380BG.ImgUnknown}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.DoorStateForegroundConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:DoorState.Close}" Content="{StaticResource Motor.HMI.CRH380BG.ForegroundWhiteBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:DoorState.Fault}" Content="{StaticResource Motor.HMI.CRH380BG.ForegroundWhiteBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:DoorState.Open}" Content="{StaticResource Motor.HMI.CRH380BG.ContentBackgroundBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:DoorState.Lock}" Content="{StaticResource Motor.HMI.CRH380BG.ContentBackgroundBrush}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.RoofIsolationStateConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:RoofIsolationState.Unkonw}" Content="{StaticResource Motor.HMI.CRH380BG.ImgUnknown}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:RoofIsolationState.Closure}" Content="{StaticResource Motor.HMI.CRH380BG.ImgRoofIsolationClosure}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:RoofIsolationState.Disconnect}" Content="{StaticResource Motor.HMI.CRH380BG.ImgRoofIsolationDisconnect}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:RoofIsolationState.Removal}" Content="{StaticResource Motor.HMI.CRH380BG.ImgRoofIsolationRemoval}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.AirConditionStateConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:AirConditionState.Close}" Content="{StaticResource Motor.HMI.CRH380BG.ContentBackgroundBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:AirConditionState.AutoOpen}" Content="{StaticResource Motor.HMI.CRH380BG.ContentLimeGreenBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:AirConditionState.ManiualOpen}" Content="{StaticResource Motor.HMI.CRH380BG.ContentBackgroundYellowBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:AirConditionState.EmergencyClose}" Content="{StaticResource Motor.HMI.CRH380BG.ContentBackgroundRedBrush}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.AirConditionTemperatureConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:AirConditionTemperatureState.Four}" Content="{StaticResource Motor.HMI.CRH380BG.StringFour}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:AirConditionTemperatureState.Zero}" Content="{StaticResource Motor.HMI.CRH380BG.StringZero}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:AirConditionTemperatureState.One}" Content="{StaticResource Motor.HMI.CRH380BG.StringOne}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:AirConditionTemperatureState.Two}" Content="{StaticResource Motor.HMI.CRH380BG.StringTwo}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:AirConditionTemperatureState.Three}" Content="{StaticResource Motor.HMI.CRH380BG.StringThree}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.IllumimationStateConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:IlluminationState.Illumination0}" Content="{StaticResource Motor.HMI.CRH380BG.ImgBlack}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:IlluminationState.Illumination1_3}" Content="{StaticResource Motor.HMI.CRH380BG.ImgIllumination1_3}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:IlluminationState.Illumination1}" Content="{StaticResource Motor.HMI.CRH380BG.ImgIllumination1}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.AscSettingConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:AscSettingState.Close}" Content="{StaticResource Motor.HMI.CRH380BG.ImgInfoAscSetting0}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:AscSettingState.Open}" Content="{StaticResource Motor.HMI.CRH380BG.ImgInfoAscSetting1}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.AscSettingStringConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:AscSettingState.Close}" Content="{StaticResource Motor.HMI.CRH380BG.StringLine}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:AscSettingState.Open}" Content="{StaticResource Motor.HMI.CRH380BG.StringZero}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.PrepareRunActivationConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:PrepareRunActivationState.Null}" Content="{StaticResource Motor.HMI.CRH380BG.ImgNull}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:PrepareRunActivationState.PrepareRunActivation}" Content="{StaticResource Motor.HMI.CRH380BG.ImgInfoPrepareRunActivation}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.InfoMainBreakConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:InfoMainBreakState.Null}" Content="{StaticResource Motor.HMI.CRH380BG.ImgNull}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:InfoMainBreakState.AtLeastOneDisconnect}" Content="{StaticResource Motor.HMI.CRH380BG.ImgInfoAtLeastOneDisconnect}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:InfoMainBreakState.AllDisconnect}" Content="{StaticResource Motor.HMI.CRH380BG.ImgInfoAllDisconnect}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.SettingPlacedInZeroTypeConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:SettingPlacedInZeroType.Null}" Content="{StaticResource Motor.HMI.CRH380BG.ImgNull}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:SettingPlacedInZeroType.BreakHandle}" Content="{StaticResource Motor.HMI.CRH380BG.ImgInfoBrakeHandle}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:SettingPlacedInZeroType.TractionHandle}" Content="{StaticResource Motor.HMI.CRH380BG.ImgInfoTractionHandle}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:SettingPlacedInZeroType.RunSpeed}" Content="{StaticResource Motor.HMI.CRH380BG.ImgInfoRunSpeed}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.TrainIsReadyStateConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:TrainIsReadyState.Null}" Content="{StaticResource Motor.HMI.CRH380BG.ImgNull}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:TrainIsReadyState.TrianIsReady}" Content="{StaticResource Motor.HMI.CRH380BG.ImgInfoTrainIsReady}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.InfoLightStateConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:InfoLightState.Null}" Content="{StaticResource Motor.HMI.CRH380BG.ImgNull}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:InfoLightState.HighBeamLightStrong}" Content="{StaticResource Motor.HMI.CRH380BG.ImgInfoHighBeamLightStrong}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:InfoLightState.LightState0}" Content="{StaticResource Motor.HMI.CRH380BG.ImgLightState0}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:InfoLightState.LightState1}" Content="{StaticResource Motor.HMI.CRH380BG.ImgLightState1}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:InfoLightState.LightState2}" Content="{StaticResource Motor.HMI.CRH380BG.ImgLightState2}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.AutoSafeDeviceStateConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:AutoSafeDeviceState.Null}" Content="{StaticResource Motor.HMI.CRH380BG.ImgNull}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:AutoSafeDeviceState.AutoSafeDevice}" Content="{StaticResource Motor.HMI.CRH380BG.ImgInfoAutoSafeDevice}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.DriverRoomChangeModeStateConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:DriverRoomChangeModeState.Null}" Content="{StaticResource Motor.HMI.CRH380BG.ImgNull}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:DriverRoomChangeModeState.DriverRoomChangeMode}" Content="{StaticResource Motor.HMI.CRH380BG.ImgInfoDriverRoomChangeMode}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.InfoDoorStateConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:InfoDoorState.Null}" Content="{StaticResource Motor.HMI.CRH380BG.ImgNull}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:InfoDoorState.CommunicationFault}" Content="{StaticResource Motor.HMI.CRH380BG.ImgInfoDoorCommunicationFault}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.FireStateConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:FireState.Null}" Content="{StaticResource Motor.HMI.CRH380BG.ImgNull}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:FireState.Fire}" Content="{StaticResource Motor.HMI.CRH380BG.ImgInfoFire}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.InfoDriverRoomDoorStateConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:InfoDriverRoomDoorState.Null}" Content="{StaticResource Motor.HMI.CRH380BG.ImgNull}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:InfoDriverRoomDoorState.Freed}" Content="{StaticResource Motor.HMI.CRH380BG.ImgInfoDriverRoomDoorFreed}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.TrainPipeCutoffStateoStateConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:TrainPipeCutoffState.Null}" Content="{StaticResource Motor.HMI.CRH380BG.ImgNull}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:TrainPipeCutoffState.Cutoff}" Content="{StaticResource Motor.HMI.CRH380BG.ImgInfoTrainTubeInflated}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:TrainPipeCutoffState.Unknow}" Content="{StaticResource Motor.HMI.CRH380BG.ImgUnknown}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.SpeedLimitStateConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:SpeedLimitState.Null}" Content="{x:Null}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:SpeedLimitState.SpeedLimit}" Content="{StaticResource Motor.HMI.CRH380BG.StringHighSpeedLimit}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.SpeedLimitVisibleStateConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:SpeedLimitState.Null}" Content="{StaticResource Motor.HMI.CRH380BG.StringHidden}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:SpeedLimitState.SpeedLimit}" Content="{StaticResource Motor.HMI.CRH380BG.StringVisible}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.AtLeastOneDoorOpenStateConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:AtLeastOneDoorOpenState.Null}" Content="{StaticResource Motor.HMI.CRH380BG.ImgNull}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:AtLeastOneDoorOpenState.AtLeastOneDoorOpen}" Content="{StaticResource Motor.HMI.CRH380BG.ImgInfoAtLeastOneDoorOpen}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.SpeedLimitBackStateConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:SpeedLimitState.Null}" Content="{StaticResource Motor.HMI.CRH380BG.ContentBackgroundTransparentBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:SpeedLimitState.SpeedLimit}" Content="{StaticResource Motor.HMI.CRH380BG.ContentBackgroundYellowBrush}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.SelectConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{StaticResource BoolTrue}" Content="{StaticResource Motor.HMI.CRH380BG.BackgroundBlueBrsh}" />
+            <converter1:ObjectContentPair Key="{StaticResource BoolFalse}" Content="{StaticResource Motor.HMI.CRH380BG.TransparentBrush}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.ReleaseSpeedConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{StaticResource BoolTrue}" Content="{StaticResource Motor.HMI.CRH380BG.ForegroundWhiteBrush}" />
+            <converter1:ObjectContentPair Key="{StaticResource BoolFalse}" Content="{StaticResource Motor.HMI.CRH380BG.ContentGrayBrush}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.SpeedLimit100Converter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{StaticResource BoolTrue}" Content="{StaticResource Motor.HMI.CRH380BG.StringZero}" />
+            <converter1:ObjectContentPair Key="{StaticResource BoolFalse}" Content="{StaticResource Motor.HMI.CRH380BG.StringOne}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.AutoSpeedControlConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:AutoSpeedControlType.AscCloes}" Content="{StaticResource Motor.HMI.CRH380BG.StringZero}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:AutoSpeedControlType.Speed2}" Content="{StaticResource Motor.HMI.CRH380BG.StringOne}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:AutoSpeedControlType.Speed5}" Content="{StaticResource Motor.HMI.CRH380BG.StringTwo}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:AutoSpeedControlType.Speed10}" Content="{StaticResource Motor.HMI.CRH380BG.StringThree}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:AutoSpeedControlType.Speed25}" Content="{StaticResource Motor.HMI.CRH380BG.StringFour}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:AutoSpeedControlType.MaxSpeed}" Content="{StaticResource Motor.HMI.CRH380BG.StringFive}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.FanTypeConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:FanType.Min}" Content="{StaticResource Motor.HMI.CRH380BG.StringZero}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:FanType.Auto}" Content="{StaticResource Motor.HMI.CRH380BG.StringOne}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:FanType.Max}" Content="{StaticResource Motor.HMI.CRH380BG.StringTwo}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.AccelerationAlarmTypeConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:AccelerationAlarmType.NoSpeedLimit}" Content="{StaticResource Motor.HMI.CRH380BG.StringZero}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:AccelerationAlarmType.SpeedLimit}" Content="{StaticResource Motor.HMI.CRH380BG.StringOne}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:AccelerationAlarmType.AccelerationAlarm}" Content="{StaticResource Motor.HMI.CRH380BG.StringTwo}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.AccelerationAlarmVisibleConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{StaticResource BoolTrue}" Content="{StaticResource Motor.HMI.CRH380BG.ForegroundWhiteBrush}" />
+            <converter1:ObjectContentPair Key="{StaticResource BoolFalse}" Content="{StaticResource Motor.HMI.CRH380BG.ContentBackgroundTransparentBrush}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.AccelerationAlarmForegroundConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{StaticResource BoolTrue}" Content="{StaticResource Motor.HMI.CRH380BG.ContentBackgroundBrush}" />
+            <converter1:ObjectContentPair Key="{StaticResource BoolFalse}" Content="{StaticResource Motor.HMI.CRH380BG.ForegroundWhiteBrush}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.NetWorkCurrentLimitTypeConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:NetWorkCurrentLimitType.Max}" Content="{StaticResource Motor.HMI.CRH380BG.StringFour}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:NetWorkCurrentLimitType.Current300A}" Content="{StaticResource Motor.HMI.CRH380BG.StringZero}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:NetWorkCurrentLimitType.Current400A}" Content="{StaticResource Motor.HMI.CRH380BG.StringOne}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:NetWorkCurrentLimitType.Current500A}" Content="{StaticResource Motor.HMI.CRH380BG.StringTwo}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:NetWorkCurrentLimitType.Current600A}" Content="{StaticResource Motor.HMI.CRH380BG.StringThree}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.FrontWindowHeatingTypeConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:FrontWindowHeatingType.Close}" Content="{StaticResource Motor.HMI.CRH380BG.StringZero}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:FrontWindowHeatingType.CommonMode}" Content="{StaticResource Motor.HMI.CRH380BG.StringOne}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:FrontWindowHeatingType.DefrostMode}" Content="{StaticResource Motor.HMI.CRH380BG.StringTwo}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.GroupHangsTypeConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:GroupHangsType.Close}" Content="{StaticResource Motor.HMI.CRH380BG.ImgHangClose}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:GroupHangsType.Open}" Content="{StaticResource Motor.HMI.CRH380BG.ImgHangOpen}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:GroupHangsType.Running}" Content="{StaticResource Motor.HMI.CRH380BG.ImgHangRunning}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:GroupHangsType.Hanged}" Content="{StaticResource Motor.HMI.CRH380BG.ImgHanged}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:GroupHangsType.ReadyHang}" Content="{StaticResource Motor.HMI.CRH380BG.ImgReadyHang}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:GroupHangsType.Fault}" Content="{StaticResource Motor.HMI.CRH380BG.ImgHangFault}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.TraBraPercentForTypeConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:TractionBrakeType.Unknow}" Content="{StaticResource Motor.HMI.CRH380BG.ContentBackgroundTransparentBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:TractionBrakeType.Traction}" Content="{StaticResource Motor.HMI.CRH380BG.BackgroundBlueBrsh}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:TractionBrakeType.Brake}" Content="{StaticResource Motor.HMI.CRH380BG.ContentBackgroundOrangeBrush}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.TraBraPercentBorderTypeConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:TractionBrakeType.Unknow}" Content="{StaticResource Motor.HMI.CRH380BG.ContentBackgroundTransparentBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:TractionBrakeType.Traction}" Content="{StaticResource Motor.HMI.CRH380BG.ForegroundWhiteBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:TractionBrakeType.Brake}" Content="{StaticResource Motor.HMI.CRH380BG.ForegroundWhiteBrush}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.TraBraPercentRightImgTypeConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:TractionBrakeType.Unknow}" Content="{StaticResource Motor.HMI.CRH380BG.ImgNull}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:TractionBrakeType.Traction}" Content="{StaticResource Motor.HMI.CRH380BG.ImgRedTriangleRight}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:TractionBrakeType.Brake}" Content="{StaticResource Motor.HMI.CRH380BG.ImgGreenTriangleRight}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.TraBraPercentLeftImgTypeConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:TractionBrakeType.Unknow}" Content="{StaticResource Motor.HMI.CRH380BG.ImgNull}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:TractionBrakeType.Traction}" Content="{StaticResource Motor.HMI.CRH380BG.ImgRedTriangleLeft}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:TractionBrakeType.Brake}" Content="{StaticResource Motor.HMI.CRH380BG.ImgGreenTriangleLeft}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.CatenaryTypeConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:CatenaryType.AutoSelect}" Content="{StaticResource Motor.HMI.CRH380BG.StringZero}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:CatenaryType.HighNet53}" Content="{StaticResource Motor.HMI.CRH380BG.StringOne}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:CatenaryType.HighNet64}" Content="{StaticResource Motor.HMI.CRH380BG.StringTwo}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+</ResourceDictionary>

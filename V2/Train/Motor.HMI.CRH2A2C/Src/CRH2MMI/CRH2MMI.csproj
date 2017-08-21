@@ -1,0 +1,629 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A868BAA2-08DF-4DA4-A053-ADB2B2140DDF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CRH2MMI</RootNamespace>
+    <AssemblyName>CRH2MMI</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\MMI\Addin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\MMI\Addin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\MMI\Addin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>..\MMI\Addin\CRH2MMI.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>..\MMI\Addin\CRH2MMI.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonUtil, Version=2.29.2016.517, Culture=neutral, processorArchitecture=x86">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Excel.Interface, Version=2.28.2016.518, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mmi.Common.DateTimeInterpreter">
+      <HintPath>..\..\..\..\Bin\Common\Mmi.Common.DateTimeInterpreter.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MMI.Facility.Interface, Version=2.50.2017.214, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AcumuElec.cs" />
+    <Compile Include="Appraise\Appraise.cs" />
+    <Compile Include="Appraise\AppraiseResource.cs" />
+    <Compile Include="BreakLocked\Screensavers.cs" />
+    <Compile Include="Common\Global\EspecialConfig.cs" />
+    <Compile Include="Common\Global\ProjectCommunicationPortFacade.cs" />
+    <Compile Include="Common\INavigateAware.cs" />
+    <Compile Include="Common\ScreenId.cs" />
+    <Compile Include="Common\Screen\ButtonConfig.cs" />
+    <Compile Include="Common\Screen\RemarksConfig.cs" />
+    <Compile Include="Common\Screen\SprinkleSandConfig.cs" />
+    <Compile Include="Extensions\ButtonConfigExtension.cs" />
+    <Compile Include="Extensions\RemarksConfigExtension.cs" />
+    <Compile Include="Fault\PackingBrakeCutItem.cs" />
+    <Compile Include="Fault\PackingBrakeCutManager.cs" />
+    <Compile Include="Fault\PackingBrakeCutState.cs" />
+    <Compile Include="Fault\View\PackingBrakeCutOccuseView.cs" />
+    <Compile Include="Resource\OubKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OubKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\OufKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OufKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SprinkleSand\SprinkleSandContentView.cs" />
+    <Compile Include="SprinkleSand\SprinkleSandView.cs" />
+    <Compile Include="Temper.cs" />
+    <Compile Include="AxisTemperature\Axis.cs" />
+    <Compile Include="AxisTemperature\AxisResource.cs" />
+    <Compile Include="AxisTemperature\AxisState.cs" />
+    <Compile Include="AxisTemperature\AxisTemperatureConfig.cs" />
+    <Compile Include="AxisTemperature\AxisTemperatureSendKeyModel.cs" />
+    <Compile Include="AxleTemperature\AxleTemperatureDetailConfig.cs" />
+    <Compile Include="AxleTemperature\AxleTemperatureView.cs" />
+    <Compile Include="Bottom\InformationLocation.cs" />
+    <Compile Include="Bottom\InformationModel.cs" />
+    <Compile Include="Bottom\InformationType.cs" />
+    <Compile Include="Bottom\SuggestiveInformation.cs" />
+    <Compile Include="BPRescue\BPConfig.cs" />
+    <Compile Include="BPRescue\BPRescueView.cs" />
+    <Compile Include="BPRescue\BPResource.cs" />
+    <Compile Include="BrakeInfo\BrakeInfo.cs" />
+    <Compile Include="BrakeInfo\BrakeInfoConfig.cs" />
+    <Compile Include="BrakeInfo\BrakeInfoPageBase.cs" />
+    <Compile Include="BrakeInfo\Pages\ASPressurePage.cs" />
+    <Compile Include="BrakeInfo\Pages\BrakeInfoCommonPage.cs" />
+    <Compile Include="BrakeInfo\Pages\BrakePage.cs" />
+    <Compile Include="BrakeInfo\Pages\BrakePressurePage.cs" />
+    <Compile Include="BrakeInfo\Pages\EPValvePage.cs" />
+    <Compile Include="BrakeInfo\Pages\MRPressurePage.cs" />
+    <Compile Include="BrakeInfo\Pages\RegenerationPage.cs" />
+    <Compile Include="BreakLocked\BrakeLockedSendKeyModel.cs" />
+    <Compile Include="BreakLocked\BrakeLockedConfig.cs" />
+    <Compile Include="BreakLocked\BrakeLockedResource.cs" />
+    <Compile Include="BreakLocked\CtrolType.cs" />
+    <Compile Include="BreakLocked\LockState.cs" />
+    <Compile Include="CarInfo\CarInfoConfig.cs" />
+    <Compile Include="Common\Control\AngleBracket.cs" />
+    <Compile Include="Common\Control\CRH2BtnGlintBehavierStrategy.cs" />
+    <Compile Include="Common\CRH2BaseClass.cs" />
+    <Compile Include="Common\CRH2BaseClassExtension.cs" />
+    <Compile Include="Common\GDIConnectHood.cs" />
+    <Compile Include="Common\GDIGrandTotalPower.cs" />
+    <Compile Include="Common\Global\ChangePagaManager.cs" />
+    <Compile Include="Common\Global\ObjectManager.cs" />
+    <Compile Include="Common\Global\GlobalEvent.cs" />
+    <Compile Include="Common\Global\GlobalInfoConfig.cs" />
+    <Compile Include="Common\Global\IFaultInfoFacade.cs" />
+    <Compile Include="Common\GridLineInitialize.cs" />
+    <Compile Include="Common\Global\ICommunicationPortFacade.cs" />
+    <Compile Include="Common\Models\ButtonStateRecorder.cs" />
+    <Compile Include="Common\Models\DictionaryKeyModel.cs" />
+    <Compile Include="Common\Models\GridLineConfig.cs" />
+    <Compile Include="Common\Models\GridLineConfigTest.cs" />
+    <Compile Include="Common\Models\GridLineItemData.cs" />
+    <Compile Include="Common\Control\MMITableControl.cs" />
+    <Compile Include="Common\Control\MMITableControlItem.cs" />
+    <Compile Include="Common\Global\GlobalInfo.cs" />
+    <Compile Include="Common\Screen\StaringView.cs" />
+    <Compile Include="Common\Screen\StartViewConfig.cs" />
+    <Compile Include="Common\Screen\TMSPower.cs" />
+    <Compile Include="Common\Screen\TMSPowerConfig.cs" />
+    <Compile Include="Common\Screen\TMSPowerState.cs" />
+    <Compile Include="Common\Util\GDIGridLineHelper.cs" />
+    <Compile Include="Common\View\GridViewConfig.cs" />
+    <Compile Include="Common\Models\MatrixViewConfigItem.cs" />
+    <Compile Include="Common\View\SetButton.cs" />
+    <Compile Include="Common\View\Train\AcceptEleArc.cs" />
+    <Compile Include="Common\View\Train\AcceptEleArcState.cs" />
+    <Compile Include="Common\View\Train\Car.cs" />
+    <Compile Include="Common\View\Train\CarFactory.cs" />
+    <Compile Include="Common\View\Train\CarState.cs" />
+    <Compile Include="Common\View\Train\CarStateModel.cs" />
+    <Compile Include="Common\View\Train\CarWidthModel.cs" />
+    <Compile Include="Common\View\Train\HeadCar.cs" />
+    <Compile Include="Common\View\Train\ICarStateProxy.cs" />
+    <Compile Include="Common\View\Train\TrainResource.cs" />
+    <Compile Include="Common\View\Train\TrainUnit.cs" />
+    <Compile Include="Common\View\Train\TrainUnitState.cs" />
+    <Compile Include="Common\View\Train\TrainUnitType.cs" />
+    <Compile Include="Common\View\Train\TrainView.cs" />
+    <Compile Include="CarInfo\CarInfo.cs" />
+    <Compile Include="CarInfo\CarInfoPage1.cs" />
+    <Compile Include="CarInfo\CarInfoPage2.cs" />
+    <Compile Include="CarInfo\CarInfoPageBase.cs" />
+    <Compile Include="CarInfo\CarInfoResource.cs" />
+    <Compile Include="CarInfo\ChangePageEventArgs.cs" />
+    <Compile Include="Common\Control\CRH2BtnBehavierStrategy.cs" />
+    <Compile Include="Common\Control\CRH2Button.cs" />
+    <Compile Include="Common\Global\GlobalParam.cs" />
+    <Compile Include="Common\Global\GlobalResource.cs" />
+    <Compile Include="Common\ResourceMatrix.cs" />
+    <Compile Include="Common\Reversal\ReversalHelper.cs" />
+    <Compile Include="Common\Reversal\ReversalRectProgress.cs" />
+    <Compile Include="Common\Reversal\ReversalRectTextInfo.cs" />
+    <Compile Include="Common\Config\TrainConfig.cs" />
+    <Compile Include="Common\Util\IUnit.cs" />
+    <Compile Include="Common\Util\UnitBase.cs" />
+    <Compile Include="Common\Config\ViewConfig.cs" />
+    <Compile Include="Common\View\CommonSetBtn.cs" />
+    <Compile Include="Common\View\Train\TrainViewLocation.cs" />
+    <Compile Include="Common\View\Train\Wheel.cs" />
+    <Compile Include="Common\View\Train\CarType.cs" />
+    <Compile Include="Common\View\Train\WheelState.cs" />
+    <Compile Include="Config\ConfigModel\ConfigFileModel.cs" />
+    <Compile Include="Config\ConfigModel\ConnectHoodInfoConfig.cs" />
+    <Compile Include="Config\ConfigModel\CRH2ChooseButtionConfig.cs" />
+    <Compile Include="Config\ConfigModel\CRH2CommunicationPortModel.cs" />
+    <Compile Include="Config\ConfigModel\CRH2CommunicationPortReaderConfig.cs" />
+    <Compile Include="Config\ConfigModel\CRH2CommunicationPortRectangleModel.cs" />
+    <Compile Include="Config\ConfigModel\CRH2Config.cs" />
+    <Compile Include="Config\ConfigModel\CRH2ConfigAdpt.cs" />
+    <Compile Include="Config\ConfigModel\CRH2Data.cs" />
+    <Compile Include="Config\ConfigModel\CRH2Debug.cs" />
+    <Compile Include="Config\ConfigModel\CRH2DetailConfig.cs" />
+    <Compile Include="Common\View\Train\CRH2TrainConfig.cs" />
+    <Compile Include="Config\ConfigModel\CRH2Type.cs" />
+    <Compile Include="Common\View\Train\TrainUnitConfig.cs" />
+    <Compile Include="Config\ConfigModel\GrandTotalPowerConfig.cs" />
+    <Compile Include="CutState\CutInfoConfig.cs" />
+    <Compile Include="CutState\RemovalStateChangedArgs.cs" />
+    <Compile Include="CutState\RemovalStateContentView2Acc.cs" />
+    <Compile Include="CutState\RemovalStateContentView1Acc.cs" />
+    <Compile Include="CutState\RemovalStateContentViewBase.cs" />
+    <Compile Include="Deliver\DeliverConfig.cs" />
+    <Compile Include="Deliver\DeliverInfoView.cs" />
+    <Compile Include="Deliver\DeliverResultType.cs" />
+    <Compile Include="DoorInfo\DoorConfig.cs" />
+    <Compile Include="DoorInfo\DoorInBoolKeyModel.cs" />
+    <Compile Include="DoorInfo\DoorInfoBack.cs" />
+    <Compile Include="DriveState\DriveStateConfig.cs" />
+    <Compile Include="CutState\RemovalStateMgr.cs" />
+    <Compile Include="DriveState\RemovalStateQueue.cs" />
+    <Compile Include="Fault\FaultChangedArgs.cs" />
+    <Compile Include="Fault\FaultCreator.cs" />
+    <Compile Include="Fault\AllFaultGetter.cs" />
+    <Compile Include="Fault\FaultGetterFacotry.cs" />
+    <Compile Include="Fault\FaultItemInfo.cs" />
+    <Compile Include="Fault\FaultMgr.cs" />
+    <Compile Include="Fault\FaultNameInfo.cs" />
+    <Compile Include="Fault\IFaultGetter.cs" />
+    <Compile Include="Fault\ActiveFaultGetter.cs" />
+    <Compile Include="Fault\ViewFaultGetter.cs" />
+    <Compile Include="Fault\View\FaultDetailInfoPage.cs" />
+    <Compile Include="Fault\View\FaultInfoPage.cs" />
+    <Compile Include="Fault\View\FaultInfoPageBase.cs" />
+    <Compile Include="Fault\View\FaultViewTitleMenuStrategy.cs" />
+    <Compile Include="Appraise\GlobalViewNavigate.cs" />
+    <Compile Include="Jack\JackConfig.cs" />
+    <Compile Include="Jack\JackGroup.cs" />
+    <Compile Include="Jack\JackPage.cs" />
+    <Compile Include="Jack\JackPageModel.cs" />
+    <Compile Include="LightTrans\LightTransPageID.cs" />
+    <Compile Include="LightTrans\LightTransView.cs" />
+    <Compile Include="LightTrans\LightTransViewPage.cs" />
+    <Compile Include="LightTrans\LightUnitBuilder.cs" />
+    <Compile Include="LightTrans\TransResource.cs" />
+    <Compile Include="LightTrans\UnitView\EndPointUnitView.cs" />
+    <Compile Include="LightTrans\LightTrainsConfig.cs" />
+    <Compile Include="LightTrans\EndPointType.cs" />
+    <Compile Include="LightTrans\UnitView\MiddleUnitView.cs" />
+    <Compile Include="LightTrans\UnitView\UnitViewBase.cs" />
+    <Compile Include="Marshing\ConnectHoodInfo.cs" />
+    <Compile Include="Marshing\CRH380AUnineMarshingTR1ItemView.cs" />
+    <Compile Include="Marshing\DemarshItemView.cs" />
+    <Compile Include="Marshing\MarshButtonType.cs" />
+    <Compile Include="Marshing\MarshInfoItemView.cs" />
+    <Compile Include="Marshing\MarshingItemView.cs" />
+    <Compile Include="Marshing\MarshingPage.cs" />
+    <Compile Include="Marshing\MarshingTR1InitCommon.cs" />
+    <Compile Include="Marshing\MarshingTR1ItemView.cs" />
+    <Compile Include="Marshing\MarshingTR2ItemView.cs" />
+    <Compile Include="Marshing\MarshItemView.cs" />
+    <Compile Include="Menu\CRH2menu.cs" />
+    <Compile Include="CstationSet.cs" />
+    <Compile Include="CutState\CutInfo.cs" />
+    <Compile Include="CutState\CutResource.cs" />
+    <Compile Include="Fault\View\FaultInfoView.cs" />
+    <Compile Include="DoorInfo\Door.cs" />
+    <Compile Include="DoorInfo\DoorResource.cs" />
+    <Compile Include="DoorInfo\DoorTypeDefine.cs" />
+    <Compile Include="DoorInfo\DoorUnit.cs" />
+    <Compile Include="DoorInfo\OpenColseDoor.cs" />
+    <Compile Include="DoorInfo\PressReleaseDoor.cs" />
+    <Compile Include="DoorInfo\ReservedDoor.cs" />
+    <Compile Include="DriveState\DriveState.cs" />
+    <Compile Include="Fault\FaultBrowse.cs" />
+    <Compile Include="Menu\DriverMenu.cs" />
+    <Compile Include="Menu\DriverMenuContent.cs" />
+    <Compile Include="Menu\MenuBase.cs" />
+    <Compile Include="Menu\MenuConfig.cs" />
+    <Compile Include="Menu\MenuResource.cs" />
+    <Compile Include="Menu\RecorderMenu.cs" />
+    <Compile Include="Menu\TrainManagerMenu.cs" />
+    <Compile Include="MMIBaseClass.cs" />
+    <Compile Include="Monitor\KeyBoardEventArgs.cs" />
+    <Compile Include="Monitor\Pages\ChangedToPageEventArgs.cs" />
+    <Compile Include="Monitor\Pages\MonitorSetPage.cs" />
+    <Compile Include="Monitor\Pages\SettingControlPage.cs" />
+    <Compile Include="Monitor\SettingKeyBoard.cs" />
+    <Compile Include="Notify\NotifyConfig.cs" />
+    <Compile Include="Notify\NotifyGetter.cs" />
+    <Compile Include="Notify\NotifyKey.cs" />
+    <Compile Include="Notify\NotifyManager.cs" />
+    <Compile Include="Notify\NotifyType.cs" />
+    <Compile Include="ParaADefine.cs" />
+    <Compile Include="PowerClassify\ACK1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PowerClassify\ACK2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PowerClassify\Apu.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PowerClassify\APUPowerFrom.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PowerClassify\ATr.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PowerClassify\BKK.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PowerClassify\BKK2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PowerClassify\CircuitChangerUnit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PowerClassify\HorizontalCircuitChangerUnit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PowerClassify\IPowerUnit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PowerClassify\MTr.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PowerClassify\PowerClassify2A.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PowerClassify\PowerClassify2B.cs" />
+    <Compile Include="PowerClassify\PowerClassify2C.cs" />
+    <Compile Include="PowerClassify\PowerClassify380A.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PowerClassify\PowerClassify380AL.cs" />
+    <Compile Include="PowerClassify\PowerClassifyBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PowerClassify\PowerClassifyBase16.cs" />
+    <Compile Include="PowerClassify\PowerClassifyConfig.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PowerClassify\PowerClassifyCRH380AReconnection.cs" />
+    <Compile Include="PowerClassify\PowerLine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PowerClassify\PowerLines.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PowerClassify\PowerLineType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PowerClassify\PowerTpe.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PowerClassify\PowerTypeResource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PowerClassify\StraightWire.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PowerClassify\ThirdPhMk.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PowerClassify\PowerStates\PowerFrom.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PowerClassify\PowerStates\PowerFromColorAdaptor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PowerClassify\PowerStates\PowerStateData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PowerClassify\PowerStates\PowerStateTree.cs" />
+    <Compile Include="PowerClassify\PowerUnitCollectoin.cs" />
+    <Compile Include="PowerVoltage\PowerVoltageConfig.cs" />
+    <Compile Include="PowerVoltage\PowerVoltagePageBase.cs" />
+    <Compile Include="PowerVoltage\PowerVoltagePageOne.cs" />
+    <Compile Include="PowerVoltage\PowerVoltagePageTwo.cs" />
+    <Compile Include="PowerVoltage\PowerVoltageUnit.cs" />
+    <Compile Include="Rac\EmputyRollConfig.cs" />
+    <Compile Include="Fault\FaultConfig.cs" />
+    <Compile Include="Resource\Images\ImageResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImageResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\InFloatKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InFloatKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TelentControl\TeleControlBtnType.cs" />
+    <Compile Include="TelentControl\TeleControlConfig.cs" />
+    <Compile Include="TelentControl\TeleSendKeyModel.cs" />
+    <Compile Include="Title\FaultCollector.cs" />
+    <Compile Include="Title\TitleConfig.cs" />
+    <Compile Include="Title\TitleMenuClickArgs.cs" />
+    <Compile Include="Title\TitleMenuType.cs" />
+    <Compile Include="Title\TitleShowStrategy.cs" />
+    <Compile Include="Title\TitleResource.cs" />
+    <Compile Include="Title\TrainLineConfig.cs" />
+    <Compile Include="Tow1\Pages\MonitorElectricityPage.cs" />
+    <Compile Include="Tow1\Pages\MonitorRotorPage.cs" />
+    <Compile Include="Tow1\Pages\DCValtagePage.cs" />
+    <Compile Include="Tow1\Pages\RegenerationBrakePage.cs" />
+    <Compile Include="Tow1\Pages\Tow1CommonPageBase.cs" />
+    <Compile Include="Tow1\Pages\Tow1Page.cs" />
+    <Compile Include="Tow1\Tow1InfoPageBase.cs" />
+    <Compile Include="Tow1\Tow1Config.cs" />
+    <Compile Include="Tow2\Content\Tow2Content16Car.cs" />
+    <Compile Include="Tow2\Content\Tow2Content16CarPageModel.cs" />
+    <Compile Include="Tow2\Content\Tow2Content8Car.cs" />
+    <Compile Include="Tow2\Content\Tow2ContentBase.cs" />
+    <Compile Include="Tow2\Tow2NameInfo.cs" />
+    <Compile Include="Tow2\TowInfo2Config.cs" />
+    <Compile Include="TrainLineNo\ChangePageEventArgs.cs" />
+    <Compile Include="TrainLineNo\ContentPressedEventArgs.cs" />
+    <Compile Include="TrainLineNo\ControlPressedEventArgs.cs" />
+    <Compile Include="TrainLineNo\ITranLinePage.cs" />
+    <Compile Include="TrainLineNo\TrainLineChangedConfirmationPage.cs" />
+    <Compile Include="TrainLineNo\TrainLineMenuPage.cs" />
+    <Compile Include="TrainLineNo\TrainLinePageType.cs" />
+    <Compile Include="TrainLineNo\TrainLineSetConfirmationPage.cs" />
+    <Compile Include="TrainLineNo\TrainLineSetKeyboard.cs" />
+    <Compile Include="TrainLineNo\TrainLineSetView.cs" />
+    <Compile Include="TrainLineNo\TrainLineView.cs" />
+    <Compile Include="Vigilant\VigilantBreak.cs" />
+    <Compile Include="Vigilant\VigilantConfig.cs" />
+    <Compile Include="Vigilant\VigilantResource.cs" />
+    <Compile Include="Vigilant\VigilantView.cs" />
+    <Compile Include="WorkState\BrakeType.cs" />
+    <Compile Include="WorkState\WorkStateConfig.cs" />
+    <Compile Include="WorkState\WorkStateView.cs" />
+    <Compile Include="BreakLocked\Hold.cs" />
+    <Compile Include="Jack\JackInfo.cs" />
+    <Compile Include="Marshing\Marsh.cs" />
+    <Compile Include="Monitor\MonitorSet.cs" />
+    <Compile Include="Notify\Notify.cs" />
+    <Compile Include="PowerVoltage\Power.cs" />
+    <Compile Include="Rac\Racing.cs" />
+    <Compile Include="CutState\RemovalState.cs" />
+    <Compile Include="TelentControl\Telecontr.cs" />
+    <Compile Include="TelentControl\TelentCtrlResource.cs" />
+    <Compile Include="TrainLineNo\TNSET.cs" />
+    <Compile Include="Tow2\ReservedTowText.cs" />
+    <Compile Include="Tow2\Tow2Resource.cs" />
+    <Compile Include="Tow1\TowInfo.cs" />
+    <Compile Include="Tow2\TowInfo2.cs" />
+    <Compile Include="LightTrans\Trans.cs" />
+    <Compile Include="Common\Util\CRH2Resource.cs" />
+    <Compile Include="Common\Util\RectTextInfo.cs" />
+    <Compile Include="Preoperation.cs" />
+    <Compile Include="Common\Util\GT_Button.cs" />
+    <Compile Include="Common\Util\GT_RectText.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Title\Title.cs" />
+    <Compile Include="TrainAttendant.cs" />
+    <Compile Include="Common\Util\RectProgress.cs" />
+    <Compile Include="WorkState\WorkStateResource.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Changes.CRH2MMI.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\DetailConfig\CRH2BConfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\CRH2Config.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\DetailConfig\CRH380ALConfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\DetailConfig\CRH380AReconnectionConfig.xml" />
+    <Content Include="Config\DetailConfig\CRH380AUnionConfig.xml" />
+    <Content Include="Config\DetailConfig\MMI_HZ_对象配置.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\DetailConfig\TrainLineConfig.xml" />
+    <Content Include="Config\DetailConfig\CRH2AConfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\DetailConfig\CRH2CConfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\DetailConfig\CRH380AConfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\LogConfig.xml" />
+    <None Include="Resource\Images\Resource\Railway.png" />
+    <None Include="Resource\Images\Resource\preoperation.png" />
+    <None Include="Resource\Images\Resource\menu3.png" />
+    <None Include="Resource\Images\Resource\menu2.png" />
+    <None Include="Resource\Images\Resource\menu1.png" />
+    <None Include="Resource\Images\Resource\menu1 - 副本.png" />
+    <None Include="Resource\Images\Resource\M5.png" />
+    <None Include="Resource\Images\Resource\M4.png" />
+    <None Include="Resource\Images\Resource\M3.png" />
+    <None Include="Resource\Images\Resource\M2.png" />
+    <None Include="Resource\Images\Resource\M1.png" />
+    <None Include="Resource\Images\Resource\isele.png" />
+    <None Include="Resource\Images\Resource\faultinfo.png" />
+    <None Include="Resource\Images\Resource\fault.png" />
+    <None Include="Resource\Images\Resource\door3.png" />
+    <None Include="Resource\Images\Resource\door2.png" />
+    <None Include="Resource\Images\Resource\carinfo.png" />
+    <None Include="Resource\Images\Resource\bluedown.png" />
+    <None Include="Resource\Images\Resource\blueb.png" />
+    <None Include="Resource\Images\Resource\AcumuElec.png" />
+    <None Include="Resource\Images\Resource\titlered2.png" />
+    <None Include="Resource\Images\Resource\titlered1.png" />
+    <None Include="Resource\Images\Resource\title1.png" />
+    <None Include="Resource\Images\Resource\title.png" />
+    <None Include="Resource\Images\Resource\removalstate2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource\Images\ImageResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ImageResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\InFloatKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InFloatKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\OubKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OubKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\OufKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OufKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

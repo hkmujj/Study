@@ -1,0 +1,16 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converter="clr-namespace:MMI.Facility.WPFInfrastructure.Converter;assembly=MMI.Facility.WPFInfrastructure"
+    xmlns:converters="clr-namespace:Subway.WuHanLine6.GIS.Converters">
+
+
+    <converter:MathConverter x:Key="MaxConverter" />
+    <converters:StationTextLocationConverter x:Key="StationTextLocationConverter" />
+    <converters:StationImageConverter x:Key="StationImageConverter" />
+    <converters:EnglishStationNameSizeConverter x:Key="EnglishStationNameSizeConverter" />
+    <converter:BoolVisibilityConverter x:Key="BoolVisibilityConverter" />
+    <converters:StationTextLocationConverter2 x:Key="StationTextLocationConverter2" />
+
+
+</ResourceDictionary>

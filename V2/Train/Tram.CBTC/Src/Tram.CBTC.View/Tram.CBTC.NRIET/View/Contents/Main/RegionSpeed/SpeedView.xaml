@@ -1,0 +1,92 @@
+﻿<UserControl
+    x:Class="Tram.CBTC.NRIET.View.Contents.Main.RegionSpeed.SpeedView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:regionSpeed="clr-namespace:Tram.CBTC.NRIET.View.Contents.Main.RegionSpeed"
+    xmlns:viewModel="clr-namespace:Tram.CBTC.NRIET.ViewModel"
+    d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+    d:DesignHeight="221"
+    d:DesignWidth="263"
+    mc:Ignorable="d">
+    <Grid>
+        <regionSpeed:SpeedDial />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.65*" />
+                <RowDefinition Height="0.35*" />
+            </Grid.RowDefinitions>
+            <Grid Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20*" />
+                    <RowDefinition Height="20*" />
+                    <RowDefinition Height="15*" />
+                </Grid.RowDefinitions>
+                <Grid Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.325*" />
+                        <ColumnDefinition Width="0.35*" />
+                        <ColumnDefinition Width="0.325*" />
+                    </Grid.ColumnDefinitions>
+                    <Border
+                        x:Name="SpeedBorder"
+                        Grid.Column="1"
+                        Background="LightGray"
+                        CornerRadius="5">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.375*" />
+                                <ColumnDefinition Width="0.25*" />
+                                <ColumnDefinition Width="0.375*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock
+                                Grid.Column="0"
+                                HorizontalAlignment="Right"
+                                Style="{StaticResource Tram.CBTC.Nriet.Style.Text.BlackText}"
+                                Text="{Binding CBTC.SignalInfo.Speed.RunSpeed.Value, StringFormat={}{0:F0}}" />
+                            <TextBlock
+                                Grid.Column="1"
+                                HorizontalAlignment="Center"
+                                Style="{StaticResource Tram.CBTC.Nriet.Style.Text.BlackText}"
+                                Text="/" />
+                            <TextBlock
+                                Grid.Column="2"
+                                HorizontalAlignment="Left"
+                                Style="{StaticResource Tram.CBTC.Nriet.Style.Text.BlackText}"
+                                Text="{Binding CBTC.SignalInfo.Speed.RecommendedSpeed.Value, StringFormat={}{0:F0}}" />
+                        </Grid>
+                    </Border>
+                    <Popup x:Name="SpeedOverPopup" Grid.Column="1" Width="220" Height="105" IsOpen="{Binding CBTC.SignalInfo.Speed.BrakeDetailsType, Converter={StaticResource Tram.CBTC.Nriet.Converter.NrietBrakeDetailsConvert}}" StaysOpen="True" PlacementTarget="{Binding ElementName=SpeedBorder}" HorizontalOffset="-60" VerticalOffset="-170">
+                        <Grid Background="Red" Opacity="0.7">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.2*"></RowDefinition>
+                                <RowDefinition Height="0.6*"></RowDefinition>
+                                <RowDefinition Height="0.2*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                                <ColumnDefinition Width="0.6*"></ColumnDefinition>
+                                <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Row="1" Column="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.4*"></ColumnDefinition>
+                                    <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                                    <ColumnDefinition Width="0.4*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Style="{StaticResource Tram.CBTC.Nriet.Style.Text.WhiteText}" Text="{StaticResource Tram.CBTC.Nriet.String.SpeedOver}"></TextBlock>
+                                <TextBlock Grid.Column="2" Style="{StaticResource Tram.CBTC.Nriet.Style.Text.WhiteText}" Text="{StaticResource Tram.CBTC.Nriet.String.Danger}"></TextBlock>
+                            </Grid>
+                        </Grid>
+                    </Popup>
+                </Grid>
+                <TextBlock
+                    Grid.Row="1"
+                    HorizontalAlignment="Center"
+                    Style="{StaticResource Tram.CBTC.Nriet.Style.Text.WhiteText2}"
+                    Text="{StaticResource Tram.CBTC.Nriet.String.FactRecommendSpeed}" />
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

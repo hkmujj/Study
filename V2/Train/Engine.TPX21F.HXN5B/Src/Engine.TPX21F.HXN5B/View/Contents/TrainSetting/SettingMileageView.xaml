@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="Engine.TPX21F.HXN5B.View.Contents.TrainSetting.SettingMileageView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:common="clr-namespace:Engine.TPX21F.HXN5B.View.Common"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:Engine.TPX21F.HXN5B.ViewModel"
+             Background="{StaticResource ContentBackgroundBrush}"
+             d:DataContext="{d:DesignInstance viewModel:HXN5BViewModel}"
+             d:DesignHeight="495"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <GroupBox Margin="181,135,121,247"
+              Style="{StaticResource CenterHeaderGroupBoxStyle}"
+              common:GroupBoxHeader.HeaderWidth="{Binding ElementName=Header,
+                                                          Path=ActualWidth}">
+        <GroupBox.Header>
+            <TextBlock x:Name="Header"
+                       Style="{StaticResource ContentConstWhiteTextStyle}"
+                       Text="{StaticResource StringPreCountMileage}" />
+        </GroupBox.Header>
+
+        <TextBox Margin="160,20"
+                 Style="{StaticResource InputtingTextStyle}"
+                 Text="TODO" />
+    </GroupBox>
+</UserControl>

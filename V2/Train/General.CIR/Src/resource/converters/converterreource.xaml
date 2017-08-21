@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:b="clr-namespace:System;assembly=mscorlib"
+    xmlns:converter="clr-namespace:General.CIR.Converter"
+    xmlns:converter1="clr-namespace:MMI.Facility.WPFInfrastructure.Converter;assembly=MMI.Facility.WPFInfrastructure"
+    xmlns:states="clr-namespace:General.CIR.Models.States">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Brushes/CIRBrushResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <converter:StringLengthConverter x:Key="StringLengthConverter" />
+    <converter:ConcatStringConverter x:Key="MainInstanceConcatStringConverter" ConcatChar="、" />
+    <b:Boolean x:Key="True">True</b:Boolean>
+    <b:Boolean x:Key="False">False</b:Boolean>
+    <Visibility x:Key="VisibilityVisible">Visible</Visibility>
+    <Visibility x:Key="VisibilityHidden">Hidden</Visibility>
+    <converter1:SelectObjectContentConverter x:Key="ColumnEndColorConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{StaticResource True}" Content="{StaticResource BlackBrush}" />
+            <converter1:ObjectContentPair Key="{StaticResource False}" Content="{StaticResource RedBrush}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+    <converter1:SelectObjectContentConverter x:Key="RegisterColor">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{StaticResource True}" Content="{StaticResource WhiteBrush}" />
+            <converter1:ObjectContentPair Key="{StaticResource False}" Content="{StaticResource BlackBrush}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+    <converter1:SelectObjectContentConverter x:Key="SignTextConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{StaticResource True}" Content="已签收" />
+            <converter1:ObjectContentPair Key="{StaticResource False}" Content="未签收" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+    <converter1:SelectObjectContentConverter x:Key="SignTextConverter1">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{StaticResource True}" Content="(已签收)" />
+            <converter1:ObjectContentPair Key="{StaticResource False}" Content="(未签收)" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+    <converter1:SelectObjectContentConverter x:Key="SignTextConverter2">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{StaticResource True}" Content="{StaticResource GreenBrush}" />
+            <converter1:ObjectContentPair Key="{StaticResource False}" Content="{StaticResource RedBrush}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+    <converter1:SelectObjectContentConverter x:Key="CommandTypeConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static states:CommandType.DispatchCarConfirm}"></converter1:ObjectContentPair>
+            <converter1:ObjectContentPair Key="{x:Static states:CommandType.DispatchCommand}" Content="调度命令" />
+            <converter1:ObjectContentPair Key="{x:Static states:CommandType.RoadTicket}" Content="路票" />
+            <converter1:ObjectContentPair Key="{x:Static states:CommandType.GreenPermit}" Content="绿色许可证" />
+            <converter1:ObjectContentPair Key="{x:Static states:CommandType.RedPermit}" Content="红色许可证" />
+            <converter1:ObjectContentPair Key="{x:Static states:CommandType.OutStation}" Content="出站跟踪调车通知书" />
+            <converter1:ObjectContentPair Key="{x:Static states:CommandType.InRoad}" Content="列车进路预告信息" />
+            <converter1:ObjectContentPair Key="{x:Static states:CommandType.DispatchCarNotify}" Content="调车作业通知单" />
+            <converter1:ObjectContentPair Key="{x:Static states:CommandType.DispatchCarConfirm}" Content="调车请求确认" />
+            <converter1:ObjectContentPair Key="{x:Static states:CommandType.OtherInfo}" Content="其它信息" />
+            <converter1:ObjectContentPair Key="{x:Static states:CommandType.InOutLibrary}" Content="出入库检测" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+    <converter:ProgressbarValueConverter x:Key="ProgressbarValueConverter" />
+    <converter1:SelectObjectContentConverter x:Key="RecvicerVisibleConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{StaticResource True}" Content="{StaticResource VisibilityHidden}" />
+            <converter1:ObjectContentPair Key="{StaticResource False}" Content="{StaticResource VisibilityVisible}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+    <converter1:SelectObjectContentConverter x:Key="SpeakerVisibleConverter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{StaticResource False}" Content="{StaticResource VisibilityHidden}" />
+            <converter1:ObjectContentPair Key="{StaticResource True}" Content="{StaticResource VisibilityVisible}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+    <converter1:MathConverter x:Key="MathConverter" />
+</ResourceDictionary>

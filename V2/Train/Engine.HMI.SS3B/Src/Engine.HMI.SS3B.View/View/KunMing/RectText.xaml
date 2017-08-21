@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="Engine.HMI.SS3B.View.View.KunMing.RectText"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="50"
+             d:DesignWidth="200"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="ColorBrush" Color="Aquamarine" />
+    </UserControl.Resources>
+    <Grid>
+        <Rectangle Fill="Black"
+                   RadiusX="20"
+                   RadiusY="20"
+                   Stroke="{StaticResource ColorBrush}" />
+        <TextBlock x:Name="TextBlock"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Background="Transparent"
+                   FontSize="16"
+                   Foreground="{StaticResource ColorBrush}"
+                   Text="" />
+    </Grid>
+</UserControl>

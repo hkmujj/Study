@@ -1,0 +1,261 @@
+﻿<UserControl
+    x:Class="Subway.XiaMenLine1.Subsystem.View.Contents.ResetView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:constant="clr-namespace:Subway.XiaMenLine1.Subsystem.Constant"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mainContentContents="clr-namespace:Subway.XiaMenLine1.Subsystem.View.Contents.MainContentContents"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:s="clr-namespace:Subway.XiaMenLine1.Interface.Resouce;assembly=Subway.XiaMenLine1.Interface"
+    xmlns:viewModels="clr-namespace:Subway.XiaMenLine1.Subsystem.ViewModels"
+    d:DataContext="{d:DesignInstance viewModels:ShellViewModel}"
+    d:DesignHeight="492"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+
+        <ResourceDictionary Source="../../AppResouce.xaml" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="Button">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                                <TextBlock
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Foreground="White"
+                                    Text="{TemplateBinding Content}"
+                                    TextAlignment="Center" />
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="BorderBrush" Value="White" />
+                <Setter Property="BorderThickness" Value="2" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="Margin" Value="2,2" />
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="125*" />
+            <RowDefinition Height="198*" />
+            <RowDefinition Height="68*" />
+            <RowDefinition Height="102*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="23*" />
+                <RowDefinition Height="41*" />
+                <RowDefinition Height="62*" />
+            </Grid.RowDefinitions>
+            <mainContentContents:CarNumber Grid.Row="1" Margin="90,0" />
+            <Grid Grid.Row="2" Margin="20,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="90*" />
+                    <ColumnDefinition Width="70*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*" />
+                        <ColumnDefinition Width="7*" />
+                    </Grid.ColumnDefinitions>
+                    <Border
+                        Grid.Column="1"
+                        Background="{StaticResource CarBackBrush}"
+                        CornerRadius="30,0,0,30" />
+                    <Rectangle
+                        Grid.Column="1"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Style="{StaticResource CabDoorRecStyleOne}">
+                        <Rectangle.Fill>
+                            <ImageBrush ImageSource="{Binding Model.DoorModel.CABOneDoorOne.DoorStatus, Converter={StaticResource DoorStatusToImageConvert}}" />
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle
+                        Grid.Column="1"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Style="{StaticResource CabDoorRecStyleOne}">
+                        <Rectangle.Fill>
+                            <ImageBrush ImageSource="{Binding Model.DoorModel.CABOneDoorTwo.DoorStatus, Converter={StaticResource DoorStatusToImageConvert}}" />
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle
+                        Grid.Column="1"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Style="{StaticResource CabDoorRecStyleTwo}">
+                        <Rectangle.Fill>
+                            <ImageBrush ImageSource="{Binding Model.MainModel.EvacuateOneDoorState, Converter={StaticResource EvacuateDoorStateToImageConvert}}" />
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Ellipse
+                        Grid.Column="1"
+                        HorizontalAlignment="Left"
+                        Style="{StaticResource CabActiveFalgE}"
+                        Visibility="{Binding Model.MainModel.DriverOneVisibility}" />
+                </Grid>
+                <Border
+                    Grid.Column="1"
+                    Margin="1"
+                    Background="{StaticResource CarBackBrush}" />
+                <Border
+                    Grid.Column="2"
+                    Margin="1"
+                    Background="{StaticResource CarBackBrush}" />
+                <Border
+                    Grid.Column="3"
+                    Margin="1"
+                    Background="{StaticResource CarBackBrush}" />
+                <Border
+                    Grid.Column="4"
+                    Margin="1"
+                    Background="{StaticResource CarBackBrush}" />
+                <Border
+                    Grid.Column="5"
+                    Margin="1"
+                    Background="{StaticResource CarBackBrush}" />
+                <Border
+                    Grid.Column="6"
+                    Margin="1"
+                    Background="{StaticResource CarBackBrush}" />
+                <Grid Grid.Column="7">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="7*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                    <Border
+                        Grid.Column="0"
+                        Background="{StaticResource CarBackBrush}"
+                        CornerRadius="0,30,30,0" />
+                    <Rectangle
+                        Grid.Column="0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Style="{StaticResource CabDoorRecStyleOne}">
+                        <Rectangle.Fill>
+                            <ImageBrush ImageSource="{Binding Model.DoorModel.CABTwoDoorOne.DoorStatus, Converter={StaticResource DoorStatusToImageConvert}}" />
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle
+                        Grid.Column="0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Bottom"
+                        Style="{StaticResource CabDoorRecStyleOne}">
+                        <Rectangle.Fill>
+                            <ImageBrush ImageSource="{Binding Model.DoorModel.CABTwoDoorTwo.DoorStatus, Converter={StaticResource DoorStatusToImageConvert}}" />
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle
+                        Grid.Column="0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Style="{StaticResource CabDoorRecStyleTwo}">
+                        <Rectangle.Fill>
+                            <ImageBrush ImageSource="{Binding Model.MainModel.EvacuateSixDoorState, Converter={StaticResource EvacuateDoorStateToImageConvert}}" />
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Ellipse
+                        Grid.Column="0"
+                        HorizontalAlignment="Right"
+                        Fill="White"
+                        Style="{StaticResource CabActiveFalgE}"
+                        Visibility="{Binding Model.MainModel.DriverSixVisibility}" />
+                </Grid>
+            </Grid>
+
+
+        </Grid>
+        <Grid Grid.Row="1" Margin="80,0">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button
+                Grid.Row="0"
+                Grid.Column="1"
+                Command="{Binding Path=Controller.SendBoolData}"
+                CommandParameter="{x:Static s:OutBoolKeys.车2牵引逆变器复位}"
+                Content="牵引逆变器&#13;复位" />
+            <Button
+                Grid.Row="0"
+                Grid.Column="2"
+                Command="{Binding Path=Controller.SendBoolData}"
+                CommandParameter="{x:Static s:OutBoolKeys.车3牵引逆变器复位}"
+                Content="牵引逆变器&#13;复位" />
+            <Button
+                Grid.Row="0"
+                Grid.Column="3"
+                Command="{Binding Path=Controller.SendBoolData}"
+                CommandParameter="{x:Static s:OutBoolKeys.车4牵引逆变器复位}"
+                Content="牵引逆变器&#13;复位" />
+            <Button
+                Grid.Row="0"
+                Grid.Column="4"
+                Command="{Binding Path=Controller.SendBoolData}"
+                CommandParameter="{x:Static s:OutBoolKeys.车5牵引逆变器复位}"
+                Content="牵引逆变器&#13;复位" />
+            <Button
+                Grid.Row="1"
+                Grid.Column="0"
+                Command="{Binding Path=Controller.SendBoolData}"
+                CommandParameter="{x:Static s:OutBoolKeys.车1辅助逆变器复位}"
+                Content="辅助逆变器&#13;复位" />
+            <Button
+                Grid.Row="1"
+                Grid.Column="2"
+                Command="{Binding Path=Controller.SendBoolData}"
+                CommandParameter="{x:Static s:OutBoolKeys.车3辅助逆变器复位}"
+                Content="辅助逆变器&#13;复位" />
+            <Button
+                Grid.Row="1"
+                Grid.Column="3"
+                Command="{Binding Path=Controller.SendBoolData}"
+                CommandParameter="{x:Static s:OutBoolKeys.车4辅助逆变器复位}"
+                Content="辅助逆变器&#13;复位" />
+            <Button
+                Grid.Row="1"
+                Grid.Column="5"
+                Command="{Binding Path=Controller.SendBoolData}"
+                CommandParameter="{x:Static s:OutBoolKeys.车6辅助逆变器复位}"
+                Content="辅助逆变器&#13;复位" />
+            <Button
+                Grid.Row="2"
+                Grid.Column="0"
+                Command="{Binding Path=Controller.SendBoolData}"
+                CommandParameter="{x:Static s:OutBoolKeys.烟温探测系统复位}"
+                Content="烟温探测&#13;系统复位" />
+        </Grid>
+        <Button
+            Grid.Row="3"
+            Width="95"
+            Margin="0,20,5,20"
+            HorizontalAlignment="Right"
+            Command="{Binding Path=Controller.ShellContentNavigateCommand}"
+            CommandParameter="{x:Static constant:ViewNames.SetttingView}"
+            Content="反回" />
+    </Grid>
+</UserControl>

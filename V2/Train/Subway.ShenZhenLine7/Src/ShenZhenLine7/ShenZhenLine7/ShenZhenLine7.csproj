@@ -1,0 +1,747 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E2E4D115-F37A-4BD2-BAA3-A2C2B8EB1857}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Subway.ShenZhenLine7</RootNamespace>
+    <AssemblyName>Subway.ShenZhenLine7</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\MMI\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\ShenZhenLine7.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\MMI\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Subway.ShenZhenLine7.App</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonUtil, Version=2.29.2016.517, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="DevExpress.Data.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Core.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.PropertyGrid.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Excel.Interface, Version=2.30.2016.712, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Expression.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.Prism, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.Prism.MefExtensions, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="MMI.Facility.Interface, Version=2.50.2017.214, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="MMI.Facility.WPFInfrastructure, Version=2.50.2017.705, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Config\EnmergencyBorderCastConfig.cs" />
+    <Compile Include="Config\Priority.cs" />
+    <Compile Include="Controller\BtnResponse\EventInfoResponse.cs" />
+    <Compile Include="Controller\ViewModelController\BaseInfoController.cs" />
+    <Compile Include="Controller\ViewModelController\EventInfoController.cs" />
+    <Compile Include="Controller\ViewModelController\MasterPageController.cs" />
+    <Compile Include="Controller\ViewModelController\ShenZhenLine7Controller.cs" />
+    <Compile Include="Controller\ViewModelController\StationController.cs" />
+    <Compile Include="Controller\ViewModelController\TractionLockController.cs" />
+    <Compile Include="Converter\BtnConverter.cs" />
+    <Compile Include="Converter\EnumToStringConverter.cs" />
+    <Compile Include="Converter\EvelLevelConverter.cs" />
+    <Compile Include="Converter\EventInfoConverter.cs" />
+    <Compile Include="Converter\FaultVisibleConverter.cs" />
+    <Compile Include="Converter\StartTimeConverter.cs" />
+    <Compile Include="Converter\TitleTimeConverter.cs" />
+    <Compile Include="Converter\TwoBoolConverter.cs" />
+    <Compile Include="CusstomAttribute\BrotherAttribute.cs" />
+    <Compile Include="CusstomAttribute\ParentAttribute.cs" />
+    <Compile Include="DataMonitor.xaml.cs">
+      <DependentUpon>DataMonitor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Entry.cs" />
+    <Compile Include="Envets\DataChangedEvent.cs" />
+    <Compile Include="Envets\NavigatorEvent.cs" />
+    <Compile Include="Envets\NavigatorToKeyEvent.cs" />
+    <Compile Include="Extention\EnumerableExtention.cs" />
+    <Compile Include="Extention\SetClassCalueExtention.cs" />
+    <Compile Include="Helper\RadionButtomHelper.cs" />
+    <Compile Include="Interfaces\ITabItemInfoProvider.cs" />
+    <Compile Include="Interfaces\ICourceStatusChanged.cs" />
+    <Compile Include="Interfaces\IEventInfo.cs" />
+    <Compile Include="Interfaces\IStation.cs" />
+    <Compile Include="Interfaces\IUnit.cs" />
+    <Compile Include="Interfaces\IViewModel.cs" />
+    <Compile Include="Interfaces\StationModel.cs" />
+    <Compile Include="Models\Units\AirConditionUnit.cs" />
+    <Compile Include="Models\Units\AssistUnit.cs" />
+    <Compile Include="Models\Units\BrakeUnit.cs" />
+    <Compile Include="Models\Units\BypassUnit.cs" />
+    <Compile Include="Models\Units\BrakeStatus.cs" />
+    <Compile Include="Models\Units\EventInfo.cs" />
+    <Compile Include="Models\Units\DoorUnit.cs" />
+    <Compile Include="Models\Units\EnmergencyTalkUnit.cs" />
+    <Compile Include="Models\Units\Station.cs" />
+    <Compile Include="Models\Units\TractionState.cs" />
+    <Compile Include="Models\Units\WorkPowerState.cs" />
+    <Compile Include="Resource\Keys\InBoolKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InBoolKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Keys\InFloatKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InFloatKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Keys\OutBoolKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutBoolKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Keys\OutFloatKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutFloatKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Keys\StateKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StateKeys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\AirConditionPriorityService.cs" />
+    <Compile Include="Service\AssistPriorityService.cs" />
+    <Compile Include="Service\BrakePriorityService.cs" />
+    <Compile Include="Service\DoorPriorityService.cs" />
+    <Compile Include="Service\EmergencyTalkPriorityService.cs" />
+    <Compile Include="Service\EventManagerService.cs" />
+    <Compile Include="Service\PriorityServiceBase.cs" />
+    <Compile Include="Service\StationManagerService.cs" />
+    <Compile Include="ShenZhenLine7Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShenZhenLine7Form.Designer.cs">
+      <DependentUpon>ShenZhenLine7Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\AirConditionViewModel.cs" />
+    <Compile Include="ViewModels\AirPumpViewModel.cs" />
+    <Compile Include="ViewModels\AssistViewModel.cs" />
+    <Compile Include="ViewModels\BaseInfoViewModel.cs" />
+    <Compile Include="ViewModels\BrakeViewModel.cs" />
+    <Compile Include="ViewModels\BypassViewModel.cs" />
+    <Compile Include="ViewModels\DoorViewModel.cs" />
+    <Compile Include="ViewModels\EmergencyTalkViewModel.cs" />
+    <Compile Include="ViewModels\EventInfoViewModel.cs" />
+    <Compile Include="ViewModels\HSCBViewModel.cs" />
+    <Compile Include="ViewModels\MainContentBrnViewModel.cs" />
+    <Compile Include="ViewModels\MasterPageViewModel.cs" />
+    <Compile Include="ViewModels\ShenZhenLine7ViewModel.cs" />
+    <Compile Include="ViewModels\SmokeViewModel.cs" />
+    <Compile Include="ViewModels\StationViewModel.cs" />
+    <Compile Include="ViewModels\TractionLockViewModel.cs" />
+    <Compile Include="ViewModels\TractionViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="Views\BaseInfo\BaseInfoView.xaml.cs">
+      <DependentUpon>BaseInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BottomButtom\MainButtomView.xaml.cs">
+      <DependentUpon>MainButtomView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Car\CarNumberView.xaml.cs">
+      <DependentUpon>CarNumberView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Car\CommonCar.xaml.cs">
+      <DependentUpon>CommonCar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Car\DoorViewCar.xaml.cs">
+      <DependentUpon>DoorViewCar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Custom\HightSpeedControl.cs" />
+    <Compile Include="Views\Help\AirConditionHelpView.xaml.cs">
+      <DependentUpon>AirConditionHelpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Help\AirPumpHelpView.xaml.cs">
+      <DependentUpon>AirPumpHelpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Help\AssistHelpView.xaml.cs">
+      <DependentUpon>AssistHelpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Help\BrakeHelpView.xaml.cs">
+      <DependentUpon>BrakeHelpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Help\DoorHelpView.xaml.cs">
+      <DependentUpon>DoorHelpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Help\EmergencyTalkHelpView.xaml.cs">
+      <DependentUpon>EmergencyTalkHelpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Help\HelpGroupContent.xaml.cs">
+      <DependentUpon>HelpGroupContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Help\HSCBHelpView.xaml.cs">
+      <DependentUpon>HSCBHelpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Help\SmokeHelpView.xaml.cs">
+      <DependentUpon>SmokeHelpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Help\TractionHelpView.xaml.cs">
+      <DependentUpon>TractionHelpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HightRegion\AirPumpValueView.xaml.cs">
+      <DependentUpon>AirPumpValueView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HightRegion\HightSpeedView.xaml.cs">
+      <DependentUpon>HightSpeedView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HightRegion\NetStreamValueView.xaml.cs">
+      <DependentUpon>NetStreamValueView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainContent\BorderCastView.xaml.cs">
+      <DependentUpon>BorderCastView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainContent\BypassView.xaml.cs">
+      <DependentUpon>BypassView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainContent\EmengencyBorderCastView.xaml.cs">
+      <DependentUpon>EmengencyBorderCastView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainContent\EventInfoView.xaml.cs">
+      <DependentUpon>EventInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainContent\EventOperationView.xaml.cs">
+      <DependentUpon>EventOperationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainContent\HelpView.xaml.cs">
+      <DependentUpon>HelpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainContent\MainContentShell.xaml.cs">
+      <DependentUpon>MainContentShell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainContent\MaininstanceView.xaml.cs">
+      <DependentUpon>MaininstanceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainContent\SettingView.xaml.cs">
+      <DependentUpon>SettingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainContent\StationSelectView.xaml.cs">
+      <DependentUpon>StationSelectView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainContent\TractionLockView.xaml.cs">
+      <DependentUpon>TractionLockView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Root\BlackView.xaml.cs">
+      <DependentUpon>BlackView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Root\DoMain.xaml.cs">
+      <DependentUpon>DoMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Root\MainShell.xaml.cs">
+      <DependentUpon>MainShell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Root\StartView.xaml.cs">
+      <DependentUpon>StartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubSystem\AirConditionView.xaml.cs">
+      <DependentUpon>AirConditionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubSystem\AirPumpView.xaml.cs">
+      <DependentUpon>AirPumpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubSystem\AssistView.xaml.cs">
+      <DependentUpon>AssistView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubSystem\BrakeView.xaml.cs">
+      <DependentUpon>BrakeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubSystem\EmergencyTalkView.xaml.cs">
+      <DependentUpon>EmergencyTalkView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubSystem\HSCBView.xaml.cs">
+      <DependentUpon>HSCBView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubSystem\SmokeView.xaml.cs">
+      <DependentUpon>SmokeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubSystem\TractionVIew.xaml.cs">
+      <DependentUpon>TractionVIew.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Title\TitleView.xaml.cs">
+      <DependentUpon>TitleView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="DataMonitor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Bootstrapper\ShenZhenLine7Bootstrapper.cs" />
+    <Compile Include="Config\StateConfig.cs" />
+    <Compile Include="Constance\RegionNames.cs" />
+    <Compile Include="Controller\BtnResponse\BtnResponseBase.cs" />
+    <Compile Include="Extention\DictionaryExtention.cs" />
+    <Compile Include="Extention\NetWorkDataExtention.cs" />
+    <Compile Include="Interfaces\IBtnItem.cs" />
+    <Compile Include="Interfaces\IBtnResponse.cs" />
+    <Compile Include="Interfaces\IState.cs" />
+    <Compile Include="Interfaces\IStateFactory.cs" />
+    <Compile Include="Interfaces\IStateKey.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Resource\Brushes\BrushesResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\Converter\ConverterResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\Images\ImageResource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\ShenZhenLine7Resource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\Styles\ButtonStyleResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\Styles\ItemControlStyleResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\Styles\StyleResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BaseInfo\BaseInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BottomButtom\MainButtomView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Car\CarNumberView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Car\CommonCar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Car\DoorViewCar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Help\AirConditionHelpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Help\AirPumpHelpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Help\AssistHelpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Help\BrakeHelpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Help\DoorHelpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Help\EmergencyTalkHelpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Help\HelpGroupContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Help\HSCBHelpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Help\SmokeHelpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Help\TractionHelpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HightRegion\AirPumpValueView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HightRegion\HightSpeedView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HightRegion\NetStreamValueView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainContent\BorderCastView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainContent\BypassView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainContent\EmengencyBorderCastView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainContent\EventInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainContent\EventOperationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainContent\HelpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainContent\MainContentShell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainContent\MaininstanceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainContent\SettingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainContent\StationSelectView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainContent\TractionLockView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Root\BlackView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Root\DoMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Root\MainShell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Root\StartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SubSystem\AirConditionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SubSystem\AirPumpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SubSystem\AssistView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SubSystem\BrakeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SubSystem\EmergencyTalkView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SubSystem\HSCBView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SubSystem\SmokeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SubSystem\TractionVIew.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Title\TitleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\ButtonModel\BtnItem.cs" />
+    <Compile Include="Models\ButtonModel\State.cs" />
+    <Compile Include="Models\ButtonModel\StateFactory.cs" />
+    <Compile Include="Models\ButtonModel\StateKey.cs" />
+    <Compile Include="Models\GlobalParam.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Keys\InBoolKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InBoolKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Keys\InFloatKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InFloatKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Keys\OutBoolKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OutBoolKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Keys\OutFloatKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OutFloatKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Keys\StateKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StateKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShenZhenLine7Form.resx">
+      <DependentUpon>ShenZhenLine7Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Resource\Images\ShenZhenLine7\制动\制动切除.psd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Images\ShenZhenLine7\列车预开门侧.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Images\ShenZhenLine7\升弓无网压.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\受电弓隔离.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Images\ShenZhenLine7\按钮\按钮1.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\按钮\按钮2.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\按钮\按钮3.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\按钮\紧急广播界面按钮1.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\按钮\紧急广播界面按钮2.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\按钮\紧急广播界面按钮3.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\按钮\紧急广播界面按钮4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Images\ShenZhenLine7\乘客紧急\乘客紧急通讯单元橘黄.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\乘客紧急\乘客紧急通讯单元灰.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\乘客紧急\乘客紧急通讯单元红.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\乘客紧急\乘客紧急通讯单元绿.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Images\ShenZhenLine7\门\门严重故障.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\门\门中等故障.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\门\门关.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\门\门切除.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\门\门开.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\门\门检测到障碍物.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\门\门紧急.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\AC辅助电源故障.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\AC辅助电源断开.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\AC辅助电源警告.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\AC辅助电源运行.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\DC辅助电源故障.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\DC辅助电源断开.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\DC辅助电源警告.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\DC辅助电源运行.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\HSCB合上.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\HSCB断开.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\受电弓升起.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\受电弓升起故障.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\受电弓降下.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\受电弓降下故障.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\探头故障.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\探测到烟火.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\未检测到烟火.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\牵引故障.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\牵引断开.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\牵引激活.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\牵引警告.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\空压机故障.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\空压机断开.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\空压机警告.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\空压机运行.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\空调故障.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\空调断开.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\空调紧急通风.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\空调警告.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\空调运行.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\空调通风.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\车间电源供电.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\车间电源未供电.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Images\ShenZhenLine7\烟火按钮\烟火按钮.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Images\ShenZhenLine7\制动\制动严重故障.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\制动\制动中等故障.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\制动\制动停放.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\制动\制动切除.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\制动\制动施加.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\制动\制动释放.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Images\ShenZhenLine7\HSCB断开故障.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\HSCB闭合故障.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Images\ShenZhenLine7\制动按钮故障.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\制动按钮正常.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\制动按钮选中.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\受电弓按钮故障.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\受电弓按钮正常.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\受电弓按钮选中.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\按钮背景.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\烟火按钮故障.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\烟火按钮正常.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\烟火按钮选中.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\牵引按钮故障.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\牵引按钮正常.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\牵引按钮选中.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\空压机按钮故障.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\空压机按钮正常.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\空压机按钮选中.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\空调按钮故障.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\空调按钮正常.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\空调按钮选中.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\紧急对讲按钮故障.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\紧急对讲按钮正常.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\紧急对讲按钮选中.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\紧急广播按钮故障.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\紧急广播按钮正常.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\紧急广播按钮选中.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\辅助电源按钮故障.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\辅助电源按钮正常.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\辅助电源按钮选中.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\门按钮故障.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\门按钮正常.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\门按钮选中.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Images\ShenZhenLine7\门\司机室侧门未锁打开.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\门\司机室侧门锁闭.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\门\疏散门未锁打开.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\门\疏散门锁闭.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Images\ShenZhenLine7\制动\停放制动未知.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Images\ShenZhenLine7\制动\常用制动未知.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Images\ShenZhenLine7\制动\停放制动缓解.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\严重故障.png" />
+    <Resource Include="Resource\Images\ShenZhenLine7\其他\中等故障.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

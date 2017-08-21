@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="Engine._6A.Views.Axle6.ForTheColumnView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:regions="http://www.codeplex.com/CompositeWPF"
+             xmlns:names="clr-namespace:Engine._6A.Constance"
+             xmlns:axle6="clr-namespace:Engine._6A.Views.Axle6"
+             xmlns:viewModel="clr-namespace:Engine._6A.Interface.ViewModel" d:DataContext="{d:DesignInstance viewModel:IEngine6AViewModel}"
+             d:DesignHeight="400"
+             d:DesignWidth="640"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary Source="../../Resouce/Engine6AResource.xaml" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid Margin="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="345*" />
+                <RowDefinition Height="35*" />
+            </Grid.RowDefinitions>
+            <ContentControl regions:RegionManager.RegionName="{x:Static names:RegionNames.ColumnRegion}" />
+            <Grid x:Name="Data" Grid.Row="1">
+                <Viewbox Width="{Binding ElementName=Data, Path=ActualWidth}" Height="{Binding ElementName=Data, Path=ActualHeight}">
+                    <Canvas Width="510" Height="30">
+                        <Path Data="m 0,0 h 510"
+                              Fill="{StaticResource DarkGrayBrush}"
+                              Stroke="{StaticResource DarkGrayBrush}"
+                              StrokeThickness="1" />
+                    </Canvas>
+                </Viewbox>
+                <axle6:ForTheColumnButton x:Name="ColumnButton" />
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>
