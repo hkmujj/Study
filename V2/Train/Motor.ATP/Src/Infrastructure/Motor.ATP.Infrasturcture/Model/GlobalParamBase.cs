@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.IO;
 using CommonUtil.Util;
 using MMI.Facility.Interface.Project;
@@ -32,10 +33,12 @@ namespace Motor.ATP.Infrasturcture.Model
             }
         }
 
+        [Browsable(false)]
         public SubsystemInitParam InitParam { private set; get; }
 
         public Lazy<RunningConfig> RunningConfig { get; private set; }
 
+        [Browsable(false)]
         public GlobalTimerBase GlobalTimer { get; protected set; }
     }
 }

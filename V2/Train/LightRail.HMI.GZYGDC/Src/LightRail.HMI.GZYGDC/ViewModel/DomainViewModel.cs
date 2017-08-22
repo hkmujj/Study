@@ -13,7 +13,7 @@ namespace LightRail.HMI.GZYGDC.ViewModel
         [ImportingConstructor]
         public DomainViewModel(DomainController controller, DomainModel model, HardwareBtnViewModel hardwareBtnViewModel, 
             TitleViewModel titleViewModel, RunningViewModel runningViewModel, EmergencyBroadcastViewModel emergencyBroadcastViewModel,
-            EventInfoViewModel eventInfoViewModel)
+            EventInfoViewModel eventInfoViewModel, AirConditionViewModel airConditionViewModel)
         {
             Controller = controller;
             //Controller.ViewModel = Lazy<DomainViewModel>(this);
@@ -28,6 +28,7 @@ namespace LightRail.HMI.GZYGDC.ViewModel
             RunningViewModel = runningViewModel;
             EmergencyBroadcastViewModel = emergencyBroadcastViewModel;
             EventInfoViewModel = eventInfoViewModel;
+            AirConditionViewModel = airConditionViewModel;
 
             Controller.Initalize();
         }
@@ -47,6 +48,9 @@ namespace LightRail.HMI.GZYGDC.ViewModel
         public EmergencyBroadcastViewModel EmergencyBroadcastViewModel { private set; get; }
 
         public EventInfoViewModel EventInfoViewModel { private set; get; }
+
+
+        public AirConditionViewModel AirConditionViewModel { private set; get; }
 
     }
 }

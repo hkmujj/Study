@@ -126,7 +126,7 @@ namespace LightRail.HMI.GZYGDC.Model
             get { return m_TailTrainActive; }
             set
             {
-                if (value.Equals(m_TailTrainActive))
+                if (Equals(value,m_TailTrainActive))
                 {
                     return;
                 }

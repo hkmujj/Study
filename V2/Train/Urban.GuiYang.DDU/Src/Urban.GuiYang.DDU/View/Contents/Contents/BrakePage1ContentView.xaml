@@ -39,7 +39,7 @@
             Grid.RowSpan="3"
             Grid.Column="3"
             State="{Binding Model.BypassState}"
-            Command="{Binding Controller.NavigatorToViewCommand}"
+            Command="{Binding Controller.GoToBypass}"
             CommandParameter="{x:Static constant:ViewNames.MainPageByPass1ContentView}"
             Margin="10,17,10,38"
             Content="{StaticResource StringByPass}" />

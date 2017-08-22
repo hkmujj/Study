@@ -13,7 +13,7 @@ namespace Motor.HMI.CRH380BG.Controller.BtnActionResponser
         {
             NavigateTo(stateViewModel, StateKeys.Root_系统);
 
-            stateViewModel.DomainViewModel.Domain.Model.SystemModel.CompiledVisible3 = false;
+            stateViewModel.Model.CompiledVisible3 = false;
 
             switch (stateViewModel.Model.ViewLocation)
             {

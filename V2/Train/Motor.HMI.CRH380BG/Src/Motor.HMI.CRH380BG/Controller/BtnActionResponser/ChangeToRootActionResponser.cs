@@ -13,7 +13,7 @@ namespace Motor.HMI.CRH380BG.Controller.BtnActionResponser
         public override void ResponseClick(StateViewModel stateViewModel)
         {
             NavigateToRoot(stateViewModel);
-            stateViewModel.DomainViewModel.Domain.Model.SystemModel.CompiledVisible3 = false;
+            stateViewModel.Model.CompiledVisible3 = false;
             EventAggregator.GetEvent<SendDataRequestEvent>().Publish(new SendDataRequestEvent.Args(OutBoolKeys.Oub给评价接口处于门界面, false));
 
             switch (stateViewModel.Model.ViewLocation)

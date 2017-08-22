@@ -1,4 +1,5 @@
-﻿using Microsoft.Practices.Prism.ViewModel;
+﻿using System.ComponentModel;
+using Microsoft.Practices.Prism.ViewModel;
 using MMI.Facility.Interface;
 using Motor.ATP.Infrasturcture.Interface;
 using Motor.ATP.Infrasturcture.Interface.Service;
@@ -14,10 +15,13 @@ namespace Motor.ATP.Infrasturcture.Model
             Parent = parent;
         }
 
+        [Browsable(false)]
         public ATPDomain Parent { set; get; }
 
+        [Browsable(false)]
         protected IATP ATP { get { return Parent; } }
 
+        [Browsable(false)]
         IATP IATPPartial.Parent { get { return Parent; } }
 
         protected IInterfaceAdapterService InterfaceAdapterService

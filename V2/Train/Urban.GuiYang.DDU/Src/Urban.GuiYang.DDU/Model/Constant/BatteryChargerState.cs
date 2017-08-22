@@ -5,5 +5,6 @@
         Normal,
         Fault,
         Working,
+        Unknow
     }
 }

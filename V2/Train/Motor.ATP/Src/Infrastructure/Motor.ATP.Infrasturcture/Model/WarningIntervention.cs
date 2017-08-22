@@ -1,4 +1,5 @@
-﻿using Motor.ATP.Infrasturcture.Interface;
+﻿using System;
+using Motor.ATP.Infrasturcture.Interface;
 using Motor.ATP.Infrasturcture.Interface.TargetDistance;
 using Motor.ATP.Infrasturcture.Model.TargitDistance;
 
@@ -32,6 +33,7 @@ namespace Motor.ATP.Infrasturcture.Model
                 {
                     return;
                 }
+
                 m_Visible = value;
                 if (!value)
                 {
@@ -50,6 +52,7 @@ namespace Motor.ATP.Infrasturcture.Model
                 {
                     return;
                 }
+
                 m_TargitDistanceScale = value;
                 RaisePropertyChanged(() => TargitDistanceScale);
             }
@@ -66,8 +69,9 @@ namespace Motor.ATP.Infrasturcture.Model
                 {
                     return;
                 }
+
                 m_BrakeWarningVisible = value;
-                
+
                 RaisePropertyChanged(() => BrakeWarningVisible);
             }
         }
@@ -81,6 +85,7 @@ namespace Motor.ATP.Infrasturcture.Model
                 {
                     return;
                 }
+
                 m_BrakeWarningLevel = value;
                 RaisePropertyChanged(() => BrakeWarningLevel);
             }
@@ -95,6 +100,7 @@ namespace Motor.ATP.Infrasturcture.Model
                 {
                     return;
                 }
+
                 m_BrakeWaringColor = value;
                 RaisePropertyChanged(() => BrakeWaringColor);
             }
@@ -106,7 +112,16 @@ namespace Motor.ATP.Infrasturcture.Model
         public double WarningTime
         {
             get { return m_WarningTime; }
-            set { m_WarningTime = value; RaisePropertyChanged(() => WarningTime); }
+            set
+            {
+                if (Math.Abs(value - m_WarningTime) < double.Epsilon)
+                {
+                    return;
+                }
+
+                m_WarningTime = value;
+                RaisePropertyChanged(() => WarningTime);
+            }
         }
 
         /// <summary>
@@ -117,6 +132,11 @@ namespace Motor.ATP.Infrasturcture.Model
             get { return m_TargetDistance; }
             set
             {
+                if (Math.Abs(value - m_TargetDistance) < double.Epsilon)
+                {
+                    return;
+                }
+
                 m_TargetDistance = value;
                 RaisePropertyChanged(() => TargetDistance);
             }
@@ -131,6 +151,7 @@ namespace Motor.ATP.Infrasturcture.Model
                 {
                     return;
                 }
+
                 m_TargetDistanceVisible = value;
                 RaisePropertyChanged(() => TargetDistanceVisible);
             }

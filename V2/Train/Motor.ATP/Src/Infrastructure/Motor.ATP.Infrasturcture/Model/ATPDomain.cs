@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using Microsoft.Practices.Prism.Events;
 using Microsoft.Practices.Prism.ViewModel;
 using MMI.Facility.Interface;
@@ -33,6 +34,7 @@ namespace Motor.ATP.Infrasturcture.Model
             ATPType = atpType;
         }
 
+        [Browsable(false)]
         private IClearDataService ClearDataService
         {
             get { return App.Current.ServiceManager.GetService<IClearDataService>(ATPType.ToString()); }
@@ -73,16 +75,19 @@ namespace Motor.ATP.Infrasturcture.Model
         /// <summary>
         /// 辅助显示信息， LED显示内容
         /// </summary>
+        [Browsable(false)]
         IAssistDisplayInfo IATP.AssistDisplayInfo
         {
             get { return AssistDisplayInfo; }
         }
 
+        [Browsable(false)]
         protected Lazy<VersionManager> Version { set; get; }
 
         /// <summary>
         /// 版本信息
         /// </summary>
+        [Browsable(false)]
         IVersionManager IATP.VersionManager
         {
             get { return Version.Value; }
@@ -97,11 +102,11 @@ namespace Motor.ATP.Infrasturcture.Model
         public EmergencyInfo EmergencyInfo { get; protected set; }
 
         public WarningIntervention WarningIntervention { get; protected set; }
-
         public SpeedMonitoringSection.SpeedMonitoringSection SpeedMonitoringSection { get; protected set; }
 
         public ForecastInformation ForecastInformation { get; protected set; }
 
+        [Browsable(false)]
         public SubsystemInitParam InitParam { protected set; get; }
 
         public ATPHardwareButton ATPHardwareButton
@@ -119,6 +124,7 @@ namespace Motor.ATP.Infrasturcture.Model
             }
         }
 
+        [Browsable(false)]
         public IGradientInfomation GradientInfomation { get; protected set; }
 
         public RegionFStateProvier RegionFStateProvier
@@ -217,11 +223,19 @@ namespace Motor.ATP.Infrasturcture.Model
             }
         }
 
+        [Browsable(false)]
         public IServiceManager ServiceManager { get; protected set; }
+
+        [Browsable(false)]
         public IInfomationService InfomationService { get; protected set; }
+
+        [Browsable(false)]
         public ICommunicationDataService DataService { get; protected set; }
+
+        [Browsable(false)]
         public IDriverInterfaceController DriverInterfaceController { get; protected set; }
 
+        [Browsable(false)]
         public DriverInterfaceController DriverInterfaceControllerImp
         {
             get { return DriverInterfaceController as DriverInterfaceController; }
@@ -232,6 +246,7 @@ namespace Motor.ATP.Infrasturcture.Model
             get { return m_SendInterfaceProxy as SendInterfaceCounterableProxy; }
         }
 
+        [Browsable(false)]
         public ISendInterface SendInterface
         {
             get { return m_SendInterfaceProxy; }
@@ -345,6 +360,8 @@ namespace Motor.ATP.Infrasturcture.Model
             get { return GradientInfomation; }
         }
 
+        public List<IPlanSectionCoordinate> PlanZoneCoordinates { set; get; }
+
 
         protected IInterfaceAdapterService InterfaceAdapterService
         {
@@ -373,8 +390,6 @@ namespace Motor.ATP.Infrasturcture.Model
             Identity = identity;
             ATPRepository.Instance.Regist(this);
         }
-
-        public List<IPlanSectionCoordinate> PlanZoneCoordinates { set; get; }
 
 
         private void CourseOnCourseStateChanged(object sender, CourseStateChangedArgs courseStateChangedArgs)

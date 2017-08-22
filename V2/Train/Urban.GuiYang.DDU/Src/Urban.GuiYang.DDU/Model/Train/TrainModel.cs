@@ -1,9 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
-using System.Runtime.InteropServices;
 using Microsoft.Practices.Prism.ViewModel;
 using Urban.GuiYang.DDU.Model.Constant;
-using Urban.GuiYang.DDU.Model.Train.CarPart;
 
 namespace Urban.GuiYang.DDU.Model.Train
 {

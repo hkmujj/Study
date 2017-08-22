@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics;
 using Microsoft.Practices.Prism.ViewModel;
 using Motor.ATP.Infrasturcture.Interface;
@@ -16,7 +17,7 @@ namespace Motor.ATP.Infrasturcture.Model
             set
             {
                // var sp = Math.Abs(value);
-                if (value.Equals(m_Value))
+                if (Math.Abs(value - (m_Value)) < float.Epsilon)
                 {
                     return;
                 }

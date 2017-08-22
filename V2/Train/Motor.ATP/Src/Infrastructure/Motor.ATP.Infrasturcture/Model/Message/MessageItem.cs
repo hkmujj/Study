@@ -10,7 +10,7 @@ namespace Motor.ATP.Infrasturcture.Model.Message
     /// </summary>
     public class MessageItem : NotificationObject, IMessageItem, ICloneable<MessageItem>
     {
-        private DateTime m_TimeStamp;
+        private DateTime? m_TimeStamp;
         private MessageStyle m_Style;
         private string m_Content;
 
@@ -32,7 +32,7 @@ namespace Motor.ATP.Infrasturcture.Model.Message
         /// </summary>
         public IInfomationItem InfomationItem { get; set; }
 
-        public DateTime TimeStamp
+        public DateTime? TimeStamp
         {
             get { return m_TimeStamp; }
             set
@@ -102,7 +102,12 @@ namespace Motor.ATP.Infrasturcture.Model.Message
 
         public string GetDisplayContent()
         {
-            return TimeStamp.ToString("T") + "  " + Content;
+            if (TimeStamp.HasValue)
+            {
+                return TimeStamp.Value.ToString("T") + "  " + Content;
+            }
+
+            return Content;
         }
 
         protected virtual void OnCancelConfirmed(MessageItem obj)

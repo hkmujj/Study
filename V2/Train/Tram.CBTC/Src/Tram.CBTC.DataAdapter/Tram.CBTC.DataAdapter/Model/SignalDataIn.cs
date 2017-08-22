@@ -498,6 +498,25 @@ namespace Tram.CBTC.DataAdapter.Model
         /// 前车距离
         /// </summary>
         public float FrontTrainDis { set; get; }
+        /// <summary>
+        /// 发车时间
+        /// </summary>
+        public float DepartTime { set; get; }
+
+        /// <summary>
+        /// 到达时间
+        /// </summary>
+        public float ArrivedTime { set; get; }
+
+        /// <summary>
+        /// 距前车运行时分
+        /// </summary>
+        public float FrontTrainRuntimeInterval { set; get; }
+
+        /// <summary>
+        /// 距后车运行时分
+        /// </summary>
+        public float BackTrainTuntimeInterval { set; get; }
 
         /// <summary>
         /// 折返信息

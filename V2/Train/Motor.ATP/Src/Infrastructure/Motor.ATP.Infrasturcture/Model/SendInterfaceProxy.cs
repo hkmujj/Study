@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using CommonUtil.Controls;
 using CommonUtil.Util;
 using Microsoft.Practices.Prism.ViewModel;
@@ -12,6 +13,7 @@ namespace Motor.ATP.Infrasturcture.Model
 {
     public class SendInterfaceProxy : NotificationObject, ISendInterface
     {
+        [Browsable(false)]
         public ISendInterface RealInterface { set; get; }
 
         /// <summary>

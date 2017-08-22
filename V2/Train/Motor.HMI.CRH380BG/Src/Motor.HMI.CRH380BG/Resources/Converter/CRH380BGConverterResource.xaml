@@ -14,6 +14,7 @@
 
     <BooleanToVisibilityConverter x:Key="Motor.HMI.CRH380BG.BooleanToVisibilityConverter" />
     <converter:LightBushConverter x:Key="Motor.HMI.CRH380BG.LightBushConverter" />
+    <converter:ContactNetVoltageConverter x:Key="Motor.HMI.CRH380BG.ContactNetVoltageConverter" />
     <converter:FindItemIndexConverter x:Key="Motor.HMI.CRH380BG.FindItemIndexConverter" />
     <converter:SetValueConverter x:Key="Motor.HMI.CRH380BG.SetValueConverter" />
     <converter1:MathConverter x:Key="Motor.HMI.CRH380BG.MathConverter" />
@@ -23,7 +24,7 @@
     <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.MaintainStateBackground">
         <converter1:SelectObjectContentConverter.ObjectContentCollection>
             <converter1:ObjectContentPair Key="{x:Static maintain:ModelState.Closed}" Content="{StaticResource Motor.HMI.CRH380BG.TransparentBrush}" />
-            <converter1:ObjectContentPair Key="{x:Static maintain:ModelState.Open}" Content="{StaticResource Motor.HMI.CRH380BG.ContentBackgroundRedBrush}" />
+            <converter1:ObjectContentPair Key="{x:Static maintain:ModelState.Open}" Content="{StaticResource Motor.HMI.CRH380BG.BackgroundBlueBrsh}" />
         </converter1:SelectObjectContentConverter.ObjectContentCollection>
     </converter1:SelectObjectContentConverter>
 

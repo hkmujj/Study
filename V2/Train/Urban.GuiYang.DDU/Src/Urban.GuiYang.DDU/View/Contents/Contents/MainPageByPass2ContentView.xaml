@@ -132,7 +132,7 @@
             Grid.RowSpan="2"
             Grid.Column="3"
             Margin="25,20,25,0"
-            Command="{Binding Controller.NavigatorToViewCommand}"
+            Command="{Binding Controller.GoToBypass}"
             CommandParameter="{x:Static constant:ViewNames.MainPageByPass1ContentView}"
             PressedImage="{StaticResource ImgOtherBtnUp}"
             RelasedImage="{StaticResource ImgOtherBtnUp}" />

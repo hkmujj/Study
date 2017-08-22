@@ -105,7 +105,7 @@
                                    Style="{StaticResource Motor.HMI.CRH380BG.TrainConfigEnTextSyle}"
                                    Text="{StaticResource Motor.HMI.CRH380BG.StringNetPressure}" />
                         <TextBlock Style="{StaticResource Motor.HMI.CRH380BG.TrainConfigEnTextSyle}" Text=":" />
-                        <TextBlock Style="{StaticResource Motor.HMI.CRH380BG.TrainConfigEnTextSyle}" Text="{Binding Path=Domain.Model.MainData.ContactNetVoltage}" />
+                        <TextBlock Style="{StaticResource Motor.HMI.CRH380BG.TrainConfigEnTextSyle}" Text="{Binding Path=Domain.Model.MainData.ContactNetVoltage, Converter={StaticResource Motor.HMI.CRH380BG.ContactNetVoltageConverter},StringFormat={StaticResource Motor.HMI.CRH380BG.ZeroFormart}}" />
                         <TextBlock Style="{StaticResource Motor.HMI.CRH380BG.TrainConfigWhiteTextSyle}" Text="kV" />
                     </StackPanel>
                     <Grid Grid.Row="1">

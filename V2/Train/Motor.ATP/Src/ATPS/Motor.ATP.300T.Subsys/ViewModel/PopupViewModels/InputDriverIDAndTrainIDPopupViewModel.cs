@@ -165,11 +165,11 @@ namespace Motor.ATP._300T.Subsys.ViewModel.PopupViewModels
                         ATP.TrainInfo.Driver.IsInputtingTrainId = false;
                         ATP.TrainInfo.Driver.IsInputtingDriverId = false;
                         DriverInterface.ATP.SendInterface.SendDriverData(
-                            new SendModel<DriverDataModel>(new DriverDataModel(TrainId, DriverId)));
+                            new SendModel<DriverDataModel>(new DriverDataModel(DriverId,TrainId )));
                         break;
                     case DriverInputControlWord.Cancel:
                         DriverInterface.ATP.SendInterface.SendDriverData(
-                            new SendModel<DriverDataModel>(new DriverDataModel(TrainId, DriverId), SendModelType.Cancel));
+                            new SendModel<DriverDataModel>(new DriverDataModel(DriverId, TrainId), SendModelType.Cancel));
                         break;
                     case DriverInputControlWord.Delete:
                         if (IsInputtingTrainId)

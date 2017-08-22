@@ -150,7 +150,7 @@ namespace CBTC.DataAdapter.ConcreateAdapter.CASCO
             }
 
             //离站时间显示
-            if (SignalDataInCASCO.LeftTime > 0.01 && SignalDataInCASCO.TrainSpeed > 0.01)
+            if (SignalDataInCASCO.LeftTime > 0.01 && SignalDataInCASCO.LeftTime < 999)
             {
                 CBTC.RoadInfo.StationInfo.PSD.DepartSecond = SignalDataInCASCO.LeftTime;
             }
@@ -233,8 +233,21 @@ namespace CBTC.DataAdapter.ConcreateAdapter.CASCO
             CBTC.TrainInfo.DoorInfo.RightPSDState = (DoorState)SignalDataInCASCO.PSDRightStatus;
             //OBCU重复待删除
             //CBTC.RunningInfo.DepartState
+            //列车运行模式
             CBTC.RunningInfo.OperatingGrade = (OperatingGrade)SignalDataInCASCO.RunLevel;
-            CBTC.RunningInfo.TrainOperatingMode = (TrainOperatingMode)SignalDataInCASCO.ControlMode;
+            if ((TrainOperatingMode)SignalDataInCASCO.ControlMode == TrainOperatingMode.ATB)
+            {
+                CBTC.RunningInfo.TrainOperatingMode = TrainOperatingMode.AM;
+            }
+            else if ((TrainOperatingMode)SignalDataInCASCO.ControlMode == TrainOperatingMode.RMR)
+            {
+                CBTC.RunningInfo.TrainOperatingMode = TrainOperatingMode.RM;
+            }
+            else
+            {
+                CBTC.RunningInfo.TrainOperatingMode = (TrainOperatingMode)SignalDataInCASCO.ControlMode;
+            }
+
             CBTC.RunningInfo.TrainPosition = TrainPosition.Initalize;
             if (SignalDataInCASCO.DepotEnterFlag)
             {

@@ -4,7 +4,6 @@ using Microsoft.Practices.Prism.Events;
 using MMI.Facility.Interface.Data;
 using Urban.GuiYang.DDU.Config;
 using Urban.GuiYang.DDU.Extension;
-using Urban.GuiYang.DDU.Model.Constant;
 using Urban.GuiYang.DDU.Model.Train.CarPart;
 using Urban.GuiYang.DDU.ViewModel;
 

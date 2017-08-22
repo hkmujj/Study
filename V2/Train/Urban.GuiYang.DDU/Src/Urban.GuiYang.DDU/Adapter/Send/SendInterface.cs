@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.Composition;
-using DevExpress.Xpf.Bars;
 using MMI.Facility.Interface.Service;
 using Urban.GuiYang.DDU.Extension;
 using Urban.GuiYang.DDU.Model;

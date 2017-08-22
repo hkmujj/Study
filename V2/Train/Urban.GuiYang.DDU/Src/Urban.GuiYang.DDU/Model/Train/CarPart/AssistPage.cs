@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Urban.GuiYang.DDU.Config;
+﻿using Urban.GuiYang.DDU.Config;
 using Urban.GuiYang.DDU.Model.Constant;
 
 namespace Urban.GuiYang.DDU.Model.Train.CarPart

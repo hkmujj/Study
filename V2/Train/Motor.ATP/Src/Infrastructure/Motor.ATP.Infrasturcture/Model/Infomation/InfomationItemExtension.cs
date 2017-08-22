@@ -19,7 +19,10 @@ namespace Motor.ATP.Infrasturcture.Model.Infomation
             {
                 Content = infomation.Content.MessageContent,
                 InfomationItem = infomation,
-                TimeStamp = infomation.Content.TimeShowType.IsTimeFromNow() ? infomation.StartTime : DateTime.MinValue,
+                TimeStamp =
+                    infomation.Content.TimeShowType == InfomationTimeShowType.NoTime
+                        ? (DateTime?) null
+                        : (infomation.Content.TimeShowType.IsTimeFromNow() ? infomation.StartTime : DateTime.MinValue),
                 TimeDifference =
                     infomation.Content.TimeShowType == InfomationTimeShowType.TimeFrom0
                         ? -TimeSpan.FromTicks(infomation.StartTime.Ticks)
@@ -41,7 +44,11 @@ namespace Motor.ATP.Infrasturcture.Model.Infomation
         /// <returns></returns>
         public static TimeSpan GetTimingSpan(this IMessageItem messageItem)
         {
-            return messageItem.TimeStamp - (messageItem.InfomationItem.StartTime + messageItem.TimeDifference);
+            if (messageItem.TimeStamp != null)
+            {
+                return messageItem.TimeStamp.Value - (messageItem.InfomationItem.StartTime + messageItem.TimeDifference);
+            }
+            return TimeSpan.Zero;
         }
     }
 }

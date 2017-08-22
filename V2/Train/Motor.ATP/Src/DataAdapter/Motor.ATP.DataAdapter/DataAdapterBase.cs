@@ -222,11 +222,7 @@ namespace Motor.ATP.DataAdapter
         public virtual void OnFloatChangedImp(object sender, CommunicationDataChangedWrapperArgs<float> dataChangedArgs)
         {
             // 当前时间
-            dataChangedArgs.UpdateIfContains(InFloatKeys.显示的日期,
-                f => SignalDataIn.NowTime = m_DateTimeInterpreter.Interpreter(f, GetInFloatAt(InFloatKeys.显示的时间)));
-
-            dataChangedArgs.UpdateIfContains(InFloatKeys.显示的时间,
-                f => SignalDataIn.NowTime = m_DateTimeInterpreter.Interpreter(GetInFloatAt(InFloatKeys.显示的日期), f));
+            SignalDataIn.NowTime = m_DateTimeInterpreter.Interpreter(GetInFloatAt(InFloatKeys.显示的日期), GetInFloatAt(InFloatKeys.显示的时间));
 
             //制动预警时间
             dataChangedArgs.UpdateIfContains(InFloatKeys.制动预警时间, f => SignalDataIn.BrakeWarningTime = f);

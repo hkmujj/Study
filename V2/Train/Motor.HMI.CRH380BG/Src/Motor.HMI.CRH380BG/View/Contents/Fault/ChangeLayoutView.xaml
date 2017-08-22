@@ -30,7 +30,7 @@
                             Orientation="Horizontal">
                     <TextBlock Style="{StaticResource Motor.HMI.CRH380BG.TitleDateTextStyle}" Text="第" />
                     <TextBlock Style="{StaticResource Motor.HMI.CRH380BG.TitleDateTextStyle}" Text=" " />
-                    <TextBlock Margin="5,0,0,0"
+                    <TextBlock Margin="5,0,5,0"
                                Style="{StaticResource Motor.HMI.CRH380BG.TitleDateTextStyle}"
                                Text="{Binding Domain.FaultViewModel.Model.AllPagedItems.CurrentListIndex,
                                               Converter={StaticResource Motor.HMI.CRH380BG.MathConverter},

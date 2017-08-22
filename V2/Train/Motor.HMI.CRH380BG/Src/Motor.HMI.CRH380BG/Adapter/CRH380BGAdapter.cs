@@ -1461,8 +1461,8 @@ namespace Motor.HMI.CRH380BG.Adapter
             args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_辅助供电单元_4_蓝, b => sw.TractionModel.Car5AssistPoweredUnit1State = b ? VoltageChargerState.Blue : VoltageChargerState.Black);
             args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_辅助供电单元_4_黄, b => sw.TractionModel.Car5AssistPoweredUnit1State = b ? VoltageChargerState.Yellow : VoltageChargerState.Black);
             args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_辅助供电单元_4_状态未知, b => sw.TractionModel.Car5AssistPoweredUnit1State = b ? VoltageChargerState.Unknow : VoltageChargerState.Black);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_辅助供电单元_5_蓝, b => sw.TractionModel.Car5AssistPoweredUnit1State = b ? VoltageChargerState.Blue : VoltageChargerState.Black);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_辅助供电单元_5_黄, b => sw.TractionModel.Car5AssistPoweredUnit1State = b ? VoltageChargerState.Yellow : VoltageChargerState.Black);
+            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_辅助供电单元_5_蓝, b => sw.TractionModel.Car5AssistPoweredUnit2State = b ? VoltageChargerState.Blue : VoltageChargerState.Black);
+            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_辅助供电单元_5_黄, b => sw.TractionModel.Car5AssistPoweredUnit2State = b ? VoltageChargerState.Yellow : VoltageChargerState.Black);
             args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_辅助供电单元_5_状态未知, b => sw.TractionModel.Car5AssistPoweredUnit1State = b ? VoltageChargerState.Unknow : VoltageChargerState.Black);
             args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_辅助供电单元_6_蓝, b => sw.TractionModel.Car7AssistPoweredUnitState = b ? VoltageChargerState.Blue : VoltageChargerState.Black);
             args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_辅助供电单元_6_黄, b => sw.TractionModel.Car7AssistPoweredUnitState = b ? VoltageChargerState.Yellow : VoltageChargerState.Black);

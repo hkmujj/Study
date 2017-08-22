@@ -4,12 +4,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:common="clr-namespace:Urban.GuiYang.DDU.View.Common"
     xmlns:constant="clr-namespace:Urban.GuiYang.DDU.Model.Constant"
+    xmlns:constant1="clr-namespace:Urban.GuiYang.DDU.Constant"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:gridLine="clr-namespace:CommonUtil.Controls.Grid.GridLine;assembly=CommonUtil"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:view="clr-namespace:MMI.Facility.WPFInfrastructure.View;assembly=MMI.Facility.WPFInfrastructure"
     xmlns:viewModel="clr-namespace:Urban.GuiYang.DDU.ViewModel"
-    xmlns:constant1="clr-namespace:Urban.GuiYang.DDU.Constant"
     d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
     d:DesignHeight="266"
     d:DesignWidth="800"
@@ -39,11 +38,11 @@
         <common:NavigationButton
             Grid.RowSpan="3"
             Grid.Column="3"
-            State="{Binding Model.BypassState}"
-            Command="{Binding Controller.NavigatorToViewCommand}"
-            CommandParameter="{x:Static constant1:ViewNames.MainPageByPass1ContentView}"
             Margin="10,17,10,38"
-            Content="{StaticResource StringByPass}" />
+            Command="{Binding Controller.GoToBypass}"
+            CommandParameter="{x:Static constant1:ViewNames.MainPageByPass1ContentView}"
+            Content="{StaticResource StringByPass}"
+            State="{Binding Model.BypassState}" />
 
         <Grid
             Grid.Row="0"

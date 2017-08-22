@@ -147,7 +147,7 @@
                     <ProgressBar Grid.Row="1"
                                  Width="50"
                                  HorizontalAlignment="Left"
-                                 Maximum="16"
+                                 Maximum="16000"
                                  Minimum="0"
                                  Style="{StaticResource Motor.HMI.CRH380BG.MainViewProgressBarStyle}"
                                  Value="{Binding Path=Domain.Model.MainData.ContactNetVoltage,
@@ -156,7 +156,7 @@
                                  Width="50"
                                  Margin="0,5,0,1"
                                  HorizontalAlignment="Left"
-                                 Maximum="16"
+                                 Maximum="16000"
                                  Minimum="0"
                                  Style="{StaticResource Motor.HMI.CRH380BG.MainViewProgressBarStyle}"
                                  Value="{Binding Path=Domain.Model.MainData.ContactNetVoltage}" />

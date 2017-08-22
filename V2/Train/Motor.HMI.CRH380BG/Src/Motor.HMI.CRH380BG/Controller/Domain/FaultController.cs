@@ -65,14 +65,14 @@ namespace Motor.HMI.CRH380BG.Controller.Domain
             int z = ViewModel.Model.AllPagedItems.CurrentListIndex;
             if(ViewModel.Model.AllItems.Count>1)
             { 
-            if (ViewModel.Model.CurrentSelectedItem== ViewModel.Model.AllItems[z])
-            {
+             if (ViewModel.Model.CurrentSelectedItem== ViewModel.Model.AllItems[z])
+              {
                 t = true;
-            }
-            else
-            {
+              }
+             else
+              {
                 t = false;
-            }
+              }
             }
 
 
@@ -239,6 +239,36 @@ namespace Motor.HMI.CRH380BG.Controller.Domain
 
         }
 
+        public void AllReportFaultReadState()
+        {
+            if (ViewModel.Model.AllPagedItems.ListItemCount==0)
+            {
+                ViewModel.Model.AllPagedItems.AllFaultReadState = false;
+                ViewModel.Model.AllPagedItems.IsfaultsTate = false;
+                return;
+            }
+            int x = 0;
+            
+            foreach (var config in ViewModel.Model.AllItems)
+            {
+                if (config.FaultReadState == FaultReadState.NotRead)
+                {
+                    x++;
+                }
+            }
+
+            if (x > 0)
+            {
+                ViewModel.Model.AllPagedItems.AllFaultReadState = false;
+                ViewModel.Model.AllPagedItems.IsfaultsTate = true;
+            }
+            else
+            {
+                ViewModel.Model.AllPagedItems.AllFaultReadState = true;
+                ViewModel.Model.AllPagedItems.IsfaultsTate = false;
+            }
+        }
+
         public void Reset()
         {
             var model = ViewModel.Model;
@@ -251,6 +281,7 @@ namespace Motor.HMI.CRH380BG.Controller.Domain
 
             var model = ViewModel.Model;
             model.AllPagedItems.Reset(model.AllItems);
+            AllReportFaultReadState();
         }
 
 

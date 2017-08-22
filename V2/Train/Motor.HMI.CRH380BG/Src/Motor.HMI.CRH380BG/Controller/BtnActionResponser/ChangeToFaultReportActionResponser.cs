@@ -30,9 +30,9 @@ namespace Motor.HMI.CRH380BG.Controller.BtnActionResponser
                 stateViewModel.DomainViewModel.Domain.FaultViewModel.Model.CurrentSelectedItem.FaultReadState = FaultReadState.Read;
                 NavigateTo(stateViewModel, StateKeys.Root_故障_报告);
             }
-            
 
-            
+            ViewModel.Value.Domain.FaultViewModel.Controller.AllReportFaultReadState();
+
 
             switch (stateViewModel.Model.ViewLocation)
             {

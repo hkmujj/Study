@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel.Composition;
+﻿using System.ComponentModel.Composition;
 using System.Linq;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Regions;

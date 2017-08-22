@@ -9,6 +9,7 @@ using MMI.Facility.Interface.Data;
 using MMI.Facility.Interface.Extension;
 using MMI.Facility.Interface.Service;
 using Tram.CBTC.DataAdapter.ConcreateAdapter;
+using Tram.CBTC.DataAdapter.ConcreateAdapter.CASCO;
 using Tram.CBTC.DataAdapter.Model;
 using Tram.CBTC.DataAdapter.Resource.Keys;
 using Tram.CBTC.Infrasturcture.Events;
@@ -311,20 +312,26 @@ namespace Tram.CBTC.DataAdapter
 
             dataChangedArgs.UpdateIfContains(InfKeys.显示的时间,
                 f => SignalDataIn.NowTime = m_DateTimeInterpreter.Interpreter(GetInFloatAt(InfKeys.显示的日期), f));
-
             //发车时间
-            dataChangedArgs.UpdateIfContains(InfKeys.停站时间, f => SignalDataIn.StationStopTime = (int)f);
-            CBTC.RoadInfo.StationInfo.PSD.DepartTime = m_DateTimeInterpreterFormSec.Interpreter(SignalDataIn.StationStopTime);
+           // CBTC.RoadInfo.StationInfo.PSD.DepartTime = m_DateTimeInterpreter.Interpreter(SignalDataIn.DepartTime, SignalDataIn.DepartTime);
 
-            //// 到站时间 (暂时这样用，后期信号需传这个值过来)
-            // dataChangedArgs.UpdateIfContains(InfKeys.停站时间, f => SignalDataIn.StationStopTime = (int)f);
-            CBTC.RoadInfo.StationInfo.PSD.ArriveTime = m_DateTimeInterpreterFormSec.Interpreter(SignalDataIn.StationStopTime);
-            //DateTime aa = m_DateTimeInterpreterFormSec.Interpreter(SignalDataIn.StationStopTime);
-            //// CBTC.RoadInfo.StationInfo.PSD.ArriveTime = DateTime.Now;
-            //CBTC.RoadInfo.StationInfo.PSD.ArriveTime = m_DateTimeInterpreter.Interpreter((SignalDataIn.StationStopTime - 30),
-            //    (SignalDataIn.StationStopTime - 30));
+            ///到站时间 
+           // CBTC.RoadInfo.StationInfo.PSD.ArriveTime = m_DateTimeInterpreter.Interpreter(SignalDataIn.ArrivedTime, SignalDataIn.ArrivedTime);
+
+            //距前车运行时分
+            CBTC.SignalInfo.ForwardCarTime = m_DateTimeInterpreterFormSec.Interpreter(SignalDataIn.FrontTrainRuntimeInterval);
+
+            ///距后车运行时分 
+            CBTC.SignalInfo.AfterCarTime = m_DateTimeInterpreterFormSec.Interpreter(SignalDataIn.BackTrainTuntimeInterval);
+
+            ////发车时间
+            CBTC.RoadInfo.StationInfo.PSD.DepartTime = m_DateTimeInterpreterFormSec.Interpreter(SignalDataIn.DepartTime);
+
+            /////到站时间 
+            CBTC.RoadInfo.StationInfo.PSD.ArriveTime = m_DateTimeInterpreterFormSec.Interpreter(SignalDataIn.ArrivedTime);
+
             ////目标距离
-            //dataChangedArgs.UpdateIfContains( (string)InfKeys.目标距离, f => SignalDataIn.GoalDistance = f);
+            dataChangedArgs.UpdateIfContains( (string)InfKeys.目标距离, f => SignalDataIn.GoalDistance = f);
 
             //列车速度
             dataChangedArgs.UpdateIfContains(InfKeys.列车运行速度, f => SignalDataIn.TrainSpeed = (int)f);
@@ -419,11 +426,18 @@ namespace Tram.CBTC.DataAdapter
             //列车当前所在区域
             dataChangedArgs.UpdateIfContains(InfKeys.列车当前所在区域, f => SignalDataIn.TrainCurAreaType = (int)f);
 
-            //前车距离
-            dataChangedArgs.UpdateIfContains(InfKeys.前车距离, f => SignalDataIn.FrontTrainDis = (int)f);
+            ////前车距离
+            //dataChangedArgs.UpdateIfContains(InfKeys.前车距离, f => SignalDataIn.FrontTrainDis = (int)f);
             //折返信息
             dataChangedArgs.UpdateIfContains(InfKeys.折返信息, f => SignalDataIn.TurnBackStatus = (int)f);
 
+            //前方信号机状态
+            dataChangedArgs.UpdateIfContains(InfKeys.前方信号机状态, f => SignalDataIn.FrontSignalStatus = (int)f);
+
+            //距前车运行时分
+            dataChangedArgs.UpdateIfContains(InfKeys.距前车运行时分, f => SignalDataIn.FrontTrainRuntimeInterval = (int)f);
+            //距后车运行时分
+            dataChangedArgs.UpdateIfContains(InfKeys.距后车运行时分, f => SignalDataIn.BackTrainTuntimeInterval = (int)f);
 
         }
 

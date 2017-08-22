@@ -72,7 +72,7 @@ namespace Motor.ATP.Infrasturcture.Interface
         /// <summary>
         /// 时间戳
         /// </summary>
-        DateTime TimeStamp { set; get; }
+        DateTime? TimeStamp { set; get; }
 
         /// <summary>
         /// 时间差,如果需要记时，用此字段。

@@ -15,6 +15,7 @@ using Urban.GuiYang.DDU.Controller.BtnStragy.UserAction.ActionResponser;
 using Urban.GuiYang.DDU.Events;
 using Urban.GuiYang.DDU.Model.BtnStragy;
 using Urban.GuiYang.DDU.Resources.Keys;
+using Urban.GuiYang.DDU.View.Contents.Contents;
 using Urban.GuiYang.DDU.View.Contents.Help;
 using Urban.GuiYang.DDU.ViewModel;
 
@@ -34,14 +35,15 @@ namespace Urban.GuiYang.DDU.Controller.Domain
         private readonly IEventAggregator m_EventAggregator;
 
         private readonly Stack<StateInterfaceKey> m_NavigateHistory;
-        public ICommand NavigatorToViewCommand { get; private set; }
+        public ICommand GoToBypass { get; private set; }
         public ICommand GoToLast { get; private set; }
         public ICommand CloseHelp { get; private set; }
         public ICommand GoToHelpResponse { get; private set; }
         public ICommand GoToHelp { get; private set; }
         [Import]
         public Lazy<HelpResponse> HelpResponse { get; private set; }
-
+        [Import]
+        public Lazy<BypassResponse> BypassResponse { get; private set; }
         [ImportingConstructor]
         public DomainController(IEventAggregator eventAggregator, IRegionManager regionManager, IStateInterfaceFactory stateInterfaceFactory)
         {
@@ -57,7 +59,7 @@ namespace Urban.GuiYang.DDU.Controller.Domain
                 ViewModel.Model.CurrentStateInterface.BtnB1.StateProvider.IsSelected = true;
                 ViewModel.Model.CurrentStateInterface.BtnB1.ActionResponser.ResponseClick();
             });
-            NavigatorToViewCommand = new DelegateCommand<string>(NavigatorToView);
+            GoToBypass = new DelegateCommand<string>(NavigatorToView);
             GoToLast = new DelegateCommand(() =>
             {
                 var sd = ViewModel.Model.CurrentStateInterface.BtnB1.ActionResponser as OrdinaryActionResponser;
@@ -84,11 +86,13 @@ namespace Urban.GuiYang.DDU.Controller.Domain
 
         public void NavigatorToView(string fullName)
         {
-            var type = Type.GetType(fullName).GetCustomAttributes(typeof(ViewExportAttribute), false).FirstOrDefault() as ViewExportAttribute;
-            if (type != null)
+            if (fullName == typeof(MainPageByPass1ContentView).FullName)
             {
-                var region = type.RegionName;
-                m_RegionManager.RequestNavigate(region, fullName);
+                BypassResponse.Value.GoToBypass1();
+            }
+            else
+            {
+                BypassResponse.Value.GoToBypass2();
             }
             CloseHelp.Execute(null);
         }

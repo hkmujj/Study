@@ -16,8 +16,19 @@ namespace Motor.HMI.CRH380BG.Model.Common
         private int m_CurrentListIndex;
         private int m_ItemsIndex;
         private bool m_IsfaultsTate;
+        private bool m_AllFaultReadState;
 
-       
+        public bool AllFaultReadState
+        {
+            get { return m_AllFaultReadState; }
+            set
+            {
+                if (value == m_AllFaultReadState)
+                    return;
+                m_AllFaultReadState = value;
+                RaisePropertyChanged(() => AllFaultReadState);
+            }
+        }
 
 
         public int ItemsIndex
@@ -41,11 +52,12 @@ namespace Motor.HMI.CRH380BG.Model.Common
         [DebuggerStepThrough]
         public ListWrapper(Func<T, bool> predicate = null, bool addNullToFillPage = false)
         {
-            ItemNumber = 15;
+            ItemNumber = 20;
             SkipCount = 0;
             CurrentListIndex = 0;
             m_AddNullToFillPage = addNullToFillPage;
             ItemsIndex = 0;
+            AllFaultReadState = false;
             if (predicate == null)
             {
                 predicate = it => true;

@@ -311,7 +311,7 @@
     <Style x:Key="Motor.HMI.CRH380BG.ListBoxfaultStyle1" TargetType="ListBox">
 
         <Style.Setters>
-            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontSize" Value="10" />
             <Setter Property="BorderThickness" Value="0" />
 
 
@@ -328,8 +328,10 @@
                 <Setter.Value>
                     <Style TargetType="ListBoxItem">
 
-                        <Setter Property="Margin" Value="0,0" />
+                        <Setter Property="Margin" Value="0,1.3" />
                         <Setter Property="Padding" Value="0" />
+                        <Setter Property="FontSize" Value="10" />
+                        <Setter Property="BorderThickness" Value="1" />
 
 
                         <Setter Property="HorizontalAlignment" Value="Stretch" />
@@ -346,42 +348,42 @@
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="70*" />
                                                 <ColumnDefinition Width="20*" />
-                                                <ColumnDefinition Width="40*" />
+                                                <ColumnDefinition Width="30*" />
                                                 <ColumnDefinition Width="50*" />
-                                                <ColumnDefinition Width="20*" />
-                                                <ColumnDefinition Width="300*" />
+                                                <ColumnDefinition Width="10*" />
+                                                <ColumnDefinition Width="380*" />
+                                                <ColumnDefinition Width="30*" />
                                                 <ColumnDefinition Width="50*" />
-                                                <ColumnDefinition Width="70*" />
-                                                <ColumnDefinition Width="50*" />
+                                                <ColumnDefinition Width="30*" />
                                                 <ColumnDefinition Width="70*" />
                                             </Grid.ColumnDefinitions>
 
                                             <TextBlock Grid.Column="0"
                                                        HorizontalAlignment="Left"
-                                                       Style="{StaticResource Motor.HMI.CRH380BG.TitleTextStyle}"
+                                                       Style="{StaticResource Motor.HMI.CRH380BG.FaultTextStyle}"
                                                        Text="{Binding FaultReadState,
                                                                       Converter={StaticResource Motor.HMI.CRH380BG.FaultReadStateToString}}" />
 
                                             <TextBlock Grid.Column="1"
                                                        HorizontalAlignment="Left"
-                                                       Style="{StaticResource Motor.HMI.CRH380BG.TitleTextStyle}"
+                                                       Style="{StaticResource Motor.HMI.CRH380BG.FaultTextStyle}"
                                                        Text="{Binding InfoConfig.CarNumber}" />
                                             <TextBlock Grid.Column="3"
                                                        HorizontalAlignment="Left"
-                                                       Style="{StaticResource Motor.HMI.CRH380BG.TitleTextStyle}"
+                                                       Style="{StaticResource Motor.HMI.CRH380BG.FaultTextStyle}"
                                                        Text="{Binding InfoConfig.FaultType}" />
                                             <TextBlock Grid.Column="5"
                                                        HorizontalAlignment="Left"
-                                                       Style="{StaticResource Motor.HMI.CRH380BG.TitleTextStyle}"
+                                                       Style="{StaticResource Motor.HMI.CRH380BG.FaultTextStyle}"
                                                        Text="{Binding InfoConfig.FaultName}" />
                                             <TextBlock Grid.Column="7"
                                                        HorizontalAlignment="Left"
-                                                       Style="{StaticResource Motor.HMI.CRH380BG.TitleTextStyle}"
+                                                       Style="{StaticResource Motor.HMI.CRH380BG.FaultTextStyle}"
                                                        Text="{Binding OccurseTime,
                                                                       StringFormat={}MM.dd.}" />
                                             <TextBlock Grid.Column="9"
                                                        HorizontalAlignment="Left"
-                                                       Style="{StaticResource Motor.HMI.CRH380BG.TitleTextStyle}"
+                                                       Style="{StaticResource Motor.HMI.CRH380BG.FaultTextStyle}"
                                                        Text="{Binding OccurseTime,
                                                                       StringFormat={}HH:mm:ss}" />
 
@@ -410,7 +412,7 @@
     <Style x:Key="Motor.HMI.CRH380BG.ListBoxfaultStyle3" TargetType="ListBox">
 
         <Style.Setters>
-            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontSize" Value="10" />
             <Setter Property="BorderThickness" Value="0" />
 
 
@@ -427,9 +429,9 @@
                 <Setter.Value>
                     <Style TargetType="ListBoxItem">
 
-                        <Setter Property="Margin" Value="0,0" />
+                        <Setter Property="Margin" Value="0,1.3" />
                         <Setter Property="Padding" Value="0" />
-
+                        <Setter Property="BorderThickness" Value="1" />
 
                         <Setter Property="HorizontalAlignment" Value="Stretch" />
                         <Setter Property="Template">
@@ -445,37 +447,37 @@
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="70*" />
                                                 <ColumnDefinition Width="20*" />
-                                                <ColumnDefinition Width="40*" />
+                                                <ColumnDefinition Width="30*" />
                                                 <ColumnDefinition Width="50*" />
-                                                <ColumnDefinition Width="20*" />
-                                                <ColumnDefinition Width="300*" />
+                                                <ColumnDefinition Width="10*" />
+                                                <ColumnDefinition Width="380*" />
+                                                <ColumnDefinition Width="30*" />
                                                 <ColumnDefinition Width="50*" />
-                                                <ColumnDefinition Width="70*" />
-                                                <ColumnDefinition Width="50*" />
+                                                <ColumnDefinition Width="30*" />
                                                 <ColumnDefinition Width="70*" />
                                             </Grid.ColumnDefinitions>
 
                                             <TextBlock Grid.Column="0"
                                                        HorizontalAlignment="Left"
-                                                       Style="{StaticResource Motor.HMI.CRH380BG.TitleTextStyle}"
+                                                       Style="{StaticResource Motor.HMI.CRH380BG.FaultTextStyle}"
                                                        Text="{Binding FaultReadState,
                                                                       Converter={StaticResource Motor.HMI.CRH380BG.FaultReadStateToString}}" />
 
                                             <TextBlock Grid.Column="1"
                                                        HorizontalAlignment="Left"
-                                                       Style="{StaticResource Motor.HMI.CRH380BG.TitleTextStyle}"
+                                                       Style="{StaticResource Motor.HMI.CRH380BG.FaultTextStyle}"
                                                        Text="{Binding InfoConfig.CarNumber}" />
                                             <TextBlock Grid.Column="3"
                                                        HorizontalAlignment="Left"
-                                                       Style="{StaticResource Motor.HMI.CRH380BG.TitleTextStyle}"
+                                                       Style="{StaticResource Motor.HMI.CRH380BG.FaultTextStyle}"
                                                        Text="{Binding InfoConfig.FaultCode}" />
                                             <TextBlock Grid.Column="5"
                                                        HorizontalAlignment="Left"
-                                                       Style="{StaticResource Motor.HMI.CRH380BG.TitleTextStyle}"
+                                                       Style="{StaticResource Motor.HMI.CRH380BG.FaultTextStyle}"
                                                        Text="{Binding InfoConfig.FaultName}" />
                                             <TextBlock Grid.Column="9"
                                                        HorizontalAlignment="Left"
-                                                       Style="{StaticResource Motor.HMI.CRH380BG.TitleTextStyle}"
+                                                       Style="{StaticResource Motor.HMI.CRH380BG.FaultTextStyle}"
                                                        Text="{Binding OccurseTime,
                                                                       StringFormat={}HH:mm:ss}" />
 
@@ -505,7 +507,7 @@
     <Style x:Key="Motor.HMI.CRH380BG.ListBoxfaultStye2" TargetType="ListBox">
 
         <Style.Setters>
-            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontSize" Value="10" />
             <Setter Property="BorderThickness" Value="0" />
             <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
             <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled" />
@@ -551,7 +553,7 @@
                                                 <ColumnDefinition Width="40*" />
                                                 <ColumnDefinition Width="80*" />
                                             </Grid.ColumnDefinitions>
-                                            
+
                                             <TextBlock Grid.Column="0"
                                                        HorizontalAlignment="Left"
                                                        Style="{StaticResource Motor.HMI.CRH380BG.TitleTextStyle}"

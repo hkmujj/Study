@@ -1,6 +1,7 @@
 ﻿using Motor.HMI.CRH380BG.Resources.Keys;
 using System;
 using System.ComponentModel.Composition;
+using DevExpress.Xpf.Editors.Helpers;
 using Motor.HMI.CRH380BG.Model;
 using Motor.HMI.CRH380BG.ViewModel;
 using MMI.Facility.WPFInfrastructure.Event;
@@ -31,7 +32,9 @@ namespace Motor.HMI.CRH380BG.Controller.BtnActionResponser
                 ViewModel.Value.Domain.FaultViewModel.Controller.GotoNext();
                 ViewModel.Value.Domain.FaultViewModel.Controller.GotoPre();
             }
-           
+            ViewModel.Value.Domain.FaultViewModel.Controller.AllReportFaultReadState();
+
+
 
 
         }

@@ -16,6 +16,8 @@ using LightRail.HMI.SZLHLF.Model;
 using LightRail.HMI.SZLHLF.View.Contents;
 using MMI.Facility.WPFInfrastructure.Behaviors;
 using Microsoft.Practices.ServiceLocation;
+using MMI.Facility.Interface;
+using MMI.Facility.Interface.Extension;
 using MMI.Facility.Interface.Service;
 
 namespace LightRail.HMI.SZLHLF.Controller
@@ -48,8 +50,12 @@ namespace LightRail.HMI.SZLHLF.Controller
 
                     break;
                 case CourseState.Started:
-                    AllModels.ForEach(f=>f.Value.Initialize());
-                    m_RegionManager.RequestNavigate(RegionNames.ContentUpContent, typeof(RootContentView).FullName);
+                    AllModels.ForEach(f => f.Value.Initialize());
+                    App.Current.GetMainDispatcher().BeginInvoke(new Action(() =>
+                    {
+                        m_RegionManager.RequestNavigate(RegionNames.ContentUpContent, typeof(RootContentView).FullName);
+                    }));
+
                     break;
                 case CourseState.Stoped:
                     AllModels.ForEach(f => f.Value.Clear());
@@ -106,6 +112,6 @@ namespace LightRail.HMI.SZLHLF.Controller
         /// 事件聚合器
         /// </summary>
         private readonly IEventAggregator m_EventAggregator;
-        
+
     }
 }

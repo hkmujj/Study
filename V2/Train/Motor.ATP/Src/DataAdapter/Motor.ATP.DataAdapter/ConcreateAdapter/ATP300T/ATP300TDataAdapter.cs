@@ -824,7 +824,7 @@ namespace Motor.ATP.DataAdapter.ConcreateAdapter.ATP300T
                         InfoCreater.UpdateInfomation(7);
                         break;
                     case ControlType.StandBy:
-                        if (SignalDataIn300tOld.ControlMode != (int)ControlType.Unknown)
+                        if (SignalDataIn300tOld.ControlMode != (int)ControlType.Unknown && SignalDataIn300tOld.ControlMode != (int)ControlType.Isolated)
                         {
                             InfoCreater.UpdateInfomation(1);
                         }
@@ -844,9 +844,9 @@ namespace Motor.ATP.DataAdapter.ConcreateAdapter.ATP300T
                     case ControlType.CallingOn:
                         InfoCreater.UpdateInfomation(5);
                         break;
-                    case ControlType.Isolated:
+                    /*case ControlType.Isolated:
                         InfoCreater.UpdateInfomation(8);
-                        break;
+                        break;*/
                     case ControlType.Sleep:
                         InfoCreater.UpdateInfomation(9);
                         break;

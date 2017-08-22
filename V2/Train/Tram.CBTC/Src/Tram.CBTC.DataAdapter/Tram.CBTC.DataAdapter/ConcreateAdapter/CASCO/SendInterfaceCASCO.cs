@@ -9,6 +9,7 @@ namespace Tram.CBTC.DataAdapter.ConcreateAdapter.CASCO
     {
         public SendInterfaceCASCO(SignalDataOut dataOut) : base(dataOut)
         {
+
         }
 
         /// <summary>
@@ -18,7 +19,27 @@ namespace Tram.CBTC.DataAdapter.ConcreateAdapter.CASCO
         /// <returns></returns>
         public override bool SelectVehicleRunningModel(SendModel<VehicleRunningModel> model)
         {
-            return base.SelectVehicleRunningModel(model);
+            SignalDataOutCASCO dataout = DataOut as SignalDataOutCASCO;
+            if (model.Content == VehicleRunningModel.OnBoardOnline)
+            {
+                dataout.TrainRunMode = 1;
+            }
+            else if(model.Content == VehicleRunningModel.VehicleIndependent)
+            {
+                dataout.TrainRunMode = (int)model.Content;
+            }
+            else if (model.Content == VehicleRunningModel.ManualControl)
+            {
+                dataout.TrainRunMode = (int)model.Content;
+            }
+            else
+            {
+                dataout.TrainRunMode = 0;
+            }
+
+
+             return true;
+            //return base.SelectVehicleRunningModel(model);
         }
 
         /// <summary>
@@ -28,7 +49,8 @@ namespace Tram.CBTC.DataAdapter.ConcreateAdapter.CASCO
         /// <returns></returns>
         public override bool SendEndStation(SendModel<string> endStation)
         {
-            return base.SendEndStation(endStation);
+            return true;
+            //return base.SendEndStation(endStation);
         }
 
         /// <summary>
@@ -38,7 +60,8 @@ namespace Tram.CBTC.DataAdapter.ConcreateAdapter.CASCO
         /// <returns></returns>
         public override bool SendLineID(SendModel<string> lineId)
         {
-            return base.SendLineID(lineId);
+            return true;
+            //return base.SendLineID(lineId);
         }
 
         /// <summary>
@@ -48,7 +71,39 @@ namespace Tram.CBTC.DataAdapter.ConcreateAdapter.CASCO
         /// <returns></returns>
         public override bool SendPlanInfo(SendModel<PlanInfo> planinfo)
         {
-            return base.SendPlanInfo(planinfo);
+            return true;
+            // return base.SendPlanInfo(planinfo);
+        }
+
+        ///<summary>
+        /// 输入司机号数字
+        /// </summary>
+        /// <param name="driveridnum"></param>
+        /// <returns></returns>
+        public override bool InputDriverIDNum(SendModel<float> driveridnum)
+        {
+            if (driveridnum.Content>0)
+            {
+                DataOut.DriverNum = driveridnum.Content;
+            }
+            return true;
+            // return base.InputDriverIDNum(driveridnum);
+        }
+
+        /// <summary>
+        /// 输入司机号
+        /// </summary>
+        /// <param name="driverId"></param>
+        /// <returns></returns>
+        public override bool InputDriverId(SendModel<string> driverId)
+        {
+            var drivernum = int.Parse(driverId.Content);
+            if (drivernum > 0)
+            {
+                DataOut.DriverNum = drivernum;
+            }
+            return true;
+            // return base.InputDriverId(driverId);
         }
     }
 }

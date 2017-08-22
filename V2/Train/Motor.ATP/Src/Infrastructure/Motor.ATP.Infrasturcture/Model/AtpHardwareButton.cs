@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using Motor.ATP.Infrasturcture.Interface;
 using Motor.ATP.Infrasturcture.Interface.UserAction;
@@ -38,6 +39,7 @@ namespace Motor.ATP.Infrasturcture.Model
             }
         }
 
+        [Browsable(false)]
         public IHardwareButtonViewModel HardwareButtonViewModel
         {
             set

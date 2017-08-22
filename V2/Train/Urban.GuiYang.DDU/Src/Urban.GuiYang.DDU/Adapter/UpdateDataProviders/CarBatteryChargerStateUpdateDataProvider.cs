@@ -51,7 +51,11 @@ namespace Urban.GuiYang.DDU.Adapter.UpdateDataProviders
             {
                 return BatteryChargerState.Working;
             }
-            return BatteryChargerState.Normal;
+            if (DataService.ReadService.GetInBoolOf(it.ItemConfig.NormalIndex))
+            {
+                return BatteryChargerState.Normal;
+            }
+            return BatteryChargerState.Unknow;
         }
     }
 }

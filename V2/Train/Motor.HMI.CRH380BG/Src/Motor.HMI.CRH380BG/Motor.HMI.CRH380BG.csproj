@@ -343,6 +343,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\Contents\NullView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Contents\Ready\ReadyView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -596,6 +600,7 @@
     <Compile Include="Controller\StateController.cs" />
     <Compile Include="Converters\FindItemIndexConverter.cs" />
     <Compile Include="Converters\LightBushConverter.cs" />
+    <Compile Include="Converters\ContactNetVoltageConverter.cs" />
     <Compile Include="Converters\ProgressBarConverter.cs" />
     <Compile Include="Converters\SetValueConverter.cs" />
     <Compile Include="Converters\TestConverter.cs" />
@@ -879,6 +884,9 @@
     </Compile>
     <Compile Include="View\Contents\Maintain\MaintainOpenView.xaml.cs">
       <DependentUpon>MaintainOpenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\NullView.xaml.cs">
+      <DependentUpon>NullView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Contents\Ready\ReadyView.xaml.cs">
       <DependentUpon>ReadyView.xaml</DependentUpon>

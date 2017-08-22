@@ -13,7 +13,7 @@ namespace Motor.HMI.CRH380BG.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var tmp = (double)value;
-            return tmp - 16;
+            return tmp - 16000;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

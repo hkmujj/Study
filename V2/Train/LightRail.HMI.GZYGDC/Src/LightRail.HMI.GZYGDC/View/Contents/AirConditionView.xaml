@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LightRail.HMI.GZYGDC.View.Contents"
              xmlns:viewModel="clr-namespace:LightRail.HMI.GZYGDC.ViewModel"
+             xmlns:state="clr-namespace:LightRail.HMI.GZYGDC.Model.State"
              mc:Ignorable="d" 
              d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
              d:DesignHeight="480" d:DesignWidth="800">
@@ -58,13 +59,13 @@
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
                     <Grid Row="0">
-                        <Button Style="{StaticResource BlueButtonStyle}" Content="{StaticResource AirConditionView.AutoMode}"></Button>
+                        <RadioButton Style="{StaticResource BlueRadioButtonStyle}" Content="{StaticResource AirConditionView.AutoMode}" GroupName="AirConditionMode" IsChecked="{Binding AirConditionViewModel.Model.ConcentrateAirConditionInfo.ConditionMode, Converter={StaticResource AirConditionModeToBoolConverter}, ConverterParameter={x:Static state:AirConditionMode.Auto}}"></RadioButton>
                     </Grid>
                     <Grid Row="1">
-                        <Button Style="{StaticResource BlueButtonStyle}" Content="{StaticResource AirConditionView.Add2}"></Button>
+                        <Button Style="{StaticResource BlueButtonStyle}" Content="{StaticResource AirConditionView.Add2}" Command="{Binding AirConditionViewModel.Controller.TemperatureAdd2Command}"></Button>
                     </Grid>
                     <Grid Row="2">
-                        <Button Style="{StaticResource BlueButtonStyle}" Content="{StaticResource AirConditionView.StrongWind}"></Button>
+                        <RadioButton Style="{StaticResource BlueRadioButtonStyle}" Content="{StaticResource AirConditionView.StrongWind}" GroupName="WindSpeedMode" IsChecked="{Binding AirConditionViewModel.Model.CabWindSpeedMode, Converter={StaticResource WindSpeedModeToBoolConverter}, ConverterParameter={x:Static state:WindSpeedMode.Strong}}"></RadioButton>
                     </Grid>
                 </Grid>
                 <Grid Column="3">
@@ -74,13 +75,13 @@
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
                     <Grid Row="0">
-                        <Button Style="{StaticResource BlueButtonStyle}" Content="{StaticResource AirConditionView.AerationMode}"></Button>
+                        <RadioButton Style="{StaticResource BlueRadioButtonStyle}" Content="{StaticResource AirConditionView.AerationMode}" GroupName="AirConditionMode" IsChecked="{Binding AirConditionViewModel.Model.ConcentrateAirConditionInfo.ConditionMode, Converter={StaticResource AirConditionModeToBoolConverter}, ConverterParameter={x:Static state:AirConditionMode.Ventilation}}"></RadioButton>
                     </Grid>
                     <Grid Row="1">
-                        <Button Style="{StaticResource BlueButtonStyle}" Content="{StaticResource AirConditionView.Add1}"></Button>
+                        <Button Style="{StaticResource BlueButtonStyle}" Content="{StaticResource AirConditionView.Add1}" Command="{Binding AirConditionViewModel.Controller.TemperatureAdd1Command}"></Button>
                     </Grid>
                     <Grid Row="2">
-                        <Button Style="{StaticResource BlueButtonStyle}" Content="{StaticResource AirConditionView.CommonWind}"></Button>
+                        <RadioButton Style="{StaticResource BlueRadioButtonStyle}" Content="{StaticResource AirConditionView.CommonWind}" GroupName="WindSpeedMode" IsChecked="{Binding AirConditionViewModel.Model.CabWindSpeedMode, Converter={StaticResource WindSpeedModeToBoolConverter}, ConverterParameter={x:Static state:WindSpeedMode.Middle}}"></RadioButton>
                     </Grid>
                 </Grid>
                 <Grid Column="4">
@@ -90,13 +91,13 @@
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
                     <Grid Row="0">
-                        <Button Style="{StaticResource BlueButtonStyle}" Content="{StaticResource AirConditionView.ClosePreCool}"></Button>
+                        <RadioButton Style="{StaticResource BlueRadioButtonStyle}" Content="{StaticResource AirConditionView.ClosePreCool}" GroupName="AirConditionMode" IsChecked="{Binding AirConditionViewModel.Model.ConcentrateAirConditionInfo.ConditionMode, Converter={StaticResource AirConditionModeToBoolConverter}, ConverterParameter={x:Static state:AirConditionMode.ClosePrecold}}"></RadioButton>
                     </Grid>
                     <Grid Row="1">
-                        <Button Style="{StaticResource BlueButtonStyle}" Content="{StaticResource AirConditionView.Reduce1}"></Button>
+                        <Button Style="{StaticResource BlueButtonStyle}" Content="{StaticResource AirConditionView.Reduce1}" Command="{Binding AirConditionViewModel.Controller.TemperatureReduce1Command}"></Button>
                     </Grid>
                     <Grid Row="2">
-                        <Button Style="{StaticResource BlueButtonStyle}" Content="{StaticResource AirConditionView.WeakWind}"></Button>
+                        <RadioButton Style="{StaticResource BlueRadioButtonStyle}" Content="{StaticResource AirConditionView.WeakWind}" GroupName="WindSpeedMode" IsChecked="{Binding AirConditionViewModel.Model.CabWindSpeedMode, Converter={StaticResource WindSpeedModeToBoolConverter}, ConverterParameter={x:Static state:WindSpeedMode.Weak}}"></RadioButton>
                     </Grid>
                 </Grid>
                 <Grid Column="5">
@@ -106,10 +107,10 @@
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
                     <Grid Row="0">
-                        <Button Style="{StaticResource BlueButtonStyle}" Content="{StaticResource AirConditionView.TestMode}"></Button>
+                        <RadioButton Style="{StaticResource BlueRadioButtonStyle}" Content="{StaticResource AirConditionView.TestMode}" GroupName="AirConditionMode" IsChecked="{Binding AirConditionViewModel.Model.ConcentrateAirConditionInfo.ConditionMode, Converter={StaticResource AirConditionModeToBoolConverter}, ConverterParameter={x:Static state:AirConditionMode.Test}}"></RadioButton>
                     </Grid>
                     <Grid Row="1">
-                        <Button Style="{StaticResource BlueButtonStyle}" Content="{StaticResource AirConditionView.Reduce2}"></Button>
+                        <Button Style="{StaticResource BlueButtonStyle}" Content="{StaticResource AirConditionView.Reduce2}" Command="{Binding AirConditionViewModel.Controller.TemperatureReduce2Command}"></Button>
                     </Grid>
                     <Grid Row="2">
 
@@ -122,7 +123,7 @@
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
                     <Grid Row="0">
-                        <Button Style="{StaticResource BlueButtonStyle}" Content="{StaticResource AirConditionView.FireMode}"></Button>
+                        <RadioButton Style="{StaticResource BlueRadioButtonStyle}" Content="{StaticResource AirConditionView.FireMode}" GroupName="AirConditionMode" IsChecked="{Binding AirConditionViewModel.Model.ConcentrateAirConditionInfo.ConditionMode, Converter={StaticResource AirConditionModeToBoolConverter}, ConverterParameter={x:Static state:AirConditionMode.Fire}}"></RadioButton>
                     </Grid>
                     <Grid Row="1">
 
@@ -213,7 +214,7 @@
                             <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
                         <Grid Row="0">
-                            <Button Style="{StaticResource LeftAlignButtonStyle}" Content=""></Button>
+                            <Button Style="{StaticResource LeftAlignButtonStyle}" HorizontalContentAlignment="Center" Content="{Binding AirConditionViewModel.Model.AirConditionInfoCar1.ConditionMode, Converter={StaticResource DescritionConverter}}"></Button>
                         </Grid>
                         <Grid Row="1">
                             <Grid>
@@ -222,10 +223,10 @@
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
                                 <Grid Column="0">
-                                    <Button Style="{StaticResource CenterAlignButtonStyle}" Content="22"></Button>
+                                    <Button Style="{StaticResource CenterAlignButtonStyle}" Content="{Binding AirConditionViewModel.Model.AirConditionInfoCar1.InCarTemperature, StringFormat={}{F0}}"></Button>
                                 </Grid>
                                 <Grid Column="1">
-                                    <Button Style="{StaticResource CenterAlignButtonStyle}" Content="0"></Button>
+                                    <Button Style="{StaticResource CenterAlignButtonStyle}" Content="{Binding AirConditionViewModel.Model.AirConditionInfoCar1.SettingTemperature, StringFormat={}{F0}}"></Button>
                                 </Grid>
                             </Grid>
                         </Grid>
@@ -238,7 +239,7 @@
                             <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
                         <Grid Row="0">
-                            <Button Style="{StaticResource LeftAlignButtonStyle}" Content=""></Button>
+                            <Button Style="{StaticResource LeftAlignButtonStyle}" HorizontalContentAlignment="Center" Content="{Binding AirConditionViewModel.Model.AirConditionInfoCar2.ConditionMode, Converter={StaticResource DescritionConverter}}"></Button>
                         </Grid>
                         <Grid Row="1">
                             <Grid>
@@ -246,11 +247,11 @@
                                     <ColumnDefinition></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Grid Column="0">
-                                    <Button Style="{StaticResource CenterAlignButtonStyle}" Content="22"></Button>
+                               <Grid Column="0">
+                                    <Button Style="{StaticResource CenterAlignButtonStyle}" Content="{Binding AirConditionViewModel.Model.AirConditionInfoCar2.InCarTemperature, StringFormat={}{F0}}"></Button>
                                 </Grid>
                                 <Grid Column="1">
-                                    <Button Style="{StaticResource CenterAlignButtonStyle}" Content="0"></Button>
+                                    <Button Style="{StaticResource CenterAlignButtonStyle}" Content="{Binding AirConditionViewModel.Model.AirConditionInfoCar2.SettingTemperature, StringFormat={}{F0}}"></Button>
                                 </Grid>
                             </Grid>
                         </Grid>
@@ -263,7 +264,7 @@
                             <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
                         <Grid Row="0">
-                            <Button Style="{StaticResource LeftAlignButtonStyle}" Content=""></Button>
+                            <Button Style="{StaticResource LeftAlignButtonStyle}" HorizontalContentAlignment="Center" Content="{Binding AirConditionViewModel.Model.AirConditionInfoCar3.ConditionMode, Converter={StaticResource DescritionConverter}}"></Button>
                         </Grid>
                         <Grid Row="1">
                             <Grid>
@@ -272,10 +273,10 @@
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
                                 <Grid Column="0">
-                                    <Button Style="{StaticResource CenterAlignButtonStyle}" Content="22"></Button>
+                                    <Button Style="{StaticResource CenterAlignButtonStyle}" Content="{Binding AirConditionViewModel.Model.AirConditionInfoCar3.InCarTemperature, StringFormat={}{F0}}"></Button>
                                 </Grid>
                                 <Grid Column="1">
-                                    <Button Style="{StaticResource CenterAlignButtonStyle}" Content="0"></Button>
+                                    <Button Style="{StaticResource CenterAlignButtonStyle}" Content="{Binding AirConditionViewModel.Model.AirConditionInfoCar3.SettingTemperature, StringFormat={}{F0}}"></Button>
                                 </Grid>
                             </Grid>
                         </Grid>
@@ -288,7 +289,7 @@
                             <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
                         <Grid Row="0">
-                            <Button Style="{StaticResource LeftAlignButtonStyle}" Content=""></Button>
+                            <Button Style="{StaticResource LeftAlignButtonStyle}" HorizontalContentAlignment="Center" Content="{Binding AirConditionViewModel.Model.AirConditionInfoCar4.ConditionMode, Converter={StaticResource DescritionConverter}}"></Button>
                         </Grid>
                         <Grid Row="1">
                             <Grid>
@@ -297,10 +298,10 @@
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
                                 <Grid Column="0">
-                                    <Button Style="{StaticResource CenterAlignButtonStyle}" Content="22"></Button>
+                                    <Button Style="{StaticResource CenterAlignButtonStyle}" Content="{Binding AirConditionViewModel.Model.AirConditionInfoCar4.InCarTemperature, StringFormat={}{F0}}"></Button>
                                 </Grid>
                                 <Grid Column="1">
-                                    <Button Style="{StaticResource CenterAlignButtonStyle}" Content="0"></Button>
+                                    <Button Style="{StaticResource CenterAlignButtonStyle}" Content="{Binding AirConditionViewModel.Model.AirConditionInfoCar4.SettingTemperature, StringFormat={}{F0}}"></Button>
                                 </Grid>
                             </Grid>
                         </Grid>

@@ -13,9 +13,7 @@
     </ResourceDictionary.MergedDictionaries>
 
     <converter:BoolVisibilityConverter x:Key="BoolToVisibilityConverter"/>
-
     <converter1:ButtonContentConverter x:Key="ButtonContentConverter" />
-    
     <converter1:TimeConverter x:Key="TimeConverter"/>
     
     <converter:SelectObjectContentConverter x:Key="DoorConverter">
@@ -192,6 +190,9 @@
 
 
     <converter1:EventInfoVisibleConverter x:Key="EventInfoVisibleConverter"/>
-    
+    <converter1:AirConditionModeToBoolConverter x:Key="AirConditionModeToBoolConverter" />
+    <converter1:WindSpeedModeToBoolConverter x:Key="WindSpeedModeToBoolConverter" />
+
+
 
 </ResourceDictionary>

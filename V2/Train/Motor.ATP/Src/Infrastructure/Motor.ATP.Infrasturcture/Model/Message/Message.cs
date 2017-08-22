@@ -72,7 +72,7 @@ namespace Motor.ATP.Infrasturcture.Model.Message
                     {
                         try
                         {
-                            e.TimeStamp = DateTime.Now + e.TimeDifference;
+                            e.TimeStamp = ATP.Other.ShowingDateTime + e.TimeDifference;
                             ATP.SendInterface.OnMessageTimeChanged(e);
                         }
                         catch (Exception)

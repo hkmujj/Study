@@ -9,7 +9,7 @@ namespace Motor.HMI.CRH380BG.View.Contents.Begin
     /// MaintainInfoView.xaml 的交互逻辑
     /// </summary>
     [PartCreationPolicy(CreationPolicy.NonShared)]
-    [ViewExport(RegionName = RegionNames.ContentContent)]
+    [ViewExport(RegionName = RegionNames.ContentContent, IsDefaultView = true)]
     public partial class BeginView
     {
         public BeginView()

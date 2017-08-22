@@ -1,4 +1,5 @@
-﻿using Motor.ATP.Infrasturcture.Interface.SpeedMonitoringSection;
+﻿using System.ComponentModel;
+using Motor.ATP.Infrasturcture.Interface.SpeedMonitoringSection;
 
 namespace Motor.ATP.Infrasturcture.Model.SpeedMonitoringSection
 {

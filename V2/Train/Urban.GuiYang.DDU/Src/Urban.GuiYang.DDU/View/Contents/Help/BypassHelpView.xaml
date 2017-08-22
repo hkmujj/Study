@@ -1,0 +1,136 @@
+﻿<UserControl
+    x:Class="Urban.GuiYang.DDU.View.Contents.Help.BypassHelpView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:common="clr-namespace:Urban.GuiYang.DDU.View.Common"
+    xmlns:constant="clr-namespace:Urban.GuiYang.DDU.Model.Constant"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:view="clr-namespace:MMI.Facility.WPFInfrastructure.View;assembly=MMI.Facility.WPFInfrastructure"
+    xmlns:viewModel="clr-namespace:Urban.GuiYang.DDU.ViewModel"
+    d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+    d:DesignHeight="355"
+    d:DesignWidth="480"
+    Background="{StaticResource HelpBack}"
+    mc:Ignorable="d">
+    <Grid>
+        <Border BorderBrush="White" BorderThickness="2,2,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="2*" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid
+                        Grid.Column="0"
+                        view:GridLine.Brush="Black"
+                        view:GridLine.Style="ShowAll"
+                        view:GridLine.Width="1"
+                        view:GridLine.WidthStyle="AllLineSame">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10*" />
+                            <ColumnDefinition Width="35*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Left" />
+                                <Setter Property="VerticalAlignment" Value="Center" />
+                                <Setter Property="Margin" Value="4,0,0,0" />
+                            </Style>
+                        </Grid.Resources>
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Text="DMBPS" />
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Text="警惕旁路按钮开关" />
+
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Text="LMRGBS" />
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Text="主风欠压旁路开关" />
+
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            Text="PBRBPS" />
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Text="停放制动缓解旁路开关" />
+
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            Text="ABRBS" />
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            Text="所有常用制动缓解旁路开关" />
+
+                        <TextBlock
+                            Grid.Row="4"
+                            Grid.Column="0"
+                            Text="DBPS" />
+                        <TextBlock
+                            Grid.Row="4"
+                            Grid.Column="1"
+                            Text="门旁路开关" />
+                    </Grid>
+                </Grid>
+                <Canvas Grid.Row="3">
+                    <common:NavigationButton
+                        Canvas.Left="170"
+                        Canvas.Bottom="2"
+                        Width="83"
+                        Height="44"
+                        Margin="0"
+                        Command="{Binding Controller.CloseHelp}"
+                        Content="确认" />
+
+                </Canvas>
+                <Line
+                    Grid.Row="1"
+                    Height="5"
+                    VerticalAlignment="Bottom"
+                    Stroke="Black"
+                    StrokeThickness="2"
+                    X1="5"
+                    X2="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Grid}, Path=ActualWidth, Converter={StaticResource MathConverter}, ConverterParameter=x-5}"
+                    Y1="5"
+                    Y2="5" />
+                <Line
+                    Grid.Row="2"
+                    Height="5"
+                    VerticalAlignment="Bottom"
+                    Stroke="Black"
+                    StrokeThickness="2"
+                    X1="5"
+                    X2="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Grid}, Path=ActualWidth, Converter={StaticResource MathConverter}, ConverterParameter=x-5}"
+                    Y1="5"
+                    Y2="5" />
+            </Grid>
+        </Border>
+        <!--<Border BorderBrush="Black" BorderThickness="0,0,2,2" />-->
+    </Grid>
+</UserControl>
+

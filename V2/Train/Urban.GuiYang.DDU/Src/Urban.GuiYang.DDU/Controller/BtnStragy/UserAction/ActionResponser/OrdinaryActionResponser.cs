@@ -6,6 +6,7 @@ using Microsoft.Practices.ServiceLocation;
 using Urban.GuiYang.DDU.Extension;
 using Urban.GuiYang.DDU.Model.BtnStragy;
 using Urban.GuiYang.DDU.Resources.Keys;
+using Urban.GuiYang.DDU.View.Contents.Contents;
 using Urban.GuiYang.DDU.ViewModel;
 
 namespace Urban.GuiYang.DDU.Controller.BtnStragy.UserAction.ActionResponser
@@ -20,7 +21,8 @@ namespace Urban.GuiYang.DDU.Controller.BtnStragy.UserAction.ActionResponser
         }
 
         protected static string m_StateKey;
-        protected static Type m_Type;
+        protected static Type HelpView;
+        protected static Type BypassBack;
         protected static bool m_IsContent;
         public IEventAggregator EventAggregator { get; private set; }
 
@@ -86,19 +88,24 @@ namespace Urban.GuiYang.DDU.Controller.BtnStragy.UserAction.ActionResponser
         private void SetLast(string key, Type view, bool isContent)
         {
             m_StateKey = key;
-            m_Type = view;
+            HelpView = view;
             m_IsContent = isContent;
+            if (view != typeof(MainPageByPass1ContentView) && view != typeof(MainPageByPass2ContentView))
+            {
+                BypassBack = view;
+            }
+
         }
 
         public void GoToLast()
         {
             if (m_IsContent)
             {
-                RequestNavigateToContent(m_StateKey, m_Type);
+                RequestNavigateToContent(m_StateKey, BypassBack);
             }
             else
             {
-                RequestNavigateToContentContent(m_StateKey, m_Type);
+                RequestNavigateToContentContent(m_StateKey, BypassBack);
             }
         }
 

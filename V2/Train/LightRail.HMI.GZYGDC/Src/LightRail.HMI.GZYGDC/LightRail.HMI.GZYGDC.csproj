@@ -222,12 +222,14 @@
     </Page>
     <Compile Include="Adapter\DomainAdapter.cs" />
     <Compile Include="Adapter\IUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateAirConditionViewDataProvider.cs" />
     <Compile Include="Adapter\UpdateDataProviderBase.cs" />
     <Compile Include="Adapter\UpdateEventInfoDataProvider.cs" />
     <Compile Include="Adapter\UpdateRunningViewDataProvider.cs" />
     <Compile Include="Adapter\UpdateTitleViewDataProvider.cs" />
     <Compile Include="Config\Priority.cs" />
     <Compile Include="Constant\RegionNames.cs" />
+    <Compile Include="Controller\AirConditionController.cs" />
     <Compile Include="Controller\BtnActionResponser\BottomViewBtnActionResponser.cs" />
     <Compile Include="Controller\BtnActionResponser\BroadcastControlViewBtnActionResponser.cs" />
     <Compile Include="Controller\BtnActionResponser\BtnActionResponserBase.cs" />
@@ -241,10 +243,12 @@
     <Compile Include="Controller\EventInfoController.cs" />
     <Compile Include="Controller\RunningController.cs" />
     <Compile Include="Controller\TitleController.cs" />
+    <Compile Include="Converter\AirConditionModeToBoolConverter.cs" />
     <Compile Include="Converter\ButtonContentConverter.cs" />
     <Compile Include="Converter\EventInfoVisibleConverter.cs" />
     <Compile Include="Converter\PowerValueBrushConverter.cs" />
     <Compile Include="Converter\TimeConverter.cs" />
+    <Compile Include="Converter\WindSpeedModeToBoolConverter.cs" />
     <Compile Include="Event\AnsyncNavigateViewByKeyEvent.cs" />
     <Compile Include="Event\DataServiceDataChanged.cs" />
     <Compile Include="Event\LazyValueCreatedEvent.cs" />
@@ -254,6 +258,7 @@
     <Compile Include="Interface\IEventInfo.cs" />
     <Compile Include="Interface\IStation.cs" />
     <Compile Include="Interface\IUnit.cs" />
+    <Compile Include="Model\AirConditionModel.cs" />
     <Compile Include="Model\ConfigModel\EmergencyBroadcastItem.cs" />
     <Compile Include="Model\ConfigModel\StateInterfaceItemBottom.cs" />
     <Compile Include="Model\ConfigModel\StateInterfaceItemCenter.cs" />
@@ -278,8 +283,11 @@
     <Compile Include="Controller\HardwareBtnController.cs" />
     <Compile Include="Model\HardwareBtnModel.cs" />
     <Compile Include="Model\RunningModel.cs" />
+    <Compile Include="Model\State\AirConditionInfo.cs" />
+    <Compile Include="Model\State\AirConditionMode.cs" />
     <Compile Include="Model\State\BatteryInfo.cs" />
     <Compile Include="Model\State\TrainDirection.cs" />
+    <Compile Include="Model\State\WindSpeedMode.cs" />
     <Compile Include="Model\State\WorkCondition.cs" />
     <Compile Include="Model\TitleModel.cs" />
     <Compile Include="Model\Units\AirConditionUnit.cs" />
@@ -331,6 +339,7 @@
     <Compile Include="Service\SpringPriorityService.cs" />
     <Compile Include="Service\StationManagerService.cs" />
     <Compile Include="Service\TractionPriorityService.cs" />
+    <Compile Include="ViewModel\AirConditionViewModel.cs" />
     <Compile Include="ViewModel\EmergencyBroadcastViewModel.cs" />
     <Compile Include="ViewModel\EventInfoViewModel.cs" />
     <Compile Include="ViewModel\HardwareBtnViewModel.cs" />

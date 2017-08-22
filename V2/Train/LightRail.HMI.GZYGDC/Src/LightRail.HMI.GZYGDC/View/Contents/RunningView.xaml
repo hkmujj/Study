@@ -362,7 +362,7 @@
                                                         <Border Margin="0,0,0,2" Background="LightGray"></Border>
                                                     </Grid>
                                                     <Grid Column="0">
-                                                        <TextBlock HorizontalAlignment="Center" Style="{StaticResource RunningViewPowerStatusTextStyle}" Text="{Binding RunningViewModel.Model.Car1BatteryInfo.Temperature}"></TextBlock>
+                                                        <TextBlock HorizontalAlignment="Center" Style="{StaticResource RunningViewPowerStatusTextStyle}" Text="{Binding RunningViewModel.Model.Car1BatteryInfo.Temperature, StringFormat={}{0:F0}}"></TextBlock>
                                                     </Grid>
                                                     <Grid Column="1">
                                                         <TextBlock HorizontalAlignment="Center" Style="{StaticResource RunningViewPowerStatusTextStyle}" Text="{StaticResource RunningView.℃}"></TextBlock>
@@ -377,7 +377,7 @@
                                                         <Border Margin="0,0,0,2" Background="LightGray"></Border>
                                                     </Grid>
                                                     <Grid Column="0">
-                                                        <TextBlock HorizontalAlignment="Center" Style="{StaticResource RunningViewPowerStatusTextStyle}" Text="{Binding RunningViewModel.Model.Car1BatteryInfo.PowerQuantityPercent}"></TextBlock>
+                                                        <TextBlock HorizontalAlignment="Center" Style="{StaticResource RunningViewPowerStatusTextStyle}" Text="{Binding RunningViewModel.Model.Car1BatteryInfo.PowerQuantityPercent, StringFormat={}{0:F0}}"></TextBlock>
                                                     </Grid>
                                                     <Grid Column="1">
                                                         <TextBlock HorizontalAlignment="Center" Style="{StaticResource RunningViewPowerStatusTextStyle}" Text="{StaticResource RunningView.％}"></TextBlock>
@@ -451,7 +451,7 @@
                                                         <Border Margin="0,0,0,2" Background="LightGray"></Border>
                                                     </Grid>
                                                     <Grid Column="0">
-                                                        <TextBlock HorizontalAlignment="Center" Style="{StaticResource RunningViewPowerStatusTextStyle}" Text="{Binding RunningViewModel.Model.Car2BatteryInfo.PowerQuantityPercent}"></TextBlock>
+                                                        <TextBlock HorizontalAlignment="Center" Style="{StaticResource RunningViewPowerStatusTextStyle}" Text="{Binding RunningViewModel.Model.Car2BatteryInfo.PowerQuantityPercent, StringFormat={}{0:F0}}"></TextBlock>
                                                     </Grid>
                                                     <Grid Column="1">
                                                         <TextBlock HorizontalAlignment="Center" Style="{StaticResource RunningViewPowerStatusTextStyle}" Text="{StaticResource RunningView.％}"></TextBlock>
@@ -525,7 +525,7 @@
                                                         <Border Margin="0,0,0,2" Background="LightGray"></Border>
                                                     </Grid>
                                                     <Grid Column="0">
-                                                        <TextBlock HorizontalAlignment="Center" Style="{StaticResource RunningViewPowerStatusTextStyle}" Text="{Binding RunningViewModel.Model.Car4BatteryInfo.PowerQuantityPercent}"></TextBlock>
+                                                        <TextBlock HorizontalAlignment="Center" Style="{StaticResource RunningViewPowerStatusTextStyle}" Text="{Binding RunningViewModel.Model.Car4BatteryInfo.PowerQuantityPercent, StringFormat={}{0:F0}}"></TextBlock>
                                                     </Grid>
                                                     <Grid Column="1">
                                                         <TextBlock HorizontalAlignment="Center" Style="{StaticResource RunningViewPowerStatusTextStyle}" Text="{StaticResource RunningView.％}"></TextBlock>

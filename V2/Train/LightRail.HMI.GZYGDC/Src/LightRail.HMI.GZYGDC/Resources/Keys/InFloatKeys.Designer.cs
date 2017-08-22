@@ -19,7 +19,7 @@ namespace LightRail.HMI.GZYGDC.Resources.Keys {
     // 类通过类似于 ResGen 或 Visual Studio 的工具自动生成的。
     // 若要添加或移除成员，请编辑 .ResX 文件，然后重新运行 ResGen
     // (以 /str 作为命令选项)，或重新生成 VS 项目。
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class InFloatKeys {
@@ -142,6 +142,24 @@ namespace LightRail.HMI.GZYGDC.Resources.Keys {
         }
         
         /// <summary>
+        ///   查找类似 车1设定温度 的本地化字符串。
+        /// </summary>
+        internal static string 车1设定温度 {
+            get {
+                return ResourceManager.GetString("车1设定温度", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 车1车内温度 的本地化字符串。
+        /// </summary>
+        internal static string 车1车内温度 {
+            get {
+                return ResourceManager.GetString("车1车内温度", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 车2电池温度 的本地化字符串。
         /// </summary>
         internal static string 车2电池温度 {
@@ -160,6 +178,42 @@ namespace LightRail.HMI.GZYGDC.Resources.Keys {
         }
         
         /// <summary>
+        ///   查找类似 车2设定温度 的本地化字符串。
+        /// </summary>
+        internal static string 车2设定温度 {
+            get {
+                return ResourceManager.GetString("车2设定温度", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 车2车内温度 的本地化字符串。
+        /// </summary>
+        internal static string 车2车内温度 {
+            get {
+                return ResourceManager.GetString("车2车内温度", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 车3设定温度 的本地化字符串。
+        /// </summary>
+        internal static string 车3设定温度 {
+            get {
+                return ResourceManager.GetString("车3设定温度", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 车3车内温度 的本地化字符串。
+        /// </summary>
+        internal static string 车3车内温度 {
+            get {
+                return ResourceManager.GetString("车3车内温度", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 车4电池温度 的本地化字符串。
         /// </summary>
         internal static string 车4电池温度 {
@@ -174,6 +228,24 @@ namespace LightRail.HMI.GZYGDC.Resources.Keys {
         internal static string 车4电池电量百分比 {
             get {
                 return ResourceManager.GetString("车4电池电量百分比", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 车4设定温度 的本地化字符串。
+        /// </summary>
+        internal static string 车4设定温度 {
+            get {
+                return ResourceManager.GetString("车4设定温度", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 车4车内温度 的本地化字符串。
+        /// </summary>
+        internal static string 车4车内温度 {
+            get {
+                return ResourceManager.GetString("车4车内温度", resourceCulture);
             }
         }
         

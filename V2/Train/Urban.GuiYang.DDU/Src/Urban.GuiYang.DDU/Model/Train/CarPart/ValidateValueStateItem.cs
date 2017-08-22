@@ -1,5 +1,4 @@
 using Microsoft.Practices.Prism.ViewModel;
-using Urban.GuiYang.DDU.Model.Constant;
 
 namespace Urban.GuiYang.DDU.Model.Train.CarPart
 {

@@ -209,7 +209,35 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Contents\Help\AirConditionHelpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Help\AssistHelpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Help\BrakeHelpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Help\BypassHelpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Contents\Help\HelpNullView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Help\MainHelpViewThree.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Help\MainHelpViewTwo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Help\TowHelpView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -597,8 +625,29 @@
     <Compile Include="View\Contents\Fault\CurrentFault.xaml.cs">
       <DependentUpon>CurrentFault.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Contents\Help\AirConditionHelpView.xaml.cs">
+      <DependentUpon>AirConditionHelpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Help\AssistHelpView.xaml.cs">
+      <DependentUpon>AssistHelpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Help\BrakeHelpView.xaml.cs">
+      <DependentUpon>BrakeHelpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Help\BypassHelpView.xaml.cs">
+      <DependentUpon>BypassHelpView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Contents\Help\HelpNullView.xaml.cs">
       <DependentUpon>HelpNullView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Help\MainHelpViewThree.xaml.cs">
+      <DependentUpon>MainHelpViewThree.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Help\MainHelpViewTwo.xaml.cs">
+      <DependentUpon>MainHelpViewTwo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Help\TowHelpView.xaml.cs">
+      <DependentUpon>TowHelpView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Contents\PIS\EmergBroadcastView.xaml.cs">
       <DependentUpon>EmergBroadcastView.xaml</DependentUpon>

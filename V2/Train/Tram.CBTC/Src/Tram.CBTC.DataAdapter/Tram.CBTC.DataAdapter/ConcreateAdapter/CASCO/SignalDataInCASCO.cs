@@ -26,15 +26,7 @@ namespace Tram.CBTC.DataAdapter.ConcreateAdapter.CASCO
         /// </summary>
         public float BackTrainDistance { set; get; }	//
 
-        /// <summary>
-        /// 距前车运行时分
-        /// </summary>
-        public float FrontTrainRuntimeInterval{set;get;}	
 
-        /// <summary>
-        /// 距后车运行时分
-        /// </summary>
-        public float BackTrainTuntimeInterval { set; get; }
 
         /// <summary>
         /// 折返信息
@@ -66,15 +58,7 @@ namespace Tram.CBTC.DataAdapter.ConcreateAdapter.CASCO
         /// </summary>
         public int TrainRunMode { set; get; }           
 
-        /// <summary>
-        /// 发车时间
-        /// </summary>
-        public float DepartTime { set; get; }          
 
-        /// <summary>
-        /// 到达时间
-        /// </summary>
-        public float ArrivedTime { set; get; }    
 
         /// <summary>
         /// 列车号

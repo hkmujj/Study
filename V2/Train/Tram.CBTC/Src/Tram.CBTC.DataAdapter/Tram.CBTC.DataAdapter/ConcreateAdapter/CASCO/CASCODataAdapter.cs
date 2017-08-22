@@ -72,10 +72,10 @@ namespace Tram.CBTC.DataAdapter.ConcreateAdapter.CASCO
             dataChangedArgs.UpdateIfContains((string)InfKeys.前方信号机距离, f => SignalDataInCASCO.FrontSignalDistance = (int)f);
             //进路预选区终点距离
             dataChangedArgs.UpdateIfContains((string)InfKeys.进路预选区终点距离, f => SignalDataInCASCO.RouteSelectEndDistance = (int)f);
-            //前车距离
-            dataChangedArgs.UpdateIfContains((string)InfKeys.前车距离, f => SignalDataInCASCO.FrontSignalDistance = (int)f);
-            //后车距离
-            dataChangedArgs.UpdateIfContains((string)InfKeys.前方信号机距离, f => SignalDataInCASCO.FrontSignalDistance = (int)f);
+            ////前车距离
+            //dataChangedArgs.UpdateIfContains((string)InfKeys.前车距离, f => SignalDataInCASCO.FrontSignalDistance = (int)f);
+            ////后车距离
+            //dataChangedArgs.UpdateIfContains((string)InfKeys.前方信号机距离, f => SignalDataInCASCO.FrontSignalDistance = (int)f);
 
 
 
@@ -152,8 +152,14 @@ namespace Tram.CBTC.DataAdapter.ConcreateAdapter.CASCO
             dataChangedArgs.UpdateIfContains((string)InfKeys.下一目标, f => SignalDataInCASCO.NextGoal = (int)f);
             //上站到下站偏移量
             dataChangedArgs.UpdateIfContains((string)InfKeys.上站到下站偏移量, f => SignalDataInCASCO.PreStationToNextStationOffSet = (int)f);
-           
 
+            //前车距离
+            dataChangedArgs.UpdateIfContains((string)InfKeys.前车距离, f => SignalDataInCASCO.FrontTrainDistance = (int)f);
+            //后车距离
+            dataChangedArgs.UpdateIfContains((string)InfKeys.后车距离, f => SignalDataInCASCO.BackTrainDistance = (int)f);
+
+            ////下一目标
+            //dataChangedArgs.UpdateIfContains((string)InfKeys.下一目标, f => SignalDataInCASCO.NextGoal = (int)f);
         }
 
 
@@ -207,13 +213,56 @@ namespace Tram.CBTC.DataAdapter.ConcreateAdapter.CASCO
             //系统时间
             CBTC.Other.NowInCBTC = SignalDataInCASCO.NowTime;
             //车载运行模式
-            CBTC.RunningInfo.VehicleRunningModel = VehicleRunningModel.VehicleOnlineEqualinterval;
+            //if (SignalDataInCASCO.TrainRunMode != SignalDataOutCASCO.TrainRunMode)
+            //{
+            //    CBTC.RunningInfo.VehicleRunningModel = (VehicleRunningModel)SignalDataOutCASCO.TrainRunMode;
+            //}
+            //else
+            //{
+            //    CBTC.RunningInfo.VehicleRunningModel = (VehicleRunningModel)SignalDataInCASCO.TrainRunMode;
+            //}
+
+            CBTC.RunningInfo.VehicleRunningModel = (VehicleRunningModel)SignalDataInCASCO.TrainRunMode;
             // 等间隔时间
             CBTC.RunningInfo.VehicleOnlineEqualintervalTime = "7分11秒";
             //列车早晚点状态
-            CBTC.RunningInfo.TrainSoonerOrLaterStatus = TrainSoonerOrLaterStatus.TrainLater;
+            if (SignalDataInCASCO.TrainSoonerOrLaters<0)
+            {
+                CBTC.RunningInfo.TrainSoonerOrLaterStatus = TrainSoonerOrLaterStatus.TrainBreakfast;
+                //SignalDataInCASCO.TrainSoonerOrLaters = -SignalDataInCASCO.TrainSoonerOrLaters;
+                if (SignalDataInCASCO.TrainSoonerOrLaters>60)
+                {
+                    CBTC.RunningInfo.TrainSoonerOrLaterTime = (-SignalDataInCASCO.TrainSoonerOrLaters/60).ToString() + "分"
+                        + (-SignalDataInCASCO.TrainSoonerOrLaters % 60) + "秒";
+                }
+                else
+                {
+                   CBTC.RunningInfo.TrainSoonerOrLaterTime = (-SignalDataInCASCO.TrainSoonerOrLaters).ToString() + "秒";
+                }
+
+            }
+            else if (SignalDataInCASCO.TrainSoonerOrLaters > 0)
+            {
+                CBTC.RunningInfo.TrainSoonerOrLaterStatus = TrainSoonerOrLaterStatus.TrainLater;
+                //CBTC.RunningInfo.TrainSoonerOrLaterTime = (-SignalDataInCASCO.TrainSoonerOrLaters).ToString() + "秒";
+                if (SignalDataInCASCO.TrainSoonerOrLaters > 60)
+                {
+                    CBTC.RunningInfo.TrainSoonerOrLaterTime = (SignalDataInCASCO.TrainSoonerOrLaters / 60).ToString() + "分"
+                        + SignalDataInCASCO.TrainSoonerOrLaters % 60 + "秒";
+                }
+                else
+                {
+                    CBTC.RunningInfo.TrainSoonerOrLaterTime = SignalDataInCASCO.TrainSoonerOrLaters.ToString() + "秒";
+                }
+            }
+            else
+            {
+                CBTC.RunningInfo.TrainSoonerOrLaterStatus = TrainSoonerOrLaterStatus.TrainScheduled;
+                CBTC.RunningInfo.TrainSoonerOrLaterTime = "";
+            }
+            
             //列车早晚点时间
-            CBTC.RunningInfo.TrainSoonerOrLaterTime = "52秒";
+           // CBTC.RunningInfo.TrainSoonerOrLaterTime = "52秒";
 
             //线路
             CBTC.RoadInfo.StationInfo.NextStation = SignalDataInCASCO.NextStationNo > 0
@@ -242,7 +291,7 @@ namespace Tram.CBTC.DataAdapter.ConcreateAdapter.CASCO
             //CBTC.SignalInfo.ForwardCarTime
 
             //后车距离
-            CBTC.SignalInfo.AfterDistance =90 /*SignalDataInCASCO.BackTrainDistance*/;
+            CBTC.SignalInfo.AfterDistance = SignalDataInCASCO.BackTrainDistance;
             //距离后车时间
             //CBTC.SignalInfo.AfterCarTime
 
@@ -253,8 +302,19 @@ namespace Tram.CBTC.DataAdapter.ConcreateAdapter.CASCO
             ////后车距离和时间
             //CBTC.SignalInfo.AfterDistanceAndTime = "941 米     54秒";
 
-            CBTC.RoadInfo.DriverID = "666";
-            CBTC.RoadInfo.TrainID = "5";
+            //司机号
+            if (SignalDataInCASCO.DriverNum==0 && SignalDataOutCASCO.DriverNum == 0)
+            {
+                CBTC.RoadInfo.DriverID = "666"; //默认司机号
+                // CBTC.RoadInfo.DriverID = SignalDataInCASCO.DriverNum.ToString();
+            }
+            else if(SignalDataOutCASCO.DriverNum>0)
+            {
+                CBTC.RoadInfo.DriverID = SignalDataOutCASCO.DriverNum.ToString();
+            }
+            //CBTC.RoadInfo.DriverID = "666";
+            //车次号
+            CBTC.RoadInfo.TrainID =SignalDataInCASCO.TrainNum.ToString()/* "5"*/;
             //折返信息
             CBTC.RoadInfo.ReturnState = (ReturnInfo)SignalDataInCASCO.TurnBackInfo;
             //车站控车状态
@@ -279,8 +339,16 @@ namespace Tram.CBTC.DataAdapter.ConcreateAdapter.CASCO
             CBTC.TrainInfo.System.VehicleCommunicationStatus = (VehicleCommunicationStatus)SignalDataInCASCO.VOBCToCTCStatus;
             //GPS状态
             CBTC.TrainInfo.System.GPSWorkStatus = (GPSWorkStatus)SignalDataInCASCO.GPSStatus;
-              
- 
+
+            CBTC.TrainInfo.System.ATPStatus = (ATPStatus)SignalDataInCASCO.ATPStatus;
+            CBTC.TrainInfo.System.ELSStatus = (ELSStatus) SignalDataInCASCO.ELSStatus;
+            CBTC.TrainInfo.System.RRStatus = (RRStatus) SignalDataInCASCO.RRStatus;
+            CBTC.TrainInfo.System.CPStatus = (CPStatus) SignalDataInCASCO.CPStatus;
+            // CBTC.TrainInfo.System.CPStatus = CPStatus.Fault;
+           // CBTC.SignalInfo.Alram.SemaphoreAlram.Value = (SemaphoreStaus) SignalDataInCASCO.FrontSignalStatus;
+
+
+
 
             return false;
         }
@@ -304,13 +372,13 @@ namespace Tram.CBTC.DataAdapter.ConcreateAdapter.CASCO
             //前方信号
             CBTC.SignalInfo.Alram.SemaphoreAlram.Text = "前方信号";
             CBTC.SignalInfo.Alram.SemaphoreAlram.Value = (SemaphoreStaus)SignalDataIn.FrontSignalStatus;
-            CBTC.SignalInfo.Alram.SemaphoreAlram.Distance = SignalDataIn.GoalDistance;
+            CBTC.SignalInfo.Alram.SemaphoreAlram.Distance = SignalDataIn.GoalDistance + 15;
             CBTC.SignalInfo.Alram.SemaphoreAlram.Visible = true;
 
             //进路请求
             CBTC.SignalInfo.Alram.RoadRequestAlram.Text = "";
             CBTC.SignalInfo.Alram.RoadRequestAlram.Value = 42;
-            CBTC.SignalInfo.Alram.RoadRequestAlram.Distance = 500;
+            CBTC.SignalInfo.Alram.RoadRequestAlram.Distance = SignalDataInCASCO.RouteSelectEndDistance;
             CBTC.SignalInfo.Alram.RoadRequestAlram.Visible = true;
 
             //*************B2区域信息********************

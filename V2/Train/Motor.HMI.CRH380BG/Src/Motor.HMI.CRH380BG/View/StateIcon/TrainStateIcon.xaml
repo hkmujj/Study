@@ -118,6 +118,32 @@
                 BorderThickness="0,1,1,0">
             <Image Source="{Binding Path=Domain.Model.TitleModel.InfoDriverRoomDoorState, Converter={StaticResource Motor.HMI.CRH380BG.InfoDriverRoomDoorStateConverter}}" />
         </Border>
+
+        <Border Grid.Column="14"
+            Visibility="{Binding Domain.FaultViewModel.Model.AllPagedItems.AllFaultReadState, Converter={StaticResource Motor.HMI.CRH380BG.BooleanToVisibilityConverter}}">
+            <Grid Margin="2"
+                  Background="Yellow"
+                  
+                
+                 >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*" />
+                    
+
+                    <ColumnDefinition Width="6*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <TextBlock HorizontalAlignment="Left"
+                               FontSize="16"
+                               Foreground="Black"
+                               Style="{StaticResource Motor.HMI.CRH380BG.TitleTextStyle}">
+                        已知故障
+                    </TextBlock>
+
+                </Grid>
+            </Grid>
+        </Border>
+
         <Border Grid.Column="14"
             Visibility="{Binding Domain.FaultViewModel.Model.AllPagedItems.IsfaultsTate, Converter={StaticResource Motor.HMI.CRH380BG.BooleanToVisibilityConverter}}">
             <Grid Margin="2"

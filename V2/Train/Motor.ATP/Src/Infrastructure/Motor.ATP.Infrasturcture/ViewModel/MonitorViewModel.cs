@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.ComponentModel;
+using System.Diagnostics;
 using Microsoft.Practices.Prism.ViewModel;
 using Motor.ATP.Infrasturcture.Controller.Monitor;
 using Motor.ATP.Infrasturcture.Model;
@@ -32,6 +33,7 @@ namespace Motor.ATP.Infrasturcture.ViewModel
 
         public MonitorModel Model { get; private set; }
 
+        [Browsable(false)]
         public MonitorController Controller { get; private set; }
 
         public ATPDomain Domain { get; private set; }

@@ -30,5 +30,11 @@ namespace Motor.ATP.Infrasturcture.Interface.Infomation
         /// </summary>
         [Description("从发生时间开始计时")]
         TimeFromOccuse,
+
+        /// <summary>
+        /// 不显示时间
+        /// </summary>
+        [Description("不显示时间")]
+        NoTime,
     }
 }

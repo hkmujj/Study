@@ -72,7 +72,6 @@ namespace Microsoft.Practices.Prism.MefExtensions
                 // which will be wrapped by the base class as an ActivationException.
                 return exports.Single().Value;
             }
-
             throw new ActivationException(
                 this.FormatActivationExceptionMessage(new CompositionException("Export not found"), serviceType, key));
         }

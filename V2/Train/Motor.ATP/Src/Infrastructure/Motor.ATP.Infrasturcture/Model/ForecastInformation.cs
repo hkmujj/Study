@@ -82,11 +82,13 @@ namespace Motor.ATP.Infrasturcture.Model
             UpdateCmdIsolatedItem();
         }
 
+        [Browsable(false)]
         public IEnumerable<IForecastInformationItem> UpForecastInformationItems
         {
             get { return ForecastInformationItems.Take(MaxRefreshDelayCount).Where((w, i) => i%2 == 0); }
         }
 
+        [Browsable(false)]
         public IEnumerable<IForecastInformationItem> DowForecastInformationItems
         {
             get { return ForecastInformationItems.Take(MaxRefreshDelayCount).Where((w, i) => i%2 == 1); }
@@ -95,6 +97,7 @@ namespace Motor.ATP.Infrasturcture.Model
         /// <summary>
         /// 命令区的
         /// </summary>
+        [Browsable(false)]
         public virtual IEnumerable<IForecastInformationItem> CmdForecastInformationItems
         {
             get { return ForecastInformationItems.Skip(MaxRefreshDelayCount).Take(MaxCmdItemCount); }
