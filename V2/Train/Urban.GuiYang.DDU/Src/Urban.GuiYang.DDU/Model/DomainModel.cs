@@ -4,6 +4,7 @@ using Microsoft.Practices.Prism.ViewModel;
 using MMI.Facility.WPFInfrastructure.Interactivity;
 using Urban.GuiYang.DDU.Model.BtnStragy;
 using Urban.GuiYang.DDU.Model.Constant;
+using Urban.GuiYang.DDU.Model.Train;
 
 namespace Urban.GuiYang.DDU.Model
 {
@@ -32,6 +33,7 @@ namespace Urban.GuiYang.DDU.Model
         }
 
         public DelegateCommand<CommandParameter> LoadedCommand { get; set; }
+
 
         public bool Visible
         {

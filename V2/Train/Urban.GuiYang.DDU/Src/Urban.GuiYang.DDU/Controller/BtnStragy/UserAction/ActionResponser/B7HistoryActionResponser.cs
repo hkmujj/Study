@@ -11,7 +11,7 @@ namespace Urban.GuiYang.DDU.Controller.BtnStragy.UserAction.ActionResponser
         /// </summary>
         public override void ResponseClick()
         {
-            RequestNavigateToContentContent(typeof(HistoryContentView));
+            RequestNavigateToContent(typeof(HistoryContentView));
         }
     }
 }

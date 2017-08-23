@@ -22,7 +22,7 @@
                     <RowDefinition Height="1*" />
                     <RowDefinition Height="2*" />
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
+                <Grid Grid.Row="0" Margin="10,15">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
                         <ColumnDefinition />
@@ -96,7 +96,123 @@
                             Grid.Column="1"
                             Text="门旁路开关" />
                     </Grid>
+                    <Grid
+                        Grid.Column="1"
+                        view:GridLine.Brush="Black"
+                        view:GridLine.Style="ShowAll"
+                        view:GridLine.Width="1"
+                        view:GridLine.WidthStyle="AllLineSame">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10*" />
+                            <ColumnDefinition Width="35*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Left" />
+                                <Setter Property="VerticalAlignment" Value="Center" />
+                                <Setter Property="Margin" Value="4,0,0,0" />
+                            </Style>
+                        </Grid.Resources>
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Text="CTS" />
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Text="列车连挂开关" />
+
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Text="PEBS" />
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Text="受电弓使能旁路开关" />
+
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            Text="ATPFS" />
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Text="ATP切除开关" />
+
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            Text="DRR" />
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            Text="门使能旁路按钮" />
+
+                        <TextBlock
+                            Grid.Row="4"
+                            Grid.Column="0"
+                            Text="KBS" />
+                        <TextBlock
+                            Grid.Row="4"
+                            Grid.Column="1"
+                            Text="钥匙旁路开关" />
+                    </Grid>
                 </Grid>
+                <Canvas Grid.Row="1">
+                    <TextBlock Canvas.Left="10" Canvas.Top="10">
+                        <Run Text="CTS：" />
+
+                    </TextBlock>
+                    <Image
+                        Canvas.Left="117"
+                        Canvas.Top="4"
+                        Width="45"
+                        Height="28"
+                        Source="{Binding Source={x:Static constant:CTSState.Normal}, Converter={StaticResource ByPassCoulplingStateToImageConverter}}" />
+                    <Image
+                        Canvas.Left="241"
+                        Canvas.Top="4"
+                        Width="45"
+                        Height="28"
+                        Source="{Binding Source={x:Static constant:CTSState.CTE}, Converter={StaticResource ByPassCoulplingStateToImageConverter}}" />
+                    <Image
+                        Canvas.Left="356"
+                        Canvas.Top="4"
+                        Width="45"
+                        Height="28"
+                        Source="{Binding Source={x:Static constant:CTSState.Unkown}, Converter={StaticResource ByPassCoulplingStateToImageConverter}}" />
+                </Canvas>
+                <Canvas Grid.Row="2">
+                    <TextBlock Canvas.Left="10" Canvas.Top="10">
+                        <Run Text="其他旁路开关：" />
+                    </TextBlock>
+                    <Image
+                        Canvas.Left="117"
+                        Canvas.Top="4"
+                        Width="45"
+                        Height="28"
+                        Source="{Binding Source={x:Static constant:SwitchState.On}, Converter={StaticResource ByPassSwitchStateToImageConverter}}" />
+                    <Image
+                        Canvas.Left="241"
+                        Canvas.Top="4"
+                        Width="45"
+                        Height="28"
+                        Source="{Binding Source={x:Static constant:SwitchState.Off}, Converter={StaticResource ByPassSwitchStateToImageConverter}}" />
+                    <Image
+                        Canvas.Left="356"
+                        Canvas.Top="4"
+                        Width="45"
+                        Height="28"
+                        Source="{Binding Source={x:Static constant:SwitchState.Unkown}, Converter={StaticResource ByPassSwitchStateToImageConverter}}" />
+                </Canvas>
                 <Canvas Grid.Row="3">
                     <common:NavigationButton
                         Canvas.Left="170"

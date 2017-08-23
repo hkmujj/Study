@@ -40,10 +40,14 @@ namespace Urban.GuiYang.DDU.Controller.Domain
         public ICommand CloseHelp { get; private set; }
         public ICommand GoToHelpResponse { get; private set; }
         public ICommand GoToHelp { get; private set; }
+        public ICommand GoToFault { get; private set; }
         [Import]
         public Lazy<HelpResponse> HelpResponse { get; private set; }
         [Import]
         public Lazy<BypassResponse> BypassResponse { get; private set; }
+        [Import]
+        public Lazy<FaultResponse> FaultResponse { get; private set; }
+        
         [ImportingConstructor]
         public DomainController(IEventAggregator eventAggregator, IRegionManager regionManager, IStateInterfaceFactory stateInterfaceFactory)
         {
@@ -81,6 +85,9 @@ namespace Urban.GuiYang.DDU.Controller.Domain
             {
                 m_RegionManager.RequestNavigate(RegionNames.HelpRegion, typeof(HelpNullView).FullName);
             });
+
+            GoToFault = new DelegateCommand(() => { FaultResponse.Value.ResponseClick(); });
+
             GoToHelpResponse = new DelegateCommand(() => { HelpResponse.Value.GoToHelp(); });
         }
 

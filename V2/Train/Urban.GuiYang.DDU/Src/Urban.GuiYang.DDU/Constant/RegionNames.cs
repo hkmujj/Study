@@ -11,6 +11,7 @@
         public const string ContentTitle = Prefix + "ContentTitle";
 
         public const string ContentContent = Prefix + "ContentContent";
+        public const string ContentContentAll = Prefix + "ContentContentAll";
 
         public const string ContentButton = Prefix + "ContentButton";
 

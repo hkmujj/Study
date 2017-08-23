@@ -5,7 +5,10 @@ using CommonUtil.Util;
 using Microsoft.Practices.Prism.Regions;
 using Urban.GuiYang.DDU.Config;
 using Urban.GuiYang.DDU.Constant;
+using Urban.GuiYang.DDU.Extension;
+using Urban.GuiYang.DDU.Resources.Keys;
 using Urban.GuiYang.DDU.View.Contents.Contents;
+using Urban.GuiYang.DDU.View.Contents.Fault;
 
 namespace Urban.GuiYang.DDU.Controller.BtnStragy.UserAction.ActionResponser
 {
@@ -50,7 +53,7 @@ namespace Urban.GuiYang.DDU.Controller.BtnStragy.UserAction.ActionResponser
 
             try
             {
-                RequestNavigateToContentContent(typeof(MainPageByPass1ContentView));
+                RequestNavigateToContentContent(typeof(MainPageByPass2ContentView));
             }
             catch (Exception e)
             {
@@ -58,5 +61,19 @@ namespace Urban.GuiYang.DDU.Controller.BtnStragy.UserAction.ActionResponser
             }
         }
     }
+    [Export]
+    public class FaultResponse : OrdinaryActionResponser
+    {
+        /// <summary>
+        /// 响应按键
+        /// </summary>
+        public override void ResponseClick()
+        {
+            Domain.Controller.NavigateTo(StateKeys.Root_Layout3);
+            RegionManager.RequestNavigateToContent(typeof(CurrentFaulyListView));
+            //RequestNavigateToContent(typeof(CurrentFaulyListView));
+        }
+    }
+
 }
 

@@ -15,6 +15,7 @@ namespace Urban.GuiYang.DDU.Extension
         public static void RequestNavigateToContentContent(this IRegionManager regionManager, Type contentContentContentViewType)
         {
             regionManager.RequestNavigate(RegionNames.ContentContent, typeof(ContentContentLayout).FullName);
+            regionManager.RequestNavigate(RegionNames.ContentContentAll, typeof(ContentShell1).FullName);
             regionManager.RequestNavigate(RegionNames.ContentContentContent, contentContentContentViewType.FullName);
         }
 
@@ -25,7 +26,7 @@ namespace Urban.GuiYang.DDU.Extension
         /// <param name="contentViewType"></param>
         public static void RequestNavigateToContent(this IRegionManager regionManager, Type contentViewType)
         {
-            regionManager.RequestNavigate(RegionNames.ContentContent, contentViewType.FullName);
+            regionManager.RequestNavigate(RegionNames.ContentContentAll, contentViewType.FullName);
         }
     }
 }

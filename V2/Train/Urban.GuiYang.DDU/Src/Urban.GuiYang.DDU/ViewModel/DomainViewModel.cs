@@ -24,9 +24,10 @@ namespace Urban.GuiYang.DDU.ViewModel
             controller.Initalize();
 
             debuggerViewModel.DomainViewModel = this;
-            
-        }
 
+        }
+        [Import]
+        public FaultViewModel FaultViewModel { get; private set; }
         public ISendInterface SendInterface { get; private set; }
 
         public DomainController Controller { private set; get; }

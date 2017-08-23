@@ -39,9 +39,9 @@
             Grid.RowSpan="3"
             Grid.Column="3"
             Margin="10,17,10,38"
-            State="{Binding Model.BypassState}"
             Command="{Binding Controller.GoToLast}"
-            Content="{StaticResource StringReturn}" />
+            Content="{StaticResource StringReturn}"
+            State="{Binding Model.BypassState}" />
         <Grid
             Grid.Row="0"
             Grid.Column="1"
@@ -163,6 +163,8 @@
         <common:NavigationButton
             Grid.Row="6"
             Grid.RowSpan="3"
+            State="{Binding Model.FaultSate}"
+            Command="{Binding Controller.GoToFault}"
             Grid.Column="3"
             Margin="10,42,10,13"
             Content="{StaticResource StringFault}" />

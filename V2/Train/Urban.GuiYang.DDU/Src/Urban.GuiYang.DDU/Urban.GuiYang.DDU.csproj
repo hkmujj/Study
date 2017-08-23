@@ -161,6 +161,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Contents\ContentShell1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Contents\Contents\MainPageByPass2ContentView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -206,6 +210,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Contents\Fault\CurrentFault.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Fault\CurrentFaulyListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -366,6 +374,7 @@
     <Compile Include="Adapter\UpdateDataProviders\CarNormalBrake1UpdateDataProvider.cs" />
     <Compile Include="Adapter\UpdateDataProviders\CarDoorLockUpdateDataProvider.cs" />
     <Compile Include="Adapter\UpdateDataProviders\CarPECUUpdateDataProvider.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\FaultChanged.cs" />
     <Compile Include="Adapter\UpdateDataProviders\PISModelUpDataProvider.cs" />
     <Compile Include="Adapter\UpdateDataProviders\TrainBaseInfoUpDataProvider.cs" />
     <Compile Include="Config\CarControlModelConfig.cs" />
@@ -444,6 +453,7 @@
     <Compile Include="Controller\BtnStragy\UserAction\StateProvider\ReturnStateProvider.cs" />
     <Compile Include="Controller\Domain\DebuggerController.cs" />
     <Compile Include="Controller\Domain\DomainController.cs" />
+    <Compile Include="Controller\Domain\FaultController.cs" />
     <Compile Include="Controller\Domain\OtherController.cs" />
     <Compile Include="Controller\Domain\PIS\EmergBroadcastController.cs" />
     <Compile Include="Controller\Domain\PIS\PISController.cs" />
@@ -459,6 +469,7 @@
     <Compile Include="Events\PISSelectCompletedEvent.cs" />
     <Compile Include="Extension\CommunicationDataChangedArgsExtension.cs" />
     <Compile Include="Extension\CommunicationDataServiceExtension.cs" />
+    <Compile Include="Extension\FloatExtention.cs" />
     <Compile Include="Extension\RegionManagerExtension.cs" />
     <Compile Include="GuiYangDDUMefBootstrapper.cs" />
     <Compile Include="GuiYangDDUSubystem.cs" />
@@ -504,6 +515,8 @@
     <Compile Include="Model\Constant\RunningDirection.cs" />
     <Compile Include="Model\Constant\VidioState.cs" />
     <Compile Include="Model\Constant\WorkState.cs" />
+    <Compile Include="Model\Fault\FaultInfo.cs" />
+    <Compile Include="Model\Fault\FaultManager.cs" />
     <Compile Include="Model\GlobalParam.cs" />
     <Compile Include="Model\GlobalTimer.cs" />
     <Compile Include="Model\IRaiseResourceChangedProvider.cs" />
@@ -542,6 +555,7 @@
     <Compile Include="Model\Train\CarPart\ValidateFloatStateItem.cs" />
     <Compile Include="Model\Train\CarPart\ValidateValueStateItem.cs" />
     <Compile Include="Model\Train\CarPart\ValidateFloatItem.cs" />
+    <Compile Include="Model\Train\FaultModel.cs" />
     <Compile Include="Model\Train\OtherModel.cs" />
     <Compile Include="Model\Train\StationModel.cs" />
     <Compile Include="Model\Train\TrainModel.cs" />
@@ -575,6 +589,7 @@
     <Compile Include="ViewModel\DebuggerViewModel.cs" />
     <Compile Include="ViewModel\DomainViewModel.cs" />
     <Compile Include="ViewModel\EmergBroadcastViewModel.cs" />
+    <Compile Include="ViewModel\FaultViewModel.cs" />
     <Compile Include="ViewModel\PISViewModel.cs" />
     <Compile Include="ViewModel\TrainViewModel.cs" />
     <Compile Include="View\Buttons\BottomButton.xaml.cs">
@@ -588,6 +603,9 @@
     </Compile>
     <Compile Include="View\Contents\ContentContentLayout.xaml.cs">
       <DependentUpon>ContentContentLayout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\ContentShell1.xaml.cs">
+      <DependentUpon>ContentShell1.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Contents\Contents\MainPageByPass2ContentView.xaml.cs">
       <DependentUpon>MainPageByPass2ContentView.xaml</DependentUpon>
@@ -624,6 +642,9 @@
     </Compile>
     <Compile Include="View\Contents\Fault\CurrentFault.xaml.cs">
       <DependentUpon>CurrentFault.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Fault\CurrentFaulyListView.xaml.cs">
+      <DependentUpon>CurrentFaulyListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Contents\Help\AirConditionHelpView.xaml.cs">
       <DependentUpon>AirConditionHelpView.xaml</DependentUpon>

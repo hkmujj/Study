@@ -105,7 +105,7 @@ namespace Urban.GuiYang.DDU.Controller.Domain.PIS
 
         private void OnEmergBroadcast()
         {
-            ViewModel.Parent.Controller.NavigateTo(StateKeys.Root_紧急广播);
+            ViewModel.Parent.Controller.NavigateTo(StateKeys.Root_Layout2);
             m_RegionManager.RequestNavigateToContent(typeof(EmergBroadcastView));
         }
 

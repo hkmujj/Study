@@ -6,7 +6,7 @@ namespace Urban.GuiYang.DDU.View.Contents.PIS
     /// <summary>
     /// EmergBroadcastView.xaml 的交互逻辑
     /// </summary>
-    [ViewExport(RegionName = RegionNames.ContentContent)]
+    [ViewExport(RegionName = RegionNames.ContentContentAll)]
     public partial class EmergBroadcastView 
     {
         public EmergBroadcastView()

@@ -100,7 +100,6 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Orientation="Horizontal">
-            <TextBlock Text="{StaticResource StringPage}" />
             <TextBlock Text="{Binding Path=TrainViewModel.Model.AirConditionPageIndex, Converter={StaticResource MathConverter}, ConverterParameter=x+1}" />
             <TextBlock Text="-2" />
         </StackPanel>
@@ -167,7 +166,9 @@
             Grid.RowSpan="3"
             Grid.Column="3"
             Margin="10,42,10,13"
-            Content="{StaticResource StringFault}" />
+            Command="{Binding Controller.GoToFault}"
+            Content="{StaticResource StringFault}"
+            State="{Binding Model.FaultSate}" />
 
         <Grid
             Grid.Row="8"
@@ -188,7 +189,7 @@
             <common:NavigationRadioButton
                 Grid.Column="1"
                 Margin="10,2,26,2"
-                Content="{StaticResource StringOpened}" />
+                Content="关闭" />
         </Grid>
 
 

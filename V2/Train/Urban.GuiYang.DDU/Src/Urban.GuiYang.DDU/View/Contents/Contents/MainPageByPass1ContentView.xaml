@@ -163,6 +163,8 @@
         <common:NavigationButton
             Grid.Row="6"
             Grid.RowSpan="3"
+            State="{Binding Model.FaultSate}"
+            Command="{Binding Controller.GoToFault}"
             Grid.Column="3"
             Margin="10,42,10,13"
             Content="{StaticResource StringFault}" />

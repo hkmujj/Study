@@ -43,5 +43,6 @@ namespace MessageManager
         /// <returns></returns>
         bool RemoveMessage(int id);
 
+
     }
 }

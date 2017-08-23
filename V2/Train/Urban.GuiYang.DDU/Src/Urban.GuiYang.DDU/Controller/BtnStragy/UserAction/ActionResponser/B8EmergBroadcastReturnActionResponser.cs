@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.Composition;
+using Urban.GuiYang.DDU.View.Contents;
 using Urban.GuiYang.DDU.View.Contents.PIS;
 
 namespace Urban.GuiYang.DDU.Controller.BtnStragy.UserAction.ActionResponser
@@ -14,6 +15,18 @@ namespace Urban.GuiYang.DDU.Controller.BtnStragy.UserAction.ActionResponser
             Domain.SendInterface.ClearEmergBroadcast();
 
             RequestNavigateToContent(typeof(PISContentLayoutView));
+        }
+    }
+    [Export]
+    public class B8FaultReturnActionResponser : OrdinaryActionResponser
+    {
+        /// <summary>
+        /// 响应按键
+        /// </summary>
+        public override void ResponseClick()
+        {
+
+            RequestNavigateToContent(typeof(ContentShell1));
         }
     }
 }
