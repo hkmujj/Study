@@ -45,19 +45,19 @@ namespace Urban.GuiYang.DDU.Controller.Domain.PIS
 
         private void OnSelectListBox()
         {
-            
-                ViewModel.Parent.Parent.SendInterface.SelectedListBox(Model);
-            
+
+            ViewModel.Parent.Parent.SendInterface.SelectedListBox(Model);
+
         }
 
         private void OnCircleBroadcast(CommandParameter commandParameter)
         {
-            ViewModel.Parent.Parent.SendInterface.SendCircleEmergBroadcast(commandParameter.Parameter != null && (string)commandParameter.Parameter == "1");
+            ViewModel.Parent.Parent.SendInterface.SendCircleEmergBroadcast((bool)commandParameter.Parameter);
         }
 
         private void OnSigleBroadcast(CommandParameter commandParameter)
         {
-            ViewModel.Parent.Parent.SendInterface.SendSigleEmergBroadcast(commandParameter.Parameter != null && (string) commandParameter.Parameter == "1");
+            ViewModel.Parent.Parent.SendInterface.SendSigleEmergBroadcast(commandParameter.Parameter != null && (string)commandParameter.Parameter == "1");
         }
 
         private void OnPageUp()

@@ -114,19 +114,23 @@
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </common:NavigationButton>
-            <common:NavigationButton
+            <ToggleButton Style="{StaticResource EmergencyButtonStyle}"     Content="{StaticResource StringCircle}"  Grid.Row="1"
+                          Grid.Column="3">
+                <i:Interaction.Triggers>
+                    <!--<i:EventTrigger EventName="PreviewMouseDown">
+                        <interactivity:InvokeCommandAction Command="{Binding Path=PISViewModel.EmergBroadcastViewModel.Model.CircleBroadcastCommand}" CommandParameter="1" />
+                    </i:EventTrigger>-->
+                    <i:EventTrigger EventName="PreviewMouseUp">
+                        <interactivity:InvokeCommandAction Command="{Binding Path=PISViewModel.EmergBroadcastViewModel.Model.CircleBroadcastCommand}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType=ToggleButton},Path=IsChecked}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </ToggleButton>
+            <!--<common:NavigationButton
                 Grid.Row="1"
                 Grid.Column="3"
                 Content="{StaticResource StringCircle}">
-                <i:Interaction.Triggers>
-                    <i:EventTrigger EventName="PreviewMouseDown">
-                        <interactivity:InvokeCommandAction Command="{Binding Path=PISViewModel.EmergBroadcastViewModel.Model.CircleBroadcastCommand}" CommandParameter="1" />
-                    </i:EventTrigger>
-                    <i:EventTrigger EventName="PreviewMouseUp">
-                        <interactivity:InvokeCommandAction Command="{Binding Path=PISViewModel.EmergBroadcastViewModel.Model.CircleBroadcastCommand}" CommandParameter="0" />
-                    </i:EventTrigger>
-                </i:Interaction.Triggers>
-            </common:NavigationButton>
+               
+            </common:NavigationButton>-->
 
 
         </Grid>
