@@ -59,6 +59,12 @@ namespace Urban.GuiYang.DDU.Model.PIS
 
         public DelegateCommand<CommandParameter> ManualCommand { get; set; }
 
+        public DelegateCommand<CommandParameter> DepartCommand { get; set; }
+
+        public DelegateCommand<CommandParameter> NextStationCommand { get; set; }
+
+        public DelegateCommand<CommandParameter> EndStationCommand { get; set; }
+
 
         public DelegateCommand<SelectedSettingFlag> SelectSettingCommand { get; set; }
 

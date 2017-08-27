@@ -89,7 +89,16 @@
             </common:NavigationButton>
             <common:NavigationButton Grid.Row="3"
                                      Grid.Column="6"
-                                     Content="{StaticResource StringDepartTrain}" />
+                                     Content="{StaticResource StringDepartTrain}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="PreviewMouseDown">
+                        <interactivity:InvokeCommandAction Command="{Binding Path=PISViewModel.Model.DepartCommand}" CommandParameter="1" />
+                    </i:EventTrigger>
+                    <i:EventTrigger EventName="PreviewMouseUp">
+                        <interactivity:InvokeCommandAction Command="{Binding Path=PISViewModel.Model.DepartCommand}" CommandParameter="0" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </common:NavigationButton>
 
             <Border Grid.Row="5"
                     Grid.Column="1"
@@ -118,7 +127,16 @@
             </common:NavigationButton>
             <common:NavigationButton Grid.Row="5"
                                      Grid.Column="6"
-                                     Content="{StaticResource StringNextStation}" />
+                                     Content="{StaticResource StringNextStation}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="PreviewMouseDown">
+                        <interactivity:InvokeCommandAction Command="{Binding Path=PISViewModel.Model.NextStationCommand}" CommandParameter="1" />
+                    </i:EventTrigger>
+                    <i:EventTrigger EventName="PreviewMouseUp">
+                        <interactivity:InvokeCommandAction Command="{Binding Path=PISViewModel.Model.NextStationCommand}" CommandParameter="0" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </common:NavigationButton>
             <Border Grid.Row="7"
                     Grid.Column="1"
                     BorderBrush="{StaticResource BlackBrush}"
@@ -145,7 +163,16 @@
             </common:NavigationButton>
             <common:NavigationButton Grid.Row="7"
                                      Grid.Column="6"
-                                     Content="{StaticResource StringArriveStation}" />
+                                     Content="{StaticResource StringArriveStation}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="PreviewMouseDown">
+                        <interactivity:InvokeCommandAction Command="{Binding Path=PISViewModel.Model.EndStationCommand}" CommandParameter="1" />
+                    </i:EventTrigger>
+                    <i:EventTrigger EventName="PreviewMouseUp">
+                        <interactivity:InvokeCommandAction Command="{Binding Path=PISViewModel.Model.EndStationCommand}" CommandParameter="0" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </common:NavigationButton>
 
             <Grid Grid.Row="9" Grid.Column="2">
                 <Grid.ColumnDefinitions>

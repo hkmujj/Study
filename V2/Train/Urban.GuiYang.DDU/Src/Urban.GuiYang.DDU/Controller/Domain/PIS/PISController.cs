@@ -61,7 +61,7 @@ namespace Urban.GuiYang.DDU.Controller.Domain.PIS
 
             Model.ShowingStationList = new Lazy<PageWrapper<Station>>(() =>
             {
-                var ls = new PageWrapper<Station>(8*5, f => f.StationConfig.StationKey != 0, true);
+                var ls = new PageWrapper<Station>(8 * 5, f => f.StationConfig.StationKey != 0, true);
                 ls.Reset(Model.StationCollection.Value);
                 return ls;
             });
@@ -70,7 +70,7 @@ namespace Urban.GuiYang.DDU.Controller.Domain.PIS
             Model.SelectSettingCommand = new DelegateCommand<SelectedSettingFlag>(OnSelectedSetting);
             Model.CanSelectedCommand = new DelegateCommand(() => Model.PopupViewVisible = false);
             Model.ItemSelectedCommand = new DelegateCommand<object>(OnItemSelected);
-            Model.NavigateToModifyHalfModelCommand = new DelegateCommand(() => NavigateTo(typeof (HalfAutoSettingView).FullName));
+            Model.NavigateToModifyHalfModelCommand = new DelegateCommand(() => NavigateTo(typeof(HalfAutoSettingView).FullName));
             Model.NavigateToEmergBroadcastCommand = new DelegateCommand(OnEmergBroadcast);
             Model.NavigateToLocationInfoCommand = new DelegateCommand(() => NavigateTo(typeof(LocationInfoView).FullName));
 
@@ -84,6 +84,9 @@ namespace Urban.GuiYang.DDU.Controller.Domain.PIS
             Model.AutoCommand = new DelegateCommand<CommandParameter>(OnAuto);
             Model.HalfAutoCommand = new DelegateCommand<CommandParameter>(OnHalfAuto);
             Model.ManualCommand = new DelegateCommand<CommandParameter>(OnManual);
+            Model.DepartCommand = new DelegateCommand<CommandParameter>((args) => { ViewModel.Parent.SendInterface.EnsureDepart(args.Parameter != null && (string)args.Parameter == "1"); });
+            Model.NextStationCommand = new DelegateCommand<CommandParameter>((args) => { ViewModel.Parent.SendInterface.EnsureNextStation(args.Parameter != null && (string)args.Parameter == "1"); });
+            Model.EndStationCommand = new DelegateCommand<CommandParameter>((args) => { ViewModel.Parent.SendInterface.EnsureEndStation(args.Parameter != null && (string)args.Parameter == "1"); });
         }
 
         private void OnManual(CommandParameter commandParameter)
@@ -226,9 +229,9 @@ namespace Urban.GuiYang.DDU.Controller.Domain.PIS
 
         private void OnNavigateTo(object pisType)
         {
-            if (pisType is  PISType)
+            if (pisType is PISType)
             {
-                var t = (PISType) pisType;
+                var t = (PISType)pisType;
 
                 NavigateTo(t);
             }
@@ -240,7 +243,7 @@ namespace Urban.GuiYang.DDU.Controller.Domain.PIS
             switch (pisType)
             {
                 case PISType.Auto:
-                    target = typeof (AutoModelView).FullName;
+                    target = typeof(AutoModelView).FullName;
                     break;
                 case PISType.HalfAuto:
                     target = typeof(HalfAutoModelView).FullName;
