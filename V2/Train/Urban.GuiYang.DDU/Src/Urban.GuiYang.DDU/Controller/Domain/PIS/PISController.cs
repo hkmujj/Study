@@ -84,6 +84,9 @@ namespace Urban.GuiYang.DDU.Controller.Domain.PIS
             Model.AutoCommand = new DelegateCommand<CommandParameter>(OnAuto);
             Model.HalfAutoCommand = new DelegateCommand<CommandParameter>(OnHalfAuto);
             Model.ManualCommand = new DelegateCommand<CommandParameter>(OnManual);
+            Model.DepartCommand = new DelegateCommand<CommandParameter>((args) => { ViewModel.Parent.SendInterface.EnsureDepart(args.Parameter != null && (string)args.Parameter == "1"); });
+            Model.NextStationCommand = new DelegateCommand<CommandParameter>((args) => { ViewModel.Parent.SendInterface.EnsureNextStation(args.Parameter != null && (string)args.Parameter == "1"); });
+            Model.EndStationCommand = new DelegateCommand<CommandParameter>((args) => { ViewModel.Parent.SendInterface.EnsureEndStation(args.Parameter != null && (string)args.Parameter == "1"); });
         }
 
         private void OnLineSelect(string obj)

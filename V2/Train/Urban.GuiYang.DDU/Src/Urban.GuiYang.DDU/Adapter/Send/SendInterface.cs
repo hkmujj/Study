@@ -104,14 +104,17 @@ namespace Urban.GuiYang.DDU.Adapter.Send
 
         public void EnsureDepart(bool isPressed)
         {
+            DataService.ChangeOutBoolOf(OubKeys.OubPIS发车, isPressed);
         }
 
         public void EnsureNextStation(bool isPressed)
         {
+            DataService.ChangeOutBoolOf(OubKeys.OubPIS下一站, isPressed);
         }
 
         public void EnsureEndStation(bool isPressed)
         {
+            DataService.ChangeOutBoolOf(OubKeys.OubPIS到达站, isPressed);
         }
     }
 }
