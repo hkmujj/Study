@@ -62,6 +62,8 @@ namespace Urban.GuiYang.DDU.Model.PIS
 
         public DelegateCommand<SelectedSettingFlag> SelectSettingCommand { get; set; }
 
+        public DelegateCommand<string> LineSelect { get; set; }
+
         public DelegateCommand CanSelectedCommand { set; get; }
 
         public DelegateCommand NavigateToModifyHalfModelCommand { set; get; }

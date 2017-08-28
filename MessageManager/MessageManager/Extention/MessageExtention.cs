@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace MessageManager.Extention
 {
@@ -14,11 +15,12 @@ namespace MessageManager.Extention
         {
             try
             {
+                
                 return (T)value;
             }
             catch (Exception e)
             {
-                Console.Error.WriteAsync(e.ToString());
+               //LogMgr.
             }
             return default(T);
         }

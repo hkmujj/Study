@@ -31,13 +31,18 @@
             <Setter Property="ItemTemplate">
                 <Setter.Value>
                     <DataTemplate DataType="carPart:DoorStateItem">
-                        <Image Source="{Binding Path=State, Converter={StaticResource DoorStateImageConverter}}" Stretch="Fill">
-                            <Image.Width>
-                                <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/4">
-                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
-                                </MultiBinding>
-                            </Image.Width>
-                        </Image>
+                        <Border Width="{Binding RelativeSource={RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}, Path=ActualWidth, Converter={StaticResource MathConverter}, ConverterParameter=x/4}">
+                            <Grid>
+                                <Image Source="{Binding Path=State, Converter={StaticResource DoorStateImageConverter}}" Stretch="Fill" />
+                                <TextBlock
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Text="{Binding CarIndex}"
+                                    Visibility="{Binding Path=State, Converter={StaticResource DoorIndexConverter}}" />
+                            </Grid>
+
+                        </Border>
+
                     </DataTemplate>
                 </Setter.Value>
             </Setter>

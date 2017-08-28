@@ -139,7 +139,7 @@ namespace Urban.GuiYang.DDU.Controller.Domain
                                 AirCondition1=CreateAirConition1(i,ty),
                                 AirCondition2=CreateAirConition2(i,ty),
                                 ControlModel = CreateControlModel(i, ty),
-                                CarTemperature=CreateCarTemperature(i,ty),           
+                                CarTemperature=CreateCarTemperature(i,ty),
                             }).ToList()
                         ),
                 },

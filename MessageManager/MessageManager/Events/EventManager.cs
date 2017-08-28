@@ -7,28 +7,31 @@ namespace MessageManager.Events
 {
     public class EventManager : IManager<EventInfo>
     {
-        private List<EventInfo> CurrentEvent = new List<EventInfo>();
-        private List<EventInfo> HistoryEvent = new List<EventInfo>();
+        public readonly List<EventInfo> CurrentEvent = new List<EventInfo>();
+        public readonly List<EventInfo> HistoryEvent = new List<EventInfo>();
+
         /// <summary>
         /// CurrentPage
         /// </summary>
-        public int CurrentPage { get; }
+        public int CurrentPage { get; protected set; } = 1;
 
         /// <summary>
         /// MaxPage
         /// </summary>
-        public int MaxPage { get; }
+        public int MaxPage { get; protected set; } = 1;
 
         /// <summary>
         /// 当前页信息
         /// </summary>
-        public IList<EventInfo> CurrentPageInfo { get; }
+        public IList<EventInfo> CurrentPageInfo { get; protected set; } = null;
 
         /// <summary>
         /// Reset Page
         /// </summary>
         public void ResetPage()
         {
+            CurrentPage = 1;
+            MaxPage = 1;
         }
 
         /// <summary>
@@ -37,6 +40,10 @@ namespace MessageManager.Events
         /// <param name="page">页</param>
         public void JumpPage(int page)
         {
+            if (page <= MaxPage)
+            {
+                CurrentPage = page;
+            }
         }
 
         /// <summary>
@@ -44,6 +51,7 @@ namespace MessageManager.Events
         /// </summary>
         public void FirstPage()
         {
+            CurrentPage = 1;
         }
 
         /// <summary>
@@ -51,10 +59,11 @@ namespace MessageManager.Events
         /// </summary>
         public void EndPage()
         {
+            CurrentPage = MaxPage;
         }
 
-        public event EventHandler<int> CurrentPageChanged;
-        public event EventHandler<int> MaxPageChanged;
+        public event Action<int> CurrentPageChanged;
+        public event Action<int> MaxPageChanged;
 
         /// <summary>
         /// 当前信息条数
@@ -64,7 +73,7 @@ namespace MessageManager.Events
         /// <summary>
         /// Messages Dictionary
         /// </summary>
-        public IDictionary<int, EventInfo> Messages { get; }
+        public IDictionary<int, EventInfo> Messages { get; protected set; }
 
         /// <summary>
         /// 初始化信息
@@ -81,6 +90,11 @@ namespace MessageManager.Events
         /// <returns>返回<see cref="IMessage"/>数据</returns>
         public EventInfo GetMessage(int id)
         {
+            if (Messages.ContainsKey(id))
+            {
+                return Messages[id];
+            }
+
             return null;
         }
 
@@ -115,12 +129,14 @@ namespace MessageManager.Events
         /// 移除消息
         /// </summary>
         /// <param name="id">消息ID</param>
+        /// <param name="removeTime">移除信息时间</param>
         /// <returns></returns>
-        public bool RemoveMessage(int id)
+        public bool RemoveMessage(int id, DateTime removeTime = default(DateTime))
         {
             var tmp = CurrentEvent.FirstOrDefault(f => f.ID == id);
             if (tmp != null)
             {
+                tmp.ConfirmTime = removeTime == default(DateTime) ? DateTime.Now : removeTime;
                 CurrentEvent.Remove(tmp);
                 return true;
             }

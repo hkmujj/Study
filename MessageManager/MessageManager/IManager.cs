@@ -36,12 +36,14 @@ namespace MessageManager
         /// <param name="dt">创建消息时间</param>
         /// <returns>true 创建成功 false 创建失败</returns>
         bool CreatMessage(int id, DateTime dt = default(DateTime));
+
         /// <summary>
         /// 移除消息
         /// </summary>
         /// <param name="id">消息ID</param>
+        /// <param name="removeTime">消息移除时间</param>
         /// <returns></returns>
-        bool RemoveMessage(int id);
+        bool RemoveMessage(int id, DateTime removeTime = default(DateTime));
 
 
     }

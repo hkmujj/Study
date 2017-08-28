@@ -61,7 +61,7 @@ namespace Urban.GuiYang.DDU.Controller.Domain.PIS
 
             Model.ShowingStationList = new Lazy<PageWrapper<Station>>(() =>
             {
-                var ls = new PageWrapper<Station>(8*5, f => f.StationConfig.StationKey != 0, true);
+                var ls = new PageWrapper<Station>(8 * 5, f => f.StationConfig.StationKey != 0, true);
                 ls.Reset(Model.StationCollection.Value);
                 return ls;
             });
@@ -70,10 +70,10 @@ namespace Urban.GuiYang.DDU.Controller.Domain.PIS
             Model.SelectSettingCommand = new DelegateCommand<SelectedSettingFlag>(OnSelectedSetting);
             Model.CanSelectedCommand = new DelegateCommand(() => Model.PopupViewVisible = false);
             Model.ItemSelectedCommand = new DelegateCommand<object>(OnItemSelected);
-            Model.NavigateToModifyHalfModelCommand = new DelegateCommand(() => NavigateTo(typeof (HalfAutoSettingView).FullName));
+            Model.NavigateToModifyHalfModelCommand = new DelegateCommand(() => NavigateTo(typeof(HalfAutoSettingView).FullName));
             Model.NavigateToEmergBroadcastCommand = new DelegateCommand(OnEmergBroadcast);
             Model.NavigateToLocationInfoCommand = new DelegateCommand(() => NavigateTo(typeof(LocationInfoView).FullName));
-
+            Model.LineSelect = new DelegateCommand<string>(OnLineSelect);
             Model.StationModel.NextStation = Model.StationCollection.Value.FirstOrDefault();
             Model.StationModel.EndStatiion = Model.StationCollection.Value.LastOrDefault();
 
@@ -86,19 +86,39 @@ namespace Urban.GuiYang.DDU.Controller.Domain.PIS
             Model.ManualCommand = new DelegateCommand<CommandParameter>(OnManual);
         }
 
+        private void OnLineSelect(string obj)
+        {
+
+        }
+
         private void OnManual(CommandParameter commandParameter)
         {
-            ViewModel.Parent.SendInterface.SetManual(commandParameter.Parameter != null && (string)commandParameter.Parameter == "1");
+            if (commandParameter.Parameter != null && commandParameter.Parameter.ToString().Equals("1"))
+            {
+                ViewModel.Parent.SendInterface.SetHalfAuto(false);
+                ViewModel.Parent.SendInterface.SetAuto(false);
+                ViewModel.Parent.SendInterface.SetManual(true);
+            }
         }
 
         private void OnHalfAuto(CommandParameter commandParameter)
         {
-            ViewModel.Parent.SendInterface.SetHalfAuto(commandParameter.Parameter != null && (string)commandParameter.Parameter == "1");
+            if (commandParameter.Parameter != null && commandParameter.Parameter.ToString().Equals("1"))
+            {
+                ViewModel.Parent.SendInterface.SetHalfAuto(true);
+                ViewModel.Parent.SendInterface.SetAuto(false);
+                ViewModel.Parent.SendInterface.SetManual(false);
+            }
         }
 
         private void OnAuto(CommandParameter commandParameter)
         {
-            ViewModel.Parent.SendInterface.SetAuto(commandParameter.Parameter != null && (string)commandParameter.Parameter == "1");
+            if (commandParameter.Parameter != null && commandParameter.Parameter.ToString().Equals("1"))
+            {
+                ViewModel.Parent.SendInterface.SetHalfAuto(false);
+                ViewModel.Parent.SendInterface.SetAuto(true);
+                ViewModel.Parent.SendInterface.SetManual(false);
+            }
         }
 
 
@@ -139,6 +159,19 @@ namespace Urban.GuiYang.DDU.Controller.Domain.PIS
 
         private void UpdateSettingLineId(SelectedSettingFlag selectedSettingFlag, string lineId)
         {
+            switch (selectedSettingFlag.PISType)
+            {
+                case PISType.Auto:
+                    break;
+                case PISType.HalfAuto:
+                    Model.HalfAutoSettingModel.SettingModel.LineId = lineId;
+                    break;
+                case PISType.Manaul:
+                    Model.ManaulSettingModel.SettingModel.LineId = lineId;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
 
         private void UpdateSettingStation(SelectedSettingFlag selectedSettingFlag, Station staion)
@@ -226,9 +259,9 @@ namespace Urban.GuiYang.DDU.Controller.Domain.PIS
 
         private void OnNavigateTo(object pisType)
         {
-            if (pisType is  PISType)
+            if (pisType is PISType)
             {
-                var t = (PISType) pisType;
+                var t = (PISType)pisType;
 
                 NavigateTo(t);
             }
@@ -240,7 +273,7 @@ namespace Urban.GuiYang.DDU.Controller.Domain.PIS
             switch (pisType)
             {
                 case PISType.Auto:
-                    target = typeof (AutoModelView).FullName;
+                    target = typeof(AutoModelView).FullName;
                     break;
                 case PISType.HalfAuto:
                     target = typeof(HalfAutoModelView).FullName;
@@ -249,7 +282,7 @@ namespace Urban.GuiYang.DDU.Controller.Domain.PIS
                     target = typeof(ManualModelView).FullName;
                     break;
                 default:
-                    throw new ArgumentOutOfRangeException(nameof(pisType), pisType, null);
+                    throw new ArgumentOutOfRangeException("pisType", pisType, null);
             }
             NavigateTo(target);
         }

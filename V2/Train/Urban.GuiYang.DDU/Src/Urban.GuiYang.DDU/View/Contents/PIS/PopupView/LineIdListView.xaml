@@ -1,22 +1,107 @@
-﻿<UserControl x:Class="Urban.GuiYang.DDU.View.Contents.PIS.PopupView.LineIdListView"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:common="clr-namespace:Urban.GuiYang.DDU.View.Common"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:Urban.GuiYang.DDU.View.Contents.PIS.PopupView"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             d:DesignHeight="300"
-             d:DesignWidth="666"
-             Background="{StaticResource Gay2Brush}"
-             BorderBrush="{StaticResource WhiteBrush}"
-             BorderThickness="1,1,0,0"
-             mc:Ignorable="d">
-    <Border BorderBrush="{StaticResource Gay1Brush}" BorderThickness="0,0,1,1">
+﻿<UserControl
+    x:Class="Urban.GuiYang.DDU.View.Contents.PIS.PopupView.LineIdListView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:common="clr-namespace:Urban.GuiYang.DDU.View.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="clr-namespace:Urban.GuiYang.DDU.ViewModel"
+    d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+    d:DesignHeight="300"
+    d:DesignWidth="666"
+    BorderThickness="1,1,0,0"
+    mc:Ignorable="d">
+    <Viewbox Stretch="Fill">
+        <Grid Width="666" Height="300">
+            <Border
+                Margin="208,49,246,54"
+                Background="{StaticResource HelpBack}"
+                BorderBrush="{StaticResource Gay1Brush}"
+                BorderThickness="0,0,1,1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Border
+                        Grid.Row="0"
+                        Margin="47,10,57,10"
+                        Background="White">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="18"
+                            Text="线路列表" />
+                    </Border>
+                    <Grid Grid.Row="1" VerticalAlignment="Bottom">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <common:NavigationButton
+                            Grid.Column="0"
+                            Width="66"
+                            Height="35"
+                            Padding="0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Command="{Binding Path=PISViewModel.Model.ItemSelectedCommand}"
+                            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+                            Content="线路1"
+                            Style="{StaticResource PISPopviewNavigationBtnStyle}" />
+                        <common:NavigationButton
+                            Grid.Column="1"
+                            Width="66"
+                            Height="35"
+                            Margin="0,14,0,0"
+                            Padding="0"
+                            HorizontalAlignment="Left"
+                            Command="{Binding Path=PISViewModel.Model.ItemSelectedCommand}"
+                            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+                            Content="线路2"
+                            Style="{StaticResource PISPopviewNavigationBtnStyle}" />
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="105" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <common:NavigationButton
+                            Grid.Column="0"
+                            Width="66"
+                            Height="35"
+                            Margin="0,0,0,14"
+                            Padding="0"
+                            HorizontalAlignment="Right"
+                            Command="{Binding Path=PISViewModel.Model.ItemSelectedCommand}"
+                            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+                            Content="线路3"
+                            Style="{StaticResource PISPopviewNavigationBtnStyle}" />
+                        <common:NavigationButton
+                            Grid.Column="1"
+                            Width="66"
+                            Height="35"
+                            Margin="0,0,0,14"
+                            Padding="0"
+                            HorizontalAlignment="Left"
+                            Command="{Binding Path=PISViewModel.Model.ItemSelectedCommand}"
+                            CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"
+                            Content="线路4"
+                            Style="{StaticResource PISPopviewNavigationBtnStyle}" />
+                    </Grid>
+                    <common:NavigationButton
+                        Grid.Row="3"
+                        Height="40"
+                        Command="{Binding Path=PISViewModel.Model.CanSelectedCommand}"
+                        Content="{StaticResource StringCancel}"
+                        Style="{StaticResource PISPopviewNavigationBtnStyle}" />
+                </Grid>
 
-        <common:NavigationButton Width="100"
-                                 Height="40"
-                                 Command="{Binding Path=PISViewModel.Model.CanSelectedCommand}"
-                                 Content="{StaticResource StringCancel}"
-                                 Style="{StaticResource PISPopviewNavigationBtnStyle}" />
-    </Border>
+            </Border>
+        </Grid>
+        
+    </Viewbox>
+    
 </UserControl>

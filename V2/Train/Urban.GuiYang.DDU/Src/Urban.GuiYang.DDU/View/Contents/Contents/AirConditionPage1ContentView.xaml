@@ -171,9 +171,10 @@
             Grid.RowSpan="3"
             Grid.Column="3"
             Margin="10,42,10,13"
+            State="{Binding Model.FaultSate}"
             Command="{Binding Controller.GoToFault}"
             Content="{StaticResource StringFault}"
-            State="{Binding Model.FaultSate}" />
+            />
         <Grid
             Grid.Row="7"
             Grid.RowSpan="2"

@@ -25,6 +25,7 @@ namespace Urban.GuiYang.DDU.Model.Train
             {
                 CurrentPageInfo = IsCurrent ? FaultManager.GetCurrentInfo() : FaultManager.GetHistoryInfo();
                 CurrentFault = FaultManager.GetInfo();
+                Count = IsCurrent ? FaultManager.CurrentCount : FaultManager.HistoryCount;
             };
             FaultManager.CurrentPageChanged += () =>
             {

@@ -1,17 +1,18 @@
-﻿<UserControl x:Class="Urban.GuiYang.DDU.View.Contents.PIS.PopupView.StationListView"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:common="clr-namespace:Urban.GuiYang.DDU.View.Common"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:viewModel="clr-namespace:Urban.GuiYang.DDU.ViewModel"
-             d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
-             d:DesignHeight="300"
-             d:DesignWidth="666"
-             Background="{StaticResource Gay2Brush}"
-             BorderBrush="{StaticResource WhiteBrush}"
-             BorderThickness="1,1,0,0"
-             mc:Ignorable="d">
+﻿<UserControl
+    x:Class="Urban.GuiYang.DDU.View.Contents.PIS.PopupView.StationListView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:common="clr-namespace:Urban.GuiYang.DDU.View.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="clr-namespace:Urban.GuiYang.DDU.ViewModel"
+    d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+    d:DesignHeight="300"
+    d:DesignWidth="666"
+    Background="{StaticResource Gay2Brush}"
+    BorderBrush="{StaticResource WhiteBrush}"
+    BorderThickness="1,1,0,0"
+    mc:Ignorable="d">
     <Border BorderBrush="{StaticResource Gay1Brush}" BorderThickness="0,0,1,1">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -29,29 +30,33 @@
                 <RowDefinition Height="12*" />
             </Grid.RowDefinitions>
 
-            <Border Grid.Row="1"
-                    Grid.Column="1"
-                    Width="140"
-                    Height="30"
-                    Background="{StaticResource WhiteBrush}">
-                <TextBlock HorizontalAlignment="Center"
-                           VerticalAlignment="Center"
-                           FontFamily="{StaticResource FontFamilySongTypeface}"
-                           FontSize="18"
-                           Text="{StaticResource StringStationList}"
-                           TextAlignment="Center" />
+            <Border
+                Grid.Row="1"
+                Grid.Column="1"
+                Width="140"
+                Height="30"
+                Background="{StaticResource WhiteBrush}">
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontFamily="{StaticResource FontFamilySongTypeface}"
+                    FontSize="18"
+                    Text="{StaticResource StringStationList}"
+                    TextAlignment="Center" />
             </Border>
 
-            <ItemsControl Grid.Row="3"
-                          Grid.Column="1"
-                          ItemsSource="{Binding Path=PISViewModel.Model.ShowingStationList.Value.Items}"
-                          Style="{StaticResource PISStationListItemStyle}" />
+            <ItemsControl
+                Grid.Row="3"
+                Grid.Column="1"
+                ItemsSource="{Binding Path=PISViewModel.Model.ShowingStationList.Value.Items}"
+                Style="{StaticResource PISStationListItemStyle}" />
 
-            <common:NavigationButton Grid.Row="5"
-                                     Grid.Column="1"
-                                     Command="{Binding Path=PISViewModel.Model.CanSelectedCommand}"
-                                     Content="{StaticResource StringCancel}"
-                                     Style="{StaticResource PISPopviewNavigationBtnStyle}" />
+            <common:NavigationButton
+                Grid.Row="5"
+                Grid.Column="1"
+                Command="{Binding Path=PISViewModel.Model.CanSelectedCommand}"
+                Content="{StaticResource StringCancel}"
+                Style="{StaticResource PISPopviewNavigationBtnStyle}" />
         </Grid>
     </Border>
 </UserControl>

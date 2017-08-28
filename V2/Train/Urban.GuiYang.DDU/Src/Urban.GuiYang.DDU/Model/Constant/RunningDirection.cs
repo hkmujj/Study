@@ -2,6 +2,8 @@
 {
     public enum RunningDirection
     {
+        None,
+
         Unkown,
 
         Left,

@@ -208,7 +208,8 @@
                                      Command="{Binding Path=PISViewModel.Model.HalfAutoSettingModel.CancelModifyCommand}"
                                      Content="{StaticResource StringCancel}" />
 
-            <common:NavigationButton Grid.Column="5" Content="{StaticResource StringFault}" />
+            <common:NavigationButton Grid.Column="5" Content="{StaticResource StringFault}" State="{Binding Model.FaultSate}"
+                                     Command="{Binding Controller.GoToFault}" />
 
         </Grid>
 

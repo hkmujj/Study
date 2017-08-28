@@ -40,10 +40,10 @@ namespace MessageManager
         /// <summary>
         /// 当前页更改
         /// </summary>
-        event EventHandler<int> CurrentPageChanged;
+        event Action<int> CurrentPageChanged;
         /// <summary>
         /// 最大页更改
         /// </summary>
-        event EventHandler<int> MaxPageChanged;
+        event Action<int> MaxPageChanged;
     }
 }

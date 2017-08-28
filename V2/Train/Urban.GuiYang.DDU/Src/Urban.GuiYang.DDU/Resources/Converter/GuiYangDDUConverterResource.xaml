@@ -21,6 +21,7 @@
     <converter1:TestConverter x:Key="TestConverter" />
 
     <converter:EnumDescritionConverter x:Key="EnumDescritionConverter" />
+    <converter1:DoorIndexConverter x:Key="DoorIndexConverter" />
 
     <!--<converter1:FloatToTowBrakeConverter x:Key="FloatToTowBrakeConverter" />-->
 
@@ -85,6 +86,7 @@
             <converter:ObjectContentPair Key="{x:Static constant:RunningDirection.Unkown}" Content="{x:Static Visibility.Visible}" />
             <converter:ObjectContentPair Key="{x:Static constant:RunningDirection.Left}" Content="{x:Static Visibility.Visible}" />
             <converter:ObjectContentPair Key="{x:Static constant:RunningDirection.Right}" Content="{x:Static Visibility.Hidden}" />
+            <converter:ObjectContentPair Key="{x:Static constant:RunningDirection.Right}" Content="{x:Static Visibility.Hidden}" />
         </converter:SelectObjectContentConverter.ObjectContentCollection>
     </converter:SelectObjectContentConverter>
 
@@ -100,6 +102,7 @@
         <converter:SelectObjectContentConverter.ObjectContentCollection>
             <converter:ObjectContentPair Key="{x:Static constant:RunningDirection.Unkown}" Content="{x:Static Visibility.Visible}" />
             <converter:ObjectContentPair Key="{x:Static constant:RunningDirection.Left}" Content="{x:Static Visibility.Hidden}" />
+            <converter:ObjectContentPair Key="{x:Static constant:RunningDirection.None}" Content="{x:Static Visibility.Hidden}" />
             <converter:ObjectContentPair Key="{x:Static constant:RunningDirection.Right}" Content="{x:Static Visibility.Visible}" />
         </converter:SelectObjectContentConverter.ObjectContentCollection>
     </converter:SelectObjectContentConverter>

@@ -65,8 +65,8 @@ namespace Urban.GuiYang.DDU.Model.Fault
             }
         }
 
-        public int CurrentCount { get; set; }
-        public int HistoryCount { get; set; }
+        public int CurrentCount { get { return CurrentInfo.Count; } }
+        public int HistoryCount { get { return HistoryInfo.Count; } }
         private List<FaultInfo> CurrentInfo = new List<FaultInfo>();
         private List<FaultInfo> HistoryInfo = new List<FaultInfo>();
 

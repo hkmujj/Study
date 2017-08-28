@@ -169,7 +169,7 @@ namespace Urban.GuiYang.DDU.Adapter.UpdateDataProviders
             }
             if (DataService.GetInBoolOf(InbKeys.Inb运行方向未选择))
             {
-                return RunningDirection.Unkown;
+                return RunningDirection.None;
             }
             return RunningDirection.Unkown;
         }

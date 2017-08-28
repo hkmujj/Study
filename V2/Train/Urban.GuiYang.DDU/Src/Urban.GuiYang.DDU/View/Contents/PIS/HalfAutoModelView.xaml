@@ -205,6 +205,8 @@
                                  Grid.Column="2"
                                  Width="84"
                                  Margin="53,8,14,9"
+                                 State="{Binding Model.FaultSate}"
+                                 Command="{Binding Controller.GoToFault}"
                                  Content="{StaticResource StringFault}"
                                  Style="{StaticResource PISNavigationBtnStyle}" />
 

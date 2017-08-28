@@ -30,7 +30,7 @@
         <ListBox
             Canvas.Left="22"
             Canvas.Top="40"
-            Width="634"
+            Width="667"
             Height="259"
             Background="Black"
             ItemsSource="{Binding FaultViewModel.Model.CurrentPageInfo}"
@@ -60,8 +60,8 @@
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="50*" />
-                                        <ColumnDefinition Width="300*" />
-                                        <ColumnDefinition Width="150*" />
+                                        <ColumnDefinition Width="330*" />
+                                        <ColumnDefinition Width="120*" />
                                         <ColumnDefinition Width="50*" />
                                         <ColumnDefinition Width="50*" />
                                     </Grid.ColumnDefinitions>
@@ -192,7 +192,7 @@
             </Grid.ColumnDefinitions>
         </Grid>-->
         <common:ImageButton
-            Canvas.Left="694"
+            Canvas.Left="723"
             Canvas.Top="185"
             Width="40"
             Height="25"
@@ -206,7 +206,7 @@
             FontSize="20"
             Text="提示：" />
         <TextBlock
-            Canvas.Left="701"
+            Canvas.Left="730"
             Canvas.Top="112"
             FontSize="12"
             Text="{Binding FaultViewModel.Model.PageInfo}" />
@@ -216,7 +216,7 @@
             FontSize="20"
             Text="{Binding FaultViewModel.Model.SelectItem.Trips}" />
         <common:ImageButton
-            Canvas.Left="694"
+            Canvas.Left="723"
             Canvas.Top="155"
             Width="40"
             Height="25"

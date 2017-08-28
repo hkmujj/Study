@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.Composition;
+using System.Linq;
 using MMI.Facility.Interface.Service;
 using Urban.GuiYang.DDU.Extension;
 using Urban.GuiYang.DDU.Model;
@@ -53,7 +54,14 @@ namespace Urban.GuiYang.DDU.Adapter.Send
             }
             if (!string.IsNullOrWhiteSpace(settingStation.LineId))
             {
-                DataService.ChangeOutFloatOf(OufKeys.OufPIS线路ID, float.Parse(settingStation.LineId));
+                var str = settingStation.LineId.Where(char.IsNumber).ToList();
+                string lines = str.Aggregate(string.Empty, (current, ch) => current + ch);
+                float fl = 0f;
+                if (float.TryParse(lines, out fl))
+                {
+                    DataService.ChangeOutFloatOf(OufKeys.OufPIS线路ID, fl);
+                }
+
             }
         }
 
@@ -63,7 +71,7 @@ namespace Urban.GuiYang.DDU.Adapter.Send
             {
                 DataService.ChangeOutFloatOf(OufKeys.OufPIS紧急广播选中项, emergeroadcastmodel.SelectedEmergBroadcast.Index);
             }
-                    
+
         }
 
         public void SendSigleEmergBroadcast(bool isPressed)
