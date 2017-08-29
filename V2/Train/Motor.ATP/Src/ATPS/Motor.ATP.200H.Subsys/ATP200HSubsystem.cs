@@ -151,7 +151,7 @@ namespace Motor.ATP._200H.Subsys
             debugViewService.DebugFormCollection.Add(domainMonitor);
 
             InitalizeValuesWhenDebug();
-
+            
             AppLog.Info(" ================== ATP300SSubsystem completed! ==================");
         }
 

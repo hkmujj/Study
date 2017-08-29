@@ -48,7 +48,7 @@ namespace Motor.ATP.DataAdapter.ConcreateAdapter.ATP300T
             base.OnBoolChangedImp(sender,dataChangedArgs);
 
             //黑屏
-            dataChangedArgs.UpdateIfContains(InBoolKeys.ATP电源, b => SignalDataIn300t.ScreenBlackFlag = b);
+            //dataChangedArgs.UpdateIfContains(InBoolKeys.ATP电源, b => SignalDataIn300t.ScreenBlackFlag = b);
 
             //常用制动故障确认
             dataChangedArgs.UpdateIfContains(InBoolKeys.请求_常用制动故障确认, b => SignalDataIn300t.FaultNormalBreakAck = b);
@@ -575,7 +575,9 @@ namespace Motor.ATP.DataAdapter.ConcreateAdapter.ATP300T
             if (!SignalDataIn300t.StartConditionFlag && !SignalDataIn300t.StartFinishFlag)
             {
                 //1、ATP启动,请等待，正常等待1分42秒，按快捷键跳转
-                if (SignalDataIn300tOld.ATPPowerFlag != SignalDataIn300t.ATPPowerFlag && SignalDataIn300t.ATPPowerFlag)
+                //条件：1、电源开启 2、从隔离到运行 3、未激活到激活
+                if ((SignalDataIn300tOld.ATPPowerFlag != SignalDataIn300t.ATPPowerFlag && SignalDataIn300t.ATPPowerFlag)
+                    || (SignalDataIn300tOld.ATPBypassFlag != SignalDataIn300t.ATPBypassFlag && !SignalDataIn300t.ATPBypassFlag))
                 {
                     InfoCreater.UpdateInfomation(15);
                 }
@@ -962,7 +964,8 @@ namespace Motor.ATP.DataAdapter.ConcreateAdapter.ATP300T
                 // 2、司机号和车次号输入:SendDriverData中处理
                 //确定进入第二步
                 //取消继续显示驾驶数据
-                if (SignalDataIn300tOld.nSelfCheckStatus != SignalDataIn300t.nSelfCheckStatus && SignalDataIn300t.nSelfCheckStatus == (int)SelfCheckStatus.CheckStatus_Success)
+                if (SignalDataIn300tOld.nSelfCheckStatus != SignalDataIn300t.nSelfCheckStatus && SignalDataIn300t.nSelfCheckStatus == (int)SelfCheckStatus.CheckStatus_Success
+                    || SignalDataIn300t.nSelfCheckStatus == (int)SelfCheckStatus.CheckStatus_Success && SignalDataIn300tOld.DriverActFlag != SignalDataIn300t.DriverActFlag && !SignalDataIn300t.DriverActFlag)
                    
                 {
                     ATP.DriverInterfaceController.UpdateDriverInterface(DriverInterfaceKey.Parser(DriverInterfaceKeys.Root_驾驶数据));
@@ -1067,6 +1070,9 @@ namespace Motor.ATP.DataAdapter.ConcreateAdapter.ATP300T
 
             SignalDataIn300t.ClearInfo();
             SignalDataOut300t.ClearInfo();
+
+            NotifyClearData();
+
             return true;
         }
     }

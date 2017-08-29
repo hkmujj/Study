@@ -261,7 +261,7 @@
                                 Height="3">
                                 <Canvas.Bottom>
                                     <MultiBinding Converter="{StaticResource Subway.CBTC.THALES.Converter.MathConverter}" ConverterParameter="x*y">
-                                        <Binding Converter="{StaticResource Subway.CBTC.THALES.Converter.TagitDistanceToProportionConverter}" Path="CBTC.SignalInfo.WarningIntervention.TargetDistance" />
+                                        <Binding Converter="{StaticResource Subway.CBTC.THALES.Converter.TagitDistanceToProportionConverter}" Path="CBTC.SignalInfo.WarningIntervention.ParkingPointDistance" />
                                         <Binding Path="ActualHeight" RelativeSource="{RelativeSource FindAncestor, AncestorType={x:Type Canvas}}" />
                                     </MultiBinding>
                                 </Canvas.Bottom>
@@ -279,7 +279,7 @@
                                 Height="3">
                                 <Canvas.Bottom>
                                     <MultiBinding Converter="{StaticResource Subway.CBTC.THALES.Converter.MathConverter}" ConverterParameter="x*y">
-                                        <Binding Converter="{StaticResource Subway.CBTC.THALES.Converter.TagitDistanceToProportionConverter}" Path="CBTC.SignalInfo.WarningIntervention.ParkingPointDistance" />
+                                        <Binding Converter="{StaticResource Subway.CBTC.THALES.Converter.TagitDistanceToProportionConverter}" Path="CBTC.SignalInfo.WarningIntervention.TargetDistance" />
                                         <Binding Path="ActualHeight" RelativeSource="{RelativeSource FindAncestor, AncestorType={x:Type Canvas}}" />
                                     </MultiBinding>
                                 </Canvas.Bottom>

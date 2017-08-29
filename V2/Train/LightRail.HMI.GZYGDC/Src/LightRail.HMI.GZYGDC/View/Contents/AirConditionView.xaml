@@ -158,23 +158,23 @@
                         <Grid Column="0">
                             <Border CornerRadius="30" Margin="0,0,10,0" Background="#2f8cb4" BorderThickness="2" BorderBrush="#6aeff8" ></Border>
                             <Border Margin="40,0,0,0" Background="#2f8cb4" BorderThickness="2" BorderBrush="#6aeff8" ></Border>
-                            <Image HorizontalAlignment="Left" Margin="13,15,0,0" Width="25" Height="25"  Source="{StaticResource HelpView.空调停止}"></Image>
+                            <Image HorizontalAlignment="Left" Margin="13,15,0,0" Width="25" Height="25"  Source="{Binding AirConditionViewModel.Model.Car1Location1AirConditionUnit.State, Converter={StaticResource AirConditionConverter}}"></Image>
                             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="30,0,0,0" Style="{StaticResource RunningViewDoorTypeTextStyle}" Text="{StaticResource RunningView.Mc1}"></TextBlock>
                         </Grid>
                         <Grid Column="1">
                             <Border Background="#2f8cb4" BorderThickness="2" BorderBrush="#6aeff8" ></Border>
-                            <Image HorizontalAlignment="Left" Margin="13,25,0,0" Width="30" Height="30"  Source="{StaticResource HelpView.空调停止}"></Image>
+                            <Image HorizontalAlignment="Left" Margin="13,25,0,0" Width="30" Height="30"  Source="{Binding AirConditionViewModel.Model.Car2Location1AirConditionUnit.State, Converter={StaticResource AirConditionConverter}}"></Image>
                             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0,0,0" Style="{StaticResource RunningViewDoorTypeTextStyle}" Text="{StaticResource RunningView.T}"></TextBlock>
                         </Grid>
                         <Grid Column="2">
                             <Border Background="#2f8cb4" BorderThickness="2" BorderBrush="#6aeff8" ></Border>
-                            <Image HorizontalAlignment="Right" Margin="0,25,10,0" Width="30" Height="30"  Source="{StaticResource HelpView.空调停止}"></Image>
+                            <Image HorizontalAlignment="Right" Margin="0,25,10,0" Width="30" Height="30"  Source="{Binding AirConditionViewModel.Model.Car3Location1AirConditionUnit.State, Converter={StaticResource AirConditionConverter}}"></Image>
                             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Style="{StaticResource RunningViewDoorTypeTextStyle}" Text="{StaticResource RunningView.M}"></TextBlock>
                         </Grid>
                         <Grid Column="3">
                             <Border CornerRadius="30" Margin="0,0,0,0" Background="#2f8cb4" BorderThickness="2" BorderBrush="#6aeff8" ></Border>
                             <Border Margin="0,0,50,0" Background="#2f8cb4" BorderThickness="2" BorderBrush="#6aeff8" ></Border>
-                            <Image HorizontalAlignment="Right" Margin="0,30,23,0" Width="25" Height="25"  Source="{StaticResource HelpView.空调停止}"></Image>
+                            <Image HorizontalAlignment="Right" Margin="0,30,23,0" Width="25" Height="25"  Source="{Binding AirConditionViewModel.Model.Car4Location1AirConditionUnit.State, Converter={StaticResource AirConditionConverter}}"></Image>
                             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,25,0" Style="{StaticResource RunningViewDoorTypeTextStyle}" Text="{StaticResource RunningView.Mc2}"></TextBlock>
                         </Grid>
                     </Grid>

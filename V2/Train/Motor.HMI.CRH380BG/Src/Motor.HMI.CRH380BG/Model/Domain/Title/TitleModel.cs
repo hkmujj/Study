@@ -28,6 +28,7 @@ namespace Motor.HMI.CRH380BG.Model.Domain.Title
         private float m_Speed;
         private float m_OutTemperature;
         private float m_HighestSpeed;
+        private float m_ASCSettingSpeed;
 
 
         public float Speed
@@ -73,6 +74,21 @@ namespace Motor.HMI.CRH380BG.Model.Domain.Title
                 RaisePropertyChanged(() => HighestSpeed);
             }
             get { return m_HighestSpeed; }
+        }
+
+        public float ASCSettingSpeed
+        {
+            set
+            {
+                if (value == m_ASCSettingSpeed)
+                {
+                    return;
+                }
+
+                m_ASCSettingSpeed = value;
+                RaisePropertyChanged(() => ASCSettingSpeed);
+            }
+            get { return m_ASCSettingSpeed; }
         }
 
         public AscSettingState AscSettingState

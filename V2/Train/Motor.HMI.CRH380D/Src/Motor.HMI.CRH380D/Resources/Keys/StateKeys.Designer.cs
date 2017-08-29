@@ -70,6 +70,42 @@ namespace Motor.HMI.CRH380D.Resources.Keys {
         }
         
         /// <summary>
+        ///   查找类似 Root_互锁_可旁通界面按键 的本地化字符串。
+        /// </summary>
+        internal static string Root_互锁_可旁通界面按键 {
+            get {
+                return ResourceManager.GetString("Root_互锁_可旁通界面按键", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Root_互锁_紧急制动界面按键 的本地化字符串。
+        /// </summary>
+        internal static string Root_互锁_紧急制动界面按键 {
+            get {
+                return ResourceManager.GetString("Root_互锁_紧急制动界面按键", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Root_互锁_阻断界面按键 的本地化字符串。
+        /// </summary>
+        internal static string Root_互锁_阻断界面按键 {
+            get {
+                return ResourceManager.GetString("Root_互锁_阻断界面按键", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Root_互锁_限速界面按键 的本地化字符串。
+        /// </summary>
+        internal static string Root_互锁_限速界面按键 {
+            get {
+                return ResourceManager.GetString("Root_互锁_限速界面按键", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Root_互锁界面按键 的本地化字符串。
         /// </summary>
         internal static string Root_互锁界面按键 {
@@ -156,6 +192,15 @@ namespace Motor.HMI.CRH380D.Resources.Keys {
         internal static string Root_客室舒适度界面按键 {
             get {
                 return ResourceManager.GetString("Root_客室舒适度界面按键", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Root_当前警报界面按键 的本地化字符串。
+        /// </summary>
+        internal static string Root_当前警报界面按键 {
+            get {
+                return ResourceManager.GetString("Root_当前警报界面按键", resourceCulture);
             }
         }
         

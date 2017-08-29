@@ -1,0 +1,110 @@
+﻿<UserControl x:Class="LightRail.HMI.GZYGDC.View.Contents.NetTopologyView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LightRail.HMI.GZYGDC.View.Contents"
+             xmlns:viewModel="clr-namespace:LightRail.HMI.GZYGDC.ViewModel"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+             d:DesignHeight="480" d:DesignWidth="800">
+    <Viewbox>
+        <Grid>
+            <Grid>
+                <Path Width="800" Height="480" Stroke="#9ffbe6"  StrokeThickness="5" Data="M 70,70 L 70,210 M 70,125 L 705,125 M 705,125 L 705,80 M 705,125 L 705,230"></Path>
+                <Path Width="800" Height="480" Stroke="#e29f30"  StrokeThickness="5" Data="M 20,190 L 20,223 M 18,226 L 50,226 M 30,229 L 30,255 M 70,226 L 240,226 M 115,226 L 115,195 M 140,226 L 140,255 M 165,226 L 165,195 M 185,226 L 185,255 M 210,226 L 210,195
+                      M 240,226 L 390,226 M 265,226 L 265,260 M 290,226 L 290,190 M 315,226 L 315,260 M 340,226 L 340,190 M 370,226 L 370,260
+                      M 390,226 L 500,226 M 420,226 L 420,190 M 440,226 L 440,260 M 470,226 L 470,190
+                      M 470,226 L 780,226 M 530,226 L 530,260 M 540,226 L 540,190 M 595,226 L 595,260 M 605,226 L 605,190 M 640,226 L 640,260 M 765,226 L 765,260 M 775,223 L 775,190"></Path>
+                <Path Width="800" Height="480" Stroke="#acb5bc"  StrokeThickness="5" Data="M 20,355 L 240,355 M 30,358 L 30,390 M 70,355 L 70,240 M 93,358 L 93,390 M 150,358 L 150,390 M 170,400 L 220,400
+                      M 220,355 L 390,355 M 295,355 L 295,390 M 345,355 L 345,390 
+                      M 390,355 L 500,355 M 415,355 L 415,390 M 470,355 L 470,390
+                      M 500,355 L 780,355 M 535,355 L 535,390 M 550,400 L 590,400 M 665,355 L 665,390 M 730,355 L 730,390"></Path>
+                <Path Height="480" Stroke="#fdfff8" StrokeThickness="2" Data="M 240,10 L 240,460"></Path>
+                <Path Height="480" Stroke="#fdfff8" StrokeThickness="2" Data="M 390,10 L 390,460"></Path>
+                <Path Height="480" Stroke="#fdfff8" StrokeThickness="2" Data="M 500,10 L 500,460"></Path>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.3*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.1875*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.1375*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.375*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Column="0">
+                    <!--<Viewbox Stretch="UniformToFill">
+                        
+                    </Viewbox>-->
+                    <Canvas Width="240" Height="480">
+                        <Button Canvas.Left="170" Canvas.Top="25" Width="50" Height="50" Style="{StaticResource LeftButtonStyle}" Content="{StaticResource RunningView.Mc1}" FontSize="22"></Button>
+                        <Button Canvas.Left="50" Canvas.Top="45" Width="40" Height="40" Background="{Binding NetTopologyViewModel.Model.Car1HMI.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="HMI"></Button>
+                        <Button Canvas.Left="44" Canvas.Top="105" Width="55" Height="40" Background="{Binding NetTopologyViewModel.Model.Car1Switch.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="Switch"></Button>
+                        <Button Canvas.Left="5" Canvas.Top="165" Width="45" Height="30" Background="{Binding NetTopologyViewModel.Model.Car1Sig.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="SIG"></Button>
+                        <Button Canvas.Left="90" Canvas.Top="165" Width="50" Height="30" Background="{Binding NetTopologyViewModel.Model.Car1Door1.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="Door1"></Button>
+                        <Button Canvas.Left="142" Canvas.Top="165" Width="42" Height="30" Background="{Binding NetTopologyViewModel.Model.Car1CMS.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="CMS"></Button>
+                        <Button Canvas.Left="186" Canvas.Top="165" Width="50" Height="30" Background="{Binding NetTopologyViewModel.Model.Car1Door2.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="Door2"></Button>
+                        <Button Canvas.Left="45" Canvas.Top="205" Width="55" Height="40" Background="{Binding NetTopologyViewModel.Model.Car1VCMe.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="VCMe"></Button>
+                        <Button Canvas.Left="5" Canvas.Top="255" Width="45" Height="30" Background="{Binding NetTopologyViewModel.Model.Car1PA.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="PA"></Button>
+                        <Button Canvas.Left="112" Canvas.Top="255" Width="50" Height="30" Background="{Binding NetTopologyViewModel.Model.Car1HVAC.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="HVAC"></Button>
+                        <Button Canvas.Left="163" Canvas.Top="255" Width="50" Height="30" Background="{Binding NetTopologyViewModel.Model.Car1Door3.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="Door3"></Button>
+                        <Button Canvas.Left="5" Canvas.Top="385" Width="45" Height="30" Background="{Binding NetTopologyViewModel.Model.Car1SKS2.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="SKS2"></Button>
+                        <Button Canvas.Left="70" Canvas.Top="385" Width="50" Height="40" Background="{Binding NetTopologyViewModel.Model.Car1VCUICU.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="VCU/&#13;ICU"></Button>
+                        <Button Canvas.Left="130" Canvas.Top="385" Width="45" Height="30" Background="{Binding NetTopologyViewModel.Model.Car1SKS3.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="SKS3"></Button>
+                        <Button Canvas.Left="195" Canvas.Top="385" Width="40" Height="30" Background="{Binding NetTopologyViewModel.Model.Car1APS.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="APS"></Button>
+                    </Canvas>
+                </Grid>
+                <Grid Column="1">
+                    <!--<Viewbox Stretch="UniformToFill">
+                        
+                    </Viewbox>-->
+                    <Canvas Width="150" Height="480">
+                        <Button Canvas.Left="50" Canvas.Top="25" Width="50" Height="50" Style="{StaticResource LeftButtonStyle}" Content="{StaticResource RunningView.T}" FontSize="22"></Button>
+                        <Button Canvas.Left="27" Canvas.Top="165" Width="45" Height="30" Background="{Binding NetTopologyViewModel.Model.Car2CMS.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="CMS"></Button>
+                        <Button Canvas.Left="73" Canvas.Top="165" Width="50" Height="30" Background="{Binding NetTopologyViewModel.Model.Car2Door5.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="Door5"></Button>
+                        <Button Canvas.Left="2" Canvas.Top="255" Width="50" Height="30" Background="{Binding NetTopologyViewModel.Model.Car2HVAC.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="HVAC"></Button>
+                        <Button Canvas.Left="53" Canvas.Top="255" Width="50" Height="30" Background="{Binding NetTopologyViewModel.Model.Car2Door4.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="Door4"></Button>
+                        <Button Canvas.Left="104" Canvas.Top="255" Width="45" Height="30" Background="{Binding NetTopologyViewModel.Model.Car2RIOM.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="RIOM"></Button>
+                        <Button Canvas.Left="35" Canvas.Top="385" Width="40" Height="30" Background="{Binding NetTopologyViewModel.Model.Car2BCU.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="BCU"></Button>
+                        <Button Canvas.Left="85" Canvas.Top="385" Width="45" Height="30" Background="{Binding NetTopologyViewModel.Model.Car2SKS4.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="SKS4"></Button>
+                    </Canvas>
+                </Grid>
+                <Grid Column="2">
+                    <!--<Viewbox Stretch="UniformToFill">
+                        
+                    </Viewbox>-->
+                    <Canvas Width="110" Height="480">
+                        <Button Canvas.Left="30" Canvas.Top="25" Width="50" Height="50" Style="{StaticResource LeftButtonStyle}" Content="{StaticResource RunningView.M}" FontSize="22"></Button>
+                        <Button Canvas.Left="3" Canvas.Top="165" Width="50" Height="30" Background="{Binding NetTopologyViewModel.Model.Car3Door6.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="Door6"></Button>
+                        <Button Canvas.Left="56" Canvas.Top="165" Width="50" Height="30" Background="{Binding NetTopologyViewModel.Model.Car3HVAC.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="HVAC"></Button>
+                        <Button Canvas.Left="25" Canvas.Top="255" Width="50" Height="30" Background="{Binding NetTopologyViewModel.Model.Car3Door7.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="Door7"></Button>
+                        <Button Canvas.Left="5" Canvas.Top="385" Width="45" Height="30" Background="{Binding NetTopologyViewModel.Model.Car3SKS8.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="SKS8"></Button>
+                        <Button Canvas.Left="55" Canvas.Top="385" Width="50" Height="40" Background="{Binding NetTopologyViewModel.Model.Car3VCUICU.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="VCU/&#13;ICU"></Button>
+                    </Canvas>
+                </Grid>
+                <Grid Column="3">
+                    <!--<Viewbox Stretch="UniformToFill">
+                        
+                    </Viewbox>-->
+                    <Canvas Width="300" Height="480">
+                        <Button Canvas.Left="85" Canvas.Top="25" Width="50" Height="50" Style="{StaticResource LeftButtonStyle}" Content="{StaticResource RunningView.Mc2}" FontSize="22"></Button>
+                        <Button Canvas.Left="185" Canvas.Top="45" Width="40" Height="40" Background="{Binding NetTopologyViewModel.Model.Car4HMI.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="HMI"></Button>
+                        <Button Canvas.Left="180" Canvas.Top="105" Width="55" Height="40" Background="{Binding NetTopologyViewModel.Model.Car4Switch.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="Switch"></Button>
+                        <Button Canvas.Left="10" Canvas.Top="165" Width="60" Height="30" Background="{Binding NetTopologyViewModel.Model.Car4Door8.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="Door8"></Button>
+                        <Button Canvas.Left="72" Canvas.Top="165" Width="60" Height="30" Background="{Binding NetTopologyViewModel.Model.Car4HVAC.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="HVAC"></Button>
+                        <Button Canvas.Left="250" Canvas.Top="165" Width="45" Height="30" Background="{Binding NetTopologyViewModel.Model.Car4Sig.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="SIG"></Button>
+                        <Button Canvas.Left="180" Canvas.Top="205" Width="55" Height="40" Background="{Binding NetTopologyViewModel.Model.Car4VCMe.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="VCMe"></Button>
+                        <Button Canvas.Left="5" Canvas.Top="255" Width="60" Height="30" Background="{Binding NetTopologyViewModel.Model.Car4Door9.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="Door9"></Button>
+                        <Button Canvas.Left="67" Canvas.Top="255" Width="55" Height="30" Background="{Binding NetTopologyViewModel.Model.Car4CMS.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="CMS"></Button>
+                        <Button Canvas.Left="125" Canvas.Top="255" Width="70" Height="30" Background="{Binding NetTopologyViewModel.Model.Car4Door10.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="Door10"></Button>
+                        <Button Canvas.Left="250" Canvas.Top="255" Width="45" Height="30" Background="{Binding NetTopologyViewModel.Model.Car4PIDS.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="PIDS"></Button>
+                        <Button Canvas.Left="13" Canvas.Top="385" Width="45" Height="30" Background="{Binding NetTopologyViewModel.Model.Car4SKS5.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="SKS5"></Button>
+                        <Button Canvas.Left="85" Canvas.Top="385" Width="40" Height="30" Background="{Binding NetTopologyViewModel.Model.Car4APS.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="APS"></Button>
+                        <Button Canvas.Left="140" Canvas.Top="385" Width="50" Height="40" Background="{Binding NetTopologyViewModel.Model.Car4VCUICU.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="VCU/&#13;ICU"></Button>
+                        <Button Canvas.Left="210" Canvas.Top="385" Width="45" Height="30" Background="{Binding NetTopologyViewModel.Model.Car4SKS9.State, Converter={StaticResource NetTopologyConverter}}" Style="{StaticResource LeftButtonStyle}" Content="SKS9"></Button>
+                        <Button Canvas.Left="220" Canvas.Top="425" Width="80" Height="50" Style="{StaticResource BottomButtonStyle}" Content="{Binding Path=Model.CenterStateInterface.BtnB1.Content,Converter={StaticResource ButtonContentConverter},Mode=OneWay}" Command="{Binding Model.CenterStateInterface.BtnB1.ClickCommand}" ></Button>
+                    </Canvas>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Viewbox>
+</UserControl>

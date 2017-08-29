@@ -55,11 +55,7 @@ namespace CBTC.DataAdapter.ConcreateAdapter.THALES
             //方向手柄
             dataChangedArgs.UpdateIfContains(InfKeys.方向手柄, f => SignalDataInTHALES.MasterControlDirection = f);
 
-            //模式开关
-            dataChangedArgs.UpdateIfContains(InfKeys.模式开关, f => SignalDataInTHALES.ModeSwitch = f);
 
-            //ATO开关
-            dataChangedArgs.UpdateIfContains(InfKeys.ATO开关, f => SignalDataInTHALES.ATORelationSwitch = f);
 
         }
 

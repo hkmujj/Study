@@ -145,9 +145,11 @@ namespace Motor.ATP._300T.Subsys.ViewModel.PopupViewModels
                 {
                     case UserActionType.F1:
                         IsInputtingDriverId = true;
+                        m_DriverInputInterpreter.Reset();
                         return;
                     case UserActionType.F2:
                         IsInputtingDriverId = false;
+                        m_DriverInputInterpreter.Reset();
                         return;
                 }
             }
@@ -211,6 +213,14 @@ namespace Motor.ATP._300T.Subsys.ViewModel.PopupViewModels
                     }
                     break;
                 case DriverInputInterpreterResult.InputType.Replace:
+                    if (IsInputtingTrainId)
+                    {
+                        TrainId = TrainId.Substring(0, TrainId.Length - 1) + rlt.InputContent;
+                    }
+                    else
+                    {
+                        DriverId = DriverId.Substring(0, DriverId.Length - 1) + rlt.InputContent;
+                    }
                     break;
                 case DriverInputInterpreterResult.InputType.Control:
                     break;

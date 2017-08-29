@@ -104,6 +104,8 @@ namespace Motor.ATP._300S.Subsys
 
             serviceManager.RegistService<IDriverInterfaceFactory>(ATPType.ATP300S.ToString(), factory);
 
+            var cleardataService = new ClearDataService() { Parent = m_ATP300SDomainModel };
+            serviceManager.RegistService<IClearDataService>(ATPType.ATP300S.ToString(), cleardataService);
 
             m_DriverController = new ATP300SDriverInterfaceController(m_ATP300SDomainModel, factory, null);
             serviceManager.RegistService<IDriverInterfaceController>(ATPType.ATP300S.ToString(), m_DriverController);
@@ -112,6 +114,7 @@ namespace Motor.ATP._300S.Subsys
             m_ATP300SDomainModel.Initalize(new ScreenIdentity("ATP300S", new Rect(), new RegionModel()));
             m_ATP300SDomainModel.ATPHardwareButton.HardwareButtonViewModel.ButtonEvent +=
                 HardwareButtonViewModelOnButtonEvent;
+
             foreach (var hardwareButton in m_ATP300SDomainModel.ATPHardwareButton.HardwareButtonCollection)
             {
                 hardwareButton.PropertyChanged += HardwareButtonOnPropertyChanged;

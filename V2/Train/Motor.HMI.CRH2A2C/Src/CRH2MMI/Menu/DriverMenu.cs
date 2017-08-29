@@ -50,14 +50,7 @@ namespace CRH2MMI.Menu
                     {
                         SetAppraiseFaultViewValue(1);
                     }
-                    if (ChangePagaManager.Instance.CanChangeTo(view))
-                    {
-                        m_CRH2Menu.append_postCmd(CmdType.ChangePage, s.Goto, 0, 0);
-                    }
-                    else
-                    {
-                        SuggestiveInformation.UpdateInformation(new InformationModel(ChangePagaManager.Instance.GetLastError()) { InformationType = InformationType.Error, Location = InformationLocation.Up });
-                    }
+
                 },
                 ButtonUpEvent = (sender, args) =>
                 {
@@ -65,6 +58,14 @@ namespace CRH2MMI.Menu
                     if (view == ViewConfig.FaultView)
                     {
                         SetAppraiseFaultViewValue(0);
+                    }
+                    if (ChangePagaManager.Instance.CanChangeTo(view))
+                    {
+                        m_CRH2Menu.append_postCmd(CmdType.ChangePage, s.Goto, 0, 0);
+                    }
+                    else
+                    {
+                        SuggestiveInformation.UpdateInformation(new InformationModel(ChangePagaManager.Instance.GetLastError()) { InformationType = InformationType.Error, Location = InformationLocation.Up });
                     }
                 },
                 DownImage = GlobalResource.Instance.BtnDownImage,

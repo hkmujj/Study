@@ -62,4 +62,11 @@
     <Spring Key="Infliction" Prioritys="1" />
     <Spring Key="Relief" Prioritys="2" />
   </SpringPriorities>
+ <NetTopologyPriorities>
+    <NetTopology Key="GatewayError" Prioritys="1" />
+    <NetTopology Key="CommunicationException" Prioritys="2" />
+	<NetTopology Key="GatewayMain" Prioritys="3" />
+	<NetTopology Key="Working" Prioritys="4" />
+	<NetTopology Key="StandBy" Prioritys="5" />
+  </NetTopologyPriorities>
 </PriorityConfig>

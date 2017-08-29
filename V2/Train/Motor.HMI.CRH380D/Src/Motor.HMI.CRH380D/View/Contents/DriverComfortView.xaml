@@ -179,7 +179,7 @@
                             VerticalAlignment="Bottom"
                             BorderBrush="Black"
                             BorderThickness="1">
-                        <TextBlock Style="{StaticResource NumTextStyle}" Text="23" />
+                        <TextBlock Style="{StaticResource NumTextStyle}" Text="{Binding Model.CarComfortModel.OutTemperature}" />
                     </Border>
                 </Grid>
                 <Grid Grid.Column="1">

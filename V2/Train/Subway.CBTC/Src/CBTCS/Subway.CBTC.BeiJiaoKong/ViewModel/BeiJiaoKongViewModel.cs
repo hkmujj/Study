@@ -21,6 +21,8 @@ namespace Subway.CBTC.BeiJiaoKong.ViewModel
         private InputKeyBoardModel m_InputKeyBoard;
         private InputScreenModel m_InputScreen;
         private TCTType m_TCTType;
+        private int m_ScreenSaverDelay;
+        private bool m_IsScreenSaver;
 
         public ICommunicationDataService DataService { get; set; }
 
@@ -87,6 +89,40 @@ namespace Subway.CBTC.BeiJiaoKong.ViewModel
                 }
                 m_TCTType = value;
                 RaisePropertyChanged(() => TCTType);
+            }
+        }
+
+        /// <summary>
+        /// 未操作屏延时进入屏保
+        /// </summary>
+        public int ScreenSaverDelay
+        {
+            get { return m_ScreenSaverDelay; }
+            set
+            {
+                if (value == m_ScreenSaverDelay)
+                {
+                    return;
+                }
+                m_ScreenSaverDelay = value;
+                RaisePropertyChanged(() => ScreenSaverDelay);
+            }
+        }
+
+        /// <summary>
+        /// 是否进入屏保状态 true=亮屏  false=黑屏
+        /// </summary>
+        public bool IsScreenSaver
+        {
+            get { return m_IsScreenSaver; }
+            set
+            {
+                if (value == m_IsScreenSaver)
+                {
+                    return;
+                }
+                m_IsScreenSaver = value;
+                RaisePropertyChanged(() => IsScreenSaver);
             }
         }
 

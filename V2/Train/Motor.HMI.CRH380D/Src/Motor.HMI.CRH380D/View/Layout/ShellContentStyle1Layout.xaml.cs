@@ -6,7 +6,7 @@ namespace Motor.HMI.CRH380D.View.Layout
     /// <summary>
     /// ShellContentLayout.xaml 的交互逻辑
     /// </summary>
-    [ViewExport(RegionName = RegionNames.DomainShellContent, IsDefaultView = true)]
+    [ViewExport(RegionName = RegionNames.DomainShellContent, IsDefaultView = false)]
     public partial class ShellContentStyle1Layout
     {
         public ShellContentStyle1Layout()

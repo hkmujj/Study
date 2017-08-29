@@ -37,7 +37,7 @@ namespace LightRail.HMI.GZYGDC.Adapter
 
             args.ChangedFloats.UpdateIfContains(InFloatKeys.下一站, f => TitleModel.NextStation = m_StationManagerService.GetStation((int)f)?.Name);
             args.ChangedFloats.UpdateIfContains(InFloatKeys.终点站, f => TitleModel.EndStation = m_StationManagerService.GetStation((int)f)?.Name);
-            args.ChangedFloats.UpdateIfContains(InFloatKeys.列车号, f => TitleModel.TrainNum = f.ToString(""));
+            args.ChangedFloats.UpdateIfContains(InFloatKeys.列车号, f => TitleModel.TrainNum = string.Format("T {0:D3}", Convert.ToInt32(f)));
             args.ChangedFloats.UpdateIfContains(InFloatKeys.电流, f => TitleModel.ElectricalCurrent = f);
             args.ChangedFloats.UpdateIfContains(InFloatKeys.电压, f => TitleModel.Voltage = f);
             args.ChangedFloats.UpdateIfContains(InFloatKeys.速度, f => TitleModel.Speed = f);

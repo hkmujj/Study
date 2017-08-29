@@ -30,9 +30,10 @@ namespace Motor.ATP._200H.Subsys.Control.UserAction.ActionResponser
         {
             base.ResponseMouseUp();
 
-            ATP.SendInterface.SendTrainId(new SendModel<DriverDataModel>(new DriverDataModel(null,m_Inputted)));
-
-            ATP.UpdateDriverInterface(DriverInterfaceKeys.Root);
+            if (ATP.SendInterface.SendTrainId(new SendModel<DriverDataModel>(new DriverDataModel(null, m_Inputted))))
+            {
+                ATP.UpdateDriverInterface(DriverInterfaceKeys.Root);
+            }
         }
     }
 }

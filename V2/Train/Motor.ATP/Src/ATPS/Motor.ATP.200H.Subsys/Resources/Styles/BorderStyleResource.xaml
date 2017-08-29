@@ -35,10 +35,15 @@
         </Style.Setters>
     </Style>
 
-    <Style x:Key="Motor.ATP.200H.AssistSpeedBorder" TargetType="Border" >
-        <Setter Property="Background" Value="{StaticResource Motor.ATP.200H.BackgroudBrush}"></Setter>
-        <Setter Property="BorderBrush" Value="{StaticResource Motor.ATP.200H.BackGridBrush}"></Setter>
-        <Setter Property="BorderThickness" Value="1"></Setter>
+    <Style x:Key="Motor.ATP.200H.AssistSpeedBorder" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource Motor.ATP.200H.BackgroudBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Motor.ATP.200H.BackGridBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
     </Style>
-
+    <Style x:Key="Motor.ATP.200H.BackGridBorderStyle1" TargetType="Border">
+        <Style.Setters>
+            <Setter Property="BorderBrush" Value="{StaticResource Motor.ATP.200H.BackGridBrush}" />
+            <Setter Property="BorderThickness" Value="1" />
+        </Style.Setters>
+    </Style>
 </ResourceDictionary>

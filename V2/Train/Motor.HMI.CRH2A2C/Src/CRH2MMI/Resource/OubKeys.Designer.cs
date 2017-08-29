@@ -70,11 +70,47 @@ namespace CRH2MMI.Resource {
         }
         
         /// <summary>
+        ///   查找类似 给评价的1屏故障发生按键状态 的本地化字符串。
+        /// </summary>
+        internal static string 给评价的1屏故障发生按键状态 {
+            get {
+                return ResourceManager.GetString("给评价的1屏故障发生按键状态", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 给评价的1屏故障详情按键状态 的本地化字符串。
+        /// </summary>
+        internal static string 给评价的1屏故障详情按键状态 {
+            get {
+                return ResourceManager.GetString("给评价的1屏故障详情按键状态", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 给评价的2屏故障一揽按键状态 的本地化字符串。
         /// </summary>
         internal static string 给评价的2屏故障一揽按键状态 {
             get {
                 return ResourceManager.GetString("给评价的2屏故障一揽按键状态", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 给评价的2屏故障发生按键状态 的本地化字符串。
+        /// </summary>
+        internal static string 给评价的2屏故障发生按键状态 {
+            get {
+                return ResourceManager.GetString("给评价的2屏故障发生按键状态", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 给评价的2屏故障详情按键状态 的本地化字符串。
+        /// </summary>
+        internal static string 给评价的2屏故障详情按键状态 {
+            get {
+                return ResourceManager.GetString("给评价的2屏故障详情按键状态", resourceCulture);
             }
         }
     }

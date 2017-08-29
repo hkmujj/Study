@@ -1,6 +1,8 @@
 ﻿using System.Windows.Controls;
+using System.Windows.Input;
 using MMI.Facility.WPFInfrastructure.Behaviors;
 using Subway.CBTC.BeiJiaoKong.Constance;
+using Subway.CBTC.BeiJiaoKong.Views.Shell;
 
 namespace Subway.CBTC.BeiJiaoKong.Views.Root
 {

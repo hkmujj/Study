@@ -26,7 +26,6 @@ namespace Motor.ATP.Infrasturcture.Control
 
         static DriverInputDataInterpreter()
         {
-
             m_InterpreteredDictionary = new Dictionary<UserActionType, string>
             {
                 {UserActionType.B1, "1"},
@@ -53,12 +52,15 @@ namespace Motor.ATP.Infrasturcture.Control
                 {UserActionType.B9, new List<string> {"W", "X", "Y", "Z"}},
                 {UserActionType.B10, new List<string> {""}}
             };
+
         }
 
         public DriverInputDataInterpreter(bool canInputChar = true)
         {
             m_LastActionTime = DateTime.Now;
             CanInputChar = canInputChar;
+
+            Reset();
         }
 
         /// <summary>

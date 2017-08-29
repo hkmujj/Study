@@ -63,12 +63,12 @@
                             <Popup
                                 Grid.Column="1"
                                 Width="273"
-                                Height="323"
-                                HorizontalOffset="60"
+                                Height="363"
+                                HorizontalOffset="260"
                                 IsOpen="{Binding Controller.Navigator.IsOpenSettingMenu}"
                                 PlacementTarget="{Binding ElementName=SettingMenuButton}"
                                 StaysOpen="False"
-                                VerticalOffset="-420">
+                                VerticalOffset="-430">
                                 <regionMenu:SettingMenu />
                             </Popup>
                             <Popup
@@ -103,6 +103,17 @@
                                 StaysOpen="False"
                                 VerticalOffset="-460">
                                 <regionMenu:MaintenView />
+                            </Popup>
+                            <Popup
+                                Grid.Column="1"
+                                Width="610"
+                                Height="420"
+                                HorizontalOffset="0"
+                                IsOpen="{Binding Controller.Navigator.IsOpenRoadCtrlViewMenuItem}"
+                                PlacementTarget="{Binding ElementName=SettingMenuButton}"
+                                StaysOpen="True"
+                                VerticalOffset="-450">
+                                <regionMenu:RoadCtrlView />
                             </Popup>
                             <Popup
                                 Grid.Column="1"

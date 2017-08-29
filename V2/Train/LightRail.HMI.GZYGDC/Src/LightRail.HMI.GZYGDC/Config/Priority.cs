@@ -116,5 +116,13 @@ namespace LightRail.HMI.GZYGDC.Config
         [XmlArray]
         [XmlArrayItem("Spring")]
         public List<Priority<SpringState, int>> SpringPriorities { get; set; }
+
+
+        /// <summary>
+        ///　网络拓扑单元
+        /// </summary>
+        [XmlArray]
+        [XmlArrayItem("NetTopology")]
+        public List<Priority<NetTopologyState, int>> NetTopologyPriorities { get; set; }
     }
 }

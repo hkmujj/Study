@@ -9,35 +9,49 @@
     d:DesignHeight="30"
     d:DesignWidth="800"
     mc:Ignorable="d">
-    <Grid Visibility="{Binding FaultViewModel.Model.Visibility}">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="50*" />
-            <ColumnDefinition Width="50*" />
-            <ColumnDefinition Width="120*" />
-            <ColumnDefinition Width="30*" />
-            <ColumnDefinition Width="30*" />
-            <ColumnDefinition Width="50*" />
-        </Grid.ColumnDefinitions>
-        <Grid.Resources>
-            <Style TargetType="TextBlock">
-                <Setter Property="HorizontalAlignment" Value="Center" />
-                <Setter Property="VerticalAlignment" Value="Center" />
-                <Setter Property="FontSize" Value="16" />
-                <Setter Property="Foreground" Value="Red" />
-            </Style>
-        </Grid.Resources>
-        <Line Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" VerticalAlignment="Top" Height="3" Stroke="White"  StrokeThickness="1" X1="0" X2="800" Y1="0" Y2="0"></Line>
-        <TextBlock
+    <Grid>
+        <Line
+            Grid.Row="0"
             Grid.Column="0"
-            Foreground="Black"
-            Text="当前故障" />
-        <TextBlock Grid.Column="1" Text="{Binding FaultViewModel.Model.CurrentFault.HapendTime, StringFormat={}{0:HH:mm:ss}}" />
-        <TextBlock Grid.Column="2" Text="{Binding FaultViewModel.Model.CurrentFault.Content}" />
-        <TextBlock Grid.Column="3" Text="{Binding FaultViewModel.Model.CurrentFault.Car, StringFormat=车号{0}}" />
-        <TextBlock Grid.Column="4">
-            <Run Text="等级" />
-            <Run Text="{Binding FaultViewModel.Model.CurrentFault.Level, Converter={StaticResource EnumDescritionConverter}}" />
-        </TextBlock>
+            Height="3"
+            VerticalAlignment="Top"
+            Stroke="White"
+            StrokeThickness="1"
+            X1="0"
+            X2="800"
+            Y1="0"
+            Y2="0" />
+        <Grid Visibility="{Binding FaultViewModel.Model.Visibility}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*" />
+                <ColumnDefinition Width="50*" />
+                <ColumnDefinition Width="120*" />
+                <ColumnDefinition Width="30*" />
+                <ColumnDefinition Width="30*" />
+                <ColumnDefinition Width="50*" />
+            </Grid.ColumnDefinitions>
+            <Grid.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="HorizontalAlignment" Value="Center" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                    <Setter Property="FontSize" Value="16" />
+                    <Setter Property="Foreground" Value="Red" />
+                </Style>
+            </Grid.Resources>
 
+            <TextBlock
+                Grid.Column="0"
+                Foreground="Black"
+                Text="当前故障" />
+            <TextBlock Grid.Column="1" Text="{Binding FaultViewModel.Model.CurrentFault.HapendTime, StringFormat={}{0:HH:mm:ss}}" />
+            <TextBlock Grid.Column="2" Text="{Binding FaultViewModel.Model.CurrentFault.Content}" />
+            <TextBlock Grid.Column="3" Text="{Binding FaultViewModel.Model.CurrentFault.Car, StringFormat=车号{0}}" />
+            <TextBlock Grid.Column="4">
+                <Run Text="等级" />
+                <Run Text="{Binding FaultViewModel.Model.CurrentFault.Level, Converter={StaticResource EnumDescritionConverter}}" />
+            </TextBlock>
+
+        </Grid>
     </Grid>
+
 </UserControl>

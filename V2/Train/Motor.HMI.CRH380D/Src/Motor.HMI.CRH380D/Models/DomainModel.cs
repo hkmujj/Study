@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.Composition;
-using LightRail.HMI.SZLHLF.Model;
 using Motor.HMI.CRH380D.Interfaces;
 using Motor.HMI.CRH380D.Models.BtnStragy;
 using Motor.HMI.CRH380D.Models.Model;
@@ -138,6 +137,30 @@ namespace Motor.HMI.CRH380D.Models
         /// </summary>
         [Import]
         public DCModel DCModel { get; private set; }
+
+        /// <summary>
+        /// 火灾探测器
+        /// </summary>
+        [Import]
+        public FireDeviceModel FireDeviceModel { get; private set; }
+
+        /// <summary>
+        /// 设置
+        /// </summary>
+        [Import]
+        public SettingModel SettingModel { get; private set; }
+
+        /// <summary>
+        /// 登陆
+        /// </summary>
+        [Import]
+        public LoginInfoModel LoginInfoModel { get; private set; }
+
+        /// <summary>
+        /// 事件
+        /// </summary>
+        [Import]
+        public EventInfoModel EventInfoModel { get; private set; }
 
         //按键
         private IStateInterface m_StateInterface;

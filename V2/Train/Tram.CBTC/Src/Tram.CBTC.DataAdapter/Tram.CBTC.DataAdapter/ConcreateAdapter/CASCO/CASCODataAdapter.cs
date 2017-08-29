@@ -213,16 +213,16 @@ namespace Tram.CBTC.DataAdapter.ConcreateAdapter.CASCO
             //系统时间
             CBTC.Other.NowInCBTC = SignalDataInCASCO.NowTime;
             //车载运行模式
-            //if (SignalDataInCASCO.TrainRunMode != SignalDataOutCASCO.TrainRunMode)
-            //{
-            //    CBTC.RunningInfo.VehicleRunningModel = (VehicleRunningModel)SignalDataOutCASCO.TrainRunMode;
-            //}
-            //else
-            //{
-            //    CBTC.RunningInfo.VehicleRunningModel = (VehicleRunningModel)SignalDataInCASCO.TrainRunMode;
-            //}
+            if (SignalDataInCASCO.TrainRunMode != SignalDataOutCASCO.TrainRunMode && SignalDataOutCASCO.TrainRunMode != 0)
+            {
+                CBTC.RunningInfo.VehicleRunningModel = (VehicleRunningModel)SignalDataOutCASCO.TrainRunMode;
+            }
+            else
+            {
+                CBTC.RunningInfo.VehicleRunningModel = (VehicleRunningModel)SignalDataInCASCO.TrainRunMode;
+            }
 
-            CBTC.RunningInfo.VehicleRunningModel = (VehicleRunningModel)SignalDataInCASCO.TrainRunMode;
+           // CBTC.RunningInfo.VehicleRunningModel = (VehicleRunningModel)SignalDataInCASCO.TrainRunMode;
             // 等间隔时间
             CBTC.RunningInfo.VehicleOnlineEqualintervalTime = "7分11秒";
             //列车早晚点状态
@@ -372,7 +372,7 @@ namespace Tram.CBTC.DataAdapter.ConcreateAdapter.CASCO
             //前方信号
             CBTC.SignalInfo.Alram.SemaphoreAlram.Text = "前方信号";
             CBTC.SignalInfo.Alram.SemaphoreAlram.Value = (SemaphoreStaus)SignalDataIn.FrontSignalStatus;
-            CBTC.SignalInfo.Alram.SemaphoreAlram.Distance = SignalDataIn.GoalDistance + 15;
+            CBTC.SignalInfo.Alram.SemaphoreAlram.Distance = SignalDataInCASCO.FrontSignalDistance /*SignalDataIn.GoalDistance + 15*/;
             CBTC.SignalInfo.Alram.SemaphoreAlram.Visible = true;
 
             //进路请求

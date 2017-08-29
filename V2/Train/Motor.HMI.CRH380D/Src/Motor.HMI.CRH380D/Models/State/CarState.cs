@@ -61,5 +61,13 @@
         /// 车辆严重超载
         /// </summary>
         StationSeriousOverLoad,
+        /// <summary>
+        /// 火灾探测器探测到发生火灾
+        /// </summary>
+        FireDeviceFireHappened,
+        /// <summary>
+        /// 火灾探测器正常
+        /// </summary>
+        FireDeviceNormal,
     }
 }

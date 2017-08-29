@@ -29,6 +29,7 @@ namespace CBTC.Infrasturcture.Model.Train
         private BlackText m_BlackText;  //黑屏时显示文本
         private bool m_ScreenSaverEnable;
         private RATOState m_RATOState;
+        private bool m_ScreenSaverBlackEnable;
 
 
         public TrainInfo()
@@ -261,6 +262,21 @@ namespace CBTC.Infrasturcture.Model.Train
                     .GetEvent<ScreenSaverEnableChangedEvent>()
                     .Publish(new ScreenSaverEnableChangedEvent.Args(value));
                 RaisePropertyChanged(() => ScreenSaverEnable);
+            }
+        }
+
+        /// <summary>
+        /// 黑屏屏保
+        /// </summary>
+        public bool ScreenSaverBlackEnable
+        {
+            get { return m_ScreenSaverBlackEnable; }
+            set
+            {
+                if (value.Equals(m_ScreenSaverBlackEnable))
+                    return;
+                m_ScreenSaverBlackEnable = value;
+                RaisePropertyChanged(() => ScreenSaverBlackEnable);
             }
         }
 

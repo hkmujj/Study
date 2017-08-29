@@ -188,6 +188,7 @@
                     <DataTemplate DataType="train:Car">
                         <Line
                             Stroke="{Binding Path=Door.UpDoorLockStateItem.State, Converter={StaticResource DoorLockStataColorConverter}}"
+                            StrokeThickness="2"
                             X1="0"
                             X2="{Binding RelativeSource={RelativeSource AncestorType=Grid}, Path=ActualWidth}"
                             Y1="5"
@@ -219,12 +220,13 @@
                 <Setter.Value>
                     <DataTemplate DataType="train:Car">
                         <Line
-                            Height="3"
+             
                             Stroke="{Binding Path=Door.DownDoorLockStateItem.State, Converter={StaticResource DoorLockStataColorConverter}}"
+                            StrokeThickness="2"
                             X1="0"
                             X2="{Binding RelativeSource={RelativeSource AncestorType=Grid}, Path=ActualWidth}"
-                            Y1="7"
-                            Y2="7">
+                            Y1="5"
+                            Y2="5">
                             <Line.Width>
                                 <MultiBinding Converter="{StaticResource MathConverter}" ConverterParameter="x/6">
                                     <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}" />
@@ -894,7 +896,7 @@
                                     VerticalAlignment="Center"
                                     FontFamily="{StaticResource FontFamilySongTypeface}"
                                     FontSize="26"
-                                    Text="{Binding Path=Brake.BrakePage2.Value.BrakePressure1.State.Value}"
+                                    Text="{Binding Path=Brake.BrakePage2.Value.BrakePressure1.State.Value, StringFormat={}{0:F1}}"
                                     TextAlignment="Center" />
                             </Border>
 
@@ -929,7 +931,7 @@
                                     VerticalAlignment="Center"
                                     FontFamily="{StaticResource FontFamilySongTypeface}"
                                     FontSize="26"
-                                    Text="{Binding Path=Brake.BrakePage2.Value.BrakePressure2.State.Value}"
+                                    Text="{Binding Path=Brake.BrakePage2.Value.BrakePressure2.State.Value, StringFormat={}{0:F1}}"
                                     TextAlignment="Center" />
                             </Border>
                             <Image Source="{StaticResource ImgCommonUnkownBig}" Visibility="{Binding Path=Brake.BrakePage2.Value.BrakePressure2.State.GeneralState, Converter={StaticResource BoolVisibilityConverter}}" />

@@ -1,4 +1,5 @@
 ﻿using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace Subway.CBTC.BeiJiaoKong.Views.Shell
 {
@@ -13,6 +14,11 @@ namespace Subway.CBTC.BeiJiaoKong.Views.Shell
         public DoMainView()
         {
             InitializeComponent();
+        }
+
+        private void DoMainView_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            ViewModel.BeiJiaoKongViewModel.DoMainViewModel.Controller.ToScreenSaverCommand.Execute(null);
         }
     }
 }

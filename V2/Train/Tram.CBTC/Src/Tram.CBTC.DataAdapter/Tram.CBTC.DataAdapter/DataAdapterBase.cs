@@ -298,9 +298,11 @@ namespace Tram.CBTC.DataAdapter
             //ATC切除开关
             dataChangedArgs.UpdateIfContains(InbKeys.ATC切除开关, b => SignalDataIn.ATCPass = b);
 
-            CBTC.Message.MessageFactory.CreateMessage(2, DateTime.Now);
-            CBTC.Message.MessageFactory.CreateMessage(51, DateTime.Now);
-
+            if (CBTC.Message.MessageFactory != null)
+            {
+                CBTC.Message.MessageFactory.CreateMessage(2, DateTime.Now);
+                CBTC.Message.MessageFactory.CreateMessage(51, DateTime.Now);
+            }
         }
 
         //float输入

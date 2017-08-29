@@ -18,7 +18,11 @@ namespace Motor.HMI.CRH380BG.Controller.BtnActionResponser
         /// </summary>
         public override void ResponseClick(StateViewModel stateViewModel)
         {
-            ViewModel.Value.Domain.FaultViewModel.Controller.GotoPre();
+            if (ViewModel.Value.Domain.FaultViewModel.Model.AllPagedItems.ListItemCount != 0)
+            {
+                ViewModel.Value.Domain.FaultViewModel.Controller.GotoPre();
+            }
+            
             //var mm = ViewModel.Value.Domain.FaultViewModel.Model;
             //if (mm.CurrentSelectedItemIndex == 0)
             //{

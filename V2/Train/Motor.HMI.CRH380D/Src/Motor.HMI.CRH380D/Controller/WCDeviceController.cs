@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.Composition;
-using System.Windows.Input;
 using Microsoft.Practices.Prism.Commands;
 using MMI.Facility.WPFInfrastructure.Interfaces;
 using Motor.HMI.CRH380D.Extension;

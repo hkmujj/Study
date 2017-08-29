@@ -106,6 +106,7 @@ namespace Motor.ATP._200H.Subsys.ViewModel.PopupViewModels
         public EnsureTrainDataPopupViewModel()
         {
             TitleContent = PopupViewStringKeys.StringTitleEnsureTrainLength;
+            PopViewTitleContent = PopupViewStringKeys.StringTitleEnsureTrainData;
             PopupViewName = PopupContentViewNames.EnsureTrainDataView;
             TrainDatas =
                 new ObservableCollection<TrainDataShowModel>(

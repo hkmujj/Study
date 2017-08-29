@@ -429,6 +429,12 @@ namespace CBTC.DataAdapter
             //车辆实时运行工况
             dataChangedArgs.UpdateIfContains(InfKeys.车辆实时运行工况, f => SignalDataIn.RealTimeWorkStatus = f);
 
+            //模式开关
+            dataChangedArgs.UpdateIfContains(InfKeys.模式开关, f => SignalDataIn.ModeSwitch = f);
+
+            //ATO开关
+            dataChangedArgs.UpdateIfContains(InfKeys.ATO开关, f => SignalDataIn.ATORelationSwitch = f);
+
         }
         //功能实现并输出
         public virtual void OnDataChangedImp(object sender, CommunicationDataChangedWrapperArgs<bool> changedBools, CommunicationDataChangedWrapperArgs<float> changedFloats)

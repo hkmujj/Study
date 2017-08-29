@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel.Composition;
 using Motor.HMI.CRH380D.Resources.Keys;
-using Motor.HMI.CRH380D.ViewModel;
 
 namespace Motor.HMI.CRH380D.Controller.BtnActionResponser.StationView
 {

@@ -1,5 +1,4 @@
-﻿using System.Windows.Controls.Primitives;
-using MMI.Facility.WPFInfrastructure.Behaviors;
+﻿using MMI.Facility.WPFInfrastructure.Behaviors;
 using Motor.HMI.CRH380D.Constant;
 
 namespace Motor.HMI.CRH380D.View.Contents

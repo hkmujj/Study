@@ -19,7 +19,7 @@ namespace Motor.TCMS.CRH400BF.Resources.Keys {
     // 类通过类似于 ResGen 或 Visual Studio 的工具自动生成的。
     // 若要添加或移除成员，请编辑 .ResX 文件，然后重新运行 ResGen
     // (以 /str 作为命令选项)，或重新生成 VS 项目。
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class InbKeys {
@@ -1132,6 +1132,96 @@ namespace Motor.TCMS.CRH400BF.Resources.Keys {
         }
         
         /// <summary>
+        ///   查找类似 右屏按钮0 的本地化字符串。
+        /// </summary>
+        internal static string Inb右屏按钮0 {
+            get {
+                return ResourceManager.GetString("Inb右屏按钮0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 右屏按钮1 的本地化字符串。
+        /// </summary>
+        internal static string Inb右屏按钮1 {
+            get {
+                return ResourceManager.GetString("Inb右屏按钮1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 右屏按钮2 的本地化字符串。
+        /// </summary>
+        internal static string Inb右屏按钮2 {
+            get {
+                return ResourceManager.GetString("Inb右屏按钮2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 右屏按钮3 的本地化字符串。
+        /// </summary>
+        internal static string Inb右屏按钮3 {
+            get {
+                return ResourceManager.GetString("Inb右屏按钮3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 右屏按钮4 的本地化字符串。
+        /// </summary>
+        internal static string Inb右屏按钮4 {
+            get {
+                return ResourceManager.GetString("Inb右屏按钮4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 右屏按钮5 的本地化字符串。
+        /// </summary>
+        internal static string Inb右屏按钮5 {
+            get {
+                return ResourceManager.GetString("Inb右屏按钮5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 右屏按钮6 的本地化字符串。
+        /// </summary>
+        internal static string Inb右屏按钮6 {
+            get {
+                return ResourceManager.GetString("Inb右屏按钮6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 右屏按钮7 的本地化字符串。
+        /// </summary>
+        internal static string Inb右屏按钮7 {
+            get {
+                return ResourceManager.GetString("Inb右屏按钮7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 右屏按钮8 的本地化字符串。
+        /// </summary>
+        internal static string Inb右屏按钮8 {
+            get {
+                return ResourceManager.GetString("Inb右屏按钮8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 右屏按钮9 的本地化字符串。
+        /// </summary>
+        internal static string Inb右屏按钮9 {
+            get {
+                return ResourceManager.GetString("Inb右屏按钮9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 司机脚踏 的本地化字符串。
         /// </summary>
         internal static string Inb司机脚踏 {
@@ -1155,6 +1245,96 @@ namespace Motor.TCMS.CRH400BF.Resources.Keys {
         internal static string Inb左侧门释放 {
             get {
                 return ResourceManager.GetString("Inb左侧门释放", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 左屏按钮0 的本地化字符串。
+        /// </summary>
+        internal static string Inb左屏按钮0 {
+            get {
+                return ResourceManager.GetString("Inb左屏按钮0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 左屏按钮1 的本地化字符串。
+        /// </summary>
+        internal static string Inb左屏按钮1 {
+            get {
+                return ResourceManager.GetString("Inb左屏按钮1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 左屏按钮2 的本地化字符串。
+        /// </summary>
+        internal static string Inb左屏按钮2 {
+            get {
+                return ResourceManager.GetString("Inb左屏按钮2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 左屏按钮3 的本地化字符串。
+        /// </summary>
+        internal static string Inb左屏按钮3 {
+            get {
+                return ResourceManager.GetString("Inb左屏按钮3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 左屏按钮4 的本地化字符串。
+        /// </summary>
+        internal static string Inb左屏按钮4 {
+            get {
+                return ResourceManager.GetString("Inb左屏按钮4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 左屏按钮5 的本地化字符串。
+        /// </summary>
+        internal static string Inb左屏按钮5 {
+            get {
+                return ResourceManager.GetString("Inb左屏按钮5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 左屏按钮6 的本地化字符串。
+        /// </summary>
+        internal static string Inb左屏按钮6 {
+            get {
+                return ResourceManager.GetString("Inb左屏按钮6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 左屏按钮7 的本地化字符串。
+        /// </summary>
+        internal static string Inb左屏按钮7 {
+            get {
+                return ResourceManager.GetString("Inb左屏按钮7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 左屏按钮8 的本地化字符串。
+        /// </summary>
+        internal static string Inb左屏按钮8 {
+            get {
+                return ResourceManager.GetString("Inb左屏按钮8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 左屏按钮9 的本地化字符串。
+        /// </summary>
+        internal static string Inb左屏按钮9 {
+            get {
+                return ResourceManager.GetString("Inb左屏按钮9", resourceCulture);
             }
         }
         

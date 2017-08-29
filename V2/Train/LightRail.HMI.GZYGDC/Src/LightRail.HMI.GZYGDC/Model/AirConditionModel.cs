@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel.Composition;
+using System.Linq;
 using CommonUtil.Util;
 using LightRail.HMI.GZYGDC.Model.ConfigModel;
 using LightRail.HMI.GZYGDC.Model.State;
+using LightRail.HMI.GZYGDC.Model.Units;
 using Microsoft.Practices.Prism.ViewModel;
 
 namespace LightRail.HMI.GZYGDC.Model
@@ -11,6 +13,7 @@ namespace LightRail.HMI.GZYGDC.Model
     [Export]
     public class AirConditionModel : NotificationObject
     {
+        private ObservableCollection<AirConditionUnit> m_AirConditionUnits;
 
         private AirConditionInfo m_ConcentrateAirConditionInfo;
 
@@ -27,20 +30,68 @@ namespace LightRail.HMI.GZYGDC.Model
 
         public AirConditionModel()
         {
+            AirConditionUnits = new ObservableCollection<AirConditionUnit>(GlobalParam.Instance.AirConditionUnits);
+
             ConcentrateAirConditionInfo = new AirConditionInfo();
             AirConditionInfoCar1 = new AirConditionInfo();
             AirConditionInfoCar2 = new AirConditionInfo();
             AirConditionInfoCar3 = new AirConditionInfo();
             AirConditionInfoCar4 = new AirConditionInfo();
-
-            //默认值
-            m_ConcentrateAirConditionInfo.ConditionMode = AirConditionMode.Auto;
-            m_ConcentrateAirConditionInfo.SettingTemperature = 20.0F;
-
-            m_CabWindSpeedMode = WindSpeedMode.Strong;
-
-            
         }
+
+
+        /// <summary>
+        /// 所有空调单元
+        /// </summary>
+        public ObservableCollection<AirConditionUnit> AirConditionUnits
+        {
+            get { return m_AirConditionUnits; }
+            private set
+            {
+                if (Equals(value, m_AirConditionUnits))
+                {
+                    return;
+                }
+                m_AirConditionUnits = value;
+                RaisePropertyChanged(() => AirConditionUnits);
+                RaisePropertyChanged(() => Car1Location1AirConditionUnit);
+                RaisePropertyChanged(() => Car2Location1AirConditionUnit);
+                RaisePropertyChanged(() => Car3Location1AirConditionUnit);
+                RaisePropertyChanged(() => Car4Location1AirConditionUnit);
+
+            }
+        }
+
+
+        /// <summary>
+        /// 1车1位置
+        /// </summary>
+        public AirConditionUnit Car1Location1AirConditionUnit { get { return AirConditionUnits.Where(w => w.Car == 1 && w.Location == 1).OrderBy(o => o.Location).FirstOrDefault(); } }
+
+
+
+        /// <summary>
+        /// 2车1位置
+        /// </summary>
+        public AirConditionUnit Car2Location1AirConditionUnit { get { return AirConditionUnits.Where(w => w.Car == 2 && w.Location == 1).OrderBy(o => o.Location).FirstOrDefault(); } }
+
+
+
+
+        /// <summary>
+        /// 3车1位置
+        /// </summary>
+        public AirConditionUnit Car3Location1AirConditionUnit { get { return AirConditionUnits.Where(w => w.Car == 3 && w.Location == 1).OrderBy(o => o.Location).FirstOrDefault(); } }
+
+
+
+
+        /// <summary>
+        /// 4车1位置
+        /// </summary>
+        public AirConditionUnit Car4Location1AirConditionUnit { get { return AirConditionUnits.Where(w => w.Car == 4 && w.Location == 1).OrderBy(o => o.Location).FirstOrDefault(); } }
+
+
 
 
         /// <summary>

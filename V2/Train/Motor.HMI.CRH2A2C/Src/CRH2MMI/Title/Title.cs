@@ -15,6 +15,8 @@ using CRH2MMI.Notify;
 using MMI.Facility.Interface.Attribute;
 using MMI.Facility.Interface.Data;
 using CommonUtil.Controls;
+using CRH2MMI.Menu;
+using CRH2MMI.Resource;
 using CRH2MMI.Resource.Images;
 
 
@@ -143,7 +145,7 @@ namespace CRH2MMI.Title
                 {
                     if (NotifyManager.Instance.HasNewNotify && !m_NotifyGetter.HasResponse)
                     {
-                        append_postCmd(CmdType.ChangePage, (int) ViewConfig.Notify, 0, 0);
+                        append_postCmd(CmdType.ChangePage, (int)ViewConfig.Notify, 0, 0);
                         m_NotifyGetter.HasResponse = true;
                     }
                 }
@@ -172,7 +174,7 @@ namespace CRH2MMI.Title
                     // 来自蜂鸣器
                     if (!m_FaultGetter.HasFault)
                     {
-                        append_postCmd(CmdType.ChangePage, (int) ViewConfig.Notify, 0, 0);
+                        append_postCmd(CmdType.ChangePage, (int)ViewConfig.Notify, 0, 0);
                     }
                     else
                     {
@@ -188,7 +190,7 @@ namespace CRH2MMI.Title
         /// </summary>
         private void ActiveFault()
         {
-            append_postCmd(CmdType.ChangePage, (int) ViewConfig.FaultInfo, 0, 0);
+            append_postCmd(CmdType.ChangePage, (int)ViewConfig.FaultInfo, 0, 0);
         }
 
         private void RefreshBKImage()
@@ -268,7 +270,7 @@ namespace CRH2MMI.Title
                 OutLineRectangle = new Rectangle(688, 10, 95, 38),
                 RefreshAction = o =>
                 {
-                    var btn = (GDIButton) o;
+                    var btn = (GDIButton)o;
                     btn.Text = TitleShowStrategy.GetMenuText();
                 },
                 ButtonDownEvent = OnMenuButtonDownEvent
@@ -337,10 +339,10 @@ namespace CRH2MMI.Title
                     };
                     strInfo.RefreshAction = o =>
                     {
-                        var txt = (GDIRectText) o;
+                        var txt = (GDIRectText)o;
                         var fValue =
                             FloatList[GetInFloatIndex(tunit.InFloatColoumNames.First())];
-                        var iValue = (int) Math.Ceiling(Math.Abs(fValue));
+                        var iValue = (int)Math.Ceiling(Math.Abs(fValue));
                         var conf = m_Resource.TrainLineConfigs.Find(f => f.Index == iValue);
                         txt.Text = conf != null ? conf.Name : "0";
                     };
@@ -360,7 +362,7 @@ namespace CRH2MMI.Title
                 {
                     strInfo.RefreshAction = o =>
                     {
-                        var txt = (GDIRectText) o;
+                        var txt = (GDIRectText)o;
                         var fValue =
                             Math.Abs(
                                 FloatList[GetInFloatIndex(tunit.InFloatColoumNames.First())]);
@@ -396,7 +398,7 @@ namespace CRH2MMI.Title
                     TextFormat = format,
                     RefreshAction = o =>
                     {
-                        var txt = (GDIRectText) o;
+                        var txt = (GDIRectText)o;
                         txt.Visible = BoolList[GetInBoolIndex(unit.InBoolColoumNames.First())];
                     }
                 };
@@ -405,7 +407,7 @@ namespace CRH2MMI.Title
                 {
                     gditxt.RefreshAction = o =>
                     {
-                        var txt = (GDIRectText) o;
+                        var txt = (GDIRectText)o;
                         txt.Visible = NotifyManager.Instance.HasNotify(NotifyType.Enmagerce);
                     };
                 }
@@ -414,7 +416,7 @@ namespace CRH2MMI.Title
                 {
                     gditxt.RefreshAction = o =>
                     {
-                        var txt = (GDIRectText) o;
+                        var txt = (GDIRectText)o;
                         txt.Visible = NotifyManager.Instance.HasNotify(NotifyType.Fire);
                     };
                 }
@@ -433,11 +435,11 @@ namespace CRH2MMI.Title
                         UpImage = txt.BKImage,
                         RefreshAction = o =>
                         {
-                            var b = (GDIButton) o;
+                            var b = (GDIButton)o;
                             b.Visible = unit.InBoolColoumNames.Any(GetInBoolValue);
                         },
                         ButtonDownEvent =
-                            (sender, args) => append_postCmd(CmdType.ChangePage, (int) ViewConfig.DriveState, 0, 0)
+                            (sender, args) => append_postCmd(CmdType.ChangePage, (int)ViewConfig.DriveState, 0, 0)
                     };
                 }
 
@@ -445,7 +447,7 @@ namespace CRH2MMI.Title
                 {
                     gditxt.RefreshAction = o =>
                     {
-                        var txt = (GDIRectText) o;
+                        var txt = (GDIRectText)o;
                         txt.Visible = BoolList[GetInBoolIndex(unit.InBoolColoumNames.First())];
                         //出现故障信息，跳转到通知信息视图
                         m_FaultCollector.AddOrRefresh(txt.Text, txt.Visible);
@@ -456,7 +458,7 @@ namespace CRH2MMI.Title
 
                 if (s.Name == "故障发生")
                 {
-                    var txt = (GDIRectText) gditxt;
+                    var txt = (GDIRectText)gditxt;
                     m_Infos.Remove(gditxt);
                     m_FaultOccuse = new CRH2Button
                     {
@@ -468,18 +470,37 @@ namespace CRH2MMI.Title
                         UpImage = txt.BKImage,
                         RefreshAction = o =>
                         {
-                            var b = (GDIButton) o;
+                            var b = (GDIButton)o;
                             b.Visible = m_FaultGetter.HasFault;
                             m_FaultCollector.AddOrRefresh(b.Text, b.Visible);
                             HasFault = m_FaultCollector.HasAnyFault;
                         },
                         ButtonDownEvent =
-                            (sender, args) => append_postCmd(CmdType.ChangePage, (int) ViewConfig.FaultInfo, 0, 0)
+                            (sender, args) =>
+                            {
+                               
+                                var idx = ScreenId==ScreenId.CRH2? OubKeys.给评价的1屏故障发生按键状态:OubKeys.给评价的2屏故障发生按键状态;
+                                append_postCmd(CmdType.ChangePage, (int) ViewConfig.FaultInfo, 0, 0);
+                                append_postCmd(CmdType.SetBoolValue,IndexDescriptionConfig.OutBoolDescriptionDictionary[idx],1,0);
+                            },
+                        ButtonUpEvent =
+                            (sender, args) =>
+                            {
+
+                                var idx = ScreenId == ScreenId.CRH2 ? OubKeys.给评价的1屏故障发生按键状态 : OubKeys.给评价的2屏故障发生按键状态;
+                                append_postCmd(CmdType.ChangePage, (int)ViewConfig.FaultInfo, 0, 0);
+                                append_postCmd(CmdType.SetBoolValue, IndexDescriptionConfig.OutBoolDescriptionDictionary[idx], 0, 0);
+                            }
                     };
                 }
             }
         }
 
+        //private void SetAppraiseFaultViewValue(int value)
+        //{
+        //    var idx = m_CRH2Menu.ScreenId == ScreenId.CRH2 ? OubKeys.给评价的1屏故障一揽按键状态 : OubKeys.给评价的2屏故障一揽按键状态;
+        //    m_CRH2Menu.append_postCmd(CmdType.SetBoolValue, m_CRH2Menu.IndexDescriptionConfig.OutBoolDescriptionDictionary[idx], value, 0);
+        //}
         public override void paint(Graphics g)
         {
             RefreshDate();
@@ -498,11 +519,11 @@ namespace CRH2MMI.Title
             base.setRunValue(nParaA, nParaB, nParaC);
             if (nParaA == ParaADefine.SwitchFromOhter)
             {
-                m_CurrentView = (ViewConfig) nParaB;
+                m_CurrentView = (ViewConfig)nParaB;
 
                 TitleText = TitleShowStrategy.GetTitleText(m_CurrentView);
 
-                LastView = (ViewConfig) Convert.ToInt32(nParaC);
+                LastView = (ViewConfig)Convert.ToInt32(nParaC);
             }
         }
 
@@ -521,6 +542,21 @@ namespace CRH2MMI.Title
             return m_FaultOccuse.OnMouseDown(point);
         }
 
+        protected override bool OnMouseUp(Point point)
+        {
+            if (HasPackingBrakeCutEvent)
+            {
+                return false;
+            }
+
+            if (m_MenuButton.OnMouseUp(point))
+            {
+                m_MenuButton.CurrentMouseState = MouseState.MouseDown;
+                return true;
+            }
+            return m_FaultOccuse.OnMouseUp(point);
+        }
+
 
 
         /// <summary>
@@ -533,7 +569,7 @@ namespace CRH2MMI.Title
 
             m_StrtimeH = string.Format("  {0,3:# 0}时{1,3:# 0}分{2,3:# 0}秒", CurrentTime.Hour, CurrentTime.Minute,
                 CurrentTime.Second);
-            m_StrtimeY = string.Format("' {0,3:# 0}年{1,3:# 0}月{2,3:# 0}日", CurrentTime.Year%100, CurrentTime.Month,
+            m_StrtimeY = string.Format("' {0,3:# 0}年{1,3:# 0}月{2,3:# 0}日", CurrentTime.Year % 100, CurrentTime.Month,
                 CurrentTime.Day);
 
             HasNotify = NotifyManager.Instance.HasNotify();
@@ -542,11 +578,11 @@ namespace CRH2MMI.Title
 
         public void InitDate()
         {
-            CRH2Resource.DrawFormat.Alignment = (StringAlignment) 1;
-            CRH2Resource.DrawFormat.LineAlignment = (StringAlignment) 1;
+            CRH2Resource.DrawFormat.Alignment = (StringAlignment)1;
+            CRH2Resource.DrawFormat.LineAlignment = (StringAlignment)1;
 
-            CRH2Resource.RightFormat.Alignment = (StringAlignment) 2;
-            CRH2Resource.RightFormat.LineAlignment = (StringAlignment) 1;
+            CRH2Resource.RightFormat.Alignment = (StringAlignment)2;
+            CRH2Resource.RightFormat.LineAlignment = (StringAlignment)1;
         }
 
         public void OnDraw(Graphics g)
@@ -565,3 +601,4 @@ namespace CRH2MMI.Title
         }
     }
 }
+

@@ -5,13 +5,14 @@ using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Events;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.Prism.ViewModel;
-using Tram.CBTC.Infrasturcture.Model.Constant;
 using Tram.CBTC.NRIET.Constant;
 using Tram.CBTC.NRIET.Controller.Navigator.Maintence;
 using Tram.CBTC.NRIET.Controller.Navigator.Running;
-using Tram.CBTC.NRIET.Model.Domain;
 using Tram.CBTC.NRIET.View.Contents;
 using Tram.CBTC.NRIET.View.Contents.Main;
+using Tram.CBTC.NRIET.View.Contents.Main.RegionDeviceStatus;
+using Tram.CBTC.NRIET.View.Contents.Main.RegionRunning;
+using Tram.CBTC.NRIET.View.Contents.Main.RegionSpeed;
 
 //using Tram.CBTC.Nriet.View.Layout;
 //using Tram.CBTC.Nriet.View.Maintence;
@@ -52,13 +53,17 @@ namespace Tram.CBTC.NRIET.Controller.Navigator
 
         private ICommand m_SettingMenuCommand;
 
-       
+
+        private ICommand m_RoadCtrlMenuCommand;
 
         private bool m_bOpenTrainTimeTableMenuItem = false;
 
         private bool m_bOpenSettingViewMenuItem = false;
 
         private bool m_bOpenMaintenViewMenuItem = false;
+
+
+        private bool m_bOpenRoadCtrlViewMenuItem = false;
 
 
         /// <summary>
@@ -184,6 +189,27 @@ namespace Tram.CBTC.NRIET.Controller.Navigator
             }
         }
 
+
+        /// <summary>
+        /// 进路控制菜单项
+        /// </summary>
+        public ICommand RoadCtrlMenuCommand
+        {
+
+            get { return m_RoadCtrlMenuCommand; }
+            private set
+            {
+                if (value.Equals(m_RoadCtrlMenuCommand))
+                {
+                    return;
+                }
+
+                m_RoadCtrlMenuCommand = value;
+
+                RaisePropertyChanged(() => RoadCtrlMenuCommand);
+            }
+        }
+
         /// <summary>
         /// 是否打开设置菜单
         /// </summary>
@@ -285,6 +311,38 @@ namespace Tram.CBTC.NRIET.Controller.Navigator
         }
 
 
+        /// <summary>
+        /// 是否打开进路控制菜单项
+        /// </summary>
+        public bool IsOpenRoadCtrlViewMenuItem
+        {
+            get { return m_bOpenRoadCtrlViewMenuItem; }
+            set
+            {
+                if (value == m_bOpenRoadCtrlViewMenuItem)
+                {
+                    return;
+                }
+
+                m_bOpenRoadCtrlViewMenuItem = value;
+
+                if (m_bOpenRoadCtrlViewMenuItem)
+                {
+                    m_RegionManager.RequestNavigate(RegionNames.DeviceStatusContent, typeof(DeviceStatusViewHide).FullName);
+                    m_RegionManager.RequestNavigate(RegionNames.SpeedContent, typeof(SpeedViewHide).FullName);
+                    m_RegionManager.RequestNavigate(RegionNames.RunningContent, typeof(RunningViewHide).FullName);
+                }
+                else
+                {
+                    m_RegionManager.RequestNavigate(RegionNames.DeviceStatusContent, typeof(DeviceStatusView).FullName);
+                    m_RegionManager.RequestNavigate(RegionNames.SpeedContent, typeof(SpeedView).FullName);
+                    m_RegionManager.RequestNavigate(RegionNames.RunningContent, typeof(RunningView).FullName);
+                }
+
+                RaisePropertyChanged(() => IsOpenRoadCtrlViewMenuItem);
+            }
+        }
+
 
         [ImportingConstructor]
         [DebuggerStepThrough]
@@ -308,7 +366,7 @@ namespace Tram.CBTC.NRIET.Controller.Navigator
             MaintenMenuItemCommand = new DelegateCommand(MaintenMenuItem);
             SettingMenuCommand = new DelegateCommand<string>(SettingMenu);
             TrainTimeTableMenuItemCommand = new DelegateCommand(TrainTimeTableMenuItem);
-            
+            RoadCtrlMenuCommand = new DelegateCommand(RoadCtrlMenuItem);
 
             //ToRunningViewCommand = new DelegateCommand(OnToRunningView);
             //ToMaintenceViewCommand = new DelegateCommand(OnToMaintenceView, () => false);
@@ -365,7 +423,12 @@ namespace Tram.CBTC.NRIET.Controller.Navigator
             IsOpenSettingMenu = strOpen == "1" ? true : false;
         }
 
-      
-       
+        private void RoadCtrlMenuItem()
+        {
+            IsOpenSettingMenu = false;
+
+            IsOpenRoadCtrlViewMenuItem = !IsOpenRoadCtrlViewMenuItem;
+        }
+
     }
 }

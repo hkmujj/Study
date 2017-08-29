@@ -64,29 +64,45 @@
                             <ColumnDefinition Width="50*" />
                         </Grid.ColumnDefinitions>
                         <Button Grid.Column="1"
-                                Content="高压"
+                                Command="{Binding Model.StateInterface.BtnB11.ClickCommand}"
+                                Content="{Binding Path=Model.StateInterface.BtnB11.Content,
+                                                  Converter={StaticResource ButtonContentConverter},
+                                                  Mode=OneWay}"
                                 FontSize="18"
+                                IsEnabled="{Binding Model.WarringSumMenuModel.Btn1Enable}"
                                 Style="{StaticResource WarringSumMenuBtnStyle}"
-                                Tag="{Binding Model.WarringSumMenuModel.AllowCheck,
-                                              Converter={StaticResource ButtonColorStateToColorConverter}}" />
+                                Tag="{Binding Model.WarringSumMenuModel.Btn1Enable,
+                                              Converter={StaticResource EventInfoSystemStatusConverter}}" />
                         <Button Grid.Column="3"
-                                Content="牵引"
+                                Command="{Binding Model.StateInterface.BtnB12.ClickCommand}"
+                                Content="{Binding Path=Model.StateInterface.BtnB12.Content,
+                                                  Converter={StaticResource ButtonContentConverter},
+                                                  Mode=OneWay}"
                                 FontSize="18"
+                                IsEnabled="{Binding Model.WarringSumMenuModel.Btn2Enable}"
                                 Style="{StaticResource WarringSumMenuBtnStyle}"
-                                Tag="{Binding Model.WarringSumMenuModel.AllowCheck,
-                                              Converter={StaticResource ButtonColorStateToColorConverter}}" />
+                                Tag="{Binding Model.WarringSumMenuModel.Btn2Enable,
+                                              Converter={StaticResource EventInfoSystemStatusConverter}}" />
                         <Button Grid.Column="5"
-                                Content="车门"
+                                Command="{Binding Model.StateInterface.BtnB13.ClickCommand}"
+                                Content="{Binding Path=Model.StateInterface.BtnB13.Content,
+                                                  Converter={StaticResource ButtonContentConverter},
+                                                  Mode=OneWay}"
                                 FontSize="18"
+                                IsEnabled="{Binding Model.WarringSumMenuModel.Btn3Enable}"
                                 Style="{StaticResource WarringSumMenuBtnStyle}"
-                                Tag="{Binding Model.WarringSumMenuModel.AllowCheck,
-                                              Converter={StaticResource ButtonColorStateToColorConverter}}" />
+                                Tag="{Binding Model.WarringSumMenuModel.Btn3Enable,
+                                              Converter={StaticResource EventInfoSystemStatusConverter}}" />
                         <Button Grid.Column="7"
-                                Content="控制和通讯"
+                                Command="{Binding Model.StateInterface.BtnB14.ClickCommand}"
+                                Content="{Binding Path=Model.StateInterface.BtnB14.Content,
+                                                  Converter={StaticResource ButtonContentConverter},
+                                                  Mode=OneWay}"
                                 FontSize="18"
+                                IsEnabled="{Binding Model.WarringSumMenuModel.Btn4Enable}"
                                 Style="{StaticResource WarringSumMenuBtnStyle}"
-                                Tag="{Binding Model.WarringSumMenuModel.AllowCheck,
-                                              Converter={StaticResource ButtonColorStateToColorConverter}}" />
+                                Tag="{Binding Model.WarringSumMenuModel.Btn4Enable,
+                                              Converter={StaticResource EventInfoSystemStatusConverter}}" />
                     </Grid>
                     <Grid Grid.Row="3">
                         <Grid.ColumnDefinitions>
@@ -101,28 +117,45 @@
                             <ColumnDefinition Width="50*" />
                         </Grid.ColumnDefinitions>
                         <Button Grid.Column="1"
-                                Content="辅助供电"
+                                Command="{Binding Model.StateInterface.BtnB15.ClickCommand}"
+                                Content="{Binding Path=Model.StateInterface.BtnB15.Content,
+                                                  Converter={StaticResource ButtonContentConverter},
+                                                  Mode=OneWay}"
+                                FontSize="18"
+                                IsEnabled="{Binding Model.WarringSumMenuModel.Btn5Enable}"
                                 Style="{StaticResource WarringSumMenuBtnStyle}"
-                                Tag="{Binding Model.WarringSumMenuModel.AllowCheck,
-                                              Converter={StaticResource ButtonColorStateToColorConverter}}" />
+                                Tag="{Binding Model.WarringSumMenuModel.Btn5Enable,
+                                              Converter={StaticResource EventInfoSystemStatusConverter}}" />
                         <Button Grid.Column="3"
-                                Content="制动"
+                                Command="{Binding Model.StateInterface.BtnB16.ClickCommand}"
+                                Content="{Binding Path=Model.StateInterface.BtnB16.Content,
+                                                  Converter={StaticResource ButtonContentConverter},
+                                                  Mode=OneWay}"
                                 FontSize="18"
+                                IsEnabled="{Binding Model.WarringSumMenuModel.Btn6Enable}"
                                 Style="{StaticResource WarringSumMenuBtnStyle}"
-                                Tag="{Binding Model.WarringSumMenuModel.AllowCheck,
-                                              Converter={StaticResource ButtonColorStateToColorConverter}}" />
+                                Tag="{Binding Model.WarringSumMenuModel.Btn6Enable,
+                                              Converter={StaticResource EventInfoSystemStatusConverter}}" />
                         <Button Grid.Column="5"
-                                Content="空调"
+                                Command="{Binding Model.StateInterface.BtnB17.ClickCommand}"
+                                Content="{Binding Path=Model.StateInterface.BtnB17.Content,
+                                                  Converter={StaticResource ButtonContentConverter},
+                                                  Mode=OneWay}"
                                 FontSize="18"
+                                IsEnabled="{Binding Model.WarringSumMenuModel.Btn7Enable}"
                                 Style="{StaticResource WarringSumMenuBtnStyle}"
-                                Tag="{Binding Model.WarringSumMenuModel.AllowCheck,
-                                              Converter={StaticResource ButtonColorStateToColorConverter}}" />
+                                Tag="{Binding Model.WarringSumMenuModel.Btn7Enable,
+                                              Converter={StaticResource EventInfoSystemStatusConverter}}" />
                         <Button Grid.Column="7"
-                                Content="前部"
+                                Command="{Binding Model.StateInterface.BtnB18.ClickCommand}"
+                                Content="{Binding Path=Model.StateInterface.BtnB18.Content,
+                                                  Converter={StaticResource ButtonContentConverter},
+                                                  Mode=OneWay}"
                                 FontSize="18"
+                                IsEnabled="{Binding Model.WarringSumMenuModel.Btn8Enable}"
                                 Style="{StaticResource WarringSumMenuBtnStyle}"
-                                Tag="{Binding Model.WarringSumMenuModel.AllowCheck,
-                                              Converter={StaticResource ButtonColorStateToColorConverter}}" />
+                                Tag="{Binding Model.WarringSumMenuModel.Btn8Enable,
+                                              Converter={StaticResource EventInfoSystemStatusConverter}}" />
                     </Grid>
                 </Grid>
             </Grid>
@@ -153,23 +186,35 @@
                             <ColumnDefinition Width="50*" />
                         </Grid.ColumnDefinitions>
                         <Button Grid.Column="1"
-                                Content="蓄电池供电"
+                                Command="{Binding Model.StateInterface.BtnB19.ClickCommand}"
+                                Content="{Binding Path=Model.StateInterface.BtnB19.Content,
+                                                  Converter={StaticResource ButtonContentConverter},
+                                                  Mode=OneWay}"
                                 FontSize="18"
+                                IsEnabled="{Binding Model.WarringSumMenuModel.Btn9Enable}"
                                 Style="{StaticResource WarringSumMenuBtnStyle}"
-                                Tag="{Binding Model.WarringSumMenuModel.AllowCheck,
-                                              Converter={StaticResource ButtonColorStateToColorConverter}}" />
+                                Tag="{Binding Model.WarringSumMenuModel.Btn9Enable,
+                                              Converter={StaticResource EventInfoSystemStatusConverter}}" />
                         <Button Grid.Column="3"
-                                Content="供风"
+                                Command="{Binding Model.StateInterface.BtnB20.ClickCommand}"
+                                Content="{Binding Path=Model.StateInterface.BtnB20.Content,
+                                                  Converter={StaticResource ButtonContentConverter},
+                                                  Mode=OneWay}"
                                 FontSize="18"
+                                IsEnabled="{Binding Model.WarringSumMenuModel.Btn10Enable}"
                                 Style="{StaticResource WarringSumMenuBtnStyle}"
-                                Tag="{Binding Model.WarringSumMenuModel.AllowCheck,
-                                              Converter={StaticResource ButtonColorStateToColorConverter}}" />
+                                Tag="{Binding Model.WarringSumMenuModel.Btn10Enable,
+                                              Converter={StaticResource EventInfoSystemStatusConverter}}" />
                         <Button Grid.Column="5"
-                                Content="卫生设备"
+                                Command="{Binding Model.StateInterface.BtnB21.ClickCommand}"
+                                Content="{Binding Path=Model.StateInterface.BtnB21.Content,
+                                                  Converter={StaticResource ButtonContentConverter},
+                                                  Mode=OneWay}"
                                 FontSize="18"
+                                IsEnabled="{Binding Model.WarringSumMenuModel.Btn11Enable}"
                                 Style="{StaticResource WarringSumMenuBtnStyle}"
-                                Tag="{Binding Model.WarringSumMenuModel.AllowCheck,
-                                              Converter={StaticResource ButtonColorStateToColorConverter}}" />
+                                Tag="{Binding Model.WarringSumMenuModel.Btn11Enable,
+                                              Converter={StaticResource EventInfoSystemStatusConverter}}" />
                     </Grid>
                     <Grid Grid.Row="3">
                         <Grid.ColumnDefinitions>
@@ -184,23 +229,35 @@
                             <ColumnDefinition Width="50*" />
                         </Grid.ColumnDefinitions>
                         <Button Grid.Column="1"
-                                Content="转向架"
+                                Command="{Binding Model.StateInterface.BtnB22.ClickCommand}"
+                                Content="{Binding Path=Model.StateInterface.BtnB22.Content,
+                                                  Converter={StaticResource ButtonContentConverter},
+                                                  Mode=OneWay}"
                                 FontSize="18"
+                                IsEnabled="{Binding Model.WarringSumMenuModel.Btn12Enable}"
                                 Style="{StaticResource WarringSumMenuBtnStyle}"
-                                Tag="{Binding Model.WarringSumMenuModel.AllowCheck,
-                                              Converter={StaticResource ButtonColorStateToColorConverter}}" />
+                                Tag="{Binding Model.WarringSumMenuModel.Btn12Enable,
+                                              Converter={StaticResource EventInfoSystemStatusConverter}}" />
                         <Button Grid.Column="3"
-                                Content="信息系统"
+                                Command="{Binding Model.StateInterface.BtnB23.ClickCommand}"
+                                Content="{Binding Path=Model.StateInterface.BtnB23.Content,
+                                                  Converter={StaticResource ButtonContentConverter},
+                                                  Mode=OneWay}"
                                 FontSize="18"
+                                IsEnabled="{Binding Model.WarringSumMenuModel.Btn13Enable}"
                                 Style="{StaticResource WarringSumMenuBtnStyle}"
-                                Tag="{Binding Model.WarringSumMenuModel.AllowCheck,
-                                              Converter={StaticResource ButtonColorStateToColorConverter}}" />
+                                Tag="{Binding Model.WarringSumMenuModel.Btn13Enable,
+                                              Converter={StaticResource EventInfoSystemStatusConverter}}" />
                         <Button Grid.Column="5"
-                                Content="火灾探测器"
+                                Command="{Binding Model.StateInterface.BtnB24.ClickCommand}"
+                                Content="{Binding Path=Model.StateInterface.BtnB24.Content,
+                                                  Converter={StaticResource ButtonContentConverter},
+                                                  Mode=OneWay}"
                                 FontSize="18"
+                                IsEnabled="{Binding Model.WarringSumMenuModel.Btn14Enable}"
                                 Style="{StaticResource WarringSumMenuBtnStyle}"
-                                Tag="{Binding Model.WarringSumMenuModel.AllowCheck,
-                                              Converter={StaticResource ButtonColorStateToColorConverter}}" />
+                                Tag="{Binding Model.WarringSumMenuModel.Btn14Enable,
+                                              Converter={StaticResource EventInfoSystemStatusConverter}}" />
                     </Grid>
                 </Grid>
             </Grid>

@@ -495,7 +495,15 @@ namespace CBTC.DataAdapter.Model
         /// </summary>
         public float RealTimeWorkStatus { set; get; }
 
+        ///<summary>
+        /// 模式开关
+        /// </summary>
+        public float ModeSwitch { set; get; }
 
+        ///<summary>
+        /// ATO开关
+        /// </summary>
+        public float ATORelationSwitch { set; get; }
         ///// <summary>
         ///// 紧急制动类型
         ///// </summary>

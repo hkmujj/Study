@@ -57,7 +57,7 @@ namespace Motor.ATP._200H.Subsys.ViewModel.PopupViewModels
             get { return m_DriverId; }
         }
 
-        public int CurrentInputtingIndex { get; private set; }
+
 
         public DataDriverIDPopupViewModel()
         {
@@ -71,23 +71,14 @@ namespace Motor.ATP._200H.Subsys.ViewModel.PopupViewModels
 
         }
 
-        private void InstanceOnTimer1S(object sender, EventArgs eventArgs)
-        {
-            // UpdateId(DriverId[CurrentInputtingIndex] == '-' ? "_" : "-", CurrentInputtingIndex);
-        }
-
+       
 
         public override void ResponseAction(IDriverInterface driverInterface)
         {
 
-            DriverId = "        ";
+            DriverId = ATP.TrainInfo.Driver.DriverId;
 
-            CurrentInputtingIndex = 0;
-
-            UpdateId(" ", CurrentInputtingIndex);
-
-            GlobalTimer.Instance.Timer1S -= InstanceOnTimer1S;
-            GlobalTimer.Instance.Timer1S += InstanceOnTimer1S;
+        
 
             base.ResponseAction(driverInterface);
         }
@@ -120,18 +111,25 @@ namespace Motor.ATP._200H.Subsys.ViewModel.PopupViewModels
                 switch (word)
                 {
                     case DriverInputControlWord.Ok:
-                        GlobalTimer.Instance.Timer1S -= InstanceOnTimer1S;
+                        
                         EventAggregator.GetEvent<DriverInputEvent<DriverInputDriverId>>()
                             .Publish(
                                 new DriverInputEventArgs<DriverInputDriverId>(
-                                    new DriverInputDriverId(DriverId.Remove(CurrentInputtingIndex)), ATP));
+                                    new DriverInputDriverId(DriverId), ATP));
                         break;
                     case DriverInputControlWord.Cancel:
-                        GlobalTimer.Instance.Timer1S -= InstanceOnTimer1S;
+                        
                         break;
                     case DriverInputControlWord.Delete:
-                        CurrentInputtingIndex = Math.Max(0, CurrentInputtingIndex - 1);
-                        UpdateId(" ", CurrentInputtingIndex);
+                        if (DriverId.Length > 1)
+                        {
+                            DriverId = DriverId.Substring(0, DriverId.Length - 1);
+                        }
+                        else
+                        {
+                            DriverId = string.Empty;
+                        }
+
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
@@ -145,13 +143,10 @@ namespace Motor.ATP._200H.Subsys.ViewModel.PopupViewModels
             switch (rlt.DriverInputType)
             {
                 case DriverInputInterpreterResult.InputType.New:
-                    if (UpdateId(rlt.InputContent, CurrentInputtingIndex))
-                    {
-                        CurrentInputtingIndex += rlt.InputContent.Length;
-                    }
+                    UpdateId(rlt.InputContent);
                     break;
                 case DriverInputInterpreterResult.InputType.Replace:
-                    UpdateId(rlt.InputContent, CurrentInputtingIndex);
+                    UpdateId(rlt.InputContent);
                     break;
                 case DriverInputInterpreterResult.InputType.Control:
                     break;
@@ -160,22 +155,14 @@ namespace Motor.ATP._200H.Subsys.ViewModel.PopupViewModels
             }
         }
 
-        private bool UpdateId(string c, int index)
+        private bool UpdateId(string c)
         {
             lock (m_Locker)
             {
-                if (index + c.Length <= DriverId.Length)
-                {
-                    var tmp = DriverId.Remove(index, c.Length);
-                    tmp = tmp.Insert(index, c);
+                DriverId += c;
 
-                    DriverId = tmp;
+                return true;
 
-                    return true;
-                }
-
-                return false;
-             
             }
         }
     }

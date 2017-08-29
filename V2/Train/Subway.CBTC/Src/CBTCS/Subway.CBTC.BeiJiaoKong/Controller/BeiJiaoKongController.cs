@@ -1,25 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Windows.Input;
+using System.Windows.Threading;
 using CBTC.Infrasturcture.Events;
 using CBTC.Infrasturcture.Model.Constant;
 using CBTC.Infrasturcture.Model.Send;
 using CBTC.Infrasturcture.Model.Test;
 using CommonUtil.Util;
-using DevExpress.Mvvm;
+using DevExpress.Utils.Filtering.Internal;
+using DevExpress.Xpf.Core.Native;
+using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Events;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.ServiceLocation;
+using MMI.Facility.Interface;
+using MMI.Facility.Interface.Extension;
 using MMI.Facility.WPFInfrastructure.Behaviors;
 using MMI.Facility.WPFInfrastructure.Interactivity;
 using MMI.Facility.WPFInfrastructure.Interfaces;
 using Subway.CBTC.BeiJiaoKong.Config;
-using Subway.CBTC.BeiJiaoKong.Constance;
 using Subway.CBTC.BeiJiaoKong.Events;
-using Subway.CBTC.BeiJiaoKong.Interfaces;
+using Subway.CBTC.BeiJiaoKong.Extentions;
 using Subway.CBTC.BeiJiaoKong.Models.Domain;
 using Subway.CBTC.BeiJiaoKong.ViewModel;
 using Subway.CBTC.BeiJiaoKong.Views.Root;
@@ -38,9 +42,11 @@ namespace Subway.CBTC.BeiJiaoKong.Controller
     /// 修改时间：2017/1/16
     /// </summary>
     [Export]
-    public class BeiJiaoKongController : ControllerBase<BeiJiaoKongViewModel>
+    public sealed class BeiJiaoKongController : ControllerBase<BeiJiaoKongViewModel>
     {
-        public DelegateCommand<CommandParameter> LoadedCommand { get; private set; }
+        public DevExpress.Mvvm.DelegateCommand<CommandParameter> LoadedCommand { get; private set; }
+        private Timer ScreenSaverTimer;
+        private System.Timers.Timer Timers_Timer;
 
         /// <summary>
         /// 构造函数
@@ -49,13 +55,64 @@ namespace Subway.CBTC.BeiJiaoKong.Controller
         {
             m_EventAggregator = ServiceLocator.Current.GetInstance<IEventAggregator>();
             m_RegionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
-            Navigator = new DelegateCommand<NavigatorEventArgs>(NavigatorMethod);
+            Navigator = new DevExpress.Mvvm.DelegateCommand<NavigatorEventArgs>(NavigatorMethod);
             m_EventAggregator.GetEvent<NavigatorEvent>().Subscribe(NavigatorMethod, ThreadOption.UIThread);
 
-            LoadedCommand = new DelegateCommand<CommandParameter>(OnLoaded);
+            LoadedCommand = new DevExpress.Mvvm.DelegateCommand<CommandParameter>(OnLoaded);
             m_EventAggregator.GetEvent<PowerStateChangedEvent>().Subscribe(OnPowerChanged, ThreadOption.UIThread);
 
-            ButtonDownCommand = new DelegateCommand<string>(OnButtonDown);
+            ButtonDownCommand = new DevExpress.Mvvm.DelegateCommand<string>(OnButtonDown);
+
+            Timers_Timer = new System.Timers.Timer(1000);
+            Timers_Timer.Elapsed += new System.Timers.ElapsedEventHandler(OnTimers_Timer);
+            Timers_Timer.Enabled = true;
+
+            ScreenSaverTimer = new Timer(OnTimer);
+            ToScreenSaverCommand = new DelegateCommand(OnToScreenSaver);
+        }
+
+        void OnTimers_Timer(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            if (ViewModel.ScreenSaverDelay == 0)
+            {
+                return;
+            }
+            if (ViewModel.IsScreenSaver && ViewModel.CBTC.SignalInfo.Speed.CurrentSpeed.Value > 0.1)
+            {
+                ScreenSaverTimer.Change(ViewModel.ScreenSaverDelay, int.MaxValue);
+            }
+            else if (!ViewModel.IsScreenSaver && ViewModel.CBTC.SignalInfo.Speed.CurrentSpeed.Value > 0.1)
+            {
+                if (App.Current.GetMainDispatcher() != null)
+                {
+                    App.Current.GetMainDispatcher().BeginInvoke(new Action(delegate { ViewModel.IsScreenSaver = true; }));
+                }
+            }
+        }  
+
+        private void OnTimer(object state)
+        {
+            if (ViewModel.ScreenSaverDelay == 0)
+            {
+                return;
+            }
+            if (App.Current.GetMainDispatcher() != null)
+            {
+                App.Current.GetMainDispatcher().BeginInvoke(new Action(delegate { ViewModel.IsScreenSaver = false; }));
+            }
+        }
+        
+        private void OnToScreenSaver()
+        {
+            if (ViewModel.ScreenSaverDelay == 0)
+            {
+                return;
+            }
+            if (!ViewModel.IsScreenSaver)
+            {
+                ViewModel.IsScreenSaver = true;
+            }
+            ScreenSaverTimer.Change(ViewModel.ScreenSaverDelay, int.MaxValue);
         }
 
         private void OnButtonDown(string obj)
@@ -77,13 +134,21 @@ namespace Subway.CBTC.BeiJiaoKong.Controller
                     SendData.InputLampTest(new SendModel<bool>(testInfo.ButtonDownLightTest));
                     break;
             }
-            GlobalParams.Instance.InitParam.CommunicationDataService.ReadService.RaiseAllDataChanged();
+            if (GlobalParams.Instance.InitParam != null)
+            {
+                GlobalParams.Instance.InitParam.CommunicationDataService.ReadService.RaiseAllDataChanged();
+            }
         }
 
         private void OnPowerChanged(PowerStateChangedEvent.Args obj)
         {
             if (obj.CurrentState == PowerState.Started)
             {
+                //设置初始定时器时间
+                ScreenSaverTimer.Change(ViewModel.ScreenSaverDelay, int.MaxValue);
+                //设置屏保状态
+                ViewModel.IsScreenSaver = true;
+
                 if (ViewModel.TCTType == TCTType.ShenZhen)
                 {
                     Navigator.Execute(new NavigatorEventArgs() { ViewType = typeof(RegionGView), ViewName = typeof(RegionGView).FullName });
@@ -116,6 +181,11 @@ namespace Subway.CBTC.BeiJiaoKong.Controller
 
             m_EventAggregator.GetEvent<ScreenSaverEnableChangedEvent>().Subscribe(TrainInfo_ScreenSaverEnableChangedEvent, ThreadOption.UIThread);
             InitalizePro();
+
+            //设置初始定时器时间
+            ScreenSaverTimer.Change(ViewModel.ScreenSaverDelay, int.MaxValue);
+            //设置屏保状态
+            ViewModel.IsScreenSaver = true;
         }
 
         private void TrainInfo_ScreenSaverEnableChangedEvent(ScreenSaverEnableChangedEvent.Args obj)
@@ -138,6 +208,7 @@ namespace Subway.CBTC.BeiJiaoKong.Controller
                       Path.Combine(GlobalParams.Instance.InitParam.AppConfig.AppPaths.ConfigDirectory,
                           BeiJiaoKongProjectConfig.FileName));
                 ViewModel.TCTType = config.Type;
+                ViewModel.ScreenSaverDelay = config.ScreenSaverDelay;
             }
             else
             {
@@ -145,6 +216,7 @@ namespace Subway.CBTC.BeiJiaoKong.Controller
                     DataSerialization.DeserializeFromXmlFile<BeiJiaoKongProjectConfig>(
                         Path.Combine(".\\Subway.CBTC.BeiJiaoKong\\config\\", BeiJiaoKongProjectConfig.FileName));
                 ViewModel.TCTType = config.Type;
+                ViewModel.ScreenSaverDelay = config.ScreenSaverDelay;
             }
 
         }
@@ -188,5 +260,10 @@ namespace Subway.CBTC.BeiJiaoKong.Controller
         /// 按钮按下发送数据
         /// </summary>
         public ICommand ButtonDownCommand { get; private set; }
+        
+        /// <summary>
+        /// 其余界面点击命令
+        /// </summary>
+        public ICommand ToScreenSaverCommand { get; private set; }
     }
 }

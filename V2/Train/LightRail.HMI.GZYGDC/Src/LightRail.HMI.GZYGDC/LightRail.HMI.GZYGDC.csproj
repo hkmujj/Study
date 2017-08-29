@@ -184,6 +184,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Contents\NetTopologyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Contents\RunningView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -223,27 +227,34 @@
     <Compile Include="Adapter\DomainAdapter.cs" />
     <Compile Include="Adapter\IUpdateDataProvider.cs" />
     <Compile Include="Adapter\UpdateAirConditionViewDataProvider.cs" />
+    <Compile Include="Adapter\UpdateBroadcastControlViewDataProvider.cs" />
     <Compile Include="Adapter\UpdateDataProviderBase.cs" />
     <Compile Include="Adapter\UpdateEventInfoDataProvider.cs" />
+    <Compile Include="Adapter\UpdateNetTopologyViewDataProvider.cs" />
     <Compile Include="Adapter\UpdateRunningViewDataProvider.cs" />
     <Compile Include="Adapter\UpdateTitleViewDataProvider.cs" />
     <Compile Include="Config\Priority.cs" />
     <Compile Include="Constant\RegionNames.cs" />
     <Compile Include="Controller\AirConditionController.cs" />
+    <Compile Include="Controller\BroadcastControlController.cs" />
     <Compile Include="Controller\BtnActionResponser\BottomViewBtnActionResponser.cs" />
     <Compile Include="Controller\BtnActionResponser\BroadcastControlViewBtnActionResponser.cs" />
     <Compile Include="Controller\BtnActionResponser\BtnActionResponserBase.cs" />
     <Compile Include="Controller\BtnActionResponser\EmergencyBroadcastViewBtnActionResponser.cs" />
     <Compile Include="Controller\BtnActionResponser\EventInfoViewBtnActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\NetTopologyViewBtnActionResponser.cs" />
     <Compile Include="Controller\BtnActionResponser\RunningViewBtnActionResponser.cs" />
     <Compile Include="Controller\BtnActionResponser\HelpViewBtnActionResponser.cs" />
     <Compile Include="Controller\BtnStragy\StateInterfaceFactory.cs" />
     <Compile Include="Controller\DomainController.cs" />
     <Compile Include="Controller\EmergencyBroadcastController.cs" />
     <Compile Include="Controller\EventInfoController.cs" />
+    <Compile Include="Controller\NetTopologyController.cs" />
     <Compile Include="Controller\RunningController.cs" />
+    <Compile Include="Controller\SettingController.cs" />
     <Compile Include="Controller\TitleController.cs" />
     <Compile Include="Converter\AirConditionModeToBoolConverter.cs" />
+    <Compile Include="Converter\BrightnessConverter.cs" />
     <Compile Include="Converter\ButtonContentConverter.cs" />
     <Compile Include="Converter\EventInfoVisibleConverter.cs" />
     <Compile Include="Converter\PowerValueBrushConverter.cs" />
@@ -259,6 +270,7 @@
     <Compile Include="Interface\IStation.cs" />
     <Compile Include="Interface\IUnit.cs" />
     <Compile Include="Model\AirConditionModel.cs" />
+    <Compile Include="Model\BroadcastControlModel.cs" />
     <Compile Include="Model\ConfigModel\EmergencyBroadcastItem.cs" />
     <Compile Include="Model\ConfigModel\StateInterfaceItemBottom.cs" />
     <Compile Include="Model\ConfigModel\StateInterfaceItemCenter.cs" />
@@ -282,7 +294,9 @@
     <Compile Include="Model\DomainModel.cs" />
     <Compile Include="Controller\HardwareBtnController.cs" />
     <Compile Include="Model\HardwareBtnModel.cs" />
+    <Compile Include="Model\NetTopologyModel.cs" />
     <Compile Include="Model\RunningModel.cs" />
+    <Compile Include="Model\SettingModel.cs" />
     <Compile Include="Model\State\AirConditionInfo.cs" />
     <Compile Include="Model\State\AirConditionMode.cs" />
     <Compile Include="Model\State\BatteryInfo.cs" />
@@ -298,6 +312,7 @@
     <Compile Include="Model\Units\EnmergencyTalkUnit.cs" />
     <Compile Include="Model\Units\EventInfo.cs" />
     <Compile Include="Model\Units\HSCBUnit.cs" />
+    <Compile Include="Model\Units\NetTopologyUnit.cs" />
     <Compile Include="Model\Units\PantographUnit.cs" />
     <Compile Include="Model\Units\SpringUnit.cs" />
     <Compile Include="Model\Units\TractionUnit.cs" />
@@ -334,17 +349,21 @@
     <Compile Include="Service\EmergencyTalkPriorityService.cs" />
     <Compile Include="Service\EventManagerService.cs" />
     <Compile Include="Service\HSCBPriorityService.cs" />
+    <Compile Include="Service\NetTopologyPriorityService.cs" />
     <Compile Include="Service\PantographPriorityService.cs" />
     <Compile Include="Service\PriorityServiceBase.cs" />
     <Compile Include="Service\SpringPriorityService.cs" />
     <Compile Include="Service\StationManagerService.cs" />
     <Compile Include="Service\TractionPriorityService.cs" />
     <Compile Include="ViewModel\AirConditionViewModel.cs" />
+    <Compile Include="ViewModel\BroadcastControlViewModel.cs" />
     <Compile Include="ViewModel\EmergencyBroadcastViewModel.cs" />
     <Compile Include="ViewModel\EventInfoViewModel.cs" />
     <Compile Include="ViewModel\HardwareBtnViewModel.cs" />
     <Compile Include="ViewModel\DomainViewModel.cs" />
+    <Compile Include="ViewModel\NetTopologyViewModel.cs" />
     <Compile Include="ViewModel\RunningViewModel.cs" />
+    <Compile Include="ViewModel\SettingViewModel.cs" />
     <Compile Include="ViewModel\TitleViewModel.cs" />
     <Compile Include="View\Buttons\BottomButton.xaml.cs">
       <DependentUpon>BottomButton.xaml</DependentUpon>
@@ -372,6 +391,9 @@
     </Compile>
     <Compile Include="View\Contents\MaintenView.xaml.cs">
       <DependentUpon>MaintenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\NetTopologyView.xaml.cs">
+      <DependentUpon>NetTopologyView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Contents\RunningView.xaml.cs">
       <DependentUpon>RunningView.xaml</DependentUpon>

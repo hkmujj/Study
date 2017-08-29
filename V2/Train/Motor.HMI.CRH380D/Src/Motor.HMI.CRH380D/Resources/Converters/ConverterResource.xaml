@@ -10,12 +10,18 @@
         <ResourceDictionary Source="../Color/ColorResource.xaml" />
         <ResourceDictionary Source="../Styles/Image/ImageStyle.xaml" />
         <ResourceDictionary Source="../Styles/Text/TextStyle.xaml" />
-        <ResourceDictionary Source="../String/StringStyle.xaml" />
+        <ResourceDictionary Source="../String/StringResource.xaml" />
+        <ResourceDictionary Source="../Styles/Button/UserButtonStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
-
+    <converter1:RemoveNullColorConverter x:Key="TestConverter" />
     <converter1:ButtonContentConverter x:Key="ButtonContentConverter" />
     <converter1:ButtonVisibilityConverter x:Key="ButtonVisibilityConverter" />
     <converter1:AirConverter x:Key="AirConverter" />
+    <converter1:LightBrushConverter x:Key="LightBrushConverter" />
+    <converter1:EventInfoVisibleConverter x:Key="EventInfoVisibleConverter" />
+    <converter1:EventInfoDisplayVisibleConverter x:Key="EventInfoDisplayVisibleConverter" />
+    <converter1:EventInfoPopUpConverter x:Key="EventInfoPopUpConverter" />
+
 
 
     <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
@@ -287,6 +293,16 @@
                     <SolidColorBrush Color="Red" />
                 </converter:ObjectContentPair.Content>
             </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:CarState.FireDeviceNormal}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="White" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:CarState.FireDeviceFireHappened}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Red" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
         </converter:SelectObjectContentConverter.ObjectContentCollection>
     </converter:SelectObjectContentConverter>
 
@@ -360,6 +376,16 @@
             <converter:ObjectContentPair Key="{x:Static State:CarState.StationSeriousOverLoad}">
                 <converter:ObjectContentPair.Content>
                     <SolidColorBrush Color="Red" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:CarState.FireDeviceNormal}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Transparent" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:CarState.FireDeviceFireHappened}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Transparent" />
                 </converter:ObjectContentPair.Content>
             </converter:ObjectContentPair>
         </converter:SelectObjectContentConverter.ObjectContentCollection>
@@ -665,6 +691,90 @@
             <converter:ObjectContentPair Key="{x:Static units:DCDevice3State.Fault}">
                 <converter:ObjectContentPair.Content>
                     <SolidColorBrush Color="Red" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="FireDeviceStateToColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:FireDeviceState.Normal}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Gray" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:FireDeviceState.Fire}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Red" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="FireDeviceStateToBackgroundColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:FireDeviceState.Normal}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Transparent" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static units:FireDeviceState.Fire}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Red" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="InterLockBooleanToButtonStyleConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{StaticResource BooleanTrue}" Content="{StaticResource InterLockBtnStyle2}" />
+            <converter:ObjectContentPair Key="{StaticResource BooleanFlase}" Content="{StaticResource InterLockBtnStyle1}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="EventInfoSystemStatusConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{StaticResource BooleanTrue}" Content="{StaticResource YellowColor}" />
+            <converter:ObjectContentPair Key="{StaticResource BooleanFlase}" Content="{StaticResource Gray2Color}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="EventInfoLevelToStringConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static State:EventLevel.Normal}" Content="{StaticResource EventLeaveNormalString}" />
+            <converter:ObjectContentPair Key="{x:Static State:EventLevel.AWarring}" Content="{StaticResource EventLeaveAWarringString}" />
+            <converter:ObjectContentPair Key="{x:Static State:EventLevel.BWarring}" Content="{StaticResource EventLeaveBWarringString}" />
+            <converter:ObjectContentPair Key="{x:Static State:EventLevel.Fault}" Content="{StaticResource EventLeaveFaultString}" />
+            <converter:ObjectContentPair Key="{x:Static State:EventLevel.Prompt}" Content="{StaticResource EventLeavePromptString}" />
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+    <converter:SelectObjectContentConverter x:Key="EventInfoLevelToColorConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static State:EventLevel.Normal}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Transparent" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:EventLevel.AWarring}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Yellow" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:EventLevel.BWarring}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Black" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:EventLevel.Fault}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Red" />
+                </converter:ObjectContentPair.Content>
+            </converter:ObjectContentPair>
+            <converter:ObjectContentPair Key="{x:Static State:EventLevel.Prompt}">
+                <converter:ObjectContentPair.Content>
+                    <SolidColorBrush Color="Transparent" />
                 </converter:ObjectContentPair.Content>
             </converter:ObjectContentPair>
         </converter:SelectObjectContentConverter.ObjectContentCollection>

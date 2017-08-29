@@ -5,24 +5,15 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:regions="http://www.codeplex.com/CompositeWPF"
+             xmlns:shell="clr-namespace:Subway.CBTC.BeiJiaoKong.Views.Shell"
              xmlns:viewModel="clr-namespace:Subway.CBTC.BeiJiaoKong.ViewModel"
-             Background="{StaticResource BeiJiaoKongBlackBrush}"
+             Background="Black"
+             MouseDown="DoMainView_OnMouseDown"
              d:DataContext="{d:DesignInstance viewModel:BeiJiaoKongViewModel}"
-             d:DesignHeight="300"
-             d:DesignWidth="300"
+             d:DesignHeight="480"
+             d:DesignWidth="600"
              mc:Ignorable="d">
-    <Grid x:Name="DoMain"
-          Background="{StaticResource BeiJiaoKongBackgroudBrush}" 
-          Visibility="{Binding Domain.TrainInfo.PowerState, Converter={StaticResource BeiJiaoKongPowerStateToVisible}}">
-        <Viewbox Stretch="Fill">
-            <ContentControl Width="600"
-                            Height="480"
-                            regions:RegionManager.RegionName="{x:Static constance:RegionNames.RootRegion}" />
-        </Viewbox>
-        <Border Panel.ZIndex="1" IsHitTestVisible="False">
-            <Border.Background>
-                <SolidColorBrush Color="{Binding Path=Domain.Other.Light, Converter={StaticResource BeiJiaoKongLightToBackColorConvert}}" />
-            </Border.Background>
-        </Border>
+    <Grid x:Name="DoMain" Visibility="{Binding DoMainViewModel.IsScreenSaver, Converter={StaticResource BeiJiaoKongBooleanToVisibilityConverter}}">
+        <shell:LayoutView />
     </Grid>
 </UserControl>

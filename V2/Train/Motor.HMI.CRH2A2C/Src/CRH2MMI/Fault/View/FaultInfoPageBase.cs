@@ -152,6 +152,23 @@ namespace CRH2MMI.Fault.View
             return m_ControlBtn.Any(a => a.OnMouseDown(point));
         }
 
+        /// <summary>鼠标按下后弹起</summary>
+        /// <param name="point"></param>
+        public override bool OnMouseUp(Point point)
+        {
+            if (m_PreviousPageBtn.OnMouseUp(point))
+            {
+                return true;
+            }
+            if (m_NextPageBtn.OnMouseUp(point))
+            {
+                return true;
+            }
+            m_ControlBtn.ForEach(a => a.OnMouseUp(point));
+
+            return true;
+        }
+
         protected virtual void GotoNextPage()
         {
             if (m_FaultGetter.HasNextFault)

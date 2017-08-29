@@ -20,10 +20,12 @@ namespace Urban.GuiYang.DDU.Controller.BtnStragy.UserAction.ActionResponser
             Domain = ServiceLocator.Current.GetInstance<DomainViewModel>();
         }
 
-        protected static string m_StateKey;
+        protected static string StateKey;
         protected static Type HelpView;
         protected static Type BypassBack;
-        protected static bool m_IsContent;
+        protected static bool IsContent;
+        protected static Type FauleReturnView;
+
         public IEventAggregator EventAggregator { get; private set; }
 
         public IRegionManager RegionManager { get; private set; }
@@ -87,9 +89,9 @@ namespace Urban.GuiYang.DDU.Controller.BtnStragy.UserAction.ActionResponser
 
         private void SetLast(string key, Type view, bool isContent)
         {
-            m_StateKey = key;
+            StateKey = key;
             HelpView = view;
-            m_IsContent = isContent;
+            IsContent = isContent;
             if (view != typeof(MainPageByPass1ContentView) && view != typeof(MainPageByPass2ContentView))
             {
                 BypassBack = view;
@@ -99,13 +101,13 @@ namespace Urban.GuiYang.DDU.Controller.BtnStragy.UserAction.ActionResponser
 
         public void GoToLast()
         {
-            if (m_IsContent)
+            if (IsContent)
             {
-                RequestNavigateToContent(m_StateKey, BypassBack);
+                RequestNavigateToContent(StateKey, BypassBack);
             }
             else
             {
-                RequestNavigateToContentContent(m_StateKey, BypassBack);
+                RequestNavigateToContentContent(StateKey, BypassBack);
             }
         }
 

@@ -22,8 +22,12 @@
 
         public const string ContentCommon = Prefix + "ContentCommon";
 
+        public const string FireDeviceCommon = Prefix + "FireDeviceCommon";
+
         public const string ContentTrainCommon1 = Prefix + "ContentTrainCommon1";
 
         public const string ContentTrainCommon2 = Prefix + "ContentTrainCommon2";
+
+        public const string ContentFaultPopUp = Prefix + "ContentFaultPopUp";
     }
 }

@@ -1,0 +1,205 @@
+﻿<UserControl x:Class="Motor.HMI.CRH380D.View.Contents.LoginView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:Motor.HMI.CRH380D.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+             d:DesignHeight="600"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <Grid Background="{StaticResource Gray2Background}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="127*" />
+                <RowDefinition Height="362*" />
+                <RowDefinition Height="111*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <TextBlock HorizontalAlignment="Center"
+                           FontSize="20"
+                           FontWeight="Black"
+                           Foreground="Black"
+                           Text="登陆" />
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="13*" />
+                    <ColumnDefinition Width="233*" />
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="261*" />
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="274*" />
+                    <ColumnDefinition Width="10*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1" Background="{StaticResource Gray1Background}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="124*" />
+                        <RowDefinition Height="30*" />
+                        <RowDefinition Height="30*" />
+                        <RowDefinition Height="30*" />
+                        <RowDefinition Height="30*" />
+                        <RowDefinition Height="124*" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="1"
+                               Margin="20,0,0,0"
+                               Style="{StaticResource LoginTextStyle}"
+                               Text="请输入您的用户名" />
+                    <TextBlock Grid.Row="3"
+                               Margin="20,0,0,0"
+                               Style="{StaticResource LoginTextStyle}"
+                               Text="Please enter your" />
+                    <TextBlock Grid.Row="4"
+                               Margin="20,0,0,0"
+                               Style="{StaticResource LoginTextStyle}"
+                               Text="user id" />
+                </Grid>
+                <Grid Grid.Column="3" Background="{StaticResource Gray1Background}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="78*" />
+                        <RowDefinition Height="23*" />
+                        <RowDefinition Height="80*" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="39*" />
+                            <ColumnDefinition Width="61*" />
+                            <ColumnDefinition Width="29*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1">
+                            <Border Background="Black"
+                                    BorderBrush="White"
+                                    BorderThickness="3" />
+                            <TextBlock VerticalAlignment="Center"
+                                       FontSize="30"
+                                       Foreground="White"
+                                       Text="{Binding Model.LoginInfoModel.PassWord}" />
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="5" Background="{StaticResource Gray1Background}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="111*" />
+                        <RowDefinition Height="70*" />
+                        <RowDefinition Height="70*" />
+                        <RowDefinition Height="111*" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Margin="0,41,0,0">
+                        <Button Width="65"
+                                Height="65"
+                                Margin="23,2,182,3"
+                                Command="{Binding Model.LoginInfoModel.LoginController.LoginCommand}"
+                                CommandParameter="7"
+                                Content="7"
+                                FontSize="25"
+                                Style="{StaticResource MainMenuBtnStyle}"
+                                Tag="{StaticResource Gray2Color}" />
+                        <Button Width="65"
+                                Height="65"
+                                Margin="93,2,112,3"
+                                Command="{Binding Model.LoginInfoModel.LoginController.LoginCommand}"
+                                CommandParameter="8"
+                                Content="8"
+                                FontSize="25"
+                                Style="{StaticResource MainMenuBtnStyle}"
+                                Tag="{StaticResource Gray2Color}" />
+                        <Button Width="65"
+                                Height="65"
+                                Margin="163,2,42,3"
+                                Command="{Binding Model.LoginInfoModel.LoginController.LoginCommand}"
+                                CommandParameter="9"
+                                Content="9"
+                                FontSize="25"
+                                Style="{StaticResource MainMenuBtnStyle}"
+                                Tag="{StaticResource Gray2Color}" />
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Button Width="65"
+                                Height="65"
+                                Margin="23,2,182,3"
+                                Command="{Binding Model.LoginInfoModel.LoginController.LoginCommand}"
+                                CommandParameter="4"
+                                Content="4"
+                                FontSize="25"
+                                Style="{StaticResource MainMenuBtnStyle}"
+                                Tag="{StaticResource Gray2Color}" />
+                        <Button Width="65"
+                                Height="65"
+                                Margin="93,2,112,3"
+                                Command="{Binding Model.LoginInfoModel.LoginController.LoginCommand}"
+                                CommandParameter="5"
+                                Content="5"
+                                FontSize="25"
+                                Style="{StaticResource MainMenuBtnStyle}"
+                                Tag="{StaticResource Gray2Color}" />
+                        <Button Width="65"
+                                Height="65"
+                                Margin="163,2,42,3"
+                                Command="{Binding Model.LoginInfoModel.LoginController.LoginCommand}"
+                                CommandParameter="6"
+                                Content="6"
+                                FontSize="25"
+                                Style="{StaticResource MainMenuBtnStyle}"
+                                Tag="{StaticResource Gray2Color}" />
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Button Width="65"
+                                Height="65"
+                                Margin="23,2,182,3"
+                                Command="{Binding Model.LoginInfoModel.LoginController.LoginCommand}"
+                                CommandParameter="1"
+                                Content="1"
+                                FontSize="25"
+                                Style="{StaticResource MainMenuBtnStyle}"
+                                Tag="{StaticResource Gray2Color}" />
+                        <Button Width="65"
+                                Height="65"
+                                Margin="93,2,112,3"
+                                Command="{Binding Model.LoginInfoModel.LoginController.LoginCommand}"
+                                CommandParameter="2"
+                                Content="2"
+                                FontSize="25"
+                                Style="{StaticResource MainMenuBtnStyle}"
+                                Tag="{StaticResource Gray2Color}" />
+                        <Button Width="65"
+                                Height="65"
+                                Margin="163,2,42,3"
+                                Command="{Binding Model.LoginInfoModel.LoginController.LoginCommand}"
+                                CommandParameter="3"
+                                Content="3"
+                                FontSize="25"
+                                Style="{StaticResource MainMenuBtnStyle}"
+                                Tag="{StaticResource Gray2Color}" />
+                    </Grid>
+                    <Grid Grid.Row="3" Margin="0,0,0,41">
+                        <Button Width="65"
+                                Height="65"
+                                Margin="23,2,182,3"
+                                Command="{Binding Model.LoginInfoModel.LoginController.LoginClearCommand}"
+                                Content="清除"
+                                FontSize="25"
+                                Style="{StaticResource MainMenuBtnStyle}"
+                                Tag="{StaticResource Gray2Color}" />
+                        <Button Width="65"
+                                Height="65"
+                                Margin="93,2,112,3"
+                                Command="{Binding Model.LoginInfoModel.LoginController.LoginCommand}"
+                                CommandParameter="0"
+                                Content="0"
+                                FontSize="25"
+                                Style="{StaticResource MainMenuBtnStyle}"
+                                Tag="{StaticResource Gray2Color}" />
+                        <Button Width="97"
+                                Height="65"
+                                Margin="163,2,10,3"
+                                Command="{Binding Model.LoginInfoModel.LoginController.LoginEnterCommand}"
+                                Content="输入"
+                                FontSize="25"
+                                Style="{StaticResource MainMenuBtnStyle}"
+                                Tag="{StaticResource Gray2Color}" />
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

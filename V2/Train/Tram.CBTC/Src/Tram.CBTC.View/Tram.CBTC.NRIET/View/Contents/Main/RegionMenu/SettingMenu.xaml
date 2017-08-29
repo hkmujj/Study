@@ -7,11 +7,14 @@
     xmlns:view="clr-namespace:MMI.Facility.WPFInfrastructure.View;assembly=MMI.Facility.WPFInfrastructure"
     xmlns:viewModel="clr-namespace:Tram.CBTC.NRIET.ViewModel"
     d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
-    d:DesignHeight="323"
+    d:DesignHeight="363"
     d:DesignWidth="273"
     mc:Ignorable="d">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
@@ -40,6 +43,21 @@
             Style="{StaticResource Tram.CBTC.Nriet.GrayBtnStyle2}" />
         <Button
             Grid.Row="4"
+            Command="{Binding Path=Controller.Navigator.RoadCtrlMenuCommand}"
+            Content="{StaticResource Tram.CBTC.Nriet.String.OpenRoadCtrl}"
+            Style="{StaticResource Tram.CBTC.Nriet.GrayBtnStyle2}" />
+        <Button
+            Grid.Row="5"
+
+            Content="{StaticResource Tram.CBTC.Nriet.String.RoadRequest}"
+            Style="{StaticResource Tram.CBTC.Nriet.GrayBtnStyle2}" />
+        <Button
+            Grid.Row="6"
+            
+            Content="{StaticResource Tram.CBTC.Nriet.String.UserRequest}"
+            Style="{StaticResource Tram.CBTC.Nriet.GrayBtnStyle2}" />
+        <Button
+            Grid.Row="7"
             Command="{Binding Path=Controller.Navigator.ToStartViewCommand}"
             Content="{StaticResource Tram.CBTC.Nriet.String.LogOff}"
             Style="{StaticResource Tram.CBTC.Nriet.GrayBtnStyle2}" />

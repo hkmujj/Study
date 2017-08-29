@@ -237,6 +237,7 @@
     <Compile Include="Adapter\DomainAdapter.cs" />
     <Compile Include="Adapter\IUpdateDataProvider.cs" />
     <Compile Include="Adapter\UpdateDataProviderBase.cs" />
+    <Compile Include="Adapter\UpdateDataProviders\ButtonAdapter.cs" />
     <Compile Include="Adapter\UpdateDataProviders\CarAirBrakeUpDataProvider.cs" />
     <Compile Include="Adapter\UpdateDataProviders\CarAssistAirCompressorStateUpDataProvider.cs" />
     <Compile Include="Adapter\UpdateDataProviders\CarBcu2StateUpDataProvider.cs" />
@@ -573,7 +574,9 @@
     <None Include="WPFApp\App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Changes.Motor.HMI.CRH400BF.txt" />
+    <Content Include="Changes.Motor.HMI.CRH400BF.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Image\Details\TrainInfo\升弓.png" />

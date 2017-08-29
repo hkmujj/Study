@@ -14,15 +14,22 @@
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <TextBlock VerticalAlignment="Center"
+        <TextBlock Margin="10,0,0,0"
+                   VerticalAlignment="Bottom"
+                   FontSize="13"
+                   FontWeight="Bold"
                    Foreground="White"
                    Text="{Binding Path=Domain.RoadInfo.TrainID,
                                   Converter={StaticResource BeiJiaoKongRecTypeTConvert}}"
                    TextAlignment="Center" />
         <TextBlock Grid.Column="2"
-                   VerticalAlignment="Center"
+                   Margin="10,0,0,0"
+                   VerticalAlignment="Bottom"
+                   FontSize="13"
+                   FontWeight="Bold"
                    Foreground="White"
-                   Text="{Binding Path=InputScreen.DriverNum, Converter={StaticResource BeiJiaoKongRecTypeCConvert}}"
+                   Text="{Binding Path=InputScreen.DriverNum,
+                                  Converter={StaticResource BeiJiaoKongRecTypeCConvert}}"
                    TextAlignment="Center" />
     </Grid>
 </UserControl>

@@ -13,8 +13,8 @@ using MMI.Facility.WPFInfrastructure.Event;
 namespace Motor.TCMS.CRH400BF.Adapter
 {
     [Export]
-    public class DomainAdapter :NotificationObject, IDataListener
-    { 
+    public class DomainAdapter : NotificationObject, IDataListener
+    {
         public IEventAggregator EventAggregator { private set; get; }
 
         public ICommunicationDataService DataService { private set; get; }
@@ -64,8 +64,13 @@ namespace Motor.TCMS.CRH400BF.Adapter
                 .Publish(new DataServiceDataChangedEvent.Args(sender, communicationDataChangedArgs));
         }
 
+        private static bool IsInit = false;
         public void Initalize(bool isDebugModel)
         {
+            if (IsInit)
+            {
+                return;
+            }
 
             foreach (var it in m_UpdateDataProviders)
             {
@@ -84,6 +89,7 @@ namespace Motor.TCMS.CRH400BF.Adapter
 
             EventAggregator.GetEvent<DataServiceDataChangedEvent>()
                 .Subscribe(s => UpdateDatas(s.Sender, s.DataChangedArgs), ThreadOption.UIThread);
+            IsInit = true;
         }
 
         private void ResetWhenClassOver(CourseStateChangedArgs args)

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
 using System.Text;
+using DevExpress.Mvvm.Native;
 using LightRail.HMI.GZYGDC.Extension;
 using LightRail.HMI.GZYGDC.Model;
 using LightRail.HMI.GZYGDC.Model.State;
@@ -35,6 +36,9 @@ namespace LightRail.HMI.GZYGDC.Adapter
         public override void UpdateDatas(object sender, CommunicationDataChangedArgs args)
         {
             var AirConditionModel = ViewModel.AirConditionViewModel.Model;
+
+
+            AirConditionModel.AirConditionUnits.ForEach(b => b.DataChanged(args.ChangedBools.NewValue));
 
 
             //默认为无模式

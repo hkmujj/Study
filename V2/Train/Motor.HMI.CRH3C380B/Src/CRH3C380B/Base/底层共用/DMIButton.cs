@@ -5,6 +5,7 @@ using System.Linq;
 using MMI.Facility.Interface;
 using MMI.Facility.Interface.Attribute;
 using MMI.Facility.Interface.Data;
+using MMI.Facility.Interface.Service;
 using Motor.HMI.CRH3C380B.Common;
 using Motor.HMI.CRH3C380B.Resource.Images;
 
@@ -14,7 +15,7 @@ namespace Motor.HMI.CRH3C380B.Base.底层共用
     /// 按钮类
     /// </summary>
     [GksDataType(DataType.isMMIObjectClass)]
-    public class DMIButton : CRH3C380BBase
+    public class DMIButton : CRH3C380BBase, IDataListener
     {
         public const int BtnMaxCount = 25;
 
@@ -62,6 +63,8 @@ namespace Motor.HMI.CRH3C380B.Base.底层共用
         public override bool Initalize()
         {
             InitData();
+
+            DataPackage.ServiceManager.GetService<IDataChangeListenService>().RegistListener(this, AppConfig);
 
             return true;
         }
@@ -173,7 +176,7 @@ namespace Motor.HMI.CRH3C380B.Base.底层共用
                 {
                 }
 
-                if (UpdateBtnUpOrDown(BoolList[m_BtnIndexs[i]], i))
+                //if (UpdateBtnUpOrDown(BoolList[m_BtnIndexs[i]], i))
                 {
                 }
             }
@@ -262,6 +265,31 @@ namespace Motor.HMI.CRH3C380B.Base.底层共用
             }
 
             return Tmp;
+        }
+
+        /// <summary>bool 值变化</summary>
+        /// <param name="sender"></param>
+        /// <param name="dataChangedArgs"></param>
+        public void OnBoolChanged(object sender, CommunicationDataChangedArgs<bool> dataChangedArgs)
+        {
+            for (var i = 0; i < m_BtnIndexs.Length; ++i)
+            {
+                dataChangedArgs.UpdateIfContains(m_BtnIndexs[i], (idx, b) => { UpdateBtnUpOrDown(b, i); });
+            }
+        }
+
+        /// <summary>float值变化</summary>
+        /// <param name="sender"></param>
+        /// <param name="dataChangedArgs"></param>
+        public void OnFloatChanged(object sender, CommunicationDataChangedArgs<float> dataChangedArgs)
+        {
+        }
+
+        /// <summary>data值变化</summary>
+        /// <param name="sender"></param>
+        /// <param name="dataChangedArgs"></param>
+        public void OnDataChanged(object sender, CommunicationDataChangedArgs dataChangedArgs)
+        {
         }
     }
 }

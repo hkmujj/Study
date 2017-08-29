@@ -16,7 +16,7 @@ namespace Motor.ATP._200H.Subsys.ViewModel.PopupViewModels
             {
                 EnsurceContent = ATP200HStringKeys.StringEnsureQuitOSContent;
                 TitleContent = PopupViewStringKeys.StringTitleEnsureOS;
-                PopViewTitleContent = PopupViewStringKeys.StringQuitOnSight;
+                PopViewTitleContent = ATP200HStringKeys.StringTitleEnsureOS;
             }
             else
             {

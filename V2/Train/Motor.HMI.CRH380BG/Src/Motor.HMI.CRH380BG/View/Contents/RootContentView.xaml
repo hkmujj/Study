@@ -340,23 +340,23 @@
                             <RowDefinition />
                         </Grid.RowDefinitions>
                         <Border Width="55" Height="55">
-                            <Image Source="{Binding Path=Domain.Model.MainData.PantographState1, Converter={StaticResource Motor.HMI.CRH380BG.PantographStateConverter}}" />
+                            <Image Source="{Binding Path=Domain.Model.Switch.TractionModel.Car7PantographState, Converter={StaticResource Motor.HMI.CRH380BG.PantographStateConverter}}" />
                         </Border>
                         <Border Grid.Column="1"
                                 Width="55"
                                 Height="55">
-                            <Image Source="{Binding Path=Domain.Model.MainData.PantographState2, Converter={StaticResource Motor.HMI.CRH380BG.PantographStateConverter}}" />
+                            <Image Source="{Binding Path=Domain.Model.Switch.TractionModel.Car2PantographState, Converter={StaticResource Motor.HMI.CRH380BG.PantographStateConverter}}" />
                         </Border>
                         <Border Grid.Row="1"
                                 Width="55"
                                 Height="55">
-                            <Image Source="{Binding Path=Domain.Model.MainData.MainBreakState1, Converter={StaticResource Motor.HMI.CRH380BG.MainBreakStateConverter}}" />
+                            <Image Source="{Binding Path=Domain.Model.Switch.TractionModel.Car7MainBreakState, Converter={StaticResource Motor.HMI.CRH380BG.MainBreakStateConverter}}" />
                         </Border>
                         <Border Grid.Row="1"
                                 Grid.Column="1"
                                 Width="55"
                                 Height="55">
-                            <Image Source="{Binding Path=Domain.Model.MainData.MainBreakState2, Converter={StaticResource Motor.HMI.CRH380BG.MainBreakStateConverter}}" />
+                            <Image Source="{Binding Path=Domain.Model.Switch.TractionModel.Car2MainBreakState, Converter={StaticResource Motor.HMI.CRH380BG.MainBreakStateConverter}}" />
                         </Border>
                     </Grid>
                 </Border>

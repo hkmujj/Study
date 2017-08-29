@@ -1312,6 +1312,15 @@ namespace Motor.HMI.CRH380D.Resources.Keys {
         }
         
         /// <summary>
+        ///   查找类似 车0发生火灾 的本地化字符串。
+        /// </summary>
+        internal static string 车0发生火灾 {
+            get {
+                return ResourceManager.GetString("车0发生火灾", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 车0司机室激活 的本地化字符串。
         /// </summary>
         internal static string 车0司机室激活 {
@@ -1470,6 +1479,15 @@ namespace Motor.HMI.CRH380D.Resources.Keys {
         internal static string 车1制动试验缓解 {
             get {
                 return ResourceManager.GetString("车1制动试验缓解", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 车1发生火灾 的本地化字符串。
+        /// </summary>
+        internal static string 车1发生火灾 {
+            get {
+                return ResourceManager.GetString("车1发生火灾", resourceCulture);
             }
         }
         
@@ -1672,6 +1690,15 @@ namespace Motor.HMI.CRH380D.Resources.Keys {
         }
         
         /// <summary>
+        ///   查找类似 车2发生火灾 的本地化字符串。
+        /// </summary>
+        internal static string 车2发生火灾 {
+            get {
+                return ResourceManager.GetString("车2发生火灾", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 车2客室舒适度车辆切除 的本地化字符串。
         /// </summary>
         internal static string 车2客室舒适度车辆切除 {
@@ -1803,6 +1830,15 @@ namespace Motor.HMI.CRH380D.Resources.Keys {
         internal static string 车3卫生间2故障 {
             get {
                 return ResourceManager.GetString("车3卫生间2故障", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 车3发生火灾 的本地化字符串。
+        /// </summary>
+        internal static string 车3发生火灾 {
+            get {
+                return ResourceManager.GetString("车3发生火灾", resourceCulture);
             }
         }
         
@@ -1987,6 +2023,15 @@ namespace Motor.HMI.CRH380D.Resources.Keys {
         }
         
         /// <summary>
+        ///   查找类似 车4发生火灾 的本地化字符串。
+        /// </summary>
+        internal static string 车4发生火灾 {
+            get {
+                return ResourceManager.GetString("车4发生火灾", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 车4客室舒适度车辆切除 的本地化字符串。
         /// </summary>
         internal static string 车4客室舒适度车辆切除 {
@@ -2149,6 +2194,15 @@ namespace Motor.HMI.CRH380D.Resources.Keys {
         }
         
         /// <summary>
+        ///   查找类似 车5发生火灾 的本地化字符串。
+        /// </summary>
+        internal static string 车5发生火灾 {
+            get {
+                return ResourceManager.GetString("车5发生火灾", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 车5客室舒适度车辆切除 的本地化字符串。
         /// </summary>
         internal static string 车5客室舒适度车辆切除 {
@@ -2280,6 +2334,15 @@ namespace Motor.HMI.CRH380D.Resources.Keys {
         internal static string 车6卫生间2故障 {
             get {
                 return ResourceManager.GetString("车6卫生间2故障", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 车6发生火灾 的本地化字符串。
+        /// </summary>
+        internal static string 车6发生火灾 {
+            get {
+                return ResourceManager.GetString("车6发生火灾", resourceCulture);
             }
         }
         
@@ -2473,6 +2536,15 @@ namespace Motor.HMI.CRH380D.Resources.Keys {
         }
         
         /// <summary>
+        ///   查找类似 车7发生火灾 的本地化字符串。
+        /// </summary>
+        internal static string 车7发生火灾 {
+            get {
+                return ResourceManager.GetString("车7发生火灾", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 车7客室舒适度车辆切除 的本地化字符串。
         /// </summary>
         internal static string 车7客室舒适度车辆切除 {
@@ -2514,6 +2586,51 @@ namespace Motor.HMI.CRH380D.Resources.Keys {
         internal static string 车7转向架超温 {
             get {
                 return ResourceManager.GetString("车7转向架超温", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 连锁信息_可旁通界面发生连锁 的本地化字符串。
+        /// </summary>
+        internal static string 连锁信息_可旁通界面发生连锁 {
+            get {
+                return ResourceManager.GetString("连锁信息_可旁通界面发生连锁", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 连锁信息_紧急制动界面发生连锁 的本地化字符串。
+        /// </summary>
+        internal static string 连锁信息_紧急制动界面发生连锁 {
+            get {
+                return ResourceManager.GetString("连锁信息_紧急制动界面发生连锁", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 连锁信息_阻断界面发生连锁 的本地化字符串。
+        /// </summary>
+        internal static string 连锁信息_阻断界面发生连锁 {
+            get {
+                return ResourceManager.GetString("连锁信息_阻断界面发生连锁", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 连锁信息_限速界面发生连锁 的本地化字符串。
+        /// </summary>
+        internal static string 连锁信息_限速界面发生连锁 {
+            get {
+                return ResourceManager.GetString("连锁信息_限速界面发生连锁", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 黑屏 的本地化字符串。
+        /// </summary>
+        internal static string 黑屏 {
+            get {
+                return ResourceManager.GetString("黑屏", resourceCulture);
             }
         }
     }

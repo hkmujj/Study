@@ -10,7 +10,7 @@ namespace Motor.ATP.DataAdapter.ConcreateAdapter.ATP300T
         /// <summary>
         /// 黑屏
         /// </summary>
-        public bool ScreenBlackFlag { set; get; }
+     //   public bool ScreenBlackFlag { set; get; }
 
         /// <summary>
         /// 常用制动故障确认

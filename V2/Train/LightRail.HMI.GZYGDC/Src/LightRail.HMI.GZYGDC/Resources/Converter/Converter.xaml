@@ -41,6 +41,16 @@
     </converter:SelectObjectContentConverter>
 
 
+    <converter:SelectObjectContentConverter x:Key="EnmergencyTalkConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:EmergencyTalkState.SeriousFault}" Content="{StaticResource HelpView.通话严重故障}" />
+            <converter:ObjectContentPair Key="{x:Static units:EmergencyTalkState.CallRequest}" Content="{StaticResource HelpView.通话请求}"/>
+            <converter:ObjectContentPair Key="{x:Static units:EmergencyTalkState.Calling}" Content="{StaticResource HelpView.通话中}"/>
+            <converter:ObjectContentPair Key="{x:Static units:EmergencyTalkState.CallEnd}" Content="{StaticResource HelpView.通话结束}"/>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+
     <converter:SelectObjectContentConverter x:Key="AssistConverter">
         <converter:SelectObjectContentConverter.ObjectContentCollection>
             <converter:ObjectContentPair Key="{x:Static units:AssistState.SeriousFault}" Content="{StaticResource RunningView.电源严重故障}" />
@@ -189,9 +199,21 @@
     </converter:SelectObjectContentConverter>
 
 
+    <converter:SelectObjectContentConverter x:Key="NetTopologyConverter">
+        <converter:SelectObjectContentConverter.ObjectContentCollection>
+            <converter:ObjectContentPair Key="{x:Static units:NetTopologyState.StandBy}" Content="#d5dbd7" />
+            <converter:ObjectContentPair Key="{x:Static units:NetTopologyState.Working}" Content="GreenYellow"/>
+            <converter:ObjectContentPair Key="{x:Static units:NetTopologyState.CommunicationException}" Content="#ffffff"/>
+            <converter:ObjectContentPair Key="{x:Static units:NetTopologyState.GatewayError}" Content="#ff0000"/>
+            <converter:ObjectContentPair Key="{x:Static units:NetTopologyState.GatewayMain}" Content="#b5a5d4"/>
+        </converter:SelectObjectContentConverter.ObjectContentCollection>
+    </converter:SelectObjectContentConverter>
+
+
     <converter1:EventInfoVisibleConverter x:Key="EventInfoVisibleConverter"/>
     <converter1:AirConditionModeToBoolConverter x:Key="AirConditionModeToBoolConverter" />
     <converter1:WindSpeedModeToBoolConverter x:Key="WindSpeedModeToBoolConverter" />
+    <converter1:BrightnessConverter x:Key="BrightnessConverter"/>
 
 
 

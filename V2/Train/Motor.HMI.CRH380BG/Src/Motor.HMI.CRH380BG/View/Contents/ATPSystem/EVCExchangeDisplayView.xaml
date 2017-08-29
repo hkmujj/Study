@@ -46,7 +46,8 @@
                             </Grid.ColumnDefinitions>
                             <TextBlock Foreground="{StaticResource Motor.HMI.CRH380BG.ContentBackgroundBrush}"
                                        Style="{StaticResource Motor.HMI.CRH380BG.InfoTextSyle}"
-                                       Text="{Binding Path=Domain.Model.MainData.EVCSpeed}" />
+                                       Text="{Binding Path=Domain.Model.MainData.EVCSpeed,
+                                                      StringFormat={StaticResource Motor.HMI.CRH380BG.ZeroFormart}}" />
                             <TextBlock Grid.Column="1"
                                        Foreground="{StaticResource Motor.HMI.CRH380BG.ContentBackgroundBrush}"
                                        Style="{StaticResource Motor.HMI.CRH380BG.InfoTextSyle}"

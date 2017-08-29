@@ -132,13 +132,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Resources\String\StringStyle.xaml">
+    <Page Include="Resources\String\StringResource.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Resources\Styles\Button\ButtonStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\Button\UserButtonStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Resources\Styles\Item\ItemControlStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -153,6 +157,50 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\Buttons\BottomButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Common\CarFireDevice\Car3FireDeviceCommon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Common\CarFireDevice\Car4FireDeviceCommon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Common\CarFireDevice\Car5FireDeviceCommon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Common\CarFireDevice\Car7FireDeviceCommon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Common\CarFireDevice\Car6FireDeviceCommon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Common\CarFireDevice\Car2FireDeviceCommon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Common\CarFireDevice\NullCarFireDeviceCommon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Common\CarFireDevice\Car1FireDeviceCommon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Common\CarFireDevice\Car0FireDeviceCommon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Common\WaitConfirmPopUpEventView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Common\WaitConfirmEventView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -200,7 +248,35 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\Contents\FireDeviceView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\Contents\FrontView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\InterLockLimitSpeedView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\InterLockBlockingUpView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\InterLockPassView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\InterLockEmergencyView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\SettingView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\WarringCurrentView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -292,7 +368,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Login\LoginView.xaml">
+    <Page Include="View\Contents\LoginView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -320,6 +396,11 @@
     <Compile Include="Controller\BtnActionResponser\BreakViewBtnActionResponser.cs" />
     <Compile Include="Controller\BtnActionResponser\CarComfortBtnActionResponser.cs" />
     <Compile Include="Controller\BtnActionResponser\BreakTestViewBtnActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\InterLockBlockingUpViewBtnActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\InterLockEmergencyViewBtnActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\InterLockLimitSpeedViewBtnActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\InterLockPassViewBtnActionResponser.cs" />
+    <Compile Include="Controller\BtnActionResponser\WarringCurrentViewBtnActionResponser.cs" />
     <Compile Include="Controller\BtnActionResponser\WarringRecordViewBtnActionResponser.cs" />
     <Compile Include="Controller\BtnActionResponser\FrontViewBtnActionResponser.cs" />
     <Compile Include="Controller\BtnActionResponser\ACViewBtnActionResponser.cs" />
@@ -345,6 +426,9 @@
     <Compile Include="Controller\BtnActionResponser\ActivateViewBtnActionResponser.cs" />
     <Compile Include="Controller\BtnActionResponser\MainMenuViewBtnActionResponser.cs" />
     <Compile Include="Controller\BreakController.cs" />
+    <Compile Include="Controller\EventInfoController.cs" />
+    <Compile Include="Controller\LoginController.cs" />
+    <Compile Include="Controller\SettingController.cs" />
     <Compile Include="Controller\StationController.cs" />
     <Compile Include="Controller\DriverComfortController.cs" />
     <Compile Include="Controller\CarComfortController.cs" />
@@ -353,6 +437,7 @@
     <Compile Include="Controller\BreakTestController.cs" />
     <Compile Include="Controller\HandleTestController.cs" />
     <Compile Include="Controller\TractionAndBreakController.cs" />
+    <Compile Include="Controller\FireDeviceController.cs" />
     <Compile Include="Controller\WCDeviceController.cs" />
     <Compile Include="Controller\TractionController.cs" />
     <Compile Include="Controller\HighVoltyageController.cs" />
@@ -362,17 +447,26 @@
     <Compile Include="Converter\AirConverter.cs" />
     <Compile Include="Converter\ButtonVisibilityConverter.cs" />
     <Compile Include="Converter\ButtonContentConverter.cs" />
+    <Compile Include="Converter\EventInfoDisplayVisibleConverter.cs" />
+    <Compile Include="Converter\EventInfoVisibleConverter.cs" />
+    <Compile Include="Converter\LightBrushConverter.cs" />
+    <Compile Include="Converter\EventInfoPopUpConverter.cs" />
+    <Compile Include="Converter\RemoveNullColorConverter.cs" />
     <Compile Include="Event\AnsyncNavigateViewByKeyEvent.cs" />
     <Compile Include="Event\DataServiceDataChanged.cs" />
     <Compile Include="Event\LazyValueCreatedEvent.cs" />
+    <Compile Include="Event\PowerStateChangedEvent.cs" />
     <Compile Include="Extension\CommunicationDataChangedArgsExtension.cs" />
     <Compile Include="Extension\CommunicationDataServiceExtension.cs" />
     <Compile Include="Extension\NetWorkDataExtention.cs" />
     <Compile Include="Interfaces\IClear.cs" />
+    <Compile Include="Interfaces\IEventInfo.cs" />
     <Compile Include="Interfaces\IInitialize.cs" />
     <Compile Include="Interfaces\IModels.cs" />
     <Compile Include="Interfaces\IStation.cs" />
     <Compile Include="Interfaces\IUnit.cs" />
+    <Compile Include="Models\ConfigModel\EventInfo.cs" />
+    <Compile Include="Models\ConfigModel\LoginInfo.cs" />
     <Compile Include="Models\ConfigModel\HandleTestInfo.cs" />
     <Compile Include="Models\ConfigModel\Priority.cs" />
     <Compile Include="Models\ConfigModel\StateInterfaceItem.cs" />
@@ -382,7 +476,14 @@
     <Compile Include="Models\ModelBase.cs" />
     <Compile Include="Models\Model\DCModel.cs" />
     <Compile Include="Models\Model\ActivateModel.cs" />
+    <Compile Include="Models\Model\EventInfoModel.cs" />
+    <Compile Include="Models\State\EventPageState.cs" />
+    <Compile Include="Models\State\EventSystemState.cs" />
+    <Compile Include="Models\State\EventLevelState.cs" />
+    <Compile Include="Models\Model\LoginInfoModel.cs" />
     <Compile Include="Models\Model\StaionModel.cs" />
+    <Compile Include="Models\Model\FireDeviceModel.cs" />
+    <Compile Include="Models\Model\SettingModel.cs" />
     <Compile Include="Models\Model\TrainStatusModel.cs" />
     <Compile Include="Models\Model\OneBogieModel.cs" />
     <Compile Include="Models\Model\HighVoltyageModel.cs" />
@@ -412,6 +513,7 @@
     <Compile Include="Models\State\InverterState.cs" />
     <Compile Include="Models\State\ButtonColorState.cs" />
     <Compile Include="Models\State\VOBCState.cs" />
+    <Compile Include="Models\Units\FireDeviceUnit.cs" />
     <Compile Include="Models\Units\DCDevice3Unit.cs" />
     <Compile Include="Models\Units\DCDevice21Unit.cs" />
     <Compile Include="Models\Units\DCDevice1Unit.cs" />
@@ -455,6 +557,7 @@
     <Compile Include="Service\DCDevice3PriorityService.cs" />
     <Compile Include="Service\DCDevice1PriorityService.cs" />
     <Compile Include="Service\ACMPriorityService.cs" />
+    <Compile Include="Service\EventManagerService.cs" />
     <Compile Include="Service\StationPriorityService.cs" />
     <Compile Include="Service\PressureSensorPriorityService.cs" />
     <Compile Include="Service\SubCompressorPriorityService.cs" />
@@ -492,6 +595,39 @@
     <Compile Include="View\Buttons\BottomButton.xaml.cs">
       <DependentUpon>BottomButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Common\CarFireDevice\Car3FireDeviceCommon.xaml.cs">
+      <DependentUpon>Car3FireDeviceCommon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\CarFireDevice\Car4FireDeviceCommon.xaml.cs">
+      <DependentUpon>Car4FireDeviceCommon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\CarFireDevice\Car5FireDeviceCommon.xaml.cs">
+      <DependentUpon>Car5FireDeviceCommon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\CarFireDevice\Car7FireDeviceCommon.xaml.cs">
+      <DependentUpon>Car7FireDeviceCommon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\CarFireDevice\Car6FireDeviceCommon.xaml.cs">
+      <DependentUpon>Car6FireDeviceCommon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\CarFireDevice\Car2FireDeviceCommon.xaml.cs">
+      <DependentUpon>Car2FireDeviceCommon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\CarFireDevice\NullCarFireDeviceCommon.xaml.cs">
+      <DependentUpon>NullCarFireDeviceCommon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\CarFireDevice\Car1FireDeviceCommon.xaml.cs">
+      <DependentUpon>Car1FireDeviceCommon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\CarFireDevice\Car0FireDeviceCommon.xaml.cs">
+      <DependentUpon>Car0FireDeviceCommon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\WaitConfirmPopUpEventView.xaml.cs">
+      <DependentUpon>WaitConfirmPopUpEventView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\WaitConfirmEventView.xaml.cs">
+      <DependentUpon>WaitConfirmEventView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Common\TrainCommon1.xaml.cs">
       <DependentUpon>TrainCommon1.xaml</DependentUpon>
     </Compile>
@@ -525,8 +661,29 @@
     <Compile Include="View\Contents\ACView.xaml.cs">
       <DependentUpon>ACView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Contents\FireDeviceView.xaml.cs">
+      <DependentUpon>FireDeviceView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Contents\FrontView.xaml.cs">
       <DependentUpon>FrontView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\InterLockLimitSpeedView.xaml.cs">
+      <DependentUpon>InterLockLimitSpeedView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\InterLockBlockingUpView.xaml.cs">
+      <DependentUpon>InterLockBlockingUpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\InterLockPassView.xaml.cs">
+      <DependentUpon>InterLockPassView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\InterLockEmergencyView.xaml.cs">
+      <DependentUpon>InterLockEmergencyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\SettingView.xaml.cs">
+      <DependentUpon>SettingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\WarringCurrentView.xaml.cs">
+      <DependentUpon>WarringCurrentView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Contents\WarringRecordView.xaml.cs">
       <DependentUpon>WarringRecordView.xaml</DependentUpon>
@@ -594,7 +751,7 @@
     <Compile Include="View\Layout\ShellContentStyle2Layout.xaml.cs">
       <DependentUpon>ShellContentStyle2Layout.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Login\LoginView.xaml.cs">
+    <Compile Include="View\Contents\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Shell\DomainShell.xaml.cs">

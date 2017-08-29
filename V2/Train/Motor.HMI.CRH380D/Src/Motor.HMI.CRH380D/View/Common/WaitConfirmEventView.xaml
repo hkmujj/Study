@@ -1,0 +1,112 @@
+﻿<UserControl x:Class="Motor.HMI.CRH380D.View.Common.WaitConfirmEventView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:Motor.HMI.CRH380D.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+             d:DesignHeight="60"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <Viewbox>
+        <Grid Width="800"
+              Height="60"
+              Background="{StaticResource Gray2Background}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0"
+                  Background="{Binding Model.EventInfoModel.WaitConfirmEvent.Level,
+                                       Converter={StaticResource EventInfoLevelToColorConverter}}"
+                  Visibility="{Binding Model.EventInfoModel.WaitConfirmEvent,
+                                       Converter={StaticResource EventInfoVisibleConverter}}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="65*" />
+                        <ColumnDefinition Width="40*" />
+                        <ColumnDefinition Width="95*" />
+                        <ColumnDefinition Width="400*" />
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Column="0"
+                            BorderBrush="Black"
+                            BorderThickness="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="2*" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Text="单元" />
+                            <TextBlock Grid.Row="1"
+                                       FontSize="18"
+                                       FontWeight="Bold"
+                                       Text="{Binding Model.EventInfoModel.WaitConfirmEvent.UnitNum}" />
+                        </Grid>
+                    </Border>
+                    <Border Grid.Column="1"
+                            BorderBrush="Black"
+                            BorderThickness="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="2*" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Text="车辆" />
+                            <TextBlock Grid.Row="1"
+                                       FontSize="18"
+                                       FontWeight="Bold"
+                                       Text="{Binding Model.EventInfoModel.WaitConfirmEvent.CarNum}" />
+                        </Grid>
+                    </Border>
+                    <Border Grid.Column="2"
+                            BorderBrush="Black"
+                            BorderThickness="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="2*" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Text="代码" />
+                            <TextBlock Grid.Row="1"
+                                       FontSize="18"
+                                       FontWeight="Bold"
+                                       Text="{Binding Model.EventInfoModel.WaitConfirmEvent.FaultCode}" />
+                        </Grid>
+                    </Border>
+                    <Border Grid.Column="3"
+                            BorderBrush="Black"
+                            BorderThickness="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="2*" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Text="" />
+                            <TextBlock Grid.Row="1"
+                                       FontSize="18"
+                                       FontWeight="Bold"
+                                       Text="{Binding Model.EventInfoModel.WaitConfirmEvent.Describe}" />
+                        </Grid>
+                    </Border>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Button Command="{Binding Model.EventInfoModel.EventInfoController.EnterCommand}"
+                            Content="确认"
+                            FontSize="18"
+                            Style="{StaticResource MainMenuBtnStyle}"
+                            Tag="{StaticResource Gray2Color}" />
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Button Content="当前故障"
+                        FontSize="18"
+                        Style="{StaticResource MainMenuBtnStyle}"
+                        Tag="{StaticResource YellowColor}" />
+            </Grid>
+        </Grid>
+    </Viewbox>
+</UserControl>

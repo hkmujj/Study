@@ -7,6 +7,10 @@ using CRH2MMI.Common.Util;
 using CRH2MMI.Common.View.Train;
 using CRH2MMI.Title;
 using System.Threading;
+using CRH2MMI.Common;
+using CRH2MMI.Common.Config;
+using CRH2MMI.Resource;
+using MMI.Facility.Interface.Data;
 
 namespace CRH2MMI.Fault.View
 {
@@ -92,9 +96,24 @@ namespace CRH2MMI.Fault.View
                 TextColor = Color.White,
                 ButtonDownEvent = (sender, args) =>
                 {
+                    var idx = m_ParentView.ScreenId == ScreenId.CRH2
+                        ? OubKeys.给评价的1屏故障详情按键状态
+                        : OubKeys.给评价的2屏故障详情按键状态;
+                    m_ParentView.append_postCmd(CmdType.SetBoolValue,
+                        m_ParentView.IndexDescriptionConfig.OutBoolDescriptionDictionary[idx], 1, 0);
+
+                },
+                ButtonUpEvent = (sender, args) =>
+                {
+                    var idx = m_ParentView.ScreenId == ScreenId.CRH2
+                        ? OubKeys.给评价的1屏故障详情按键状态
+                        : OubKeys.给评价的2屏故障详情按键状态;
+                    m_ParentView.append_postCmd(CmdType.SetBoolValue,
+                        m_ParentView.IndexDescriptionConfig.OutBoolDescriptionDictionary[idx], 0, 0);
+
                     m_Title.TitleMenuClicking -= OnTitleMenuClick;
                     m_ParentView.GotoDetailFaultInfoPage();
-                },
+                }
             });
         }
 

@@ -35,7 +35,7 @@
                     <RowDefinition Height="0.5*"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid Row="1">
-                    <Button Style="{StaticResource BlueButtonStyle}" Content="{StaticResource SettingView.LightAutoAdjust}"></Button>
+                    <Button Style="{StaticResource BlueButtonStyle}" Content="{StaticResource SettingView.LightAutoAdjust}" Command="{Binding SettingViewModel.Controller.BrightnessAutoAdjustCommand}"></Button>
                 </Grid>
                 <Grid Row="3">
                     <Button Style="{StaticResource CenterAlignButtonStyle}" Content="{StaticResource SettingView.CurLine}"></Button>
@@ -73,7 +73,7 @@
                         <ColumnDefinition Width="0.38*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid Column="0">
-                        <Button Style="{StaticResource WhiteButtonStyle}" Content="{StaticResource SettingView.Reduce}"></Button>
+                        <Button Style="{StaticResource WhiteButtonStyle}" Content="{StaticResource SettingView.Reduce}" Command="{Binding SettingViewModel.Controller.BrightnessReduceCommand}"></Button>
                     </Grid>
                     <Grid Column="2">
                         <Grid.RowDefinitions>
@@ -86,16 +86,16 @@
                             <Border Background="White" VerticalAlignment="Top" Height="3"></Border>
                         </Grid>
                         <Grid Row="2">
-                            <ProgressBar Style="{StaticResource SoundCtrlProgressBarStyle}" Value="3"></ProgressBar>
-                            <TextBlock Style="{StaticResource SoundCtrlTextStyle}" Text="0%"></TextBlock>
+                            <ProgressBar Style="{StaticResource SoundCtrlProgressBarStyle}" Value="{Binding SettingViewModel.Model.SettingBrightness}"></ProgressBar>
+                            <TextBlock Style="{StaticResource BrightnessCtrlTextStyle}" Text="{Binding SettingViewModel.Model.SettingBrightness, StringFormat={}{0:F0}%}"></TextBlock>
                         </Grid>
                     </Grid>
                     <Grid Column="4">
-                        <Button Style="{StaticResource WhiteButtonStyle}" Content="{StaticResource SettingView.Add}"></Button>
+                        <Button Style="{StaticResource WhiteButtonStyle}" Content="{StaticResource SettingView.Add}" Command="{Binding SettingViewModel.Controller.BrightnessAddCommand}"></Button>
                     </Grid>
                 </Grid>
                 <Grid Row="3">
-                    <Button Style="{StaticResource LeftAlignLineButtonStyle}"  Content="广州塔-万胜围"></Button>
+                    <Button Style="{StaticResource LeftAlignLineButtonStyle}"  Content=""></Button>
                 </Grid>
                 <Grid Row="5">
                     <Grid.ColumnDefinitions>

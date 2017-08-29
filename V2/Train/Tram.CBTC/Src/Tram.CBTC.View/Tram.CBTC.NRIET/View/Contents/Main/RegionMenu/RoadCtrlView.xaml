@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="Tram.CBTC.NRIET.View.Contents.Main.RegionMenu.RoadCtrlView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Tram.CBTC.NRIET.View.Contents.Main.RegionMenu"
+             xmlns:viewModel="clr-namespace:Tram.CBTC.NRIET.ViewModel"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+             d:DesignHeight="420" d:DesignWidth="610">
+    <Grid>
+        <Border Background="Black" BorderBrush="LightGray" BorderThickness="2"></Border>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.15*"></RowDefinition>
+                <RowDefinition Height="0.73*"></RowDefinition>
+                <RowDefinition Height="0.12*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.55*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.25*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.4*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.4*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock
+                        Grid.Column="1"
+                        Foreground="Yellow"
+                        Style="{StaticResource Tram.CBTC.Nriet.Style.Text.WhiteText1}"
+                        Text="{Binding CBTC.RoadInfo.LineRunDirection, Converter={StaticResource Tram.CBTC.Nriet.Converter.DescritionConverter}}" />
+                    <TextBlock
+                        Grid.Column="3"
+                        Foreground="Yellow"
+                        Style="{StaticResource Tram.CBTC.Nriet.Style.Text.WhiteText1}"
+                        Text="{Binding CBTC.RoadInfo.ForkDirection, Converter={StaticResource Tram.CBTC.Nriet.Converter.DescritionConverter}}" />
+                </Grid>
+                <Grid Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.40*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.50*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock
+                        Grid.Column="1"
+                        Style="{StaticResource Tram.CBTC.Nriet.Style.Text.WhiteText1}"
+                        Text="{StaticResource Tram.CBTC.Nriet.String.ForkArea:}" />
+                    <TextBlock
+                        Grid.Column="2"
+                        Style="{StaticResource Tram.CBTC.Nriet.Style.Text.WhiteText1}"
+                        Text="{Binding CBTC.RoadInfo.ForkArea}" />
+                </Grid>
+                <Grid Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.4*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.6*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock
+                        Grid.Column="1"
+                        Foreground="Yellow"
+                        Style="{StaticResource Tram.CBTC.Nriet.Style.Text.WhiteText1}"
+                        Text="{Binding CBTC.RoadInfo.ForkCtrlMode, Converter={StaticResource Tram.CBTC.Nriet.Converter.DescritionConverter}}" />
+                </Grid>
+            </Grid>
+            <Grid Row="1">
+
+            </Grid>
+            <Grid Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.82*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.18*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="1" Style="{StaticResource Tram.CBTC.Nriet.BlackBtnStyle1}" Content="{StaticResource Tram.CBTC.Nriet.String.Return}" Margin="0,0,4,4" Command="{Binding Path=Controller.Navigator.RoadCtrlMenuCommand}"></Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

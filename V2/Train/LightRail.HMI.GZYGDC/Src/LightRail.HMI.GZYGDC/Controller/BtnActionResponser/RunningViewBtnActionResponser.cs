@@ -22,7 +22,7 @@ namespace LightRail.HMI.GZYGDC.Controller.BtnActionResponser.RunningView
     {
         public override void ResponseClick()
         {
-            
+            NavigateTo(StateKeys.Root_网络拓扑界面按键);
         }
     }
 

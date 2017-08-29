@@ -6,19 +6,19 @@ namespace Subway.CBTC.BeiJiaoKong.Models.RegionA
     {
         public static GraduationResouce Instance = new GraduationResouce();
         public Dictionary<double, double> Graduation = new Dictionary<double, double>();
-        public const double MaxPix = 321;
+        public const double MaxPix = 21;
 
         private GraduationResouce()
         {
             Graduation.Add(1, 1);
-            Graduation.Add(2, 289d / MaxPix);
-            Graduation.Add(5, 243d / MaxPix);
-            Graduation.Add(10, 209d / MaxPix);
-            Graduation.Add(20, 174d / MaxPix);
-            Graduation.Add(50, 133d / MaxPix);
-            Graduation.Add(100, 97d / MaxPix);
-            Graduation.Add(200, 63d / MaxPix);
-            Graduation.Add(500, 19d / MaxPix);
+            Graduation.Add(2, 19d / MaxPix);
+            Graduation.Add(5, 16d / MaxPix);
+            Graduation.Add(10, 14d / MaxPix);
+            Graduation.Add(20, 12d / MaxPix);
+            Graduation.Add(50, 9d / MaxPix);
+            Graduation.Add(100, 7d / MaxPix);
+            Graduation.Add(200, 5d / MaxPix);
+            Graduation.Add(500, 2d / MaxPix);
             Graduation.Add(750, 0d / MaxPix);
         }
 

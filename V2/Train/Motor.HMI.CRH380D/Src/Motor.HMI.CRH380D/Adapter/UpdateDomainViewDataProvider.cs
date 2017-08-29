@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.Composition;
+using System.Linq;
 using DevExpress.Mvvm.Native;
 using Microsoft.Practices.Prism.Events;
 using MMI.Facility.Interface.Data;
@@ -61,6 +62,98 @@ namespace Motor.HMI.CRH380D.Adapter
             UpdateDatasTrainStatusModel(sender, args);
             //直流供电界面
             UpdateDatasDCModel(sender, args);
+            //火灾探测器界面
+            UpdateDatasFireDeviceModel(sender, args);
+            //设置界面
+            UpdateDatasSettingModel(sender, args);
+            //互锁界面
+            UpdateDatasInterLockModel(sender, args);
+            //故障信息
+            UpdateDatasEventInfoModel(sender, args);
+
+        }
+
+        private void UpdateDatasEventInfoModel(object sender, CommunicationDataChangedArgs args)
+        {
+            var EventInfoModel = ViewModel.Model.EventInfoModel;
+
+            foreach (var newValueKey in args.ChangedBools.NewValue.Values)
+            {
+                if (newValueKey)
+                {
+                    EventInfoModel.EventManagerService.HappenFault(args.ChangedBools.NewValue.Keys.FirstOrDefault());
+                }
+                else
+                {
+                    EventInfoModel.EventManagerService.DeleteFault(args.ChangedBools.NewValue.Keys.FirstOrDefault());
+                }
+            }
+        }
+
+        private void UpdateDatasInterLockModel(object sender, CommunicationDataChangedArgs args)
+        {
+            var InterLockModel = ViewModel.Model.InterLockModel;
+
+            args.ChangedBools.UpdateIfContains(InBoolKey.连锁信息_可旁通界面发生连锁, b => InterLockModel.Btn1State = b);
+            args.ChangedBools.UpdateIfContains(InBoolKey.连锁信息_阻断界面发生连锁, b => InterLockModel.Btn2State = b);
+            args.ChangedBools.UpdateIfContains(InBoolKey.连锁信息_紧急制动界面发生连锁, b => InterLockModel.Btn3State = b);
+            args.ChangedBools.UpdateIfContains(InBoolKey.连锁信息_限速界面发生连锁, b => InterLockModel.Btn4State = b);
+        }
+
+        private void UpdateDatasSettingModel(object sender, CommunicationDataChangedArgs args)
+        {
+            var SettingModel = ViewModel.Model.SettingModel;
+
+            args.ChangedBools.UpdateIfContains(InBoolKey.黑屏, b => SettingModel.HMIBlack = true);
+        }
+
+        private void UpdateDatasFireDeviceModel(object sender, CommunicationDataChangedArgs args)
+        {
+            var FireDeviceModel = ViewModel.Model.FireDeviceModel;
+
+            //火灾探测器状态
+            FireDeviceModel.FireDeviceUnits.ForEach(b => b.DataChanged(args.ChangedBools.NewValue));
+
+            //司机室激活
+            FireDeviceModel.TrainModel.MC00 = VOBCState.NoActivate;
+            args.ChangedBools.UpdateIfContainsWhenTrue(InBoolKey.车0司机室激活, () => FireDeviceModel.TrainModel.MC00 = VOBCState.Activate);
+
+            FireDeviceModel.TrainModel.MC01 = VOBCState.NoActivate;
+            args.ChangedBools.UpdateIfContainsWhenTrue(InBoolKey.车1司机室激活, () => FireDeviceModel.TrainModel.MC01 = VOBCState.Activate);
+
+            //火灾探测器状态
+            args.ChangedBools.UpdateIfContains(InBoolKey.车0发生火灾, b =>
+            {
+                FireDeviceModel.TrainModel.CarModel0.State = b ? CarState.FireDeviceFireHappened : CarState.FireDeviceNormal;
+            });
+            args.ChangedBools.UpdateIfContains(InBoolKey.车1发生火灾, b =>
+            {
+                FireDeviceModel.TrainModel.CarModel1.State = b ? CarState.FireDeviceFireHappened : CarState.FireDeviceNormal;
+            });
+            args.ChangedBools.UpdateIfContains(InBoolKey.车2发生火灾, b =>
+            {
+                FireDeviceModel.TrainModel.CarModel2.State = b ? CarState.FireDeviceFireHappened : CarState.FireDeviceNormal;
+            });
+            args.ChangedBools.UpdateIfContains(InBoolKey.车3发生火灾, b =>
+            {
+                FireDeviceModel.TrainModel.CarModel3.State = b ? CarState.FireDeviceFireHappened : CarState.FireDeviceNormal;
+            });
+            args.ChangedBools.UpdateIfContains(InBoolKey.车4发生火灾, b =>
+            {
+                FireDeviceModel.TrainModel.CarModel4.State = b ? CarState.FireDeviceFireHappened : CarState.FireDeviceNormal;
+            });
+            args.ChangedBools.UpdateIfContains(InBoolKey.车5发生火灾, b =>
+            {
+                FireDeviceModel.TrainModel.CarModel5.State = b ? CarState.FireDeviceFireHappened : CarState.FireDeviceNormal;
+            });
+            args.ChangedBools.UpdateIfContains(InBoolKey.车6发生火灾, b =>
+            {
+                FireDeviceModel.TrainModel.CarModel6.State = b ? CarState.FireDeviceFireHappened : CarState.FireDeviceNormal;
+            });
+            args.ChangedBools.UpdateIfContains(InBoolKey.车7发生火灾, b =>
+            {
+                FireDeviceModel.TrainModel.CarModel7.State = b ? CarState.FireDeviceFireHappened : CarState.FireDeviceNormal;
+            });
         }
 
 

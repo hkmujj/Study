@@ -37,14 +37,14 @@ namespace Motor.ATP._200H.Subsys.ViewModel.PopupViewModels
             {
                 Lengths = new[]
                 {
-                    ATPUIString.TrainDataLength8,
-                    ATPUIString.TrainDataLength16
+                    ATPUIString.TrainDataLength200H8,
+                    ATPUIString.TrainDataLength200H16
                 }
             };
 
             PopupViewName = PopupContentViewNames.InputTrainDataView;
             TrainLengths =
-                new List<string>(Enumerable.Repeat(ATPUIString.TrainDataLength8,
+                new List<string>(Enumerable.Repeat(ATPUIString.TrainDataLength200H16,
                     TrainInfo.MaxTrainLenghtCount));
         }
 
@@ -55,10 +55,10 @@ namespace Motor.ATP._200H.Subsys.ViewModel.PopupViewModels
                 var ti = ATP.TrainInfo.TrainLegth[i];
 
                 var length = float.IsNaN(ti)
-                    ? ATPUIString.TrainDataLength8
-                    : (ti.ToString("") == ATPUIString.TrainDataLength8
-                        ? ATPUIString.TrainDataLength8
-                        : ATPUIString.TrainDataLength16);
+                    ? ATPUIString.TrainDataLength200H8
+                    : (ti.ToString("") == ATPUIString.TrainDataLength200H8
+                        ? ATPUIString.TrainDataLength200H8
+                        : ATPUIString.TrainDataLength200H16);
 
                 TrainLengths[i] = length;
             }
@@ -67,7 +67,7 @@ namespace Motor.ATP._200H.Subsys.ViewModel.PopupViewModels
                 .Publish(
                     new DriverInputEventArgs<DriverInputTrainData>(
                         new DriverInputTrainData(ATP.ATPType,
-                            IsSigleTrain ? new[] {TrainLengths[0]} : TrainLengths.ToArray())));
+                            IsSigleTrain ? new[] { TrainLengths[0] } : TrainLengths.ToArray())));
 
             UpdateView(TrainLengths);
         }
@@ -86,11 +86,15 @@ namespace Motor.ATP._200H.Subsys.ViewModel.PopupViewModels
 
                 UpdateView(inputted);
 
-                var legs = new List<string>() {TrainLengths[0] == ATPUIString.TrainDataLength8 ? "8" : "16"};
+                var legs = new List<string>() { TrainLengths[0] == ATPUIString.TrainDataLength200H8 ? "8" : "16" };
                 ATP.SendInterface.SendTrainData(new SendModel<ReadOnlyCollection<string>>(legs.AsReadOnly()));
-
-                ATP.GetInterfaceController()
-                    .UpdateDriverInterface(DriverInterfaceKey.Parser(DriverInterfaceKeys.Root));
+                EventAggregator.GetEvent<DriverInputEvent<DriverInputTrainData>>()
+                    .Publish(
+                        new DriverInputEventArgs<DriverInputTrainData>(
+                            new DriverInputTrainData(ATP.ATPType,
+                                IsSigleTrain ? new[] { TrainLengths[0] } : TrainLengths.ToArray())));
+                //ATP.GetInterfaceController()
+                //    .UpdateDriverInterface(DriverInterfaceKey.Parser(DriverInterfaceKeys.Root));
             }
         }
 
@@ -107,6 +111,8 @@ namespace Motor.ATP._200H.Subsys.ViewModel.PopupViewModels
             {
                 TrainLengths[i] = content[i];
             }
+            
+            RaisePropertyChanged(() => TrainLengths);
         }
     }
 }

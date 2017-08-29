@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
-using LightRail.HMI.SZLHLF.Model;
 using Motor.HMI.CRH380D.Controller;
 using Motor.HMI.CRH380D.Models;
 

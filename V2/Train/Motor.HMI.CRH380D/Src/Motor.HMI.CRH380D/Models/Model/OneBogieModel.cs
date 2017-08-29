@@ -1,5 +1,4 @@
-﻿using LightRail.HMI.SZLHLF.Model;
-using Motor.HMI.CRH380D.Models.State;
+﻿using Motor.HMI.CRH380D.Models.State;
 
 namespace Motor.HMI.CRH380D.Models.Model
 {

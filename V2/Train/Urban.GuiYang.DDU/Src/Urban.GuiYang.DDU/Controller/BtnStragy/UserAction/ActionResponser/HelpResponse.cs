@@ -69,6 +69,13 @@ namespace Urban.GuiYang.DDU.Controller.BtnStragy.UserAction.ActionResponser
         /// </summary>
         public override void ResponseClick()
         {
+            var firstOrDefault = RegionManager.Regions[RegionNames.ContentContentAll].ActiveViews.FirstOrDefault();
+            if (firstOrDefault != null)
+            {
+                var regionview = firstOrDefault.GetType();
+                FauleReturnView = regionview;
+            }
+
             Domain.Controller.NavigateTo(StateKeys.Root_Layout3);
             RegionManager.RequestNavigateToContent(typeof(CurrentFaulyListView));
             //RequestNavigateToContent(typeof(CurrentFaulyListView));

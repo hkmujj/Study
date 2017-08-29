@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModel="clr-namespace:Subway.CBTC.BeiJiaoKong.ViewModel"
              d:DataContext="{d:DesignInstance viewModel:BeiJiaoKongViewModel}"
-             d:DesignHeight="71"
+             d:DesignHeight="54"
              d:DesignWidth="400"
              mc:Ignorable="d">
     <Grid>
@@ -18,19 +18,29 @@
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
-            <TextBlock Text="{Binding Domain.Other.ShowingDateTime, StringFormat={}yyyy-MM-dd}"
-                   FontSize="16" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-            <TextBlock Grid.Row="1" Text="{Binding Domain.Other.ShowingDateTime, StringFormat={}HH:mm:ss}"
-                   FontSize="16" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Center"
+                       VerticalAlignment="Bottom"
+                       FontSize="16"
+                       Foreground="White"
+                       Text="{Binding Domain.Other.ShowingDateTime,
+                                      StringFormat={}yyyy-MM-dd}" />
+            <TextBlock Grid.Row="1"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Top"
+                       FontSize="16"
+                       Foreground="White"
+                       Text="{Binding Domain.Other.ShowingDateTime,
+                                      StringFormat={}HH:mm:ss}" />
 
         </Grid>
         <TextBlock Grid.Column="1"
-                   Visibility="{Binding Path=Domain.Message.FaultShowingItem, Converter={StaticResource BeiJiaoKongNullToVisibility}}"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    FontSize="20"
                    Foreground="White"
-                   Text="{Binding Domain.Message.FaultShowingItem.InformationContent.Content}" />
+                   Text="{Binding Domain.Message.FaultShowingItem.InformationContent.Content}"
+                   Visibility="{Binding Path=Domain.Message.FaultShowingItem,
+                                        Converter={StaticResource BeiJiaoKongNullToVisibility}}" />
     </Grid>
 </UserControl>
 

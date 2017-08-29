@@ -14,8 +14,6 @@ namespace Motor.HMI.CRH380D.Models.Units
     [ExcelLocation("界面接口表.xls", "ParkBreakUnit")]
     public class ParkBreakUnit : NotificationObject, ISetValueProvider, IUnit
     {
-        private bool m_IsChecked;
-
         /// <summary>
         /// 构造
         /// </summary>

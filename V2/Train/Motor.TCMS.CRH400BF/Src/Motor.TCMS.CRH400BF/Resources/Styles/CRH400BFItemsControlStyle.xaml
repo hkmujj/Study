@@ -525,7 +525,7 @@
                         <TextBlock
                             VerticalAlignment="Center"
                             Foreground="Yellow"
-                            Text="{Binding Path=BrakeInfoPage.Value.WindPipePress.State}"
+                            Text="{Binding Path=BrakeInfoPage.Value.WindPipePress.State, StringFormat={}{0:F1}}"
                             TextAlignment="Center"
                             Visibility="{Binding Path=BrakeInfoPage.Value.WindPipePress.Visible, Converter={StaticResource BoolVisibilityConverter}}">
                             <TextBlock.Width>
@@ -556,7 +556,7 @@
                         <TextBlock
                             VerticalAlignment="Center"
                             Foreground="Yellow"
-                            Text="{Binding Path=BrakeInfoPage.Value.EmptySpring1Press.State}"
+                            Text="{Binding Path=BrakeInfoPage.Value.EmptySpring1Press.State, StringFormat={}{0:F1}}"
                             TextAlignment="Center"
                             Visibility="{Binding Path=BrakeInfoPage.Value.EmptySpring1Press.Visible, Converter={StaticResource BoolVisibilityConverter}}">
                             <TextBlock.Width>
@@ -587,7 +587,7 @@
                         <TextBlock
                             VerticalAlignment="Center"
                             Foreground="Yellow"
-                            Text="{Binding Path=BrakeInfoPage.Value.BrakeCylinderPress.State}"
+                            Text="{Binding Path=BrakeInfoPage.Value.BrakeCylinderPress.State, StringFormat={}{0:F1}}"
                             TextAlignment="Center"
                             Visibility="{Binding Path=BrakeInfoPage.Value.BrakeCylinderPress.Visible, Converter={StaticResource BoolVisibilityConverter}}">
                             <TextBlock.Width>
@@ -618,7 +618,7 @@
                         <TextBlock
                             VerticalAlignment="Center"
                             Foreground="Yellow"
-                            Text="{Binding Path=BrakeInfoPage.Value.EmptySpring2Press.State}"
+                            Text="{Binding Path=BrakeInfoPage.Value.EmptySpring2Press.State, StringFormat={}{0:F1}}"
                             TextAlignment="Center"
                             Visibility="{Binding Path=BrakeInfoPage.Value.EmptySpring2Press.Visible, Converter={StaticResource BoolVisibilityConverter}}">
                             <TextBlock.Width>
@@ -649,7 +649,7 @@
                         <TextBlock
                             VerticalAlignment="Center"
                             Foreground="Yellow"
-                            Text="{Binding Path=BrakeInfoPage.Value.ParkingCylinderPress.State}"
+                            Text="{Binding Path=BrakeInfoPage.Value.ParkingCylinderPress.State, StringFormat={}{0:F1}}"
                             TextAlignment="Center"
                             Visibility="{Binding Path=BrakeInfoPage.Value.ParkingCylinderPress.Visible, Converter={StaticResource BoolVisibilityConverter}}">
                             <TextBlock.Width>

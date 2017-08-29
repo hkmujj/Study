@@ -5,10 +5,18 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:regions="http://www.codeplex.com/CompositeWPF"
+             xmlns:viewModel="clr-namespace:Motor.HMI.CRH380D.ViewModel"
+             Background="Black"
+             d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
              d:DesignHeight="600"
              d:DesignWidth="800"
              mc:Ignorable="d">
-    <Grid>
+    <Grid Visibility="{Binding Model.SettingModel.HMIBlack, Converter={StaticResource BooleanToVisibilityConverter}}">
         <Border Background="{StaticResource TransparentBackground}" regions:RegionManager.RegionName="{x:Static constant:RegionNames.DomainShellContent}" />
+        <Border Panel.ZIndex="1" IsHitTestVisible="False">
+            <Border.Background>
+                <SolidColorBrush Color="{Binding Path=Model.SettingModel.Light, Converter={StaticResource LightBrushConverter}}" />
+            </Border.Background>
+        </Border>
     </Grid>
 </UserControl>

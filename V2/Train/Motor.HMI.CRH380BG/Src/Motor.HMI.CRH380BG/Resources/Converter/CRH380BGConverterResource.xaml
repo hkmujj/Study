@@ -327,10 +327,17 @@
         </converter1:SelectObjectContentConverter.ObjectContentCollection>
     </converter1:SelectObjectContentConverter>
 
-    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.AscSettingStringConverter">
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.AscSettingVisibleConverter">
         <converter1:SelectObjectContentConverter.ObjectContentCollection>
-            <converter1:ObjectContentPair Key="{x:Static constant:AscSettingState.Close}" Content="{StaticResource Motor.HMI.CRH380BG.StringLine}" />
-            <converter1:ObjectContentPair Key="{x:Static constant:AscSettingState.Open}" Content="{StaticResource Motor.HMI.CRH380BG.StringZero}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:AscSettingState.Close}" Content="{StaticResource Motor.HMI.CRH380BG.StringHidden}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:AscSettingState.Open}" Content="{StaticResource Motor.HMI.CRH380BG.StringVisible}" />
+        </converter1:SelectObjectContentConverter.ObjectContentCollection>
+    </converter1:SelectObjectContentConverter>
+
+    <converter1:SelectObjectContentConverter x:Key="Motor.HMI.CRH380BG.AscSettingVisible1Converter">
+        <converter1:SelectObjectContentConverter.ObjectContentCollection>
+            <converter1:ObjectContentPair Key="{x:Static constant:AscSettingState.Close}" Content="{StaticResource Motor.HMI.CRH380BG.StringVisible}" />
+            <converter1:ObjectContentPair Key="{x:Static constant:AscSettingState.Open}" Content="{StaticResource Motor.HMI.CRH380BG.StringHidden}" />
         </converter1:SelectObjectContentConverter.ObjectContentCollection>
     </converter1:SelectObjectContentConverter>
 

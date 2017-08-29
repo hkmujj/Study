@@ -57,7 +57,6 @@ namespace Motor.ATP._200H.Subsys.ViewModel.PopupViewModels
             get { return m_TrainId; }
         }
 
-        public int CurrentInputtingIndex { get; private set; }
 
         public InputDataTrainIDPopupViewModel()
         {
@@ -69,23 +68,13 @@ namespace Motor.ATP._200H.Subsys.ViewModel.PopupViewModels
             PopViewTitleContent = PopupViewStringKeys.StringTitleInputingTrainId;
         }
 
-        private void InstanceOnTimer1S(object sender, EventArgs eventArgs)
-        {
-           // UpdateId(TrainId[CurrentInputtingIndex] == '-' ? "_" : "-", CurrentInputtingIndex);
-        }
+
 
 
         public override void ResponseAction(IDriverInterface driverInterface)
         {
 
-            TrainId = "          ";
-
-            CurrentInputtingIndex = 0;
-
-            UpdateId(" ", CurrentInputtingIndex);
-
-            GlobalTimer.Instance.Timer1S -= InstanceOnTimer1S;
-            GlobalTimer.Instance.Timer1S += InstanceOnTimer1S;
+            TrainId = ATP.TrainInfo.Driver.TrainId;
 
             base.ResponseAction(driverInterface);
         }
@@ -118,22 +107,30 @@ namespace Motor.ATP._200H.Subsys.ViewModel.PopupViewModels
                 switch (word)
                 {
                     case DriverInputControlWord.Ok:
-                        GlobalTimer.Instance.Timer1S -= InstanceOnTimer1S;
+
                         EventAggregator.GetEvent<DriverInputEvent<DriverInputTrainId>>()
                             .Publish(
                                 new DriverInputEventArgs<DriverInputTrainId>(
-                                    new DriverInputTrainId(TrainId.Remove(CurrentInputtingIndex)), ATP));
+                                    new DriverInputTrainId(TrainId), ATP));
                         break;
                     case DriverInputControlWord.Cancel:
-                        GlobalTimer.Instance.Timer1S -= InstanceOnTimer1S;
+
                         break;
                     case DriverInputControlWord.Delete:
-                        CurrentInputtingIndex = Math.Max(0, CurrentInputtingIndex - 1);
-                        UpdateId(" ", CurrentInputtingIndex);
+                        if (TrainId.Length > 1)
+                        {
+                            TrainId = TrainId.Substring(0, TrainId.Length - 1);
+                        }
+                        else
+                        {
+                            TrainId = string.Empty;
+                        }
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
+
+                m_DriverInputInterpreter.Reset();
             }
         }
 
@@ -143,13 +140,10 @@ namespace Motor.ATP._200H.Subsys.ViewModel.PopupViewModels
             switch (rlt.DriverInputType)
             {
                 case DriverInputInterpreterResult.InputType.New:
-                    if (UpdateId(rlt.InputContent + " ", CurrentInputtingIndex))
-                    {
-                        CurrentInputtingIndex += rlt.InputContent.Length;
-                    }
+                    UpdateId(rlt.InputContent);
                     break;
                 case DriverInputInterpreterResult.InputType.Replace:
-                    UpdateId(rlt.InputContent, CurrentInputtingIndex);
+                    UpdateId(rlt.InputContent);
                     break;
                 case DriverInputInterpreterResult.InputType.Control:
                     break;
@@ -158,21 +152,13 @@ namespace Motor.ATP._200H.Subsys.ViewModel.PopupViewModels
             }
         }
 
-        private bool UpdateId(string c, int index)
+        private bool UpdateId(string c)
         {
             lock (m_Locker)
             {
-                if (index + c.Length <= TrainId.Length)
-                {
-                    var tmp = TrainId.Remove(index, c.Length);
-                    tmp = tmp.Insert(index, c);
+                TrainId += c;
 
-                    TrainId = tmp;
-
-                    return true;
-                }
-
-                return false;
+                return true;
             }
         }
     }

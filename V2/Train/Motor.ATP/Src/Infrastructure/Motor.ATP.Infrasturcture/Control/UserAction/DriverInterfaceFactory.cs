@@ -183,26 +183,26 @@ namespace Motor.ATP.Infrasturcture.Control.UserAction
             var actionResponseType = m_SerachTypes.FirstOrDefault(f => f.Name == actionResponseTypeName || f.FullName == actionResponseTypeName);
             if (actionResponseType != null)
             {
-                AppLog.Debug(string.Format("Sucess found class {0} of name {1} in assembly {2}", actionResponseType,
-                    actionResponseTypeName, actionResponseType.Assembly));
+                //AppLog.Debug(string.Format("Sucess found class {0} of name {1} in assembly {2}", actionResponseType,
+                //    actionResponseTypeName, actionResponseType.Assembly));
                 actionResponser =
                     Activator.CreateInstance(actionResponseType, driverSelectableItem) as IDriverActionResponser;
-                AppLog.Debug(string.Format("Sucess create instance of type {0}", actionResponseTypeName));
+                //AppLog.Debug(string.Format("Sucess create instance of type {0}", actionResponseTypeName));
                 if (actionResponser == null)
                 {
-                    AppLog.Fatal(
-                        string.Format(
-                            "Class {0} is not a type inherit from {1} in row : {2} coloumn: {2}.\r\n{3}",
-                            actionResponseType, typeof(IDriverActionResponser), row[0], colName));
+                    //AppLog.Fatal(
+                    //    string.Format(
+                    //        "Class {0} is not a type inherit from {1} in row : {2} coloumn: {2}.\r\n{3}",
+                    //        actionResponseType, typeof(IDriverActionResponser), row[0], colName));
                 }
             }
 
             if (actionResponser == null)
             {
-                AppLog.Fatal(
-                    string.Format(
-                        "Can not create state provider where the class name is {0} in row : {1} coloumn: {2}. so create {3} to replace it.",
-                        actionResponseTypeName, row[0], colName, typeof(EmptyActionResponser)));
+                //AppLog.Fatal(
+                //    string.Format(
+                //        "Can not create state provider where the class name is {0} in row : {1} coloumn: {2}. so create {3} to replace it.",
+                //        actionResponseTypeName, row[0], colName, typeof(EmptyActionResponser)));
                 actionResponser = new EmptyActionResponser(driverSelectableItem);
             }
             return actionResponser;
@@ -217,26 +217,26 @@ namespace Motor.ATP.Infrasturcture.Control.UserAction
                 m_SerachTypes.FirstOrDefault(f => f.Name == stateProviderTypeName || f.FullName == stateProviderTypeName);
             if (stateProviderType != null)
             {
-                AppLog.Debug(string.Format("Sucess found class {0} of name {1} in assembly {2}", stateProviderType,
-                    stateProviderTypeName, stateProviderType.Assembly));
+                //AppLog.Debug(string.Format("Sucess found class {0} of name {1} in assembly {2}", stateProviderType,
+                //    stateProviderTypeName, stateProviderType.Assembly));
                 stateProvider = Activator.CreateInstance(stateProviderType) as IDriverSelectableItemStateProvider;
-                AppLog.Debug(string.Format("Sucess create instance of type {0}", stateProviderTypeName));
+               // AppLog.Debug(string.Format("Sucess create instance of type {0}", stateProviderTypeName));
                 if (stateProvider == null)
                 {
-                    AppLog.Fatal(
-                        string.Format(
-                            "Class {0} is not a type inherit from {1} in row : {2} coloumn: {2}.\r\n{3}",
-                            stateProviderType, typeof(IDriverSelectableItemStateProvider), row[0], colName));
+                    //AppLog.Fatal(
+                    //    string.Format(
+                    //        "Class {0} is not a type inherit from {1} in row : {2} coloumn: {2}.\r\n{3}",
+                    //        stateProviderType, typeof(IDriverSelectableItemStateProvider), row[0], colName));
                     
                 }
             }
 
             if (stateProvider == null)
             {
-                AppLog.Fatal(
-                    string.Format(
-                        "Can not create state provider where the class name is {0} in row : {1} coloumn: {2}. so create {3} to replace it.",
-                        stateProviderTypeName, row[0], colName, typeof(NormalStateProvider)));
+                //AppLog.Fatal(
+                //    string.Format(
+                //        "Can not create state provider where the class name is {0} in row : {1} coloumn: {2}. so create {3} to replace it.",
+                //        stateProviderTypeName, row[0], colName, typeof(NormalStateProvider)));
                 stateProvider = new NormalStateProvider();
             }
             return stateProvider;
@@ -256,24 +256,24 @@ namespace Motor.ATP.Infrasturcture.Control.UserAction
             if (popViewType != null)
             {
                 popupView = GetOrCreatePopupView(popViewType);
-                AppLog.Info(string.Format("Sucess create instance of type {0}", popViewType));
+              //  AppLog.Info(string.Format("Sucess create instance of type {0}", popViewType));
                 if (popupView == null)
                 {
-                    AppLog.Fatal(
-                        string.Format(
-                            "Class {0} is not a type inherit from {1} in row : {2} coloumn: {3}.\r\n{4}",
-                            popViewType, typeof(IDriverPopupView), row[0], dt.Rows.IndexOf(row),
-                            RegionFStructConfigNames.ColoumnPopupView));
+                    //AppLog.Fatal(
+                    //    string.Format(
+                    //        "Class {0} is not a type inherit from {1} in row : {2} coloumn: {3}.\r\n{4}",
+                    //        popViewType, typeof(IDriverPopupView), row[0], dt.Rows.IndexOf(row),
+                    //        RegionFStructConfigNames.ColoumnPopupView));
                     return null;
                 }
             }
 
             if (popupView == null)
             {
-                AppLog.Fatal(
-                    string.Format(
-                        "Can not found type of {0} when BuildDriverInterfaceDictionaryByDataTable where the row : key is {1} row no.: {2}",
-                        popupViewTypeName, key, row[0]));
+                //AppLog.Fatal(
+                //    string.Format(
+                //        "Can not found type of {0} when BuildDriverInterfaceDictionaryByDataTable where the row : key is {1} row no.: {2}",
+                //        popupViewTypeName, key, row[0]));
             }
 
             return popupView;

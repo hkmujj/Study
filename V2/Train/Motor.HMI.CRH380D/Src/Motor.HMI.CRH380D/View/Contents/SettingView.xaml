@@ -1,0 +1,114 @@
+﻿<UserControl x:Class="Motor.HMI.CRH380D.View.Contents.SettingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:common="clr-namespace:Motor.HMI.CRH380D.View.Common"
+             xmlns:constant="clr-namespace:Motor.HMI.CRH380D.Constant"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:regions="http://www.codeplex.com/CompositeWPF"
+             xmlns:viewModel="clr-namespace:Motor.HMI.CRH380D.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+             d:DesignHeight="420"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <Viewbox>
+        <Grid Width="800"
+              Height="420"
+              Background="{StaticResource Gray2Background}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="33*" />
+                <RowDefinition Height="65*" />
+                <RowDefinition Height="11*" />
+                <RowDefinition Height="305*" />
+                <RowDefinition Height="6*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <TextBlock Style="{StaticResource TitleTextStyle}" Text="设置" />
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <common:TrainCommon1 />
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="256*" />
+                    <ColumnDefinition Width="185*" />
+                    <ColumnDefinition Width="359*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0"
+                      Margin="85,40,15,30"
+                      Background="{StaticResource Gray1Background}">
+                    <Button Width="100"
+                            Height="60"
+                            Margin="0,25,0,150"
+                            Content="事件上传"
+                            FontSize="20"
+                            Style="{StaticResource MainMenuBtnStyle}"
+                            Tag="{StaticResource Gray2Color}" />
+                    <Button Width="100"
+                            Height="60"
+                            Margin="0,105,0,70"
+                            Content="主控复位"
+                            FontSize="20"
+                            Style="{StaticResource MainMenuBtnStyle}"
+                            Tag="{StaticResource Gray2Color}" />
+                </Grid>
+                <Grid Grid.Column="1"
+                      Margin="15,40,15,30"
+                      Background="{StaticResource Gray1Background}">
+                    <Button Width="100"
+                            Height="60"
+                            Margin="0,25,0,150"
+                            Command="{Binding Model.SettingModel.SettingController.LoginOutCommand}"
+                            Content="注销"
+                            FontSize="20"
+                            Style="{StaticResource MainMenuBtnStyle}"
+                            Tag="{StaticResource Gray2Color}" />
+                </Grid>
+                <Grid Grid.Column="2"
+                      Margin="15,40,80,30"
+                      Background="{StaticResource Gray1Background}">
+                    <Button Width="60"
+                            Height="60"
+                            Margin="30,105,174,70"
+                            Command="{Binding Model.SettingModel.SettingController.SetLightCommand}"
+                            CommandParameter="-"
+                            Content="-"
+                            FontSize="60"
+                            Style="{StaticResource MainMenuBtnStyle}"
+                            Tag="{StaticResource Gray2Color}" />
+                    <Button Width="60"
+                            Height="60"
+                            Margin="170,105,25,70"
+                            Command="{Binding Model.SettingModel.SettingController.SetLightCommand}"
+                            CommandParameter="+"
+                            Content="+"
+                            FontSize="60"
+                            Style="{StaticResource MainMenuBtnStyle}"
+                            Tag="{StaticResource Gray2Color}" />
+                    <Border Width="70"
+                            Height="70"
+                            Margin="97,100,97,65"
+                            BorderBrush="White"
+                            BorderThickness="3">
+                        <Border Width="64"
+                                Height="64"
+                                Background="White"
+                                BorderBrush="Black"
+                                BorderThickness="1">
+                            <TextBlock HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontSize="25"
+                                       Text="{Binding Model.SettingModel.Light}" />
+                        </Border>
+                    </Border>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Viewbox>
+</UserControl>

@@ -9,7 +9,7 @@ namespace Motor.HMI.CRH380D.Controller.BtnActionResponser.WarringRecordView
     {
         public override void ResponseClick()
         {
-
+            DomainViewModel.Instacnce.Model.EventInfoModel.EventInfoController.OnLastPage();
         }
     }
 
@@ -18,7 +18,7 @@ namespace Motor.HMI.CRH380D.Controller.BtnActionResponser.WarringRecordView
     {
         public override void ResponseClick()
         {
-
+            DomainViewModel.Instacnce.Model.EventInfoModel.EventInfoController.OnNextPage();
         }
     }
 
@@ -30,16 +30,7 @@ namespace Motor.HMI.CRH380D.Controller.BtnActionResponser.WarringRecordView
 
         }
     }
-
-    [Export]
-    public class WarringSumMenuResponser : BtnActionResponserBase
-    {
-        public override void ResponseClick()
-        {
-            NavigateTo(StateKeys.Root_警报汇总界面按键);
-        }
-    }
-
+    
     [Export]
     public class MainMenuResponser : BtnActionResponserBase
     {

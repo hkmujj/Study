@@ -1,0 +1,135 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converter="clr-namespace:Motor.HMI.CRH380D.Converter">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../../Brushs/BrushResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <converter:RemoveNullColorConverter x:Key="TestConverter" />
+
+    <Style x:Key="InterLockBtnStyle1" TargetType="Button">
+        <Style.Setters>
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Foreground" Value="{StaticResource ShellBackgroundBrush}" />
+            <Setter Property="BorderBrush" Value="{StaticResource ShellBackgroundBrush}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Tag" Value="#FFC1C1C1" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border x:Name="border"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}">
+                                <Rectangle Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}, Path=ActualWidth}" Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}, Path=ActualHeight}">
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                            <GradientStop Offset="0." Color="Gainsboro" />
+                                            <GradientStop Offset="0.12" Color="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}, Path=Tag, Converter={StaticResource TestConverter}}" />
+                                            <GradientStop Offset="0.85" Color="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}, Path=Tag, Converter={StaticResource TestConverter}}" />
+                                            <GradientStop Offset="1" Color="#FF282828" />
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                            </Border>
+                            <ContentPresenter Margin="{TemplateBinding Padding}"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Focusable="False"
+                                              RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="border" Property="Tag" Value="{StaticResource YellowColor}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="InterLockBtnStyle2" TargetType="Button">
+        <Style.Setters>
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Foreground" Value="{StaticResource ShellBackgroundBrush}" />
+            <Setter Property="BorderBrush" Value="{StaticResource TransparentBackground}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}, Path=Width}" Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}, Path=ActualHeight}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="3" />
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <Rectangle>
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                            <GradientStop Offset="0" Color="Black" />
+                                            <GradientStop Offset="1" Color="#FFB70F17" />
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                            </Grid>
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="3" />
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0">
+                                    <Rectangle>
+                                        <Rectangle.Fill>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                                <GradientStop Offset="0" Color="Black" />
+                                                <GradientStop Offset="1" Color="#FFB70F17" />
+                                            </LinearGradientBrush>
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+                                </Grid>
+                                <Grid Grid.Column="1" Background="Red">
+                                    <TextBlock HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                               VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                               FontSize="{TemplateBinding FontSize}"
+                                               FontWeight="{TemplateBinding FontWeight}"
+                                               Text="{TemplateBinding Content}" />
+                                </Grid>
+                                <Grid Grid.Column="2">
+                                    <Rectangle>
+                                        <Rectangle.Fill>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                                <GradientStop Offset="0" Color="#FFB70F17" />
+                                                <GradientStop Offset="1" Color="Black" />
+                                            </LinearGradientBrush>
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+                                </Grid>
+                            </Grid>
+                            <Grid Grid.Row="2">
+                                <Rectangle>
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                            <GradientStop Offset="0" Color="#FFB70F17" />
+                                            <GradientStop Offset="1" Color="White" />
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                            </Grid>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+</ResourceDictionary>

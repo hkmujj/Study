@@ -567,7 +567,8 @@ namespace CBTC.DataAdapter.ConcreateAdapter.TCT
 
             if (SignalDataInTCT.Fault[5] || !SignalDataInTCT.KeySwitch) //MMI通信中断
             {
-                CBTC.TrainInfo.BlackText = BlackText.MMICommunicationFault;
+                // CBTC.TrainInfo.BlackText = BlackText.MMICommunicationFault;
+                CBTC.TrainInfo.BlackText = BlackText.None;
             }
             else
             {
@@ -596,7 +597,8 @@ namespace CBTC.DataAdapter.ConcreateAdapter.TCT
 
             if (SignalDataInTCT.ATCPass)  //ATP已切除
             {
-                CBTC.TrainInfo.BlackText = BlackText.ATPAbscission;
+                //CBTC.TrainInfo.BlackText = BlackText.ATPAbscission;
+                CBTC.TrainInfo.BlackText = BlackText.MMICommunicationFault;
             }
 
             if (SignalDataInTCT.BATBing)  // 无人折返

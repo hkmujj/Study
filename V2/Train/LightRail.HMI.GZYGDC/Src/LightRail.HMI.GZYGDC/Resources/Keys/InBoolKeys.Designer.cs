@@ -61,6 +61,15 @@ namespace LightRail.HMI.GZYGDC.Resources.Keys {
         }
         
         /// <summary>
+        ///   查找类似 保持制动 的本地化字符串。
+        /// </summary>
+        internal static string 保持制动 {
+            get {
+                return ResourceManager.GetString("保持制动", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 列车方向向前 的本地化字符串。
         /// </summary>
         internal static string 列车方向向前 {
@@ -185,174 +194,142 @@ namespace LightRail.HMI.GZYGDC.Resources.Keys {
                 return ResourceManager.GetString("车1空调模式_通风模式", resourceCulture);
             }
         }
-
-
+        
         /// <summary>
-        ///   查找类似 车1空调模式_关闭预冷 的本地化字符串。
+        ///   查找类似 车2空调模式_关闭预冷 的本地化字符串。
         /// </summary>
-        internal static string 车2空调模式_关闭预冷
-        {
-            get
-            {
+        internal static string 车2空调模式_关闭预冷 {
+            get {
                 return ResourceManager.GetString("车2空调模式_关闭预冷", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   查找类似 车1空调模式_测试模式 的本地化字符串。
+        ///   查找类似 车2空调模式_测试模式 的本地化字符串。
         /// </summary>
-        internal static string 车2空调模式_测试模式
-        {
-            get
-            {
+        internal static string 车2空调模式_测试模式 {
+            get {
                 return ResourceManager.GetString("车2空调模式_测试模式", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   查找类似 车1空调模式_火灾模式 的本地化字符串。
+        ///   查找类似 车2空调模式_火灾模式 的本地化字符串。
         /// </summary>
-        internal static string 车2空调模式_火灾模式
-        {
-            get
-            {
+        internal static string 车2空调模式_火灾模式 {
+            get {
                 return ResourceManager.GetString("车2空调模式_火灾模式", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   查找类似 车1空调模式_自动模式 的本地化字符串。
+        ///   查找类似 车2空调模式_自动模式 的本地化字符串。
         /// </summary>
-        internal static string 车2空调模式_自动模式
-        {
-            get
-            {
+        internal static string 车2空调模式_自动模式 {
+            get {
                 return ResourceManager.GetString("车2空调模式_自动模式", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   查找类似 车1空调模式_通风模式 的本地化字符串。
+        ///   查找类似 车2空调模式_通风模式 的本地化字符串。
         /// </summary>
-        internal static string 车2空调模式_通风模式
-        {
-            get
-            {
+        internal static string 车2空调模式_通风模式 {
+            get {
                 return ResourceManager.GetString("车2空调模式_通风模式", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   查找类似 车1空调模式_关闭预冷 的本地化字符串。
+        ///   查找类似 车3空调模式_关闭预冷 的本地化字符串。
         /// </summary>
-        internal static string 车3空调模式_关闭预冷
-        {
-            get
-            {
+        internal static string 车3空调模式_关闭预冷 {
+            get {
                 return ResourceManager.GetString("车3空调模式_关闭预冷", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   查找类似 车1空调模式_测试模式 的本地化字符串。
+        ///   查找类似 车3空调模式_测试模式 的本地化字符串。
         /// </summary>
-        internal static string 车3空调模式_测试模式
-        {
-            get
-            {
+        internal static string 车3空调模式_测试模式 {
+            get {
                 return ResourceManager.GetString("车3空调模式_测试模式", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   查找类似 车1空调模式_火灾模式 的本地化字符串。
+        ///   查找类似 车3空调模式_火灾模式 的本地化字符串。
         /// </summary>
-        internal static string 车3空调模式_火灾模式
-        {
-            get
-            {
+        internal static string 车3空调模式_火灾模式 {
+            get {
                 return ResourceManager.GetString("车3空调模式_火灾模式", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   查找类似 车1空调模式_自动模式 的本地化字符串。
+        ///   查找类似 车3空调模式_自动模式 的本地化字符串。
         /// </summary>
-        internal static string 车3空调模式_自动模式
-        {
-            get
-            {
+        internal static string 车3空调模式_自动模式 {
+            get {
                 return ResourceManager.GetString("车3空调模式_自动模式", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   查找类似 车1空调模式_通风模式 的本地化字符串。
+        ///   查找类似 车3空调模式_通风模式 的本地化字符串。
         /// </summary>
-        internal static string 车3空调模式_通风模式
-        {
-            get
-            {
+        internal static string 车3空调模式_通风模式 {
+            get {
                 return ResourceManager.GetString("车3空调模式_通风模式", resourceCulture);
             }
         }
-
-
+        
         /// <summary>
-        ///   查找类似 车1空调模式_关闭预冷 的本地化字符串。
+        ///   查找类似 车4空调模式_关闭预冷 的本地化字符串。
         /// </summary>
-        internal static string 车4空调模式_关闭预冷
-        {
-            get
-            {
+        internal static string 车4空调模式_关闭预冷 {
+            get {
                 return ResourceManager.GetString("车4空调模式_关闭预冷", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   查找类似 车1空调模式_测试模式 的本地化字符串。
+        ///   查找类似 车4空调模式_测试模式 的本地化字符串。
         /// </summary>
-        internal static string 车4空调模式_测试模式
-        {
-            get
-            {
+        internal static string 车4空调模式_测试模式 {
+            get {
                 return ResourceManager.GetString("车4空调模式_测试模式", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   查找类似 车1空调模式_火灾模式 的本地化字符串。
+        ///   查找类似 车4空调模式_火灾模式 的本地化字符串。
         /// </summary>
-        internal static string 车4空调模式_火灾模式
-        {
-            get
-            {
+        internal static string 车4空调模式_火灾模式 {
+            get {
                 return ResourceManager.GetString("车4空调模式_火灾模式", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   查找类似 车1空调模式_自动模式 的本地化字符串。
+        ///   查找类似 车4空调模式_自动模式 的本地化字符串。
         /// </summary>
-        internal static string 车4空调模式_自动模式
-        {
-            get
-            {
+        internal static string 车4空调模式_自动模式 {
+            get {
                 return ResourceManager.GetString("车4空调模式_自动模式", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   查找类似 车1空调模式_通风模式 的本地化字符串。
+        ///   查找类似 车4空调模式_通风模式 的本地化字符串。
         /// </summary>
-        internal static string 车4空调模式_通风模式
-        {
-            get
-            {
+        internal static string 车4空调模式_通风模式 {
+            get {
                 return ResourceManager.GetString("车4空调模式_通风模式", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   查找类似 黑屏 的本地化字符串。
         /// </summary>

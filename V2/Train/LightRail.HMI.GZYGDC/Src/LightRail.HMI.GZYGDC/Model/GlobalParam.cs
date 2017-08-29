@@ -112,6 +112,10 @@ namespace LightRail.HMI.GZYGDC.Model
 
 
 
+        /// <summary>
+        /// 网络拓扑单元集合
+        /// </summary>
+        public IEnumerable<NetTopologyUnit> NetTopologyUnits { get; private set; }
 
 
         public void Initalize(SubsystemInitParam initParam)
@@ -141,6 +145,8 @@ namespace LightRail.HMI.GZYGDC.Model
             InitParam.DataPackage.ServiceManager.RegistService<HSCBPriorityService>(new HSCBPriorityService(Priority.HSCBPriorities));
             InitParam.DataPackage.ServiceManager.RegistService<BatteryPriorityService>(new BatteryPriorityService(Priority.BatteryPriorities));
             InitParam.DataPackage.ServiceManager.RegistService<SpringPriorityService>(new SpringPriorityService(Priority.SpringPriorities));
+
+            InitParam.DataPackage.ServiceManager.RegistService<NetTopologyPriorityService>(new NetTopologyPriorityService(Priority.NetTopologyPriorities));
 
             InitParam.DataPackage.ServiceManager.RegistService<EventManagerService>(new EventManagerService(EventInfoItems, 10));
 
@@ -181,6 +187,7 @@ namespace LightRail.HMI.GZYGDC.Model
             SpringUnits = ExcelParser.Parser<SpringUnit>(appConfigPath);
             EmergencyBroadcastItems = ExcelParser.Parser<EmergencyBroadcastItem>(appConfigPath);
             EventInfoItems = ExcelParser.Parser<EventInfo>(appConfigPath);
+            NetTopologyUnits = ExcelParser.Parser<NetTopologyUnit>(appConfigPath);
         }
     }
 }

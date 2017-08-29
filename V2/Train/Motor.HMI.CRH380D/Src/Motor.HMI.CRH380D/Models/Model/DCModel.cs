@@ -1,7 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel.Composition;
 using System.Linq;
-using LightRail.HMI.SZLHLF.Model;
 using Motor.HMI.CRH380D.Models.Units;
 
 namespace Motor.HMI.CRH380D.Models.Model

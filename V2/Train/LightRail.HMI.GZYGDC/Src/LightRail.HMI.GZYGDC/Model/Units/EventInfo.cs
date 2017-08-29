@@ -118,7 +118,7 @@ namespace LightRail.HMI.GZYGDC.Model.Units
                 case "Level":
                     try
                     {
-                        if (string.IsNullOrWhiteSpace(value))
+                        if (!string.IsNullOrWhiteSpace(value) && string.IsNullOrEmpty(value))
                         {
                             Level = (EventLevel)int.Parse(value);
                         }

@@ -3,12 +3,14 @@ using System.ComponentModel;
 using System.ComponentModel.Composition;
 using System.Linq;
 using System.Windows.Input;
+using DevExpress.Mvvm.POCO;
 using LightRail.HMI.GZYGDC.Model;
 using LightRail.HMI.GZYGDC.Model.ConfigModel;
 using LightRail.HMI.GZYGDC.Model.State;
 using LightRail.HMI.GZYGDC.Resources.Keys;
 using LightRail.HMI.GZYGDC.ViewModel;
 using Microsoft.Practices.Prism.Commands;
+using MMI.Facility.Interface.Service;
 using MMI.Facility.WPFInfrastructure.Interfaces;
 
 namespace LightRail.HMI.GZYGDC.Controller
@@ -16,9 +18,9 @@ namespace LightRail.HMI.GZYGDC.Controller
     [Export]
     public class AirConditionController : ControllerBase<Lazy<AirConditionViewModel>>
     {
-       
 
-       
+
+
         [ImportingConstructor]
         public AirConditionController(Lazy<AirConditionViewModel> viewModel) : base(viewModel)
         {
@@ -31,9 +33,35 @@ namespace LightRail.HMI.GZYGDC.Controller
 
         public override void Initalize()
         {
+            if (GlobalParam.Instance.InitParam != null)
+            {
+                var courseService = GlobalParam.Instance.InitParam.DataPackage.ServiceManager.GetService<ICourseService>();
+
+                if (courseService != null)
+                {
+                    courseService.CourseStateChanged += OnCourseStateChanged;
+                }
+            }
+
+            ResetData();
+
             ViewModel.Value.Model.PropertyChanged += OnPropertyChanged;
 
             UpdateSendData();
+        }
+
+        private void OnCourseStateChanged(object sender, CourseStateChangedArgs courseStateChangedArgs)
+        {
+            if (courseStateChangedArgs.CourseService != null)
+            {
+                if (courseStateChangedArgs.CourseService.CurrentCourseState == CourseState.Started ||
+                    courseStateChangedArgs.CourseService.CurrentCourseState == CourseState.Stoped)
+                {
+                    ResetData();
+
+                    UpdateSendData();
+                }
+            }
         }
 
         /// <summary>
@@ -63,7 +91,7 @@ namespace LightRail.HMI.GZYGDC.Controller
         /// </summary>
         private void TemperatureAdd2()
         {
-            ViewModel.Value.Model.ConcentrateAirConditionInfo.SettingTemperature += 2;
+            ViewModel.Value.Model.ConcentrateAirConditionInfo.SettingTemperature = Math.Min(ViewModel.Value.Model.ConcentrateAirConditionInfo.SettingTemperature + 2, 35);
         }
 
         /// <summary>
@@ -71,7 +99,7 @@ namespace LightRail.HMI.GZYGDC.Controller
         /// </summary>
         private void TemperatureAdd1()
         {
-            ViewModel.Value.Model.ConcentrateAirConditionInfo.SettingTemperature += 1;
+            ViewModel.Value.Model.ConcentrateAirConditionInfo.SettingTemperature = Math.Min(ViewModel.Value.Model.ConcentrateAirConditionInfo.SettingTemperature + 1, 35);
         }
 
 
@@ -80,7 +108,7 @@ namespace LightRail.HMI.GZYGDC.Controller
         /// </summary>
         private void TemperatureReduce1()
         {
-            ViewModel.Value.Model.ConcentrateAirConditionInfo.SettingTemperature -= 1;
+            ViewModel.Value.Model.ConcentrateAirConditionInfo.SettingTemperature = Math.Max(ViewModel.Value.Model.ConcentrateAirConditionInfo.SettingTemperature - 1, 5);
         }
 
         /// <summary>
@@ -88,7 +116,7 @@ namespace LightRail.HMI.GZYGDC.Controller
         /// </summary>
         private void TemperatureReduce2()
         {
-            ViewModel.Value.Model.ConcentrateAirConditionInfo.SettingTemperature -= 2;
+            ViewModel.Value.Model.ConcentrateAirConditionInfo.SettingTemperature = Math.Max(ViewModel.Value.Model.ConcentrateAirConditionInfo.SettingTemperature - 2, 5);
         }
 
         /// <summary>
@@ -102,8 +130,8 @@ namespace LightRail.HMI.GZYGDC.Controller
 
                 if (DataService != null && GlobalParam.Instance.IndexDescription != null)
                 {
-                    ViewModel.Value.Model.ConcentrateAirConditionInfo.InCarTemperature =  ViewModel.Value.Model.ConcentrateAirConditionInfo.SettingTemperature;
-                    DataService.WriteService.ChangeFloat(GlobalParam.Instance.IndexDescription.OutFloatDescriptionDictionary[OutFloatKeys.集中控制设定温度], 
+                    ViewModel.Value.Model.ConcentrateAirConditionInfo.InCarTemperature = ViewModel.Value.Model.ConcentrateAirConditionInfo.SettingTemperature;
+                    DataService.WriteService.ChangeFloat(GlobalParam.Instance.IndexDescription.OutFloatDescriptionDictionary[OutFloatKeys.集中控制设定温度],
                         ViewModel.Value.Model.ConcentrateAirConditionInfo.SettingTemperature);
 
                     DataService.WriteService.ChangeBool(GlobalParam.Instance.IndexDescription.OutBoolDescriptionDictionary[OutBoolKeys.集中控制_空调模式_自动模式],
@@ -131,6 +159,19 @@ namespace LightRail.HMI.GZYGDC.Controller
         private void OnPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)
         {
             UpdateSendData();
+        }
+
+
+        /// <summary>
+        /// 重置输出数据
+        /// </summary>
+        public void ResetData()
+        {
+            //默认值
+            ViewModel.Value.Model.ConcentrateAirConditionInfo.ConditionMode = AirConditionMode.Auto;
+            ViewModel.Value.Model.ConcentrateAirConditionInfo.SettingTemperature = 20.0F;
+
+            ViewModel.Value.Model.CabWindSpeedMode = WindSpeedMode.Strong;
         }
     }
 }

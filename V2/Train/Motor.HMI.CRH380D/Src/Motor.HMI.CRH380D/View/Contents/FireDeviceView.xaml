@@ -1,6 +1,7 @@
 ﻿<UserControl x:Class="Motor.HMI.CRH380D.View.Contents.FireDeviceView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:common="clr-namespace:Motor.HMI.CRH380D.View.Common"
              xmlns:constant="clr-namespace:Motor.HMI.CRH380D.Constant"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -14,12 +15,18 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="33*" />
             <RowDefinition Height="65*" />
-            <RowDefinition Height="11*" />
-            <RowDefinition Height="296*" />
-            <RowDefinition Height="15*" />
+            <RowDefinition Height="152*" />
+            <RowDefinition Height="130*" />
+            <RowDefinition Height="40*" />
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <TextBlock Style="{StaticResource TitleTextStyle}" Text="火灾探测器" />
+        </Grid>
+        <Grid Grid.Row="1">
+            <common:TrainCommon3 DataContext="{Binding Model.FireDeviceModel.TrainModel}" />
+        </Grid>
+        <Grid x:Name="FireDevice" Grid.Row="3">
+            <Border regions:RegionManager.RegionName="{x:Static constant:RegionNames.FireDeviceCommon}" />
         </Grid>
     </Grid>
 </UserControl>

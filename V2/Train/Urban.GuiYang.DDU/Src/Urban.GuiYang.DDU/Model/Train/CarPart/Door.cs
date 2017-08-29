@@ -7,7 +7,7 @@ using Urban.GuiYang.DDU.Model.Constant;
 
 namespace Urban.GuiYang.DDU.Model.Train.CarPart
 {
-    public class DoorStateItem : CarItem<DoorState,CarDoorConfig >
+    public class DoorStateItem : CarItem<DoorState, CarDoorConfig>
     {
         public DoorStateItem(int carIndex, CarDoorConfig indexString) : base(carIndex, indexString)
         {
@@ -17,7 +17,7 @@ namespace Urban.GuiYang.DDU.Model.Train.CarPart
 
     public class DoorLockStateItem : CarItem<DoorLockState, CarDoorLockStateConfig>
     {
-        public DoorLockStateItem(int carIndex, CarDoorLockStateConfig lockStateConfig) : base(carIndex, lockStateConfig)
+        public DoorLockStateItem(int carIndex, CarDoorLockStateConfig lockStateConfig) : base(carIndex, lockStateConfig, lockStateConfig.ItemIndex)
         {
         }
     }
@@ -31,7 +31,7 @@ namespace Urban.GuiYang.DDU.Model.Train.CarPart
         {
             ItemLocationStyle = itemLocationStyle;
         }
-  
+
         public IEnumerable<DoorStateItem> UpItems { get; private set; }
         public IEnumerable<DoorStateItem> DownItems { get; private set; }
 
@@ -53,7 +53,7 @@ namespace Urban.GuiYang.DDU.Model.Train.CarPart
                 switch (ItemLocationStyle)
                 {
                     case ItemLocationStyle.LeftStyle:
-                        UpItems = value.Where(w => w.CarIndex%2 == 0);
+                        UpItems = value.Where(w => w.CarIndex % 2 == 0);
                         DownItems = value.Where(w => w.CarIndex % 2 != 0);
                         break;
                     case ItemLocationStyle.RightStyle:

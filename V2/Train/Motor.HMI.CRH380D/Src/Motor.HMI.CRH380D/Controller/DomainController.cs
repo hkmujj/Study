@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
-using System.Windows.Threading;
 using Microsoft.Practices.Prism.Events;
 using Microsoft.Practices.Prism.Regions;
+using MMI.Facility.Interface.Service;
 using MMI.Facility.WPFInfrastructure.Interfaces;
+using Motor.HMI.CRH380D.Constant;
 using Motor.HMI.CRH380D.Event;
+using Motor.HMI.CRH380D.Interfaces;
 using Motor.HMI.CRH380D.Models;
 using Motor.HMI.CRH380D.Models.BtnStragy;
 using Motor.HMI.CRH380D.Resources.Keys;
+using Motor.HMI.CRH380D.View.Contents;
 using Motor.HMI.CRH380D.ViewModel;
 
 namespace Motor.HMI.CRH380D.Controller
@@ -43,6 +46,13 @@ namespace Motor.HMI.CRH380D.Controller
             AnsyncNavigateViewKeyEvent = m_EventAggregator.GetEvent<AnsyncNavigateViewByKeyEvent>();
 
             AnsyncNavigateViewKeyEvent.Subscribe(s => NavigateTo(s.StateKey), ThreadOption.UIThread, true);
+
+            if (GlobalParam.Instance.InitParam != null)
+            {
+                GlobalParam.Instance.InitParam.DataPackage.ServiceManager.GetService<ICourseService>().CourseStateChanged += DomainController_CourseStateChanged;
+            }
+            
+            m_EventAggregator.GetEvent<PowerStateChangedEvent>().Subscribe(OnPowerChanged, ThreadOption.UIThread);
         }
 
         public override void Initalize()
@@ -72,6 +82,35 @@ namespace Motor.HMI.CRH380D.Controller
             //        }
             //    }
             //};
+        }
+
+        private void OnPowerChanged(PowerStateChangedEvent.Args obj)
+        {
+            if (obj.CurrentState)
+            {
+                m_RegionManager.RequestNavigate(RegionNames.DomainShellContent, typeof(LoginView).FullName);
+            }
+        }
+
+        [ImportMany]
+        private List<Lazy<IModels>> AllModels;
+        private void DomainController_CourseStateChanged(object sender, CourseStateChangedArgs e)
+        {
+            switch (e.CourseService.CurrentCourseState)
+            {
+                case CourseState.Unknown:
+
+                    break;
+                case CourseState.Started:
+                    AllModels.ForEach(f => f.Value.Initialize());
+                    m_RegionManager.RequestNavigate(RegionNames.DomainShellContent, typeof(LoginView).FullName);
+                    break;
+                case CourseState.Stoped:
+                    AllModels.ForEach(f => f.Value.Clear());
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
 
 
@@ -124,6 +163,11 @@ namespace Motor.HMI.CRH380D.Controller
         public void NavigateToRoot()
         {
             NavigateTo(StateKeys.Root_主菜单界面按键);
+        }
+
+        public void NavigateToView(string RegionName, string ViewName)
+        {
+            m_RegionManager.RequestNavigate(RegionName, ViewName);
         }
     }
 }

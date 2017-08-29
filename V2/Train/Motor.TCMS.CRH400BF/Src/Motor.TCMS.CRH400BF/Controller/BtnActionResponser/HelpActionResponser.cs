@@ -8,7 +8,7 @@ namespace Motor.TCMS.CRH400BF.Controller.BtnActionResponser
     {
         public override void ResponseClick(StateViewModel stateViewModel)
         {
-            NavigateTo(stateViewModel, "Root-牵引界面帮助");
+            NavigateTo(stateViewModel, "Root-牵引界面帮助信息");
         }
     }
 }

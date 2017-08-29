@@ -61,6 +61,51 @@ namespace LightRail.HMI.GZYGDC.Resources.Keys {
         }
         
         /// <summary>
+        ///   查找类似 乘客对讲 的本地化字符串。
+        /// </summary>
+        internal static string 乘客对讲 {
+            get {
+                return ResourceManager.GetString("乘客对讲", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 乘客对讲复位 的本地化字符串。
+        /// </summary>
+        internal static string 乘客对讲复位 {
+            get {
+                return ResourceManager.GetString("乘客对讲复位", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 司机室对讲 的本地化字符串。
+        /// </summary>
+        internal static string 司机室对讲 {
+            get {
+                return ResourceManager.GetString("司机室对讲", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 客室广播 的本地化字符串。
+        /// </summary>
+        internal static string 客室广播 {
+            get {
+                return ResourceManager.GetString("客室广播", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 车外广播 的本地化字符串。
+        /// </summary>
+        internal static string 车外广播 {
+            get {
+                return ResourceManager.GetString("车外广播", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 集中控制_司机室风速_中风 的本地化字符串。
         /// </summary>
         internal static string 集中控制_司机室风速_中风 {

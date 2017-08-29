@@ -4,9 +4,7 @@ using Microsoft.Practices.Prism.Commands;
 using MMI.Facility.WPFInfrastructure.Interfaces;
 using Motor.HMI.CRH380D.Extension;
 using Motor.HMI.CRH380D.Models.Model;
-using Motor.HMI.CRH380D.Models.State;
 using Motor.HMI.CRH380D.Models.Units;
-using Motor.HMI.CRH380D.Resources.Keys;
 using Motor.HMI.CRH380D.ViewModel;
 
 namespace Motor.HMI.CRH380D.Controller

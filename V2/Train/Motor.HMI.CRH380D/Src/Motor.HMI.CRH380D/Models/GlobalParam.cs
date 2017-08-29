@@ -129,6 +129,21 @@ namespace Motor.HMI.CRH380D.Models
         /// 直流供电设备3集合
         /// </summary>
         public List<DCDevice3Unit> DCDevice3Units { get; private set; }
+        
+        /// <summary>
+        /// 火灾探测器集合
+        /// </summary>
+        public List<FireDeviceUnit> FireDeviceUnits { get; private set; }
+
+        /// <summary>
+        /// 账户密码集合
+        /// </summary>
+        public List<LoginInfo> LoginInfos { get; private set; }
+
+        /// <summary>
+        /// 事件信息表
+        /// </summary>
+        public List<EventInfo> EventInfos { get; private set; }
 
         public void Initalize(SubsystemInitParam initParam)
         {
@@ -157,9 +172,11 @@ namespace Motor.HMI.CRH380D.Models
             InitParam.DataPackage.ServiceManager.RegistService<DCDevice1PriorityService>(new DCDevice1PriorityService(Priority.DCDevice1Priorities));
             InitParam.DataPackage.ServiceManager.RegistService<DCDevice2PriorityService>(new DCDevice2PriorityService(Priority.DCDevice2Priorities));
             InitParam.DataPackage.ServiceManager.RegistService<DCDevice3PriorityService>(new DCDevice3PriorityService(Priority.DCDevice3Priorities));
-
+            
             Initalize(initParam.DataPackage.Config.SystemDicrectory.SystemConfigDirectory,
                 initParam.AppConfig.AppPaths.ConfigDirectory);
+
+            InitParam.DataPackage.ServiceManager.RegistService<EventManagerService>(new EventManagerService(EventInfos, 10));
         }
 
         public void Initalize(string rootConfigPath, string appConfigPath)
@@ -167,6 +184,7 @@ namespace Motor.HMI.CRH380D.Models
             StateInterfaceCollection = ExcelParser.Parser<StateInterfaceItem>(appConfigPath).ToList();
             BreakTestInfos = ExcelParser.Parser<BreakTestInfo>(appConfigPath).ToList();
             HandleTestInfos = ExcelParser.Parser<HandleTestInfo>(appConfigPath).ToList();
+            EventInfos = ExcelParser.Parser<EventInfo>(appConfigPath).ToList();
             
             DoorUnits = ExcelParser.Parser<DoorUnit>(appConfigPath).ToList();
             PantographUnits = ExcelParser.Parser<PantographUnit>(appConfigPath).ToList();
@@ -187,6 +205,8 @@ namespace Motor.HMI.CRH380D.Models
             DCDevice1Units = ExcelParser.Parser<DCDevice1Unit>(appConfigPath).ToList();
             DCDevice2Units = ExcelParser.Parser<DCDevice2Unit>(appConfigPath).ToList();
             DCDevice3Units = ExcelParser.Parser<DCDevice3Unit>(appConfigPath).ToList();
+            FireDeviceUnits = ExcelParser.Parser<FireDeviceUnit>(appConfigPath).ToList();
+            LoginInfos = ExcelParser.Parser<LoginInfo>(appConfigPath).ToList();
         }
     }
 }

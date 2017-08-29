@@ -86,7 +86,7 @@
             <converter:ObjectContentPair Key="{x:Static constant:RunningDirection.Unkown}" Content="{x:Static Visibility.Visible}" />
             <converter:ObjectContentPair Key="{x:Static constant:RunningDirection.Left}" Content="{x:Static Visibility.Visible}" />
             <converter:ObjectContentPair Key="{x:Static constant:RunningDirection.Right}" Content="{x:Static Visibility.Hidden}" />
-            <converter:ObjectContentPair Key="{x:Static constant:RunningDirection.Right}" Content="{x:Static Visibility.Hidden}" />
+            <converter:ObjectContentPair Key="{x:Static constant:RunningDirection.None}" Content="{x:Static Visibility.Hidden}" />
         </converter:SelectObjectContentConverter.ObjectContentCollection>
     </converter:SelectObjectContentConverter>
 

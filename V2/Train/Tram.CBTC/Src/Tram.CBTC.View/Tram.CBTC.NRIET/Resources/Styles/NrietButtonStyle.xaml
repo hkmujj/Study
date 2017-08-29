@@ -44,6 +44,42 @@
         </Style.Setters>
     </Style>
 
+    <Style x:Key="Tram.CBTC.Nriet.BlackBtnStyle1" TargetType="Button">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="{StaticResource Tram.CBTC.Nriet.HarwareButtonWhiteBrush}" />
+            <Setter Property="BorderBrush" Value="{StaticResource Tram.CBTC.Nriet.Brush.LightGray}" />
+            <Setter Property="Background" Value="{StaticResource Tram.CBTC.Nriet.Brush.Black}" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                            x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="10"
+                            SnapsToDevicePixels="true">
+                            <ContentPresenter
+                                Margin="{TemplateBinding Padding}"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Focusable="False"
+                                RecognizesAccessKey="True"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="border" Property="Background" Value="{StaticResource Tram.CBTC.Nriet.HarwareButtonPressedBackground}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style.Setters>
+    </Style>
 
     <Style x:Key="Tram.CBTC.Nriet.StartViewBtnStyle" TargetType="Button">
         <Style.Setters>

@@ -43,31 +43,31 @@
             <Button  Margin="2,40,0,10" Style="{StaticResource CenterAlignButtonStyle}" Content="{StaticResource BroadcastControlView.EmergencyCall2}"></Button>
         </Grid>
         <Grid Row="2" Column="1">
-            <Image Margin="0,45,0,15" Source="{StaticResource HelpView.通话结束}"></Image>
+            <Image Margin="0,45,0,15" Source="{Binding BroadcastControlViewModel.Model.Car1Location2EnmergencyTalkUnit.State, Converter={StaticResource EnmergencyTalkConverter}}"></Image>
         </Grid>
         <Grid Row="2" Column="2">
-            <Image Margin="0,45,0,15" Source="{StaticResource HelpView.通话结束}"></Image>
+            <Image Margin="0,45,0,15" Source="{Binding BroadcastControlViewModel.Model.Car2Location2EnmergencyTalkUnit.State, Converter={StaticResource EnmergencyTalkConverter}}"></Image>
         </Grid>
         <Grid Row="2" Column="3">
-            <Image Margin="0,45,0,15" Source="{StaticResource HelpView.通话结束}"></Image>
+            <Image Margin="0,45,0,15" Source="{Binding BroadcastControlViewModel.Model.Car3Location2EnmergencyTalkUnit.State, Converter={StaticResource EnmergencyTalkConverter}}"></Image>
         </Grid>
         <Grid Row="2" Column="4">
-            <Image Margin="0,45,0,15" Source="{StaticResource HelpView.通话结束}"></Image>
+            <Image Margin="0,45,0,15" Source="{Binding BroadcastControlViewModel.Model.Car4Location2EnmergencyTalkUnit.State, Converter={StaticResource EnmergencyTalkConverter}}"></Image>
         </Grid>
         <Grid Row="3" Column="0">
             <Button  Margin="2,10,0,40" Style="{StaticResource CenterAlignButtonStyle}" Content="{StaticResource BroadcastControlView.EmergencyCall1}"></Button>
         </Grid>
         <Grid Row="3" Column="1">
-            <Image Margin="0,15,0,45" Source="{StaticResource HelpView.通话结束}"></Image>
+            <Image Margin="0,15,0,45" Source="{Binding BroadcastControlViewModel.Model.Car1Location1EnmergencyTalkUnit.State, Converter={StaticResource EnmergencyTalkConverter}}"></Image>
         </Grid>
         <Grid Row="3" Column="2">
-            <Image Margin="0,15,0,45" Source="{StaticResource HelpView.通话结束}"></Image>
+            <Image Margin="0,15,0,45" Source="{Binding BroadcastControlViewModel.Model.Car2Location1EnmergencyTalkUnit.State, Converter={StaticResource EnmergencyTalkConverter}}"></Image>
         </Grid>
         <Grid Row="3" Column="3">
-            <Image Margin="0,15,0,45" Source="{StaticResource HelpView.通话结束}"></Image>
+            <Image Margin="0,15,0,45" Source="{Binding BroadcastControlViewModel.Model.Car3Location1EnmergencyTalkUnit.State, Converter={StaticResource EnmergencyTalkConverter}}"></Image>
         </Grid>
         <Grid Row="3" Column="4">
-            <Image Margin="0,15,0,45" Source="{StaticResource HelpView.通话结束}"></Image>
+            <Image Margin="0,15,0,45" Source="{Binding BroadcastControlViewModel.Model.Car4Location1EnmergencyTalkUnit.State, Converter={StaticResource EnmergencyTalkConverter}}"></Image>
         </Grid>
         <Grid Row="1" Column="5">
             <Grid.ColumnDefinitions>
@@ -75,10 +75,10 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Column="0">
-                <Button Style="{StaticResource RoundButtonStyle}" Content="{StaticResource BroadcastControlView.OutCarBroadcast}"></Button>
+                <Button Style="{StaticResource RoundButtonStyle}" Content="{StaticResource BroadcastControlView.OutCarBroadcast}" Command="{Binding BroadcastControlViewModel.Controller.OutCarBroadcastCommand}" CommandParameter="1"></Button>
             </Grid>
             <Grid Column="1">
-                <Button Style="{StaticResource RoundButtonStyle}" Content="{StaticResource BroadcastControlView.CabBroadcast}"></Button>
+                <Button Style="{StaticResource RoundButtonStyle}" Content="{StaticResource BroadcastControlView.CabBroadcast}" Command="{Binding BroadcastControlViewModel.Controller.PassengerBroadcastCommand}" CommandParameter="1"></Button>
             </Grid>
         </Grid>
         <Grid Row="2" Column="5">
@@ -87,10 +87,10 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Column="0">
-                <Button Style="{StaticResource RoundButtonStyle}" Content="{StaticResource BroadcastControlView.Passengertalk}"></Button>
+                <Button Style="{StaticResource RoundButtonStyle}" Content="{StaticResource BroadcastControlView.Passengertalk}" Command="{Binding BroadcastControlViewModel.Controller.PassengerCallTalkCommand}" CommandParameter="1"></Button>
             </Grid>
             <Grid Column="1">
-                <Button Style="{StaticResource RoundButtonStyle}" Content="{StaticResource BroadcastControlView.PassengertalkReset}"></Button>
+                <Button Style="{StaticResource RoundButtonStyle}" Content="{StaticResource BroadcastControlView.PassengertalkReset}" Command="{Binding BroadcastControlViewModel.Controller.PassengerCallTalkResetCommand}" CommandParameter="1"></Button>
             </Grid>
         </Grid>
         <Grid Row="3" Column="5">
@@ -99,7 +99,7 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Column="0">
-                <Button Style="{StaticResource RoundButtonStyle}" Content="{StaticResource BroadcastControlView.CabTalk}"></Button>
+                <Button Style="{StaticResource RoundButtonStyle}" Content="{StaticResource BroadcastControlView.CabTalk}" Command="{Binding BroadcastControlViewModel.Controller.CabCallTalkCommand}" CommandParameter="1"></Button>
             </Grid>
             <Grid Column="1">
 
@@ -116,3 +116,4 @@
         </Grid>
     </Grid>
 </UserControl>
+

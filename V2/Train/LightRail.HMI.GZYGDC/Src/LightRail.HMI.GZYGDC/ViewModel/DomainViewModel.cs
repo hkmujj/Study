@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel.Composition;
-using DevExpress.Xpf.Editors.Helpers;
 using LightRail.HMI.GZYGDC.Controller;
 using LightRail.HMI.GZYGDC.Model;
 using Microsoft.Practices.Prism.ViewModel;
@@ -13,7 +12,8 @@ namespace LightRail.HMI.GZYGDC.ViewModel
         [ImportingConstructor]
         public DomainViewModel(DomainController controller, DomainModel model, HardwareBtnViewModel hardwareBtnViewModel, 
             TitleViewModel titleViewModel, RunningViewModel runningViewModel, EmergencyBroadcastViewModel emergencyBroadcastViewModel,
-            EventInfoViewModel eventInfoViewModel, AirConditionViewModel airConditionViewModel)
+            EventInfoViewModel eventInfoViewModel, AirConditionViewModel airConditionViewModel, SettingViewModel settingViewModel,
+            BroadcastControlViewModel broadcastControlViewModel, NetTopologyViewModel netTopologyViewModel)
         {
             Controller = controller;
             //Controller.ViewModel = Lazy<DomainViewModel>(this);
@@ -29,6 +29,9 @@ namespace LightRail.HMI.GZYGDC.ViewModel
             EmergencyBroadcastViewModel = emergencyBroadcastViewModel;
             EventInfoViewModel = eventInfoViewModel;
             AirConditionViewModel = airConditionViewModel;
+            SettingViewModel = settingViewModel;
+            BroadcastControlViewModel = broadcastControlViewModel;
+            NetTopologyViewModel = netTopologyViewModel;
 
             Controller.Initalize();
         }
@@ -51,6 +54,12 @@ namespace LightRail.HMI.GZYGDC.ViewModel
 
 
         public AirConditionViewModel AirConditionViewModel { private set; get; }
+
+        public SettingViewModel SettingViewModel { private set; get; }
+
+        public BroadcastControlViewModel BroadcastControlViewModel { private set; get; }
+
+        public NetTopologyViewModel NetTopologyViewModel { private set; get; }
 
     }
 }

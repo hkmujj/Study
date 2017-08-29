@@ -34,7 +34,17 @@
         <Border Grid.Column="1"
                 BorderBrush="{StaticResource Motor.HMI.CRH380BG.ForegroundWhiteBrush}"
                 BorderThickness="0,1,1,0">
-            <TextBlock Style="{StaticResource Motor.HMI.CRH380BG.TitleTextStyle}" Text="{Binding Path=Domain.Model.TitleModel.AscSettingState, Converter={StaticResource Motor.HMI.CRH380BG.AscSettingStringConverter}}" />
+            <Grid>
+                <TextBlock Style="{StaticResource Motor.HMI.CRH380BG.TitleTextStyle}"
+                           Text="{Binding Path=Domain.Model.TitleModel.ASCSettingSpeed,
+                                          StringFormat={StaticResource Motor.HMI.CRH380BG.ZeroFormart}}"
+                           Visibility="{Binding Path=Domain.Model.TitleModel.AscSettingState,
+                                                Converter={StaticResource Motor.HMI.CRH380BG.AscSettingVisibleConverter}}" />
+                <TextBlock Style="{StaticResource Motor.HMI.CRH380BG.TitleTextStyle}"
+                           Text="{StaticResource Motor.HMI.CRH380BG.StringLine}"
+                           Visibility="{Binding Path=Domain.Model.TitleModel.AscSettingState,
+                                                Converter={StaticResource Motor.HMI.CRH380BG.AscSettingVisible1Converter}}" />
+            </Grid>
         </Border>
         <Border Grid.Column="2"
                 BorderBrush="{StaticResource Motor.HMI.CRH380BG.ForegroundWhiteBrush}"
@@ -119,16 +129,11 @@
             <Image Source="{Binding Path=Domain.Model.TitleModel.InfoDriverRoomDoorState, Converter={StaticResource Motor.HMI.CRH380BG.InfoDriverRoomDoorStateConverter}}" />
         </Border>
 
-        <Border Grid.Column="14"
-            Visibility="{Binding Domain.FaultViewModel.Model.AllPagedItems.AllFaultReadState, Converter={StaticResource Motor.HMI.CRH380BG.BooleanToVisibilityConverter}}">
-            <Grid Margin="2"
-                  Background="Yellow"
-                  
-                
-                 >
+        <Border Grid.Column="14" Visibility="{Binding Domain.FaultViewModel.Model.AllPagedItems.AllFaultReadState, Converter={StaticResource Motor.HMI.CRH380BG.BooleanToVisibilityConverter}}">
+            <Grid Margin="2" Background="Yellow">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="10*" />
-                    
+
 
                     <ColumnDefinition Width="6*" />
                 </Grid.ColumnDefinitions>
@@ -144,14 +149,11 @@
             </Grid>
         </Border>
 
-        <Border Grid.Column="14"
-            Visibility="{Binding Domain.FaultViewModel.Model.AllPagedItems.IsfaultsTate, Converter={StaticResource Motor.HMI.CRH380BG.BooleanToVisibilityConverter}}">
+        <Border Grid.Column="14" Visibility="{Binding Domain.FaultViewModel.Model.AllPagedItems.IsfaultsTate, Converter={StaticResource Motor.HMI.CRH380BG.BooleanToVisibilityConverter}}">
             <Grid Margin="2"
                   Background="Yellow"
-                  
                   view:FlickerManager.DurationMiliSecond="1000"
-                  view:FlickerManager.Flicking="True"
-                 >
+                  view:FlickerManager.Flicking="True">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="4*" />
                     <ColumnDefinition Width="6*" />

@@ -15,25 +15,27 @@
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <TextBlock HorizontalAlignment="Center"
-                   VerticalAlignment="Center"
-                   FontSize="15"
+        <TextBlock HorizontalAlignment="Right"
+                   VerticalAlignment="Bottom"
+                   FontSize="13"
                    Foreground="#FF2597E6"
                    Text="终点站：" />
         <TextBlock Grid.Column="1"
-                   VerticalAlignment="Center"
-                   FontSize="15"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Bottom"
+                   FontSize="13"
                    Foreground="#FF2597E6"
                    Text="{Binding Path=Domain.RoadInfo.StationInfo.EndStation}" />
         <TextBlock Grid.Column="2"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"
-                   FontSize="15"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Bottom"
+                   FontSize="13"
                    Foreground="#FF2597E6"
                    Text="下一站：" />
         <TextBlock Grid.Column="3"
-                   VerticalAlignment="Center"
-                   FontSize="15"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Bottom"
+                   FontSize="13"
                    Foreground="#FF2597E6"
                    Text="{Binding Path=Domain.RoadInfo.StationInfo.NextStation}" />
     </Grid>

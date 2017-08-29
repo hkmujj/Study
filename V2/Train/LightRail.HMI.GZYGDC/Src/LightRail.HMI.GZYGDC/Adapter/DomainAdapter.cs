@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.Composition;
 using System.IO;
+using System.Windows.Threading;
 using CommonUtil.Util;
 using LightRail.HMI.GZYGDC.Event;
 using LightRail.HMI.GZYGDC.Extension;
@@ -10,6 +11,7 @@ using LightRail.HMI.GZYGDC.ViewModel;
 using Microsoft.Practices.Prism.Events;
 using Microsoft.Practices.Prism.ViewModel;
 using Microsoft.Practices.ServiceLocation;
+using MMI.Facility.Interface;
 using MMI.Facility.Interface.Data;
 using MMI.Facility.Interface.Event;
 using MMI.Facility.Interface.Extension;
@@ -19,8 +21,8 @@ using MMI.Facility.WPFInfrastructure.Event;
 namespace LightRail.HMI.GZYGDC.Adapter
 {
     [Export]
-    public class DomainAdapter :NotificationObject, IDataListener
-    { 
+    public class DomainAdapter : NotificationObject, IDataListener
+    {
         public IEventAggregator EventAggregator { private set; get; }
 
         public ICommunicationDataService DataService { private set; get; }
@@ -87,7 +89,7 @@ namespace LightRail.HMI.GZYGDC.Adapter
             GlobalParam.Instance.InitParam.RegistDataListener(this);
 
             EventAggregator.GetEvent<DataServiceDataChangedEvent>()
-                .Subscribe(s => UpdateDatas(s.Sender, s.DataChangedArgs), ThreadOption.UIThread);
+                .Subscribe(s => UpdateDatas(s.Sender, s.DataChangedArgs));
 
             DataService.WritableReadService.ChangedInBoolOf(InBoolKeys.黑屏, isDebugModel);
 
@@ -153,10 +155,15 @@ namespace LightRail.HMI.GZYGDC.Adapter
         {
             args.ChangedBools.UpdateIfContains(InBoolKeys.黑屏, b => ViewModel.Model.IsStart = b);
 
-            foreach (var it in m_UpdateDataProviders)
+
+            App.Current.GetMainDispatcher().BeginInvoke(DispatcherPriority.Normal, new Action(() =>
             {
-                it.UpdateDatas(sender, args);
-            }
+                foreach (var it in m_UpdateDataProviders)
+                {
+                    it.UpdateDatas(sender, args);
+                }
+            }));
+           
 
         }
 

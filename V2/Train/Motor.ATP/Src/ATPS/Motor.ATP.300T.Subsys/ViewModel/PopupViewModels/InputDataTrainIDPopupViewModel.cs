@@ -120,7 +120,7 @@ namespace Motor.ATP._300T.Subsys.ViewModel.PopupViewModels
                         throw new ArgumentOutOfRangeException();
                 }
 
-                //m_DriverInputInterpreter.Reset();
+                m_DriverInputInterpreter.Reset();
             }
         }
 
@@ -133,8 +133,7 @@ namespace Motor.ATP._300T.Subsys.ViewModel.PopupViewModels
                     TrainId += rlt.InputContent;
                     break;
                 case DriverInputInterpreterResult.InputType.Replace:
-                    TrainId = TrainId.Remove(TrainId.Length - 1) +
-                                           rlt.InputContent;
+                    TrainId = TrainId.Substring(0, TrainId.Length - 1) + rlt.InputContent;
                     break;
                 case DriverInputInterpreterResult.InputType.Control:
                     break;

@@ -362,12 +362,12 @@ namespace Motor.HMI.CRH380BG.Adapter
             args.ChangedBools.UpdateIfContains(InBoolKeys.Inb制动有效率有效8D, b => br.IsAirBrake8Usefull = b ? Efficence.Efficent : Efficence.NotEfficent);
             args.ChangedBools.UpdateIfContains(InBoolKeys.Inb制动有效率有效关闭8D, b => br.IsAirBrake8Closed = b ? EfficenceClose.Close : EfficenceClose.Open);
 
-            args.ChangedFloats.UpdateIfContains(InFloatKeys.Inf牵引制动百分比1, b=> br.AirBrakeEfficencePercent = b);
-            args.ChangedFloats.UpdateIfContains(InFloatKeys.Inf牵引制动百分比1, b => br.AirBrakeTotalNumber = b);
-            args.ChangedFloats.UpdateIfContains(InFloatKeys.Inf牵引制动百分比3, b => br.AirBrakeTotalNumber = b);
+            args.ChangedFloats.UpdateIfContains(InFloatKeys.Inf牵引制动百分比1, f=> br.AirBrakeEfficencePercent = f);
+            args.ChangedFloats.UpdateIfContains(InFloatKeys.Inf牵引制动百分比1, f => br.AirBrakeTotalNumber = f);
+            args.ChangedFloats.UpdateIfContains(InFloatKeys.Inf牵引制动百分比3, f => br.AirBrakeTotalNumber = f);
 
-            args.ChangedFloats.UpdateIfContains(InFloatKeys.Inf车长, b => br.AirBrakeTrainWidth = b);
-            args.ChangedFloats.UpdateIfContains(InFloatKeys.Inf轴数, b => br.AirBrakeAxleNumber = b);
+            args.ChangedFloats.UpdateIfContains(InFloatKeys.Inf车长, f => br.AirBrakeTrainWidth = f);
+            args.ChangedFloats.UpdateIfContains(InFloatKeys.Inf轴数, f => br.AirBrakeAxleNumber = f);
 
             //时间和日期没有填写
         }
@@ -436,34 +436,75 @@ namespace Motor.HMI.CRH380BG.Adapter
             });
 
 
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb接触网电压充电机1_黄))
+            {
+                main.VoltageChargerState1 = VoltageChargerState.Yellow;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb接触网电压充电机1_蓝))
+            {
+                main.VoltageChargerState1 = VoltageChargerState.Blue;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb接触网电压充电机1_状态未知))
+            {
+                main.VoltageChargerState1 = VoltageChargerState.Unknow;
+            }
+            else
+            {
+                main.VoltageChargerState1 = VoltageChargerState.Black;
+            }
 
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb接触网电压充电机2_黄))
+            {
+                main.VoltageChargerState2 = VoltageChargerState.Yellow;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb接触网电压充电机2_蓝))
+            {
+                main.VoltageChargerState2 = VoltageChargerState.Blue;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb接触网电压充电机2_状态未知))
+            {
+                main.VoltageChargerState2 = VoltageChargerState.Unknow;
+            }
+            else
+            {
+                main.VoltageChargerState2 = VoltageChargerState.Black;
+            }
 
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb充电机1_黄))
+            {
+                main.ChargerState1 = ChargerState.Yellow;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb充电机1_蓝))
+            {
+                main.ChargerState1 = ChargerState.Blue;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb充电机1_状态未知))
+            {
+                main.ChargerState1 = ChargerState.Unknow;
+            }
+            else
+            {
+                main.ChargerState1 = ChargerState.Black;
+            }
 
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_受电弓_1_升弓, b => main.PantographState1 = b ? PantographState.Rise : PantographState.Unkown);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_受电弓_1_降弓, b => main.PantographState1 = b ? PantographState.Down : PantographState.Unkown);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_受电弓_1_切除, b => main.PantographState1 = b ? PantographState.Removal : PantographState.Unkown);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_受电弓_2_升弓, b => main.PantographState2 = b ? PantographState.Rise : PantographState.Unkown);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_受电弓_2_降弓, b => main.PantographState2 = b ? PantographState.Down : PantographState.Unkown);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_受电弓_2_切除, b => main.PantographState2 = b ? PantographState.Removal : PantographState.Unkown);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_主断_1_闭合, b => main.MainBreakState1 = b ? MainBreakState.Closure : MainBreakState.Unkonw);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_主断_1_断开, b => main.MainBreakState1 = b ? MainBreakState.Disconnect : MainBreakState.Unkonw);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_主断_1_切除, b => main.MainBreakState1 = b ? MainBreakState.Removal : MainBreakState.Unkonw);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_主断_2_闭合, b => main.MainBreakState2 = b ? MainBreakState.Closure : MainBreakState.Unkonw);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_主断_2_断开, b => main.MainBreakState2 = b ? MainBreakState.Disconnect : MainBreakState.Unkonw);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_主断_2_切除, b => main.MainBreakState2 = b ? MainBreakState.Removal : MainBreakState.Unkonw);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb接触网电压充电机1_黄, b => main.VoltageChargerState1 = b ? VoltageChargerState.Yellow : VoltageChargerState.Black);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb接触网电压充电机1_蓝, b => main.VoltageChargerState1 = b ? VoltageChargerState.Blue : VoltageChargerState.Black);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb接触网电压充电机1_状态未知, b => main.VoltageChargerState1 = b ? VoltageChargerState.Unknow : VoltageChargerState.Black);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb接触网电压充电机2_黄, b => main.VoltageChargerState2 = b ? VoltageChargerState.Yellow : VoltageChargerState.Black);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb接触网电压充电机2_蓝, b => main.VoltageChargerState2 = b ? VoltageChargerState.Blue : VoltageChargerState.Black);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb接触网电压充电机2_状态未知, b => main.VoltageChargerState2 = b ? VoltageChargerState.Unknow : VoltageChargerState.Black);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb充电机1_黄, b => main.ChargerState1 = b ? ChargerState.Yellow : ChargerState.Black);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb充电机1_蓝, b => main.ChargerState1 = b ? ChargerState.Blue : ChargerState.Black);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb充电机1_状态未知, b => main.ChargerState1 = b ? ChargerState.Unknow : ChargerState.Black);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb充电机2_黄, b => main.ChargerState2 = b ? ChargerState.Yellow : ChargerState.Black);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb充电机2_蓝, b => main.ChargerState2 = b ? ChargerState.Blue : ChargerState.Black);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb充电机2_状态未知, b => main.ChargerState2 = b ? ChargerState.Unknow : ChargerState.Black);
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb充电机2_黄))
+            {
+                main.ChargerState2 = ChargerState.Yellow;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb充电机2_蓝))
+            {
+                main.ChargerState2 = ChargerState.Blue;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb充电机2_状态未知))
+            {
+                main.ChargerState2 = ChargerState.Unknow;
+            }
+            else
+            {
+                main.ChargerState2 = ChargerState.Black;
+            }
 
+            
             args.ChangedBools.UpdateIfContains(InBoolKeys.InbEVC可以切换标志, b => main.EVCIsDisplay =b);
 
             if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb工况牵引)
@@ -1298,94 +1339,471 @@ namespace Motor.HMI.CRH380BG.Adapter
         {
             var door = ViewModel.Domain.Model.Door;
 
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb1车右_1门故障, b => door.Car1RightDoor2State = b ? DoorState.Fault : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb1车右_1门开, b => door.Car1RightDoor2State = b ? DoorState.Open : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb1车右_1门锁闭, b => door.Car1RightDoor2State = b ? DoorState.Lock : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb01车_右_1门状态未知, b => door.Car1RightDoor2State = b ? DoorState.Unkown : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb1车左_1门故障, b => door.Car1LeftDoor2State = b ? DoorState.Fault : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb1车左_1门开, b => door.Car1LeftDoor2State = b ? DoorState.Open : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb1车左_1门锁闭, b => door.Car1LeftDoor2State = b ? DoorState.Lock : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb01车_左_1门状态未知, b => door.Car1LeftDoor2State = b ? DoorState.Unkown : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb2车右_1门故障, b => door.Car2RightDoor1State = b ? DoorState.Fault : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb2车右_1门开, b => door.Car2RightDoor1State = b ? DoorState.Open : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb2车右_1门锁闭, b => door.Car2RightDoor1State = b ? DoorState.Lock : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb02车_右_1门状态未知, b => door.Car2RightDoor1State = b ? DoorState.Unkown : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb2车右_2门故障, b => door.Car2RightDoor2State = b ? DoorState.Fault : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb2车右_2门开, b => door.Car2RightDoor2State = b ? DoorState.Open : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb2车右_2门锁闭, b => door.Car2RightDoor2State = b ? DoorState.Lock : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb02车_右_2门状态未知, b => door.Car2RightDoor2State = b ? DoorState.Unkown : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb2车左_1门故障, b => door.Car2LeftDoor1State = b ? DoorState.Fault : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb2车左_1门开, b => door.Car2LeftDoor1State = b ? DoorState.Open : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb2车左_1门锁闭, b => door.Car2LeftDoor1State = b ? DoorState.Lock : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb02车_左_1门状态未知, b => door.Car2LeftDoor1State = b ? DoorState.Unkown : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb2车左_2门故障, b => door.Car2LeftDoor2State = b ? DoorState.Fault : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb2车左_2门开, b => door.Car2LeftDoor2State = b ? DoorState.Open : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb2车左_2门锁闭, b => door.Car2LeftDoor2State = b ? DoorState.Lock : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb02车_左_2门状态未知, b => door.Car2LeftDoor2State = b ? DoorState.Unkown : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb3车右_1门故障, b => door.Car3RightDoor1State = b ? DoorState.Fault : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb3车右_1门开, b => door.Car3RightDoor1State = b ? DoorState.Open : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb3车右_1门锁闭, b => door.Car3RightDoor1State = b ? DoorState.Lock : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb03车_右_1门状态未知, b => door.Car3RightDoor1State = b ? DoorState.Unkown : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb3车右_2门故障, b => door.Car3RightDoor2State = b ? DoorState.Fault : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb3车右_2门开, b => door.Car3RightDoor2State = b ? DoorState.Open : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb3车右_2门锁闭, b => door.Car3RightDoor2State = b ? DoorState.Lock : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb03车_右_2门状态未知, b => door.Car3RightDoor2State = b ? DoorState.Unkown : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb3车左_1门故障, b => door.Car3LeftDoor1State = b ? DoorState.Fault : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb3车左_1门开, b => door.Car3LeftDoor1State = b ? DoorState.Open : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb3车左_1门锁闭, b => door.Car3LeftDoor1State = b ? DoorState.Lock : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb03车_左_1门状态未知, b => door.Car3LeftDoor1State = b ? DoorState.Unkown : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb3车左_2门故障, b => door.Car3LeftDoor2State = b ? DoorState.Fault : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb3车左_2门开, b => door.Car3LeftDoor2State = b ? DoorState.Open : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb3车左_2门锁闭, b => door.Car3LeftDoor2State = b ? DoorState.Lock : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb03车_左_2门状态未知, b => door.Car3LeftDoor2State = b ? DoorState.Unkown : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb4车右_1门故障, b => door.Car4RightDoor1State = b ? DoorState.Fault : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb4车右_1门开, b => door.Car4RightDoor1State = b ? DoorState.Open : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb4车右_1门锁闭, b => door.Car4RightDoor1State = b ? DoorState.Lock : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb04车_右_1门状态未知, b => door.Car4RightDoor1State = b ? DoorState.Unkown : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb4车左_1门故障, b => door.Car4LeftDoor1State = b ? DoorState.Fault : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb4车左_1门开, b => door.Car4LeftDoor1State = b ? DoorState.Open : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb4车左_1门锁闭, b => door.Car4LeftDoor1State = b ? DoorState.Lock : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb04车_左_1门状态未知, b => door.Car4LeftDoor1State = b ? DoorState.Unkown : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb6车右_1门故障, b => door.Car6RightDoor1State = b ? DoorState.Fault : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb6车右_1门开, b => door.Car6RightDoor1State = b ? DoorState.Open : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb6车右_1门锁闭, b => door.Car6RightDoor1State = b ? DoorState.Lock : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb06车_右_1门状态未知, b => door.Car6RightDoor1State = b ? DoorState.Unkown : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb6车右_2门故障, b => door.Car6RightDoor2State = b ? DoorState.Fault : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb6车右_2门开, b => door.Car6RightDoor2State = b ? DoorState.Open : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb6车右_2门锁闭, b => door.Car6RightDoor2State = b ? DoorState.Lock : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb06车_右_2门状态未知, b => door.Car6RightDoor2State = b ? DoorState.Unkown : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb6车左_1门故障, b => door.Car6LeftDoor1State = b ? DoorState.Fault : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb6车左_1门开, b => door.Car6LeftDoor1State = b ? DoorState.Open : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb6车左_1门锁闭, b => door.Car6LeftDoor1State = b ? DoorState.Lock : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb06车_左_1门状态未知, b => door.Car6LeftDoor1State = b ? DoorState.Unkown : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb6车左_2门故障, b => door.Car6LeftDoor2State = b ? DoorState.Fault : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb6车左_2门开, b => door.Car6LeftDoor2State = b ? DoorState.Open : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb6车左_2门锁闭, b => door.Car6LeftDoor2State = b ? DoorState.Lock : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb06车_左_2门状态未知, b => door.Car6LeftDoor2State = b ? DoorState.Unkown : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb7车右_1门故障, b => door.Car7RightDoor1State = b ? DoorState.Fault : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb7车右_1门开, b => door.Car7RightDoor1State = b ? DoorState.Open : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb7车右_1门锁闭, b => door.Car7RightDoor1State = b ? DoorState.Lock : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb07车_右_1门状态未知, b => door.Car7RightDoor1State = b ? DoorState.Unkown : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb7车右_2门故障, b => door.Car7RightDoor2State = b ? DoorState.Fault : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb7车右_2门开, b => door.Car7RightDoor2State = b ? DoorState.Open : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb7车右_2门锁闭, b => door.Car7RightDoor2State = b ? DoorState.Lock : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb07车_右_2门状态未知, b => door.Car7RightDoor2State = b ? DoorState.Unkown : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb7车左_1门故障, b => door.Car7LeftDoor1State = b ? DoorState.Fault : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb7车左_1门开, b => door.Car7LeftDoor1State = b ? DoorState.Open : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb7车左_1门锁闭, b => door.Car7LeftDoor1State = b ? DoorState.Lock : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb07车_左_1门状态未知, b => door.Car7LeftDoor1State = b ? DoorState.Unkown : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb7车左_2门故障, b => door.Car7LeftDoor2State = b ? DoorState.Fault : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb7车左_2门开, b => door.Car7LeftDoor2State = b ? DoorState.Open : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb7车左_2门锁闭, b => door.Car7LeftDoor2State = b ? DoorState.Lock : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb07车_左_2门状态未知, b => door.Car7LeftDoor2State = b ? DoorState.Unkown : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb8车右_1门故障, b => door.Car8RightDoor1State = b ? DoorState.Fault : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb8车右_1门开, b => door.Car8RightDoor1State = b ? DoorState.Open : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb8车右_1门锁闭, b => door.Car8RightDoor1State = b ? DoorState.Lock : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb08车_右_1门状态未知, b => door.Car8RightDoor1State = b ? DoorState.Unkown : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb8车左_1门故障, b => door.Car8LeftDoor1State = b ? DoorState.Fault : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb8车左_1门开, b => door.Car8LeftDoor1State = b ? DoorState.Open : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb8车左_1门锁闭, b => door.Car8LeftDoor1State = b ? DoorState.Lock : DoorState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb08车_左_1门状态未知, b => door.Car8LeftDoor1State = b ? DoorState.Unkown : DoorState.Close);
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb1车右_1门故障))
+            {
+                door.Car1RightDoor2State = DoorState.Fault;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb1车右_1门开))
+            {
+                door.Car1RightDoor2State = DoorState.Open;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb1车右_1门锁闭))
+            {
+                door.Car1RightDoor2State = DoorState.Lock;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb01车_右_1门状态未知))
+            {
+                door.Car1RightDoor2State = DoorState.Unkown;
+            }
+            else
+            {
+                door.Car1RightDoor2State = DoorState.Close;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb1车左_1门故障))
+            {
+                door.Car1LeftDoor2State = DoorState.Fault;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb1车左_1门开))
+            {
+                door.Car1LeftDoor2State = DoorState.Open;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb1车左_1门锁闭))
+            {
+                door.Car1LeftDoor2State = DoorState.Lock;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb01车_左_1门状态未知))
+            {
+                door.Car1LeftDoor2State = DoorState.Unkown;
+            }
+            else
+            {
+                door.Car1LeftDoor2State = DoorState.Close;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb2车右_1门故障))
+            {
+                door.Car2RightDoor1State = DoorState.Fault;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb2车右_1门开))
+            {
+                door.Car2RightDoor1State = DoorState.Open;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb2车右_1门锁闭))
+            {
+                door.Car2RightDoor1State = DoorState.Lock;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb02车_右_1门状态未知))
+            {
+                door.Car2RightDoor1State = DoorState.Unkown;
+            }
+            else
+            {
+                door.Car2RightDoor1State = DoorState.Close;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb2车右_2门故障))
+            {
+                door.Car2RightDoor2State = DoorState.Fault;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb2车右_2门开))
+            {
+                door.Car2RightDoor2State = DoorState.Open;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb2车右_2门锁闭))
+            {
+                door.Car2RightDoor2State = DoorState.Lock;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb02车_右_2门状态未知))
+            {
+                door.Car2RightDoor2State = DoorState.Unkown;
+            }
+            else
+            {
+                door.Car2RightDoor2State = DoorState.Close;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb2车左_1门故障))
+            {
+                door.Car2LeftDoor1State = DoorState.Fault;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb2车左_1门开))
+            {
+                door.Car2LeftDoor1State = DoorState.Open;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb2车左_1门锁闭))
+            {
+                door.Car2LeftDoor1State = DoorState.Lock;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb02车_左_1门状态未知))
+            {
+                door.Car2LeftDoor1State = DoorState.Unkown;
+            }
+            else
+            {
+                door.Car2LeftDoor1State = DoorState.Close;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb2车左_2门故障))
+            {
+                door.Car2LeftDoor2State = DoorState.Fault;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb2车左_2门开))
+            {
+                door.Car2LeftDoor2State = DoorState.Open;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb2车左_2门锁闭))
+            {
+                door.Car2LeftDoor2State = DoorState.Lock;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb02车_左_2门状态未知))
+            {
+                door.Car2LeftDoor2State = DoorState.Unkown;
+            }
+            else
+            {
+                door.Car2LeftDoor2State = DoorState.Close;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb3车右_1门故障))
+            {
+                door.Car3RightDoor1State = DoorState.Fault;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb3车右_1门开))
+            {
+                door.Car3RightDoor1State = DoorState.Open;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb3车右_1门锁闭))
+            {
+                door.Car3RightDoor1State = DoorState.Lock;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb03车_右_1门状态未知))
+            {
+                door.Car3RightDoor1State = DoorState.Unkown;
+            }
+            else
+            {
+                door.Car3RightDoor1State = DoorState.Close;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb3车右_2门故障))
+            {
+                door.Car3RightDoor2State = DoorState.Fault;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb3车右_2门开))
+            {
+                door.Car3RightDoor2State = DoorState.Open;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb3车右_2门锁闭))
+            {
+                door.Car3RightDoor2State = DoorState.Lock;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb03车_右_2门状态未知))
+            {
+                door.Car3RightDoor2State = DoorState.Unkown;
+            }
+            else
+            {
+                door.Car3RightDoor2State = DoorState.Close;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb3车左_1门故障))
+            {
+                door.Car3LeftDoor1State = DoorState.Fault;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb3车左_1门开))
+            {
+                door.Car3LeftDoor1State = DoorState.Open;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb3车左_1门锁闭))
+            {
+                door.Car3LeftDoor1State = DoorState.Lock;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb03车_左_1门状态未知))
+            {
+                door.Car3LeftDoor1State = DoorState.Unkown;
+            }
+            else
+            {
+                door.Car3LeftDoor1State = DoorState.Close;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb3车左_2门故障))
+            {
+                door.Car3LeftDoor2State = DoorState.Fault;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb3车左_2门开))
+            {
+                door.Car3LeftDoor2State = DoorState.Open;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb3车左_2门锁闭))
+            {
+                door.Car3LeftDoor2State = DoorState.Lock;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb03车_左_2门状态未知))
+            {
+                door.Car3LeftDoor2State = DoorState.Unkown;
+            }
+            else
+            {
+                door.Car3LeftDoor2State = DoorState.Close;
+            }
+
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb5车右_1门故障))
+            {
+                door.Car4RightDoor1State = DoorState.Fault;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb5车右_1门开))
+            {
+                door.Car4RightDoor1State = DoorState.Open;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb5车右_1门锁闭))
+            {
+                door.Car4RightDoor1State = DoorState.Lock;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb05车_右_1门状态未知))
+            {
+                door.Car4RightDoor1State = DoorState.Unkown;
+            }
+            else
+            {
+                door.Car4RightDoor1State = DoorState.Close;
+            }
+            
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb5车左_1门故障))
+            {
+                door.Car4LeftDoor1State = DoorState.Fault;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb5车左_1门开))
+            {
+                door.Car4LeftDoor1State = DoorState.Open;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb5车左_1门锁闭))
+            {
+                door.Car4LeftDoor1State = DoorState.Lock;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb05车_左_1门状态未知))
+            {
+                door.Car4LeftDoor1State = DoorState.Unkown;
+            }
+            else
+            {
+                door.Car4LeftDoor1State = DoorState.Close;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb6车右_1门故障))
+            {
+                door.Car6RightDoor1State = DoorState.Fault;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb6车右_1门开))
+            {
+                door.Car6RightDoor1State = DoorState.Open;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb6车右_1门锁闭))
+            {
+                door.Car6RightDoor1State = DoorState.Lock;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb06车_右_1门状态未知))
+            {
+                door.Car6RightDoor1State = DoorState.Unkown;
+            }
+            else
+            {
+                door.Car6RightDoor1State = DoorState.Close;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb6车右_2门故障))
+            {
+                door.Car6RightDoor2State = DoorState.Fault;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb6车右_2门开))
+            {
+                door.Car6RightDoor2State = DoorState.Open;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb6车右_2门锁闭))
+            {
+                door.Car6RightDoor2State = DoorState.Lock;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb06车_右_2门状态未知))
+            {
+                door.Car6RightDoor2State = DoorState.Unkown;
+            }
+            else
+            {
+                door.Car6RightDoor2State = DoorState.Close;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb6车左_1门故障))
+            {
+                door.Car6LeftDoor1State = DoorState.Fault;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb6车左_1门开))
+            {
+                door.Car6LeftDoor1State = DoorState.Open;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb6车左_1门锁闭))
+            {
+                door.Car6LeftDoor1State = DoorState.Lock;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb06车_左_1门状态未知))
+            {
+                door.Car6LeftDoor1State = DoorState.Unkown;
+            }
+            else
+            {
+                door.Car6LeftDoor1State = DoorState.Close;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb6车左_2门故障))
+            {
+                door.Car6LeftDoor2State = DoorState.Fault;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb6车左_2门开))
+            {
+                door.Car6LeftDoor2State = DoorState.Open;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb6车左_2门锁闭))
+            {
+                door.Car6LeftDoor2State = DoorState.Lock;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb06车_左_2门状态未知))
+            {
+                door.Car6LeftDoor2State = DoorState.Unkown;
+            }
+            else
+            {
+                door.Car6LeftDoor2State = DoorState.Close;
+            }
+
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb7车右_1门故障))
+            {
+                door.Car7RightDoor1State = DoorState.Fault;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb7车右_1门开))
+            {
+                door.Car7RightDoor1State = DoorState.Open;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb7车右_1门锁闭))
+            {
+                door.Car7RightDoor1State = DoorState.Lock;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb07车_右_1门状态未知))
+            {
+                door.Car7RightDoor1State = DoorState.Unkown;
+            }
+            else
+            {
+                door.Car7RightDoor1State = DoorState.Close;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb7车右_2门故障))
+            {
+                door.Car7RightDoor2State = DoorState.Fault;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb7车右_2门开))
+            {
+                door.Car7RightDoor2State = DoorState.Open;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb7车右_2门锁闭))
+            {
+                door.Car7RightDoor2State = DoorState.Lock;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb07车_右_2门状态未知))
+            {
+                door.Car7RightDoor2State = DoorState.Unkown;
+            }
+            else
+            {
+                door.Car7RightDoor2State = DoorState.Close;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb7车左_1门故障))
+            {
+                door.Car7LeftDoor1State = DoorState.Fault;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb7车左_1门开))
+            {
+                door.Car7LeftDoor1State = DoorState.Open;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb7车左_1门锁闭))
+            {
+                door.Car7LeftDoor1State = DoorState.Lock;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb07车_左_1门状态未知))
+            {
+                door.Car7LeftDoor1State = DoorState.Unkown;
+            }
+            else
+            {
+                door.Car7LeftDoor1State = DoorState.Close;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb7车左_2门故障))
+            {
+                door.Car7LeftDoor2State = DoorState.Fault;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb7车左_2门开))
+            {
+                door.Car7LeftDoor2State = DoorState.Open;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb7车左_2门锁闭))
+            {
+                door.Car7LeftDoor2State = DoorState.Lock;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb07车_左_2门状态未知))
+            {
+                door.Car7LeftDoor2State = DoorState.Unkown;
+            }
+            else
+            {
+                door.Car7LeftDoor2State = DoorState.Close;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb8车右_1门故障))
+            {
+                door.Car8RightDoor1State = DoorState.Fault;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb8车右_1门开))
+            {
+                door.Car8RightDoor1State = DoorState.Open;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb8车右_1门锁闭))
+            {
+                door.Car8RightDoor1State = DoorState.Lock;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb08车_右_1门状态未知))
+            {
+                door.Car8RightDoor1State = DoorState.Unkown;
+            }
+            else
+            {
+                door.Car8RightDoor1State = DoorState.Close;
+            }
+            
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb8车左_1门故障))
+            {
+                door.Car8LeftDoor1State = DoorState.Fault;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb8车左_1门开))
+            {
+                door.Car8LeftDoor1State = DoorState.Open;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb8车左_1门锁闭))
+            {
+                door.Car8LeftDoor1State = DoorState.Lock;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb08车_左_1门状态未知))
+            {
+                door.Car8LeftDoor1State = DoorState.Unkown;
+            }
+            else
+            {
+                door.Car8LeftDoor1State = DoorState.Close;
+            }
+
+            
             args.ChangedBools.UpdateIfContains(InBoolKeys.Inb1车_右侧门已禁用, b => door.RightDoor1DisableType = b ? DoorDisableType.Disable : DoorDisableType.Null);
             args.ChangedBools.UpdateIfContains(InBoolKeys.Inb1车_左侧门已禁用, b => door.LeftDoor1DisableType = b ? DoorDisableType.Disable : DoorDisableType.Null);
             args.ChangedBools.UpdateIfContains(InBoolKeys.Inb2车_右侧门已禁用, b => door.RightDoor2DisableType = b ? DoorDisableType.Disable : DoorDisableType.Null);
@@ -1417,88 +1835,434 @@ namespace Motor.HMI.CRH380BG.Adapter
         {
             var sw = ViewModel.Domain.Model.Switch;
 
-            
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_受电弓_1_升弓))
+            {
+                sw.TractionModel.Car2PantographState = PantographState.Rise;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_受电弓_1_降弓))
+            {
+                sw.TractionModel.Car2PantographState = PantographState.Down;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_受电弓_1_切除))
+            {
+                sw.TractionModel.Car2PantographState = PantographState.Removal;
+            }
+            else
+            {
+                sw.TractionModel.Car2PantographState = PantographState.Unkown;
+            }
 
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_受电弓_1_升弓 , b => sw.TractionModel.Car2PantographState = b ? PantographState.Rise : PantographState.Unkown);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_受电弓_1_降弓, b => sw.TractionModel.Car2PantographState = b ? PantographState.Down : PantographState.Unkown);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_受电弓_1_切除, b => sw.TractionModel.Car2PantographState = b ? PantographState.Removal : PantographState.Unkown);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_受电弓_2_升弓, b => sw.TractionModel.Car7PantographState = b ? PantographState.Rise : PantographState.Unkown);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_受电弓_2_降弓, b => sw.TractionModel.Car7PantographState = b ? PantographState.Down : PantographState.Unkown);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_受电弓_2_切除, b => sw.TractionModel.Car7PantographState = b ? PantographState.Removal : PantographState.Unkown);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_主断_1_闭合, b => sw.TractionModel.Car2MainBreakState = b ? MainBreakState.Closure : MainBreakState.Unkonw);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_主断_1_断开, b => sw.TractionModel.Car2MainBreakState = b ? MainBreakState.Disconnect : MainBreakState.Unkonw);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_主断_1_切除, b => sw.TractionModel.Car2MainBreakState = b ? MainBreakState.Removal : MainBreakState.Unkonw);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_主断_2_闭合, b => sw.TractionModel.Car7MainBreakState = b ? MainBreakState.Closure : MainBreakState.Unkonw);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_主断_2_断开, b => sw.TractionModel.Car7MainBreakState = b ? MainBreakState.Disconnect : MainBreakState.Unkonw);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_主断_2_切除, b => sw.TractionModel.Car7MainBreakState = b ? MainBreakState.Removal : MainBreakState.Unkonw);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_车顶隔离开关_1_闭合, b => sw.TractionModel.Car2RoofIsolationState = b ? RoofIsolationState.Closure : RoofIsolationState.Unkonw);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_车顶隔离开关_1_断开, b => sw.TractionModel.Car2RoofIsolationState = b ? RoofIsolationState.Disconnect : RoofIsolationState.Unkonw);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_车顶隔离开关_1_切除, b => sw.TractionModel.Car2RoofIsolationState = b ? RoofIsolationState.Removal : RoofIsolationState.Unkonw);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_车顶隔离开关_2_闭合, b => sw.TractionModel.Car7RoofIsolationState = b ? RoofIsolationState.Closure : RoofIsolationState.Unkonw);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_车顶隔离开关_2_断开, b => sw.TractionModel.Car7RoofIsolationState = b ? RoofIsolationState.Disconnect : RoofIsolationState.Unkonw);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_车顶隔离开关_2_切除, b => sw.TractionModel.Car7RoofIsolationState = b ? RoofIsolationState.Removal : RoofIsolationState.Unkonw);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_牵引变流器_11_闭合, b => sw.TractionModel.Car1TractionConverterState = b ? MainBreakState.Closure : MainBreakState.Unkonw);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_牵引变流器_11_断开, b => sw.TractionModel.Car1TractionConverterState = b ? MainBreakState.Disconnect : MainBreakState.Unkonw);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_牵引变流器_11_切除, b => sw.TractionModel.Car1TractionConverterState = b ? MainBreakState.Removal : MainBreakState.Unkonw);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_牵引变流器_12_闭合, b => sw.TractionModel.Car3TractionConverterState = b ? MainBreakState.Closure : MainBreakState.Unkonw);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_牵引变流器_12_断开, b => sw.TractionModel.Car3TractionConverterState = b ? MainBreakState.Disconnect : MainBreakState.Unkonw);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_牵引变流器_12_切除, b => sw.TractionModel.Car3TractionConverterState = b ? MainBreakState.Removal : MainBreakState.Unkonw);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_牵引变流器_21_闭合, b => sw.TractionModel.Car6TractionConverterState = b ? MainBreakState.Closure : MainBreakState.Unkonw);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_牵引变流器_21_断开, b => sw.TractionModel.Car6TractionConverterState = b ? MainBreakState.Disconnect : MainBreakState.Unkonw);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_牵引变流器_21_切除, b => sw.TractionModel.Car6TractionConverterState = b ? MainBreakState.Removal : MainBreakState.Unkonw);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_牵引变流器_22_闭合, b => sw.TractionModel.Car8TractionConverterState = b ? MainBreakState.Closure : MainBreakState.Unkonw);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_牵引变流器_22_断开, b => sw.TractionModel.Car8TractionConverterState = b ? MainBreakState.Disconnect : MainBreakState.Unkonw);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_牵引变流器_22_切除, b => sw.TractionModel.Car8TractionConverterState = b ? MainBreakState.Removal : MainBreakState.Unkonw);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_辅助供电单元_1_蓝 , b => sw.TractionModel.Car2AssistPoweredUnitState = b ? VoltageChargerState.Blue : VoltageChargerState.Black);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_辅助供电单元_1_黄, b => sw.TractionModel.Car2AssistPoweredUnitState = b ? VoltageChargerState.Yellow : VoltageChargerState.Black);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_辅助供电单元_1_状态未知, b => sw.TractionModel.Car2AssistPoweredUnitState = b ? VoltageChargerState.Unknow : VoltageChargerState.Black);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_辅助供电单元_2_蓝, b => sw.TractionModel.Car4AssistPoweredUnit1State = b ? VoltageChargerState.Blue : VoltageChargerState.Black);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_辅助供电单元_2_黄, b => sw.TractionModel.Car4AssistPoweredUnit1State = b ? VoltageChargerState.Yellow : VoltageChargerState.Black);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_辅助供电单元_2_状态未知, b => sw.TractionModel.Car4AssistPoweredUnit1State = b ? VoltageChargerState.Unknow : VoltageChargerState.Black);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_辅助供电单元_3_蓝, b => sw.TractionModel.Car4AssistPoweredUnit2State = b ? VoltageChargerState.Blue : VoltageChargerState.Black);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_辅助供电单元_3_黄, b => sw.TractionModel.Car4AssistPoweredUnit2State = b ? VoltageChargerState.Yellow : VoltageChargerState.Black);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_辅助供电单元_3_状态未知, b => sw.TractionModel.Car4AssistPoweredUnit2State = b ? VoltageChargerState.Unknow : VoltageChargerState.Black);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_辅助供电单元_4_蓝, b => sw.TractionModel.Car5AssistPoweredUnit1State = b ? VoltageChargerState.Blue : VoltageChargerState.Black);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_辅助供电单元_4_黄, b => sw.TractionModel.Car5AssistPoweredUnit1State = b ? VoltageChargerState.Yellow : VoltageChargerState.Black);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_辅助供电单元_4_状态未知, b => sw.TractionModel.Car5AssistPoweredUnit1State = b ? VoltageChargerState.Unknow : VoltageChargerState.Black);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_辅助供电单元_5_蓝, b => sw.TractionModel.Car5AssistPoweredUnit2State = b ? VoltageChargerState.Blue : VoltageChargerState.Black);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_辅助供电单元_5_黄, b => sw.TractionModel.Car5AssistPoweredUnit2State = b ? VoltageChargerState.Yellow : VoltageChargerState.Black);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_辅助供电单元_5_状态未知, b => sw.TractionModel.Car5AssistPoweredUnit1State = b ? VoltageChargerState.Unknow : VoltageChargerState.Black);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_辅助供电单元_6_蓝, b => sw.TractionModel.Car7AssistPoweredUnitState = b ? VoltageChargerState.Blue : VoltageChargerState.Black);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_辅助供电单元_6_黄, b => sw.TractionModel.Car7AssistPoweredUnitState = b ? VoltageChargerState.Yellow : VoltageChargerState.Black);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb牵引_辅助供电单元_6_状态未知, b => sw.TractionModel.Car7AssistPoweredUnitState = b ? VoltageChargerState.Unknow : VoltageChargerState.Black);
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_受电弓_2_升弓))
+            {
+                sw.TractionModel.Car7PantographState = PantographState.Rise;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_受电弓_2_降弓))
+            {
+                sw.TractionModel.Car7PantographState = PantographState.Down;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_受电弓_2_切除))
+            {
+                sw.TractionModel.Car7PantographState = PantographState.Removal;
+            }
+            else
+            {
+                sw.TractionModel.Car7PantographState = PantographState.Unkown;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_主断_1_闭合))
+            {
+                sw.TractionModel.Car2MainBreakState = MainBreakState.Closure;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_主断_1_断开))
+            {
+                sw.TractionModel.Car2MainBreakState = MainBreakState.Disconnect;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_主断_1_切除))
+            {
+                sw.TractionModel.Car2MainBreakState = MainBreakState.Removal;
+            }
+            else
+            {
+                sw.TractionModel.Car2MainBreakState = MainBreakState.Unkonw;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_主断_2_闭合))
+            {
+                sw.TractionModel.Car7MainBreakState = MainBreakState.Closure;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_主断_2_断开))
+            {
+                sw.TractionModel.Car7MainBreakState = MainBreakState.Disconnect;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_主断_2_切除))
+            {
+                sw.TractionModel.Car7MainBreakState = MainBreakState.Removal;
+            }
+            else
+            {
+                sw.TractionModel.Car7MainBreakState = MainBreakState.Unkonw;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_车顶隔离开关_1_闭合))
+            {
+                sw.TractionModel.Car2RoofIsolationState = RoofIsolationState.Closure;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_车顶隔离开关_1_断开))
+            {
+                sw.TractionModel.Car2RoofIsolationState = RoofIsolationState.Disconnect;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_车顶隔离开关_1_切除))
+            {
+                sw.TractionModel.Car2RoofIsolationState = RoofIsolationState.Removal;
+            }
+            else
+            {
+                sw.TractionModel.Car2RoofIsolationState = RoofIsolationState.Unkonw;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_车顶隔离开关_2_闭合))
+            {
+                sw.TractionModel.Car7RoofIsolationState = RoofIsolationState.Closure;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_车顶隔离开关_2_断开))
+            {
+                sw.TractionModel.Car7RoofIsolationState = RoofIsolationState.Disconnect;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_车顶隔离开关_2_切除))
+            {
+                sw.TractionModel.Car7RoofIsolationState = RoofIsolationState.Removal;
+            }
+            else
+            {
+                sw.TractionModel.Car7RoofIsolationState = RoofIsolationState.Unkonw;
+            }
+            
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_牵引变流器_11_闭合))
+            {
+                sw.TractionModel.Car1TractionConverterState = MainBreakState.Closure;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_牵引变流器_11_断开))
+            {
+                sw.TractionModel.Car1TractionConverterState = MainBreakState.Disconnect;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_牵引变流器_11_切除))
+            {
+                sw.TractionModel.Car1TractionConverterState = MainBreakState.Removal;
+            }
+            else
+            {
+                sw.TractionModel.Car1TractionConverterState = MainBreakState.Unkonw;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_牵引变流器_12_闭合))
+            {
+                sw.TractionModel.Car3TractionConverterState = MainBreakState.Closure;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_牵引变流器_12_断开))
+            {
+                sw.TractionModel.Car3TractionConverterState = MainBreakState.Disconnect;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_牵引变流器_12_切除))
+            {
+                sw.TractionModel.Car3TractionConverterState = MainBreakState.Removal;
+            }
+            else
+            {
+                sw.TractionModel.Car3TractionConverterState = MainBreakState.Unkonw;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_牵引变流器_21_闭合))
+            {
+                sw.TractionModel.Car6TractionConverterState = MainBreakState.Closure;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_牵引变流器_21_断开))
+            {
+                sw.TractionModel.Car6TractionConverterState = MainBreakState.Disconnect;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_牵引变流器_21_切除))
+            {
+                sw.TractionModel.Car6TractionConverterState = MainBreakState.Removal;
+            }
+            else
+            {
+                sw.TractionModel.Car6TractionConverterState = MainBreakState.Unkonw;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_牵引变流器_22_闭合))
+            {
+                sw.TractionModel.Car8TractionConverterState = MainBreakState.Closure;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_牵引变流器_22_断开))
+            {
+                sw.TractionModel.Car8TractionConverterState = MainBreakState.Disconnect;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_牵引变流器_22_切除))
+            {
+                sw.TractionModel.Car8TractionConverterState = MainBreakState.Removal;
+            }
+            else
+            {
+                sw.TractionModel.Car8TractionConverterState = MainBreakState.Unkonw;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_辅助供电单元_1_蓝))
+            {
+                sw.TractionModel.Car2AssistPoweredUnitState = VoltageChargerState.Blue;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_辅助供电单元_1_黄))
+            {
+                sw.TractionModel.Car2AssistPoweredUnitState = VoltageChargerState.Yellow;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_辅助供电单元_1_状态未知))
+            {
+                sw.TractionModel.Car2AssistPoweredUnitState = VoltageChargerState.Unknow;
+            }
+            else
+            {
+                sw.TractionModel.Car2AssistPoweredUnitState = VoltageChargerState.Black;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_辅助供电单元_2_蓝))
+            {
+                sw.TractionModel.Car4AssistPoweredUnit1State = VoltageChargerState.Blue;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_辅助供电单元_2_黄))
+            {
+                sw.TractionModel.Car4AssistPoweredUnit1State = VoltageChargerState.Yellow;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_辅助供电单元_2_状态未知))
+            {
+                sw.TractionModel.Car4AssistPoweredUnit1State = VoltageChargerState.Unknow;
+            }
+            else
+            {
+                sw.TractionModel.Car4AssistPoweredUnit1State = VoltageChargerState.Black;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_辅助供电单元_3_蓝))
+            {
+                sw.TractionModel.Car4AssistPoweredUnit2State = VoltageChargerState.Blue;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_辅助供电单元_3_黄))
+            {
+                sw.TractionModel.Car4AssistPoweredUnit2State = VoltageChargerState.Yellow;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_辅助供电单元_3_状态未知))
+            {
+                sw.TractionModel.Car4AssistPoweredUnit2State = VoltageChargerState.Unknow;
+            }
+            else
+            {
+                sw.TractionModel.Car4AssistPoweredUnit2State = VoltageChargerState.Black;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_辅助供电单元_4_蓝))
+            {
+                sw.TractionModel.Car5AssistPoweredUnit1State = VoltageChargerState.Blue;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_辅助供电单元_4_黄))
+            {
+                sw.TractionModel.Car5AssistPoweredUnit1State = VoltageChargerState.Yellow;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_辅助供电单元_4_状态未知))
+            {
+                sw.TractionModel.Car5AssistPoweredUnit1State = VoltageChargerState.Unknow;
+            }
+            else
+            {
+                sw.TractionModel.Car5AssistPoweredUnit1State = VoltageChargerState.Black;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_辅助供电单元_5_蓝))
+            {
+                sw.TractionModel.Car5AssistPoweredUnit2State = VoltageChargerState.Blue;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_辅助供电单元_5_黄))
+            {
+                sw.TractionModel.Car5AssistPoweredUnit2State = VoltageChargerState.Yellow;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_辅助供电单元_5_状态未知))
+            {
+                sw.TractionModel.Car5AssistPoweredUnit2State = VoltageChargerState.Unknow;
+            }
+            else
+            {
+                sw.TractionModel.Car5AssistPoweredUnit2State = VoltageChargerState.Black;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_辅助供电单元_6_蓝))
+            {
+                sw.TractionModel.Car7AssistPoweredUnitState = VoltageChargerState.Blue;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_辅助供电单元_6_黄))
+            {
+                sw.TractionModel.Car7AssistPoweredUnitState = VoltageChargerState.Yellow;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb牵引_辅助供电单元_6_状态未知))
+            {
+                sw.TractionModel.Car7AssistPoweredUnitState = VoltageChargerState.Unknow;
+            }
+            else
+            {
+                sw.TractionModel.Car7AssistPoweredUnitState = VoltageChargerState.Black;
+            }
 
             args.ChangedBools.UpdateIfContains(InBoolKeys.Inb空调紧急关, b => sw.AirConditionModel.TrainAirConditionState = b ? AirConditionState.EmergencyClose : AirConditionState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb空调_动车组1_手动开启空调, b => sw.AirConditionModel.EMU1AirConditionState = b ? AirConditionState.ManiualOpen : AirConditionState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb空调_动车组1_自动开启空调, b => sw.AirConditionModel.EMU1AirConditionState = b ? AirConditionState.AutoOpen : AirConditionState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb空调紧急关, b => sw.AirConditionModel.EMU1AirConditionState = b ? AirConditionState.EmergencyClose : AirConditionState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb空调_单车空调_11_手动开启空调, b => sw.AirConditionModel.OnecarAirCondition1State = b ? AirConditionState.ManiualOpen : AirConditionState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb空调_单车空调_11_自动开启空调, b => sw.AirConditionModel.OnecarAirCondition1State = b ? AirConditionState.AutoOpen : AirConditionState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb空调紧急关, b => sw.AirConditionModel.OnecarAirCondition1State = b ? AirConditionState.EmergencyClose : AirConditionState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb空调_单车空调_12_手动开启空调, b => sw.AirConditionModel.OnecarAirCondition2State = b ? AirConditionState.ManiualOpen : AirConditionState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb空调_单车空调_12_自动开启空调, b => sw.AirConditionModel.OnecarAirCondition2State = b ? AirConditionState.AutoOpen : AirConditionState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb空调紧急关, b => sw.AirConditionModel.OnecarAirCondition2State = b ? AirConditionState.EmergencyClose : AirConditionState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb空调_单车空调_13_手动开启空调, b => sw.AirConditionModel.OnecarAirCondition3State = b ? AirConditionState.ManiualOpen : AirConditionState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb空调_单车空调_13_自动开启空调, b => sw.AirConditionModel.OnecarAirCondition3State = b ? AirConditionState.AutoOpen : AirConditionState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb空调紧急关, b => sw.AirConditionModel.OnecarAirCondition3State = b ? AirConditionState.EmergencyClose : AirConditionState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb空调_单车空调_14_手动开启空调, b => sw.AirConditionModel.OnecarAirCondition4State = b ? AirConditionState.ManiualOpen : AirConditionState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb空调_单车空调_14_自动开启空调, b => sw.AirConditionModel.OnecarAirCondition4State = b ? AirConditionState.AutoOpen : AirConditionState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb空调紧急关, b => sw.AirConditionModel.OnecarAirCondition4State = b ? AirConditionState.EmergencyClose : AirConditionState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb空调_单车空调_15_手动开启空调, b => sw.AirConditionModel.OnecarAirCondition5State = b ? AirConditionState.ManiualOpen : AirConditionState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb空调_单车空调_15_自动开启空调, b => sw.AirConditionModel.OnecarAirCondition5State = b ? AirConditionState.AutoOpen : AirConditionState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb空调紧急关, b => sw.AirConditionModel.OnecarAirCondition5State = b ? AirConditionState.EmergencyClose : AirConditionState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb空调_单车空调_16_手动开启空调, b => sw.AirConditionModel.OnecarAirCondition6State = b ? AirConditionState.ManiualOpen : AirConditionState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb空调_单车空调_16_自动开启空调, b => sw.AirConditionModel.OnecarAirCondition6State = b ? AirConditionState.AutoOpen : AirConditionState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb空调紧急关, b => sw.AirConditionModel.OnecarAirCondition6State = b ? AirConditionState.EmergencyClose : AirConditionState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb空调_单车空调_17_手动开启空调, b => sw.AirConditionModel.OnecarAirCondition7State = b ? AirConditionState.ManiualOpen : AirConditionState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb空调_单车空调_17_自动开启空调, b => sw.AirConditionModel.OnecarAirCondition7State = b ? AirConditionState.AutoOpen : AirConditionState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb空调紧急关, b => sw.AirConditionModel.OnecarAirCondition7State = b ? AirConditionState.EmergencyClose : AirConditionState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb空调_单车空调_18_手动开启空调, b => sw.AirConditionModel.OnecarAirCondition8State = b ? AirConditionState.ManiualOpen : AirConditionState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb空调_单车空调_18_自动开启空调, b => sw.AirConditionModel.OnecarAirCondition8State = b ? AirConditionState.AutoOpen : AirConditionState.Close);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb空调紧急关, b => sw.AirConditionModel.OnecarAirCondition8State = b ? AirConditionState.EmergencyClose : AirConditionState.Close);
 
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb空调紧急关))
+            {
+                sw.AirConditionModel.EMU1AirConditionState = AirConditionState.EmergencyClose;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb空调_动车组1_手动开启空调))
+            {
+                sw.AirConditionModel.EMU1AirConditionState = AirConditionState.ManiualOpen;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb空调_动车组1_自动开启空调))
+            {
+                sw.AirConditionModel.EMU1AirConditionState = AirConditionState.AutoOpen;
+            }
+            else
+            {
+                sw.AirConditionModel.EMU1AirConditionState = AirConditionState.Close;
+            }
 
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb空调紧急关))
+            {
+                sw.AirConditionModel.OnecarAirCondition1State = AirConditionState.EmergencyClose;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb空调_单车空调_11_手动开启空调))
+            {
+                sw.AirConditionModel.OnecarAirCondition1State = AirConditionState.ManiualOpen;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb空调_单车空调_11_自动开启空调))
+            {
+                sw.AirConditionModel.OnecarAirCondition1State = AirConditionState.AutoOpen;
+            }
+            else
+            {
+                sw.AirConditionModel.OnecarAirCondition1State = AirConditionState.Close;
+            }
 
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb空调紧急关))
+            {
+                sw.AirConditionModel.OnecarAirCondition2State = AirConditionState.EmergencyClose;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb空调_单车空调_12_手动开启空调))
+            {
+                sw.AirConditionModel.OnecarAirCondition2State = AirConditionState.ManiualOpen;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb空调_单车空调_12_自动开启空调))
+            {
+                sw.AirConditionModel.OnecarAirCondition2State = AirConditionState.AutoOpen;
+            }
+            else
+            {
+                sw.AirConditionModel.OnecarAirCondition2State = AirConditionState.Close;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb空调紧急关))
+            {
+                sw.AirConditionModel.OnecarAirCondition3State = AirConditionState.EmergencyClose;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb空调_单车空调_13_手动开启空调))
+            {
+                sw.AirConditionModel.OnecarAirCondition3State = AirConditionState.ManiualOpen;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb空调_单车空调_13_自动开启空调))
+            {
+                sw.AirConditionModel.OnecarAirCondition3State = AirConditionState.AutoOpen;
+            }
+            else
+            {
+                sw.AirConditionModel.OnecarAirCondition3State = AirConditionState.Close;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb空调紧急关))
+            {
+                sw.AirConditionModel.OnecarAirCondition4State = AirConditionState.EmergencyClose;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb空调_单车空调_14_手动开启空调))
+            {
+                sw.AirConditionModel.OnecarAirCondition4State = AirConditionState.ManiualOpen;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb空调_单车空调_14_自动开启空调))
+            {
+                sw.AirConditionModel.OnecarAirCondition4State = AirConditionState.AutoOpen;
+            }
+            else
+            {
+                sw.AirConditionModel.OnecarAirCondition4State = AirConditionState.Close;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb空调紧急关))
+            {
+                sw.AirConditionModel.OnecarAirCondition5State = AirConditionState.EmergencyClose;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb空调_单车空调_15_手动开启空调))
+            {
+                sw.AirConditionModel.OnecarAirCondition5State = AirConditionState.ManiualOpen;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb空调_单车空调_15_自动开启空调))
+            {
+                sw.AirConditionModel.OnecarAirCondition5State = AirConditionState.AutoOpen;
+            }
+            else
+            {
+                sw.AirConditionModel.OnecarAirCondition5State = AirConditionState.Close;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb空调紧急关))
+            {
+                sw.AirConditionModel.OnecarAirCondition6State = AirConditionState.EmergencyClose;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb空调_单车空调_16_手动开启空调))
+            {
+                sw.AirConditionModel.OnecarAirCondition6State = AirConditionState.ManiualOpen;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb空调_单车空调_16_自动开启空调))
+            {
+                sw.AirConditionModel.OnecarAirCondition6State = AirConditionState.AutoOpen;
+            }
+            else
+            {
+                sw.AirConditionModel.OnecarAirCondition6State = AirConditionState.Close;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb空调紧急关))
+            {
+                sw.AirConditionModel.OnecarAirCondition7State = AirConditionState.EmergencyClose;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb空调_单车空调_17_手动开启空调))
+            {
+                sw.AirConditionModel.OnecarAirCondition7State = AirConditionState.ManiualOpen;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb空调_单车空调_17_自动开启空调))
+            {
+                sw.AirConditionModel.OnecarAirCondition7State = AirConditionState.AutoOpen;
+            }
+            else
+            {
+                sw.AirConditionModel.OnecarAirCondition7State = AirConditionState.Close;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb空调紧急关))
+            {
+                sw.AirConditionModel.OnecarAirCondition8State = AirConditionState.EmergencyClose;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb空调_单车空调_18_手动开启空调))
+            {
+                sw.AirConditionModel.OnecarAirCondition8State = AirConditionState.ManiualOpen;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb空调_单车空调_18_自动开启空调))
+            {
+                sw.AirConditionModel.OnecarAirCondition8State = AirConditionState.AutoOpen;
+            }
+            else
+            {
+                sw.AirConditionModel.OnecarAirCondition8State = AirConditionState.Close;
+            }
+
+            
             if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb空调_温度_11_0) && DataService.ReadService.GetInBoolOf(InBoolKeys.Inb空调_温度_11_1) && DataService.ReadService.GetInBoolOf(InBoolKeys.Inb空调_温度_11_2))
             {
                 sw.AirConditionModel.TemPeratureState11 = AirConditionTemperatureState.Three;
@@ -1834,29 +2598,136 @@ namespace Motor.HMI.CRH380BG.Adapter
                 sw.AirConditionModel.TemPeratureState82 = AirConditionTemperatureState.Four;
             }
 
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb照明_动车组1_照明13))
+            {
+                sw.IlluminationModel.EMU1IlluminationState = IlluminationState.Illumination1_3;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb照明_动车组1_照明1))
+            {
+                sw.IlluminationModel.EMU1IlluminationState = IlluminationState.Illumination1;
+            }
+            else
+            {
+                sw.IlluminationModel.EMU1IlluminationState = IlluminationState.Illumination0;
+            }
 
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb照明_动车组1_照明13, b => sw.IlluminationModel.EMU1IlluminationState = b ? IlluminationState.Illumination1_3 : IlluminationState.Illumination0);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb照明_动车组1_照明1, b => sw.IlluminationModel.EMU1IlluminationState = b ? IlluminationState.Illumination1 : IlluminationState.Illumination0);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb照明_全列车_照明13, b => sw.IlluminationModel.TrainIlluminationState = b ? IlluminationState.Illumination1_3 : IlluminationState.Illumination0);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb照明_全列车_照明1, b => sw.IlluminationModel.TrainIlluminationState = b ? IlluminationState.Illumination1 : IlluminationState.Illumination0);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb照明_单车照明_11_照明13, b => sw.IlluminationModel.OnecarIllumination1State = b ? IlluminationState.Illumination1_3 : IlluminationState.Illumination0);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb照明_单车照明_11_照明1, b => sw.IlluminationModel.OnecarIllumination1State = b ? IlluminationState.Illumination1 : IlluminationState.Illumination0);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb照明_单车照明_12_照明13, b => sw.IlluminationModel.OnecarIllumination2State = b ? IlluminationState.Illumination1_3 : IlluminationState.Illumination0);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb照明_单车照明_12_照明1, b => sw.IlluminationModel.OnecarIllumination2State = b ? IlluminationState.Illumination1 : IlluminationState.Illumination0);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb照明_单车照明_13_照明13, b => sw.IlluminationModel.OnecarIllumination3State = b ? IlluminationState.Illumination1_3 : IlluminationState.Illumination0);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb照明_单车照明_13_照明1, b => sw.IlluminationModel.OnecarIllumination3State = b ? IlluminationState.Illumination1 : IlluminationState.Illumination0);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb照明_单车照明_14_照明13, b => sw.IlluminationModel.OnecarIllumination4State = b ? IlluminationState.Illumination1_3 : IlluminationState.Illumination0);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb照明_单车照明_14_照明1, b => sw.IlluminationModel.OnecarIllumination4State = b ? IlluminationState.Illumination1 : IlluminationState.Illumination0);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb照明_单车照明_15_照明13, b => sw.IlluminationModel.OnecarIllumination5State = b ? IlluminationState.Illumination1_3 : IlluminationState.Illumination0);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb照明_单车照明_15_照明1, b => sw.IlluminationModel.OnecarIllumination5State = b ? IlluminationState.Illumination1 : IlluminationState.Illumination0);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb照明_单车照明_16_照明13, b => sw.IlluminationModel.OnecarIllumination6State = b ? IlluminationState.Illumination1_3 : IlluminationState.Illumination0);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb照明_单车照明_16_照明1, b => sw.IlluminationModel.OnecarIllumination6State = b ? IlluminationState.Illumination1 : IlluminationState.Illumination0);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb照明_单车照明_17_照明13, b => sw.IlluminationModel.OnecarIllumination7State = b ? IlluminationState.Illumination1_3 : IlluminationState.Illumination0);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb照明_单车照明_17_照明1, b => sw.IlluminationModel.OnecarIllumination7State = b ? IlluminationState.Illumination1 : IlluminationState.Illumination0);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb照明_单车照明_18_照明13, b => sw.IlluminationModel.OnecarIllumination8State = b ? IlluminationState.Illumination1_3 : IlluminationState.Illumination0);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb照明_单车照明_18_照明1, b => sw.IlluminationModel.OnecarIllumination8State = b ? IlluminationState.Illumination1 : IlluminationState.Illumination0);
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb照明_全列车_照明13))
+            {
+                sw.IlluminationModel.TrainIlluminationState = IlluminationState.Illumination1_3;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb照明_全列车_照明1))
+            {
+                sw.IlluminationModel.TrainIlluminationState = IlluminationState.Illumination1;
+            }
+            else
+            {
+                sw.IlluminationModel.TrainIlluminationState = IlluminationState.Illumination0;
+            }
 
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb照明_单车照明_11_照明13))
+            {
+                sw.IlluminationModel.OnecarIllumination1State = IlluminationState.Illumination1_3;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb照明_单车照明_11_照明1))
+            {
+                sw.IlluminationModel.OnecarIllumination1State = IlluminationState.Illumination1;
+            }
+            else
+            {
+                sw.IlluminationModel.OnecarIllumination1State = IlluminationState.Illumination0;
+            }
 
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb照明_单车照明_12_照明13))
+            {
+                sw.IlluminationModel.OnecarIllumination2State = IlluminationState.Illumination1_3;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb照明_单车照明_12_照明1))
+            {
+                sw.IlluminationModel.OnecarIllumination2State = IlluminationState.Illumination1;
+            }
+            else
+            {
+                sw.IlluminationModel.OnecarIllumination2State = IlluminationState.Illumination0;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb照明_单车照明_13_照明13))
+            {
+                sw.IlluminationModel.OnecarIllumination3State = IlluminationState.Illumination1_3;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb照明_单车照明_13_照明1))
+            {
+                sw.IlluminationModel.OnecarIllumination3State = IlluminationState.Illumination1;
+            }
+            else
+            {
+                sw.IlluminationModel.OnecarIllumination3State = IlluminationState.Illumination0;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb照明_单车照明_14_照明13))
+            {
+                sw.IlluminationModel.OnecarIllumination4State = IlluminationState.Illumination1_3;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb照明_单车照明_14_照明1))
+            {
+                sw.IlluminationModel.OnecarIllumination4State = IlluminationState.Illumination1;
+            }
+            else
+            {
+                sw.IlluminationModel.OnecarIllumination4State = IlluminationState.Illumination0;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb照明_单车照明_15_照明13))
+            {
+                sw.IlluminationModel.OnecarIllumination5State = IlluminationState.Illumination1_3;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb照明_单车照明_15_照明1))
+            {
+                sw.IlluminationModel.OnecarIllumination5State = IlluminationState.Illumination1;
+            }
+            else
+            {
+                sw.IlluminationModel.OnecarIllumination5State = IlluminationState.Illumination0;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb照明_单车照明_16_照明13))
+            {
+                sw.IlluminationModel.OnecarIllumination6State = IlluminationState.Illumination1_3;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb照明_单车照明_16_照明1))
+            {
+                sw.IlluminationModel.OnecarIllumination6State = IlluminationState.Illumination1;
+            }
+            else
+            {
+                sw.IlluminationModel.OnecarIllumination6State = IlluminationState.Illumination0;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb照明_单车照明_17_照明13))
+            {
+                sw.IlluminationModel.OnecarIllumination7State = IlluminationState.Illumination1_3;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb照明_单车照明_17_照明1))
+            {
+                sw.IlluminationModel.OnecarIllumination7State = IlluminationState.Illumination1;
+            }
+            else
+            {
+                sw.IlluminationModel.OnecarIllumination7State = IlluminationState.Illumination0;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb照明_单车照明_18_照明13))
+            {
+                sw.IlluminationModel.OnecarIllumination8State = IlluminationState.Illumination1_3;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb照明_单车照明_18_照明1))
+            {
+                sw.IlluminationModel.OnecarIllumination8State = IlluminationState.Illumination1;
+            }
+            else
+            {
+                sw.IlluminationModel.OnecarIllumination8State = IlluminationState.Illumination0;
+            }
+            
             args.ChangedBools.UpdateIfContains(InBoolKeys.Inb922, b => sw.NetWorkCurrentLimitEnable = b);
             args.ChangedBools.UpdateIfContains(InBoolKeys.Inb前窗加热常用模式, b =>
             {
@@ -1889,17 +2760,73 @@ namespace Motor.HMI.CRH380BG.Adapter
         {
             var t = ViewModel.Domain.Model.TitleModel;
 
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb信息状态条至少一个主断路器能够闭合))
+            {
+                t.InfoMainBreakState = InfoMainBreakState.AtLeastOneDisconnect;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb信息状态条全部主断路器已闭合))
+            {
+                t.InfoMainBreakState = InfoMainBreakState.AllDisconnect;
+            }
+            else
+            {
+                t.InfoMainBreakState = InfoMainBreakState.Null;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb信息状态条制动手柄应置于0位))
+            {
+                t.SettingPlacedInZeroType = SettingPlacedInZeroType.BreakHandle;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb信息状态条牵引手柄应置于0位))
+            {
+                t.SettingPlacedInZeroType = SettingPlacedInZeroType.TractionHandle;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb信息状态条运行速度设定应置于0位))
+            {
+                t.SettingPlacedInZeroType = SettingPlacedInZeroType.RunSpeed;
+            }
+            else
+            {
+                t.SettingPlacedInZeroType = SettingPlacedInZeroType.Null;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb信息状态条远光灯强))
+            {
+                t.InfoLightState = InfoLightState.HighBeamLightStrong;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb灯光状态位0位))
+            {
+                t.InfoLightState = InfoLightState.LightState0;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb灯光状态位1位))
+            {
+                t.InfoLightState = InfoLightState.LightState1;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb灯光状态位2位))
+            {
+                t.InfoLightState = InfoLightState.LightState2;
+            }
+            else
+            {
+                t.InfoLightState = InfoLightState.Null;
+            }
+
+            if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb信息状态条列车管充风已被切断))
+            {
+                t.TrainPipeCutoffState = TrainPipeCutoffState.Cutoff;
+            }
+            else if (DataService.ReadService.GetInBoolOf(InBoolKeys.Inb列车管充风已被切断状态未知信息状态栏))
+            {
+                t.TrainPipeCutoffState = TrainPipeCutoffState.Unknow;
+            }
+            else
+            {
+                t.TrainPipeCutoffState = TrainPipeCutoffState.Null;
+            }
+
             args.ChangedBools.UpdateIfContains(InBoolKeys.Inb信息状态条ASC设置0为关闭1为开启, b => t.AscSettingState = b ? AscSettingState.Open : AscSettingState.Close);
             args.ChangedBools.UpdateIfContains(InBoolKeys.Inb信息状态条整备运行激活, b => t.PrepareRunActivationState = b ? PrepareRunActivationState.PrepareRunActivation : PrepareRunActivationState.Null);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb信息状态条至少一个主断路器能够闭合, b => t.InfoMainBreakState = b ? InfoMainBreakState.AtLeastOneDisconnect : InfoMainBreakState.Null);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb信息状态条全部主断路器已闭合, b => t.InfoMainBreakState = b ? InfoMainBreakState.AllDisconnect : InfoMainBreakState.Null);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb信息状态条制动手柄应置于0位, b => t.SettingPlacedInZeroType = b ? SettingPlacedInZeroType.BreakHandle : SettingPlacedInZeroType.Null);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb信息状态条牵引手柄应置于0位, b => t.SettingPlacedInZeroType = b ? SettingPlacedInZeroType.TractionHandle : SettingPlacedInZeroType.Null);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb信息状态条运行速度设定应置于0位, b => t.SettingPlacedInZeroType = b ? SettingPlacedInZeroType.RunSpeed : SettingPlacedInZeroType.Null);
             args.ChangedBools.UpdateIfContains(InBoolKeys.Inb信息状态条列车已就绪, b => t.TrainIsReadyState = b ? TrainIsReadyState.TrianIsReady : TrainIsReadyState.Null);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb信息状态条远光灯强, b => t.InfoLightState = b ? InfoLightState.HighBeamLightStrong : InfoLightState.Null);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb信息状态条列车管充风已被切断, b => t.TrainPipeCutoffState = b ? TrainPipeCutoffState.Cutoff : TrainPipeCutoffState.Null);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb列车管充风已被切断状态未知信息状态栏, b => t.TrainPipeCutoffState = b ? TrainPipeCutoffState.Unknow : TrainPipeCutoffState.Null);
             args.ChangedBools.UpdateIfContains(InBoolKeys.Inb信息状态条时速限制_公里小时, b => t.SpeedLimitState = b ? SpeedLimitState.SpeedLimit : SpeedLimitState.Null);
             args.ChangedBools.UpdateIfContains(InBoolKeys.Inb信息状态条至少一门仍开启, b => t.AtLeastOneDoorOpenState = b ? AtLeastOneDoorOpenState.AtLeastOneDoorOpen : AtLeastOneDoorOpenState.Null);
             args.ChangedBools.UpdateIfContains(InBoolKeys.Inb信息状态条自动安全装置, b => t.AutoSafeDeviceState = b ? AutoSafeDeviceState.AutoSafeDevice : AutoSafeDeviceState.Null);
@@ -1907,13 +2834,10 @@ namespace Motor.HMI.CRH380BG.Adapter
             args.ChangedBools.UpdateIfContains(InBoolKeys.Inb信息状态条与门通讯故障, b => t.InfoDoorState = b ? InfoDoorState.CommunicationFault : InfoDoorState.Null);
             args.ChangedBools.UpdateIfContains(InBoolKeys.Inb信息状态条火警闪烁, b => t.FireState = b ? FireState.Fire : FireState.Null);
             args.ChangedBools.UpdateIfContains(InBoolKeys.Inb信息状态条司机室门已释放可操作, b => t.InfoDriverRoomDoorState = b ? InfoDriverRoomDoorState.Freed : InfoDriverRoomDoorState.Null);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb灯光状态位0位, b => t.InfoLightState = b ? InfoLightState.LightState0 : InfoLightState.Null);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb灯光状态位1位, b => t.InfoLightState = b ? InfoLightState.LightState1 : InfoLightState.Null);
-            args.ChangedBools.UpdateIfContains(InBoolKeys.Inb灯光状态位2位, b => t.InfoLightState = b ? InfoLightState.LightState2 : InfoLightState.Null);
-
             args.ChangedFloats.UpdateIfContains(InFloatKeys.Inf最高时速, f => t.HighestSpeed = f);
             args.ChangedFloats.UpdateIfContains(InFloatKeys.Inf当前运行速度, f => t.Speed = f);
             args.ChangedFloats.UpdateIfContains(InFloatKeys.Inf外部温度, f => t.OutTemperature = f);
+            args.ChangedFloats.UpdateIfContains(InFloatKeys.InfASC速度设定点速度, f => t.ASCSettingSpeed = f);
         }
     }
 }

@@ -19,27 +19,23 @@
                         <Grid>
                             <Border x:Name="border"
                                     BorderBrush="{TemplateBinding BorderBrush}"
-                                    BorderThickness="{TemplateBinding BorderThickness}"
-                                    Tag="{Binding RelativeSource={RelativeSource FindAncestor,
-                                                                                 AncestorType={x:Type Button}},
-                                                  Path=Tag}">
+                                    BorderThickness="{TemplateBinding BorderThickness}">
                                 <Rectangle Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}, Path=ActualWidth}" Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}, Path=ActualHeight}">
                                     <Rectangle.Fill>
                                         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                                             <GradientStop Offset="0." Color="Gainsboro" />
-                                            <GradientStop Offset="0.12" Color="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Border}}, Path=Tag}" />
-                                            <GradientStop Offset="0.85" Color="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Border}}, Path=Tag}" />
+                                            <GradientStop Offset="0.12" Color="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}, Path=Tag, Converter={StaticResource TestConverter}}" />
+                                            <GradientStop Offset="0.85" Color="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}, Path=Tag, Converter={StaticResource TestConverter}}" />
                                             <GradientStop Offset="1" Color="#FF282828" />
                                         </LinearGradientBrush>
                                     </Rectangle.Fill>
                                 </Rectangle>
                             </Border>
-                            <ContentPresenter Margin="{TemplateBinding Padding}"
-                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                              Focusable="False"
-                                              RecognizesAccessKey="True"
-                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                            <TextBlock HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontSize="{TemplateBinding FontSize}"
+                                       Text="{TemplateBinding Content}"
+                                       TextAlignment="Center" />
                         </Grid>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsPressed" Value="true">
@@ -65,16 +61,13 @@
                         <Grid>
                             <Border x:Name="border"
                                     BorderBrush="{TemplateBinding BorderBrush}"
-                                    BorderThickness="{TemplateBinding BorderThickness}"
-                                    Tag="{Binding RelativeSource={RelativeSource FindAncestor,
-                                                                                 AncestorType={x:Type Button}},
-                                                  Path=Tag}">
+                                    BorderThickness="{TemplateBinding BorderThickness}">
                                 <Rectangle Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}, Path=ActualWidth}" Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}, Path=ActualHeight}">
                                     <Rectangle.Fill>
                                         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                                             <GradientStop Offset="0." Color="Gainsboro" />
-                                            <GradientStop Offset="0.12" Color="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Border}}, Path=Tag}" />
-                                            <GradientStop Offset="0.85" Color="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Border}}, Path=Tag}" />
+                                            <GradientStop Offset="0.12" Color="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Button, AncestorLevel=1}, Path=Tag, Converter={StaticResource TestConverter}}" />
+                                            <GradientStop Offset="0.85" Color="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Button, AncestorLevel=1}, Path=Tag, Converter={StaticResource TestConverter}}" />
                                             <GradientStop Offset="1" Color="#FF282828" />
                                         </LinearGradientBrush>
                                     </Rectangle.Fill>
@@ -85,54 +78,6 @@
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsPressed" Value="true">
                                 <Setter TargetName="border" Property="Tag" Value="{StaticResource BlueColor}" />
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style.Setters>
-    </Style>
-
-    <Style x:Key="InterLockBtnStyle" TargetType="Button">
-        <Style.Setters>
-            <Setter Property="HorizontalAlignment" Value="Center" />
-            <Setter Property="VerticalAlignment" Value="Center" />
-            <Setter Property="Foreground" Value="{StaticResource ShellBackgroundBrush}" />
-            <Setter Property="BorderBrush" Value="{StaticResource ShellBackgroundBrush}" />
-            <Setter Property="BorderThickness" Value="1" />
-            <Setter Property="FontSize" Value="18" />
-            <Setter Property="FontWeight" Value="Bold" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Grid>
-                            <Border x:Name="border"
-                                    BorderBrush="{TemplateBinding BorderBrush}"
-                                    BorderThickness="{TemplateBinding BorderThickness}"
-                                    Tag="{Binding RelativeSource={RelativeSource FindAncestor,
-                                                                                 AncestorType={x:Type Button}},
-                                                  Path=Tag}">
-                                <Rectangle Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}, Path=ActualWidth}" Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}, Path=ActualHeight}">
-                                    <Rectangle.Fill>
-                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                                            <GradientStop Offset="0." Color="Gainsboro" />
-                                            <GradientStop Offset="0.12" Color="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Border}}, Path=Tag}" />
-                                            <GradientStop Offset="0.85" Color="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Border}}, Path=Tag}" />
-                                            <GradientStop Offset="1" Color="#FF282828" />
-                                        </LinearGradientBrush>
-                                    </Rectangle.Fill>
-                                </Rectangle>
-                            </Border>
-                            <ContentPresenter Margin="{TemplateBinding Padding}"
-                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                              Focusable="False"
-                                              RecognizesAccessKey="True"
-                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
-                        </Grid>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsPressed" Value="true">
-                                <Setter TargetName="border" Property="Tag" Value="{StaticResource YellowColor}" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -378,8 +323,8 @@
                                     <Rectangle.Fill>
                                         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                                             <GradientStop Offset="0." Color="Gainsboro" />
-                                            <GradientStop Offset="0.12" Color="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Border}}, Path=Tag}" />
-                                            <GradientStop Offset="0.85" Color="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Border}}, Path=Tag}" />
+                                            <GradientStop Offset="0.12" Color="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Border}}, Path=Tag, Converter={StaticResource TestConverter}}" />
+                                            <GradientStop Offset="0.85" Color="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Border}}, Path=Tag, Converter={StaticResource TestConverter}}" />
                                             <GradientStop Offset="1" Color="#FF282828" />
                                         </LinearGradientBrush>
                                     </Rectangle.Fill>

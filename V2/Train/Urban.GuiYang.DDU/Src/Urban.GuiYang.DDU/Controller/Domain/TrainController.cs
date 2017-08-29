@@ -829,7 +829,7 @@ namespace Urban.GuiYang.DDU.Controller.Domain
                 new ObservableCollection<DoorLockStateItem>(GlobalParam.Instance.CarDoorLockStateConfigCollection.Value
                     .Where(w => w.CarIndex == carIndex)
                     .OrderBy(o => o.ItemIndex)
-                    .Select(s => new DoorLockStateItem(carIndex, s)
+                    .Select(s => new DoorLockStateItem(carIndex, s) { } 
                     ));
 
         }

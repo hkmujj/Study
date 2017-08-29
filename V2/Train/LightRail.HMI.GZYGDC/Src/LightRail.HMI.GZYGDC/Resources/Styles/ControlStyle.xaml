@@ -16,21 +16,71 @@
     <Style x:Key="RunningViewPowerStatusProgressBarStyle" TargetType="ProgressBar">
         <Setter Property="Orientation" Value="Vertical"></Setter>
         <Setter Property="Background" Value="#d1dadf"></Setter>
-        <Setter Property="Foreground" Value="#5ebf2a"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ProgressBar">
+                    <Border Name="border"
+                            BorderBrush="Transparent"
+                            BorderThickness="0">
+                        <Grid>
+                            <Rectangle Name="PART_Track" Fill="{TemplateBinding Background}" />
+                            <Rectangle Name="PART_Indicator"
+                                       HorizontalAlignment="Left"
+                                       Fill="{TemplateBinding Foreground}" />
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Orientation" Value="Vertical">
+                            <Setter TargetName="border" Property="LayoutTransform">
+                                <Setter.Value>
+                                    <RotateTransform Angle="-90" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 
     <Style x:Key="RunningViewTractionProgressBarStyle" TargetType="ProgressBar">
         <Setter Property="Orientation" Value="Vertical"></Setter>
         <Setter Property="Background" Value="Transparent"></Setter>
         <Setter Property="Foreground" Value="#5ebf2a"></Setter>
-        <Setter Property="BorderBrush" Value="Transparent"></Setter>
         <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ProgressBar">
+                    <Border Name="border"
+                            BorderBrush="Transparent"
+                            BorderThickness="0">
+                        <Grid>
+                            <Rectangle Name="PART_Track" Fill="{TemplateBinding Background}" />
+                            <Rectangle Name="PART_Indicator"
+                                       HorizontalAlignment="Left"
+                                       Fill="{TemplateBinding Foreground}" />
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Orientation" Value="Vertical">
+                            <Setter TargetName="border" Property="LayoutTransform">
+                                <Setter.Value>
+                                    <RotateTransform Angle="-90" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 
     <Style x:Key="RunningViewBrakeProgressBarStyle" TargetType="ProgressBar">
         <Setter Property="Orientation" Value="Vertical"></Setter>
         <Setter Property="Background" Value="Transparent"></Setter>
         <Setter Property="Foreground" Value="#ff656e"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ProgressBar">
@@ -66,6 +116,31 @@
         <Setter Property="Orientation" Value="Horizontal"></Setter>
         <Setter Property="Background" Value="Transparent"></Setter>
         <Setter Property="Foreground" Value="#affd52"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ProgressBar">
+                    <Border Name="border"
+                            BorderBrush="Transparent"
+                            BorderThickness="0">
+                        <Grid>
+                            <Rectangle Name="PART_Track" Fill="{TemplateBinding Background}" />
+                            <Rectangle Name="PART_Indicator"
+                                       HorizontalAlignment="Left"
+                                       Fill="{TemplateBinding Foreground}" />
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Orientation" Value="Horizontal">
+                            <Setter TargetName="border" Property="LayoutTransform">
+                                <Setter.Value>
+                                    <RotateTransform Angle="0" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 
     <Style x:Key="EmmergencyBroadcastListBox" TargetType="ListBox">

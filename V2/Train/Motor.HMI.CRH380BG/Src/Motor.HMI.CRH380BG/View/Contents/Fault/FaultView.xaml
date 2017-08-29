@@ -29,12 +29,12 @@
                             HorizontalAlignment="Right"
                             Orientation="Horizontal">
                     <TextBlock Style="{StaticResource Motor.HMI.CRH380BG.TitleDateTextStyle}" Text="第" />
-                    <TextBlock Style="{StaticResource Motor.HMI.CRH380BG.TitleDateTextStyle}"  Text=" " />
-                    <TextBlock
-                        Visibility="{Binding Domain.FaultViewModel.Model.AllPagedItems.IsfaultsTate, Converter={StaticResource Motor.HMI.CRH380BG.BooleanToVisibilityConverter}}"
-                        Margin="5,0,5,0"
+                    <TextBlock Style="{StaticResource Motor.HMI.CRH380BG.TitleDateTextStyle}" Text=" " />
+                    <TextBlock Margin="5,0,5,0"
                                Style="{StaticResource Motor.HMI.CRH380BG.TitleDateTextStyle}"
-                               Text="{Binding Domain.FaultViewModel.Model.AllPagedItems.CurrentListIndex,  Converter={StaticResource Motor.HMI.CRH380BG.MathConverter}, ConverterParameter=x+1}" />
+                               Text="{Binding Domain.FaultViewModel.Model.AllPagedItems.CurrentListIndex,
+                                              Converter={StaticResource Motor.HMI.CRH380BG.MathConverter},
+                                              ConverterParameter=x+1}" />
                     <TextBlock Style="{StaticResource Motor.HMI.CRH380BG.TitleDateTextStyle}" Text="行" />
                     <TextBlock Style="{StaticResource Motor.HMI.CRH380BG.TitleDateTextStyle}" Text="共" />
                     <TextBlock Margin="5,0,5,0"
@@ -51,12 +51,10 @@
 
 
 
-            <ListBox
-                Grid.Row="1"
+            <ListBox Grid.Row="1"
                      ItemsSource="{Binding Path=Domain.FaultViewModel.Model.AllPagedItems.Items}"
                      SelectedIndex="{Binding Path=Domain.FaultViewModel.Model.AllPagedItems.ItemsIndex}"
-                    
-                Style="{StaticResource Motor.HMI.CRH380BG.ListBoxfaultStyle1}"/>
+                     Style="{StaticResource Motor.HMI.CRH380BG.ListBoxfaultStyle1}" />
         </Grid>
     </Grid>
 </UserControl>

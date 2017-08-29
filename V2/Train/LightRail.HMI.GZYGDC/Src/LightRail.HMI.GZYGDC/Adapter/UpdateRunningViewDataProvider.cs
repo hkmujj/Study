@@ -35,16 +35,14 @@ namespace LightRail.HMI.GZYGDC.Adapter
             var RunningModel = ViewModel.RunningViewModel.Model;
 
             RunningModel.DoorUnits.ForEach(b => b.DataChanged(args.ChangedBools.NewValue));
-            RunningModel.AirConditionUnits.ForEach(b => b.DataChanged(args.ChangedBools.NewValue));
             RunningModel.AssistUnits.ForEach(b => b.DataChanged(args.ChangedBools.NewValue));
-            RunningModel.EnmergencyTalkUnits.ForEach(b => b.DataChanged(args.ChangedBools.NewValue));
             RunningModel.BrakeUnits.ForEach(b => b.DataChanged(args.ChangedBools.NewValue));
             RunningModel.TractionUnits.ForEach(b => b.DataChanged(args.ChangedBools.NewValue));
             RunningModel.PantographUnits.ForEach(b => b.DataChanged(args.ChangedBools.NewValue));
             RunningModel.HSCBUnits.ForEach(b => b.DataChanged(args.ChangedBools.NewValue));
             RunningModel.BatteryUnits.ForEach(b => b.DataChanged(args.ChangedBools.NewValue));
             RunningModel.SpringUnits.ForEach(b => b.DataChanged(args.ChangedBools.NewValue));
-
+           
 
             //工况默认为无模式
             RunningModel.CurWorkCondition = WorkCondition.None;
@@ -52,7 +50,8 @@ namespace LightRail.HMI.GZYGDC.Adapter
             args.ChangedBools.UpdateIfContainsWhenTrue(InBoolKeys.惰行, () => RunningModel.CurWorkCondition = WorkCondition.Lazy);
             args.ChangedBools.UpdateIfContainsWhenTrue(InBoolKeys.常用制动, () => RunningModel.CurWorkCondition = WorkCondition.ConmonBrake);
             args.ChangedBools.UpdateIfContainsWhenTrue(InBoolKeys.自动紧急制动, () => RunningModel.CurWorkCondition = WorkCondition.AutoEmergencyBrake);
-        
+            args.ChangedBools.UpdateIfContainsWhenTrue(InBoolKeys.保持制动, () => RunningModel.CurWorkCondition = WorkCondition.KeepBrake);
+
 
             args.ChangedBools.UpdateIfContains(InBoolKeys.头车司机室激活, b => RunningModel.HeadTrainActive = b);
             args.ChangedBools.UpdateIfContains(InBoolKeys.尾车司机室激活, b => RunningModel.TailTrainActive = b);

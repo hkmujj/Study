@@ -5,12 +5,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:regions="http://www.codeplex.com/CompositeWPF"
+             xmlns:viewModel="clr-namespace:LightRail.HMI.GZYGDC.ViewModel"
              Background="Black"
+             d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
              d:DesignHeight="600"
              d:DesignWidth="800"
              mc:Ignorable="d">
     <Grid Visibility="{Binding Path=Model.IsStart, Converter={StaticResource BoolToVisibilityConverter}}">
         <ContentControl Background="{StaticResource ContentBackgroundBrush}"
                 regions:RegionManager.RegionName="{x:Static constant:RegionNames.ShellRoot}" />
+        <Border Panel.ZIndex="1" IsHitTestVisible="False">
+            <Border.Background>
+                <SolidColorBrush Color="{Binding Path = SettingViewModel.Model.SettingBrightness, Converter={StaticResource BrightnessConverter}}"></SolidColorBrush>
+            </Border.Background>
+        </Border>
     </Grid>
 </UserControl>

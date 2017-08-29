@@ -9,5 +9,8 @@ namespace Subway.CBTC.BeiJiaoKong.Config
         public const string FileName = "BeiJiaoKongProjectConfig.xml";
         [XmlElement]
         public TCTType Type { get; set; }
+
+        [XmlElement]
+        public int ScreenSaverDelay { get; set; }
     }
 }

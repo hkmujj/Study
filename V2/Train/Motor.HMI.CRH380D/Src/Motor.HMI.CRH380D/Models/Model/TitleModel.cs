@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ComponentModel.Composition;
 using System.Windows.Threading;
-using LightRail.HMI.SZLHLF.Model;
 
 namespace Motor.HMI.CRH380D.Models.Model
 {

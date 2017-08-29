@@ -4,17 +4,33 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:popupViewModels="clr-namespace:Motor.ATP._200H.Subsys.ViewModel.PopupViewModels"
+             xmlns:common="clr-namespace:Motor.ATP._200H.Subsys.WPFView.PopupViews.Common"
              d:DataContext="{d:DesignInstance popupViewModels:InputTrainDataViewModel}"
              d:DesignHeight="250"
              d:DesignWidth="232"
              Background="{StaticResource Motor.ATP.200H.Bursh.PopViewContent}"
              mc:Ignorable="d">
-    <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
-        <TextBlock Style="{StaticResource Motor.ATP.200H.PopupViewInputLongDataTextStyle}"
-                   Text="{StaticResource Motor.ATP.Infrasturcture.String.8Car}"
-                   TextAlignment="Center" />
-        <TextBlock Style="{StaticResource Motor.ATP.200H.PopupViewInputLongDataTextStyle}"
-                   Text="{StaticResource Motor.ATP.Infrasturcture.String.16Car}"
-                   TextAlignment="Center" />
-    </StackPanel>
+    <Grid Margin="6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <TextBlock Style="{StaticResource Motor.ATP.200H.PopupViewContentTextStyle}" Text="{StaticResource Motor.ATP.Infrasturcture.String.TrainData16Or8}" />
+            <TextBlock Margin="6,0,0,0"
+                       Style="{StaticResource Motor.ATP.200H.PopupViewContentTextStyle}"
+                       Text=":" />
+        </StackPanel>
+        <TextBlock Background="White" Foreground="Black" Grid.Row="2"
+                   IsEnabled="True"
+                   Style="{StaticResource Motor.ATP.200H.PopupViewInputLongDataTextStyle}"
+                   Text="{Binding Path=TrainLengths[0]}" />
+
+        <common:InputingCharOrNumberView Grid.Row="4" />
+        <!--<common:PleaseInputing09AZView Grid.Row="4" />-->
+    </Grid>
 </UserControl>

@@ -16,15 +16,7 @@ namespace CBTC.DataAdapter.ConcreateAdapter.THALES
         /// </summary>
         public float MasterControlDirection { set; get; }
 
-        ///<summary>
-        /// 模式开关
-        /// </summary>
-        public float ModeSwitch { set; get; }
-       
-        ///<summary>
-        /// 
-        /// </summary>
-        public float ATORelationSwitch { set; get; }
+
 
         /// <summary>
         /// 信号屏是否显示停站倒计时

@@ -45,6 +45,18 @@ namespace CRH2MMI.Fault.View
             return true;
         }
 
+        protected override bool OnMouseUp(Point point)
+        {
+            if (!m_Title.HasPackingBrakeCutEvent)
+            {
+                return CurrentFautlPage.OnMouseUp(point);
+            }
+
+            m_BrakeCutOccuseView.OnMouseUp(point);
+
+            return true;
+        }
+
         public void GetoFaultInfoPage()
         {
             CurrentFautlPage = m_FaultInfoPageBases.First();

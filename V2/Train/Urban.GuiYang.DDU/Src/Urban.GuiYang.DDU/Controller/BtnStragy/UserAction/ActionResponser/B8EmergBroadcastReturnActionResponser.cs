@@ -25,8 +25,11 @@ namespace Urban.GuiYang.DDU.Controller.BtnStragy.UserAction.ActionResponser
         /// </summary>
         public override void ResponseClick()
         {
-
-            RequestNavigateToContent(typeof(ContentShell1));
+            if (FauleReturnView != null)
+            {
+                RequestNavigateToContent(FauleReturnView);
+            }
         }
     }
+
 }

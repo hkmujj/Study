@@ -1,6 +1,7 @@
 ﻿<UserControl x:Class="Motor.HMI.CRH380D.View.Contents.WarringRecordView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:common="clr-namespace:Motor.HMI.CRH380D.View.Common"
              xmlns:constant="clr-namespace:Motor.HMI.CRH380D.Constant"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -14,12 +15,34 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="33*" />
             <RowDefinition Height="65*" />
-            <RowDefinition Height="11*" />
-            <RowDefinition Height="296*" />
-            <RowDefinition Height="15*" />
+            <RowDefinition Height="322*" />
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <TextBlock Style="{StaticResource TitleTextStyle}" Text="警报记录" />
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <common:TrainCommon1 />
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2" Background="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="10*" />
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="1"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Text="无车辆被选"
+                       Visibility="{Binding Model.EventInfoModel.EventInfoDisplayItems.Count,
+                                            Converter={StaticResource EventInfoDisplayVisibleConverter}}" />
+        </Grid>
+        <Grid Grid.Row="2" Background="Transparent">
+            <ItemsControl ItemsSource="{Binding Model.EventInfoModel.EventInfoDisplayItems}" Style="{StaticResource EventInfoItemsControl}" />
         </Grid>
     </Grid>
 </UserControl>

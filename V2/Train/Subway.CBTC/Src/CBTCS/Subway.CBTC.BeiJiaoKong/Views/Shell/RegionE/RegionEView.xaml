@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModel="clr-namespace:Subway.CBTC.BeiJiaoKong.ViewModel"
              d:DataContext="{d:DesignInstance viewModel:BeiJiaoKongViewModel}"
-             d:DesignHeight="71"
+             d:DesignHeight="54"
              d:DesignWidth="400"
              mc:Ignorable="d">
     <Grid Visibility="{Binding Path=Domain.Message.FaultShowingItem, Converter={StaticResource BeiJiaoKongNullToVisibility}}">

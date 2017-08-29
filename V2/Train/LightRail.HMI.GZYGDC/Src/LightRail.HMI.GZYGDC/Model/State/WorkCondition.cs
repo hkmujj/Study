@@ -36,5 +36,10 @@ namespace LightRail.HMI.GZYGDC.Model.State
         /// </summary>
         [Description("自动紧急制动")]
        AutoEmergencyBrake,
+        /// <summary>
+        /// 保持制动
+        /// </summary>
+        [Description("保持制动")]
+        KeepBrake,
     }
 }

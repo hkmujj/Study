@@ -1,0 +1,188 @@
+﻿<UserControl x:Class="Motor.HMI.CRH380D.View.Common.CarFireDevice.Car1FireDeviceCommon"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:Motor.HMI.CRH380D.ViewModel"
+             d:DataContext="{d:DesignInstance viewModel:DomainViewModel}"
+             d:DesignHeight="130"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <Viewbox>
+        <Grid Width="800" Height="130">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="66*" />
+                <ColumnDefinition Width="124*" />
+                <ColumnDefinition Width="222*" />
+                <ColumnDefinition Width="70*" />
+                <ColumnDefinition Width="103*" />
+                <ColumnDefinition Width="169*" />
+                <ColumnDefinition Width="46*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35*" />
+                    <RowDefinition Height="60*" />
+                    <RowDefinition Height="35*" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Border Margin="-2"
+                            BorderBrush="Gray"
+                            BorderThickness="4" />
+                    <Border Width="25"
+                            Height="25"
+                            Margin="27,5,72,5"
+                            Background="{Binding Model.FireDeviceModel.FireDevice19.State,
+                                                 Converter={StaticResource FireDeviceStateToBackgroundColorConverter}}"
+                            BorderBrush="{Binding Model.FireDeviceModel.FireDevice19.State,
+                                                  Converter={StaticResource FireDeviceStateToColorConverter}}"
+                            BorderThickness="4">
+                        <TextBlock HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontSize="20"
+                                   FontWeight="Bold"
+                                   Foreground="Gray"
+                                   Text="9" />
+                    </Border>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Border Margin="-2"
+                            BorderBrush="Gray"
+                            BorderThickness="4" />
+                    <Border Width="25"
+                            Height="25"
+                            Margin="39,0,60,0"
+                            Background="{Binding Model.FireDeviceModel.FireDevice17.State,
+                                                 Converter={StaticResource FireDeviceStateToBackgroundColorConverter}}"
+                            BorderBrush="{Binding Model.FireDeviceModel.FireDevice17.State,
+                                                  Converter={StaticResource FireDeviceStateToColorConverter}}"
+                            BorderThickness="4">
+                        <TextBlock HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontSize="20"
+                                   FontWeight="Bold"
+                                   Foreground="Gray"
+                                   Text="7" />
+                    </Border>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Border Margin="-2"
+                            BorderBrush="Gray"
+                            BorderThickness="4" />
+                    <Border Width="25"
+                            Height="25"
+                            Margin="3,0,96,0"
+                            Background="{Binding Model.FireDeviceModel.FireDevice18.State,
+                                                 Converter={StaticResource FireDeviceStateToBackgroundColorConverter}}"
+                            BorderBrush="{Binding Model.FireDeviceModel.FireDevice18.State,
+                                                  Converter={StaticResource FireDeviceStateToColorConverter}}"
+                            BorderThickness="4">
+                        <TextBlock HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontSize="20"
+                                   FontWeight="Bold"
+                                   Foreground="Gray"
+                                   Text="8" />
+                    </Border>
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Border Margin="-2"
+                        BorderBrush="Gray"
+                        BorderThickness="4" />
+                <Border Width="25"
+                        Height="25"
+                        Margin="63,52.5,134,52.5"
+                        Background="{Binding Model.FireDeviceModel.FireDevice13.State,
+                                             Converter={StaticResource FireDeviceStateToBackgroundColorConverter}}"
+                        BorderBrush="{Binding Model.FireDeviceModel.FireDevice13.State,
+                                              Converter={StaticResource FireDeviceStateToColorConverter}}"
+                        BorderThickness="4">
+                    <TextBlock HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="20"
+                               FontWeight="Bold"
+                               Foreground="Gray"
+                               Text="3" />
+                </Border>
+                <Border Width="25"
+                        Height="25"
+                        Margin="153,52.5,44,52.5"
+                        Background="{Binding Model.FireDeviceModel.FireDevice12.State,
+                                             Converter={StaticResource FireDeviceStateToBackgroundColorConverter}}"
+                        BorderBrush="{Binding Model.FireDeviceModel.FireDevice12.State,
+                                              Converter={StaticResource FireDeviceStateToColorConverter}}"
+                        BorderThickness="4">
+                    <TextBlock HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="20"
+                               FontWeight="Bold"
+                               Foreground="Gray"
+                               Text="2" />
+                </Border>
+            </Grid>
+            <Grid Grid.Column="3">
+                <Border Margin="-2"
+                        BorderBrush="Gray"
+                        BorderThickness="4" />
+                <Border Width="25"
+                        Height="25"
+                        Background="{Binding Model.FireDeviceModel.FireDevice16.State,
+                                             Converter={StaticResource FireDeviceStateToBackgroundColorConverter}}"
+                        BorderBrush="{Binding Model.FireDeviceModel.FireDevice16.State,
+                                              Converter={StaticResource FireDeviceStateToColorConverter}}"
+                        BorderThickness="4">
+                    <TextBlock HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="20"
+                               FontWeight="Bold"
+                               Foreground="Gray"
+                               Text="6" />
+                </Border>
+            </Grid>
+            <Grid Grid.Column="4">
+                <Border Margin="-2"
+                        BorderBrush="Gray"
+                        BorderThickness="4" />
+                <Border Width="25"
+                        Height="25"
+                        Background="{Binding Model.FireDeviceModel.FireDevice14.State,
+                                             Converter={StaticResource FireDeviceStateToBackgroundColorConverter}}"
+                        BorderBrush="{Binding Model.FireDeviceModel.FireDevice14.State,
+                                              Converter={StaticResource FireDeviceStateToColorConverter}}"
+                        BorderThickness="4">
+                    <TextBlock HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="20"
+                               FontWeight="Bold"
+                               Foreground="Gray"
+                               Text="4" />
+                </Border>
+            </Grid>
+            <Grid Grid.Column="5">
+                <Border Width="173"
+                        Height="134"
+                        Margin="-2"
+                        HorizontalAlignment="Right"
+                        BorderBrush="Gray"
+                        BorderThickness="4"
+                        CornerRadius="0,173,173,0" />
+                <Border Width="25"
+                        Height="25"
+                        Margin="8,0,136,0"
+                        Background="{Binding Model.FireDeviceModel.FireDevice11.State,
+                                             Converter={StaticResource FireDeviceStateToBackgroundColorConverter}}"
+                        BorderBrush="{Binding Model.FireDeviceModel.FireDevice11.State,
+                                              Converter={StaticResource FireDeviceStateToColorConverter}}"
+                        BorderThickness="4">
+                    <TextBlock HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="20"
+                               FontWeight="Bold"
+                               Foreground="Gray"
+                               Text="1" />
+                </Border>
+            </Grid>
+        </Grid>
+    </Viewbox>
+</UserControl>

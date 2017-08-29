@@ -16,11 +16,13 @@ namespace Motor.ATP._200H.Subsys.Controller
         {
             Model = model;
             SwichAssist = new DelegateCommand(SwichAssistMethod);
+            
         }
 
         private void SwichAssistMethod()
         {
             Model.SendInterface.AssistSwich(new SendModel<bool>(!Model.AssistDisplayInfo.Visible));
+            
         }
         /// <summary>
         /// 切换辅屏命令

@@ -23,9 +23,9 @@ namespace Subway.CBTC.BeiJiaoKong.Views.Shell.RegionA
 
             foreach (var d in GraduationResouce.Instance.Graduation.Keys)
             {
-                const int x1 = 29;
-                const int z2 = 39;
-                double y = 160 * GraduationResouce.Instance.Graduation[d] + 10;
+                const int x1 = 22;
+                const int z2 = 29;
+                double y = 220 * GraduationResouce.Instance.Graduation[d] + 10;
                 var line = new Line()
                 {
                     X1 = x1,
@@ -42,10 +42,11 @@ namespace Subway.CBTC.BeiJiaoKong.Views.Shell.RegionA
                 }
                 var txt = new TextBlock()
                 {
-                    Margin = new Thickness(0, y - 7, 25, 0),
+                    Margin = new Thickness(0, y - 7, 9, 0),
 
                     Text = tmp,
                     Foreground = Brushes.LightGray,
+                    FontSize = 10,
                     VerticalAlignment = VerticalAlignment.Top,
                     HorizontalAlignment = HorizontalAlignment.Right
                 };

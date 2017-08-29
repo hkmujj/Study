@@ -14,18 +14,19 @@
             <ColumnDefinition Width="33*" />
         </Grid.ColumnDefinitions>
         <Grid Visibility="{Binding Domain.TrainInfo.DoorInfo.DoorControlMode, Converter={StaticResource BeiJiaoKongDoorControlModeToVisibilityConverter}}">
-            <Border Background="White" 
-                Margin="22,10,5,10">
-                <Border Margin="2,5,2,5" BorderBrush="Black" BorderThickness="2" />
+            <Border Margin="22,10,5,10" Background="White">
+                <Border Margin="2,5,2,5"
+                        BorderBrush="Black"
+                        BorderThickness="2" />
             </Border>
         </Grid>
         <TextBlock Grid.Column="1"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Center"
-                   FontSize="24"
+                   FontSize="30"
                    Foreground="White"
                    Text="{Binding Domain.TrainInfo.DoorInfo.DoorControlMode,
-                                  Converter={StaticResource BeiJiaoKongDoorControlMode1Converter}}"/>
+                                  Converter={StaticResource BeiJiaoKongDoorControlMode1Converter}}" />
     </Grid>
 </UserControl>
 

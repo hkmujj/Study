@@ -20,6 +20,9 @@ namespace Tram.CBTC.Infrasturcture.Model.Road
         private string m_PlanID;
         public ReturnIndicateInfo m_ReturnIndicateInfo;
         public GarageIndicateInfo m_GarageIndicateInfo;
+        private ForkDirection m_ForkDirection = ForkDirection.Forward;
+        private string m_ForkArea;
+        private ForkCtrlMode m_ForkCtrlMode = ForkCtrlMode.Hand;
 
 
         public RoadInfo()
@@ -274,6 +277,57 @@ namespace Tram.CBTC.Infrasturcture.Model.Road
                     (sender, args) => RaisePropertyChanged(() => GarageIndicateInfo);
 
                 RaisePropertyChanged(() => GarageIndicateInfo);
+            }
+        }
+
+
+        /// <summary>
+        /// 道岔方向
+        /// </summary>
+        public ForkDirection ForkDirection
+        {
+            get { return m_ForkDirection; }
+            set
+            {
+                if (value == m_ForkDirection)
+                    return;
+
+                m_ForkDirection = value;
+
+                RaisePropertyChanged(() => ForkDirection);
+            }
+        }
+
+
+        /// <summary>
+        /// 道岔区域
+        /// </summary>
+        public string ForkArea
+        {
+            get { return m_ForkArea; }
+            set
+            {
+                if (value == m_ForkArea)
+                    return;
+                m_ForkArea = value;
+                RaisePropertyChanged(() => ForkArea);
+            }
+        }
+
+        /// <summary>
+        /// 道岔控制模式
+        /// </summary>
+        public ForkCtrlMode ForkCtrlMode
+        {
+            get { return m_ForkCtrlMode; }
+            set
+            {
+                if (value == m_ForkCtrlMode)
+                    return;
+
+                m_ForkCtrlMode = value;
+
+                RaisePropertyChanged(() => ForkCtrlMode);
             }
         }
     }

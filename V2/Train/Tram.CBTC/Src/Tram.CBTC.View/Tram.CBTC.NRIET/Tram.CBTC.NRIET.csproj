@@ -161,11 +161,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Contents\Main\RegionDeviceStatus\DeviceStatusViewHide.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Contents\Main\RegionInfo\InfoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Contents\Main\RegionMenu\MaintenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Main\RegionMenu\RoadCtrlView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -189,6 +197,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Contents\Main\RegionRunning\RunningViewHide.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Contents\Main\RegionSpeed\DegreeScaleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -206,6 +218,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Contents\Main\RegionSpeed\SpeedView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\Main\RegionSpeed\SpeedViewHide.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -317,11 +333,17 @@
     <Compile Include="View\Contents\Main\RegionDeviceStatus\DeviceStatusView.xaml.cs">
       <DependentUpon>DeviceStatusView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Contents\Main\RegionDeviceStatus\DeviceStatusViewHide.xaml.cs">
+      <DependentUpon>DeviceStatusViewHide.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Contents\Main\RegionInfo\InfoView.xaml.cs">
       <DependentUpon>InfoView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Contents\Main\RegionMenu\MaintenView.xaml.cs">
       <DependentUpon>MaintenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Main\RegionMenu\RoadCtrlView.xaml.cs">
+      <DependentUpon>RoadCtrlView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Contents\Main\RegionMenu\SettingMenu.xaml.cs">
       <DependentUpon>SettingMenu.xaml</DependentUpon>
@@ -338,6 +360,9 @@
     <Compile Include="View\Contents\Main\RegionRunning\RunningView.xaml.cs">
       <DependentUpon>RunningView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Contents\Main\RegionRunning\RunningViewHide.xaml.cs">
+      <DependentUpon>RunningViewHide.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Contents\Main\RegionSpeed\DegreeScaleView.xaml.cs">
       <DependentUpon>DegreeScaleView.xaml</DependentUpon>
     </Compile>
@@ -352,6 +377,9 @@
     </Compile>
     <Compile Include="View\Contents\Main\RegionSpeed\SpeedView.xaml.cs">
       <DependentUpon>SpeedView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\Main\RegionSpeed\SpeedViewHide.xaml.cs">
+      <DependentUpon>SpeedViewHide.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Contents\ReentryWindow.xaml.cs">
       <DependentUpon>ReentryWindow.xaml</DependentUpon>

@@ -1,7 +1,7 @@
 ﻿using Microsoft.Practices.Prism.ViewModel;
 using Motor.HMI.CRH380D.Interfaces;
 
-namespace LightRail.HMI.SZLHLF.Model
+namespace Motor.HMI.CRH380D.Models
 {
     /// <summary>
     /// Model 基类

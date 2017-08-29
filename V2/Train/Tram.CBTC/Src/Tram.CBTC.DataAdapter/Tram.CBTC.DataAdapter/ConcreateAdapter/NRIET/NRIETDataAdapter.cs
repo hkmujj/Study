@@ -366,7 +366,7 @@ namespace Tram.CBTC.DataAdapter.ConcreateAdapter.NRIET
             {
                 DateTime t = new DateTime();
                 t = t.AddSeconds((double)SignalDataInNRIET.ArriveNextStationTimeSpan);
-                CBTC.SignalInfo.NextStationTime = t.ToString("mm::ss");
+                CBTC.SignalInfo.NextStationTime = t.ToString("mm：ss");
             }
            
            
