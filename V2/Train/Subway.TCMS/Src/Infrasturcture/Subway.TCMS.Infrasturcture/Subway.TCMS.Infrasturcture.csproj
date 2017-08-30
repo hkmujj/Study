@@ -1,120 +1,23 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2F8A7708-E660-4FA2-A04F-BEF7768E7370}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Subway.TCMS.Infrasturcture</RootNamespace>
-    <AssemblyName>Subway.TCMS.Infrasturcture</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
+     <TargetFrameworks>net40;net45</TargetFrameworks>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x86\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
-    <OutputPath>bin\x86\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="CommonUtil, Version=2.29.2016.517, Culture=neutral, processorArchitecture=x86" />
-    <Reference Include="DevExpress.Data.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Mvvm.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Xpf.Core.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="devexpress.xpf.propertygrid.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.Practices.Prism, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.Practices.Prism.MefExtensions, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
-    <Reference Include="MMI.Facility.Interface, Version=2.50.2017.214, Culture=neutral, processorArchitecture=MSIL" />
-    <Reference Include="MMI.Facility.WPFInfrastructure, Version=2.50.2017.705, Culture=neutral, processorArchitecture=MSIL" />
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xaml" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="UIAutomationProvider" />
+    <Reference Include="CommonUtil">
+      <HintPath>..\..\..\..\..\Bin\Platform\CommonUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism">
+      <HintPath>..\..\..\..\..\Bin\MMI\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\..\..\..\..\Bin\MMI\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="MMI.Facility.Interface">
+      <HintPath>..\..\..\..\..\Bin\Platform\MMI.Facility.Interface.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
-    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Controller\MonitorController.cs" />
-    <Compile Include="Evnts\CommunicationDataChangedWrapperArgs.cs" />
-    <Compile Include="Extention\CommunicationExtention.cs" />
-    <Compile Include="Model\Constance\TCMSType.cs" />
-    <Compile Include="Model\Monitor\Detail\ReciveMonitor.cs" />
-    <Compile Include="Model\Monitor\Detail\SendMonitor.cs" />
-    <Compile Include="Model\Monitor\MonitorModel.cs" />
-    <Compile Include="Model\Recive\IReciveInterface.cs" />
-    <Compile Include="Model\Recive\ReciveInterfaceBase.cs" />
-    <Compile Include="Model\Recive\ReciveModel.cs" />
-    <Compile Include="Model\Send\ISendInterface.cs" />
-    <Compile Include="Model\Send\SendInterfaceBase.cs" />
-    <Compile Include="Model\Send\SendModel.cs" />
-    <Compile Include="Model\TCMS.cs" />
-    <Compile Include="Monitor\DataMonitorForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Monitor\DataMonitorForm.Designer.cs">
-      <DependentUpon>DataMonitorForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Monitor\DataMonitorView.xaml.cs">
-      <DependentUpon>DataMonitorView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service\IProjectDecriptionService.cs" />
-    <Compile Include="Service\ProjectDecriptionService.cs" />
-    <Compile Include="ViewModel\MonitorViewModel.cs" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <EmbeddedResource Include="Monitor\DataMonitorForm.resx">
-      <DependentUpon>DataMonitorForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Licenses.licx" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="Monitor\DataMonitorView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
 </Project>
